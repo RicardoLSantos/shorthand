@@ -1,24 +1,24 @@
 # iOS Health App Lifestyle Medicine Implementation Guide
 
-## Propósito
-Este guia de implementação FHIR define como extrair e representar dados de atividade física do iOS Health App para apoiar intervenções em medicina do estilo de vida.
+## Purpose
+This FHIR implementation guide defines how to extract and represent physical activity data from the iOS Health App to support lifestyle medicine interventions.
 
-## Escopo
-- Dados de atividade física do iOS Health App
-- Passos
-- Distância percorrida
-- Exercícios
-- Gasto energético
-- Minutos de exercício
+## Scope
+- Physical activity data from iOS Health App
+- Steps
+- Distance traveled
+- Workouts
+- Energy expenditure
+- Exercise minutes
 
-## Casos de Uso
-1. Coleta automática de dados de atividade física
-2. Monitoramento de níveis de atividade diária
-3. Avaliação de padrões de movimento
-4. Suporte a intervenções em estilo de vida
+## Use Cases
+1. Automatic physical activity data collection
+2. Daily activity level monitoring
+3. Movement pattern assessment
+4. Lifestyle intervention support
 
-## Audiência
-- Desenvolvedores de software em saúde
-- Profissionais de saúde
-- Pesquisadores
-- Gestores de saúde digital
+## Audience
+- Healthcare software developers
+- Healthcare professionals
+- Researchers
+- Digital health managers
