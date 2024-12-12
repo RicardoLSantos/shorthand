@@ -57,6 +57,7 @@ The iOS Health App collects vital signs from the following sources:
 - Temperature: Per measurement
 - Respiratory Rate: Continuous during sleep/exercise
 - ECG: On-demand/recording
+
 ## Operations Supported
 
 ### Search
@@ -74,7 +75,7 @@ The iOS Health App collects vital signs from the following sources:
 ### Search Examples
 GET [base]/Observation?category=vital-signs&patient=[id]&code=8867-4
 GET [base]/Observation?category=vital-signs&patient=[id]&date=ge2024-03-19
-Copy
+
 ## Conformance
 
 ### Must Support
@@ -90,6 +91,7 @@ Elements marked with MS must be supported:
 ### Cardinality
 - Blood pressure requires systolic and diastolic components
 - Other vital signs require at least one value
+
 ## iOS Health App to FHIR Mapping
 
 ### Main Fields
