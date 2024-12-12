@@ -30,8 +30,8 @@ Description: "Example of nightly sleep data from iOS Health App"
 * component[respiratoryRate].code = $LOINC#9279-1 "Respiratory rate"
 * component[respiratoryRate].valueQuantity = 14 '/min' "per minute"
  
-* component[heartRateVariability].code = $LOINC#80404-7 "Heart rate variability"
+* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * component[heartRateVariability].valueQuantity = 45 'ms' "milliseconds"
  
-* component[interruptions].code = $LOINC#93837-3 "Number of awakenings"
+* component[interruptions].code = $LOINC#93837-3 "Number of awakenings during sleep"
 * component[interruptions].valueQuantity = 3 '{count}' "count"
