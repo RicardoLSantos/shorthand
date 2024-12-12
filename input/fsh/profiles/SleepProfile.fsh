@@ -15,7 +15,7 @@ Description: "Profile for recording sleep data from iOS Health App"
 * code = $LOINC#93832-4 "Sleep pattern panel"
 * subject 1..1 MS
 * subject only Reference(Patient)
-* effectiveDateTime 1..1 MS
+* effectiveDateTime 0..1 MS
 * effectivePeriod 0..1 MS
 * device 0..1 MS
  
