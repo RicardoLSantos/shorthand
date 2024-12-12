@@ -90,3 +90,47 @@ Elements marked with MS must be supported:
 ### Cardinality
 - Blood pressure requires systolic and diastolic components
 - Other vital signs require at least one value
+## iOS Health App to FHIR Mapping
+
+### Main Fields
+| iOS Health App | FHIR Path | LOINC Code |
+|----------------|-----------|-------------|
+| Heart Rate | valueQuantity | 8867-4 |
+| HRV | component[heartRateVariability] | 80404-7 |
+| Blood Pressure Systolic | component[systolic] | 8480-6 |
+| Blood Pressure Diastolic | component[diastolic] | 8462-4 |
+| SpO2 | valueQuantity | 2708-6 |
+| Body Temperature | valueQuantity | 8310-5 |
+| Respiratory Rate | valueQuantity | 9279-1 |
+
+### Implementation Considerations
+
+1. Source Prioritization
+- Apple Watch has priority for continuous measurements
+- Validated medical devices for specific measurements
+- Manual entries as last resort
+
+2. Data Validation
+- Verification of values within physiological ranges
+- Outlier detection
+- Temporal consistency of measurements
+
+3. Data Aggregation
+- Continuous measurements aggregated in intervals
+- Calculation of averages, minimums and maximums
+- Trends over time
+
+4. Accuracy and Reliability
+- Indication of measurement source/device
+- Measurement confidence level
+- Device calibration and validation
+
+5. Alert Management
+- Definition of normal limits
+- Notification of abnormal values
+- Critical alert escalation
+
+6. Storage and Retention
+- Data retention policy
+- Historical data compression
+- Backup and recovery
