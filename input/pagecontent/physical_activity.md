@@ -38,3 +38,32 @@ The iOS Health App collects physical activity data in the following ways:
 - Distance: Continuous during activity
 - Workouts: Per session
 - Energy: Daily calculation
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + activity-type
+- patient + date + activity-type
+
+### Search Parameters
+- patient: Patient identifier
+- date: Activity date
+- activity-type: Type of physical activity
+
+### Search Examples
+GET [base]/Observation?category=activity&patient=[id]&date=[date]
+GET [base]/Observation?category=activity&patient=[id]&code=[activity-type]
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported by the implementing system:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- component.steps
+- component.distance
+- component.duration
+- component.energy
