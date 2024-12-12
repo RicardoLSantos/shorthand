@@ -41,3 +41,45 @@ The iOS Health App collects sleep data from the following sources:
 - Continuous data during sleep period
 - Daily metrics aggregation
 - Weekly trend analysis
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + date-range
+- patient + category
+
+### Search Parameters
+- patient: Patient identifier
+- date: Sleep record date
+- category: Observation category (always "sleep")
+
+### Search Examples
+GET [base]/Observation?category=sleep&patient=[id]&date=[date]
+GET [base]/Observation?category=sleep&patient=[id]&date=ge[start]&date=le[end]
+
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime/effectivePeriod
+- component.timeInBed
+- component.totalSleepTime
+- component.deepSleep
+- component.remSleep
+- component.lightSleep
+- component.respiratoryRate
+- component.heartRateVariability
+- component.interruptions
+
+### Cardinality
+- Time in bed and total sleep time are mandatory (1..1)
+- Other components are optional (0..1)
+
+### Validation
+- Total sleep time must be less than or equal to time in bed
+- The sum of sleep stages must equal the total sleep time
