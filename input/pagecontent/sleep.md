@@ -83,3 +83,33 @@ Elements marked with MS must be supported:
 ### Validation
 - Total sleep time must be less than or equal to time in bed
 - The sum of sleep stages must equal the total sleep time
+
+## iOS Health App to FHIR Mapping
+
+### Main Fields
+| iOS Health App | FHIR Path |
+|----------------|-----------|
+| Time in Bed | component[timeInBed].valueQuantity |
+| Sleep Time | component[totalSleepTime].valueQuantity |
+| Deep Sleep | component[deepSleep].valueQuantity |
+| REM Sleep | component[remSleep].valueQuantity |
+| Light Sleep | component[lightSleep].valueQuantity |
+| Respiratory Rate | component[respiratoryRate].valueQuantity |
+| HRV | component[heartRateVariability].valueQuantity |
+| Interruptions | component[interruptions].valueQuantity |
+
+### Implementation Considerations
+1. Data Aggregation
+   - Data is collected continuously during sleep
+   - Nightly aggregation is done automatically
+   - Metrics are calculated per night of sleep
+
+2. Data Quality
+   - Temporal overlap validation
+   - Consistency check between metrics
+   - Outlier detection
+
+3. Privacy and Security
+   - Sensitive data requiring protection
+   - User consent required
+   - Anonymization for research use
