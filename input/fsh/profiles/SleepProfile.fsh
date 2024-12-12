@@ -72,3 +72,4 @@ Description: "Profile for recording sleep data from iOS Health App"
 * component[interruptions].valueQuantity only Quantity
 * component[interruptions].valueQuantity.system = $UCUM
 * component[interruptions].valueQuantity.code = #{count}
+* extension contains SleepQuality named quality 0..1
