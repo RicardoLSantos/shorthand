@@ -14,7 +14,7 @@ Description: "Profile for vital signs data from iOS Health App"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * code 1..1 MS
-* value[x] 1..1 MS
+* value[x] 0..1 MS
 * device 0..1 MS
 
 Profile: HeartRateObservation
