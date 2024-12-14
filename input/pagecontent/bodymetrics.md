@@ -49,3 +49,46 @@ The body measurements are mapped to FHIR Observation resources with specific pro
 - Weight measurements use the [body-weight](StructureDefinition-body-weight.html) profile
 - Height uses the [body-height](StructureDefinition-body-height.html) profile
 - BMI calculations use the [bmi](StructureDefinition-bmi.html) profile
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + code
+- patient + date-range + code
+- patient + category
+
+### Search Parameters
+- patient: Patient identifier
+- date: Measurement date
+- code: Type of body measurement
+- category: Category (vital-signs)
+
+### Search Examples
+GET [base]/Observation?category=vital-signs&patient=[id]&code=29463-7
+GET [base]/Observation?category=vital-signs&patient=[id]&date=ge2024-03-19
+GET [base]/Observation?category=vital-signs&patient=[id]&code=88365-2&date=ge2024-01-01&date=le2024-12-31
+Copy
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status: Measurement status
+- category: Vital signs category
+- code: Type of measurement (LOINC code)
+- subject: Reference to patient
+- effectiveDateTime: When measurement was taken
+- valueQuantity: The measurement value and unit
+- component: Body composition components (for composition measurements)
+
+### Device Support
+The following device types are supported for data capture:
+- Smart scales
+- Bioimpedance analyzers
+- Manual entry
+- Third-party apps via HealthKit
+
+### Security Requirements
+- Patient access control
+- Device authentication
+- Data validation rules
