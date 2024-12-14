@@ -5,8 +5,8 @@ Description: "Additional context about the vital sign measurement"
 * value[x] only CodeableConcept
 * valueCodeableConcept from MeasurementContextVS (required)
 
-ValueSet: MeasurementContextVS
-Id: measurement-context-vs
+ValueSet: MeasurementContextVitalSigns
+Id: measurement-context-vital-signs
 Title: "Measurement Context Value Set"
 * $SCT#255214003 "At rest"
 * $SCT#309604004 "During exercise"
