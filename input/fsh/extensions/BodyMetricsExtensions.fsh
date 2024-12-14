@@ -63,10 +63,9 @@ Description: "Types of devices used for health and body measurements"
 * ^status = #draft
 
 * $SCT#469576000 "Smart watch"
-* $SCT#469576000 "Smart scale device"
 * $SCT#706767009 "Body composition analyzer"
 * $SCT#131009002 "Height measuring device"
-* $SCT#131009002 "Blood pressure monitor"
+* $SCT#706889009 "Blood pressure monitor"
 * $SCT#444699000 "Tape measure"
 * $SCT#44056008  "Digital scale"
 
