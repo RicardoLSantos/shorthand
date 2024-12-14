@@ -11,7 +11,7 @@ Title: "Heart Rate Measurement Example"
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "per minute"
 * device = Reference(DeviceHeartRateMonitor)
-* component[heartRateVariability].code = $LOINC#80404-7 "Heart rate variability"
+* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * component[heartRateVariability].valueQuantity = 45 'ms' "millisecond"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
