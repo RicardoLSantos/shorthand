@@ -3,7 +3,6 @@ InstanceOf: HeartRateObservation
 Usage: #example
 Title: "Heart Rate Measurement Example"
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#8867-4 "Heart rate"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
@@ -21,7 +20,6 @@ InstanceOf: BloodPressureObservation
 Usage: #example
 Title: "Blood Pressure Measurement Example"
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#85354-9 "Blood pressure panel with all children optional"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
