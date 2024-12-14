@@ -92,3 +92,96 @@ The following device types are supported for data capture:
 - Patient access control
 - Device authentication
 - Data validation rules
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code | Description |
+|----------------|-----------|-------------|-------------|
+| Weight | WeightObservation.valueQuantity | 29463-7 | Body weight measurement |
+| Height | HeightObservation.valueQuantity | 8302-2 | Body height measurement |
+| BMI | BMIObservation.valueQuantity | 39156-5 | Body Mass Index calculation |
+| Body Fat % | BodyCompositionObservation.component[bodyFat] | 41982-0 | Percentage of body fat |
+| Lean Mass | BodyCompositionObservation.component[leanMass] | 291-7 | Lean body mass |
+| Body Water | BodyCompositionObservation.component[bodyWater] | 73708-0 | Total body water |
+| Muscle Mass | BodyCompositionObservation.component[muscleMass] | 73713-0 | Skeletal muscle mass |
+| Bone Mass | BodyCompositionObservation.component[boneMass] | 73711-4 | Bone mass measurement |
+
+### Implementation Considerations
+
+1. Data Validation
+- Physiological range validation
+- Sudden variation detection
+- Cross-validation between related measurements
+- Unit conversion and standardization
+
+2. Automatic Calculations
+- BMI calculation from weight and height
+- Cross-validation of composition measurements
+- Percentage changes and trends
+- Statistical analysis of measurements
+
+3. Frequency and Timing
+- Measurement frequency recommendations
+- Preferred measurement timing
+- Minimum intervals between measurements
+- Time zone handling for measurements
+
+4. Data Quality
+- Measurement source (device/manual)
+- Device calibration status
+- Measurement conditions
+- Data completeness checks
+
+5. Goal Integration
+- Goal setting and tracking
+- Progress monitoring
+- Significant deviation alerts
+- Personalized target ranges
+
+6. Reports and Visualizations
+- Trend charts and graphs
+- Reference comparisons
+- Body composition analysis
+- Progress reports and summaries
+
+### Device Integration
+
+1. Smart Scale Integration
+- Bluetooth connectivity
+- Data synchronization
+- Error handling
+- Battery status monitoring
+
+2. Bioimpedance Analysis
+- Device calibration requirements
+- Measurement protocol
+- Environmental conditions
+- Quality control checks
+
+3. Manual Entry
+- Data validation rules
+- Required fields
+- Unit conversion support
+- Entry confirmation
+
+### Error Handling
+
+1. Device Errors
+- Connection failures
+- Calibration errors
+- Battery warnings
+- Invalid measurements
+
+2. Data Validation Errors
+- Out of range values
+- Inconsistent measurements
+- Missing required data
+- Invalid units
+
+3. Synchronization Errors
+- Network connectivity issues
+- Data transfer failures
+- Version conflicts
+- Retry mechanisms
+
