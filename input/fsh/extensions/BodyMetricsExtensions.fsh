@@ -73,7 +73,7 @@ Description: "Types of devices used for health and body measurements"
 ValueSet: MeasurementQualityVS
 Id: measurement-quality-vs
 Title: "Measurement Quality Value Set"
-Description: "Quality indicators for measurements"
+Description: "Quality indicators for Qualitative assessment of measurement quality"
 
 * ^version = "0.1.0"
 * ^status = #draft
