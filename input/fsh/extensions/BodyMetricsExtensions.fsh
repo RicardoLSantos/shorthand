@@ -57,14 +57,16 @@ Description: "Standard conditions under which measurements are taken"
 ValueSet: MeasurementDeviceTypeVS
 Id: measurement-device-type-vs
 Title: "Measurement Device Type Value Set"
-Description: "Types of devices used for body measurements"
+Description: "Types of devices used for health and body measurements"
 
 * ^version = "0.1.0"
 * ^status = #draft
 
+* $SCT#469576000 "Smart watch"
 * $SCT#469576000 "Smart scale device"
 * $SCT#706767009 "Body composition analyzer"
 * $SCT#131009002 "Height measuring device"
+* $SCT#131009002 "Blood pressure monitor"
 * $SCT#444699000 "Tape measure"
 * $SCT#44056008  "Digital scale"
 
