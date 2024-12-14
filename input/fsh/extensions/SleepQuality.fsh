@@ -3,10 +3,10 @@ Id: sleep-quality
 Title: "Sleep Quality Extension"
 Description: "Extension for recording subjective sleep quality"
 * value[x] only CodeableConcept
-* valueCodeableConcept from SleepQualityVS (required)
+* valueCodeableConcept from SleepQualityExtendedVS (required)
  
-ValueSet: SleepQualityVS
-Id: sleep-quality-vs
+ValueSet: SleepQualityExtendedVS
+Id: sleep-quality-extended-vs
 Title: "Sleep Quality Value Set"
 * $SCT#248220008 "Very good quality sleep"
 * $SCT#248221007 "Good quality sleep"
