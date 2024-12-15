@@ -27,12 +27,11 @@ Id: mindful-session-observation
 Title: "Mindful Session Observation Profile"
 Description: "Profile for mindfulness session measurements"
 
-// Fix the code assignment (cannot just assign "min" as string to code)
+// Instead of (code) "min", we use #min.
 * code = LOINC#93847-2 "Mindfulness duration"
 * valueQuantity only Quantity
 * valueQuantity.system = "http://unitsofmeasure.org"
-// Option 1: Use FSH syntax for code
-* valueQuantity.code = (code) "min"
+* valueQuantity.code = #min
 * valueQuantity.unit = "minute"
 
 Profile: MoodObservation
@@ -42,7 +41,6 @@ Title: "Mood Observation Profile"
 Description: "Profile for mood measurements"
 
 * code = LOINC#89204-2 "Mental Health Mood"
-// If MoodStateVS is defined (ValueSet: MoodStateVS / Id: mood-state-vs), use:
 * valueCodeableConcept from MoodStateVS (required)
 
 Profile: StressObservation
@@ -53,4 +51,4 @@ Description: "Profile for stress level measurements"
 
 * code = LOINC#89203-4 "Stress level"
 * valueInteger only integer
-// Removing direct ^minValue / ^maxValue (FHIR Observation doesn't support them directly)
+// Removed ^minValue or ^maxValue since Observation doesn't support them directly

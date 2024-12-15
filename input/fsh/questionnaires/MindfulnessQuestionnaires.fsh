@@ -7,13 +7,13 @@ Description: "Captures mindfulness session, mood, and stress data."
 * name = "MindfulnessQuestionnaire"
 * status = #draft
 
-// ITEM 0
+// ITEM 0: Session Duration
 * item[0].linkId = "sessionDuration"
 * item[0].text = "Mindfulness session duration (minutes)"
 * item[0].type = #integer
 * item[0].required = true
 
-// ITEM 1
+// ITEM 1: Practice Type
 * item[1].linkId = "practiceType"
 * item[1].text = "Practice type"
 * item[1].type = #choice
@@ -23,14 +23,14 @@ Description: "Captures mindfulness session, mood, and stress data."
 * item[1].answerOption[2].valueString = "Walking meditation"
 * item[1].answerOption[3].valueString = "Other"
 
-// ITEM 2
+// ITEM 2: Mood Assessment
 * item[2].linkId = "moodAssessment"
 * item[2].text = "How is your mood now?"
 * item[2].type = #choice
 * item[2].required = true
 * item[2].answerValueSet = Canonical(MoodStateVS)
 
-// ITEM 3
+// ITEM 3: Mood Intensity
 * item[3].linkId = "moodIntensity"
 * item[3].text = "Mood intensity (1-5)"
 * item[3].type = #integer
@@ -40,7 +40,7 @@ Description: "Captures mindfulness session, mood, and stress data."
 * item[3].extension[1].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxValue"
 * item[3].extension[1].valueInteger = 5
 
-// ITEM 4
+// ITEM 4: Stress Assessment
 * item[4].linkId = "stressAssessment"
 * item[4].text = "Current stress level (0-10)"
 * item[4].type = #integer
@@ -50,7 +50,7 @@ Description: "Captures mindfulness session, mood, and stress data."
 * item[4].extension[1].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxValue"
 * item[4].extension[1].valueInteger = 10
 
-// ITEM 5
+// ITEM 5: Stress Symptoms
 * item[5].linkId = "stressSymptoms"
 * item[5].text = "Stress symptoms"
 * item[5].type = #choice
@@ -60,7 +60,7 @@ Description: "Captures mindfulness session, mood, and stress data."
 * item[5].answerOption[2].valueString = "Muscle tension"
 * item[5].answerOption[3].valueString = "Irritability"
 
-// ITEM 6
+// ITEM 6: Relaxation Technique
 * item[6].linkId = "relaxationTechnique"
 * item[6].text = "Relaxation technique"
 * item[6].type = #choice
