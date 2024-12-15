@@ -1,66 +1,31 @@
-Instance: MindfulnessStatistics
-InstanceOf: OperationDefinition
-Usage: #definition
-* name = "MindfulnessStatisticsOperation"
-* description = "Calculate statistics for mindfulness sessions"
-* status = #draft
-* kind = #operation
-* code = #calculate-statistics
-* system = true
-* type = true
-* instance = false
-* parameter 1..1
-* parameter[0]
-  * name = #patientId
-  * use = #in
-  * type = #string
-  * documentation = "ID of the patient"
-* parameter[1]
-  * name = #startDate
-  * use = #in
-  * type = #date
-  * documentation = "Start date for statistics calculation"
-* parameter[2]
-  * name = #endDate
-  * use = #in
-  * type = #date
-  * documentation = "End date for statistics calculation"
-* parameter[3]
-  * name = #return
-  * use = #out
-  * type = #Bundle
-  * documentation = "Bundle containing calculated statistics"
+Profile: MindfulnessConfiguration
+Parent: Basic
+Id: mindfulness-config
+Title: "Mindfulness Module Configuration"
+Description: "Configuration settings for the mindfulness module"
 
-Instance: MindfulnessTrends
-InstanceOf: OperationDefinition
-Usage: #definition
-* name = "MindfulnessTrendsOperation"
-* description = "Analyze trends in mindfulness practice"
-* status = #draft
-* kind = #operation
-* code = #analyze-trends
-* system = true
-* type = true
-* instance = false
-* parameter 1..1
-* parameter[0]
-  * name = #patientId
-  * use = #in
-  * type = #string
-  * documentation = "ID of the patient"
-* parameter[1]
-  * name = #metricType
-  * use = #in
-  * type = #code
-  * documentation = "Type of metric to analyze (stress, mood, duration)"
-* parameter[2]
-  * name = #period
-  * use = #in
-  * type = #string
-  * documentation = "Analysis period (daily, weekly, monthly)"
-* parameter[3]
-  * name = #return
-  * use = #out
-  * type = #Bundle
-  * documentation = "Bundle containing trend analysis"
+* extension contains
+    DefaultDuration named defaultDuration 0..1 and
+    ReminderSettings named reminderSettings 0..1 and
+    DataSync named dataSync 0..1
+
+Extension: DefaultDuration
+* value[x] only integer
+* valueInteger 0..1
+
+Extension: ReminderSettings
+* value[x] only boolean
+* valueBoolean 0..1
+
+Extension: DataSync
+* value[x] only boolean
+* valueBoolean 0..1
+
+Instance: DefaultMindfulnessConfig
+InstanceOf: MindfulnessConfiguration
+Usage: #example
+Title: "Default Mindfulness Configuration"
+* extension[defaultDuration].valueInteger = 20
+* extension[reminderSettings].valueBoolean = true
+* extension[dataSync].valueBoolean = true
 EOL
