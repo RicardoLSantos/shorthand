@@ -1,70 +1,96 @@
-Profile: MindfulnessQuestionnaire
-Parent: Questionnaire
-Id: MindfulnessQuestionnaire
-Title: "Mindfulness Questionnaire"
-Description: "Captures mindfulness session, mood, and stress data."
+Instance: DailyMindfulnessQuestionnaire
+InstanceOf: Questionnaire
+Usage: #definition
+Title: "Daily Mindfulness and Mental Health Questionnaire"
+Description: "Questionnaire for daily mindfulness and mental health tracking"
 
-* name = "MindfulnessQuestionnaire"
-* status = #draft
+* url = "https://github.com/RicardoLSantos/shorthand/Questionnaire/daily-mindfulness"
+* version = "0.1.0"
+* name = "DailyMindfulnessQuestionnaire"
+* title = "Daily Mindfulness and Mental Health"
+* status = #active
+* experimental = false
+* date = "2024-12-14"
+* publisher = "Ricardo Lourenço dos Santos"
 
-// ITEM 0: Session Duration
-* item[0].linkId = "sessionDuration"
-* item[0].text = "Mindfulness session duration (minutes)"
-* item[0].type = #integer
-* item[0].required = true
+* item[0]
+ * linkId = "mindful_session"
+ * text = "Mindfulness Session"
+ * type = #group
+ * repeats = true
 
-// ITEM 1: Practice Type
-* item[1].linkId = "practiceType"
-* item[1].text = "Practice type"
-* item[1].type = #choice
-* item[1].required = true
-* item[1].answerOption[0].valueString = "Body scan"
-* item[1].answerOption[1].valueString = "Breathing exercise"
-* item[1].answerOption[2].valueString = "Walking meditation"
-* item[1].answerOption[3].valueString = "Other"
+ * item[0]
+   * linkId = "session_duration"
+   * text = "Session duration (minutes)"
+   * type = #integer
+   * required = true
 
-// ITEM 2: Mood Assessment
-* item[2].linkId = "moodAssessment"
-* item[2].text = "How is your mood now?"
-* item[2].type = #choice
-* item[2].required = true
-* item[2].answerValueSet = Canonical(MoodStateVS)
+ * item[1]
+   * linkId = "session_type"
+   * text = "Practice type"
+   * type = #choice
+   * required = true
+   * answerOption[0].valueString = "Meditation"
+   * answerOption[1].valueString = "Mindful breathing"
+   * answerOption[2].valueString = "Body scan"
+   * answerOption[3].valueString = "Mindful yoga"
 
-// ITEM 3: Mood Intensity
-* item[3].linkId = "moodIntensity"
-* item[3].text = "Mood intensity (1-5)"
-* item[3].type = #integer
-* item[3].required = true
-* item[3].extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minValue"
-* item[3].extension[0].valueInteger = 1
-* item[3].extension[1].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxValue"
-* item[3].extension[1].valueInteger = 5
+* item[1]
+ * linkId = "mood_assessment"
+ * text = "Mood Assessment"
+ * type = #group
 
-// ITEM 4: Stress Assessment
-* item[4].linkId = "stressAssessment"
-* item[4].text = "Current stress level (0-10)"
-* item[4].type = #integer
-* item[4].required = true
-* item[4].extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minValue"
-* item[4].extension[0].valueInteger = 0
-* item[4].extension[1].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxValue"
-* item[4].extension[1].valueInteger = 10
+ * item[0]
+   * linkId = "current_mood"
+   * text = "How is your mood now?"
+   * type = #choice
+   * required = true
+   * answerValueSet = "https://github.com/RicardoLSantos/shorthand/ValueSet/mood-state"
 
-// ITEM 5: Stress Symptoms
-* item[5].linkId = "stressSymptoms"
-* item[5].text = "Stress symptoms"
-* item[5].type = #choice
-* item[5].repeats = true
-* item[5].answerOption[0].valueString = "Difficulty sleeping"
-* item[5].answerOption[1].valueString = "Headaches"
-* item[5].answerOption[2].valueString = "Muscle tension"
-* item[5].answerOption[3].valueString = "Irritability"
+ * item[1]
+   * linkId = "mood_intensity"
+   * text = "Mood intensity (1-5)"
+   * type = #integer
+   * required = true
 
-// ITEM 6: Relaxation Technique
-* item[6].linkId = "relaxationTechnique"
-* item[6].text = "Relaxation technique"
-* item[6].type = #choice
-* item[6].answerOption[0].valueString = "Progressive muscle relaxation"
-* item[6].answerOption[1].valueString = "Guided imagery"
-* item[6].answerOption[2].valueString = "Deep breathing"
-* item[6].answerOption[3].valueString = "Other"
+* item[2]
+ * linkId = "stress_assessment"
+ * text = "Stress Assessment"
+ * type = #group
+
+ * item[0]
+   * linkId = "stress_level"
+   * text = "Stress level (0-10)"
+   * type = #integer
+   * required = true
+
+ * item[1]
+   * linkId = "stress_symptoms"
+   * text = "Stress symptoms"
+   * type = #choice
+   * repeats = true
+   * answerOption[0].valueString = "Muscle tension"
+   * answerOption[1].valueString = "Anxiety"
+   * answerOption[2].valueString = "Irritability" 
+   * answerOption[3].valueString = "Insomnia"
+
+* item[3]
+ * linkId = "relaxation"
+ * text = "Relaxation"
+ * type = #group
+
+ * item[0]
+   * linkId = "relaxation_duration"
+   * text = "Relaxation time (minutes)"
+   * type = #integer
+   * required = true
+
+ * item[1]
+   * linkId = "relaxation_technique"
+   * text = "Technique used"
+   * type = #choice
+   * required = true
+   * answerOption[0].valueString = "Deep breathing"
+   * answerOption[1].valueString = "Progressive muscle relaxation"
+   * answerOption[2].valueString = "Visualization"
+   * answerOption[3].valueString = "Relaxing music"
