@@ -10,7 +10,7 @@ Title: "Example of Mindfulness Session Observation"
 * performer = Reference(Practitioner/example)
 
 * component[sessionDuration].code = $SCT#118682006 "Duration"
-* component[sessionDuration].valueQuantity = 20 'min' "minutes"
+* component[sessionDuration].valueQuantity = 20 'min'
 
 * component[stressLevel].code = $SCT#725854004 "Assessment of stress level"
 * component[stressLevel].valueInteger = 4

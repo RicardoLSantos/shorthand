@@ -18,6 +18,35 @@ Description: "Configuration settings for the mindfulness module"
 * baseDefinition = "http://hl7.org/fhir/StructureDefinition/Basic"
 * derivation = #constraint
 
+* snapshot.element[0]
+  * id = "Basic"
+  * path = "Basic"
+  * definition = "Configuration settings for mindfulness module"
+* snapshot.element[+]
+  * id = "Basic.extension:defaultDuration"
+  * path = "Basic.extension"
+  * sliceName = "defaultDuration"
+  * min = 0
+  * max = "1"
+  * type.code = #Extension
+  * definition = "Default duration for mindfulness sessions"
+* snapshot.element[+]
+  * id = "Basic.extension:reminderSettings"
+  * path = "Basic.extension"
+  * sliceName = "reminderSettings"
+  * min = 0
+  * max = "1"
+  * type.code = #Extension
+  * definition = "Settings for practice reminders"
+* snapshot.element[+]
+  * id = "Basic.extension:dataSync"
+  * path = "Basic.extension"
+  * sliceName = "dataSync"
+  * min = 0
+  * max = "1"
+  * type.code = #Extension
+  * definition = "Data synchronization settings"
+
 * differential.element[0]
   * id = "Basic"
   * path = "Basic"

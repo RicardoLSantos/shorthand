@@ -50,7 +50,7 @@ Description: "Mapping instructions for importing mindfulness data"
 
 Instance: HealthKitMappingConfig
 InstanceOf: MindfulnessImportMap
-Usage: #example
+Usage: #inline
 
 * extension[source].valueString = "HKCategoryTypeIdentifierMindfulSession"
 * extension[target].valueString = "Observation"

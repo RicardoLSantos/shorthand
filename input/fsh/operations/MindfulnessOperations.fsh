@@ -1,6 +1,7 @@
 Instance: MindfulnessStatistics
 InstanceOf: OperationDefinition
 Usage: #definition
+* name = "MindfulnessStatisticsOperation"
 Description: "Calculate statistics for mindfulness sessions"
 
 * status = #draft
@@ -46,6 +47,7 @@ Description: "Calculate statistics for mindfulness sessions"
 Instance: MindfulnessTrends
 InstanceOf: OperationDefinition
 Usage: #definition
+* name = "MindfulnessTrendsOperation"
 Description: "Analyze trends in mindfulness practice"
 
 * status = #draft
