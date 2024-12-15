@@ -1,6 +1,6 @@
-Alias: LOINC = http://loinc.org
-Alias: UCUM = http://unitsofmeasure.org
-Alias: SCT = http://snomed.info/sct
+Alias: $SCT = http://snomed.info/sct
+Alias: $LOINC = http://loinc.org
+Alias: $UCUM = http://unitsofmeasure.org
 
 Profile: MindfulnessObservation
 Parent: Observation
@@ -28,10 +28,16 @@ Id: mindful-session-observation
 Title: "Mindful Session Observation Profile"
 Description: "Profile for mindfulness session measurements"
 
-* code = LOINC#93847-2 "Mindfulness duration"
+* ^version = "0.1.0"
+* ^status = #draft
+* ^experimental = false
+* ^date = "2024-12-14"
+* ^publisher = "Ricardo Lourenço dos Santos"
+
+* code = $LOINC#93847-2 "Mindfulness duration"
 * valueQuantity only Quantity
-* valueQuantity.system = UCUM
-* valueQuantity.code = UCUM#min
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #min
 * valueQuantity.unit = "minute"
 
 Profile: MoodObservation
@@ -40,7 +46,13 @@ Id: mood-observation
 Title: "Mood Observation Profile"
 Description: "Profile for mood measurements"
 
-* code = LOINC#89204-2 "Mental Health Mood"
+* ^version = "0.1.0"
+* ^status = #draft
+* ^experimental = false
+* ^date = "2024-12-14"
+* ^publisher = "Ricardo Lourenço dos Santos"
+
+* code = $LOINC#89204-2 "Mental Health Mood"
 * valueCodeableConcept from MoodStateVS (required)
 
 Profile: StressObservation
@@ -49,6 +61,13 @@ Id: stress-observation
 Title: "Stress Observation Profile"
 Description: "Profile for stress level measurements"
 
-* code = LOINC#89203-4 "Stress level"
+* ^version = "0.1.0"
+* ^status = #draft
+* ^experimental = false
+* ^date = "2024-12-14"
+* ^publisher = "Ricardo Lourenço dos Santos"
+
+* code = $LOINC#89203-4 "Stress level"
 * valueInteger only integer
-# Removed ^minValue or ^maxValue since Observation doesn't support them directly
+* valueInteger ^minValue = 0
+* valueInteger ^maxValue = 10
