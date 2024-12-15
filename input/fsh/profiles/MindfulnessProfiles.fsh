@@ -1,3 +1,6 @@
+Alias: LOINC = http://loinc.org
+Alias: UCUM = http://unitsofmeasure.org
+
 Profile: MindfulnessObservation
 Parent: Observation
 Id: mindfulness-observation
@@ -24,16 +27,12 @@ Id: mindful-session-observation
 Title: "Mindful Session Observation Profile"
 Description: "Profile for mindfulness session measurements"
 
-* ^version = "0.1.0"
-* ^status = #draft
-* ^experimental = false
-* ^date = "2024-12-14"
-* ^publisher = "Ricardo Lourenço dos Santos"
-
+// Fix the code assignment (cannot just assign "min" as string to code)
 * code = LOINC#93847-2 "Mindfulness duration"
 * valueQuantity only Quantity
 * valueQuantity.system = "http://unitsofmeasure.org"
-* valueQuantity.code = "min"
+// Option 1: Use FSH syntax for code
+* valueQuantity.code = (code) "min"
 * valueQuantity.unit = "minute"
 
 Profile: MoodObservation
@@ -42,14 +41,8 @@ Id: mood-observation
 Title: "Mood Observation Profile"
 Description: "Profile for mood measurements"
 
-* ^version = "0.1.0"
-* ^status = #draft
-* ^experimental = false
-* ^date = "2024-12-14"
-* ^publisher = "Ricardo Lourenço dos Santos"
-
 * code = LOINC#89204-2 "Mental Health Mood"
-// Use a canonical if MoodStateVS is defined with Id: mood-state-vs
+// If MoodStateVS is defined (ValueSet: MoodStateVS / Id: mood-state-vs), use:
 * valueCodeableConcept from MoodStateVS (required)
 
 Profile: StressObservation
@@ -58,13 +51,6 @@ Id: stress-observation
 Title: "Stress Observation Profile"
 Description: "Profile for stress level measurements"
 
-* ^version = "0.1.0"
-* ^status = #draft
-* ^experimental = false
-* ^date = "2024-12-14"
-* ^publisher = "Ricardo Lourenço dos Santos"
-
 * code = LOINC#89203-4 "Stress level"
 * valueInteger only integer
-// minValue/maxValue are not standard FHIR elements in Observation.valueInteger. 
-// If you really need range constraints, consider extensions or invariants.
+// Removing direct ^minValue / ^maxValue (FHIR Observation doesn't support them directly)
