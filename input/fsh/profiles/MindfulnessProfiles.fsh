@@ -1,5 +1,6 @@
 Alias: LOINC = http://loinc.org
 Alias: UCUM = http://unitsofmeasure.org
+Alias: SCT = http://snomed.info/sct
 
 Profile: MindfulnessObservation
 Parent: Observation
@@ -27,11 +28,10 @@ Id: mindful-session-observation
 Title: "Mindful Session Observation Profile"
 Description: "Profile for mindfulness session measurements"
 
-// Instead of (code) "min", we use #min.
 * code = LOINC#93847-2 "Mindfulness duration"
 * valueQuantity only Quantity
-* valueQuantity.system = "http://unitsofmeasure.org"
-* valueQuantity.code = #min
+* valueQuantity.system = UCUM
+* valueQuantity.code = UCUM#min
 * valueQuantity.unit = "minute"
 
 Profile: MoodObservation
@@ -51,4 +51,4 @@ Description: "Profile for stress level measurements"
 
 * code = LOINC#89203-4 "Stress level"
 * valueInteger only integer
-// Removed ^minValue or ^maxValue since Observation doesn't support them directly
+# Removed ^minValue or ^maxValue since Observation doesn't support them directly
