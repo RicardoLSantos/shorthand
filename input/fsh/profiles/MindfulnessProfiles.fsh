@@ -1,7 +1,3 @@
-Alias:  = http://snomed.info/sct
-Alias:  = http://loinc.org
-Alias:  = http://unitsofmeasure.org
-
 Profile: MindfulnessObservation
 Parent: Observation
 Id: mindfulness-observation
@@ -34,10 +30,10 @@ Description: "Profile for mindfulness session measurements"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = #93847-2 "Mindfulness duration"
+* code = LOINC#93847-2 "Mindfulness duration"
 * valueQuantity only Quantity
-* valueQuantity.system = 
-* valueQuantity.code = #min
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = "min"
 * valueQuantity.unit = "minute"
 
 Profile: MoodObservation
@@ -52,8 +48,8 @@ Description: "Profile for mood measurements"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = #89204-2 "Mental Health Mood"
-// Make sure you have a ValueSet: MoodStateVS / Id: mood-state-vs in your project.
+* code = LOINC#89204-2 "Mental Health Mood"
+// Use a canonical if MoodStateVS is defined with Id: mood-state-vs
 * valueCodeableConcept from MoodStateVS (required)
 
 Profile: StressObservation
@@ -68,10 +64,7 @@ Description: "Profile for stress level measurements"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = #89203-4 "Stress level"
+* code = LOINC#89203-4 "Stress level"
 * valueInteger only integer
-// If you want minValue / maxValue for numeric logic, note that normal FHIR rules
-// don't directly allow ^minValue / ^maxValue in Observation. This might require
-// an extension. The lines below reflect your original snippet.
-* valueInteger ^minValue = 0
-* valueInteger ^maxValue = 10
+// minValue/maxValue are not standard FHIR elements in Observation.valueInteger. 
+// If you really need range constraints, consider extensions or invariants.
