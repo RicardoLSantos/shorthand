@@ -74,3 +74,34 @@ The nutritional data is mapped to FHIR resources with specific profiles for each
 - Access control
 - Audit logging
 - Consent management
+
+## Questionnaire to Observation Mapping
+
+### QuestionnaireResponse to Observation
+| Questionnaire Item | FHIR Observation |
+|-------------------|------------------|
+| water_intake | WaterIntakeObservation |
+| calories | CalorieIntakeObservation |
+| macronutrients | MacronutrientsObservation |
+
+### Transformation Rules
+1. Each meal response generates:
+   - A calorie observation
+   - A macronutrients observation
+  
+2. Daily Aggregations:
+   - Total calories
+   - Total macronutrients
+   - Total water
+   - Total caffeine
+
+3. Validations:
+   - Sum of macronutrients in grams
+   - Calorie calculation from macronutrients
+   - Values within physiological ranges
+
+### Implementation Notes
+- Each QuestionnaireResponse is processed into multiple Observations
+- Timestamps from meal records are preserved in Observations
+- Aggregations are performed at the end of each day
+- All measurements include source attribution
