@@ -2,27 +2,27 @@ Profile: MindfulnessQuestionnaire
 Parent: Questionnaire
 Id: MindfulnessQuestionnaire
 Title: "Mindfulness Questionnaire"
-Description: "Questionnaire capturing mindfulness session info, mood, and stress."
+Description: "Questionnaire capturing mindfulness session information, mood, and stress."
 
 * name = "MindfulnessQuestionnaire"
 * status = #draft
 
 // -----------------------------------------------------------------------
-// ITEM 0 - Sessão de Mindfulness (Session Duration)
+// ITEM 0 - Mindfulness Session Duration
 // -----------------------------------------------------------------------
 * item[0].linkId = "sessionDuration"
-* item[0].text = "Session duration (minutes)"
+* item[0].text = "Mindfulness session duration (minutes)"
 * item[0].type = #integer
 * item[0].required = true
 
-// Se quiser min e max:
+// If you want min/max:
 // * item[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minValue"
 // * item[0].extension[0].valueInteger = 1
 // * item[0].extension[1].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxValue"
 // * item[0].extension[1].valueInteger = 180
 
 // -----------------------------------------------------------------------
-// ITEM 1 - Prática (Practice Type)
+// ITEM 1 - Practice Type
 // -----------------------------------------------------------------------
 * item[1].linkId = "practiceType"
 * item[1].text = "Practice type"
@@ -41,13 +41,13 @@ Description: "Questionnaire capturing mindfulness session info, mood, and stress
 * item[2].type = #choice
 * item[2].required = true
 * item[2].answerValueSet = Canonical(MoodStateVS)
-// Se o SUSHI reclamar que "MoodStateVS" não é URI válido, verificar se 
-// ValueSet: MoodStateVS / Id: mood-state-vs está definido no projeto
-// ou substituir por: 
+// If SUSHI complains "MoodStateVS" is not a valid URI, confirm that
+// ValueSet: MoodStateVS / Id: mood-state-vs exists in the project
+// or replace with a literal URI, for example:
 // * item[2].answerValueSet = http://example.org/fhir/ValueSet/mood-state-vs
 
 // -----------------------------------------------------------------------
-// ITEM 3 - Mood intensity
+// ITEM 3 - Mood Intensity
 // -----------------------------------------------------------------------
 * item[3].linkId = "moodIntensity"
 * item[3].text = "Mood intensity (1-5)"
@@ -65,14 +65,14 @@ Description: "Questionnaire capturing mindfulness session info, mood, and stress
 * item[4].text = "Current stress level (0-10)"
 * item[4].type = #integer
 * item[4].required = true
-// Se quiser limitar o range via extensões:
+// If you want to limit numeric range:
 * item[4].extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-minValue"
 * item[4].extension[0].valueInteger = 0
 * item[4].extension[1].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-maxValue"
 * item[4].extension[1].valueInteger = 10
 
 // -----------------------------------------------------------------------
-// ITEM 5 - Stress symptoms
+// ITEM 5 - Stress Symptoms
 // -----------------------------------------------------------------------
 * item[5].linkId = "stressSymptoms"
 * item[5].text = "Stress symptoms"
@@ -84,7 +84,7 @@ Description: "Questionnaire capturing mindfulness session info, mood, and stress
 * item[5].answerOption[3].valueString = "Irritability"
 
 // -----------------------------------------------------------------------
-// ITEM 6 - Relaxation technique
+// ITEM 6 - Relaxation Technique
 // -----------------------------------------------------------------------
 * item[6].linkId = "relaxationTechnique"
 * item[6].text = "Technique used"
@@ -95,5 +95,4 @@ Description: "Questionnaire capturing mindfulness session info, mood, and stress
 * item[6].answerOption[2].valueString = "Deep breathing"
 * item[6].answerOption[3].valueString = "Other"
 
-// Esse Questionário é apenas um exemplo ilustrativo, ajustando a lógica e 
-// reparando erros. Ajuste item[n] e parâmetros conforme necessário.
+// This Questionnaire is just an illustrative example. Adjust item[n] and rules as needed.

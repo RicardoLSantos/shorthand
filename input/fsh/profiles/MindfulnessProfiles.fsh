@@ -1,6 +1,6 @@
-Alias: $SCT = http://snomed.info/sct
-Alias: $LOINC = http://loinc.org
-Alias: $UCUM = http://unitsofmeasure.org
+Alias:  = http://snomed.info/sct
+Alias:  = http://loinc.org
+Alias:  = http://unitsofmeasure.org
 
 Profile: MindfulnessObservation
 Parent: Observation
@@ -34,9 +34,9 @@ Description: "Profile for mindfulness session measurements"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = $LOINC#93847-2 "Mindfulness duration"
+* code = #93847-2 "Mindfulness duration"
 * valueQuantity only Quantity
-* valueQuantity.system = $UCUM
+* valueQuantity.system = 
 * valueQuantity.code = #min
 * valueQuantity.unit = "minute"
 
@@ -52,7 +52,8 @@ Description: "Profile for mood measurements"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = $LOINC#89204-2 "Mental Health Mood"
+* code = #89204-2 "Mental Health Mood"
+// Make sure you have a ValueSet: MoodStateVS / Id: mood-state-vs in your project.
 * valueCodeableConcept from MoodStateVS (required)
 
 Profile: StressObservation
@@ -67,7 +68,10 @@ Description: "Profile for stress level measurements"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = $LOINC#89203-4 "Stress level"
+* code = #89203-4 "Stress level"
 * valueInteger only integer
+// If you want minValue / maxValue for numeric logic, note that normal FHIR rules
+// don't directly allow ^minValue / ^maxValue in Observation. This might require
+// an extension. The lines below reflect your original snippet.
 * valueInteger ^minValue = 0
 * valueInteger ^maxValue = 10
