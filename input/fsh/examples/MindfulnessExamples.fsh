@@ -1,113 +1,60 @@
-Instance: MindfulnessQuestionnaireResponseExample
-InstanceOf: QuestionnaireResponse
+Instance: MindfulnessObservationExample
+InstanceOf: MindfulnessObservation
 Usage: #example
-Title: "Daily Mindfulness Questionnaire Response Example"
+Title: "Example of Mindfulness Session Observation"
 
-* questionnaire = "http://example.org/Questionnaire/daily-mindfulness"
-* status = #completed
-* subject = Reference(Patient/example)
-* authored = "2024-03-19T20:00:00Z"
-
-// ITEM 0: Mindful Session
-* item[0]
-  * linkId = "mindful_session"
-
-  * item[0]
-    * linkId = "session_duration"
-    * answer.valueInteger = 20
-
-  * item[1]
-    * linkId = "session_type"
-    * answer.valueString = "Meditation"
-
-// ITEM 1: Mood Assessment
-* item[1]
-  * linkId = "mood_assessment"
-
-  * item[0]
-    * linkId = "current_mood"
-    * answer.valueCoding = SCT#130991005 "Neutral mood"
-
-  * item[1]
-    * linkId = "mood_intensity"
-    * answer.valueInteger = 3
-
-// ITEM 2: Stress Assessment
-* item[2]
-  * linkId = "stress_assessment"
-
-  * item[0]
-    * linkId = "stress_level"
-    * answer.valueInteger = 4
-
-  * item[1]
-    * linkId = "stress_symptoms"
-    * answer[0].valueString = "Muscle tension"
-    * answer[1].valueString = "Anxiety"
-
-// ITEM 3: Relaxation
-* item[3]
-  * linkId = "relaxation"
-
-  * item[0]
-    * linkId = "relaxation_duration"
-    * answer.valueInteger = 15
-
-  * item[1]
-    * linkId = "relaxation_technique"
-    * answer.valueString = "Deep breathing"
-
-Instance: MindfulnessQuestionnaireResponseExample
-InstanceOf: QuestionnaireResponse
-Usage: #example
-Title: "Daily Mindfulness Questionnaire Response Example"
-
-* questionnaire = "http://example.org/Questionnaire/daily-mindfulness"
-* status = #completed
+* status = #final
+* code = $SCT#711020003 "Meditation"
 * subject = Reference(Patient/PatientExample)
-* authored = "2024-03-19T20:00:00Z"
+* effectiveDateTime = "2024-03-19T09:30:00Z"
+* performer = Reference(Practitioner/example)
+
+* component[sessionDuration].code = $SCT#118682006 "Duration"
+* component[sessionDuration].valueQuantity = 20 'min' "minutes"
+
+* component[stressLevel].code = $SCT#725854004 "Assessment of stress level"
+* component[stressLevel].valueInteger = 4
+
+* component[moodState].code = $SCT#373931001 "Mood finding"
+* component[moodState].valueCodeableConcept = $SCT#130991005 "Neutral mood"
+
+* component[relaxationResponse].code = $SCT#276241001 "Relaxation technique"
+* component[relaxationResponse].valueString = "Deep breathing exercises helped reduce tension"
+
+* component[mindfulnessType].code = $SCT#711020003 "Meditation"
+* component[mindfulnessType].valueCodeableConcept = $SCT#711020003 "Meditation"
+
+// New example for MindfulnessQuestionnaire
+Instance: MindfulnessQuestionnaireExample
+InstanceOf: Questionnaire
+Usage: #example
+Title: "Example of Mindfulness Questionnaire"
+
+* url = "http://example.org/Questionnaire/mindfulness-example"
+* status = #active
+* title = "Daily Mindfulness Assessment"
+* version = "1.0"
+* name = "MindfulnessQuestionnaireExample"
+* date = "2024-03-19"
+* publisher = "Example Organization"
+* description = "Example questionnaire for daily mindfulness practice assessment"
 
 * item[0]
-  * linkId = "mindful_session"
-
+  * linkId = "session_details"
+  * text = "Session Details"
+  * type = #group
+  
   * item[0]
-    * linkId = "session_duration" 
-    * answer.valueInteger = 20
-
+    * linkId = "duration"
+    * text = "Duration (minutes)"
+    * type = #integer
+    * required = true
+    
   * item[1]
-    * linkId = "session_type"
-    * answer.valueString = "Meditation"
-
-* item[1]
-  * linkId = "mood_assessment"
-
-  * item[0]
-    * linkId = "current_mood"
-    * answer.valueCoding = http://snomed.info/sct#130991005 "Neutral mood"
-
-  * item[1]
-    * linkId = "mood_intensity"
-    * answer.valueInteger = 3
-
-* item[2]
-  * linkId = "stress_assessment"
-
-  * item[0]
-    * linkId = "stress_level"
-    * answer.valueInteger = 4
-
-  * item[1]
-    * linkId = "stress_symptoms"
-    * answer[0].valueString = "Muscle tension"
-    * answer[1].valueString = "Anxiety"
-
-* item[3]
-  * linkId = "relaxation"
-
-  * item[0]
-    * linkId = "relaxation_duration"
-    * answer.valueInteger = 15
-
-  * item[1]
-    * linkId = "relaxation_technique"
-    * answer.valueString = "Deep breathing"
+    * linkId = "technique"
+    * text = "Technique Used"
+    * type = #choice
+    * required = true
+    * answerOption[0].valueString = "Mindful Breathing"
+    * answerOption[1].valueString = "Body Scan"
+    * answerOption[2].valueString = "Walking Meditation"
