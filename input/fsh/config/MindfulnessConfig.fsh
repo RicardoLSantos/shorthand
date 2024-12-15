@@ -3,7 +3,6 @@ InstanceOf: StructureDefinition
 Usage: #definition
 Title: "Mindfulness Module Configuration"
 Description: "Configuration settings for the mindfulness module"
-
 * url = "https://example.org/StructureDefinition/mindfulness-config"
 * version = "1.0.0"
 * name = "MindfulnessConfig"
@@ -11,7 +10,6 @@ Description: "Configuration settings for the mindfulness module"
 * experimental = false
 * date = "2024-03-19"
 * publisher = "Example Organization"
-
 * kind = #resource
 * abstract = false
 * type = #Basic
@@ -22,6 +20,14 @@ Description: "Configuration settings for the mindfulness module"
   * id = "Basic"
   * path = "Basic"
   * definition = "Configuration settings for mindfulness module"
+
+* snapshot.element[+]
+  * id = "Basic.extension"
+  * path = "Basic.extension"
+  * slicing.discriminator.type = #value
+  * slicing.discriminator.path = "url"
+  * slicing.rules = #open
+
 * snapshot.element[+]
   * id = "Basic.extension:defaultDuration"
   * path = "Basic.extension"
@@ -30,6 +36,7 @@ Description: "Configuration settings for the mindfulness module"
   * max = "1"
   * type.code = #Extension
   * definition = "Default duration for mindfulness sessions"
+
 * snapshot.element[+]
   * id = "Basic.extension:reminderSettings"
   * path = "Basic.extension"
@@ -38,6 +45,7 @@ Description: "Configuration settings for the mindfulness module"
   * max = "1"
   * type.code = #Extension
   * definition = "Settings for practice reminders"
+
 * snapshot.element[+]
   * id = "Basic.extension:dataSync"
   * path = "Basic.extension"
@@ -51,6 +59,13 @@ Description: "Configuration settings for the mindfulness module"
   * id = "Basic"
   * path = "Basic"
   * definition = "Configuration settings for mindfulness module"
+
+* differential.element[+]
+  * id = "Basic.extension"
+  * path = "Basic.extension"
+  * slicing.discriminator.type = #value
+  * slicing.discriminator.path = "url"
+  * slicing.rules = #open
 
 * differential.element[+]
   * id = "Basic.extension:defaultDuration"
@@ -83,7 +98,7 @@ Instance: DefaultMindfulnessConfig
 InstanceOf: MindfulnessConfiguration
 Usage: #example
 Title: "Default Mindfulness Configuration"
-
 * extension[defaultDuration].valueInteger = 20
 * extension[reminderSettings].valueBoolean = true
 * extension[dataSync].valueBoolean = true
+EOL

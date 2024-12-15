@@ -2,13 +2,13 @@ Instance: MindfulnessStatistics
 InstanceOf: OperationDefinition
 Usage: #definition
 * name = "MindfulnessStatisticsOperation"
-Description: "Calculate statistics for mindfulness sessions"
+* description = "Calculate statistics for mindfulness sessions"
 
 * status = #draft
 * kind = #operation
 * code = #calculate-statistics
 * resource[0] = #Observation
-* system = false
+* system = true
 * type = true
 * instance = false
 
@@ -48,13 +48,13 @@ Instance: MindfulnessTrends
 InstanceOf: OperationDefinition
 Usage: #definition
 * name = "MindfulnessTrendsOperation"
-Description: "Analyze trends in mindfulness practice"
+* description = "Analyze trends in mindfulness practice"
 
 * status = #draft
 * kind = #operation
 * code = #analyze-trends
 * resource[0] = #Observation
-* system = false
+* system = true
 * type = true
 * instance = false
 
