@@ -1,27 +1,27 @@
-Profile: MindfulnessSessionOperation
+Profile: MindfulnessOperation
 Parent: OperationDefinition
-Id: mindfulness-session-operation
-Title: "Mindfulness Session Operations"
-Description: "Operations that can be performed on mindfulness sessions"
+Id: mindfulness-operation
+Title: "Mindfulness Operation"
+Description: "Base definition for mindfulness operations"
 
-* name MS
-* status MS
-* code MS
-* resource MS
-* system MS
-* type MS
-* instance MS
-* inputProfile MS
-* outputProfile MS
-* parameter MS
+* status 1..1
+* kind 1..1
+* name 1..1
+* code 1..1
+* resource 1..1
+* system 1..1
+* type 1..1
+* instance 1..1
+* parameter 0..*
 
-Instance: StartSessionOperation
-InstanceOf: MindfulnessSessionOperation
+Instance: StartSession
+InstanceOf: MindfulnessOperation
 Title: "Start Session Operation"
 Description: "Operation to start a new mindfulness session"
 
 * status = #active
 * kind = #operation
+* name = "start-session"
 * code = #start
 * resource = #Observation
 * system = false
@@ -30,14 +30,29 @@ Description: "Operation to start a new mindfulness session"
 * parameter[+]
   * name = "duration"
   * use = #in
+  * documentation = "Duration in minutes"
   * min = 1
   * max = "1"
   * type = #integer
 
+Instance: EndSession
+InstanceOf: MindfulnessOperation
+Title: "End Session Operation"
+Description: "Operation to end an ongoing mindfulness session"
+
+* status = #active
+* kind = #operation
+* name = "end-session"
+* code = #end
+* resource = #Observation
+* system = false
+* type = true
+* instance = true
 * parameter[+]
-  * name = "sessionType"
+  * name = "sessionId"
   * use = #in
+  * documentation = "ID of the session to end"
   * min = 1
   * max = "1"
-  * type = #code
+  * type = #string
 
