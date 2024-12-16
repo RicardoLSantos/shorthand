@@ -1,64 +1,43 @@
-Instance: MindfulnessStatisticsOperation
-InstanceOf: OperationDefinition
-Usage: #definition
-* name = "MindfulnessStatisticsOperation"
-* description = "Calculate statistics for mindfulness sessions"
-* status = #draft
-* kind = #operation
-* code = #calculate-statistics
-* system = true
-* type = true
-* instance = false
-* parameter[0]
-  * name = #patientId
-  * use = #in
-  * type = #string
-  * documentation = "ID of the patient"
-* parameter[1]
-  * name = #startDate
-  * use = #in
-  * type = #date
-  * documentation = "Start date for statistics calculation"
-* parameter[2]
-  * name = #endDate
-  * use = #in
-  * type = #date
-  * documentation = "End date for statistics calculation"
-* parameter[3]
-  * name = #return
-  * use = #out
-  * type = #Bundle
-  * documentation = "Bundle containing calculated statistics"
+Profile: MindfulnessSessionOperation
+Parent: OperationDefinition
+Id: mindfulness-session-operation
+Title: "Mindfulness Session Operations"
+Description: "Operations that can be performed on mindfulness sessions"
 
-Instance: MindfulnessTrendsOperation
-InstanceOf: OperationDefinition
-Usage: #definition
-* name = "MindfulnessTrendsOperation"
-* description = "Analyze trends in mindfulness practice"
-* status = #draft
+* name MS
+* status MS
+* code MS
+* resource MS
+* system MS
+* type MS
+* instance MS
+* inputProfile MS
+* outputProfile MS
+* parameter MS
+
+Instance: StartSessionOperation
+InstanceOf: MindfulnessSessionOperation
+Title: "Start Session Operation"
+Description: "Operation to start a new mindfulness session"
+
+* status = #active
 * kind = #operation
-* code = #analyze-trends
-* system = true
+* code = #start
+* resource = #Observation
+* system = false
 * type = true
 * instance = false
-* parameter[0]
-  * name = #patientId
+* parameter[+]
+  * name = "duration"
   * use = #in
-  * type = #string
-  * documentation = "ID of the patient"
-* parameter[1]
-  * name = #metricType
+  * min = 1
+  * max = "1"
+  * type = #integer
+
+* parameter[+]
+  * name = "sessionType"
   * use = #in
+  * min = 1
+  * max = "1"
   * type = #code
-  * documentation = "Type of metric to analyze (stress, mood, duration)"
-* parameter[2]
-  * name = #period
-  * use = #in
-  * type = #string
-  * documentation = "Analysis period (daily, weekly, monthly)"
-* parameter[3]
-  * name = #return
-  * use = #out
-  * type = #Bundle
-  * documentation = "Bundle containing trend analysis"
-EOL
+
