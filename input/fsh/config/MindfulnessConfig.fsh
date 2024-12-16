@@ -1,31 +1,21 @@
 Profile: MindfulnessConfiguration
 Parent: Basic
-Id: mindfulness-config
-Title: "Mindfulness Module Configuration"
-Description: "Configuration settings for the mindfulness module"
+Id: mindfulness-configuration
+Title: "Mindfulness Configuration"
+Description: "Configuration settings for mindfulness sessions"
 
 * extension contains
-    DefaultDuration named defaultDuration 0..1 and
-    ReminderSettings named reminderSettings 0..1 and
-    DataSync named dataSync 0..1
+    sessionDuration 0..1 MS and
+    reminderTime 0..1 MS and
+    preferredGuide 0..1 MS
 
-Extension: DefaultDuration
-* value[x] only integer
-* valueInteger 0..1
-
-Extension: ReminderSettings
-* value[x] only boolean
-* valueBoolean 0..1
-
-Extension: DataSync
-* value[x] only boolean
-* valueBoolean 0..1
-
-Instance: DefaultMindfulnessConfig
-InstanceOf: MindfulnessConfiguration
+Instance: MindfulnessConfigExample
+InstanceOf: MindfulnessConfiguration 
 Usage: #example
-Title: "Default Mindfulness Configuration"
-* extension[defaultDuration].valueInteger = 20
-* extension[reminderSettings].valueBoolean = true
-* extension[dataSync].valueBoolean = true
-EOL
+Title: "Example Mindfulness Configuration"
+Description: "Example configuration settings for mindfulness sessions"
+
+* extension[sessionDuration].valueInteger = 15
+* extension[reminderTime].valueTime = "08:00:00"
+* extension[preferredGuide].valueString = "Jane Smith"
+
