@@ -1,31 +1,28 @@
 Profile: MindfulnessAudit
-Parent: AuditEvent
+Parent: Basic
 Id: mindfulness-audit
-Title: "Mindfulness Audit Event"
+Title: "Mindfulness Audit"
 Description: "Records mindfulness session audit events"
 
-* type MS
-* subtype MS
-* action MS
-* recorded MS
-* outcome MS
-* agent MS
-* source MS
-* entity MS
+* code 1..1 MS
+* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Mindfulness Session"
+* subject 1..1 MS
+* created 1..1 MS
+
+* extension contains
+    sessionStart 0..1 MS and
+    sessionEnd 0..1 MS and 
+    sessionDuration 1..1 MS
 
 Instance: MindfulnessAuditExample
 InstanceOf: MindfulnessAudit
-Usage: #example
-Title: "Example of Mindfulness Audit"
-Description: "Shows how to record a mindfulness session audit event"
+Title: "Mindfulness Audit Example"
+Description: "Example of a mindfulness session audit record"
 
-* type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest "RESTful Operation"
-* subtype = http://hl7.org/fhir/restful-interaction#create "create"
-* action = #C
-* recorded = "2024-03-15T09:49:00.000Z"
-* outcome = #0
-* agent[0].who = Reference(Device/example)
-* agent[0].type = http://terminology.hl7.org/CodeSystem/extra-security-role-type#humanuser "human user"
-* source.observer = Reference(Device/example)
-* entity[0].what = Reference(MindfulnessSession/example)
+* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Mindfulness Session"
+* subject = Reference(Patient/example)
+* created = "2024-03-15T09:49:00Z"
+* extension[sessionDuration].valueInteger = 20
+* extension[sessionStart].valueDateTime = "2024-03-15T09:30:00Z"
+* extension[sessionEnd].valueDateTime = "2024-03-15T09:50:00Z"
 
