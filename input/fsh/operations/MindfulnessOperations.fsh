@@ -28,11 +28,13 @@ Description: "Operation to start a new mindfulness session"
 * system = false
 * type = true
 * instance = false
-* parameter[+].name = "durationMinutes"
-* parameter[=].use = #in
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].type = #integer
+* parameter[+]
+  * name = #duration
+  * use = #in
+  * min = 1
+  * max = "1" 
+  * type = #integer
+  * documentation = "Duration in minutes"
 
 Instance: EndSessionOperation
 InstanceOf: MindfulnessOperation
@@ -47,8 +49,10 @@ Description: "Operation to end an ongoing mindfulness session"
 * system = false
 * type = true
 * instance = true
-* parameter[+].name = "sessionId"
-* parameter[=].use = #in
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].type = #string
+* parameter[+]
+  * name = #session
+  * use = #in
+  * min = 1
+  * max = "1"
+  * type = #string
+  * documentation = "ID of the session to end"
