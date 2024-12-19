@@ -1,3 +1,27 @@
+Extension: MindfulnessSessionDuration
+Id: mindfulness-session-duration
+Title: "Mindfulness Session Duration"
+Description: "Default duration for mindfulness sessions in minutes"
+* value[x] only integer
+
+Extension: MindfulnessReminderTime
+Id: mindfulness-reminder-time
+Title: "Mindfulness Reminder Time"
+Description: "Default time for daily reminders"
+* value[x] only time
+
+Extension: MindfulnessPreferredGuide
+Id: mindfulness-preferred-guide
+Title: "Mindfulness Preferred Guide"
+Description: "Preferred guide for mindfulness sessions"
+* value[x] only string
+
+Extension: MindfulnessNotificationEnabled
+Id: mindfulness-notification-enabled
+Title: "Mindfulness Notification Enabled"
+Description: "Whether notifications are enabled for mindfulness sessions"
+* value[x] only boolean
+
 Profile: MindfulnessConfiguration
 Parent: Basic
 Id: mindfulness-configuration
@@ -8,22 +32,10 @@ Description: "Configuration settings for mindfulness sessions"
 * code = http://example.org/CodeSystem/mindfulness-config-type#settings "Mindfulness Settings"
 
 * extension contains
-    sessionDuration 1..1 MS and
-    reminderTime 1..1 MS and
-    preferredGuide 0..1 MS and
-    notificationEnabled 1..1 MS
-
-Extension: SessionDuration
-Id: session-duration
-Title: "Session Duration"
-Description: "Default duration for mindfulness sessions in minutes"
-* value[x] only integer
-
-Extension: ReminderTime
-Id: reminder-time
-Title: "Reminder Time"
-Description: "Default time for daily reminders"
-* value[x] only time
+    MindfulnessSessionDuration named sessionDuration 1..1 MS and
+    MindfulnessReminderTime named reminderTime 1..1 MS and
+    MindfulnessPreferredGuide named preferredGuide 0..1 MS and
+    MindfulnessNotificationEnabled named notificationEnabled 1..1 MS
 
 Instance: DefaultMindfulnessConfig
 InstanceOf: MindfulnessConfiguration
@@ -35,4 +47,3 @@ Description: "Default configuration settings for mindfulness sessions"
 * extension[reminderTime].valueTime = "08:00:00"
 * extension[preferredGuide].valueString = "Jane Smith"
 * extension[notificationEnabled].valueBoolean = true
-
