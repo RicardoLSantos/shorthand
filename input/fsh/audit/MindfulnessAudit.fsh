@@ -1,28 +1,20 @@
 Profile: MindfulnessAudit
 Parent: Basic
-Id: mindfulness-audit
+Id: mindfulness-audit 
 Title: "Mindfulness Audit"
-Description: "Records mindfulness session audit events"
+Description: "Audit record for mindfulness sessions"
 
 * code 1..1 MS
-* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Mindfulness Session"
-* subject 1..1 MS
+* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Session Audit"
 * created 1..1 MS
-
-* extension contains
-    sessionStart 0..1 MS and
-    sessionEnd 0..1 MS and 
-    sessionDuration 1..1 MS
 
 Instance: MindfulnessAuditExample
 InstanceOf: MindfulnessAudit
-Title: "Mindfulness Audit Example"
+Title: "Example Mindfulness Audit"
 Description: "Example of a mindfulness session audit record"
 
-* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Mindfulness Session"
-* subject = Reference(Patient/example)
-* created = "2024-03-15T09:49:00Z"
-* extension[sessionDuration].valueInteger = 20
-* extension[sessionStart].valueDateTime = "2024-03-15T09:30:00Z"
-* extension[sessionEnd].valueDateTime = "2024-03-15T09:50:00Z"
-
+* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Session Audit"
+* created = "2024-03-15"  // Corrigido formato da data
+* extension[auditLevel].valueCode = #detailed
+* extension[auditRetention].valueDuration = 90 'days'
+* extension[auditFormat].valueCode = #fhir
