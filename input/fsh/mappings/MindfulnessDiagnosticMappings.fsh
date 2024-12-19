@@ -41,7 +41,7 @@ Description: "Mapping of mindfulness outcomes to diagnostic codes"
   * target[0]
     * code = #736253002
     * display = "Mental state, behavior and/or psychosocial functioning"
-    * equivalence = #related
+    * equivalence = #relatedto
     * comment = "General improvement in mental state"
 
 RuleSet: MindfulnessDiagnosticRules
