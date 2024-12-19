@@ -74,7 +74,7 @@ Title: "CSV to FHIR Mindfulness Transform"
     * target[0]
       * context = "target"
       * element = "effectiveDateTime"
-      * transform = #concatenate
+      * transform = #append
 
 RuleSet: TransformValidationRules
 * rule[+]
