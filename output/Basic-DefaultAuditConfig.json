@@ -1,0 +1,34 @@
+{
+  "resourceType" : "Basic",
+  "id" : "DefaultAuditConfig",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-config"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Basic DefaultAuditConfig</b></p><a name=\"DefaultAuditConfig\"> </a><a name=\"hcDefaultAuditConfig\"> </a><a name=\"DefaultAuditConfig-en-US\"> </a><p><b>Mindfulness Audit Level</b>: detailed</p><p><b>Mindfulness Audit Retention</b>: No display for Duration  (value: 90; system: http://unitsofmeasure.org; code: days)</p><p><b>Mindfulness Audit Format</b>: fhir</p><p><b>code</b>: <span title=\"Codes:{http://example.org/CodeSystem/mindfulness-config-type audit}\">Audit Configuration</span></p></div>"
+  },
+  "extension" : [{
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-level",
+    "valueCode" : "detailed"
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-retention",
+    "valueDuration" : {
+      "value" : 90,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "days"
+    }
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-format",
+    "valueCode" : "fhir"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://example.org/CodeSystem/mindfulness-config-type",
+      "code" : "audit",
+      "display" : "Audit Configuration"
+    }]
+  }
+}

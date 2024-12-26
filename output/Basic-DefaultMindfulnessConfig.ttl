@@ -1,0 +1,43 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Basic/DefaultMindfulnessConfig> a fhir:Basic ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DefaultMindfulnessConfig"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Basic DefaultMindfulnessConfig</b></p><a name=\"DefaultMindfulnessConfig\"> </a><a name=\"hcDefaultMindfulnessConfig\"> </a><a name=\"DefaultMindfulnessConfig-en-US\"> </a><p><b>Mindfulness Session Duration</b>: 15</p><p><b>Mindfulness Reminder Time</b>: 08:00:00</p><p><b>Mindfulness Preferred Guide</b>: Jane Smith</p><p><b>Mindfulness Notification Enabled</b>: true</p><p><b>code</b>: <span title=\"Codes:{http://example.org/CodeSystem/mindfulness-config-type settings}\">Mindfulness Settings</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-session-duration"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "15"^^xsd:integer ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-reminder-time"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "08:00:00"^^xsd:time ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-preferred-guide"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Jane Smith" ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-notification-enabled"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "true"^^xsd:boolean ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://example.org/CodeSystem/mindfulness-config-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "settings" ] ;
+       fhir:display [ fhir:v "Mindfulness Settings" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

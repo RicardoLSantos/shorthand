@@ -1,0 +1,181 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/SleepObservationExample1> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SleepObservationExample1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-observation"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation SleepObservationExample1</b></p><a name=\"SleepObservationExample1\"> </a><a name=\"hcSleepObservationExample1\"> </a><a name=\"SleepObservationExample1-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category sleep}\">sleep</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 93832-4}\">Sleep pattern panel</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 22:00:00+0000 --&gt; 2024-03-20 06:30:00+0000</p><p><b>device</b>: <a href=\"Device-DeviceSleepMonitor.html\">Device: manufacturer = HealthTech Devices; modelNumber = SQM-2024; type = Sleep monitor</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 93831-6}\">Time in bed</span></p><p><b>value</b>: 510 minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 93833-2}\">Sleep duration</span></p><p><b>value</b>: 472 minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 93834-0}\">Deep sleep duration</span></p><p><b>value</b>: 95 minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 93835-7}\">REM sleep duration</span></p><p><b>value</b>: 118 minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 93836-5}\">Light sleep duration</span></p><p><b>value</b>: 259 minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 9279-1}\">Respiratory rate</span></p><p><b>value</b>: 14 per minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code/min = '/min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 80404-7}\">R-R interval.standard deviation (Heart rate variability)</span></p><p><b>value</b>: 45 millisecond<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codems = 'ms')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 93837-3}\">Number of awakenings during sleep</span></p><p><b>value</b>: 3 count<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{count} = '{count}')</span></p></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "sleep" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:93832-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "93832-4" ] ;
+       fhir:display [ fhir:v "Sleep pattern panel" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2024-03-19T22:00:00Z"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2024-03-20T06:30:00Z"^^xsd:dateTime ]
+  ] ; # 
+  fhir:device [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Device/DeviceSleepMonitor> ;
+     fhir:reference [ fhir:v "Device/DeviceSleepMonitor" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:93831-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "93831-6" ] ;
+         fhir:display [ fhir:v "Time in bed" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "510"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:93833-2 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "93833-2" ] ;
+         fhir:display [ fhir:v "Sleep duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "472"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:93834-0 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "93834-0" ] ;
+         fhir:display [ fhir:v "Deep sleep duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "95"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:93835-7 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "93835-7" ] ;
+         fhir:display [ fhir:v "REM sleep duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "118"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:93836-5 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "93836-5" ] ;
+         fhir:display [ fhir:v "Light sleep duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "259"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:9279-1 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "9279-1" ] ;
+         fhir:display [ fhir:v "Respiratory rate" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "14"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "per minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "/min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:80404-7 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "80404-7" ] ;
+         fhir:display [ fhir:v "R-R interval.standard deviation (Heart rate variability)" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "45"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "millisecond" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ms" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:93837-3 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "93837-3" ] ;
+         fhir:display [ fhir:v "Number of awakenings during sleep" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "3"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "count" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "{count}" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

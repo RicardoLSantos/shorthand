@@ -1,0 +1,133 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/CompleteMindfulnessSession> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CompleteMindfulnessSession"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation CompleteMindfulnessSession</b></p><a name=\"CompleteMindfulnessSession\"> </a><a name=\"hcCompleteMindfulnessSession\"> </a><a name=\"CompleteMindfulnessSession-en-US\"> </a><blockquote><p><b>Mindfulness Session Context</b></p><ul><li>location: Home meditation room</li><li>environment: <span title=\"Codes:\">Quiet Space</span></li><li>guidance: true</li></ul></blockquote><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner/example\">Practitioner/example</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 118682006}\">Duration</span></p><p><b>value</b>: 20 min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 725854004}\">Assessment of stress level</span></p><p><b>value</b>: 3</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 373931001}\">Mood finding</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 130991005}\">Neutral mood</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 276241001}\">Relaxation technique</span></p><p><b>value</b>: Deep breathing exercises with progressive relaxation</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p></blockquote></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "location"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Home meditation room" ]
+     ] [
+       fhir:url [ fhir:v "environment"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:code [ fhir:v "quiet" ] ;
+           fhir:display [ fhir:v "Quiet Space" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "guidance"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:url [ fhir:v "https://example.org/StructureDefinition/mindfulness-context"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:711020003 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "711020003" ] ;
+       fhir:display [ fhir:v "Meditation" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ]
+  ] ) ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a sct:118682006 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "118682006" ] ;
+         fhir:display [ fhir:v "Duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "20"^^xsd:decimal ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:725854004 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "725854004" ] ;
+         fhir:display [ fhir:v "Assessment of stress level" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "3"^^xsd:integer ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:373931001 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "373931001" ] ;
+         fhir:display [ fhir:v "Mood finding" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:130991005 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "130991005" ] ;
+         fhir:display [ fhir:v "Neutral mood" ]
+       ] )
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:276241001 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "276241001" ] ;
+         fhir:display [ fhir:v "Relaxation technique" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "Deep breathing exercises with progressive relaxation" ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:711020003 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "711020003" ] ;
+         fhir:display [ fhir:v "Meditation" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:711020003 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "711020003" ] ;
+         fhir:display [ fhir:v "Meditation" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

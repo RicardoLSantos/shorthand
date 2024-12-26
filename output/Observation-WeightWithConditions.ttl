@@ -1,0 +1,85 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/WeightWithConditions> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "WeightWithConditions"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation WeightWithConditions</b></p><a name=\"WeightWithConditions\"> </a><a name=\"hcWeightWithConditions\"> </a><a name=\"WeightWithConditions-en-US\"> </a><p><b>Measurement Conditions Extension</b>: <span title=\"Codes:{http://snomed.info/sct 307818003}\">Pre-breakfast</span></p><p><b>Measurement Device Type Extension</b>: <span title=\"Codes:{http://snomed.info/sct 469576000}\">Smart scale device</span></p><p><b>Measurement Quality Extension</b>: <span title=\"Codes:{http://snomed.info/sct 723510000}\">High quality</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 29463-7}\">Body weight</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 70.5 kg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg = 'kg')</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-conditions"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:307818003 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "307818003" ] ;
+         fhir:display [ fhir:v "Pre-breakfast" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-device-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:469576000 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "469576000" ] ;
+         fhir:display [ fhir:v "Smart scale device" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-quality"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:723510000 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "723510000" ] ;
+         fhir:display [ fhir:v "High quality" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:29463-7 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "29463-7" ] ;
+       fhir:display [ fhir:v "Body weight" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "70.5"^^xsd:decimal ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "kg" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

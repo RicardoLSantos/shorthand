@@ -1,0 +1,54 @@
+{
+  "resourceType" : "StructureMap",
+  "id" : "MindfulnessCSVTransform",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap MindfulnessCSVTransform</b></p><a name=\"MindfulnessCSVTransform\"> </a><a name=\"hcMindfulnessCSVTransform\"> </a><a name=\"MindfulnessCSVTransform-en-US\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform<span style=\"color: navy\">&quot; = &quot;</span>MindfulnessCSVTransform<span style=\"color: navy\">&quot;\r\n\r\n</span><b>uses</b><span style=\"color: navy\"> &quot;</span>http://example.org/StructureDefinition/csv-mindfulness<span style=\"color: navy\">&quot; </span><b>as </b><b>source</b> <span style=\"color: navy\">// </span><span style=\"color: green\">CSV mindfulness data structure</span>\r\n\r\n<b>group </b>CSVToMindfulnessObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">source</span><span style=\"color: navy\"> : </span>CSVMindfulness, <b>target</b> <span style=\"color: maroon\">target</span><span style=\"color: navy\"> : </span>Observation<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  source.date,time<span style=\"color: navy\"><b> -&gt; </b></span>target.effectiveDateTime = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: navy\">)</span> <i>&quot;MapDatetime&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  },
+  "url" : "https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform",
+  "version" : "0.1.0",
+  "name" : "MindfulnessCSVTransform",
+  "title" : "CSV to FHIR Mindfulness Transform",
+  "status" : "draft",
+  "date" : "2024-12-26T10:45:41+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "structure" : [{
+    "url" : "http://example.org/StructureDefinition/csv-mindfulness",
+    "mode" : "source",
+    "documentation" : "CSV mindfulness data structure"
+  }],
+  "group" : [{
+    "name" : "CSVToMindfulnessObservation",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "source",
+      "type" : "CSVMindfulness",
+      "mode" : "source"
+    },
+    {
+      "name" : "target",
+      "type" : "Observation",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "MapDatetime",
+      "source" : [{
+        "context" : "source",
+        "element" : "date,time"
+      }],
+      "target" : [{
+        "context" : "target",
+        "contextType" : "variable",
+        "element" : "effectiveDateTime",
+        "transform" : "append"
+      }]
+    }]
+  }]
+}

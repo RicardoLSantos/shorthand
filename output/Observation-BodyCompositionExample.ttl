@@ -1,0 +1,129 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/BodyCompositionExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "BodyCompositionExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation BodyCompositionExample</b></p><a name=\"BodyCompositionExample\"> </a><a name=\"hcBodyCompositionExample\"> </a><a name=\"BodyCompositionExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 88365-2}\">Body composition panel</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>device</b>: <a href=\"Device-BioimpedanceAnalyzer.html\">Device: manufacturer = MedTech Solutions; modelNumber = BCA-Pro; type = Body composition analyzer</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 41982-0}\">Percentage body fat</span></p><p><b>value</b>: 22.5 percent<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 291-7}\">Lean body mass</span></p><p><b>value</b>: 54.6 kilogram<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg = 'kg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 73708-0}\">Total body water</span></p><p><b>value</b>: 39.2 liter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeL = 'L')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 73713-0}\">Muscle mass</span></p><p><b>value</b>: 51.8 kilogram<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg = 'kg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 73711-4}\">Bone mass</span></p><p><b>value</b>: 2.8 kilogram<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg = 'kg')</span></p></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:88365-2 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "88365-2" ] ;
+       fhir:display [ fhir:v "Body composition panel" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime] ; # 
+  fhir:device [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Device/BioimpedanceAnalyzer> ;
+     fhir:reference [ fhir:v "Device/BioimpedanceAnalyzer" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:41982-0 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "41982-0" ] ;
+         fhir:display [ fhir:v "Percentage body fat" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "22.5"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "percent" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "%" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:291-7 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "291-7" ] ;
+         fhir:display [ fhir:v "Lean body mass" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "54.6"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "kilogram" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "kg" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:73708-0 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "73708-0" ] ;
+         fhir:display [ fhir:v "Total body water" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "39.2"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "liter" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "L" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:73713-0 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "73713-0" ] ;
+         fhir:display [ fhir:v "Muscle mass" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "51.8"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "kilogram" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "kg" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:73711-4 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "73711-4" ] ;
+         fhir:display [ fhir:v "Bone mass" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "2.8"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "kilogram" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "kg" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PhysicalActivityExample1"/>
+  <meta>
+    <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation PhysicalActivityExample1</b></p><a name="PhysicalActivityExample1"> </a><a name="hcPhysicalActivityExample1"> </a><a name="PhysicalActivityExample1-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category activity}">Activity</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 228557008}">Walking</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>device</b>: <a href="Device-DeviceActivityTracker.html">Device: manufacturer = HealthTech Devices; modelNumber = HAT-2024; type = Activity monitor</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 55423-8}">Number of steps in 24 hour Measured</span></p><p><b>value</b>: 8546 count<span style="background: LightGoldenRodYellow"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 55430-3}">Distance walked</span></p><p><b>value</b>: 6.2 kilometer<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekm = 'km')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 55411-3}">Exercise duration</span></p><p><b>value</b>: 72 minute<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 55424-6}">Energy expenditure</span></p><p><b>value</b>: 320 kilocalorie<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekcal = 'kcal')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="activity"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="228557008"/>
+      <display value="Walking"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T15:30:00Z"/>
+  <device>
+    <reference value="Device/DeviceActivityTracker"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="55423-8"/>
+        <display value="Number of steps in 24 hour Measured"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="8546"/>
+      <unit value="count"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="55430-3"/>
+        <display value="Distance walked"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="6.2"/>
+      <unit value="kilometer"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="km"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="55411-3"/>
+        <display value="Exercise duration"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="72"/>
+      <unit value="minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="55424-6"/>
+        <display value="Energy expenditure"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="320"/>
+      <unit value="kilocalorie"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="kcal"/>
+    </valueQuantity>
+  </component>
+</Observation>

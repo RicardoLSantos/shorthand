@@ -1,0 +1,34 @@
+{
+  "resourceType" : "Basic",
+  "id" : "DefaultMindfulnessConfig",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Basic DefaultMindfulnessConfig</b></p><a name=\"DefaultMindfulnessConfig\"> </a><a name=\"hcDefaultMindfulnessConfig\"> </a><a name=\"DefaultMindfulnessConfig-en-US\"> </a><p><b>Mindfulness Session Duration</b>: 15</p><p><b>Mindfulness Reminder Time</b>: 08:00:00</p><p><b>Mindfulness Preferred Guide</b>: Jane Smith</p><p><b>Mindfulness Notification Enabled</b>: true</p><p><b>code</b>: <span title=\"Codes:{http://example.org/CodeSystem/mindfulness-config-type settings}\">Mindfulness Settings</span></p></div>"
+  },
+  "extension" : [{
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-session-duration",
+    "valueInteger" : 15
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-reminder-time",
+    "valueTime" : "08:00:00"
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-preferred-guide",
+    "valueString" : "Jane Smith"
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-notification-enabled",
+    "valueBoolean" : true
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://example.org/CodeSystem/mindfulness-config-type",
+      "code" : "settings",
+      "display" : "Mindfulness Settings"
+    }]
+  }
+}

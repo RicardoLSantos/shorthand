@@ -1,0 +1,44 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Basic/DailyMindfulnessAlert> a fhir:Basic ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DailyMindfulnessAlert"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-alert"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-alert>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Basic DailyMindfulnessAlert</b></p><a name=\"DailyMindfulnessAlert\"> </a><a name=\"hcDailyMindfulnessAlert\"> </a><a name=\"DailyMindfulnessAlert-en-US\"> </a><p><b>Alert Timing Extension</b>: Once per 1 days</p><p><b>Alert Message Extension</b>: Time for your daily mindfulness practice</p><p><b>code</b>: <span title=\"Codes:{http://example.org/CodeSystem/mindfulness-alert-type reminder}\">Mindfulness Reminder</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-timing"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Timing ;
+       fhir:repeat [
+         fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+         fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:periodUnit [ fhir:v "d" ]
+       ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Time for your daily mindfulness practice" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://example.org/CodeSystem/mindfulness-alert-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "reminder" ] ;
+       fhir:display [ fhir:v "Mindfulness Reminder" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

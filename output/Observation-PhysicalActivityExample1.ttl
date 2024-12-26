@@ -1,0 +1,114 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/PhysicalActivityExample1> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PhysicalActivityExample1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PhysicalActivityExample1</b></p><a name=\"PhysicalActivityExample1\"> </a><a name=\"hcPhysicalActivityExample1\"> </a><a name=\"PhysicalActivityExample1-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category activity}\">Activity</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 228557008}\">Walking</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>device</b>: <a href=\"Device-DeviceActivityTracker.html\">Device: manufacturer = HealthTech Devices; modelNumber = HAT-2024; type = Activity monitor</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55423-8}\">Number of steps in 24 hour Measured</span></p><p><b>value</b>: 8546 count<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55430-3}\">Distance walked</span></p><p><b>value</b>: 6.2 kilometer<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekm = 'km')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55411-3}\">Exercise duration</span></p><p><b>value</b>: 72 minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55424-6}\">Energy expenditure</span></p><p><b>value</b>: 320 kilocalorie<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekcal = 'kcal')</span></p></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "activity" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:228557008 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "228557008" ] ;
+       fhir:display [ fhir:v "Walking" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2024-03-19T15:30:00Z"^^xsd:dateTime] ; # 
+  fhir:device [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Device/DeviceActivityTracker> ;
+     fhir:reference [ fhir:v "Device/DeviceActivityTracker" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:55423-8 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "55423-8" ] ;
+         fhir:display [ fhir:v "Number of steps in 24 hour Measured" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "8546"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "count" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "1" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:55430-3 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "55430-3" ] ;
+         fhir:display [ fhir:v "Distance walked" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "6.2"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "kilometer" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "km" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:55411-3 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "55411-3" ] ;
+         fhir:display [ fhir:v "Exercise duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "72"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:55424-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "55424-6" ] ;
+         fhir:display [ fhir:v "Energy expenditure" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "320"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "kilocalorie" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "kcal" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

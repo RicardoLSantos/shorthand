@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="WeightWithConditions"/>
+  <meta>
+    <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation WeightWithConditions</b></p><a name="WeightWithConditions"> </a><a name="hcWeightWithConditions"> </a><a name="WeightWithConditions-en-US"> </a><p><b>Measurement Conditions Extension</b>: <span title="Codes:{http://snomed.info/sct 307818003}">Pre-breakfast</span></p><p><b>Measurement Device Type Extension</b>: <span title="Codes:{http://snomed.info/sct 469576000}">Smart scale device</span></p><p><b>Measurement Quality Extension</b>: <span title="Codes:{http://snomed.info/sct 723510000}">High quality</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 29463-7}">Body weight</span></p><p><b>subject</b>: <a href="Patient/example">Patient/example</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 70.5 kg<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg = 'kg')</span></p></div>
+  </text>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-conditions">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="307818003"/>
+        <display value="Pre-breakfast"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-device-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="469576000"/>
+        <display value="Smart scale device"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-quality">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="723510000"/>
+        <display value="High quality"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="29463-7"/>
+      <display value="Body weight"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T08:00:00Z"/>
+  <valueQuantity>
+    <value value="70.5"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="kg"/>
+  </valueQuantity>
+</Observation>

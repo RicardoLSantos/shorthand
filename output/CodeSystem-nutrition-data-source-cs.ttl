@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/nutrition-data-source-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "nutrition-data-source-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem nutrition-data-source-cs</b></p><a name=\"nutrition-data-source-cs\"> </a><a name=\"hcnutrition-data-source-cs\"> </a><a name=\"nutrition-data-source-cs-en-US\"> </a><p>This case-sensitive code system <code>https://github.com/RicardoLSantos/shorthand/CodeSystem/nutrition-data-source-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">manual<a name=\"nutrition-data-source-cs-manual\"> </a></td><td>Manual Entry</td><td>Data entered manually by user</td></tr><tr><td style=\"white-space:nowrap\">app<a name=\"nutrition-data-source-cs-app\"> </a></td><td>App Integration</td><td>Data from integrated third-party apps</td></tr><tr><td style=\"white-space:nowrap\">device<a name=\"nutrition-data-source-cs-device\"> </a></td><td>Connected Device</td><td>Data from connected nutrition tracking devices</td></tr><tr><td style=\"white-space:nowrap\">questionnaire<a name=\"nutrition-data-source-cs-questionnaire\"> </a></td><td>Questionnaire Response</td><td>Data collected through questionnaires</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/nutrition-data-source-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "NutritionDataSourceCS"] ; # 
+  fhir:title [ fhir:v "Nutrition Data Source Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-12-14"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Code system for nutrition data sources"] ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "manual" ] ;
+     fhir:display [ fhir:v "Manual Entry" ] ;
+     fhir:definition [ fhir:v "Data entered manually by user" ]
+  ] [
+     fhir:code [ fhir:v "app" ] ;
+     fhir:display [ fhir:v "App Integration" ] ;
+     fhir:definition [ fhir:v "Data from integrated third-party apps" ]
+  ] [
+     fhir:code [ fhir:v "device" ] ;
+     fhir:display [ fhir:v "Connected Device" ] ;
+     fhir:definition [ fhir:v "Data from connected nutrition tracking devices" ]
+  ] [
+     fhir:code [ fhir:v "questionnaire" ] ;
+     fhir:display [ fhir:v "Questionnaire Response" ] ;
+     fhir:definition [ fhir:v "Data collected through questionnaires" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

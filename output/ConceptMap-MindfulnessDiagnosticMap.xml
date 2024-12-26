@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="MindfulnessDiagnosticMap"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ConceptMap MindfulnessDiagnosticMap</b></p><a name="MindfulnessDiagnosticMap"> </a><a name="hcMindfulnessDiagnosticMap"> </a><a name="MindfulnessDiagnosticMap-en-US"> </a><p>Mapping from https://example.org/ValueSet/mindfulness-outcome-vs to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">http://snomed.info/sct</a></p><br/><p><b>Group 1 </b>Mapping from <code>https://example.org/CodeSystem/mindfulness-outcome-cs</code> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>stressReduction</td><td><a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#narrower" title="narrower">narrower</a></td><td>73595000 (Stress)</td><td>Indicates reduction in stress levels</td></tr><tr><td>improvedSleep</td><td><a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#narrower" title="narrower">narrower</a></td><td>248234008 (Sleep pattern)</td><td>Indicates improvement in sleep quality</td></tr><tr><td>emotionalBalance</td><td><a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#equivalent" title="equivalent">is equivalent to</a></td><td>285854004 (Emotional state)</td><td>Maps to emotional state finding</td></tr><tr><td>increasedAwareness</td><td><a href="http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#relatedto" title="relatedto">is related to</a></td><td>736253002 (Mental state, behavior and/or psychosocial functioning)</td><td>General improvement in mental state</td></tr></table></div>
+  </text>
+  <url value="https://github.com/RicardoLSantos/shorthand/ConceptMap/MindfulnessDiagnosticMap"/>
+  <version value="0.1.0"/>
+  <title value="Mindfulness Diagnostic Mappings"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2024-12-26T10:45:41+00:00"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Mapping of mindfulness outcomes to diagnostic codes"/>
+  <purpose value="Map mindfulness outcomes to standard diagnostic codes"/>
+  <sourceUri value="https://example.org/ValueSet/mindfulness-outcome-vs"/>
+  <targetUri value="http://snomed.info/sct"/>
+  <group>
+    <source value="https://example.org/CodeSystem/mindfulness-outcome-cs"/>
+    <target value="http://snomed.info/sct"/>
+    <element>
+      <code value="stressReduction"/>
+      <target>
+        <code value="73595000"/>
+        <display value="Stress"/>
+        <equivalence value="narrower"/>
+        <comment value="Indicates reduction in stress levels"/>
+      </target>
+    </element>
+    <element>
+      <code value="improvedSleep"/>
+      <target>
+        <code value="248234008"/>
+        <display value="Sleep pattern"/>
+        <equivalence value="narrower"/>
+        <comment value="Indicates improvement in sleep quality"/>
+      </target>
+    </element>
+    <element>
+      <code value="emotionalBalance"/>
+      <target>
+        <code value="285854004"/>
+        <display value="Emotional state"/>
+        <equivalence value="equivalent"/>
+        <comment value="Maps to emotional state finding"/>
+      </target>
+    </element>
+    <element>
+      <code value="increasedAwareness"/>
+      <target>
+        <code value="736253002"/>
+        <display value="Mental state, behavior and/or psychosocial functioning"/>
+        <equivalence value="relatedto"/>
+        <comment value="General improvement in mental state"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

@@ -1,0 +1,1724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="iOS-Lifestyle-Medicine"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name="iOS-Lifestyle-Medicine"> </a><a name="hciOS-Lifestyle-Medicine"> </a><a name="iOS-Lifestyle-Medicine-en-US"> </a><h2>iOS_Lifestyle_Medicine_HEADS2_FMUP</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/RicardoLSantos/shorthand/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>
+  </text>
+  <url value="https://github.com/RicardoLSantos/shorthand/ImplementationGuide/iOS-Lifestyle-Medicine"/>
+  <version value="0.1.0"/>
+  <name value="iOS_Lifestyle_Medicine_HEADS2_FMUP"/>
+  <title value="iOS Lifestyle Medicine Implementation Guide"/>
+  <status value="draft"/>
+  <date value="2024-12-26T10:45:41+00:00"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <packageId value="iOS-Lifestyle-Medicine"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="6.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.1.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2024+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://github.com/RicardoLSantos/shorthand/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#0.3.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2024+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://github.com/RicardoLSantos/shorthand/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/DeviceActivityTracker"/>
+      </reference>
+      <name value="Activity Tracking Device"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-message"/>
+      </reference>
+      <name value="Alert Message Extension"/>
+      <description value="Defines the alert message content"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-timing"/>
+      </reference>
+      <name value="Alert Timing Extension"/>
+      <description value="Defines when alerts should be triggered"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/audit-format"/>
+      </reference>
+      <name value="Audit Format Extension"/>
+      <description value="Format for audit records"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/audit-level"/>
+      </reference>
+      <name value="Audit Level Extension"/>
+      <description value="Level of detail for audit records"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/audit-retention"/>
+      </reference>
+      <name value="Audit Retention Extension"/>
+      <description value="Period to retain audit records"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/BioimpedanceAnalyzer"/>
+      </reference>
+      <name value="Bioimpedance Analyzer Device"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/BloodPressureExample"/>
+      </reference>
+      <name value="Blood Pressure Measurement Example"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/blood-pressure-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/DeviceBloodPressureMonitor"/>
+      </reference>
+      <name value="Blood Pressure Monitor Device"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/blood-pressure-observation"/>
+      </reference>
+      <name value="Blood Pressure Observation Profile"/>
+      <description value="Profile for blood pressure measurements from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/BMIExample"/>
+      </reference>
+      <name value="BMI Calculation Example"/>
+      <description value="Example of a BMI calculation based on weight and height measurements"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/bmi-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/bmi-observation"/>
+      </reference>
+      <name value="BMI Measurement Profile"/>
+      <description value="Profile for Body Mass Index calculations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/BodyCompositionExample"/>
+      </reference>
+      <name value="Body Composition Measurement Example"/>
+      <description value="Example of comprehensive body composition measurements from a bioimpedance device"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/body-composition-observation"/>
+      </reference>
+      <name value="Body Composition Profile"/>
+      <description value="Profile for body composition measurements including fat, lean mass, and other metrics"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/body-metrics-observation"/>
+      </reference>
+      <name value="Body Metrics Observation Profile"/>
+      <description value="Profile for body measurements from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/calorie-intake-observation"/>
+      </reference>
+      <name value="Calorie Intake Observation Profile"/>
+      <description value="Profile for caloric intake measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CompleteMindfulnessSession"/>
+      </reference>
+      <name value="Complete Mindfulness Session Example"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/CompleteMindfulnessResponse"/>
+      </reference>
+      <name value="Complete Mindfulness Session Response"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/MindfulnessCSVTransform"/>
+      </reference>
+      <name value="CSV to FHIR Mindfulness Transform"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Basic"/>
+      </extension>
+      <reference>
+        <reference value="Basic/DailyMindfulnessAlert"/>
+      </reference>
+      <name value="Daily Mindfulness Alert"/>
+      <description value="Example of a daily mindfulness alert configuration"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-alert"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/DailyMindfulnessQuestionnaire"/>
+      </reference>
+      <name value="Daily Mindfulness Questionnaire"/>
+      <description value="Questionnaire for capturing daily mindfulness practice and associated effects"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/DailyNutritionQuestionnaire"/>
+      </reference>
+      <name value="Daily Nutrition Intake Questionnaire"/>
+      <description value="Questionnaire for daily nutrition intake tracking"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/NutritionQuestionnaireResponseExample"/>
+      </reference>
+      <name value="Daily Nutrition Questionnaire Response Example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Basic"/>
+      </extension>
+      <reference>
+        <reference value="Basic/DefaultAuditConfig"/>
+      </reference>
+      <name value="Default Audit Configuration"/>
+      <description value="Default configuration for mindfulness session auditing"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-config"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Basic"/>
+      </extension>
+      <reference>
+        <reference value="Basic/DefaultMindfulnessConfig"/>
+      </reference>
+      <name value="Default Mindfulness Configuration"/>
+      <description value="Default configuration settings for mindfulness sessions"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/EndSessionMessage"/>
+      </reference>
+      <name value="End Session Message"/>
+      <description value="Message definition for ending a mindfulness session"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/EndSessionOperation"/>
+      </reference>
+      <name value="End Session Operation"/>
+      <description value="Operation to end an ongoing mindfulness session"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Basic"/>
+      </extension>
+      <reference>
+        <reference value="Basic/MindfulnessAuditExample"/>
+      </reference>
+      <name value="Example Mindfulness Audit"/>
+      <description value="Example of a mindfulness session audit record"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/MindfulnessQuestionnaireExample"/>
+      </reference>
+      <name value="Example of Mindfulness Questionnaire"/>
+      <description value="Example questionnaire for daily mindfulness practice assessment"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/MindfulnessObservationExample"/>
+      </reference>
+      <name value="Example of Mindfulness Session Observation"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/SleepObservationExample1"/>
+      </reference>
+      <name value="Example of Sleep Record"/>
+      <description value="Example of nightly sleep data from iOS Health App"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/PhysicalActivityExample1"/>
+      </reference>
+      <name value="Example of Walking Activity"/>
+      <description value="Example of walking activity data from iOS Health App"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientExample"/>
+      </reference>
+      <name value="Example Patient"/>
+      <description value="Example patient for lifestyle medicine measurements"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/MindfulnessHealthKitTransform"/>
+      </reference>
+      <name value="HealthKit to FHIR Mindfulness Transform"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/HeartRateExample"/>
+      </reference>
+      <name value="Heart Rate Measurement Example"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/heart-rate-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/DeviceHeartRateMonitor"/>
+      </reference>
+      <name value="Heart Rate Monitor Device"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/heart-rate-observation"/>
+      </reference>
+      <name value="Heart Rate Observation Profile"/>
+      <description value="Profile for heart rate measurements from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/HeightExample"/>
+      </reference>
+      <name value="Height Measurement Example"/>
+      <description value="Example of a height measurement"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/height-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/height-observation"/>
+      </reference>
+      <name value="Height Measurement Profile"/>
+      <description value="Profile for body height measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/lifestyle-vital-signs"/>
+      </reference>
+      <name value="Lifestyle Medicine Vital Signs Profile"/>
+      <description value="Profile for vital signs data from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/macronutrients-observation"/>
+      </reference>
+      <name value="Macronutrients Observation Profile"/>
+      <description value="Profile for macronutrient intake measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/measurement-conditions"/>
+      </reference>
+      <name value="Measurement Conditions Extension"/>
+      <description value="Records the conditions under which body measurements were taken"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/measurement-conditions-vs"/>
+      </reference>
+      <name value="Measurement Conditions Value Set"/>
+      <description value="Standard conditions under which measurements are taken"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/measurement-context"/>
+      </reference>
+      <name value="Measurement Context Extension"/>
+      <description value="Additional context about the vital sign measurement"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/measurement-context-vital-signs"/>
+      </reference>
+      <name value="Measurement Context Value Set"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/measurement-context-vs"/>
+      </reference>
+      <name value="Measurement Context Value Set"/>
+      <description value="Contexts in which measurements can be taken, including temporal and location-based contexts"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/measurement-device-type"/>
+      </reference>
+      <name value="Measurement Device Type Extension"/>
+      <description value="Specifies the type of device used for body measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/measurement-device-type-vs"/>
+      </reference>
+      <name value="Measurement Device Type Value Set"/>
+      <description value="Types of devices used for health and body measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/measurement-quality"/>
+      </reference>
+      <name value="Measurement Quality Extension"/>
+      <description value="Indicates the quality and reliability of the measurement"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/measurement-quality-vs"/>
+      </reference>
+      <name value="Measurement Quality Value Set"/>
+      <description value="Quality indicators for Qualitative assessment of measurement quality"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-alert"/>
+      </reference>
+      <name value="Mindfulness Alert"/>
+      <description value="Alert configuration for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-audit"/>
+      </reference>
+      <name value="Mindfulness Audit"/>
+      <description value="Audit record for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-audit-config"/>
+      </reference>
+      <name value="Mindfulness Audit Configuration"/>
+      <description value="Configuration for mindfulness session auditing"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-audit-format"/>
+      </reference>
+      <name value="Mindfulness Audit Format"/>
+      <description value="Format for audit records"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-audit-level"/>
+      </reference>
+      <name value="Mindfulness Audit Level"/>
+      <description value="Level of detail for audit records"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-audit-retention"/>
+      </reference>
+      <name value="Mindfulness Audit Retention"/>
+      <description value="Period to retain audit records"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-configuration"/>
+      </reference>
+      <name value="Mindfulness Configuration"/>
+      <description value="Configuration settings for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/MindfulnessAccessPolicy"/>
+      </reference>
+      <name value="Mindfulness Data Access Policy"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/MindfulnessSecurityDefinition"/>
+      </reference>
+      <name value="Mindfulness Data Security Policy"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/MindfulnessDiagnosticMap"/>
+      </reference>
+      <name value="Mindfulness Diagnostic Mappings"/>
+      <description value="Mapping of mindfulness outcomes to diagnostic codes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-import-map"/>
+      </reference>
+      <name value="Mindfulness Import Mapping"/>
+      <description value="Mapping instructions for importing mindfulness data"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-message-definition"/>
+      </reference>
+      <name value="Mindfulness Message Definition"/>
+      <description value="Definition for mindfulness session messages"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/MindfulnessCapabilityStatement"/>
+      </reference>
+      <name value="Mindfulness Module Capabilities"/>
+      <description value="Capabilities supported by the mindfulness module implementation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-notification-enabled"/>
+      </reference>
+      <name value="Mindfulness Notification Enabled"/>
+      <description value="Whether notifications are enabled for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-operation"/>
+      </reference>
+      <name value="Mindfulness Operation"/>
+      <description value="Base definition for mindfulness operations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-outcome-cs"/>
+      </reference>
+      <name value="Mindfulness Outcomes"/>
+      <description value="Outcomes and effects of mindfulness practice"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mindfulness-outcome-vs"/>
+      </reference>
+      <name value="Mindfulness Outcomes Value Set"/>
+      <description value="Value set for mindfulness practice outcomes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Measure"/>
+      </extension>
+      <reference>
+        <reference value="Measure/MindfulnessProgressReport"/>
+      </reference>
+      <name value="Mindfulness Practice Progress Report"/>
+      <description value="Measures progress in mindfulness practice over time"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-qualifier-cs"/>
+      </reference>
+      <name value="Mindfulness Practice Qualifiers"/>
+      <description value="Qualifiers for mindfulness practice characteristics"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mindfulness-qualifier-vs"/>
+      </reference>
+      <name value="Mindfulness Practice Qualifiers Value Set"/>
+      <description value="Value set for mindfulness practice qualifiers"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-type-cs"/>
+      </reference>
+      <name value="Mindfulness Practice Types"/>
+      <description value="Types of mindfulness practices and techniques"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mindfulness-type-vs"/>
+      </reference>
+      <name value="Mindfulness Practice Types Value Set"/>
+      <description value="Value set of mindfulness practice types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-preferred-guide"/>
+      </reference>
+      <name value="Mindfulness Preferred Guide"/>
+      <description value="Preferred guide for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-reminder-time"/>
+      </reference>
+      <name value="Mindfulness Reminder Time"/>
+      <description value="Default time for daily reminders"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-schedule"/>
+      </reference>
+      <name value="Mindfulness Schedule"/>
+      <description value="Schedule configuration for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-schedule-timing"/>
+      </reference>
+      <name value="Mindfulness Schedule Timing"/>
+      <description value="Timing configuration for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-context"/>
+      </reference>
+      <name value="Mindfulness Session Context"/>
+      <description value="Additional context about the mindfulness practice session"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-session-duration"/>
+      </reference>
+      <name value="Mindfulness Session Duration"/>
+      <description value="Default duration for mindfulness sessions in minutes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mindfulness-observation"/>
+      </reference>
+      <name value="Mindfulness Session Observation"/>
+      <description value="Profile for recording mindfulness practice sessions and outcomes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MindfulnessSettingCS"/>
+      </reference>
+      <name value="Mindfulness Setting CodeSystem"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mood-vs"/>
+      </reference>
+      <name value="Mood Value Set"/>
+      <description value="Codes representing different mood states"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/nutrition-data-source-cs"/>
+      </reference>
+      <name value="Nutrition Data Source Code System"/>
+      <description value="Code system for nutrition data sources"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/nutrition-data-source"/>
+      </reference>
+      <name value="Nutrition Data Source Extension"/>
+      <description value="Indicates the source of nutrition data"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/nutrition-data-source-vs"/>
+      </reference>
+      <name value="Nutrition Data Source Value Set"/>
+      <description value="Value set for nutrition data sources"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/nutrition-intake-observation"/>
+      </reference>
+      <name value="Nutrition Intake Observation Profile"/>
+      <description value="Profile for nutrition intake data from iOS Health App and user input"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/oxygen-saturation-observation"/>
+      </reference>
+      <name value="Oxygen Saturation Observation Profile"/>
+      <description value="Profile for SpO2 measurements from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/physical-activity-observation"/>
+      </reference>
+      <name value="Physical Activity Observation Profile"/>
+      <description value="Profile for recording physical activity data from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/physical-activity-type-vs"/>
+      </reference>
+      <name value="Physical Activity Types Value Set"/>
+      <description value="Types of physical activities from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/environment-type-cs"/>
+      </reference>
+      <name value="Practice Environment Types"/>
+      <description value="Types of environments for mindfulness practice"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/environment-type-vs"/>
+      </reference>
+      <name value="Practice Environment Types Value Set"/>
+      <description value="Value set of practice environment types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/MindfulnessType"/>
+      </reference>
+      <name value="Search by mindfulness practice type"/>
+      <description value="Search for mindfulness observations by practice type"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/SessionDuration"/>
+      </reference>
+      <name value="Search by session duration"/>
+      <description value="Search for mindfulness observations by session duration"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/StressLevel"/>
+      </reference>
+      <name value="Search by stress level"/>
+      <description value="Search for mindfulness observations by stress level"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/DeviceSleepMonitor"/>
+      </reference>
+      <name value="Sleep Monitoring Device"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sleep-observation"/>
+      </reference>
+      <name value="Sleep Observation Profile"/>
+      <description value="Profile for recording sleep data from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/sleep-quality"/>
+      </reference>
+      <name value="Sleep Quality Extension"/>
+      <description value="Extension for recording subjective sleep quality"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/sleep-quality-extended-vs"/>
+      </reference>
+      <name value="Sleep Quality Value Set"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/sleep-quality-vs"/>
+      </reference>
+      <name value="Sleep Quality Value Set"/>
+      <description value="Qualitative assessments of sleep quality including subjective measures"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/SmartScale"/>
+      </reference>
+      <name value="Smart Scale Device"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MessageDefinition"/>
+      </extension>
+      <reference>
+        <reference value="MessageDefinition/StartSessionMessage"/>
+      </reference>
+      <name value="Start Session Message"/>
+      <description value="Message definition for starting a mindfulness session"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/StartSessionOperation"/>
+      </reference>
+      <name value="Start Session Operation"/>
+      <description value="Operation to start a new mindfulness session"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/water-intake-observation"/>
+      </reference>
+      <name value="Water Intake Observation Profile"/>
+      <description value="Profile for water intake measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Basic"/>
+      </extension>
+      <reference>
+        <reference value="Basic/WeeklyMindfulnessSchedule"/>
+      </reference>
+      <name value="Weekly Mindfulness Schedule"/>
+      <description value="Example of a weekly mindfulness schedule"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-schedule"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/WeightExample"/>
+      </reference>
+      <name value="Weight Measurement Example"/>
+      <description value="Example of a weight measurement from a smart scale"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/weight-observation"/>
+      </reference>
+      <name value="Weight Measurement Profile"/>
+      <description value="Profile for body weight measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/WeightWithConditions"/>
+      </reference>
+      <name value="Weight Measurement with Conditions Example"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="bodymetrics.html"/>
+        </extension>
+        <nameUrl value="bodymetrics.html"/>
+        <title value="Bodymetrics"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mindfulness.html"/>
+        </extension>
+        <nameUrl value="mindfulness.html"/>
+        <title value="Mindfulness"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mindfulness_module.html"/>
+        </extension>
+        <nameUrl value="mindfulness_module.html"/>
+        <title value="Mindfulness Module"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="nutrition.html"/>
+        </extension>
+        <nameUrl value="nutrition.html"/>
+        <title value="Nutrition"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="physical_activity.html"/>
+        </extension>
+        <nameUrl value="physical_activity.html"/>
+        <title value="Physical Activity"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="sleep.html"/>
+        </extension>
+        <nameUrl value="sleep.html"/>
+        <title value="Sleep"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="vitalsigns.html"/>
+        </extension>
+        <nameUrl value="vitalsigns.html"/>
+        <title value="Vitalsigns"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

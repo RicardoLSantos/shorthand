@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="measurement-context-vs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet measurement-context-vs</b></p><a name="measurement-context-vs"> </a><a name="hcmeasurement-context-vs"> </a><a name="measurement-context-vs-en-US"> </a><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://snomed.info/id/272125009">272125009</a></td><td>Assessment context value (qualifier value)</td></tr><tr><td><a href="http://snomed.info/id/307818003">307818003</a></td><td>Before food</td></tr><tr><td><a href="http://snomed.info/id/307819006">307819006</a></td><td>After food</td></tr><tr><td><a href="http://snomed.info/id/255214003">255214003</a></td><td>After exercise</td></tr><tr><td><a href="http://snomed.info/id/264362003">264362003</a></td><td>Time of day</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-context-vs"/>
+  <version value="0.1.0"/>
+  <name value="MeasurementContextVS"/>
+  <title value="Measurement Context Value Set"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2024-12-26T10:45:41+00:00"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Contexts in which measurements can be taken, including temporal and location-based contexts"/>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="272125009"/>
+        <display value="Assessment context value (qualifier value)"/>
+      </concept>
+      <concept>
+        <code value="307818003"/>
+        <display value="Before food"/>
+      </concept>
+      <concept>
+        <code value="307819006"/>
+        <display value="After food"/>
+      </concept>
+      <concept>
+        <code value="255214003"/>
+        <display value="After exercise"/>
+      </concept>
+      <concept>
+        <code value="264362003"/>
+        <display value="Time of day"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

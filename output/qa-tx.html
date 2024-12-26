@@ -1,0 +1,414 @@
+<html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2><pre>
+
+</pre><hr/>
+<a name="l1"> </a><h3>1</h3>
+<pre>
+Request: 
+
+GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+User-Agent: fhir/publisher
+
+
+Response (00:00:00.267): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:2125
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059182
+
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2024-12-26T10:45:34.779Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+
+</pre><hr/>
+<a name="l2"> </a><h3>2</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.269): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1458
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:46 GMT
+last-modified:Thu, 26 Dec 2024 10:45:46 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059221
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://hl7.org/fhir/fhir-types"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://hl7.org/fhir/fhir-types"},{"name" : "code","valueCode" : "ImplementationGuide"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, en_US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://hl7.org/fhir/fhir-types#ImplementationGuide (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://hl7.org/fhir/fhir-types#ImplementationGuide\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://hl7.org/fhir/fhir-types\"\r\n"}]}
+
+</pre><hr/>
+<a name="l3"> </a><h3>3</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.373): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1600
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:46 GMT
+last-modified:Thu, 26 Dec 2024 10:45:46 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059223
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
+
+</pre><hr/>
+<a name="l4"> </a><h3>4</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.276): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1581
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:53 GMT
+last-modified:Thu, 26 Dec 2024 10:45:53 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059225
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
+
+</pre><hr/>
+<a name="l5"> </a><h3>5</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.273): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1578
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:54 GMT
+last-modified:Thu, 26 Dec 2024 10:45:54 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059227
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
+
+</pre><hr/>
+<a name="l6"> </a><h3>6</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.294): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1578
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:55 GMT
+last-modified:Thu, 26 Dec 2024 10:45:55 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059229
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
+
+</pre><hr/>
+<a name="l7"> </a><h3>7</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.357): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1603
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:56 GMT
+last-modified:Thu, 26 Dec 2024 10:45:56 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059231
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
+
+--- 1 -----------------
+Request: 
+
+GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+User-Agent: fhir/publisher
+
+
+Response (00:00:00.267): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:2125
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059182
+
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2024-12-26T10:45:34.779Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+
+--- 2 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.269): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1458
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:46 GMT
+last-modified:Thu, 26 Dec 2024 10:45:46 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059221
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://hl7.org/fhir/fhir-types"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://hl7.org/fhir/fhir-types"},{"name" : "code","valueCode" : "ImplementationGuide"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, en_US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://hl7.org/fhir/fhir-types#ImplementationGuide (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://hl7.org/fhir/fhir-types#ImplementationGuide\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://hl7.org/fhir/fhir-types\"\r\n"}]}
+
+--- 3 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.373): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1600
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:46 GMT
+last-modified:Thu, 26 Dec 2024 10:45:46 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059223
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
+
+--- 4 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.276): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1581
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:53 GMT
+last-modified:Thu, 26 Dec 2024 10:45:53 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059225
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
+
+--- 5 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.273): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1578
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:54 GMT
+last-modified:Thu, 26 Dec 2024 10:45:54 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059227
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
+
+--- 6 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.294): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1578
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:55 GMT
+last-modified:Thu, 26 Dec 2024 10:45:55 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059229
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
+
+--- 7 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3327412f-7809-41bc-a609-81ec5fdf80a7"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.357): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:close
+content-length:1603
+content-type:application/fhir+json
+date:Thu, 26 Dec 2024 10:45:56 GMT
+last-modified:Thu, 26 Dec 2024 10:45:56 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1059231
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
+</pre></head></html>

@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/ConceptMap/MindfulnessDiagnosticMap> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MindfulnessDiagnosticMap"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap MindfulnessDiagnosticMap</b></p><a name=\"MindfulnessDiagnosticMap\"> </a><a name=\"hcMindfulnessDiagnosticMap\"> </a><a name=\"MindfulnessDiagnosticMap-en-US\"> </a><p>Mapping from https://example.org/ValueSet/mindfulness-outcome-vs to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">http://snomed.info/sct</a></p><br/><p><b>Group 1 </b>Mapping from <code>https://example.org/CodeSystem/mindfulness-outcome-cs</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>stressReduction</td><td><a href=\"http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#narrower\" title=\"narrower\">narrower</a></td><td>73595000 (Stress)</td><td>Indicates reduction in stress levels</td></tr><tr><td>improvedSleep</td><td><a href=\"http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#narrower\" title=\"narrower\">narrower</a></td><td>248234008 (Sleep pattern)</td><td>Indicates improvement in sleep quality</td></tr><tr><td>emotionalBalance</td><td><a href=\"http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>285854004 (Emotional state)</td><td>Maps to emotional state finding</td></tr><tr><td>increasedAwareness</td><td><a href=\"http://hl7.org/fhir/extensions/5.1.0/CodeSystem-concept-map-equivalence.html#relatedto\" title=\"relatedto\">is related to</a></td><td>736253002 (Mental state, behavior and/or psychosocial functioning)</td><td>General improvement in mental state</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/ConceptMap/MindfulnessDiagnosticMap"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:title [ fhir:v "Mindfulness Diagnostic Mappings"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-12-26T10:45:41+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mapping of mindfulness outcomes to diagnostic codes"] ; # 
+  fhir:purpose [ fhir:v "Map mindfulness outcomes to standard diagnostic codes"] ; # 
+  fhir:source [ fhir:v "https://example.org/ValueSet/mindfulness-outcome-vs"^^xsd:anyURI] ; # 
+  fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "https://example.org/CodeSystem/mindfulness-outcome-cs"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "stressReduction" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "73595000" ] ;
+         fhir:display [ fhir:v "Stress" ] ;
+         fhir:equivalence [ fhir:v "narrower" ] ;
+         fhir:comment [ fhir:v "Indicates reduction in stress levels" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "improvedSleep" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "248234008" ] ;
+         fhir:display [ fhir:v "Sleep pattern" ] ;
+         fhir:equivalence [ fhir:v "narrower" ] ;
+         fhir:comment [ fhir:v "Indicates improvement in sleep quality" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "emotionalBalance" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "285854004" ] ;
+         fhir:display [ fhir:v "Emotional state" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Maps to emotional state finding" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "increasedAwareness" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "736253002" ] ;
+         fhir:display [ fhir:v "Mental state, behavior and/or psychosocial functioning" ] ;
+         fhir:equivalence [ fhir:v "relatedto" ] ;
+         fhir:comment [ fhir:v "General improvement in mental state" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

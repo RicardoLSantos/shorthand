@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/MindfulnessSettingCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MindfulnessSettingCS"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem MindfulnessSettingCS</b></p><a name=\"MindfulnessSettingCS\"> </a><a name=\"hcMindfulnessSettingCS\"> </a><a name=\"MindfulnessSettingCS-en-US\"> </a><p>This case-sensitive code system <code>http://example.org/CodeSystem/mindfulness-setting</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">home<a name=\"MindfulnessSettingCS-home\"> </a></td><td>Home Practice</td></tr><tr><td style=\"white-space:nowrap\">clinic<a name=\"MindfulnessSettingCS-clinic\"> </a></td><td>Clinical Setting</td></tr><tr><td style=\"white-space:nowrap\">group<a name=\"MindfulnessSettingCS-group\"> </a></td><td>Group Setting</td></tr><tr><td style=\"white-space:nowrap\">retreat<a name=\"MindfulnessSettingCS-retreat\"> </a></td><td>Retreat Setting</td></tr><tr><td style=\"white-space:nowrap\">workplace<a name=\"MindfulnessSettingCS-workplace\"> </a></td><td>Workplace Setting</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/CodeSystem/mindfulness-setting"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MindfulnessSettingCS"] ; # 
+  fhir:title [ fhir:v "Mindfulness Setting CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-12-26T10:45:41+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "home" ] ;
+     fhir:display [ fhir:v "Home Practice" ]
+  ] [
+     fhir:code [ fhir:v "clinic" ] ;
+     fhir:display [ fhir:v "Clinical Setting" ]
+  ] [
+     fhir:code [ fhir:v "group" ] ;
+     fhir:display [ fhir:v "Group Setting" ]
+  ] [
+     fhir:code [ fhir:v "retreat" ] ;
+     fhir:display [ fhir:v "Retreat Setting" ]
+  ] [
+     fhir:code [ fhir:v "workplace" ] ;
+     fhir:display [ fhir:v "Workplace Setting" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

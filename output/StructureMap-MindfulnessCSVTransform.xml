@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="MindfulnessCSVTransform"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap MindfulnessCSVTransform</b></p><a name="MindfulnessCSVTransform"> </a><a name="hcMindfulnessCSVTransform"> </a><a name="MindfulnessCSVTransform-en-US"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform<span style="color: navy">&quot; = &quot;</span>MindfulnessCSVTransform<span style="color: navy">&quot;
+
+</span><b>uses</b><span style="color: navy"> &quot;</span>http://example.org/StructureDefinition/csv-mindfulness<span style="color: navy">&quot; </span><b>as </b><b>source</b> <span style="color: navy">// </span><span style="color: green">CSV mindfulness data structure</span>
+
+<b>group </b>CSVToMindfulnessObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">source</span><span style="color: navy"> : </span>CSVMindfulness, <b>target</b> <span style="color: maroon">target</span><span style="color: navy"> : </span>Observation<span style="color: navy">)</span><span style="color: navy"> {
+</span>  source.date,time<span style="color: navy"><b> -&gt; </b></span>target.effectiveDateTime = <b>append</b><span style="color: navy">(</span><span style="color: navy">)</span> <i>&quot;MapDatetime&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform"/>
+  <version value="0.1.0"/>
+  <name value="MindfulnessCSVTransform"/>
+  <title value="CSV to FHIR Mindfulness Transform"/>
+  <status value="draft"/>
+  <date value="2024-12-26T10:45:41+00:00"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <structure>
+    <url value="http://example.org/StructureDefinition/csv-mindfulness"/>
+    <mode value="source"/>
+    <documentation value="CSV mindfulness data structure"/>
+  </structure>
+  <group>
+    <name value="CSVToMindfulnessObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="source"/>
+      <type value="CSVMindfulness"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="target"/>
+      <type value="Observation"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="MapDatetime"/>
+      <source>
+        <context value="source"/>
+        <element value="date,time"/>
+      </source>
+      <target>
+        <context value="target"/>
+        <contextType value="variable"/>
+        <element value="effectiveDateTime"/>
+        <transform value="append"/>
+      </target>
+    </rule>
+  </group>
+</StructureMap>

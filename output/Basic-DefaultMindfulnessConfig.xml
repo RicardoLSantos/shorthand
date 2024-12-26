@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Basic xmlns="http://hl7.org/fhir">
+  <id value="DefaultMindfulnessConfig"/>
+  <meta>
+    <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Basic DefaultMindfulnessConfig</b></p><a name="DefaultMindfulnessConfig"> </a><a name="hcDefaultMindfulnessConfig"> </a><a name="DefaultMindfulnessConfig-en-US"> </a><p><b>Mindfulness Session Duration</b>: 15</p><p><b>Mindfulness Reminder Time</b>: 08:00:00</p><p><b>Mindfulness Preferred Guide</b>: Jane Smith</p><p><b>Mindfulness Notification Enabled</b>: true</p><p><b>code</b>: <span title="Codes:{http://example.org/CodeSystem/mindfulness-config-type settings}">Mindfulness Settings</span></p></div>
+  </text>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-session-duration">
+    <valueInteger value="15"/>
+  </extension>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-reminder-time">
+    <valueTime value="08:00:00"/>
+  </extension>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-preferred-guide">
+    <valueString value="Jane Smith"/>
+  </extension>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-notification-enabled">
+    <valueBoolean value="true"/>
+  </extension>
+  <code>
+    <coding>
+      <system value="http://example.org/CodeSystem/mindfulness-config-type"/>
+      <code value="settings"/>
+      <display value="Mindfulness Settings"/>
+    </coding>
+  </code>
+</Basic>

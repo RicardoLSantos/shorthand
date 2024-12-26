@@ -1,0 +1,92 @@
+{
+  "resourceType" : "Observation",
+  "id" : "PhysicalActivityExample1",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation PhysicalActivityExample1</b></p><a name=\"PhysicalActivityExample1\"> </a><a name=\"hcPhysicalActivityExample1\"> </a><a name=\"PhysicalActivityExample1-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category activity}\">Activity</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 228557008}\">Walking</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789\u00a0(use:\u00a0usual,\u00a0))</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>device</b>: <a href=\"Device-DeviceActivityTracker.html\">Device: manufacturer = HealthTech Devices; modelNumber = HAT-2024; type = Activity monitor</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55423-8}\">Number of steps in 24 hour Measured</span></p><p><b>value</b>: 8546 count<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55430-3}\">Distance walked</span></p><p><b>value</b>: 6.2 kilometer<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekm = 'km')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55411-3}\">Exercise duration</span></p><p><b>value</b>: 72 minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 55424-6}\">Energy expenditure</span></p><p><b>value</b>: 320 kilocalorie<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekcal = 'kcal')</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "activity"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "228557008",
+      "display" : "Walking"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2024-03-19T15:30:00Z",
+  "device" : {
+    "reference" : "Device/DeviceActivityTracker"
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "55423-8",
+        "display" : "Number of steps in 24 hour Measured"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 8546,
+      "unit" : "count",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "1"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "55430-3",
+        "display" : "Distance walked"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 6.2,
+      "unit" : "kilometer",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "km"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "55411-3",
+        "display" : "Exercise duration"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 72,
+      "unit" : "minute",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "min"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "55424-6",
+        "display" : "Energy expenditure"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 320,
+      "unit" : "kilocalorie",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "kcal"
+    }
+  }]
+}

@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MindfulnessCSVTransform"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap MindfulnessCSVTransform</b></p><a name=\"MindfulnessCSVTransform\"> </a><a name=\"hcMindfulnessCSVTransform\"> </a><a name=\"MindfulnessCSVTransform-en-US\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform<span style=\"color: navy\">&quot; = &quot;</span>MindfulnessCSVTransform<span style=\"color: navy\">&quot;\r\n\r\n</span><b>uses</b><span style=\"color: navy\"> &quot;</span>http://example.org/StructureDefinition/csv-mindfulness<span style=\"color: navy\">&quot; </span><b>as </b><b>source</b> <span style=\"color: navy\">// </span><span style=\"color: green\">CSV mindfulness data structure</span>\r\n\r\n<b>group </b>CSVToMindfulnessObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">source</span><span style=\"color: navy\"> : </span>CSVMindfulness, <b>target</b> <span style=\"color: maroon\">target</span><span style=\"color: navy\"> : </span>Observation<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  source.date,time<span style=\"color: navy\"><b> -&gt; </b></span>target.effectiveDateTime = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: navy\">)</span> <i>&quot;MapDatetime&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MindfulnessCSVTransform"] ; # 
+  fhir:title [ fhir:v "CSV to FHIR Mindfulness Transform"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-12-26T10:45:41+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "http://example.org/StructureDefinition/csv-mindfulness"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/csv-mindfulness>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:documentation [ fhir:v "CSV mindfulness data structure" ]
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "CSVToMindfulnessObservation" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "source" ] ;
+       fhir:type [ fhir:v "CSVMindfulness" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "target" ] ;
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "MapDatetime" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "source" ] ;
+         fhir:element [ fhir:v "date,time" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "target" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "effectiveDateTime" ] ;
+         fhir:transform [ fhir:v "append" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

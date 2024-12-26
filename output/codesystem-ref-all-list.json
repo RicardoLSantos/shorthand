@@ -1,0 +1,408 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://hl7.org/fhir/abstract-types",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "AbstractType",
+      "title" : "AbstractType",
+      "description" : "A list of the base types defined by this version of the FHIR specification - types that are defined, but for which only specializations actually are created.",
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-all-types.html" : "FHIRAllTypes"
+    },
+    {
+      "url" : "http://hl7.org/fhir/binding-strength",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "BindingStrength",
+      "title" : "BindingStrength",
+      "description" : "Indication of the degree of conformance expectations associated with a binding.",
+      "oids" : ["2.16.840.1.113883.4.642.4.44"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-binding-strength.html" : "BindingStrength"
+    },
+    {
+      "url" : "http://hl7.org/fhir/data-types",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "DataType",
+      "title" : "DataType",
+      "description" : "A version specific list of the data types defined by the FHIR specification for use as an element  type (any of the FHIR defined data types).",
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-all-types.html" : "FHIRAllTypes"
+    },
+    {
+      "url" : "http://hl7.org/fhir/days-of-week",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "DaysOfWeek",
+      "title" : "DaysOfWeek",
+      "description" : "The days of the week.",
+      "oids" : ["2.16.840.1.113883.4.642.4.513"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-days-of-week.html" : "DaysOfWeek"
+    },
+    {
+      "url" : "http://hl7.org/fhir/event-timing",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "EventTiming",
+      "title" : "EventTiming",
+      "description" : "Real world event relating to the schedule.",
+      "oids" : ["2.16.840.1.113883.4.642.4.76"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-event-timing.html" : "EventTiming"
+    },
+    {
+      "url" : "http://hl7.org/fhir/message-events",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "MessageEvent",
+      "title" : "MessageEvent",
+      "description" : "One of the message events defined as part of this version of FHIR.",
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-message-events.html" : "MessageEvent"
+    },
+    {
+      "url" : "http://hl7.org/fhir/message-significance-category",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "MessageSignificanceCategory",
+      "title" : "MessageSignificanceCategory",
+      "description" : "The impact of the content of a message.",
+      "oids" : ["2.16.840.1.113883.4.642.4.189"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-message-significance-category.html" : "MessageSignificanceCategory"
+    },
+    {
+      "url" : "http://hl7.org/fhir/messageheader-response-request",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "messageheader-response-request",
+      "title" : "messageheader-response-request",
+      "description" : "HL7-defined table of codes which identify conditions under which acknowledgments are required to be returned in response to a message.",
+      "oids" : ["2.16.840.1.113883.4.642.4.925"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-messageheader-response-request.html" : "messageheader-response-request"
+    },
+    {
+      "url" : "http://hl7.org/fhir/observation-status",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "ObservationStatus",
+      "title" : "ObservationStatus",
+      "description" : "Codes providing the status of an observation.",
+      "oids" : ["2.16.840.1.113883.4.642.4.401"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-observation-status.html" : "ObservationStatus"
+    },
+    {
+      "url" : "http://hl7.org/fhir/operation-kind",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "OperationKind",
+      "title" : "OperationKind",
+      "description" : "Whether an operation is a normal operation or a query.",
+      "oids" : ["2.16.840.1.113883.4.642.4.507"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-operation-kind.html" : "OperationKind"
+    },
+    {
+      "url" : "http://hl7.org/fhir/operation-parameter-use",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "OperationParameterUse",
+      "title" : "OperationParameterUse",
+      "description" : "Whether an operation parameter is an input or an output parameter.",
+      "oids" : ["2.16.840.1.113883.4.642.4.509"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-operation-parameter-use.html" : "OperationParameterUse"
+    },
+    {
+      "url" : "http://hl7.org/fhir/publication-status",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "PublicationStatus",
+      "title" : "PublicationStatus",
+      "description" : "The lifecycle status of an artifact.",
+      "oids" : ["2.16.840.1.113883.4.642.4.4"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-publication-status.html" : "PublicationStatus"
+    },
+    {
+      "url" : "http://hl7.org/fhir/quantity-comparator",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "QuantityComparator",
+      "title" : "QuantityComparator",
+      "description" : "How the Quantity should be understood and represented.",
+      "oids" : ["2.16.840.1.113883.4.642.4.60"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-quantity-comparator.html" : "QuantityComparator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/resource-types",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "ResourceType",
+      "title" : "ResourceType",
+      "description" : "One of the resource types defined as part of this version of FHIR.",
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType",
+      "http://hl7.org/fhir/R4/valueset-all-types.html" : "FHIRAllTypes"
+    },
+    {
+      "url" : "http://hl7.org/fhir/search-param-type",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "SearchParamType",
+      "title" : "SearchParamType",
+      "description" : "Data types allowed to be used for search parameters.",
+      "oids" : ["2.16.840.1.113883.4.642.4.12"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-search-param-type.html" : "SearchParamType"
+    },
+    {
+      "url" : "http://loinc.org",
+      "version" : "3.1.0",
+      "status" : "active",
+      "name" : "LOINC",
+      "title" : "Logical Observation Identifiers, Names and Codes (LOINC)",
+      "description" : "LOINC provides a set of universal names and ID codes for identifying laboratory and clinical test results.1,2 LOINC facilitates the exchange and pooling of results, such as blood hemoglobin, serum potassium, or vital signs, for clinical care, outcomes management, and research. LOINC's universal identifiers (names and codes) can be used in the context of order and observation exchanges between information systems that use syntax standards such as HL73, CEN TC251, ISO TC215, ASTM4, and DICOM. Specifically, the identifier can be used as the coded value for an observation in any other standard that uses the observation/observation value paradigm, whether messages, documents, application programming interface (API), etc. For example, LOINC codes are used widely in the OBX segment Observation Identifier field (OBX-3) of an ORU HL7 (HL7 version 2.x or ASTM 1238-9410) message that may be sent between a Clinical Laboratory Information Management Systems (LIMS) and Electronic Health Record Systems (EHR).5, 6 In this way, LOINC codes provide universal identifiers that allow the exchange of clinical data between heterogeneous computing environments.",
+      "oids" : ["2.16.840.1.113883.6.1"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html" : "Vital Signs",
+      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes"
+    },
+    {
+      "url" : "http://snomed.info/sct",
+      "version" : null,
+      "status" : "active",
+      "name" : "SNOMED_CT",
+      "title" : "SNOMED CT (all versions)",
+      "description" : "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+      "oids" : ["2.16.840.1.113883.6.96"],
+      "uses" : {
+      },
+      "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
+      "ValueSet-mood-vs.html" : "Mood Value Set",
+      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
+      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+      "ValueSet-sleep-quality-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
+      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
+      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
+      "ValueSet-sleep-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
+      "ValueSet-measurement-quality-vs.html" : "Measurement Quality Value Set"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/basic-resource-type",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "BasicResourceTypes",
+      "title" : "Basic Resource Types",
+      "description" : "This value set defines codes for resources not yet supported by (or which will never be supported by) FHIR.  Many of the codes listed here will eventually be turned into official resources.  However, there is no guarantee that any particular resource will be created nor that the scope will be exactly as defined by the codes presented here.  Codes in this set will be deprecated if/when formal resources are defined that encompass these concepts.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1072"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-basic-resource-type.html" : "Basic Resource Types"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "DataAbsentReason",
+      "title" : "DataAbsentReason",
+      "description" : "Used to specify why the normally expected content of the data element is missing.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1048"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-data-absent-reason.html" : "DataAbsentReason"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ObservationCategoryCodes",
+      "title" : "Observation Category Codes",
+      "description" : "Observation Category codes.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1125"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-observation-category.html" : "Observation Category Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ObservationReferenceRangeMeaningCodes",
+      "title" : "Observation Reference Range Meaning Codes",
+      "description" : "This value set defines a set of codes that can be used to indicate the meaning/use of a reference range for a particular target population.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1124"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-referencerange-meaning.html" : "Observation Reference Range Meaning Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "GTSAbbreviation",
+      "title" : "GTSAbbreviation",
+      "description" : "*Open Issue:* It appears that the printnames are suboptimal and should be improved for many of the existing codes.",
+      "oids" : ["2.16.840.1.113883.5.1022"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-timing-abbreviation.html" : "TimingAbbreviation"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "ObservationInterpretation",
+      "title" : "ObservationInterpretation",
+      "description" : "One or more codes providing a rough qualitative interpretation of the observation, such as \"normal\" / \"abnormal\", \"low\" / \"high\", \"better\" / \"worse\", \"resistant\" / \"susceptible\", \"expected\" / \"not expected\". The value set is intended to be for ANY use where coded representation of an interpretation is needed.",
+      "oids" : ["2.16.840.1.113883.5.83"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-observation-interpretation.html" : "Observation Interpretation Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "TimingEvent",
+      "title" : "TimingEvent",
+      "description" : "**** MISSING DESCRIPTION ****",
+      "oids" : ["2.16.840.1.113883.5.139"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-event-timing.html" : "EventTiming"
+    },
+    {
+      "url" : "http://unitsofmeasure.org",
+      "version" : "3.0.1",
+      "status" : "active",
+      "name" : "UCUM",
+      "title" : "Unified Code for Units of Measure (UCUM)",
+      "description" : "The Unified Code for Units of Measure (UCUM) is a code system intended to include all units of measures being contemporarily used in international science, engineering, and business. The purpose is to facilitate unambiguous electronic communication of quantities together with their units. The focus is on electronic communication, as opposed to communication between humans. A typical application of The Unified Code for Units of Measure are electronic data interchange (EDI) protocols, but there is nothing that prevents it from being used in other types of machine communication.",
+      "oids" : ["2.16.840.1.113883.6.8"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime",
+      "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/environment-type-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "EnvironmentTypeCS",
+      "title" : "Practice Environment Types",
+      "description" : "Types of environments for mindfulness practice",
+      "uses" : {
+      },
+      "ValueSet-environment-type-vs.html" : "Practice Environment Types Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mindfulness-outcome-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "MindfulnessOutcomeCS",
+      "title" : "Mindfulness Outcomes",
+      "description" : "Outcomes and effects of mindfulness practice",
+      "uses" : {
+      },
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mindfulness-qualifier-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "MindfulnessQualifierCS",
+      "title" : "Mindfulness Practice Qualifiers",
+      "description" : "Qualifiers for mindfulness practice characteristics",
+      "uses" : {
+      },
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mindfulness-type-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "MindfulnessTypeCS",
+      "title" : "Mindfulness Practice Types",
+      "description" : "Types of mindfulness practices and techniques",
+      "uses" : {
+      },
+      "ValueSet-mindfulness-type-vs.html" : "Mindfulness Practice Types Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/nutrition-data-source-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "NutritionDataSourceCS",
+      "title" : "Nutrition Data Source Code System",
+      "description" : "Code system for nutrition data sources",
+      "uses" : {
+      },
+      "ValueSet-nutrition-data-source-vs.html" : "Nutrition Data Source Value Set"
+    },
+    {
+      "url" : "urn:ietf:bcp:47",
+      "version" : "2.0.1",
+      "status" : "active",
+      "name" : "Ietf3066",
+      "title" : "Tags for the Identification of Languages",
+      "description" : "Older value from OID registry.  Superceded; see recommendations in BCP-47.",
+      "oids" : ["2.16.840.1.113883.6.121"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-languages.html" : "Common Languages"
+    },
+    {
+      "url" : "urn:iso:std:iso:3166",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ISO3166Part1",
+      "title" : "ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code",
+      "description" : "ISO 3166-1 establishes codes that represent the current names of countries, dependencies, and other areas of particular geopolitical interest, on the basis of country names obtained from the United Nations.",
+      "oids" : ["1.0.3166.1"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-jurisdiction.html" : "Jurisdiction"
+    },
+    {
+      "url" : "urn:iso:std:iso:3166:-2",
+      "version" : "2013-11",
+      "status" : "retired",
+      "name" : "Iso3166_2",
+      "title" : "ISO 3166 Part 2 Country Subdivision Codes",
+      "description" : "Identifies the coding system published in the ISO 3166-2 Standard for Country Subdivision codes. This standard is released periodically, and a new OID will be assigned by ISO for new editions.",
+      "oids" : ["1.0.3166.2"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-jurisdiction.html" : "Jurisdiction"
+    }
+  ]
+}

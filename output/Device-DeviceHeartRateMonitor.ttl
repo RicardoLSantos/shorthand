@@ -1,0 +1,32 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Device/DeviceHeartRateMonitor> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DeviceHeartRateMonitor"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device DeviceHeartRateMonitor</b></p><a name=\"DeviceHeartRateMonitor\"> </a><a name=\"hcDeviceHeartRateMonitor\"> </a><a name=\"DeviceHeartRateMonitor-en-US\"> </a><p><b>manufacturer</b>: HealthTech Devices</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Continuous Heart Rate Monitor</td><td>User Friendly name</td></tr></table><p><b>modelNumber</b>: HRM-2024</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 720737000}\">Pulse rate monitoring device</span></p></div>"
+  ] ; # 
+  fhir:manufacturer [ fhir:v "HealthTech Devices"] ; # 
+  fhir:deviceName ( [
+     fhir:name [ fhir:v "Continuous Heart Rate Monitor" ] ;
+     fhir:type [ fhir:v "user-friendly-name" ]
+  ] ) ; # 
+  fhir:modelNumber [ fhir:v "HRM-2024"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a sct:720737000 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "720737000" ] ;
+       fhir:display [ fhir:v "Pulse rate monitoring device" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

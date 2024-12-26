@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/ValueSet/sleep-quality-extended-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "sleep-quality-extended-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet sleep-quality-extended-vs</b></p><a name=\"sleep-quality-extended-vs\"> </a><a name=\"hcsleep-quality-extended-vs\"> </a><a name=\"sleep-quality-extended-vs-en-US\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/248220008\">248220008</a></td><td>Very good quality sleep</td></tr><tr><td><a href=\"http://snomed.info/id/248221007\">248221007</a></td><td>Good quality sleep</td></tr><tr><td><a href=\"http://snomed.info/id/248222000\">248222000</a></td><td>Poor quality sleep</td></tr><tr><td><a href=\"http://snomed.info/id/248223005\">248223005</a></td><td>Very poor quality sleep</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/ValueSet/sleep-quality-extended-vs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "SleepQualityExtendedVS"] ; # 
+  fhir:title [ fhir:v "Sleep Quality Value Set"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-12-26T10:45:41+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "248220008" ] ;
+         fhir:display [ fhir:v "Very good quality sleep" ]
+       ] [
+         fhir:code [ fhir:v "248221007" ] ;
+         fhir:display [ fhir:v "Good quality sleep" ]
+       ] [
+         fhir:code [ fhir:v "248222000" ] ;
+         fhir:display [ fhir:v "Poor quality sleep" ]
+       ] [
+         fhir:code [ fhir:v "248223005" ] ;
+         fhir:display [ fhir:v "Very poor quality sleep" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

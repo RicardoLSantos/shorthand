@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/WeightExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "WeightExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation WeightExample</b></p><a name=\"WeightExample\"> </a><a name=\"hcWeightExample\"> </a><a name=\"WeightExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 29463-7}\">Body weight</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 70.5 kilogram<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg = 'kg')</span></p><p><b>device</b>: <a href=\"Device-SmartScale.html\">Device: manufacturer = HealthTech Devices; modelNumber = SBA-2024; type = Digital scale device</a></p></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:29463-7 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "29463-7" ] ;
+       fhir:display [ fhir:v "Body weight" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "70.5"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "kilogram" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "kg" ]
+  ] ; # 
+  fhir:device [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Device/SmartScale> ;
+     fhir:reference [ fhir:v "Device/SmartScale" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

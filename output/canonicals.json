@@ -1,0 +1,557 @@
+[
+  {
+    "id" : "MindfulnessSettingCS",
+    "type" : "CodeSystem",
+    "url" : "http://example.org/CodeSystem/mindfulness-setting",
+    "version" : "0.1.0",
+    "name" : "MindfulnessSettingCS"
+  },
+  {
+    "id" : "DailyMindfulnessQuestionnaire",
+    "type" : "Questionnaire",
+    "url" : "http://example.org/Questionnaire/daily-mindfulness",
+    "version" : "0.1.0",
+    "name" : "DailyMindfulnessQuestionnaire"
+  },
+  {
+    "id" : "MindfulnessQuestionnaireExample",
+    "type" : "Questionnaire",
+    "url" : "http://example.org/Questionnaire/mindfulness-example",
+    "version" : "0.1.0",
+    "name" : "MindfulnessQuestionnaireExample"
+  },
+  {
+    "id" : "EndSessionMessage",
+    "type" : "MessageDefinition",
+    "url" : "http://example.org/fhir/MessageDefinition/end-session",
+    "version" : "0.1.0"
+  },
+  {
+    "id" : "StartSessionMessage",
+    "type" : "MessageDefinition",
+    "url" : "http://example.org/fhir/MessageDefinition/start-session",
+    "version" : "0.1.0"
+  },
+  {
+    "id" : "mindfulness-context",
+    "type" : "StructureDefinition",
+    "url" : "https://example.org/StructureDefinition/mindfulness-context",
+    "version" : "0.1.0",
+    "name" : "MindfulnessContext"
+  },
+  {
+    "id" : "mindfulness-import-map",
+    "type" : "StructureDefinition",
+    "url" : "https://example.org/StructureDefinition/mindfulness-import-map",
+    "version" : "0.1.0",
+    "name" : "MindfulnessImportMap"
+  },
+  {
+    "id" : "MindfulnessCapabilityStatement",
+    "type" : "CapabilityStatement",
+    "url" : "https://github.com/RicardoLSantos/shorthand/CapabilityStatement/MindfulnessCapabilityStatement",
+    "version" : "0.1.0"
+  },
+  {
+    "id" : "environment-type-cs",
+    "type" : "CodeSystem",
+    "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/environment-type-cs",
+    "version" : "0.1.0",
+    "name" : "EnvironmentTypeCS"
+  },
+  {
+    "id" : "mindfulness-outcome-cs",
+    "type" : "CodeSystem",
+    "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mindfulness-outcome-cs",
+    "version" : "0.1.0",
+    "name" : "MindfulnessOutcomeCS"
+  },
+  {
+    "id" : "mindfulness-qualifier-cs",
+    "type" : "CodeSystem",
+    "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mindfulness-qualifier-cs",
+    "version" : "0.1.0",
+    "name" : "MindfulnessQualifierCS"
+  },
+  {
+    "id" : "mindfulness-type-cs",
+    "type" : "CodeSystem",
+    "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mindfulness-type-cs",
+    "version" : "0.1.0",
+    "name" : "MindfulnessTypeCS"
+  },
+  {
+    "id" : "nutrition-data-source-cs",
+    "type" : "CodeSystem",
+    "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/nutrition-data-source-cs",
+    "version" : "0.1.0",
+    "name" : "NutritionDataSourceCS"
+  },
+  {
+    "id" : "MindfulnessDiagnosticMap",
+    "type" : "ConceptMap",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ConceptMap/MindfulnessDiagnosticMap",
+    "version" : "0.1.0"
+  },
+  {
+    "id" : "iOS-Lifestyle-Medicine",
+    "type" : "ImplementationGuide",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ImplementationGuide/iOS-Lifestyle-Medicine",
+    "version" : "0.1.0",
+    "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP"
+  },
+  {
+    "id" : "MindfulnessProgressReport",
+    "type" : "Measure",
+    "url" : "https://github.com/RicardoLSantos/shorthand/Measure/MindfulnessProgressReport",
+    "version" : "0.1.0"
+  },
+  {
+    "id" : "EndSessionOperation",
+    "type" : "OperationDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/OperationDefinition/EndSessionOperation",
+    "version" : "0.1.0",
+    "name" : "end-session"
+  },
+  {
+    "id" : "StartSessionOperation",
+    "type" : "OperationDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/OperationDefinition/StartSessionOperation",
+    "version" : "0.1.0",
+    "name" : "start-session"
+  },
+  {
+    "id" : "DailyNutritionQuestionnaire",
+    "type" : "Questionnaire",
+    "url" : "https://github.com/RicardoLSantos/shorthand/Questionnaire/daily-nutrition",
+    "version" : "0.1.0",
+    "name" : "DailyNutritionQuestionnaire"
+  },
+  {
+    "id" : "MindfulnessType",
+    "type" : "SearchParameter",
+    "url" : "https://github.com/RicardoLSantos/shorthand/SearchParameter/MindfulnessType",
+    "version" : "0.1.0",
+    "name" : "MindfulnessType"
+  },
+  {
+    "id" : "SessionDuration",
+    "type" : "SearchParameter",
+    "url" : "https://github.com/RicardoLSantos/shorthand/SearchParameter/SessionDuration",
+    "version" : "0.1.0",
+    "name" : "SessionDuration"
+  },
+  {
+    "id" : "StressLevel",
+    "type" : "SearchParameter",
+    "url" : "https://github.com/RicardoLSantos/shorthand/SearchParameter/StressLevel",
+    "version" : "0.1.0",
+    "name" : "StressLevel"
+  },
+  {
+    "id" : "alert-message",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message",
+    "version" : "0.1.0",
+    "name" : "AlertMessage"
+  },
+  {
+    "id" : "alert-timing",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-timing",
+    "version" : "0.1.0",
+    "name" : "AlertTiming"
+  },
+  {
+    "id" : "audit-format",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format",
+    "version" : "0.1.0",
+    "name" : "AuditFormatExtension"
+  },
+  {
+    "id" : "audit-level",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-level",
+    "version" : "0.1.0",
+    "name" : "AuditLevelExtension"
+  },
+  {
+    "id" : "audit-retention",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-retention",
+    "version" : "0.1.0",
+    "name" : "AuditRetentionExtension"
+  },
+  {
+    "id" : "blood-pressure-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/blood-pressure-observation",
+    "version" : "0.1.0",
+    "name" : "BloodPressureObservation"
+  },
+  {
+    "id" : "bmi-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/bmi-observation",
+    "version" : "0.1.0",
+    "name" : "BMIObservation"
+  },
+  {
+    "id" : "body-composition-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation",
+    "version" : "0.1.0",
+    "name" : "BodyCompositionObservation"
+  },
+  {
+    "id" : "body-metrics-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-metrics-observation",
+    "version" : "0.1.0",
+    "name" : "BodyMetricsObservation"
+  },
+  {
+    "id" : "calorie-intake-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/calorie-intake-observation",
+    "version" : "0.1.0",
+    "name" : "CalorieIntakeObservation"
+  },
+  {
+    "id" : "heart-rate-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/heart-rate-observation",
+    "version" : "0.1.0",
+    "name" : "HeartRateObservation"
+  },
+  {
+    "id" : "height-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/height-observation",
+    "version" : "0.1.0",
+    "name" : "HeightObservation"
+  },
+  {
+    "id" : "lifestyle-vital-signs",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/lifestyle-vital-signs",
+    "version" : "0.1.0",
+    "name" : "LifestyleVitalSigns"
+  },
+  {
+    "id" : "macronutrients-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/macronutrients-observation",
+    "version" : "0.1.0",
+    "name" : "MacronutrientsObservation"
+  },
+  {
+    "id" : "measurement-conditions",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-conditions",
+    "version" : "0.1.0",
+    "name" : "MeasurementConditions"
+  },
+  {
+    "id" : "measurement-context",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-context",
+    "version" : "0.1.0",
+    "name" : "MeasurementContext"
+  },
+  {
+    "id" : "measurement-device-type",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-device-type",
+    "version" : "0.1.0",
+    "name" : "MeasurementDevice"
+  },
+  {
+    "id" : "measurement-quality",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-quality",
+    "version" : "0.1.0",
+    "name" : "MeasurementQuality"
+  },
+  {
+    "id" : "mindfulness-alert",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-alert",
+    "version" : "0.1.0",
+    "name" : "MindfulnessAlert"
+  },
+  {
+    "id" : "mindfulness-audit",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit",
+    "version" : "0.1.0",
+    "name" : "MindfulnessAudit"
+  },
+  {
+    "id" : "mindfulness-audit-config",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-config",
+    "version" : "0.1.0",
+    "name" : "MindfulnessAuditConfig"
+  },
+  {
+    "id" : "mindfulness-audit-format",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-format",
+    "version" : "0.1.0",
+    "name" : "MindfulnessAuditFormat"
+  },
+  {
+    "id" : "mindfulness-audit-level",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-level",
+    "version" : "0.1.0",
+    "name" : "MindfulnessAuditLevel"
+  },
+  {
+    "id" : "mindfulness-audit-retention",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-retention",
+    "version" : "0.1.0",
+    "name" : "MindfulnessAuditRetention"
+  },
+  {
+    "id" : "mindfulness-configuration",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration",
+    "version" : "0.1.0",
+    "name" : "MindfulnessConfiguration"
+  },
+  {
+    "id" : "mindfulness-message-definition",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition",
+    "version" : "0.1.0",
+    "name" : "MindfulnessMessageDefinition"
+  },
+  {
+    "id" : "mindfulness-notification-enabled",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-notification-enabled",
+    "version" : "0.1.0",
+    "name" : "MindfulnessNotificationEnabled"
+  },
+  {
+    "id" : "mindfulness-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation",
+    "version" : "0.1.0",
+    "name" : "MindfulnessObservation"
+  },
+  {
+    "id" : "mindfulness-operation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation",
+    "version" : "0.1.0",
+    "name" : "MindfulnessOperation"
+  },
+  {
+    "id" : "mindfulness-preferred-guide",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-preferred-guide",
+    "version" : "0.1.0",
+    "name" : "MindfulnessPreferredGuide"
+  },
+  {
+    "id" : "mindfulness-reminder-time",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-reminder-time",
+    "version" : "0.1.0",
+    "name" : "MindfulnessReminderTime"
+  },
+  {
+    "id" : "mindfulness-schedule",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-schedule",
+    "version" : "0.1.0",
+    "name" : "MindfulnessSchedule"
+  },
+  {
+    "id" : "mindfulness-schedule-timing",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-schedule-timing",
+    "version" : "0.1.0",
+    "name" : "MindfulnessScheduleTiming"
+  },
+  {
+    "id" : "mindfulness-session-duration",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-session-duration",
+    "version" : "0.1.0",
+    "name" : "MindfulnessSessionDuration"
+  },
+  {
+    "id" : "nutrition-data-source",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/nutrition-data-source",
+    "version" : "0.1.0",
+    "name" : "NutritionDataSource"
+  },
+  {
+    "id" : "nutrition-intake-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/nutrition-intake-observation",
+    "version" : "0.1.0",
+    "name" : "NutritionIntakeObservation"
+  },
+  {
+    "id" : "oxygen-saturation-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/oxygen-saturation-observation",
+    "version" : "0.1.0",
+    "name" : "OxygenSaturationObservation"
+  },
+  {
+    "id" : "physical-activity-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation",
+    "version" : "0.1.0",
+    "name" : "PhysicalActivityObservation"
+  },
+  {
+    "id" : "sleep-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-observation",
+    "version" : "0.1.0",
+    "name" : "SleepObservation"
+  },
+  {
+    "id" : "sleep-quality",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-quality",
+    "version" : "0.1.0",
+    "name" : "SleepQuality"
+  },
+  {
+    "id" : "water-intake-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/water-intake-observation",
+    "version" : "0.1.0",
+    "name" : "WaterIntakeObservation"
+  },
+  {
+    "id" : "weight-observation",
+    "type" : "StructureDefinition",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation",
+    "version" : "0.1.0",
+    "name" : "WeightObservation"
+  },
+  {
+    "id" : "MindfulnessCSVTransform",
+    "type" : "StructureMap",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessCSVTransform",
+    "version" : "0.1.0",
+    "name" : "MindfulnessCSVTransform"
+  },
+  {
+    "id" : "MindfulnessHealthKitTransform",
+    "type" : "StructureMap",
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessHealthKitTransform",
+    "version" : "0.1.0",
+    "name" : "MindfulnessHealthKitTransform"
+  },
+  {
+    "id" : "environment-type-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/environment-type-vs",
+    "version" : "0.1.0",
+    "name" : "EnvironmentTypeVS"
+  },
+  {
+    "id" : "measurement-conditions-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-conditions-vs",
+    "version" : "0.1.0",
+    "name" : "MeasurementConditionsVS"
+  },
+  {
+    "id" : "measurement-context-vital-signs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-context-vital-signs",
+    "version" : "0.1.0",
+    "name" : "MeasurementContextVitalSigns"
+  },
+  {
+    "id" : "measurement-context-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-context-vs",
+    "version" : "0.1.0",
+    "name" : "MeasurementContextVS"
+  },
+  {
+    "id" : "measurement-device-type-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-device-type-vs",
+    "version" : "0.1.0",
+    "name" : "MeasurementDeviceTypeVS"
+  },
+  {
+    "id" : "measurement-quality-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-quality-vs",
+    "version" : "0.1.0",
+    "name" : "MeasurementQualityVS"
+  },
+  {
+    "id" : "mindfulness-outcome-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mindfulness-outcome-vs",
+    "version" : "0.1.0",
+    "name" : "MindfulnessOutcomeVS"
+  },
+  {
+    "id" : "mindfulness-qualifier-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mindfulness-qualifier-vs",
+    "version" : "0.1.0",
+    "name" : "MindfulnessQualifierVS"
+  },
+  {
+    "id" : "mindfulness-type-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mindfulness-type-vs",
+    "version" : "0.1.0",
+    "name" : "MindfulnessTypeVS"
+  },
+  {
+    "id" : "mood-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mood-vs",
+    "version" : "0.1.0",
+    "name" : "MoodValueSet"
+  },
+  {
+    "id" : "nutrition-data-source-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/nutrition-data-source-vs",
+    "version" : "0.1.0",
+    "name" : "NutritionDataSourceVS"
+  },
+  {
+    "id" : "physical-activity-type-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/physical-activity-type-vs",
+    "version" : "0.1.0",
+    "name" : "PhysicalActivityTypeVS"
+  },
+  {
+    "id" : "sleep-quality-extended-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/sleep-quality-extended-vs",
+    "version" : "0.1.0",
+    "name" : "SleepQualityExtendedVS"
+  },
+  {
+    "id" : "sleep-quality-vs",
+    "type" : "ValueSet",
+    "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/sleep-quality-vs",
+    "version" : "0.1.0",
+    "name" : "SleepQualityVS"
+  }
+]

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="BMIExample"/>
+  <meta>
+    <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/bmi-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation BMIExample</b></p><a name="BMIExample"> </a><a name="hcBMIExample"> </a><a name="BMIExample-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 39156-5}">Body mass index (BMI)</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 23 kilogram per square meter<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg/m2 = 'kg/m2')</span></p><p><b>derivedFrom</b>: </p><ul><li><a href="Observation-WeightExample.html">Observation Body weight</a></li><li><a href="Observation-HeightExample.html">Observation Body height</a></li></ul></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="39156-5"/>
+      <display value="Body mass index (BMI)"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T08:00:00Z"/>
+  <valueQuantity>
+    <value value="23"/>
+    <unit value="kilogram per square meter"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="kg/m2"/>
+  </valueQuantity>
+  <derivedFrom>
+    <reference value="Observation/WeightExample"/>
+  </derivedFrom>
+  <derivedFrom>
+    <reference value="Observation/HeightExample"/>
+  </derivedFrom>
+</Observation>

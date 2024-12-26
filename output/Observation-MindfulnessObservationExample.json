@@ -1,0 +1,92 @@
+{
+  "resourceType" : "Observation",
+  "id" : "MindfulnessObservationExample",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation MindfulnessObservationExample</b></p><a name=\"MindfulnessObservationExample\"> </a><a name=\"hcMindfulnessObservationExample\"> </a><a name=\"MindfulnessObservationExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789\u00a0(use:\u00a0usual,\u00a0))</a></p><p><b>effective</b>: 2024-03-19 09:30:00+0000</p><p><b>performer</b>: <a href=\"Practitioner/example\">Practitioner/example</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 118682006}\">Duration</span></p><p><b>value</b>: 20 min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 725854004}\">Assessment of stress level</span></p><p><b>value</b>: 4</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 373931001}\">Mood finding</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 130991005}\">Neutral mood</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 276241001}\">Relaxation technique</span></p><p><b>value</b>: Deep breathing exercises helped reduce tension</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "711020003",
+      "display" : "Meditation"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2024-03-19T09:30:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/example"
+  }],
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "118682006",
+        "display" : "Duration"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 20,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "min"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "725854004",
+        "display" : "Assessment of stress level"
+      }]
+    },
+    "valueInteger" : 4
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "373931001",
+        "display" : "Mood finding"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "130991005",
+        "display" : "Neutral mood"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "276241001",
+        "display" : "Relaxation technique"
+      }]
+    },
+    "valueString" : "Deep breathing exercises helped reduce tension"
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "711020003",
+        "display" : "Meditation"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "711020003",
+        "display" : "Meditation"
+      }]
+    }
+  }]
+}

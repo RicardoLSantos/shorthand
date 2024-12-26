@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessHealthKitTransform> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MindfulnessHealthKitTransform"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap MindfulnessHealthKitTransform</b></p><a name=\"MindfulnessHealthKitTransform\"> </a><a name=\"hcMindfulnessHealthKitTransform\"> </a><a name=\"MindfulnessHealthKitTransform-en-US\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessHealthKitTransform<span style=\"color: navy\">&quot; = &quot;</span>MindfulnessHealthKitTransform<span style=\"color: navy\">&quot;\r\n\r\n</span><b>uses</b><span style=\"color: navy\"> &quot;</span>http://example.org/StructureDefinition/healthkit-mindfulness<span style=\"color: navy\">&quot; </span><b>as </b><b>source</b> <span style=\"color: navy\">// </span><span style=\"color: green\">HealthKit mindfulness session structure</span>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>as </b><b>target</b> <span style=\"color: navy\">// </span><span style=\"color: green\">FHIR Observation resource</span>\r\n\r\n<b>group </b>MindfulnessSessionToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">source</span><span style=\"color: navy\"> : </span>HealthKitMindfulness, <b>target</b> <span style=\"color: maroon\">target</span><span style=\"color: navy\"> : </span>Observation<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  source.startDate<span style=\"color: navy\"><b> -&gt; </b></span>target.effectiveDateTime <i>&quot;Session&quot;</i><span style=\"color: navy\">;</span>\r\n  source.duration<span style=\"color: navy\"><b> -&gt; </b></span>target.component.where(code.coding.code='118682006').valueQuantity <i>&quot;Duration&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessHealthKitTransform"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MindfulnessHealthKitTransform"] ; # 
+  fhir:title [ fhir:v "HealthKit to FHIR Mindfulness Transform"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-12-26T10:45:41+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "http://example.org/StructureDefinition/healthkit-mindfulness"^^xsd:anyURI ;
+       fhir:link <http://example.org/StructureDefinition/healthkit-mindfulness>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:documentation [ fhir:v "HealthKit mindfulness session structure" ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:documentation [ fhir:v "FHIR Observation resource" ]
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "MindfulnessSessionToObservation" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "source" ] ;
+       fhir:type [ fhir:v "HealthKitMindfulness" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "target" ] ;
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "Session" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "source" ] ;
+         fhir:element [ fhir:v "startDate" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "target" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "effectiveDateTime" ]
+       ] )
+     ] [
+       fhir:name [ fhir:v "Duration" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "source" ] ;
+         fhir:element [ fhir:v "duration" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "target" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "component.where(code.coding.code='118682006').valueQuantity" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

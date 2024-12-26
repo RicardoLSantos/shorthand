@@ -1,0 +1,35 @@
+{
+  "resourceType" : "Basic",
+  "id" : "MindfulnessAuditExample",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Basic MindfulnessAuditExample</b></p><a name=\"MindfulnessAuditExample\"> </a><a name=\"hcMindfulnessAuditExample\"> </a><a name=\"MindfulnessAuditExample-en-US\"> </a><p><b>Audit Level Extension</b>: detailed</p><p><b>Audit Retention Extension</b>: No display for Duration  (value: 90; system: http://unitsofmeasure.org; code: days)</p><p><b>Audit Format Extension</b>: fhir</p><p><b>code</b>: <span title=\"Codes:{http://example.org/CodeSystem/mindfulness-audit-type session}\">Session Audit</span></p><p><b>created</b>: 2024-03-15</p></div>"
+  },
+  "extension" : [{
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-level",
+    "valueCode" : "detailed"
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-retention",
+    "valueDuration" : {
+      "value" : 90,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "days"
+    }
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format",
+    "valueCode" : "fhir"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://example.org/CodeSystem/mindfulness-audit-type",
+      "code" : "session",
+      "display" : "Session Audit"
+    }]
+  },
+  "created" : "2024-03-15"
+}

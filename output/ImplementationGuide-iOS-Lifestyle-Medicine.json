@@ -1,0 +1,1994 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "iOS-Lifestyle-Medicine",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name=\"iOS-Lifestyle-Medicine\"> </a><a name=\"hciOS-Lifestyle-Medicine\"> </a><a name=\"iOS-Lifestyle-Medicine-en-US\"> </a><h2>iOS_Lifestyle_Medicine_HEADS2_FMUP</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/RicardoLSantos/shorthand/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>"
+  },
+  "url" : "https://github.com/RicardoLSantos/shorthand/ImplementationGuide/iOS-Lifestyle-Medicine",
+  "version" : "0.1.0",
+  "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP",
+  "title" : "iOS Lifestyle Medicine Implementation Guide",
+  "status" : "draft",
+  "date" : "2024-12-26T10:45:41+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "packageId" : "iOS-Lifestyle-Medicine",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["4.0.1"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "6.1.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.1.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2024+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://github.com/RicardoLSantos/shorthand/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.3.0"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2024+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://github.com/RicardoLSantos/shorthand/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceActivityTracker"
+      },
+      "name" : "Activity Tracking Device",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/alert-message"
+      },
+      "name" : "Alert Message Extension",
+      "description" : "Defines the alert message content",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/alert-timing"
+      },
+      "name" : "Alert Timing Extension",
+      "description" : "Defines when alerts should be triggered",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/audit-format"
+      },
+      "name" : "Audit Format Extension",
+      "description" : "Format for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/audit-level"
+      },
+      "name" : "Audit Level Extension",
+      "description" : "Level of detail for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/audit-retention"
+      },
+      "name" : "Audit Retention Extension",
+      "description" : "Period to retain audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/BioimpedanceAnalyzer"
+      },
+      "name" : "Bioimpedance Analyzer Device",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BloodPressureExample"
+      },
+      "name" : "Blood Pressure Measurement Example",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/blood-pressure-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceBloodPressureMonitor"
+      },
+      "name" : "Blood Pressure Monitor Device",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/blood-pressure-observation"
+      },
+      "name" : "Blood Pressure Observation Profile",
+      "description" : "Profile for blood pressure measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BMIExample"
+      },
+      "name" : "BMI Calculation Example",
+      "description" : "Example of a BMI calculation based on weight and height measurements",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/bmi-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bmi-observation"
+      },
+      "name" : "BMI Measurement Profile",
+      "description" : "Profile for Body Mass Index calculations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BodyCompositionExample"
+      },
+      "name" : "Body Composition Measurement Example",
+      "description" : "Example of comprehensive body composition measurements from a bioimpedance device",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/body-composition-observation"
+      },
+      "name" : "Body Composition Profile",
+      "description" : "Profile for body composition measurements including fat, lean mass, and other metrics",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/body-metrics-observation"
+      },
+      "name" : "Body Metrics Observation Profile",
+      "description" : "Profile for body measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/calorie-intake-observation"
+      },
+      "name" : "Calorie Intake Observation Profile",
+      "description" : "Profile for caloric intake measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CompleteMindfulnessSession"
+      },
+      "name" : "Complete Mindfulness Session Example",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/CompleteMindfulnessResponse"
+      },
+      "name" : "Complete Mindfulness Session Response",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/MindfulnessCSVTransform"
+      },
+      "name" : "CSV to FHIR Mindfulness Transform",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/DailyMindfulnessAlert"
+      },
+      "name" : "Daily Mindfulness Alert",
+      "description" : "Example of a daily mindfulness alert configuration",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-alert"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/DailyMindfulnessQuestionnaire"
+      },
+      "name" : "Daily Mindfulness Questionnaire",
+      "description" : "Questionnaire for capturing daily mindfulness practice and associated effects",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/DailyNutritionQuestionnaire"
+      },
+      "name" : "Daily Nutrition Intake Questionnaire",
+      "description" : "Questionnaire for daily nutrition intake tracking",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/NutritionQuestionnaireResponseExample"
+      },
+      "name" : "Daily Nutrition Questionnaire Response Example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/DefaultAuditConfig"
+      },
+      "name" : "Default Audit Configuration",
+      "description" : "Default configuration for mindfulness session auditing",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-config"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/DefaultMindfulnessConfig"
+      },
+      "name" : "Default Mindfulness Configuration",
+      "description" : "Default configuration settings for mindfulness sessions",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MessageDefinition"
+      }],
+      "reference" : {
+        "reference" : "MessageDefinition/EndSessionMessage"
+      },
+      "name" : "End Session Message",
+      "description" : "Message definition for ending a mindfulness session",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/EndSessionOperation"
+      },
+      "name" : "End Session Operation",
+      "description" : "Operation to end an ongoing mindfulness session",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/MindfulnessAuditExample"
+      },
+      "name" : "Example Mindfulness Audit",
+      "description" : "Example of a mindfulness session audit record",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/MindfulnessQuestionnaireExample"
+      },
+      "name" : "Example of Mindfulness Questionnaire",
+      "description" : "Example questionnaire for daily mindfulness practice assessment",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/MindfulnessObservationExample"
+      },
+      "name" : "Example of Mindfulness Session Observation",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/SleepObservationExample1"
+      },
+      "name" : "Example of Sleep Record",
+      "description" : "Example of nightly sleep data from iOS Health App",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/PhysicalActivityExample1"
+      },
+      "name" : "Example of Walking Activity",
+      "description" : "Example of walking activity data from iOS Health App",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientExample"
+      },
+      "name" : "Example Patient",
+      "description" : "Example patient for lifestyle medicine measurements",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/MindfulnessHealthKitTransform"
+      },
+      "name" : "HealthKit to FHIR Mindfulness Transform",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/HeartRateExample"
+      },
+      "name" : "Heart Rate Measurement Example",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/heart-rate-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceHeartRateMonitor"
+      },
+      "name" : "Heart Rate Monitor Device",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/heart-rate-observation"
+      },
+      "name" : "Heart Rate Observation Profile",
+      "description" : "Profile for heart rate measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/HeightExample"
+      },
+      "name" : "Height Measurement Example",
+      "description" : "Example of a height measurement",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/height-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/height-observation"
+      },
+      "name" : "Height Measurement Profile",
+      "description" : "Profile for body height measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/lifestyle-vital-signs"
+      },
+      "name" : "Lifestyle Medicine Vital Signs Profile",
+      "description" : "Profile for vital signs data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/macronutrients-observation"
+      },
+      "name" : "Macronutrients Observation Profile",
+      "description" : "Profile for macronutrient intake measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-conditions"
+      },
+      "name" : "Measurement Conditions Extension",
+      "description" : "Records the conditions under which body measurements were taken",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-conditions-vs"
+      },
+      "name" : "Measurement Conditions Value Set",
+      "description" : "Standard conditions under which measurements are taken",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-context"
+      },
+      "name" : "Measurement Context Extension",
+      "description" : "Additional context about the vital sign measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-context-vital-signs"
+      },
+      "name" : "Measurement Context Value Set",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-context-vs"
+      },
+      "name" : "Measurement Context Value Set",
+      "description" : "Contexts in which measurements can be taken, including temporal and location-based contexts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-device-type"
+      },
+      "name" : "Measurement Device Type Extension",
+      "description" : "Specifies the type of device used for body measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-device-type-vs"
+      },
+      "name" : "Measurement Device Type Value Set",
+      "description" : "Types of devices used for health and body measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-quality"
+      },
+      "name" : "Measurement Quality Extension",
+      "description" : "Indicates the quality and reliability of the measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-quality-vs"
+      },
+      "name" : "Measurement Quality Value Set",
+      "description" : "Quality indicators for Qualitative assessment of measurement quality",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-alert"
+      },
+      "name" : "Mindfulness Alert",
+      "description" : "Alert configuration for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit"
+      },
+      "name" : "Mindfulness Audit",
+      "description" : "Audit record for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-config"
+      },
+      "name" : "Mindfulness Audit Configuration",
+      "description" : "Configuration for mindfulness session auditing",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-format"
+      },
+      "name" : "Mindfulness Audit Format",
+      "description" : "Format for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-level"
+      },
+      "name" : "Mindfulness Audit Level",
+      "description" : "Level of detail for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-retention"
+      },
+      "name" : "Mindfulness Audit Retention",
+      "description" : "Period to retain audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-configuration"
+      },
+      "name" : "Mindfulness Configuration",
+      "description" : "Configuration settings for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/MindfulnessAccessPolicy"
+      },
+      "name" : "Mindfulness Data Access Policy",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/MindfulnessSecurityDefinition"
+      },
+      "name" : "Mindfulness Data Security Policy",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/MindfulnessDiagnosticMap"
+      },
+      "name" : "Mindfulness Diagnostic Mappings",
+      "description" : "Mapping of mindfulness outcomes to diagnostic codes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-import-map"
+      },
+      "name" : "Mindfulness Import Mapping",
+      "description" : "Mapping instructions for importing mindfulness data",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-message-definition"
+      },
+      "name" : "Mindfulness Message Definition",
+      "description" : "Definition for mindfulness session messages",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/MindfulnessCapabilityStatement"
+      },
+      "name" : "Mindfulness Module Capabilities",
+      "description" : "Capabilities supported by the mindfulness module implementation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-notification-enabled"
+      },
+      "name" : "Mindfulness Notification Enabled",
+      "description" : "Whether notifications are enabled for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-operation"
+      },
+      "name" : "Mindfulness Operation",
+      "description" : "Base definition for mindfulness operations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-outcome-cs"
+      },
+      "name" : "Mindfulness Outcomes",
+      "description" : "Outcomes and effects of mindfulness practice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-outcome-vs"
+      },
+      "name" : "Mindfulness Outcomes Value Set",
+      "description" : "Value set for mindfulness practice outcomes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Measure"
+      }],
+      "reference" : {
+        "reference" : "Measure/MindfulnessProgressReport"
+      },
+      "name" : "Mindfulness Practice Progress Report",
+      "description" : "Measures progress in mindfulness practice over time",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-qualifier-cs"
+      },
+      "name" : "Mindfulness Practice Qualifiers",
+      "description" : "Qualifiers for mindfulness practice characteristics",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-qualifier-vs"
+      },
+      "name" : "Mindfulness Practice Qualifiers Value Set",
+      "description" : "Value set for mindfulness practice qualifiers",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-type-cs"
+      },
+      "name" : "Mindfulness Practice Types",
+      "description" : "Types of mindfulness practices and techniques",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-type-vs"
+      },
+      "name" : "Mindfulness Practice Types Value Set",
+      "description" : "Value set of mindfulness practice types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-preferred-guide"
+      },
+      "name" : "Mindfulness Preferred Guide",
+      "description" : "Preferred guide for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-reminder-time"
+      },
+      "name" : "Mindfulness Reminder Time",
+      "description" : "Default time for daily reminders",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-schedule"
+      },
+      "name" : "Mindfulness Schedule",
+      "description" : "Schedule configuration for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-schedule-timing"
+      },
+      "name" : "Mindfulness Schedule Timing",
+      "description" : "Timing configuration for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-context"
+      },
+      "name" : "Mindfulness Session Context",
+      "description" : "Additional context about the mindfulness practice session",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-session-duration"
+      },
+      "name" : "Mindfulness Session Duration",
+      "description" : "Default duration for mindfulness sessions in minutes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-observation"
+      },
+      "name" : "Mindfulness Session Observation",
+      "description" : "Profile for recording mindfulness practice sessions and outcomes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/MindfulnessSettingCS"
+      },
+      "name" : "Mindfulness Setting CodeSystem",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mood-vs"
+      },
+      "name" : "Mood Value Set",
+      "description" : "Codes representing different mood states",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/nutrition-data-source-cs"
+      },
+      "name" : "Nutrition Data Source Code System",
+      "description" : "Code system for nutrition data sources",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/nutrition-data-source"
+      },
+      "name" : "Nutrition Data Source Extension",
+      "description" : "Indicates the source of nutrition data",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/nutrition-data-source-vs"
+      },
+      "name" : "Nutrition Data Source Value Set",
+      "description" : "Value set for nutrition data sources",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/nutrition-intake-observation"
+      },
+      "name" : "Nutrition Intake Observation Profile",
+      "description" : "Profile for nutrition intake data from iOS Health App and user input",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/oxygen-saturation-observation"
+      },
+      "name" : "Oxygen Saturation Observation Profile",
+      "description" : "Profile for SpO2 measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/physical-activity-observation"
+      },
+      "name" : "Physical Activity Observation Profile",
+      "description" : "Profile for recording physical activity data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/physical-activity-type-vs"
+      },
+      "name" : "Physical Activity Types Value Set",
+      "description" : "Types of physical activities from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/environment-type-cs"
+      },
+      "name" : "Practice Environment Types",
+      "description" : "Types of environments for mindfulness practice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/environment-type-vs"
+      },
+      "name" : "Practice Environment Types Value Set",
+      "description" : "Value set of practice environment types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/MindfulnessType"
+      },
+      "name" : "Search by mindfulness practice type",
+      "description" : "Search for mindfulness observations by practice type",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/SessionDuration"
+      },
+      "name" : "Search by session duration",
+      "description" : "Search for mindfulness observations by session duration",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/StressLevel"
+      },
+      "name" : "Search by stress level",
+      "description" : "Search for mindfulness observations by stress level",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceSleepMonitor"
+      },
+      "name" : "Sleep Monitoring Device",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sleep-observation"
+      },
+      "name" : "Sleep Observation Profile",
+      "description" : "Profile for recording sleep data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/sleep-quality"
+      },
+      "name" : "Sleep Quality Extension",
+      "description" : "Extension for recording subjective sleep quality",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/sleep-quality-extended-vs"
+      },
+      "name" : "Sleep Quality Value Set",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/sleep-quality-vs"
+      },
+      "name" : "Sleep Quality Value Set",
+      "description" : "Qualitative assessments of sleep quality including subjective measures",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/SmartScale"
+      },
+      "name" : "Smart Scale Device",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MessageDefinition"
+      }],
+      "reference" : {
+        "reference" : "MessageDefinition/StartSessionMessage"
+      },
+      "name" : "Start Session Message",
+      "description" : "Message definition for starting a mindfulness session",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/StartSessionOperation"
+      },
+      "name" : "Start Session Operation",
+      "description" : "Operation to start a new mindfulness session",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/water-intake-observation"
+      },
+      "name" : "Water Intake Observation Profile",
+      "description" : "Profile for water intake measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/WeeklyMindfulnessSchedule"
+      },
+      "name" : "Weekly Mindfulness Schedule",
+      "description" : "Example of a weekly mindfulness schedule",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-schedule"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WeightExample"
+      },
+      "name" : "Weight Measurement Example",
+      "description" : "Example of a weight measurement from a smart scale",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/weight-observation"
+      },
+      "name" : "Weight Measurement Profile",
+      "description" : "Profile for body weight measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WeightWithConditions"
+      },
+      "name" : "Weight Measurement with Conditions Example",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"
+    }],
+    "page" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+        "valueUrl" : "toc.html"
+      }],
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "bodymetrics.html"
+        }],
+        "nameUrl" : "bodymetrics.html",
+        "title" : "Bodymetrics",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mindfulness.html"
+        }],
+        "nameUrl" : "mindfulness.html",
+        "title" : "Mindfulness",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mindfulness_module.html"
+        }],
+        "nameUrl" : "mindfulness_module.html",
+        "title" : "Mindfulness Module",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "nutrition.html"
+        }],
+        "nameUrl" : "nutrition.html",
+        "title" : "Nutrition",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "physical_activity.html"
+        }],
+        "nameUrl" : "physical_activity.html",
+        "title" : "Physical Activity",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "sleep.html"
+        }],
+        "nameUrl" : "sleep.html",
+        "title" : "Sleep",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "vitalsigns.html"
+        }],
+        "nameUrl" : "vitalsigns.html",
+        "title" : "Vitalsigns",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/maps"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
+  }
+}

@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/MessageDefinition/StartSessionMessage> a fhir:MessageDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "StartSessionMessage"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MessageDefinition StartSessionMessage</b></p><a name=\"StartSessionMessage\"> </a><a name=\"hcStartSessionMessage\"> </a><a name=\"StartSessionMessage-en-US\"> </a><p><b>url</b>: <a href=\"MessageDefinition-StartSessionMessage.html\">MessageDefinition: url = http://example.org/fhir/MessageDefinition/start-session; version = 0.1.0; status = active; date = 2024-03-19; publisher = Ricardo Lourenço dos Santos; contact = Ricardo Lourenço dos Santos (https://linktr.ee/ricardolsantos); jurisdiction = ; copyright = ; event[x] = Session Start (mindfulness-message-events#session-start); category = notification</a></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-03-19</p><p><b>publisher</b>: Ricardo Lourenço dos Santos</p><p><b>contact</b>: Ricardo Lourenço dos Santos: <a href=\"https://linktr.ee/ricardolsantos\">https://linktr.ee/ricardolsantos</a></p><p><b>event</b>: mindfulness-message-events session-start: Session Start</p><p><b>category</b>: Notification</p><h3>Focus</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Profile</b></td><td><b>Min</b></td></tr><tr><td style=\"display: none\">*</td><td>Observation</td><td><code>http://example.org/fhir/StructureDefinition/mindfulness-session</code></td><td>1</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/MessageDefinition/start-session"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-19"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:event [
+     a fhir:Coding ;
+     fhir:system [ fhir:v "http://example.org/fhir/CodeSystem/mindfulness-message-events"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "session-start" ] ;
+     fhir:display [ fhir:v "Session Start" ]
+  ] ; # 
+  fhir:category [ fhir:v "notification"] ; # 
+  fhir:focus ( [
+     fhir:code [ fhir:v "Observation" ] ;
+     fhir:profile [
+       fhir:v "http://example.org/fhir/StructureDefinition/mindfulness-session"^^xsd:anyURI ;
+       fhir:link <http://example.org/fhir/StructureDefinition/mindfulness-session>
+     ] ;
+     fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

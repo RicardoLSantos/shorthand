@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="BodyCompositionExample"/>
+  <meta>
+    <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation BodyCompositionExample</b></p><a name="BodyCompositionExample"> </a><a name="hcBodyCompositionExample"> </a><a name="BodyCompositionExample-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 88365-2}">Body composition panel</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>device</b>: <a href="Device-BioimpedanceAnalyzer.html">Device: manufacturer = MedTech Solutions; modelNumber = BCA-Pro; type = Body composition analyzer</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 41982-0}">Percentage body fat</span></p><p><b>value</b>: 22.5 percent<span style="background: LightGoldenRodYellow"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 291-7}">Lean body mass</span></p><p><b>value</b>: 54.6 kilogram<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg = 'kg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 73708-0}">Total body water</span></p><p><b>value</b>: 39.2 liter<span style="background: LightGoldenRodYellow"> (Details: UCUM  codeL = 'L')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 73713-0}">Muscle mass</span></p><p><b>value</b>: 51.8 kilogram<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg = 'kg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 73711-4}">Bone mass</span></p><p><b>value</b>: 2.8 kilogram<span style="background: LightGoldenRodYellow"> (Details: UCUM  codekg = 'kg')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="88365-2"/>
+      <display value="Body composition panel"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T08:00:00Z"/>
+  <device>
+    <reference value="Device/BioimpedanceAnalyzer"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="41982-0"/>
+        <display value="Percentage body fat"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="22.5"/>
+      <unit value="percent"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="291-7"/>
+        <display value="Lean body mass"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="54.6"/>
+      <unit value="kilogram"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="kg"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="73708-0"/>
+        <display value="Total body water"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="39.2"/>
+      <unit value="liter"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="L"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="73713-0"/>
+        <display value="Muscle mass"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="51.8"/>
+      <unit value="kilogram"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="kg"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="73711-4"/>
+        <display value="Bone mass"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="2.8"/>
+      <unit value="kilogram"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="kg"/>
+    </valueQuantity>
+  </component>
+</Observation>

@@ -1,0 +1,45 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Basic/DefaultAuditConfig> a fhir:Basic ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DefaultAuditConfig"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-config"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-config>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Basic DefaultAuditConfig</b></p><a name=\"DefaultAuditConfig\"> </a><a name=\"hcDefaultAuditConfig\"> </a><a name=\"DefaultAuditConfig-en-US\"> </a><p><b>Mindfulness Audit Level</b>: detailed</p><p><b>Mindfulness Audit Retention</b>: No display for Duration  (value: 90; system: http://unitsofmeasure.org; code: days)</p><p><b>Mindfulness Audit Format</b>: fhir</p><p><b>code</b>: <span title=\"Codes:{http://example.org/CodeSystem/mindfulness-config-type audit}\">Audit Configuration</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-level"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "detailed" ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-retention"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Duration ;
+       fhir:value [ fhir:v "90"^^xsd:decimal ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "days" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-format"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fhir" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://example.org/CodeSystem/mindfulness-config-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "audit" ] ;
+       fhir:display [ fhir:v "Audit Configuration" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

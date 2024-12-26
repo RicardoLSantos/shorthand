@@ -1,0 +1,38 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "EndSessionOperation",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition EndSessionOperation</b></p><a name=\"EndSessionOperation\"> </a><a name=\"hcEndSessionOperation\"> </a><a name=\"EndSessionOperation-en-US\"> </a><p>URL: [base]/Observation/$end</p><p>URL: [base]/Observation/[id]/$end</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>session</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>ID of the session to end</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://github.com/RicardoLSantos/shorthand/OperationDefinition/EndSessionOperation",
+  "version" : "0.1.0",
+  "name" : "end-session",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2024-12-26T10:45:41+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "code" : "end",
+  "resource" : ["Observation"],
+  "system" : false,
+  "type" : true,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "session",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "ID of the session to end",
+    "type" : "string"
+  }]
+}

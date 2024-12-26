@@ -1,0 +1,32 @@
+{
+  "resourceType" : "Basic",
+  "id" : "DailyMindfulnessAlert",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-alert"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Basic DailyMindfulnessAlert</b></p><a name=\"DailyMindfulnessAlert\"> </a><a name=\"hcDailyMindfulnessAlert\"> </a><a name=\"DailyMindfulnessAlert-en-US\"> </a><p><b>Alert Timing Extension</b>: Once per 1 days</p><p><b>Alert Message Extension</b>: Time for your daily mindfulness practice</p><p><b>code</b>: <span title=\"Codes:{http://example.org/CodeSystem/mindfulness-alert-type reminder}\">Mindfulness Reminder</span></p></div>"
+  },
+  "extension" : [{
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-timing",
+    "valueTiming" : {
+      "repeat" : {
+        "frequency" : 1,
+        "period" : 1,
+        "periodUnit" : "d"
+      }
+    }
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message",
+    "valueString" : "Time for your daily mindfulness practice"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://example.org/CodeSystem/mindfulness-alert-type",
+      "code" : "reminder",
+      "display" : "Mindfulness Reminder"
+    }]
+  }
+}
