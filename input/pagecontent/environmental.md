@@ -75,3 +75,51 @@ Environmental data is mapped to FHIR Observation resources with specific profile
    - Risk factor analysis
    - Prevention recommendations
    - Clinical decision support
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code | Description |
+|----------------|-----------|------------|-------------|
+| Audio Exposure | NoiseExposureObservation.component[level] | 89020-2 | Environmental sound intensity |
+| UV Index | UVExposureObservation.component[index] | 89022-8 | UV Index measurement |
+| Noise Duration | NoiseExposureObservation.component[duration] | 89023-6 | Duration of noise exposure |
+| Peak Level | NoiseExposureObservation.component[peak] | 89024-4 | Peak sound pressure level |
+| Background Noise | NoiseExposureObservation.component[background] | 89025-1 | Background noise level |
+
+### Mapping Considerations
+
+1. Temporality
+   - Continuous measurements aggregation
+   - Analysis periods
+   - Update frequency
+   - Time zone handling
+   - Event correlation
+
+2. Data Quality
+   - Sensor calibration
+   - Measurement conditions
+   - Data validation
+   - Accuracy thresholds
+   - Error detection
+
+3. Context
+   - Location data
+   - Related activity
+   - Environmental conditions
+   - Device specifications
+   - Measurement settings
+
+4. Integration Requirements
+   - HealthKit permissions
+   - Data synchronization
+   - API compatibility
+   - Error handling
+   - Batch processing
+
+5. Validation Rules
+   - Range validation
+   - Unit conversion
+   - Threshold alerts
+   - Data consistency
+   - Cross-validation
