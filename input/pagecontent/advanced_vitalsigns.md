@@ -1,4 +1,3 @@
-cat << 'EOF' > input/pagecontent/advanced_vitalsigns.md
 # Advanced Vital Signs Data
 
 ## Overview
@@ -322,82 +321,98 @@ GET [base]/Observation?category=advanced-vitals&patient=[id]&component-code=circ
 ### 1. Advanced Cardiac Metrics
 - HRV Spectral Analysis:
 
-	Power(f) = |FFT(RR intervals)|²
-	LF Power = ∫(0.04-0.15 Hz) Power(f)df
-	HF Power = ∫(0.15-0.40 Hz) Power(f)df
+	- Power(f) = |FFT(RR intervals)|²
+	
+	- LF Power = ∫(0.04-0.15 Hz) Power(f)df
+	
+	- HF Power = ∫(0.15-0.40 Hz) Power(f)df
 
 - HRV Entropy:
 
-	SampEn = -ln(A/B)
-	where: A = matches of length m+1, B = matches of length m
+	- SampEn = -ln(A/B), where:
+		- A = matches of length m+1
+		- B = matches of length m
 
 - Autonomic Balance:
 
-	LF/HF ratio = (LF Power)/(HF Power)
-	Normalized LF = LF/(LF+HF)*100
-	Normalized HF = HF/(LF+HF)*100
+	- LF/HF ratio = (LF Power)/(HF Power)
+	
+	- Normalized LF = LF/(LF+HF)*100
+	
+	- Normalized HF = HF/(LF+HF)*100
 
 ### 2. Respiratory Metrics
 - Respiratory Variability:
 
-	CV = (SD of intervals)/(Mean interval)*100
-	RMSSD = √(Σ(RRi+1 - RRi)²/n)
+	- CV = (SD of intervals)/(Mean interval)*100
+	
+	- RMSSD = √(Σ(RRi+1 - RRi)²/n)
 
 - Oxygenation Indices:
 
-	PaO2/FiO2 ratio
-	SpO2/FiO2 ratio
-	OI = (FiO2 * MAP)/(PaO2)
+	- PaO2/FiO2 ratio
+	
+	- SpO2/FiO2 ratio
+	
+	- OI = (FiO2 * MAP)/(PaO2)
 
 ### 3. Composite Indices
 - Physiological Stress Index (PSI):
-	PSI = w1HRVnorm + w2BPnorm + w3SpO2norm + w4Tempnorm
-	where:
-	HRVnorm = normalized HRV deviation
-	BPnorm = normalized blood pressure variation
-	SpO2norm = normalized oxygen saturation
-	Tempnorm = normalized temperature variation
-	wi = weighting factors
+	- PSI = w1HRVnorm + w2BPnorm + w3SpO2norm + w4Tempnorm, where:
+	
+		- HRVnorm = normalized HRV deviation
+	
+		- BPnorm = normalized blood pressure variation
+	
+		- SpO2norm = normalized oxygen saturation
+	
+		- Tempnorm = normalized temperature variation
+	
+		- wi = weighting factors
 
 - Homeostasis Index (HI):
-	HI = Σ(wi * Mi) / Σwi
-	where:
-	Mi = normalized metric i
-	wi = weight for metric i
+	- HI = Σ(wi * Mi) / Σwi, where:
+	
+		- Mi = normalized metric i
+	
+		- wi = weight for metric i
 
-- Allostatic Load Index (ALI):
-	ALI = Σ(Ci)
-	where:
-	Ci = count of metrics outside normal range
+- Allostatic Load Index (ALI): 
+	- ALI = Σ(Ci), where:
+	
+		- Ci = count of metrics outside normal range
 
 ### 4. Advanced Statistical Transformations
 - Time Domain Analysis:
-	SDNN = √(Σ(RRi - RRmean)²/(n-1))
-	pNN50 = (NN50 count)/(total NN count)
+	- SDNN = √(Σ(RRi - RRmean)²/(n-1))
+	
+	- pNN50 = (NN50 count)/(total NN count)
 
 - Frequency Domain Analysis:
-	Welch's periodogram
-	AR spectral analysis
-	Wavelet transform
+	- Welch's periodogram
+	
+	- AR spectral analysis
+	
+	- Wavelet transform
 
 - Non-linear Methods:
-	Poincaré plot indices
-	Detrended fluctuation analysis
-	Sample entropy
-	Approximate entropy
+	- Poincaré plot indices
+	- Detrended fluctuation analysis
+	- Sample entropy
+	- Approximate entropy
 
 ### 5. Pattern Recognition
 - Circadian Pattern Analysis:
-	Cosinor analysis
-	Phase estimation
-	Amplitude calculation
-	MESOR determination
+	- Cosinor analysis
+	- Phase estimation
+	- Amplitude calculation
+	- MESOR determination
 
 - Trend Detection:
-	Moving averages
-	Exponential smoothing
-	Change point detection
-	Pattern matching
+	- Moving averages
+	- Exponential smoothing
+	- Change point detection
+	- Pattern matching
 
 These calculations and transformations provide the mathematical foundation for advanced vital signs analysis. Each metric is carefully validated and normalized to ensure clinical relevance and reliability.
 
