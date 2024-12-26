@@ -196,3 +196,55 @@ Elements marked with MS must be supported:
    - Security audits
    - Compliance checks
    - User feedback
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code |
+|----------------|-----------|------------|
+| Walking Steadiness | WalkingSteadinessObservation.valueQuantity | LA32-8 |
+| Walking Speed | WalkingSpeedObservation.valueQuantity | LA29042-4 |
+| Step Length | StepLengthObservation.valueQuantity | LA19752-7 |
+| Double Support Time | DoubleSupportTimeObservation.valueQuantity | LA32-9 |
+| Walking Asymmetry | WalkingAsymmetryObservation.valueQuantity | LA32-10 |
+
+### Mapping Considerations
+1. Temporality
+   - Aggregation of continuous measurements
+   - Analysis periods 
+   - Update frequency
+   - Data synchronization timing
+   - Historical data handling
+   - Real-time vs batch processing
+
+2. Quality Assurance
+   - Measurement reliability
+   - Collection conditions
+   - Cross-validation
+   - Data consistency checks
+   - Calibration verification
+   - Error detection and handling
+
+3. Context
+   - Environmental conditions
+   - User state and conditions
+   - Related activity
+   - Device positioning
+   - Movement patterns
+   - Activity intensity
+
+4. Data Flow
+   - Continuous monitoring
+   - Batch processing
+   - Event triggers
+   - Alert handling
+   - Data transformation
+   - Error recovery
+
+5. Integration Requirements
+   - HealthKit permissions
+   - Data synchronization
+   - Background processing
+   - Battery optimization
+   - Error handling
+   - Version compatibility
