@@ -26,19 +26,6 @@ Description: "Specifies the type of device used for body measurements"
 * value[x] only CodeableConcept
 * valueCodeableConcept from MeasurementDeviceTypeVS (required)
 
-Extension: MeasurementQuality
-Id: measurement-quality
-Title: "Measurement Quality Extension"
-Description: "Indicates the quality and reliability of the measurement"
-
-* ^version = "0.1.0"
-* ^status = #draft
-* ^context[0].type = #element
-* ^context[0].expression = "Observation"
-
-* value[x] only CodeableConcept
-* valueCodeableConcept from MeasurementQualityVS (required)
-
 ValueSet: MeasurementConditionsVS
 Id: measurement-conditions-vs
 Title: "Measurement Conditions Value Set"
@@ -69,20 +56,6 @@ Description: "Types of devices used for health and body measurements"
 * $SCT#444699000 "Tape measure"
 * $SCT#44056008  "Digital scale"
 
-ValueSet: MeasurementQualityVS
-Id: measurement-quality-vs
-Title: "Measurement Quality Value Set"
-Description: "Quality indicators for Qualitative assessment of measurement quality"
-
-* ^version = "0.1.0"
-* ^status = #draft
-
-* $SCT#723510000 "High quality"
-* $SCT#723511001 "Moderate quality"
-* $SCT#723512008 "Low quality"
-* $SCT#723513003 "Uncertain quality"
-
-// Add examples of using the extensions
 Instance: WeightWithConditions
 InstanceOf: WeightObservation
 Usage: #example
@@ -100,6 +73,3 @@ Title: "Weight Measurement with Conditions Example"
 
 * extension[measurement-device-type].url = "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-device-type"
 * extension[measurement-device-type].valueCodeableConcept = $SCT#469576000 "Smart scale device"
-
-* extension[measurement-quality].url = "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-quality"
-* extension[measurement-quality].valueCodeableConcept = $SCT#723510000 "High quality"
