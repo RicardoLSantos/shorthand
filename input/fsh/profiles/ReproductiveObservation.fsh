@@ -30,8 +30,8 @@ Description: "Base profile for reproductive health observations"
 * component[severity]
   * code = $LOINC#72514-3
   * value[x] only integer
-  * valueInteger >= 0
-  * valueInteger <= 10
+  * valueInteger ^minValue = 0
+  * valueInteger ^maxValue = 10
 
 * component[duration]
   * code = $LOINC#103332-8
