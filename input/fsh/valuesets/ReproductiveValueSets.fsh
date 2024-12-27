@@ -1,91 +1,58 @@
+ValueSet: ReproductiveGoalVS
+Id: reproductive-goal-vs
+Title: "Reproductive Health Goals Value Set"
+Description: "Goals related to reproductive health tracking and planning"
 
-ValueSet: FlowIntensityVS
-Id: flow-intensity-vs
-Title: "Menstrual Flow Intensity Value Set"
-Description: "Intensity levels for menstrual flow"
-* codes from system FlowIntensityCS
+* ^status = #active
+* ^experimental = false
+* ^date = "2024-03-19"
 
-CodeSystem: FlowIntensityCS
-Id: flow-intensity-cs
-Title: "Flow Intensity Code System"
-* #light "Light"
-* #moderate "Moderate"
-* #heavy "Heavy"
-* #spotting "Spotting"
+* $LOINC#8708-0 "Menstrual cycle length"
+* $LOINC#55284-4 "Blood pressure"
+* $LOINC#8310-5 "Body temperature"
+* $LOINC#8302-2 "Body height"
+* $LOINC#29463-7 "Body weight"
+* $SCT#364311006 "Menstrual cycle monitoring"
+* $SCT#289530006 "Reproductive health finding"
 
-ValueSet: OvulationTestVS
-Id: ovulation-test-vs
-Title: "Ovulation Test Value Set"
-Description: "Results for ovulation tests"
-* codes from system OvulationTestCS
+ValueSet: ReproductiveActivityVS
+Id: reproductive-activity-vs
+Title: "Reproductive Health Activities Value Set"
+Description: "Activities related to reproductive health monitoring"
 
-CodeSystem: OvulationTestCS
-Id: ovulation-test-cs
-Title: "Ovulation Test Code System"
-* #positive "Positive"
-* #negative "Negative"
-* #invalid "Invalid"
-* #notTested "Not tested"
+* ^status = #active
+* ^experimental = false
+* ^date = "2024-03-19"
 
-ValueSet: FertilityStatusVS
-Id: fertility-status-vs
-Title: "Fertility Status Value Set"
-Description: "Fertility status indicators"
-* codes from system FertilityStatusCS
+* codes from system ReproductiveActivityCS
 
-CodeSystem: FertilityStatusCS
-Id: fertility-status-cs
-Title: "Fertility Status Code System"
-* #fertile "Fertile"
-* #nonFertile "Non-fertile"
-* #unknown "Unknown"
-* #likelyFertile "Likely fertile"
-* #likelyNonFertile "Likely non-fertile"
+CodeSystem: ReproductiveActivityCS
+Id: reproductive-activity-cs
+Title: "Reproductive Health Activities Code System"
+Description: "Code system for reproductive health monitoring activities"
 
-ValueSet: CyclePhaseVS
-Id: cycle-phase-vs
-Title: "Menstrual Cycle Phase Value Set"
-Description: "Phases of the menstrual cycle"
-* codes from system CyclePhaseCS
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
 
-CodeSystem: CyclePhaseCS
-Id: cycle-phase-cs
-Title: "Cycle Phase Code System"
-* #menstrual "Menstrual phase"
-* #follicular "Follicular phase"
-* #ovulatory "Ovulatory phase"
-* #luteal "Luteal phase"
+* #cycle-tracking "Cycle Tracking" "Track menstrual cycle dates and characteristics"
+* #temp-monitoring "Temperature Monitoring" "Monitor basal body temperature"
+* #symptom-tracking "Symptom Tracking" "Track reproductive health symptoms"
+* #vitals-monitoring "Vitals Monitoring" "Monitor vital signs related to reproductive health"
+* #fertility-signs "Fertility Signs" "Monitor fertility signs and indicators"
+* #mood-tracking "Mood Tracking" "Track mood changes related to reproductive cycle"
+* #medication-log "Medication Log" "Log reproductive health medications"
+* #exercise-tracking "Exercise Tracking" "Track physical activity during cycle"
 
-ValueSet: ReproductiveMedicationsVS
-Id: reproductive-medications-vs
-Title: "Reproductive Medications Value Set"
-Description: "Common medications related to reproductive health"
-* $SCT#77468003 "Combined oral contraceptive"
-* $SCT#169442009 "Progestogen-only contraceptive"
-* $SCT#412776001 "Fertility medication"
-* $SCT#256697009 "Menstrual cycle regulator"
-
-Instance: ExampleFlowIntensity
-InstanceOf: Observation
+Instance: ExampleReproductiveActivity
+InstanceOf: CarePlan
 Usage: #example
-Title: "Flow Intensity Example"
+Title: "Example Reproductive Activity"
+Description: "Example showing use of reproductive activity value set"
 
-* status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#reproductive
-* code = FlowIntensityCS#moderate
+* status = #active
+* intent = #plan
 * subject = Reference(Patient/example)
-* effectiveDateTime = "2024-03-19T10:00:00Z"
-* valueCodeableConcept = FlowIntensityCS#moderate
-
-Instance: ExampleFertilityStatus
-InstanceOf: Observation
-Usage: #example
-Title: "Fertility Status Example"
-
-* status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#reproductive
-* code = FertilityStatusCS#fertile
-* subject = Reference(Patient/example)
-* effectiveDateTime = "2024-03-19T10:00:00Z"
-* valueCodeableConcept = FertilityStatusCS#fertile
-
+* activity.detail.kind = #observation
+* activity.detail.code = ReproductiveActivityCS#cycle-tracking
+* activity.detail.status = #scheduled
