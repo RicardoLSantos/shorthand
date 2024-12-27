@@ -1,3 +1,12 @@
+CodeSystem: SymptomSeverityCS
+Id: symptom-severity-cs
+Title: "Symptom Severity Code System"
+Description: "Severity levels for symptoms"
+
+* #1-3 "Light" "Symptom barely noticeable"
+* #4-6 "Mild" "Symptom noticeable but not interfering with daily activities"
+* #7-8 "Intense" "Symptom interfering with daily activities"
+* #9-10 "Severe" "Symptom preventing daily activities"
 
 ValueSet: BodyLocationsVS
 Id: body-locations-vs
@@ -81,5 +90,4 @@ Title: "Example Symptom Severity"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = $SCT#246604007 "Symptom severity"
 * effectiveDateTime = "2024-03-19T10:30:00Z"
-* valueCodeableConcept = SymptomSeverityCS#4-6 "Moderado"
-
+* valueCodeableConcept = http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 "Moderado"
