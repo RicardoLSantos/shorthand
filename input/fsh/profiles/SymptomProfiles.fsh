@@ -1,4 +1,3 @@
-
 Profile: SymptomQuestionnaire
 Parent: Questionnaire
 Id: symptom-questionnaire
@@ -19,22 +18,26 @@ Description: "Questionnaire template for symptom assessments"
     onset 0..1 MS and
     description 0..1 MS
 
-* item[symptomType].linkId = "symptom-type"
-* item[symptomType].text = "Symptom Type"
-* item[symptomType].type = #choice
-* item[symptomType].required = true
+* item[symptomType]
+  * linkId = "symptom-type"
+  * text = "Type of Symptom"
+  * type = #choice
+  * required = true
 
-* item[location].linkId = "location"
-* item[location].text = "Location"
-* item[location].type = #string
+* item[location]
+  * linkId = "location"
+  * text = "Location of Symptom"
+  * type = #string
 
-* item[onset].linkId = "onset"
-* item[onset].text = "When did it start?"
-* item[onset].type = #dateTime
+* item[onset]
+  * linkId = "onset"
+  * text = "Onset Date"
+  * type = #dateTime
 
-* item[description].linkId = "description"
-* item[description].text = "Description"
-* item[description].type = #text
+* item[description]
+  * linkId = "description"
+  * text = "Symptom Description"
+  * type = #text
 
 Profile: SymptomAssessment
 Parent: ClinicalImpression
@@ -69,17 +72,3 @@ Invariant: symptom-duration-valid
 Description: "Duration must be a positive value"
 Severity: #error
 Expression: "component.where(code = %duration).value.as(Quantity) > 0"
-
-Instance: SymptomQuestionnaireExample
-InstanceOf: symptom-questionnaire
-Title: "Example Symptom Questionnaire"
-Description: "Example of a symptom assessment questionnaire"
-Usage: #example
-
-* status = #active
-* title = "Symptom Assessment"
-* item[symptomType].text = "What type of symptom are you experiencing?"
-* item[location].text = "Where is the symptom located?"
-* item[onset].text = "When did the symptom start?"
-* item[description].text = "Please describe the symptom"
-
