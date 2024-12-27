@@ -29,9 +29,9 @@ Description: "Base profile for reproductive health observations"
 
 * component[severity]
   * code = $LOINC#72514-3
-  * value[x] only integer 1..1
-  * valueInteger ^constraint.expression = "$this >= 0 and $this <= 10"
-  * valueInteger ^constraint.severity = #error
+  * value[x] only integer
+  * valueInteger 1..1 
+  * valueInteger obeys rep-1
 
 * component[duration]
   * code = $LOINC#103332-8
@@ -47,3 +47,8 @@ Description: "Base profile for reproductive health observations"
   * code = $LOINC#103335-1
   * value[x] only CodeableConcept
   * valueCodeableConcept from SymptomProgressionVS (required)
+
+Invariant: rep-1
+Description: "Severity must be between 0 and 10"
+Expression: "$this >= 0 and $this <= 10"
+Severity: #error
