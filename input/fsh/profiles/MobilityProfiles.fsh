@@ -12,28 +12,17 @@ Description: "Profile for mobility data from iOS Health App"
 * effectiveDateTime 1..1 MS
 * device 0..1 MS
 
-* component MS
-  * code MS
-  * value[x] MS
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
 
-Profile: MobilityRiskAssessment
-Parent: RiskAssessment
-Id: mobility-risk-assessment
-Title: "Mobility Risk Assessment Profile"
-Description: "Profile for assessing mobility-related risks"
+* component contains
+    balanceScore 0..1 MS and
+    balanceStatus 0..1 MS and
+    speed 0..1 MS and
+    distance 0..1 MS
 
-* status MS
-* subject 1..1 MS
-* occurrence[x] MS
-* prediction MS
-  * outcome MS
-  * probability[x] MS
-  * qualitativeRisk MS
-
-* method MS
-  * coding 1..* MS
-  * coding ^slicing.discriminator.type = #pattern
-  * coding ^slicing.discriminator.path = "$this"
-  * coding ^slicing.rules = #open
-  * coding contains
-      mobilityAssessment 1..1 MS
+* component[balanceScore].code = $LOINC#LA32-8
+* component[balanceStatus].code = $LOINC#LA32-9
+* component[speed].code = $LOINC#LA29042-4
+* component[distance].code = $LOINC#LA29043-2
