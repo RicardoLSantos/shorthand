@@ -7,7 +7,6 @@ Description: "Base profile for reproductive health observations"
 * ^version = "1.0.0"
 * ^status = #active
 * ^date = "2024-03-19"
-* ^publisher = "Health Level Seven International"
 
 * status MS
 * category 1..1 MS
@@ -29,24 +28,22 @@ Description: "Base profile for reproductive health observations"
     pattern 0..1 MS
 
 * component[severity]
-  * code = $LOINC#72514-3 "Pain severity score"
+  * code = $LOINC#72514-3
   * value[x] only integer
-  * valueInteger ^minValue = 0
-  * valueInteger ^maxValue = 10
+  * valueInteger >= 0
+  * valueInteger <= 10
 
 * component[duration]
-  * code = $LOINC#103332-8 "Duration"
+  * code = $LOINC#103332-8
   * value[x] only Quantity
   * valueQuantity from DurationUnitsVS (required)
 
 * component[frequency]
-  * code = $LOINC#103334-4 "Frequency"
+  * code = $LOINC#103334-4
   * value[x] only CodeableConcept
   * valueCodeableConcept from SymptomFrequencyVS (required)
 
 * component[pattern]
-  * code = $LOINC#103335-1 "Pattern"
+  * code = $LOINC#103335-1
   * value[x] only CodeableConcept
   * valueCodeableConcept from SymptomProgressionVS (required)
-
-* note MS

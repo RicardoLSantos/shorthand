@@ -1,5 +1,5 @@
 Instance: ChronicSymptomExample
-InstanceOf: SymptomObservation
+InstanceOf: Observation
 Usage: #example
 Title: "Chronic Symptom Example"
 
@@ -9,6 +9,12 @@ Title: "Chronic Symptom Example"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T14:00:00Z"
 
-* component[severity].valueInteger = 7
-* component[duration].valueQuantity = 30 'day' 
-* component[frequency].valueString = "Daily occurrence"
+* component[0]
+  * code = $LOINC#72514-3 "Severity score"
+  * valueInteger = 7
+* component[1]
+  * code = $LOINC#103332-8 "Duration"
+  * valueQuantity = 30 'd'
+* component[2]
+  * code = $LOINC#103334-4 "Frequency"
+  * valueString = "Daily occurrence"
