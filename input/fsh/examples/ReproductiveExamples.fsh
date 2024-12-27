@@ -1,3 +1,13 @@
+Profile: BasalTemperatureObservation
+Parent: ReproductiveObservation
+Id: basal-temperature-observation
+Title: "Basal Temperature Observation Profile"
+Description: "Profile for basal body temperature measurements"
+
+* code = $LOINC#8310-5 "Body temperature"
+* valueQuantity only Quantity
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #Cel
 
 Instance: BasalTemperatureExample
 InstanceOf: BasalTemperatureObservation
@@ -22,11 +32,8 @@ Title: "Fertility Signs Example"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
 
-* component[cervicalMucus].code = $LOINC#8669-4
-* component[cervicalMucus].valueCodeableConcept = CervicalMucusCS#eggwhite
-
-* component[ovulationTest].code = $LOINC#8670-2
-* component[ovulationTest].valueCodeableConcept = OvulationTestCS#positive
+* component[cervicalMucus].valueCodeableConcept = http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggwhite
+* component[ovulationTest].valueCodeableConcept = http://example.org/fhir/CodeSystem/ovulation-test-cs#positive
 
 Instance: ReproductiveSymptomsExample
 InstanceOf: ReproductiveSymptomObservation
@@ -39,10 +46,7 @@ Title: "Reproductive Symptoms Example"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T10:00:00Z"
 
-* component[severity].code = $LOINC#72514-3
 * component[severity].valueInteger = 6
-
-* component[duration].code = $LOINC#103332-8
 * component[duration].valueQuantity = 4 'h'
 
 Instance: ReproductiveCyclePlanExample
@@ -69,14 +73,16 @@ Usage: #example
 Title: "Reproductive Goal Example"
 
 * lifecycleStatus = #active
-* description = "Track regular menstrual cycles"
+* category = http://terminology.hl7.org/CodeSystem/goal-category#reproductive
+* description.text = "Track regular menstrual cycles"
 * subject = Reference(Patient/example)
 * startDate = "2024-03-19"
 
 * target.measure = $LOINC#8708-0 "Menstrual cycle duration"
-* target.detailRange.low = 26
-* target.detailRange.high = 30
-* target.detailRange.unit = "days"
+* target.detailRange
+  * low = 26
+  * high = 30
+  * unit = "days"
 * target.dueDate = "2024-06-19"
 
 Instance: CompleteCycleExample
@@ -86,18 +92,12 @@ Title: "Complete Menstrual Cycle Example with All Components"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#reproductive
-* code = $LOINC#49033-4
+* code = $LOINC#49033-4 "Menstrual cycle finding"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T06:00:00Z"
 
-* component[cycleLength].code = $LOINC#8708-0
 * component[cycleLength].valueQuantity = 28 'd'
-
-* component[flowDuration].code = $LOINC#49030-0
 * component[flowDuration].valueQuantity = 5 'd'
-
-* component[flowIntensity].code = FlowIntensityCS#moderate
-* component[flowIntensity].valueCodeableConcept = FlowIntensityCS#moderate
+* component[flowIntensity].valueCodeableConcept = http://example.org/fhir/CodeSystem/flow-intensity-cs#moderate
 
 * note.text = "Regular cycle with normal characteristics"
-
