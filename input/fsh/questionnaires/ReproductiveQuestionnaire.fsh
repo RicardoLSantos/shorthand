@@ -7,46 +7,46 @@ Description: "Daily questionnaire for reproductive health tracking"
 * status = #active
 * url = "http://example.org/Questionnaire/reproductive-health"
 * name = "ReproductiveHealthQuestionnaire"
-* title = "Monitoramento de Saúde Reprodutiva"
+* title = "Reproductive Health Monitoring"
 * date = "2024-03-19"
  
 * item[0]
   * linkId = "menstrual_cycle"
-  * text = "Ciclo Menstrual"
+  * text = "Menstrual Cycle"
   * type = #group
  
   * item[0]
     * linkId = "cycle_start"
-    * text = "Início do ciclo hoje?"
+    * text = "Cycle started today?"
     * type = #boolean
  
   * item[1]
     * linkId = "flow_intensity"
-    * text = "Intensidade do fluxo"
+    * text = "Flow intensity"
     * type = #choice
     * enableWhen
       * question = "cycle_start"
       * operator = #=
       * answerBoolean = true
-    * answerOption[0].valueString = "Leve"
-    * answerOption[1].valueString = "Moderado"
-    * answerOption[2].valueString = "Intenso"
+    * answerOption[0].valueString = "Light"
+    * answerOption[1].valueString = "Moderate"
+    * answerOption[2].valueString = "Heavy"
  
 * item[1]
   * linkId = "symptoms"
-  * text = "Sintomas"
+  * text = "Symptoms"
   * type = #group
   * repeats = true
  
   * item[0]
     * linkId = "symptom_type"
-    * text = "Tipo de sintoma"
+    * text = "Symptom type"
     * type = #choice
     * answerValueSet = "http://example.org/ValueSet/reproductive-symptoms"
  
   * item[1]
     * linkId = "symptom_severity"
-    * text = "Intensidade (0-10)"
+    * text = "Intensity (0-10)"
     * type = #integer
     * extension[0]
       * url = "http://hl7.org/fhir/StructureDefinition/minValue"
@@ -55,20 +55,20 @@ Description: "Daily questionnaire for reproductive health tracking"
       * url = "http://hl7.org/fhir/StructureDefinition/maxValue"
       * valueInteger = 10
  
-* item[7]
+* item[2]
   * linkId = "mood_changes"
-  * text = "Mudanças de Humor"
+  * text = "Mood Changes"
   * type = #group
 
   * item[0]
     * linkId = "mood_type"
-    * text = "Humor atual"
+    * text = "Current mood"
     * type = #choice
     * answerValueSet = "http://example.org/ValueSet/mood-types"
 
   * item[1]
     * linkId = "mood_severity"
-    * text = "Intensidade (0-10)"
+    * text = "Intensity (0-10)"
     * type = #integer
     * extension[0]
       * url = "http://hl7.org/fhir/StructureDefinition/minValue"
