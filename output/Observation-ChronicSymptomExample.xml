@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="ChronicSymptomExample"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation ChronicSymptomExample</b></p><a name="ChronicSymptomExample"> </a><a name="hcChronicSymptomExample"> </a><a name="ChronicSymptomExample-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}">Survey</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 267036007}">Fatigue</span></p><p><b>subject</b>: <a href="Patient/example">Patient/example</a></p><p><b>effective</b>: 2024-03-19 14:00:00+0000</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 72514-3}">Severity score</span></p><p><b>value</b>: 7</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 103332-8}">Duration</span></p><p><b>value</b>: 30 d<span style="background: LightGoldenRodYellow"> (Details: UCUM  coded = 'd')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 103334-4}">Frequency</span></p><p><b>value</b>: Daily occurrence</p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="survey"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="267036007"/>
+      <display value="Fatigue"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T14:00:00Z"/>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="72514-3"/>
+        <display value="Severity score"/>
+      </coding>
+    </code>
+    <valueInteger value="7"/>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="103332-8"/>
+        <display value="Duration"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="30"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="d"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="103334-4"/>
+        <display value="Frequency"/>
+      </coding>
+    </code>
+    <valueString value="Daily occurrence"/>
+  </component>
+</Observation>

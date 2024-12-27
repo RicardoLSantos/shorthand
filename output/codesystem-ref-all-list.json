@@ -59,6 +59,18 @@
       "http://hl7.org/fhir/R4/valueset-event-timing.html" : "EventTiming"
     },
     {
+      "url" : "http://hl7.org/fhir/item-type",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "QuestionnaireItemType",
+      "title" : "QuestionnaireItemType",
+      "description" : "Distinguishes groups from questions and display text and indicates data type for questions.",
+      "oids" : ["2.16.840.1.113883.4.642.4.445"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-item-type.html" : "QuestionnaireItemType"
+    },
+    {
       "url" : "http://hl7.org/fhir/message-events",
       "version" : "4.0.1",
       "status" : "active",
@@ -154,6 +166,30 @@
       "http://hl7.org/fhir/R4/valueset-quantity-comparator.html" : "QuantityComparator"
     },
     {
+      "url" : "http://hl7.org/fhir/questionnaire-enable-behavior",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "EnableWhenBehavior",
+      "title" : "EnableWhenBehavior",
+      "description" : "Controls how multiple enableWhen values are interpreted -  whether all or any must be true.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1008"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-questionnaire-enable-behavior.html" : "EnableWhenBehavior"
+    },
+    {
+      "url" : "http://hl7.org/fhir/questionnaire-enable-operator",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "QuestionnaireItemOperator",
+      "title" : "QuestionnaireItemOperator",
+      "description" : "The criteria by which a question is enabled.",
+      "oids" : ["2.16.840.1.113883.4.642.4.1006"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-questionnaire-enable-operator.html" : "QuestionnaireItemOperator"
+    },
+    {
       "url" : "http://hl7.org/fhir/resource-types",
       "version" : "4.0.1",
       "status" : "active",
@@ -187,8 +223,10 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
+      "ValueSet-reproductive-goal-vs.html" : "Reproductive Health Goals Value Set",
       "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes",
-      "http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html" : "Vital Signs"
+      "http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html" : "Vital Signs",
+      "http://hl7.org/fhir/R4/valueset-questionnaire-questions.html" : "Questionnaire Question Codes"
     },
     {
       "url" : "http://snomed.info/sct",
@@ -200,21 +238,25 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
-      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
-      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+      "http://hl7.org/fhir/R4/valueset-questionnaire-answers.html" : "Questionnaire Answer Codes",
       "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
-      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
-      "ValueSet-measurement-quality-vs.html" : "Measurement Quality Value Set",
-      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
-      "ValueSet-sleep-quality-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
       "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
-      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
-      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
-      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
-      "ValueSet-sleep-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
       "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
-      "ValueSet-mood-vs.html" : "Mood Value Set"
+      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
+      "ValueSet-time-of-day-vs.html" : "Time of Day Value Set",
+      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
+      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
+      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ValueSet-sleep-quality-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-reproductive-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
+      "ValueSet-sleep-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
+      "ValueSet-mood-vs.html" : "Mood Value Set",
+      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/basic-resource-type",
@@ -265,6 +307,18 @@
       "http://hl7.org/fhir/R4/valueset-referencerange-meaning.html" : "Observation Reference Range Meaning Codes"
     },
     {
+      "url" : "http://terminology.hl7.org/CodeSystem/risk-probability",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "RiskProbability",
+      "title" : "Risk Probability",
+      "description" : "Codes representing the likelihood of a particular outcome in a risk assessment.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1133"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-risk-probability.html" : "Risk Probability"
+    },
+    {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
       "version" : "3.0.0",
       "status" : "active",
@@ -310,8 +364,31 @@
       "oids" : ["2.16.840.1.113883.6.8"],
       "uses" : {
       },
+      "ValueSet-duration-units-vs.html" : "Duration Units Value Set",
       "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units",
       "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/advanced-vital-signs-context-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "AdvancedVitalSignsContextCS",
+      "title" : "Advanced Vital Signs Context Code System",
+      "description" : "Codes for advanced vital signs measurement context",
+      "uses" : {
+      },
+      "ValueSet-advanced-vital-signs-context-vs.html" : "Advanced Vital Signs Context Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "CircadianPhaseCS",
+      "title" : "Circadian Phase Code System",
+      "description" : "Code system for circadian rhythm phases",
+      "uses" : {
+      },
+      "ValueSet-circadian-phase-vs.html" : "Circadian Phase Value Set"
     },
     {
       "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/environment-type-cs",
@@ -323,6 +400,39 @@
       "uses" : {
       },
       "ValueSet-environment-type-vs.html" : "Practice Environment Types Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-conditions-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "ExposureConditionsCS",
+      "title" : "Exposure Conditions Code System",
+      "description" : "Code system for conditions during environmental exposure",
+      "uses" : {
+      },
+      "ValueSet-exposure-conditions-vs.html" : "Exposure Conditions Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-location-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "ExposureLocationCS",
+      "title" : "Exposure Location Code System",
+      "description" : "Code system for environmental exposure locations",
+      "uses" : {
+      },
+      "ValueSet-exposure-location-vs.html" : "Exposure Location Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "MeasurementQualityCS",
+      "title" : "Measurement Quality Code System",
+      "description" : "Code system for measurement quality indicators",
+      "uses" : {
+      },
+      "ValueSet-measurement-quality-vs.html" : "Measurement Quality Value Set"
     },
     {
       "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mindfulness-outcome-cs",
@@ -358,6 +468,17 @@
       "ValueSet-mindfulness-type-vs.html" : "Mindfulness Practice Types Value Set"
     },
     {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MobilityAlertLevelCS",
+      "title" : "Mobility Alert Level Code System",
+      "description" : "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns",
+      "uses" : {
+      },
+      "ValueSet-mobility-alert-level-vs.html" : "Mobility Alert Level Value Set"
+    },
+    {
       "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/nutrition-data-source-cs",
       "version" : "0.1.0",
       "status" : "draft",
@@ -367,6 +488,39 @@
       "uses" : {
       },
       "ValueSet-nutrition-data-source-vs.html" : "Nutrition Data Source Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/reproductive-activity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ReproductiveActivityCS",
+      "title" : "Reproductive Health Activities Code System",
+      "description" : "Code system for reproductive health monitoring activities",
+      "uses" : {
+      },
+      "ValueSet-reproductive-activity-vs.html" : "Reproductive Health Activities Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-frequency-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "SymptomFrequencyCS",
+      "title" : "Symptom Frequency Code System",
+      "description" : "Frequency patterns for symptoms",
+      "uses" : {
+      },
+      "ValueSet-symptom-frequency-vs.html" : "Symptom Frequency Value Set"
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-impact-cs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "SymptomImpactCS",
+      "title" : "Symptom Impact Code System",
+      "description" : "Impact levels of symptoms on daily activities",
+      "uses" : {
+      },
+      "ValueSet-symptom-impact-vs.html" : "Symptom Impact Value Set"
     },
     {
       "url" : "urn:ietf:bcp:47",

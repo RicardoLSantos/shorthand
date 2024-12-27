@@ -10,14 +10,15 @@
   fhir:id [ fhir:v "measurement-quality-vs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet measurement-quality-vs</b></p><a name=\"measurement-quality-vs\"> </a><a name=\"hcmeasurement-quality-vs\"> </a><a name=\"measurement-quality-vs-en-US\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/723510000\">723510000</a></td><td>High quality</td></tr><tr><td><a href=\"http://snomed.info/id/723511001\">723511001</a></td><td>Moderate quality</td></tr><tr><td><a href=\"http://snomed.info/id/723512008\">723512008</a></td><td>Low quality</td></tr><tr><td><a href=\"http://snomed.info/id/723513003\">723513003</a></td><td>Uncertain quality</td></tr></table></li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet measurement-quality-vs</b></p><a name=\"measurement-quality-vs\"> </a><a name=\"hcmeasurement-quality-vs\"> </a><a name=\"measurement-quality-vs-en-US\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-measurement-quality-cs.html\"><code>https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs</code></a></li></ul></div>"
   ] ; # 
   fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-quality-vs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MeasurementQualityVS"] ; # 
   fhir:title [ fhir:v "Measurement Quality Value Set"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-12-26T11:41:10+00:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-12-27T22:28:35+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -26,23 +27,10 @@
        fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "Quality indicators for Qualitative assessment of measurement quality"] ; # 
+  fhir:description [ fhir:v "Value set for measurement quality indicators"] ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-       fhir:concept ( [
-         fhir:code [ fhir:v "723510000" ] ;
-         fhir:display [ fhir:v "High quality" ]
-       ] [
-         fhir:code [ fhir:v "723511001" ] ;
-         fhir:display [ fhir:v "Moderate quality" ]
-       ] [
-         fhir:code [ fhir:v "723512008" ] ;
-         fhir:display [ fhir:v "Low quality" ]
-       ] [
-         fhir:code [ fhir:v "723513003" ] ;
-         fhir:display [ fhir:v "Uncertain quality" ]
-       ] )
+       fhir:system [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs"^^xsd:anyURI ]
      ] )
   ] . # 
 

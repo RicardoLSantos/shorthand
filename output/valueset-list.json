@@ -1,6 +1,46 @@
 {
   "codeSystems" : [
     {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/advanced-vital-signs-context-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "AdvancedVitalSignsContextVS",
+      "title" : "Advanced Vital Signs Context Value Set",
+      "description" : "Context codes for advanced vital sign measurements",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/advanced-vital-signs-context-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/body-locations-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "BodyLocationsVS",
+      "title" : "Body Locations Value Set",
+      "description" : "Anatomical locations for symptom recording",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/circadian-phase-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "CircadianPhaseVS",
+      "title" : "Circadian Phase Value Set",
+      "description" : "Value set for circadian rhythm phases",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/duration-units-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "DurationUnitsVS",
+      "title" : "Duration Units Value Set",
+      "description" : "Time units for symptom duration",
+      "systems" : ["http://unitsofmeasure.org"]
+    },
+    {
       "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/environment-type-vs",
       "version" : "0.1.0",
       "status" : "draft",
@@ -9,6 +49,39 @@
       "description" : "Value set of practice environment types",
       "systems" : [
         "https://github.com/RicardoLSantos/shorthand/CodeSystem/environment-type-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/environmental-context-vs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "EnvironmentalContextVS",
+      "title" : "Environmental Context Value Set",
+      "description" : "Valid contexts for environmental measurements",
+      "systems" : [
+        "http://example.org/fhir/CodeSystem/environmental-context-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/exposure-conditions-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "ExposureConditionsVS",
+      "title" : "Exposure Conditions Value Set",
+      "description" : "Value set for environmental exposure conditions",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-conditions-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/exposure-location-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "ExposureLocationVS",
+      "title" : "Exposure Location Value Set",
+      "description" : "Value set for environmental exposure locations",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-location-cs"
       ]
     },
     {
@@ -53,8 +126,10 @@
       "status" : "draft",
       "name" : "MeasurementQualityVS",
       "title" : "Measurement Quality Value Set",
-      "description" : "Quality indicators for Qualitative assessment of measurement quality",
-      "systems" : ["http://snomed.info/sct"]
+      "description" : "Value set for measurement quality indicators",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs"
+      ]
     },
     {
       "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mindfulness-outcome-vs",
@@ -92,6 +167,17 @@
       ]
     },
     {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mobility-alert-level-vs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MobilityAlertLevelVS",
+      "title" : "Mobility Alert Level Value Set",
+      "description" : "Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs"
+      ]
+    },
+    {
       "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mood-vs",
       "version" : "0.1.0",
       "status" : "draft",
@@ -121,6 +207,26 @@
       "systems" : ["http://snomed.info/sct"]
     },
     {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/reproductive-activity-vs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ReproductiveActivityVS",
+      "title" : "Reproductive Health Activities Value Set",
+      "description" : "Activities related to reproductive health monitoring",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/reproductive-activity-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/reproductive-goal-vs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ReproductiveGoalVS",
+      "title" : "Reproductive Health Goals Value Set",
+      "description" : "Goals related to reproductive health tracking and planning",
+      "systems" : ["http://loinc.org", "http://snomed.info/sct"]
+    },
+    {
       "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/sleep-quality-extended-vs",
       "version" : "0.1.0",
       "status" : "draft",
@@ -136,6 +242,46 @@
       "name" : "SleepQualityVS",
       "title" : "Sleep Quality Value Set",
       "description" : "Qualitative assessments of sleep quality including subjective measures",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/symptom-frequency-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "SymptomFrequencyVS",
+      "title" : "Symptom Frequency Value Set",
+      "description" : "Frequency patterns for symptoms",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-frequency-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/symptom-impact-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "SymptomImpactVS",
+      "title" : "Symptom Impact Value Set",
+      "description" : "Impact levels for symptoms",
+      "systems" : [
+        "https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-impact-cs"
+      ]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/symptom-progression-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "SymptomProgressionVS",
+      "title" : "Symptom Progression Value Set",
+      "description" : "Progression patterns for symptoms",
+      "systems" : ["http://snomed.info/sct"]
+    },
+    {
+      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/time-of-day-vs",
+      "version" : "0.1.0",
+      "status" : "draft",
+      "name" : "TimeOfDayVS",
+      "title" : "Time of Day Value Set",
+      "description" : "Times of day for symptom occurrence",
       "systems" : ["http://snomed.info/sct"]
     }
   ]

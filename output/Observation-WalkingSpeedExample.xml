@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="WalkingSpeedExample"/>
+  <meta>
+    <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-speed-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation WalkingSpeedExample</b></p><a name="WalkingSpeedExample"> </a><a name="hcWalkingSpeedExample"> </a><a name="WalkingSpeedExample-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category activity}">Activity</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org LA29042-4}">Walking speed</span></p><p><b>subject</b>: <a href="Patient/example">Patient/example</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>value</b>: 1.2 meters per second<span style="background: LightGoldenRodYellow"> (Details: UCUM  codem/s = 'm/s')</span></p><p><b>device</b>: <a href="Device/iphone-example">Device/iphone-example</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org LA29042-4}">Walking speed measurement</span></p><p><b>value</b>: 1.2 meters per second<span style="background: LightGoldenRodYellow"> (Details: UCUM  codem/s = 'm/s')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org LA29043-2}">Walking distance</span></p><p><b>value</b>: 10 meters<span style="background: LightGoldenRodYellow"> (Details: UCUM  codem = 'm')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="activity"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LA29042-4"/>
+      <display value="Walking speed"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T15:30:00Z"/>
+  <valueQuantity>
+    <value value="1.2"/>
+    <unit value="meters per second"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="m/s"/>
+  </valueQuantity>
+  <device>
+    <reference value="Device/iphone-example"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="LA29042-4"/>
+        <display value="Walking speed measurement"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="1.2"/>
+      <unit value="meters per second"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="m/s"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="LA29043-2"/>
+        <display value="Walking distance"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="10"/>
+      <unit value="meters"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="m"/>
+    </valueQuantity>
+  </component>
+</Observation>

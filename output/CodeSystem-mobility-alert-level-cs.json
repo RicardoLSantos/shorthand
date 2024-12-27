@@ -1,0 +1,52 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "mobility-alert-level-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mobility-alert-level-cs</b></p><a name=\"mobility-alert-level-cs\"> </a><a name=\"hcmobility-alert-level-cs\"> </a><a name=\"mobility-alert-level-cs-en-US\"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>status</td><td>status</td><td>code</td><td>The status of the alert level</td></tr><tr><td>severity</td><td>severity</td><td>integer</td><td>Numeric value indicating severity (1=low, 3=high)</td></tr></table><p><b>Concepts</b></p><p>This case-sensitive code system <code>https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">green<a name=\"mobility-alert-level-cs-green\"> </a></td><td>Normal - No concern</td><td>Mobility measurements are within normal range and show no concerning patterns</td></tr><tr><td style=\"white-space:nowrap\">yellow<a name=\"mobility-alert-level-cs-yellow\"> </a></td><td>Caution - Monitor closely</td><td>Mobility measurements show slight deviations that warrant closer monitoring</td></tr><tr><td style=\"white-space:nowrap\">red<a name=\"mobility-alert-level-cs-red\"> </a></td><td>Alert - Significant change</td><td>Mobility measurements indicate significant changes that require immediate attention</td></tr></table></div>"
+  },
+  "url" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs",
+  "version" : "0.1.0",
+  "name" : "MobilityAlertLevelCS",
+  "title" : "Mobility Alert Level Code System",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-12-27T22:28:35+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns",
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "property" : [{
+    "code" : "status",
+    "description" : "The status of the alert level",
+    "type" : "code"
+  },
+  {
+    "code" : "severity",
+    "description" : "Numeric value indicating severity (1=low, 3=high)",
+    "type" : "integer"
+  }],
+  "concept" : [{
+    "code" : "green",
+    "display" : "Normal - No concern",
+    "definition" : "Mobility measurements are within normal range and show no concerning patterns"
+  },
+  {
+    "code" : "yellow",
+    "display" : "Caution - Monitor closely",
+    "definition" : "Mobility measurements show slight deviations that warrant closer monitoring"
+  },
+  {
+    "code" : "red",
+    "display" : "Alert - Significant change",
+    "definition" : "Mobility measurements indicate significant changes that require immediate attention"
+  }]
+}

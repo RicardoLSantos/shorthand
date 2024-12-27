@@ -1,0 +1,105 @@
+{
+  "resourceType" : "Observation",
+  "id" : "UVExposureExample",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation"],
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+      "code" : "N"
+    }]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation UVExposureExample</b></p><a name=\"UVExposureExample\"> </a><a name=\"hcUVExposureExample\"> </a><a name=\"UVExposureExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category environment}\">environment</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 28574-5}\">UV exposure</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 12:00:00+0000</p><p><b>note</b>: Measurement taken during outdoor activity</p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 37016008}\">Automatic measurement</span></p><p><b>device</b>: <a href=\"Device/iphone-example\">Device/iphone-example</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89022-8}\">UV index</span></p><p><b>value</b>: 8 {index}<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{index} = '{index}')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">High</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89023-6}\">UV exposure duration</span></p><p><b>value</b>: 45 min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89026-9}\">Time of exposure</span></p><p><b>value</b>: 2024-03-19 12:00:00+0000</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89027-7}\">UV intensity</span></p><p><b>value</b>: 0.3 W/m2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeW/m2 = 'W/m2')</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "environment"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "28574-5",
+      "display" : "UV exposure"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "effectiveDateTime" : "2024-03-19T12:00:00Z",
+  "note" : [{
+    "text" : "Measurement taken during outdoor activity"
+  }],
+  "method" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "37016008",
+      "display" : "Automatic measurement"
+    }]
+  },
+  "device" : {
+    "reference" : "Device/iphone-example"
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89022-8",
+        "display" : "UV index"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 8,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "{index}"
+    },
+    "interpretation" : [{
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+        "code" : "H",
+        "display" : "High"
+      }]
+    }]
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89023-6",
+        "display" : "UV exposure duration"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 45,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "min"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89026-9",
+        "display" : "Time of exposure"
+      }]
+    },
+    "valueDateTime" : "2024-03-19T12:00:00Z"
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89027-7",
+        "display" : "UV intensity"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 0.3,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "W/m2"
+    }
+  }]
+}

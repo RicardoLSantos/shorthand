@@ -1,0 +1,61 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "circadian-phase-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem circadian-phase-cs</b></p><a name=\"circadian-phase-cs\"> </a><a name=\"hccircadian-phase-cs\"> </a><a name=\"circadian-phase-cs-en-US\"> </a><p>This case-sensitive code system <code>https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">early-morning<a name=\"circadian-phase-cs-early-morning\"> </a></td><td>Early Morning Phase</td><td>Period shortly after awakening</td></tr><tr><td style=\"white-space:nowrap\">mid-morning<a name=\"circadian-phase-cs-mid-morning\"> </a></td><td>Mid Morning Phase</td><td>Mid-morning period</td></tr><tr><td style=\"white-space:nowrap\">afternoon<a name=\"circadian-phase-cs-afternoon\"> </a></td><td>Afternoon Phase</td><td>Afternoon period</td></tr><tr><td style=\"white-space:nowrap\">evening<a name=\"circadian-phase-cs-evening\"> </a></td><td>Evening Phase</td><td>Evening period</td></tr><tr><td style=\"white-space:nowrap\">night<a name=\"circadian-phase-cs-night\"> </a></td><td>Night Phase</td><td>Nighttime period</td></tr><tr><td style=\"white-space:nowrap\">deep-night<a name=\"circadian-phase-cs-deep-night\"> </a></td><td>Deep Night Phase</td><td>Deep night period</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CircadianPhaseCS"] ; # 
+  fhir:title [ fhir:v "Circadian Phase Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-12-27T22:28:35+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Code system for circadian rhythm phases"] ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "early-morning" ] ;
+     fhir:display [ fhir:v "Early Morning Phase" ] ;
+     fhir:definition [ fhir:v "Period shortly after awakening" ]
+  ] [
+     fhir:code [ fhir:v "mid-morning" ] ;
+     fhir:display [ fhir:v "Mid Morning Phase" ] ;
+     fhir:definition [ fhir:v "Mid-morning period" ]
+  ] [
+     fhir:code [ fhir:v "afternoon" ] ;
+     fhir:display [ fhir:v "Afternoon Phase" ] ;
+     fhir:definition [ fhir:v "Afternoon period" ]
+  ] [
+     fhir:code [ fhir:v "evening" ] ;
+     fhir:display [ fhir:v "Evening Phase" ] ;
+     fhir:definition [ fhir:v "Evening period" ]
+  ] [
+     fhir:code [ fhir:v "night" ] ;
+     fhir:display [ fhir:v "Night Phase" ] ;
+     fhir:definition [ fhir:v "Nighttime period" ]
+  ] [
+     fhir:code [ fhir:v "deep-night" ] ;
+     fhir:display [ fhir:v "Deep Night Phase" ] ;
+     fhir:definition [ fhir:v "Deep night period" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,44 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "time-of-day-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet time-of-day-vs</b></p><a name=\"time-of-day-vs\"> </a><a name=\"hctime-of-day-vs\"> </a><a name=\"time-of-day-vs-en-US\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/73775008\">73775008</a></td><td>Morning</td></tr><tr><td><a href=\"http://snomed.info/id/255253008\">255253008</a></td><td>Afternoon</td></tr><tr><td><a href=\"http://snomed.info/id/2546009\">2546009</a></td><td>Evening</td></tr><tr><td><a href=\"http://snomed.info/id/73768005\">73768005</a></td><td>Night</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/time-of-day-vs",
+  "version" : "0.1.0",
+  "name" : "TimeOfDayVS",
+  "title" : "Time of Day Value Set",
+  "status" : "draft",
+  "date" : "2024-12-27T22:28:35+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "Times of day for symptom occurrence",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "73775008",
+        "display" : "Morning"
+      },
+      {
+        "code" : "255253008",
+        "display" : "Afternoon"
+      },
+      {
+        "code" : "2546009",
+        "display" : "Evening"
+      },
+      {
+        "code" : "73768005",
+        "display" : "Night"
+      }]
+    }]
+  }
+}

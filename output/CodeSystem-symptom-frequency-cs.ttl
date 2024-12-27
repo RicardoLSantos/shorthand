@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-frequency-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "symptom-frequency-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem symptom-frequency-cs</b></p><a name=\"symptom-frequency-cs\"> </a><a name=\"hcsymptom-frequency-cs\"> </a><a name=\"symptom-frequency-cs-en-US\"> </a><p>This  code system <code>https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-frequency-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">rare<a name=\"symptom-frequency-cs-rare\"> </a></td><td>Rare</td><td>Less than once per month</td></tr><tr><td style=\"white-space:nowrap\">occasional<a name=\"symptom-frequency-cs-occasional\"> </a></td><td>Occasional</td><td>Several times per month</td></tr><tr><td style=\"white-space:nowrap\">frequent<a name=\"symptom-frequency-cs-frequent\"> </a></td><td>Frequent</td><td>Several times per week</td></tr><tr><td style=\"white-space:nowrap\">daily<a name=\"symptom-frequency-cs-daily\"> </a></td><td>Daily</td><td>Once or more per day</td></tr><tr><td style=\"white-space:nowrap\">constant<a name=\"symptom-frequency-cs-constant\"> </a></td><td>Constant</td><td>Present most of the time</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-frequency-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "SymptomFrequencyCS"] ; # 
+  fhir:title [ fhir:v "Symptom Frequency Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-12-27T22:28:35+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Frequency patterns for symptoms"] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "rare" ] ;
+     fhir:display [ fhir:v "Rare" ] ;
+     fhir:definition [ fhir:v "Less than once per month" ]
+  ] [
+     fhir:code [ fhir:v "occasional" ] ;
+     fhir:display [ fhir:v "Occasional" ] ;
+     fhir:definition [ fhir:v "Several times per month" ]
+  ] [
+     fhir:code [ fhir:v "frequent" ] ;
+     fhir:display [ fhir:v "Frequent" ] ;
+     fhir:definition [ fhir:v "Several times per week" ]
+  ] [
+     fhir:code [ fhir:v "daily" ] ;
+     fhir:display [ fhir:v "Daily" ] ;
+     fhir:definition [ fhir:v "Once or more per day" ]
+  ] [
+     fhir:code [ fhir:v "constant" ] ;
+     fhir:display [ fhir:v "Constant" ] ;
+     fhir:definition [ fhir:v "Present most of the time" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,127 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/UVExposureExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "UVExposureExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation>
+     ] ) ;
+     fhir:security ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "N" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation UVExposureExample</b></p><a name=\"UVExposureExample\"> </a><a name=\"hcUVExposureExample\"> </a><a name=\"UVExposureExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category environment}\">environment</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 28574-5}\">UV exposure</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 12:00:00+0000</p><p><b>note</b>: Measurement taken during outdoor activity</p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 37016008}\">Automatic measurement</span></p><p><b>device</b>: <a href=\"Device/iphone-example\">Device/iphone-example</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89022-8}\">UV index</span></p><p><b>value</b>: 8 {index}<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{index} = '{index}')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">High</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89023-6}\">UV exposure duration</span></p><p><b>value</b>: 45 min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89026-9}\">Time of exposure</span></p><p><b>value</b>: 2024-03-19 12:00:00+0000</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89027-7}\">UV intensity</span></p><p><b>value</b>: 0.3 W/m2<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeW/m2 = 'W/m2')</span></p></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "environment" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:28574-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "28574-5" ] ;
+       fhir:display [ fhir:v "UV exposure" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2024-03-19T12:00:00Z"^^xsd:dateTime] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Measurement taken during outdoor activity" ]
+  ] ) ; # 
+  fhir:method [
+     fhir:coding ( [
+       a sct:37016008 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "37016008" ] ;
+       fhir:display [ fhir:v "Automatic measurement" ]
+     ] )
+  ] ; # 
+  fhir:device [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Device/iphone-example> ;
+     fhir:reference [ fhir:v "Device/iphone-example" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89022-8 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89022-8" ] ;
+         fhir:display [ fhir:v "UV index" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "8"^^xsd:decimal ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "{index}" ]
+     ] ;
+     fhir:interpretation ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "H" ] ;
+         fhir:display [ fhir:v "High" ]
+       ] )
+     ] )
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89023-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89023-6" ] ;
+         fhir:display [ fhir:v "UV exposure duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "45"^^xsd:decimal ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89026-9 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89026-9" ] ;
+         fhir:display [ fhir:v "Time of exposure" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "2024-03-19T12:00:00Z"^^xsd:dateTime ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89027-7 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89027-7" ] ;
+         fhir:display [ fhir:v "UV intensity" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "0.3"^^xsd:decimal ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "W/m2" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

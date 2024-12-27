@@ -3,14 +3,15 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="measurement-quality-vs"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet measurement-quality-vs</b></p><a name="measurement-quality-vs"> </a><a name="hcmeasurement-quality-vs"> </a><a name="measurement-quality-vs-en-US"> </a><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://snomed.info/id/723510000">723510000</a></td><td>High quality</td></tr><tr><td><a href="http://snomed.info/id/723511001">723511001</a></td><td>Moderate quality</td></tr><tr><td><a href="http://snomed.info/id/723512008">723512008</a></td><td>Low quality</td></tr><tr><td><a href="http://snomed.info/id/723513003">723513003</a></td><td>Uncertain quality</td></tr></table></li></ul></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet measurement-quality-vs</b></p><a name="measurement-quality-vs"> </a><a name="hcmeasurement-quality-vs"> </a><a name="measurement-quality-vs-en-US"> </a><ul><li>Include all codes defined in <a href="CodeSystem-measurement-quality-cs.html"><code>https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs</code></a></li></ul></div>
   </text>
   <url value="https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-quality-vs"/>
   <version value="0.1.0"/>
   <name value="MeasurementQualityVS"/>
   <title value="Measurement Quality Value Set"/>
   <status value="draft"/>
-  <date value="2024-12-26T11:41:10+00:00"/>
+  <experimental value="true"/>
+  <date value="2024-12-27T22:28:35+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -19,26 +20,10 @@
       <value value="https://linktr.ee/ricardolsantos"/>
     </telecom>
   </contact>
-  <description value="Quality indicators for Qualitative assessment of measurement quality"/>
+  <description value="Value set for measurement quality indicators"/>
   <compose>
     <include>
-      <system value="http://snomed.info/sct"/>
-      <concept>
-        <code value="723510000"/>
-        <display value="High quality"/>
-      </concept>
-      <concept>
-        <code value="723511001"/>
-        <display value="Moderate quality"/>
-      </concept>
-      <concept>
-        <code value="723512008"/>
-        <display value="Low quality"/>
-      </concept>
-      <concept>
-        <code value="723513003"/>
-        <display value="Uncertain quality"/>
-      </concept>
+      <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs"/>
     </include>
   </compose>
 </ValueSet>

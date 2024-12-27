@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/ValueSet/duration-units-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "duration-units-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet duration-units-vs</b></p><a name=\"duration-units-vs\"> </a><a name=\"hcduration-units-vs\"> </a><a name=\"duration-units-vs-en-US\"> </a><ul><li>Include these codes as defined in <a href=\"http://unitsofmeasure.org\"><code>http://unitsofmeasure.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>min</td><td>Minutes</td></tr><tr><td>h</td><td>Hours</td></tr><tr><td>d</td><td>Days</td></tr><tr><td>wk</td><td>Weeks</td></tr><tr><td>mo</td><td>Months</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/ValueSet/duration-units-vs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "DurationUnitsVS"] ; # 
+  fhir:title [ fhir:v "Duration Units Value Set"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-12-27T22:28:35+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Time units for symptom duration"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "min" ] ;
+         fhir:display [ fhir:v "Minutes" ]
+       ] [
+         fhir:code [ fhir:v "h" ] ;
+         fhir:display [ fhir:v "Hours" ]
+       ] [
+         fhir:code [ fhir:v "d" ] ;
+         fhir:display [ fhir:v "Days" ]
+       ] [
+         fhir:code [ fhir:v "wk" ] ;
+         fhir:display [ fhir:v "Weeks" ]
+       ] [
+         fhir:code [ fhir:v "mo" ] ;
+         fhir:display [ fhir:v "Months" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -10,7 +10,7 @@
   "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP",
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "draft",
-  "date" : "2024-12-26T11:41:10+00:00",
+  "date" : "2024-12-27T22:28:35+00:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -611,6 +611,54 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/advanced-vital-signs-context-cs"
+      },
+      "name" : "Advanced Vital Signs Context Code System",
+      "description" : "Codes for advanced vital signs measurement context",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/advanced-vital-signs-context"
+      },
+      "name" : "Advanced Vital Signs Context Extension",
+      "description" : "Additional context about advanced vital sign measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/advanced-vital-signs-context-vs"
+      },
+      "name" : "Advanced Vital Signs Context Value Set",
+      "description" : "Context codes for advanced vital sign measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/advanced-vital-signs"
+      },
+      "name" : "Advanced Vital Signs Profile",
+      "description" : "Profile for advanced vital signs data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -630,6 +678,18 @@
       },
       "name" : "Alert Timing Extension",
       "description" : "Defines when alerts should be triggered",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/allostatic-load"
+      },
+      "name" : "Allostatic Load Extension",
+      "description" : "Measure of cumulative physiological burden over time",
       "exampleBoolean" : false
     },
     {
@@ -764,6 +824,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/body-locations-vs"
+      },
+      "name" : "Body Locations Value Set",
+      "description" : "Anatomical locations for symptom recording",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -783,6 +855,53 @@
       },
       "name" : "Calorie Intake Observation Profile",
       "description" : "Profile for caloric intake measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/ChronicSymptomExample"
+      },
+      "name" : "Chronic Symptom Example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/circadian-phase-cs"
+      },
+      "name" : "Circadian Phase Code System",
+      "description" : "Code system for circadian rhythm phases",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/circadian-phase"
+      },
+      "name" : "Circadian Phase Extension",
+      "description" : "Indicator of position in circadian rhythm cycle",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/circadian-phase-vs"
+      },
+      "name" : "Circadian Phase Value Set",
+      "description" : "Value set for circadian rhythm phases",
       "exampleBoolean" : false
     },
     {
@@ -892,6 +1011,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/duration-units-vs"
+      },
+      "name" : "Duration Units Value Set",
+      "description" : "Time units for symptom duration",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MessageDefinition"
       }],
       "reference" : {
@@ -912,6 +1043,54 @@
       "name" : "End Session Operation",
       "description" : "Operation to end an ongoing mindfulness session",
       "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/environmental-context"
+      },
+      "name" : "Environmental Context Extension",
+      "description" : "Additional context about environmental measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/environmental-context-vs"
+      },
+      "name" : "Environmental Context Value Set",
+      "description" : "Valid contexts for environmental measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/EnvironmentalDeviceExample"
+      },
+      "name" : "Environmental Monitoring Device",
+      "description" : "Example of iOS device used for environmental monitoring",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/environmental-observation"
+      },
+      "name" : "Environmental Observation Profile",
+      "description" : "Base profile for environmental measurements from iOS Health App",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -987,6 +1166,124 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/ExampleReproductiveActivity"
+      },
+      "name" : "Example Reproductive Activity",
+      "description" : "Example showing use of reproductive activity value set",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleSymptomSeverity"
+      },
+      "name" : "Example Symptom Severity",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/exposure-conditions-cs"
+      },
+      "name" : "Exposure Conditions Code System",
+      "description" : "Code system for conditions during environmental exposure",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/exposure-conditions"
+      },
+      "name" : "Exposure Conditions Extension",
+      "description" : "Additional conditions during environmental exposure measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/exposure-conditions-vs"
+      },
+      "name" : "Exposure Conditions Value Set",
+      "description" : "Value set for environmental exposure conditions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/exposure-location-cs"
+      },
+      "name" : "Exposure Location Code System",
+      "description" : "Code system for environmental exposure locations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/exposure-location"
+      },
+      "name" : "Exposure Location Extension",
+      "description" : "Extension for recording location of environmental exposure measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/exposure-location-vs"
+      },
+      "name" : "Exposure Location Value Set",
+      "description" : "Value set for environmental exposure locations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/fertility-observation"
+      },
+      "name" : "Fertility Observation Profile",
+      "description" : "Profile for fertility signs and symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/FertilitySignsExample"
+      },
+      "name" : "Fertility Signs Example",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
       }],
       "reference" : {
@@ -1051,6 +1348,18 @@
       },
       "name" : "Height Measurement Profile",
       "description" : "Profile for body height measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/homeostasis-index"
+      },
+      "name" : "Homeostasis Index Extension",
+      "description" : "Composite measure of physiological balance and adaptation",
       "exampleBoolean" : false
     },
     {
@@ -1163,13 +1472,25 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/measurement-quality-cs"
+      },
+      "name" : "Measurement Quality Code System",
+      "description" : "Code system for measurement quality indicators",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
         "reference" : "StructureDefinition/measurement-quality"
       },
       "name" : "Measurement Quality Extension",
-      "description" : "Indicates the quality and reliability of the measurement",
+      "description" : "Indicator of the quality and reliability of the measurement",
       "exampleBoolean" : false
     },
     {
@@ -1181,7 +1502,7 @@
         "reference" : "ValueSet/measurement-quality-vs"
       },
       "name" : "Measurement Quality Value Set",
-      "description" : "Quality indicators for Qualitative assessment of measurement quality",
+      "description" : "Value set for measurement quality indicators",
       "exampleBoolean" : false
     },
     {
@@ -1544,6 +1865,66 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mobility-alert-level-cs"
+      },
+      "name" : "Mobility Alert Level Code System",
+      "description" : "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mobility-alert-level"
+      },
+      "name" : "Mobility Alert Level Extension",
+      "description" : "Extension for mobility measurements alert levels to indicate the severity or concern level of mobility changes detected by the device",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mobility-alert-level-vs"
+      },
+      "name" : "Mobility Alert Level Value Set",
+      "description" : "Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mobility-profile"
+      },
+      "name" : "Mobility Profile",
+      "description" : "Profile for mobility data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mobility-risk-assessment"
+      },
+      "name" : "Mobility Risk Assessment Profile",
+      "description" : "Profile for assessing mobility-related risks",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -1551,6 +1932,30 @@
       },
       "name" : "Mood Value Set",
       "description" : "Codes representing different mood states",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/NoiseExposureExample"
+      },
+      "name" : "Noise Exposure Measurement Example",
+      "description" : "Example of noise exposure measurement from iOS Health App",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/noise-exposure-observation"
+      },
+      "name" : "Noise Exposure Observation Profile",
+      "description" : "Profile for noise exposure measurements from iOS Health App",
       "exampleBoolean" : false
     },
     {
@@ -1640,6 +2045,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/physiological-stress-index"
+      },
+      "name" : "Physiological Stress Index Extension",
+      "description" : "Index representing overall physiological stress based on multiple parameters",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -1659,6 +2076,78 @@
       },
       "name" : "Practice Environment Types Value Set",
       "description" : "Value set of practice environment types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/recovery-efficiency"
+      },
+      "name" : "Recovery Efficiency Extension",
+      "description" : "Measure of how efficiently the body recovers from stress or exertion",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/reproductive-activity-cs"
+      },
+      "name" : "Reproductive Health Activities Code System",
+      "description" : "Code system for reproductive health monitoring activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/reproductive-activity-vs"
+      },
+      "name" : "Reproductive Health Activities Value Set",
+      "description" : "Activities related to reproductive health monitoring",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/reproductive-observation"
+      },
+      "name" : "Reproductive Health Base Profile",
+      "description" : "Base profile for reproductive health observations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/reproductive-goal-vs"
+      },
+      "name" : "Reproductive Health Goals Value Set",
+      "description" : "Goals related to reproductive health tracking and planning",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/ReproductiveHealthQuestionnaire"
+      },
+      "name" : "Reproductive Health Tracking Questionnaire",
+      "description" : "Daily questionnaire for reproductive health tracking",
       "exampleBoolean" : false
     },
     {
@@ -1796,6 +2285,174 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/symptom-questionnaire"
+      },
+      "name" : "Symptom Assessment Questionnaire",
+      "description" : "Questionnaire template for symptom assessments",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/symptom-frequency-cs"
+      },
+      "name" : "Symptom Frequency Code System",
+      "description" : "Frequency patterns for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/symptom-frequency-vs"
+      },
+      "name" : "Symptom Frequency Value Set",
+      "description" : "Frequency patterns for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/symptom-impact-cs"
+      },
+      "name" : "Symptom Impact Code System",
+      "description" : "Impact levels of symptoms on daily activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/symptom-impact-vs"
+      },
+      "name" : "Symptom Impact Value Set",
+      "description" : "Impact levels for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/symptom-progression-vs"
+      },
+      "name" : "Symptom Progression Value Set",
+      "description" : "Progression patterns for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/symptom-severity-cs"
+      },
+      "name" : "Symptom Severity Code System",
+      "description" : "Severity levels for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/time-of-day-vs"
+      },
+      "name" : "Time of Day Value Set",
+      "description" : "Times of day for symptom occurrence",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/UVExposureExample"
+      },
+      "name" : "UV Exposure Measurement Example",
+      "description" : "Example of UV exposure measurement from iOS Health App",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/uv-exposure-observation"
+      },
+      "name" : "UV Exposure Observation Profile",
+      "description" : "Profile for UV exposure measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WalkingSpeedExample"
+      },
+      "name" : "Walking Speed Measurement Example",
+      "description" : "Example of walking speed measurement from iPhone Motion Sensors",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-speed-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/walking-speed-observation"
+      },
+      "name" : "Walking Speed Observation Profile",
+      "description" : "Profile for walking speed measurements from iPhone Motion Sensors",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WalkingSteadinessExample"
+      },
+      "name" : "Walking Steadiness Measurement Example",
+      "description" : "Example of walking steadiness measurement from iPhone Motion Sensors",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/walking-steadiness-observation"
+      },
+      "name" : "Walking Steadiness Observation Profile",
+      "description" : "Profile for walking steadiness measurements from iPhone Motion Sensors",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/water-intake-observation"
       },
       "name" : "Water Intake Observation Profile",
@@ -1869,10 +2526,28 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "advanced_vitalsigns.html"
+        }],
+        "nameUrl" : "advanced_vitalsigns.html",
+        "title" : "Advanced Vitalsigns",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "bodymetrics.html"
         }],
         "nameUrl" : "bodymetrics.html",
         "title" : "Bodymetrics",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "environmental.html"
+        }],
+        "nameUrl" : "environmental.html",
+        "title" : "Environmental",
         "generation" : "markdown"
       },
       {
@@ -1896,6 +2571,15 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mobility.html"
+        }],
+        "nameUrl" : "mobility.html",
+        "title" : "Mobility",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "nutrition.html"
         }],
         "nameUrl" : "nutrition.html",
@@ -1914,10 +2598,28 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "reproductive.html"
+        }],
+        "nameUrl" : "reproductive.html",
+        "title" : "Reproductive",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "sleep.html"
         }],
         "nameUrl" : "sleep.html",
         "title" : "Sleep",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "symptoms.html"
+        }],
+        "nameUrl" : "symptoms.html",
+        "title" : "Symptoms",
         "generation" : "markdown"
       },
       {

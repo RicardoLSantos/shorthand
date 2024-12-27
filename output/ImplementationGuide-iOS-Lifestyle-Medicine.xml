@@ -10,7 +10,7 @@
   <name value="iOS_Lifestyle_Medicine_HEADS2_FMUP"/>
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="draft"/>
-  <date value="2024-12-26T11:41:10+00:00"/>
+  <date value="2024-12-27T22:28:35+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -454,6 +454,50 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/advanced-vital-signs-context-cs"/>
+      </reference>
+      <name value="Advanced Vital Signs Context Code System"/>
+      <description value="Codes for advanced vital signs measurement context"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/advanced-vital-signs-context"/>
+      </reference>
+      <name value="Advanced Vital Signs Context Extension"/>
+      <description value="Additional context about advanced vital sign measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/advanced-vital-signs-context-vs"/>
+      </reference>
+      <name value="Advanced Vital Signs Context Value Set"/>
+      <description value="Context codes for advanced vital sign measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/advanced-vital-signs"/>
+      </reference>
+      <name value="Advanced Vital Signs Profile"/>
+      <description value="Profile for advanced vital signs data from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -472,6 +516,17 @@
       </reference>
       <name value="Alert Timing Extension"/>
       <description value="Defines when alerts should be triggered"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/allostatic-load"/>
+      </reference>
+      <name value="Allostatic Load Extension"/>
+      <description value="Measure of cumulative physiological burden over time"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -594,6 +649,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/body-locations-vs"/>
+      </reference>
+      <name value="Body Locations Value Set"/>
+      <description value="Anatomical locations for symptom recording"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -612,6 +678,49 @@
       </reference>
       <name value="Calorie Intake Observation Profile"/>
       <description value="Profile for caloric intake measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ChronicSymptomExample"/>
+      </reference>
+      <name value="Chronic Symptom Example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/circadian-phase-cs"/>
+      </reference>
+      <name value="Circadian Phase Code System"/>
+      <description value="Code system for circadian rhythm phases"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/circadian-phase"/>
+      </reference>
+      <name value="Circadian Phase Extension"/>
+      <description value="Indicator of position in circadian rhythm cycle"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/circadian-phase-vs"/>
+      </reference>
+      <name value="Circadian Phase Value Set"/>
+      <description value="Value set for circadian rhythm phases"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -711,6 +820,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/duration-units-vs"/>
+      </reference>
+      <name value="Duration Units Value Set"/>
+      <description value="Time units for symptom duration"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="MessageDefinition"/>
       </extension>
       <reference>
@@ -730,6 +850,50 @@
       <name value="End Session Operation"/>
       <description value="Operation to end an ongoing mindfulness session"/>
       <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/environmental-context"/>
+      </reference>
+      <name value="Environmental Context Extension"/>
+      <description value="Additional context about environmental measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/environmental-context-vs"/>
+      </reference>
+      <name value="Environmental Context Value Set"/>
+      <description value="Valid contexts for environmental measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/EnvironmentalDeviceExample"/>
+      </reference>
+      <name value="Environmental Monitoring Device"/>
+      <description value="Example of iOS device used for environmental monitoring"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/environmental-observation"/>
+      </reference>
+      <name value="Environmental Observation Profile"/>
+      <description value="Base profile for environmental measurements from iOS Health App"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -798,6 +962,114 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CarePlan"/>
+      </extension>
+      <reference>
+        <reference value="CarePlan/ExampleReproductiveActivity"/>
+      </reference>
+      <name value="Example Reproductive Activity"/>
+      <description value="Example showing use of reproductive activity value set"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ExampleSymptomSeverity"/>
+      </reference>
+      <name value="Example Symptom Severity"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/exposure-conditions-cs"/>
+      </reference>
+      <name value="Exposure Conditions Code System"/>
+      <description value="Code system for conditions during environmental exposure"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/exposure-conditions"/>
+      </reference>
+      <name value="Exposure Conditions Extension"/>
+      <description value="Additional conditions during environmental exposure measurement"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/exposure-conditions-vs"/>
+      </reference>
+      <name value="Exposure Conditions Value Set"/>
+      <description value="Value set for environmental exposure conditions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/exposure-location-cs"/>
+      </reference>
+      <name value="Exposure Location Code System"/>
+      <description value="Code system for environmental exposure locations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/exposure-location"/>
+      </reference>
+      <name value="Exposure Location Extension"/>
+      <description value="Extension for recording location of environmental exposure measurement"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/exposure-location-vs"/>
+      </reference>
+      <name value="Exposure Location Value Set"/>
+      <description value="Value set for environmental exposure locations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/fertility-observation"/>
+      </reference>
+      <name value="Fertility Observation Profile"/>
+      <description value="Profile for fertility signs and symptoms"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/FertilitySignsExample"/>
+      </reference>
+      <name value="Fertility Signs Example"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureMap"/>
       </extension>
       <reference>
@@ -857,6 +1129,17 @@
       </reference>
       <name value="Height Measurement Profile"/>
       <description value="Profile for body height measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/homeostasis-index"/>
+      </reference>
+      <name value="Homeostasis Index Extension"/>
+      <description value="Composite measure of physiological balance and adaptation"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -959,13 +1242,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/measurement-quality-cs"/>
+      </reference>
+      <name value="Measurement Quality Code System"/>
+      <description value="Code system for measurement quality indicators"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/measurement-quality"/>
       </reference>
       <name value="Measurement Quality Extension"/>
-      <description value="Indicates the quality and reliability of the measurement"/>
+      <description value="Indicator of the quality and reliability of the measurement"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -976,7 +1270,7 @@
         <reference value="ValueSet/measurement-quality-vs"/>
       </reference>
       <name value="Measurement Quality Value Set"/>
-      <description value="Quality indicators for Qualitative assessment of measurement quality"/>
+      <description value="Value set for measurement quality indicators"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1308,6 +1602,61 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mobility-alert-level-cs"/>
+      </reference>
+      <name value="Mobility Alert Level Code System"/>
+      <description value="Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mobility-alert-level"/>
+      </reference>
+      <name value="Mobility Alert Level Extension"/>
+      <description value="Extension for mobility measurements alert levels to indicate the severity or concern level of mobility changes detected by the device"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mobility-alert-level-vs"/>
+      </reference>
+      <name value="Mobility Alert Level Value Set"/>
+      <description value="Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mobility-profile"/>
+      </reference>
+      <name value="Mobility Profile"/>
+      <description value="Profile for mobility data from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/mobility-risk-assessment"/>
+      </reference>
+      <name value="Mobility Risk Assessment Profile"/>
+      <description value="Profile for assessing mobility-related risks"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -1315,6 +1664,28 @@
       </reference>
       <name value="Mood Value Set"/>
       <description value="Codes representing different mood states"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/NoiseExposureExample"/>
+      </reference>
+      <name value="Noise Exposure Measurement Example"/>
+      <description value="Example of noise exposure measurement from iOS Health App"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/noise-exposure-observation"/>
+      </reference>
+      <name value="Noise Exposure Observation Profile"/>
+      <description value="Profile for noise exposure measurements from iOS Health App"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1396,6 +1767,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/physiological-stress-index"/>
+      </reference>
+      <name value="Physiological Stress Index Extension"/>
+      <description value="Index representing overall physiological stress based on multiple parameters"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -1414,6 +1796,72 @@
       </reference>
       <name value="Practice Environment Types Value Set"/>
       <description value="Value set of practice environment types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recovery-efficiency"/>
+      </reference>
+      <name value="Recovery Efficiency Extension"/>
+      <description value="Measure of how efficiently the body recovers from stress or exertion"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/reproductive-activity-cs"/>
+      </reference>
+      <name value="Reproductive Health Activities Code System"/>
+      <description value="Code system for reproductive health monitoring activities"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/reproductive-activity-vs"/>
+      </reference>
+      <name value="Reproductive Health Activities Value Set"/>
+      <description value="Activities related to reproductive health monitoring"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/reproductive-observation"/>
+      </reference>
+      <name value="Reproductive Health Base Profile"/>
+      <description value="Base profile for reproductive health observations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/reproductive-goal-vs"/>
+      </reference>
+      <name value="Reproductive Health Goals Value Set"/>
+      <description value="Goals related to reproductive health tracking and planning"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/ReproductiveHealthQuestionnaire"/>
+      </reference>
+      <name value="Reproductive Health Tracking Questionnaire"/>
+      <description value="Daily questionnaire for reproductive health tracking"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1539,6 +1987,160 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/symptom-questionnaire"/>
+      </reference>
+      <name value="Symptom Assessment Questionnaire"/>
+      <description value="Questionnaire template for symptom assessments"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/symptom-frequency-cs"/>
+      </reference>
+      <name value="Symptom Frequency Code System"/>
+      <description value="Frequency patterns for symptoms"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/symptom-frequency-vs"/>
+      </reference>
+      <name value="Symptom Frequency Value Set"/>
+      <description value="Frequency patterns for symptoms"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/symptom-impact-cs"/>
+      </reference>
+      <name value="Symptom Impact Code System"/>
+      <description value="Impact levels of symptoms on daily activities"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/symptom-impact-vs"/>
+      </reference>
+      <name value="Symptom Impact Value Set"/>
+      <description value="Impact levels for symptoms"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/symptom-progression-vs"/>
+      </reference>
+      <name value="Symptom Progression Value Set"/>
+      <description value="Progression patterns for symptoms"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/symptom-severity-cs"/>
+      </reference>
+      <name value="Symptom Severity Code System"/>
+      <description value="Severity levels for symptoms"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/time-of-day-vs"/>
+      </reference>
+      <name value="Time of Day Value Set"/>
+      <description value="Times of day for symptom occurrence"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/UVExposureExample"/>
+      </reference>
+      <name value="UV Exposure Measurement Example"/>
+      <description value="Example of UV exposure measurement from iOS Health App"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/uv-exposure-observation"/>
+      </reference>
+      <name value="UV Exposure Observation Profile"/>
+      <description value="Profile for UV exposure measurements from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/WalkingSpeedExample"/>
+      </reference>
+      <name value="Walking Speed Measurement Example"/>
+      <description value="Example of walking speed measurement from iPhone Motion Sensors"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-speed-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/walking-speed-observation"/>
+      </reference>
+      <name value="Walking Speed Observation Profile"/>
+      <description value="Profile for walking speed measurements from iPhone Motion Sensors"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/WalkingSteadinessExample"/>
+      </reference>
+      <name value="Walking Steadiness Measurement Example"/>
+      <description value="Example of walking steadiness measurement from iPhone Motion Sensors"/>
+      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/walking-steadiness-observation"/>
+      </reference>
+      <name value="Walking Steadiness Observation Profile"/>
+      <description value="Profile for walking steadiness measurements from iPhone Motion Sensors"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/water-intake-observation"/>
       </reference>
       <name value="Water Intake Observation Profile"/>
@@ -1605,10 +2207,26 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="advanced_vitalsigns.html"/>
+        </extension>
+        <nameUrl value="advanced_vitalsigns.html"/>
+        <title value="Advanced Vitalsigns"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="bodymetrics.html"/>
         </extension>
         <nameUrl value="bodymetrics.html"/>
         <title value="Bodymetrics"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="environmental.html"/>
+        </extension>
+        <nameUrl value="environmental.html"/>
+        <title value="Environmental"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -1629,6 +2247,14 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mobility.html"/>
+        </extension>
+        <nameUrl value="mobility.html"/>
+        <title value="Mobility"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="nutrition.html"/>
         </extension>
         <nameUrl value="nutrition.html"/>
@@ -1645,10 +2271,26 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="reproductive.html"/>
+        </extension>
+        <nameUrl value="reproductive.html"/>
+        <title value="Reproductive"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="sleep.html"/>
         </extension>
         <nameUrl value="sleep.html"/>
         <title value="Sleep"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="symptoms.html"/>
+        </extension>
+        <nameUrl value="symptoms.html"/>
+        <title value="Symptoms"/>
         <generation value="markdown"/>
       </page>
       <page>

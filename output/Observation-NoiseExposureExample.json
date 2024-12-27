@@ -1,0 +1,109 @@
+{
+  "resourceType" : "Observation",
+  "id" : "NoiseExposureExample",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation"],
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+      "code" : "N"
+    }]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation NoiseExposureExample</b></p><a name=\"NoiseExposureExample\"> </a><a name=\"hcNoiseExposureExample\"> </a><a name=\"NoiseExposureExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category environment}\">environment</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 28573-7}\">Noise exposure time</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>note</b>: Measurement taken during urban commute</p><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 37016008}\">Automatic measurement</span></p><p><b>device</b>: <a href=\"Device/iphone-example\">Device/iphone-example</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89020-2}\">Environmental noise average</span></p><p><b>value</b>: 85 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedB = 'dB')</span></p><p><b>interpretation</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation H}\">High</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89021-0}\">Environmental noise duration</span></p><p><b>value</b>: 120 min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89024-4}\">Peak sound level</span></p><p><b>value</b>: 95 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedB = 'dB')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89025-1}\">Background noise level</span></p><p><b>value</b>: 45 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedB = 'dB')</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "environment"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "28573-7",
+      "display" : "Noise exposure time"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "effectiveDateTime" : "2024-03-19T15:30:00Z",
+  "note" : [{
+    "text" : "Measurement taken during urban commute"
+  }],
+  "method" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "37016008",
+      "display" : "Automatic measurement"
+    }]
+  },
+  "device" : {
+    "reference" : "Device/iphone-example"
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89020-2",
+        "display" : "Environmental noise average"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 85,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "dB"
+    },
+    "interpretation" : [{
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+        "code" : "H",
+        "display" : "High"
+      }]
+    }]
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89021-0",
+        "display" : "Environmental noise duration"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 120,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "min"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89024-4",
+        "display" : "Peak sound level"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 95,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "dB"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89025-1",
+        "display" : "Background noise level"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 45,
+      "system" : "http://unitsofmeasure.org",
+      "code" : "dB"
+    }
+  }]
+}

@@ -122,6 +122,13 @@
       ]
     },
     {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/advanced-vital-signs-context",
+      "title": "Advanced Vital Signs Context Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
       "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message",
       "title": "Alert Message Extension",
       "types": [
@@ -161,6 +168,20 @@
       ]
     },
     {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/allostatic-load",
+      "title": "Allostatic Load Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
+      ]
+    },
+    {
       "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format",
       "title": "Audit Format Extension",
       "types": [
@@ -179,6 +200,48 @@
       "title": "Audit Retention Extension",
       "types": [
         "Duration"
+      ]
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/circadian-phase",
+      "title": "Circadian Phase Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/environmental-context",
+      "title": "Environmental Context Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/exposure-conditions",
+      "title": "Exposure Conditions Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/exposure-location",
+      "title": "Exposure Location Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/homeostasis-index",
+      "title": "Homeostasis Index Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
       ]
     },
     {
@@ -266,10 +329,45 @@
       ]
     },
     {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mobility-alert-level",
+      "title": "Mobility Alert Level Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
       "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/nutrition-data-source",
       "title": "Nutrition Data Source Extension",
       "types": [
         "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/physiological-stress-index",
+      "title": "Physiological Stress Index Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
+      ]
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/recovery-efficiency",
+      "title": "Recovery Efficiency Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
       ]
     },
     {
@@ -283,20 +381,16 @@
   "profiles": {
     "Observation": [
       {
-        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/nutrition-intake-observation",
-        "title": "Nutrition Intake Observation Profile"
+        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation",
+        "title": "UV Exposure Observation Profile"
       },
       {
-        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/oxygen-saturation-observation",
-        "title": "Oxygen Saturation Observation Profile"
+        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-speed-observation",
+        "title": "Walking Speed Observation Profile"
       },
       {
-        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/physical-activity-observation",
-        "title": "Physical Activity Observation Profile"
-      },
-      {
-        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-observation",
-        "title": "Sleep Observation Profile"
+        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation",
+        "title": "Walking Steadiness Observation Profile"
       },
       {
         "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/water-intake-observation",
@@ -324,6 +418,18 @@
         "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation",
         "title": "Mindfulness Operation"
       }
+    ],
+    "RiskAssessment": [
+      {
+        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mobility-risk-assessment",
+        "title": "Mobility Risk Assessment Profile"
+      }
+    ],
+    "Questionnaire": [
+      {
+        "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/symptom-questionnaire",
+        "title": "Symptom Assessment Questionnaire"
+      }
     ]
   },
   "usage": {
@@ -349,6 +455,9 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
       "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/maxValue": [
+      "Questionnaire.item.item"
     ],
     "http://hl7.org/fhir/StructureDefinition/minValue": [
       "Questionnaire.item.item"
@@ -397,9 +506,6 @@
       "Observation"
     ],
     "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-device-type": [
-      "Observation"
-    ],
-    "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-quality": [
       "Observation"
     ],
     "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit-format": [

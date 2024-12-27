@@ -3,14 +3,15 @@
   "id" : "measurement-quality-vs",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet measurement-quality-vs</b></p><a name=\"measurement-quality-vs\"> </a><a name=\"hcmeasurement-quality-vs\"> </a><a name=\"measurement-quality-vs-en-US\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/723510000\">723510000</a></td><td>High quality</td></tr><tr><td><a href=\"http://snomed.info/id/723511001\">723511001</a></td><td>Moderate quality</td></tr><tr><td><a href=\"http://snomed.info/id/723512008\">723512008</a></td><td>Low quality</td></tr><tr><td><a href=\"http://snomed.info/id/723513003\">723513003</a></td><td>Uncertain quality</td></tr></table></li></ul></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet measurement-quality-vs</b></p><a name=\"measurement-quality-vs\"> </a><a name=\"hcmeasurement-quality-vs\"> </a><a name=\"measurement-quality-vs-en-US\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-measurement-quality-cs.html\"><code>https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs</code></a></li></ul></div>"
   },
   "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-quality-vs",
   "version" : "0.1.0",
   "name" : "MeasurementQualityVS",
   "title" : "Measurement Quality Value Set",
   "status" : "draft",
-  "date" : "2024-12-26T11:41:10+00:00",
+  "experimental" : true,
+  "date" : "2024-12-27T22:28:35+00:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -19,26 +20,10 @@
       "value" : "https://linktr.ee/ricardolsantos"
     }]
   }],
-  "description" : "Quality indicators for Qualitative assessment of measurement quality",
+  "description" : "Value set for measurement quality indicators",
   "compose" : {
     "include" : [{
-      "system" : "http://snomed.info/sct",
-      "concept" : [{
-        "code" : "723510000",
-        "display" : "High quality"
-      },
-      {
-        "code" : "723511001",
-        "display" : "Moderate quality"
-      },
-      {
-        "code" : "723512008",
-        "display" : "Low quality"
-      },
-      {
-        "code" : "723513003",
-        "display" : "Uncertain quality"
-      }]
+      "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs"
     }]
   }
 }

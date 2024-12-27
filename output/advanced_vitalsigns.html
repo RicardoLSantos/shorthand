@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Advanced Vitalsigns - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">iOS Lifestyle Medicine Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Advanced Vitalsigns</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://github.com/RicardoLSantos/shorthand/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Advanced Vitalsigns</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#advanced-vital-signs-data" id="markdown-toc-advanced-vital-signs-data">Advanced Vital Signs Data</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#data-sources" id="markdown-toc-data-sources">Data Sources</a></li>
+      <li><a href="#types-of-collected-data" id="markdown-toc-types-of-collected-data">Types of Collected Data</a>        <ul>
+          <li><a href="#1-advanced-cardiovascular-metrics" id="markdown-toc-1-advanced-cardiovascular-metrics">1. Advanced Cardiovascular Metrics</a></li>
+          <li><a href="#2-advanced-respiratory-metrics" id="markdown-toc-2-advanced-respiratory-metrics">2. Advanced Respiratory Metrics</a></li>
+          <li><a href="#3-physiological-stress-biomarkers" id="markdown-toc-3-physiological-stress-biomarkers">3. Physiological Stress Biomarkers</a></li>
+          <li><a href="#4-thermoregulation-metrics" id="markdown-toc-4-thermoregulation-metrics">4. Thermoregulation Metrics</a></li>
+          <li><a href="#5-multiparametric-integration" id="markdown-toc-5-multiparametric-integration">5. Multiparametric Integration</a></li>
+        </ul>
+      </li>
+      <li><a href="#ios-health-app-to-fhir-mapping" id="markdown-toc-ios-health-app-to-fhir-mapping">iOS Health App to FHIR Mapping</a>        <ul>
+          <li><a href="#core-fields" id="markdown-toc-core-fields">Core Fields</a></li>
+          <li><a href="#advanced-measurements" id="markdown-toc-advanced-measurements">Advanced Measurements</a></li>
+        </ul>
+      </li>
+      <li><a href="#implementation-requirements" id="markdown-toc-implementation-requirements">Implementation Requirements</a>        <ul>
+          <li><a href="#1-data-collection" id="markdown-toc-1-data-collection">1. Data Collection</a></li>
+          <li><a href="#2-processing-pipeline" id="markdown-toc-2-processing-pipeline">2. Processing Pipeline</a></li>
+          <li><a href="#3-integration-aspects" id="markdown-toc-3-integration-aspects">3. Integration Aspects</a></li>
+          <li><a href="#4-clinical-validation" id="markdown-toc-4-clinical-validation">4. Clinical Validation</a></li>
+        </ul>
+      </li>
+      <li><a href="#technical-implementation" id="markdown-toc-technical-implementation">Technical Implementation</a>        <ul>
+          <li><a href="#data-processing-pipeline" id="markdown-toc-data-processing-pipeline">Data Processing Pipeline</a></li>
+          <li><a href="#data-quality-management" id="markdown-toc-data-quality-management">Data Quality Management</a></li>
+          <li><a href="#integration-requirements" id="markdown-toc-integration-requirements">Integration Requirements</a></li>
+        </ul>
+      </li>
+      <li><a href="#clinical-applications" id="markdown-toc-clinical-applications">Clinical Applications</a>        <ul>
+          <li><a href="#1-preventive-medicine" id="markdown-toc-1-preventive-medicine">1. Preventive Medicine</a></li>
+          <li><a href="#2-performance-monitoring" id="markdown-toc-2-performance-monitoring">2. Performance Monitoring</a></li>
+          <li><a href="#3-clinical-decision-support" id="markdown-toc-3-clinical-decision-support">3. Clinical Decision Support</a></li>
+          <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a></li>
+          <li><a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a></li>
+        </ul>
+      </li>
+      <li><a href="#privacy-and-security" id="markdown-toc-privacy-and-security">Privacy and Security</a>        <ul>
+          <li><a href="#data-protection" id="markdown-toc-data-protection">Data Protection</a></li>
+          <li><a href="#compliance-requirements" id="markdown-toc-compliance-requirements">Compliance Requirements</a></li>
+        </ul>
+      </li>
+      <li><a href="#supported-operations" id="markdown-toc-supported-operations">Supported Operations</a>        <ul>
+          <li><a href="#advanced-search-capabilities" id="markdown-toc-advanced-search-capabilities">Advanced Search Capabilities</a></li>
+          <li><a href="#specific-search-parameters" id="markdown-toc-specific-search-parameters">Specific Search Parameters</a></li>
+          <li><a href="#advanced-search-examples" id="markdown-toc-advanced-search-examples">Advanced Search Examples</a></li>
+        </ul>
+      </li>
+      <li><a href="#calculations-and-transformations" id="markdown-toc-calculations-and-transformations">Calculations and Transformations</a>        <ul>
+          <li><a href="#1-advanced-cardiac-metrics" id="markdown-toc-1-advanced-cardiac-metrics">1. Advanced Cardiac Metrics</a></li>
+          <li><a href="#2-respiratory-metrics" id="markdown-toc-2-respiratory-metrics">2. Respiratory Metrics</a></li>
+          <li><a href="#3-composite-indices" id="markdown-toc-3-composite-indices">3. Composite Indices</a></li>
+          <li><a href="#4-advanced-statistical-transformations" id="markdown-toc-4-advanced-statistical-transformations">4. Advanced Statistical Transformations</a></li>
+          <li><a href="#5-pattern-recognition" id="markdown-toc-5-pattern-recognition">5. Pattern Recognition</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="advanced-vital-signs-data">Advanced Vital Signs Data</h1>
+
+<h2 id="overview">Overview</h2>
+<p>This module defines how advanced vital signs data collected from the iOS Health App are mapped to FHIR resources. These data provide a deeper insight into individual physiology and homeostasis, complementing basic vital signs.</p>
+
+<h2 id="data-sources">Data Sources</h2>
+<ul>
+  <li>Apple Watch (advanced sensors)</li>
+  <li>Connected medical devices</li>
+  <li>Integrated biomedical sensors</li>
+  <li>Specialized health apps</li>
+</ul>
+
+<h2 id="types-of-collected-data">Types of Collected Data</h2>
+
+<h3 id="1-advanced-cardiovascular-metrics">1. Advanced Cardiovascular Metrics</h3>
+<ul>
+  <li>Detailed Heart Rate Variability
+    <ul>
+      <li>HRV spectral analysis</li>
+      <li>Low/high frequency indicators</li>
+      <li>HRV entropy measurements</li>
+      <li>Time-domain metrics</li>
+      <li>Frequency-domain parameters</li>
+    </ul>
+  </li>
+  <li>Cardiac Recovery Indices
+    <ul>
+      <li>Post-exercise recovery rate</li>
+      <li>Time to normalization</li>
+      <li>Recovery pattern analysis</li>
+      <li>Heart rate reserve</li>
+    </ul>
+  </li>
+  <li>Advanced Blood Pressure
+    <ul>
+      <li>Mean arterial pressure</li>
+      <li>Pulse pressure</li>
+      <li>Blood pressure variability</li>
+      <li>Circadian pattern tracking</li>
+      <li>Pressure waveform analysis</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-advanced-respiratory-metrics">2. Advanced Respiratory Metrics</h3>
+<ul>
+  <li>Respiratory Patterns
+    <ul>
+      <li>Respiratory variability</li>
+      <li>Estimated respiratory volume</li>
+      <li>Ventilation/perfusion ratio</li>
+      <li>Breathing pattern analysis</li>
+      <li>Respiratory rate variability</li>
+    </ul>
+  </li>
+  <li>Advanced Oxygen Saturation
+    <ul>
+      <li>Nocturnal trends</li>
+      <li>Exercise desaturation</li>
+      <li>Hypoxia index</li>
+      <li>Recovery patterns</li>
+      <li>Continuous monitoring</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-physiological-stress-biomarkers">3. Physiological Stress Biomarkers</h3>
+<ul>
+  <li>Physiological stress index</li>
+  <li>Allostatic load measurement</li>
+  <li>Autonomic recovery tracking</li>
+  <li>Sympathetic-vagal balance</li>
+  <li>Stress response patterns</li>
+  <li>Recovery efficiency metrics</li>
+  <li>Chronic stress indicators</li>
+</ul>
+
+<h3 id="4-thermoregulation-metrics">4. Thermoregulation Metrics</h3>
+<ul>
+  <li>Circadian temperature variation</li>
+  <li>Temperature gradients</li>
+  <li>Exercise thermal response</li>
+  <li>Heat dissipation patterns</li>
+  <li>Core temperature estimation</li>
+  <li>Skin temperature mapping</li>
+  <li>Environmental adaptation</li>
+</ul>
+
+<h3 id="5-multiparametric-integration">5. Multiparametric Integration</h3>
+<ul>
+  <li>Composite health indices</li>
+  <li>Parameter correlations</li>
+  <li>Trend prediction models</li>
+  <li>Abnormal pattern detection</li>
+  <li>Risk stratification</li>
+  <li>Personalized baselines</li>
+  <li>Adaptive thresholds</li>
+</ul>
+
+<h2 id="ios-health-app-to-fhir-mapping">iOS Health App to FHIR Mapping</h2>
+
+<h3 id="core-fields">Core Fields</h3>
+<p>| iOS Health App | FHIR Path | LOINC Code | Description |
+|—————-|———–|————|————-|
+| Heart Rate Variability | HRVObservation.component[hrv] | 80404-7 | R-R interval standard deviation |
+| Respiratory Rate | RespiratoryObservation.component[rate] | 9279-1 | Respiratory rate |
+| Blood Pressure | BPObservation.component[systolic/diastolic] | 85354-9 | Blood pressure panel with all children |
+| Temperature | TempObservation.component[core] | 8310-5 | Body temperature |
+| Oxygen Saturation | SpO2Observation.component[saturation] | 59408-5 | Oxygen saturation in blood |</p>
+
+<h3 id="advanced-measurements">Advanced Measurements</h3>
+<p>| iOS Health App | FHIR Path | LOINC Code | Description |
+|—————-|———–|————|————-|
+| HRV Analysis | HRVObservation.component[spectral] | 80405-4 | Heart rate variability metrics |
+| Recovery Rate | RecoveryObservation.component[rate] | 80406-2 | Cardiac recovery rate |
+| Stress Index | StressObservation.component[index] | 80407-0 | Physiological stress index |
+| Temperature Variation | TempObservation.component[variation] | 80408-8 | Temperature pattern |</p>
+
+<h2 id="implementation-requirements">Implementation Requirements</h2>
+
+<h3 id="1-data-collection">1. Data Collection</h3>
+<ul>
+  <li>Sensor accuracy</li>
+  <li>Sampling frequency</li>
+  <li>Calibration protocols</li>
+  <li>Quality assurance</li>
+  <li>Data validation</li>
+</ul>
+
+<h3 id="2-processing-pipeline">2. Processing Pipeline</h3>
+<ul>
+  <li>Signal processing</li>
+  <li>Noise reduction</li>
+  <li>Feature extraction</li>
+  <li>Pattern analysis</li>
+  <li>Real-time processing</li>
+</ul>
+
+<h3 id="3-integration-aspects">3. Integration Aspects</h3>
+<ul>
+  <li>Data synchronization</li>
+  <li>Device compatibility</li>
+  <li>API requirements</li>
+  <li>Security protocols</li>
+  <li>Privacy compliance</li>
+</ul>
+
+<h3 id="4-clinical-validation">4. Clinical Validation</h3>
+<ul>
+  <li>Accuracy verification</li>
+  <li>Clinical correlation</li>
+  <li>Reference standards</li>
+  <li>Validation studies</li>
+  <li>Performance metrics</li>
+</ul>
+
+<h2 id="technical-implementation">Technical Implementation</h2>
+
+<h3 id="data-processing-pipeline">Data Processing Pipeline</h3>
+<ol>
+  <li>Data Collection
+    <ul>
+      <li>Sensor data acquisition</li>
+      <li>Quality checks</li>
+      <li>Initial validation</li>
+      <li>Raw data storage</li>
+    </ul>
+  </li>
+  <li>Signal Processing
+    <ul>
+      <li>Noise reduction</li>
+      <li>Artifact removal</li>
+      <li>Signal enhancement</li>
+      <li>Feature extraction</li>
+    </ul>
+  </li>
+  <li>Analysis Pipeline
+    <ul>
+      <li>Pattern detection</li>
+      <li>Trend analysis</li>
+      <li>Statistical processing</li>
+      <li>Composite index calculation</li>
+    </ul>
+  </li>
+  <li>Clinical Integration
+    <ul>
+      <li>Risk assessment</li>
+      <li>Alert generation</li>
+      <li>Clinical correlation</li>
+      <li>Decision support</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="data-quality-management">Data Quality Management</h3>
+<ol>
+  <li>Validation Rules
+    <ul>
+      <li>Range checking</li>
+      <li>Consistency verification</li>
+      <li>Cross-validation</li>
+      <li>Temporal validation</li>
+    </ul>
+  </li>
+  <li>Quality Metrics
+    <ul>
+      <li>Signal quality</li>
+      <li>Data completeness</li>
+      <li>Measurement accuracy</li>
+      <li>Sensor reliability</li>
+    </ul>
+  </li>
+  <li>Error Handling
+    <ul>
+      <li>Data gaps</li>
+      <li>Sensor failures</li>
+      <li>Connection issues</li>
+      <li>Processing errors</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="integration-requirements">Integration Requirements</h3>
+<ol>
+  <li>Device Integration
+    <ul>
+      <li>Sensor compatibility</li>
+      <li>Data protocols</li>
+      <li>Synchronization</li>
+      <li>Calibration</li>
+    </ul>
+  </li>
+  <li>System Integration
+    <ul>
+      <li>API requirements</li>
+      <li>Data formats</li>
+      <li>Security protocols</li>
+      <li>Performance standards</li>
+    </ul>
+  </li>
+  <li>Clinical Systems
+    <ul>
+      <li>EHR integration</li>
+      <li>Alert systems</li>
+      <li>Decision support</li>
+      <li>Documentation</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="clinical-applications">Clinical Applications</h2>
+
+<h3 id="1-preventive-medicine">1. Preventive Medicine</h3>
+<ul>
+  <li>Early warning systems</li>
+  <li>Risk assessment</li>
+  <li>Trend analysis</li>
+  <li>Intervention timing</li>
+  <li>Prevention strategies</li>
+</ul>
+
+<h3 id="2-performance-monitoring">2. Performance Monitoring</h3>
+<ul>
+  <li>Athletic performance</li>
+  <li>Recovery optimization</li>
+  <li>Training adaptation</li>
+  <li>Fatigue detection</li>
+  <li>Overtraining prevention</li>
+</ul>
+
+<h3 id="3-clinical-decision-support">3. Clinical Decision Support</h3>
+<ul>
+  <li>Pattern recognition</li>
+  <li>Risk stratification</li>
+  <li>Treatment response</li>
+  <li>Progress monitoring</li>
+  <li>Outcome prediction</li>
+</ul>
+
+<h3 id="use-cases">Use Cases</h3>
+<ol>
+  <li>Clinical Monitoring
+    <ul>
+      <li>Patient tracking</li>
+      <li>Progress assessment</li>
+      <li>Treatment response</li>
+      <li>Risk prediction</li>
+    </ul>
+  </li>
+  <li>Research Applications
+    <ul>
+      <li>Data collection</li>
+      <li>Pattern analysis</li>
+      <li>Outcome studies</li>
+      <li>Population health</li>
+    </ul>
+  </li>
+  <li>Personal Health
+    <ul>
+      <li>Self-monitoring</li>
+      <li>Health goals</li>
+      <li>Lifestyle tracking</li>
+      <li>Preventive care</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="best-practices">Best Practices</h3>
+<ol>
+  <li>Implementation Guidelines
+    <ul>
+      <li>Setup procedures</li>
+      <li>Configuration steps</li>
+      <li>Maintenance protocols</li>
+      <li>Update processes</li>
+    </ul>
+  </li>
+  <li>User Training
+    <ul>
+      <li>Clinical staff</li>
+      <li>Technical team</li>
+      <li>End users</li>
+      <li>Support staff</li>
+    </ul>
+  </li>
+  <li>Quality Assurance
+    <ul>
+      <li>Testing protocols</li>
+      <li>Validation procedures</li>
+      <li>Performance monitoring</li>
+      <li>Continuous improvement</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="privacy-and-security">Privacy and Security</h2>
+
+<h3 id="data-protection">Data Protection</h3>
+<ol>
+  <li>Security Measures
+    <ul>
+      <li>Encryption</li>
+      <li>Access control</li>
+      <li>Audit logging</li>
+      <li>Data segregation</li>
+    </ul>
+  </li>
+  <li>Privacy Controls
+    <ul>
+      <li>Consent management</li>
+      <li>Data anonymization</li>
+      <li>Access restrictions</li>
+      <li>Usage tracking</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="compliance-requirements">Compliance Requirements</h3>
+<ol>
+  <li>Regulatory Standards
+    <ul>
+      <li>HIPAA compliance</li>
+      <li>GDPR requirements</li>
+      <li>Local regulations</li>
+      <li>Industry standards</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Policy documentation</li>
+      <li>Procedure records</li>
+      <li>Audit trails</li>
+      <li>Compliance reports</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="supported-operations">Supported Operations</h2>
+
+<h3 id="advanced-search-capabilities">Advanced Search Capabilities</h3>
+<ul>
+  <li>Multiparametric search</li>
+  <li>Trend analysis queries</li>
+  <li>Temporal correlations</li>
+  <li>Circadian pattern analysis</li>
+  <li>Complex pattern matching</li>
+  <li>Event sequence detection</li>
+</ul>
+
+<h3 id="specific-search-parameters">Specific Search Parameters</h3>
+<ol>
+  <li>Composite Indices
+    <ul>
+      <li>physiological-stress-index</li>
+      <li>allostatic-load</li>
+      <li>autonomic-balance</li>
+      <li>recovery-index</li>
+    </ul>
+  </li>
+  <li>Temporal Patterns
+    <ul>
+      <li>circadian-rhythm</li>
+      <li>ultradian-pattern</li>
+      <li>seasonal-variation</li>
+      <li>adaptation-trend</li>
+    </ul>
+  </li>
+  <li>Physiological Correlations
+    <ul>
+      <li>cardio-respiratory</li>
+      <li>thermo-regulatory</li>
+      <li>stress-recovery</li>
+      <li>autonomic-balance</li>
+    </ul>
+  </li>
+  <li>Adaptive Trends
+    <ul>
+      <li>baseline-shift</li>
+      <li>response-pattern</li>
+      <li>recovery-trajectory</li>
+      <li>adaptation-rate</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="advanced-search-examples">Advanced Search Examples</h3>
+
+<p>GET [base]/Observation?category=advanced-vitals&amp;patient=[id]&amp;code=physiological-stress
+GET [base]/Observation?category=advanced-vitals&amp;patient=[id]&amp;date=ge[start]&amp;component-code=autonomic-balance
+GET [base]/Observation?category=advanced-vitals&amp;patient=[id]&amp;code=recovery-index&amp;date=ge[start]&amp;date=le[end]
+GET [base]/Observation?category=advanced-vitals&amp;patient=[id]&amp;component-code=circadian-pattern&amp;_include=related-observations</p>
+
+<h2 id="calculations-and-transformations">Calculations and Transformations</h2>
+
+<h3 id="1-advanced-cardiac-metrics">1. Advanced Cardiac Metrics</h3>
+<ul>
+  <li>
+    <p>HRV Spectral Analysis:</p>
+
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Power(f) =</td>
+              <td>FFT(RR intervals)</td>
+              <td>²</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <p>LF Power = ∫(0.04-0.15 Hz) Power(f)df</p>
+      </li>
+      <li>HF Power = ∫(0.15-0.40 Hz) Power(f)df</li>
+    </ul>
+  </li>
+  <li>
+    <p>HRV Entropy:</p>
+
+    <ul>
+      <li>SampEn = -ln(A/B), where:
+        <ul>
+          <li>A = matches of length m+1</li>
+          <li>B = matches of length m</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Autonomic Balance:</p>
+
+    <ul>
+      <li>
+        <p>LF/HF ratio = (LF Power)/(HF Power)</p>
+      </li>
+      <li>
+        <p>Normalized LF = LF/(LF+HF)*100</p>
+      </li>
+      <li>
+        <p>Normalized HF = HF/(LF+HF)*100</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-respiratory-metrics">2. Respiratory Metrics</h3>
+<ul>
+  <li>
+    <p>Respiratory Variability:</p>
+
+    <ul>
+      <li>
+        <p>CV = (SD of intervals)/(Mean interval)*100</p>
+      </li>
+      <li>
+        <p>RMSSD = √(Σ(RRi+1 - RRi)²/n)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Oxygenation Indices:</p>
+
+    <ul>
+      <li>
+        <p>PaO2/FiO2 ratio</p>
+      </li>
+      <li>
+        <p>SpO2/FiO2 ratio</p>
+      </li>
+      <li>
+        <p>OI = (FiO2 * MAP)/(PaO2)</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-composite-indices">3. Composite Indices</h3>
+<ul>
+  <li>Physiological Stress Index (PSI):
+    <ul>
+      <li>
+        <p>PSI = w1HRVnorm + w2BPnorm + w3SpO2norm + w4Tempnorm, where:</p>
+
+        <ul>
+          <li>
+            <p>HRVnorm = normalized HRV deviation</p>
+          </li>
+          <li>
+            <p>BPnorm = normalized blood pressure variation</p>
+          </li>
+          <li>
+            <p>SpO2norm = normalized oxygen saturation</p>
+          </li>
+          <li>
+            <p>Tempnorm = normalized temperature variation</p>
+          </li>
+          <li>
+            <p>wi = weighting factors</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Homeostasis Index (HI):
+    <ul>
+      <li>
+        <p>HI = Σ(wi * Mi) / Σwi, where:</p>
+
+        <ul>
+          <li>
+            <p>Mi = normalized metric i</p>
+          </li>
+          <li>
+            <p>wi = weight for metric i</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Allostatic Load Index (ALI):
+    <ul>
+      <li>
+        <p>ALI = Σ(Ci), where:</p>
+
+        <ul>
+          <li>Ci = count of metrics outside normal range</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-advanced-statistical-transformations">4. Advanced Statistical Transformations</h3>
+<ul>
+  <li>Time Domain Analysis:
+    <ul>
+      <li>
+        <p>SDNN = √(Σ(RRi - RRmean)²/(n-1))</p>
+      </li>
+      <li>
+        <p>pNN50 = (NN50 count)/(total NN count)</p>
+      </li>
+    </ul>
+  </li>
+  <li>Frequency Domain Analysis:
+    <ul>
+      <li>
+        <p>Welch's periodogram</p>
+      </li>
+      <li>
+        <p>AR spectral analysis</p>
+      </li>
+      <li>
+        <p>Wavelet transform</p>
+      </li>
+    </ul>
+  </li>
+  <li>Non-linear Methods:
+    <ul>
+      <li>Poincaré plot indices</li>
+      <li>Detrended fluctuation analysis</li>
+      <li>Sample entropy</li>
+      <li>Approximate entropy</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-pattern-recognition">5. Pattern Recognition</h3>
+<ul>
+  <li>Circadian Pattern Analysis:
+    <ul>
+      <li>Cosinor analysis</li>
+      <li>Phase estimation</li>
+      <li>Amplitude calculation</li>
+      <li>MESOR determination</li>
+    </ul>
+  </li>
+  <li>Trend Detection:
+    <ul>
+      <li>Moving averages</li>
+      <li>Exponential smoothing</li>
+      <li>Change point detection</li>
+      <li>Pattern matching</li>
+    </ul>
+  </li>
+</ul>
+
+<p>These calculations and transformations provide the mathematical foundation for advanced vital signs analysis. Each metric is carefully validated and normalized to ensure clinical relevance and reliability.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 27, 2024 22:28+0000">2024-12-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "iOS_Lifestyle_Medicine_HEADS2_FMUP"] ; # 
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-12-26T11:41:10+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-27T22:28:35+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -523,6 +523,54 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/advanced-vital-signs-context-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/advanced-vital-signs-context-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Advanced Vital Signs Context Code System" ] ;
+       fhir:description [ fhir:v "Codes for advanced vital signs measurement context" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/advanced-vital-signs-context> ;
+         fhir:reference [ fhir:v "StructureDefinition/advanced-vital-signs-context" ]
+       ] ;
+       fhir:name [ fhir:v "Advanced Vital Signs Context Extension" ] ;
+       fhir:description [ fhir:v "Additional context about advanced vital sign measurements" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/advanced-vital-signs-context-vs> ;
+         fhir:reference [ fhir:v "ValueSet/advanced-vital-signs-context-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Advanced Vital Signs Context Value Set" ] ;
+       fhir:description [ fhir:v "Context codes for advanced vital sign measurements" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/advanced-vital-signs> ;
+         fhir:reference [ fhir:v "StructureDefinition/advanced-vital-signs" ]
+       ] ;
+       fhir:name [ fhir:v "Advanced Vital Signs Profile" ] ;
+       fhir:description [ fhir:v "Profile for advanced vital signs data from iOS Health App" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -543,6 +591,18 @@
        ] ;
        fhir:name [ fhir:v "Alert Timing Extension" ] ;
        fhir:description [ fhir:v "Defines when alerts should be triggered" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/allostatic-load> ;
+         fhir:reference [ fhir:v "StructureDefinition/allostatic-load" ]
+       ] ;
+       fhir:name [ fhir:v "Allostatic Load Extension" ] ;
+       fhir:description [ fhir:v "Measure of cumulative physiological burden over time" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -685,6 +745,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/body-locations-vs> ;
+         fhir:reference [ fhir:v "ValueSet/body-locations-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Body Locations Value Set" ] ;
+       fhir:description [ fhir:v "Anatomical locations for symptom recording" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -705,6 +777,53 @@
        ] ;
        fhir:name [ fhir:v "Calorie Intake Observation Profile" ] ;
        fhir:description [ fhir:v "Profile for caloric intake measurements" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/ChronicSymptomExample> ;
+         fhir:reference [ fhir:v "Observation/ChronicSymptomExample" ]
+       ] ;
+       fhir:name [ fhir:v "Chronic Symptom Example" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/circadian-phase-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Circadian Phase Code System" ] ;
+       fhir:description [ fhir:v "Code system for circadian rhythm phases" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/circadian-phase> ;
+         fhir:reference [ fhir:v "StructureDefinition/circadian-phase" ]
+       ] ;
+       fhir:name [ fhir:v "Circadian Phase Extension" ] ;
+       fhir:description [ fhir:v "Indicator of position in circadian rhythm cycle" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/circadian-phase-vs> ;
+         fhir:reference [ fhir:v "ValueSet/circadian-phase-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Circadian Phase Value Set" ] ;
+       fhir:description [ fhir:v "Value set for circadian rhythm phases" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -825,6 +944,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/duration-units-vs> ;
+         fhir:reference [ fhir:v "ValueSet/duration-units-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Duration Units Value Set" ] ;
+       fhir:description [ fhir:v "Time units for symptom duration" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "MessageDefinition" ]
        ] ) ;
        fhir:reference [
@@ -852,6 +983,54 @@
          fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"^^xsd:anyURI ;
          fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation>
        ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/environmental-context> ;
+         fhir:reference [ fhir:v "StructureDefinition/environmental-context" ]
+       ] ;
+       fhir:name [ fhir:v "Environmental Context Extension" ] ;
+       fhir:description [ fhir:v "Additional context about environmental measurements" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/environmental-context-vs> ;
+         fhir:reference [ fhir:v "ValueSet/environmental-context-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Environmental Context Value Set" ] ;
+       fhir:description [ fhir:v "Valid contexts for environmental measurements" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Device" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Device/EnvironmentalDeviceExample> ;
+         fhir:reference [ fhir:v "Device/EnvironmentalDeviceExample" ]
+       ] ;
+       fhir:name [ fhir:v "Environmental Monitoring Device" ] ;
+       fhir:description [ fhir:v "Example of iOS device used for environmental monitoring" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/environmental-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/environmental-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Environmental Observation Profile" ] ;
+       fhir:description [ fhir:v "Base profile for environmental measurements from iOS Health App" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -938,6 +1117,127 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CarePlan" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CarePlan/ExampleReproductiveActivity> ;
+         fhir:reference [ fhir:v "CarePlan/ExampleReproductiveActivity" ]
+       ] ;
+       fhir:name [ fhir:v "Example Reproductive Activity" ] ;
+       fhir:description [ fhir:v "Example showing use of reproductive activity value set" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/ExampleSymptomSeverity> ;
+         fhir:reference [ fhir:v "Observation/ExampleSymptomSeverity" ]
+       ] ;
+       fhir:name [ fhir:v "Example Symptom Severity" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-conditions-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/exposure-conditions-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Exposure Conditions Code System" ] ;
+       fhir:description [ fhir:v "Code system for conditions during environmental exposure" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/exposure-conditions> ;
+         fhir:reference [ fhir:v "StructureDefinition/exposure-conditions" ]
+       ] ;
+       fhir:name [ fhir:v "Exposure Conditions Extension" ] ;
+       fhir:description [ fhir:v "Additional conditions during environmental exposure measurement" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/exposure-conditions-vs> ;
+         fhir:reference [ fhir:v "ValueSet/exposure-conditions-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Exposure Conditions Value Set" ] ;
+       fhir:description [ fhir:v "Value set for environmental exposure conditions" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-location-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/exposure-location-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Exposure Location Code System" ] ;
+       fhir:description [ fhir:v "Code system for environmental exposure locations" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/exposure-location> ;
+         fhir:reference [ fhir:v "StructureDefinition/exposure-location" ]
+       ] ;
+       fhir:name [ fhir:v "Exposure Location Extension" ] ;
+       fhir:description [ fhir:v "Extension for recording location of environmental exposure measurement" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/exposure-location-vs> ;
+         fhir:reference [ fhir:v "ValueSet/exposure-location-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Exposure Location Value Set" ] ;
+       fhir:description [ fhir:v "Value set for environmental exposure locations" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/fertility-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Fertility Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for fertility signs and symptoms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/FertilitySignsExample> ;
+         fhir:reference [ fhir:v "Observation/FertilitySignsExample" ]
+       ] ;
+       fhir:name [ fhir:v "Fertility Signs Example" ] ;
+       fhir:example [
+         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation"^^xsd:anyURI ;
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureMap" ]
        ] ) ;
        fhir:reference [
@@ -1009,6 +1309,18 @@
        ] ;
        fhir:name [ fhir:v "Height Measurement Profile" ] ;
        fhir:description [ fhir:v "Profile for body height measurements" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/homeostasis-index> ;
+         fhir:reference [ fhir:v "StructureDefinition/homeostasis-index" ]
+       ] ;
+       fhir:name [ fhir:v "Homeostasis Index Extension" ] ;
+       fhir:description [ fhir:v "Composite measure of physiological balance and adaptation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1120,6 +1432,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/measurement-quality-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/measurement-quality-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Measurement Quality Code System" ] ;
+       fhir:description [ fhir:v "Code system for measurement quality indicators" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -1127,7 +1451,7 @@
          fhir:reference [ fhir:v "StructureDefinition/measurement-quality" ]
        ] ;
        fhir:name [ fhir:v "Measurement Quality Extension" ] ;
-       fhir:description [ fhir:v "Indicates the quality and reliability of the measurement" ] ;
+       fhir:description [ fhir:v "Indicator of the quality and reliability of the measurement" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1139,7 +1463,7 @@
          fhir:reference [ fhir:v "ValueSet/measurement-quality-vs" ]
        ] ;
        fhir:name [ fhir:v "Measurement Quality Value Set" ] ;
-       fhir:description [ fhir:v "Quality indicators for Qualitative assessment of measurement quality" ] ;
+       fhir:description [ fhir:v "Value set for measurement quality indicators" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1501,6 +1825,66 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/mobility-alert-level-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Alert Level Code System" ] ;
+       fhir:description [ fhir:v "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mobility-alert-level> ;
+         fhir:reference [ fhir:v "StructureDefinition/mobility-alert-level" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Alert Level Extension" ] ;
+       fhir:description [ fhir:v "Extension for mobility measurements alert levels to indicate the severity or concern level of mobility changes detected by the device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/mobility-alert-level-vs> ;
+         fhir:reference [ fhir:v "ValueSet/mobility-alert-level-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Alert Level Value Set" ] ;
+       fhir:description [ fhir:v "Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mobility-profile> ;
+         fhir:reference [ fhir:v "StructureDefinition/mobility-profile" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Profile" ] ;
+       fhir:description [ fhir:v "Profile for mobility data from iOS Health App" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mobility-risk-assessment> ;
+         fhir:reference [ fhir:v "StructureDefinition/mobility-risk-assessment" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Risk Assessment Profile" ] ;
+       fhir:description [ fhir:v "Profile for assessing mobility-related risks" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -1509,6 +1893,33 @@
        ] ;
        fhir:name [ fhir:v "Mood Value Set" ] ;
        fhir:description [ fhir:v "Codes representing different mood states" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/NoiseExposureExample> ;
+         fhir:reference [ fhir:v "Observation/NoiseExposureExample" ]
+       ] ;
+       fhir:name [ fhir:v "Noise Exposure Measurement Example" ] ;
+       fhir:description [ fhir:v "Example of noise exposure measurement from iOS Health App" ] ;
+       fhir:example [
+         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation"^^xsd:anyURI ;
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/noise-exposure-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Noise Exposure Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for noise exposure measurements from iOS Health App" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1597,6 +2008,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/physiological-stress-index> ;
+         fhir:reference [ fhir:v "StructureDefinition/physiological-stress-index" ]
+       ] ;
+       fhir:name [ fhir:v "Physiological Stress Index Extension" ] ;
+       fhir:description [ fhir:v "Index representing overall physiological stress based on multiple parameters" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
@@ -1617,6 +2040,78 @@
        ] ;
        fhir:name [ fhir:v "Practice Environment Types Value Set" ] ;
        fhir:description [ fhir:v "Value set of practice environment types" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/recovery-efficiency> ;
+         fhir:reference [ fhir:v "StructureDefinition/recovery-efficiency" ]
+       ] ;
+       fhir:name [ fhir:v "Recovery Efficiency Extension" ] ;
+       fhir:description [ fhir:v "Measure of how efficiently the body recovers from stress or exertion" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/reproductive-activity-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/reproductive-activity-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Reproductive Health Activities Code System" ] ;
+       fhir:description [ fhir:v "Code system for reproductive health monitoring activities" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/reproductive-activity-vs> ;
+         fhir:reference [ fhir:v "ValueSet/reproductive-activity-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Reproductive Health Activities Value Set" ] ;
+       fhir:description [ fhir:v "Activities related to reproductive health monitoring" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/reproductive-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/reproductive-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Reproductive Health Base Profile" ] ;
+       fhir:description [ fhir:v "Base profile for reproductive health observations" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/reproductive-goal-vs> ;
+         fhir:reference [ fhir:v "ValueSet/reproductive-goal-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Reproductive Health Goals Value Set" ] ;
+       fhir:description [ fhir:v "Goals related to reproductive health tracking and planning" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Questionnaire" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Questionnaire/ReproductiveHealthQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/ReproductiveHealthQuestionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Reproductive Health Tracking Questionnaire" ] ;
+       fhir:description [ fhir:v "Daily questionnaire for reproductive health tracking" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1759,6 +2254,183 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/symptom-questionnaire> ;
+         fhir:reference [ fhir:v "StructureDefinition/symptom-questionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Assessment Questionnaire" ] ;
+       fhir:description [ fhir:v "Questionnaire template for symptom assessments" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-frequency-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/symptom-frequency-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Frequency Code System" ] ;
+       fhir:description [ fhir:v "Frequency patterns for symptoms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/symptom-frequency-vs> ;
+         fhir:reference [ fhir:v "ValueSet/symptom-frequency-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Frequency Value Set" ] ;
+       fhir:description [ fhir:v "Frequency patterns for symptoms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-impact-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/symptom-impact-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Impact Code System" ] ;
+       fhir:description [ fhir:v "Impact levels of symptoms on daily activities" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/symptom-impact-vs> ;
+         fhir:reference [ fhir:v "ValueSet/symptom-impact-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Impact Value Set" ] ;
+       fhir:description [ fhir:v "Impact levels for symptoms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/symptom-progression-vs> ;
+         fhir:reference [ fhir:v "ValueSet/symptom-progression-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Progression Value Set" ] ;
+       fhir:description [ fhir:v "Progression patterns for symptoms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/symptom-severity-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/symptom-severity-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Severity Code System" ] ;
+       fhir:description [ fhir:v "Severity levels for symptoms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/time-of-day-vs> ;
+         fhir:reference [ fhir:v "ValueSet/time-of-day-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Time of Day Value Set" ] ;
+       fhir:description [ fhir:v "Times of day for symptom occurrence" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/UVExposureExample> ;
+         fhir:reference [ fhir:v "Observation/UVExposureExample" ]
+       ] ;
+       fhir:name [ fhir:v "UV Exposure Measurement Example" ] ;
+       fhir:description [ fhir:v "Example of UV exposure measurement from iOS Health App" ] ;
+       fhir:example [
+         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation"^^xsd:anyURI ;
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/uv-exposure-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/uv-exposure-observation" ]
+       ] ;
+       fhir:name [ fhir:v "UV Exposure Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for UV exposure measurements from iOS Health App" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/WalkingSpeedExample> ;
+         fhir:reference [ fhir:v "Observation/WalkingSpeedExample" ]
+       ] ;
+       fhir:name [ fhir:v "Walking Speed Measurement Example" ] ;
+       fhir:description [ fhir:v "Example of walking speed measurement from iPhone Motion Sensors" ] ;
+       fhir:example [
+         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-speed-observation"^^xsd:anyURI ;
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-speed-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-speed-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/walking-speed-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Walking Speed Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for walking speed measurements from iPhone Motion Sensors" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/WalkingSteadinessExample> ;
+         fhir:reference [ fhir:v "Observation/WalkingSteadinessExample" ]
+       ] ;
+       fhir:name [ fhir:v "Walking Steadiness Measurement Example" ] ;
+       fhir:description [ fhir:v "Example of walking steadiness measurement from iPhone Motion Sensors" ] ;
+       fhir:example [
+         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation"^^xsd:anyURI ;
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/walking-steadiness-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Walking Steadiness Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for walking steadiness measurements from iPhone Motion Sensors" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/water-intake-observation> ;
          fhir:reference [ fhir:v "StructureDefinition/water-intake-observation" ]
        ] ;
@@ -1841,10 +2513,26 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "advanced_vitalsigns.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "advanced_vitalsigns.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Advanced Vitalsigns" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "bodymetrics.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "bodymetrics.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Bodymetrics" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "environmental.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "environmental.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Environmental" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -1865,6 +2553,14 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "mobility.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "mobility.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Mobility" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "nutrition.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "nutrition.html"^^xsd:anyURI ] ;
@@ -1881,10 +2577,26 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "reproductive.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "reproductive.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Reproductive" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "sleep.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "sleep.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Sleep" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "symptoms.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "symptoms.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Symptoms" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

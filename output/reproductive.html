@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Reproductive - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">iOS Lifestyle Medicine Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Reproductive</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://github.com/RicardoLSantos/shorthand/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Reproductive</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#fhir-resources" id="markdown-toc-fhir-resources">FHIR Resources</a>    <ul>
+      <li><a href="#main-resources-used" id="markdown-toc-main-resources-used">Main Resources Used</a></li>
+      <li><a href="#parameters" id="markdown-toc-parameters">Parameters</a></li>
+      <li><a href="#search-examples" id="markdown-toc-search-examples">Search Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#conformance" id="markdown-toc-conformance">Conformance</a>    <ul>
+      <li><a href="#must-support-elements" id="markdown-toc-must-support-elements">Must Support Elements</a></li>
+    </ul>
+  </li>
+  <li><a href="#implementation-considerations" id="markdown-toc-implementation-considerations">Implementation Considerations</a>    <ul>
+      <li><a href="#data-collection" id="markdown-toc-data-collection">Data Collection</a></li>
+      <li><a href="#data-analysis" id="markdown-toc-data-analysis">Data Analysis</a></li>
+      <li><a href="#clinical-integration" id="markdown-toc-clinical-integration">Clinical Integration</a></li>
+      <li><a href="#privacy--security" id="markdown-toc-privacy--security">Privacy &amp; Security</a></li>
+    </ul>
+  </li>
+  <li><a href="#ios-health-app-to-fhir-mapping" id="markdown-toc-ios-health-app-to-fhir-mapping">iOS Health App to FHIR Mapping</a>    <ul>
+      <li><a href="#core-fields" id="markdown-toc-core-fields">Core Fields</a></li>
+      <li><a href="#integration-requirements" id="markdown-toc-integration-requirements">Integration Requirements</a></li>
+      <li><a href="#performance-considerations" id="markdown-toc-performance-considerations">Performance Considerations</a></li>
+      <li><a href="#user-interface-guidelines" id="markdown-toc-user-interface-guidelines">User Interface Guidelines</a></li>
+    </ul>
+  </li>
+  <li><a href="#detailed-implementation-considerations" id="markdown-toc-detailed-implementation-considerations">Detailed Implementation Considerations</a>    <ul>
+      <li><a href="#data-management" id="markdown-toc-data-management">Data Management</a></li>
+      <li><a href="#clinical-integration-details" id="markdown-toc-clinical-integration-details">Clinical Integration Details</a></li>
+      <li><a href="#advanced-analytics" id="markdown-toc-advanced-analytics">Advanced Analytics</a></li>
+      <li><a href="#system-integration" id="markdown-toc-system-integration">System Integration</a></li>
+      <li><a href="#performance-optimization" id="markdown-toc-performance-optimization">Performance Optimization</a></li>
+      <li><a href="#user-experience" id="markdown-toc-user-experience">User Experience</a></li>
+      <li><a href="#security-details" id="markdown-toc-security-details">Security Details</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<h2 id="fhir-resources">FHIR Resources</h2>
+
+<h3 id="main-resources-used">Main Resources Used</h3>
+<ul>
+  <li>Observation: For cycle tracking and temperature measurements</li>
+  <li>QuestionnaireResponse: For symptom reporting</li>
+  <li>CarePlan: For fertility planning</li>
+  <li>Goal: For reproductive health goals</li>
+</ul>
+
+<h3 id="parameters">Parameters</h3>
+<ul>
+  <li>patient: Patient identifier</li>
+  <li>date: Record date</li>
+  <li>category: reproductive-health</li>
+  <li>code: Specific measurement type</li>
+</ul>
+
+<h3 id="search-examples">Search Examples</h3>
+<p>GET [base]/Observation?category=reproductive-health&amp;patient=[id]&amp;date=[date]
+GET [base]/Observation?code=menstrual-cycle&amp;patient=[id]</p>
+
+<h2 id="conformance">Conformance</h2>
+
+<h3 id="must-support-elements">Must Support Elements</h3>
+<p>Elements marked with MS must be supported:</p>
+<ul>
+  <li>status</li>
+  <li>category</li>
+  <li>code</li>
+  <li>subject</li>
+  <li>effectiveDateTime</li>
+  <li>value[x]</li>
+  <li>component (for composite measurements)</li>
+</ul>
+
+<h2 id="implementation-considerations">Implementation Considerations</h2>
+
+<h3 id="data-collection">Data Collection</h3>
+<ol>
+  <li>Automated Measurements
+    <ul>
+      <li>Temperature tracking</li>
+      <li>Activity patterns</li>
+      <li>Sleep quality</li>
+      <li>Heart rate variability</li>
+    </ul>
+  </li>
+  <li>Manual Records
+    <ul>
+      <li>Symptom logging</li>
+      <li>Cycle tracking</li>
+      <li>Fertility signs</li>
+      <li>Medication use</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="data-analysis">Data Analysis</h3>
+<ol>
+  <li>Pattern Recognition
+    <ul>
+      <li>Cycle regularity</li>
+      <li>Temperature trends</li>
+      <li>Symptom correlations</li>
+      <li>Fertility windows</li>
+    </ul>
+  </li>
+  <li>Alert Generation
+    <ul>
+      <li>Cycle predictions</li>
+      <li>Fertile days</li>
+      <li>Temperature changes</li>
+      <li>Symptom patterns</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="clinical-integration">Clinical Integration</h3>
+<ol>
+  <li>Reports
+    <ul>
+      <li>Cycle summaries</li>
+      <li>Fertility tracking</li>
+      <li>Symptom patterns</li>
+      <li>Treatment responses</li>
+    </ul>
+  </li>
+  <li>Decision Support
+    <ul>
+      <li>Fertility planning</li>
+      <li>Cycle abnormalities</li>
+      <li>Risk identification</li>
+      <li>Treatment monitoring</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="privacy--security">Privacy &amp; Security</h3>
+<ol>
+  <li>Data Protection
+    <ul>
+      <li>Encryption</li>
+      <li>Access control</li>
+      <li>Consent management</li>
+      <li>Data sharing</li>
+    </ul>
+  </li>
+  <li>User Control
+    <ul>
+      <li>Data visibility</li>
+      <li>Sharing preferences</li>
+      <li>Export options</li>
+      <li>Deletion rights</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="ios-health-app-to-fhir-mapping">iOS Health App to FHIR Mapping</h2>
+
+<h3 id="core-fields">Core Fields</h3>
+<p>| iOS Health App | FHIR Path | LOINC Code |
+|—————-|———–|————|
+| Cycle Start | Observation.effectiveDateTime | 8665-2 |
+| Cycle Length | Observation.valueQuantity | 8664-5 |
+| Flow Duration | Observation.component[duration].valueQuantity | 49033-4 |
+| Basal Temperature | Observation.valueQuantity | 8310-5 |
+| Cervical Mucus | Observation.valueCodeableConcept | 8669-4 |</p>
+
+<h3 id="integration-requirements">Integration Requirements</h3>
+<ol>
+  <li>HealthKit Access
+    <ul>
+      <li>Permissions setup</li>
+      <li>Data synchronization</li>
+      <li>Background updates</li>
+      <li>Error handling</li>
+    </ul>
+  </li>
+  <li>Data Validation
+    <ul>
+      <li>Range checks</li>
+      <li>Pattern validation</li>
+      <li>Temporal consistency</li>
+      <li>Cross-reference verification</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="performance-considerations">Performance Considerations</h3>
+<ol>
+  <li>Data Processing
+    <ul>
+      <li>Real-time updates</li>
+      <li>Batch processing</li>
+      <li>Historical data</li>
+      <li>Trend analysis</li>
+    </ul>
+  </li>
+  <li>Resource Optimization
+    <ul>
+      <li>Battery usage</li>
+      <li>Storage efficiency</li>
+      <li>Network usage</li>
+      <li>Processing load</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="user-interface-guidelines">User Interface Guidelines</h3>
+<ol>
+  <li>Data Entry
+    <ul>
+      <li>Quick input methods</li>
+      <li>Template options</li>
+      <li>Reminder settings</li>
+      <li>Validation feedback</li>
+    </ul>
+  </li>
+  <li>Visualization
+    <ul>
+      <li>Cycle calendar</li>
+      <li>Temperature charts</li>
+      <li>Symptom tracking</li>
+      <li>Fertility windows</li>
+    </ul>
+  </li>
+  <li>Notifications
+    <ul>
+      <li>Cycle predictions</li>
+      <li>Fertile days</li>
+      <li>Temperature alerts</li>
+      <li>Medication reminders</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="detailed-implementation-considerations">Detailed Implementation Considerations</h2>
+
+<h3 id="data-management">Data Management</h3>
+<ol>
+  <li>Storage Strategy
+    <ul>
+      <li>Real-time data storage</li>
+      <li>Historical data archival</li>
+      <li>Data compression techniques</li>
+      <li>Backup procedures</li>
+      <li>Recovery mechanisms</li>
+      <li>Version control</li>
+    </ul>
+  </li>
+  <li>Data Quality
+    <ul>
+      <li>Input validation rules</li>
+      <li>Data completeness checks</li>
+      <li>Cross-validation methods</li>
+      <li>Anomaly detection</li>
+      <li>Error correction procedures</li>
+      <li>Quality metrics</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="clinical-integration-details">Clinical Integration Details</h3>
+<ol>
+  <li>Provider Integration
+    <ul>
+      <li>Clinical portal access</li>
+      <li>Data export formats</li>
+      <li>Integration APIs</li>
+      <li>Real-time notifications</li>
+      <li>Emergency alerts</li>
+      <li>Audit trails</li>
+    </ul>
+  </li>
+  <li>Decision Support
+    <ul>
+      <li>Clinical guidelines integration</li>
+      <li>Risk assessment algorithms</li>
+      <li>Treatment recommendations</li>
+      <li>Follow-up protocols</li>
+      <li>Alert thresholds</li>
+      <li>Intervention triggers</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="advanced-analytics">Advanced Analytics</h3>
+<ol>
+  <li>Pattern Recognition
+    <ul>
+      <li>Cycle irregularity detection</li>
+      <li>Symptom correlation analysis</li>
+      <li>Fertility window prediction</li>
+      <li>Risk factor identification</li>
+      <li>Trend analysis</li>
+      <li>Outcome prediction</li>
+    </ul>
+  </li>
+  <li>Machine Learning Integration
+    <ul>
+      <li>Prediction models</li>
+      <li>Pattern classification</li>
+      <li>Anomaly detection</li>
+      <li>Personalization</li>
+      <li>Model training</li>
+      <li>Performance monitoring</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="system-integration">System Integration</h3>
+<ol>
+  <li>External Systems
+    <ul>
+      <li>EHR integration</li>
+      <li>Laboratory systems</li>
+      <li>Pharmacy systems</li>
+      <li>Insurance systems</li>
+      <li>Research databases</li>
+      <li>Public health reporting</li>
+    </ul>
+  </li>
+  <li>Data Exchange
+    <ul>
+      <li>HL7 FHIR APIs</li>
+      <li>Standard terminologies</li>
+      <li>Data mapping</li>
+      <li>Transform rules</li>
+      <li>Validation checks</li>
+      <li>Error handling</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="performance-optimization">Performance Optimization</h3>
+<ol>
+  <li>Resource Management
+    <ul>
+      <li>CPU usage</li>
+      <li>Memory allocation</li>
+      <li>Storage optimization</li>
+      <li>Network bandwidth</li>
+      <li>Battery consumption</li>
+      <li>Cache strategy</li>
+    </ul>
+  </li>
+  <li>Scalability
+    <ul>
+      <li>Load balancing</li>
+      <li>Database sharding</li>
+      <li>Service distribution</li>
+      <li>Queue management</li>
+      <li>Batch processing</li>
+      <li>Real-time processing</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="user-experience">User Experience</h3>
+<ol>
+  <li>Accessibility
+    <ul>
+      <li>Screen reader support</li>
+      <li>Color contrast</li>
+      <li>Font sizing</li>
+      <li>Touch targets</li>
+      <li>Keyboard navigation</li>
+      <li>Voice input</li>
+    </ul>
+  </li>
+  <li>Localization
+    <ul>
+      <li>Multiple languages</li>
+      <li>Cultural considerations</li>
+      <li>Date formats</li>
+      <li>Unit preferences</li>
+      <li>Terminology adaptation</li>
+      <li>Regional compliance</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="security-details">Security Details</h3>
+<ol>
+  <li>Authentication
+    <ul>
+      <li>Multi-factor authentication</li>
+      <li>Biometric options</li>
+      <li>Session management</li>
+      <li>Token handling</li>
+      <li>Password policies</li>
+      <li>Account recovery</li>
+    </ul>
+  </li>
+  <li>Authorization
+    <ul>
+      <li>Role-based access</li>
+      <li>Attribute-based control</li>
+      <li>Dynamic permissions</li>
+      <li>Temporary access</li>
+      <li>Emergency access</li>
+      <li>Audit logging</li>
+    </ul>
+  </li>
+  <li>Compliance
+    <ul>
+      <li>HIPAA requirements</li>
+      <li>GDPR compliance</li>
+      <li>Local regulations</li>
+      <li>Industry standards</li>
+      <li>Security frameworks</li>
+      <li>Privacy policies</li>
+    </ul>
+  </li>
+</ol>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 27, 2024 22:28+0000">2024-12-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
