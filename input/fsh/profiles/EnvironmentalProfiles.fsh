@@ -105,4 +105,4 @@ Title: "Environmental Context Extension"
 Description: "Additional context about environmental measurements"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from EnvironmentalContextVS (required)
+* valueCodeableConcept from http://example.org/fhir/ValueSet/environmental-context (required)
