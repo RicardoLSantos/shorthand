@@ -1,3 +1,15 @@
+Profile: ReproductiveObservation
+Parent: Observation
+Id: reproductive-observation
+Title: "Reproductive Health Base Profile"
+Description: "Base profile for reproductive health observations"
+
+* status MS
+* category 1..1 MS
+* category = http://terminology.hl7.org/CodeSystem/observation-category#reproductive
+* subject 1..1 MS
+* effectiveDateTime 1..1 MS
+* value[x] MS
 
 Profile: FertilityObservation
 Parent: ReproductiveObservation
@@ -49,6 +61,33 @@ Description: "Profile for reproductive health symptoms"
 * component[duration].valueQuantity.system = $UCUM
 * component[duration].valueQuantity.code = #h
 
+Profile: MenstrualCycleObservation
+Parent: ReproductiveObservation
+Id: menstrual-cycle-observation
+Title: "Menstrual Cycle Observation Profile"
+Description: "Profile for menstrual cycle tracking"
+
+* code = $LOINC#49033-4 "Menstrual cycle finding"
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+
+* component contains
+    cycleLength 0..1 MS and
+    flowDuration 0..1 MS and
+    flowIntensity 0..1 MS
+
+* component[cycleLength].code = $LOINC#8708-0 "Menstrual cycle length"
+* component[cycleLength].valueQuantity.system = $UCUM
+* component[cycleLength].valueQuantity.code = #d
+
+* component[flowDuration].code = $LOINC#49030-0 "Menstruation duration"
+* component[flowDuration].valueQuantity.system = $UCUM
+* component[flowDuration].valueQuantity.code = #d
+
+* component[flowIntensity].code = FlowIntensityCS#moderate "Flow intensity"
+* component[flowIntensity].valueCodeableConcept from FlowIntensityVS (required)
+
 Profile: ReproductiveGoal
 Parent: Goal
 Id: reproductive-goal
@@ -61,7 +100,7 @@ Description: "Profile for reproductive health goals and planning"
 * subject 1..1 MS
 * target MS
 
-* target.measure from ReproductiveGoalVS (required)
+* target.measure from http://example.org/fhir/ValueSet/reproductive-goal-measures (required)
 * target.detail[x] only Quantity or CodeableConcept
 * target.due[x] only date or Duration
 
@@ -78,28 +117,6 @@ Description: "Profile for reproductive cycle planning and tracking"
 * activity MS
 
 * activity.detail.kind = #observation
-* activity.detail.code from ReproductiveActivityVS (required)
+* activity.detail.code from http://example.org/fhir/ValueSet/reproductive-activity (required)
 * activity.detail.status MS
 * activity.detail.scheduledTiming MS
-
-Invariant: temp-range
-Description: "Basal temperature must be between 35.0 and 38.0 Celsius"
-Severity: #error
-Expression: "valueQuantity.value >= 35.0 and valueQuantity.value <= 38.0"
-
-Invariant: cycle-length-range
-Description: "Cycle length must be between 20 and 45 days"
-Severity: #error
-Expression: "component.where(code = %cycleLength).valueQuantity.value >= 20 and component.where(code = %cycleLength).valueQuantity.value <= 45"
-
-Instance: ExampleMenstrualCycle
-InstanceOf: MenstrualCycleObservation
-Title: "Example Menstrual Cycle Record"
-Usage: #example
-
-* status = #final
-* subject = Reference(Patient/example)
-* effectiveDateTime = "2024-03-19"
-* component[cycleLength].valueQuantity = 28 'd'
-* component[flowDuration].valueQuantity = 5 'd'
-
