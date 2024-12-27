@@ -1,3 +1,34 @@
+Profile: SymptomObservation
+Parent: Observation
+Id: symptom-observation
+Title: "Symptom Observation Profile"
+Description: "Profile for recording symptoms and their characteristics"
+
+* status MS
+* category 1..1 MS
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* code 1..1 MS
+* subject 1..1 MS
+* effectiveDateTime MS
+
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+
+* component contains
+    severity 0..1 MS and
+    duration 0..1 MS and
+    frequency 0..1 MS
+
+* component[severity].code = $LOINC#72514-3 "Pain severity score"
+* component[severity].valueInteger only integer
+
+* component[duration].code = $LOINC#103332-8 "Duration"
+* component[duration].valueQuantity.system = $UCUM
+* component[duration].valueQuantity.code = #d
+
+* component[frequency].code = $LOINC#103334-4 "Frequency"
+* component[frequency].valueString only string
 
 Instance: ChronicSymptomExample
 InstanceOf: SymptomObservation
@@ -10,13 +41,8 @@ Title: "Chronic Symptom Example"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T14:00:00Z"
 
-* component[severity].code = $LOINC#72514-3
 * component[severity].valueInteger = 7
-
-* component[duration].code = $LOINC#103332-8
 * component[duration].valueQuantity = 30 'd'
-
-* component[frequency].code = $LOINC#103334-4
 * component[frequency].valueString = "Daily occurrence"
 
 Instance: SymptomQuestionnaireResponseExample
@@ -76,13 +102,8 @@ Title: "Symptom Follow-up Example"
 * effectiveDateTime = "2024-03-26T10:00:00Z"
 * basedOn = Reference(CarePlan/example)
 
-* component[severity].code = $LOINC#72514-3
 * component[severity].valueInteger = 4
-
-* component[duration].code = $LOINC#103332-8
 * component[duration].valueQuantity = 45 'min'
-
-* component[frequency].code = $LOINC#103334-4
 * component[frequency].valueString = "Once per week"
 
 Instance: SymptomWithContextExample
@@ -96,14 +117,8 @@ Title: "Symptom with Context Example"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 
-* component[severity].code = $LOINC#72514-3
 * component[severity].valueInteger = 8
-
-* component[duration].code = $LOINC#103332-8
 * component[duration].valueQuantity = 180 'min'
-
-* component[frequency].code = $LOINC#103334-4
 * component[frequency].valueString = "3 times per week"
 
 * note.text = "Symptoms worsen with physical activity and bright lights"
-
