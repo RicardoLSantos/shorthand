@@ -10,13 +10,16 @@ Description: "Profile for fertility signs and symptoms"
 * code = $LOINC#8669-4 "Ovulation status"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
-* value[x] MS
+
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
 
 * component contains
     cervicalMucus 0..1 MS and
-    ovulationTest 0..1 MS and 
+    ovulationTest 0..1 MS and
     fertilityStatus 0..1 MS
 
-* component[cervicalMucus].valueCodeableConcept from http://hl7.org/fhir/ValueSet/cervical-mucus-observation (required)
-* component[ovulationTest].valueCodeableConcept from http://hl7.org/fhir/ValueSet/ovulation-test-observation (required) 
-* component[fertilityStatus].valueCodeableConcept from http://hl7.org/fhir/ValueSet/fertility-status-observation (required)
+* component[cervicalMucus].valueCodeableConcept from http://example.org/fhir/ValueSet/cervical-mucus-vs (required)
+* component[ovulationTest].valueCodeableConcept from http://example.org/fhir/ValueSet/ovulation-test-vs (required)
+* component[fertilityStatus].valueCodeableConcept from http://example.org/fhir/ValueSet/fertility-status-vs (required)

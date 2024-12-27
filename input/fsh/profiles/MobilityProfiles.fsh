@@ -17,28 +17,12 @@ Description: "Profile for mobility data from iOS Health App"
 * component ^slicing.rules = #open
 
 * component contains
-    balanceScore 0..1 MS and
-    balanceStatus 0..1 MS and
-    speed 0..1 MS and
-    distance 0..1 MS
+    steadiness 0..1 MS and
+    balance 0..1 MS and
+    gait 0..1 MS and 
+    movement 0..1 MS
 
-* component[balanceScore].code = $LOINC#LA32-8 "Balance score"
-* component[balanceStatus].code = $LOINC#LA32-9 "Balance status"
-* component[speed].code = $LOINC#LA29042-4 "Walking speed"
-* component[distance].code = $LOINC#LA29043-2 "Walking distance"
-
-Profile: WalkingSteadinessObservation
-Parent: MobilityProfile
-Id: walking-steadiness-observation
-Title: "Walking Steadiness Observation Profile"
-Description: "Profile for walking steadiness measurements from iPhone Motion Sensors"
-
-* code = $LOINC#LA32-8 "Balance"
-
-Profile: WalkingSpeedObservation 
-Parent: MobilityProfile
-Id: walking-speed-observation
-Title: "Walking Speed Observation Profile"
-Description: "Profile for walking speed measurements from iPhone Motion Sensors"
-
-* code = $LOINC#LA29042-4 "Walking speed"
+* component[steadiness].code = $LOINC#LA32-8
+* component[balance].code = $LOINC#LA32-9
+* component[gait].code = $LOINC#LA29042-4
+* component[movement].code = $LOINC#LA29043-2
