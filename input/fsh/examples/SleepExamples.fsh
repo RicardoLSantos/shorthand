@@ -8,7 +8,6 @@ Description: "Example of nightly sleep data from iOS Health App"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#sleep
 * code = $LOINC#93832-4 "Sleep pattern panel"
 * subject = Reference(PatientExample)
-* effectiveDateTime = "2024-03-19T22:00:00Z"
 * effectivePeriod.start = "2024-03-19T22:00:00Z"
 * effectivePeriod.end = "2024-03-20T06:30:00Z"
 * device = Reference(DeviceSleepMonitor)
