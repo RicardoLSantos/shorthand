@@ -11,7 +11,7 @@ Title: "Fertility Signs Example"
 
 * component[cervicalMucus]
   * code = $LOINC#89020-2 "Cervical mucus observation"
-  * valueCodeableConcept = http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggwhite
+  * valueCodeableConcept = http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggWhite
 
 * component[ovulationTest]
   * code = $LOINC#89021-0 "Ovulation test"
