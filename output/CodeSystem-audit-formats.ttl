@@ -1,0 +1,46 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/audit-formats> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "audit-formats"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem audit-formats</b></p><a name=\"audit-formats\"> </a><a name=\"hcaudit-formats\"> </a><a name=\"audit-formats-en-US\"> </a><p>This case-sensitive code system <code>http://example.org/fhir/CodeSystem/audit-formats</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">text<a name=\"audit-formats-text\"> </a></td><td>Text Format</td></tr><tr><td style=\"white-space:nowrap\">structured<a name=\"audit-formats-structured\"> </a></td><td>Structured Format</td></tr><tr><td style=\"white-space:nowrap\">mixed<a name=\"audit-formats-mixed\"> </a></td><td>Mixed Format</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/CodeSystem/audit-formats"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "AuditFormatsCodeSystem"] ; # 
+  fhir:title [ fhir:v "Audit Formats Code System"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2025-01-02T17:46:41+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Code system for audit format types"] ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "text" ] ;
+     fhir:display [ fhir:v "Text Format" ]
+  ] [
+     fhir:code [ fhir:v "structured" ] ;
+     fhir:display [ fhir:v "Structured Format" ]
+  ] [
+     fhir:code [ fhir:v "mixed" ] ;
+     fhir:display [ fhir:v "Mixed Format" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

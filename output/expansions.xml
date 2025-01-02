@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="71e1a0fc-4b4d-4429-b3e2-b8fc3da5ae40"/>
+  <id value="bb8e8bc6-e260-40fb-9dc8-01651ba1f8da"/>
   <meta>
-    <lastUpdated value="2024-12-27T22:28:35.563+00:00"/>
+    <lastUpdated value="2025-01-02T17:46:41.720+00:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -114,10 +114,10 @@
         <title value="Advanced Vital Signs Context Value Set"/>
         <status value="draft"/>
         <experimental value="true"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:d9f746fa-1d31-470f-8405-0002ab301717"/>
-          <timestamp value="2024-12-27T22:30:42+00:00"/>
+          <identifier value="urn:uuid:2326e31f-bed2-4c01-8fbb-6cd88e03e70b"/>
+          <timestamp value="2025-01-02T17:47:53+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -160,6 +160,443 @@
             <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/advanced-vital-signs-context-cs"/>
             <code value="stress"/>
             <display value="Stress state"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/ValueSet/assistance-level-outcomes-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-assistance-level-outcomes-codesystem.html">codesystem Assistance Level Outcomes Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 4 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/assistance-level-outcomes-codesystem-independent"> </a>  
+                  <a href="CodeSystem-assistance-level-outcomes-codesystem.html#assistance-level-outcomes-codesystem-independent">independent</a>
+                </td>
+                <td>http://example.org/CodeSystem/assistance-level-outcomes-codesystem</td>
+                <td>Independent</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/assistance-level-outcomes-codesystem-minimalAssistance"> </a>  
+                  <a href="CodeSystem-assistance-level-outcomes-codesystem.html#assistance-level-outcomes-codesystem-minimalAssistance">minimalAssistance</a>
+                </td>
+                <td>http://example.org/CodeSystem/assistance-level-outcomes-codesystem</td>
+                <td>Minimal Assistance Needed</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/assistance-level-outcomes-codesystem-moderateAssistance"> </a>  
+                  <a href="CodeSystem-assistance-level-outcomes-codesystem.html#assistance-level-outcomes-codesystem-moderateAssistance">moderateAssistance</a>
+                </td>
+                <td>http://example.org/CodeSystem/assistance-level-outcomes-codesystem</td>
+                <td>Moderate Assistance Needed</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/assistance-level-outcomes-codesystem-maximumAssistance"> </a>  
+                  <a href="CodeSystem-assistance-level-outcomes-codesystem.html#assistance-level-outcomes-codesystem-maximumAssistance">maximumAssistance</a>
+                </td>
+                <td>http://example.org/CodeSystem/assistance-level-outcomes-codesystem</td>
+                <td>Maximum Assistance Needed</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/ValueSet/assistance-level-outcomes-valueset"/>
+        <version value="0.1.0"/>
+        <name value="AssistanceLevelOutcomesValueSet"/>
+        <title value="Assistance Level Outcomes Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:02eeb6d4-04f5-47e3-8214-dc1d6ef707c6"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="4"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/CodeSystem/assistance-level-outcomes-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/CodeSystem/assistance-level-outcomes-codesystem"/>
+            <code value="independent"/>
+            <display value="Independent"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/assistance-level-outcomes-codesystem"/>
+            <code value="minimalAssistance"/>
+            <display value="Minimal Assistance Needed"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/assistance-level-outcomes-codesystem"/>
+            <code value="moderateAssistance"/>
+            <display value="Moderate Assistance Needed"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/assistance-level-outcomes-codesystem"/>
+            <code value="maximumAssistance"/>
+            <display value="Maximum Assistance Needed"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ValueSet/audit-formats"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-audit-formats.html">codesystem Audit Formats Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 3 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/audit-formats-text"> </a>  
+                  <a href="CodeSystem-audit-formats.html#audit-formats-text">text</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/audit-formats</td>
+                <td>Text Format</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/audit-formats-structured"> </a>  
+                  <a href="CodeSystem-audit-formats.html#audit-formats-structured">structured</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/audit-formats</td>
+                <td>Structured Format</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/audit-formats-mixed"> </a>  
+                  <a href="CodeSystem-audit-formats.html#audit-formats-mixed">mixed</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/audit-formats</td>
+                <td>Mixed Format</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/fhir/ValueSet/audit-formats"/>
+        <version value="0.1.0"/>
+        <name value="AuditFormatsValueSet"/>
+        <title value="Audit Formats Value Set"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2024-12-27"/>
+        <expansion>
+          <identifier value="urn:uuid:72a69298-0900-444a-abad-65a23774e1d1"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/fhir/CodeSystem/audit-formats|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/audit-formats"/>
+            <code value="text"/>
+            <display value="Text Format"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/audit-formats"/>
+            <code value="structured"/>
+            <display value="Structured Format"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/audit-formats"/>
+            <code value="mixed"/>
+            <display value="Mixed Format"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ValueSet/audit-levels"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-audit-levels.html">codesystem Audit Levels Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 3 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/audit-levels-low"> </a>  
+                  <a href="CodeSystem-audit-levels.html#audit-levels-low">low</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/audit-levels</td>
+                <td>Low Level</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/audit-levels-medium"> </a>  
+                  <a href="CodeSystem-audit-levels.html#audit-levels-medium">medium</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/audit-levels</td>
+                <td>Medium Level</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/audit-levels-high"> </a>  
+                  <a href="CodeSystem-audit-levels.html#audit-levels-high">high</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/audit-levels</td>
+                <td>High Level</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/fhir/ValueSet/audit-levels"/>
+        <version value="0.1.0"/>
+        <name value="AuditLevelsValueSet"/>
+        <title value="Audit Levels Value Set"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2024-12-27"/>
+        <expansion>
+          <identifier value="urn:uuid:fe795555-945b-49bb-a5c5-6acd704e4879"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/fhir/CodeSystem/audit-levels|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/audit-levels"/>
+            <code value="low"/>
+            <display value="Low Level"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/audit-levels"/>
+            <code value="medium"/>
+            <display value="Medium Level"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/audit-levels"/>
+            <code value="high"/>
+            <display value="High Level"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ValueSet/balance-status-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-balance-status-codesystem.html">codesystem Balance Status Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 5 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/balance-status-codesystem-veryStable"> </a>  
+                  <a href="CodeSystem-balance-status-codesystem.html#balance-status-codesystem-veryStable">veryStable</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/balance-status-codesystem</td>
+                <td>Very Stable</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/balance-status-codesystem-stable"> </a>  
+                  <a href="CodeSystem-balance-status-codesystem.html#balance-status-codesystem-stable">stable</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/balance-status-codesystem</td>
+                <td>Stable</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/balance-status-codesystem-slightlyUnstable"> </a>  
+                  <a href="CodeSystem-balance-status-codesystem.html#balance-status-codesystem-slightlyUnstable">slightlyUnstable</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/balance-status-codesystem</td>
+                <td>Slightly Unstable</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/balance-status-codesystem-unstable"> </a>  
+                  <a href="CodeSystem-balance-status-codesystem.html#balance-status-codesystem-unstable">unstable</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/balance-status-codesystem</td>
+                <td>Unstable</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/balance-status-codesystem-veryUnstable"> </a>  
+                  <a href="CodeSystem-balance-status-codesystem.html#balance-status-codesystem-veryUnstable">veryUnstable</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/balance-status-codesystem</td>
+                <td>Very Unstable</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/fhir/ValueSet/balance-status-valueset"/>
+        <version value="0.1.0"/>
+        <name value="BalanceStatusValueSet"/>
+        <title value="Balance Status Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:86aec1cd-bb45-4c20-bdd3-fe0de790f767"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="5"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/fhir/CodeSystem/balance-status-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/balance-status-codesystem"/>
+            <code value="veryStable"/>
+            <display value="Very Stable"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/balance-status-codesystem"/>
+            <code value="stable"/>
+            <display value="Stable"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/balance-status-codesystem"/>
+            <code value="slightlyUnstable"/>
+            <display value="Slightly Unstable"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/balance-status-codesystem"/>
+            <code value="unstable"/>
+            <display value="Unstable"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/balance-status-codesystem"/>
+            <code value="veryUnstable"/>
+            <display value="Very Unstable"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -261,10 +698,10 @@
         <name value="BodyLocationsVS"/>
         <title value="Body Locations Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:5b994a4e-370f-48d5-9e45-39f84e7f3c49"/>
-          <timestamp value="2024-12-27T22:30:42+00:00"/>
+          <identifier value="urn:uuid:d9536581-aef1-4c8e-9fae-2a88036f85d6"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="8"/>
           <offset value="0"/>
           <parameter>
@@ -330,6 +767,131 @@
             <system value="http://snomed.info/sct"/>
             <code value="61685007"/>
             <display value="Lower extremity"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ValueSet/cervical-mucus-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-cervical-mucus-codesystem.html">codesystem Cervical Mucus Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 5 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/cervical-mucus-codesystem-dry"> </a>  
+                  <a href="CodeSystem-cervical-mucus-codesystem.html#cervical-mucus-codesystem-dry">dry</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/cervical-mucus-codesystem</td>
+                <td>Dry</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/cervical-mucus-codesystem-sticky"> </a>  
+                  <a href="CodeSystem-cervical-mucus-codesystem.html#cervical-mucus-codesystem-sticky">sticky</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/cervical-mucus-codesystem</td>
+                <td>Sticky</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/cervical-mucus-codesystem-creamy"> </a>  
+                  <a href="CodeSystem-cervical-mucus-codesystem.html#cervical-mucus-codesystem-creamy">creamy</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/cervical-mucus-codesystem</td>
+                <td>Creamy</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/cervical-mucus-codesystem-watery"> </a>  
+                  <a href="CodeSystem-cervical-mucus-codesystem.html#cervical-mucus-codesystem-watery">watery</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/cervical-mucus-codesystem</td>
+                <td>Watery</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/cervical-mucus-codesystem-eggWhite"> </a>  
+                  <a href="CodeSystem-cervical-mucus-codesystem.html#cervical-mucus-codesystem-eggWhite">eggWhite</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/cervical-mucus-codesystem</td>
+                <td>Egg White</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/fhir/ValueSet/cervical-mucus-valueset"/>
+        <version value="0.1.0"/>
+        <name value="CervicalMucusValueSet"/>
+        <title value="Cervical Mucus Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:331eece4-cefa-4089-add6-e9f7f92f4c57"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="5"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/fhir/CodeSystem/cervical-mucus-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/cervical-mucus-codesystem"/>
+            <code value="dry"/>
+            <display value="Dry"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/cervical-mucus-codesystem"/>
+            <code value="sticky"/>
+            <display value="Sticky"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/cervical-mucus-codesystem"/>
+            <code value="creamy"/>
+            <display value="Creamy"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/cervical-mucus-codesystem"/>
+            <code value="watery"/>
+            <display value="Watery"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/cervical-mucus-codesystem"/>
+            <code value="eggWhite"/>
+            <display value="Egg White"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -457,10 +1019,10 @@
         <title value="Circadian Phase Value Set"/>
         <status value="draft"/>
         <experimental value="true"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:73dae5b2-3184-479e-bded-f2334e33e245"/>
-          <timestamp value="2024-12-27T22:30:43+00:00"/>
+          <identifier value="urn:uuid:9fa15f5e-8bcd-4b6f-91df-37b21ff78ee4"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="6"/>
           <offset value="0"/>
           <parameter>
@@ -580,10 +1142,10 @@
         <name value="DurationUnitsVS"/>
         <title value="Duration Units Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:c1a271f1-1441-4d2d-956a-31f4fc343794"/>
-          <timestamp value="2024-12-27T22:30:43+00:00"/>
+          <identifier value="urn:uuid:e10a2784-1ad4-426a-b9af-b90e8e91aa15"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -733,10 +1295,10 @@
         <title value="Practice Environment Types Value Set"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:3108c49b-83f4-4041-9fd8-90988100ee36"/>
-          <timestamp value="2024-12-27T22:30:44+00:00"/>
+          <identifier value="urn:uuid:fb37c03f-36fb-4297-bcb3-977164ec6c20"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="4"/>
           <offset value="0"/>
           <parameter>
@@ -873,10 +1435,10 @@
         <title value="Exposure Conditions Value Set"/>
         <status value="draft"/>
         <experimental value="true"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:efc54bf8-be1a-4dbf-9e5c-a6d8b04e3b14"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:18b6d91c-b380-4bfa-82c2-2a3f4ac23e5e"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="4"/>
           <offset value="0"/>
           <parameter>
@@ -1055,10 +1617,10 @@
         <title value="Exposure Location Value Set"/>
         <status value="draft"/>
         <experimental value="true"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:7a76d6e9-9d82-4314-8d53-a4bd387d9905"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:f0a237fd-a9af-41a8-b9e4-3359cbf3ba58"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="7"/>
           <offset value="0"/>
           <parameter>
@@ -1111,6 +1673,217 @@
             <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-location-cs"/>
             <code value="rural"/>
             <display value="Rural area"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/ValueSet/fall-risk-outcomes-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-fall-risk-outcomes-codesystem.html">codesystem Fall Risk Outcomes Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 4 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/fall-risk-outcomes-codesystem-noRisk"> </a>  
+                  <a href="CodeSystem-fall-risk-outcomes-codesystem.html#fall-risk-outcomes-codesystem-noRisk">noRisk</a>
+                </td>
+                <td>http://example.org/CodeSystem/fall-risk-outcomes-codesystem</td>
+                <td>No Risk of Falls</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/fall-risk-outcomes-codesystem-lowRisk"> </a>  
+                  <a href="CodeSystem-fall-risk-outcomes-codesystem.html#fall-risk-outcomes-codesystem-lowRisk">lowRisk</a>
+                </td>
+                <td>http://example.org/CodeSystem/fall-risk-outcomes-codesystem</td>
+                <td>Low Risk of Falls</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/fall-risk-outcomes-codesystem-moderateRisk"> </a>  
+                  <a href="CodeSystem-fall-risk-outcomes-codesystem.html#fall-risk-outcomes-codesystem-moderateRisk">moderateRisk</a>
+                </td>
+                <td>http://example.org/CodeSystem/fall-risk-outcomes-codesystem</td>
+                <td>Moderate Risk of Falls</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/fall-risk-outcomes-codesystem-highRisk"> </a>  
+                  <a href="CodeSystem-fall-risk-outcomes-codesystem.html#fall-risk-outcomes-codesystem-highRisk">highRisk</a>
+                </td>
+                <td>http://example.org/CodeSystem/fall-risk-outcomes-codesystem</td>
+                <td>High Risk of Falls</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/ValueSet/fall-risk-outcomes-valueset"/>
+        <version value="0.1.0"/>
+        <name value="FallRiskOutcomesValueSet"/>
+        <title value="Fall Risk Outcomes Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:baafac4f-689b-418d-a05e-d54b235bdc99"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="4"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/CodeSystem/fall-risk-outcomes-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/CodeSystem/fall-risk-outcomes-codesystem"/>
+            <code value="noRisk"/>
+            <display value="No Risk of Falls"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/fall-risk-outcomes-codesystem"/>
+            <code value="lowRisk"/>
+            <display value="Low Risk of Falls"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/fall-risk-outcomes-codesystem"/>
+            <code value="moderateRisk"/>
+            <display value="Moderate Risk of Falls"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/fall-risk-outcomes-codesystem"/>
+            <code value="highRisk"/>
+            <display value="High Risk of Falls"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ValueSet/fertility-status-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-fertility-status-codesystem.html">codesystem Fertility Status Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 3 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/fertility-status-codesystem-fertile"> </a>  
+                  <a href="CodeSystem-fertility-status-codesystem.html#fertility-status-codesystem-fertile">fertile</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/fertility-status-codesystem</td>
+                <td>Fertile</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/fertility-status-codesystem-notFertile"> </a>  
+                  <a href="CodeSystem-fertility-status-codesystem.html#fertility-status-codesystem-notFertile">notFertile</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/fertility-status-codesystem</td>
+                <td>Not Fertile</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/fertility-status-codesystem-uncertain"> </a>  
+                  <a href="CodeSystem-fertility-status-codesystem.html#fertility-status-codesystem-uncertain">uncertain</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/fertility-status-codesystem</td>
+                <td>Uncertain</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/fhir/ValueSet/fertility-status-valueset"/>
+        <version value="0.1.0"/>
+        <name value="FertilityStatusValueSet"/>
+        <title value="Fertility Status Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:da485dfb-6f2b-4a8a-ab10-428453e8c4b5"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/fhir/CodeSystem/fertility-status-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/fertility-status-codesystem"/>
+            <code value="fertile"/>
+            <display value="Fertile"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/fertility-status-codesystem"/>
+            <code value="notFertile"/>
+            <display value="Not Fertile"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/fertility-status-codesystem"/>
+            <code value="uncertain"/>
+            <display value="Uncertain"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -1188,10 +1961,10 @@
         <name value="MeasurementConditionsVS"/>
         <title value="Measurement Conditions Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:ce41941c-853d-4da3-8939-ae738ffb7ef8"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:7b946850-5ae2-4c49-b218-e51cef59b6de"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -1303,10 +2076,10 @@
         <name value="MeasurementContextVitalSigns"/>
         <title value="Measurement Context Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:856209e4-b5ff-4d17-a14b-a0af70b92cdc"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:06d943bf-c36f-4250-8f37-24ad48cf82a9"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="3"/>
           <offset value="0"/>
           <parameter>
@@ -1425,10 +2198,10 @@
         <title value="Measurement Context Value Set"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:9b4c836f-1ef0-457a-8cc9-42108a270397"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:757bf69e-0038-4377-9d1a-8610e603f464"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -1546,10 +2319,10 @@
         <name value="MeasurementDeviceTypeVS"/>
         <title value="Measurement Device Type Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:92680683-7ec3-4028-98b1-17c217827f20"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:139d58ce-ee55-449c-9645-f26cbcc05894"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="3"/>
           <offset value="0"/>
           <parameter>
@@ -1704,10 +2477,10 @@
         <title value="Measurement Quality Value Set"/>
         <status value="draft"/>
         <experimental value="true"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:3ceb6d4d-a0f2-4db7-a9ca-c112d7a29cf6"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:0c5b577d-86c5-4f0f-8de4-a1c62b5a611c"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -1891,10 +2664,10 @@
         <title value="Mindfulness Outcomes Value Set"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:5ac42a42-8574-4b20-a43e-83406612a4ad"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:eb0e0d08-6ea6-479c-9166-1c5f132d1a98"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="7"/>
           <offset value="0"/>
           <parameter>
@@ -2090,10 +2863,10 @@
         <title value="Mindfulness Practice Qualifiers Value Set"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:ebee2e52-67f5-45c4-a0d2-87e279cf3e3f"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:bcbeaa64-7f9f-4271-884b-f497a53d3777"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="6"/>
           <offset value="0"/>
           <parameter>
@@ -2270,10 +3043,10 @@
         <title value="Mindfulness Practice Types Value Set"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:f6250409-686e-44e8-a3ef-b7090ddd1646"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:e6d92029-1d4a-4787-ab2f-7ad0c8504d4a"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -2401,10 +3174,10 @@
         <title value="Mobility Alert Level Value Set"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:02c411ce-c6a0-4c81-8035-05c0b1b71983"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:11cb0b0c-04d8-4937-9cba-3bfdc5440d00"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="3"/>
           <offset value="0"/>
           <parameter>
@@ -2437,6 +3210,118 @@
             <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs"/>
             <code value="red"/>
             <display value="Alert - Significant change"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/ValueSet/mobility-decline-outcomes-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-mobility-decline-outcomes-codesystem.html">codesystem Mobility Decline Outcomes Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 4 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/mobility-decline-outcomes-codesystem-stable"> </a>  
+                  <a href="CodeSystem-mobility-decline-outcomes-codesystem.html#mobility-decline-outcomes-codesystem-stable">stable</a>
+                </td>
+                <td>http://example.org/CodeSystem/mobility-decline-outcomes-codesystem</td>
+                <td>Stable Mobility</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/mobility-decline-outcomes-codesystem-minorDecline"> </a>  
+                  <a href="CodeSystem-mobility-decline-outcomes-codesystem.html#mobility-decline-outcomes-codesystem-minorDecline">minorDecline</a>
+                </td>
+                <td>http://example.org/CodeSystem/mobility-decline-outcomes-codesystem</td>
+                <td>Minor Decline</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/mobility-decline-outcomes-codesystem-moderateDecline"> </a>  
+                  <a href="CodeSystem-mobility-decline-outcomes-codesystem.html#mobility-decline-outcomes-codesystem-moderateDecline">moderateDecline</a>
+                </td>
+                <td>http://example.org/CodeSystem/mobility-decline-outcomes-codesystem</td>
+                <td>Moderate Decline</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/mobility-decline-outcomes-codesystem-severeDecline"> </a>  
+                  <a href="CodeSystem-mobility-decline-outcomes-codesystem.html#mobility-decline-outcomes-codesystem-severeDecline">severeDecline</a>
+                </td>
+                <td>http://example.org/CodeSystem/mobility-decline-outcomes-codesystem</td>
+                <td>Severe Decline</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/ValueSet/mobility-decline-outcomes-valueset"/>
+        <version value="0.1.0"/>
+        <name value="MobilityDeclineOutcomesValueSet"/>
+        <title value="Mobility Decline Outcomes Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:823aec55-06ce-49e0-a270-165f9fa0fbb5"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="4"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/CodeSystem/mobility-decline-outcomes-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/CodeSystem/mobility-decline-outcomes-codesystem"/>
+            <code value="stable"/>
+            <display value="Stable Mobility"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/mobility-decline-outcomes-codesystem"/>
+            <code value="minorDecline"/>
+            <display value="Minor Decline"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/mobility-decline-outcomes-codesystem"/>
+            <code value="moderateDecline"/>
+            <display value="Moderate Decline"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/mobility-decline-outcomes-codesystem"/>
+            <code value="severeDecline"/>
+            <display value="Severe Decline"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -2532,10 +3417,10 @@
         <title value="Mood Value Set"/>
         <status value="draft"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:d06d8817-88a4-45df-92e8-4610ddfc5453"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:318a642d-0955-40fe-a873-3f242ca66a9b"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="6"/>
           <offset value="0"/>
           <parameter>
@@ -2693,8 +3578,8 @@
         <experimental value="false"/>
         <date value="2024-12-14"/>
         <expansion>
-          <identifier value="urn:uuid:421765d9-04a2-48b3-9e02-8205f6afeff8"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:b143a337-3628-43a3-bc1f-b947ad589c78"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="4"/>
           <offset value="0"/>
           <parameter>
@@ -2732,6 +3617,105 @@
             <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/nutrition-data-source-cs"/>
             <code value="questionnaire"/>
             <display value="Questionnaire Response"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/ValueSet/ovulation-test-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-ovulation-test-codesystem.html">codesystem Ovulation Test Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 3 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/ovulation-test-codesystem-negative"> </a>  
+                  <a href="CodeSystem-ovulation-test-codesystem.html#ovulation-test-codesystem-negative">negative</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/ovulation-test-codesystem</td>
+                <td>Negative</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/ovulation-test-codesystem-positive"> </a>  
+                  <a href="CodeSystem-ovulation-test-codesystem.html#ovulation-test-codesystem-positive">positive</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/ovulation-test-codesystem</td>
+                <td>Positive</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/fhir/CodeSystem/ovulation-test-codesystem-invalid"> </a>  
+                  <a href="CodeSystem-ovulation-test-codesystem.html#ovulation-test-codesystem-invalid">invalid</a>
+                </td>
+                <td>http://example.org/fhir/CodeSystem/ovulation-test-codesystem</td>
+                <td>Invalid Test</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/fhir/ValueSet/ovulation-test-valueset"/>
+        <version value="0.1.0"/>
+        <name value="OvulationTestValueSet"/>
+        <title value="Ovulation Test Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:53329dcc-15a7-4683-90e8-76cf3eced7bf"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/fhir/CodeSystem/ovulation-test-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/ovulation-test-codesystem"/>
+            <code value="negative"/>
+            <display value="Negative"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/ovulation-test-codesystem"/>
+            <code value="positive"/>
+            <display value="Positive"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/fhir/CodeSystem/ovulation-test-codesystem"/>
+            <code value="invalid"/>
+            <display value="Invalid Test"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -2801,10 +3785,10 @@
         <name value="PhysicalActivityTypeVS"/>
         <title value="Physical Activity Types Value Set"/>
         <status value="active"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:d905cc7c-0861-4dd5-94cc-2e6b50bafe6c"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:69116fd0-1318-435b-8549-91541b0ffde3"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="4"/>
           <offset value="0"/>
           <parameter>
@@ -3007,8 +3991,8 @@
         <experimental value="false"/>
         <date value="2024-03-19"/>
         <expansion>
-          <identifier value="urn:uuid:5f408ec9-29d1-43ba-a4e8-7b74a410a63e"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:5ebbade4-6fa5-4790-9360-1045b49a250d"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="8"/>
           <offset value="0"/>
           <parameter>
@@ -3160,8 +4144,8 @@
         <experimental value="false"/>
         <date value="2024-03-19"/>
         <expansion>
-          <identifier value="urn:uuid:5cd560bb-bbb0-48ad-83cd-d62019da905b"/>
-          <timestamp value="2024-12-27T22:30:46+00:00"/>
+          <identifier value="urn:uuid:a1bf873c-8779-4662-9c77-d59ec7c16403"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="6"/>
           <offset value="0"/>
           <parameter>
@@ -3229,6 +4213,131 @@
             <system value="http://snomed.info/sct"/>
             <code value="289530006"/>
             <display value="Reproductive health finding"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/ValueSet/risk-level-valueset"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-risk-level-codesystem.html">codesystem Risk Level Code System v0.1.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 5 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/risk-level-codesystem-none"> </a>  
+                  <a href="CodeSystem-risk-level-codesystem.html#risk-level-codesystem-none">none</a>
+                </td>
+                <td>http://example.org/CodeSystem/risk-level-codesystem</td>
+                <td>No Risk</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/risk-level-codesystem-low"> </a>  
+                  <a href="CodeSystem-risk-level-codesystem.html#risk-level-codesystem-low">low</a>
+                </td>
+                <td>http://example.org/CodeSystem/risk-level-codesystem</td>
+                <td>Low Risk</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/risk-level-codesystem-moderate"> </a>  
+                  <a href="CodeSystem-risk-level-codesystem.html#risk-level-codesystem-moderate">moderate</a>
+                </td>
+                <td>http://example.org/CodeSystem/risk-level-codesystem</td>
+                <td>Moderate Risk</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/risk-level-codesystem-high"> </a>  
+                  <a href="CodeSystem-risk-level-codesystem.html#risk-level-codesystem-high">high</a>
+                </td>
+                <td>http://example.org/CodeSystem/risk-level-codesystem</td>
+                <td>High Risk</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://example.org/CodeSystem/risk-level-codesystem-critical"> </a>  
+                  <a href="CodeSystem-risk-level-codesystem.html#risk-level-codesystem-critical">critical</a>
+                </td>
+                <td>http://example.org/CodeSystem/risk-level-codesystem</td>
+                <td>Critical Risk</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://example.org/ValueSet/risk-level-valueset"/>
+        <version value="0.1.0"/>
+        <name value="RiskLevelValueSet"/>
+        <title value="Risk Level Value Set"/>
+        <status value="active"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
+        <expansion>
+          <identifier value="urn:uuid:b3c7608d-336b-4463-a45d-1b6a7cca5e83"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
+          <total value="5"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://example.org/CodeSystem/risk-level-codesystem|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://example.org/CodeSystem/risk-level-codesystem"/>
+            <code value="none"/>
+            <display value="No Risk"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/risk-level-codesystem"/>
+            <code value="low"/>
+            <display value="Low Risk"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/risk-level-codesystem"/>
+            <code value="moderate"/>
+            <display value="Moderate Risk"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/risk-level-codesystem"/>
+            <code value="high"/>
+            <display value="High Risk"/>
+          </contains>
+          <contains>
+            <system value="http://example.org/CodeSystem/risk-level-codesystem"/>
+            <code value="critical"/>
+            <display value="Critical Risk"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -3305,10 +4414,10 @@
         <name value="SleepQualityExtendedVS"/>
         <title value="Sleep Quality Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:97052525-0699-4a2f-882c-8d5ed0d8993f"/>
-          <timestamp value="2024-12-27T22:30:47+00:00"/>
+          <identifier value="urn:uuid:f27db33c-1ec5-46ba-a144-116181d7d019"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="4"/>
           <offset value="0"/>
           <parameter>
@@ -3434,10 +4543,10 @@
         <title value="Sleep Quality Value Set"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:5aab49e2-a61a-4a04-8271-ddfbb0a1211d"/>
-          <timestamp value="2024-12-27T22:30:47+00:00"/>
+          <identifier value="urn:uuid:30d2e022-f554-4cf7-8ec8-1580f97f79f4"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -3600,10 +4709,10 @@
         <name value="SymptomFrequencyVS"/>
         <title value="Symptom Frequency Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:46251b93-e50f-410e-b8e7-e2c9d91dd9ce"/>
-          <timestamp value="2024-12-27T22:30:47+00:00"/>
+          <identifier value="urn:uuid:b5b3c727-52ef-415e-b4e4-6da9a0f73616"/>
+          <timestamp value="2025-01-02T17:47:54+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -3725,10 +4834,10 @@
         <name value="SymptomImpactVS"/>
         <title value="Symptom Impact Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:bbf515d1-0f22-4918-891c-e8bcba3051be"/>
-          <timestamp value="2024-12-27T22:30:47+00:00"/>
+          <identifier value="urn:uuid:70b32ec6-930a-407b-9176-d3b0d3f6148b"/>
+          <timestamp value="2025-01-02T17:47:55+00:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -3840,10 +4949,10 @@
         <name value="SymptomProgressionVS"/>
         <title value="Symptom Progression Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:5414b9da-b7a1-4e3b-b600-a1509b7b5955"/>
-          <timestamp value="2024-12-27T22:30:47+00:00"/>
+          <identifier value="urn:uuid:fd9b6b94-3835-405e-9538-d5e59d92069f"/>
+          <timestamp value="2025-01-02T17:47:55+00:00"/>
           <total value="4"/>
           <offset value="0"/>
           <parameter>
@@ -3942,10 +5051,10 @@
         <name value="TimeOfDayVS"/>
         <title value="Time of Day Value Set"/>
         <status value="draft"/>
-        <date value="2024-12-27T22:28:35+00:00"/>
+        <date value="2025-01-02T17:46:41+00:00"/>
         <expansion>
-          <identifier value="urn:uuid:2157de7f-9260-4f8e-a625-1cf1a1d978b5"/>
-          <timestamp value="2024-12-27T22:30:48+00:00"/>
+          <identifier value="urn:uuid:a44ded87-919c-4504-bc15-2bd1e37328c2"/>
+          <timestamp value="2025-01-02T17:47:55+00:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
