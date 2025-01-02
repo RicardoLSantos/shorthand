@@ -9,7 +9,7 @@ Title: "Search by mindfulness practice type"
 * description = "Search for mindfulness observations by practice type"
 * base = #Observation
 * type = #token
-* expression = "Observation.component.where(code.coding.where(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)"
+* expression = "Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)"
 * xpath = "f:Observation/f:component[f:code/f:coding/f:system/@value='http://snomed.info/sct' and f:code/f:coding/f:code/@value='711020003']/f:valueCodeableConcept"
 * xpathUsage = #normal
 
@@ -24,7 +24,7 @@ Title: "Search by stress level"
 * description = "Search for mindfulness observations by stress level"
 * base = #Observation
 * type = #number
-* expression = "Observation.component.where(code.coding.where(system='http://snomed.info/sct' and code='725854004')).value.ofType(integer)"
+* expression = "Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='725854004')).value.ofType(integer)"
 * xpath = "f:Observation/f:component[f:code/f:coding/f:system/@value='http://snomed.info/sct' and f:code/f:coding/f:code/@value='725854004']/f:valueInteger"
 * xpathUsage = #normal
 
@@ -39,6 +39,6 @@ Title: "Search by session duration"
 * description = "Search for mindfulness observations by session duration"
 * base = #Observation
 * type = #quantity
-* expression = "Observation.component.where(code.coding.where(system='http://snomed.info/sct' and code='118682006')).value.ofType(Quantity)"
+* expression = "Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='118682006')).value.ofType(Quantity)"
 * xpath = "f:Observation/f:component[f:code/f:coding/f:system/@value='http://snomed.info/sct' and f:code/f:coding/f:code/@value='118682006']/f:valueQuantity"
 * xpathUsage = #normal
