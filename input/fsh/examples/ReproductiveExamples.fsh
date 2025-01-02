@@ -11,12 +11,12 @@ Title: "Fertility Signs Example"
 
 * component[cervicalMucus]
   * code = $LOINC#89020-2 "Cervical mucus observation"
-  * valueCodeableConcept = http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggWhite
+  * valueCodeableConcept = http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggWhite "Egg White"
 
 * component[ovulationTest]
   * code = $LOINC#89021-0 "Ovulation test"
-  * valueCodeableConcept = http://example.org/fhir/CodeSystem/ovulation-test-cs#positive
+  * valueCodeableConcept = http://example.org/fhir/CodeSystem/ovulation-test-cs#positive "Positive"
 
 * component[fertilityStatus]
   * code = $LOINC#89022-8 "Fertility status"
-  * valueCodeableConcept = http://example.org/fhir/CodeSystem/fertility-status-cs#fertile
+  * valueCodeableConcept = http://example.org/fhir/CodeSystem/fertility-status-cs#fertile "Fertile"
