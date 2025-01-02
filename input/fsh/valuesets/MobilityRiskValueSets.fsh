@@ -6,6 +6,14 @@ Description: "Value set for fall risk assessment outcomes"
 * ^status = #active
 * include codes from system http://example.org/fhir/CodeSystem/fall-risk-outcomes
 
+ValueSet: RiskLevelValueSet
+Id: risk-level
+Title: "Risk Level Value Set"
+Description: "Value set for general risk levels"
+* ^url = "http://example.org/fhir/ValueSet/risk-level"
+* ^status = #active
+* include codes from system http://example.org/fhir/CodeSystem/risk-level
+
 ValueSet: MobilityDeclineOutcomesValueSet
 Id: mobility-decline-outcomes
 Title: "Mobility Decline Outcomes Value Set"
