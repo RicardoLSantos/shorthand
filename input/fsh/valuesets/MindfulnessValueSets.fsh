@@ -1,11 +1,15 @@
-ValueSet: MoodValueSet
-Id: mood-vs
-Title: "Mood Value Set"
-Description: "Codes representing different mood states"
-* ^experimental = false
-* $SCT#285854004 "Mood elevation"  
-* $SCT#130987000 "Anxious mood"
-* $SCT#130988005 "Depressed mood"
-* $SCT#130989002 "Irritable mood" 
-* $SCT#130990006 "Labile mood"
-* $SCT#130991005 "Neutral mood"
+ValueSet: EnvironmentTypeValueSet
+Id: environment-type
+Title: "Environment Type Value Set"
+Description: "Value set for environmental context types"
+* ^url = "http://example.org/ValueSet/environment-type"
+* ^status = #active
+* include codes from system http://example.org/CodeSystem/environment-type
+
+ValueSet: MindfulnessTypeValueSet
+Id: mindfulness-type
+Title: "Mindfulness Type Value Set"
+Description: "Value set for types of mindfulness practices"
+* ^url = "http://example.org/ValueSet/mindfulness-type"
+* ^status = #active
+* include codes from system http://example.org/CodeSystem/mindfulness-type
