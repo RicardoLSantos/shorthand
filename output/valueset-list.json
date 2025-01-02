@@ -1,46 +1,15 @@
 {
   "codeSystems" : [
     {
-      "url" : "http://example.org/ValueSet/assistance-level-outcomes-valueset",
+      "url" : "http://example.org/fhir/ValueSet/assistance-level-outcomes",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "AssistanceLevelOutcomesValueSet",
       "title" : "Assistance Level Outcomes Value Set",
       "description" : "Value set for assistance level assessment outcomes",
       "systems" : [
-        "http://example.org/CodeSystem/assistance-level-outcomes-codesystem"
+        "http://example.org/fhir/CodeSystem/assistance-level-outcomes"
       ]
-    },
-    {
-      "url" : "http://example.org/ValueSet/fall-risk-outcomes-valueset",
-      "version" : "0.1.0",
-      "status" : "active",
-      "name" : "FallRiskOutcomesValueSet",
-      "title" : "Fall Risk Outcomes Value Set",
-      "description" : "Value set for fall risk assessment outcomes",
-      "systems" : [
-        "http://example.org/CodeSystem/fall-risk-outcomes-codesystem"
-      ]
-    },
-    {
-      "url" : "http://example.org/ValueSet/mobility-decline-outcomes-valueset",
-      "version" : "0.1.0",
-      "status" : "active",
-      "name" : "MobilityDeclineOutcomesValueSet",
-      "title" : "Mobility Decline Outcomes Value Set",
-      "description" : "Value set for mobility decline assessment outcomes",
-      "systems" : [
-        "http://example.org/CodeSystem/mobility-decline-outcomes-codesystem"
-      ]
-    },
-    {
-      "url" : "http://example.org/ValueSet/risk-level-valueset",
-      "version" : "0.1.0",
-      "status" : "active",
-      "name" : "RiskLevelValueSet",
-      "title" : "Risk Level Value Set",
-      "description" : "Value set for general risk levels",
-      "systems" : ["http://example.org/CodeSystem/risk-level-codesystem"]
     },
     {
       "url" : "http://example.org/fhir/ValueSet/audit-formats",
@@ -61,48 +30,104 @@
       "systems" : ["http://example.org/fhir/CodeSystem/audit-levels"]
     },
     {
-      "url" : "http://example.org/fhir/ValueSet/balance-status-valueset",
+      "url" : "http://example.org/fhir/ValueSet/balance-status",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "BalanceStatusValueSet",
       "title" : "Balance Status Value Set",
       "description" : "Value set for walking steadiness balance status",
-      "systems" : [
-        "http://example.org/fhir/CodeSystem/balance-status-codesystem"
-      ]
+      "systems" : ["http://example.org/fhir/CodeSystem/balance-status"]
     },
     {
-      "url" : "http://example.org/fhir/ValueSet/cervical-mucus-valueset",
+      "url" : "http://example.org/fhir/ValueSet/cervical-mucus-vs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "CervicalMucusValueSet",
       "title" : "Cervical Mucus Value Set",
       "description" : "Value set for cervical mucus observations",
-      "systems" : [
-        "http://example.org/fhir/CodeSystem/cervical-mucus-codesystem"
-      ]
+      "systems" : ["http://example.org/fhir/CodeSystem/cervical-mucus-cs"]
     },
     {
-      "url" : "http://example.org/fhir/ValueSet/fertility-status-valueset",
+      "url" : "http://example.org/fhir/ValueSet/environment-type",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "EnvironmentTypeValueSet",
+      "title" : "Environment Type Value Set",
+      "description" : "Value set for environmental context types",
+      "systems" : ["http://example.org/fhir/CodeSystem/environment-type"]
+    },
+    {
+      "url" : "http://example.org/fhir/ValueSet/environmental-context",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "EnvironmentalContextValueSet",
+      "title" : "Environmental Context Value Set",
+      "description" : "Valid contexts for environmental measurements",
+      "systems" : ["http://example.org/fhir/CodeSystem/environmental-context"]
+    },
+    {
+      "url" : "http://example.org/fhir/ValueSet/fall-risk-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FallRiskOutcomesValueSet",
+      "title" : "Fall Risk Outcomes Value Set",
+      "description" : "Value set for fall risk assessment outcomes",
+      "systems" : ["http://example.org/fhir/CodeSystem/fall-risk-outcomes"]
+    },
+    {
+      "url" : "http://example.org/fhir/ValueSet/fertility-status-vs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "FertilityStatusValueSet",
       "title" : "Fertility Status Value Set",
       "description" : "Value set for fertility status",
+      "systems" : ["http://example.org/fhir/CodeSystem/fertility-status-cs"]
+    },
+    {
+      "url" : "http://example.org/fhir/ValueSet/mindfulness-type",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MindfulnessTypeValueSet",
+      "title" : "Mindfulness Type Value Set",
+      "description" : "Value set for types of mindfulness practices",
+      "systems" : ["http://example.org/fhir/CodeSystem/mindfulness-type"]
+    },
+    {
+      "url" : "http://example.org/fhir/ValueSet/mobility-decline-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MobilityDeclineOutcomesValueSet",
+      "title" : "Mobility Decline Outcomes Value Set",
+      "description" : "Value set for mobility decline assessment outcomes",
       "systems" : [
-        "http://example.org/fhir/CodeSystem/fertility-status-codesystem"
+        "http://example.org/fhir/CodeSystem/mobility-decline-outcomes"
       ]
     },
     {
-      "url" : "http://example.org/fhir/ValueSet/ovulation-test-valueset",
+      "url" : "http://example.org/fhir/ValueSet/mood",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MoodValueSet",
+      "title" : "Mood Value Set",
+      "description" : "Value set for mood states"
+    },
+    {
+      "url" : "http://example.org/fhir/ValueSet/ovulation-test-vs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "OvulationTestValueSet",
       "title" : "Ovulation Test Value Set",
       "description" : "Value set for ovulation test results",
-      "systems" : [
-        "http://example.org/fhir/CodeSystem/ovulation-test-codesystem"
-      ]
+      "systems" : ["http://example.org/fhir/CodeSystem/ovulation-test-cs"]
+    },
+    {
+      "url" : "http://example.org/fhir/ValueSet/risk-level",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "RiskLevelValueSet",
+      "title" : "Risk Level Value Set",
+      "description" : "Value set for general risk levels",
+      "systems" : ["http://example.org/fhir/CodeSystem/risk-level"]
     },
     {
       "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/advanced-vital-signs-context-vs",
@@ -153,17 +178,6 @@
       "description" : "Value set of practice environment types",
       "systems" : [
         "https://github.com/RicardoLSantos/shorthand/CodeSystem/environment-type-cs"
-      ]
-    },
-    {
-      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/environmental-context-vs",
-      "version" : "0.1.0",
-      "status" : "active",
-      "name" : "EnvironmentalContextVS",
-      "title" : "Environmental Context Value Set",
-      "description" : "Valid contexts for environmental measurements",
-      "systems" : [
-        "http://example.org/fhir/CodeSystem/environmental-context-cs"
       ]
     },
     {
@@ -280,15 +294,6 @@
       "systems" : [
         "https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs"
       ]
-    },
-    {
-      "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/mood-vs",
-      "version" : "0.1.0",
-      "status" : "draft",
-      "name" : "MoodValueSet",
-      "title" : "Mood Value Set",
-      "description" : "Codes representing different mood states",
-      "systems" : ["http://snomed.info/sct"]
     },
     {
       "url" : "https://github.com/RicardoLSantos/shorthand/ValueSet/nutrition-data-source-vs",

@@ -10,7 +10,7 @@
   <name value="iOS_Lifestyle_Medicine_HEADS2_FMUP"/>
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-01-02T17:46:41+00:00"/>
+  <date value="2025-01-02T19:32:36+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -531,20 +531,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/assistance-level-outcomes-codesystem"/>
-      </reference>
-      <name value="Assistance Level Outcomes Code System"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/assistance-level-outcomes-valueset"/>
+        <reference value="ValueSet/assistance-level-outcomes"/>
       </reference>
       <name value="Assistance Level Outcomes Value Set"/>
       <description value="Value set for assistance level assessment outcomes"/>
@@ -632,7 +622,7 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/balance-status-codesystem"/>
+        <reference value="CodeSystem/balance-status"/>
       </reference>
       <name value="Balance Status Code System"/>
       <description value="Code system for balance status types"/>
@@ -643,7 +633,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/balance-status-valueset"/>
+        <reference value="ValueSet/balance-status"/>
       </reference>
       <name value="Balance Status Value Set"/>
       <description value="Value set for walking steadiness balance status"/>
@@ -772,7 +762,7 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/cervical-mucus-codesystem"/>
+        <reference value="CodeSystem/cervical-mucus-cs"/>
       </reference>
       <name value="Cervical Mucus Code System"/>
       <exampleBoolean value="false"/>
@@ -961,6 +951,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/environment-type"/>
+      </reference>
+      <name value="Environment Type Value Set"/>
+      <description value="Value set for environmental context types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -975,7 +976,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/environmental-context-vs"/>
+        <reference value="ValueSet/environmental-context"/>
       </reference>
       <name value="Environmental Context Value Set"/>
       <description value="Valid contexts for environmental measurements"/>
@@ -1157,20 +1158,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/fall-risk-outcomes-codesystem"/>
-      </reference>
-      <name value="Fall Risk Outcomes Code System"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/fall-risk-outcomes-valueset"/>
+        <reference value="ValueSet/fall-risk-outcomes"/>
       </reference>
       <name value="Fall Risk Outcomes Value Set"/>
       <description value="Value set for fall risk assessment outcomes"/>
@@ -1202,7 +1193,7 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/fertility-status-codesystem"/>
+        <reference value="CodeSystem/fertility-status-cs"/>
       </reference>
       <name value="Fertility Status Code System"/>
       <exampleBoolean value="false"/>
@@ -1752,6 +1743,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mindfulness-type"/>
+      </reference>
+      <name value="Mindfulness Type Value Set"/>
+      <description value="Value set for types of mindfulness practices"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -1785,20 +1787,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/mobility-decline-outcomes-codesystem"/>
-      </reference>
-      <name value="Mobility Decline Outcomes Code System"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/mobility-decline-outcomes-valueset"/>
+        <reference value="ValueSet/mobility-decline-outcomes"/>
       </reference>
       <name value="Mobility Decline Outcomes Value Set"/>
       <description value="Value set for mobility decline assessment outcomes"/>
@@ -1828,13 +1820,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mood"/>
+      </reference>
+      <name value="Mood Code System"/>
+      <description value="Code system for mood states"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/mood-vs"/>
+        <reference value="ValueSet/mood"/>
       </reference>
       <name value="Mood Value Set"/>
-      <description value="Codes representing different mood states"/>
+      <description value="Value set for mood states"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1908,7 +1911,7 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/ovulation-test-codesystem"/>
+        <reference value="CodeSystem/ovulation-test-cs"/>
       </reference>
       <name value="Ovulation Test Code System"/>
       <exampleBoolean value="false"/>
@@ -2058,20 +2061,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/risk-level-codesystem"/>
-      </reference>
-      <name value="Risk Level Code System"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/risk-level-valueset"/>
+        <reference value="ValueSet/risk-level"/>
       </reference>
       <name value="Risk Level Value Set"/>
       <description value="Value set for general risk levels"/>

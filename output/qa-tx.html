@@ -20,12 +20,12 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:2125
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:35 GMT
+date:Thu, 02 Jan 2025 19:32:28 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624576
+x-request-id:181-1636259
 
-{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-02T17:46:35.127Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-02T19:32:28.832Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
 
 </pre><hr/>
 <a name="l2"> </a><h3>2</h3>
@@ -37,10 +37,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.130): 
+Response (00:00:00.143): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -50,11 +50,11 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1451
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:44 GMT
-last-modified:Thu, 02 Jan 2025 17:46:44 GMT
+date:Thu, 02 Jan 2025 19:32:40 GMT
+last-modified:Thu, 02 Jan 2025 19:32:39 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624581
+x-request-id:181-1636261
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://hl7.org/fhir/fhir-types"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://hl7.org/fhir/fhir-types"},{"name" : "code","valueCode" : "ImplementationGuide"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, en_US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://hl7.org/fhir/fhir-types#ImplementationGuide (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://hl7.org/fhir/fhir-types#ImplementationGuide\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://hl7.org/fhir/fhir-types\"\r\n"}]}
 
@@ -68,10 +68,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.123): 
+Response (00:00:00.128): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -79,15 +79,15 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1600
+content-length:1593
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:44 GMT
-last-modified:Thu, 02 Jan 2025 17:46:44 GMT
+date:Thu, 02 Jan 2025 19:32:40 GMT
+last-modified:Thu, 02 Jan 2025 19:32:40 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624583
+x-request-id:181-1636263
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
 
 </pre><hr/>
 <a name="l4"> </a><h3>4</h3>
@@ -99,100 +99,7 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/cervical-mucus-cs","code":"eggwhite"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.132): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1565
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:45 GMT
-last-modified:Thu, 02 Jan 2025 17:46:45 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624585
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/cervical-mucus-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/cervical-mucus-cs"},{"name" : "code","valueCode" : "eggwhite"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/cervical-mucus-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/cervical-mucus-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggwhite (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggwhite\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/cervical-mucus-cs\"\r\n"}]}
-
-</pre><hr/>
-<a name="l5"> </a><h3>5</h3>
-<pre>
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/ovulation-test-cs","code":"positive"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.120): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1572
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:45 GMT
-last-modified:Thu, 02 Jan 2025 17:46:45 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624587
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/ovulation-test-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/ovulation-test-cs"},{"name" : "code","valueCode" : "positive"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/ovulation-test-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/ovulation-test-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/ovulation-test-cs#positive (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/ovulation-test-cs#positive\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/ovulation-test-cs\"\r\n"}]}
-
-</pre><hr/>
-<a name="l6"> </a><h3>6</h3>
-<pre>
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/fertility-status-cs","code":"fertile"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.132): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1576
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:46 GMT
-last-modified:Thu, 02 Jan 2025 17:46:46 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624590
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/fertility-status-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/fertility-status-cs"},{"name" : "code","valueCode" : "fertile"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/fertility-status-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/fertility-status-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/fertility-status-cs#fertile (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/fertility-status-cs#fertile\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/fertility-status-cs\"\r\n"}]}
-
-</pre><hr/>
-<a name="l7"> </a><h3>7</h3>
-<pre>
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
 Response (00:00:00.127): 
@@ -205,13 +112,106 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1588
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:52 GMT
-last-modified:Thu, 02 Jan 2025 17:46:52 GMT
+date:Thu, 02 Jan 2025 19:32:47 GMT
+last-modified:Thu, 02 Jan 2025 19:32:47 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624594
+x-request-id:181-1636273
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
+
+</pre><hr/>
+<a name="l5"> </a><h3>5</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1578
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:32:47 GMT
+last-modified:Thu, 02 Jan 2025 19:32:47 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1636275
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
+
+</pre><hr/>
+<a name="l6"> </a><h3>6</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.125): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1571
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:32:48 GMT
+last-modified:Thu, 02 Jan 2025 19:32:48 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1636277
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
+
+</pre><hr/>
+<a name="l7"> </a><h3>7</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.141): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1603
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:32:49 GMT
+last-modified:Thu, 02 Jan 2025 19:32:49 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1636279
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
 
 </pre><hr/>
 <a name="l8"> </a><h3>8</h3>
@@ -223,103 +223,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.126): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1585
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:53 GMT
-last-modified:Thu, 02 Jan 2025 17:46:53 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624596
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
-
-</pre><hr/>
-<a name="l9"> </a><h3>9</h3>
-<pre>
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.122): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1578
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:53 GMT
-last-modified:Thu, 02 Jan 2025 17:46:53 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624598
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
-
-</pre><hr/>
-<a name="l10"> </a><h3>10</h3>
-<pre>
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.122): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1603
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:54 GMT
-last-modified:Thu, 02 Jan 2025 17:46:54 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624601
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
-
-</pre><hr/>
-<a name="l11"> </a><h3>11</h3>
-<pre>
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.124): 
+Response (00:00:00.120): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -329,13 +236,349 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1568
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:47:00 GMT
-last-modified:Thu, 02 Jan 2025 17:47:00 GMT
+date:Thu, 02 Jan 2025 19:32:53 GMT
+last-modified:Thu, 02 Jan 2025 19:32:53 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624603
+x-request-id:181-1636281
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "code","valueCode" : "4-6"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 (\"Moderado\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/symptom-severity-cs\"\r\n"}]}
+
+</pre><hr/>
+<a name="l9"> </a><h3>9</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/assistance-level-outcomes"}]}}}]}
+
+
+Response (00:00:00.133): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:01 GMT
+server:nginx
+x-request-id:181-1636451
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes"}}]}
+
+</pre><hr/>
+<a name="l10"> </a><h3>10</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"assistance-level-outcomes","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/assistance-level-outcomes","version":"0.1.0","name":"AssistanceLevelOutcomesValueSet","title":"Assistance Level Outcomes Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for assistance level assessment outcomes","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/assistance-level-outcomes"}]}}}]}
+
+
+Response (00:00:00.136): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:02 GMT
+server:nginx
+x-request-id:181-1636454
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes"}}]}
+
+</pre><hr/>
+<a name="l11"> </a><h3>11</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/environment-type"}]}}}]}
+
+
+Response (00:00:00.136): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:03 GMT
+server:nginx
+x-request-id:181-1636457
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type"}}]}
+
+</pre><hr/>
+<a name="l12"> </a><h3>12</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"environment-type","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/environment-type","version":"0.1.0","name":"EnvironmentTypeValueSet","title":"Environment Type Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for environmental context types","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/environment-type"}]}}}]}
+
+
+Response (00:00:00.145): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:03 GMT
+server:nginx
+x-request-id:181-1636460
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type"}}]}
+
+</pre><hr/>
+<a name="l13"> </a><h3>13</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/fall-risk-outcomes"}]}}}]}
+
+
+Response (00:00:00.135): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:415
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:04 GMT
+server:nginx
+x-request-id:181-1636463
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes"}}]}
+
+</pre><hr/>
+<a name="l14"> </a><h3>14</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"fall-risk-outcomes","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/fall-risk-outcomes","version":"0.1.0","name":"FallRiskOutcomesValueSet","title":"Fall Risk Outcomes Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for fall risk assessment outcomes","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/fall-risk-outcomes"}]}}}]}
+
+
+Response (00:00:00.138): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:415
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:04 GMT
+server:nginx
+x-request-id:181-1636466
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes"}}]}
+
+</pre><hr/>
+<a name="l15"> </a><h3>15</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/mindfulness-type"}]}}}]}
+
+
+Response (00:00:00.142): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:05 GMT
+server:nginx
+x-request-id:181-1636469
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type"}}]}
+
+</pre><hr/>
+<a name="l16"> </a><h3>16</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"mindfulness-type","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/mindfulness-type","version":"0.1.0","name":"MindfulnessTypeValueSet","title":"Mindfulness Type Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for types of mindfulness practices","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/mindfulness-type"}]}}}]}
+
+
+Response (00:00:00.147): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:06 GMT
+server:nginx
+x-request-id:181-1636472
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type"}}]}
+
+</pre><hr/>
+<a name="l17"> </a><h3>17</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}]}}}]}
+
+
+Response (00:00:00.132): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:06 GMT
+server:nginx
+x-request-id:181-1636477
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}}]}
+
+</pre><hr/>
+<a name="l18"> </a><h3>18</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"mobility-decline-outcomes","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/mobility-decline-outcomes","version":"0.1.0","name":"MobilityDeclineOutcomesValueSet","title":"Mobility Decline Outcomes Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for mobility decline assessment outcomes","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}]}}}]}
+
+
+Response (00:00:00.164): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:07 GMT
+server:nginx
+x-request-id:181-1636482
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}}]}
+
+</pre><hr/>
+<a name="l19"> </a><h3>19</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/risk-level"}]}}}]}
+
+
+Response (00:00:00.155): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:399
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:08 GMT
+server:nginx
+x-request-id:181-1636485
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level"}}]}
+
+</pre><hr/>
+<a name="l20"> </a><h3>20</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"risk-level","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/risk-level","version":"0.1.0","name":"RiskLevelValueSet","title":"Risk Level Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for general risk levels","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/risk-level"}]}}}]}
+
+
+Response (00:00:00.150): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:399
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:08 GMT
+server:nginx
+x-request-id:181-1636488
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level"}}]}
 
 --- 1 -----------------
 Request: 
@@ -355,12 +598,12 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:2125
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:35 GMT
+date:Thu, 02 Jan 2025 19:32:28 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624576
+x-request-id:181-1636259
 
-{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-02T17:46:35.127Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-02T19:32:28.832Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
 
 --- 2 -----------------
 Request: 
@@ -370,10 +613,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.130): 
+Response (00:00:00.143): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -383,11 +626,11 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1451
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:44 GMT
-last-modified:Thu, 02 Jan 2025 17:46:44 GMT
+date:Thu, 02 Jan 2025 19:32:40 GMT
+last-modified:Thu, 02 Jan 2025 19:32:39 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624581
+x-request-id:181-1636261
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://hl7.org/fhir/fhir-types"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://hl7.org/fhir/fhir-types"},{"name" : "code","valueCode" : "ImplementationGuide"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, en_US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://hl7.org/fhir/fhir-types#ImplementationGuide (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://hl7.org/fhir/fhir-types#ImplementationGuide\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://hl7.org/fhir/fhir-types\"\r\n"}]}
 
@@ -399,10 +642,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.123): 
+Response (00:00:00.128): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -410,15 +653,15 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1600
+content-length:1593
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:44 GMT
-last-modified:Thu, 02 Jan 2025 17:46:44 GMT
+date:Thu, 02 Jan 2025 19:32:40 GMT
+last-modified:Thu, 02 Jan 2025 19:32:40 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624583
+x-request-id:181-1636263
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
 
 --- 4 -----------------
 Request: 
@@ -428,94 +671,7 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/cervical-mucus-cs","code":"eggwhite"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.132): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1565
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:45 GMT
-last-modified:Thu, 02 Jan 2025 17:46:45 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624585
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/cervical-mucus-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/cervical-mucus-cs"},{"name" : "code","valueCode" : "eggwhite"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/cervical-mucus-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/cervical-mucus-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggwhite (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/cervical-mucus-cs#eggwhite\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/cervical-mucus-cs\"\r\n"}]}
-
---- 5 -----------------
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/ovulation-test-cs","code":"positive"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.120): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1572
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:45 GMT
-last-modified:Thu, 02 Jan 2025 17:46:45 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624587
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/ovulation-test-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/ovulation-test-cs"},{"name" : "code","valueCode" : "positive"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/ovulation-test-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/ovulation-test-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/ovulation-test-cs#positive (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/ovulation-test-cs#positive\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/ovulation-test-cs\"\r\n"}]}
-
---- 6 -----------------
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/fertility-status-cs","code":"fertile"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.132): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1576
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:46 GMT
-last-modified:Thu, 02 Jan 2025 17:46:46 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624590
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/fertility-status-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/fertility-status-cs"},{"name" : "code","valueCode" : "fertile"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/fertility-status-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/fertility-status-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/fertility-status-cs#fertile (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/fertility-status-cs#fertile\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/fertility-status-cs\"\r\n"}]}
-
---- 7 -----------------
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
 Response (00:00:00.127): 
@@ -528,15 +684,15 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1588
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:52 GMT
-last-modified:Thu, 02 Jan 2025 17:46:52 GMT
+date:Thu, 02 Jan 2025 19:32:47 GMT
+last-modified:Thu, 02 Jan 2025 19:32:47 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624594
+x-request-id:181-1636273
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
 
---- 8 -----------------
+--- 5 -----------------
 Request: 
 
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
@@ -544,94 +700,7 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.126): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1585
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:53 GMT
-last-modified:Thu, 02 Jan 2025 17:46:53 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624596
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
-
---- 9 -----------------
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.122): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1578
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:53 GMT
-last-modified:Thu, 02 Jan 2025 17:46:53 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624598
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
-
---- 10 -----------------
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
-
-
-Response (00:00:00.122): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1603
-content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:46:54 GMT
-last-modified:Thu, 02 Jan 2025 17:46:54 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1624601
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
-
---- 11 -----------------
-Request: 
-
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
-User-Agent: fhir/publisher
-
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"b60645e1-b6dd-46ed-a2b3-1c2cf4a3fae6"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
 Response (00:00:00.124): 
@@ -642,13 +711,412 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1568
+content-length:1578
 content-type:application/fhir+json
-date:Thu, 02 Jan 2025 17:47:00 GMT
-last-modified:Thu, 02 Jan 2025 17:47:00 GMT
+date:Thu, 02 Jan 2025 19:32:47 GMT
+last-modified:Thu, 02 Jan 2025 19:32:47 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1624603
+x-request-id:181-1636275
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
+
+--- 6 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.125): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1571
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:32:48 GMT
+last-modified:Thu, 02 Jan 2025 19:32:48 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1636277
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
+
+--- 7 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.141): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1603
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:32:49 GMT
+last-modified:Thu, 02 Jan 2025 19:32:49 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1636279
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
+
+--- 8 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.120): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1568
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:32:53 GMT
+last-modified:Thu, 02 Jan 2025 19:32:53 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1636281
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "code","valueCode" : "4-6"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 (\"Moderado\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/symptom-severity-cs\"\r\n"}]}
+
+--- 9 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/assistance-level-outcomes"}]}}}]}
+
+
+Response (00:00:00.133): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:01 GMT
+server:nginx
+x-request-id:181-1636451
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes"}}]}
+
+--- 10 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"assistance-level-outcomes","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/assistance-level-outcomes","version":"0.1.0","name":"AssistanceLevelOutcomesValueSet","title":"Assistance Level Outcomes Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for assistance level assessment outcomes","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/assistance-level-outcomes"}]}}}]}
+
+
+Response (00:00:00.136): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:02 GMT
+server:nginx
+x-request-id:181-1636454
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/assistance-level-outcomes"}}]}
+
+--- 11 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/environment-type"}]}}}]}
+
+
+Response (00:00:00.136): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:03 GMT
+server:nginx
+x-request-id:181-1636457
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type"}}]}
+
+--- 12 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"environment-type","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/environment-type","version":"0.1.0","name":"EnvironmentTypeValueSet","title":"Environment Type Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for environmental context types","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/environment-type"}]}}}]}
+
+
+Response (00:00:00.145): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:03 GMT
+server:nginx
+x-request-id:181-1636460
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/environment-type"}}]}
+
+--- 13 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/fall-risk-outcomes"}]}}}]}
+
+
+Response (00:00:00.135): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:415
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:04 GMT
+server:nginx
+x-request-id:181-1636463
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes"}}]}
+
+--- 14 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"fall-risk-outcomes","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/fall-risk-outcomes","version":"0.1.0","name":"FallRiskOutcomesValueSet","title":"Fall Risk Outcomes Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for fall risk assessment outcomes","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/fall-risk-outcomes"}]}}}]}
+
+
+Response (00:00:00.138): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:415
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:04 GMT
+server:nginx
+x-request-id:181-1636466
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/fall-risk-outcomes"}}]}
+
+--- 15 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/mindfulness-type"}]}}}]}
+
+
+Response (00:00:00.142): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:05 GMT
+server:nginx
+x-request-id:181-1636469
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type"}}]}
+
+--- 16 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"mindfulness-type","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/mindfulness-type","version":"0.1.0","name":"MindfulnessTypeValueSet","title":"Mindfulness Type Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for types of mindfulness practices","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/mindfulness-type"}]}}}]}
+
+
+Response (00:00:00.147): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:411
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:06 GMT
+server:nginx
+x-request-id:181-1636472
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mindfulness-type"}}]}
+
+--- 17 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}]}}}]}
+
+
+Response (00:00:00.132): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:06 GMT
+server:nginx
+x-request-id:181-1636477
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}}]}
+
+--- 18 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"mobility-decline-outcomes","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/mobility-decline-outcomes","version":"0.1.0","name":"MobilityDeclineOutcomesValueSet","title":"Mobility Decline Outcomes Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for mobility decline assessment outcomes","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}]}}}]}
+
+
+Response (00:00:00.164): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:429
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:07 GMT
+server:nginx
+x-request-id:181-1636482
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/mobility-decline-outcomes"}}]}
+
+--- 19 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":false},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://example.org/fhir/CodeSystem/risk-level"}]}}}]}
+
+
+Response (00:00:00.155): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:399
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:08 GMT
+server:nginx
+x-request-id:181-1636485
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level"}}]}
+
+--- 20 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"_limit","valueInteger":10000},{"name":"_incomplete","valueBoolean":true},{"name":"count","valueInteger":1000},{"name":"offset","valueInteger":0},{"name":"excludeNested","valueBoolean":false},{"name":"incomplete-ok","valueBoolean":true},{"name":"cache-id","valueId":"7a28839e-5e62-4857-ab97-afa3e315eba2"},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"risk-level","text":{"status":"generated","div":"<div>!-- Narrative removed --></div>"},"url":"http://example.org/fhir/ValueSet/risk-level","version":"0.1.0","name":"RiskLevelValueSet","title":"Risk Level Value Set","status":"active","date":"2025-01-02T19:32:36+00:00","publisher":"Ricardo Lourenço dos Santos","contact":[{"name":"Ricardo Lourenço dos Santos","telecom":[{"system":"url","value":"https://linktr.ee/ricardolsantos"}]}],"description":"Value set for general risk levels","compose":{"include":[{"system":"http://example.org/fhir/CodeSystem/risk-level"}]}}}]}
+
+
+Response (00:00:00.150): 
+
+422
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+connection:keep-alive
+content-length:399
+content-type:application/fhir+json
+date:Thu, 02 Jan 2025 19:34:08 GMT
+server:nginx
+x-request-id:181-1636488
+
+{"resourceType" : "OperationOutcome","text" : {"status" : "generated","div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level</p></div>"},"issue" : [{"severity" : "error","code" : "not-supported","details" : {"text" : "Unable to provide support for code system http://example.org/fhir/CodeSystem/risk-level"}}]}
 </pre></head></html>

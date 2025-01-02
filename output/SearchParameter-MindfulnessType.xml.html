@@ -189,14 +189,14 @@
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
     &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: SearchParameter MindfulnessType&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;MindfulnessType&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcMindfulnessType&quot;&gt; &lt;/a&gt;&lt;a name=&quot;MindfulnessType-en-US&quot;&gt; &lt;/a&gt;&lt;h2&gt;MindfulnessType&lt;/h2&gt;&lt;p&gt;Parameter &lt;code&gt;mindfulness-type&lt;/code&gt;:&lt;code&gt;token&lt;/code&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;Search for mindfulness observations by practice type&lt;/p&gt;
-&lt;/div&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/observation.html&quot;&gt;Observation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;Observation.component.where(code.coding.where(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Processing Mode&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true&lt;/li&gt;&lt;li&gt;multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+&lt;/div&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/observation.html&quot;&gt;Observation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Processing Mode&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true&lt;/li&gt;&lt;li&gt;multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://github.com/RicardoLSantos/shorthand/SearchParameter/MindfulnessType&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.0&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MindfulnessType&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2025-01-02T17:46:41+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2025-01-02T19:32:36+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ricardo Lourenço dos Santos&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ricardo Lourenço dos Santos&quot;/&gt;
@@ -210,7 +210,7 @@
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.base">base</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Observation&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;token&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">expression</a>
-              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Observation.component.where(code.coding.where(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)&quot;/&gt;
+              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.xpathUsage">xpathUsage</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;normal&quot;/&gt;
 &lt;/SearchParameter&gt;</code></pre>
 
@@ -236,7 +236,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 2, 2025 17:46+0000">2025-01-02</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 2, 2025 19:32+0000">2025-01-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

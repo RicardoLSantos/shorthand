@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "iOS_Lifestyle_Medicine_HEADS2_FMUP"] ; # 
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-01-02T17:46:41+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-01-02T19:32:36+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -607,22 +607,11 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/assistance-level-outcomes-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/assistance-level-outcomes-codesystem" ]
-       ] ;
-       fhir:name [ fhir:v "Assistance Level Outcomes Code System" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/assistance-level-outcomes-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/assistance-level-outcomes-valueset" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/assistance-level-outcomes> ;
+         fhir:reference [ fhir:v "ValueSet/assistance-level-outcomes" ]
        ] ;
        fhir:name [ fhir:v "Assistance Level Outcomes Value Set" ] ;
        fhir:description [ fhir:v "Value set for assistance level assessment outcomes" ] ;
@@ -717,8 +706,8 @@
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/balance-status-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/balance-status-codesystem" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/balance-status> ;
+         fhir:reference [ fhir:v "CodeSystem/balance-status" ]
        ] ;
        fhir:name [ fhir:v "Balance Status Code System" ] ;
        fhir:description [ fhir:v "Code system for balance status types" ] ;
@@ -729,8 +718,8 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/balance-status-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/balance-status-valueset" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/balance-status> ;
+         fhir:reference [ fhir:v "ValueSet/balance-status" ]
        ] ;
        fhir:name [ fhir:v "Balance Status Value Set" ] ;
        fhir:description [ fhir:v "Value set for walking steadiness balance status" ] ;
@@ -879,8 +868,8 @@
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/cervical-mucus-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/cervical-mucus-codesystem" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/cervical-mucus-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cervical-mucus-cs" ]
        ] ;
        fhir:name [ fhir:v "Cervical Mucus Code System" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
@@ -1104,6 +1093,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/environment-type> ;
+         fhir:reference [ fhir:v "ValueSet/environment-type" ]
+       ] ;
+       fhir:name [ fhir:v "Environment Type Value Set" ] ;
+       fhir:description [ fhir:v "Value set for environmental context types" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -1119,8 +1120,8 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/environmental-context-vs> ;
-         fhir:reference [ fhir:v "ValueSet/environmental-context-vs" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/environmental-context> ;
+         fhir:reference [ fhir:v "ValueSet/environmental-context" ]
        ] ;
        fhir:name [ fhir:v "Environmental Context Value Set" ] ;
        fhir:description [ fhir:v "Valid contexts for environmental measurements" ] ;
@@ -1330,22 +1331,11 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/fall-risk-outcomes-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/fall-risk-outcomes-codesystem" ]
-       ] ;
-       fhir:name [ fhir:v "Fall Risk Outcomes Code System" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/fall-risk-outcomes-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/fall-risk-outcomes-valueset" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/fall-risk-outcomes> ;
+         fhir:reference [ fhir:v "ValueSet/fall-risk-outcomes" ]
        ] ;
        fhir:name [ fhir:v "Fall Risk Outcomes Value Set" ] ;
        fhir:description [ fhir:v "Value set for fall risk assessment outcomes" ] ;
@@ -1382,8 +1372,8 @@
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/fertility-status-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/fertility-status-codesystem" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/fertility-status-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/fertility-status-cs" ]
        ] ;
        fhir:name [ fhir:v "Fertility Status Code System" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
@@ -1989,6 +1979,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/mindfulness-type> ;
+         fhir:reference [ fhir:v "ValueSet/mindfulness-type" ]
+       ] ;
+       fhir:name [ fhir:v "Mindfulness Type Value Set" ] ;
+       fhir:description [ fhir:v "Value set for types of mindfulness practices" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
@@ -2025,22 +2027,11 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-decline-outcomes-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/mobility-decline-outcomes-codesystem" ]
-       ] ;
-       fhir:name [ fhir:v "Mobility Decline Outcomes Code System" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/mobility-decline-outcomes-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/mobility-decline-outcomes-valueset" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/mobility-decline-outcomes> ;
+         fhir:reference [ fhir:v "ValueSet/mobility-decline-outcomes" ]
        ] ;
        fhir:name [ fhir:v "Mobility Decline Outcomes Value Set" ] ;
        fhir:description [ fhir:v "Value set for mobility decline assessment outcomes" ] ;
@@ -2072,14 +2063,26 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/mood> ;
+         fhir:reference [ fhir:v "CodeSystem/mood" ]
+       ] ;
+       fhir:name [ fhir:v "Mood Code System" ] ;
+       fhir:description [ fhir:v "Code system for mood states" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/mood-vs> ;
-         fhir:reference [ fhir:v "ValueSet/mood-vs" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/mood> ;
+         fhir:reference [ fhir:v "ValueSet/mood" ]
        ] ;
        fhir:name [ fhir:v "Mood Value Set" ] ;
-       fhir:description [ fhir:v "Codes representing different mood states" ] ;
+       fhir:description [ fhir:v "Value set for mood states" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2162,8 +2165,8 @@
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/ovulation-test-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/ovulation-test-codesystem" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/ovulation-test-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/ovulation-test-cs" ]
        ] ;
        fhir:name [ fhir:v "Ovulation Test Code System" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
@@ -2326,22 +2329,11 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CodeSystem" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/risk-level-codesystem> ;
-         fhir:reference [ fhir:v "CodeSystem/risk-level-codesystem" ]
-       ] ;
-       fhir:name [ fhir:v "Risk Level Code System" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/risk-level-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/risk-level-valueset" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/risk-level> ;
+         fhir:reference [ fhir:v "ValueSet/risk-level" ]
        ] ;
        fhir:name [ fhir:v "Risk Level Value Set" ] ;
        fhir:description [ fhir:v "Value set for general risk levels" ] ;

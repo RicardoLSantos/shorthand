@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/mood> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mood"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mood</b></p><a name=\"mood\"> </a><a name=\"hcmood\"> </a><a name=\"mood-en-US\"> </a><p>This case-sensitive code system <code>http://example.org/fhir/CodeSystem/mood</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">elevated<a name=\"mood-elevated\"> </a></td><td>Elevated</td><td>Mood is higher than normal</td></tr><tr><td style=\"white-space:nowrap\">neutral<a name=\"mood-neutral\"> </a></td><td>Neutral</td><td>Neither elevated nor depressed mood</td></tr><tr><td style=\"white-space:nowrap\">depressed<a name=\"mood-depressed\"> </a></td><td>Depressed</td><td>Mood is lower than normal</td></tr><tr><td style=\"white-space:nowrap\">anxious<a name=\"mood-anxious\"> </a></td><td>Anxious</td><td>Feeling worried or nervous</td></tr><tr><td style=\"white-space:nowrap\">irritable<a name=\"mood-irritable\"> </a></td><td>Irritable</td><td>Easily annoyed or angered</td></tr><tr><td style=\"white-space:nowrap\">calm<a name=\"mood-calm\"> </a></td><td>Calm</td><td>Feeling peaceful and relaxed</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/CodeSystem/mood"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MoodCodeSystem"] ; # 
+  fhir:title [ fhir:v "Mood Code System"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-01-02T19:32:36+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Code system for mood states"] ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "elevated" ] ;
+     fhir:display [ fhir:v "Elevated" ] ;
+     fhir:definition [ fhir:v "Mood is higher than normal" ]
+  ] [
+     fhir:code [ fhir:v "neutral" ] ;
+     fhir:display [ fhir:v "Neutral" ] ;
+     fhir:definition [ fhir:v "Neither elevated nor depressed mood" ]
+  ] [
+     fhir:code [ fhir:v "depressed" ] ;
+     fhir:display [ fhir:v "Depressed" ] ;
+     fhir:definition [ fhir:v "Mood is lower than normal" ]
+  ] [
+     fhir:code [ fhir:v "anxious" ] ;
+     fhir:display [ fhir:v "Anxious" ] ;
+     fhir:definition [ fhir:v "Feeling worried or nervous" ]
+  ] [
+     fhir:code [ fhir:v "irritable" ] ;
+     fhir:display [ fhir:v "Irritable" ] ;
+     fhir:definition [ fhir:v "Easily annoyed or angered" ]
+  ] [
+     fhir:code [ fhir:v "calm" ] ;
+     fhir:display [ fhir:v "Calm" ] ;
+     fhir:definition [ fhir:v "Feeling peaceful and relaxed" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

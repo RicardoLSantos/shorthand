@@ -10,7 +10,7 @@
   "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP",
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "draft",
-  "date" : "2025-01-02T17:46:41+00:00",
+  "date" : "2025-01-02T19:32:36+00:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -695,21 +695,10 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/assistance-level-outcomes-codesystem"
-      },
-      "name" : "Assistance Level Outcomes Code System",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/assistance-level-outcomes-valueset"
+        "reference" : "ValueSet/assistance-level-outcomes"
       },
       "name" : "Assistance Level Outcomes Value Set",
       "description" : "Value set for assistance level assessment outcomes",
@@ -805,7 +794,7 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/balance-status-codesystem"
+        "reference" : "CodeSystem/balance-status"
       },
       "name" : "Balance Status Code System",
       "description" : "Code system for balance status types",
@@ -817,7 +806,7 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/balance-status-valueset"
+        "reference" : "ValueSet/balance-status"
       },
       "name" : "Balance Status Value Set",
       "description" : "Value set for walking steadiness balance status",
@@ -958,7 +947,7 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/cervical-mucus-codesystem"
+        "reference" : "CodeSystem/cervical-mucus-cs"
       },
       "name" : "Cervical Mucus Code System",
       "exampleBoolean" : false
@@ -1165,6 +1154,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/environment-type"
+      },
+      "name" : "Environment Type Value Set",
+      "description" : "Value set for environmental context types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1180,7 +1181,7 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/environmental-context-vs"
+        "reference" : "ValueSet/environmental-context"
       },
       "name" : "Environmental Context Value Set",
       "description" : "Valid contexts for environmental measurements",
@@ -1379,21 +1380,10 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/fall-risk-outcomes-codesystem"
-      },
-      "name" : "Fall Risk Outcomes Code System",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/fall-risk-outcomes-valueset"
+        "reference" : "ValueSet/fall-risk-outcomes"
       },
       "name" : "Fall Risk Outcomes Value Set",
       "description" : "Value set for fall risk assessment outcomes",
@@ -1428,7 +1418,7 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/fertility-status-codesystem"
+        "reference" : "CodeSystem/fertility-status-cs"
       },
       "name" : "Fertility Status Code System",
       "exampleBoolean" : false
@@ -2029,6 +2019,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-type"
+      },
+      "name" : "Mindfulness Type Value Set",
+      "description" : "Value set for types of mindfulness practices",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -2065,21 +2067,10 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/mobility-decline-outcomes-codesystem"
-      },
-      "name" : "Mobility Decline Outcomes Code System",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/mobility-decline-outcomes-valueset"
+        "reference" : "ValueSet/mobility-decline-outcomes"
       },
       "name" : "Mobility Decline Outcomes Value Set",
       "description" : "Value set for mobility decline assessment outcomes",
@@ -2112,13 +2103,25 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mood"
+      },
+      "name" : "Mood Code System",
+      "description" : "Code system for mood states",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/mood-vs"
+        "reference" : "ValueSet/mood"
       },
       "name" : "Mood Value Set",
-      "description" : "Codes representing different mood states",
+      "description" : "Value set for mood states",
       "exampleBoolean" : false
     },
     {
@@ -2199,7 +2202,7 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/ovulation-test-codesystem"
+        "reference" : "CodeSystem/ovulation-test-cs"
       },
       "name" : "Ovulation Test Code System",
       "exampleBoolean" : false
@@ -2363,21 +2366,10 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/risk-level-codesystem"
-      },
-      "name" : "Risk Level Code System",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/risk-level-valueset"
+        "reference" : "ValueSet/risk-level"
       },
       "name" : "Risk Level Value Set",
       "description" : "Value set for general risk levels",

@@ -1,0 +1,38 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/ValueSet/environmental-context> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "environmental-context"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet environmental-context</b></p><a name=\"environmental-context\"> </a><a name=\"hcenvironmental-context\"> </a><a name=\"environmental-context-en-US\"> </a><ul><li>Include all codes defined in <code>http://example.org/fhir/CodeSystem/environmental-context</code></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/ValueSet/environmental-context"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "EnvironmentalContextValueSet"] ; # 
+  fhir:title [ fhir:v "Environmental Context Value Set"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2025-01-02T19:32:36+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Valid contexts for environmental measurements"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://example.org/fhir/CodeSystem/environmental-context"^^xsd:anyURI ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
