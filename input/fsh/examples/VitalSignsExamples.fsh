@@ -10,6 +10,7 @@ Title: "Heart Rate Measurement Example"
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "per minute"
 * device = Reference(DeviceHeartRateMonitor)
+* performer = Reference(PractitionerExample)
 * component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * component[heartRateVariability].valueQuantity = 45 'ms' "millisecond"
 * component[heartRateVariability].valueQuantity.system = $UCUM
@@ -24,6 +25,7 @@ Title: "Blood Pressure Measurement Example"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * device = Reference(DeviceBloodPressureMonitor)
+* performer = Reference(PractitionerExample)
 * component[systolic].code = $LOINC#8480-6 "Systolic blood pressure"
 * component[systolic].valueQuantity = 120 'mm[Hg]' "millimeter of mercury"
 * component[systolic].valueQuantity.system = $UCUM
