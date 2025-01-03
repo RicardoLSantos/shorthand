@@ -43,16 +43,3 @@ Description: "Code system for reproductive health monitoring activities"
 * #mood-tracking "Mood Tracking" "Track mood changes related to reproductive cycle"
 * #medication-log "Medication Log" "Log reproductive health medications"
 * #exercise-tracking "Exercise Tracking" "Track physical activity during cycle"
-
-Instance: ExampleReproductiveActivity
-InstanceOf: CarePlan
-Usage: #example
-Title: "Example Reproductive Activity"
-Description: "Example showing use of reproductive activity value set"
-
-* status = #active
-* intent = #plan
-* subject = Reference(Patient/example)
-* activity.detail.kind = #observation
-* activity.detail.code = ReproductiveActivityCS#cycle-tracking
-* activity.detail.status = #scheduled
