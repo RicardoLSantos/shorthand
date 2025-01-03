@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14.161"}
-    h3,h4,h5,h6{--heading-prefix:"14.161"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.160"}
+    h3,h4,h5,h6{--heading-prefix:"14.160"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -173,26 +173,23 @@
   "<a href="http://hl7.org/fhir/R4/patient.html#Patient.id">id</a>" : "PatientExample",
   "<a href="http://hl7.org/fhir/R4/patient.html#Patient.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Patient PatientExample&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;PatientExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcPatientExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;PatientExample-en-US\&quot;&gt; &lt;/a&gt;&lt;p style=\&quot;border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\&quot;&gt;Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789\u00a0(use:\u00a0usual,\u00a0))&lt;/p&gt;&lt;hr/&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;background-color: #f3f5da\&quot; title=\&quot;Record is active\&quot;&gt;Active:&lt;/td&gt;&lt;td colspan=\&quot;3\&quot;&gt;true&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Patient PatientExample&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;PatientExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcPatientExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;PatientExample-en-US\&quot;&gt; &lt;/a&gt;&lt;p style=\&quot;border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\&quot;&gt;Test Example  Female, DoB: 1990-01-01 ( UUID:example)&lt;/p&gt;&lt;hr/&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/R4/patient.html#Patient.identifier">identifier</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a>" : "usual",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:2.16.840.1.113883.2.4.6.3",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "123456789"
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:ietf:rfc:3986",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "urn:uuid:example"
     }
   ],
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.active">active</a>" : true,
   "<a href="http://hl7.org/fhir/R4/patient.html#Patient.name">name</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.text">text</a>" : "Example Patient",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a>" : "Patient",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a>" : "Example",
       "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">given</a>" : [
-        "Example"
+        "Test"
       ]
     }
   ],
-  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">gender</a>" : "male",
+  "<a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">gender</a>" : "female",
   "<a href="http://hl7.org/fhir/R4/patient.html#Patient.birthDate">birthDate</a>" : "1990-01-01"
 }</code></pre>
 
@@ -218,7 +215,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 2, 2025 19:32+0000">2025-01-02</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 3, 2025 09:54+0000">2025-01-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

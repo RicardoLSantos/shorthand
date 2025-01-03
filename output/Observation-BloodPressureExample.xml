@@ -6,7 +6,7 @@
     <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/blood-pressure-observation"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation BloodPressureExample</b></p><a name="BloodPressureExample"> </a><a name="hcBloodPressureExample"> </a><a name="BloodPressureExample-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 85354-9}">Blood pressure panel with all children optional</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>device</b>: <a href="Device-DeviceBloodPressureMonitor.html">Device: manufacturer = HealthTech Devices; modelNumber = BPM-2024; type = Blood pressure monitor</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8480-6}">Systolic blood pressure</span></p><p><b>value</b>: 120 millimeter of mercury<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8462-4}">Diastolic blood pressure</span></p><p><b>value</b>: 80 millimeter of mercury<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation BloodPressureExample</b></p><a name="BloodPressureExample"> </a><a name="hcBloodPressureExample"> </a><a name="BloodPressureExample-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 85354-9}">Blood pressure panel with all children optional</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Test Example  Female, DoB: 1990-01-01 ( UUID:example)</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>performer</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Test Provider </a></p><p><b>device</b>: <a href="Device-DeviceBloodPressureMonitor.html">Device: manufacturer = HealthTech Devices; modelNumber = BPM-2024; type = Blood pressure monitor</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8480-6}">Systolic blood pressure</span></p><p><b>value</b>: 120 millimeter of mercury<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 8462-4}">Diastolic blood pressure</span></p><p><b>value</b>: 80 millimeter of mercury<span style="background: LightGoldenRodYellow"> (Details: UCUM  codemm[Hg] = 'mm[Hg]')</span></p></blockquote></div>
   </text>
   <status value="final"/>
   <category>
@@ -26,6 +26,9 @@
     <reference value="Patient/PatientExample"/>
   </subject>
   <effectiveDateTime value="2024-03-19T15:30:00Z"/>
+  <performer>
+    <reference value="Practitioner/PractitionerExample"/>
+  </performer>
   <device>
     <reference value="Device/DeviceBloodPressureMonitor"/>
   </device>

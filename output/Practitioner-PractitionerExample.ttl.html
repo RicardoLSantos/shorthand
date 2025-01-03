@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Search by session duration - TTL Representation - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
+    <title>Example Healthcare Provider - TTL Representation - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"14.3"}
-    h3,h4,h5,h6{--heading-prefix:"14.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.154"}
+    h3,h4,h5,h6{--heading-prefix:"14.154"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -99,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Search by session duration</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Example Healthcare Provider</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -125,21 +125,21 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="SearchParameter-SessionDuration.html">Narrative Content</a>
+    <a href="Practitioner-PractitionerExample.html">Narrative Content</a>
   </li>
 
 
 
   
     <li>
-      <a href="SearchParameter-SessionDuration.xml.html">XML</a>
+      <a href="Practitioner-PractitionerExample.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="SearchParameter-SessionDuration.json.html">JSON</a>
+      <a href="Practitioner-PractitionerExample.json.html">JSON</a>
     </li>
   
 
@@ -158,25 +158,10 @@
 <a name="root"> </a>
 
 
-<h2 id="root">: Search by session duration - TTL Representation</h2>
-
-  <table class="colsi">
-    <tr>
-
-      <td colspan="2">
-        
-          Active
-          
-            as of 2025-01-02
-          
-        
-      </td>
-
-    </tr>
-  </table>
+<h2 id="root">: Example Healthcare Provider - TTL Representation</h2>
 
 
-<p><a href="SearchParameter-SessionDuration.ttl" no-download="true">Raw ttl</a> | <a href="SearchParameter-SessionDuration.ttl" download>Download</a></p>
+<p><a href="Practitioner-PractitionerExample.ttl" no-download="true">Raw ttl</a> | <a href="Practitioner-PractitionerExample.ttl" download>Download</a></p>
 
   <!-- insert intro if present -->
   
@@ -191,31 +176,28 @@
 
 # - resource -------------------------------------------------------------------
 
- a fhir:SearchParameter ;
+ a fhir:Practitioner ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;SessionDuration&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.text">fhir:text</a> [
+  <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;PractitionerExample&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.text">fhir:text</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: SearchParameter SessionDuration&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;SessionDuration\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcSessionDuration\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;SessionDuration-en-US\&quot;&gt; &lt;/a&gt;&lt;h2&gt;SessionDuration&lt;/h2&gt;&lt;p&gt;Parameter &lt;code&gt;session-duration&lt;/code&gt;:&lt;code&gt;quantity&lt;/code&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;Search for mindfulness observations by session duration&lt;/p&gt;\n&lt;/div&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/observation.html\&quot;&gt;Observation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='118682006')).value.ofType(Quantity)&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Processing Mode&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true&lt;/li&gt;&lt;li&gt;multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Practitioner PractitionerExample&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;PractitionerExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcPractitionerExample\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;PractitionerExample-en-US\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=\&quot;http://terminology.hl7.org/6.1.0/NamingSystem-uri.html\&quot; title=\&quot;As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\&quot;&gt;Uniform Resource Identifier (URI)&lt;/a&gt;/urn:uuid:practitioner-example&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: Test Provider &lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: &lt;a href=\&quot;tel:+1-555-555-0123\&quot;&gt;+1-555-555-0123&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;gender&lt;/b&gt;: unspecified&lt;/p&gt;&lt;/div&gt;&quot;
   ] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://github.com/RicardoLSantos/shorthand/SearchParameter/SessionDuration&quot;^^xsd:anyURI] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;0.1.0&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;SessionDuration&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2025-01-02T19:32:36+00:00&quot;^^xsd:dateTime] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Ricardo Lourenço dos Santos&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.contact">fhir:contact</a> ( [
-<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Ricardo Lourenço dos Santos&quot; ] ;
-    ( <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:telecom</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;url&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;https://linktr.ee/ricardolsantos&quot; ]     ] )
+  <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">fhir:identifier</a> ( [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:ietf:rfc:3986&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;urn:uuid:practitioner-example&quot; ]
   ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Search for mindfulness observations by session duration&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;session-duration&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.base">fhir:base</a> ( [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;Observation&quot;] ) ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;quantity&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">fhir:expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='118682006')).value.ofType(Quantity)&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.xpathUsage">fhir:xpathUsage</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;normal&quot;] . # 
+  <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.active">fhir:active</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> &quot;true&quot;^^xsd:boolean] ; # 
+  <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">fhir:name</a> ( [
+<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">fhir:family</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Provider&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">fhir:given</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Test&quot; ] )
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.telecom">fhir:telecom</a> ( [
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;phone&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;+1-555-555-0123&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;work&quot; ]
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.gender">fhir:gender</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;unspecified&quot;] . # 
 
 </code></pre>
 
@@ -242,7 +224,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 2, 2025 19:32+0000">2025-01-02</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 3, 2025 09:54+0000">2025-01-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -10,7 +10,7 @@
   <name value="iOS_Lifestyle_Medicine_HEADS2_FMUP"/>
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-01-02T19:32:36+00:00"/>
+  <date value="2025-01-03T09:54:59+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -1006,6 +1006,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/PractitionerExample"/>
+      </reference>
+      <name value="Example Healthcare Provider"/>
+      <description value="Example healthcare provider for testing"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Basic"/>
       </extension>
       <reference>
@@ -1066,18 +1077,7 @@
         <reference value="Patient/PatientExample"/>
       </reference>
       <name value="Example Patient"/>
-      <description value="Example patient for lifestyle medicine measurements"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CarePlan"/>
-      </extension>
-      <reference>
-        <reference value="CarePlan/ExampleReproductiveActivity"/>
-      </reference>
-      <name value="Example Reproductive Activity"/>
-      <description value="Example showing use of reproductive activity value set"/>
+      <description value="Example patient for testing"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1088,6 +1088,16 @@
         <reference value="Observation/ExampleSymptomSeverity"/>
       </reference>
       <name value="Example Symptom Severity"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CarePlan"/>
+      </extension>
+      <reference>
+        <reference value="CarePlan/ExampleReproductiveActivity"/>
+      </reference>
+      <name value="ExampleReproductiveActivity"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1177,16 +1187,6 @@
       <name value="Fertility Observation Profile"/>
       <description value="Profile for fertility signs and symptoms"/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Observation"/>
-      </extension>
-      <reference>
-        <reference value="Observation/FertilitySignsExample"/>
-      </reference>
-      <name value="Fertility Signs Example"/>
-      <exampleCanonical value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1754,6 +1754,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/MindfulnessType"/>
+      </reference>
+      <name value="MindfulnessType"/>
+      <description value="Search for mindfulness observations by practice type"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -2068,39 +2079,6 @@
       </reference>
       <name value="Risk Level Value Set"/>
       <description value="Value set for general risk levels"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
-      </extension>
-      <reference>
-        <reference value="SearchParameter/MindfulnessType"/>
-      </reference>
-      <name value="Search by mindfulness practice type"/>
-      <description value="Search for mindfulness observations by practice type"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
-      </extension>
-      <reference>
-        <reference value="SearchParameter/SessionDuration"/>
-      </reference>
-      <name value="Search by session duration"/>
-      <description value="Search for mindfulness observations by session duration"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="SearchParameter"/>
-      </extension>
-      <reference>
-        <reference value="SearchParameter/StressLevel"/>
-      </reference>
-      <name value="Search by stress level"/>
-      <description value="Search for mindfulness observations by stress level"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

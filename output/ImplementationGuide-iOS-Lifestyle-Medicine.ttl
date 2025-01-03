@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "iOS_Lifestyle_Medicine_HEADS2_FMUP"] ; # 
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-01-02T19:32:36+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-01-03T09:54:59+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -1153,6 +1153,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Practitioner/PractitionerExample> ;
+         fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+       ] ;
+       fhir:name [ fhir:v "Example Healthcare Provider" ] ;
+       fhir:description [ fhir:v "Example healthcare provider for testing" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Basic" ]
        ] ) ;
        fhir:reference [
@@ -1231,19 +1243,7 @@
          fhir:reference [ fhir:v "Patient/PatientExample" ]
        ] ;
        fhir:name [ fhir:v "Example Patient" ] ;
-       fhir:description [ fhir:v "Example patient for lifestyle medicine measurements" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CarePlan" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CarePlan/ExampleReproductiveActivity> ;
-         fhir:reference [ fhir:v "CarePlan/ExampleReproductiveActivity" ]
-       ] ;
-       fhir:name [ fhir:v "Example Reproductive Activity" ] ;
-       fhir:description [ fhir:v "Example showing use of reproductive activity value set" ] ;
+       fhir:description [ fhir:v "Example patient for testing" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1255,6 +1255,17 @@
          fhir:reference [ fhir:v "Observation/ExampleSymptomSeverity" ]
        ] ;
        fhir:name [ fhir:v "Example Symptom Severity" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CarePlan" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CarePlan/ExampleReproductiveActivity> ;
+         fhir:reference [ fhir:v "CarePlan/ExampleReproductiveActivity" ]
+       ] ;
+       fhir:name [ fhir:v "ExampleReproductiveActivity" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1352,20 +1363,6 @@
        fhir:name [ fhir:v "Fertility Observation Profile" ] ;
        fhir:description [ fhir:v "Profile for fertility signs and symptoms" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Observation" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/FertilitySignsExample> ;
-         fhir:reference [ fhir:v "Observation/FertilitySignsExample" ]
-       ] ;
-       fhir:name [ fhir:v "Fertility Signs Example" ] ;
-       fhir:example [
-         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation"^^xsd:anyURI ;
-         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation>
-       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1991,6 +1988,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/SearchParameter/MindfulnessType> ;
+         fhir:reference [ fhir:v "SearchParameter/MindfulnessType" ]
+       ] ;
+       fhir:name [ fhir:v "MindfulnessType" ] ;
+       fhir:description [ fhir:v "Search for mindfulness observations by practice type" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "CodeSystem" ]
        ] ) ;
        fhir:reference [
@@ -2337,42 +2346,6 @@
        ] ;
        fhir:name [ fhir:v "Risk Level Value Set" ] ;
        fhir:description [ fhir:v "Value set for general risk levels" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "SearchParameter" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/SearchParameter/MindfulnessType> ;
-         fhir:reference [ fhir:v "SearchParameter/MindfulnessType" ]
-       ] ;
-       fhir:name [ fhir:v "Search by mindfulness practice type" ] ;
-       fhir:description [ fhir:v "Search for mindfulness observations by practice type" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "SearchParameter" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/SearchParameter/SessionDuration> ;
-         fhir:reference [ fhir:v "SearchParameter/SessionDuration" ]
-       ] ;
-       fhir:name [ fhir:v "Search by session duration" ] ;
-       fhir:description [ fhir:v "Search for mindfulness observations by session duration" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "SearchParameter" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/SearchParameter/StressLevel> ;
-         fhir:reference [ fhir:v "SearchParameter/StressLevel" ]
-       ] ;
-       fhir:name [ fhir:v "Search by stress level" ] ;
-       fhir:description [ fhir:v "Search for mindfulness observations by stress level" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

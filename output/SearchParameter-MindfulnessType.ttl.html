@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Search by mindfulness practice type - TTL Representation - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
+    <title>MindfulnessType - TTL Representation - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -99,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Search by mindfulness practice type</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>MindfulnessType</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -158,7 +158,7 @@
 <a name="root"> </a>
 
 
-<h2 id="root">: Search by mindfulness practice type - TTL Representation</h2>
+<h2 id="root">: MindfulnessType - TTL Representation</h2>
 
   <table class="colsi">
     <tr>
@@ -167,7 +167,7 @@
         
           Active
           
-            as of 2025-01-02
+            as of 2025-01-03
           
         
       </td>
@@ -196,13 +196,13 @@
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;MindfulnessType&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.text">fhir:text</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: SearchParameter MindfulnessType&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;MindfulnessType\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcMindfulnessType\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;MindfulnessType-en-US\&quot;&gt; &lt;/a&gt;&lt;h2&gt;MindfulnessType&lt;/h2&gt;&lt;p&gt;Parameter &lt;code&gt;mindfulness-type&lt;/code&gt;:&lt;code&gt;token&lt;/code&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;Search for mindfulness observations by practice type&lt;/p&gt;\n&lt;/div&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/observation.html\&quot;&gt;Observation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Processing Mode&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true&lt;/li&gt;&lt;li&gt;multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: SearchParameter MindfulnessType&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;MindfulnessType\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcMindfulnessType\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;MindfulnessType-en-US\&quot;&gt; &lt;/a&gt;&lt;h2&gt;MindfulnessType&lt;/h2&gt;&lt;p&gt;Parameter &lt;code&gt;mindfulness-type&lt;/code&gt;:&lt;code&gt;token&lt;/code&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;Search for mindfulness observations by practice type&lt;/p&gt;\n&lt;/div&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Resource&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/observation.html\&quot;&gt;Observation&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Expression&lt;/td&gt;&lt;td&gt;&lt;code&gt;Observation.component(code.coding.where(system='http://snomed.info/sct' and code='711020003')).value.as(CodeableConcept)&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Processing Mode&lt;/td&gt;&lt;td&gt;Normal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Multiples&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true&lt;/li&gt;&lt;li&gt;multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
   ] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://github.com/RicardoLSantos/shorthand/SearchParameter/MindfulnessType&quot;^^xsd:anyURI] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;0.1.0&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;MindfulnessType&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2025-01-02T19:32:36+00:00&quot;^^xsd:dateTime] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2025-01-03T09:54:59+00:00&quot;^^xsd:dateTime] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Ricardo Lourenço dos Santos&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.contact">fhir:contact</a> ( [
 <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Ricardo Lourenço dos Santos&quot; ] ;
@@ -214,7 +214,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;mindfulness-type&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.base">fhir:base</a> ( [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;Observation&quot;] ) ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.type">fhir:type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;token&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">fhir:expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Observation.component.where(code.coding.exists(system='http://snomed.info/sct' and code='711020003')).value.ofType(CodeableConcept)&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.expression">fhir:expression</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Observation.component(code.coding.where(system='http://snomed.info/sct' and code='711020003')).value.as(CodeableConcept)&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.xpathUsage">fhir:xpathUsage</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;normal&quot;] . # 
 
 </code></pre>
@@ -242,7 +242,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 2, 2025 19:32+0000">2025-01-02</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 3, 2025 09:54+0000">2025-01-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

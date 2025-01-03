@@ -10,7 +10,7 @@
   "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP",
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "draft",
-  "date" : "2025-01-02T19:32:36+00:00",
+  "date" : "2025-01-03T09:54:59+00:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -1214,6 +1214,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/PractitionerExample"
+      },
+      "name" : "Example Healthcare Provider",
+      "description" : "Example healthcare provider for testing",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Basic"
       }],
       "reference" : {
@@ -1279,19 +1291,7 @@
         "reference" : "Patient/PatientExample"
       },
       "name" : "Example Patient",
-      "description" : "Example patient for lifestyle medicine measurements",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CarePlan"
-      }],
-      "reference" : {
-        "reference" : "CarePlan/ExampleReproductiveActivity"
-      },
-      "name" : "Example Reproductive Activity",
-      "description" : "Example showing use of reproductive activity value set",
+      "description" : "Example patient for testing",
       "exampleBoolean" : true
     },
     {
@@ -1303,6 +1303,17 @@
         "reference" : "Observation/ExampleSymptomSeverity"
       },
       "name" : "Example Symptom Severity",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/ExampleReproductiveActivity"
+      },
+      "name" : "ExampleReproductiveActivity",
       "exampleBoolean" : true
     },
     {
@@ -1400,17 +1411,6 @@
       "name" : "Fertility Observation Profile",
       "description" : "Profile for fertility signs and symptoms",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      }],
-      "reference" : {
-        "reference" : "Observation/FertilitySignsExample"
-      },
-      "name" : "Fertility Signs Example",
-      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/fertility-observation"
     },
     {
       "extension" : [{
@@ -2031,6 +2031,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/MindfulnessType"
+      },
+      "name" : "MindfulnessType",
+      "description" : "Search for mindfulness observations by practice type",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -2373,42 +2385,6 @@
       },
       "name" : "Risk Level Value Set",
       "description" : "Value set for general risk levels",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/MindfulnessType"
-      },
-      "name" : "Search by mindfulness practice type",
-      "description" : "Search for mindfulness observations by practice type",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/SessionDuration"
-      },
-      "name" : "Search by session duration",
-      "description" : "Search for mindfulness observations by session duration",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/StressLevel"
-      },
-      "name" : "Search by stress level",
-      "description" : "Search for mindfulness observations by stress level",
       "exampleBoolean" : false
     },
     {

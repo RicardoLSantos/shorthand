@@ -17,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation BMIExample</b></p><a name=\"BMIExample\"> </a><a name=\"hcBMIExample\"> </a><a name=\"BMIExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 39156-5}\">Body mass index (BMI)</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Example Patient Male, DoB: 1990-01-01 ( urn:oid:2.16.840.1.113883.2.4.6.3#123456789 (use: usual, ))</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 23 kilogram per square meter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg/m2 = 'kg/m2')</span></p><p><b>derivedFrom</b>: </p><ul><li><a href=\"Observation-WeightExample.html\">Observation Body weight</a></li><li><a href=\"Observation-HeightExample.html\">Observation Body height</a></li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation BMIExample</b></p><a name=\"BMIExample\"> </a><a name=\"hcBMIExample\"> </a><a name=\"BMIExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 39156-5}\">Body mass index (BMI)</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Test Example  Female, DoB: 1990-01-01 ( UUID:example)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Test Provider </a></p><p><b>value</b>: 23 kilogram per square meter<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg/m2 = 'kg/m2')</span></p><p><b>derivedFrom</b>: </p><ul><li><a href=\"Observation-WeightExample.html\">Observation Body weight</a></li><li><a href=\"Observation-HeightExample.html\">Observation Body height</a></li></ul></div>"
   ] ; # 
   fhir:status [ fhir:v "final"] ; # 
   fhir:category ( [
@@ -39,6 +39,10 @@
      fhir:reference [ fhir:v "Patient/PatientExample" ]
   ] ; # 
   fhir:effective [ fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Practitioner/PractitionerExample> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+  ] ) ; # 
   fhir:value [
      a fhir:Quantity ;
      fhir:value [ fhir:v "23"^^xsd:decimal ] ;
