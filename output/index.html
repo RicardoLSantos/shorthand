@@ -172,43 +172,154 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
-<h1 id="ios-health-app-lifestyle-medicine-implementation-guide">iOS Health App Lifestyle Medicine Implementation Guide</h1>
-
-<h2 id="purpose">Purpose</h2>
-<p>This FHIR implementation guide defines how to extract and represent vital signs, sleep patterns, physical activity and other health related data from the iOS Health App to support lifestyle medicine interventions.</p>
-
-<h2 id="scope">Scope</h2>
-<ul>
-  <li>Health data from iOS Health App</li>
-  <li>Vital Signs</li>
-  <li>Physical activity data
-    <ul>
-      <li>Steps</li>
-      <li>Distance traveled</li>
-      <li>Workouts</li>
-      <li>Energy expenditure</li>
-      <li>Exercise minutes</li>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#ios-health-app-lifestyle-medicine-implementation-guide" id="markdown-toc-ios-health-app-lifestyle-medicine-implementation-guide">iOS Health App Lifestyle Medicine Implementation Guide</a>    <ul>
+      <li><a href="#purpose" id="markdown-toc-purpose">Purpose</a></li>
+      <li><a href="#scope" id="markdown-toc-scope">Scope</a>        <ul>
+          <li><a href="#vital-signs" id="markdown-toc-vital-signs">Vital Signs</a></li>
+          <li><a href="#physical-activity" id="markdown-toc-physical-activity">Physical Activity</a></li>
+          <li><a href="#sleep" id="markdown-toc-sleep">Sleep</a></li>
+          <li><a href="#mindfulness--mental-health" id="markdown-toc-mindfulness--mental-health">Mindfulness &amp; Mental Health</a></li>
+          <li><a href="#body-measurements" id="markdown-toc-body-measurements">Body Measurements</a></li>
+          <li><a href="#nutrition" id="markdown-toc-nutrition">Nutrition</a></li>
+          <li><a href="#environmental-factors" id="markdown-toc-environmental-factors">Environmental Factors</a></li>
+          <li><a href="#reproductive-health" id="markdown-toc-reproductive-health">Reproductive Health</a></li>
+          <li><a href="#social--behavioral" id="markdown-toc-social--behavioral">Social &amp; Behavioral</a></li>
+        </ul>
+      </li>
+      <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a></li>
+      <li><a href="#audience" id="markdown-toc-audience">Audience</a></li>
+      <li><a href="#technical-framework" id="markdown-toc-technical-framework">Technical Framework</a></li>
+      <li><a href="#implementation-notes" id="markdown-toc-implementation-notes">Implementation Notes</a></li>
     </ul>
   </li>
 </ul>
 
+</div>
+<h1 id="ios-health-app-lifestyle-medicine-implementation-guide">iOS Health App Lifestyle Medicine Implementation Guide</h1>
+
+<h2 id="purpose">Purpose</h2>
+<p>This FHIR implementation guide defines how to extract and represent health and lifestyle data from the iOS Health App to support lifestyle medicine interventions.</p>
+
+<h2 id="scope">Scope</h2>
+<p>The implementation guide covers the following data domains from iOS Health App:</p>
+
+<h3 id="vital-signs">Vital Signs</h3>
+<ul>
+  <li>Basic vital signs (heart rate, blood pressure, temperature, etc.)</li>
+  <li>Advanced physiological metrics (HRV, respiratory patterns, etc.)</li>
+  <li>Physiological stress biomarkers</li>
+  <li>Thermoregulation metrics</li>
+</ul>
+
+<h3 id="physical-activity">Physical Activity</h3>
+<ul>
+  <li>Steps and distance</li>
+  <li>Workouts and exercise</li>
+  <li>Energy expenditure</li>
+  <li>Activity patterns</li>
+  <li>Movement analysis</li>
+</ul>
+
+<h3 id="sleep">Sleep</h3>
+<ul>
+  <li>Sleep duration and stages</li>
+  <li>Sleep quality metrics</li>
+  <li>Breathing during sleep</li>
+  <li>Heart rate during sleep</li>
+  <li>Sleep consistency</li>
+</ul>
+
+<h3 id="mindfulness--mental-health">Mindfulness &amp; Mental Health</h3>
+<ul>
+  <li>Mindfulness sessions</li>
+  <li>Stress levels</li>
+  <li>Mood tracking</li>
+  <li>Relaxation practices</li>
+  <li>Mental well-being metrics</li>
+</ul>
+
+<h3 id="body-measurements">Body Measurements</h3>
+<ul>
+  <li>Weight and height</li>
+  <li>BMI calculations</li>
+  <li>Body composition</li>
+  <li>Anthropometric measurements</li>
+</ul>
+
+<h3 id="nutrition">Nutrition</h3>
+<ul>
+  <li>Food and water intake</li>
+  <li>Macronutrients tracking</li>
+  <li>Energy balance</li>
+  <li>Meal patterns</li>
+</ul>
+
+<h3 id="environmental-factors">Environmental Factors</h3>
+<ul>
+  <li>Noise exposure</li>
+  <li>UV exposure</li>
+  <li>Environmental context</li>
+  <li>Exposure patterns</li>
+</ul>
+
+<h3 id="reproductive-health">Reproductive Health</h3>
+<ul>
+  <li>Cycle tracking</li>
+  <li>Fertility signs</li>
+  <li>Symptoms tracking</li>
+  <li>Health patterns</li>
+</ul>
+
+<h3 id="social--behavioral">Social &amp; Behavioral</h3>
+<ul>
+  <li>Social interactions</li>
+  <li>Support networks</li>
+  <li>Behavioral patterns</li>
+  <li>Activity context</li>
+</ul>
+
 <h2 id="use-cases">Use Cases</h2>
 <ol>
-  <li>Automatic physical activity data collection</li>
-  <li>Daily activity level monitoring</li>
-  <li>Movement pattern assessment</li>
-  <li>Lifestyle intervention support</li>
+  <li>Automated health data collection and monitoring</li>
+  <li>Lifestyle pattern assessment and analysis</li>
+  <li>Intervention planning and tracking</li>
+  <li>Progress monitoring and outcomes assessment</li>
+  <li>Patient engagement and self-management</li>
+  <li>Clinical decision support</li>
+  <li>Research and population health</li>
 </ol>
 
 <h2 id="audience">Audience</h2>
 <ul>
   <li>Healthcare software developers</li>
-  <li>Healthcare professionals</li>
-  <li>Researchers</li>
-  <li>Digital health managers</li>
+  <li>Healthcare professionals and providers</li>
+  <li>Digital health platform developers</li>
+  <li>Health researchers</li>
+  <li>Lifestyle medicine specialists</li>
+  <li>Health informaticians</li>
+  <li>Digital health innovators</li>
+</ul>
+
+<h2 id="technical-framework">Technical Framework</h2>
+<p>Built on FHIR R4 (4.0.1) with:</p>
+<ul>
+  <li>Custom profiles for iOS Health data</li>
+  <li>Extensions for contextual information</li>
+  <li>Terminologies for standardized coding</li>
+  <li>Search parameters for data access</li>
+  <li>Operations for data processing</li>
+  <li>Examples for implementation guidance</li>
+</ul>
+
+<h2 id="implementation-notes">Implementation Notes</h2>
+<ul>
+  <li>Integration with HealthKit API</li>
+  <li>Privacy and security considerations</li>
+  <li>Data validation requirements</li>
+  <li>Interoperability guidelines</li>
+  <li>Best practices for implementation</li>
 </ul>
 
 
@@ -230,7 +341,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Jan 4, 2025 22:09+0000">2025-01-04</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Jan 4, 2025 22:27+0000">2025-01-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
