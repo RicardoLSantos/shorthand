@@ -10,7 +10,7 @@
   <name value="iOS_Lifestyle_Medicine_HEADS2_FMUP"/>
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-01-04T21:28:42+00:00"/>
+  <date value="2025-01-04T22:09:55+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -785,7 +785,7 @@
       <reference>
         <reference value="Observation/ChronicSymptomExample"/>
       </reference>
-      <name value="Chronic Symptom Example"/>
+      <name value="ChronicSymptomExample"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1006,17 +1006,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Practitioner"/>
-      </extension>
-      <reference>
-        <reference value="Practitioner/PractitionerExample"/>
-      </reference>
-      <name value="Example Healthcare Provider"/>
-      <description value="Example healthcare provider for testing"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Basic"/>
       </extension>
       <reference>
@@ -1071,13 +1060,12 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
+        <valueString value="CarePlan"/>
       </extension>
       <reference>
-        <reference value="Patient/PatientExample"/>
+        <reference value="CarePlan/ExampleReproductiveActivity"/>
       </reference>
-      <name value="Example Patient"/>
-      <description value="Example patient for testing"/>
+      <name value="ExampleReproductiveActivity"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1087,17 +1075,7 @@
       <reference>
         <reference value="Observation/ExampleSymptomSeverity"/>
       </reference>
-      <name value="Example Symptom Severity"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CarePlan"/>
-      </extension>
-      <reference>
-        <reference value="CarePlan/ExampleReproductiveActivity"/>
-      </reference>
-      <name value="ExampleReproductiveActivity"/>
+      <name value="ExampleSymptomSeverity"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1951,6 +1929,16 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientExample"/>
+      </reference>
+      <name value="PatientExample"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -2003,6 +1991,16 @@
       <name value="Practice Environment Types Value Set"/>
       <description value="Value set of practice environment types"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/PractitionerExample"/>
+      </reference>
+      <name value="PractitionerExample"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

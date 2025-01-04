@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "ExampleSymptomSeverity"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ExampleSymptomSeverity</b></p><a name=\"ExampleSymptomSeverity\"> </a><a name=\"hcExampleSymptomSeverity\"> </a><a name=\"ExampleSymptomSeverity-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 246604007}\">Symptom severity</span></p><p><b>effective</b>: 2024-03-19 10:30:00+0000</p><p><b>value</b>: <span title=\"Codes:{http://example.org/fhir/CodeSystem/symptom-severity-cs 4-6}\">Moderado</span></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ExampleSymptomSeverity</b></p><a name=\"ExampleSymptomSeverity\"> </a><a name=\"hcExampleSymptomSeverity\"> </a><a name=\"ExampleSymptomSeverity-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 246604007}\">Symptom severity</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 10:30:00+0000</p><p><b>performer</b>: <a href=\"Practitioner/example\">Practitioner/example</a></p></div>"
   ] ; # 
   fhir:status [ fhir:v "final"] ; # 
   fhir:category ( [
@@ -28,15 +28,15 @@
        fhir:display [ fhir:v "Symptom severity" ]
      ] )
   ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
   fhir:effective [ fhir:v "2024-03-19T10:30:00Z"^^xsd:dateTime] ; # 
-  fhir:value [
-     a fhir:CodeableConcept ;
-     fhir:coding ( [
-       fhir:system [ fhir:v "http://example.org/fhir/CodeSystem/symptom-severity-cs"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "4-6" ] ;
-       fhir:display [ fhir:v "Moderado" ]
-     ] )
-  ] . # 
+  fhir:performer ( [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Practitioner/example> ;
+     fhir:reference [ fhir:v "Practitioner/example" ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

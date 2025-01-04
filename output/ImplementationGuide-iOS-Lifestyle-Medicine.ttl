@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "iOS_Lifestyle_Medicine_HEADS2_FMUP"] ; # 
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-01-04T21:28:42+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-01-04T22:09:55+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -894,7 +894,7 @@
          fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/ChronicSymptomExample> ;
          fhir:reference [ fhir:v "Observation/ChronicSymptomExample" ]
        ] ;
-       fhir:name [ fhir:v "Chronic Symptom Example" ] ;
+       fhir:name [ fhir:v "ChronicSymptomExample" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1153,18 +1153,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Practitioner" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/Practitioner/PractitionerExample> ;
-         fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
-       ] ;
-       fhir:name [ fhir:v "Example Healthcare Provider" ] ;
-       fhir:description [ fhir:v "Example healthcare provider for testing" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Basic" ]
        ] ) ;
        fhir:reference [
@@ -1236,14 +1224,13 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Patient" ]
+         fhir:value [ fhir:v "CarePlan" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
-         fhir:reference [ fhir:v "Patient/PatientExample" ]
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CarePlan/ExampleReproductiveActivity> ;
+         fhir:reference [ fhir:v "CarePlan/ExampleReproductiveActivity" ]
        ] ;
-       fhir:name [ fhir:v "Example Patient" ] ;
-       fhir:description [ fhir:v "Example patient for testing" ] ;
+       fhir:name [ fhir:v "ExampleReproductiveActivity" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1254,18 +1241,7 @@
          fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/ExampleSymptomSeverity> ;
          fhir:reference [ fhir:v "Observation/ExampleSymptomSeverity" ]
        ] ;
-       fhir:name [ fhir:v "Example Symptom Severity" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "CarePlan" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/RicardoLSantos/shorthand/CarePlan/ExampleReproductiveActivity> ;
-         fhir:reference [ fhir:v "CarePlan/ExampleReproductiveActivity" ]
-       ] ;
-       fhir:name [ fhir:v "ExampleReproductiveActivity" ] ;
+       fhir:name [ fhir:v "ExampleSymptomSeverity" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2206,6 +2182,17 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
+         fhir:reference [ fhir:v "Patient/PatientExample" ]
+       ] ;
+       fhir:name [ fhir:v "PatientExample" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -2263,6 +2250,17 @@
        fhir:name [ fhir:v "Practice Environment Types Value Set" ] ;
        fhir:description [ fhir:v "Value set of practice environment types" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Practitioner/PractitionerExample> ;
+         fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+       ] ;
+       fhir:name [ fhir:v "PractitionerExample" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

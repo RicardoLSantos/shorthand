@@ -10,23 +10,16 @@
   fhir:id [ fhir:v "PractitionerExample"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner PractitionerExample</b></p><a name=\"PractitionerExample\"> </a><a name=\"hcPractitionerExample\"> </a><a name=\"PractitionerExample-en-US\"> </a><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/6.1.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:uuid:practitioner-example</p><p><b>active</b>: true</p><p><b>name</b>: Test Provider </p><p><b>telecom</b>: <a href=\"tel:+1-555-555-0123\">+1-555-555-0123</a></p><p><b>gender</b>: unspecified</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner PractitionerExample</b></p><a name=\"PractitionerExample\"> </a><a name=\"hcPractitionerExample\"> </a><a name=\"PractitionerExample-en-US\"> </a><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/6.1.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339108</p><p><b>name</b>: Jane Smith </p></div>"
   ] ; # 
   fhir:identifier ( [
-     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "urn:uuid:practitioner-example" ]
+     fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "9941339108" ]
   ] ) ; # 
-  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:name ( [
-     fhir:family [ fhir:v "Provider" ] ;
-     fhir:given ( [ fhir:v "Test" ] )
-  ] ) ; # 
-  fhir:telecom ( [
-     fhir:system [ fhir:v "phone" ] ;
-     fhir:value [ fhir:v "+1-555-555-0123" ] ;
-     fhir:use [ fhir:v "work" ]
-  ] ) ; # 
-  fhir:gender [ fhir:v "unspecified"] . # 
+     fhir:family [ fhir:v "Smith" ] ;
+     fhir:given ( [ fhir:v "Jane" ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

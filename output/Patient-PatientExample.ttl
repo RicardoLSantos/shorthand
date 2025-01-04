@@ -10,18 +10,18 @@
   fhir:id [ fhir:v "PatientExample"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientExample</b></p><a name=\"PatientExample\"> </a><a name=\"hcPatientExample\"> </a><a name=\"PatientExample-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Test Example  Female, DoB: 1990-01-01 ( UUID:example)</p><hr/></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientExample</b></p><a name=\"PatientExample\"> </a><a name=\"hcPatientExample\"> </a><a name=\"PatientExample-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</p><hr/></div>"
   ] ; # 
   fhir:identifier ( [
-     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "urn:uuid:example" ]
+     fhir:system [ fhir:v "urn:oid:2.16.858.1.1.1"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "12345" ]
   ] ) ; # 
   fhir:name ( [
-     fhir:family [ fhir:v "Example" ] ;
-     fhir:given ( [ fhir:v "Test" ] )
+     fhir:family [ fhir:v "Doe" ] ;
+     fhir:given ( [ fhir:v "John" ] )
   ] ) ; # 
-  fhir:gender [ fhir:v "female"] ; # 
-  fhir:birthDate [ fhir:v "1990-01-01"^^xsd:date] . # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1970-01-01"^^xsd:date] . # 
 
 # -------------------------------------------------------------------------------------
 

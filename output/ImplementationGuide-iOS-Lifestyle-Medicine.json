@@ -10,7 +10,7 @@
   "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP",
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "draft",
-  "date" : "2025-01-04T21:28:42+00:00",
+  "date" : "2025-01-04T22:09:55+00:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -972,7 +972,7 @@
       "reference" : {
         "reference" : "Observation/ChronicSymptomExample"
       },
-      "name" : "Chronic Symptom Example",
+      "name" : "ChronicSymptomExample",
       "exampleBoolean" : true
     },
     {
@@ -1214,18 +1214,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Practitioner"
-      }],
-      "reference" : {
-        "reference" : "Practitioner/PractitionerExample"
-      },
-      "name" : "Example Healthcare Provider",
-      "description" : "Example healthcare provider for testing",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Basic"
       }],
       "reference" : {
@@ -1285,13 +1273,12 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
+        "valueString" : "CarePlan"
       }],
       "reference" : {
-        "reference" : "Patient/PatientExample"
+        "reference" : "CarePlan/ExampleReproductiveActivity"
       },
-      "name" : "Example Patient",
-      "description" : "Example patient for testing",
+      "name" : "ExampleReproductiveActivity",
       "exampleBoolean" : true
     },
     {
@@ -1302,18 +1289,7 @@
       "reference" : {
         "reference" : "Observation/ExampleSymptomSeverity"
       },
-      "name" : "Example Symptom Severity",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CarePlan"
-      }],
-      "reference" : {
-        "reference" : "CarePlan/ExampleReproductiveActivity"
-      },
-      "name" : "ExampleReproductiveActivity",
+      "name" : "ExampleSymptomSeverity",
       "exampleBoolean" : true
     },
     {
@@ -2246,6 +2222,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientExample"
+      },
+      "name" : "PatientExample",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -2302,6 +2289,17 @@
       "name" : "Practice Environment Types Value Set",
       "description" : "Value set of practice environment types",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/PractitionerExample"
+      },
+      "name" : "PractitionerExample",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{

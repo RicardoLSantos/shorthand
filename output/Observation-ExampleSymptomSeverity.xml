@@ -3,7 +3,7 @@
 <Observation xmlns="http://hl7.org/fhir">
   <id value="ExampleSymptomSeverity"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation ExampleSymptomSeverity</b></p><a name="ExampleSymptomSeverity"> </a><a name="hcExampleSymptomSeverity"> </a><a name="ExampleSymptomSeverity-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}">Survey</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 246604007}">Symptom severity</span></p><p><b>effective</b>: 2024-03-19 10:30:00+0000</p><p><b>value</b>: <span title="Codes:{http://example.org/fhir/CodeSystem/symptom-severity-cs 4-6}">Moderado</span></p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation ExampleSymptomSeverity</b></p><a name="ExampleSymptomSeverity"> </a><a name="hcExampleSymptomSeverity"> </a><a name="ExampleSymptomSeverity-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category survey}">Survey</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 246604007}">Symptom severity</span></p><p><b>subject</b>: <a href="Patient/example">Patient/example</a></p><p><b>effective</b>: 2024-03-19 10:30:00+0000</p><p><b>performer</b>: <a href="Practitioner/example">Practitioner/example</a></p></div>
   </text>
   <status value="final"/>
   <category>
@@ -19,12 +19,11 @@
       <display value="Symptom severity"/>
     </coding>
   </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
   <effectiveDateTime value="2024-03-19T10:30:00Z"/>
-  <valueCodeableConcept>
-    <coding>
-      <system value="http://example.org/fhir/CodeSystem/symptom-severity-cs"/>
-      <code value="4-6"/>
-      <display value="Moderado"/>
-    </coding>
-  </valueCodeableConcept>
+  <performer>
+    <reference value="Practitioner/example"/>
+  </performer>
 </Observation>
