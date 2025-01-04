@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "iOS_Lifestyle_Medicine_HEADS2_FMUP"] ; # 
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-01-03T09:54:59+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-01-04T21:28:42+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -2419,6 +2419,212 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/social-activity-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/social-activity-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Activity Code System" ] ;
+       fhir:description [ fhir:v "Code system for types of social activities" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-activity> ;
+         fhir:reference [ fhir:v "StructureDefinition/social-activity" ]
+       ] ;
+       fhir:name [ fhir:v "Social Activity Extension" ] ;
+       fhir:description [ fhir:v "Extension for recording specific social activities" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/social-activity-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-activity-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Activity Value Set" ] ;
+       fhir:description [ fhir:v "Value set for types of social activities" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/social-context-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/social-context-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Context Code System" ] ;
+       fhir:description [ fhir:v "Code system for social interaction contexts" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-context> ;
+         fhir:reference [ fhir:v "StructureDefinition/social-context" ]
+       ] ;
+       fhir:name [ fhir:v "Social Context Extension" ] ;
+       fhir:description [ fhir:v "Extension for recording the context of social interaction" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/social-context-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-context-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Context Value Set" ] ;
+       fhir:description [ fhir:v "Value set for social interaction contexts" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/SocialInteractionExample> ;
+         fhir:reference [ fhir:v "Observation/SocialInteractionExample" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Example" ] ;
+       fhir:example [
+         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-interaction"^^xsd:anyURI ;
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-interaction>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-medium-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/social-interaction-medium-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Medium Code System" ] ;
+       fhir:description [ fhir:v "Mediums through which social interaction occurs" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/social-interaction-medium-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-interaction-medium-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Medium Value Set" ] ;
+       fhir:description [ fhir:v "Mediums through which social interaction occurs" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-interaction> ;
+         fhir:reference [ fhir:v "StructureDefinition/social-interaction" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording social interaction data from iOS Health App" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-quality-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/social-interaction-quality-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Quality Code System" ] ;
+       fhir:description [ fhir:v "Quality measures for social interactions" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/social-interaction-quality-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-interaction-quality-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Quality Value Set" ] ;
+       fhir:description [ fhir:v "Quality measures for social interactions" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-type-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/social-interaction-type-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Type Code System" ] ;
+       fhir:description [ fhir:v "Types of social interactions" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/social-interaction-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-interaction-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Interaction Type Value Set" ] ;
+       fhir:description [ fhir:v "Types of social interactions" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/social-support-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/social-support-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Support Code System" ] ;
+       fhir:description [ fhir:v "Code system for levels of social support" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-support> ;
+         fhir:reference [ fhir:v "StructureDefinition/social-support" ]
+       ] ;
+       fhir:name [ fhir:v "Social Support Extension" ] ;
+       fhir:description [ fhir:v "Extension for recording perceived social support" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/social-support-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-support-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Social Support Value Set" ] ;
+       fhir:description [ fhir:v "Value set for levels of social support" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "MessageDefinition" ]
        ] ) ;
        fhir:reference [
@@ -2446,6 +2652,152 @@
          fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"^^xsd:anyURI ;
          fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation>
        ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-chronicity-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/stress-chronicity-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Chronicity Code System" ] ;
+       fhir:description [ fhir:v "Code system for stress chronicity classification" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/stress-chronicity-vs> ;
+         fhir:reference [ fhir:v "ValueSet/stress-chronicity-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Chronicity Value Set" ] ;
+       fhir:description [ fhir:v "Value set for classifying stress chronicity" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/stress-coping-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Coping Code System" ] ;
+       fhir:description [ fhir:v "Code system for stress coping mechanisms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-coping> ;
+         fhir:reference [ fhir:v "StructureDefinition/stress-coping" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Coping Extension" ] ;
+       fhir:description [ fhir:v "Extension for recording stress coping mechanisms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/stress-coping-vs> ;
+         fhir:reference [ fhir:v "ValueSet/stress-coping-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Coping Value Set" ] ;
+       fhir:description [ fhir:v "Value set for stress coping mechanisms" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-impact-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/stress-impact-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Impact Code System" ] ;
+       fhir:description [ fhir:v "Code system for stress impact levels" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/stress-impact-vs> ;
+         fhir:reference [ fhir:v "ValueSet/stress-impact-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Impact Value Set" ] ;
+       fhir:description [ fhir:v "Value set for describing stress impact levels" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/Observation/StressLevelExample> ;
+         fhir:reference [ fhir:v "Observation/StressLevelExample" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Level Measurement Example" ] ;
+       fhir:example [
+         fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-level"^^xsd:anyURI ;
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-level>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-level> ;
+         fhir:reference [ fhir:v "StructureDefinition/stress-level" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Level Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording stress level measurements from iOS Health App" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-triggers-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/stress-triggers-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Triggers Code System" ] ;
+       fhir:description [ fhir:v "Code system for common stress triggers" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-triggers> ;
+         fhir:reference [ fhir:v "StructureDefinition/stress-triggers" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Triggers Extension" ] ;
+       fhir:description [ fhir:v "Extension for recording identified stress triggers" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/RicardoLSantos/shorthand/ValueSet/stress-triggers-vs> ;
+         fhir:reference [ fhir:v "ValueSet/stress-triggers-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Triggers Value Set" ] ;
+       fhir:description [ fhir:v "Value set for common stress triggers" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

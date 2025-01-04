@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "stress-coping-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem stress-coping-cs</b></p><a name=\"stress-coping-cs\"> </a><a name=\"hcstress-coping-cs\"> </a><a name=\"stress-coping-cs-en-US\"> </a><p>This  code system <code>https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">exercise<a name=\"stress-coping-cs-exercise\"> </a></td><td>Physical Exercise</td><td>Using exercise to manage stress</td></tr><tr><td style=\"white-space:nowrap\">meditation<a name=\"stress-coping-cs-meditation\"> </a></td><td>Meditation</td><td>Meditation and mindfulness practices</td></tr><tr><td style=\"white-space:nowrap\">social<a name=\"stress-coping-cs-social\"> </a></td><td>Social Support</td><td>Seeking social support</td></tr><tr><td style=\"white-space:nowrap\">professional<a name=\"stress-coping-cs-professional\"> </a></td><td>Professional Help</td><td>Seeking professional assistance</td></tr><tr><td style=\"white-space:nowrap\">relaxation<a name=\"stress-coping-cs-relaxation\"> </a></td><td>Relaxation</td><td>Relaxation techniques</td></tr><tr><td style=\"white-space:nowrap\">creative<a name=\"stress-coping-cs-creative\"> </a></td><td>Creative Activities</td><td>Engaging in creative activities</td></tr><tr><td style=\"white-space:nowrap\">nature<a name=\"stress-coping-cs-nature\"> </a></td><td>Nature</td><td>Spending time in nature</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "StressCopingCS"] ; # 
+  fhir:title [ fhir:v "Stress Coping Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2025-01-04T21:28:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Code system for stress coping mechanisms"] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "exercise" ] ;
+     fhir:display [ fhir:v "Physical Exercise" ] ;
+     fhir:definition [ fhir:v "Using exercise to manage stress" ]
+  ] [
+     fhir:code [ fhir:v "meditation" ] ;
+     fhir:display [ fhir:v "Meditation" ] ;
+     fhir:definition [ fhir:v "Meditation and mindfulness practices" ]
+  ] [
+     fhir:code [ fhir:v "social" ] ;
+     fhir:display [ fhir:v "Social Support" ] ;
+     fhir:definition [ fhir:v "Seeking social support" ]
+  ] [
+     fhir:code [ fhir:v "professional" ] ;
+     fhir:display [ fhir:v "Professional Help" ] ;
+     fhir:definition [ fhir:v "Seeking professional assistance" ]
+  ] [
+     fhir:code [ fhir:v "relaxation" ] ;
+     fhir:display [ fhir:v "Relaxation" ] ;
+     fhir:definition [ fhir:v "Relaxation techniques" ]
+  ] [
+     fhir:code [ fhir:v "creative" ] ;
+     fhir:display [ fhir:v "Creative Activities" ] ;
+     fhir:definition [ fhir:v "Engaging in creative activities" ]
+  ] [
+     fhir:code [ fhir:v "nature" ] ;
+     fhir:display [ fhir:v "Nature" ] ;
+     fhir:definition [ fhir:v "Spending time in nature" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

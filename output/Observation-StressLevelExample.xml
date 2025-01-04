@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="StressLevelExample"/>
+  <meta>
+    <profile value="https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-level"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation StressLevelExample</b></p><a name="StressLevelExample"> </a><a name="hcStressLevelExample"> </a><a name="StressLevelExample-en-US"> </a><p><b>Stress Triggers Extension</b>: <span title="Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-triggers-cs work}">Work-related</span></p><p><b>Stress Coping Extension</b>: <span title="Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs meditation}">Meditation</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 89592-0}">Stress level score</span></p><p><b>subject</b>: <a href="Patient/example">Patient/example</a></p><p><b>effective</b>: 2024-01-03 15:30:00+0000</p><p><b>value</b>: 7 score<span style="background: LightGoldenRodYellow"> (Details: UCUM  code{score} = '{score}')</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 89593-8}">Physiological stress</span></p><p><b>value</b>: 6 score<span style="background: LightGoldenRodYellow"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 89594-6}">Psychological stress</span></p><p><b>value</b>: 8 score<span style="background: LightGoldenRodYellow"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 89595-3}">Stress chronicity</span></p><p><b>value</b>: <span title="Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-chronicity-cs subacute}">Subacute</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 89596-1}">Stress impact</span></p><p><b>value</b>: <span title="Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-impact-cs moderate}">Moderate Impact</span></p></blockquote></div>
+  </text>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-triggers">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-triggers-cs"/>
+        <code value="work"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-coping">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs"/>
+        <code value="meditation"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="89592-0"/>
+      <display value="Stress level score"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <effectiveDateTime value="2024-01-03T15:30:00Z"/>
+  <valueQuantity>
+    <value value="7"/>
+    <unit value="score"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="{score}"/>
+  </valueQuantity>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="89593-8"/>
+        <display value="Physiological stress"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="6"/>
+      <unit value="score"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="{score}"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="89594-6"/>
+        <display value="Psychological stress"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="8"/>
+      <unit value="score"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="{score}"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="89595-3"/>
+        <display value="Stress chronicity"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-chronicity-cs"/>
+        <code value="subacute"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="89596-1"/>
+        <display value="Stress impact"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-impact-cs"/>
+        <code value="moderate"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+</Observation>

@@ -1,0 +1,135 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/Observation/StressLevelExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "StressLevelExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-level"^^xsd:anyURI ;
+       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-level>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation StressLevelExample</b></p><a name=\"StressLevelExample\"> </a><a name=\"hcStressLevelExample\"> </a><a name=\"StressLevelExample-en-US\"> </a><p><b>Stress Triggers Extension</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-triggers-cs work}\">Work-related</span></p><p><b>Stress Coping Extension</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs meditation}\">Meditation</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89592-0}\">Stress level score</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-01-03 15:30:00+0000</p><p><b>value</b>: 7 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89593-8}\">Physiological stress</span></p><p><b>value</b>: 6 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89594-6}\">Psychological stress</span></p><p><b>value</b>: 8 score<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89595-3}\">Stress chronicity</span></p><p><b>value</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-chronicity-cs subacute}\">Subacute</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89596-1}\">Stress impact</span></p><p><b>value</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-impact-cs moderate}\">Moderate Impact</span></p></blockquote></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-triggers"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-triggers-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "work" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-coping"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-coping-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "meditation" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:89592-0 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "89592-0" ] ;
+       fhir:display [ fhir:v "Stress level score" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2024-01-03T15:30:00Z"^^xsd:dateTime] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "7"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "score" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "{score}" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89593-8 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89593-8" ] ;
+         fhir:display [ fhir:v "Physiological stress" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "6"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "score" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "{score}" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89594-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89594-6" ] ;
+         fhir:display [ fhir:v "Psychological stress" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "8"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "score" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "{score}" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89595-3 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89595-3" ] ;
+         fhir:display [ fhir:v "Stress chronicity" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-chronicity-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "subacute" ]
+       ] )
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:89596-1 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "89596-1" ] ;
+         fhir:display [ fhir:v "Stress impact" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/stress-impact-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "moderate" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,117 @@
+{
+  "resourceType" : "Observation",
+  "id" : "SocialInteractionExample",
+  "meta" : {
+    "profile" : ["https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-interaction"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation SocialInteractionExample</b></p><a name=\"SocialInteractionExample\"> </a><a name=\"hcSocialInteractionExample\"> </a><a name=\"SocialInteractionExample-en-US\"> </a><p><b>Social Context Extension</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/social-context-cs home}\">Home</span></p><p><b>Social Support Extension</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/social-support-cs strong}\">Strong Support</span></p><p><b>Social Activity Extension</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/social-activity-cs meal}\">Shared Meal</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 96766-1}\">Social interaction pattern</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-01-03 14:00:00+0000</p><p><b>value</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-type-cs family}\">Family Interaction</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89597-9}\">Social interaction duration</span></p><p><b>value</b>: 120 minutes<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89598-7}\">Social interaction quality</span></p><p><b>value</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-quality-cs meaningful}\">Meaningful</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89599-5}\">Social interaction medium</span></p><p><b>value</b>: <span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-medium-cs inPerson}\">In Person</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89600-1}\">Social interaction participants</span></p><p><b>value</b>: 4</p></blockquote></div>"
+  },
+  "extension" : [{
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-context",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/social-context-cs",
+        "code" : "home"
+      }]
+    }
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-support",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/social-support-cs",
+        "code" : "strong"
+      }]
+    }
+  },
+  {
+    "url" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-activity",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/social-activity-cs",
+        "code" : "meal"
+      }]
+    }
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "social-history"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "96766-1",
+      "display" : "Social interaction pattern"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "effectiveDateTime" : "2024-01-03T14:00:00Z",
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-type-cs",
+      "code" : "family"
+    }]
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89597-9",
+        "display" : "Social interaction duration"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 120,
+      "unit" : "minutes",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "min"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89598-7",
+        "display" : "Social interaction quality"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-quality-cs",
+        "code" : "meaningful"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89599-5",
+        "display" : "Social interaction medium"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-medium-cs",
+        "code" : "inPerson"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "89600-1",
+        "display" : "Social interaction participants"
+      }]
+    },
+    "valueInteger" : 4
+  }]
+}

@@ -10,7 +10,7 @@ Accept: application/fhir+json; fhirVersion=4.0
 User-Agent: fhir/publisher
 
 
-Response (00:00:00.134): 
+Response (00:00:00.137): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -20,12 +20,12 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:2125
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:54:53 GMT
+date:Sat, 04 Jan 2025 21:28:34 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686464
+x-request-id:181-1834773
 
-{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-03T09:54:53.126Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-04T21:28:34.378Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
 
 </pre><hr/>
 <a name="l2"> </a><h3>2</h3>
@@ -37,10 +37,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.125): 
+Response (00:00:00.131): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -50,11 +50,11 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1451
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:02 GMT
-last-modified:Fri, 03 Jan 2025 09:55:02 GMT
+date:Sat, 04 Jan 2025 21:28:44 GMT
+last-modified:Sat, 04 Jan 2025 21:28:44 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686490
+x-request-id:181-1834775
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://hl7.org/fhir/fhir-types"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://hl7.org/fhir/fhir-types"},{"name" : "code","valueCode" : "ImplementationGuide"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, en_US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://hl7.org/fhir/fhir-types#ImplementationGuide (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://hl7.org/fhir/fhir-types#ImplementationGuide\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://hl7.org/fhir/fhir-types\"\r\n"}]}
 
@@ -68,10 +68,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.124): 
+Response (00:00:00.127): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -81,13 +81,13 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1600
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:02 GMT
-last-modified:Fri, 03 Jan 2025 09:55:02 GMT
+date:Sat, 04 Jan 2025 21:28:45 GMT
+last-modified:Sat, 04 Jan 2025 21:28:45 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686499
+x-request-id:181-1834777
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
 
 </pre><hr/>
 <a name="l4"> </a><h3>4</h3>
@@ -99,10 +99,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://unitsofmeasure.org","code":"{score}"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.123): 
+Response (00:00:00.125): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -110,15 +110,15 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1581
+content-length:830
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:08 GMT
-last-modified:Fri, 03 Jan 2025 09:55:08 GMT
+date:Sat, 04 Jan 2025 21:28:47 GMT
+last-modified:Sat, 04 Jan 2025 21:28:47 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686511
+x-request-id:181-1834779
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://unitsofmeasure.org"},{"name" : "code","valueCode" : "{score}"},{"name" : "version","valueString" : "2.2"},{"name" : "display","valueString" : "{score}"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://unitsofmeasure.org#{score} (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://unitsofmeasure.org#{score}\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://unitsofmeasure.org|2.2\" (content = complete)\r\n"}]}
 
 </pre><hr/>
 <a name="l5"> </a><h3>5</h3>
@@ -130,10 +130,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.124): 
+Response (00:00:00.122): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -141,15 +141,15 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1585
+content-length:1588
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:09 GMT
-last-modified:Fri, 03 Jan 2025 09:55:09 GMT
+date:Sat, 04 Jan 2025 21:28:53 GMT
+last-modified:Sat, 04 Jan 2025 21:28:53 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686513
+x-request-id:181-1834781
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
 
 </pre><hr/>
 <a name="l6"> </a><h3>6</h3>
@@ -161,10 +161,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.130): 
+Response (00:00:00.123): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -172,15 +172,15 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1571
+content-length:1585
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:09 GMT
-last-modified:Fri, 03 Jan 2025 09:55:09 GMT
+date:Sat, 04 Jan 2025 21:28:53 GMT
+last-modified:Sat, 04 Jan 2025 21:28:53 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686515
+x-request-id:181-1834783
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
 
 </pre><hr/>
 <a name="l7"> </a><h3>7</h3>
@@ -192,10 +192,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.123): 
+Response (00:00:00.138): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -203,15 +203,15 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1610
+content-length:1571
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:10 GMT
-last-modified:Fri, 03 Jan 2025 09:55:10 GMT
+date:Sat, 04 Jan 2025 21:28:54 GMT
+last-modified:Sat, 04 Jan 2025 21:28:54 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686519
+x-request-id:181-1834785
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
 
 </pre><hr/>
 <a name="l8"> </a><h3>8</h3>
@@ -223,36 +223,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.128): 
-
-200
-access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
-access-control-allow-origin:*
-access-control-expose-headers:Content-Location, Location
-cache-control:public, max-age=600
-connection:keep-alive
-content-length:1575
-content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:14 GMT
-last-modified:Fri, 03 Jan 2025 09:55:14 GMT
-pragma:no-cache
-server:nginx
-x-request-id:181-1686523
-
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "code","valueCode" : "4-6"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 16: 16ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 (\"Moderado\")]\"\r\n16 0: 16ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6\"\r\n16 0: 16ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/symptom-severity-cs\"\r\n"}]}
-
---- 1 -----------------
-Request: 
-
-GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
-Accept: application/fhir+json; fhirVersion=4.0
-User-Agent: fhir/publisher
-
-
-Response (00:00:00.134): 
+Response (00:00:00.132): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -260,16 +234,19 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:2125
+content-length:1603
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:54:53 GMT
+date:Sat, 04 Jan 2025 21:28:55 GMT
+last-modified:Sat, 04 Jan 2025 21:28:55 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686464
+x-request-id:181-1834787
 
-{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-03T09:54:53.126Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
 
---- 2 -----------------
+</pre><hr/>
+<a name="l9"> </a><h3>9</h3>
+<pre>
 Request: 
 
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
@@ -277,7 +254,131 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"96766-1","display":"Social interaction pattern"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.132): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1590
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:56 GMT
+last-modified:Sat, 04 Jan 2025 21:28:56 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834791
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "96766-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "GISAID sequence accession number"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction pattern' for http://loinc.org#96766-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'GISAID sequence accession number'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction pattern' for http://loinc.org#96766-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'GISAID sequence accession number'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#96766-1 (\"Social interaction pattern\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#96766-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l10"> </a><h3>10</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89597-9","display":"Social interaction duration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.168): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1764
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:57 GMT
+last-modified:Sat, 04 Jan 2025 21:28:57 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834794
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89597-9"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction duration' for http://loinc.org#89597-9. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction duration' for http://loinc.org#89597-9. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89597-9 (\"Social interaction duration\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89597-9\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l11"> </a><h3>11</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89598-7","display":"Social interaction quality"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.130): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1752
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:57 GMT
+last-modified:Sat, 04 Jan 2025 21:28:57 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834796
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89598-7"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction quality' for http://loinc.org#89598-7. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction quality' for http://loinc.org#89598-7. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89598-7 (\"Social interaction quality\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89598-7\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l12"> </a><h3>12</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89599-5","display":"Social interaction medium"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.139): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1737
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:57 GMT
+last-modified:Sat, 04 Jan 2025 21:28:57 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834798
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89599-5"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction medium' for http://loinc.org#89599-5. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction medium' for http://loinc.org#89599-5. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89599-5 (\"Social interaction medium\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89599-5\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l13"> </a><h3>13</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89600-1","display":"Social interaction participants"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
 Response (00:00:00.125): 
@@ -288,13 +389,594 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1451
+content-length:1792
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:02 GMT
-last-modified:Fri, 03 Jan 2025 09:55:02 GMT
+date:Sat, 04 Jan 2025 21:28:58 GMT
+last-modified:Sat, 04 Jan 2025 21:28:58 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686490
+x-request-id:181-1834800
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89600-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "FDA product label FDA-initiated compliance action drug registration and listing inactivation"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction participants' for http://loinc.org#89600-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'FDA product label FDA-initiated compliance action drug registration and listing inactivation'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction participants' for http://loinc.org#89600-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'FDA product label FDA-initiated compliance action drug registration and listing inactivation'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89600-1 (\"Social interaction participants\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89600-1\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l14"> </a><h3>14</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89592-0","display":"Stress level score"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1686
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:58 GMT
+last-modified:Sat, 04 Jan 2025 21:28:58 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834802
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89592-0"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Stress level score' for http://loinc.org#89592-0. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Stress level score' for http://loinc.org#89592-0. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89592-0 (\"Stress level score\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89592-0\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l15"> </a><h3>15</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89593-8","display":"Physiological stress"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.128): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1674
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:59 GMT
+last-modified:Sat, 04 Jan 2025 21:28:59 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834804
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89593-8"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella sp DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Physiological stress' for http://loinc.org#89593-8. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella sp DNA [Presence] in Tissue by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Physiological stress' for http://loinc.org#89593-8. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella sp DNA [Presence] in Tissue by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89593-8 (\"Physiological stress\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89593-8\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l16"> </a><h3>16</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89594-6","display":"Psychological stress"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.126): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1747
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:59 GMT
+last-modified:Sat, 04 Jan 2025 21:28:59 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834806
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89594-6"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence"},{"name" : "message","valueString" : "Wrong Display Name 'Psychological stress' for http://loinc.org#89594-6. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Psychological stress' for http://loinc.org#89594-6. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89594-6 (\"Psychological stress\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89594-6\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l17"> </a><h3>17</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89595-3","display":"Stress chronicity"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.123): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1671
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:59 GMT
+last-modified:Sat, 04 Jan 2025 21:28:59 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834808
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89595-3"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence"},{"name" : "message","valueString" : "Wrong Display Name 'Stress chronicity' for http://loinc.org#89595-3. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Stress chronicity' for http://loinc.org#89595-3. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89595-3 (\"Stress chronicity\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89595-3\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l18"> </a><h3>18</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89596-1","display":"Stress impact"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1677
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:29:00 GMT
+last-modified:Sat, 04 Jan 2025 21:29:00 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834812
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89596-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Stress impact' for http://loinc.org#89596-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Stress impact' for http://loinc.org#89596-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89596-1 (\"Stress impact\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89596-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l19"> </a><h3>19</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.131): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1568
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:29:02 GMT
+last-modified:Sat, 04 Jan 2025 21:29:02 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834815
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "code","valueCode" : "4-6"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 (\"Moderado\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/symptom-severity-cs\"\r\n"}]}
+
+</pre><hr/>
+<a name="l20"> </a><h3>20</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://unitsofmeasure.org","code":"{score}"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.130): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:819
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:29:02 GMT
+last-modified:Sat, 04 Jan 2025 21:29:02 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834817
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://unitsofmeasure.org"},{"name" : "code","valueCode" : "{score}"},{"name" : "version","valueString" : "2.2"},{"name" : "display","valueString" : "{score}"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://unitsofmeasure.org#{score} (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://unitsofmeasure.org#{score}\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://unitsofmeasure.org|2.2\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l21"> </a><h3>21</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"96766-1"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:814
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:06 GMT
+last-modified:Sat, 04 Jan 2025 21:30:06 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834819
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "96766-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "GISAID sequence accession number"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#96766-1 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#96766-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l22"> </a><h3>22</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89597-9"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.129): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:871
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:07 GMT
+last-modified:Sat, 04 Jan 2025 21:30:07 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834821
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89597-9"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89597-9 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89597-9\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l23"> </a><h3>23</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89598-7"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:875
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:07 GMT
+last-modified:Sat, 04 Jan 2025 21:30:07 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834823
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89598-7"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89598-7 (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89598-7\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l24"> </a><h3>24</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89599-5"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:864
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:08 GMT
+last-modified:Sat, 04 Jan 2025 21:30:08 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834825
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89599-5"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89599-5 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89599-5\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l25"> </a><h3>25</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89600-1"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.125): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:874
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:08 GMT
+last-modified:Sat, 04 Jan 2025 21:30:08 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834827
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89600-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "FDA product label FDA-initiated compliance action drug registration and listing inactivation"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89600-1 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89600-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l26"> </a><h3>26</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89592-0"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.136): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:854
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:08 GMT
+last-modified:Sat, 04 Jan 2025 21:30:08 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834829
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89592-0"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89592-0 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89592-0\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l27"> </a><h3>27</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89593-8"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.121): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:848
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:09 GMT
+last-modified:Sat, 04 Jan 2025 21:30:09 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834831
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89593-8"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella sp DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89593-8 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89593-8\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l28"> </a><h3>28</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89594-6"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.130): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:870
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:09 GMT
+last-modified:Sat, 04 Jan 2025 21:30:09 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834833
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89594-6"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89594-6 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89594-6\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l29"> </a><h3>29</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89595-3"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.131): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:850
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:09 GMT
+last-modified:Sat, 04 Jan 2025 21:30:09 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834835
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89595-3"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89595-3 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89595-3\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+</pre><hr/>
+<a name="l30"> </a><h3>30</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89596-1"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.129): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:856
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:10 GMT
+last-modified:Sat, 04 Jan 2025 21:30:10 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834837
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89596-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89596-1 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89596-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 1 -----------------
+Request: 
+
+GET http://tx.fhir.org/r4/metadata?_summary=true HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+User-Agent: fhir/publisher
+
+
+Response (00:00:00.137): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:2125
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834773
+
+{"resourceType" : "CapabilityStatement","id" : "FhirServer","meta" : {"tag" : [{"system" : "http://hl7.org/fhir/v3/ObservationValue","code" : "SUBSETTED","display" : "Subsetted"}]},"url" : "http://tx.fhir.org/r4/CapabilityStatement/tx","version" : "4.0.1-3.4.34","name" : "FHIRReferenceServer","title" : "FHIR Reference Server Conformance Statement","status" : "active","date" : "2025-01-04T21:28:34.378Z","contact" : [{"telecom" : [{"system" : "other","value" : "http://healthintersections.com.au/"}]}],"kind" : "instance","instantiates" : ["http://hl7.org/fhir/CapabilityStatement/terminology-server","http://hl7.org/fhir/CapabilityStatement/terminology-server"],"software" : {"name" : "Reference Server","version" : "3.4.34","releaseDate" : "2024-12-16T06:09:46.524Z"},"implementation" : {"description" : "FHIR Server running at http://tx.fhir.org/r4","url" : "http://tx.fhir.org/r4"},"fhirVersion" : "4.0.1","format" : ["application/fhir+xml","application/fhir+json"],"rest" : [{"mode" : "server","security" : {"cors" : true},"resource" : [{"type" : "CodeSystem","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"}]},{"type" : "ValueSet","operation" : [{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"},{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"}]}],"operation" : [{"name" : "expand","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"},{"name" : "lookup","definition" : "http://hl7.org/fhir/OperationDefinition/ValueSet-lookup"},{"name" : "validate-code","definition" : "http://hl7.org/fhir/OperationDefinition/Resource-validate"},{"name" : "translate","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"},{"name" : "closure","definition" : "http://hl7.org/fhir/OperationDefinition/ConceptMap-closure"},{"name" : "versions","definition" : "http://tx.fhir.org/r4/OperationDefinition/fso-versions"}]}]}
+
+--- 2 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://hl7.org/fhir/fhir-types","code":"ImplementationGuide"}},{"name":"displayLanguage","valueString":"en, en-US, en_US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.131): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1451
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:44 GMT
+last-modified:Sat, 04 Jan 2025 21:28:44 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834775
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://hl7.org/fhir/fhir-types"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://hl7.org/fhir/fhir-types"},{"name" : "code","valueCode" : "ImplementationGuide"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://hl7.org/fhir/fhir-types' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, en_US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://hl7.org/fhir/fhir-types#ImplementationGuide (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://hl7.org/fhir/fhir-types#ImplementationGuide\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://hl7.org/fhir/fhir-types\"\r\n"}]}
 
@@ -306,10 +988,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"https://example.org/CodeSystem/mindfulness-outcome-cs","code":"stressReduction"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.124): 
+Response (00:00:00.127): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -319,13 +1001,13 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:1600
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:02 GMT
-last-modified:Fri, 03 Jan 2025 09:55:02 GMT
+date:Sat, 04 Jan 2025 21:28:45 GMT
+last-modified:Sat, 04 Jan 2025 21:28:45 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686499
+x-request-id:181-1834777
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "https://example.org/CodeSystem/mindfulness-outcome-cs"},{"name" : "code","valueCode" : "stressReduction"},{"name" : "message","valueString" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'https://example.org/CodeSystem/mindfulness-outcome-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"https://example.org/CodeSystem/mindfulness-outcome-cs#stressReduction\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"https://example.org/CodeSystem/mindfulness-outcome-cs\"\r\n"}]}
 
 --- 4 -----------------
 Request: 
@@ -335,7 +1017,65 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://unitsofmeasure.org","code":"{score}"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.125): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:830
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:47 GMT
+last-modified:Sat, 04 Jan 2025 21:28:47 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834779
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://unitsofmeasure.org"},{"name" : "code","valueCode" : "{score}"},{"name" : "version","valueString" : "2.2"},{"name" : "display","valueString" : "{score}"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://unitsofmeasure.org#{score} (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://unitsofmeasure.org#{score}\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://unitsofmeasure.org|2.2\" (content = complete)\r\n"}]}
+
+--- 5 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-alert-type","code":"reminder","display":"Mindfulness Reminder"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.122): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1588
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:53 GMT
+last-modified:Sat, 04 Jan 2025 21:28:53 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834781
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
+
+--- 6 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
 Response (00:00:00.123): 
@@ -346,17 +1086,17 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1581
+content-length:1585
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:08 GMT
-last-modified:Fri, 03 Jan 2025 09:55:08 GMT
+date:Sat, 04 Jan 2025 21:28:53 GMT
+last-modified:Sat, 04 Jan 2025 21:28:53 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686511
+x-request-id:181-1834783
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-alert-type"},{"name" : "code","valueCode" : "reminder"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-alert-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-alert-type#reminder (\"Mindfulness Reminder\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-alert-type#reminder\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-alert-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
 
---- 5 -----------------
+--- 7 -----------------
 Request: 
 
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
@@ -364,10 +1104,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-config-type","code":"audit","display":"Audit Configuration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.124): 
+Response (00:00:00.138): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -375,17 +1115,17 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1585
+content-length:1571
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:09 GMT
-last-modified:Fri, 03 Jan 2025 09:55:09 GMT
+date:Sat, 04 Jan 2025 21:28:54 GMT
+last-modified:Sat, 04 Jan 2025 21:28:54 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686513
+x-request-id:181-1834785
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-config-type"},{"name" : "code","valueCode" : "audit"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-config-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-config-type#audit (\"Audit Configuration\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-config-type#audit\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-config-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
 
---- 6 -----------------
+--- 8 -----------------
 Request: 
 
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
@@ -393,7 +1133,94 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-audit-type","code":"session","display":"Session Audit"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.132): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1603
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:55 GMT
+last-modified:Sat, 04 Jan 2025 21:28:55 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834787
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
+
+--- 9 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"96766-1","display":"Social interaction pattern"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.132): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1590
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:56 GMT
+last-modified:Sat, 04 Jan 2025 21:28:56 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834791
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "96766-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "GISAID sequence accession number"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction pattern' for http://loinc.org#96766-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'GISAID sequence accession number'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction pattern' for http://loinc.org#96766-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'GISAID sequence accession number'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#96766-1 (\"Social interaction pattern\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#96766-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 10 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89597-9","display":"Social interaction duration"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.168): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1764
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:57 GMT
+last-modified:Sat, 04 Jan 2025 21:28:57 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834794
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89597-9"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction duration' for http://loinc.org#89597-9. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction duration' for http://loinc.org#89597-9. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89597-9 (\"Social interaction duration\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89597-9\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 11 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89598-7","display":"Social interaction quality"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
 Response (00:00:00.130): 
@@ -404,17 +1231,17 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1571
+content-length:1752
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:09 GMT
-last-modified:Fri, 03 Jan 2025 09:55:09 GMT
+date:Sat, 04 Jan 2025 21:28:57 GMT
+last-modified:Sat, 04 Jan 2025 21:28:57 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686515
+x-request-id:181-1834796
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-audit-type"},{"name" : "code","valueCode" : "session"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-audit-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-audit-type#session (\"Session Audit\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-audit-type#session\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-audit-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89598-7"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction quality' for http://loinc.org#89598-7. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction quality' for http://loinc.org#89598-7. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89598-7 (\"Social interaction quality\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89598-7\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
 
---- 7 -----------------
+--- 12 -----------------
 Request: 
 
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
@@ -422,10 +1249,10 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/CodeSystem/mindfulness-schedule-type","code":"recurring","display":"Recurring Schedule"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89599-5","display":"Social interaction medium"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
-Response (00:00:00.123): 
+Response (00:00:00.139): 
 
 200
 access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
@@ -433,17 +1260,17 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1610
+content-length:1737
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:10 GMT
-last-modified:Fri, 03 Jan 2025 09:55:10 GMT
+date:Sat, 04 Jan 2025 21:28:57 GMT
+last-modified:Sat, 04 Jan 2025 21:28:57 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686519
+x-request-id:181-1834798
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/CodeSystem/mindfulness-schedule-type"},{"name" : "code","valueCode" : "recurring"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/CodeSystem/mindfulness-schedule-type' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/CodeSystem/mindfulness-schedule-type#recurring (\"Recurring Schedule\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/CodeSystem/mindfulness-schedule-type#recurring\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/CodeSystem/mindfulness-schedule-type\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89599-5"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction medium' for http://loinc.org#89599-5. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction medium' for http://loinc.org#89599-5. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89599-5 (\"Social interaction medium\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89599-5\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
 
---- 8 -----------------
+--- 13 -----------------
 Request: 
 
 POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
@@ -451,7 +1278,65 @@ Accept: application/fhir+json; fhirVersion=4.0
 Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
 User-Agent: fhir/publisher
 
-{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"3f941dd7-aafe-4b6a-96de-776266333a33"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89600-1","display":"Social interaction participants"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.125): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1792
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:58 GMT
+last-modified:Sat, 04 Jan 2025 21:28:58 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834800
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89600-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "FDA product label FDA-initiated compliance action drug registration and listing inactivation"},{"name" : "message","valueString" : "Wrong Display Name 'Social interaction participants' for http://loinc.org#89600-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'FDA product label FDA-initiated compliance action drug registration and listing inactivation'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Social interaction participants' for http://loinc.org#89600-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'FDA product label FDA-initiated compliance action drug registration and listing inactivation'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n16 16: tx-op\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89600-1 (\"Social interaction participants\")]\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89600-1\"\r\n16 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 14 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89592-0","display":"Stress level score"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1686
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:58 GMT
+last-modified:Sat, 04 Jan 2025 21:28:58 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834802
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89592-0"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Stress level score' for http://loinc.org#89592-0. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Stress level score' for http://loinc.org#89592-0. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89592-0 (\"Stress level score\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89592-0\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 15 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89593-8","display":"Physiological stress"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
 
 
 Response (00:00:00.128): 
@@ -462,13 +1347,448 @@ access-control-allow-origin:*
 access-control-expose-headers:Content-Location, Location
 cache-control:public, max-age=600
 connection:keep-alive
-content-length:1575
+content-length:1674
 content-type:application/fhir+json
-date:Fri, 03 Jan 2025 09:55:14 GMT
-last-modified:Fri, 03 Jan 2025 09:55:14 GMT
+date:Sat, 04 Jan 2025 21:28:59 GMT
+last-modified:Sat, 04 Jan 2025 21:28:59 GMT
 pragma:no-cache
 server:nginx
-x-request-id:181-1686523
+x-request-id:181-1834804
 
-{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "code","valueCode" : "4-6"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n16 16: 16ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 (\"Moderado\")]\"\r\n16 0: 16ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6\"\r\n16 0: 16ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/symptom-severity-cs\"\r\n"}]}
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89593-8"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella sp DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Physiological stress' for http://loinc.org#89593-8. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella sp DNA [Presence] in Tissue by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Physiological stress' for http://loinc.org#89593-8. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Bartonella sp DNA [Presence] in Tissue by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89593-8 (\"Physiological stress\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89593-8\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 16 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89594-6","display":"Psychological stress"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.126): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1747
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:59 GMT
+last-modified:Sat, 04 Jan 2025 21:28:59 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834806
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89594-6"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence"},{"name" : "message","valueString" : "Wrong Display Name 'Psychological stress' for http://loinc.org#89594-6. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Psychological stress' for http://loinc.org#89594-6. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89594-6 (\"Psychological stress\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89594-6\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 17 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89595-3","display":"Stress chronicity"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.123): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1671
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:28:59 GMT
+last-modified:Sat, 04 Jan 2025 21:28:59 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834808
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89595-3"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence"},{"name" : "message","valueString" : "Wrong Display Name 'Stress chronicity' for http://loinc.org#89595-3. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Stress chronicity' for http://loinc.org#89595-3. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89595-3 (\"Stress chronicity\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89595-3\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 18 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89596-1","display":"Stress impact"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1677
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:29:00 GMT
+last-modified:Sat, 04 Jan 2025 21:29:00 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834812
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89596-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection"},{"name" : "message","valueString" : "Wrong Display Name 'Stress impact' for http://loinc.org#89596-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "invalid","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "invalid-display"}],"text" : "Wrong Display Name 'Stress impact' for http://loinc.org#89596-1. There are no valid display names found for language(s) 'pt-PT'. Default display is 'Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection'"},"location" : ["Coding.display"],"expression" : ["Coding.display"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89596-1 (\"Stress impact\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89596-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 19 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://example.org/fhir/CodeSystem/symptom-severity-cs","code":"4-6","display":"Moderado"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.131): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1568
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:29:02 GMT
+last-modified:Sat, 04 Jan 2025 21:29:02 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834815
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "system","valueUri" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://example.org/fhir/CodeSystem/symptom-severity-cs"},{"name" : "code","valueCode" : "4-6"},{"name" : "message","valueString" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"coding" : [{"system" : "http://hl7.org/fhir/tools/CodeSystem/tx-issue-type","code" : "not-found"}],"text" : "A definition for CodeSystem 'http://example.org/fhir/CodeSystem/symptom-severity-cs' could not be found, so the code cannot be validated"},"location" : ["Coding.system"],"expression" : ["Coding.system"]}]}},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 (\"Moderado\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Didn't find CodeSystem \"http://example.org/fhir/CodeSystem/symptom-severity-cs\"\r\n"}]}
+
+--- 20 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://unitsofmeasure.org","code":"{score}"}},{"name":"displayLanguage","valueString":"pt-PT"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.130): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:819
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:29:02 GMT
+last-modified:Sat, 04 Jan 2025 21:29:02 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834817
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://unitsofmeasure.org"},{"name" : "code","valueCode" : "{score}"},{"name" : "version","valueString" : "2.2"},{"name" : "display","valueString" : "{score}"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=pt-PT, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://unitsofmeasure.org#{score} (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://unitsofmeasure.org#{score}\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://unitsofmeasure.org|2.2\" (content = complete)\r\n"}]}
+
+--- 21 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"96766-1"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:814
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:06 GMT
+last-modified:Sat, 04 Jan 2025 21:30:06 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834819
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "96766-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "GISAID sequence accession number"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#96766-1 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#96766-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 22 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89597-9"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.129): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:871
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:07 GMT
+last-modified:Sat, 04 Jan 2025 21:30:07 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834821
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89597-9"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma genitalium DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89597-9 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89597-9\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 23 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89598-7"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:875
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:07 GMT
+last-modified:Sat, 04 Jan 2025 21:30:07 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834823
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89598-7"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Mycoplasma hominis DNA [Presence] in Cornea or Conjunctiva by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n15 15: tx-op\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89598-7 (\"\")]\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89598-7\"\r\n15 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 24 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89599-5"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.124): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:864
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:08 GMT
+last-modified:Sat, 04 Jan 2025 21:30:08 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834825
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89599-5"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Toxoplasma gondii [Presence] in Cerebral spinal fluid by Organism specific culture"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89599-5 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89599-5\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 25 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89600-1"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.125): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:874
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:08 GMT
+last-modified:Sat, 04 Jan 2025 21:30:08 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834827
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89600-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "FDA product label FDA-initiated compliance action drug registration and listing inactivation"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89600-1 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89600-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 26 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89592-0"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.136): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:854
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:08 GMT
+last-modified:Sat, 04 Jan 2025 21:30:08 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834829
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89592-0"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella quintana DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89592-0 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89592-0\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 27 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89593-8"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.121): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:848
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:09 GMT
+last-modified:Sat, 04 Jan 2025 21:30:09 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834831
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89593-8"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Bartonella sp DNA [Presence] in Tissue by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89593-8 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89593-8\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 28 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89594-6"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.130): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:870
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:09 GMT
+last-modified:Sat, 04 Jan 2025 21:30:09 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834833
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89594-6"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Lower respiratory specimen by Immunofluorescence"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89594-6 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89594-6\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 29 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89595-3"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.131): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:850
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:09 GMT
+last-modified:Sat, 04 Jan 2025 21:30:09 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834835
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89595-3"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Legionella pneumophila Ag [Presence] in Tissue by Immunofluorescence"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89595-3 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89595-3\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
+
+--- 30 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"89596-1"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"1dada260-34ed-48e1-b986-0be964f8b34e"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+
+
+Response (00:00:00.129): 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:856
+content-type:application/fhir+json
+date:Sat, 04 Jan 2025 21:30:10 GMT
+last-modified:Sat, 04 Jan 2025 21:30:10 GMT
+pragma:no-cache
+server:nginx
+x-request-id:181-1834837
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "89596-1"},{"name" : "version","valueString" : "2.78"},{"name" : "display","valueString" : "Listeria monocytogenes DNA [Presence] in Blood by NAA with probe detection"},{"name" : "diagnostics","valueString" : "0 0 : start\r\n0 0: tx-op\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Analysing\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Parameters: disp-lang=en, en-US, default-to-latest\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Validate \"[http://loinc.org#89596-1 (\"\")]\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Check \"http://loinc.org#89596-1\"\r\n0 0: 0ms http://hl7.org/fhir/ValueSet/@all: Using CodeSystem \"http://loinc.org|2.78\" (content = complete)\r\n"}]}
 </pre></head></html>

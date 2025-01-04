@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://github.com/RicardoLSantos/shorthand/CodeSystem/social-activity-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "social-activity-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem social-activity-cs</b></p><a name=\"social-activity-cs\"> </a><a name=\"hcsocial-activity-cs\"> </a><a name=\"social-activity-cs-en-US\"> </a><p>This  code system <code>https://github.com/RicardoLSantos/shorthand/CodeSystem/social-activity-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">meal<a name=\"social-activity-cs-meal\"> </a></td><td>Shared Meal</td><td>Sharing a meal together</td></tr><tr><td style=\"white-space:nowrap\">exercise<a name=\"social-activity-cs-exercise\"> </a></td><td>Group Exercise</td><td>Group physical activity</td></tr><tr><td style=\"white-space:nowrap\">entertainment<a name=\"social-activity-cs-entertainment\"> </a></td><td>Entertainment</td><td>Shared entertainment activity</td></tr><tr><td style=\"white-space:nowrap\">learning<a name=\"social-activity-cs-learning\"> </a></td><td>Learning</td><td>Group learning activity</td></tr><tr><td style=\"white-space:nowrap\">volunteering<a name=\"social-activity-cs-volunteering\"> </a></td><td>Volunteering</td><td>Community service activity</td></tr><tr><td style=\"white-space:nowrap\">celebration<a name=\"social-activity-cs-celebration\"> </a></td><td>Celebration</td><td>Social celebration or event</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/social-activity-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "SocialActivityCS"] ; # 
+  fhir:title [ fhir:v "Social Activity Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2025-01-04T21:28:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Code system for types of social activities"] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "meal" ] ;
+     fhir:display [ fhir:v "Shared Meal" ] ;
+     fhir:definition [ fhir:v "Sharing a meal together" ]
+  ] [
+     fhir:code [ fhir:v "exercise" ] ;
+     fhir:display [ fhir:v "Group Exercise" ] ;
+     fhir:definition [ fhir:v "Group physical activity" ]
+  ] [
+     fhir:code [ fhir:v "entertainment" ] ;
+     fhir:display [ fhir:v "Entertainment" ] ;
+     fhir:definition [ fhir:v "Shared entertainment activity" ]
+  ] [
+     fhir:code [ fhir:v "learning" ] ;
+     fhir:display [ fhir:v "Learning" ] ;
+     fhir:definition [ fhir:v "Group learning activity" ]
+  ] [
+     fhir:code [ fhir:v "volunteering" ] ;
+     fhir:display [ fhir:v "Volunteering" ] ;
+     fhir:definition [ fhir:v "Community service activity" ]
+  ] [
+     fhir:code [ fhir:v "celebration" ] ;
+     fhir:display [ fhir:v "Celebration" ] ;
+     fhir:definition [ fhir:v "Social celebration or event" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

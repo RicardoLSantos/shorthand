@@ -10,7 +10,7 @@
   "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP",
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "draft",
-  "date" : "2025-01-03T09:54:59+00:00",
+  "date" : "2025-01-04T21:28:42+00:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -2459,6 +2459,209 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-activity-cs"
+      },
+      "name" : "Social Activity Code System",
+      "description" : "Code system for types of social activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-activity"
+      },
+      "name" : "Social Activity Extension",
+      "description" : "Extension for recording specific social activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-activity-vs"
+      },
+      "name" : "Social Activity Value Set",
+      "description" : "Value set for types of social activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-context-cs"
+      },
+      "name" : "Social Context Code System",
+      "description" : "Code system for social interaction contexts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-context"
+      },
+      "name" : "Social Context Extension",
+      "description" : "Extension for recording the context of social interaction",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-context-vs"
+      },
+      "name" : "Social Context Value Set",
+      "description" : "Value set for social interaction contexts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/SocialInteractionExample"
+      },
+      "name" : "Social Interaction Example",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-interaction"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-interaction-medium-cs"
+      },
+      "name" : "Social Interaction Medium Code System",
+      "description" : "Mediums through which social interaction occurs",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-interaction-medium-vs"
+      },
+      "name" : "Social Interaction Medium Value Set",
+      "description" : "Mediums through which social interaction occurs",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-interaction"
+      },
+      "name" : "Social Interaction Profile",
+      "description" : "Profile for recording social interaction data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-interaction-quality-cs"
+      },
+      "name" : "Social Interaction Quality Code System",
+      "description" : "Quality measures for social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-interaction-quality-vs"
+      },
+      "name" : "Social Interaction Quality Value Set",
+      "description" : "Quality measures for social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-interaction-type-cs"
+      },
+      "name" : "Social Interaction Type Code System",
+      "description" : "Types of social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-interaction-type-vs"
+      },
+      "name" : "Social Interaction Type Value Set",
+      "description" : "Types of social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-support-cs"
+      },
+      "name" : "Social Support Code System",
+      "description" : "Code system for levels of social support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-support"
+      },
+      "name" : "Social Support Extension",
+      "description" : "Extension for recording perceived social support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-support-vs"
+      },
+      "name" : "Social Support Value Set",
+      "description" : "Value set for levels of social support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MessageDefinition"
       }],
       "reference" : {
@@ -2479,6 +2682,149 @@
       "name" : "Start Session Operation",
       "description" : "Operation to start a new mindfulness session",
       "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-operation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-chronicity-cs"
+      },
+      "name" : "Stress Chronicity Code System",
+      "description" : "Code system for stress chronicity classification",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-chronicity-vs"
+      },
+      "name" : "Stress Chronicity Value Set",
+      "description" : "Value set for classifying stress chronicity",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-coping-cs"
+      },
+      "name" : "Stress Coping Code System",
+      "description" : "Code system for stress coping mechanisms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/stress-coping"
+      },
+      "name" : "Stress Coping Extension",
+      "description" : "Extension for recording stress coping mechanisms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-coping-vs"
+      },
+      "name" : "Stress Coping Value Set",
+      "description" : "Value set for stress coping mechanisms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-impact-cs"
+      },
+      "name" : "Stress Impact Code System",
+      "description" : "Code system for stress impact levels",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-impact-vs"
+      },
+      "name" : "Stress Impact Value Set",
+      "description" : "Value set for describing stress impact levels",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/StressLevelExample"
+      },
+      "name" : "Stress Level Measurement Example",
+      "exampleCanonical" : "https://github.com/RicardoLSantos/shorthand/StructureDefinition/stress-level"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/stress-level"
+      },
+      "name" : "Stress Level Profile",
+      "description" : "Profile for recording stress level measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-triggers-cs"
+      },
+      "name" : "Stress Triggers Code System",
+      "description" : "Code system for common stress triggers",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/stress-triggers"
+      },
+      "name" : "Stress Triggers Extension",
+      "description" : "Extension for recording identified stress triggers",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-triggers-vs"
+      },
+      "name" : "Stress Triggers Value Set",
+      "description" : "Value set for common stress triggers",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
