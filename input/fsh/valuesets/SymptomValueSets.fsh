@@ -80,14 +80,3 @@ Description: "Times of day for symptom occurrence"
 * $SCT#255253008 "Afternoon"
 * $SCT#2546009 "Evening"
 * $SCT#73768005 "Night"
-
-Instance: ExampleSymptomSeverity
-InstanceOf: Observation
-Usage: #example
-Title: "Example Symptom Severity"
-
-* status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = $SCT#246604007 "Symptom severity"
-* effectiveDateTime = "2024-03-19T10:30:00Z"
-* valueCodeableConcept = http://example.org/fhir/CodeSystem/symptom-severity-cs#4-6 "Moderado"
