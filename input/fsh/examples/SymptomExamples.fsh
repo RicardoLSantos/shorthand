@@ -1,20 +1,21 @@
 Instance: ChronicSymptomExample
 InstanceOf: Observation
 Usage: #example
-Title: "Chronic Symptom Example"
-
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = $SCT#267036007 "Fatigue"
 * subject = Reference(Patient/example)
+* performer = Reference(Practitioner/example)
 * effectiveDateTime = "2024-03-19T14:00:00Z"
+// ... resto do exemplo ...
 
-* component[0]
-  * code = $LOINC#72514-3 "Severity score"
-  * valueInteger = 7
-* component[1]
-  * code = $LOINC#103332-8 "Duration"
-  * valueQuantity = 30 'd'
-* component[2]
-  * code = $LOINC#103334-4 "Frequency"
-  * valueString = "Daily occurrence"
+Instance: ExampleSymptomSeverity
+InstanceOf: Observation
+Usage: #example
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* code = $SCT#246604007 "Symptom severity"
+* subject = Reference(Patient/example)
+* performer = Reference(Practitioner/example)
+* effectiveDateTime = "2024-03-19T10:30:00Z"
+// ... resto do exemplo ...

@@ -1,12 +1,7 @@
-Instance: PatientExample
+Instance: example
 InstanceOf: Patient
 Usage: #example
-Title: "Example Patient"
-Description: "Example patient for testing"
-
-* identifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:example"
-* name.family = "Example"
-* name.given = "Test"
-* gender = #female
-* birthDate = "1990-01-01"
+* name.given = "John"
+* name.family = "Doe"
+* gender = #male
+* birthDate = "1970-01-01"
