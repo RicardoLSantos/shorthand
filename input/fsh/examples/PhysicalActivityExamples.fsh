@@ -2,7 +2,6 @@ Instance: PhysicalActivityExample1
 InstanceOf: PhysicalActivityObservation
 Usage: #example
 Title: "Example of Walking Activity"
-Description: "Example of walking activity data from iOS Health App"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $SNOMED#228557008 "Walking"

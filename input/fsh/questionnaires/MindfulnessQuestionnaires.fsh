@@ -4,7 +4,7 @@ Usage: #definition
 Title: "Daily Mindfulness Questionnaire"
 Description: "Questionnaire for capturing daily mindfulness practice and associated effects"
 
-* url = "http://example.org/Questionnaire/daily-mindfulness"
+* url = "https://2rdoc.pt/fhir/Questionnaire/daily-mindfulness"
 * status = #active
 * title = "Daily Mindfulness Practice"
 * subjectType = #Patient
@@ -46,7 +46,7 @@ Description: "Questionnaire for capturing daily mindfulness practice and associa
     * text = "How is your mood now?"
     * type = #choice
     * required = true
-    * answerValueSet = "https://example.org/fhir/ValueSet/mood-vs"
+    * answerValueSet = "https://2rdoc.pt/fhir/ValueSet/mood-vs"
 
   * item[1]
     * linkId = "mood_intensity"

@@ -38,7 +38,7 @@ Description: "Value set of practice environment types"
 Instance: MindfulnessSettingCS
 InstanceOf: CodeSystem
 Usage: #definition
-* url = "http://example.org/CodeSystem/mindfulness-setting"
+* url = "https://2rdoc.pt/fhir/CodeSystem/mindfulness-setting"
 * version = "1.0.0"
 * name = "MindfulnessSettingCS"
 * title = "Mindfulness Setting CodeSystem"

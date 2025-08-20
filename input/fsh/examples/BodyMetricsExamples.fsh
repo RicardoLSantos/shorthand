@@ -2,7 +2,6 @@ Instance: WeightExample
 InstanceOf: WeightObservation
 Usage: #example
 Title: "Weight Measurement Example"
-Description: "Example of a weight measurement from a smart scale"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#29463-7 "Body weight"
@@ -18,7 +17,6 @@ Instance: HeightExample
 InstanceOf: HeightObservation
 Usage: #example
 Title: "Height Measurement Example"
-Description: "Example of a height measurement"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#8302-2 "Body height"
@@ -33,7 +31,6 @@ Instance: BMIExample
 InstanceOf: BMIObservation
 Usage: #example
 Title: "BMI Calculation Example"
-Description: "Example of a BMI calculation based on weight and height measurements"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#39156-5 "Body mass index (BMI)"
@@ -50,7 +47,6 @@ Instance: BodyCompositionExample
 InstanceOf: BodyCompositionObservation
 Usage: #example
 Title: "Body Composition Measurement Example" 
-Description: "Example of comprehensive body composition measurements from a bioimpedance device"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#88365-2 "Body composition panel"

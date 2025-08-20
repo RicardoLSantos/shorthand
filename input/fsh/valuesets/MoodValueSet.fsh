@@ -2,7 +2,7 @@ ValueSet: MoodValueSet
 Id: mood
 Title: "Mood Value Set"
 Description: "Value set for mood states"
-* ^url = "http://example.org/fhir/ValueSet/mood"
+* ^url = "https://2rdoc.pt/fhir/ValueSet/mood"
 * ^status = #active
 * ^experimental = false
 
@@ -10,7 +10,7 @@ CodeSystem: MoodCodeSystem
 Id: mood
 Title: "Mood Code System"
 Description: "Code system for mood states"
-* ^url = "http://example.org/fhir/CodeSystem/mood"
+* ^url = "https://2rdoc.pt/fhir/CodeSystem/mood"
 * ^status = #active
 * ^caseSensitive = true
 * #elevated "Elevated" "Mood is higher than normal"

@@ -3,7 +3,7 @@ InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "Daily Nutrition Questionnaire Response Example"
 
-* questionnaire = "https://github.com/RicardoLSantos/shorthand/Questionnaire/daily-nutrition"
+* questionnaire = "https://2rdoc.pt/fhir/Questionnaire/daily-nutrition"
 * status = #completed
 * subject = Reference(Patient/PatientExample)
 * authored = "2024-12-14T20:00:00Z"

@@ -7,7 +7,7 @@ Title: "Example of Mindfulness Session Observation"
 * code = $SCT#711020003 "Meditation"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T09:30:00Z"
-* performer = Reference(Practitioner/example)
+* performer = Reference(Practitioner/PractitionerExample)
 
 * component[sessionDuration].code = $SCT#118682006 "Duration"
 * component[sessionDuration].valueQuantity = 20 'min'
@@ -30,13 +30,12 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Example of Mindfulness Questionnaire"
 
-* url = "http://example.org/Questionnaire/mindfulness-example"
+* url = "https://2rdoc.pt/fhir/Questionnaire/mindfulness-example"
 * status = #active
 * title = "Daily Mindfulness Assessment"
 * version = "1.0"
 * name = "MindfulnessQuestionnaireExample"
 * date = "2024-03-19"
-* publisher = "Example Organization"
 * description = "Example questionnaire for daily mindfulness practice assessment"
 
 * item[0]

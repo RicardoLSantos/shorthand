@@ -35,7 +35,7 @@ Id: mindfulness-import-map
 Title: "Mindfulness Import Mapping"
 Description: "Mapping instructions for importing mindfulness data"
 
-* ^url = "https://example.org/StructureDefinition/mindfulness-import-map"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-import-map"
 * ^version = "1.0.0"
 * ^status = #draft
 

@@ -2,13 +2,13 @@ Instance: NoiseExposureExample
 InstanceOf: NoiseExposureObservation
 Usage: #example
 Title: "Noise Exposure Measurement Example"
-Description: "Example of noise exposure measurement from iOS Health App"
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * status = #final
+* performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#environment
 * code = $LOINC#28573-7 "Noise exposure time"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * device = Reference(Device/iphone-example)
 * method = http://snomed.info/sct#37016008 "Automatic measurement"
@@ -36,13 +36,12 @@ Instance: UVExposureExample
 InstanceOf: UVExposureObservation
 Usage: #example
 Title: "UV Exposure Measurement Example"
-Description: "Example of UV exposure measurement from iOS Health App"
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#environment
 * code = $LOINC#28574-5 "UV exposure"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T12:00:00Z"
 * device = Reference(Device/iphone-example)
 * method = http://snomed.info/sct#37016008 "Automatic measurement"
@@ -70,9 +69,8 @@ Instance: EnvironmentalDeviceExample
 InstanceOf: Device
 Usage: #example
 Title: "Environmental Monitoring Device"
-Description: "Example of iOS device used for environmental monitoring"
 
-* identifier.system = "http://example.org/devices"
+* identifier.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/devices"
 * identifier.value = "iPhone-ENV-001"
 * manufacturer = "Apple Inc."
 * modelNumber = "iPhone 15 Pro"

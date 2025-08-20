@@ -50,7 +50,7 @@ Description: "Profile for recording mindfulness practice sessions and outcomes"
 * component[moodState]
   * code = $SCT#373931001 "Mood finding"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from http://example.org/fhir/ValueSet/mood (required)
+  * valueCodeableConcept from https://2rdoc.pt/fhir/ValueSet/mood (required)
 
 * component[relaxationResponse]
   * code = $SCT#276241001 "Relaxation technique"
@@ -59,4 +59,4 @@ Description: "Profile for recording mindfulness practice sessions and outcomes"
 * component[mindfulnessType]
   * code = $SCT#711020003 "Meditation"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from http://example.org/ValueSet/mindfulness-type (required)
+  * valueCodeableConcept from https://2rdoc.pt/fhir/ValueSet/mindfulness-type (required)

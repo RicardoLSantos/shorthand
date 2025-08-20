@@ -1,7 +1,7 @@
 Alias: $LOINC = http://loinc.org
 Alias: $SNOMED = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
-Alias: $ActivityCodes = http://example.org/activity-codes
+Alias: $ActivityCodes = https://2rdoc.pt/ig/ios-lifestyle-medicine/activity-codes
 
 Profile: PhysicalActivityObservation
 Parent: Observation

@@ -68,8 +68,8 @@ Title: "Weight Measurement with Conditions Example"
 * effectiveDateTime = "2024-03-19T08:00:00Z"
 * valueQuantity = 70.5 'kg'
 
-* extension[measurement-conditions].url = "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-conditions"
+* extension[measurement-conditions].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions"
 * extension[measurement-conditions].valueCodeableConcept = $SCT#307818003 "Pre-breakfast"
 
-* extension[measurement-device-type].url = "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-device-type"
+* extension[measurement-device-type].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-device-type"
 * extension[measurement-device-type].valueCodeableConcept = $SCT#469576000 "Smart scale device"

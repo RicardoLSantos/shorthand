@@ -6,7 +6,7 @@ Title: "HealthKit to FHIR Mindfulness Transform"
 * status = #draft
 * name = "MindfulnessHealthKitTransform"
 * structure[0]
-  * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/healthkit-mindfulness"
+  * url = "http://example.org/StructureDefinition/healthkit-mindfulness"
   * mode = #source
   * documentation = "HealthKit mindfulness session structure"
 
@@ -51,7 +51,7 @@ Title: "CSV to FHIR Mindfulness Transform"
 * status = #draft
 * name = "MindfulnessCSVTransform"
 * structure[0]
-  * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/csv-mindfulness"
+  * url = "http://example.org/StructureDefinition/csv-mindfulness"
   * mode = #source
   * documentation = "CSV mindfulness data structure"
 
@@ -74,7 +74,7 @@ Title: "CSV to FHIR Mindfulness Transform"
     * target[0]
       * context = "target"
       * element = "effectiveDateTime"
-      * transform = #append
+      * transform = #concatenate
 
 RuleSet: TransformValidationRules
 * rule[+]

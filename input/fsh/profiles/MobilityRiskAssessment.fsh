@@ -19,7 +19,7 @@ Description: "Profile for assessing mobility-related risks"
   * coding contains
       mobilityAssessment 1..1 MS
 
-* method.coding[mobilityAssessment] = http://example.org/CodeSystem/mobility-assessment-method#standardized "Standardized Mobility Assessment"
+* method.coding[mobilityAssessment] = https://2rdoc.pt/fhir/CodeSystem/mobility-assessment-method#standardized "Standardized Mobility Assessment"
 
 * prediction ^slicing.discriminator.type = #pattern
 * prediction ^slicing.discriminator.path = "outcome"
@@ -30,17 +30,17 @@ Description: "Profile for assessing mobility-related risks"
     mobilityDecline 0..1 MS and
     assistanceNeeded 0..1 MS
 
-* prediction[fallRisk].outcome from http://example.org/ValueSet/fall-risk-outcomes
+* prediction[fallRisk].outcome from https://2rdoc.pt/fhir/ValueSet/fall-risk-outcomes
 * prediction[fallRisk].probabilityDecimal 0..1 MS
-* prediction[fallRisk].qualitativeRisk from http://example.org/ValueSet/risk-level
+* prediction[fallRisk].qualitativeRisk from https://2rdoc.pt/fhir/ValueSet/risk-level
 
-* prediction[mobilityDecline].outcome from http://example.org/ValueSet/mobility-decline-outcomes
+* prediction[mobilityDecline].outcome from https://2rdoc.pt/fhir/ValueSet/mobility-decline-outcomes
 * prediction[mobilityDecline].probabilityDecimal 0..1 MS
-* prediction[mobilityDecline].qualitativeRisk from http://example.org/ValueSet/risk-level
+* prediction[mobilityDecline].qualitativeRisk from https://2rdoc.pt/fhir/ValueSet/risk-level
 
-* prediction[assistanceNeeded].outcome from http://example.org/ValueSet/assistance-level-outcomes
+* prediction[assistanceNeeded].outcome from https://2rdoc.pt/fhir/ValueSet/assistance-level-outcomes
 * prediction[assistanceNeeded].probabilityDecimal 0..1 MS
-* prediction[assistanceNeeded].qualitativeRisk from http://example.org/ValueSet/risk-level
+* prediction[assistanceNeeded].qualitativeRisk from https://2rdoc.pt/fhir/ValueSet/risk-level
 
 * basis only Reference(MobilityProfile or Observation or QuestionnaireResponse)
 * basis MS

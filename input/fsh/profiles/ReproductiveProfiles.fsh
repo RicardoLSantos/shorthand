@@ -20,6 +20,6 @@ Description: "Profile for fertility signs and symptoms"
     ovulationTest 0..1 MS and
     fertilityStatus 0..1 MS
 
-* component[cervicalMucus].valueCodeableConcept from http://example.org/fhir/ValueSet/cervical-mucus-vs (required)
-* component[ovulationTest].valueCodeableConcept from http://example.org/fhir/ValueSet/ovulation-test-vs (required)
-* component[fertilityStatus].valueCodeableConcept from http://example.org/fhir/ValueSet/fertility-status-vs (required)
+* component[cervicalMucus].valueCodeableConcept from https://2rdoc.pt/fhir/ValueSet/cervical-mucus-vs (required)
+* component[ovulationTest].valueCodeableConcept from https://2rdoc.pt/fhir/ValueSet/ovulation-test-vs (required)
+* component[fertilityStatus].valueCodeableConcept from https://2rdoc.pt/fhir/ValueSet/fertility-status-vs (required)

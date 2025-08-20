@@ -4,7 +4,7 @@ Usage: #definition
 Title: "Daily Nutrition Intake Questionnaire"
 Description: "Questionnaire for daily nutrition intake tracking"
 
-* url = "https://github.com/RicardoLSantos/shorthand/Questionnaire/daily-nutrition"
+* url = "https://2rdoc.pt/fhir/Questionnaire/daily-nutrition"
 * version = "0.1.0"
 * name = "DailyNutritionQuestionnaire"
 * title = "Daily Nutrition Intake"

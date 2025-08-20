@@ -5,7 +5,7 @@ Title: "Reproductive Health Tracking Questionnaire"
 Description: "Daily questionnaire for reproductive health tracking"
  
 * status = #active
-* url = "http://example.org/Questionnaire/reproductive-health"
+* url = "https://2rdoc.pt/fhir/Questionnaire/reproductive-health"
 * name = "ReproductiveHealthQuestionnaire"
 * title = "Reproductive Health Monitoring"
 * date = "2024-03-19"
@@ -42,7 +42,7 @@ Description: "Daily questionnaire for reproductive health tracking"
     * linkId = "symptom_type"
     * text = "Symptom type"
     * type = #choice
-    * answerValueSet = "http://example.org/ValueSet/reproductive-symptoms"
+    * answerValueSet = "https://2rdoc.pt/fhir/ValueSet/reproductive-symptoms"
  
   * item[1]
     * linkId = "symptom_severity"
@@ -64,7 +64,7 @@ Description: "Daily questionnaire for reproductive health tracking"
     * linkId = "mood_type"
     * text = "Current mood"
     * type = #choice
-    * answerValueSet = "http://example.org/ValueSet/mood-types"
+    * answerValueSet = "https://2rdoc.pt/fhir/ValueSet/mood-types"
 
   * item[1]
     * linkId = "mood_severity"

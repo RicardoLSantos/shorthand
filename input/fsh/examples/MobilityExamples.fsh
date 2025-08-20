@@ -2,7 +2,6 @@ Profile: WalkingSteadinessObservation
 Parent: MobilityProfile
 Id: walking-steadiness-observation
 Title: "Walking Steadiness Observation Profile"
-Description: "Profile for walking steadiness measurements from iPhone Motion Sensors"
 
 * code = $LOINC#LA32-8 "Balance"
 * component contains
@@ -16,13 +15,12 @@ Description: "Profile for walking steadiness measurements from iPhone Motion Sen
 
 * component[balanceStatus]
   * code = $LOINC#LA32-9 "Balance status"
-  * valueCodeableConcept from http://example.org/fhir/ValueSet/balance-status (required)
+  * valueCodeableConcept from https://2rdoc.pt/fhir/ValueSet/balance-status (required)
 
 Profile: WalkingSpeedObservation
 Parent: MobilityProfile
 Id: walking-speed-observation
 Title: "Walking Speed Observation Profile"
-Description: "Profile for walking speed measurements from iPhone Motion Sensors"
 
 * code = $LOINC#LA29042-4 "Walking speed"
 * component contains
@@ -43,12 +41,11 @@ Instance: WalkingSteadinessExample
 InstanceOf: WalkingSteadinessObservation
 Usage: #example
 Title: "Walking Steadiness Measurement Example"
-Description: "Example of walking steadiness measurement from iPhone Motion Sensors"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $LOINC#LA32-8 "Balance"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * valueQuantity = 85 '1' "score"
 * device = Reference(Device/iphone-example)
@@ -60,12 +57,11 @@ Instance: WalkingSpeedExample
 InstanceOf: WalkingSpeedObservation
 Usage: #example
 Title: "Walking Speed Measurement Example"
-Description: "Example of walking speed measurement from iPhone Motion Sensors"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $LOINC#LA29042-4 "Walking speed"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * valueQuantity = 1.2 'm/s' "meters per second"
 * device = Reference(Device/iphone-example)

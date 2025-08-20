@@ -21,7 +21,7 @@ Title: "Mindfulness Alert"
 Description: "Alert configuration for mindfulness sessions"
 
 * code 1..1 MS
-* code = http://example.org/CodeSystem/mindfulness-alert-type#reminder "Mindfulness Reminder"
+* code = https://2rdoc.pt/fhir/CodeSystem/mindfulness-alert-type#reminder "Mindfulness Reminder"
 
 * extension contains
     alert-timing named alertTiming 0..1 MS and
@@ -32,7 +32,7 @@ InstanceOf: MindfulnessAlert
 Title: "Daily Mindfulness Alert" 
 Description: "Example of a daily mindfulness alert configuration"
 
-* code = http://example.org/CodeSystem/mindfulness-alert-type#reminder "Mindfulness Reminder"
+* code = https://2rdoc.pt/fhir/CodeSystem/mindfulness-alert-type#reminder "Mindfulness Reminder"
 * extension[alertTiming].valueTiming.repeat
   * frequency = 1
   * period = 1

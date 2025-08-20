@@ -5,7 +5,7 @@ Title: "Mindfulness Schedule"
 Description: "Schedule configuration for mindfulness sessions"
 
 * code 1..1 MS
-* code = http://example.org/CodeSystem/mindfulness-schedule-type#recurring "Recurring Schedule"
+* code = https://2rdoc.pt/fhir/CodeSystem/mindfulness-schedule-type#recurring "Recurring Schedule"
 
 Extension: MindfulnessScheduleTiming
 Id: mindfulness-schedule-timing
@@ -18,7 +18,7 @@ InstanceOf: MindfulnessSchedule
 Title: "Weekly Mindfulness Schedule"
 Description: "Example of a weekly mindfulness schedule"
 
-* code = http://example.org/CodeSystem/mindfulness-schedule-type#recurring "Recurring Schedule"
+* code = https://2rdoc.pt/fhir/CodeSystem/mindfulness-schedule-type#recurring "Recurring Schedule"
 * extension[mindfulness-schedule-timing].valueTiming.repeat.frequency = 1
 * extension[mindfulness-schedule-timing].valueTiming.repeat.period = 1
 * extension[mindfulness-schedule-timing].valueTiming.repeat.periodUnit = #wk

@@ -5,5 +5,5 @@ Description: "Valid contexts for environmental measurements"
 
 * ^status = #active
 * ^experimental = false
-* ^url = "http://example.org/fhir/ValueSet/environmental-context"
-* include codes from system http://example.org/fhir/CodeSystem/environmental-context
+* ^url = "https://2rdoc.pt/fhir/ValueSet/environmental-context"
+* include codes from system https://2rdoc.pt/fhir/CodeSystem/environmental-context

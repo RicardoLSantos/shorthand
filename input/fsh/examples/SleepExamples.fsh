@@ -2,7 +2,6 @@ Instance: SleepObservationExample1
 InstanceOf: SleepObservation
 Usage: #example
 Title: "Example of Sleep Record"
-Description: "Example of nightly sleep data from iOS Health App"
  
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#sleep

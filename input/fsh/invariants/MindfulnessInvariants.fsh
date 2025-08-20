@@ -15,7 +15,7 @@ Severity: #warning
 
 Invariant: mindfulness-context-complete
 Description: "Mindfulness context should include location and environment"
-Expression: "extension.where(url='https://example.org/StructureDefinition/mindfulness-context').exists() implies (extension.where(url='https://example.org/StructureDefinition/mindfulness-context').extension.where(url='location').exists() and extension.where(url='https://example.org/StructureDefinition/mindfulness-context').extension.where(url='environment').exists())"
+Expression: "extension.where(url='https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-context').exists() implies (extension.where(url='https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-context').extension.where(url='location').exists() and extension.where(url='https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-context').extension.where(url='environment').exists())"
 Severity: #warning
 
 Invariant: sequential-measurements

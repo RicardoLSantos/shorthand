@@ -8,8 +8,8 @@ Title: "Mindfulness Data Security Policy"
 * category = http://loinc.org#59284-0 "Consent Document"
 
 * policy[0]
-  * authority = "http://example.org/privacy-policy"
-  * uri = "http://example.org/mindfulness-privacy"
+  * authority = "https://2rdoc.pt/ig/ios-lifestyle-medicine/privacy-policy"
+  * uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-privacy"
 
 * provision
   * type = #permit
@@ -18,7 +18,7 @@ Title: "Mindfulness Data Security Policy"
   * actor[0]
     * role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PRCP
     * reference
-      * identifier.system = "http://example.org/practitioners"
+      * identifier.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/practitioners"
       * identifier.value = "mindfulness-practitioners"
 
 RuleSet: SecurityRequirements
@@ -39,8 +39,8 @@ Title: "Mindfulness Data Access Policy"
 * category = http://loinc.org#59284-0 "Consent Document"
 
 * policy[0]
-  * authority = "http://example.org/access-policy"
-  * uri = "http://example.org/mindfulness-access"
+  * authority = "https://2rdoc.pt/ig/ios-lifestyle-medicine/access-policy"
+  * uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-access"
 
 * provision
   * type = #permit
@@ -49,6 +49,6 @@ Title: "Mindfulness Data Access Policy"
   * actor[0]
     * role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PRCP
     * reference
-      * identifier.system = "http://example.org/practitioners"
+      * identifier.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/practitioners"
       * identifier.value = "mindfulness-practitioners"
   * action = http://terminology.hl7.org/CodeSystem/consentaction#access "Access"

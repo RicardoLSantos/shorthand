@@ -6,7 +6,7 @@ Title: "Stress Level Measurement Example"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#89592-0 "Stress level score"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-01-03T15:30:00Z"
 * valueQuantity = 7 '{score}' "score"
 

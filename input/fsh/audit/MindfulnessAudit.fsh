@@ -3,7 +3,7 @@ Id: audit-level
 Title: "Audit Level Extension"
 Description: "Level of detail for audit records"
 * value[x] only code
-* valueCode from http://example.org/fhir/ValueSet/audit-levels (required)
+* valueCode from https://2rdoc.pt/fhir/ValueSet/audit-levels (required)
 
 Extension: AuditRetentionExtension
 Id: audit-retention
@@ -16,7 +16,7 @@ Id: audit-format
 Title: "Audit Format Extension"
 Description: "Format for audit records"
 * value[x] only code
-* valueCode from http://example.org/fhir/ValueSet/audit-formats (required)
+* valueCode from https://2rdoc.pt/fhir/ValueSet/audit-formats (required)
 
 Profile: MindfulnessAudit
 Parent: Basic
@@ -25,7 +25,7 @@ Title: "Mindfulness Audit"
 Description: "Audit record for mindfulness sessions"
 
 * code 1..1 MS
-* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Session Audit"
+* code = https://2rdoc.pt/fhir/CodeSystem/mindfulness-audit-type#session "Session Audit"
 * created 1..1 MS
 
 * extension contains
@@ -38,7 +38,7 @@ InstanceOf: MindfulnessAudit
 Title: "Example Mindfulness Audit"
 Description: "Example of a mindfulness session audit record"
 
-* code = http://example.org/CodeSystem/mindfulness-audit-type#session "Session Audit"
+* code = https://2rdoc.pt/fhir/CodeSystem/mindfulness-audit-type#session "Session Audit"
 * created = "2024-03-15"
 * extension[auditLevel].valueCode = #detailed
 * extension[auditRetention].valueDuration = 90 'days'
