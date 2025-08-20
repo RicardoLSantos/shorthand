@@ -1,27 +1,28 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix loinc: <https://loinc.org/rdf/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/Observation/WeightWithConditions> a fhir:Observation ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/WeightWithConditions> a fhir:Observation ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "WeightWithConditions"] ; # 
   fhir:meta [
      fhir:profile ( [
-       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation"^^xsd:anyURI ;
-       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation>
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/weight-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/weight-observation>
      ] )
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation WeightWithConditions</b></p><a name=\"WeightWithConditions\"> </a><a name=\"hcWeightWithConditions\"> </a><a name=\"WeightWithConditions-en-US\"> </a><p><b>Measurement Conditions Extension</b>: <span title=\"Codes:{http://snomed.info/sct 307818003}\">Pre-breakfast</span></p><p><b>Measurement Device Type Extension</b>: <span title=\"Codes:{http://snomed.info/sct 469576000}\">Smart scale device</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 29463-7}\">Body weight</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 70.5 kg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codekg = 'kg')</span></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation WeightWithConditions</b></p><a name=\"WeightWithConditions\"> </a><a name=\"hcWeightWithConditions\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-weight-observation.html\">Weight Measurement Profile</a></p></div><p><b>Measurement Conditions Extension</b>: <span title=\"Códigos:{http://snomed.info/sct 307818003}\">Pre-breakfast</span></p><p><b>Measurement Device Type Extension</b>: <span title=\"Códigos:{http://snomed.info/sct 469576000}\">Smart scale device</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 29463-7}\">Body weight</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 70.5 kg<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigokg = 'kg')</span></p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:extension ( [
-     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-conditions"^^xsd:anyURI ] ;
+     fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions"^^xsd:anyURI ] ;
      fhir:value [
        a fhir:CodeableConcept ;
        fhir:coding ( [
@@ -32,7 +33,7 @@
        ] )
      ]
   ] [
-     fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-device-type"^^xsd:anyURI ] ;
+     fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-device-type"^^xsd:anyURI ] ;
      fhir:value [
        a fhir:CodeableConcept ;
        fhir:coding ( [
@@ -59,13 +60,16 @@
      ] )
   ] ; # 
   fhir:subject [
-     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/example> ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/example> ;
      fhir:reference [ fhir:v "Patient/example" ]
   ] ; # 
-  fhir:effective [ fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime
+  ] ; # 
   fhir:value [
      a fhir:Quantity ;
-     fhir:value [ fhir:v "70.5"^^xsd:decimal ] ;
+     fhir:value [ fhir:v 70.5 ] ;
      fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
      fhir:code [ fhir:v "kg" ]
   ] . # 

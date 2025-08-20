@@ -1,24 +1,25 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs> a fhir:CodeSystem ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs> a fhir:CodeSystem ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "mobility-alert-level-cs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem mobility-alert-level-cs</b></p><a name=\"mobility-alert-level-cs\"> </a><a name=\"hcmobility-alert-level-cs\"> </a><a name=\"mobility-alert-level-cs-en-US\"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>status</td><td>status</td><td>code</td><td>The status of the alert level</td></tr><tr><td>severity</td><td>severity</td><td>integer</td><td>Numeric value indicating severity (1=low, 3=high)</td></tr></table><p><b>Concepts</b></p><p>This case-sensitive code system <code>https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">green<a name=\"mobility-alert-level-cs-green\"> </a></td><td>Normal - No concern</td><td>Mobility measurements are within normal range and show no concerning patterns</td></tr><tr><td style=\"white-space:nowrap\">yellow<a name=\"mobility-alert-level-cs-yellow\"> </a></td><td>Caution - Monitor closely</td><td>Mobility measurements show slight deviations that warrant closer monitoring</td></tr><tr><td style=\"white-space:nowrap\">red<a name=\"mobility-alert-level-cs-red\"> </a></td><td>Alert - Significant change</td><td>Mobility measurements indicate significant changes that require immediate attention</td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mobility-alert-level-cs</b></p><a name=\"mobility-alert-level-cs\"> </a><a name=\"hcmobility-alert-level-cs\"> </a><p><b>Propriedades</b></p><p><b>Este sistema de códigos define as seguintes propriedades para os seus conceitos</b></p><table class=\"grid\"><tr><td><b>Nome</b></td><td><b>Código</b></td><td><b>Tipo</b></td><td><b>Descrição</b></td></tr><tr><td>status</td><td>status</td><td>code</td><td>The status of the alert level</td></tr><tr><td>severity</td><td>severity</td><td>integer</td><td>Numeric value indicating severity (1=low, 3=high)</td></tr></table><p><b>Conceitos</b></p><p>Este case-sensitive sistema de código <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs</code> define o seguinte códigos:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">green<a name=\"mobility-alert-level-cs-green\"> </a></td><td>Normal - No concern</td><td>Mobility measurements are within normal range and show no concerning patterns</td></tr><tr><td style=\"white-space:nowrap\">yellow<a name=\"mobility-alert-level-cs-yellow\"> </a></td><td>Caution - Monitor closely</td><td>Mobility measurements show slight deviations that warrant closer monitoring</td></tr><tr><td style=\"white-space:nowrap\">red<a name=\"mobility-alert-level-cs-red\"> </a></td><td>Alert - Significant change</td><td>Mobility measurements indicate significant changes that require immediate attention</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/mobility-alert-level-cs"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MobilityAlertLevelCS"] ; # 
   fhir:title [ fhir:v "Mobility Alert Level Code System"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2025-01-24T12:30:11+00:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-08-20T10:40:04+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -28,7 +29,7 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns"] ; # 
-  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
   fhir:content [ fhir:v "complete"] ; # 
   fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
   fhir:property ( [

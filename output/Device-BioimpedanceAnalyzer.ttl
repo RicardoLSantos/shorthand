@@ -1,17 +1,18 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/Device/BioimpedanceAnalyzer> a fhir:Device ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/BioimpedanceAnalyzer> a fhir:Device ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "BioimpedanceAnalyzer"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device BioimpedanceAnalyzer</b></p><a name=\"BioimpedanceAnalyzer\"> </a><a name=\"hcBioimpedanceAnalyzer\"> </a><a name=\"BioimpedanceAnalyzer-en-US\"> </a><p><b>manufacturer</b>: MedTech Solutions</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Professional Body Composition Analyzer</td><td>User Friendly name</td></tr></table><p><b>modelNumber</b>: BCA-Pro</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 706767009}\">Body composition analyzer</span></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Device BioimpedanceAnalyzer</b></p><a name=\"BioimpedanceAnalyzer\"> </a><a name=\"hcBioimpedanceAnalyzer\"> </a><p><b>manufacturer</b>: MedTech Solutions</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Professional Body Composition Analyzer</td><td>User Friendly name</td></tr></table><p><b>modelNumber</b>: BCA-Pro</p><p><b>type</b>: <span title=\"Códigos:{http://snomed.info/sct 706767009}\">Body composition analyzer</span></p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:manufacturer [ fhir:v "MedTech Solutions"] ; # 
   fhir:deviceName ( [

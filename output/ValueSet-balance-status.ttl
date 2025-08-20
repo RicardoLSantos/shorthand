@@ -1,23 +1,24 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/ValueSet/balance-status> a fhir:ValueSet ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/balance-status> a fhir:ValueSet ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "balance-status"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet balance-status</b></p><a name=\"balance-status\"> </a><a name=\"hcbalance-status\"> </a><a name=\"balance-status-en-US\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-balance-status.html\"><code>http://example.org/fhir/CodeSystem/balance-status</code></a></li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet balance-status</b></p><a name=\"balance-status\"> </a><a name=\"hcbalance-status\"> </a><ul><li>Include todos os códigos definidos em <a href=\"CodeSystem-balance-status.html\"><code>https://2rdoc.pt/fhir/CodeSystem/balance-status</code></a></li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "http://example.org/fhir/ValueSet/balance-status"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/fhir/ValueSet/balance-status"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "BalanceStatusValueSet"] ; # 
   fhir:title [ fhir:v "Balance Status Value Set"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2025-01-24T12:30:11+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-08-20T10:40:04+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -29,7 +30,7 @@
   fhir:description [ fhir:v "Value set for walking steadiness balance status"] ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "http://example.org/fhir/CodeSystem/balance-status"^^xsd:anyURI ]
+       fhir:system [ fhir:v "https://2rdoc.pt/fhir/CodeSystem/balance-status"^^xsd:anyURI ]
      ] )
   ] . # 
 

@@ -1,23 +1,24 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/Observation/MindfulnessObservationExample> a fhir:Observation ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/MindfulnessObservationExample> a fhir:Observation ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "MindfulnessObservationExample"] ; # 
   fhir:meta [
      fhir:profile ( [
-       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation"^^xsd:anyURI ;
-       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-observation>
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation>
      ] )
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation MindfulnessObservationExample</b></p><a name=\"MindfulnessObservationExample\"> </a><a name=\"hcMindfulnessObservationExample\"> </a><a name=\"MindfulnessObservationExample-en-US\"> </a><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 09:30:00+0000</p><p><b>performer</b>: <a href=\"Practitioner/example\">Practitioner/example</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 118682006}\">Duration</span></p><p><b>value</b>: 20 min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 725854004}\">Assessment of stress level</span></p><p><b>value</b>: 4</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 373931001}\">Mood finding</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 130991005}\">Neutral mood</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 276241001}\">Relaxation technique</span></p><p><b>value</b>: Deep breathing exercises helped reduce tension</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 711020003}\">Meditation</span></p></blockquote></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation MindfulnessObservationExample</b></p><a name=\"MindfulnessObservationExample\"> </a><a name=\"hcMindfulnessObservationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-mindfulness-observation.html\">Mindfulness Session Observation</a></p></div><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 09:30:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 118682006}\">Duration</span></p><p><b>value</b>: 20 min<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 725854004}\">Assessment of stress level</span></p><p><b>value</b>: 4</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 373931001}\">Mood finding</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 130991005}\">Neutral mood</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 276241001}\">Relaxation technique</span></p><p><b>value</b>: Deep breathing exercises helped reduce tension</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 711020003}\">Meditation</span></p></blockquote></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:status [ fhir:v "final"] ; # 
   fhir:code [
@@ -29,13 +30,16 @@
      ] )
   ] ; # 
   fhir:subject [
-     fhir:link <https://github.com/RicardoLSantos/shorthand/Patient/PatientExample> ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
      fhir:reference [ fhir:v "Patient/PatientExample" ]
   ] ; # 
-  fhir:effective [ fhir:v "2024-03-19T09:30:00Z"^^xsd:dateTime] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2024-03-19T09:30:00Z"^^xsd:dateTime
+  ] ; # 
   fhir:performer ( [
-     fhir:link <https://github.com/RicardoLSantos/shorthand/Practitioner/example> ;
-     fhir:reference [ fhir:v "Practitioner/example" ]
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/PractitionerExample> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
   ] ) ; # 
   fhir:component ( [
      fhir:code [
@@ -61,7 +65,10 @@
          fhir:display [ fhir:v "Assessment of stress level" ]
        ] )
      ] ;
-     fhir:value [ fhir:v "4"^^xsd:integer ]
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 4
+     ]
   ] [
      fhir:code [
        fhir:coding ( [
@@ -89,7 +96,10 @@
          fhir:display [ fhir:v "Relaxation technique" ]
        ] )
      ] ;
-     fhir:value [ fhir:v "Deep breathing exercises helped reduce tension" ]
+     fhir:value [
+       a fhir:string ;
+       fhir:v "Deep breathing exercises helped reduce tension"
+     ]
   ] [
      fhir:code [
        fhir:coding ( [

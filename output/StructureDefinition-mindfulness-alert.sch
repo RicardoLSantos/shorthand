@@ -12,9 +12,9 @@
   <sch:pattern>
     <sch:title>f:Basic</sch:title>
     <sch:rule context="f:Basic">
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-timing']) &lt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-timing': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message']) &gt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message']) &lt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/alert-message': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-timing']) &lt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-timing': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-message']) &gt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-message': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-message']) &lt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-message': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

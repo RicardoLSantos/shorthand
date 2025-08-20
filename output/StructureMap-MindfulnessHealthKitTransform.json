@@ -3,14 +3,14 @@
   "id" : "MindfulnessHealthKitTransform",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap MindfulnessHealthKitTransform</b></p><a name=\"MindfulnessHealthKitTransform\"> </a><a name=\"hcMindfulnessHealthKitTransform\"> </a><a name=\"MindfulnessHealthKitTransform-en-US\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessHealthKitTransform<span style=\"color: navy\">&quot; = &quot;</span>MindfulnessHealthKitTransform<span style=\"color: navy\">&quot;\r\n\r\n</span><b>uses</b><span style=\"color: navy\"> &quot;</span>http://example.org/StructureDefinition/healthkit-mindfulness<span style=\"color: navy\">&quot; </span><b>as </b><b>source</b> <span style=\"color: navy\">// </span><span style=\"color: green\">HealthKit mindfulness session structure</span>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>as </b><b>target</b> <span style=\"color: navy\">// </span><span style=\"color: green\">FHIR Observation resource</span>\r\n\r\n<b>group </b>MindfulnessSessionToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">source</span><span style=\"color: navy\"> : </span>HealthKitMindfulness, <b>target</b> <span style=\"color: maroon\">target</span><span style=\"color: navy\"> : </span>Observation<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  source.startDate<span style=\"color: navy\"><b> -&gt; </b></span>target.effectiveDateTime <i>&quot;Session&quot;</i><span style=\"color: navy\">;</span>\r\n  source.duration<span style=\"color: navy\"><b> -&gt; </b></span>target.component.where(code.coding.code='118682006').valueQuantity <i>&quot;Duration&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: StructureMap MindfulnessHealthKitTransform</b></p><a name=\"MindfulnessHealthKitTransform\"> </a><a name=\"hcMindfulnessHealthKitTransform\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureMap/MindfulnessHealthKitTransform<span style=\"color: navy\">&quot; = &quot;</span>MindfulnessHealthKitTransform<span style=\"color: navy\">&quot;\r\n\r\n</span><b>uses</b><span style=\"color: navy\"> &quot;</span>https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/healthkit-mindfulness<span style=\"color: navy\">&quot; </span><b>as </b><b>source</b> <span style=\"color: navy\">// </span><span style=\"color: green\">HealthKit mindfulness session structure</span>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>as </b><b>target</b> <span style=\"color: navy\">// </span><span style=\"color: green\">FHIR Observation resource</span>\r\n\r\n<b>group </b>MindfulnessSessionToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">source</span><span style=\"color: navy\"> : </span>HealthKitMindfulness, <b>target</b> <span style=\"color: maroon\">target</span><span style=\"color: navy\"> : </span>Observation<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  source.startDate<span style=\"color: navy\"><b> -&gt; </b></span>target.effectiveDateTime <i>&quot;Session&quot;</i><span style=\"color: navy\">;</span>\r\n  source.duration<span style=\"color: navy\"><b> -&gt; </b></span>target.component.where(code.coding.code='118682006').valueQuantity <i>&quot;Duration&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
   },
-  "url" : "https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessHealthKitTransform",
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureMap/MindfulnessHealthKitTransform",
   "version" : "0.1.0",
   "name" : "MindfulnessHealthKitTransform",
   "title" : "HealthKit to FHIR Mindfulness Transform",
   "status" : "draft",
-  "date" : "2025-01-24T12:30:11+00:00",
+  "date" : "2025-08-20T10:40:04+01:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -20,7 +20,7 @@
     }]
   }],
   "structure" : [{
-    "url" : "http://example.org/StructureDefinition/healthkit-mindfulness",
+    "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/healthkit-mindfulness",
     "mode" : "source",
     "documentation" : "HealthKit mindfulness session structure"
   },

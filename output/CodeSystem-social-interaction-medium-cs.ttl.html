@@ -32,10 +32,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
-    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -112,7 +112,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://github.com/RicardoLSantos/shorthand/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">!!iOS Lifestyle Medicine Implementation Guide - Compilação de desenvolvimento local (v0.1.0) construída pelas ferramentas de compilação FHIR (HL7&reg; FHIR&reg; Standard). Veja o <a href='https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html'>Diretório de versões publicadas</a></p><!--EndReleaseHeader-->
 
 
 
@@ -167,7 +167,7 @@
         
           Draft
           
-            as of 2025-01-24
+            as of 2025-08-20
           
         
       </td>
@@ -186,6 +186,7 @@
   <pre class="rdf" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
@@ -196,14 +197,14 @@
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;social-interaction-medium-cs&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.text">fhir:text</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem social-interaction-medium-cs&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;social-interaction-medium-cs\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcsocial-interaction-medium-cs\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;social-interaction-medium-cs-en-US\&quot;&gt; &lt;/a&gt;&lt;p&gt;This  code system &lt;code&gt;https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-medium-cs&lt;/code&gt; defines the following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;inPerson&lt;a name=\&quot;social-interaction-medium-cs-inPerson\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;In Person&lt;/td&gt;&lt;td&gt;Face-to-face interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;video&lt;a name=\&quot;social-interaction-medium-cs-video\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Video Call&lt;/td&gt;&lt;td&gt;Video-based interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;voice&lt;a name=\&quot;social-interaction-medium-cs-voice\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Voice Call&lt;/td&gt;&lt;td&gt;Voice-only interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;text&lt;a name=\&quot;social-interaction-medium-cs-text\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Text Based&lt;/td&gt;&lt;td&gt;Text-based communication&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;social&lt;a name=\&quot;social-interaction-medium-cs-social\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Social Media&lt;/td&gt;&lt;td&gt;Social media interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;mixed&lt;a name=\&quot;social-interaction-medium-cs-mixed\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Mixed Medium&lt;/td&gt;&lt;td&gt;Multiple communication methods&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Narrativa gerada: CodeSystem social-interaction-medium-cs&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;social-interaction-medium-cs\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcsocial-interaction-medium-cs\&quot;&gt; &lt;/a&gt;&lt;p&gt;Este  sistema de código &lt;code&gt;https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-medium-cs&lt;/code&gt; define o seguinte códigos:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Código&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Ecrã&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definição&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;inPerson&lt;a name=\&quot;social-interaction-medium-cs-inPerson\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;In Person&lt;/td&gt;&lt;td&gt;Face-to-face interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;video&lt;a name=\&quot;social-interaction-medium-cs-video\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Video Call&lt;/td&gt;&lt;td&gt;Video-based interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;voice&lt;a name=\&quot;social-interaction-medium-cs-voice\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Voice Call&lt;/td&gt;&lt;td&gt;Voice-only interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;text&lt;a name=\&quot;social-interaction-medium-cs-text\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Text Based&lt;/td&gt;&lt;td&gt;Text-based communication&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;social&lt;a name=\&quot;social-interaction-medium-cs-social\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Social Media&lt;/td&gt;&lt;td&gt;Social media interaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;mixed&lt;a name=\&quot;social-interaction-medium-cs-mixed\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Mixed Medium&lt;/td&gt;&lt;td&gt;Multiple communication methods&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral
   ] ; # 
-  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://github.com/RicardoLSantos/shorthand/CodeSystem/social-interaction-medium-cs&quot;^^xsd:anyURI] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-medium-cs&quot;^^xsd:anyURI] ; # 
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;0.1.0&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;SocialInteractionMediumCS&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Social Interaction Medium Code System&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;draft&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2025-01-24T12:30:11+00:00&quot;^^xsd:dateTime] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2025-08-20T10:40:04+01:00&quot;^^xsd:dateTime] ; # 
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Ricardo Lourenço dos Santos&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.contact">fhir:contact</a> ( [
 <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Ricardo Lourenço dos Santos&quot; ] ;
@@ -265,7 +266,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 24, 2025 12:30+0000">2025-01-24</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 20, 2025 10:40+0100">2025-08-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,23 +1,24 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/ValueSet/mobility-decline-outcomes> a fhir:ValueSet ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes> a fhir:ValueSet ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "mobility-decline-outcomes"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet mobility-decline-outcomes</b></p><a name=\"mobility-decline-outcomes\"> </a><a name=\"hcmobility-decline-outcomes\"> </a><a name=\"mobility-decline-outcomes-en-US\"> </a><ul><li>Include all codes defined in <code>http://example.org/fhir/CodeSystem/mobility-decline-outcomes</code></li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet mobility-decline-outcomes</b></p><a name=\"mobility-decline-outcomes\"> </a><a name=\"hcmobility-decline-outcomes\"> </a><ul><li>Include todos os códigos definidos em <code>https://2rdoc.pt/fhir/CodeSystem/mobility-decline-outcomes</code></li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "http://example.org/fhir/ValueSet/mobility-decline-outcomes"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/fhir/ValueSet/mobility-decline-outcomes"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MobilityDeclineOutcomesValueSet"] ; # 
   fhir:title [ fhir:v "Mobility Decline Outcomes Value Set"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2025-01-24T12:30:11+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-08-20T10:40:04+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -29,7 +30,7 @@
   fhir:description [ fhir:v "Value set for mobility decline assessment outcomes"] ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "http://example.org/fhir/CodeSystem/mobility-decline-outcomes"^^xsd:anyURI ]
+       fhir:system [ fhir:v "https://2rdoc.pt/fhir/CodeSystem/mobility-decline-outcomes"^^xsd:anyURI ]
      ] )
   ] . # 
 

@@ -1,17 +1,18 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/Device/DeviceHeartRateMonitor> a fhir:Device ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/DeviceHeartRateMonitor> a fhir:Device ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "DeviceHeartRateMonitor"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device DeviceHeartRateMonitor</b></p><a name=\"DeviceHeartRateMonitor\"> </a><a name=\"hcDeviceHeartRateMonitor\"> </a><a name=\"DeviceHeartRateMonitor-en-US\"> </a><p><b>manufacturer</b>: HealthTech Devices</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Continuous Heart Rate Monitor</td><td>User Friendly name</td></tr></table><p><b>modelNumber</b>: HRM-2024</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 720737000}\">Pulse rate monitoring device</span></p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Device DeviceHeartRateMonitor</b></p><a name=\"DeviceHeartRateMonitor\"> </a><a name=\"hcDeviceHeartRateMonitor\"> </a><p><b>manufacturer</b>: HealthTech Devices</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Continuous Heart Rate Monitor</td><td>User Friendly name</td></tr></table><p><b>modelNumber</b>: HRM-2024</p><p><b>type</b>: <span title=\"Códigos:{http://snomed.info/sct 720737000}\">Pulse rate monitoring device</span></p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:manufacturer [ fhir:v "HealthTech Devices"] ; # 
   fhir:deviceName ( [

@@ -1,24 +1,25 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/MessageDefinition/EndSessionMessage> a fhir:MessageDefinition ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/EndSessionMessage> a fhir:MessageDefinition ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "EndSessionMessage"] ; # 
   fhir:meta [
      fhir:profile ( [
-       fhir:v "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition"^^xsd:anyURI ;
-       fhir:link <https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition>
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition>
      ] )
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MessageDefinition EndSessionMessage</b></p><a name=\"EndSessionMessage\"> </a><a name=\"hcEndSessionMessage\"> </a><a name=\"EndSessionMessage-en-US\"> </a><p><b>url</b>: <a href=\"MessageDefinition-EndSessionMessage.html\">MessageDefinition: url = http://example.org/fhir/MessageDefinition/end-session; version = 0.1.0; status = active; date = 2024-03-19; publisher = Ricardo Lourenço dos Santos; contact = Ricardo Lourenço dos Santos (https://linktr.ee/ricardolsantos); jurisdiction = ; copyright = ; event[x] = Session End (mindfulness-message-events#session-end); category = notification</a></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-03-19</p><p><b>publisher</b>: Ricardo Lourenço dos Santos</p><p><b>contact</b>: Ricardo Lourenço dos Santos: <a href=\"https://linktr.ee/ricardolsantos\">https://linktr.ee/ricardolsantos</a></p><p><b>event</b>: mindfulness-message-events session-end: Session End</p><p><b>category</b>: Notification</p><h3>Focus</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Profile</b></td><td><b>Min</b></td></tr><tr><td style=\"display: none\">*</td><td>Observation</td><td><code>http://example.org/fhir/StructureDefinition/mindfulness-session</code></td><td>1</td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: MessageDefinition EndSessionMessage</b></p><a name=\"EndSessionMessage\"> </a><a name=\"hcEndSessionMessage\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-mindfulness-message-definition.html\">Mindfulness Message Definition</a></p></div><p><b>url</b>: <a href=\"MessageDefinition-EndSessionMessage.html\">MessageDefinition: url = https://2rdoc.pt/fhir/MessageDefinition/end-session; version = 0.1.0; status = active; date = 2024-03-19; publisher = Ricardo Lourenço dos Santos; contact = Ricardo Lourenço dos Santos (https://linktr.ee/ricardolsantos); jurisdiction = ; copyright = ; event[x] = Session End (mindfulness-message-events#session-end); category = notification</a></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-03-19</p><p><b>publisher</b>: Ricardo Lourenço dos Santos</p><p><b>contact</b>: Ricardo Lourenço dos Santos: <a href=\"https://linktr.ee/ricardolsantos\">https://linktr.ee/ricardolsantos</a></p><p><b>event</b>: mindfulness-message-events session-end: Session End</p><p><b>category</b>: Notification</p><h3>Focus</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Profile</b></td><td><b>Min</b></td></tr><tr><td style=\"display: none\">*</td><td>Observation</td><td><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session</code></td><td>1</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "http://example.org/fhir/MessageDefinition/end-session"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/fhir/MessageDefinition/end-session"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:date [ fhir:v "2024-03-19"^^xsd:date] ; # 
@@ -32,7 +33,7 @@
   ] ) ; # 
   fhir:event [
      a fhir:Coding ;
-     fhir:system [ fhir:v "http://example.org/fhir/CodeSystem/mindfulness-message-events"^^xsd:anyURI ] ;
+     fhir:system [ fhir:v "https://2rdoc.pt/fhir/CodeSystem/mindfulness-message-events"^^xsd:anyURI ] ;
      fhir:code [ fhir:v "session-end" ] ;
      fhir:display [ fhir:v "Session End" ]
   ] ; # 
@@ -40,8 +41,8 @@
   fhir:focus ( [
      fhir:code [ fhir:v "Observation" ] ;
      fhir:profile [
-       fhir:v "http://example.org/fhir/StructureDefinition/mindfulness-session"^^xsd:anyURI ;
-       fhir:link <http://example.org/fhir/StructureDefinition/mindfulness-session>
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session>
      ] ;
      fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ]
   ] ) . # 

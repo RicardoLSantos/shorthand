@@ -1,24 +1,25 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/ValueSet/circadian-phase-vs> a fhir:ValueSet ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/circadian-phase-vs> a fhir:ValueSet ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "circadian-phase-vs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet circadian-phase-vs</b></p><a name=\"circadian-phase-vs\"> </a><a name=\"hccircadian-phase-vs\"> </a><a name=\"circadian-phase-vs-en-US\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-circadian-phase-cs.html\"><code>https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs</code></a></li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet circadian-phase-vs</b></p><a name=\"circadian-phase-vs\"> </a><a name=\"hccircadian-phase-vs\"> </a><ul><li>Include todos os códigos definidos em <a href=\"CodeSystem-circadian-phase-cs.html\"><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs</code></a></li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/ValueSet/circadian-phase-vs"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/circadian-phase-vs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "CircadianPhaseVS"] ; # 
   fhir:title [ fhir:v "Circadian Phase Value Set"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2025-01-24T12:30:11+00:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2025-08-20T10:40:04+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -30,7 +31,7 @@
   fhir:description [ fhir:v "Value set for circadian rhythm phases"] ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/circadian-phase-cs"^^xsd:anyURI ]
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs"^^xsd:anyURI ]
      ] )
   ] . # 
 

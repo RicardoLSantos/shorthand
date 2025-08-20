@@ -1,24 +1,25 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/RicardoLSantos/shorthand/ValueSet/exposure-conditions-vs> a fhir:ValueSet ;
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/exposure-conditions-vs> a fhir:ValueSet ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "exposure-conditions-vs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet exposure-conditions-vs</b></p><a name=\"exposure-conditions-vs\"> </a><a name=\"hcexposure-conditions-vs\"> </a><a name=\"exposure-conditions-vs-en-US\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-exposure-conditions-cs.html\"><code>https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-conditions-cs</code></a></li></ul></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet exposure-conditions-vs</b></p><a name=\"exposure-conditions-vs\"> </a><a name=\"hcexposure-conditions-vs\"> </a><ul><li>Include todos os códigos definidos em <a href=\"CodeSystem-exposure-conditions-cs.html\"><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs</code></a></li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "https://github.com/RicardoLSantos/shorthand/ValueSet/exposure-conditions-vs"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/exposure-conditions-vs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "ExposureConditionsVS"] ; # 
   fhir:title [ fhir:v "Exposure Conditions Value Set"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2025-01-24T12:30:11+00:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2025-08-20T10:40:04+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -30,7 +31,7 @@
   fhir:description [ fhir:v "Value set for environmental exposure conditions"] ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "https://github.com/RicardoLSantos/shorthand/CodeSystem/exposure-conditions-cs"^^xsd:anyURI ]
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs"^^xsd:anyURI ]
      ] )
   ] . # 
 

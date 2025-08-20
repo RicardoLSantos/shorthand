@@ -32,10 +32,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
-    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -112,7 +112,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://github.com/RicardoLSantos/shorthand/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">!!iOS Lifestyle Medicine Implementation Guide - Compilação de desenvolvimento local (v0.1.0) construída pelas ferramentas de compilação FHIR (HL7&reg; FHIR&reg; Standard). Veja o <a href='https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html'>Diretório de versões publicadas</a></p><!--EndReleaseHeader-->
 
 
 
@@ -186,6 +186,7 @@
   <pre class="rdf" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
@@ -196,14 +197,14 @@
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;EndSessionMessage&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.meta">fhir:meta</a> [
     ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-message-definition&gt;     ] )
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition&gt;     ] )
   ] ; # 
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.text">fhir:text</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: MessageDefinition EndSessionMessage&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;EndSessionMessage\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcEndSessionMessage\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;EndSessionMessage-en-US\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;a href=\&quot;MessageDefinition-EndSessionMessage.html\&quot;&gt;MessageDefinition: url = http://example.org/fhir/MessageDefinition/end-session; version = 0.1.0; status = active; date = 2024-03-19; publisher = Ricardo Lourenço dos Santos; contact = Ricardo Lourenço dos Santos (https://linktr.ee/ricardolsantos); jurisdiction = ; copyright = ; event[x] = Session End (mindfulness-message-events#session-end); category = notification&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2024-03-19&lt;/p&gt;&lt;p&gt;&lt;b&gt;publisher&lt;/b&gt;: Ricardo Lourenço dos Santos&lt;/p&gt;&lt;p&gt;&lt;b&gt;contact&lt;/b&gt;: Ricardo Lourenço dos Santos: &lt;a href=\&quot;https://linktr.ee/ricardolsantos\&quot;&gt;https://linktr.ee/ricardolsantos&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;event&lt;/b&gt;: mindfulness-message-events session-end: Session End&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Notification&lt;/p&gt;&lt;h3&gt;Focus&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Min&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;Observation&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://example.org/fhir/StructureDefinition/mindfulness-session&lt;/code&gt;&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Narrativa gerada: MessageDefinition EndSessionMessage&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;EndSessionMessage\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcEndSessionMessage\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Perfil: &lt;a href=\&quot;StructureDefinition-mindfulness-message-definition.html\&quot;&gt;Mindfulness Message Definition&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;a href=\&quot;MessageDefinition-EndSessionMessage.html\&quot;&gt;MessageDefinition: url = https://2rdoc.pt/fhir/MessageDefinition/end-session; version = 0.1.0; status = active; date = 2024-03-19; publisher = Ricardo Lourenço dos Santos; contact = Ricardo Lourenço dos Santos (https://linktr.ee/ricardolsantos); jurisdiction = ; copyright = ; event[x] = Session End (mindfulness-message-events#session-end); category = notification&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2024-03-19&lt;/p&gt;&lt;p&gt;&lt;b&gt;publisher&lt;/b&gt;: Ricardo Lourenço dos Santos&lt;/p&gt;&lt;p&gt;&lt;b&gt;contact&lt;/b&gt;: Ricardo Lourenço dos Santos: &lt;a href=\&quot;https://linktr.ee/ricardolsantos\&quot;&gt;https://linktr.ee/ricardolsantos&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;event&lt;/b&gt;: mindfulness-message-events session-end: Session End&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Notification&lt;/p&gt;&lt;h3&gt;Focus&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Min&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;Observation&lt;/td&gt;&lt;td&gt;&lt;code&gt;https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session&lt;/code&gt;&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral
   ] ; # 
-  <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://example.org/fhir/MessageDefinition/end-session&quot;^^xsd:anyURI] ; # 
+  <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://2rdoc.pt/fhir/MessageDefinition/end-session&quot;^^xsd:anyURI] ; # 
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;0.1.0&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot;] ; # 
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2024-03-19&quot;^^xsd:date] ; # 
@@ -216,7 +217,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
   ] ) ; # 
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.event[x]">fhir:event</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">a</a> fhir:Coding ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://example.org/fhir/CodeSystem/mindfulness-message-events&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://2rdoc.pt/fhir/CodeSystem/mindfulness-message-events&quot;^^xsd:anyURI ] ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;session-end&quot; ] ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Session End&quot; ]
   ] ; # 
@@ -224,8 +225,8 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
   <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.focus">fhir:focus</a> ( [
 <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.focus.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;Observation&quot; ] ;
 <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.focus.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;http://example.org/fhir/StructureDefinition/mindfulness-session&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://example.org/fhir/StructureDefinition/mindfulness-session&gt;     ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session&gt;     ] ;
 <a href="http://hl7.org/fhir/R4/messagedefinition.html#MessageDefinition.focus.min">fhir:min</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:v</a> &quot;1&quot;^^xsd:nonNegativeInteger ]
   ] ) . # 
 
@@ -254,7 +255,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 24, 2025 12:30+0000">2025-01-24</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 20, 2025 10:40+0100">2025-08-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

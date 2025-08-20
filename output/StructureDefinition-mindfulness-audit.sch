@@ -12,12 +12,12 @@
   <sch:pattern>
     <sch:title>f:Basic</sch:title>
     <sch:rule context="f:Basic">
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-level']) &gt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-level': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-level']) &lt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-level': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-retention']) &gt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-retention': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-retention']) &lt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-retention': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format']) &gt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format']) &lt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-level']) &gt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-level': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-level']) &lt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-level': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-retention']) &gt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-retention': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-retention']) &lt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-retention': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-format']) &gt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-format': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-format']) &lt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-format': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:created) &gt;= 1">created: minimum cardinality of 'created' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

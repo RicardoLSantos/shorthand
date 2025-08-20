@@ -3,19 +3,19 @@
   "id" : "ExampleReproductiveActivity",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CarePlan ExampleReproductiveActivity</b></p><a name=\"ExampleReproductiveActivity\"> </a><a name=\"hcExampleReproductiveActivity\"> </a><a name=\"ExampleReproductiveActivity-en-US\"> </a><p><b>status</b>: Active</p><p><b>intent</b>: Plan</p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><blockquote><p><b>activity</b></p><h3>Details</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Kind</b></td><td><b>Code</b></td><td><b>Status</b></td></tr><tr><td style=\"display: none\">*</td><td>Observation</td><td><span title=\"Codes:{https://github.com/RicardoLSantos/shorthand/CodeSystem/reproductive-activity-cs cycle-tracking}\">Cycle Tracking</span></td><td>Scheduled</td></tr></table></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CarePlan ExampleReproductiveActivity</b></p><a name=\"ExampleReproductiveActivity\"> </a><a name=\"hcExampleReproductiveActivity\"> </a><p><b>status</b>: Active</p><p><b>intent</b>: Plan</p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><blockquote><p><b>activity</b></p><h3>Details</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Kind</b></td><td><b>Code</b></td><td><b>Status</b></td></tr><tr><td style=\"display: none\">*</td><td>ServiceRequest</td><td><span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/reproductive-activity-cs cycle-tracking}\">Cycle Tracking</span></td><td>Scheduled</td></tr></table></blockquote></div>"
   },
   "status" : "active",
   "intent" : "plan",
   "subject" : {
-    "reference" : "Patient/example"
+    "reference" : "Patient/PatientExample"
   },
   "activity" : [{
     "detail" : {
-      "kind" : "Observation",
+      "kind" : "ServiceRequest",
       "code" : {
         "coding" : [{
-          "system" : "https://github.com/RicardoLSantos/shorthand/CodeSystem/reproductive-activity-cs",
+          "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/reproductive-activity-cs",
           "code" : "cycle-tracking"
         }]
       },

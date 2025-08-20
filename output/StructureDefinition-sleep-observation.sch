@@ -12,7 +12,7 @@
   <sch:pattern>
     <sch:title>f:Observation</sch:title>
     <sch:rule context="f:Observation">
-      <sch:assert test="count(f:extension[@url = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-quality']) &lt;= 1">extension with URL = 'https://github.com/RicardoLSantos/shorthand/StructureDefinition/sleep-quality': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-quality']) &lt;= 1">extension with URL = 'https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-quality': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:category) &gt;= 1">category: minimum cardinality of 'category' is 1</sch:assert>
       <sch:assert test="count(f:category) &lt;= 1">category: maximum cardinality of 'category' is 1</sch:assert>
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
