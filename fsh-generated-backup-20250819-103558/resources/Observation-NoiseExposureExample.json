@@ -1,0 +1,133 @@
+{
+  "resourceType": "Observation",
+  "id": "NoiseExposureExample",
+  "meta": {
+    "security": [
+      {
+        "code": "N",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+      }
+    ],
+    "profile": [
+      "https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "environment",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89020-2",
+            "system": "http://loinc.org",
+            "display": "Environmental noise average"
+          }
+        ]
+      },
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "code": "H",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+              "display": "High"
+            }
+          ]
+        }
+      ],
+      "valueQuantity": {
+        "value": 85,
+        "code": "dB",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89021-0",
+            "system": "http://loinc.org",
+            "display": "Environmental noise duration"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 120,
+        "code": "min",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89024-4",
+            "system": "http://loinc.org",
+            "display": "Peak sound level"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 95,
+        "code": "dB",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89025-1",
+            "system": "http://loinc.org",
+            "display": "Background noise level"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 45,
+        "code": "dB",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Measurement taken during urban commute"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "28573-7",
+        "system": "http://loinc.org",
+        "display": "Noise exposure time"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "effectiveDateTime": "2024-03-19T15:30:00Z",
+  "device": {
+    "reference": "Device/iphone-example"
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "37016008",
+        "system": "http://snomed.info/sct",
+        "display": "Automatic measurement"
+      }
+    ]
+  }
+}

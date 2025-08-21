@@ -1,0 +1,70 @@
+{
+  "resourceType": "StructureMap",
+  "id": "MindfulnessHealthKitTransform",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureMap/MindfulnessHealthKitTransform",
+  "title": "HealthKit to FHIR Mindfulness Transform",
+  "structure": [
+    {
+      "url": "http://example.org/StructureDefinition/healthkit-mindfulness",
+      "mode": "source",
+      "documentation": "HealthKit mindfulness session structure"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/Observation",
+      "mode": "target",
+      "documentation": "FHIR Observation resource"
+    }
+  ],
+  "group": [
+    {
+      "input": [
+        {
+          "name": "source",
+          "type": "HealthKitMindfulness",
+          "mode": "source"
+        },
+        {
+          "name": "target",
+          "type": "Observation",
+          "mode": "target"
+        }
+      ],
+      "rule": [
+        {
+          "source": [
+            {
+              "context": "source",
+              "element": "startDate"
+            }
+          ],
+          "target": [
+            {
+              "context": "target",
+              "element": "effectiveDateTime"
+            }
+          ],
+          "name": "Session"
+        },
+        {
+          "source": [
+            {
+              "context": "source",
+              "element": "duration"
+            }
+          ],
+          "target": [
+            {
+              "context": "target",
+              "element": "component.where(code.coding.code='118682006').valueQuantity"
+            }
+          ],
+          "name": "Duration"
+        }
+      ],
+      "name": "MindfulnessSessionToObservation",
+      "typeMode": "none"
+    }
+  ],
+  "status": "draft",
+  "name": "MindfulnessHealthKitTransform"
+}

@@ -1,0 +1,100 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "CompleteMindfulnessResponse",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueInteger": 20
+            }
+          ],
+          "linkId": "session_duration"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Meditation"
+            }
+          ],
+          "linkId": "practice_type"
+        }
+      ],
+      "linkId": "mindful_session"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "130991005",
+                "system": "http://snomed.info/sct",
+                "display": "Neutral mood"
+              }
+            }
+          ],
+          "linkId": "current_mood"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 3
+            }
+          ],
+          "linkId": "mood_intensity"
+        }
+      ],
+      "linkId": "mood_assessment"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueInteger": 3
+            }
+          ],
+          "linkId": "stress_level"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Slight tension"
+            }
+          ],
+          "linkId": "stress_symptoms"
+        }
+      ],
+      "linkId": "stress_assessment"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueInteger": 15
+            }
+          ],
+          "linkId": "relaxation_duration"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Deep breathing"
+            }
+          ],
+          "linkId": "relaxation_technique"
+        }
+      ],
+      "linkId": "relaxation"
+    }
+  ],
+  "questionnaire": "http://example.org/Questionnaire/daily-mindfulness",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/PatientExample"
+  },
+  "authored": "2024-03-19T08:30:00Z"
+}

@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "measurement-context",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-context",
+  "name": "MeasurementContext",
+  "title": "Measurement Context Extension",
+  "status": "draft",
+  "description": "Additional context about the vital sign measurement",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Measurement Context Extension",
+        "definition": "Additional context about the vital sign measurement"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/measurement-context"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://github.com/RicardoLSantos/shorthand/ValueSet/measurement-context-vs"
+        }
+      }
+    ]
+  }
+}

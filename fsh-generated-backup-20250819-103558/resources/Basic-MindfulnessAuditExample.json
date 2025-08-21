@@ -1,0 +1,37 @@
+{
+  "resourceType": "Basic",
+  "id": "MindfulnessAuditExample",
+  "meta": {
+    "profile": [
+      "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-audit"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-level",
+      "valueCode": "detailed"
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-retention",
+      "valueDuration": {
+        "value": 90,
+        "code": "days",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/audit-format",
+      "valueCode": "fhir"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "session",
+        "system": "http://example.org/CodeSystem/mindfulness-audit-type",
+        "display": "Session Audit"
+      }
+    ]
+  },
+  "created": "2024-03-15"
+}

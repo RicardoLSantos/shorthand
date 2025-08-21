@@ -1,0 +1,111 @@
+{
+  "resourceType": "Measure",
+  "id": "MindfulnessProgressReport",
+  "url": "https://github.com/RicardoLSantos/shorthand/Measure/MindfulnessProgressReport",
+  "title": "Mindfulness Practice Progress Report",
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "process"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "population": [
+        {
+          "criteria": {
+            "language": "text/fhirpath",
+            "expression": "Observation.where(code.coding.code='711020003')"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "denominator"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "criteria": {
+            "language": "text/fhirpath",
+            "expression": "Observation.effective.as(DateTime).truncate(@T).truncate(@W)"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "weekly"
+              }
+            ]
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "practice-frequency"
+          }
+        ]
+      },
+      "description": "Frequency of mindfulness practice"
+    },
+    {
+      "population": [
+        {
+          "criteria": {
+            "language": "text/fhirpath",
+            "expression": "Observation.where(component.code.coding.code='725854004')"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "denominator"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "criteria": {
+            "language": "text/fhirpath",
+            "expression": "component.where(code.coding.code='725854004').value.value"
+          },
+          "code": {
+            "coding": [
+              {
+                "code": "trend"
+              }
+            ]
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "stress-reduction"
+          }
+        ]
+      },
+      "description": "Stress level changes over time"
+    }
+  ],
+  "status": "active",
+  "experimental": false,
+  "date": "2024-03-19",
+  "publisher": "Example Organization",
+  "description": "Measures progress in mindfulness practice over time",
+  "scoring": {
+    "coding": [
+      {
+        "code": "continuous-variable"
+      }
+    ]
+  },
+  "riskAdjustment": "none",
+  "rateAggregation": "Average values over time period"
+}

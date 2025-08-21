@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "exposure-conditions",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/exposure-conditions",
+  "version": "0.1.0",
+  "name": "ExposureConditions",
+  "title": "Exposure Conditions Extension",
+  "status": "draft",
+  "description": "Additional conditions during environmental exposure measurement",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Observation"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Exposure Conditions Extension",
+        "definition": "Additional conditions during environmental exposure measurement"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/exposure-conditions"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Conditions during exposure",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://github.com/RicardoLSantos/shorthand/ValueSet/exposure-conditions-vs"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mindfulness-configuration",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-configuration",
+  "name": "MindfulnessConfiguration",
+  "title": "Mindfulness Configuration",
+  "status": "draft",
+  "description": "Configuration settings for mindfulness sessions",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Basic",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Basic",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Basic.extension",
+        "path": "Basic.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 3
+      },
+      {
+        "id": "Basic.extension:sessionDuration",
+        "path": "Basic.extension",
+        "sliceName": "sessionDuration",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-session-duration"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Basic.extension:reminderTime",
+        "path": "Basic.extension",
+        "sliceName": "reminderTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-reminder-time"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Basic.extension:preferredGuide",
+        "path": "Basic.extension",
+        "sliceName": "preferredGuide",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-preferred-guide"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Basic.extension:notificationEnabled",
+        "path": "Basic.extension",
+        "sliceName": "notificationEnabled",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-notification-enabled"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Basic.code",
+        "path": "Basic.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "settings",
+              "system": "http://example.org/CodeSystem/mindfulness-config-type",
+              "display": "Mindfulness Settings"
+            }
+          ]
+        },
+        "mustSupport": true
+      }
+    ]
+  }
+}

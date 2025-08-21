@@ -1,0 +1,81 @@
+{
+  "resourceType": "Observation",
+  "id": "WalkingSteadinessExample",
+  "meta": {
+    "profile": [
+      "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "LA32-8",
+            "system": "http://loinc.org",
+            "display": "Balance score"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 85,
+        "code": "%",
+        "system": "http://unitsofmeasure.org",
+        "unit": "percent"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "LA32-9",
+            "system": "http://loinc.org",
+            "display": "Balance status"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA32-10",
+            "system": "http://loinc.org",
+            "display": "OK"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "LA32-8",
+        "system": "http://loinc.org",
+        "display": "Balance"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "effectiveDateTime": "2024-03-19T15:30:00Z",
+  "valueQuantity": {
+    "value": 85,
+    "code": "1",
+    "system": "http://unitsofmeasure.org",
+    "unit": "score"
+  },
+  "device": {
+    "reference": "Device/iphone-example"
+  }
+}

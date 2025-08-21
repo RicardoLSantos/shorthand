@@ -1,0 +1,140 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "walking-steadiness-observation",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/walking-steadiness-observation",
+  "name": "WalkingSteadinessObservation",
+  "title": "Walking Steadiness Observation Profile",
+  "status": "draft",
+  "description": "Profile for walking steadiness measurements from iPhone Motion Sensors",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mobility-profile",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA32-8",
+              "system": "http://loinc.org",
+              "display": "Balance"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:balanceScore",
+        "path": "Observation.component",
+        "sliceName": "balanceScore",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:balanceScore.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA32-8",
+              "system": "http://loinc.org",
+              "display": "Balance score"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:balanceScore.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:balanceScore.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:balanceScore.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:balanceScore.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "%"
+      },
+      {
+        "id": "Observation.component:balanceStatus",
+        "path": "Observation.component",
+        "sliceName": "balanceStatus",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:balanceStatus.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA32-9",
+              "system": "http://loinc.org",
+              "display": "Balance status"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:balanceStatus.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:balanceStatus.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://example.org/fhir/ValueSet/balance-status"
+        }
+      }
+    ]
+  }
+}

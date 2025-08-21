@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "recovery-efficiency",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/recovery-efficiency",
+  "version": "0.1.0",
+  "name": "RecoveryEfficiency",
+  "title": "Recovery Efficiency Extension",
+  "status": "draft",
+  "description": "Measure of how efficiently the body recovers from stress or exertion",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Observation"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Recovery Efficiency Extension",
+        "definition": "Measure of how efficiently the body recovers from stress or exertion"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/recovery-efficiency"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Recovery efficiency percentage",
+        "definition": "Percentage indicating recovery efficiency",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x].system",
+        "path": "Extension.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Extension.value[x].code",
+        "path": "Extension.value[x].code",
+        "patternCode": "%"
+      }
+    ]
+  }
+}

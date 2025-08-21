@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "social-activity",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-activity",
+  "name": "SocialActivity",
+  "title": "Social Activity Extension",
+  "status": "draft",
+  "description": "Extension for recording specific social activities",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Social Activity Extension",
+        "definition": "Extension for recording specific social activities"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/social-activity"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://github.com/RicardoLSantos/shorthand/ValueSet/social-activity-vs"
+        }
+      }
+    ]
+  }
+}

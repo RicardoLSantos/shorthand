@@ -1,0 +1,50 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mindfulness-preferred-guide",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-preferred-guide",
+  "name": "MindfulnessPreferredGuide",
+  "title": "Mindfulness Preferred Guide",
+  "status": "draft",
+  "description": "Preferred guide for mindfulness sessions",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Mindfulness Preferred Guide",
+        "definition": "Preferred guide for mindfulness sessions"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mindfulness-preferred-guide"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

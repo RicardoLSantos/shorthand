@@ -1,0 +1,280 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "noise-exposure-observation",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/noise-exposure-observation",
+  "name": "NoiseExposureObservation",
+  "title": "Noise Exposure Observation Profile",
+  "status": "draft",
+  "description": "Profile for noise exposure measurements from iOS Health App",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/environmental-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "28573-7",
+              "system": "http://loinc.org",
+              "display": "Noise exposure time"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Noise exposure components",
+        "definition": "Components of noise exposure measurement",
+        "min": 2
+      },
+      {
+        "id": "Observation.component:level",
+        "path": "Observation.component",
+        "sliceName": "level",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:level.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "89020-2",
+              "system": "http://loinc.org",
+              "display": "Environmental noise average"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:level.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:level.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "short": "Noise level in decibels",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:level.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:level.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "dB"
+      },
+      {
+        "id": "Observation.component:duration",
+        "path": "Observation.component",
+        "sliceName": "duration",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:duration.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "89021-0",
+              "system": "http://loinc.org",
+              "display": "Environmental noise duration"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:duration.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:duration.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "short": "Duration of exposure",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:duration.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:duration.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "min"
+      },
+      {
+        "id": "Observation.component:peakLevel",
+        "path": "Observation.component",
+        "sliceName": "peakLevel",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:peakLevel.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "89024-4",
+              "system": "http://loinc.org",
+              "display": "Peak sound level"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:peakLevel.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:peakLevel.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "short": "Peak noise level",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:peakLevel.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:peakLevel.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "dB"
+      },
+      {
+        "id": "Observation.component:backgroundNoise",
+        "path": "Observation.component",
+        "sliceName": "backgroundNoise",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:backgroundNoise.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "89025-1",
+              "system": "http://loinc.org",
+              "display": "Background noise level"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:backgroundNoise.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:backgroundNoise.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "short": "Background noise level",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:backgroundNoise.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:backgroundNoise.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "dB"
+      }
+    ]
+  }
+}

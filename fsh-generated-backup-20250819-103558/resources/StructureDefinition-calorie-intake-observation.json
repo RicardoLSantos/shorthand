@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "calorie-intake-observation",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/calorie-intake-observation",
+  "version": "0.1.0",
+  "name": "CalorieIntakeObservation",
+  "title": "Calorie Intake Observation Profile",
+  "status": "draft",
+  "publisher": "Ricardo Lourenço dos Santos",
+  "description": "Profile for caloric intake measurements",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/nutrition-intake-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "9051-4",
+              "system": "http://loinc.org",
+              "display": "Caloric intake total"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity",
+        "path": "Observation.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity.unit",
+        "path": "Observation.value[x].unit",
+        "patternString": "kilocalorie"
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity.system",
+        "path": "Observation.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity.code",
+        "path": "Observation.value[x].code",
+        "patternCode": "kcal"
+      }
+    ]
+  }
+}

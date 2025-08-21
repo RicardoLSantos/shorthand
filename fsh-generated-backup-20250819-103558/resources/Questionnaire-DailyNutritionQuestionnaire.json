@@ -1,0 +1,129 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "DailyNutritionQuestionnaire",
+  "url": "https://github.com/RicardoLSantos/shorthand/Questionnaire/daily-nutrition",
+  "title": "Daily Nutrition Intake",
+  "description": "Questionnaire for daily nutrition intake tracking",
+  "item": [
+    {
+      "initial": [
+        {
+          "valueQuantity": {
+            "value": 0,
+            "code": "mL",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ],
+      "linkId": "water_intake",
+      "text": "How much water did you drink today?",
+      "type": "quantity",
+      "required": true,
+      "repeats": false
+    },
+    {
+      "item": [
+        {
+          "linkId": "meal_time",
+          "text": "Meal Time",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueString": "Breakfast"
+            },
+            {
+              "valueString": "Lunch"
+            },
+            {
+              "valueString": "Dinner"
+            },
+            {
+              "valueString": "Snack"
+            }
+          ],
+          "linkId": "meal_type",
+          "text": "Meal Type",
+          "type": "choice",
+          "required": true
+        },
+        {
+          "linkId": "calories",
+          "text": "Estimated Calories",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "item": [
+            {
+              "linkId": "carbs",
+              "text": "Carbohydrates (g)",
+              "type": "decimal",
+              "required": true
+            },
+            {
+              "linkId": "protein",
+              "text": "Proteins (g)",
+              "type": "decimal",
+              "required": true
+            },
+            {
+              "linkId": "fat",
+              "text": "Fats (g)",
+              "type": "decimal",
+              "required": true
+            }
+          ],
+          "linkId": "macronutrients",
+          "text": "Macronutrients",
+          "type": "group"
+        }
+      ],
+      "linkId": "meal_record",
+      "text": "Meal Records",
+      "type": "group",
+      "repeats": true
+    },
+    {
+      "item": [
+        {
+          "linkId": "caffeine_amount",
+          "text": "Caffeine amount (mg)",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "answerOption": [
+            {
+              "valueString": "Coffee"
+            },
+            {
+              "valueString": "Tea"
+            },
+            {
+              "valueString": "Soft Drink"
+            },
+            {
+              "valueString": "Energy Drink"
+            }
+          ],
+          "linkId": "caffeine_source",
+          "text": "Caffeine source",
+          "type": "choice",
+          "repeats": true
+        }
+      ],
+      "linkId": "caffeine",
+      "text": "Caffeine Intake",
+      "type": "group"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "DailyNutritionQuestionnaire",
+  "status": "active",
+  "experimental": false,
+  "date": "2024-12-14",
+  "publisher": "Ricardo Lourenço dos Santos"
+}

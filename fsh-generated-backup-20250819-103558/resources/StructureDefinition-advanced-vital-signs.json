@@ -1,0 +1,753 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "advanced-vital-signs",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/advanced-vital-signs",
+  "version": "0.1.0",
+  "name": "AdvancedVitalSigns",
+  "title": "Advanced Vital Signs Profile",
+  "status": "draft",
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "name": "Advanced Vital Signs Working Group"
+    }
+  ],
+  "description": "Profile for advanced vital signs data from iOS Health App",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Advanced vital signs components",
+        "definition": "Components of advanced vital sign measurements"
+      },
+      {
+        "id": "Observation.component:hrvSpectral",
+        "path": "Observation.component",
+        "sliceName": "hrvSpectral",
+        "short": "Spectral analysis of heart rate variability",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:hrvSpectral.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87834-8",
+              "system": "http://loinc.org",
+              "display": "Heart rate variability [Frequency band]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:hrvSpectral.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:hrvSpectral.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:hrvSpectral.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:hrvSpectral.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "ms"
+      },
+      {
+        "id": "Observation.component:hrvEntropy",
+        "path": "Observation.component",
+        "sliceName": "hrvEntropy",
+        "short": "Sample entropy of heart rate variability",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:hrvEntropy.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87835-5",
+              "system": "http://loinc.org",
+              "display": "Heart rate variability entropy"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:hrvEntropy.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:hrvEntropy.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:hrvEntropy.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:hrvEntropy.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{entropy}"
+      },
+      {
+        "id": "Observation.component:meanArterialPressure",
+        "path": "Observation.component",
+        "sliceName": "meanArterialPressure",
+        "short": "Mean arterial blood pressure",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:meanArterialPressure.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "8478-0",
+              "system": "http://loinc.org",
+              "display": "Mean blood pressure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:meanArterialPressure.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:meanArterialPressure.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:meanArterialPressure.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:meanArterialPressure.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mmHg"
+      },
+      {
+        "id": "Observation.component:pulseWaveAnalysis",
+        "path": "Observation.component",
+        "sliceName": "pulseWaveAnalysis",
+        "short": "Analysis of arterial pulse wave",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:pulseWaveAnalysis.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87836-3",
+              "system": "http://loinc.org",
+              "display": "Pulse wave analysis"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:pulseWaveAnalysis.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:pulseWaveAnalysis.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:pulseWaveAnalysis.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:pulseWaveAnalysis.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{index}"
+      },
+      {
+        "id": "Observation.component:respiratoryVariability",
+        "path": "Observation.component",
+        "sliceName": "respiratoryVariability",
+        "short": "Variability in respiratory rate",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:respiratoryVariability.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87837-1",
+              "system": "http://loinc.org",
+              "display": "Respiratory rate variability"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:respiratoryVariability.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:respiratoryVariability.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:respiratoryVariability.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:respiratoryVariability.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{coefficient}"
+      },
+      {
+        "id": "Observation.component:oxygenationIndex",
+        "path": "Observation.component",
+        "sliceName": "oxygenationIndex",
+        "short": "Index of blood oxygenation",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:oxygenationIndex.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87838-9",
+              "system": "http://loinc.org",
+              "display": "Oxygenation index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:oxygenationIndex.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:oxygenationIndex.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:oxygenationIndex.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:oxygenationIndex.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{ratio}"
+      },
+      {
+        "id": "Observation.component:stressIndex",
+        "path": "Observation.component",
+        "sliceName": "stressIndex",
+        "short": "Index of physiological stress",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:stressIndex.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87839-7",
+              "system": "http://loinc.org",
+              "display": "Physiological stress index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:stressIndex.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:stressIndex.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:stressIndex.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:stressIndex.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{index}"
+      },
+      {
+        "id": "Observation.component:thermalGradient",
+        "path": "Observation.component",
+        "sliceName": "thermalGradient",
+        "short": "Gradient of body temperature",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:thermalGradient.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87840-5",
+              "system": "http://loinc.org",
+              "display": "Temperature gradient"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:thermalGradient.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:thermalGradient.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:thermalGradient.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:thermalGradient.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "Cel"
+      },
+      {
+        "id": "Observation.component:autonomicBalance",
+        "path": "Observation.component",
+        "sliceName": "autonomicBalance",
+        "short": "Balance of autonomic nervous system",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:autonomicBalance.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87841-3",
+              "system": "http://loinc.org",
+              "display": "Autonomic balance index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:autonomicBalance.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:autonomicBalance.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:autonomicBalance.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:autonomicBalance.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{ratio}"
+      },
+      {
+        "id": "Observation.component:recoveryRate",
+        "path": "Observation.component",
+        "sliceName": "recoveryRate",
+        "short": "Rate of physiological recovery",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:recoveryRate.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87842-1",
+              "system": "http://loinc.org",
+              "display": "Recovery rate index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:recoveryRate.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:recoveryRate.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:recoveryRate.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:recoveryRate.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{rate}"
+      },
+      {
+        "id": "Observation.component:allostaticLoad",
+        "path": "Observation.component",
+        "sliceName": "allostaticLoad",
+        "short": "Measure of cumulative physiological burden",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:allostaticLoad.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "87843-9",
+              "system": "http://loinc.org",
+              "display": "Allostatic load index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:allostaticLoad.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:allostaticLoad.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:allostaticLoad.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:allostaticLoad.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{score}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "resourceType": "Observation",
+  "id": "BodyCompositionExample",
+  "meta": {
+    "profile": [
+      "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/PractitionerExample"
+    }
+  ],
+  "component": [
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "value": 22.5,
+        "code": "%",
+        "unit": "percent"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "41982-0",
+            "system": "http://loinc.org",
+            "display": "Percentage body fat"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "value": 54.6,
+        "code": "kg",
+        "unit": "kilogram"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "291-7",
+            "system": "http://loinc.org",
+            "display": "Lean body mass"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "value": 39.2,
+        "code": "L",
+        "unit": "liter"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "73708-0",
+            "system": "http://loinc.org",
+            "display": "Total body water"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "value": 51.8,
+        "code": "kg",
+        "unit": "kilogram"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "73713-0",
+            "system": "http://loinc.org",
+            "display": "Muscle mass"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "value": 2.8,
+        "code": "kg",
+        "unit": "kilogram"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "73711-4",
+            "system": "http://loinc.org",
+            "display": "Bone mass"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "88365-2",
+        "system": "http://loinc.org",
+        "display": "Body composition panel"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/PatientExample"
+  },
+  "effectiveDateTime": "2024-03-19T08:00:00Z",
+  "device": {
+    "reference": "Device/BioimpedanceAnalyzer"
+  }
+}

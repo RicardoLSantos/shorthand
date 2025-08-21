@@ -1,0 +1,69 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "weight-observation",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/weight-observation",
+  "version": "0.1.0",
+  "name": "WeightObservation",
+  "title": "Weight Measurement Profile",
+  "status": "draft",
+  "description": "Profile for body weight measurements",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-metrics-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "29463-7",
+              "system": "http://loinc.org",
+              "display": "Body weight"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity",
+        "path": "Observation.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity.system",
+        "path": "Observation.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.value[x]:valueQuantity.code",
+        "path": "Observation.value[x].code",
+        "patternCode": "kg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mobility-profile",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/mobility-profile",
+  "name": "MobilityProfile",
+  "title": "Mobility Profile",
+  "status": "draft",
+  "description": "Profile for mobility data from iOS Health App",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "activity",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:steadiness",
+        "path": "Observation.component",
+        "sliceName": "steadiness",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:steadiness.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA32-8",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:balance",
+        "path": "Observation.component",
+        "sliceName": "balance",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:balance.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA32-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:gait",
+        "path": "Observation.component",
+        "sliceName": "gait",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:gait.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA29042-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:movement",
+        "path": "Observation.component",
+        "sliceName": "movement",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:movement.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA29043-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

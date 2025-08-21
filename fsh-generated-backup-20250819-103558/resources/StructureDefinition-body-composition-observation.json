@@ -1,0 +1,331 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "body-composition-observation",
+  "url": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-composition-observation",
+  "version": "0.1.0",
+  "name": "BodyCompositionObservation",
+  "title": "Body Composition Profile",
+  "status": "draft",
+  "description": "Profile for body composition measurements including fat, lean mass, and other metrics",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://github.com/RicardoLSantos/shorthand/StructureDefinition/body-metrics-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "88365-2",
+              "system": "http://loinc.org",
+              "display": "Body composition panel"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:bodyFat",
+        "path": "Observation.component",
+        "sliceName": "bodyFat",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:bodyFat.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "41982-0",
+              "system": "http://loinc.org",
+              "display": "Percentage body fat"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:bodyFat.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:bodyFat.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:bodyFat.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:bodyFat.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "%"
+      },
+      {
+        "id": "Observation.component:leanMass",
+        "path": "Observation.component",
+        "sliceName": "leanMass",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:leanMass.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "291-7",
+              "system": "http://loinc.org",
+              "display": "Lean body mass"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:leanMass.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:leanMass.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:leanMass.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:leanMass.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "kg"
+      },
+      {
+        "id": "Observation.component:bodyWater",
+        "path": "Observation.component",
+        "sliceName": "bodyWater",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:bodyWater.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "73708-0",
+              "system": "http://loinc.org",
+              "display": "Total body water"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:bodyWater.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:bodyWater.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:bodyWater.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:bodyWater.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "L"
+      },
+      {
+        "id": "Observation.component:muscleMass",
+        "path": "Observation.component",
+        "sliceName": "muscleMass",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:muscleMass.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "73713-0",
+              "system": "http://loinc.org",
+              "display": "Muscle mass"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:muscleMass.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:muscleMass.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:muscleMass.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:muscleMass.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "kg"
+      },
+      {
+        "id": "Observation.component:boneMass",
+        "path": "Observation.component",
+        "sliceName": "boneMass",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:boneMass.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "73711-4",
+              "system": "http://loinc.org",
+              "display": "Bone mass"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:boneMass.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:boneMass.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:boneMass.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:boneMass.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "kg"
+      }
+    ]
+  }
+}

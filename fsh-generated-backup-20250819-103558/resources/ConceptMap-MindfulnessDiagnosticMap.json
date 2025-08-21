@@ -1,0 +1,64 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "MindfulnessDiagnosticMap",
+  "url": "https://github.com/RicardoLSantos/shorthand/ConceptMap/MindfulnessDiagnosticMap",
+  "title": "Mindfulness Diagnostic Mappings",
+  "description": "Mapping of mindfulness outcomes to diagnostic codes",
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "73595000",
+              "display": "Stress",
+              "equivalence": "narrower",
+              "comment": "Indicates reduction in stress levels"
+            }
+          ],
+          "code": "stressReduction"
+        },
+        {
+          "target": [
+            {
+              "code": "248234008",
+              "display": "Sleep pattern",
+              "equivalence": "narrower",
+              "comment": "Indicates improvement in sleep quality"
+            }
+          ],
+          "code": "improvedSleep"
+        },
+        {
+          "target": [
+            {
+              "code": "285854004",
+              "display": "Emotional state",
+              "equivalence": "equivalent",
+              "comment": "Maps to emotional state finding"
+            }
+          ],
+          "code": "emotionalBalance"
+        },
+        {
+          "target": [
+            {
+              "code": "736253002",
+              "display": "Mental state, behavior and/or psychosocial functioning",
+              "equivalence": "relatedto",
+              "comment": "General improvement in mental state"
+            }
+          ],
+          "code": "increasedAwareness"
+        }
+      ],
+      "source": "https://example.org/CodeSystem/mindfulness-outcome-cs",
+      "target": "http://snomed.info/sct"
+    }
+  ],
+  "status": "draft",
+  "experimental": false,
+  "purpose": "Map mindfulness outcomes to standard diagnostic codes",
+  "sourceUri": "https://example.org/ValueSet/mindfulness-outcome-vs",
+  "targetUri": "http://snomed.info/sct"
+}
