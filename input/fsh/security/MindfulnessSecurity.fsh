@@ -1,5 +1,6 @@
 Instance: MindfulnessSecurityDefinition
 InstanceOf: Consent
+Description: "Mindfulness security consent example"
 Usage: #definition
 Title: "Mindfulness Data Security Policy"
 
@@ -31,6 +32,7 @@ RuleSet: SecurityRequirements
 
 Instance: MindfulnessAccessPolicy
 InstanceOf: Consent
+Description: "Mindfulness data access consent example"
 Usage: #definition
 Title: "Mindfulness Data Access Policy"
 

@@ -1,6 +1,7 @@
 Instance: SleepObservationExample1
 InstanceOf: SleepObservation
 Usage: #example
+Description: "Sleep observation example"
 Title: "Example of Sleep Record"
  
 * status = #final
@@ -54,6 +55,7 @@ Title: "Example of Sleep Record"
 Instance: DeviceSleepMonitor
 InstanceOf: Device
 Usage: #example
+Description: "Sleep monitor device example"
 Title: "Sleep Monitoring Device"
 * deviceName.name = "Sleep Quality Monitor"
 * deviceName.type = #user-friendly-name

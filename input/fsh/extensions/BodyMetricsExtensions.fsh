@@ -59,6 +59,7 @@ Description: "Types of devices used for health and body measurements"
 Instance: WeightWithConditions
 InstanceOf: WeightObservation
 Usage: #example
+Description: "Weight with conditions observation example"
 Title: "Weight Measurement with Conditions Example"
 
 * status = #final

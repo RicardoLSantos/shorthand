@@ -7,7 +7,7 @@ Description: "Additional context about the vital sign measurement"
 
 ValueSet: MeasurementContextVitalSigns
 Id: measurement-context-vital-signs
-Title: "Measurement Context Value Set"
+Description: "Value set for measurement context in vital signs observations"Title: "Measurement Context Value Set"
 * $SCT#255214003 "At rest"
 * $SCT#309604004 "During exercise"
 * $SCT#309605003 "Post exercise"

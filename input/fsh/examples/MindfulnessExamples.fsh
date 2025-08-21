@@ -1,6 +1,7 @@
 Instance: MindfulnessObservationExample
 InstanceOf: MindfulnessObservation
 Usage: #example
+Description: "Mindfulness observation example"
 Title: "Example of Mindfulness Session Observation"
 
 * status = #final

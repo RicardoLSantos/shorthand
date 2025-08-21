@@ -1,6 +1,7 @@
 Instance: PhysicalActivityExample1
 InstanceOf: PhysicalActivityObservation
 Usage: #example
+Description: "Physical activity observation example"
 Title: "Example of Walking Activity"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
@@ -28,6 +29,7 @@ Title: "Example of Walking Activity"
 Instance: DeviceActivityTracker
 InstanceOf: Device
 Usage: #example
+Description: "Activity tracker device example"
 Title: "Activity Tracking Device"
 * deviceName.name = "Health Activity Tracker"
 * deviceName.type = #user-friendly-name

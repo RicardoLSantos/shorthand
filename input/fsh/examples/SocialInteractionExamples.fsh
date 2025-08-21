@@ -1,6 +1,7 @@
 Instance: SocialInteractionExample
 InstanceOf: SocialInteractionProfile
 Usage: #example
+Description: "Social interaction observation example"
 Title: "Social Interaction Example"
 
 * status = #final

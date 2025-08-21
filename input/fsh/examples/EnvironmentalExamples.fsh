@@ -1,6 +1,7 @@
 Instance: NoiseExposureExample
 InstanceOf: NoiseExposureObservation
 Usage: #example
+Description: "Noise exposure observation example"
 Title: "Noise Exposure Measurement Example"
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
@@ -35,6 +36,7 @@ Title: "Noise Exposure Measurement Example"
 Instance: UVExposureExample
 InstanceOf: UVExposureObservation
 Usage: #example
+Description: "UV exposure observation example"
 Title: "UV Exposure Measurement Example"
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
@@ -68,6 +70,7 @@ Title: "UV Exposure Measurement Example"
 Instance: EnvironmentalDeviceExample
 InstanceOf: Device
 Usage: #example
+Description: "Environmental monitoring device example"
 Title: "Environmental Monitoring Device"
 
 * identifier.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/devices"

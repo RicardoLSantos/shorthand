@@ -8,7 +8,7 @@ Description: "Value set for cervical mucus observations"
 
 CodeSystem: CervicalMucusCodeSystem
 Id: cervical-mucus-cs
-Title: "Cervical Mucus Code System"
+Description: "Code system for cervical mucus classification"Title: "Cervical Mucus Code System"
 * ^url = "https://2rdoc.pt/fhir/CodeSystem/cervical-mucus-cs"
 * ^status = #active
 * ^caseSensitive = true
@@ -28,7 +28,7 @@ Description: "Value set for ovulation test results"
 
 CodeSystem: OvulationTestCodeSystem
 Id: ovulation-test-cs
-Title: "Ovulation Test Code System"
+Description: "Code system for ovulation test results"Title: "Ovulation Test Code System"
 * ^url = "https://2rdoc.pt/fhir/CodeSystem/ovulation-test-cs"
 * ^status = #active
 * ^caseSensitive = true
@@ -46,7 +46,7 @@ Description: "Value set for fertility status"
 
 CodeSystem: FertilityStatusCodeSystem
 Id: fertility-status-cs
-Title: "Fertility Status Code System"
+Description: "Code system for fertility status indicators"Title: "Fertility Status Code System"
 * ^url = "https://2rdoc.pt/fhir/CodeSystem/fertility-status-cs"
 * ^status = #active
 * ^caseSensitive = true

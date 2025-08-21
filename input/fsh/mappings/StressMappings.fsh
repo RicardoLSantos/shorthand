@@ -1,6 +1,6 @@
 Mapping: StressToHealthKit
 Id: stress-to-healthkit
-Title: "Mapping to Apple HealthKit"
+Description: "Definition for stress-to-healthkit resource"Title: "Mapping to Apple HealthKit"
 Source: StressLevelProfile
 Target: "http://developer.apple.com/documentation/healthkit"
 

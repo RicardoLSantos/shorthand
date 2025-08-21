@@ -1,6 +1,7 @@
 Instance: WeightExample
 InstanceOf: WeightObservation
 Usage: #example
+Description: "Weight observation example"
 Title: "Weight Measurement Example"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
@@ -16,6 +17,7 @@ Title: "Weight Measurement Example"
 Instance: HeightExample
 InstanceOf: HeightObservation
 Usage: #example
+Description: "Height observation example"
 Title: "Height Measurement Example"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
@@ -30,6 +32,7 @@ Title: "Height Measurement Example"
 Instance: BMIExample
 InstanceOf: BMIObservation
 Usage: #example
+Description: "Body Mass Index observation example"
 Title: "BMI Calculation Example"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
@@ -46,6 +49,7 @@ Title: "BMI Calculation Example"
 Instance: BodyCompositionExample
 InstanceOf: BodyCompositionObservation
 Usage: #example
+Description: "Body composition observation example"
 Title: "Body Composition Measurement Example" 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
@@ -83,6 +87,7 @@ Title: "Body Composition Measurement Example"
 Instance: SmartScale
 InstanceOf: Device
 Usage: #example
+Description: "Smart scale device example"
 Title: "Smart Scale Device"
 * deviceName.name = "Smart Body Analyzer"
 * deviceName.type = #user-friendly-name
@@ -93,6 +98,7 @@ Title: "Smart Scale Device"
 Instance: BioimpedanceAnalyzer  
 InstanceOf: Device
 Usage: #example
+Description: "Bioimpedance analyzer device example"
 Title: "Bioimpedance Analyzer Device"
 * deviceName.name = "Professional Body Composition Analyzer"
 * deviceName.type = #user-friendly-name

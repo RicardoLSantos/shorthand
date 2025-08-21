@@ -1,6 +1,7 @@
 Instance: StressLevelExample
 InstanceOf: StressLevelProfile
 Usage: #example
+Description: "Stress level observation example"
 Title: "Stress Level Measurement Example"
 
 * status = #final

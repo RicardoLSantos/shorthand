@@ -1,6 +1,7 @@
 Instance: ExampleReproductiveActivity
 InstanceOf: CarePlan
 Usage: #example
+Description: "Reproductive health care plan example"
 * status = #active
 * intent = #plan
 * subject = Reference(Patient/PatientExample)

@@ -1,7 +1,7 @@
 Profile: WalkingSteadinessObservation
 Parent: MobilityProfile
 Id: walking-steadiness-observation
-Title: "Walking Steadiness Observation Profile"
+Description: "Profile for assessing walking steadiness and balance"Title: "Walking Steadiness Observation Profile"
 
 * code = $LOINC#LA32-8 "Balance"
 * component contains
@@ -20,7 +20,7 @@ Title: "Walking Steadiness Observation Profile"
 Profile: WalkingSpeedObservation
 Parent: MobilityProfile
 Id: walking-speed-observation
-Title: "Walking Speed Observation Profile"
+Description: "Profile for measuring walking speed as part of mobility assessment"Title: "Walking Speed Observation Profile"
 
 * code = $LOINC#LA29042-4 "Walking speed"
 * component contains
@@ -40,6 +40,7 @@ Title: "Walking Speed Observation Profile"
 Instance: WalkingSteadinessExample
 InstanceOf: WalkingSteadinessObservation
 Usage: #example
+Description: "Walking steadiness observation example"
 Title: "Walking Steadiness Measurement Example"
 
 * status = #final
@@ -56,6 +57,7 @@ Title: "Walking Steadiness Measurement Example"
 Instance: WalkingSpeedExample
 InstanceOf: WalkingSpeedObservation
 Usage: #example
+Description: "Walking speed observation example"
 Title: "Walking Speed Measurement Example"
 
 * status = #final

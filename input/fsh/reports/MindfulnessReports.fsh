@@ -2,7 +2,7 @@ Instance: MindfulnessProgressReport
 InstanceOf: Measure
 Usage: #definition
 Title: "Mindfulness Practice Progress Report"
-
+Description: "Example instance of MindfulnessProgressReport"
 * status = #active
 * experimental = false
 * date = "2024-03-19"

@@ -1,6 +1,6 @@
 Mapping: SocialInteractionToHealthKit
 Id: social-interaction-to-healthkit
-Title: "Mapping to Apple HealthKit"
+Description: "Definition for social-interaction-to-healthkit resource"Title: "Mapping to Apple HealthKit"
 Source: SocialInteractionProfile
 Target: "http://developer.apple.com/documentation/healthkit"
 

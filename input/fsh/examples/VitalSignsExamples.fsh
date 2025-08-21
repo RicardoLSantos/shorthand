@@ -1,6 +1,7 @@
 Instance: HeartRateExample
 InstanceOf: HeartRateObservation
 Usage: #example
+Description: "Heart rate observation example"
 Title: "Heart Rate Measurement Example"
 * status = #final
 * code = $LOINC#8867-4 "Heart rate"
@@ -19,6 +20,7 @@ Title: "Heart Rate Measurement Example"
 Instance: BloodPressureExample
 InstanceOf: BloodPressureObservation
 Usage: #example
+Description: "Blood pressure observation example"
 Title: "Blood Pressure Measurement Example"
 * status = #final
 * code = $LOINC#85354-9 "Blood pressure panel with all children optional"
@@ -38,6 +40,7 @@ Title: "Blood Pressure Measurement Example"
 Instance: DeviceHeartRateMonitor
 InstanceOf: Device
 Usage: #example
+Description: "Heart rate monitor device example"
 Title: "Heart Rate Monitor Device"
 * deviceName.name = "Continuous Heart Rate Monitor"
 * deviceName.type = #user-friendly-name
@@ -48,6 +51,7 @@ Title: "Heart Rate Monitor Device"
 Instance: DeviceBloodPressureMonitor
 InstanceOf: Device
 Usage: #example
+Description: "Blood pressure monitor device example"
 Title: "Blood Pressure Monitor Device"
 * deviceName.name = "Digital Blood Pressure Monitor"
 * deviceName.type = #user-friendly-name

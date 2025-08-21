@@ -1,6 +1,7 @@
 Instance: NutritionQuestionnaireResponseExample
 InstanceOf: QuestionnaireResponse
 Usage: #example
+Description: "Nutrition questionnaire response example"
 Title: "Daily Nutrition Questionnaire Response Example"
 
 * questionnaire = "https://2rdoc.pt/fhir/Questionnaire/daily-nutrition"

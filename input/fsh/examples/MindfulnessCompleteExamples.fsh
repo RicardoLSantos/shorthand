@@ -1,6 +1,7 @@
 Instance: CompleteMindfulnessSession
 InstanceOf: MindfulnessObservation
 Usage: #example
+Description: "Complete mindfulness session observation example"
 Title: "Complete Mindfulness Session Example"
 
 * status = #final
@@ -31,6 +32,7 @@ Title: "Complete Mindfulness Session Example"
 Instance: CompleteMindfulnessResponse
 InstanceOf: QuestionnaireResponse
 Usage: #example
+Description: "Complete mindfulness questionnaire response example"
 Title: "Complete Mindfulness Session Response"
 
 * questionnaire = "https://2rdoc.pt/fhir/Questionnaire/daily-mindfulness"
