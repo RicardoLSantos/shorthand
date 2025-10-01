@@ -5,7 +5,7 @@ Description: "Complete mindfulness session observation example"
 Title: "Complete Mindfulness Session Example"
 
 * status = #final
-* code = $SCT#285854004 "Emotion"
+// Code inherited from profile
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
@@ -13,20 +13,20 @@ Title: "Complete Mindfulness Session Example"
 * component[sessionDuration].code = $SCT#704323007 "Process duration"
 * component[sessionDuration].valueQuantity = 20 'min'
 
-* component[stressLevel].code = $SCT#725854004 "Assessment of stress level"
+// Code inherited from profile
 * component[stressLevel].valueInteger = 3
 
 * component[moodState].code = $SCT#106131003 "Mood finding"
-* component[moodState].valueCodeableConcept = $SCT#102894008 "Feeling calm"
+* component[moodState].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood#calm "Calm"
 
-* component[relaxationResponse].code = $SCT#363894002 "Relaxation therapy"
+// Code inherited from profile
 * component[relaxationResponse].valueString = "Deep breathing exercises with progressive relaxation"
 
-* component[mindfulnessType].code = $SCT#285854004 "Emotion"
-* component[mindfulnessType].valueCodeableConcept = $SCT#285854004 "Emotion"
+// Code inherited from profile
+* component[mindfulnessType].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs#meditation "Meditation"
 
 * extension[mindfulness-context].extension[location].valueString = "Home meditation room"
-* extension[mindfulness-context].extension[environment].valueCodeableConcept = #quiet "Quiet Space"
+* extension[mindfulness-context].extension[environment].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environment-type-cs#quiet "Quiet Space"
 * extension[mindfulness-context].extension[guidance].valueBoolean = true
 
 Instance: CompleteMindfulnessResponse
@@ -53,7 +53,7 @@ Title: "Complete Mindfulness Session Response"
   * linkId = "mood_assessment"
   * item[0]
     * linkId = "current_mood"
-    * answer.valueCoding = $SCT#102894008 "Feeling calm"
+    * answer.valueCoding = $SCT#112080002 "Happiness"
   * item[1]
     * linkId = "mood_intensity"
     * answer.valueInteger = 3
@@ -65,7 +65,7 @@ Title: "Complete Mindfulness Session Response"
     * answer.valueInteger = 3
   * item[1]
     * linkId = "stress_symptoms"
-    * answer[0].valueString = "Slight tension"
+    * answer[0].valueString = "Muscle tension"
 
 * item[3]
   * linkId = "relaxation"

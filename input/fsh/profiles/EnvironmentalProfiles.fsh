@@ -28,7 +28,7 @@ Id: noise-exposure-observation
 Title: "Noise Exposure Observation Profile"
 Description: "Profile for noise exposure measurements from iOS Health App"
 
-* code = $LOINC#28573-7 "Noise exposure time"
+* code = $LIFESTYLEOBS#noise-duration "Environmental noise exposure duration"
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -67,7 +67,7 @@ Id: uv-exposure-observation
 Title: "UV Exposure Observation Profile"
 Description: "Profile for UV exposure measurements from iOS Health App"
 
-* code = $LOINC#28574-5 "UV exposure"
+* code = $LIFESTYLEOBS#uv-duration "UV exposure duration"
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open

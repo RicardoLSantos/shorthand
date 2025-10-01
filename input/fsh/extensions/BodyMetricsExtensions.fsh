@@ -67,11 +67,10 @@ Description: "Standard conditions under which measurements are taken"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 
-* $SCT#307157005 "Before breakfast"
+* $SCT#255214003 "After exercise"
 * $SCT#307819006 "Post-exercise"
 * $SCT#307820000 "Wearing light clothing"
 * $SCT#255203001 "First thing in morning"
-* $SCT#410594000 "After exercise"
 * $SCT#309604004 "During rest"
 
 ValueSet: MeasurementDeviceTypeVS
@@ -111,10 +110,10 @@ Title: "Weight Measurement with Conditions Example"
 * code = $LOINC#29463-7 "Body weight"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
-* valueQuantity = 70.5 'kg'
+* valueQuantity = 70.5 'kg' "kilogram"
 
 * extension[measurement-conditions].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions"
-* extension[measurement-conditions].valueCodeableConcept = $SCT#307157005 "Before breakfast"
+* extension[measurement-conditions].valueCodeableConcept = $SCT#255214003 "After exercise"
 
 * extension[measurement-device-type].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-device-type"
 * extension[measurement-device-type].valueCodeableConcept = $SCT#5159002 "Physiologic monitoring system"

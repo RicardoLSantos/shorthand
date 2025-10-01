@@ -12,7 +12,7 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 42
+* ^count = 49
 
 // Sleep Measurements (5 codes)
 * #sleep-panel "Sleep measurement panel"
@@ -120,6 +120,9 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * #balance-assessment "Balance assessment"
   "Comprehensive balance and stability assessment"
 
+* #balance-status "Balance status"
+  "Qualitative status of balance (normal, impaired, etc.)"
+
 * #gait-assessment "Gait assessment"
   "Assessment of walking pattern and gait characteristics"
 
@@ -146,9 +149,30 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * #ovulation-status "Ovulation status"
   "Status of ovulation as measured by consumer fertility tracking device"
 
+// Device Types (2 codes)
+* #sleep-monitoring-device "Sleep monitoring device"
+  "Device for monitoring and tracking sleep patterns and sleep quality metrics"
+
+* #environmental-sensor "Environmental sensor device"
+  "Device for monitoring environmental conditions such as noise, temperature, humidity, and UV exposure"
+
 // Body Composition (1 code)
 * #body-composition-panel "Body composition measurement panel"
   "Panel for comprehensive body composition measurements from bioimpedance analysis"
+
+// Mindfulness and Relaxation (3 codes)
+* #mindfulness-session "Mindfulness practice session"
+  "A session of mindfulness meditation or practice including breathing exercises, body scans, or mindful awareness"
+
+* #relaxation-response "Relaxation response observation"
+  "Subjective observation of the relaxation response experienced during or after mindfulness or relaxation practice"
+
+* #mindfulness-type "Type of mindfulness practice"
+  "The specific type or technique of mindfulness or meditation practice performed"
+
+// Nutrition and Hydration (1 code)
+* #water-intake "Water intake volume"
+  "Daily water consumption measured in liters or milliliters"
 
 
 // ValueSet for all local lifestyle codes

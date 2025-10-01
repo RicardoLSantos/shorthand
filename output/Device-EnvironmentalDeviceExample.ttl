@@ -2,7 +2,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -12,7 +11,7 @@
   fhir:id [ fhir:v "EnvironmentalDeviceExample"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Device EnvironmentalDeviceExample</b></p><a name=\"EnvironmentalDeviceExample\"> </a><a name=\"hcEnvironmentalDeviceExample\"> </a><p><b>identifier</b>: <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/devices</code>/iPhone-ENV-001</p><p><b>status</b>: Active</p><p><b>manufacturer</b>: Apple Inc.</p><p><b>modelNumber</b>: iPhone 15 Pro</p><p><b>type</b>: <span title=\"Códigos:{http://snomed.info/sct 462242008}\">Monitor</span></p></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Device EnvironmentalDeviceExample</b></p><a name=\"EnvironmentalDeviceExample\"> </a><a name=\"hcEnvironmentalDeviceExample\"> </a><p><b>identifier</b>: <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/devices</code>/iPhone-ENV-001</p><p><b>status</b>: Active</p><p><b>manufacturer</b>: Apple Inc.</p><p><b>modelNumber</b>: iPhone 15 Pro</p><p><b>type</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs environmental-sensor}\">Environmental sensor device</span></p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:identifier ( [
      fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/devices"^^xsd:anyURI ] ;
@@ -23,10 +22,9 @@
   fhir:modelNumber [ fhir:v "iPhone 15 Pro"] ; # 
   fhir:type [
      fhir:coding ( [
-       a sct:462242008 ;
-       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "462242008" ] ;
-       fhir:display [ fhir:v "Monitor" ]
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "environmental-sensor" ] ;
+       fhir:display [ fhir:v "Environmental sensor device" ]
      ] )
   ] . # 
 

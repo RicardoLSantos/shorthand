@@ -30,7 +30,7 @@ Description: "Profile for water intake measurements"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = $LOINC#77111-4 "Water intake"
+* code = $LIFESTYLEOBS#water-intake "Water intake volume"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mL

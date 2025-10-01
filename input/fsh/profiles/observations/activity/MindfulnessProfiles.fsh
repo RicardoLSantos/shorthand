@@ -13,7 +13,7 @@ Description: "Profile for recording mindfulness practice sessions and outcomes"
 * component MS
 
 * status = #final
-* code = $SCT#285854004 "Emotion"
+* code = $LIFESTYLEOBS#mindfulness-session "Mindfulness practice session"
 * subject only Reference(Patient)
 * effectiveDateTime 1..1
 * performer only Reference(Practitioner or PractitionerRole)
@@ -39,7 +39,7 @@ Description: "Profile for recording mindfulness practice sessions and outcomes"
     * code = #min
 
 * component[stressLevel]
-  * code = $SCT#725854004 "Assessment of stress level"
+  * code = $SCT#365949003 "Health-related behavior finding"
   * value[x] only integer
   * valueInteger
     * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueInteger"
@@ -53,10 +53,10 @@ Description: "Profile for recording mindfulness practice sessions and outcomes"
   * valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood (required)
 
 * component[relaxationResponse]
-  * code = $SCT#363894002 "Relaxation therapy"
+  * code = $LIFESTYLEOBS#relaxation-response "Relaxation response observation"
   * value[x] only string
 
 * component[mindfulnessType]
-  * code = $SCT#285854004 "Emotion"
+  * code = $LIFESTYLEOBS#mindfulness-type "Type of mindfulness practice"
   * value[x] only CodeableConcept
   * valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-type (required)

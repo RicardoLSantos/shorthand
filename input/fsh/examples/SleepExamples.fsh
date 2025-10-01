@@ -61,4 +61,4 @@ Title: "Sleep Monitoring Device"
 * deviceName.type = #user-friendly-name
 * manufacturer = "HealthTech Devices"
 * modelNumber = "SQM-2024"
-* type = $SCT#706172001 "Sleep monitor"
+* type = $LIFESTYLEOBS#sleep-monitoring-device "Sleep monitoring device"

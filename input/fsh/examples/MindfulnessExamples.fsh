@@ -5,7 +5,7 @@ Description: "Mindfulness observation example"
 Title: "Example of Mindfulness Session Observation"
 
 * status = #final
-* code = $SCT#285854004 "Emotion"
+// Code inherited from profile
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T09:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
@@ -13,17 +13,17 @@ Title: "Example of Mindfulness Session Observation"
 * component[sessionDuration].code = $SCT#704323007 "Process duration"
 * component[sessionDuration].valueQuantity = 20 'min'
 
-* component[stressLevel].code = $SCT#725854004 "Assessment of stress level"
+// Code inherited from profile
 * component[stressLevel].valueInteger = 4
 
 * component[moodState].code = $SCT#106131003 "Mood finding"
-* component[moodState].valueCodeableConcept = $SCT#102894008 "Feeling calm"
+* component[moodState].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood#calm "Calm"
 
-* component[relaxationResponse].code = $SCT#363894002 "Relaxation therapy"
+// Code inherited from profile
 * component[relaxationResponse].valueString = "Deep breathing exercises helped reduce tension"
 
-* component[mindfulnessType].code = $SCT#285854004 "Emotion"
-* component[mindfulnessType].valueCodeableConcept = $SCT#285854004 "Emotion"
+// Code inherited from profile
+* component[mindfulnessType].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs#meditation "Meditation"
 
 // New example for MindfulnessQuestionnaire
 Instance: MindfulnessQuestionnaireExample
@@ -31,7 +31,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Example of Mindfulness Questionnaire"
 
-* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/mindfulness-example"
+* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/MindfulnessQuestionnaireExample"
 * status = #active
 * title = "Daily Mindfulness Assessment"
 * version = "1.0"

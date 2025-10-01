@@ -16,7 +16,7 @@ Usage: #example
 Description: "Symptom severity observation example"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = $SCT#246604007 "Symptom severity"
+* code = $SCT#162465004 "Symptom severity"
 * subject = Reference(Patient/PatientExample)
 * performer = Reference(Practitioner/PractitionerExample)
 * effectiveDateTime = "2024-03-19T10:30:00Z"

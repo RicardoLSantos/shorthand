@@ -8,11 +8,11 @@ Title: "Noise Exposure Measurement Example"
 * status = #final
 * performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = $LOINC#28573-7 "Noise exposure time"
+* code = $LIFESTYLEOBS#noise-duration "Environmental noise exposure duration"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * device = Reference(Device/iphone-example)
-* method = http://snomed.info/sct#37016008 "Automatic measurement"
+* method = http://snomed.info/sct#258104002 "Measured"
 
 * component[level]
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-avg "Environmental noise average level"
@@ -42,11 +42,11 @@ Title: "UV Exposure Measurement Example"
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = $LOINC#28574-5 "UV exposure"
+* code = $LIFESTYLEOBS#uv-duration "UV exposure duration"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T12:00:00Z"
 * device = Reference(Device/iphone-example)
-* method = http://snomed.info/sct#37016008 "Automatic measurement"
+* method = http://snomed.info/sct#258104002 "Measured"
 
 * component[index]
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-index "UV index"
@@ -77,5 +77,5 @@ Title: "Environmental Monitoring Device"
 * identifier.value = "iPhone-ENV-001"
 * manufacturer = "Apple Inc."
 * modelNumber = "iPhone 15 Pro"
-* type = $SCT#462242008 "Monitor"
+* type = $LIFESTYLEOBS#environmental-sensor "Environmental sensor device"
 * status = #active

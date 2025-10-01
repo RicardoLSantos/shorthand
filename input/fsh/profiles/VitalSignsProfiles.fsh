@@ -37,6 +37,18 @@ Description: "Profile for heart rate measurements from iOS Health App"
     recoveryHeartRate 0..1 MS and
     heartRateVariability 0..1 MS
 
+* component[restingHeartRate].code = $LOINC#40443-4 "Heart rate --resting"
+* component[restingHeartRate].valueQuantity.system = $UCUM
+* component[restingHeartRate].valueQuantity.code = #/min
+
+* component[exerciseHeartRate].code = $LOINC#55425-3 "Heart rate --during exercise"
+* component[exerciseHeartRate].valueQuantity.system = $UCUM
+* component[exerciseHeartRate].valueQuantity.code = #/min
+
+* component[recoveryHeartRate].code = $LOINC#69999-9 "Heart rate --post exercise"
+* component[recoveryHeartRate].valueQuantity.system = $UCUM
+* component[recoveryHeartRate].valueQuantity.code = #/min
+
 * component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.code = #ms
