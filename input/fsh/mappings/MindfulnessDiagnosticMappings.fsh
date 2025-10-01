@@ -7,10 +7,10 @@ Description: "Mapping of mindfulness outcomes to diagnostic codes"
 * status = #draft
 * experimental = false
 * purpose = "Map mindfulness outcomes to standard diagnostic codes"
-* sourceUri = "https://2rdoc.pt/fhir/ValueSet/mindfulness-outcome-vs"
+* sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-outcome-vs"
 * targetUri = "http://snomed.info/sct"
 
-* group[0].source = "https://2rdoc.pt/fhir/CodeSystem/mindfulness-outcome-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-outcome-cs"
 * group[0].target = "http://snomed.info/sct"
 * group[0].element[0]
   * code = #stressReduction
@@ -26,7 +26,7 @@ Description: "Mapping of mindfulness outcomes to diagnostic codes"
     * code = #248234008
     * display = "Sleep pattern"
     * equivalence = #narrower
-    * comment = "Indicates improvement in sleep quality"
+    * comment = "Indicates improvement in activity quality"
 
 * group[0].element[2]
   * code = #emotionalBalance
@@ -52,8 +52,8 @@ RuleSet: MindfulnessDiagnosticRules
 * value[x] MS
 * method MS
 
-* method from https://2rdoc.pt/fhir/ValueSet/mindfulness-diagnostic-method-vs (required)
-* code from https://2rdoc.pt/fhir/ValueSet/mindfulness-diagnostic-code-vs (required)
+* method from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-diagnostic-method-vs (required)
+* code from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-diagnostic-code-vs (required)
 
 * extension contains 
     diagnosticCertainty 0..1 MS and

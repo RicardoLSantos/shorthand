@@ -27,7 +27,7 @@ Description: "Profile for heart rate measurements from iOS Health App"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #/min
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
@@ -49,7 +49,7 @@ Description: "Profile for blood pressure measurements from iOS Health App"
 
 * code = $LOINC#85354-9 "Blood pressure panel with all children optional"
 * component 2..2 MS
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #closed
 

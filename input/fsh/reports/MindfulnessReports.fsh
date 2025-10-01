@@ -20,7 +20,7 @@ Description: "Example instance of MindfulnessProgressReport"
   * population[0]
     * code = #denominator
     * criteria.language = #text/fhirpath
-    * criteria.expression = "Observation.where(code.coding.code='711020003')"
+    * criteria.expression = "Observation.where(code.coding.code='711415009')"
   * stratifier[0]
     * code = #weekly
     * criteria.language = #text/fhirpath

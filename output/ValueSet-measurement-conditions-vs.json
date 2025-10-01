@@ -3,14 +3,15 @@
   "id" : "measurement-conditions-vs",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet measurement-conditions-vs</b></p><a name=\"measurement-conditions-vs\"> </a><a name=\"hcmeasurement-conditions-vs\"> </a><ul><li>Include estes códigos, tal como definidos em <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"http://snomed.info/id/307818003\">307818003</a></td><td>Pre-breakfast</td></tr><tr><td><a href=\"http://snomed.info/id/307819006\">307819006</a></td><td>Post-exercise</td></tr><tr><td><a href=\"http://snomed.info/id/307820000\">307820000</a></td><td>Wearing light clothing</td></tr><tr><td><a href=\"http://snomed.info/id/255203001\">255203001</a></td><td>First thing in morning</td></tr><tr><td><a href=\"http://snomed.info/id/255214005\">255214005</a></td><td>After void</td></tr><tr><td><a href=\"http://snomed.info/id/309604004\">309604004</a></td><td>During rest</td></tr></table></li></ul></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet measurement-conditions-vs</b></p><a name=\"measurement-conditions-vs\"> </a><a name=\"hcmeasurement-conditions-vs\"> </a><ul><li>Include estes códigos, tal como definidos em <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"http://snomed.info/id/307157005\">307157005</a></td><td>Before breakfast</td></tr><tr><td><a href=\"http://snomed.info/id/307819006\">307819006</a></td><td>Post-exercise</td></tr><tr><td><a href=\"http://snomed.info/id/307820000\">307820000</a></td><td>Wearing light clothing</td></tr><tr><td><a href=\"http://snomed.info/id/255203001\">255203001</a></td><td>First thing in morning</td></tr><tr><td><a href=\"http://snomed.info/id/410594000\">410594000</a></td><td>After exercise</td></tr><tr><td><a href=\"http://snomed.info/id/309604004\">309604004</a></td><td>During rest</td></tr></table></li></ul></div>"
   },
   "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/measurement-conditions-vs",
   "version" : "0.1.0",
   "name" : "MeasurementConditionsVS",
   "title" : "Measurement Conditions Value Set",
-  "status" : "draft",
-  "date" : "2025-08-20T17:48:34+01:00",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-10-01T16:36:18+01:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -20,12 +21,63 @@
     }]
   }],
   "description" : "Standard conditions under which measurements are taken",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "program"
+    },
+    "valueCodeableConcept" : {
+      "text" : "iOS Lifestyle Medicine"
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
   "compose" : {
     "include" : [{
       "system" : "http://snomed.info/sct",
       "concept" : [{
-        "code" : "307818003",
-        "display" : "Pre-breakfast"
+        "code" : "307157005",
+        "display" : "Before breakfast"
       },
       {
         "code" : "307819006",
@@ -40,8 +92,8 @@
         "display" : "First thing in morning"
       },
       {
-        "code" : "255214005",
-        "display" : "After void"
+        "code" : "410594000",
+        "display" : "After exercise"
       },
       {
         "code" : "309604004",

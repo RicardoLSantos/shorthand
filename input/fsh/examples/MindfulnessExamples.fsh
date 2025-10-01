@@ -5,25 +5,25 @@ Description: "Mindfulness observation example"
 Title: "Example of Mindfulness Session Observation"
 
 * status = #final
-* code = $SCT#711020003 "Meditation"
+* code = $SCT#285854004 "Emotion"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T09:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 
-* component[sessionDuration].code = $SCT#118682006 "Duration"
+* component[sessionDuration].code = $SCT#704323007 "Process duration"
 * component[sessionDuration].valueQuantity = 20 'min'
 
 * component[stressLevel].code = $SCT#725854004 "Assessment of stress level"
 * component[stressLevel].valueInteger = 4
 
-* component[moodState].code = $SCT#373931001 "Mood finding"
-* component[moodState].valueCodeableConcept = $SCT#130991005 "Neutral mood"
+* component[moodState].code = $SCT#106131003 "Mood finding"
+* component[moodState].valueCodeableConcept = $SCT#102894008 "Feeling calm"
 
-* component[relaxationResponse].code = $SCT#276241001 "Relaxation technique"
+* component[relaxationResponse].code = $SCT#363894002 "Relaxation therapy"
 * component[relaxationResponse].valueString = "Deep breathing exercises helped reduce tension"
 
-* component[mindfulnessType].code = $SCT#711020003 "Meditation"
-* component[mindfulnessType].valueCodeableConcept = $SCT#711020003 "Meditation"
+* component[mindfulnessType].code = $SCT#285854004 "Emotion"
+* component[mindfulnessType].valueCodeableConcept = $SCT#285854004 "Emotion"
 
 // New example for MindfulnessQuestionnaire
 Instance: MindfulnessQuestionnaireExample
@@ -31,7 +31,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Example of Mindfulness Questionnaire"
 
-* url = "https://2rdoc.pt/fhir/Questionnaire/mindfulness-example"
+* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/mindfulness-example"
 * status = #active
 * title = "Daily Mindfulness Assessment"
 * version = "1.0"

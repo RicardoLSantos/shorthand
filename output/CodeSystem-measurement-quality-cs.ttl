@@ -11,15 +11,15 @@
   fhir:id [ fhir:v "measurement-quality-cs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem measurement-quality-cs</b></p><a name=\"measurement-quality-cs\"> </a><a name=\"hcmeasurement-quality-cs\"> </a><p>Este case-sensitive sistema de código <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs</code> define o seguinte códigos:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">excellent<a name=\"measurement-quality-cs-excellent\"> </a></td><td>Excellent Quality</td><td>High quality measurement with minimal noise</td></tr><tr><td style=\"white-space:nowrap\">good<a name=\"measurement-quality-cs-good\"> </a></td><td>Good Quality</td><td>Good quality measurement with acceptable noise</td></tr><tr><td style=\"white-space:nowrap\">fair<a name=\"measurement-quality-cs-fair\"> </a></td><td>Fair Quality</td><td>Fair quality measurement with some interference</td></tr><tr><td style=\"white-space:nowrap\">poor<a name=\"measurement-quality-cs-poor\"> </a></td><td>Poor Quality</td><td>Poor quality measurement with significant interference</td></tr><tr><td style=\"white-space:nowrap\">unreliable<a name=\"measurement-quality-cs-unreliable\"> </a></td><td>Unreliable</td><td>Unreliable measurement requiring verification</td></tr></table></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem measurement-quality-cs</b></p><a name=\"measurement-quality-cs\"> </a><a name=\"hcmeasurement-quality-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">excellent<a name=\"measurement-quality-cs-excellent\"> </a></td><td>Excellent Quality</td><td>High quality measurement with minimal noise</td></tr><tr><td style=\"white-space:nowrap\">good<a name=\"measurement-quality-cs-good\"> </a></td><td>Good Quality</td><td>Good quality measurement with acceptable noise</td></tr><tr><td style=\"white-space:nowrap\">fair<a name=\"measurement-quality-cs-fair\"> </a></td><td>Fair Quality</td><td>Fair quality measurement with some interference</td></tr><tr><td style=\"white-space:nowrap\">poor<a name=\"measurement-quality-cs-poor\"> </a></td><td>Poor Quality</td><td>Poor quality measurement with significant interference</td></tr><tr><td style=\"white-space:nowrap\">unreliable<a name=\"measurement-quality-cs-unreliable\"> </a></td><td>Unreliable</td><td>Unreliable measurement requiring verification</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MeasurementQualityCS"] ; # 
   fhir:title [ fhir:v "Measurement Quality Code System"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v true] ; # 
-  fhir:date [ fhir:v "2025-08-20T17:48:34+01:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-10-01T16:36:18+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -29,6 +29,43 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Code system for measurement quality indicators"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:caseSensitive [ fhir:v true] ; # 
   fhir:content [ fhir:v "complete"] ; # 
   fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 

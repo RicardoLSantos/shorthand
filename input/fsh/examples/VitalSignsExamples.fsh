@@ -46,7 +46,7 @@ Title: "Heart Rate Monitor Device"
 * deviceName.type = #user-friendly-name
 * manufacturer = "HealthTech Devices"
 * modelNumber = "HRM-2024"
-* type = $SCT#720737000 "Pulse rate monitoring device"
+* type = $SCT#364075005 "Heart rate"
 
 Instance: DeviceBloodPressureMonitor
 InstanceOf: Device
@@ -57,4 +57,4 @@ Title: "Blood Pressure Monitor Device"
 * deviceName.type = #user-friendly-name
 * manufacturer = "HealthTech Devices"
 * modelNumber = "BPM-2024"
-* type = $SCT#43770009 "Blood pressure monitor"
+* type = $SCT#258057004 "Non-invasive blood pressure monitor"

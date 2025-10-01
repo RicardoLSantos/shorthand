@@ -11,14 +11,15 @@
   fhir:id [ fhir:v "stress-chronicity-cs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem stress-chronicity-cs</b></p><a name=\"stress-chronicity-cs\"> </a><a name=\"hcstress-chronicity-cs\"> </a><p>Este  sistema de código <code>https://2rdoc.pt/fhir/CodeSystem/stress-chronicity-cs</code> define o seguinte códigos:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">acute<a name=\"stress-chronicity-cs-acute\"> </a></td><td>Acute</td><td>Short-term stress response</td></tr><tr><td style=\"white-space:nowrap\">subacute<a name=\"stress-chronicity-cs-subacute\"> </a></td><td>Subacute</td><td>Medium-term stress response</td></tr><tr><td style=\"white-space:nowrap\">chronic<a name=\"stress-chronicity-cs-chronic\"> </a></td><td>Chronic</td><td>Long-term stress response</td></tr><tr><td style=\"white-space:nowrap\">episodic<a name=\"stress-chronicity-cs-episodic\"> </a></td><td>Episodic</td><td>Recurring stress episodes</td></tr><tr><td style=\"white-space:nowrap\">persistent<a name=\"stress-chronicity-cs-persistent\"> </a></td><td>Persistent</td><td>Continuous stress state</td></tr></table></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem stress-chronicity-cs</b></p><a name=\"stress-chronicity-cs\"> </a><a name=\"hcstress-chronicity-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">acute<a name=\"stress-chronicity-cs-acute\"> </a></td><td>Acute</td><td>Short-term stress response</td></tr><tr><td style=\"white-space:nowrap\">subacute<a name=\"stress-chronicity-cs-subacute\"> </a></td><td>Subacute</td><td>Medium-term stress response</td></tr><tr><td style=\"white-space:nowrap\">chronic<a name=\"stress-chronicity-cs-chronic\"> </a></td><td>Chronic</td><td>Long-term stress response</td></tr><tr><td style=\"white-space:nowrap\">episodic<a name=\"stress-chronicity-cs-episodic\"> </a></td><td>Episodic</td><td>Recurring stress episodes</td></tr><tr><td style=\"white-space:nowrap\">persistent<a name=\"stress-chronicity-cs-persistent\"> </a></td><td>Persistent</td><td>Continuous stress state</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "https://2rdoc.pt/fhir/CodeSystem/stress-chronicity-cs"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-chronicity-cs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "StressChronicityCS"] ; # 
   fhir:title [ fhir:v "Stress Chronicity Code System"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-08-20T17:48:34+01:00"^^xsd:dateTime] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-10-01T16:36:18+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -28,6 +29,43 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Code system for stress chronicity classification"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:content [ fhir:v "complete"] ; # 
   fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
   fhir:concept ( [

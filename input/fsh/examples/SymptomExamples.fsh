@@ -4,7 +4,7 @@ Usage: #example
 Description: "Chronic symptom observation example"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = $SCT#267036007 "Fatigue"
+* code = $SCT#84229001 "Fatigue"
 * subject = Reference(Patient/PatientExample)
 * performer = Reference(Practitioner/PractitionerExample)
 * effectiveDateTime = "2024-03-19T14:00:00Z"

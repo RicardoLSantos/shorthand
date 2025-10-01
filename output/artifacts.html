@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"16"}
-    h3,h4,h5,h6{--heading-prefix:"16.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"18"}
+    h3,h4,h5,h6{--heading-prefix:"18.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -53,6 +53,30 @@
           <p><span style="font-size:12pt;font-weight:bold">iOS Lifestyle Medicine Implementation Guide</span>
             <br/>
             <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <span title="">150</span>
+
+
+
+  <span title="">021</span>
+
+
+
+  <span title="">005</span>
+
+
+
+  <img alt="Portugal flag" src="assets/images/prt.svg" height="16" title="Portugal"/>
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+
+  <img alt="Brazil flag" src="assets/images/bra.svg" height="16" title="Brazil"/>
 
 
             </span>
@@ -81,6 +105,19 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
     <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Policies
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="data-protection-policies.html">Overview</a>
+      </li>
+      <li>
+        <a href="practitioner-identifiers.html">Practitioner IDs</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
@@ -117,7 +154,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">!!iOS Lifestyle Medicine Implementation Guide - Compilação de desenvolvimento local (v0.1.0) construída pelas ferramentas de compilação FHIR (HL7&reg; FHIR&reg; Standard). Veja o <a href='https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html'>Diretório de versões publicadas</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Compilação de desenvolvimento local (v0.1.0) construída pelas ferramentas de compilação FHIR (HL7&reg; FHIR&reg; Standard). Veja o <a href='https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html'>Diretório de versões publicadas</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -160,9 +197,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </li>
       <li>
          <a href="#11">Example: Example Instances</a>
-      </li>
-      <li>
-         <a href="#12">Other</a>
       </li>
    </ul>
 </div>
@@ -229,8 +263,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="Questionnaire-DailyMindfulnessQuestionnaire.html"
-                  title="Questionnaire/DailyMindfulnessQuestionnaire">Daily Mindfulness Questionnaire</a>
+               <a href="Questionnaire-daily-mindfulness.html"
+                  title="Questionnaire/daily-mindfulness">Daily Mindfulness Questionnaire</a>
             </td>
             <td>
 <p>Questionnaire for capturing daily mindfulness practice and associated effects</p>
@@ -238,8 +272,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Questionnaire-DailyNutritionQuestionnaire.html"
-                  title="Questionnaire/DailyNutritionQuestionnaire">Daily Nutrition Intake Questionnaire</a>
+               <a href="Questionnaire-daily-nutrition.html"
+                  title="Questionnaire/daily-nutrition">Daily Nutrition Intake Questionnaire</a>
             </td>
             <td>
 <p>Questionnaire for daily nutrition intake tracking</p>
@@ -247,11 +281,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Questionnaire-ReproductiveHealthQuestionnaire.html"
-                  title="Questionnaire/ReproductiveHealthQuestionnaire">Reproductive Health Tracking Questionnaire</a>
+               <a href="Questionnaire-social-history-health.html"
+                  title="Questionnaire/social-history-health">Reproductive Health Tracking Questionnaire</a>
             </td>
             <td>
-<p>Daily questionnaire for reproductive health tracking</p>
+<p>Daily questionnaire for social-history health tracking</p>
 </td>
          </tr>
       </tbody>
@@ -462,6 +496,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-multi-jurisdictional-consent.html"
+                  title="StructureDefinition/multi-jurisdictional-consent">Multi-Jurisdictional Healthcare Consent</a>
+            </td>
+            <td>
+<p>Consent profile supporting GDPR, HIPAA, and LGPD compliance</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-noise-exposure-observation.html"
                   title="StructureDefinition/noise-exposure-observation">Noise Exposure Observation Profile</a>
             </td>
@@ -498,20 +541,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-reproductive-observation.html"
-                  title="StructureDefinition/reproductive-observation">Reproductive Health Base Profile</a>
+               <a href="StructureDefinition-social-history-observation.html"
+                  title="StructureDefinition/social-history-observation">Reproductive Health Base Profile</a>
             </td>
             <td>
-<p>Base profile for reproductive health observations</p>
+<p>Base profile for social-history health observations</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-sleep-observation.html"
-                  title="StructureDefinition/sleep-observation">Sleep Observation Profile</a>
+               <a href="StructureDefinition-activity-observation.html"
+                  title="StructureDefinition/activity-observation">Sleep Observation Profile</a>
             </td>
             <td>
-<p>Profile for recording sleep data from iOS Health App</p>
+<p>Profile for recording activity data from iOS Health App</p>
 </td>
          </tr>
          <tr>
@@ -668,6 +711,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-data-localization.html"
+                  title="StructureDefinition/data-localization">Data Localization Requirements</a>
+            </td>
+            <td>
+<p>Specifies data localization requirements per jurisdiction</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-environmental-context.html"
                   title="StructureDefinition/environmental-context">Environmental Context Extension</a>
             </td>
@@ -700,6 +752,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Composite measure of physiological balance and adaptation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-jurisdiction-applicability.html"
+                  title="StructureDefinition/jurisdiction-applicability">Jurisdiction Applicability</a>
+            </td>
+            <td>
+<p>Specifies which jurisdictions this consent applies to</p>
 </td>
          </tr>
          <tr>
@@ -866,11 +927,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-sleep-quality.html"
-                  title="StructureDefinition/sleep-quality">Sleep Quality Extension</a>
+               <a href="StructureDefinition-regulatory-basis.html"
+                  title="StructureDefinition/regulatory-basis">Regulatory Basis for Consent</a>
             </td>
             <td>
-<p>Extension for recording subjective sleep quality</p>
+<p>Identifies the regulatory framework(s) that govern this consent</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-activity-quality.html"
+                  title="StructureDefinition/activity-quality">Sleep Quality Extension</a>
+            </td>
+            <td>
+<p>Extension for recording subjective activity quality</p>
 </td>
          </tr>
          <tr>
@@ -979,8 +1049,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-cervical-mucus-valueset.html"
-                  title="ValueSet/cervical-mucus-valueset">Cervical Mucus Value Set</a>
+               <a href="ValueSet-cervical-mucus-vs.html"
+                  title="ValueSet/cervical-mucus-vs">Cervical Mucus Value Set</a>
             </td>
             <td>
 <p>Value set for cervical mucus observations</p>
@@ -1050,11 +1120,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-fertility-status-valueset.html"
-                  title="ValueSet/fertility-status-valueset">Fertility Status Value Set</a>
+               <a href="ValueSet-fertility-status-vs.html"
+                  title="ValueSet/fertility-status-vs">Fertility Status Value Set</a>
             </td>
             <td>
 <p>Value set for fertility status</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-lifestyle-observation-vs.html"
+                  title="ValueSet/lifestyle-observation-vs">Lifestyle Medicine Observation Value Set</a>
+            </td>
+            <td>
+<p>Value set containing all local lifestyle medicine observation codes</p>
 </td>
          </tr>
          <tr>
@@ -1174,8 +1253,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-ovulation-test-valueset.html"
-                  title="ValueSet/ovulation-test-valueset">Ovulation Test Value Set</a>
+               <a href="ValueSet-ovulation-test-vs.html"
+                  title="ValueSet/ovulation-test-vs">Ovulation Test Value Set</a>
             </td>
             <td>
 <p>Value set for ovulation test results</p>
@@ -1201,20 +1280,38 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-reproductive-activity-vs.html"
-                  title="ValueSet/reproductive-activity-vs">Reproductive Health Activities Value Set</a>
+               <a href="ValueSet-practitioner-identifier-vs.html"
+                  title="ValueSet/practitioner-identifier-vs">Practitioner Identifier Value Set</a>
             </td>
             <td>
-<p>Activities related to reproductive health monitoring</p>
+<p>Value set para identificadores de practitioners</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-reproductive-goal-vs.html"
-                  title="ValueSet/reproductive-goal-vs">Reproductive Health Goals Value Set</a>
+               <a href="ValueSet-regulatory-framework-vs.html"
+                  title="ValueSet/regulatory-framework-vs">Regulatory Framework Value Set</a>
             </td>
             <td>
-<p>Goals related to reproductive health tracking and planning</p>
+<p>Regulatory frameworks for healthcare data protection</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-social-history-activity-vs.html"
+                  title="ValueSet/social-history-activity-vs">Reproductive Health Activities Value Set</a>
+            </td>
+            <td>
+<p>Activities related to social-history health monitoring</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-social-history-goal-vs.html"
+                  title="ValueSet/social-history-goal-vs">Reproductive Health Goals Value Set</a>
+            </td>
+            <td>
+<p>Goals related to social-history health tracking and planning</p>
 </td>
          </tr>
          <tr>
@@ -1227,19 +1324,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-sleep-quality-extended-vs.html"
-                  title="ValueSet/sleep-quality-extended-vs">Sleep Quality Value Set</a>
+               <a href="ValueSet-activity-quality-extended-vs.html"
+                  title="ValueSet/activity-quality-extended-vs">Sleep Quality Value Set</a>
             </td>
             <td>
-<p>Extended value set for sleep quality assessment</p>
+<p>Extended value set for activity quality assessment</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-sleep-quality-vs.html" title="ValueSet/sleep-quality-vs">Sleep Quality Value Set</a>
+               <a href="ValueSet-activity-quality-vs.html"
+                  title="ValueSet/activity-quality-vs">Sleep Quality Value Set</a>
             </td>
             <td>
-<p>Qualitative assessments of sleep quality including subjective measures</p>
+<p>Qualitative assessments of activity quality including subjective measures</p>
 </td>
          </tr>
          <tr>
@@ -1453,6 +1551,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-lifestyle-observation-cs.html"
+                  title="CodeSystem/lifestyle-observation-cs">Lifestyle Medicine Observation Codes</a>
+            </td>
+            <td>
+<p>Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-measurement-quality-cs.html"
                   title="CodeSystem/measurement-quality-cs">Measurement Quality Code System</a>
             </td>
@@ -1542,11 +1649,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="CodeSystem-reproductive-activity-cs.html"
-                  title="CodeSystem/reproductive-activity-cs">Reproductive Health Activities Code System</a>
+               <a href="CodeSystem-practitioner-identifier-cs.html"
+                  title="CodeSystem/practitioner-identifier-cs">Practitioner Identifier Code System</a>
             </td>
             <td>
-<p>Code system for reproductive health monitoring activities</p>
+<p>Sistema de códigos para identificação de practitioners</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-regulatory-framework-cs.html"
+                  title="CodeSystem/regulatory-framework-cs">Regulatory Framework Code System</a>
+            </td>
+            <td>
+<p>Codes for healthcare regulatory frameworks</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-social-history-activity-cs.html"
+                  title="CodeSystem/social-history-activity-cs">Reproductive Health Activities Code System</a>
+            </td>
+            <td>
+<p>Code system for social-history health monitoring activities</p>
 </td>
          </tr>
          <tr>
@@ -1828,8 +1953,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="MessageDefinition-EndSessionMessage.html"
-                  title="MessageDefinition/EndSessionMessage">End Session Message</a>
+               <a href="MessageDefinition-end-session.html"
+                  title="MessageDefinition/end-session">End Session Message</a>
             </td>
             <td>
 <p>Message definition for ending a mindfulness session</p>
@@ -1944,6 +2069,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Consent-MindfulnessAccessPolicy.html"
+                  title="Consent/MindfulnessAccessPolicy">MindfulnessAccessPolicy</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Consent-MindfulnessSecurityDefinition.html"
+                  title="Consent/MindfulnessSecurityDefinition">MindfulnessSecurityDefinition</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-NoiseExposureExample.html"
                   title="Observation/NoiseExposureExample">Noise Exposure Measurement Example</a>
             </td>
@@ -1953,10 +2096,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Organization-Org2RDoc.html" title="Organization/Org2RDoc">Org2RDoc</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Patient-PatientExample.html" title="Patient/PatientExample">PatientExample</a>
             </td>
             <td>
 <p>Patient resource example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-PatientMindfulness.html"
+                  title="Patient/PatientMindfulness">PatientMindfulness</a>
+            </td>
+            <td>
+
 </td>
          </tr>
          <tr>
@@ -1995,8 +2155,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="MessageDefinition-StartSessionMessage.html"
-                  title="MessageDefinition/StartSessionMessage">Start Session Message</a>
+               <a href="MessageDefinition-start-session.html"
+                  title="MessageDefinition/start-session">Start Session Message</a>
             </td>
             <td>
 <p>Message definition for starting a mindfulness session</p>
@@ -2073,30 +2233,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Weight with conditions observation example</p>
 </td>
          </tr>
-      </tbody>
-   </table>
-   <a name="12"> </a>
-   <h3>Other </h3>
-    <p>These are resources that are used within this implementation guide that do not fit into one of the other categories.</p>
-<table class="grid">
-      <col style="width:20%"/>
-      <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="Consent-MindfulnessAccessPolicy.html"
-                  title="Consent/MindfulnessAccessPolicy">Mindfulness Data Access Policy</a>
+               <a href="Patient-example.html" title="Patient/example">example</a>
             </td>
             <td>
-<p>Mindfulness data access consent example</p>
+
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Consent-MindfulnessSecurityDefinition.html"
-                  title="Consent/MindfulnessSecurityDefinition">Mindfulness Data Security Policy</a>
+               <a href="Device-iphone-example.html" title="Device/iphone-example">iPhone Device Example</a>
             </td>
             <td>
-<p>Mindfulness security consent example</p>
+<p>Example iPhone device for iOS Health App data collection</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-osa-practitioner-kyle-anydoc.html"
+                  title="Practitioner/osa-practitioner-kyle-anydoc">osa-practitioner-kyle-anydoc</a>
+            </td>
+            <td>
+
 </td>
          </tr>
       </tbody>
@@ -2119,7 +2278,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Aug 20, 2025 17:49+0100">2025-08-20</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 1, 2025 16:37+0100">2025-10-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

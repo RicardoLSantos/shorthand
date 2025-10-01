@@ -11,13 +11,13 @@
   fhir:id [ fhir:v "nutrition-data-source-cs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem nutrition-data-source-cs</b></p><a name=\"nutrition-data-source-cs\"> </a><a name=\"hcnutrition-data-source-cs\"> </a><p>Este case-sensitive sistema de código <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-data-source-cs</code> define o seguinte códigos:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">manual<a name=\"nutrition-data-source-cs-manual\"> </a></td><td>Manual Entry</td><td>Data entered manually by user</td></tr><tr><td style=\"white-space:nowrap\">app<a name=\"nutrition-data-source-cs-app\"> </a></td><td>App Integration</td><td>Data from integrated third-party apps</td></tr><tr><td style=\"white-space:nowrap\">device<a name=\"nutrition-data-source-cs-device\"> </a></td><td>Connected Device</td><td>Data from connected nutrition tracking devices</td></tr><tr><td style=\"white-space:nowrap\">questionnaire<a name=\"nutrition-data-source-cs-questionnaire\"> </a></td><td>Questionnaire Response</td><td>Data collected through questionnaires</td></tr></table></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem nutrition-data-source-cs</b></p><a name=\"nutrition-data-source-cs\"> </a><a name=\"hcnutrition-data-source-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">manual<a name=\"nutrition-data-source-cs-manual\"> </a></td><td>Manual Entry</td><td>Data entered manually by user</td></tr><tr><td style=\"white-space:nowrap\">app<a name=\"nutrition-data-source-cs-app\"> </a></td><td>App Integration</td><td>Data from integrated third-party apps</td></tr><tr><td style=\"white-space:nowrap\">device<a name=\"nutrition-data-source-cs-device\"> </a></td><td>Connected Device</td><td>Data from connected nutrition tracking devices</td></tr><tr><td style=\"white-space:nowrap\">questionnaire<a name=\"nutrition-data-source-cs-questionnaire\"> </a></td><td>Questionnaire Response</td><td>Data collected through questionnaires</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-data-source-cs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "NutritionDataSourceCS"] ; # 
   fhir:title [ fhir:v "Nutrition Data Source Code System"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
   fhir:date [ fhir:v "2024-12-14"^^xsd:date] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
@@ -29,6 +29,53 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Code system for nutrition data sources"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "program" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "iOS Lifestyle Medicine" ]
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:caseSensitive [ fhir:v true] ; # 
   fhir:content [ fhir:v "complete"] ; # 
   fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 

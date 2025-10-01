@@ -6,7 +6,7 @@ Title: "Stress Level Measurement Example"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
-* code = $LOINC#89592-0 "Stress level score"
+* code = $LOINC#64394-0 "PhenX - perceived stress protocol 180801"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-01-03T15:30:00Z"
 * valueQuantity = 7 '{score}' "score"

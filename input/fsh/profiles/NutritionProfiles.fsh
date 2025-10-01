@@ -14,7 +14,7 @@ Description: "Profile for nutrition intake data from iOS Health App and user inp
 
 * status MS
 * category 1..1 MS
-* category = http://terminology.hl7.org/CodeSystem/observation-category#nutrition
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * code 1..1 MS
@@ -46,7 +46,7 @@ Description: "Profile for caloric intake measurements"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = $LOINC#9051-4 "Caloric intake total"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#caloric-intake "Total caloric intake"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #kcal
@@ -62,8 +62,8 @@ Description: "Profile for macronutrient intake measurements"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = $LOINC#LP199119-9 "Macronutrients panel"
-* component ^slicing.discriminator.type = #pattern
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#macronutrients-panel "Macronutrients intake panel"
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
@@ -72,17 +72,17 @@ Description: "Profile for macronutrient intake measurements"
     proteins 0..1 MS and
     fats 0..1 MS
 
-* component[carbohydrates].code = $LOINC#LP35925-4 "Carbohydrates"
+* component[carbohydrates].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#carbohydrate-intake "Carbohydrate intake"
 * component[carbohydrates].valueQuantity.system = $UCUM
 * component[carbohydrates].valueQuantity.code = #g
 * component[carbohydrates].valueQuantity.unit = "gram"
 
-* component[proteins].code = $LOINC#LP35921-3 "Proteins" 
+* component[proteins].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#protein-intake "Protein intake" 
 * component[proteins].valueQuantity.system = $UCUM
 * component[proteins].valueQuantity.code = #g
 * component[proteins].valueQuantity.unit = "gram"
 
-* component[fats].code = $LOINC#LP35922-1 "Fats"
+* component[fats].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#fat-intake "Fat intake"
 * component[fats].valueQuantity.system = $UCUM
 * component[fats].valueQuantity.code = #g
 * component[fats].valueQuantity.unit = "gram"

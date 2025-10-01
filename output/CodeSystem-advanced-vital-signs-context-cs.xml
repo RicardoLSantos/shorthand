@@ -3,15 +3,15 @@
 <CodeSystem xmlns="http://hl7.org/fhir">
   <id value="advanced-vital-signs-context-cs"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: CodeSystem advanced-vital-signs-context-cs</b></p><a name="advanced-vital-signs-context-cs"> </a><a name="hcadvanced-vital-signs-context-cs"> </a><p>Este case-sensitive sistema de código <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs</code> define o seguinte códigos:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style="white-space:nowrap">resting<a name="advanced-vital-signs-context-cs-resting"> </a></td><td>Resting state</td><td>Measurement taken during rest</td></tr><tr><td style="white-space:nowrap">active<a name="advanced-vital-signs-context-cs-active"> </a></td><td>Active state</td><td>Measurement taken during activity</td></tr><tr><td style="white-space:nowrap">recovery<a name="advanced-vital-signs-context-cs-recovery"> </a></td><td>Recovery state</td><td>Measurement taken during recovery</td></tr><tr><td style="white-space:nowrap">sleep<a name="advanced-vital-signs-context-cs-sleep"> </a></td><td>Sleep state</td><td>Measurement taken during sleep</td></tr><tr><td style="white-space:nowrap">stress<a name="advanced-vital-signs-context-cs-stress"> </a></td><td>Stress state</td><td>Measurement taken during stress</td></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: CodeSystem advanced-vital-signs-context-cs</b></p><a name="advanced-vital-signs-context-cs"> </a><a name="hcadvanced-vital-signs-context-cs"> </a><p>Este  sistema de código  define o seguinte código:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style="white-space:nowrap">resting<a name="advanced-vital-signs-context-cs-resting"> </a></td><td>Resting state</td><td>Measurement taken during rest</td></tr><tr><td style="white-space:nowrap">active<a name="advanced-vital-signs-context-cs-active"> </a></td><td>Active state</td><td>Measurement taken during activity</td></tr><tr><td style="white-space:nowrap">recovery<a name="advanced-vital-signs-context-cs-recovery"> </a></td><td>Recovery state</td><td>Measurement taken during recovery</td></tr><tr><td style="white-space:nowrap">activity<a name="advanced-vital-signs-context-cs-activity"> </a></td><td>Sleep state</td><td>Measurement taken during activity</td></tr><tr><td style="white-space:nowrap">stress<a name="advanced-vital-signs-context-cs-stress"> </a></td><td>Stress state</td><td>Measurement taken during stress</td></tr></table></div>
   </text>
   <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs"/>
   <version value="0.1.0"/>
   <name value="AdvancedVitalSignsContextCS"/>
   <title value="Advanced Vital Signs Context Code System"/>
-  <status value="draft"/>
+  <status value="active"/>
   <experimental value="true"/>
-  <date value="2025-08-20T17:48:34+01:00"/>
+  <date value="2025-10-01T16:36:18+01:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -21,6 +21,48 @@
     </telecom>
   </contact>
   <description value="Codes for advanced vital signs measurement context"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
   <caseSensitive value="true"/>
   <content value="complete"/>
   <count value="5"/>
@@ -40,9 +82,9 @@
     <definition value="Measurement taken during recovery"/>
   </concept>
   <concept>
-    <code value="sleep"/>
+    <code value="activity"/>
     <display value="Sleep state"/>
-    <definition value="Measurement taken during sleep"/>
+    <definition value="Measurement taken during activity"/>
   </concept>
   <concept>
     <code value="stress"/>

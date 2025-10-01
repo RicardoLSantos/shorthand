@@ -13,13 +13,13 @@ Description: "Profile for recording stress level measurements from iOS Health Ap
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code 1..1 MS
-* code = $LOINC#89592-0 "Stress level score"
+* code = $LOINC#64394-0 "PhenX - perceived stress protocol 180801"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * value[x] only Quantity
 * valueQuantity MS
 
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
@@ -30,23 +30,23 @@ Description: "Profile for recording stress level measurements from iOS Health Ap
     impact 0..1 MS
 
 * component[physiologicalStress]
-  * code = $LOINC#89593-8 "Physiological stress"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-physiological "Physiological stress indicator"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #{score}
 
 * component[psychologicalStress]
-  * code = $LOINC#89594-6 "Psychological stress"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-psychological "Psychological stress score"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #{score}
 
 * component[chronicity]
-  * code = $LOINC#89595-3 "Stress chronicity"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-chronicity "Stress chronicity assessment"
   * valueCodeableConcept from StressChronicityVS (required)
 
 * component[impact]
-  * code = $LOINC#89596-1 "Stress impact"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-impact "Stress impact assessment"
   * valueCodeableConcept from StressImpactVS (required)
 
 * extension contains

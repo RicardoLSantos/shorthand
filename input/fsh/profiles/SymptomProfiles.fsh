@@ -8,7 +8,7 @@ Description: "Questionnaire template for symptom assessments"
 * title MS
 * item MS
 
-* item ^slicing.discriminator.type = #pattern
+* item ^slicing.discriminator.type = #value
 * item ^slicing.discriminator.path = "linkId"
 * item ^slicing.rules = #open
 

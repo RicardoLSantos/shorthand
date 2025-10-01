@@ -2,7 +2,15 @@
   "package": "iOS-Lifestyle-Medicine",
   "version": "0.1.0",
   "fhirVersion": "4.0.1",
+  "jurisdiction": "150",
   "extensions": [
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality",
+      "title": "Sleep Quality Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
     {
       "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs-context",
       "title": "Advanced Vital Signs Context Extension",
@@ -92,6 +100,65 @@
       ]
     },
     {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-localization",
+      "title": "Data Localization Requirements",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "boolean",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
       "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-context",
       "title": "Environmental Context Extension",
       "types": [
@@ -124,6 +191,13 @@
         "string",
         "uri",
         "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/jurisdiction-applicability",
+      "title": "Jurisdiction Applicability",
+      "types": [
+        "CodeableConcept"
       ]
     },
     {
@@ -371,8 +445,8 @@
       ]
     },
     {
-      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-quality",
-      "title": "Sleep Quality Extension",
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/regulatory-basis",
+      "title": "Regulatory Basis for Consent",
       "types": [
         "CodeableConcept"
       ]
@@ -460,6 +534,12 @@
         "title": "Mobility Risk Assessment Profile"
       }
     ],
+    "Consent": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent",
+        "title": "Multi-Jurisdictional Healthcare Consent"
+      }
+    ],
     "Questionnaire": [
       {
         "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire",
@@ -522,6 +602,9 @@
     "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
       "StructureDefinition.snapshot"
     ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality": [
+      "Observation"
+    ],
     "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-message": [
       "Basic"
     ],
@@ -536,6 +619,12 @@
     ],
     "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-retention": [
       "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-localization": [
+      "Consent"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/jurisdiction-applicability": [
+      "Consent"
     ],
     "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions": [
       "Observation"
@@ -573,8 +662,8 @@
     "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session-duration": [
       "Basic"
     ],
-    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-quality": [
-      "Observation"
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/regulatory-basis": [
+      "Consent"
     ],
     "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-activity": [
       "Observation"

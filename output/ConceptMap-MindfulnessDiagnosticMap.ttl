@@ -11,14 +11,14 @@
   fhir:id [ fhir:v "MindfulnessDiagnosticMap"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap MindfulnessDiagnosticMap</b></p><a name=\"MindfulnessDiagnosticMap\"> </a><a name=\"hcMindfulnessDiagnosticMap\"> </a><p>Mapeamento de https://2rdoc.pt/fhir/ValueSet/mindfulness-outcome-vs para <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">http://snomed.info/sct</a></p><br/><p><b>Grupo 1 </b>Mapeamento de <code>https://2rdoc.pt/fhir/CodeSystem/mindfulness-outcome-cs</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>stressReduction</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>73595000 (Stress)</td><td>Indicates reduction in stress levels</td></tr><tr><td>improvedSleep</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>248234008 (Sleep pattern)</td><td>Indicates improvement in sleep quality</td></tr><tr><td>emotionalBalance</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>285854004 (Emotional state)</td><td>Maps to emotional state finding</td></tr><tr><td>increasedAwareness</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>736253002 (Mental state, behavior and/or psychosocial functioning)</td><td>General improvement in mental state</td></tr></table></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap MindfulnessDiagnosticMap</b></p><a name=\"MindfulnessDiagnosticMap\"> </a><a name=\"hcMindfulnessDiagnosticMap\"> </a><p>Mapeamento de <a href=\"ValueSet-mindfulness-outcome-vs.html\">Mindfulness Outcomes Value Set</a> para <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">http://snomed.info/sct</a></p><br/><p><b>Grupo 1 </b>Mapeamento de <a href=\"CodeSystem-mindfulness-outcome-cs.html\">Mindfulness Outcomes</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>stressReduction</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>73595000 (Stress)</td><td>Indicates reduction in stress levels</td></tr><tr><td>improvedSleep</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>248234008 (Sleep pattern)</td><td>Indicates improvement in activity quality</td></tr><tr><td>emotionalBalance</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>285854004 (Emotional state)</td><td>Maps to emotional state finding</td></tr><tr><td>increasedAwareness</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>736253002 (Mental state, behavior and/or psychosocial functioning)</td><td>General improvement in mental state</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/MindfulnessDiagnosticMap"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:title [ fhir:v "Mindfulness Diagnostic Mappings"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-08-20T17:48:34+01:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-10-01T16:36:18+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -28,17 +28,54 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Mapping of mindfulness outcomes to diagnostic codes"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:purpose [ fhir:v "Map mindfulness outcomes to standard diagnostic codes"] ; # 
   fhir:source [
      a fhir:uri ;
-     fhir:v "https://2rdoc.pt/fhir/ValueSet/mindfulness-outcome-vs"^^xsd:anyURI
+     fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-outcome-vs"^^xsd:anyURI
   ] ; # 
   fhir:target [
      a fhir:uri ;
      fhir:v "http://snomed.info/sct"^^xsd:anyURI
   ] ; # 
   fhir:group ( [
-     fhir:source [ fhir:v "https://2rdoc.pt/fhir/CodeSystem/mindfulness-outcome-cs"^^xsd:anyURI ] ;
+     fhir:source [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-outcome-cs"^^xsd:anyURI ] ;
      fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
      fhir:element ( [
        fhir:code [ fhir:v "stressReduction" ] ;
@@ -54,7 +91,7 @@
          fhir:code [ fhir:v "248234008" ] ;
          fhir:display [ fhir:v "Sleep pattern" ] ;
          fhir:equivalence [ fhir:v "narrower" ] ;
-         fhir:comment [ fhir:v "Indicates improvement in sleep quality" ]
+         fhir:comment [ fhir:v "Indicates improvement in activity quality" ]
        ] )
      ] [
        fhir:code [ fhir:v "emotionalBalance" ] ;

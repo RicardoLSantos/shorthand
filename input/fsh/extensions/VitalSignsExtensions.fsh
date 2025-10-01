@@ -2,6 +2,7 @@ Extension: MeasurementContext
 Id: measurement-context
 Title: "Measurement Context Extension"
 Description: "Additional context about the vital sign measurement"
+* ^experimental = false
 * value[x] only CodeableConcept
 * valueCodeableConcept from MeasurementContextVS (required)
 
@@ -11,4 +12,4 @@ Description: "Value set for measurement context in vital signs observations"Titl
 * $SCT#255214003 "At rest"
 * $SCT#309604004 "During exercise"
 * $SCT#309605003 "Post exercise"
-* $SCT#248626006 "During sleep"
+* $SCT#410534003 "During exercise"

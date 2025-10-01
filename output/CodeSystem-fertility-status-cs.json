@@ -3,14 +3,15 @@
   "id" : "fertility-status-cs",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem fertility-status-cs</b></p><a name=\"fertility-status-cs\"> </a><a name=\"hcfertility-status-cs\"> </a><p>Este case-sensitive sistema de código <code>https://2rdoc.pt/fhir/CodeSystem/fertility-status-cs</code> define o seguinte códigos:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td style=\"white-space:nowrap\">fertile<a name=\"fertility-status-cs-fertile\"> </a></td><td>Fertile</td></tr><tr><td style=\"white-space:nowrap\">notFertile<a name=\"fertility-status-cs-notFertile\"> </a></td><td>Not Fertile</td></tr><tr><td style=\"white-space:nowrap\">uncertain<a name=\"fertility-status-cs-uncertain\"> </a></td><td>Uncertain</td></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem fertility-status-cs</b></p><a name=\"fertility-status-cs\"> </a><a name=\"hcfertility-status-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td style=\"white-space:nowrap\">fertile<a name=\"fertility-status-cs-fertile\"> </a></td><td>Fertile</td></tr><tr><td style=\"white-space:nowrap\">notFertile<a name=\"fertility-status-cs-notFertile\"> </a></td><td>Not Fertile</td></tr><tr><td style=\"white-space:nowrap\">uncertain<a name=\"fertility-status-cs-uncertain\"> </a></td><td>Uncertain</td></tr></table></div>"
   },
-  "url" : "https://2rdoc.pt/fhir/CodeSystem/fertility-status-cs",
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs",
   "version" : "0.1.0",
   "name" : "FertilityStatusCodeSystem",
   "title" : "Fertility Status Code System",
   "status" : "active",
-  "date" : "2025-08-20T17:48:34+01:00",
+  "experimental" : false,
+  "date" : "2025-10-01T16:36:18+01:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -20,6 +21,57 @@
     }]
   }],
   "description" : "Code system for fertility status indicators",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "program"
+    },
+    "valueCodeableConcept" : {
+      "text" : "iOS Lifestyle Medicine"
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 3,

@@ -1,6 +1,18 @@
 {
   "codeSystems" : [
     {
+      "url" : "http://dicom.nema.org/resources/ontology/DCM",
+      "version" : "2022.4.20221006",
+      "status" : "active",
+      "name" : "DICOMTerminologyDefinitions",
+      "title" : "DICOM Controlled Terminology Definitions",
+      "description" : "DICOM Code Definitions (Coding Scheme Designator \"DCM\" Coding Scheme Version 2022.4.20221006",
+      "oids" : ["1.2.840.10008.2.16.4"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
+    },
+    {
       "url" : "http://hl7.org/fhir/abstract-types",
       "version" : "4.0.1",
       "status" : "active",
@@ -22,6 +34,42 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R4/valueset-binding-strength.html" : "BindingStrength"
+    },
+    {
+      "url" : "http://hl7.org/fhir/consent-data-meaning",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ConsentDataMeaning",
+      "title" : "ConsentDataMeaning",
+      "description" : "How a resource reference is interpreted when testing consent restrictions.",
+      "oids" : ["2.16.840.1.113883.4.642.4.760"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-consent-data-meaning.html" : "ConsentDataMeaning"
+    },
+    {
+      "url" : "http://hl7.org/fhir/consent-provision-type",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ConsentProvisionType",
+      "title" : "ConsentProvisionType",
+      "description" : "How a rule statement is applied, such as adding additional consent or removing consent.",
+      "oids" : ["2.16.840.1.113883.4.642.4.758"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-consent-provision-type.html" : "ConsentProvisionType"
+    },
+    {
+      "url" : "http://hl7.org/fhir/consent-state-codes",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ConsentState",
+      "title" : "ConsentState",
+      "description" : "Indicates the state of the consent.",
+      "oids" : ["2.16.840.1.113883.4.642.4.756"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-consent-state-codes.html" : "ConsentState"
     },
     {
       "url" : "http://hl7.org/fhir/data-types",
@@ -199,6 +247,7 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R4/valueset-all-types.html" : "FHIRAllTypes",
+      "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class",
       "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType"
     },
     {
@@ -223,10 +272,12 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
-      "ValueSet-reproductive-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "http://hl7.org/fhir/R4/valueset-consent-category.html" : "Consent Category Codes",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "http://hl7.org/fhir/R4/valueset-consent-content-code.html" : "Consent Content Codes",
+      "http://hl7.org/fhir/R4/valueset-questionnaire-questions.html" : "Questionnaire Question Codes",
       "http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html" : "Vital Signs",
-      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes",
-      "http://hl7.org/fhir/R4/valueset-questionnaire-questions.html" : "Questionnaire Question Codes"
+      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes"
     },
     {
       "url" : "http://snomed.info/sct",
@@ -238,24 +289,24 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
+      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "http://hl7.org/fhir/R4/valueset-questionnaire-answers.html" : "Questionnaire Answer Codes",
+      "ValueSet-activity-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
       "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
-      "ValueSet-sleep-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
+      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
       "ValueSet-time-of-day-vs.html" : "Time of Day Value Set",
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
+      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
       "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
       "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
-      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
-      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
+      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
       "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
-      "ValueSet-reproductive-goal-vs.html" : "Reproductive Health Goals Value Set",
-      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
-      "ValueSet-sleep-quality-vs.html" : "Sleep Quality Value Set",
-      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
-      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
-      "http://hl7.org/fhir/R4/valueset-questionnaire-answers.html" : "Questionnaire Answer Codes",
       "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
-      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
-      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures"
+      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/basic-resource-type",
@@ -270,6 +321,66 @@
       "http://hl7.org/fhir/R4/valueset-basic-resource-type.html" : "Basic Resource Types"
     },
     {
+      "url" : "http://terminology.hl7.org/CodeSystem/consentaction",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ConsentActionCodes",
+      "title" : "Consent Action Codes",
+      "description" : "This value set includes sample Consent Action codes.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1227"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-consent-action.html" : "Consent Action Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ConsentCategoryCodes",
+      "title" : "Consent Category Codes",
+      "description" : "This value set includes sample Consent Directive Type codes, including several consent directive related LOINC codes; HL7 VALUE SET: ActConsentType(2.16.840.1.113883.1.11.19897); examples of US realm consent directive legal descriptions and references to online and/or downloadable forms such as the SSA-827 Authorization to Disclose Information to the Social Security Administration; and other anticipated consent directives related to participation in a clinical trial, medical procedures, reproductive procedures; health care directive (Living Will); advance directive, do not resuscitate (DNR); Physician Orders for Life-Sustaining Treatment (POLST)",
+      "oids" : ["2.16.840.1.113883.4.642.1.1226"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-consent-category.html" : "Consent Category Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/consentpolicycodes",
+      "version" : "3.0.1",
+      "status" : "active",
+      "name" : "ConsentPolicyRuleCodes",
+      "title" : "Consent PolicyRule Codes",
+      "description" : "This value set includes sample Regulatory consent policy types from the US and other regions.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1229"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-consent-policy.html" : "Consent PolicyRule Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/consentscope",
+      "version" : "2.0.1",
+      "status" : "active",
+      "name" : "ConsentScopeCodes",
+      "title" : "Consent Scope Codes",
+      "description" : "This value set includes the four Consent scope codes.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1228"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-consent-scope.html" : "Consent Scope Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/contractsignertypecodes",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ContractSignerTypeCodes",
+      "title" : "Contract Signer Type Codes",
+      "description" : "This value set includes sample Contract Signer Type codes.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1201"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
+    },
+    {
       "url" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
       "version" : "1.0.0",
       "status" : "active",
@@ -280,6 +391,17 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R4/valueset-data-absent-reason.html" : "DataAbsentReason"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/extra-security-role-type",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "SecurityRoleType",
+      "title" : "Security Role Type",
+      "description" : "This CodeSystem contains Additional FHIR-defined Security Role types not defined elsewhere",
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -318,6 +440,18 @@
       "http://hl7.org/fhir/R4/valueset-risk-probability.html" : "Risk Probability"
     },
     {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "version" : "3.1.0",
+      "status" : "active",
+      "name" : "ActReason",
+      "title" : "ActReason",
+      "description" : "A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type \"has reason\" linking to another Act.\r\n\r\n*Examples:* Example reasons that might qualify for being coded in this field might be: \"routine requirement\", \"infectious disease reporting requirement\", \"on patient request\", \"required by law\".",
+      "oids" : ["2.16.840.1.113883.5.8"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/6.5.0/ValueSet-v3-PurposeOfUse.html" : "PurposeOfUse"
+    },
+    {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
       "version" : "3.0.0",
       "status" : "active",
@@ -342,6 +476,54 @@
       "http://hl7.org/fhir/R4/valueset-observation-interpretation.html" : "Observation Interpretation Codes"
     },
     {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "ParticipationFunction",
+      "title" : "ParticipationFunction",
+      "description" : "This code is used to specify the exact function an actor had in a service in all necessary detail. This domain may include local extensions (CWE).",
+      "oids" : ["2.16.840.1.113883.5.88"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "ParticipationType",
+      "title" : "ParticipationType",
+      "description" : "A code specifying the meaning and purpose of every Participation instance. Each of its values implies specific constraints on the Roles undertaking the participation.",
+      "oids" : ["2.16.840.1.113883.5.90"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleClass",
+      "version" : "4.0.0",
+      "status" : "active",
+      "name" : "RoleClass",
+      "title" : "RoleClass",
+      "description" : "Codes for the Role class hierarchy. The values in this hierarchy, represent a Role which is an association or relationship between two entities - the entity that plays the role and the entity that scopes the role. Roles names are derived from the name of the playing entity in that role.\r\n\r\nThe role hierarchy stems from three core concepts, or abstract domains:\r\n\r\n *  **RoleClassOntological** is an abstract domain that collects roles in which the playing entity is defined or specified by the scoping entity.\r\n *  **RoleClassPartitive** collects roles in which the playing entity is in some sense a \"part\" of the scoping entity.\r\n *  **RoleClassAssociative** collects all of the remaining forms of association between the playing entity and the scoping entity. This set of roles is further partitioned between:\r\n    \r\n     *  **RoleClassPassive** which are roles in which the playing entity is used, known, treated, handled, built, or destroyed, etc. under the auspices of the scoping entity. The playing entity is passive in these roles in that the role exists without an agreement from the playing entity.\r\n     *  **RoleClassMutualRelationship** which are relationships based on mutual behavior of the two entities. The basis of these relationship may be formal agreements or they may be *de facto* behavior. Thus, this sub-domain is further divided into:\r\n        \r\n         *  **RoleClassRelationshipFormal** in which the relationship is formally defined, frequently by a contract or agreement.\r\n         *  **Personal relationship** which inks two people in a personal relationship.\r\n\r\nThe hierarchy discussed above is represented In the current vocabulary tables as a set of abstract domains, with the exception of the \"Personal relationship\" which is a leaf concept.\r\n\r\n*OpenIssue:* Description copied from Concept Domain of same name. Must be verified.",
+      "oids" : ["2.16.840.1.113883.5.110"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "RoleCode",
+      "title" : "RoleCode",
+      "description" : "A set of codes further specifying the kind of Role; specific classification codes for further qualifying RoleClass codes.",
+      "oids" : ["2.16.840.1.113883.5.111"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
+    },
+    {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
       "version" : "3.0.0",
       "status" : "active",
@@ -363,12 +545,23 @@
       "oids" : ["2.16.840.1.113883.6.8"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime",
+      "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units",
       "ValueSet-duration-units-vs.html" : "Duration Units Value Set",
-      "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units"
+      "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime"
     },
     {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/audit-formats",
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AdvancedVitalSignsContextCS",
+      "title" : "Advanced Vital Signs Context Code System",
+      "description" : "Codes for advanced vital signs measurement context",
+      "uses" : {
+      },
+      "ValueSet-advanced-vital-signs-context-vs.html" : "Advanced Vital Signs Context Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-formats",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "AuditFormatsCodeSystem",
@@ -379,7 +572,7 @@
       "ValueSet-audit-formats.html" : "Audit Formats Value Set"
     },
     {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/audit-levels",
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-levels",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "AuditLevelsCodeSystem",
@@ -390,7 +583,7 @@
       "ValueSet-audit-levels.html" : "Audit Levels Value Set"
     },
     {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/balance-status",
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/balance-status",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "BalanceStatusCodeSystem",
@@ -401,7 +594,7 @@
       "ValueSet-balance-status.html" : "Balance Status Value Set"
     },
     {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/cervical-mucus-cs",
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cervical-mucus-cs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "CervicalMucusCodeSystem",
@@ -409,67 +602,12 @@
       "description" : "Code system for cervical mucus classification",
       "uses" : {
       },
-      "ValueSet-cervical-mucus-valueset.html" : "Cervical Mucus Value Set"
-    },
-    {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/fertility-status-cs",
-      "version" : "0.1.0",
-      "status" : "active",
-      "name" : "FertilityStatusCodeSystem",
-      "title" : "Fertility Status Code System",
-      "description" : "Code system for fertility status indicators",
-      "uses" : {
-      },
-      "ValueSet-fertility-status-valueset.html" : "Fertility Status Value Set"
-    },
-    {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/ovulation-test-cs",
-      "version" : "0.1.0",
-      "status" : "active",
-      "name" : "OvulationTestCodeSystem",
-      "title" : "Ovulation Test Code System",
-      "description" : "Code system for ovulation test results",
-      "uses" : {
-      },
-      "ValueSet-ovulation-test-valueset.html" : "Ovulation Test Value Set"
-    },
-    {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/stress-chronicity-cs",
-      "version" : "0.1.0",
-      "status" : "draft",
-      "name" : "StressChronicityCS",
-      "title" : "Stress Chronicity Code System",
-      "description" : "Code system for stress chronicity classification",
-      "uses" : {
-      },
-      "ValueSet-stress-chronicity-vs.html" : "Stress Chronicity Value Set"
-    },
-    {
-      "url" : "https://2rdoc.pt/fhir/CodeSystem/stress-impact-cs",
-      "version" : "0.1.0",
-      "status" : "draft",
-      "name" : "StressImpactCS",
-      "title" : "Stress Impact Code System",
-      "description" : "Code system for stress impact levels",
-      "uses" : {
-      },
-      "ValueSet-stress-impact-vs.html" : "Stress Impact Value Set"
-    },
-    {
-      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs",
-      "version" : "0.1.0",
-      "status" : "draft",
-      "name" : "AdvancedVitalSignsContextCS",
-      "title" : "Advanced Vital Signs Context Code System",
-      "description" : "Codes for advanced vital signs measurement context",
-      "uses" : {
-      },
-      "ValueSet-advanced-vital-signs-context-vs.html" : "Advanced Vital Signs Context Value Set"
+      "ValueSet-cervical-mucus-vs.html" : "Cervical Mucus Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "CircadianPhaseCS",
       "title" : "Circadian Phase Code System",
       "description" : "Code system for circadian rhythm phases",
@@ -480,7 +618,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environment-type-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "EnvironmentTypeCS",
       "title" : "Practice Environment Types",
       "description" : "Types of environments for mindfulness practice",
@@ -491,7 +629,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "ExposureConditionsCS",
       "title" : "Exposure Conditions Code System",
       "description" : "Code system for conditions during environmental exposure",
@@ -502,7 +640,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-location-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "ExposureLocationCS",
       "title" : "Exposure Location Code System",
       "description" : "Code system for environmental exposure locations",
@@ -511,9 +649,31 @@
       "ValueSet-exposure-location-vs.html" : "Exposure Location Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FertilityStatusCodeSystem",
+      "title" : "Fertility Status Code System",
+      "description" : "Code system for fertility status indicators",
+      "uses" : {
+      },
+      "ValueSet-fertility-status-vs.html" : "Fertility Status Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "LifestyleObservationCS",
+      "title" : "Lifestyle Medicine Observation Codes",
+      "description" : "Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist.",
+      "uses" : {
+      },
+      "ValueSet-lifestyle-observation-vs.html" : "Lifestyle Medicine Observation Value Set"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "MeasurementQualityCS",
       "title" : "Measurement Quality Code System",
       "description" : "Code system for measurement quality indicators",
@@ -524,18 +684,19 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-outcome-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "MindfulnessOutcomeCS",
       "title" : "Mindfulness Outcomes",
       "description" : "Outcomes and effects of mindfulness practice",
       "uses" : {
       },
-      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set"
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-qualifier-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "MindfulnessQualifierCS",
       "title" : "Mindfulness Practice Qualifiers",
       "description" : "Qualifiers for mindfulness practice characteristics",
@@ -546,7 +707,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "MindfulnessTypeCS",
       "title" : "Mindfulness Practice Types",
       "description" : "Types of mindfulness practices and techniques",
@@ -568,7 +729,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-data-source-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "NutritionDataSourceCS",
       "title" : "Nutrition Data Source Code System",
       "description" : "Code system for nutrition data sources",
@@ -577,20 +738,42 @@
       "ValueSet-nutrition-data-source-vs.html" : "Nutrition Data Source Value Set"
     },
     {
-      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/reproductive-activity-cs",
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs",
       "version" : "0.1.0",
       "status" : "active",
-      "name" : "ReproductiveActivityCS",
-      "title" : "Reproductive Health Activities Code System",
-      "description" : "Code system for reproductive health monitoring activities",
+      "name" : "OvulationTestCodeSystem",
+      "title" : "Ovulation Test Code System",
+      "description" : "Code system for ovulation test results",
       "uses" : {
       },
-      "ValueSet-reproductive-activity-vs.html" : "Reproductive Health Activities Value Set"
+      "ValueSet-ovulation-test-vs.html" : "Ovulation Test Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/practitioner-identifier-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "PractitionerIdentifierCS",
+      "title" : "Practitioner Identifier Code System",
+      "description" : "Sistema de códigos para identificação de practitioners",
+      "uses" : {
+      },
+      "ValueSet-practitioner-identifier-vs.html" : "Practitioner Identifier Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/regulatory-framework-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "RegulatoryFrameworkCS",
+      "title" : "Regulatory Framework Code System",
+      "description" : "Codes for healthcare regulatory frameworks",
+      "uses" : {
+      },
+      "ValueSet-regulatory-framework-vs.html" : "Regulatory Framework Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-activity-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SocialActivityCS",
       "title" : "Social Activity Code System",
       "description" : "Code system for types of social activities",
@@ -601,7 +784,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-context-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SocialContextCS",
       "title" : "Social Context Code System",
       "description" : "Code system for social interaction contexts",
@@ -610,9 +793,20 @@
       "ValueSet-social-context-vs.html" : "Social Context Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-history-activity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ReproductiveActivityCS",
+      "title" : "Reproductive Health Activities Code System",
+      "description" : "Code system for social-history health monitoring activities",
+      "uses" : {
+      },
+      "ValueSet-social-history-activity-vs.html" : "Reproductive Health Activities Value Set"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-medium-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SocialInteractionMediumCS",
       "title" : "Social Interaction Medium Code System",
       "description" : "Mediums through which social interaction occurs",
@@ -623,7 +817,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-quality-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SocialInteractionQualityCS",
       "title" : "Social Interaction Quality Code System",
       "description" : "Quality measures for social interactions",
@@ -634,7 +828,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-type-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SocialInteractionTypeCS",
       "title" : "Social Interaction Type Code System",
       "description" : "Types of social interactions",
@@ -645,7 +839,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SocialSupportCS",
       "title" : "Social Support Code System",
       "description" : "Code system for levels of social support",
@@ -654,9 +848,20 @@
       "ValueSet-social-support-vs.html" : "Social Support Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-chronicity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "StressChronicityCS",
+      "title" : "Stress Chronicity Code System",
+      "description" : "Code system for stress chronicity classification",
+      "uses" : {
+      },
+      "ValueSet-stress-chronicity-vs.html" : "Stress Chronicity Value Set"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-coping-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "StressCopingCS",
       "title" : "Stress Coping Code System",
       "description" : "Code system for stress coping mechanisms",
@@ -665,9 +870,20 @@
       "ValueSet-stress-coping-vs.html" : "Stress Coping Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-impact-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "StressImpactCS",
+      "title" : "Stress Impact Code System",
+      "description" : "Code system for stress impact levels",
+      "uses" : {
+      },
+      "ValueSet-stress-impact-vs.html" : "Stress Impact Value Set"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-triggers-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "StressTriggersCS",
       "title" : "Stress Triggers Code System",
       "description" : "Code system for common stress triggers",
@@ -678,7 +894,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/symptom-frequency-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SymptomFrequencyCS",
       "title" : "Symptom Frequency Code System",
       "description" : "Frequency patterns for symptoms",
@@ -689,7 +905,7 @@
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/symptom-impact-cs",
       "version" : "0.1.0",
-      "status" : "draft",
+      "status" : "active",
       "name" : "SymptomImpactCS",
       "title" : "Symptom Impact Code System",
       "description" : "Impact levels of symptoms on daily activities",
@@ -723,11 +939,11 @@
     },
     {
       "url" : "urn:iso:std:iso:3166:-2",
-      "version" : "2013-11",
-      "status" : "retired",
-      "name" : "Iso3166_2",
-      "title" : "ISO 3166 Part 2 Country Subdivision Codes",
-      "description" : "Identifies the coding system published in the ISO 3166-2 Standard for Country Subdivision codes. This standard is released periodically, and a new OID will be assigned by ISO for new editions.",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ISO3166Part2",
+      "title" : "ISO 3166-2 Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code",
+      "description" : "ISO 3166-2 establishes a code that represents the names of the principal administrative divisions, or similar areas, of the countries and entities included in ISO 3166-1.",
       "oids" : ["1.0.3166.2"],
       "uses" : {
       },

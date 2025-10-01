@@ -11,14 +11,15 @@
   fhir:id [ fhir:v "mood"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mood</b></p><a name=\"mood\"> </a><a name=\"hcmood\"> </a><p>Este case-sensitive sistema de código <code>https://2rdoc.pt/fhir/CodeSystem/mood</code> define o seguinte códigos:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">elevated<a name=\"mood-elevated\"> </a></td><td>Elevated</td><td>Mood is higher than normal</td></tr><tr><td style=\"white-space:nowrap\">neutral<a name=\"mood-neutral\"> </a></td><td>Neutral</td><td>Neither elevated nor depressed mood</td></tr><tr><td style=\"white-space:nowrap\">depressed<a name=\"mood-depressed\"> </a></td><td>Depressed</td><td>Mood is lower than normal</td></tr><tr><td style=\"white-space:nowrap\">anxious<a name=\"mood-anxious\"> </a></td><td>Anxious</td><td>Feeling worried or nervous</td></tr><tr><td style=\"white-space:nowrap\">irritable<a name=\"mood-irritable\"> </a></td><td>Irritable</td><td>Easily annoyed or angered</td></tr><tr><td style=\"white-space:nowrap\">calm<a name=\"mood-calm\"> </a></td><td>Calm</td><td>Feeling peaceful and relaxed</td></tr></table></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mood</b></p><a name=\"mood\"> </a><a name=\"hcmood\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">elevated<a name=\"mood-elevated\"> </a></td><td>Elevated</td><td>Mood is higher than normal</td></tr><tr><td style=\"white-space:nowrap\">neutral<a name=\"mood-neutral\"> </a></td><td>Neutral</td><td>Neither elevated nor depressed mood</td></tr><tr><td style=\"white-space:nowrap\">depressed<a name=\"mood-depressed\"> </a></td><td>Depressed</td><td>Mood is lower than normal</td></tr><tr><td style=\"white-space:nowrap\">anxious<a name=\"mood-anxious\"> </a></td><td>Anxious</td><td>Feeling worried or nervous</td></tr><tr><td style=\"white-space:nowrap\">irritable<a name=\"mood-irritable\"> </a></td><td>Irritable</td><td>Easily annoyed or angered</td></tr><tr><td style=\"white-space:nowrap\">calm<a name=\"mood-calm\"> </a></td><td>Calm</td><td>Feeling peaceful and relaxed</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "https://2rdoc.pt/fhir/CodeSystem/mood"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MoodCodeSystem"] ; # 
   fhir:title [ fhir:v "Mood Code System"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2025-08-20T17:48:34+01:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-10-01T16:36:18+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -28,6 +29,53 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Code system for mood states"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "program" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "iOS Lifestyle Medicine" ]
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:caseSensitive [ fhir:v true] ; # 
   fhir:content [ fhir:v "complete"] ; # 
   fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 

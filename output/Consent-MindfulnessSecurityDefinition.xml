@@ -3,13 +3,14 @@
 <Consent xmlns="http://hl7.org/fhir">
   <id value="MindfulnessSecurityDefinition"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Consent MindfulnessSecurityDefinition</b></p><a name="MindfulnessSecurityDefinition"> </a><a name="hcMindfulnessSecurityDefinition"> </a><p><b>status</b>: Active</p><p><b>scope</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/consentscope patient-privacy}">Privacy Consent</span></p><p><b>category</b>: <span title="Códigos:{http://loinc.org 59284-0}">Consent Document</span></p><h3>Policies</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Authority</b></td><td><b>Uri</b></td></tr><tr><td style="display: none">*</td><td><a href="https://2rdoc.pt/ig/ios-lifestyle-medicine/privacy-policy">https://2rdoc.pt/ig/ios-lifestyle-medicine/privacy-policy</a></td><td><a href="https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-privacy">https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-privacy</a></td></tr></table><blockquote><p><b>provision</b></p><p><b>type</b>: Opt In</p><p><b>period</b>: 2024-03-19 --&gt; (em curso)</p><h3>Actors</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType PRCP}">primary information recipient</span></td><td>Identifier: <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/practitioners</code>/mindfulness-practitioners</td></tr></table></blockquote></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Consent MindfulnessSecurityDefinition</b></p><a name="MindfulnessSecurityDefinition"> </a><a name="hcMindfulnessSecurityDefinition"> </a><p><b>status</b>: Active</p><p><b>scope</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/consentscope patient-privacy}">Privacy Consent</span></p><p><b>category</b>: <span title="Códigos:{http://loinc.org 59284-0}">Consent Document</span></p><p><b>patient</b>: <a href="Patient-PatientMindfulness.html">Test Mindfulness  Other, DoB: 1980-01-01 ( http://example.org/patients#mindfulness-patient)</a></p><p><b>dateTime</b>: 2024-01-01</p><p><b>organization</b>: <a href="Organization-Org2RDoc.html">Organization 2RDoc Healthcare Solutions</a></p><h3>Policies</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Authority</b></td><td><b>Uri</b></td></tr><tr><td style="display: none">*</td><td><a href="http://terminology.hl7.org/6.5.0/CodeSystem-consentpolicycodes.html">http://terminology.hl7.org/CodeSystem/consentpolicycodes</a></td><td><a href="http://terminology.hl7.org/6.5.0/CodeSystem-consentpolicycodes.html">http://terminology.hl7.org/CodeSystem/consentpolicycodes</a></td></tr></table><blockquote><p><b>provision</b></p><p><b>type</b>: Opt In</p><p><b>period</b>: 2024-01-01 --&gt; 2025-12-31</p><h3>Actors</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/v3-RoleCode PRO}">healthcare provider</span></td><td>Identifier: 1234567890</td></tr></table><p><b>securityLabel</b>: <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-Confidentiality.html#v3-Confidentiality-N">Confidentiality N</a>: normal</p><p><b>purpose</b>: <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-ActReason.html#v3-ActReason-TREAT">ActReason TREAT</a>: treatment</p><p><b>dataPeriod</b>: 2024-01-01 --&gt; 2025-12-31</p></blockquote></div>
   </text>
   <status value="active"/>
   <scope>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
       <code value="patient-privacy"/>
+      <display value="Privacy Consent"/>
     </coding>
   </scope>
   <category>
@@ -19,28 +20,50 @@
       <display value="Consent Document"/>
     </coding>
   </category>
+  <patient>
+    <reference value="Patient/PatientMindfulness"/>
+  </patient>
+  <dateTime value="2024-01-01"/>
+  <organization>
+    <reference value="Organization/Org2RDoc"/>
+  </organization>
   <policy>
-    <authority value="https://2rdoc.pt/ig/ios-lifestyle-medicine/privacy-policy"/>
-    <uri value="https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-privacy"/>
+    <authority value="http://terminology.hl7.org/CodeSystem/consentpolicycodes"/>
+    <uri value="http://terminology.hl7.org/CodeSystem/consentpolicycodes"/>
   </policy>
   <provision>
     <type value="permit"/>
     <period>
-      <start value="2024-03-19"/>
+      <start value="2024-01-01"/>
+      <end value="2025-12-31"/>
     </period>
     <actor>
       <role>
         <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-          <code value="PRCP"/>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+          <code value="PRO"/>
+          <display value="healthcare provider"/>
         </coding>
       </role>
       <reference>
         <identifier>
-          <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/practitioners"/>
-          <value value="mindfulness-practitioners"/>
+          <value value="1234567890"/>
         </identifier>
       </reference>
     </actor>
+    <securityLabel>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
+      <code value="N"/>
+      <display value="normal"/>
+    </securityLabel>
+    <purpose>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="TREAT"/>
+      <display value="treatment"/>
+    </purpose>
+    <dataPeriod>
+      <start value="2024-01-01"/>
+      <end value="2025-12-31"/>
+    </dataPeriod>
   </provision>
 </Consent>

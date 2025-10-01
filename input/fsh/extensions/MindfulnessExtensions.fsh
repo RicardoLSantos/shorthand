@@ -20,7 +20,7 @@ Description: "Additional context about the mindfulness practice session"
 * extension[location] ^definition = "The physical location where the mindfulness practice took place"
 
 * extension[environment].value[x] only CodeableConcept
-* extension[environment].valueCodeableConcept from https://2rdoc.pt/fhir/ValueSet/environment-type (required)
+* extension[environment].valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environment-type (required)
 * extension[environment] ^short = "Environmental conditions"
 * extension[environment] ^definition = "The environmental conditions during the practice session"
 

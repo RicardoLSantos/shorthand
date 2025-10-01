@@ -2,6 +2,7 @@ Extension: SocialContext
 Id: social-context
 Title: "Social Context Extension"
 Description: "Extension for recording the context of social interaction"
+* ^experimental = false
 * value[x] only CodeableConcept
 * valueCodeableConcept from SocialContextVS (required)
 
@@ -9,6 +10,7 @@ Extension: SocialSupport
 Id: social-support
 Title: "Social Support Extension"
 Description: "Extension for recording perceived social support"
+* ^experimental = false
 * value[x] only CodeableConcept
 * valueCodeableConcept from SocialSupportVS (required)
 
@@ -16,6 +18,7 @@ Extension: SocialActivity
 Id: social-activity
 Title: "Social Activity Extension"
 Description: "Extension for recording specific social activities"
+* ^experimental = false
 * value[x] only CodeableConcept
 * valueCodeableConcept from SocialActivityVS (required)
 
@@ -23,24 +26,28 @@ ValueSet: SocialContextVS
 Id: social-context-vs
 Title: "Social Context Value Set"
 Description: "Value set for social interaction contexts"
+* ^experimental = false
 * codes from system SocialContextCS
 
 ValueSet: SocialSupportVS
 Id: social-support-vs
 Title: "Social Support Value Set"
 Description: "Value set for levels of social support"
+* ^experimental = false
 * codes from system SocialSupportCS
 
 ValueSet: SocialActivityVS
 Id: social-activity-vs
 Title: "Social Activity Value Set"
 Description: "Value set for types of social activities"
+* ^experimental = false
 * codes from system SocialActivityCS
 
 CodeSystem: SocialContextCS
 Id: social-context-cs
 Title: "Social Context Code System"
 Description: "Code system for social interaction contexts"
+* ^experimental = false
 * #home "Home" "Home environment"
 * #work "Work" "Work environment"
 * #education "Educational" "Educational setting"
@@ -52,6 +59,7 @@ CodeSystem: SocialSupportCS
 Id: social-support-cs
 Title: "Social Support Code System"
 Description: "Code system for levels of social support"
+* ^experimental = false
 * #strong "Strong Support" "Strong social support network"
 * #adequate "Adequate Support" "Sufficient social support"
 * #limited "Limited Support" "Limited social support"
@@ -62,6 +70,7 @@ CodeSystem: SocialActivityCS
 Id: social-activity-cs
 Title: "Social Activity Code System"
 Description: "Code system for types of social activities"
+* ^experimental = false
 * #meal "Shared Meal" "Sharing a meal together"
 * #exercise "Group Exercise" "Group physical activity"
 * #entertainment "Entertainment" "Shared entertainment activity"

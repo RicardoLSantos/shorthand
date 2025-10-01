@@ -18,7 +18,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation CompleteMindfulnessSession</b></p><a name=\"CompleteMindfulnessSession\"> </a><a name=\"hcCompleteMindfulnessSession\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-mindfulness-observation.html\">Mindfulness Session Observation</a></p></div><blockquote><p><b>Mindfulness Session Context</b></p><ul><li>location: Home meditation room</li><li>environment: <span title=\"Códigos:\">Quiet Space</span></li><li>guidance: true</li></ul></blockquote><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 118682006}\">Duration</span></p><p><b>value</b>: 20 min<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 725854004}\">Assessment of stress level</span></p><p><b>value</b>: 3</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 373931001}\">Mood finding</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 130991005}\">Neutral mood</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 276241001}\">Relaxation technique</span></p><p><b>value</b>: Deep breathing exercises with progressive relaxation</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 711020003}\">Meditation</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 711020003}\">Meditation</span></p></blockquote></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation CompleteMindfulnessSession</b></p><a name=\"CompleteMindfulnessSession\"> </a><a name=\"hcCompleteMindfulnessSession\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-mindfulness-observation.html\">Mindfulness Session Observation</a></p></div><blockquote><p><b>Mindfulness Session Context</b></p><ul><li>location: Home meditation room</li><li>environment: <span title=\"Códigos:\">Quiet Space</span></li><li>guidance: true</li></ul></blockquote><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 285854004}\">Emotion</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 704323007}\">Process duration</span></p><p><b>value</b>: 20 min<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 725854004}\">Assessment of stress level</span></p><p><b>value</b>: 3</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 106131003}\">Mood finding</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 102894008}\">Feeling calm</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 363894002}\">Relaxation therapy</span></p><p><b>value</b>: Deep breathing exercises with progressive relaxation</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 285854004}\">Emotion</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 285854004}\">Emotion</span></p></blockquote></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:extension ( [
      fhir:extension ( [
@@ -48,10 +48,10 @@
   fhir:status [ fhir:v "final"] ; # 
   fhir:code [
      fhir:coding ( [
-       a sct:711020003 ;
+       a sct:285854004 ;
        fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "711020003" ] ;
-       fhir:display [ fhir:v "Meditation" ]
+       fhir:code [ fhir:v "285854004" ] ;
+       fhir:display [ fhir:v "Emotion" ]
      ] )
   ] ; # 
   fhir:subject [
@@ -69,10 +69,10 @@
   fhir:component ( [
      fhir:code [
        fhir:coding ( [
-         a sct:118682006 ;
+         a sct:704323007 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "118682006" ] ;
-         fhir:display [ fhir:v "Duration" ]
+         fhir:code [ fhir:v "704323007" ] ;
+         fhir:display [ fhir:v "Process duration" ]
        ] )
      ] ;
      fhir:value [
@@ -97,28 +97,28 @@
   ] [
      fhir:code [
        fhir:coding ( [
-         a sct:373931001 ;
+         a sct:106131003 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "373931001" ] ;
+         fhir:code [ fhir:v "106131003" ] ;
          fhir:display [ fhir:v "Mood finding" ]
        ] )
      ] ;
      fhir:value [
        a fhir:CodeableConcept ;
        fhir:coding ( [
-         a sct:130991005 ;
+         a sct:102894008 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "130991005" ] ;
-         fhir:display [ fhir:v "Neutral mood" ]
+         fhir:code [ fhir:v "102894008" ] ;
+         fhir:display [ fhir:v "Feeling calm" ]
        ] )
      ]
   ] [
      fhir:code [
        fhir:coding ( [
-         a sct:276241001 ;
+         a sct:363894002 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "276241001" ] ;
-         fhir:display [ fhir:v "Relaxation technique" ]
+         fhir:code [ fhir:v "363894002" ] ;
+         fhir:display [ fhir:v "Relaxation therapy" ]
        ] )
      ] ;
      fhir:value [
@@ -128,19 +128,19 @@
   ] [
      fhir:code [
        fhir:coding ( [
-         a sct:711020003 ;
+         a sct:285854004 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "711020003" ] ;
-         fhir:display [ fhir:v "Meditation" ]
+         fhir:code [ fhir:v "285854004" ] ;
+         fhir:display [ fhir:v "Emotion" ]
        ] )
      ] ;
      fhir:value [
        a fhir:CodeableConcept ;
        fhir:coding ( [
-         a sct:711020003 ;
+         a sct:285854004 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "711020003" ] ;
-         fhir:display [ fhir:v "Meditation" ]
+         fhir:code [ fhir:v "285854004" ] ;
+         fhir:display [ fhir:v "Emotion" ]
        ] )
      ]
   ] ) . # 

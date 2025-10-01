@@ -13,13 +13,13 @@ Description: "Profile for recording social interaction data from iOS Health App"
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = $LOINC#96766-1 "Social interaction pattern"
+* code = $LOINC#76506-5 "Social connection and isolation panel"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * value[x] only CodeableConcept
 * valueCodeableConcept from SocialInteractionTypeVS (required)
 
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
@@ -30,21 +30,21 @@ Description: "Profile for recording social interaction data from iOS Health App"
     participants 0..1 MS
 
 * component[duration]
-  * code = $LOINC#89597-9 "Social interaction duration"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-duration "Social interaction duration"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #min
 
 * component[quality]
-  * code = $LOINC#89598-7 "Social interaction quality"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-quality "Social interaction quality score"
   * valueCodeableConcept from SocialInteractionQualityVS (required)
 
 * component[medium]
-  * code = $LOINC#89599-5 "Social interaction medium"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-medium "Social interaction medium"
   * valueCodeableConcept from SocialInteractionMediumVS (required)
 
 * component[participants]
-  * code = $LOINC#89600-1 "Social interaction participants"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-count "Number of social interactions"
   * valueInteger only integer
 
 * extension contains

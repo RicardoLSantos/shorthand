@@ -5,6 +5,16 @@ Description: "Extension for recording location of environmental exposure measure
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
@@ -20,6 +30,16 @@ Description: "Additional conditions during environmental exposure measurement"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
@@ -34,6 +54,16 @@ Description: "Value set for environmental exposure locations"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^experimental = true
 * codes from system ExposureLocationCS
 
@@ -44,6 +74,16 @@ Description: "Value set for environmental exposure conditions"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^experimental = true
 * codes from system ExposureConditionsCS
 
@@ -54,6 +94,16 @@ Description: "Code system for environmental exposure locations"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
 * ^experimental = true
 
@@ -72,6 +122,16 @@ Description: "Code system for conditions during environmental exposure"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
 * ^experimental = true
 

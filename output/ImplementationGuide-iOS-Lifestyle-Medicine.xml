@@ -9,8 +9,9 @@
   <version value="0.1.0"/>
   <name value="iOS_Lifestyle_Medicine_HEADS2_FMUP"/>
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
-  <status value="draft"/>
-  <date value="2025-08-20T17:48:34+01:00"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-10-01T16:36:18+01:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -19,6 +20,48 @@
       <value value="https://linktr.ee/ricardolsantos"/>
     </telecom>
   </contact>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
   <packageId value="iOS-Lifestyle-Medicine"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -37,6 +80,16 @@
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
     <version value="5.2.0"/>
+  </dependsOn>
+  <dependsOn id="ihe_iti_pcf">
+    <uri value="https://profiles.ihe.net/ITI/PCF/ImplementationGuide/ihe.iti.pcf"/>
+    <packageId value="ihe.iti.pcf"/>
+    <version value="1.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_ips">
+    <uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
+    <packageId value="hl7.fhir.uv.ips"/>
+    <version value="1.1.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -240,7 +293,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools.r4#0.7.1"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.8.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -777,7 +830,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/cervical-mucus-valueset"/>
+        <reference value="ValueSet/cervical-mucus-vs"/>
       </reference>
       <name value="Cervical Mucus Value Set"/>
       <description value="Value set for cervical mucus observations"/>
@@ -875,7 +928,7 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/DailyMindfulnessQuestionnaire"/>
+        <reference value="Questionnaire/daily-mindfulness"/>
       </reference>
       <name value="Daily Mindfulness Questionnaire"/>
       <description value="Questionnaire for capturing daily mindfulness practice and associated effects"/>
@@ -886,7 +939,7 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/DailyNutritionQuestionnaire"/>
+        <reference value="Questionnaire/daily-nutrition"/>
       </reference>
       <name value="Daily Nutrition Intake Questionnaire"/>
       <description value="Questionnaire for daily nutrition intake tracking"/>
@@ -902,6 +955,17 @@
       <name value="Daily Nutrition Questionnaire Response Example"/>
       <description value="Nutrition questionnaire response example"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/data-localization"/>
+      </reference>
+      <name value="Data Localization Requirements"/>
+      <description value="Specifies data localization requirements per jurisdiction"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -941,7 +1005,7 @@
         <valueString value="MessageDefinition"/>
       </extension>
       <reference>
-        <reference value="MessageDefinition/EndSessionMessage"/>
+        <reference value="MessageDefinition/end-session"/>
       </reference>
       <name value="End Session Message"/>
       <description value="Message definition for ending a mindfulness session"/>
@@ -1015,6 +1079,16 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/example"/>
+      </reference>
+      <name value="example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Basic"/>
       </extension>
       <reference>
@@ -1055,7 +1129,7 @@
       </reference>
       <name value="Example of Sleep Record"/>
       <description value="Sleep observation example"/>
-      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-observation"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1194,7 +1268,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/fertility-status-valueset"/>
+        <reference value="ValueSet/fertility-status-vs"/>
       </reference>
       <name value="Fertility Status Value Set"/>
       <description value="Value set for fertility status"/>
@@ -1274,6 +1348,50 @@
       </reference>
       <name value="Homeostasis Index Extension"/>
       <description value="Composite measure of physiological balance and adaptation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/iphone-example"/>
+      </reference>
+      <name value="iPhone Device Example"/>
+      <description value="Example iPhone device for iOS Health App data collection"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/jurisdiction-applicability"/>
+      </reference>
+      <name value="Jurisdiction Applicability"/>
+      <description value="Specifies which jurisdictions this consent applies to"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/lifestyle-observation-cs"/>
+      </reference>
+      <name value="Lifestyle Medicine Observation Codes"/>
+      <description value="Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/lifestyle-observation-vs"/>
+      </reference>
+      <name value="Lifestyle Medicine Observation Value Set"/>
+      <description value="Value set containing all local lifestyle medicine observation codes"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1483,28 +1601,6 @@
       </reference>
       <name value="Mindfulness Configuration"/>
       <description value="Configuration settings for mindfulness sessions"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Consent"/>
-      </extension>
-      <reference>
-        <reference value="Consent/MindfulnessAccessPolicy"/>
-      </reference>
-      <name value="Mindfulness Data Access Policy"/>
-      <description value="Mindfulness data access consent example"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Consent"/>
-      </extension>
-      <reference>
-        <reference value="Consent/MindfulnessSecurityDefinition"/>
-      </reference>
-      <name value="Mindfulness Data Security Policy"/>
-      <description value="Mindfulness security consent example"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1750,6 +1846,26 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/MindfulnessAccessPolicy"/>
+      </reference>
+      <name value="MindfulnessAccessPolicy"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/MindfulnessSecurityDefinition"/>
+      </reference>
+      <name value="MindfulnessSecurityDefinition"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="SearchParameter"/>
       </extension>
       <reference>
@@ -1849,6 +1965,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/multi-jurisdictional-consent"/>
+      </reference>
+      <name value="Multi-Jurisdictional Healthcare Consent"/>
+      <description value="Consent profile supporting GDPR, HIPAA, and LGPD compliance"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -1915,6 +2042,26 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/Org2RDoc"/>
+      </reference>
+      <name value="Org2RDoc"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/osa-practitioner-kyle-anydoc"/>
+      </reference>
+      <name value="osa-practitioner-kyle-anydoc"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -1929,7 +2076,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/ovulation-test-valueset"/>
+        <reference value="ValueSet/ovulation-test-vs"/>
       </reference>
       <name value="Ovulation Test Value Set"/>
       <description value="Value set for ovulation test results"/>
@@ -1955,6 +2102,16 @@
       </reference>
       <name value="PatientExample"/>
       <description value="Patient resource example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientMindfulness"/>
+      </reference>
+      <name value="PatientMindfulness"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -2014,6 +2171,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/practitioner-identifier-cs"/>
+      </reference>
+      <name value="Practitioner Identifier Code System"/>
+      <description value="Sistema de códigos para identificação de practitioners"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/practitioner-identifier-vs"/>
+      </reference>
+      <name value="Practitioner Identifier Value Set"/>
+      <description value="Value set para identificadores de practitioners"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Practitioner"/>
       </extension>
       <reference>
@@ -2036,13 +2215,24 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/regulatory-basis"/>
+      </reference>
+      <name value="Regulatory Basis for Consent"/>
+      <description value="Identifies the regulatory framework(s) that govern this consent"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/reproductive-activity-cs"/>
+        <reference value="CodeSystem/regulatory-framework-cs"/>
       </reference>
-      <name value="Reproductive Health Activities Code System"/>
-      <description value="Code system for reproductive health monitoring activities"/>
+      <name value="Regulatory Framework Code System"/>
+      <description value="Codes for healthcare regulatory frameworks"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2050,10 +2240,32 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/reproductive-activity-vs"/>
+        <reference value="ValueSet/regulatory-framework-vs"/>
+      </reference>
+      <name value="Regulatory Framework Value Set"/>
+      <description value="Regulatory frameworks for healthcare data protection"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/social-history-activity-cs"/>
+      </reference>
+      <name value="Reproductive Health Activities Code System"/>
+      <description value="Code system for social-history health monitoring activities"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/social-history-activity-vs"/>
       </reference>
       <name value="Reproductive Health Activities Value Set"/>
-      <description value="Activities related to reproductive health monitoring"/>
+      <description value="Activities related to social-history health monitoring"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2061,10 +2273,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/reproductive-observation"/>
+        <reference value="StructureDefinition/social-history-observation"/>
       </reference>
       <name value="Reproductive Health Base Profile"/>
-      <description value="Base profile for reproductive health observations"/>
+      <description value="Base profile for social-history health observations"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2072,10 +2284,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/reproductive-goal-vs"/>
+        <reference value="ValueSet/social-history-goal-vs"/>
       </reference>
       <name value="Reproductive Health Goals Value Set"/>
-      <description value="Goals related to reproductive health tracking and planning"/>
+      <description value="Goals related to social-history health tracking and planning"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2083,10 +2295,10 @@
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
-        <reference value="Questionnaire/ReproductiveHealthQuestionnaire"/>
+        <reference value="Questionnaire/social-history-health"/>
       </reference>
       <name value="Reproductive Health Tracking Questionnaire"/>
-      <description value="Daily questionnaire for reproductive health tracking"/>
+      <description value="Daily questionnaire for social-history health tracking"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2116,10 +2328,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/sleep-observation"/>
+        <reference value="StructureDefinition/activity-observation"/>
       </reference>
       <name value="Sleep Observation Profile"/>
-      <description value="Profile for recording sleep data from iOS Health App"/>
+      <description value="Profile for recording activity data from iOS Health App"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2127,10 +2339,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/sleep-quality"/>
+        <reference value="StructureDefinition/activity-quality"/>
       </reference>
       <name value="Sleep Quality Extension"/>
-      <description value="Extension for recording subjective sleep quality"/>
+      <description value="Extension for recording subjective activity quality"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2138,10 +2350,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/sleep-quality-extended-vs"/>
+        <reference value="ValueSet/activity-quality-extended-vs"/>
       </reference>
       <name value="Sleep Quality Value Set"/>
-      <description value="Extended value set for sleep quality assessment"/>
+      <description value="Extended value set for activity quality assessment"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2149,10 +2361,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/sleep-quality-vs"/>
+        <reference value="ValueSet/activity-quality-vs"/>
       </reference>
       <name value="Sleep Quality Value Set"/>
-      <description value="Qualitative assessments of sleep quality including subjective measures"/>
+      <description value="Qualitative assessments of activity quality including subjective measures"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2358,7 +2570,7 @@
         <valueString value="MessageDefinition"/>
       </extension>
       <reference>
-        <reference value="MessageDefinition/StartSessionMessage"/>
+        <reference value="MessageDefinition/start-session"/>
       </reference>
       <name value="Start Session Message"/>
       <description value="Message definition for starting a mindfulness session"/>
@@ -2749,6 +2961,14 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="data-protection-policies.html"/>
+        </extension>
+        <nameUrl value="data-protection-policies.html"/>
+        <title value="Data Protection Policies"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="environmental.html"/>
         </extension>
         <nameUrl value="environmental.html"/>
@@ -2793,6 +3013,14 @@
         </extension>
         <nameUrl value="physical_activity.html"/>
         <title value="Physical Activity"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="practitioner-identifiers.html"/>
+        </extension>
+        <nameUrl value="practitioner-identifiers.html"/>
+        <title value="Practitioner Identifiers"/>
         <generation value="markdown"/>
       </page>
       <page>

@@ -3,13 +3,13 @@
   "id" : "MindfulnessType",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: SearchParameter MindfulnessType</b></p><a name=\"MindfulnessType\"> </a><a name=\"hcMindfulnessType\"> </a><h2>MindfulnessType</h2><p>Parâmetro <code>mindfulness-type</code>:<code>token</code></p><div><p>Search for mindfulness observations by practice type</p>\n</div><table class=\"grid\"><tr><td>Recursos</td><td><a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a></td></tr><tr><td>Expressão</td><td><code>Observation.component.where(code.coding.where(system='http://snomed.info/sct' and code='711020003')).value.as(CodeableConcept)</code></td></tr><tr><td>Modo de processamento</td><td>Normal</td></tr><tr><td>Múltiplos</td><td><ul><li>multipleAnd: Cabe ao servidor decidir se o parâmetro pode ser repetido para especificar valores múltiplos que devem ser todos verdadeiros</li><li>multipleOr: Cabe ao servidor decidir se o parâmetro pode ter vários valores (separados por vírgula) em que pelo menos um tem de ser verdadeiro</li></ul></td></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: SearchParameter MindfulnessType</b></p><a name=\"MindfulnessType\"> </a><a name=\"hcMindfulnessType\"> </a><h2>MindfulnessType</h2><p>Parâmetro <code>mindfulness-type</code>:<code>token</code></p><div><p>Search for mindfulness observations by practice type</p>\n</div><table class=\"grid\"><tr><td>Recursos</td><td><a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a></td></tr><tr><td>Expressão</td><td><code>Observation.component.where(code.coding.exists(system = 'http://snomed.info/sct' and code = '711415009')).value.as(CodeableConcept)</code></td></tr><tr><td>Modo de processamento</td><td>Normal</td></tr><tr><td>Múltiplos</td><td><ul><li>multipleAnd: Cabe ao servidor decidir se o parâmetro pode ser repetido para especificar valores múltiplos que devem ser todos verdadeiros</li><li>multipleOr: Cabe ao servidor decidir se o parâmetro pode ter vários valores (separados por vírgula) em que pelo menos um tem de ser verdadeiro</li></ul></td></tr></table></div>"
   },
   "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/SearchParameter/MindfulnessType",
   "version" : "0.1.0",
   "name" : "MindfulnessType",
   "status" : "active",
-  "date" : "2025-08-20T17:48:34+01:00",
+  "date" : "2025-10-01T16:36:18+01:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -19,9 +19,51 @@
     }]
   }],
   "description" : "Search for mindfulness observations by practice type",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
   "code" : "mindfulness-type",
   "base" : ["Observation"],
   "type" : "token",
-  "expression" : "Observation.component.where(code.coding.where(system='http://snomed.info/sct' and code='711020003')).value.as(CodeableConcept)",
+  "expression" : "Observation.component.where(code.coding.exists(system = 'http://snomed.info/sct' and code = '711415009')).value.as(CodeableConcept)",
   "xpathUsage" : "normal"
 }

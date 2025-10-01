@@ -12,7 +12,7 @@ Description: "Profile for mobility data from iOS Health App"
 * effectiveDateTime 1..1 MS
 * device 0..1 MS
 
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
@@ -23,6 +23,6 @@ Description: "Profile for mobility data from iOS Health App"
     movement 0..1 MS
 
 * component[steadiness].code = $LOINC#LA32-8
-* component[balance].code = $LOINC#LA32-9
-* component[gait].code = $LOINC#LA29042-4
-* component[movement].code = $LOINC#LA29043-2
+* component[balance].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#balance-assessment
+* component[gait].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#gait-assessment
+* component[movement].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#movement-assessment

@@ -25,7 +25,7 @@ Title: "Mapping to SNOMED CT"
 Source: MindfulnessObservation
 Target: "http://snomed.info/sct"
 
-* -> "711020003" "Meditation"
+* -> "711415009" "Meditation"
 * component[stressLevel] -> "725854004" "Assessment of stress level"
 * component[moodState] -> "373931001" "Mood finding"
 * component[relaxationResponse] -> "276241001" "Relaxation technique"

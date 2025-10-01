@@ -17,8 +17,8 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "MindfulnessMessageDefinition"] ; # 
   fhir:title [ fhir:v "Mindfulness Message Definition"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-08-20T17:48:34+01:00"^^xsd:dateTime] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-10-01T16:36:18+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -28,6 +28,43 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Definition for mindfulness session messages"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:mapping ( [
      fhir:identity [ fhir:v "v2" ] ;
@@ -295,8 +332,8 @@
          fhir:strength [ fhir:v "preferred" ] ;
          fhir:description [ fhir:v "A human language." ] ;
          fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/languages"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/ValueSet/languages>
+           fhir:v "http://hl7.org/fhir/ValueSet/languages|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/ValueSet/languages|4.0.1>
          ]
        ]
      ] [
@@ -639,8 +676,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "canonical"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/MessageDefinition>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -961,8 +998,8 @@
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "Countries and regions within which this artifact is targeted for use." ] ;
          fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/jurisdiction"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/ValueSet/jurisdiction>
+           fhir:v "http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1>
          ]
        ] ;
        fhir:mapping ( [
@@ -1060,8 +1097,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "canonical"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/MessageDefinition>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -1093,11 +1130,11 @@
        fhir:type ( [
          fhir:code [ fhir:v "canonical"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/ActivityDefinition"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/ActivityDefinition>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/ActivityDefinition|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/ActivityDefinition|4.0.1>
          ] [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/PlanDefinition"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/PlanDefinition>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/PlanDefinition|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/PlanDefinition|4.0.1>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -1155,8 +1192,8 @@
          fhir:strength [ fhir:v "example" ] ;
          fhir:description [ fhir:v "One of the message events defined as part of this version of FHIR." ] ;
          fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/message-events"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/ValueSet/message-events>
+           fhir:v "http://hl7.org/fhir/ValueSet/message-events|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/ValueSet/message-events|4.0.1>
          ]
        ]
      ] [
@@ -1422,8 +1459,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "canonical"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -1714,8 +1751,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "canonical"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/MessageDefinition>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/MessageDefinition|4.0.1>
          ] )
        ] ) ;
        fhir:constraint ( [
@@ -1774,8 +1811,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "canonical"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/GraphDefinition"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/GraphDefinition>
+           fhir:v "http://hl7.org/fhir/StructureDefinition/GraphDefinition|4.0.1"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/GraphDefinition|4.0.1>
          ] )
        ] ) ;
        fhir:constraint ( [

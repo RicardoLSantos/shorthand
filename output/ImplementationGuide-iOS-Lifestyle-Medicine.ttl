@@ -17,14 +17,52 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "iOS_Lifestyle_Medicine_HEADS2_FMUP"] ; # 
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-08-20T17:48:34+01:00"^^xsd:dateTime] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-10-01T16:36:18+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
      ] )
   ] ) ; # 
   fhir:packageId [ fhir:v "iOS-Lifestyle-Medicine"] ; # 
@@ -60,6 +98,22 @@
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
      fhir:version [ fhir:v "5.2.0" ]
+  ] [
+     fhir:id [ fhir:v "ihe_iti_pcf" ] ;
+     fhir:uri [
+       fhir:v "https://profiles.ihe.net/ITI/PCF/ImplementationGuide/ihe.iti.pcf"^^xsd:anyURI ;
+       fhir:link <https://profiles.ihe.net/ITI/PCF/ImplementationGuide/ihe.iti.pcf>
+     ] ;
+     fhir:packageId [ fhir:v "ihe.iti.pcf" ] ;
+     fhir:version [ fhir:v "1.1.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7_fhir_uv_ips" ] ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.ips" ] ;
+     fhir:version [ fhir:v "1.1.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -441,7 +495,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
        fhir:value [
          a fhir:code ;
-         fhir:v "hl7.fhir.uv.tools.r4#0.7.1"
+         fhir:v "hl7.fhir.uv.tools.r4#0.8.0"
        ]
      ] [
        fhir:extension ( [
@@ -1371,8 +1425,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cervical-mucus-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/cervical-mucus-valueset" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cervical-mucus-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cervical-mucus-vs" ]
        ] ;
        fhir:name [ fhir:v "Cervical Mucus Value Set" ] ;
        fhir:description [ fhir:v "Value set for cervical mucus observations" ] ;
@@ -1534,8 +1588,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/DailyMindfulnessQuestionnaire> ;
-         fhir:reference [ fhir:v "Questionnaire/DailyMindfulnessQuestionnaire" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/daily-mindfulness> ;
+         fhir:reference [ fhir:v "Questionnaire/daily-mindfulness" ]
        ] ;
        fhir:name [ fhir:v "Daily Mindfulness Questionnaire" ] ;
        fhir:description [ fhir:v "Questionnaire for capturing daily mindfulness practice and associated effects" ] ;
@@ -1552,8 +1606,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/DailyNutritionQuestionnaire> ;
-         fhir:reference [ fhir:v "Questionnaire/DailyNutritionQuestionnaire" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/daily-nutrition> ;
+         fhir:reference [ fhir:v "Questionnaire/daily-nutrition" ]
        ] ;
        fhir:name [ fhir:v "Daily Nutrition Intake Questionnaire" ] ;
        fhir:description [ fhir:v "Questionnaire for daily nutrition intake tracking" ] ;
@@ -1578,6 +1632,24 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-localization> ;
+         fhir:reference [ fhir:v "StructureDefinition/data-localization" ]
+       ] ;
+       fhir:name [ fhir:v "Data Localization Requirements" ] ;
+       fhir:description [ fhir:v "Specifies data localization requirements per jurisdiction" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [
@@ -1644,8 +1716,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/EndSessionMessage> ;
-         fhir:reference [ fhir:v "MessageDefinition/EndSessionMessage" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/end-session> ;
+         fhir:reference [ fhir:v "MessageDefinition/end-session" ]
        ] ;
        fhir:name [ fhir:v "End Session Message" ] ;
        fhir:description [ fhir:v "Message definition for ending a mindfulness session" ] ;
@@ -1768,6 +1840,23 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/example> ;
+         fhir:reference [ fhir:v "Patient/example" ]
+       ] ;
+       fhir:name [ fhir:v "example" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Basic"
          ]
        ] ) ;
@@ -1835,8 +1924,8 @@
        fhir:description [ fhir:v "Sleep observation example" ] ;
        fhir:example [
          a fhir:canonical ;
-         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-observation"^^xsd:anyURI ;
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-observation>
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-observation>
        ]
      ] [
        fhir:extension ( [
@@ -2064,8 +2153,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fertility-status-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/fertility-status-valueset" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fertility-status-vs> ;
+         fhir:reference [ fhir:v "ValueSet/fertility-status-vs" ]
        ] ;
        fhir:name [ fhir:v "Fertility Status Value Set" ] ;
        fhir:description [ fhir:v "Value set for fertility status" ] ;
@@ -2196,6 +2285,78 @@
        ] ;
        fhir:name [ fhir:v "Homeostasis Index Extension" ] ;
        fhir:description [ fhir:v "Composite measure of physiological balance and adaptation" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Device"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/iphone-example> ;
+         fhir:reference [ fhir:v "Device/iphone-example" ]
+       ] ;
+       fhir:name [ fhir:v "iPhone Device Example" ] ;
+       fhir:description [ fhir:v "Example iPhone device for iOS Health App data collection" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/jurisdiction-applicability> ;
+         fhir:reference [ fhir:v "StructureDefinition/jurisdiction-applicability" ]
+       ] ;
+       fhir:name [ fhir:v "Jurisdiction Applicability" ] ;
+       fhir:description [ fhir:v "Specifies which jurisdictions this consent applies to" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/lifestyle-observation-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Lifestyle Medicine Observation Codes" ] ;
+       fhir:description [ fhir:v "Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs> ;
+         fhir:reference [ fhir:v "ValueSet/lifestyle-observation-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Lifestyle Medicine Observation Value Set" ] ;
+       fhir:description [ fhir:v "Value set containing all local lifestyle medicine observation codes" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -2538,42 +2699,6 @@
        ] ;
        fhir:name [ fhir:v "Mindfulness Configuration" ] ;
        fhir:description [ fhir:v "Configuration settings for mindfulness sessions" ] ;
-       fhir:example [
-         a fhir:boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "Consent"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Consent/MindfulnessAccessPolicy> ;
-         fhir:reference [ fhir:v "Consent/MindfulnessAccessPolicy" ]
-       ] ;
-       fhir:name [ fhir:v "Mindfulness Data Access Policy" ] ;
-       fhir:description [ fhir:v "Mindfulness data access consent example" ] ;
-       fhir:example [
-         a fhir:boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
-           fhir:v "Consent"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Consent/MindfulnessSecurityDefinition> ;
-         fhir:reference [ fhir:v "Consent/MindfulnessSecurityDefinition" ]
-       ] ;
-       fhir:name [ fhir:v "Mindfulness Data Security Policy" ] ;
-       fhir:description [ fhir:v "Mindfulness security consent example" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -2978,6 +3103,40 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Consent"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Consent/MindfulnessAccessPolicy> ;
+         fhir:reference [ fhir:v "Consent/MindfulnessAccessPolicy" ]
+       ] ;
+       fhir:name [ fhir:v "MindfulnessAccessPolicy" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Consent"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Consent/MindfulnessSecurityDefinition> ;
+         fhir:reference [ fhir:v "Consent/MindfulnessSecurityDefinition" ]
+       ] ;
+       fhir:name [ fhir:v "MindfulnessSecurityDefinition" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "SearchParameter"
          ]
        ] ) ;
@@ -3140,6 +3299,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent> ;
+         fhir:reference [ fhir:v "StructureDefinition/multi-jurisdictional-consent" ]
+       ] ;
+       fhir:name [ fhir:v "Multi-Jurisdictional Healthcare Consent" ] ;
+       fhir:description [ fhir:v "Consent profile supporting GDPR, HIPAA, and LGPD compliance" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Observation"
          ]
        ] ) ;
@@ -3249,6 +3426,40 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Organization/Org2RDoc> ;
+         fhir:reference [ fhir:v "Organization/Org2RDoc" ]
+       ] ;
+       fhir:name [ fhir:v "Org2RDoc" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Practitioner"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/osa-practitioner-kyle-anydoc> ;
+         fhir:reference [ fhir:v "Practitioner/osa-practitioner-kyle-anydoc" ]
+       ] ;
+       fhir:name [ fhir:v "osa-practitioner-kyle-anydoc" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "CodeSystem"
          ]
        ] ) ;
@@ -3271,8 +3482,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ovulation-test-valueset> ;
-         fhir:reference [ fhir:v "ValueSet/ovulation-test-valueset" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ovulation-test-vs> ;
+         fhir:reference [ fhir:v "ValueSet/ovulation-test-vs" ]
        ] ;
        fhir:name [ fhir:v "Ovulation Test Value Set" ] ;
        fhir:description [ fhir:v "Value set for ovulation test results" ] ;
@@ -3312,6 +3523,23 @@
        ] ;
        fhir:name [ fhir:v "PatientExample" ] ;
        fhir:description [ fhir:v "Patient resource example" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientMindfulness> ;
+         fhir:reference [ fhir:v "Patient/PatientMindfulness" ]
+       ] ;
+       fhir:name [ fhir:v "PatientMindfulness" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v true
@@ -3411,6 +3639,42 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/practitioner-identifier-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/practitioner-identifier-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Practitioner Identifier Code System" ] ;
+       fhir:description [ fhir:v "Sistema de códigos para identificação de practitioners" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/practitioner-identifier-vs> ;
+         fhir:reference [ fhir:v "ValueSet/practitioner-identifier-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Practitioner Identifier Value Set" ] ;
+       fhir:description [ fhir:v "Value set para identificadores de practitioners" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Practitioner"
          ]
        ] ) ;
@@ -3447,15 +3711,33 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/regulatory-basis> ;
+         fhir:reference [ fhir:v "StructureDefinition/regulatory-basis" ]
+       ] ;
+       fhir:name [ fhir:v "Regulatory Basis for Consent" ] ;
+       fhir:description [ fhir:v "Identifies the regulatory framework(s) that govern this consent" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "CodeSystem"
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/reproductive-activity-cs> ;
-         fhir:reference [ fhir:v "CodeSystem/reproductive-activity-cs" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/regulatory-framework-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/regulatory-framework-cs" ]
        ] ;
-       fhir:name [ fhir:v "Reproductive Health Activities Code System" ] ;
-       fhir:description [ fhir:v "Code system for reproductive health monitoring activities" ] ;
+       fhir:name [ fhir:v "Regulatory Framework Code System" ] ;
+       fhir:description [ fhir:v "Codes for healthcare regulatory frameworks" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3469,11 +3751,47 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/reproductive-activity-vs> ;
-         fhir:reference [ fhir:v "ValueSet/reproductive-activity-vs" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/regulatory-framework-vs> ;
+         fhir:reference [ fhir:v "ValueSet/regulatory-framework-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Regulatory Framework Value Set" ] ;
+       fhir:description [ fhir:v "Regulatory frameworks for healthcare data protection" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-history-activity-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/social-history-activity-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Reproductive Health Activities Code System" ] ;
+       fhir:description [ fhir:v "Code system for social-history health monitoring activities" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/social-history-activity-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-history-activity-vs" ]
        ] ;
        fhir:name [ fhir:v "Reproductive Health Activities Value Set" ] ;
-       fhir:description [ fhir:v "Activities related to reproductive health monitoring" ] ;
+       fhir:description [ fhir:v "Activities related to social-history health monitoring" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3487,11 +3805,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/reproductive-observation> ;
-         fhir:reference [ fhir:v "StructureDefinition/reproductive-observation" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-history-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/social-history-observation" ]
        ] ;
        fhir:name [ fhir:v "Reproductive Health Base Profile" ] ;
-       fhir:description [ fhir:v "Base profile for reproductive health observations" ] ;
+       fhir:description [ fhir:v "Base profile for social-history health observations" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3505,11 +3823,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/reproductive-goal-vs> ;
-         fhir:reference [ fhir:v "ValueSet/reproductive-goal-vs" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/social-history-goal-vs> ;
+         fhir:reference [ fhir:v "ValueSet/social-history-goal-vs" ]
        ] ;
        fhir:name [ fhir:v "Reproductive Health Goals Value Set" ] ;
-       fhir:description [ fhir:v "Goals related to reproductive health tracking and planning" ] ;
+       fhir:description [ fhir:v "Goals related to social-history health tracking and planning" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3523,11 +3841,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/ReproductiveHealthQuestionnaire> ;
-         fhir:reference [ fhir:v "Questionnaire/ReproductiveHealthQuestionnaire" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/social-history-health> ;
+         fhir:reference [ fhir:v "Questionnaire/social-history-health" ]
        ] ;
        fhir:name [ fhir:v "Reproductive Health Tracking Questionnaire" ] ;
-       fhir:description [ fhir:v "Daily questionnaire for reproductive health tracking" ] ;
+       fhir:description [ fhir:v "Daily questionnaire for social-history health tracking" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3577,11 +3895,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-observation> ;
-         fhir:reference [ fhir:v "StructureDefinition/sleep-observation" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/activity-observation" ]
        ] ;
        fhir:name [ fhir:v "Sleep Observation Profile" ] ;
-       fhir:description [ fhir:v "Profile for recording sleep data from iOS Health App" ] ;
+       fhir:description [ fhir:v "Profile for recording activity data from iOS Health App" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3595,11 +3913,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-quality> ;
-         fhir:reference [ fhir:v "StructureDefinition/sleep-quality" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality> ;
+         fhir:reference [ fhir:v "StructureDefinition/activity-quality" ]
        ] ;
        fhir:name [ fhir:v "Sleep Quality Extension" ] ;
-       fhir:description [ fhir:v "Extension for recording subjective sleep quality" ] ;
+       fhir:description [ fhir:v "Extension for recording subjective activity quality" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3613,11 +3931,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/sleep-quality-extended-vs> ;
-         fhir:reference [ fhir:v "ValueSet/sleep-quality-extended-vs" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/activity-quality-extended-vs> ;
+         fhir:reference [ fhir:v "ValueSet/activity-quality-extended-vs" ]
        ] ;
        fhir:name [ fhir:v "Sleep Quality Value Set" ] ;
-       fhir:description [ fhir:v "Extended value set for sleep quality assessment" ] ;
+       fhir:description [ fhir:v "Extended value set for activity quality assessment" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3631,11 +3949,11 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/sleep-quality-vs> ;
-         fhir:reference [ fhir:v "ValueSet/sleep-quality-vs" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/activity-quality-vs> ;
+         fhir:reference [ fhir:v "ValueSet/activity-quality-vs" ]
        ] ;
        fhir:name [ fhir:v "Sleep Quality Value Set" ] ;
-       fhir:description [ fhir:v "Qualitative assessments of sleep quality including subjective measures" ] ;
+       fhir:description [ fhir:v "Qualitative assessments of activity quality including subjective measures" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3974,8 +4292,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/StartSessionMessage> ;
-         fhir:reference [ fhir:v "MessageDefinition/StartSessionMessage" ]
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/start-session> ;
+         fhir:reference [ fhir:v "MessageDefinition/start-session" ]
        ] ;
        fhir:name [ fhir:v "Start Session Message" ] ;
        fhir:description [ fhir:v "Message definition for starting a mindfulness session" ] ;
@@ -4630,6 +4948,20 @@
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
              a fhir:url ;
+             fhir:v "data-protection-policies.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "data-protection-policies.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Data Protection Policies" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
              fhir:v "environmental.html"^^xsd:anyURI
            ]
          ] ) ;
@@ -4708,6 +5040,20 @@
            fhir:v "physical_activity.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Physical Activity" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "practitioner-identifiers.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "practitioner-identifiers.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Practitioner Identifiers" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

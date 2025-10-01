@@ -1,4 +1,4 @@
-Alias: $MsgEvents = https://2rdoc.pt/fhir/CodeSystem/mindfulness-message-events
+Alias: $MsgEvents = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-message-events
 Alias: $MsgTypes = http://terminology.hl7.org/CodeSystem/message-type
 
 Profile: MindfulnessMessageDefinition
@@ -15,30 +15,32 @@ Description: "Definition for mindfulness session messages"
 * focus 1..* MS
 * focus.min 1..1
 
-Instance: StartSessionMessage
+Instance: start-session
 InstanceOf: MindfulnessMessageDefinition
 Title: "Start Session Message"
 Description: "Message definition for starting a mindfulness session"
 
-* url = "https://2rdoc.pt/fhir/MessageDefinition/start-session"
+* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/start-session"
 * date = "2024-03-19"
 * status = #active
 * eventCoding = $MsgEvents#session-start "Session Start"
 * category = #notification
 * focus.code = #Observation
 * focus.min = 1
+* focus.max = "*"
 * focus.profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session"
 
-Instance: EndSessionMessage  
+Instance: end-session
 InstanceOf: MindfulnessMessageDefinition
 Title: "End Session Message"
 Description: "Message definition for ending a mindfulness session"
 
-* url = "https://2rdoc.pt/fhir/MessageDefinition/end-session"
+* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/end-session"
 * date = "2024-03-19"
 * status = #active
 * eventCoding = $MsgEvents#session-end "Session End"
 * category = #notification
 * focus.code = #Observation
 * focus.min = 1
+* focus.max = "*"
 * focus.profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session"

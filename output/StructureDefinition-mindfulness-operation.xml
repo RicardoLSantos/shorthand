@@ -11,8 +11,8 @@
   <version value="0.1.0"/>
   <name value="MindfulnessOperation"/>
   <title value="Mindfulness Operation"/>
-  <status value="draft"/>
-  <date value="2025-08-20T17:48:34+01:00"/>
+  <status value="active"/>
+  <date value="2025-10-01T16:36:18+01:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -22,6 +22,48 @@
     </telecom>
   </contact>
   <description value="Base definition for mindfulness operations"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
   <fhirVersion value="4.0.1"/>
   <mapping>
     <identity value="workflow"/>
@@ -239,7 +281,7 @@
         </extension>
         <strength value="preferred"/>
         <description value="A human language."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/languages"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/languages|4.0.1"/>
       </binding>
     </element>
     <element id="OperationDefinition.text">
@@ -822,7 +864,7 @@
         </extension>
         <strength value="extensible"/>
         <description value="Countries and regions within which this artifact is targeted for use."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/jurisdiction"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1"/>
       </binding>
       <mapping>
         <identity value="workflow"/>
@@ -957,7 +999,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -1101,7 +1143,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -1128,7 +1170,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -1483,7 +1525,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -1713,7 +1755,7 @@
       </base>
       <type>
         <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet|4.0.1"/>
       </type>
       <constraint>
         <key value="ele-1"/>

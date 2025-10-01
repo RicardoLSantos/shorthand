@@ -10,7 +10,7 @@ RuleSet: MindfulnessValidation
 * component MS
 
 * status from http://hl7.org/fhir/ValueSet/observation-status
-* code from http://snomed.info/sct?fhir_vs=isa/711020003
+* code from http://snomed.info/sct?fhir_vs=isa/711415009
 * subject only Reference(Patient)
 * effective[x] only dateTime
 
@@ -27,7 +27,7 @@ RuleSet: MindfulnessQuestionnaireValidation
 
 * status = #active
 * subjectType = #Patient
-* item ^slicing.discriminator.type = #pattern
+* item ^slicing.discriminator.type = #value
 * item ^slicing.discriminator.path = "linkId"
 * item ^slicing.rules = #open
 * item contains 
@@ -73,6 +73,6 @@ RuleSet: MindfulnessResponseValidation
 * status = #completed
 * subject only Reference(Patient)
 * authored 1..1
-* item ^slicing.discriminator.type = #pattern
+* item ^slicing.discriminator.type = #value
 * item ^slicing.discriminator.path = "linkId"
 * item ^slicing.rules = #open

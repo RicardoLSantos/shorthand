@@ -11,9 +11,9 @@
   fhir:id [ fhir:v "audit-formats"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet audit-formats</b></p><a name=\"audit-formats\"> </a><a name=\"hcaudit-formats\"> </a><ul><li>Include todos os códigos definidos em <a href=\"CodeSystem-audit-formats.html\"><code>https://2rdoc.pt/fhir/CodeSystem/audit-formats</code></a></li></ul></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet audit-formats</b></p><a name=\"audit-formats\"> </a><a name=\"hcaudit-formats\"> </a><ul><li>Include todos os códigos definidos em <a href=\"CodeSystem-audit-formats.html\"><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-formats</code></a></li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
-  fhir:url [ fhir:v "https://2rdoc.pt/fhir/ValueSet/audit-formats"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-formats"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "AuditFormatsValueSet"] ; # 
   fhir:title [ fhir:v "Audit Formats Value Set"] ; # 
@@ -29,9 +29,56 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Value set for audit format types"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "program" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "iOS Lifestyle Medicine" ]
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:compose [
      fhir:include ( [
-       fhir:system [ fhir:v "https://2rdoc.pt/fhir/CodeSystem/audit-formats"^^xsd:anyURI ]
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-formats"^^xsd:anyURI ]
      ] )
   ] . # 
 

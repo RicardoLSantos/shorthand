@@ -5,25 +5,25 @@ Description: "Complete mindfulness session observation example"
 Title: "Complete Mindfulness Session Example"
 
 * status = #final
-* code = $SCT#711020003 "Meditation"
+* code = $SCT#285854004 "Emotion"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 
-* component[sessionDuration].code = $SCT#118682006 "Duration"
+* component[sessionDuration].code = $SCT#704323007 "Process duration"
 * component[sessionDuration].valueQuantity = 20 'min'
 
 * component[stressLevel].code = $SCT#725854004 "Assessment of stress level"
 * component[stressLevel].valueInteger = 3
 
-* component[moodState].code = $SCT#373931001 "Mood finding"
-* component[moodState].valueCodeableConcept = $SCT#130991005 "Neutral mood"
+* component[moodState].code = $SCT#106131003 "Mood finding"
+* component[moodState].valueCodeableConcept = $SCT#102894008 "Feeling calm"
 
-* component[relaxationResponse].code = $SCT#276241001 "Relaxation technique"
+* component[relaxationResponse].code = $SCT#363894002 "Relaxation therapy"
 * component[relaxationResponse].valueString = "Deep breathing exercises with progressive relaxation"
 
-* component[mindfulnessType].code = $SCT#711020003 "Meditation"
-* component[mindfulnessType].valueCodeableConcept = $SCT#711020003 "Meditation"
+* component[mindfulnessType].code = $SCT#285854004 "Emotion"
+* component[mindfulnessType].valueCodeableConcept = $SCT#285854004 "Emotion"
 
 * extension[mindfulness-context].extension[location].valueString = "Home meditation room"
 * extension[mindfulness-context].extension[environment].valueCodeableConcept = #quiet "Quiet Space"
@@ -35,7 +35,7 @@ Usage: #example
 Description: "Complete mindfulness questionnaire response example"
 Title: "Complete Mindfulness Session Response"
 
-* questionnaire = "https://2rdoc.pt/fhir/Questionnaire/daily-mindfulness"
+* questionnaire = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/daily-mindfulness"
 * status = #completed
 * subject = Reference(Patient/PatientExample)
 * authored = "2024-03-19T08:30:00Z"
@@ -53,7 +53,7 @@ Title: "Complete Mindfulness Session Response"
   * linkId = "mood_assessment"
   * item[0]
     * linkId = "current_mood"
-    * answer.valueCoding = $SCT#130991005 "Neutral mood"
+    * answer.valueCoding = $SCT#102894008 "Feeling calm"
   * item[1]
     * linkId = "mood_intensity"
     * answer.valueInteger = 3

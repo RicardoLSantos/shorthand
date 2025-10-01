@@ -7,6 +7,16 @@ Description: "Index representing overall physiological stress based on multiple 
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
@@ -23,6 +33,16 @@ Description: "Composite measure of physiological balance and adaptation"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
@@ -39,6 +59,16 @@ Description: "Measure of how efficiently the body recovers from stress or exerti
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
@@ -55,6 +85,16 @@ Description: "Measure of cumulative physiological burden over time"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
@@ -71,6 +111,16 @@ Description: "Indicator of position in circadian rhythm cycle"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
@@ -107,6 +157,16 @@ Description: "Indicator of the quality and reliability of the measurement"
 
 * ^version = "0.1.0"
 * ^status = #draft
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^context[+].type = #element
 * ^context[=].expression = "Observation"
 

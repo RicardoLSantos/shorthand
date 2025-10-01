@@ -6,7 +6,7 @@ Title: "Social Interaction Example"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = $LOINC#96766-1 "Social interaction pattern"
+* code = $LOINC#76506-5 "Social connection and isolation panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-01-03T14:00:00Z"
 * valueCodeableConcept = SocialInteractionTypeCS#family

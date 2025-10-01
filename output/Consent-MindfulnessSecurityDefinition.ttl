@@ -12,13 +12,14 @@
   fhir:id [ fhir:v "MindfulnessSecurityDefinition"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Consent MindfulnessSecurityDefinition</b></p><a name=\"MindfulnessSecurityDefinition\"> </a><a name=\"hcMindfulnessSecurityDefinition\"> </a><p><b>status</b>: Active</p><p><b>scope</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/consentscope patient-privacy}\">Privacy Consent</span></p><p><b>category</b>: <span title=\"Códigos:{http://loinc.org 59284-0}\">Consent Document</span></p><h3>Policies</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Authority</b></td><td><b>Uri</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"https://2rdoc.pt/ig/ios-lifestyle-medicine/privacy-policy\">https://2rdoc.pt/ig/ios-lifestyle-medicine/privacy-policy</a></td><td><a href=\"https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-privacy\">https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-privacy</a></td></tr></table><blockquote><p><b>provision</b></p><p><b>type</b>: Opt In</p><p><b>period</b>: 2024-03-19 --&gt; (em curso)</p><h3>Actors</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType PRCP}\">primary information recipient</span></td><td>Identifier: <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/practitioners</code>/mindfulness-practitioners</td></tr></table></blockquote></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Consent MindfulnessSecurityDefinition</b></p><a name=\"MindfulnessSecurityDefinition\"> </a><a name=\"hcMindfulnessSecurityDefinition\"> </a><p><b>status</b>: Active</p><p><b>scope</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/consentscope patient-privacy}\">Privacy Consent</span></p><p><b>category</b>: <span title=\"Códigos:{http://loinc.org 59284-0}\">Consent Document</span></p><p><b>patient</b>: <a href=\"Patient-PatientMindfulness.html\">Test Mindfulness  Other, DoB: 1980-01-01 ( http://example.org/patients#mindfulness-patient)</a></p><p><b>dateTime</b>: 2024-01-01</p><p><b>organization</b>: <a href=\"Organization-Org2RDoc.html\">Organization 2RDoc Healthcare Solutions</a></p><h3>Policies</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Authority</b></td><td><b>Uri</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-consentpolicycodes.html\">http://terminology.hl7.org/CodeSystem/consentpolicycodes</a></td><td><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-consentpolicycodes.html\">http://terminology.hl7.org/CodeSystem/consentpolicycodes</a></td></tr></table><blockquote><p><b>provision</b></p><p><b>type</b>: Opt In</p><p><b>period</b>: 2024-01-01 --&gt; 2025-12-31</p><h3>Actors</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/v3-RoleCode PRO}\">healthcare provider</span></td><td>Identifier: 1234567890</td></tr></table><p><b>securityLabel</b>: <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-Confidentiality.html#v3-Confidentiality-N\">Confidentiality N</a>: normal</p><p><b>purpose</b>: <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-ActReason.html#v3-ActReason-TREAT\">ActReason TREAT</a>: treatment</p><p><b>dataPeriod</b>: 2024-01-01 --&gt; 2025-12-31</p></blockquote></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:scope [
      fhir:coding ( [
        fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "patient-privacy" ]
+       fhir:code [ fhir:v "patient-privacy" ] ;
+       fhir:display [ fhir:v "Privacy Consent" ]
      ] )
   ] ; # 
   fhir:category ( [
@@ -29,29 +30,53 @@
        fhir:display [ fhir:v "Consent Document" ]
      ] )
   ] ) ; # 
+  fhir:patient [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientMindfulness> ;
+     fhir:reference [ fhir:v "Patient/PatientMindfulness" ]
+  ] ; # 
+  fhir:dateTime [ fhir:v "2024-01-01"^^xsd:date] ; # 
+  fhir:organization ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Organization/Org2RDoc> ;
+     fhir:reference [ fhir:v "Organization/Org2RDoc" ]
+  ] ) ; # 
   fhir:policy ( [
-     fhir:authority [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/privacy-policy"^^xsd:anyURI ] ;
-     fhir:uri [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/mindfulness-privacy"^^xsd:anyURI ]
+     fhir:authority [ fhir:v "http://terminology.hl7.org/CodeSystem/consentpolicycodes"^^xsd:anyURI ] ;
+     fhir:uri [ fhir:v "http://terminology.hl7.org/CodeSystem/consentpolicycodes"^^xsd:anyURI ]
   ] ) ; # 
   fhir:provision [
      fhir:type [ fhir:v "permit" ] ;
      fhir:period [
-       fhir:start [ fhir:v "2024-03-19"^^xsd:date ]
+       fhir:start [ fhir:v "2024-01-01"^^xsd:date ] ;
+       fhir:end [ fhir:v "2025-12-31"^^xsd:date ]
      ] ;
      fhir:actor ( [
        fhir:role [
          fhir:coding ( [
-           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"^^xsd:anyURI ] ;
-           fhir:code [ fhir:v "PRCP" ]
+           fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleCode"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "PRO" ] ;
+           fhir:display [ fhir:v "healthcare provider" ]
          ] )
        ] ;
        fhir:reference [
          fhir:identifier [
-           fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/practitioners"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "mindfulness-practitioners" ]
+           fhir:value [ fhir:v "1234567890" ]
          ]
        ]
-     ] )
+     ] ) ;
+     fhir:securityLabel ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "N" ] ;
+       fhir:display [ fhir:v "normal" ]
+     ] ) ;
+     fhir:purpose ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "TREAT" ] ;
+       fhir:display [ fhir:v "treatment" ]
+     ] ) ;
+     fhir:dataPeriod [
+       fhir:start [ fhir:v "2024-01-01"^^xsd:date ] ;
+       fhir:end [ fhir:v "2025-12-31"^^xsd:date ]
+     ]
   ] . # 
 
 # -------------------------------------------------------------------------------------

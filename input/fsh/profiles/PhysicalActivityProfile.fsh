@@ -19,7 +19,7 @@ Description: "Profile for recording physical activity data from iOS Health App"
 * effectiveDateTime 1..1 MS
 * device 0..1 MS
 * value[x] only Quantity
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 
@@ -29,12 +29,12 @@ Description: "Profile for recording physical activity data from iOS Health App"
     duration 0..1 MS and
     energy 0..1 MS
 
-* component[steps].code = $LOINC#55423-8 "Number of steps in 24 hour Measured"
+* component[steps].code = $LOINC#55423-8 "Number of steps in unspecified time Pedometer"
 * component[steps].valueQuantity only Quantity
 * component[steps].valueQuantity.system = $UCUM
 * component[steps].valueQuantity.code = #1 "count"
 
-* component[distance].code = $LOINC#55430-3 "Distance walked"
+* component[distance].code = $LOINC#55430-3 "Walking distance unspecified time Pedometer"
 * component[distance].valueQuantity only Quantity
 * component[distance].valueQuantity.system = $UCUM
 * component[distance].valueQuantity.code = #km "kilometer"
@@ -44,7 +44,7 @@ Description: "Profile for recording physical activity data from iOS Health App"
 * component[duration].valueQuantity.system = $UCUM
 * component[duration].valueQuantity.code = #min "minute"
 
-* component[energy].code = $LOINC#55424-6 "Energy expenditure"
+* component[energy].code = $LOINC#55424-6 "Calories burned in unspecified time Pedometer"
 * component[energy].valueQuantity only Quantity
 * component[energy].valueQuantity.system = $UCUM
 * component[energy].valueQuantity.code = #kcal "kilocalorie"

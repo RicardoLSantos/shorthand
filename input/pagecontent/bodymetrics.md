@@ -46,9 +46,9 @@ The iOS Health App collects body measurements from the following sources:
 The body measurements are mapped to FHIR Observation resources with specific profiles for each type of measurement.
 
 ### Examples
-- Weight measurements use the [body-weight](StructureDefinition-body-weight.html) profile
-- Height uses the [body-height](StructureDefinition-body-height.html) profile
-- BMI calculations use the [bmi](StructureDefinition-bmi.html) profile
+- Weight measurements use the [body-weight](StructureDefinition-weight-observation.html) profile
+- Height uses the [body-height](StructureDefinition-height-observation.html) profile
+- BMI calculations use the [bmi](StructureDefinition-bmi-observation.html) profile
 
 ## Supported Operations
 

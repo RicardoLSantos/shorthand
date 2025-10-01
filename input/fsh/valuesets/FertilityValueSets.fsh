@@ -1,16 +1,37 @@
 ValueSet: CervicalMucusValueSet
-Id: cervical-mucus-valueset
+Id: cervical-mucus-vs
 Title: "Cervical Mucus Value Set"
 Description: "Value set for cervical mucus observations"
-* ^url = "https://2rdoc.pt/fhir/ValueSet/cervical-mucus-vs"
+* ^experimental = false
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cervical-mucus-vs"
 * ^status = #active
-* include codes from system https://2rdoc.pt/fhir/CodeSystem/cervical-mucus-cs
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cervical-mucus-cs
 
 CodeSystem: CervicalMucusCodeSystem
 Id: cervical-mucus-cs
 Description: "Code system for cervical mucus classification"Title: "Cervical Mucus Code System"
-* ^url = "https://2rdoc.pt/fhir/CodeSystem/cervical-mucus-cs"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cervical-mucus-cs"
 * ^status = #active
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
 * #dry "Dry"
 * #sticky "Sticky"
@@ -19,36 +40,78 @@ Description: "Code system for cervical mucus classification"Title: "Cervical Muc
 * #eggWhite "Egg White"
 
 ValueSet: OvulationTestValueSet
-Id: ovulation-test-valueset
+Id: ovulation-test-vs
 Title: "Ovulation Test Value Set"
 Description: "Value set for ovulation test results"
-* ^url = "https://2rdoc.pt/fhir/ValueSet/ovulation-test-vs"
+* ^experimental = false
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ovulation-test-vs"
 * ^status = #active
-* include codes from system https://2rdoc.pt/fhir/CodeSystem/ovulation-test-cs
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs
 
 CodeSystem: OvulationTestCodeSystem
 Id: ovulation-test-cs
 Description: "Code system for ovulation test results"Title: "Ovulation Test Code System"
-* ^url = "https://2rdoc.pt/fhir/CodeSystem/ovulation-test-cs"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs"
 * ^status = #active
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
 * #negative "Negative"
 * #positive "Positive"
 * #invalid "Invalid Test"
 
 ValueSet: FertilityStatusValueSet
-Id: fertility-status-valueset
+Id: fertility-status-vs
 Title: "Fertility Status Value Set"
 Description: "Value set for fertility status"
-* ^url = "https://2rdoc.pt/fhir/ValueSet/fertility-status-vs"
+* ^experimental = false
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fertility-status-vs"
 * ^status = #active
-* include codes from system https://2rdoc.pt/fhir/CodeSystem/fertility-status-cs
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs
 
 CodeSystem: FertilityStatusCodeSystem
 Id: fertility-status-cs
 Description: "Code system for fertility status indicators"Title: "Fertility Status Code System"
-* ^url = "https://2rdoc.pt/fhir/CodeSystem/fertility-status-cs"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs"
 * ^status = #active
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^publisher = "2RDoc FMUP"
+* ^contact.name = "2RDoc Technical Team"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
+* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
 * #fertile "Fertile"
 * #notFertile "Not Fertile"

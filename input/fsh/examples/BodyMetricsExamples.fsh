@@ -36,7 +36,7 @@ Description: "Body Mass Index observation example"
 Title: "BMI Calculation Example"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
-* code = $LOINC#39156-5 "Body mass index (BMI)"
+* code = $LOINC#39156-5 "Body mass index (BMI) [Ratio]"
 * subject = Reference(PatientExample)
 * performer = Reference(PractitionerExample)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
@@ -53,33 +53,33 @@ Description: "Body composition observation example"
 Title: "Body Composition Measurement Example" 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
-* code = $LOINC#88365-2 "Body composition panel"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#body-composition-panel "Body composition measurement panel"
 * subject = Reference(PatientExample)
 * performer = Reference(PractitionerExample)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
 * device = Reference(BioimpedanceAnalyzer)
 
-* component[bodyFat].code = $LOINC#41982-0 "Percentage body fat"
+* component[bodyFat].code = $LOINC#41982-0 "Percentage of body fat Measured"
 * component[bodyFat].valueQuantity = 22.5 '%' "percent"
 * component[bodyFat].valueQuantity.system = $UCUM
 * component[bodyFat].valueQuantity.unit = "percent"
 
-* component[leanMass].code = $LOINC#291-7 "Lean body mass"
+* component[leanMass].code = $LOINC#8342-8 "Lean body weight Immersion"
 * component[leanMass].valueQuantity = 54.6 'kg' "kilogram"
 * component[leanMass].valueQuantity.system = $UCUM
 * component[leanMass].valueQuantity.unit = "kilogram"
 
-* component[bodyWater].code = $LOINC#73708-0 "Total body water"
+* component[bodyWater].code = $LOINC#101683-1 "Body water mass"
 * component[bodyWater].valueQuantity = 39.2 'L' "liter"
 * component[bodyWater].valueQuantity.system = $UCUM
 * component[bodyWater].valueQuantity.unit = "liter"
 
-* component[muscleMass].code = $LOINC#73713-0 "Muscle mass"
+* component[muscleMass].code = $LOINC#73965-6 "Body muscle mass/Body weight Measured"
 * component[muscleMass].valueQuantity = 51.8 'kg' "kilogram"
 * component[muscleMass].valueQuantity.system = $UCUM
 * component[muscleMass].valueQuantity.unit = "kilogram"
 
-* component[boneMass].code = $LOINC#73711-4 "Bone mass"
+* component[boneMass].code = $LOINC#101685-6 "Body bone mass"
 * component[boneMass].valueQuantity = 2.8 'kg' "kilogram"
 * component[boneMass].valueQuantity.system = $UCUM
 * component[boneMass].valueQuantity.unit = "kilogram"
@@ -93,7 +93,7 @@ Title: "Smart Scale Device"
 * deviceName.type = #user-friendly-name
 * manufacturer = "HealthTech Devices"
 * modelNumber = "SBA-2024"
-* type = $SCT#469576000 "Digital scale device"
+* type = $SCT#5159002 "Physiologic monitoring system"
 
 Instance: BioimpedanceAnalyzer  
 InstanceOf: Device
@@ -104,4 +104,4 @@ Title: "Bioimpedance Analyzer Device"
 * deviceName.type = #user-friendly-name
 * manufacturer = "MedTech Solutions"
 * modelNumber = "BCA-Pro"
-* type = $SCT#706767009 "Body composition analyzer"
+* type = $SCT#706767009 "Patient data recorder"

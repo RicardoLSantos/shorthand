@@ -19,17 +19,17 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation WeightWithConditions</b></p><a name=\"WeightWithConditions\"> </a><a name=\"hcWeightWithConditions\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-weight-observation.html\">Weight Measurement Profile</a></p></div><p><b>Measurement Conditions Extension</b>: <span title=\"Códigos:{http://snomed.info/sct 307818003}\">Pre-breakfast</span></p><p><b>Measurement Device Type Extension</b>: <span title=\"Códigos:{http://snomed.info/sct 469576000}\">Smart scale device</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 29463-7}\">Body weight</span></p><p><b>subject</b>: <a href=\"Patient/example\">Patient/example</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 70.5 kg<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigokg = 'kg')</span></p></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation WeightWithConditions</b></p><a name=\"WeightWithConditions\"> </a><a name=\"hcWeightWithConditions\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-weight-observation.html\">Weight Measurement Profile</a></p></div><p><b>Measurement Conditions Extension</b>: <span title=\"Códigos:{http://snomed.info/sct 307157005}\">Before breakfast</span></p><p><b>Measurement Device Type Extension</b>: <span title=\"Códigos:{http://snomed.info/sct 5159002}\">Physiologic monitoring system</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 29463-7}\">Body weight</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>value</b>: 70.5 kg<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigokg = 'kg')</span></p></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions"^^xsd:anyURI ] ;
      fhir:value [
        a fhir:CodeableConcept ;
        fhir:coding ( [
-         a sct:307818003 ;
+         a sct:307157005 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "307818003" ] ;
-         fhir:display [ fhir:v "Pre-breakfast" ]
+         fhir:code [ fhir:v "307157005" ] ;
+         fhir:display [ fhir:v "Before breakfast" ]
        ] )
      ]
   ] [
@@ -37,10 +37,10 @@
      fhir:value [
        a fhir:CodeableConcept ;
        fhir:coding ( [
-         a sct:469576000 ;
+         a sct:5159002 ;
          fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "469576000" ] ;
-         fhir:display [ fhir:v "Smart scale device" ]
+         fhir:code [ fhir:v "5159002" ] ;
+         fhir:display [ fhir:v "Physiologic monitoring system" ]
        ] )
      ]
   ] ) ; # 

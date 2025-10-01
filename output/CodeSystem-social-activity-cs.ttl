@@ -11,14 +11,15 @@
   fhir:id [ fhir:v "social-activity-cs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem social-activity-cs</b></p><a name=\"social-activity-cs\"> </a><a name=\"hcsocial-activity-cs\"> </a><p>Este  sistema de código <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-activity-cs</code> define o seguinte códigos:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">meal<a name=\"social-activity-cs-meal\"> </a></td><td>Shared Meal</td><td>Sharing a meal together</td></tr><tr><td style=\"white-space:nowrap\">exercise<a name=\"social-activity-cs-exercise\"> </a></td><td>Group Exercise</td><td>Group physical activity</td></tr><tr><td style=\"white-space:nowrap\">entertainment<a name=\"social-activity-cs-entertainment\"> </a></td><td>Entertainment</td><td>Shared entertainment activity</td></tr><tr><td style=\"white-space:nowrap\">learning<a name=\"social-activity-cs-learning\"> </a></td><td>Learning</td><td>Group learning activity</td></tr><tr><td style=\"white-space:nowrap\">volunteering<a name=\"social-activity-cs-volunteering\"> </a></td><td>Volunteering</td><td>Community service activity</td></tr><tr><td style=\"white-space:nowrap\">celebration<a name=\"social-activity-cs-celebration\"> </a></td><td>Celebration</td><td>Social celebration or event</td></tr></table></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem social-activity-cs</b></p><a name=\"social-activity-cs\"> </a><a name=\"hcsocial-activity-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">meal<a name=\"social-activity-cs-meal\"> </a></td><td>Shared Meal</td><td>Sharing a meal together</td></tr><tr><td style=\"white-space:nowrap\">exercise<a name=\"social-activity-cs-exercise\"> </a></td><td>Group Exercise</td><td>Group physical activity</td></tr><tr><td style=\"white-space:nowrap\">entertainment<a name=\"social-activity-cs-entertainment\"> </a></td><td>Entertainment</td><td>Shared entertainment activity</td></tr><tr><td style=\"white-space:nowrap\">learning<a name=\"social-activity-cs-learning\"> </a></td><td>Learning</td><td>Group learning activity</td></tr><tr><td style=\"white-space:nowrap\">volunteering<a name=\"social-activity-cs-volunteering\"> </a></td><td>Volunteering</td><td>Community service activity</td></tr><tr><td style=\"white-space:nowrap\">celebration<a name=\"social-activity-cs-celebration\"> </a></td><td>Celebration</td><td>Social celebration or event</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-activity-cs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "SocialActivityCS"] ; # 
   fhir:title [ fhir:v "Social Activity Code System"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2025-08-20T17:48:34+01:00"^^xsd:dateTime] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-10-01T16:36:18+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -28,6 +29,43 @@
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "Code system for types of social activities"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
   fhir:content [ fhir:v "complete"] ; # 
   fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
   fhir:concept ( [
