@@ -1,0 +1,28 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientMindfulness> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PatientMindfulness"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Patient PatientMindfulness</b></p><a name=\"PatientMindfulness\"> </a><a name=\"hcPatientMindfulness\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Test Mindfulness  Other, DoB: 1980-01-01 ( http://example.org/patients#mindfulness-patient)</p><hr/></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://example.org/patients"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "mindfulness-patient" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Mindfulness" ] ;
+     fhir:given ( [ fhir:v "Test" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "other"] ; # 
+  fhir:birthDate [ fhir:v "1980-01-01"^^xsd:date] . # 
+
+# -------------------------------------------------------------------------------------
+

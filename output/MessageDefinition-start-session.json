@@ -1,0 +1,77 @@
+{
+  "resourceType" : "MessageDefinition",
+  "id" : "start-session",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: MessageDefinition start-session</b></p><a name=\"start-session\"> </a><a name=\"hcstart-session\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-mindfulness-message-definition.html\">Mindfulness Message Definition</a></p></div><p><b>url</b>: <a href=\"MessageDefinition-start-session.html\">MessageDefinition: url = https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/start-session; version = 0.1.0; status = active; date = 2024-03-19; publisher = Ricardo Lourenço dos Santos; contact = Ricardo Lourenço dos Santos (https://linktr.ee/ricardolsantos); jurisdiction = Europe,Northern America a/,South America,Portugal,United States of America,Brazil; copyright = ; event[x] = Session Start (mindfulness-message-events#session-start); category = notification</a></p><p><b>version</b>: 0.1.0</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-03-19</p><p><b>publisher</b>: Ricardo Lourenço dos Santos</p><p><b>contact</b>: Ricardo Lourenço dos Santos: <a href=\"https://linktr.ee/ricardolsantos\">https://linktr.ee/ricardolsantos</a></p><p><b>jurisdiction</b>: <span title=\"Códigos:{http://unstats.un.org/unsd/methods/m49/m49.htm 150}\">Europe</span>, <span title=\"Códigos:{http://unstats.un.org/unsd/methods/m49/m49.htm 021}\">Northern America a/</span>, <span title=\"Códigos:{http://unstats.un.org/unsd/methods/m49/m49.htm 005}\">South America</span>, <span title=\"Códigos:{urn:iso:std:iso:3166 PT}\">Portugal</span>, <span title=\"Códigos:{urn:iso:std:iso:3166 US}\">United States of America</span>, <span title=\"Códigos:{urn:iso:std:iso:3166 BR}\">Brazil</span></p><p><b>event</b>: mindfulness-message-events session-start: Session Start</p><p><b>category</b>: Notification</p><h3>Focus</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Profile</b></td><td><b>Min</b></td><td><b>Max</b></td></tr><tr><td style=\"display: none\">*</td><td>Observation</td><td><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session</code></td><td>1</td><td>*</td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/start-session",
+  "version" : "0.1.0",
+  "status" : "active",
+  "date" : "2024-03-19",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "eventCoding" : {
+    "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-message-events",
+    "code" : "session-start",
+    "display" : "Session Start"
+  },
+  "category" : "notification",
+  "focus" : [{
+    "code" : "Observation",
+    "profile" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session",
+    "min" : 1,
+    "max" : "*"
+  }]
+}

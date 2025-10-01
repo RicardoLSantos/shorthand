@@ -1,27 +1,32 @@
-# Generated directories
+# Generated directories (excluded from GitHub, but output/ will be force-added)
 /temp/
-/output/
 /input-cache/
 /fsh-generated/
 /qa/
 
 # Local IG Publisher files
-/input-cache/
 /template/
+publisher.jar
+validator_cli.jar
+*.jar
+
+# Internal use only - NOT for GitHub
+/backups/
+/documentation/
 
 # Backups and temporary files
-# Note: /backups/ and /documentation/ are tracked for internal use
-# but /output/, /temp/, and /fsh-generated/ remain ignored
 backup_descriptions-*.tar.gz
 *_old/
 preprocessed/
 ls_*.txt
+
+# Build logs (keep local only)
+*.log
 
 # System specific files
 .DS_Store
 Thumbs.db
 
 # Other common files to ignore
-*.log
 *.swp
 *.swo

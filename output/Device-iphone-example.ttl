@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/iphone-example> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "iphone-example"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Device iphone-example</b></p><a name=\"iphone-example\"> </a><a name=\"hciphone-example\"> </a><p><b>status</b>: Active</p><p><b>manufacturer</b>: Apple Inc.</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>iPhone</td><td>User Friendly name</td></tr></table><p><b>type</b>: <span title=\"Códigos:{http://snomed.info/sct 706689003}\">Application programme software</span></p><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>iOS 17.0</td></tr></table><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/device-property-type model}\">model</span></p><p><b>valueCode</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/device-property-type model}\">model</span></p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/device-property-type os-version}\">os-version</span></p><p><b>valueCode</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/device-property-type os-version}\">os-version</span></p></blockquote><p><b>note</b>: </p><blockquote><div><p>iPhone 15 Pro running iOS 17.0 - Apple Inc.</p>\n</div></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:manufacturer [ fhir:v "Apple Inc."] ; # 
+  fhir:deviceName ( [
+     fhir:name [ fhir:v "iPhone" ] ;
+     fhir:type [ fhir:v "user-friendly-name" ]
+  ] ) ; # 
+  fhir:type [
+     fhir:coding ( [
+       a sct:706689003 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "706689003" ] ;
+       fhir:display [ fhir:v "Application programme software" ]
+     ] )
+  ] ; # 
+  fhir:version ( [
+     fhir:value [ fhir:v "iOS 17.0" ]
+  ] ) ; # 
+  fhir:property ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/device-property-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "model" ]
+       ] )
+     ] ;
+     fhir:valueCode ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/device-property-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "model" ]
+       ] )
+     ] )
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/device-property-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "os-version" ]
+       ] )
+     ] ;
+     fhir:valueCode ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/device-property-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "os-version" ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "iPhone 15 Pro running iOS 17.0 - Apple Inc." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
