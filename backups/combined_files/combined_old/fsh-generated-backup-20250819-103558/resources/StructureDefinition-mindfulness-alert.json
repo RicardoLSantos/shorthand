@@ -1,0 +1,80 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-alert",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-alert",
+  "name": "(MindfulnessAlert|)",
+  "title": "(Mindfulness|) (Alert|)",
+  "status": "draft",
+  "description": "(Alert|) configuration for mindfulness sessions",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Basic|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Basic|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Basic|).extension",
+        "path": "(Basic|).extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "(Basic|).extension:alert(Timing|)",
+        "path": "(Basic|).extension",
+        "slice(Name|)": "alert(Timing|)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Extension|)",
+            "profile": [
+              "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/alert-timing"
+            ]
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Basic|).extension:alert(Message|)",
+        "path": "(Basic|).extension",
+        "slice(Name|)": "alert(Message|)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Extension|)",
+            "profile": [
+              "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/alert-message"
+            ]
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Basic|).code",
+        "path": "(Basic|).code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "reminder",
+              "system": "http://example.org/(CodeSystem|)/mindfulness-alert-type",
+              "display": "(Mindfulness|) (Reminder|)"
+            }
+          ]
+        },
+        "must(Support|)": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resource(Type|)": "(Questionnaire|)",
+  "id": "(MindfulnessQuestionnaireExample|)",
+  "item": [
+    {
+      "item": [
+        {
+          "link(Id|)": "duration",
+          "text": "(Duration|) (minutes)",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "answer(Option|)": [
+            {
+              "value(String|)": "(Mindful|) (Breathing|)"
+            },
+            {
+              "value(String|)": "(Body|) (Scan|)"
+            },
+            {
+              "value(String|)": "(Walking|) (Meditation|)"
+            }
+          ],
+          "link(Id|)": "technique",
+          "text": "(Technique|) (Used|)",
+          "type": "choice",
+          "required": true
+        }
+      ],
+      "link(Id|)": "session_details",
+      "text": "(Session|) (Details|)",
+      "type": "group"
+    }
+  ],
+  "url": "http://example.org/(Questionnaire|)/mindfulness-example",
+  "status": "active",
+  "title": "(Daily|) (Mindfulness|) (Assessment|)",
+  "version": "1.0",
+  "name": "(MindfulnessQuestionnaireExample|)",
+  "date": "2024-03-19",
+  "publisher": "(Example|) (Organization|)",
+  "description": "(Example|) questionnaire for daily mindfulness practice assessment"
+}

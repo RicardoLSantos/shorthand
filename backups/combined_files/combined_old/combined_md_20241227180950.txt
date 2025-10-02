@@ -1,0 +1,3561 @@
+
+// ===== Conteúdo de: nutrition.md =====
+
+# Nutrition
+
+## General Description
+This module describes how nutritional data collected from the iOS Health App and through questionnaires are mapped to FHIR resources. Nutritional data is essential for assessment and intervention in lifestyle medicine.
+
+## Data Sources
+Nutritional data is collected from:
+- iOS Health App (automatic data)
+- User-completed questionnaires 
+- Integrated nutrition apps
+- Manual records
+
+## Types of Data Collected
+
+### 1. Hydration
+- Water intake volume
+- Other non-caloric beverages
+- Intake timestamps
+- Record source
+
+### 2. Energy
+- Total calories consumed
+- Distribution by meal
+- Meal timestamps
+- Energy balance
+
+### 3. Macronutrients
+- Carbohydrates (g)
+- Proteins (g) 
+- Fats (g)
+  - Saturated
+  - Unsaturated
+  - Trans
+
+### 4. Micronutrients
+- Vitamins
+- Minerals
+- Electrolytes
+
+### 5. Other
+- Caffeine
+- Fiber
+- Alcohol
+
+## FHIR Resources
+The nutritional data is mapped to FHIR resources with specific profiles for each type of measurement:
+
+### Observations
+- Nutrition intake observations
+- Hydration observations
+- Energy/caloric intake
+- Nutrient measurements
+
+### Care Plans
+- Nutrition care plans
+- Dietary recommendations
+- Supplementation plans
+
+### Goals
+- Nutritional goals
+- Hydration targets
+- Weight management goals
+
+## Implementation Considerations
+
+### Data Validation
+- Physiological range validation
+- Consistency checks
+- Cross-validation between related measurements
+- Unit standardization
+
+### Privacy & Security  
+- Data anonymization
+- Access control
+- Audit logging
+- Consent management
+
+## Questionnaire to Observation Mapping
+
+### QuestionnaireResponse to Observation
+| Questionnaire Item | FHIR Observation |
+|-------------------|------------------|
+| water_intake | WaterIntakeObservation |
+| calories | CalorieIntakeObservation |
+| macronutrients | MacronutrientsObservation |
+
+### Transformation Rules
+1. Each meal response generates:
+   - A calorie observation
+   - A macronutrients observation
+  
+2. Daily Aggregations:
+   - Total calories
+   - Total macronutrients
+   - Total water
+   - Total caffeine
+
+3. Validations:
+   - Sum of macronutrients in grams
+   - Calorie calculation from macronutrients
+   - Values within physiological ranges
+
+### Implementation Notes
+- Each QuestionnaireResponse is processed into multiple Observations
+- Timestamps from meal records are preserved in Observations
+- Aggregations are performed at the end of each day
+- All measurements include source attribution
+
+## Implementation Considerations
+
+### Data Flow
+1. Collection
+   - Questionnaire completion
+   - App integration
+   - iOS Health App data
+
+2. Processing
+   - Data validation
+   - Derived calculations
+   - Aggregations
+
+3. Storage
+   - QuestionnaireResponse
+   - Observations
+   - History
+
+### Validations
+1. Raw Data
+   - Valid ranges
+   - Temporal consistency
+   - Completeness
+
+2. Calculations
+   - Macronutrient balance
+   - Caloric equivalence
+   - Daily goals
+
+### UX Considerations
+1. Questionnaire Interface
+   - Easy completion
+   - Default values
+   - Real-time validation
+
+2. Feedback
+   - Daily progress
+   - Goal alerts
+   - Suggestions
+
+### Technical Aspects
+1. Device Integration
+   - HealthKit permissions
+   - Data synchronization
+   - Offline support
+
+2. Performance
+   - Batch processing
+   - Query optimization
+   - Data aggregation strategies
+
+3. Security
+   - Data encryption
+   - Access control
+   - Audit logging
+
+
+
+// ===== Conteúdo de: sleep.md =====
+
+# Sleep
+
+## General Description
+This module describes how sleep data collected from the iOS Health App is mapped to FHIR resources. Sleep monitoring is a critical component of lifestyle medicine, providing insights into sleep quality and quantity.
+
+## Data Source
+The iOS Health App collects sleep data from the following sources:
+- Apple Watch
+- Integrated third-party apps
+- Manual records
+
+## Types of Collected Data
+
+### Key Metrics
+1. Time in Bed
+   - Start time
+   - End time
+   - Total duration
+
+2. Sleep Time
+   - Total time sleeping
+   - Sleep efficiency (percentage of time in bed actually sleeping)
+
+3. Sleep Stages
+   - Deep Sleep
+   - REM Sleep
+   - Light Sleep
+   - Awake Time
+
+4. Physiological Data During Sleep
+   - Respiratory rate
+   - Heart rate variability
+   - Average heart rate
+
+5. Sleep Quality
+   - Sleep interruptions
+   - Time to fall asleep
+   - Sleep consistency
+
+## Collection Frequency
+- Continuous data during sleep period
+- Daily metrics aggregation
+- Weekly trend analysis
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + date-range
+- patient + category
+
+### Search Parameters
+- patient: Patient identifier
+- date: Sleep record date
+- category: Observation category (always "sleep")
+
+### Search Examples
+GET [base]/Observation?category=sleep&patient=[id]&date=[date]
+GET [base]/Observation?category=sleep&patient=[id]&date=ge[start]&date=le[end]
+
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime/effectivePeriod
+- component.timeInBed
+- component.totalSleepTime
+- component.deepSleep
+- component.remSleep
+- component.lightSleep
+- component.respiratoryRate
+- component.heartRateVariability
+- component.interruptions
+
+### Cardinality
+- Time in bed and total sleep time are mandatory (1..1)
+- Other components are optional (0..1)
+
+### Validation
+- Total sleep time must be less than or equal to time in bed
+- The sum of sleep stages must equal the total sleep time
+
+## iOS Health App to FHIR Mapping
+
+### Main Fields
+| iOS Health App | FHIR Path |
+|----------------|-----------|
+| Time in Bed | component[timeInBed].valueQuantity |
+| Sleep Time | component[totalSleepTime].valueQuantity |
+| Deep Sleep | component[deepSleep].valueQuantity |
+| REM Sleep | component[remSleep].valueQuantity |
+| Light Sleep | component[lightSleep].valueQuantity |
+| Respiratory Rate | component[respiratoryRate].valueQuantity |
+| HRV | component[heartRateVariability].valueQuantity |
+| Interruptions | component[interruptions].valueQuantity |
+
+### Implementation Considerations
+1. Data Aggregation
+   - Data is collected continuously during sleep
+   - Nightly aggregation is done automatically
+   - Metrics are calculated per night of sleep
+
+2. Data Quality
+   - Temporal overlap validation
+   - Consistency check between metrics
+   - Outlier detection
+
+3. Privacy and Security
+   - Sensitive data requiring protection
+   - User consent required
+   - Anonymization for research use
+
+
+
+// ===== Conteúdo de: fsh-link-references.md =====
+
+[DeviceActivityTracker]: Device-DeviceActivityTracker.html
+[AlertMessage]: StructureDefinition-alert-message.html
+[AlertTiming]: StructureDefinition-alert-timing.html
+[AuditFormatExtension]: StructureDefinition-audit-format.html
+[AuditLevelExtension]: StructureDefinition-audit-level.html
+[AuditRetentionExtension]: StructureDefinition-audit-retention.html
+[BioimpedanceAnalyzer]: Device-BioimpedanceAnalyzer.html
+[BloodPressureExample]: Observation-BloodPressureExample.html
+[DeviceBloodPressureMonitor]: Device-DeviceBloodPressureMonitor.html
+[BloodPressureObservation]: StructureDefinition-blood-pressure-observation.html
+[BMIExample]: Observation-BMIExample.html
+[BMIObservation]: StructureDefinition-bmi-observation.html
+[BodyCompositionExample]: Observation-BodyCompositionExample.html
+[BodyCompositionObservation]: StructureDefinition-body-composition-observation.html
+[BodyMetricsObservation]: StructureDefinition-body-metrics-observation.html
+[CalorieIntakeObservation]: StructureDefinition-calorie-intake-observation.html
+[CompleteMindfulnessSession]: Observation-CompleteMindfulnessSession.html
+[CompleteMindfulnessResponse]: QuestionnaireResponse-CompleteMindfulnessResponse.html
+[MindfulnessCSVTransform]: StructureMap-MindfulnessCSVTransform.html
+[DailyMindfulnessAlert]: Basic-DailyMindfulnessAlert.html
+[DailyMindfulnessQuestionnaire]: Questionnaire-DailyMindfulnessQuestionnaire.html
+[DailyNutritionQuestionnaire]: Questionnaire-DailyNutritionQuestionnaire.html
+[NutritionQuestionnaireResponseExample]: QuestionnaireResponse-NutritionQuestionnaireResponseExample.html
+[DefaultAuditConfig]: Basic-DefaultAuditConfig.html
+[DefaultMindfulnessConfig]: Basic-DefaultMindfulnessConfig.html
+[EndSessionMessage]: MessageDefinition-EndSessionMessage.html
+[EndSessionOperation]: OperationDefinition-EndSessionOperation.html
+[MindfulnessAuditExample]: Basic-MindfulnessAuditExample.html
+[MindfulnessQuestionnaireExample]: Questionnaire-MindfulnessQuestionnaireExample.html
+[MindfulnessObservationExample]: Observation-MindfulnessObservationExample.html
+[SleepObservationExample1]: Observation-SleepObservationExample1.html
+[PhysicalActivityExample1]: Observation-PhysicalActivityExample1.html
+[PatientExample]: Patient-PatientExample.html
+[MindfulnessHealthKitTransform]: StructureMap-MindfulnessHealthKitTransform.html
+[HeartRateExample]: Observation-HeartRateExample.html
+[DeviceHeartRateMonitor]: Device-DeviceHeartRateMonitor.html
+[HeartRateObservation]: StructureDefinition-heart-rate-observation.html
+[HeightExample]: Observation-HeightExample.html
+[HeightObservation]: StructureDefinition-height-observation.html
+[LifestyleVitalSigns]: StructureDefinition-lifestyle-vital-signs.html
+[MacronutrientsObservation]: StructureDefinition-macronutrients-observation.html
+[MeasurementConditions]: StructureDefinition-measurement-conditions.html
+[MeasurementConditionsVS]: ValueSet-measurement-conditions-vs.html
+[MeasurementContext]: StructureDefinition-measurement-context.html
+[MeasurementContextVitalSigns]: ValueSet-measurement-context-vital-signs.html
+[MeasurementContextVS]: ValueSet-measurement-context-vs.html
+[MeasurementDevice]: StructureDefinition-measurement-device-type.html
+[MeasurementDeviceTypeVS]: ValueSet-measurement-device-type-vs.html
+[MeasurementQuality]: StructureDefinition-measurement-quality.html
+[MeasurementQualityVS]: ValueSet-measurement-quality-vs.html
+[MindfulnessAlert]: StructureDefinition-mindfulness-alert.html
+[MindfulnessAudit]: StructureDefinition-mindfulness-audit.html
+[MindfulnessAuditConfig]: StructureDefinition-mindfulness-audit-config.html
+[MindfulnessAuditFormat]: StructureDefinition-mindfulness-audit-format.html
+[MindfulnessAuditLevel]: StructureDefinition-mindfulness-audit-level.html
+[MindfulnessAuditRetention]: StructureDefinition-mindfulness-audit-retention.html
+[MindfulnessConfiguration]: StructureDefinition-mindfulness-configuration.html
+[MindfulnessAccessPolicy]: Consent-MindfulnessAccessPolicy.html
+[MindfulnessSecurityDefinition]: Consent-MindfulnessSecurityDefinition.html
+[MindfulnessDiagnosticMap]: ConceptMap-MindfulnessDiagnosticMap.html
+[MindfulnessImportMap]: StructureDefinition-mindfulness-import-map.html
+[MindfulnessMessageDefinition]: StructureDefinition-mindfulness-message-definition.html
+[MindfulnessCapabilityStatement]: CapabilityStatement-MindfulnessCapabilityStatement.html
+[MindfulnessNotificationEnabled]: StructureDefinition-mindfulness-notification-enabled.html
+[MindfulnessOperation]: StructureDefinition-mindfulness-operation.html
+[MindfulnessOutcomeCS]: CodeSystem-mindfulness-outcome-cs.html
+[MindfulnessOutcomeVS]: ValueSet-mindfulness-outcome-vs.html
+[MindfulnessProgressReport]: Measure-MindfulnessProgressReport.html
+[MindfulnessQualifierCS]: CodeSystem-mindfulness-qualifier-cs.html
+[MindfulnessQualifierVS]: ValueSet-mindfulness-qualifier-vs.html
+[MindfulnessTypeCS]: CodeSystem-mindfulness-type-cs.html
+[MindfulnessTypeVS]: ValueSet-mindfulness-type-vs.html
+[MindfulnessPreferredGuide]: StructureDefinition-mindfulness-preferred-guide.html
+[MindfulnessReminderTime]: StructureDefinition-mindfulness-reminder-time.html
+[MindfulnessSchedule]: StructureDefinition-mindfulness-schedule.html
+[MindfulnessScheduleTiming]: StructureDefinition-mindfulness-schedule-timing.html
+[MindfulnessContext]: StructureDefinition-mindfulness-context.html
+[MindfulnessSessionDuration]: StructureDefinition-mindfulness-session-duration.html
+[MindfulnessObservation]: StructureDefinition-mindfulness-observation.html
+[MindfulnessSettingCS]: CodeSystem-MindfulnessSettingCS.html
+[MoodValueSet]: ValueSet-mood-vs.html
+[NutritionDataSourceCS]: CodeSystem-nutrition-data-source-cs.html
+[NutritionDataSource]: StructureDefinition-nutrition-data-source.html
+[NutritionDataSourceVS]: ValueSet-nutrition-data-source-vs.html
+[NutritionIntakeObservation]: StructureDefinition-nutrition-intake-observation.html
+[OxygenSaturationObservation]: StructureDefinition-oxygen-saturation-observation.html
+[PhysicalActivityObservation]: StructureDefinition-physical-activity-observation.html
+[PhysicalActivityTypeVS]: ValueSet-physical-activity-type-vs.html
+[EnvironmentTypeCS]: CodeSystem-environment-type-cs.html
+[EnvironmentTypeVS]: ValueSet-environment-type-vs.html
+[MindfulnessType]: SearchParameter-MindfulnessType.html
+[SessionDuration]: SearchParameter-SessionDuration.html
+[StressLevel]: SearchParameter-StressLevel.html
+[DeviceSleepMonitor]: Device-DeviceSleepMonitor.html
+[SleepObservation]: StructureDefinition-sleep-observation.html
+[SleepQuality]: StructureDefinition-sleep-quality.html
+[SleepQualityExtendedVS]: ValueSet-sleep-quality-extended-vs.html
+[SleepQualityVS]: ValueSet-sleep-quality-vs.html
+[SmartScale]: Device-SmartScale.html
+[StartSessionMessage]: MessageDefinition-StartSessionMessage.html
+[StartSessionOperation]: OperationDefinition-StartSessionOperation.html
+[WaterIntakeObservation]: StructureDefinition-water-intake-observation.html
+[WeeklyMindfulnessSchedule]: Basic-WeeklyMindfulnessSchedule.html
+[WeightExample]: Observation-WeightExample.html
+[WeightObservation]: StructureDefinition-weight-observation.html
+[WeightWithConditions]: Observation-WeightWithConditions.html
+
+
+// ===== Conteúdo de: vitalsigns.md =====
+
+# Vital Signs
+
+## General Description
+This module describes how vital signs data collected from the iOS Health App are mapped to FHIR resources. Vital signs are fundamental physiological measurements that reflect essential body functions and health states.
+
+## Data Source
+The iOS Health App collects vital signs from the following sources:
+- Apple Watch
+- Bluetooth-connected medical devices
+- Integrated third-party apps
+- Manual records
+
+## Types of Data Collected
+
+### 1. Heart Rate
+- Continuous measurement (Apple Watch)
+- Resting heart rate
+- Exercise heart rate
+- Recovery heart rate
+- Heart rate variability (HRV)
+- Anomaly recording
+
+### 2. Blood Pressure
+- Systolic pressure
+- Diastolic pressure
+- Date and time of measurement
+- Body position during measurement
+- Device used
+
+### 3. Oxygen Saturation (SpO2)
+- Saturation percentage
+- Trends over time
+- Sleep measurements
+- Activity measurements
+
+### 4. Body Temperature
+- Temperature in Celsius/Fahrenheit
+- Measurement location
+- Measurement method
+
+### 5. Respiratory Rate
+- Breaths per minute
+- Resting measurements
+- Sleep measurements
+- Exercise measurements
+
+### 6. ECG (Electrocardiogram)
+- Trace recording
+- Rhythm classification
+- Beat interval
+- Anomaly analysis
+
+## Collection Frequency
+- Heart Rate: Continuous (when using Apple Watch)
+- Blood Pressure: Per measurement
+- SpO2: Continuous or on-demand
+- Temperature: Per measurement
+- Respiratory Rate: Continuous during sleep/exercise
+- ECG: On-demand/recording
+
+## Operations Supported
+
+### Search
+- patient + date
+- patient + code
+- patient + category
+- patient + code + date-range
+
+### Search Parameters
+- patient: Patient identifier
+- date: Measurement date
+- code: Vital sign type
+- category: Category (vital-signs)
+
+### Search Examples
+GET [base]/Observation?category=vital-signs&patient=[id]&code=8867-4
+GET [base]/Observation?category=vital-signs&patient=[id]&date=ge2024-03-19
+
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- valueQuantity
+- component (when applicable)
+
+### Cardinality
+- Blood pressure requires systolic and diastolic components
+- Other vital signs require at least one value
+
+## iOS Health App to FHIR Mapping
+
+### Main Fields
+| iOS Health App | FHIR Path | LOINC Code |
+|----------------|-----------|-------------|
+| Heart Rate | valueQuantity | 8867-4 |
+| HRV | component[heartRateVariability] | 80404-7 |
+| Blood Pressure Systolic | component[systolic] | 8480-6 |
+| Blood Pressure Diastolic | component[diastolic] | 8462-4 |
+| SpO2 | valueQuantity | 2708-6 |
+| Body Temperature | valueQuantity | 8310-5 |
+| Respiratory Rate | valueQuantity | 9279-1 |
+
+### Implementation Considerations
+
+1. Source Prioritization
+- Apple Watch has priority for continuous measurements
+- Validated medical devices for specific measurements
+- Manual entries as last resort
+
+2. Data Validation
+- Verification of values within physiological ranges
+- Outlier detection
+- Temporal consistency of measurements
+
+3. Data Aggregation
+- Continuous measurements aggregated in intervals
+- Calculation of averages, minimums and maximums
+- Trends over time
+
+4. Accuracy and Reliability
+- Indication of measurement source/device
+- Measurement confidence level
+- Device calibration and validation
+
+5. Alert Management
+- Definition of normal limits
+- Notification of abnormal values
+- Critical alert escalation
+
+6. Storage and Retention
+- Data retention policy
+- Historical data compression
+- Backup and recovery
+
+
+
+// ===== Conteúdo de: physical_activity.md =====
+
+# Physical Activity
+
+## General Description
+This module describes how physical activity data from the iOS Health App is mapped to FHIR resources.
+
+## Data Source
+The iOS Health App collects physical activity data in the following ways:
+- iPhone sensors (step counter, GPS)
+- Apple Watch (when available)
+- Integrated third-party apps
+
+## Types of Data Collected
+
+### Steps
+- Total step count
+- Start and end timestamp
+- Data source
+
+### Distance
+- Total distance covered
+- Unit of measurement (meters/kilometers)
+- Type of movement (walking/running)
+
+### Workouts
+- Type of exercise
+- Duration
+- Calories burned
+- Distance (when applicable)
+- Heart rate (when available)
+
+### Energy
+- Active calories
+- Resting calories
+- Total calories
+
+## Collection Frequency
+- Steps: Continuous when in motion
+- Distance: Continuous during activity
+- Workouts: Per session
+- Energy: Daily calculation
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + activity-type
+- patient + date + activity-type
+
+### Search Parameters
+- patient: Patient identifier
+- date: Activity date
+- activity-type: Type of physical activity
+
+### Search Examples
+GET [base]/Observation?category=activity&patient=[id]&date=[date]
+GET [base]/Observation?category=activity&patient=[id]&code=[activity-type]
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported by the implementing system:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- component.steps
+- component.distance
+- component.duration
+- component.energy
+
+
+
+// ===== Conteúdo de: mindfulness.md =====
+
+# Mindfulness and Mental Health
+
+## General Description 
+This module describes how mindfulness practice and mental health data collected from the iOS Health App and through questionnaires are mapped to FHIR resources. This data is fundamental for assessing stress management and emotional wellbeing.
+
+## Data Sources
+Data is collected from:
+- iOS Health App (automatic data)
+- Apple Watch (breathing and mindfulness sessions) 
+- Self-assessment questionnaires
+- Integrated meditation apps
+- Manual records
+
+## Types of Data Collected
+
+### 1. Mindfulness Practices
+- Session duration
+- Type of practice
+- Session frequency 
+- Practice timing
+
+### 2. Mood State
+- Current mood
+- Daily variations
+- Influencing factors
+- Intensity
+
+### 3. Stress Levels
+- Perceived stress level
+- Physical symptoms
+- Identified triggers
+- Management strategies
+
+### 4. Relaxation
+- Time dedicated
+- Techniques used
+- Perceived effectiveness
+- Regularity
+
+## Collection Frequency
+- Mindfulness: Per session
+- Mood: Multiple times per day
+- Stress: Daily
+- Relaxation: Per session
+
+## FHIR Resources
+Mindfulness and mental health data is mapped to FHIR resources with specific profiles for each type of measurement:
+
+### Observations
+- Mindfulness session observations
+- Mood assessments 
+- Stress level measurements
+- Relaxation practice records
+
+### Questionnaires 
+- Mental health screenings
+- Stress assessments
+- Mood tracking
+- Practice logs
+
+### Goals
+- Practice frequency targets
+- Stress reduction goals
+- Emotional wellbeing objectives
+
+## Implementation Considerations
+
+### Data Privacy 
+- Enhanced security measures
+- Patient consent management
+- Access control
+- Data anonymization
+
+### Data Integration
+- HealthKit integration
+- Third-party app connectivity
+- Multi-device synchronization
+- Data consolidation
+## Implementation Considerations
+
+### Data Flow
+1. Collection
+   - Questionnaire completion
+   - Apple Watch data
+   - Meditation apps integration
+
+2. Processing
+   - Data validation
+   - Trend analysis
+   - Correlations with other indicators
+
+3. Storage
+   - QuestionnaireResponse
+   - Observations
+   - History and trends
+
+### Validations
+1. Input Data
+   - Valid ranges for scales
+   - Temporal consistency
+   - Correlation between measurements
+
+2. Analysis
+   - Mood patterns
+   - Practice effectiveness
+   - Stress triggers
+
+### UX Considerations
+1. Questionnaire Interface
+   - Simple completion
+   - Immediate visual feedback
+   - Multi-language support
+
+2. Feedback
+   - Trend visualization
+   - Personalized recommendations
+   - Adaptive reminders
+
+### Integration Requirements
+1. HealthKit Integration
+   - Mindfulness minutes
+   - Heart rate variability
+   - Sleep data correlation
+
+2. Third-party Apps
+   - API requirements
+   - Data synchronization
+   - Privacy considerations
+
+
+
+// ===== Conteúdo de: bodymetrics.md =====
+
+# Body Measurements
+
+## Overview
+This module describes how anthropometric and body composition data collected from the iOS Health App are mapped to FHIR resources. These measurements are fundamental for assessing nutritional status and monitoring lifestyle medicine interventions.
+
+## Data Sources
+The iOS Health App collects body measurements from the following sources:
+- Connected smart scales
+- Bioimpedance devices 
+- Manual measurements
+- Integrated third-party apps
+
+## Types of Collected Data
+
+### 1. Basic Measurements
+- Body weight
+- Height
+- BMI (automatically calculated)
+- Waist circumference
+
+### 2. Body Composition
+- Body fat percentage
+- Lean mass
+- Body water
+- Muscle mass 
+- Bone mass
+
+### 3. Segmental Analysis
+- Body fat distribution
+- Muscle mass distribution
+- Body symmetry
+
+### 4. Trends and Analysis
+- Weight variation
+- BMI history
+- Body composition progression
+- Goals and objectives
+
+## Collection Frequency
+- Weight: Recommended daily
+- Height: Periodically 
+- Body composition: Weekly
+- Circumference: Monthly
+
+## FHIR Resources
+The body measurements are mapped to FHIR Observation resources with specific profiles for each type of measurement.
+
+### Examples
+- Weight measurements use the [body-weight](StructureDefinition-body-weight.html) profile
+- Height uses the [body-height](StructureDefinition-body-height.html) profile
+- BMI calculations use the [bmi](StructureDefinition-bmi.html) profile
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + code
+- patient + date-range + code
+- patient + category
+
+### Search Parameters
+- patient: Patient identifier
+- date: Measurement date
+- code: Type of body measurement
+- category: Category (vital-signs)
+
+### Search Examples
+GET [base]/Observation?category=vital-signs&patient=[id]&code=29463-7
+GET [base]/Observation?category=vital-signs&patient=[id]&date=ge2024-03-19
+GET [base]/Observation?category=vital-signs&patient=[id]&code=88365-2&date=ge2024-01-01&date=le2024-12-31
+Copy
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status: Measurement status
+- category: Vital signs category
+- code: Type of measurement (LOINC code)
+- subject: Reference to patient
+- effectiveDateTime: When measurement was taken
+- valueQuantity: The measurement value and unit
+- component: Body composition components (for composition measurements)
+
+### Device Support
+The following device types are supported for data capture:
+- Smart scales
+- Bioimpedance analyzers
+- Manual entry
+- Third-party apps via HealthKit
+
+### Security Requirements
+- Patient access control
+- Device authentication
+- Data validation rules
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code | Description |
+|----------------|-----------|-------------|-------------|
+| Weight | WeightObservation.valueQuantity | 29463-7 | Body weight measurement |
+| Height | HeightObservation.valueQuantity | 8302-2 | Body height measurement |
+| BMI | BMIObservation.valueQuantity | 39156-5 | Body Mass Index calculation |
+| Body Fat % | BodyCompositionObservation.component[bodyFat] | 41982-0 | Percentage of body fat |
+| Lean Mass | BodyCompositionObservation.component[leanMass] | 291-7 | Lean body mass |
+| Body Water | BodyCompositionObservation.component[bodyWater] | 73708-0 | Total body water |
+| Muscle Mass | BodyCompositionObservation.component[muscleMass] | 73713-0 | Skeletal muscle mass |
+| Bone Mass | BodyCompositionObservation.component[boneMass] | 73711-4 | Bone mass measurement |
+
+### Implementation Considerations
+
+1. Data Validation
+- Physiological range validation
+- Sudden variation detection
+- Cross-validation between related measurements
+- Unit conversion and standardization
+
+2. Automatic Calculations
+- BMI calculation from weight and height
+- Cross-validation of composition measurements
+- Percentage changes and trends
+- Statistical analysis of measurements
+
+3. Frequency and Timing
+- Measurement frequency recommendations
+- Preferred measurement timing
+- Minimum intervals between measurements
+- Time zone handling for measurements
+
+4. Data Quality
+- Measurement source (device/manual)
+- Device calibration status
+- Measurement conditions
+- Data completeness checks
+
+5. Goal Integration
+- Goal setting and tracking
+- Progress monitoring
+- Significant deviation alerts
+- Personalized target ranges
+
+6. Reports and Visualizations
+- Trend charts and graphs
+- Reference comparisons
+- Body composition analysis
+- Progress reports and summaries
+
+### Device Integration
+
+1. Smart Scale Integration
+- Bluetooth connectivity
+- Data synchronization
+- Error handling
+- Battery status monitoring
+
+2. Bioimpedance Analysis
+- Device calibration requirements
+- Measurement protocol
+- Environmental conditions
+- Quality control checks
+
+3. Manual Entry
+- Data validation rules
+- Required fields
+- Unit conversion support
+- Entry confirmation
+
+### Error Handling
+
+1. Device Errors
+- Connection failures
+- Calibration errors
+- Battery warnings
+- Invalid measurements
+
+2. Data Validation Errors
+- Out of range values
+- Inconsistent measurements
+- Missing required data
+- Invalid units
+
+3. Synchronization Errors
+- Network connectivity issues
+- Data transfer failures
+- Version conflicts
+- Retry mechanisms
+
+
+
+
+// ===== Conteúdo de: index.md =====
+
+# iOS Health App Lifestyle Medicine Implementation Guide
+
+## Purpose
+This FHIR implementation guide defines how to extract and represent vital signs, sleep patterns, physical activity and other health related data from the iOS Health App to support lifestyle medicine interventions.
+
+## Scope
+- Health data from iOS Health App
+- Vital Signs
+- Physical activity data
+	- Steps
+	- Distance traveled
+	- Workouts
+	- Energy expenditure
+	- Exercise minutes
+
+## Use Cases
+1. Automatic physical activity data collection
+2. Daily activity level monitoring
+3. Movement pattern assessment
+4. Lifestyle intervention support
+
+## Audience
+- Healthcare software developers
+- Healthcare professionals
+- Researchers
+- Digital health managers
+
+
+
+// ===== Conteúdo de: mindfulness_module.md =====
+
+# Mindfulness Module Implementation Guide
+
+## Overview
+This module provides FHIR resources and profiles for tracking mindfulness practices and their outcomes in healthcare applications.
+
+## Scope
+- Mindfulness session recording
+- Mood and stress assessments
+- Practice outcomes tracking
+- Data integration with HealthKit
+
+## Key Resources
+
+### Profiles
+- MindfulnessObservation: Core profile for recording mindfulness sessions
+- MindfulnessQuestionnaire: Profile for mindfulness assessment tools
+- MindfulnessConfiguration: Profile for module configuration
+
+### Extensions
+- MindfulnessContext: Additional context about practice sessions
+- MindfulnessImportMap: Mapping configuration for data import
+
+### Value Sets
+- MoodValueSet: Standardized mood states
+- MindfulnessOutcomeVS: Practice outcomes
+- MindfulnessQualifierVS: Practice qualifiers
+
+## Implementation Guidelines
+
+### Data Collection
+1. Session Recording
+   - Duration tracking
+   - Practice type categorization
+   - Environmental context
+
+2. Assessment Tools
+   - Mood evaluation
+   - Stress level measurement
+   - Practice effectiveness
+
+### Integration Points
+1. HealthKit
+   - Mindfulness minutes
+   - Heart rate data
+   - Activity correlation
+
+2. Clinical Systems
+   - EHR integration
+   - Care plan incorporation
+   - Progress monitoring
+
+### Security Considerations
+- Patient data privacy
+- Access control
+- Audit logging
+- Data encryption
+
+## Conformance Requirements
+- Must support core profiles
+- Required value set bindings
+- Mandatory elements
+- Validation rules
+
+## Usage Examples
+See the examples directory for detailed implementation scenarios.
+
+
+
+// ===== Conteúdo de: nutrition.md =====
+
+# Nutrition
+
+## General Description
+This module describes how nutritional data collected from the iOS Health App and through questionnaires are mapped to FHIR resources. Nutritional data is essential for assessment and intervention in lifestyle medicine.
+
+## Data Sources
+Nutritional data is collected from:
+- iOS Health App (automatic data)
+- User-completed questionnaires 
+- Integrated nutrition apps
+- Manual records
+
+## Types of Data Collected
+
+### 1. Hydration
+- Water intake volume
+- Other non-caloric beverages
+- Intake timestamps
+- Record source
+
+### 2. Energy
+- Total calories consumed
+- Distribution by meal
+- Meal timestamps
+- Energy balance
+
+### 3. Macronutrients
+- Carbohydrates (g)
+- Proteins (g) 
+- Fats (g)
+  - Saturated
+  - Unsaturated
+  - Trans
+
+### 4. Micronutrients
+- Vitamins
+- Minerals
+- Electrolytes
+
+### 5. Other
+- Caffeine
+- Fiber
+- Alcohol
+
+## FHIR Resources
+The nutritional data is mapped to FHIR resources with specific profiles for each type of measurement:
+
+### Observations
+- Nutrition intake observations
+- Hydration observations
+- Energy/caloric intake
+- Nutrient measurements
+
+### Care Plans
+- Nutrition care plans
+- Dietary recommendations
+- Supplementation plans
+
+### Goals
+- Nutritional goals
+- Hydration targets
+- Weight management goals
+
+## Implementation Considerations
+
+### Data Validation
+- Physiological range validation
+- Consistency checks
+- Cross-validation between related measurements
+- Unit standardization
+
+### Privacy & Security  
+- Data anonymization
+- Access control
+- Audit logging
+- Consent management
+
+## Questionnaire to Observation Mapping
+
+### QuestionnaireResponse to Observation
+| Questionnaire Item | FHIR Observation |
+|-------------------|------------------|
+| water_intake | WaterIntakeObservation |
+| calories | CalorieIntakeObservation |
+| macronutrients | MacronutrientsObservation |
+
+### Transformation Rules
+1. Each meal response generates:
+   - A calorie observation
+   - A macronutrients observation
+  
+2. Daily Aggregations:
+   - Total calories
+   - Total macronutrients
+   - Total water
+   - Total caffeine
+
+3. Validations:
+   - Sum of macronutrients in grams
+   - Calorie calculation from macronutrients
+   - Values within physiological ranges
+
+### Implementation Notes
+- Each QuestionnaireResponse is processed into multiple Observations
+- Timestamps from meal records are preserved in Observations
+- Aggregations are performed at the end of each day
+- All measurements include source attribution
+
+## Implementation Considerations
+
+### Data Flow
+1. Collection
+   - Questionnaire completion
+   - App integration
+   - iOS Health App data
+
+2. Processing
+   - Data validation
+   - Derived calculations
+   - Aggregations
+
+3. Storage
+   - QuestionnaireResponse
+   - Observations
+   - History
+
+### Validations
+1. Raw Data
+   - Valid ranges
+   - Temporal consistency
+   - Completeness
+
+2. Calculations
+   - Macronutrient balance
+   - Caloric equivalence
+   - Daily goals
+
+### UX Considerations
+1. Questionnaire Interface
+   - Easy completion
+   - Default values
+   - Real-time validation
+
+2. Feedback
+   - Daily progress
+   - Goal alerts
+   - Suggestions
+
+### Technical Aspects
+1. Device Integration
+   - HealthKit permissions
+   - Data synchronization
+   - Offline support
+
+2. Performance
+   - Batch processing
+   - Query optimization
+   - Data aggregation strategies
+
+3. Security
+   - Data encryption
+   - Access control
+   - Audit logging
+
+
+
+// ===== Conteúdo de: sleep.md =====
+
+# Sleep
+
+## General Description
+This module describes how sleep data collected from the iOS Health App is mapped to FHIR resources. Sleep monitoring is a critical component of lifestyle medicine, providing insights into sleep quality and quantity.
+
+## Data Source
+The iOS Health App collects sleep data from the following sources:
+- Apple Watch
+- Integrated third-party apps
+- Manual records
+
+## Types of Collected Data
+
+### Key Metrics
+1. Time in Bed
+   - Start time
+   - End time
+   - Total duration
+
+2. Sleep Time
+   - Total time sleeping
+   - Sleep efficiency (percentage of time in bed actually sleeping)
+
+3. Sleep Stages
+   - Deep Sleep
+   - REM Sleep
+   - Light Sleep
+   - Awake Time
+
+4. Physiological Data During Sleep
+   - Respiratory rate
+   - Heart rate variability
+   - Average heart rate
+
+5. Sleep Quality
+   - Sleep interruptions
+   - Time to fall asleep
+   - Sleep consistency
+
+## Collection Frequency
+- Continuous data during sleep period
+- Daily metrics aggregation
+- Weekly trend analysis
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + date-range
+- patient + category
+
+### Search Parameters
+- patient: Patient identifier
+- date: Sleep record date
+- category: Observation category (always "sleep")
+
+### Search Examples
+GET [base]/Observation?category=sleep&patient=[id]&date=[date]
+GET [base]/Observation?category=sleep&patient=[id]&date=ge[start]&date=le[end]
+
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime/effectivePeriod
+- component.timeInBed
+- component.totalSleepTime
+- component.deepSleep
+- component.remSleep
+- component.lightSleep
+- component.respiratoryRate
+- component.heartRateVariability
+- component.interruptions
+
+### Cardinality
+- Time in bed and total sleep time are mandatory (1..1)
+- Other components are optional (0..1)
+
+### Validation
+- Total sleep time must be less than or equal to time in bed
+- The sum of sleep stages must equal the total sleep time
+
+## iOS Health App to FHIR Mapping
+
+### Main Fields
+| iOS Health App | FHIR Path |
+|----------------|-----------|
+| Time in Bed | component[timeInBed].valueQuantity |
+| Sleep Time | component[totalSleepTime].valueQuantity |
+| Deep Sleep | component[deepSleep].valueQuantity |
+| REM Sleep | component[remSleep].valueQuantity |
+| Light Sleep | component[lightSleep].valueQuantity |
+| Respiratory Rate | component[respiratoryRate].valueQuantity |
+| HRV | component[heartRateVariability].valueQuantity |
+| Interruptions | component[interruptions].valueQuantity |
+
+### Implementation Considerations
+1. Data Aggregation
+   - Data is collected continuously during sleep
+   - Nightly aggregation is done automatically
+   - Metrics are calculated per night of sleep
+
+2. Data Quality
+   - Temporal overlap validation
+   - Consistency check between metrics
+   - Outlier detection
+
+3. Privacy and Security
+   - Sensitive data requiring protection
+   - User consent required
+   - Anonymization for research use
+
+
+
+// ===== Conteúdo de: reproductive.md =====
+
+
+## FHIR Resources
+
+### Main Resources Used
+- Observation: For cycle tracking and temperature measurements
+- QuestionnaireResponse: For symptom reporting
+- CarePlan: For fertility planning
+- Goal: For reproductive health goals
+
+### Parameters
+- patient: Patient identifier
+- date: Record date
+- category: reproductive-health
+- code: Specific measurement type
+
+### Search Examples
+GET [base]/Observation?category=reproductive-health&patient=[id]&date=[date]
+GET [base]/Observation?code=menstrual-cycle&patient=[id]
+
+## Conformance
+
+### Must Support Elements
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- value[x]
+- component (for composite measurements)
+
+## Implementation Considerations
+
+### Data Collection
+1. Automated Measurements
+   - Temperature tracking
+   - Activity patterns
+   - Sleep quality
+   - Heart rate variability
+
+2. Manual Records
+   - Symptom logging
+   - Cycle tracking
+   - Fertility signs
+   - Medication use
+
+### Data Analysis
+1. Pattern Recognition
+   - Cycle regularity
+   - Temperature trends
+   - Symptom correlations
+   - Fertility windows
+
+2. Alert Generation
+   - Cycle predictions
+   - Fertile days
+   - Temperature changes
+   - Symptom patterns
+
+### Clinical Integration
+1. Reports
+   - Cycle summaries
+   - Fertility tracking
+   - Symptom patterns
+   - Treatment responses
+
+2. Decision Support
+   - Fertility planning
+   - Cycle abnormalities
+   - Risk identification
+   - Treatment monitoring
+
+### Privacy & Security
+1. Data Protection
+   - Encryption
+   - Access control
+   - Consent management
+   - Data sharing
+
+2. User Control
+   - Data visibility
+   - Sharing preferences
+   - Export options
+   - Deletion rights
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code |
+|----------------|-----------|------------|
+| Cycle Start | Observation.effectiveDateTime | 8665-2 |
+| Cycle Length | Observation.valueQuantity | 8664-5 |
+| Flow Duration | Observation.component[duration].valueQuantity | 49033-4 |
+| Basal Temperature | Observation.valueQuantity | 8310-5 |
+| Cervical Mucus | Observation.valueCodeableConcept | 8669-4 |
+
+### Integration Requirements
+1. HealthKit Access
+   - Permissions setup
+   - Data synchronization
+   - Background updates
+   - Error handling
+
+2. Data Validation
+   - Range checks
+   - Pattern validation
+   - Temporal consistency
+   - Cross-reference verification
+
+### Performance Considerations
+1. Data Processing
+   - Real-time updates
+   - Batch processing
+   - Historical data
+   - Trend analysis
+
+2. Resource Optimization
+   - Battery usage
+   - Storage efficiency
+   - Network usage
+   - Processing load
+
+### User Interface Guidelines
+1. Data Entry
+   - Quick input methods
+   - Template options
+   - Reminder settings
+   - Validation feedback
+
+2. Visualization
+   - Cycle calendar
+   - Temperature charts
+   - Symptom tracking
+   - Fertility windows
+
+3. Notifications
+   - Cycle predictions
+   - Fertile days
+   - Temperature alerts
+   - Medication reminders
+
+
+## Detailed Implementation Considerations
+
+### Data Management
+1. Storage Strategy
+   - Real-time data storage
+   - Historical data archival
+   - Data compression techniques
+   - Backup procedures
+   - Recovery mechanisms
+   - Version control
+
+2. Data Quality
+   - Input validation rules
+   - Data completeness checks
+   - Cross-validation methods
+   - Anomaly detection
+   - Error correction procedures
+   - Quality metrics
+
+### Clinical Integration Details
+1. Provider Integration
+   - Clinical portal access
+   - Data export formats
+   - Integration APIs
+   - Real-time notifications
+   - Emergency alerts
+   - Audit trails
+
+2. Decision Support
+   - Clinical guidelines integration
+   - Risk assessment algorithms
+   - Treatment recommendations
+   - Follow-up protocols
+   - Alert thresholds
+   - Intervention triggers
+
+### Advanced Analytics
+1. Pattern Recognition
+   - Cycle irregularity detection
+   - Symptom correlation analysis
+   - Fertility window prediction
+   - Risk factor identification
+   - Trend analysis
+   - Outcome prediction
+
+2. Machine Learning Integration
+   - Prediction models
+   - Pattern classification
+   - Anomaly detection
+   - Personalization
+   - Model training
+   - Performance monitoring
+
+### System Integration
+1. External Systems
+   - EHR integration
+   - Laboratory systems
+   - Pharmacy systems
+   - Insurance systems
+   - Research databases
+   - Public health reporting
+
+2. Data Exchange
+   - HL7 FHIR APIs
+   - Standard terminologies
+   - Data mapping
+   - Transform rules
+   - Validation checks
+   - Error handling
+
+### Performance Optimization
+1. Resource Management
+   - CPU usage
+   - Memory allocation
+   - Storage optimization
+   - Network bandwidth
+   - Battery consumption
+   - Cache strategy
+
+2. Scalability
+   - Load balancing
+   - Database sharding
+   - Service distribution
+   - Queue management
+   - Batch processing
+   - Real-time processing
+
+### User Experience
+1. Accessibility
+   - Screen reader support
+   - Color contrast
+   - Font sizing
+   - Touch targets
+   - Keyboard navigation
+   - Voice input
+
+2. Localization
+   - Multiple languages
+   - Cultural considerations
+   - Date formats
+   - Unit preferences
+   - Terminology adaptation
+   - Regional compliance
+
+### Security Details
+1. Authentication
+   - Multi-factor authentication
+   - Biometric options
+   - Session management
+   - Token handling
+   - Password policies
+   - Account recovery
+
+2. Authorization
+   - Role-based access
+   - Attribute-based control
+   - Dynamic permissions
+   - Temporary access
+   - Emergency access
+   - Audit logging
+
+3. Compliance
+   - HIPAA requirements
+   - GDPR compliance
+   - Local regulations
+   - Industry standards
+   - Security frameworks
+   - Privacy policies
+
+
+
+
+// ===== Conteúdo de: vitalsigns.md =====
+
+# Vital Signs
+
+## General Description
+This module describes how vital signs data collected from the iOS Health App are mapped to FHIR resources. Vital signs are fundamental physiological measurements that reflect essential body functions and health states.
+
+## Data Source
+The iOS Health App collects vital signs from the following sources:
+- Apple Watch
+- Bluetooth-connected medical devices
+- Integrated third-party apps
+- Manual records
+
+## Types of Data Collected
+
+### 1. Heart Rate
+- Continuous measurement (Apple Watch)
+- Resting heart rate
+- Exercise heart rate
+- Recovery heart rate
+- Heart rate variability (HRV)
+- Anomaly recording
+
+### 2. Blood Pressure
+- Systolic pressure
+- Diastolic pressure
+- Date and time of measurement
+- Body position during measurement
+- Device used
+
+### 3. Oxygen Saturation (SpO2)
+- Saturation percentage
+- Trends over time
+- Sleep measurements
+- Activity measurements
+
+### 4. Body Temperature
+- Temperature in Celsius/Fahrenheit
+- Measurement location
+- Measurement method
+
+### 5. Respiratory Rate
+- Breaths per minute
+- Resting measurements
+- Sleep measurements
+- Exercise measurements
+
+### 6. ECG (Electrocardiogram)
+- Trace recording
+- Rhythm classification
+- Beat interval
+- Anomaly analysis
+
+## Collection Frequency
+- Heart Rate: Continuous (when using Apple Watch)
+- Blood Pressure: Per measurement
+- SpO2: Continuous or on-demand
+- Temperature: Per measurement
+- Respiratory Rate: Continuous during sleep/exercise
+- ECG: On-demand/recording
+
+## Operations Supported
+
+### Search
+- patient + date
+- patient + code
+- patient + category
+- patient + code + date-range
+
+### Search Parameters
+- patient: Patient identifier
+- date: Measurement date
+- code: Vital sign type
+- category: Category (vital-signs)
+
+### Search Examples
+GET [base]/Observation?category=vital-signs&patient=[id]&code=8867-4
+GET [base]/Observation?category=vital-signs&patient=[id]&date=ge2024-03-19
+
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- valueQuantity
+- component (when applicable)
+
+### Cardinality
+- Blood pressure requires systolic and diastolic components
+- Other vital signs require at least one value
+
+## iOS Health App to FHIR Mapping
+
+### Main Fields
+| iOS Health App | FHIR Path | LOINC Code |
+|----------------|-----------|-------------|
+| Heart Rate | valueQuantity | 8867-4 |
+| HRV | component[heartRateVariability] | 80404-7 |
+| Blood Pressure Systolic | component[systolic] | 8480-6 |
+| Blood Pressure Diastolic | component[diastolic] | 8462-4 |
+| SpO2 | valueQuantity | 2708-6 |
+| Body Temperature | valueQuantity | 8310-5 |
+| Respiratory Rate | valueQuantity | 9279-1 |
+
+### Implementation Considerations
+
+1. Source Prioritization
+- Apple Watch has priority for continuous measurements
+- Validated medical devices for specific measurements
+- Manual entries as last resort
+
+2. Data Validation
+- Verification of values within physiological ranges
+- Outlier detection
+- Temporal consistency of measurements
+
+3. Data Aggregation
+- Continuous measurements aggregated in intervals
+- Calculation of averages, minimums and maximums
+- Trends over time
+
+4. Accuracy and Reliability
+- Indication of measurement source/device
+- Measurement confidence level
+- Device calibration and validation
+
+5. Alert Management
+- Definition of normal limits
+- Notification of abnormal values
+- Critical alert escalation
+
+6. Storage and Retention
+- Data retention policy
+- Historical data compression
+- Backup and recovery
+
+
+
+// ===== Conteúdo de: physical_activity.md =====
+
+# Physical Activity
+
+## General Description
+This module describes how physical activity data from the iOS Health App is mapped to FHIR resources.
+
+## Data Source
+The iOS Health App collects physical activity data in the following ways:
+- iPhone sensors (step counter, GPS)
+- Apple Watch (when available)
+- Integrated third-party apps
+
+## Types of Data Collected
+
+### Steps
+- Total step count
+- Start and end timestamp
+- Data source
+
+### Distance
+- Total distance covered
+- Unit of measurement (meters/kilometers)
+- Type of movement (walking/running)
+
+### Workouts
+- Type of exercise
+- Duration
+- Calories burned
+- Distance (when applicable)
+- Heart rate (when available)
+
+### Energy
+- Active calories
+- Resting calories
+- Total calories
+
+## Collection Frequency
+- Steps: Continuous when in motion
+- Distance: Continuous during activity
+- Workouts: Per session
+- Energy: Daily calculation
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + activity-type
+- patient + date + activity-type
+
+### Search Parameters
+- patient: Patient identifier
+- date: Activity date
+- activity-type: Type of physical activity
+
+### Search Examples
+GET [base]/Observation?category=activity&patient=[id]&date=[date]
+GET [base]/Observation?category=activity&patient=[id]&code=[activity-type]
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported by the implementing system:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- component.steps
+- component.distance
+- component.duration
+- component.energy
+
+
+
+// ===== Conteúdo de: mindfulness.md =====
+
+# Mindfulness and Mental Health
+
+## General Description 
+This module describes how mindfulness practice and mental health data collected from the iOS Health App and through questionnaires are mapped to FHIR resources. This data is fundamental for assessing stress management and emotional wellbeing.
+
+## Data Sources
+Data is collected from:
+- iOS Health App (automatic data)
+- Apple Watch (breathing and mindfulness sessions) 
+- Self-assessment questionnaires
+- Integrated meditation apps
+- Manual records
+
+## Types of Data Collected
+
+### 1. Mindfulness Practices
+- Session duration
+- Type of practice
+- Session frequency 
+- Practice timing
+
+### 2. Mood State
+- Current mood
+- Daily variations
+- Influencing factors
+- Intensity
+
+### 3. Stress Levels
+- Perceived stress level
+- Physical symptoms
+- Identified triggers
+- Management strategies
+
+### 4. Relaxation
+- Time dedicated
+- Techniques used
+- Perceived effectiveness
+- Regularity
+
+## Collection Frequency
+- Mindfulness: Per session
+- Mood: Multiple times per day
+- Stress: Daily
+- Relaxation: Per session
+
+## FHIR Resources
+Mindfulness and mental health data is mapped to FHIR resources with specific profiles for each type of measurement:
+
+### Observations
+- Mindfulness session observations
+- Mood assessments 
+- Stress level measurements
+- Relaxation practice records
+
+### Questionnaires 
+- Mental health screenings
+- Stress assessments
+- Mood tracking
+- Practice logs
+
+### Goals
+- Practice frequency targets
+- Stress reduction goals
+- Emotional wellbeing objectives
+
+## Implementation Considerations
+
+### Data Privacy 
+- Enhanced security measures
+- Patient consent management
+- Access control
+- Data anonymization
+
+### Data Integration
+- HealthKit integration
+- Third-party app connectivity
+- Multi-device synchronization
+- Data consolidation
+## Implementation Considerations
+
+### Data Flow
+1. Collection
+   - Questionnaire completion
+   - Apple Watch data
+   - Meditation apps integration
+
+2. Processing
+   - Data validation
+   - Trend analysis
+   - Correlations with other indicators
+
+3. Storage
+   - QuestionnaireResponse
+   - Observations
+   - History and trends
+
+### Validations
+1. Input Data
+   - Valid ranges for scales
+   - Temporal consistency
+   - Correlation between measurements
+
+2. Analysis
+   - Mood patterns
+   - Practice effectiveness
+   - Stress triggers
+
+### UX Considerations
+1. Questionnaire Interface
+   - Simple completion
+   - Immediate visual feedback
+   - Multi-language support
+
+2. Feedback
+   - Trend visualization
+   - Personalized recommendations
+   - Adaptive reminders
+
+### Integration Requirements
+1. HealthKit Integration
+   - Mindfulness minutes
+   - Heart rate variability
+   - Sleep data correlation
+
+2. Third-party Apps
+   - API requirements
+   - Data synchronization
+   - Privacy considerations
+
+
+
+// ===== Conteúdo de: bodymetrics.md =====
+
+# Body Measurements
+
+## Overview
+This module describes how anthropometric and body composition data collected from the iOS Health App are mapped to FHIR resources. These measurements are fundamental for assessing nutritional status and monitoring lifestyle medicine interventions.
+
+## Data Sources
+The iOS Health App collects body measurements from the following sources:
+- Connected smart scales
+- Bioimpedance devices 
+- Manual measurements
+- Integrated third-party apps
+
+## Types of Collected Data
+
+### 1. Basic Measurements
+- Body weight
+- Height
+- BMI (automatically calculated)
+- Waist circumference
+
+### 2. Body Composition
+- Body fat percentage
+- Lean mass
+- Body water
+- Muscle mass 
+- Bone mass
+
+### 3. Segmental Analysis
+- Body fat distribution
+- Muscle mass distribution
+- Body symmetry
+
+### 4. Trends and Analysis
+- Weight variation
+- BMI history
+- Body composition progression
+- Goals and objectives
+
+## Collection Frequency
+- Weight: Recommended daily
+- Height: Periodically 
+- Body composition: Weekly
+- Circumference: Monthly
+
+## FHIR Resources
+The body measurements are mapped to FHIR Observation resources with specific profiles for each type of measurement.
+
+### Examples
+- Weight measurements use the [body-weight](StructureDefinition-body-weight.html) profile
+- Height uses the [body-height](StructureDefinition-body-height.html) profile
+- BMI calculations use the [bmi](StructureDefinition-bmi.html) profile
+
+## Supported Operations
+
+### Search
+- patient + date
+- patient + code
+- patient + date-range + code
+- patient + category
+
+### Search Parameters
+- patient: Patient identifier
+- date: Measurement date
+- code: Type of body measurement
+- category: Category (vital-signs)
+
+### Search Examples
+GET [base]/Observation?category=vital-signs&patient=[id]&code=29463-7
+GET [base]/Observation?category=vital-signs&patient=[id]&date=ge2024-03-19
+GET [base]/Observation?category=vital-signs&patient=[id]&code=88365-2&date=ge2024-01-01&date=le2024-12-31
+Copy
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status: Measurement status
+- category: Vital signs category
+- code: Type of measurement (LOINC code)
+- subject: Reference to patient
+- effectiveDateTime: When measurement was taken
+- valueQuantity: The measurement value and unit
+- component: Body composition components (for composition measurements)
+
+### Device Support
+The following device types are supported for data capture:
+- Smart scales
+- Bioimpedance analyzers
+- Manual entry
+- Third-party apps via HealthKit
+
+### Security Requirements
+- Patient access control
+- Device authentication
+- Data validation rules
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code | Description |
+|----------------|-----------|-------------|-------------|
+| Weight | WeightObservation.valueQuantity | 29463-7 | Body weight measurement |
+| Height | HeightObservation.valueQuantity | 8302-2 | Body height measurement |
+| BMI | BMIObservation.valueQuantity | 39156-5 | Body Mass Index calculation |
+| Body Fat % | BodyCompositionObservation.component[bodyFat] | 41982-0 | Percentage of body fat |
+| Lean Mass | BodyCompositionObservation.component[leanMass] | 291-7 | Lean body mass |
+| Body Water | BodyCompositionObservation.component[bodyWater] | 73708-0 | Total body water |
+| Muscle Mass | BodyCompositionObservation.component[muscleMass] | 73713-0 | Skeletal muscle mass |
+| Bone Mass | BodyCompositionObservation.component[boneMass] | 73711-4 | Bone mass measurement |
+
+### Implementation Considerations
+
+1. Data Validation
+- Physiological range validation
+- Sudden variation detection
+- Cross-validation between related measurements
+- Unit conversion and standardization
+
+2. Automatic Calculations
+- BMI calculation from weight and height
+- Cross-validation of composition measurements
+- Percentage changes and trends
+- Statistical analysis of measurements
+
+3. Frequency and Timing
+- Measurement frequency recommendations
+- Preferred measurement timing
+- Minimum intervals between measurements
+- Time zone handling for measurements
+
+4. Data Quality
+- Measurement source (device/manual)
+- Device calibration status
+- Measurement conditions
+- Data completeness checks
+
+5. Goal Integration
+- Goal setting and tracking
+- Progress monitoring
+- Significant deviation alerts
+- Personalized target ranges
+
+6. Reports and Visualizations
+- Trend charts and graphs
+- Reference comparisons
+- Body composition analysis
+- Progress reports and summaries
+
+### Device Integration
+
+1. Smart Scale Integration
+- Bluetooth connectivity
+- Data synchronization
+- Error handling
+- Battery status monitoring
+
+2. Bioimpedance Analysis
+- Device calibration requirements
+- Measurement protocol
+- Environmental conditions
+- Quality control checks
+
+3. Manual Entry
+- Data validation rules
+- Required fields
+- Unit conversion support
+- Entry confirmation
+
+### Error Handling
+
+1. Device Errors
+- Connection failures
+- Calibration errors
+- Battery warnings
+- Invalid measurements
+
+2. Data Validation Errors
+- Out of range values
+- Inconsistent measurements
+- Missing required data
+- Invalid units
+
+3. Synchronization Errors
+- Network connectivity issues
+- Data transfer failures
+- Version conflicts
+- Retry mechanisms
+
+
+
+
+// ===== Conteúdo de: index.md =====
+
+# iOS Health App Lifestyle Medicine Implementation Guide
+
+## Purpose
+This FHIR implementation guide defines how to extract and represent vital signs, sleep patterns, physical activity and other health related data from the iOS Health App to support lifestyle medicine interventions.
+
+## Scope
+- Health data from iOS Health App
+- Vital Signs
+- Physical activity data
+	- Steps
+	- Distance traveled
+	- Workouts
+	- Energy expenditure
+	- Exercise minutes
+
+## Use Cases
+1. Automatic physical activity data collection
+2. Daily activity level monitoring
+3. Movement pattern assessment
+4. Lifestyle intervention support
+
+## Audience
+- Healthcare software developers
+- Healthcare professionals
+- Researchers
+- Digital health managers
+
+
+
+// ===== Conteúdo de: advanced_vitalsigns.md =====
+
+# Advanced Vital Signs Data
+
+## Overview
+This module defines how advanced vital signs data collected from the iOS Health App are mapped to FHIR resources. These data provide a deeper insight into individual physiology and homeostasis, complementing basic vital signs.
+
+## Data Sources
+- Apple Watch (advanced sensors)
+- Connected medical devices
+- Integrated biomedical sensors
+- Specialized health apps
+
+## Types of Collected Data
+
+### 1. Advanced Cardiovascular Metrics
+- Detailed Heart Rate Variability
+  - HRV spectral analysis
+  - Low/high frequency indicators
+  - HRV entropy measurements
+  - Time-domain metrics
+  - Frequency-domain parameters
+- Cardiac Recovery Indices
+  - Post-exercise recovery rate
+  - Time to normalization
+  - Recovery pattern analysis
+  - Heart rate reserve
+- Advanced Blood Pressure
+  - Mean arterial pressure
+  - Pulse pressure
+  - Blood pressure variability
+  - Circadian pattern tracking
+  - Pressure waveform analysis
+
+### 2. Advanced Respiratory Metrics
+- Respiratory Patterns
+  - Respiratory variability
+  - Estimated respiratory volume
+  - Ventilation/perfusion ratio
+  - Breathing pattern analysis
+  - Respiratory rate variability
+- Advanced Oxygen Saturation
+  - Nocturnal trends
+  - Exercise desaturation
+  - Hypoxia index
+  - Recovery patterns
+  - Continuous monitoring
+
+### 3. Physiological Stress Biomarkers
+- Physiological stress index
+- Allostatic load measurement
+- Autonomic recovery tracking
+- Sympathetic-vagal balance
+- Stress response patterns
+- Recovery efficiency metrics
+- Chronic stress indicators
+
+### 4. Thermoregulation Metrics
+- Circadian temperature variation
+- Temperature gradients
+- Exercise thermal response
+- Heat dissipation patterns
+- Core temperature estimation
+- Skin temperature mapping
+- Environmental adaptation
+
+### 5. Multiparametric Integration
+- Composite health indices
+- Parameter correlations
+- Trend prediction models
+- Abnormal pattern detection
+- Risk stratification
+- Personalized baselines
+- Adaptive thresholds
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code | Description |
+|----------------|-----------|------------|-------------|
+| Heart Rate Variability | HRVObservation.component[hrv] | 80404-7 | R-R interval standard deviation |
+| Respiratory Rate | RespiratoryObservation.component[rate] | 9279-1 | Respiratory rate |
+| Blood Pressure | BPObservation.component[systolic/diastolic] | 85354-9 | Blood pressure panel with all children |
+| Temperature | TempObservation.component[core] | 8310-5 | Body temperature |
+| Oxygen Saturation | SpO2Observation.component[saturation] | 59408-5 | Oxygen saturation in blood |
+
+### Advanced Measurements
+| iOS Health App | FHIR Path | LOINC Code | Description |
+|----------------|-----------|------------|-------------|
+| HRV Analysis | HRVObservation.component[spectral] | 80405-4 | Heart rate variability metrics |
+| Recovery Rate | RecoveryObservation.component[rate] | 80406-2 | Cardiac recovery rate |
+| Stress Index | StressObservation.component[index] | 80407-0 | Physiological stress index |
+| Temperature Variation | TempObservation.component[variation] | 80408-8 | Temperature pattern |
+
+## Implementation Requirements
+
+### 1. Data Collection
+- Sensor accuracy
+- Sampling frequency
+- Calibration protocols
+- Quality assurance
+- Data validation
+
+### 2. Processing Pipeline
+- Signal processing
+- Noise reduction
+- Feature extraction
+- Pattern analysis
+- Real-time processing
+
+### 3. Integration Aspects
+- Data synchronization
+- Device compatibility
+- API requirements
+- Security protocols
+- Privacy compliance
+
+### 4. Clinical Validation
+- Accuracy verification
+- Clinical correlation
+- Reference standards
+- Validation studies
+- Performance metrics
+
+## Technical Implementation
+
+### Data Processing Pipeline
+1. Data Collection
+   - Sensor data acquisition
+   - Quality checks
+   - Initial validation
+   - Raw data storage
+
+2. Signal Processing
+   - Noise reduction
+   - Artifact removal
+   - Signal enhancement
+   - Feature extraction
+
+3. Analysis Pipeline
+   - Pattern detection
+   - Trend analysis
+   - Statistical processing
+   - Composite index calculation
+
+4. Clinical Integration
+   - Risk assessment
+   - Alert generation
+   - Clinical correlation
+   - Decision support
+
+### Data Quality Management
+1. Validation Rules
+   - Range checking
+   - Consistency verification
+   - Cross-validation
+   - Temporal validation
+
+2. Quality Metrics
+   - Signal quality
+   - Data completeness
+   - Measurement accuracy
+   - Sensor reliability
+
+3. Error Handling
+   - Data gaps
+   - Sensor failures
+   - Connection issues
+   - Processing errors
+
+### Integration Requirements
+1. Device Integration
+   - Sensor compatibility
+   - Data protocols
+   - Synchronization
+   - Calibration
+
+2. System Integration
+   - API requirements
+   - Data formats
+   - Security protocols
+   - Performance standards
+
+3. Clinical Systems
+   - EHR integration
+   - Alert systems
+   - Decision support
+   - Documentation
+
+## Clinical Applications
+
+### 1. Preventive Medicine
+- Early warning systems
+- Risk assessment
+- Trend analysis
+- Intervention timing
+- Prevention strategies
+
+### 2. Performance Monitoring
+- Athletic performance
+- Recovery optimization
+- Training adaptation
+- Fatigue detection
+- Overtraining prevention
+
+### 3. Clinical Decision Support
+- Pattern recognition
+- Risk stratification
+- Treatment response
+- Progress monitoring
+- Outcome prediction
+
+### Use Cases
+1. Clinical Monitoring
+   - Patient tracking
+   - Progress assessment
+   - Treatment response
+   - Risk prediction
+
+2. Research Applications
+   - Data collection
+   - Pattern analysis
+   - Outcome studies
+   - Population health
+
+3. Personal Health
+   - Self-monitoring
+   - Health goals
+   - Lifestyle tracking
+   - Preventive care
+
+### Best Practices
+1. Implementation Guidelines
+   - Setup procedures
+   - Configuration steps
+   - Maintenance protocols
+   - Update processes
+
+2. User Training
+   - Clinical staff
+   - Technical team
+   - End users
+   - Support staff
+
+3. Quality Assurance
+   - Testing protocols
+   - Validation procedures
+   - Performance monitoring
+   - Continuous improvement
+
+## Privacy and Security
+
+### Data Protection
+1. Security Measures
+   - Encryption
+   - Access control
+   - Audit logging
+   - Data segregation
+
+2. Privacy Controls
+   - Consent management
+   - Data anonymization
+   - Access restrictions
+   - Usage tracking
+
+### Compliance Requirements
+1. Regulatory Standards
+   - HIPAA compliance
+   - GDPR requirements
+   - Local regulations
+   - Industry standards
+
+2. Documentation
+   - Policy documentation
+   - Procedure records
+   - Audit trails
+   - Compliance reports
+
+## Supported Operations
+
+### Advanced Search Capabilities
+- Multiparametric search
+- Trend analysis queries
+- Temporal correlations
+- Circadian pattern analysis
+- Complex pattern matching
+- Event sequence detection
+
+### Specific Search Parameters
+1. Composite Indices
+   - physiological-stress-index
+   - allostatic-load
+   - autonomic-balance
+   - recovery-index
+
+2. Temporal Patterns
+   - circadian-rhythm
+   - ultradian-pattern
+   - seasonal-variation
+   - adaptation-trend
+
+3. Physiological Correlations
+   - cardio-respiratory
+   - thermo-regulatory
+   - stress-recovery
+   - autonomic-balance
+
+4. Adaptive Trends
+   - baseline-shift
+   - response-pattern
+   - recovery-trajectory
+   - adaptation-rate
+
+### Advanced Search Examples
+
+GET [base]/Observation?category=advanced-vitals&patient=[id]&code=physiological-stress
+GET [base]/Observation?category=advanced-vitals&patient=[id]&date=ge[start]&component-code=autonomic-balance
+GET [base]/Observation?category=advanced-vitals&patient=[id]&code=recovery-index&date=ge[start]&date=le[end]
+GET [base]/Observation?category=advanced-vitals&patient=[id]&component-code=circadian-pattern&_include=related-observations
+
+## Calculations and Transformations
+
+### 1. Advanced Cardiac Metrics
+- HRV Spectral Analysis:
+
+	- Power(f) = |FFT(RR intervals)|²
+	
+	- LF Power = ∫(0.04-0.15 Hz) Power(f)df
+	
+	- HF Power = ∫(0.15-0.40 Hz) Power(f)df
+
+- HRV Entropy:
+
+	- SampEn = -ln(A/B), where:
+		- A = matches of length m+1
+		- B = matches of length m
+
+- Autonomic Balance:
+
+	- LF/HF ratio = (LF Power)/(HF Power)
+	
+	- Normalized LF = LF/(LF+HF)*100
+	
+	- Normalized HF = HF/(LF+HF)*100
+
+### 2. Respiratory Metrics
+- Respiratory Variability:
+
+	- CV = (SD of intervals)/(Mean interval)*100
+	
+	- RMSSD = √(Σ(RRi+1 - RRi)²/n)
+
+- Oxygenation Indices:
+
+	- PaO2/FiO2 ratio
+	
+	- SpO2/FiO2 ratio
+	
+	- OI = (FiO2 * MAP)/(PaO2)
+
+### 3. Composite Indices
+- Physiological Stress Index (PSI):
+	- PSI = w1HRVnorm + w2BPnorm + w3SpO2norm + w4Tempnorm, where:
+	
+		- HRVnorm = normalized HRV deviation
+	
+		- BPnorm = normalized blood pressure variation
+	
+		- SpO2norm = normalized oxygen saturation
+	
+		- Tempnorm = normalized temperature variation
+	
+		- wi = weighting factors
+
+- Homeostasis Index (HI):
+	- HI = Σ(wi * Mi) / Σwi, where:
+	
+		- Mi = normalized metric i
+	
+		- wi = weight for metric i
+
+- Allostatic Load Index (ALI): 
+	- ALI = Σ(Ci), where:
+	
+		- Ci = count of metrics outside normal range
+
+### 4. Advanced Statistical Transformations
+- Time Domain Analysis:
+	- SDNN = √(Σ(RRi - RRmean)²/(n-1))
+	
+	- pNN50 = (NN50 count)/(total NN count)
+
+- Frequency Domain Analysis:
+	- Welch's periodogram
+	
+	- AR spectral analysis
+	
+	- Wavelet transform
+
+- Non-linear Methods:
+	- Poincaré plot indices
+	- Detrended fluctuation analysis
+	- Sample entropy
+	- Approximate entropy
+
+### 5. Pattern Recognition
+- Circadian Pattern Analysis:
+	- Cosinor analysis
+	- Phase estimation
+	- Amplitude calculation
+	- MESOR determination
+
+- Trend Detection:
+	- Moving averages
+	- Exponential smoothing
+	- Change point detection
+	- Pattern matching
+
+These calculations and transformations provide the mathematical foundation for advanced vital signs analysis. Each metric is carefully validated and normalized to ensure clinical relevance and reliability.
+
+
+
+
+// ===== Conteúdo de: environmental.md =====
+
+# Environmental Factors
+
+## Overview
+This module describes how environmental data collected from the iOS Health App is mapped to FHIR resources. These data are crucial for assessing exposure to environmental factors that may impact health.
+
+## Data Sources
+Environmental data is collected through:
+- iPhone (built-in sensors)
+- Apple Watch
+- Integrated environmental monitoring apps
+- Connected environmental monitoring devices
+
+## Types of Collected Data
+
+### 1. Audio Exposure
+- Exposure level in decibels (dB)
+- Duration of exposure
+- Peak moments
+- Dangerous level alerts
+- Exposure history
+- Sound pressure level measurements
+- Daily noise dose calculation
+
+### 2. Environmental Noise
+- Continuous noise levels
+- Daily variations
+- Exposure patterns
+- Associated locations
+- Critical periods
+- Background noise analysis
+- Quiet time periods
+
+### 3. UV Exposure
+- UV index measurements
+- Exposure duration
+- Time of exposure
+- Intensity levels
+- Protection recommendations
+- Cumulative exposure
+- Risk assessments
+
+## Collection Frequency
+- Noise: Continuous monitoring
+- UV: During sun exposure
+- Alerts: Real-time
+- Analysis: Daily and weekly aggregation
+
+## FHIR Resources
+Environmental data is mapped to FHIR Observation resources with specific profiles:
+- AudioExposureObservation
+- EnvironmentalNoiseObservation
+- UVExposureObservation
+
+## Supported Operations
+- Search by date
+- Search by exposure type
+- Search by intensity level
+- Aggregate reports
+
+## Implementation Considerations
+1. Data Validation
+   - Sensor calibration
+   - Measurement accuracy
+   - Data consistency checks
+   - Outlier detection
+
+2. Privacy & Security
+   - Location data protection
+   - Personal exposure data
+   - Data aggregation rules
+   - Access controls
+
+3. Clinical Integration
+   - Health impact assessment
+   - Risk factor analysis
+   - Prevention recommendations
+   - Clinical decision support
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code | Description |
+|----------------|-----------|------------|-------------|
+| Audio Exposure | NoiseExposureObservation.component[level] | 89020-2 | Environmental sound intensity |
+| UV Index | UVExposureObservation.component[index] | 89022-8 | UV Index measurement |
+| Noise Duration | NoiseExposureObservation.component[duration] | 89023-6 | Duration of noise exposure |
+| Peak Level | NoiseExposureObservation.component[peak] | 89024-4 | Peak sound pressure level |
+| Background Noise | NoiseExposureObservation.component[background] | 89025-1 | Background noise level |
+
+### Mapping Considerations
+
+1. Temporality
+   - Continuous measurements aggregation
+   - Analysis periods
+   - Update frequency
+   - Time zone handling
+   - Event correlation
+
+2. Data Quality
+   - Sensor calibration
+   - Measurement conditions
+   - Data validation
+   - Accuracy thresholds
+   - Error detection
+
+3. Context
+   - Location data
+   - Related activity
+   - Environmental conditions
+   - Device specifications
+   - Measurement settings
+
+4. Integration Requirements
+   - HealthKit permissions
+   - Data synchronization
+   - API compatibility
+   - Error handling
+   - Batch processing
+
+5. Validation Rules
+   - Range validation
+   - Unit conversion
+   - Threshold alerts
+   - Data consistency
+   - Cross-validation
+
+## Implementation Considerations
+
+### Data Processing
+1. Collection
+   - Sensor calibration requirements
+   - Measurement validation rules
+   - Sampling frequency optimization
+   - Data quality checks
+   - Device synchronization
+
+2. Analysis
+   - Temporal aggregation methods
+   - Pattern identification algorithms
+   - Location correlation techniques
+   - Trend analysis
+   - Statistical processing
+
+3. Storage
+   - Raw data management
+   - Processed metrics
+   - Exposure history
+   - Data retention policies
+   - Backup procedures
+
+### Alert System
+1. Noise Alerts
+   - Dangerous levels (>85 dB)
+   - Extended exposure warnings
+   - Intensity peaks detection
+   - Daily exposure limits
+   - Cumulative exposure tracking
+
+2. UV Alerts
+   - High UV index warnings
+   - Exposure time monitoring
+   - Critical hours alerts
+   - Skin type considerations
+   - Protection recommendations
+
+### Visualizations
+1. Dashboards
+   - Daily exposure metrics
+   - Weekly trends analysis
+   - Comparative reports
+   - Risk assessments
+   - Historical patterns
+
+2. Maps
+   - Exposure locations
+   - Risk zones mapping
+   - Geographic patterns
+   - Time-based heatmaps
+   - Location clustering
+
+### Integrations
+1. Device Integration
+   - Calibration procedures
+   - Synchronization protocols
+   - Validation methods
+   - Error handling
+   - Data consistency
+
+2. External Data
+   - UV forecasts
+   - Noise mapping
+   - Weather data
+   - Environmental alerts
+   - Public health data
+
+### Clinical Integration
+1. Risk Assessment
+   - Exposure thresholds
+   - Cumulative effects
+   - Health impact analysis
+   - Population comparisons
+   - Trend evaluation
+
+2. Decision Support
+   - Clinical guidelines
+   - Intervention triggers
+   - Treatment recommendations
+   - Follow-up protocols
+   - Prevention strategies
+
+### Recommendations
+1. Protection Measures
+   - Protective equipment
+   - Optimal timing
+   - Duration limits
+   - Safety guidelines
+   - Best practices
+
+2. Mitigation Strategies
+   - Exposure reduction
+   - Preventive measures
+   - Alternative options
+   - Risk management
+   - Behavioral changes
+
+### Privacy & Security
+1. Data Protection
+   - Personal information handling
+   - Location data privacy
+   - Access controls
+   - Encryption requirements
+   - Audit trails
+
+2. Compliance
+   - Regulatory requirements
+   - Data retention policies
+   - Consent management
+   - Security protocols
+   - Privacy standards
+
+
+
+// ===== Conteúdo de: symptoms.md =====
+
+
+## FHIR Resources
+
+### Main Resources Used
+- Observation: For recording symptom details and measurements
+- QuestionnaireResponse: For capturing structured symptom assessments
+- Condition: For documenting ongoing symptoms
+- ClinicalImpression: For clinical assessment of symptoms
+
+### Parameters
+- patient: Patient identifier
+- date: Symptom record date
+- category: symptom-assessment
+- code: Specific symptom type
+
+### Search Examples
+GET [base]/Observation?category=symptom&patient=[id]&date=[date]
+GET [base]/Observation?code=severity&patient=[id]
+
+## Conformance
+
+### Must Support Elements
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- value[x]
+- component (for composite measurements)
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code |
+|----------------|-----------|------------|
+| Symptom Type | Observation.code | 75325-1 |
+| Severity | Observation.component[severity].valueQuantity | 72514-3 |
+| Duration | Observation.component[duration].valueDuration | 103333-2 |
+| Frequency | Observation.component[frequency].valueQuantity | 103334-0 |
+
+### Implementation Considerations
+
+1. Data Collection
+   - Questionnaire design
+   - User interface optimization
+   - Data validation rules
+   - Real-time feedback
+   - Multi-language support
+   - Accessibility features
+
+2. Data Quality
+   - Input validation
+   - Consistency checks
+   - Temporal validation
+   - Cross-reference verification
+   - Completeness assessment
+   - Error detection
+
+3. Clinical Integration
+   - Care plan updates
+   - Alert generation
+   - Decision support
+   - Provider notifications
+   - Trend analysis
+   - Risk assessment
+
+4. Privacy & Security
+   - Data encryption
+   - Access control
+   - Audit logging
+   - Consent management
+   - Data retention
+   - Regulatory compliance
+
+5. Performance Optimization
+   - Response time
+   - Data compression
+   - Cache management
+   - Network efficiency
+   - Battery impact
+   - Storage optimization
+
+## Implementation Details
+
+### Data Flow
+1. Collection
+   - Direct user input
+   - Periodic questionnaires
+   - Follow-up records
+   - Automated data validation
+   - Real-time processing
+   - Data synchronization
+
+2. Validation
+   - Data consistency
+   - Record completeness
+   - Temporal coherence
+   - Value ranges
+   - Logical relationships
+   - Cross-validation
+
+3. Analysis
+   - Temporal patterns
+   - Correlations
+   - Trends
+   - Statistical analysis
+   - Pattern recognition
+   - Predictive modeling
+
+### User Interface
+1. Recording
+   - Easy data entry
+   - Predefined templates
+   - Customizable options
+   - Quick input methods
+   - Offline capability
+   - Multi-device support
+
+2. Visualization
+   - Timelines
+   - Intensity graphs
+   - Recurrence patterns
+   - Interactive charts
+   - Custom views
+   - Export options
+
+3. Alerts
+   - Severe symptoms
+   - Concerning patterns
+   - Recording reminders
+   - Smart notifications
+   - Priority levels
+   - Custom thresholds
+
+### Clinical Integration
+1. Reports
+   - Professional summaries
+   - Symptom history
+   - Trend analysis
+   - Clinical metrics
+   - Custom formats
+   - Export capabilities
+
+2. Clinical Decision Support
+   - Pattern identification
+   - Intervention triggers
+   - Progress monitoring
+   - Risk assessment
+   - Treatment recommendations
+   - Outcome tracking
+
+### Quality Assurance
+1. Data Quality
+   - Input validation
+   - Completeness checks
+   - Consistency verification
+   - Anomaly detection
+   - Error handling
+   - Data correction
+
+2. System Performance
+   - Response time
+   - Data processing
+   - Storage optimization
+   - Battery efficiency
+   - Network usage
+   - Cache management
+
+3. Security Measures
+   - Data encryption
+   - Access control
+   - Audit trails
+   - Compliance checks
+   - Privacy protection
+   - Backup procedures
+
+
+
+
+// ===== Conteúdo de: mindfulness_module.md =====
+
+# Mindfulness Module Implementation Guide
+
+## Overview
+This module provides FHIR resources and profiles for tracking mindfulness practices and their outcomes in healthcare applications.
+
+## Scope
+- Mindfulness session recording
+- Mood and stress assessments
+- Practice outcomes tracking
+- Data integration with HealthKit
+
+## Key Resources
+
+### Profiles
+- MindfulnessObservation: Core profile for recording mindfulness sessions
+- MindfulnessQuestionnaire: Profile for mindfulness assessment tools
+- MindfulnessConfiguration: Profile for module configuration
+
+### Extensions
+- MindfulnessContext: Additional context about practice sessions
+- MindfulnessImportMap: Mapping configuration for data import
+
+### Value Sets
+- MoodValueSet: Standardized mood states
+- MindfulnessOutcomeVS: Practice outcomes
+- MindfulnessQualifierVS: Practice qualifiers
+
+## Implementation Guidelines
+
+### Data Collection
+1. Session Recording
+   - Duration tracking
+   - Practice type categorization
+   - Environmental context
+
+2. Assessment Tools
+   - Mood evaluation
+   - Stress level measurement
+   - Practice effectiveness
+
+### Integration Points
+1. HealthKit
+   - Mindfulness minutes
+   - Heart rate data
+   - Activity correlation
+
+2. Clinical Systems
+   - EHR integration
+   - Care plan incorporation
+   - Progress monitoring
+
+### Security Considerations
+- Patient data privacy
+- Access control
+- Audit logging
+- Data encryption
+
+## Conformance Requirements
+- Must support core profiles
+- Required value set bindings
+- Mandatory elements
+- Validation rules
+
+## Usage Examples
+See the examples directory for detailed implementation scenarios.
+
+
+
+// ===== Conteúdo de: mobility.md =====
+
+# Mobility Implementation Guide
+
+## Overview
+This module describes how to implement mobility monitoring using iOS motion sensors data, covering data collection, processing, analysis, and clinical integration.
+
+## FHIR Resources
+
+### Main Resources Used
+- Observation: For recording mobility metrics
+- RiskAssessment: For fall risk evaluations
+- Goal: For mobility improvement targets
+- CarePlan: For mobility enhancement plans
+
+### Parameters
+- patient: Patient identifier
+- date: Assessment date
+- category: mobility
+- code: Specific mobility metric
+
+### Search Examples
+GET [base]/Observation?category=mobility&patient=[id]&date=[date]
+GET [base]/Observation?code=walking-steadiness&patient=[id]
+
+## Conformance
+
+### Must Support
+Elements marked with MS must be supported:
+- status
+- category
+- code
+- subject
+- effectiveDateTime
+- value[x]
+- device
+- component (for composite measurements)
+
+## Implementation Considerations
+
+### Data Processing
+1. Collection
+   - Raw sensor data from iPhone motion sensors
+   - Processing algorithms for motion data
+   - Noise filtering and signal processing
+   - Sampling rates and data quality checks
+   - Battery optimization considerations
+   - Motion context detection
+
+2. Analysis
+   - Key metrics calculation (speed, steadiness, balance)
+   - Trend detection and pattern recognition
+   - Statistical analysis methods
+   - Machine learning model integration
+   - Real-time vs batch processing
+   - Performance optimization strategies
+
+3. Storage
+   - Raw sensor data management
+   - Processed metrics database
+   - Historical trend storage
+   - Data compression techniques
+   - Backup and archival policies
+   - Privacy considerations
+
+### Data Quality Validations
+1. Data Quality
+   - Signal integrity verification
+   - Temporal consistency checks
+   - Anomaly detection algorithms
+   - Sensor calibration validation
+   - Environmental interference detection
+   - Movement artifact filtering
+
+2. Trend Analysis
+   - Significant change detection
+   - Deterioration pattern identification
+   - Cross-metric correlations
+   - Baseline comparison methods
+   - Statistical significance testing
+   - Confidence level calculations
+
+### Alert System
+1. Alert Levels
+   - Normal (green)
+     * Within baseline parameters
+     * Regular movement patterns
+     * Stable measurements
+   - Caution (yellow)
+     * Minor deviations from baseline
+     * Subtle pattern changes
+     * Early warning indicators
+   - Alert (red)
+     * Significant changes detected
+     * Concerning patterns identified
+     * Immediate attention required
+
+2. Triggers
+   - Sudden changes in measurements
+   - Negative trend development
+   - Abnormal pattern detection
+   - Multiple metric correlation
+   - Time-based thresholds
+   - Context-aware alerting
+
+### User Interface
+1. Visualizations
+   - Trend graphs and charts
+   - Status indicators and dashboards
+   - Baseline comparisons
+   - Interactive data exploration
+   - Custom view configurations
+   - Accessibility considerations
+
+2. Notifications
+   - Real-time alerts and updates
+   - Periodic summary reports
+   - Contextual recommendations
+   - Priority-based notifications
+   - User preference settings
+   - Do-not-disturb protocols
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path |
+|------------------|-----------|
+| Walking Steadiness | Observation.component[steadiness] |
+| Walking Speed | Observation.component[speed] |
+| Step Length | Observation.component[stepLength] |
+| Double Support Time | Observation.component[supportTime] |
+| Walking Asymmetry | Observation.component[asymmetry] |
+
+### Integration Requirements
+1. Health App Integration
+   - HealthKit permissions
+   - Data synchronization
+   - Background processing
+   - Battery optimization
+   - Error handling
+   - Version compatibility
+
+2. Clinical Systems
+   - FHIR compliance
+   - API endpoints
+   - Authentication
+   - Data mapping
+   - Error handling
+   - Versioning strategy
+
+### Security and Privacy
+1. Data Protection
+   - Encryption standards
+   - Access control
+   - Audit logging
+   - Data anonymization
+   - Consent management
+   - Regulatory compliance
+
+2. System Security
+   - Authentication methods
+   - Authorization protocols
+   - Secure communication
+   - Threat detection
+   - Incident response
+   - System monitoring
+
+### Performance Optimization
+1. Resource Management
+   - Battery optimization
+   - Network usage
+   - Storage efficiency
+   - Processing optimization
+   - Memory management
+   - Cache strategies
+
+2. Scalability
+   - Load balancing
+   - Data partitioning
+   - Service distribution
+   - Query optimization
+   - Batch processing
+   - Real-time processing
+
+## Testing and Validation
+1. Test Cases
+   - Unit tests
+   - Integration tests
+   - Performance tests
+   - Security tests
+   - User acceptance tests
+   - Compliance validation
+
+2. Quality Assurance
+   - Code review
+   - Documentation review
+   - Performance monitoring
+   - Security audits
+   - Compliance checks
+   - User feedback
+
+## iOS Health App to FHIR Mapping
+
+### Core Fields
+| iOS Health App | FHIR Path | LOINC Code |
+|----------------|-----------|------------|
+| Walking Steadiness | WalkingSteadinessObservation.valueQuantity | LA32-8 |
+| Walking Speed | WalkingSpeedObservation.valueQuantity | LA29042-4 |
+| Step Length | StepLengthObservation.valueQuantity | LA19752-7 |
+| Double Support Time | DoubleSupportTimeObservation.valueQuantity | LA32-9 |
+| Walking Asymmetry | WalkingAsymmetryObservation.valueQuantity | LA32-10 |
+
+### Mapping Considerations
+1. Temporality
+   - Aggregation of continuous measurements
+   - Analysis periods 
+   - Update frequency
+   - Data synchronization timing
+   - Historical data handling
+   - Real-time vs batch processing
+
+2. Quality Assurance
+   - Measurement reliability
+   - Collection conditions
+   - Cross-validation
+   - Data consistency checks
+   - Calibration verification
+   - Error detection and handling
+
+3. Context
+   - Environmental conditions
+   - User state and conditions
+   - Related activity
+   - Device positioning
+   - Movement patterns
+   - Activity intensity
+
+4. Data Flow
+   - Continuous monitoring
+   - Batch processing
+   - Event triggers
+   - Alert handling
+   - Data transformation
+   - Error recovery
+
+5. Integration Requirements
+   - HealthKit permissions
+   - Data synchronization
+   - Background processing
+   - Battery optimization
+   - Error handling
+   - Version compatibility
+
+
+// ===== Conteúdo de: README.md =====
+
+# ig-template-base
+package-id = fhir.base.template
+
+Base IG template managed by HL7 but usable by anyone (no logos).  The foundation for most HL7-published IGs
+
+
+
+// ===== Conteúdo de: README.md =====
+
+# iOS Lifestyle Medicine HEADS2 FMUP
+
+## Main Documentation
+- [Quality Assurance Report](output/qa.html)
+- [Implementation Guide Index](output/index.html)
+- [Full Implementation Guide Package](output/full-ig.zip)
+
+## Project Structure
+The complete implementation guide and all related files can be found in the [output](output/) directory.
+
+## Resource Navigation
+For a complete list of all available resources and documentation, please visit the [output directory](output/).
+
+
+
+// ===== Conteúdo de: fsh-link-references.md =====
+
+[DeviceActivityTracker]: Device-DeviceActivityTracker.html
+[AdvancedVitalSignsContextCS]: CodeSystem-advanced-vital-signs-context-cs.html
+[AdvancedVitalSignsContext]: StructureDefinition-advanced-vital-signs-context.html
+[AdvancedVitalSignsContextVS]: ValueSet-advanced-vital-signs-context-vs.html
+[AdvancedVitalSigns]: StructureDefinition-advanced-vital-signs.html
+[AlertMessage]: StructureDefinition-alert-message.html
+[AlertTiming]: StructureDefinition-alert-timing.html
+[AllostaticLoad]: StructureDefinition-allostatic-load.html
+[AuditFormatExtension]: StructureDefinition-audit-format.html
+[AuditLevelExtension]: StructureDefinition-audit-level.html
+[AuditRetentionExtension]: StructureDefinition-audit-retention.html
+[BasalTemperatureObservation]: StructureDefinition-basal-temperature-observation.html
+[BasalTemperatureExample]: Observation-BasalTemperatureExample.html
+[BioimpedanceAnalyzer]: Device-BioimpedanceAnalyzer.html
+[BloodPressureExample]: Observation-BloodPressureExample.html
+[DeviceBloodPressureMonitor]: Device-DeviceBloodPressureMonitor.html
+[BloodPressureObservation]: StructureDefinition-blood-pressure-observation.html
+[BMIExample]: Observation-BMIExample.html
+[BMIObservation]: StructureDefinition-bmi-observation.html
+[BodyCompositionExample]: Observation-BodyCompositionExample.html
+[BodyCompositionObservation]: StructureDefinition-body-composition-observation.html
+[BodyLocationsVS]: ValueSet-body-locations-vs.html
+[BodyMetricsObservation]: StructureDefinition-body-metrics-observation.html
+[CalorieIntakeObservation]: StructureDefinition-calorie-intake-observation.html
+[ChronicSymptomExample]: Observation-ChronicSymptomExample.html
+[CircadianPhaseCS]: CodeSystem-circadian-phase-cs.html
+[CircadianPhase]: StructureDefinition-circadian-phase.html
+[CircadianPhaseVS]: ValueSet-circadian-phase-vs.html
+[SymptomAssessmentExample]: ClinicalImpression-SymptomAssessmentExample.html
+[CompleteCycleExample]: Observation-CompleteCycleExample.html
+[CompleteMindfulnessSession]: Observation-CompleteMindfulnessSession.html
+[CompleteMindfulnessResponse]: QuestionnaireResponse-CompleteMindfulnessResponse.html
+[MindfulnessCSVTransform]: StructureMap-MindfulnessCSVTransform.html
+[DailyMindfulnessAlert]: Basic-DailyMindfulnessAlert.html
+[DailyMindfulnessQuestionnaire]: Questionnaire-DailyMindfulnessQuestionnaire.html
+[DailyNutritionQuestionnaire]: Questionnaire-DailyNutritionQuestionnaire.html
+[NutritionQuestionnaireResponseExample]: QuestionnaireResponse-NutritionQuestionnaireResponseExample.html
+[DefaultAuditConfig]: Basic-DefaultAuditConfig.html
+[DefaultMindfulnessConfig]: Basic-DefaultMindfulnessConfig.html
+[DurationUnitsVS]: ValueSet-duration-units-vs.html
+[EndSessionMessage]: MessageDefinition-EndSessionMessage.html
+[EndSessionOperation]: OperationDefinition-EndSessionOperation.html
+[EnvironmentalContextCS]: CodeSystem-environmental-context-cs.html
+[EnvironmentalContext]: StructureDefinition-environmental-context.html
+[EnvironmentalContextVS]: ValueSet-environmental-context-vs.html
+[EnvironmentalDeviceExample]: Device-EnvironmentalDeviceExample.html
+[EnvironmentalObservation]: StructureDefinition-environmental-observation.html
+[ExampleEnvironmentalContext]: Observation-ExampleEnvironmentalContext.html
+[ExampleMeasurementQuality]: Observation-ExampleMeasurementQuality.html
+[MindfulnessAuditExample]: Basic-MindfulnessAuditExample.html
+[MindfulnessQuestionnaireExample]: Questionnaire-MindfulnessQuestionnaireExample.html
+[MindfulnessObservationExample]: Observation-MindfulnessObservationExample.html
+[SleepObservationExample1]: Observation-SleepObservationExample1.html
+[PhysicalActivityExample1]: Observation-PhysicalActivityExample1.html
+[PatientExample]: Patient-PatientExample.html
+[ExampleReproductiveActivity]: CarePlan-ExampleReproductiveActivity.html
+[ExampleSymptomSeverity]: Observation-ExampleSymptomSeverity.html
+[ExposureConditionsCS]: CodeSystem-exposure-conditions-cs.html
+[ExposureConditions]: StructureDefinition-exposure-conditions.html
+[ExposureConditionsVS]: ValueSet-exposure-conditions-vs.html
+[ExposureLocationCS]: CodeSystem-exposure-location-cs.html
+[ExposureLocation]: StructureDefinition-exposure-location.html
+[ExposureLocationVS]: ValueSet-exposure-location-vs.html
+[FertilityObservation]: StructureDefinition-fertility-observation.html
+[FertilitySignsExample]: Observation-FertilitySignsExample.html
+[MindfulnessHealthKitTransform]: StructureMap-MindfulnessHealthKitTransform.html
+[HeartRateExample]: Observation-HeartRateExample.html
+[DeviceHeartRateMonitor]: Device-DeviceHeartRateMonitor.html
+[HeartRateObservation]: StructureDefinition-heart-rate-observation.html
+[HeightExample]: Observation-HeightExample.html
+[HeightObservation]: StructureDefinition-height-observation.html
+[HomeostasisIndex]: StructureDefinition-homeostasis-index.html
+[LifestyleVitalSigns]: StructureDefinition-lifestyle-vital-signs.html
+[MacronutrientsObservation]: StructureDefinition-macronutrients-observation.html
+[MeasurementConditions]: StructureDefinition-measurement-conditions.html
+[MeasurementConditionsVS]: ValueSet-measurement-conditions-vs.html
+[MeasurementContext]: StructureDefinition-measurement-context.html
+[MeasurementContextVitalSigns]: ValueSet-measurement-context-vital-signs.html
+[MeasurementContextVS]: ValueSet-measurement-context-vs.html
+[MeasurementDevice]: StructureDefinition-measurement-device-type.html
+[MeasurementDeviceTypeVS]: ValueSet-measurement-device-type-vs.html
+[MeasurementQualityCS]: CodeSystem-measurement-quality-cs.html
+[MeasurementQuality]: StructureDefinition-measurement-quality.html
+[MeasurementQualityVS]: ValueSet-measurement-quality-vs.html
+[MenstrualCycleObservation]: StructureDefinition-menstrual-cycle-observation.html
+[MindfulnessAlert]: StructureDefinition-mindfulness-alert.html
+[MindfulnessAudit]: StructureDefinition-mindfulness-audit.html
+[MindfulnessAuditConfig]: StructureDefinition-mindfulness-audit-config.html
+[MindfulnessAuditFormat]: StructureDefinition-mindfulness-audit-format.html
+[MindfulnessAuditLevel]: StructureDefinition-mindfulness-audit-level.html
+[MindfulnessAuditRetention]: StructureDefinition-mindfulness-audit-retention.html
+[MindfulnessConfiguration]: StructureDefinition-mindfulness-configuration.html
+[MindfulnessAccessPolicy]: Consent-MindfulnessAccessPolicy.html
+[MindfulnessSecurityDefinition]: Consent-MindfulnessSecurityDefinition.html
+[MindfulnessDiagnosticMap]: ConceptMap-MindfulnessDiagnosticMap.html
+[MindfulnessImportMap]: StructureDefinition-mindfulness-import-map.html
+[MindfulnessMessageDefinition]: StructureDefinition-mindfulness-message-definition.html
+[MindfulnessCapabilityStatement]: CapabilityStatement-MindfulnessCapabilityStatement.html
+[MindfulnessNotificationEnabled]: StructureDefinition-mindfulness-notification-enabled.html
+[MindfulnessOperation]: StructureDefinition-mindfulness-operation.html
+[MindfulnessOutcomeCS]: CodeSystem-mindfulness-outcome-cs.html
+[MindfulnessOutcomeVS]: ValueSet-mindfulness-outcome-vs.html
+[MindfulnessProgressReport]: Measure-MindfulnessProgressReport.html
+[MindfulnessQualifierCS]: CodeSystem-mindfulness-qualifier-cs.html
+[MindfulnessQualifierVS]: ValueSet-mindfulness-qualifier-vs.html
+[MindfulnessTypeCS]: CodeSystem-mindfulness-type-cs.html
+[MindfulnessTypeVS]: ValueSet-mindfulness-type-vs.html
+[MindfulnessPreferredGuide]: StructureDefinition-mindfulness-preferred-guide.html
+[MindfulnessReminderTime]: StructureDefinition-mindfulness-reminder-time.html
+[MindfulnessSchedule]: StructureDefinition-mindfulness-schedule.html
+[MindfulnessScheduleTiming]: StructureDefinition-mindfulness-schedule-timing.html
+[MindfulnessContext]: StructureDefinition-mindfulness-context.html
+[MindfulnessSessionDuration]: StructureDefinition-mindfulness-session-duration.html
+[MindfulnessObservation]: StructureDefinition-mindfulness-observation.html
+[MindfulnessSettingCS]: CodeSystem-MindfulnessSettingCS.html
+[MobilityAlertLevelCS]: CodeSystem-mobility-alert-level-cs.html
+[MobilityAlertLevel]: StructureDefinition-mobility-alert-level.html
+[MobilityAlertLevelVS]: ValueSet-mobility-alert-level-vs.html
+[MobilityProfile]: StructureDefinition-mobility-profile.html
+[MobilityRiskAssessment]: StructureDefinition-mobility-risk-assessment.html
+[MoodValueSet]: ValueSet-mood-vs.html
+[NoiseExposureExample]: Observation-NoiseExposureExample.html
+[NoiseExposureObservation]: StructureDefinition-noise-exposure-observation.html
+[NutritionDataSourceCS]: CodeSystem-nutrition-data-source-cs.html
+[NutritionDataSource]: StructureDefinition-nutrition-data-source.html
+[NutritionDataSourceVS]: ValueSet-nutrition-data-source-vs.html
+[NutritionIntakeObservation]: StructureDefinition-nutrition-intake-observation.html
+[OxygenSaturationObservation]: StructureDefinition-oxygen-saturation-observation.html
+[PhysicalActivityObservation]: StructureDefinition-physical-activity-observation.html
+[PhysicalActivityTypeVS]: ValueSet-physical-activity-type-vs.html
+[PhysiologicalStressIndex]: StructureDefinition-physiological-stress-index.html
+[EnvironmentTypeCS]: CodeSystem-environment-type-cs.html
+[EnvironmentTypeVS]: ValueSet-environment-type-vs.html
+[RecoveryEfficiency]: StructureDefinition-recovery-efficiency.html
+[ReproductiveCyclePlanExample]: CarePlan-ReproductiveCyclePlanExample.html
+[ReproductiveCyclePlan]: StructureDefinition-reproductive-cycle-plan.html
+[ReproductiveGoalExample]: Goal-ReproductiveGoalExample.html
+[ReproductiveActivityCS]: CodeSystem-reproductive-activity-cs.html
+[ReproductiveActivityVS]: ValueSet-reproductive-activity-vs.html
+[ReproductiveObservation]: StructureDefinition-reproductive-observation.html
+[ReproductiveGoal]: StructureDefinition-reproductive-goal.html
+[ReproductiveGoalVS]: ValueSet-reproductive-goal-vs.html
+[ReproductiveHealthQuestionnaire]: Questionnaire-ReproductiveHealthQuestionnaire.html
+[ReproductiveSymptomObservation]: StructureDefinition-reproductive-symptom-observation.html
+[ReproductiveSymptomsExample]: Observation-ReproductiveSymptomsExample.html
+[MindfulnessType]: SearchParameter-MindfulnessType.html
+[SessionDuration]: SearchParameter-SessionDuration.html
+[StressLevel]: SearchParameter-StressLevel.html
+[DeviceSleepMonitor]: Device-DeviceSleepMonitor.html
+[SleepObservation]: StructureDefinition-sleep-observation.html
+[SleepQuality]: StructureDefinition-sleep-quality.html
+[SleepQualityExtendedVS]: ValueSet-sleep-quality-extended-vs.html
+[SleepQualityVS]: ValueSet-sleep-quality-vs.html
+[SmartScale]: Device-SmartScale.html
+[StartSessionMessage]: MessageDefinition-StartSessionMessage.html
+[StartSessionOperation]: OperationDefinition-StartSessionOperation.html
+[SymptomQuestionnaire]: StructureDefinition-symptom-questionnaire.html
+[SymptomAssessment]: StructureDefinition-symptom-assessment.html
+[SymptomFollowUpExample]: Observation-SymptomFollowUpExample.html
+[SymptomFrequencyCS]: CodeSystem-symptom-frequency-cs.html
+[SymptomFrequencyVS]: ValueSet-symptom-frequency-vs.html
+[SymptomImpactCS]: CodeSystem-symptom-impact-cs.html
+[SymptomImpactVS]: ValueSet-symptom-impact-vs.html
+[SymptomObservation]: StructureDefinition-symptom-observation.html
+[SymptomProgressionVS]: ValueSet-symptom-progression-vs.html
+[SymptomQuestionnaireResponseExample]: QuestionnaireResponse-SymptomQuestionnaireResponseExample.html
+[SymptomSeverityCS]: CodeSystem-symptom-severity-cs.html
+[SymptomWithContextExample]: Observation-SymptomWithContextExample.html
+[TimeOfDayVS]: ValueSet-time-of-day-vs.html
+[UVExposureExample]: Observation-UVExposureExample.html
+[UVExposureObservation]: StructureDefinition-uv-exposure-observation.html
+[WalkingSpeedExample]: Observation-WalkingSpeedExample.html
+[WalkingSpeedObservation]: StructureDefinition-walking-speed-observation.html
+[WalkingSteadinessExample]: Observation-WalkingSteadinessExample.html
+[WalkingSteadinessObservation]: StructureDefinition-walking-steadiness-observation.html
+[WaterIntakeObservation]: StructureDefinition-water-intake-observation.html
+[WeeklyMindfulnessSchedule]: Basic-WeeklyMindfulnessSchedule.html
+[WeightExample]: Observation-WeightExample.html
+[WeightObservation]: StructureDefinition-weight-observation.html
+[WeightWithConditions]: Observation-WeightWithConditions.html
+

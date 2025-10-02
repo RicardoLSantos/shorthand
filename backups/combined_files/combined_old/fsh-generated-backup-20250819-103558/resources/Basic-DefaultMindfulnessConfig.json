@@ -1,0 +1,36 @@
+{
+  "resource(Type|)": "(Basic|)",
+  "id": "(DefaultMindfulnessConfig|)",
+  "meta": {
+    "profile": [
+      "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-configuration"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-session-duration",
+      "value(Integer|)": 15
+    },
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-reminder-time",
+      "value(Time|)": "08:00:00"
+    },
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-preferred-guide",
+      "value(String|)": "(Jane|) (Smith|)"
+    },
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-notification-enabled",
+      "value(Boolean|)": true
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "settings",
+        "system": "http://example.org/(CodeSystem|)/mindfulness-config-type",
+        "display": "(Mindfulness|) (Settings|)"
+      }
+    ]
+  }
+}

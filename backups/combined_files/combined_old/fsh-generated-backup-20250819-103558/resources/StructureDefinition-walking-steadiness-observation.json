@@ -1,0 +1,140 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "walking-steadiness-observation",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/walking-steadiness-observation",
+  "name": "(WalkingSteadinessObservation|)",
+  "title": "(Walking|) (Steadiness|) (Observation|) (Profile|)",
+  "status": "draft",
+  "description": "(Profile|) for walking steadiness measurements from i(Phone|) (Motion|) (Sensors|)",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Observation|)",
+  "base(Definition|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mobility-profile",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Observation|).code",
+        "path": "(Observation|).code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "(LA|)32-8",
+              "system": "http://loinc.org",
+              "display": "(Balance|)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:balance(Score|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "balance(Score|)",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:balance(Score|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "(LA|)32-8",
+              "system": "http://loinc.org",
+              "display": "(Balance|) score"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:balance(Score|).value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:balance(Score|).value[x]:value(Quantity|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(Quantity|)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:balance(Score|).value[x]:value(Quantity|).system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:balance(Score|).value[x]:value(Quantity|).code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "%"
+      },
+      {
+        "id": "(Observation|).component:balance(Status|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "balance(Status|)",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:balance(Status|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "(LA|)32-9",
+              "system": "http://loinc.org",
+              "display": "(Balance|) status"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:balance(Status|).value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:balance(Status|).value[x]:value(CodeableConcept|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(CodeableConcept|)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(CodeableConcept|)"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "value(Set|)": "http://example.org/fhir/(ValueSet|)/balance-status"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-audit-retention",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-audit-retention",
+  "name": "(MindfulnessAuditRetention|)",
+  "title": "(Mindfulness|) (Audit|) (Retention|)",
+  "status": "draft",
+  "description": "(Period|) to retain audit records",
+  "fhir(Version|)": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "(Element|)"
+    }
+  ],
+  "type": "(Extension|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Extension|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Extension|)",
+        "path": "(Extension|)",
+        "short": "(Mindfulness|) (Audit|) (Retention|)",
+        "definition": "(Period|) to retain audit records"
+      },
+      {
+        "id": "(Extension|).extension",
+        "path": "(Extension|).extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).url",
+        "path": "(Extension|).url",
+        "fixed(Uri|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-audit-retention"
+      },
+      {
+        "id": "(Extension|).value[x]",
+        "path": "(Extension|).value[x]",
+        "type": [
+          {
+            "code": "(Duration|)"
+          }
+        ]
+      }
+    ]
+  }
+}

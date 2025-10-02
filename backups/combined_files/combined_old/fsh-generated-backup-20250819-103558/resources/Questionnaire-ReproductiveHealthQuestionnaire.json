@@ -1,0 +1,104 @@
+{
+  "resource(Type|)": "(Questionnaire|)",
+  "id": "(ReproductiveHealthQuestionnaire|)",
+  "url": "http://example.org/(Questionnaire|)/reproductive-health",
+  "title": "(Reproductive|) (Health|) (Monitoring|)",
+  "description": "(Daily|) questionnaire for reproductive health tracking",
+  "item": [
+    {
+      "item": [
+        {
+          "link(Id|)": "cycle_start",
+          "text": "(Cycle|) started today?",
+          "type": "boolean"
+        },
+        {
+          "enable(When|)": [
+            {
+              "question": "cycle_start",
+              "operator": "=",
+              "answer(Boolean|)": true
+            }
+          ],
+          "answer(Option|)": [
+            {
+              "value(String|)": "(Light|)"
+            },
+            {
+              "value(String|)": "(Moderate|)"
+            },
+            {
+              "value(String|)": "(Heavy|)"
+            }
+          ],
+          "link(Id|)": "flow_intensity",
+          "text": "(Flow|) intensity",
+          "type": "choice"
+        }
+      ],
+      "link(Id|)": "menstrual_cycle",
+      "text": "(Menstrual|) (Cycle|)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "link(Id|)": "symptom_type",
+          "text": "(Symptom|) type",
+          "type": "choice",
+          "answer(ValueSet|)": "http://example.org/(ValueSet|)/reproductive-symptoms"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/(StructureDefinition|)/min(Value|)",
+              "value(Integer|)": 0
+            },
+            {
+              "url": "http://hl7.org/fhir/(StructureDefinition|)/max(Value|)",
+              "value(Integer|)": 10
+            }
+          ],
+          "link(Id|)": "symptom_severity",
+          "text": "(Intensity|) (0-10)",
+          "type": "integer"
+        }
+      ],
+      "link(Id|)": "symptoms",
+      "text": "(Symptoms|)",
+      "type": "group",
+      "repeats": true
+    },
+    {
+      "item": [
+        {
+          "link(Id|)": "mood_type",
+          "text": "(Current|) mood",
+          "type": "choice",
+          "answer(ValueSet|)": "http://example.org/(ValueSet|)/mood-types"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/(StructureDefinition|)/min(Value|)",
+              "value(Integer|)": 0
+            },
+            {
+              "url": "http://hl7.org/fhir/(StructureDefinition|)/max(Value|)",
+              "value(Integer|)": 10
+            }
+          ],
+          "link(Id|)": "mood_severity",
+          "text": "(Intensity|) (0-10)",
+          "type": "integer"
+        }
+      ],
+      "link(Id|)": "mood_changes",
+      "text": "(Mood|) (Changes|)",
+      "type": "group"
+    }
+  ],
+  "status": "active",
+  "name": "(ReproductiveHealthQuestionnaire|)",
+  "date": "2024-03-19"
+}

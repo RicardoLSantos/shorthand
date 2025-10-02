@@ -1,0 +1,100 @@
+{
+  "resource(Type|)": "(QuestionnaireResponse|)",
+  "id": "(CompleteMindfulnessResponse|)",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "value(Integer|)": 20
+            }
+          ],
+          "link(Id|)": "session_duration"
+        },
+        {
+          "answer": [
+            {
+              "value(String|)": "(Meditation|)"
+            }
+          ],
+          "link(Id|)": "practice_type"
+        }
+      ],
+      "link(Id|)": "mindful_session"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "value(Coding|)": {
+                "code": "130991005",
+                "system": "http://snomed.info/sct",
+                "display": "(Neutral|) mood"
+              }
+            }
+          ],
+          "link(Id|)": "current_mood"
+        },
+        {
+          "answer": [
+            {
+              "value(Integer|)": 3
+            }
+          ],
+          "link(Id|)": "mood_intensity"
+        }
+      ],
+      "link(Id|)": "mood_assessment"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "value(Integer|)": 3
+            }
+          ],
+          "link(Id|)": "stress_level"
+        },
+        {
+          "answer": [
+            {
+              "value(String|)": "(Slight|) tension"
+            }
+          ],
+          "link(Id|)": "stress_symptoms"
+        }
+      ],
+      "link(Id|)": "stress_assessment"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "value(Integer|)": 15
+            }
+          ],
+          "link(Id|)": "relaxation_duration"
+        },
+        {
+          "answer": [
+            {
+              "value(String|)": "(Deep|) breathing"
+            }
+          ],
+          "link(Id|)": "relaxation_technique"
+        }
+      ],
+      "link(Id|)": "relaxation"
+    }
+  ],
+  "questionnaire": "http://example.org/(Questionnaire|)/daily-mindfulness",
+  "status": "completed",
+  "subject": {
+    "reference": "(Patient|)/(PatientExample|)"
+  },
+  "authored": "2024-03-19(T|)08:30:00(Z|)"
+}

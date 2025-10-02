@@ -1,0 +1,44 @@
+{
+  "resource(Type|)": "(ValueSet|)",
+  "url": "http://example.org/fhir/(ValueSet|)/(ValueSet|)-duration-units-vs",
+  "version": "1.0.0",
+  "name": "(ValueSetdurationunitsvs|)",
+  "status": "active",
+  "experimental": false,
+  "publisher": "(Generated|) (Publisher|)",
+  "description": "(Generated|) description for (ValueSet|)",  "status": "draft",
+  "name": "(DurationUnitsVS|)",
+  "id": "duration-units-vs",
+  "title": "(Duration|) (Units|) (Value|) (Set|)",
+  "description": "(Time|) units for symptom duration",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(ValueSet|)/duration-units-vs",
+  "compose": {
+    "include": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "concept": [
+          {
+            "code": "min",
+            "display": "(Minutes|)"
+          },
+          {
+            "code": "h",
+            "display": "(Hours|)"
+          },
+          {
+            "code": "d",
+            "display": "(Days|)"
+          },
+          {
+            "code": "wk",
+            "display": "(Weeks|)"
+          },
+          {
+            "code": "mo",
+            "display": "(Months|)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+# Procedimentos Operacionais e diretrizes para **Implementation Guides** do HL7 FHIR
+
+## Contexto geral
+
+Os **Implementation Guides (IGs)** da família **HL7 FHIR** são documentos técnicos que transformam o padrão FHIR genérico em instruções específicas para um domínio (por exemplo, relatórios laboratoriais, integração com registros nacionais ou uso clínico específico). Cada IG é desenvolvido por uma equipe ou projeto específico (p. ex., TEFCA, projetos aceleradores como Da Vinci, sistemas de saúde nacionais), que define perfis de recurso, extensões e fluxos de trabalho. Não existe um procedimento operacional padrão único e universal para todas as guias, pois o FHIR foi projetado para ser um ecossistema flexível.  A própria HL7 fornece diretrizes e requisitos básicos de qualidade para a publicação de IGs, mas cada organização complementa essas diretrizes com seus próprios processos.
+
+## Diretrizes de publicação e qualidade da HL7
+
+A HL7 mantém um conjunto de requisitos de publicação para guias de implementação. Esses requisitos não são chamados de *SOP*, mas funcionam como um guia de boas práticas.  Segundo o documento **FHIR Implementation Guide Publishing Requirements**, todo IG deve:
+
+- Declarar elementos **publisher** e **contact** no recurso ImplementationGuide e expor essas informações na página inicial【410760319394645†L64-L74】.
+- Utilizar **index.html** como página raiz ou redirecionar para ela【410760319394645†L64-L84】.
+- Fornecer um arquivo **NPM** com metadados e (quando aplicável) um arquivo OpenAPI para cada *CapabilityStatement*【410760319394645†L64-L84】.
+- Especificar claramente as versões do IG e do FHIR e disponibilizar um arquivo **ZIP** para download com todo o conteúdo do guia【410760319394645†L64-L84】.
+
+Há também orientações condicionais sobre o uso de logotipos (HL7 ou parceiros), uso de uma única versão do FHIR, apresentação de metadados completos para perfis e conjuntos de valores e exigências sobre cabeçalho e rodapé da publicação【410760319394645†L98-L176】.  Esses requisitos visam padronizar a publicação e facilitar o uso e a revisão dos IGs, mas a HL7 não publica um *SOP* formal para sua elaboração.
+
+## Exemplo de **SOP** para FHIR: TEFCA (Estados Unidos)
+
+Nos Estados Unidos, a iniciativa **Trusted Exchange Framework and Common Agreement (TEFCA)** estabelece regras para troca de informações de saúde através de **Qualified Health Information Networks (QHINs)**.  Como parte dessa iniciativa, há tanto um **Implementation Guide** como um **Standard Operating Procedure (SOP)** específicos para a troca de dados em FHIR:
+
+* **TEFCA Facilitated FHIR Implementation Guide** – define requisitos de política, técnicos e de processo para que QHINs, participantes e sub‑participantes troquem informações usando HL7 FHIR.  O guia observa que esses requisitos se aplicam “sob os termos do *Common Agreement* e **procedimentos operacionais padrão (SOPs) associados**”【101129746679979†L74-L90】.  Ele descreve, por exemplo, papéis (Iniciador de consulta FHIR e Ator respondedente) e requisitos para proveniência, compatibilidade de versões e erros【101129746679979†L74-L174】.
+
+* **SOP – Facilitated FHIR Implementation** – documento complementar que fornece um roteiro para adoção escalável do FHIR dentro do TEFCA.  Ele incentiva a adoção consistente em rede, permitindo um período de transição durante o qual muitos requisitos são opcionais.  O SOP reconhece que pode haver diferenças no escopo dos dados trocados e no conjunto de parceiros iniciais.  Um **Grupo Consultivo de Implementação FHIR** foi criado para coletar aprendizados e avaliar a adoção do guia de segurança HL7 SSRAA【555336105154197†L107-L132】.  O documento também descreve um cenário de consulta FHIR (consulta a dados do paciente) e lista os padrões e perfis utilizados (TLS, OAuth 2.0, UDAP, SMART on FHIR, US Core etc.)【555336105154197†L146-L239】.
+
+Esse conjunto de IG + SOP é um bom exemplo de como um projeto específico define processos operacionais detalhados para uso do FHIR.
+
+## **SMART Guidelines** da OMS – SOP para elaborar guias de implementação
+
+A Organização Mundial da Saúde (OMS) desenvolveu o método **SMART Guidelines** para digitalizar recomendações clínicas.  A OMS utiliza FHIR para produzir **Guias de Implementação (L3)** a partir de *Digital Adaptation Kits (DAKs)* de nível 2.  Para garantir consistência, a OMS publicou o **SMART Guidelines Starter Kit**, que contém **Procedimentos Operacionais Padrão (SOP)** para autorar DAKs de nível 2 e guias de implementação de nível 3【446226293508522†L84-L98】.  O kit ressalta que, como as guias SMART são projetadas para serem reutilizadas e adaptadas em todo o mundo, o processo de criação, validação e manutenção deve ser conhecido e replicável【446226293508522†L84-L98】.  O documento oferece:
+
+- Orientações para configurar repositórios no GitHub e publicar as guias;
+- Passo a passo para redigir conteúdos narrativos, modelar processos e artefatos (Modelos lógicos, *ValueSets*, *CodeSystems*, perfis etc.);
+- Instruções para controle de qualidade e verificação.
+
+Portanto, embora não exista um SOP global para todas as guias FHIR, a OMS definiu um procedimento formal para suas próprias guias de implementação.
+
+## Outras diretrizes e iniciativas relacionadas
+
+Além dos casos citados, várias organizações oferecem orientações (não necessariamente chamadas de *SOP*) para criação de Implementation Guides:
+
+* **NHS Digital (Reino Unido)** – disponibiliza o **FHIR Implementation Guide Template 2.0**, um conjunto de diretrizes sob constante evolução.  O documento informa que a orientação está em desenvolvimento, permitindo atualizações regulares【525049141856381†L70-L75】.  Ele descreve o público‑alvo (clínicos, analistas de negócio, arquitetos, especialistas FHIR, desenvolvedores) e fornece instruções sobre estrutura e propósito de cada página do guia【525049141856381†L94-L146】.
+
+* **Projetos Aceleradores da HL7** – iniciativas como **Da Vinci**, **Gravity**, **CodeX** e **CARIN** publicam guias FHIR para casos de uso específicos (p. ex., troca de dados de pagadores, interoperabilidade em oncologia, determinantes sociais de saúde).  Embora esses projetos sigam o processo padrão de proposals e ballot da HL7, cada um estabelece cronogramas, modelos de governança e documentos de perguntas frequentes, mas não há evidência pública de SOPs formais.
+
+* **Integrating the Healthcare Enterprise (IHE)** – organização que desenvolve *profiles* de interoperabilidade, incluindo perfis FHIR (por exemplo, IHE FHIRcast).  O IHE segue um processo estruturado de desenvolvimento e teste de perfis; porém, assim como a HL7, publica diretrizes de qualidade e ciclos de comentários em vez de um único SOP.
+
+* **National Digital Health Mission (NDHM / Ayushman Bharat Digital Mission – Índia)** e **NHS Wales** – publicaram guias de implementação FHIR para seus sistemas nacionais de saúde.  Esses países elaboram guias seguindo práticas locais e, em muitos casos, baseiam‑se nos requisitos de publicação da HL7.
+
+* **Outras entidades governamentais** – agências regulatórias, como o **Centers for Medicare & Medicaid Services (CMS)**, disponibilizam recursos e listas de guias recomendados.  A CMS observa que seu Grupo de Informática e Interoperabilidade apoia “o desenvolvimento de padrões técnicos e **Implementation Guides**” em parceria com organizações de padronização e partes interessadas【359657432099779†L789-L813】.  O site da CMS apresenta links para listas de APIs requeridas e os IGs associados, bem como uma seção de *Standards and IGs Index and Resources* para consulta pública【359657432099779†L789-L813】.
+
+## Onde encontrar Implementation Guides
+
+Para localizar guias de implementação já publicados, podem ser utilizados os seguintes repositórios e recursos:
+
+1. **Registro oficial de Implementation Guides (registry.fhir.org)** – O site da FHIR Foundation explica que o padrão base fornece a plataforma e que entidades como organizações nacionais, consórcios de fornecedores e sociedades clínicas publicam guias que definem como as capacidades do FHIR devem ser usadas【611076007227196†L20-L28】.  O registro completo está disponível em [registry.fhir.org](http://registry.fhir.org)【611076007227196†L31-L33】.
+
+2. **Portal de guias do FHIR Foundation (fhir.org/guides)** – apresenta uma lista de guias hospedados pela comunidade FHIR, com a possibilidade de submeter novos guias via pull request no repositório *ig‑registry*【611076007227196†L31-L40】.
+
+3. **Simplifier.net** – plataforma mantida pela empresa Firely onde diversos projetos e organizações publicam guias FHIR.  Permite navegação por domínio, busca de perfis, extensões e exemplos e inclui a **FHIR Implementation Guide Template** da NHS Digital【525049141856381†L70-L75】.
+
+4. **Repositórios GitHub** – a maioria dos IGs desenvolvidos pela HL7 ou por projetos aceleradores é mantida em repositórios públicos (por exemplo, `github.com/HL7` ou `github.com/FHIR`), que contêm a definição do recurso `ImplementationGuide`, pacotes NPM, código do editor (IG Publisher) e scripts de validação.
+
+5. **Sites de órgãos públicos** – além da CMS, outras agências como **ONC (Office of the National Coordinator for Health IT)** nos EUA, **Agence du Numérique en Santé** na França ou **Ministerio da Saúde** de diferentes países hospedam guias de implementação ligados às suas regulamentações.
+
+## Conclusões
+
+- O **HL7 FHIR** não possui um Procedimento Operacional Padrão (SOP) universal para criação de Implementation Guides.  A HL7 fornece requisitos de publicação e qualidade que todos os guias devem seguir【410760319394645†L64-L84】, mas as etapas detalhadas de elaboração variam conforme o projeto.
+- Alguns programas específicos criaram seus próprios SOPs ou processos formais.  **TEFCA** elaborou um *Implementation Guide* e um **SOP** para adoção do FHIR, detalhando papéis, fluxos de consulta e padrões de segurança【101129746679979†L74-L90】【555336105154197†L146-L239】.  A **OMS**, por meio das **SMART Guidelines**, publicou um **Starter Kit** que contém SOPs para autorar *Digital Adaptation Kits* e guias FHIR, visando padronizar a adaptação de guias clínicos no mundo todo【446226293508522†L84-L98】.
+- Outras entidades (NHS Digital, projetos aceleradores, IHE, etc.) fornecem guias e modelos de referência, mas geralmente tratam‑se de orientações ou listas de verificação, não de SOPs formais.
+- Para encontrar IGs existentes, utilize o **Registry FHIR**, a plataforma **Simplifier.net**, repositórios **GitHub** e os sites de organizações governamentais e projetos aceleradores.
+
+## Referências
+
+1. **FHIR Implementation Guide Publishing Requirements – HL7**. Lista de requisitos obrigatórios para publicação de guias (publisher, index.html, pacotes NPM, etc.)【410760319394645†L64-L84】. Disponível em: <https://confluence.hl7.org/spaces/FHIR/pages/66930646/FHIR+Implementation+Guide+Publishing+Requirements>.
+2. **TEFCA Facilitated FHIR Implementation Guide**. Define requisitos de política, técnicos e de processo para trocas em FHIR no TEFCA e menciona que os requisitos se aplicam conforme os procedimentos operacionais padrão【101129746679979†L74-L90】. Disponível em: <https://rce.sequoiaproject.org/wp-content/uploads/2022/10/TEFCA-Facilitated-FHIR-Implementation-Guide-Draft-for-508.pdf>.
+3. **SOP: Facilitated FHIR Implementation – Sequoia Project**. SOP que descreve a adoção escalável do FHIR no TEFCA, incluindo roteiro, requisitos de segurança e fluxo de consulta【555336105154197†L107-L132】【555336105154197†L146-L239】. Disponível em: <https://rce.sequoiaproject.org/wp-content/uploads/2024/07/SOP-Facilitated-FHIR-Implementation_508-1.pdf>.
+4. **SMART Guidelines Starter Kit – OMS**. Documento que apresenta os Procedimentos Operacionais Padrão para a elaboração dos DAKs de nível 2 e dos guias FHIR de nível 3, justificando a necessidade de processos replicáveis【446226293508522†L84-L98】. Disponível em: <https://smart.who.int/ig-starter-kit/>.
+5. **Implementation Guides and Standards – CMS**. A CMS indica que seu grupo de Informática e Interoperabilidade apoia o desenvolvimento de padrões e Implementation Guides em parceria com organizações de padronização e oferece links para listas de APIs e IGs recomendados【359657432099779†L789-L813】. Disponível em: <https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability/implementation-guides-and-standards>.
+6. **Implementation Guide Registry – FHIR Foundation**. Explica que o padrão FHIR fornece a plataforma e que diversos grupos publicam guias de implementação para casos específicos, oferecendo um diretório de IGs【611076007227196†L20-L33】. Disponível em: <https://www.fhir.org/guides/registry/>.
+7. **FHIR Implementation Guide Template 2.0 – NHS Digital**. Documento em desenvolvimento que fornece uma estrutura e orientações sobre como construir um guia de implementação, incluindo seções obrigatórias e público‑alvo【525049141856381†L70-L116】. Disponível em: <https://simplifier.net/guide/fhirimplementationguidetemplate/>.

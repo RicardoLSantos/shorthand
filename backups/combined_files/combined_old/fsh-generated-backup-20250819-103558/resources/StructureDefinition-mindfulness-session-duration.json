@@ -1,0 +1,50 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-session-duration",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-session-duration",
+  "name": "(MindfulnessSessionDuration|)",
+  "title": "(Mindfulness|) (Session|) (Duration|)",
+  "status": "draft",
+  "description": "(Default|) duration for mindfulness sessions in minutes",
+  "fhir(Version|)": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "(Element|)"
+    }
+  ],
+  "type": "(Extension|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Extension|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Extension|)",
+        "path": "(Extension|)",
+        "short": "(Mindfulness|) (Session|) (Duration|)",
+        "definition": "(Default|) duration for mindfulness sessions in minutes"
+      },
+      {
+        "id": "(Extension|).extension",
+        "path": "(Extension|).extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).url",
+        "path": "(Extension|).url",
+        "fixed(Uri|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-session-duration"
+      },
+      {
+        "id": "(Extension|).value[x]",
+        "path": "(Extension|).value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      }
+    ]
+  }
+}

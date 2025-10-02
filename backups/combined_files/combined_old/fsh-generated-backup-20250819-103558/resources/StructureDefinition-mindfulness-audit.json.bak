@@ -1,0 +1,102 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-audit",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-audit",
+  "name": "(MindfulnessAudit|)",
+  "title": "(Mindfulness|) (Audit|)",
+  "status": "draft",
+  "description": "(Audit|) record for mindfulness sessions",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Basic|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Basic|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Basic|).extension",
+        "path": "(Basic|).extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 3
+      },
+      {
+        "id": "(Basic|).extension:audit(Level|)",
+        "path": "(Basic|).extension",
+        "slice(Name|)": "audit(Level|)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Extension|)",
+            "profile": [
+              "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/audit-level"
+            ]
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Basic|).extension:audit(Retention|)",
+        "path": "(Basic|).extension",
+        "slice(Name|)": "audit(Retention|)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Extension|)",
+            "profile": [
+              "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/audit-retention"
+            ]
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Basic|).extension:audit(Format|)",
+        "path": "(Basic|).extension",
+        "slice(Name|)": "audit(Format|)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Extension|)",
+            "profile": [
+              "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/audit-format"
+            ]
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Basic|).code",
+        "path": "(Basic|).code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "session",
+              "system": "http://example.org/(CodeSystem|)/mindfulness-audit-type",
+              "display": "(Session|) (Audit|)"
+            }
+          ]
+        },
+        "must(Support|)": true
+      },
+      {
+        "id": "(Basic|).created",
+        "path": "(Basic|).created",
+        "min": 1,
+        "must(Support|)": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "symptom-questionnaire",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/symptom-questionnaire",
+  "name": "(SymptomQuestionnaire|)",
+  "title": "(Symptom|) (Assessment|) (Questionnaire|)",
+  "status": "draft",
+  "description": "(Questionnaire|) template for symptom assessments",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Questionnaire|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Questionnaire|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Questionnaire|).title",
+        "path": "(Questionnaire|).title",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Questionnaire|).status",
+        "path": "(Questionnaire|).status",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Questionnaire|).item",
+        "path": "(Questionnaire|).item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "link(Id|)"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "must(Support|)": true
+      },
+      {
+        "id": "(Questionnaire|).item:symptom(Type|)",
+        "path": "(Questionnaire|).item",
+        "slice(Name|)": "symptom(Type|)",
+        "min": 1,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Questionnaire|).item:symptom(Type|).link(Id|)",
+        "path": "(Questionnaire|).item.link(Id|)",
+        "pattern(String|)": "symptom-type"
+      },
+      {
+        "id": "(Questionnaire|).item:symptom(Type|).text",
+        "path": "(Questionnaire|).item.text",
+        "pattern(String|)": "(Type|) of (Symptom|)"
+      },
+      {
+        "id": "(Questionnaire|).item:symptom(Type|).type",
+        "path": "(Questionnaire|).item.type",
+        "pattern(Code|)": "choice"
+      },
+      {
+        "id": "(Questionnaire|).item:symptom(Type|).required",
+        "path": "(Questionnaire|).item.required",
+        "pattern(Boolean|)": true
+      },
+      {
+        "id": "(Questionnaire|).item:location",
+        "path": "(Questionnaire|).item",
+        "slice(Name|)": "location",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Questionnaire|).item:location.link(Id|)",
+        "path": "(Questionnaire|).item.link(Id|)",
+        "pattern(String|)": "location"
+      },
+      {
+        "id": "(Questionnaire|).item:location.text",
+        "path": "(Questionnaire|).item.text",
+        "pattern(String|)": "(Location|)"
+      },
+      {
+        "id": "(Questionnaire|).item:location.type",
+        "path": "(Questionnaire|).item.type",
+        "pattern(Code|)": "string"
+      },
+      {
+        "id": "(Questionnaire|).item:onset",
+        "path": "(Questionnaire|).item",
+        "slice(Name|)": "onset",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Questionnaire|).item:onset.link(Id|)",
+        "path": "(Questionnaire|).item.link(Id|)",
+        "pattern(String|)": "onset"
+      },
+      {
+        "id": "(Questionnaire|).item:onset.text",
+        "path": "(Questionnaire|).item.text",
+        "pattern(String|)": "(When|) did it start?"
+      },
+      {
+        "id": "(Questionnaire|).item:onset.type",
+        "path": "(Questionnaire|).item.type",
+        "pattern(Code|)": "date(Time|)"
+      },
+      {
+        "id": "(Questionnaire|).item:description",
+        "path": "(Questionnaire|).item",
+        "slice(Name|)": "description",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Questionnaire|).item:description.link(Id|)",
+        "path": "(Questionnaire|).item.link(Id|)",
+        "pattern(String|)": "description"
+      },
+      {
+        "id": "(Questionnaire|).item:description.text",
+        "path": "(Questionnaire|).item.text",
+        "pattern(String|)": "(Description|)"
+      },
+      {
+        "id": "(Questionnaire|).item:description.type",
+        "path": "(Questionnaire|).item.type",
+        "pattern(Code|)": "text"
+      }
+    ]
+  }
+}
