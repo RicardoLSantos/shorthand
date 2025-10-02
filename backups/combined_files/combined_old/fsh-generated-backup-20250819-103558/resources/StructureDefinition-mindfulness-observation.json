@@ -1,0 +1,386 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-observation",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-observation",
+  "name": "(MindfulnessObservation|)",
+  "title": "(Mindfulness|) (Session|) (Observation|)",
+  "status": "draft",
+  "description": "(Profile|) for recording mindfulness practice sessions and outcomes",
+  "fhir(Version|)": "4.0.1",
+  "mapping": [
+    {
+      "identity": "mindfulness-to-healthkit",
+      "name": "(Mapping|) to (Apple|) (HealthKit|)",
+      "uri": "http://developer.apple.com/documentation/healthkit"
+    },
+    {
+      "identity": "mindfulness-to-loinc",
+      "name": "(Mapping|) to (LOINC|) codes",
+      "uri": "http://loinc.org"
+    },
+    {
+      "identity": "mindfulness-to-snomed",
+      "name": "(Mapping|) to (SNOMED|) (CT|)",
+      "uri": "http://snomed.info/sct"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Observation|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Observation|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Observation|)",
+        "path": "(Observation|)",
+        "mapping": [
+          {
+            "identity": "mindfulness-to-healthkit",
+            "map": "(HKCategoryTypeIdentifierMindfulSession|)",
+            "comment": "(Root|) mapping"
+          },
+          {
+            "identity": "mindfulness-to-loinc",
+            "map": "89555-7",
+            "comment": "(Mindfulness|) safety questionnaire"
+          },
+          {
+            "identity": "mindfulness-to-snomed",
+            "map": "711020003",
+            "comment": "(Meditation|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).status",
+        "path": "(Observation|).status",
+        "pattern(Code|)": "final",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).code",
+        "path": "(Observation|).code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "711020003",
+              "system": "http://snomed.info/sct",
+              "display": "(Meditation|)"
+            }
+          ]
+        },
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).subject",
+        "path": "(Observation|).subject",
+        "type": [
+          {
+            "code": "(Reference|)",
+            "target(Profile|)": [
+              "http://hl7.org/fhir/(StructureDefinition|)/(Patient|)"
+            ]
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).effective[x]",
+        "path": "(Observation|).effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "(Observation|).effective[x]:effective(DateTime|)",
+        "path": "(Observation|).effective[x]",
+        "slice(Name|)": "effective(DateTime|)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date(Time|)"
+          }
+        ],
+        "must(Support|)": true,
+        "mapping": [
+          {
+            "identity": "mindfulness-to-healthkit",
+            "map": "start(Date|) and end(Date|)",
+            "comment": "(Session|) timing"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).performer",
+        "path": "(Observation|).performer",
+        "type": [
+          {
+            "code": "(Reference|)",
+            "target(Profile|)": [
+              "http://hl7.org/fhir/(StructureDefinition|)/(Practitioner|)",
+              "http://hl7.org/fhir/(StructureDefinition|)/(PractitionerRole|)"
+            ]
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).value[x]",
+        "path": "(Observation|).value[x]",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component",
+        "path": "(Observation|).component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:session(Duration|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "session(Duration|)",
+        "min": 0,
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "mindfulness-to-loinc",
+            "map": "89557-3",
+            "comment": "(Duration|) of mindfulness practice"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:session(Duration|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "118682006",
+              "system": "http://snomed.info/sct",
+              "display": "(Duration|)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:session(Duration|).value[x]",
+        "path": "(Observation|).component.value[x]",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "mindfulness-to-healthkit",
+            "map": "duration",
+            "comment": "(Session|) duration"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:session(Duration|).value[x].value",
+        "path": "(Observation|).component.value[x].value",
+        "min": 1
+      },
+      {
+        "id": "(Observation|).component:session(Duration|).value[x].unit",
+        "path": "(Observation|).component.value[x].unit",
+        "pattern(String|)": "min"
+      },
+      {
+        "id": "(Observation|).component:session(Duration|).value[x].system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:session(Duration|).value[x].code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "min"
+      },
+      {
+        "id": "(Observation|).component:stress(Level|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "stress(Level|)",
+        "min": 0,
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "mindfulness-to-loinc",
+            "map": "89556-5",
+            "comment": "(Stress|) level score"
+          },
+          {
+            "identity": "mindfulness-to-snomed",
+            "map": "725854004",
+            "comment": "(Assessment|) of stress level"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:stress(Level|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "725854004",
+              "system": "http://snomed.info/sct",
+              "display": "(Assessment|) of stress level"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:stress(Level|).value[x]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/(StructureDefinition|)/elementdefinition-min(ValueInteger|)",
+            "value(Integer|)": 0
+          },
+          {
+            "url": "http://hl7.org/fhir/(StructureDefinition|)/elementdefinition-max(ValueInteger|)",
+            "value(Integer|)": 10
+          }
+        ],
+        "path": "(Observation|).component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:mood(State|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "mood(State|)",
+        "min": 0,
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "mindfulness-to-loinc",
+            "map": "89558-1",
+            "comment": "(Mood|) pattern"
+          },
+          {
+            "identity": "mindfulness-to-snomed",
+            "map": "373931001",
+            "comment": "(Mood|) finding"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:mood(State|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "373931001",
+              "system": "http://snomed.info/sct",
+              "display": "(Mood|) finding"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:mood(State|).value[x]",
+        "path": "(Observation|).component.value[x]",
+        "type": [
+          {
+            "code": "(CodeableConcept|)"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "value(Set|)": "http://example.org/fhir/(ValueSet|)/mood"
+        }
+      },
+      {
+        "id": "(Observation|).component:relaxation(Response|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "relaxation(Response|)",
+        "min": 0,
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "mindfulness-to-snomed",
+            "map": "276241001",
+            "comment": "(Relaxation|) technique"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:relaxation(Response|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "276241001",
+              "system": "http://snomed.info/sct",
+              "display": "(Relaxation|) technique"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:relaxation(Response|).value[x]",
+        "path": "(Observation|).component.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:mindfulness(Type|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "mindfulness(Type|)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "(Observation|).component:mindfulness(Type|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "711020003",
+              "system": "http://snomed.info/sct",
+              "display": "(Meditation|)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:mindfulness(Type|).value[x]",
+        "path": "(Observation|).component.value[x]",
+        "type": [
+          {
+            "code": "(CodeableConcept|)"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "value(Set|)": "http://example.org/(ValueSet|)/mindfulness-type"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "resource(Type|)": "(Observation|)",
+  "id": "(StressLevelExample|)",
+  "meta": {
+    "profile": [
+      "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/stress-level"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/(CodeSystem|)/observation-category"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89593-8",
+            "system": "http://loinc.org",
+            "display": "(Physiological|) stress"
+          }
+        ]
+      },
+      "value(Quantity|)": {
+        "value": 6,
+        "code": "{score}",
+        "system": "http://unitsofmeasure.org",
+        "unit": "score"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89594-6",
+            "system": "http://loinc.org",
+            "display": "(Psychological|) stress"
+          }
+        ]
+      },
+      "value(Quantity|)": {
+        "value": 8,
+        "code": "{score}",
+        "system": "http://unitsofmeasure.org",
+        "unit": "score"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89595-3",
+            "system": "http://loinc.org",
+            "display": "(Stress|) chronicity"
+          }
+        ]
+      },
+      "value(CodeableConcept|)": {
+        "coding": [
+          {
+            "code": "subacute",
+            "system": "https://github.com/(RicardoLSantos|)/shorthand/(CodeSystem|)/stress-chronicity-cs"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "89596-1",
+            "system": "http://loinc.org",
+            "display": "(Stress|) impact"
+          }
+        ]
+      },
+      "value(CodeableConcept|)": {
+        "coding": [
+          {
+            "code": "moderate",
+            "system": "https://github.com/(RicardoLSantos|)/shorthand/(CodeSystem|)/stress-impact-cs"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/stress-triggers",
+      "value(CodeableConcept|)": {
+        "coding": [
+          {
+            "code": "work",
+            "system": "https://github.com/(RicardoLSantos|)/shorthand/(CodeSystem|)/stress-triggers-cs"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/stress-coping",
+      "value(CodeableConcept|)": {
+        "coding": [
+          {
+            "code": "meditation",
+            "system": "https://github.com/(RicardoLSantos|)/shorthand/(CodeSystem|)/stress-coping-cs"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "89592-0",
+        "system": "http://loinc.org",
+        "display": "(Stress|) level score"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "(Patient|)/example"
+  },
+  "effective(DateTime|)": "2024-01-03(T|)15:30:00(Z|)",
+  "value(Quantity|)": {
+    "value": 7,
+    "code": "{score}",
+    "system": "http://unitsofmeasure.org",
+    "unit": "score"
+  }
+}

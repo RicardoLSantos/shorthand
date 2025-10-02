@@ -1,0 +1,103 @@
+{
+  "resource(Type|)": "(QuestionnaireResponse|)",
+  "id": "(NutritionQuestionnaireResponseExample|)",
+  "item": [
+    {
+      "answer": [
+        {
+          "value(Quantity|)": {
+            "value": 2000,
+            "code": "m(L|)",
+            "system": "http://unitsofmeasure.org"
+          }
+        }
+      ],
+      "link(Id|)": "water_intake"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "value(DateTime|)": "2024-12-14(T|)12:00:00(Z|)"
+            }
+          ],
+          "link(Id|)": "meal_time"
+        },
+        {
+          "answer": [
+            {
+              "value(String|)": "(Lunch|)"
+            }
+          ],
+          "link(Id|)": "meal_type"
+        },
+        {
+          "answer": [
+            {
+              "value(Integer|)": 650
+            }
+          ],
+          "link(Id|)": "calories"
+        },
+        {
+          "item": [
+            {
+              "answer": [
+                {
+                  "value(Decimal|)": 75
+                }
+              ],
+              "link(Id|)": "carbs"
+            },
+            {
+              "answer": [
+                {
+                  "value(Decimal|)": 30
+                }
+              ],
+              "link(Id|)": "protein"
+            },
+            {
+              "answer": [
+                {
+                  "value(Decimal|)": 25
+                }
+              ],
+              "link(Id|)": "fat"
+            }
+          ],
+          "link(Id|)": "macronutrients"
+        }
+      ],
+      "link(Id|)": "meal_record"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "value(Integer|)": 80
+            }
+          ],
+          "link(Id|)": "caffeine_amount"
+        },
+        {
+          "answer": [
+            {
+              "value(String|)": "(Coffee|)"
+            }
+          ],
+          "link(Id|)": "caffeine_source"
+        }
+      ],
+      "link(Id|)": "caffeine"
+    }
+  ],
+  "questionnaire": "https://github.com/(RicardoLSantos|)/shorthand/(Questionnaire|)/daily-nutrition",
+  "status": "completed",
+  "subject": {
+    "reference": "(Patient|)/(PatientExample|)"
+  },
+  "authored": "2024-12-14(T|)20:00:00(Z|)"
+}

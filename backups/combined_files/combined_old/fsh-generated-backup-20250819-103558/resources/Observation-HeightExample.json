@@ -1,0 +1,44 @@
+{
+  "resource(Type|)": "(Observation|)",
+  "id": "(HeightExample|)",
+  "meta": {
+    "profile": [
+      "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/height-observation"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/(CodeSystem|)/observation-category"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "(Practitioner|)/(PractitionerExample|)"
+    }
+  ],
+  "value(Quantity|)": {
+    "system": "http://unitsofmeasure.org",
+    "value": 175,
+    "code": "cm",
+    "unit": "centimeter"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "8302-2",
+        "system": "http://loinc.org",
+        "display": "(Body|) height"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "(Patient|)/(PatientExample|)"
+  },
+  "effective(DateTime|)": "2024-03-19(T|)08:00:00(Z|)"
+}

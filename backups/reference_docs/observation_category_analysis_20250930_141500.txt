@@ -1,0 +1,54 @@
+OBSERVATION CATEGORY ERRORS - Phase 2.4 Analysis
+=================================================
+Generated: 2025-09-30 14:15:00
+Total: 11 errors (better than 8 estimated)
+
+INVALID CATEGORIES USED:
+1. 'nutrition' - NOT in HL7 observation-category CodeSystem
+2. 'environment' - NOT in HL7 observation-category CodeSystem
+
+VALID HL7 OBSERVATION CATEGORIES (v1.0.1):
+- social-history
+- vital-signs
+- imaging
+- laboratory
+- procedure
+- survey
+- exam
+- therapy
+- activity
+
+AFFECTED RESOURCES:
+
+A. NUTRITION PROFILES (5 errors) - Use 'survey' or 'exam'
+   1. StructureDefinition/calorie-intake-observation (snapshot)
+   2. StructureDefinition/macronutrients-observation (snapshot)
+   3. StructureDefinition/nutrition-intake-observation (snapshot + differential)
+   4. StructureDefinition/water-intake-observation (snapshot)
+
+B. ENVIRONMENTAL PROFILES (6 errors) - Use 'survey' or 'exam'
+   1. Observation/NoiseExposureExample (instance)
+   2. Observation/UVExposureExample (instance)
+   3. StructureDefinition/environmental-observation (snapshot + differential)
+   4. StructureDefinition/noise-exposure-observation (snapshot)
+   5. StructureDefinition/uv-exposure-observation (snapshot)
+
+RECOMMENDATION:
+- nutrition → 'survey' (most appropriate for self-reported nutrition data)
+- environment → 'survey' (most appropriate for environmental exposure tracking)
+
+Alternative: 'exam' if measured by device/clinician
+
+FSH FILES TO FIX:
+- input/fsh/profiles/NutritionProfiles.fsh (nutrition profiles)
+- input/fsh/profiles/EnvironmentalProfiles.fsh (environmental profiles)
+- input/fsh/examples/NutritionExamples.fsh (if needed)
+- input/fsh/examples/EnvironmentalExamples.fsh (if needed)
+
+STRATEGY:
+Find and replace:
+  * category = http://terminology.hl7.org/CodeSystem/observation-category#nutrition
+  → * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+
+  * category = http://terminology.hl7.org/CodeSystem/observation-category#environment
+  → * category = http://terminology.hl7.org/CodeSystem/observation-category#survey

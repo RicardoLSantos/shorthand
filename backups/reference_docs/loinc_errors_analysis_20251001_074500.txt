@@ -1,0 +1,203 @@
+LOINC ERRORS ANALYSIS - Phase 3.2
+===================================
+Generated: 2025-10-01 07:45:00
+Total LOINC errors identified: ~28 errors
+
+CRITICAL ISSUE:
+---------------
+The LOINC codes in the IG are COMPLETELY WRONG - they reference
+unrelated medical tests (microbiology, allergy tests, audiometry)
+instead of lifestyle/wellness measurements.
+
+AFFECTED OBSERVATIONS & WRONG CODES:
+=====================================
+
+1. BODY COMPOSITION (Observation/BodyCompositionExample)
+---------------------------------------------------------
+   Main code: 88365-2
+   - Used for: "Body composition panel"
+   - Actually means: "Glucose [Mass/volume] in Blood --pre-meal"
+   - WRONG!
+
+   Component codes:
+   a) 41982-0 - "Percentage body fat"
+      Display wrong but code might be correct (needs verification)
+
+   b) 291-7 - UNKNOWN CODE (not found in LOINC 2.80)
+      Used for: Unknown component
+
+   c) 73708-0 - "Total body water"
+      Actually means: "Body fat [Mass] Calculated"
+      WRONG!
+
+   d) 73713-0 - "Muscle mass"
+      Actually means: "Epidermal Allergen Mix 72 IgE Ab" (allergy test!)
+      COMPLETELY WRONG!
+
+   e) 73711-4 - "Bone mass"
+      Actually means: "Food Allergen Mix 18 IgE Ab" (allergy test!)
+      COMPLETELY WRONG!
+
+2. NOISE EXPOSURE (Observation/NoiseExposureExample)
+-----------------------------------------------------
+   Main code: 28573-7 - UNKNOWN CODE (not found in LOINC 2.80)
+
+   Component codes:
+   a) 89020-2 - "Environmental noise average"
+      Actually means: "Hearing threshold Ear - left --3000 Hz"
+      WRONG!
+
+   b) 89021-0 - "Environmental noise duration"
+      Actually means: "Hearing threshold Ear - right --3000 Hz"
+      WRONG!
+
+   c) 89024-4 - "Peak sound level"
+      Actually means: "Hearing threshold Ear - left --500 Hz"
+      WRONG!
+
+   d) 89025-1 - "Background noise level"
+      Actually means: "Hearing threshold Ear - right --500 Hz"
+      WRONG!
+
+3. PHYSICAL ACTIVITY (Observation/PhysicalActivityExample1)
+------------------------------------------------------------
+   Component codes (display names wrong):
+   a) 55423-8 - "Number of steps in 24 hour Measured"
+      Should be: "Number of steps in unspecified time Pedometer"
+      CODE LIKELY CORRECT, DISPLAY WRONG
+
+   b) 55430-3 - "Distance walked"
+      Should be: "Walking distance unspecified time Pedometer"
+      CODE LIKELY CORRECT, DISPLAY WRONG
+
+   c) 55424-6 - "Energy expenditure"
+      Should be: "Calories burned in unspecified time Pedometer"
+      CODE LIKELY CORRECT, DISPLAY WRONG
+
+4. SLEEP (Observation/SleepObservationExample1)
+------------------------------------------------
+   Main code: 93832-4 - "Sleep pattern panel"
+   Actually means: "Sleep duration"
+   WRONG - should be panel code
+
+   Component codes - ALL WRONG:
+   a) 93831-6 - "Time in bed"
+      Actually means: "Deep sleep duration"
+      WRONG!
+
+   b) 93833-2 - "Sleep duration"
+      Actually means: "Flights climbed 24 hour" (!?)
+      COMPLETELY WRONG!
+
+   c) 93834-0 - "Deep activity duration"
+      Actually means: "Coccidioides sp IgM Ab in CSF" (fungal test!)
+      COMPLETELY WRONG!
+
+   d) 93835-7 - "REM activity duration"
+      Actually means: "Coccidioides sp IgM Ab in Serum" (fungal test!)
+      COMPLETELY WRONG!
+
+   e) 93836-5 - "Light activity duration"
+      Actually means: "Coccidioides sp IgG Ab in Serum" (fungal test!)
+      COMPLETELY WRONG!
+
+   f) 93837-3 - "Number of awakenings during activity"
+      Actually means: "Coccidioides sp IgG Ab in CSF" (fungal test!)
+      COMPLETELY WRONG!
+
+5. SOCIAL INTERACTION (Observation/SocialInteractionExample)
+-------------------------------------------------------------
+   Main code: 96766-1 - "Social interaction pattern"
+   Actually means: "GISAID sequence accession number" (!?)
+   COMPLETELY WRONG!
+
+   Component codes - ALL WRONG:
+   a) 89597-9 - "Social interaction duration"
+      Actually means: "Mycoplasma genitalium DNA in Cornea"
+      COMPLETELY WRONG!
+
+   b) 89598-7 - "Social interaction quality"
+      Actually means: "Mycoplasma hominis DNA in Cornea"
+      COMPLETELY WRONG!
+
+   c) 89599-5 - "Social interaction medium"
+      Actually means: "Toxoplasma gondii in CSF by culture"
+      COMPLETELY WRONG!
+
+   d) 89600-1 - "Social interaction participants"
+      Actually means: "FDA product label compliance action"
+      COMPLETELY WRONG!
+
+6. STRESS LEVEL (Observation/StressLevelExample)
+-------------------------------------------------
+   Main code: 89592-0 - "Stress level score"
+   Actually means: "Bartonella quintana DNA in Tissue"
+   COMPLETELY WRONG!
+
+   Component codes - ALL WRONG:
+   a) 89593-8 - "Physiological stress"
+      Actually means: "Bartonella sp DNA in Tissue"
+      COMPLETELY WRONG!
+
+   b) 89594-6 - "Psychological stress"
+      Actually means: "Legionella pneumophila Ag in Lower resp"
+      COMPLETELY WRONG!
+
+   c) 89595-3 - "Stress chronicity"
+      Actually means: "Legionella pneumophila Ag in Tissue"
+      COMPLETELY WRONG!
+
+SUMMARY OF ISSUES:
+==================
+Total errors: ~28 LOINC code errors
+
+Breakdown by type:
+- Completely wrong codes (need replacement): ~21 codes
+- Unknown codes (not in LOINC 2.80): 2 codes (291-7, 28573-7)
+- Display name issues only: ~5 codes (physical activity codes seem OK)
+
+AFFECTED FILES:
+===============
+- input/fsh/examples/VitalSignsExamples.fsh (body composition)
+- input/fsh/examples/EnvironmentalExamples.fsh (noise exposure)
+- input/fsh/examples/PhysicalActivityExamples.fsh
+- input/fsh/examples/SleepExamples.fsh
+- input/fsh/examples/SocialInteractionExamples.fsh
+- input/fsh/examples/StressExamples.fsh
+
+ROOT CAUSE:
+===========
+It appears that LOINC codes were either:
+1. Made up / invented (incorrect codes)
+2. Randomly selected from LOINC database
+3. Copied from wrong sources
+
+Many of these lifestyle/wellness measurements may NOT have
+standardized LOINC codes, as LOINC primarily focuses on
+laboratory tests and clinical measurements.
+
+RECOMMENDED APPROACH:
+=====================
+1. Search LOINC database for actual codes for:
+   - Body composition measurements
+   - Environmental noise monitoring
+   - Sleep tracking metrics
+   - Social interaction measures
+   - Stress assessment scores
+
+2. For concepts without LOINC codes, consider:
+   - Using SNOMED CT codes instead
+   - Creating local codes with proper namespacing
+   - Using existing wearable device terminologies
+
+3. Consult LOINC documentation for:
+   - Personal health device codes
+   - Consumer health informatics codes
+   - Behavioral health measures
+
+NEXT STEPS:
+===========
+This requires EXTENSIVE research with LOINC database and potentially
+Opus 4 to find or determine proper codes for each concept.
+
+PRIORITY: HIGH - These errors significantly impact interoperability.

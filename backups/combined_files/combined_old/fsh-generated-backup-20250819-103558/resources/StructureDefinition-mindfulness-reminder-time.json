@@ -1,0 +1,50 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-reminder-time",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-reminder-time",
+  "name": "(MindfulnessReminderTime|)",
+  "title": "(Mindfulness|) (Reminder|) (Time|)",
+  "status": "draft",
+  "description": "(Default|) time for daily reminders",
+  "fhir(Version|)": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "(Element|)"
+    }
+  ],
+  "type": "(Extension|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Extension|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Extension|)",
+        "path": "(Extension|)",
+        "short": "(Mindfulness|) (Reminder|) (Time|)",
+        "definition": "(Default|) time for daily reminders"
+      },
+      {
+        "id": "(Extension|).extension",
+        "path": "(Extension|).extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).url",
+        "path": "(Extension|).url",
+        "fixed(Uri|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-reminder-time"
+      },
+      {
+        "id": "(Extension|).value[x]",
+        "path": "(Extension|).value[x]",
+        "type": [
+          {
+            "code": "time"
+          }
+        ]
+      }
+    ]
+  }
+}

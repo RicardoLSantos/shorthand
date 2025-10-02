@@ -1,0 +1,25 @@
+{
+  "resource(Type|)": "(MessageDefinition|)",
+  "id": "(EndSessionMessage|)",
+  "meta": {
+    "profile": [
+      "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-message-definition"
+    ]
+  },
+  "focus": [
+    {
+      "code": "(Observation|)",
+      "min": 1,
+      "profile": "http://example.org/fhir/(StructureDefinition|)/mindfulness-session"
+    }
+  ],
+  "url": "http://example.org/fhir/(MessageDefinition|)/end-session",
+  "date": "2024-03-19",
+  "status": "active",
+  "event(Coding|)": {
+    "code": "session-end",
+    "system": "http://example.org/fhir/(CodeSystem|)/mindfulness-message-events",
+    "display": "(Session|) (End|)"
+  },
+  "category": "notification"
+}

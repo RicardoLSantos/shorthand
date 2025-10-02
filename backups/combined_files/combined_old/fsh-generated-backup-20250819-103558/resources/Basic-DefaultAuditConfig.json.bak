@@ -1,0 +1,36 @@
+{
+  "resource(Type|)": "(Basic|)",
+  "id": "(DefaultAuditConfig|)",
+  "meta": {
+    "profile": [
+      "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-audit-config"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-audit-level",
+      "value(Code|)": "detailed"
+    },
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-audit-retention",
+      "value(Duration|)": {
+        "value": 90,
+        "code": "days",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-audit-format",
+      "value(Code|)": "fhir"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "audit",
+        "system": "http://example.org/(CodeSystem|)/mindfulness-config-type",
+        "display": "(Audit|) (Configuration|)"
+      }
+    ]
+  }
+}
