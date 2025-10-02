@@ -48,6 +48,7 @@ Id: social-context-cs
 Title: "Social Context Code System"
 Description: "Code system for social interaction contexts"
 * ^experimental = false
+* ^caseSensitive = true
 * #home "Home" "Home environment"
 * #work "Work" "Work environment"
 * #education "Educational" "Educational setting"
@@ -60,6 +61,7 @@ Id: social-support-cs
 Title: "Social Support Code System"
 Description: "Code system for levels of social support"
 * ^experimental = false
+* ^caseSensitive = true
 * #strong "Strong Support" "Strong social support network"
 * #adequate "Adequate Support" "Sufficient social support"
 * #limited "Limited Support" "Limited social support"
@@ -71,6 +73,7 @@ Id: social-activity-cs
 Title: "Social Activity Code System"
 Description: "Code system for types of social activities"
 * ^experimental = false
+* ^caseSensitive = true
 * #meal "Shared Meal" "Sharing a meal together"
 * #exercise "Group Exercise" "Group physical activity"
 * #entertainment "Entertainment" "Shared entertainment activity"

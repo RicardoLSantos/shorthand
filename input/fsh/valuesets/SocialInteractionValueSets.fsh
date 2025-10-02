@@ -24,6 +24,7 @@ Id: social-interaction-type-cs
 Title: "Social Interaction Type Code System"
 Description: "Types of social interactions"
 * ^experimental = false
+* ^caseSensitive = true
 * #family "Family Interaction" "Interaction with family members"
 * #friends "Friend Interaction" "Interaction with friends"
 * #professional "Professional Interaction" "Work-related interactions"
@@ -36,6 +37,7 @@ Id: social-interaction-quality-cs
 Title: "Social Interaction Quality Code System"
 Description: "Quality measures for social interactions"
 * ^experimental = false
+* ^caseSensitive = true
 * #meaningful "Meaningful" "Deep, meaningful interaction"
 * #supportive "Supportive" "Supportive interaction"
 * #neutral "Neutral" "Neither positive nor negative"
@@ -46,6 +48,7 @@ Id: social-interaction-medium-cs
 Title: "Social Interaction Medium Code System"
 Description: "Mediums through which social interaction occurs"
 * ^experimental = false
+* ^caseSensitive = true
 * #inPerson "In Person" "Face-to-face interaction"
 * #meaningful "Meaningful" "Deep and significant interaction"
 * #video "Video Call" "Video-based interaction"

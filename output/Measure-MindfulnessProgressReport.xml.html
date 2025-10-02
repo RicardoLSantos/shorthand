@@ -220,7 +220,7 @@
 
 
 
-  <pre class="xml" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure">Measure</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MindfulnessProgressReport&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.text">text</a>&gt;
@@ -327,7 +327,7 @@
 
 &lt;th scope=&quot;row&quot; class=&quot;row-header&quot;&gt;Measure Scoring&lt;/th&gt;
 
-&lt;td class=&quot;content-container&quot;&gt;&lt;span title=&quot;Códigos:&quot;&gt;continuous-variable&lt;/span&gt;&lt;/td&gt;
+&lt;td class=&quot;content-container&quot;&gt;&lt;span title=&quot;Códigos:{http://terminology.hl7.org/CodeSystem/measure-scoring continuous-variable}&quot;&gt;Continuous Variable&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 
@@ -336,7 +336,7 @@
 
 &lt;th scope=&quot;row&quot; class=&quot;row-header&quot;&gt;Measure Type&lt;/th&gt;
 
-&lt;td class=&quot;content-container&quot;&gt;&lt;span title=&quot;Códigos:&quot;&gt;process&lt;/span&gt;&lt;/td&gt;
+&lt;td class=&quot;content-container&quot;&gt;&lt;span title=&quot;Códigos:{http://terminology.hl7.org/CodeSystem/measure-type process}&quot;&gt;Process&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 
@@ -591,11 +591,13 @@
   &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.jurisdiction">jurisdiction</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.scoring">scoring</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-scoring&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;continuous-variable&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.scoring">scoring</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.type">type</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-type&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;process&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.type">type</a>&gt;
@@ -603,14 +605,14 @@
   &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.rateAggregation">rateAggregation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Average values over time period&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group">group</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.code">code</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;practice-frequency&quot;/&gt;
-      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;practice-frequency&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.code">code</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.description">description</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Frequency of mindfulness practice&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-population&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;denominator&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
@@ -621,9 +623,7 @@
     &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier">stratifier</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;weekly&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;weekly&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier.code">code</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier.criteria">criteria</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/fhirpath&quot;/&gt;
@@ -634,14 +634,14 @@
   &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group">group</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group">group</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.code">code</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;stress-reduction&quot;/&gt;
-      &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;stress-reduction&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.code">code</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.description">description</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Stress level changes over time&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+                  <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/measure-population&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;denominator&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population.code">code</a>&gt;
@@ -653,9 +653,7 @@
     &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.population">population</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier">stratifier</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;trend&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;trend&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier.code">code</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/measure.html#Measure.group.stratifier.criteria">criteria</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Expression#Expression.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/fhirpath&quot;/&gt;
@@ -688,7 +686,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Oct 2, 2025 11:14+0100">2025-10-02</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Oct 2, 2025 18:32+0100">2025-10-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

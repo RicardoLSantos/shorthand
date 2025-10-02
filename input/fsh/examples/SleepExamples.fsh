@@ -48,7 +48,7 @@ Title: "Example of Sleep Record"
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
  
 * component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-awakenings "Number of sleep awakenings"
-* component[interruptions].valueQuantity = 3 '{count}' "count"
+* component[interruptions].valueQuantity = 3 '1' "count"
 * component[interruptions].valueQuantity.system = $UCUM
 * component[interruptions].valueQuantity.unit = "count"
 

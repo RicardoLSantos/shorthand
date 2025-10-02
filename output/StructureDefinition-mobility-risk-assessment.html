@@ -390,7 +390,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Mobility Assessment</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Test</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="adaag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10240.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slice.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Tipo de dados primitivos" class="hierarchy"/> <a no-external="true" href="http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.userSelected" data-no-external="true">userSelected</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
@@ -594,7 +594,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments on the risk assessment<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // 35418e36-437b-4ae7-9b40-b537f7852ba5
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // cb9261ab-ed26-4192-a4cc-7feee838b9d6
 document.getElementById('cbmobility-risk-assessmentK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
 filterDesc(document.getElementById('mobility-risk-assessmentK'), 'constraint', document.getElementById('cbmobility-risk-assessmentK-constraint').checked, document.getElementById('ppmobility-risk-assessmentK'));
 document.getElementById('cbmobility-risk-assessmentK-obligation').checked = 'false' != localStorage.getItem('ht-table-states-obligation');
@@ -604,18 +604,155 @@ filterDesc(document.getElementById('mobility-risk-assessmentK'), 'binding', docu
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminologia Ligações</h4>
-<table class="list">
-<tr><td><b>Caminho</b></td><td><b>Conformidade</b></td><td><b>Conjunto de valores</b></td><td><b>URI</b></td></tr>
-<tr><td>RiskAssessment.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="The status of the risk assessment; e.g. preliminary, final, amended, etc."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-observation-status.html">ObservationStatus</a><div><code>http://hl7.org/fhir/ValueSet/observation-status|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.method</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The likelihood of the occurrence of a specified outcome."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-risk-probability.html">RiskProbability</a><div><code>http://hl7.org/fhir/ValueSet/risk-probability|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-fall-risk-outcomes.html">FallRiskOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-mobility-decline-outcomes.html">MobilityDeclineOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-assistance-level-outcomes.html">AssistanceLevelOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Caminho</b>
+    </td>
+    <td>
+      <b>Estado</b>
+    </td>
+    <td>
+      <b>Utilização</b>
+    </td>
+    <td>
+      <b>Conjunto de valores</b>
+    </td>
+    <td>
+      <b>Versão</b>
+    </td>
+    <td>
+      <b>Fonte</b>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.status</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td title="The status of the risk assessment; e.g. preliminary, final, amended, etc.">
+      <a href="http://hl7.org/fhir/R4/valueset-observation-status.html" opacity="1.0">ObservationStatus</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.method</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The likelihood of the occurrence of a specified outcome.">
+      <a href="http://hl7.org/fhir/R4/valueset-risk-probability.html" opacity="1.0">Risk Probability</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-fall-risk-outcomes.html" opacity="1.0">Fall Risk Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-mobility-decline-outcomes.html" opacity="1.0">Mobility Decline Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-assistance-level-outcomes.html" opacity="1.0">Assistance Level Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
 </table>
 
         
@@ -625,17 +762,109 @@ filterDesc(document.getElementById('mobility-risk-assessmentK'), 'binding', docu
             <a name="inv-key"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Restrições</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grau</b></td><td><b>Caminho(s)</b></td><td><b>Detalhes</b></td><td><b>Requisitos</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>RiskAssessment</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ras-1</td><td>error</td><td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td><td>low and high must be percentages, if present<br/>: (low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</td><td></td></tr>
-<tr><td>ras-2</td><td>error</td><td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td><td>Must be &lt;= 100<br/>: probability is decimal implies (probability as decimal) &lt;= 100</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grau</b>
+    </td>
+    <td>
+      <b>Caminho(s)</b>
+    </td>
+    <td>
+      <b>Descrição</b>
+    </td>
+    <td>
+      <b>Expressão</b>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-2</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL NOT contain nested Resources</td>
+    <td>
+      <code>contained.contained.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-3</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource</td>
+    <td>
+      <code>contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-4</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated</td>
+    <td>
+      <code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-5</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a security label</td>
+    <td>
+      <code>contained.meta.security.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-6</td>
+    <td>best practice</td>
+    <td>RiskAssessment</td>
+    <td>A resource should have narrative for robust management</td>
+    <td>
+      <code>text.`div`.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ele-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** elements</b>
+    </td>
+    <td>All FHIR elements must have a @value or children</td>
+    <td>
+      <code>hasValue() or (children().count() &gt; id.count())</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ext-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** extensions</b>
+    </td>
+    <td>Must have either extensions or value[x], not both</td>
+    <td>
+      <code>extension.exists() != value.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-1</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td>
+    <td>low and high must be percentages, if present</td>
+    <td>
+      <code>(low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-2</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td>
+    <td>Must be &lt;= 100</td>
+    <td>
+      <code>probability is decimal implies (probability as decimal) &lt;= 100</code>
+    </td>
+  </tr>
 </table>
 
           
@@ -688,7 +917,7 @@ filterDesc(document.getElementById('mobility-risk-assessmentK'), 'binding', docu
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Mobility Assessment</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Test</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="ac" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Elemento" class="hierarchy"/> <a no-external="true" href="StructureDefinition-mobility-risk-assessment-definitions.html#RiskAssessment.subject" data-no-external="true">subject</a><a name="RiskAssessment.subject"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Este elemento deve ser suportado">S</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
@@ -809,7 +1038,7 @@ filterDesc(document.getElementById('mobility-risk-assessmentK'), 'binding', docu
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Comments on the risk assessment</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // 35418e36-437b-4ae7-9b40-b537f7852ba5
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // cb9261ab-ed26-4192-a4cc-7feee838b9d6
 document.getElementById('cbmobility-risk-assessmentD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
 filterDesc(document.getElementById('mobility-risk-assessmentD'), 'constraint', document.getElementById('cbmobility-risk-assessmentD-constraint').checked, document.getElementById('ppmobility-risk-assessmentD'));
 document.getElementById('cbmobility-risk-assessmentD-obligation').checked = 'false' != localStorage.getItem('ht-table-states-obligation');
@@ -820,14 +1049,105 @@ filterDesc(document.getElementById('mobility-risk-assessmentD'), 'binding', docu
           <a name="tx"> </a>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminologia Ligações (Diferencial)</h4>
-<table class="list">
-<tr><td><b>Caminho</b></td><td><b>Conformidade</b></td><td><b>Conjunto de valores</b></td><td><b>URI</b></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-fall-risk-outcomes.html">FallRiskOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-mobility-decline-outcomes.html">MobilityDeclineOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-assistance-level-outcomes.html">AssistanceLevelOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Caminho</b>
+    </td>
+    <td>
+      <b>Estado</b>
+    </td>
+    <td>
+      <b>Utilização</b>
+    </td>
+    <td>
+      <b>Conjunto de valores</b>
+    </td>
+    <td>
+      <b>Versão</b>
+    </td>
+    <td>
+      <b>Fonte</b>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-fall-risk-outcomes.html" opacity="0.5">Fall Risk Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="0.5">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-mobility-decline-outcomes.html" opacity="0.5">Mobility Decline Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="0.5">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-assistance-level-outcomes.html" opacity="0.5">Assistance Level Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="0.5">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
 </table>
 
         
@@ -966,7 +1286,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Mobility Assessment</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Test</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="amcag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11240.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slice.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Tipo de dados primitivos" class="hierarchy"/> <a no-external="true" href="http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.userSelected" data-no-external="true">userSelected</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
@@ -1350,7 +1670,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments on the risk assessment<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // 35418e36-437b-4ae7-9b40-b537f7852ba5
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // cb9261ab-ed26-4192-a4cc-7feee838b9d6
 document.getElementById('cbmobility-risk-assessmentS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
 filterDesc(document.getElementById('mobility-risk-assessmentS'), 'constraint', document.getElementById('cbmobility-risk-assessmentS-constraint').checked, document.getElementById('ppmobility-risk-assessmentS'));
 document.getElementById('cbmobility-risk-assessmentS-obligation').checked = 'false' != localStorage.getItem('ht-table-states-obligation');
@@ -1360,35 +1680,170 @@ filterDesc(document.getElementById('mobility-risk-assessmentS'), 'binding', docu
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminologia Ligações</h4>
-<table class="list">
-<tr><td><b>Caminho</b></td><td><b>Conformidade</b></td><td><b>Conjunto de valores</b></td><td><b>URI</b></td></tr>
-<tr><td>RiskAssessment.language</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#preferred">preferred</a></td><td title="A human language."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">CommonLanguages</a><div><code>http://hl7.org/fhir/ValueSet/languages|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1"></button></div><div>From a norma FHIR</div><table class="grid">
+<table class="list" data-fhir="generated-heirarchy">
   <tr>
-    <td style="font-size: 11px">
-      <b>Vínculos adicionais</b>
+    <td>
+      <b>Caminho</b>
     </td>
-    <td style="font-size: 11px">Objetivo</td>
+    <td>
+      <b>Estado</b>
+    </td>
+    <td>
+      <b>Utilização</b>
+    </td>
+    <td>
+      <b>Conjunto de valores</b>
+    </td>
+    <td>
+      <b>Versão</b>
+    </td>
+    <td>
+      <b>Fonte</b>
+    </td>
   </tr>
   <tr>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a>
+    <td>RiskAssessment.language</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]" opacity="1.0">preferred</a>
     </td>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="Um vínculo obrigatório, para utilização quando a força do vínculo é 'extensível' ou 'preferido'">Vínculo máximo</a>
+    <td title="A human language.">
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html" opacity="1.0">Common Languages</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
     </td>
   </tr>
-</table>
-</td></tr>
-<tr><td>RiskAssessment.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="The status of the risk assessment; e.g. preliminary, final, amended, etc."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-observation-status.html">ObservationStatus</a><div><code>http://hl7.org/fhir/ValueSet/observation-status|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.method</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The likelihood of the occurrence of a specified outcome."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-risk-probability.html">RiskProbability</a><div><code>http://hl7.org/fhir/ValueSet/risk-probability|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-fall-risk-outcomes.html">FallRiskOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-mobility-decline-outcomes.html">MobilityDeclineOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-assistance-level-outcomes.html">AssistanceLevelOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
+  <tr>
+    <td>RiskAssessment.status</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td title="The status of the risk assessment; e.g. preliminary, final, amended, etc.">
+      <a href="http://hl7.org/fhir/R4/valueset-observation-status.html" opacity="1.0">ObservationStatus</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.method</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The likelihood of the occurrence of a specified outcome.">
+      <a href="http://hl7.org/fhir/R4/valueset-risk-probability.html" opacity="1.0">Risk Probability</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-fall-risk-outcomes.html" opacity="1.0">Fall Risk Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-mobility-decline-outcomes.html" opacity="1.0">Mobility Decline Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-assistance-level-outcomes.html" opacity="1.0">Assistance Level Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
 </table>
 
         
@@ -1398,17 +1853,109 @@ filterDesc(document.getElementById('mobility-risk-assessmentS'), 'binding', docu
             <a name="inv-snap"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Restrições</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grau</b></td><td><b>Caminho(s)</b></td><td><b>Detalhes</b></td><td><b>Requisitos</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>RiskAssessment</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ras-1</td><td>error</td><td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td><td>low and high must be percentages, if present<br/>: (low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</td><td></td></tr>
-<tr><td>ras-2</td><td>error</td><td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td><td>Must be &lt;= 100<br/>: probability is decimal implies (probability as decimal) &lt;= 100</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grau</b>
+    </td>
+    <td>
+      <b>Caminho(s)</b>
+    </td>
+    <td>
+      <b>Descrição</b>
+    </td>
+    <td>
+      <b>Expressão</b>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-2</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL NOT contain nested Resources</td>
+    <td>
+      <code>contained.contained.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-3</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource</td>
+    <td>
+      <code>contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-4</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated</td>
+    <td>
+      <code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-5</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a security label</td>
+    <td>
+      <code>contained.meta.security.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-6</td>
+    <td>best practice</td>
+    <td>RiskAssessment</td>
+    <td>A resource should have narrative for robust management</td>
+    <td>
+      <code>text.`div`.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ele-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** elements</b>
+    </td>
+    <td>All FHIR elements must have a @value or children</td>
+    <td>
+      <code>hasValue() or (children().count() &gt; id.count())</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ext-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** extensions</b>
+    </td>
+    <td>Must have either extensions or value[x], not both</td>
+    <td>
+      <code>extension.exists() != value.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-1</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td>
+    <td>low and high must be percentages, if present</td>
+    <td>
+      <code>(low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-2</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td>
+    <td>Must be &lt;= 100</td>
+    <td>
+      <code>probability is decimal implies (probability as decimal) &lt;= 100</code>
+    </td>
+  </tr>
 </table>
 
           
@@ -1638,7 +2185,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Mobility Assessment</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Test</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="adaag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10240.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slice.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Tipo de dados primitivos" class="hierarchy"/> <a no-external="true" href="http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.userSelected" data-no-external="true">userSelected</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
@@ -1842,7 +2389,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments on the risk assessment<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // 35418e36-437b-4ae7-9b40-b537f7852ba5
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // cb9261ab-ed26-4192-a4cc-7feee838b9d6
 document.getElementById('cbmobility-risk-assessmentKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
 filterDesc(document.getElementById('mobility-risk-assessmentKA'), 'constraint', document.getElementById('cbmobility-risk-assessmentKA-constraint').checked, document.getElementById('ppmobility-risk-assessmentKA'));
 document.getElementById('cbmobility-risk-assessmentKA-obligation').checked = 'false' != localStorage.getItem('ht-table-states-obligation');
@@ -1852,18 +2399,155 @@ filterDesc(document.getElementById('mobility-risk-assessmentKA'), 'binding', doc
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminologia Ligações</h4>
-<table class="list">
-<tr><td><b>Caminho</b></td><td><b>Conformidade</b></td><td><b>Conjunto de valores</b></td><td><b>URI</b></td></tr>
-<tr><td>RiskAssessment.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="The status of the risk assessment; e.g. preliminary, final, amended, etc."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-observation-status.html">ObservationStatus</a><div><code>http://hl7.org/fhir/ValueSet/observation-status|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.method</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The likelihood of the occurrence of a specified outcome."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-risk-probability.html">RiskProbability</a><div><code>http://hl7.org/fhir/ValueSet/risk-probability|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-fall-risk-outcomes.html">FallRiskOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-mobility-decline-outcomes.html">MobilityDeclineOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-assistance-level-outcomes.html">AssistanceLevelOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Caminho</b>
+    </td>
+    <td>
+      <b>Estado</b>
+    </td>
+    <td>
+      <b>Utilização</b>
+    </td>
+    <td>
+      <b>Conjunto de valores</b>
+    </td>
+    <td>
+      <b>Versão</b>
+    </td>
+    <td>
+      <b>Fonte</b>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.status</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td title="The status of the risk assessment; e.g. preliminary, final, amended, etc.">
+      <a href="http://hl7.org/fhir/R4/valueset-observation-status.html" opacity="1.0">ObservationStatus</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.method</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The likelihood of the occurrence of a specified outcome.">
+      <a href="http://hl7.org/fhir/R4/valueset-risk-probability.html" opacity="1.0">Risk Probability</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-fall-risk-outcomes.html" opacity="1.0">Fall Risk Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-mobility-decline-outcomes.html" opacity="1.0">Mobility Decline Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-assistance-level-outcomes.html" opacity="1.0">Assistance Level Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
 </table>
 
         
@@ -1873,17 +2557,109 @@ filterDesc(document.getElementById('mobility-risk-assessmentKA'), 'binding', doc
             <a name="inv-all-key"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Restrições</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grau</b></td><td><b>Caminho(s)</b></td><td><b>Detalhes</b></td><td><b>Requisitos</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>RiskAssessment</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ras-1</td><td>error</td><td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td><td>low and high must be percentages, if present<br/>: (low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</td><td></td></tr>
-<tr><td>ras-2</td><td>error</td><td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td><td>Must be &lt;= 100<br/>: probability is decimal implies (probability as decimal) &lt;= 100</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grau</b>
+    </td>
+    <td>
+      <b>Caminho(s)</b>
+    </td>
+    <td>
+      <b>Descrição</b>
+    </td>
+    <td>
+      <b>Expressão</b>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-2</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL NOT contain nested Resources</td>
+    <td>
+      <code>contained.contained.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-3</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource</td>
+    <td>
+      <code>contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-4</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated</td>
+    <td>
+      <code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-5</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a security label</td>
+    <td>
+      <code>contained.meta.security.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-6</td>
+    <td>best practice</td>
+    <td>RiskAssessment</td>
+    <td>A resource should have narrative for robust management</td>
+    <td>
+      <code>text.`div`.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ele-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** elements</b>
+    </td>
+    <td>All FHIR elements must have a @value or children</td>
+    <td>
+      <code>hasValue() or (children().count() &gt; id.count())</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ext-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** extensions</b>
+    </td>
+    <td>Must have either extensions or value[x], not both</td>
+    <td>
+      <code>extension.exists() != value.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-1</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td>
+    <td>low and high must be percentages, if present</td>
+    <td>
+      <code>(low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-2</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td>
+    <td>Must be &lt;= 100</td>
+    <td>
+      <code>probability is decimal implies (probability as decimal) &lt;= 100</code>
+    </td>
+  </tr>
 </table>
 
           
@@ -1936,7 +2712,7 @@ filterDesc(document.getElementById('mobility-risk-assessmentKA'), 'binding', doc
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Mobility Assessment</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Test</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="ac" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Elemento" class="hierarchy"/> <a no-external="true" href="StructureDefinition-mobility-risk-assessment-definitions.html#RiskAssessment.subject" data-no-external="true">subject</a><a name="a-RiskAssessment.subject"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="Este elemento deve ser suportado">S</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
@@ -2057,7 +2833,7 @@ filterDesc(document.getElementById('mobility-risk-assessmentKA'), 'binding', doc
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Comments on the risk assessment</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // 35418e36-437b-4ae7-9b40-b537f7852ba5
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // cb9261ab-ed26-4192-a4cc-7feee838b9d6
 document.getElementById('cbmobility-risk-assessmentDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
 filterDesc(document.getElementById('mobility-risk-assessmentDA'), 'constraint', document.getElementById('cbmobility-risk-assessmentDA-constraint').checked, document.getElementById('ppmobility-risk-assessmentDA'));
 document.getElementById('cbmobility-risk-assessmentDA-obligation').checked = 'false' != localStorage.getItem('ht-table-states-obligation');
@@ -2067,14 +2843,105 @@ filterDesc(document.getElementById('mobility-risk-assessmentDA'), 'binding', doc
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminologia Ligações (Diferencial)</h4>
-<table class="list">
-<tr><td><b>Caminho</b></td><td><b>Conformidade</b></td><td><b>Conjunto de valores</b></td><td><b>URI</b></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-fall-risk-outcomes.html">FallRiskOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-mobility-decline-outcomes.html">MobilityDeclineOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-assistance-level-outcomes.html">AssistanceLevelOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Caminho</b>
+    </td>
+    <td>
+      <b>Estado</b>
+    </td>
+    <td>
+      <b>Utilização</b>
+    </td>
+    <td>
+      <b>Conjunto de valores</b>
+    </td>
+    <td>
+      <b>Versão</b>
+    </td>
+    <td>
+      <b>Fonte</b>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-fall-risk-outcomes.html" opacity="0.5">Fall Risk Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="0.5">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-mobility-decline-outcomes.html" opacity="0.5">Mobility Decline Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="0.5">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-assistance-level-outcomes.html" opacity="0.5">Assistance Level Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="0.5">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
 </table>
 
         
@@ -2213,7 +3080,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Mobility Assessment</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system<br/><span style="font-weight: bold">Valor fixo: </span><span style="color: darkgreen">Standardized Test</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="amcag" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11240.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slice.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_primitive.png" alt="." style="background-color: white; background-color: inherit" title="Tipo de dados primitivos" class="hierarchy"/> <a no-external="true" href="http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.userSelected" data-no-external="true">userSelected</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
@@ -2597,7 +3464,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Comments on the risk assessment<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // 35418e36-437b-4ae7-9b40-b537f7852ba5
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legenda para este formato"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentação para este formato</a></td></tr><script type="text/javascript">  // cb9261ab-ed26-4192-a4cc-7feee838b9d6
 document.getElementById('cbmobility-risk-assessmentSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
 filterDesc(document.getElementById('mobility-risk-assessmentSA'), 'constraint', document.getElementById('cbmobility-risk-assessmentSA-constraint').checked, document.getElementById('ppmobility-risk-assessmentSA'));
 document.getElementById('cbmobility-risk-assessmentSA-obligation').checked = 'false' != localStorage.getItem('ht-table-states-obligation');
@@ -2607,35 +3474,170 @@ filterDesc(document.getElementById('mobility-risk-assessmentSA'), 'binding', doc
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminologia Ligações</h4>
-<table class="list">
-<tr><td><b>Caminho</b></td><td><b>Conformidade</b></td><td><b>Conjunto de valores</b></td><td><b>URI</b></td></tr>
-<tr><td>RiskAssessment.language</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#preferred">preferred</a></td><td title="A human language."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">CommonLanguages</a><div><code>http://hl7.org/fhir/ValueSet/languages|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1"></button></div><div>From a norma FHIR</div><table class="grid">
+<table class="list" data-fhir="generated-heirarchy">
   <tr>
-    <td style="font-size: 11px">
-      <b>Vínculos adicionais</b>
+    <td>
+      <b>Caminho</b>
     </td>
-    <td style="font-size: 11px">Objetivo</td>
+    <td>
+      <b>Estado</b>
+    </td>
+    <td>
+      <b>Utilização</b>
+    </td>
+    <td>
+      <b>Conjunto de valores</b>
+    </td>
+    <td>
+      <b>Versão</b>
+    </td>
+    <td>
+      <b>Fonte</b>
+    </td>
   </tr>
   <tr>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a>
+    <td>RiskAssessment.language</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]" opacity="1.0">preferred</a>
     </td>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="Um vínculo obrigatório, para utilização quando a força do vínculo é 'extensível' ou 'preferido'">Vínculo máximo</a>
+    <td title="A human language.">
+      <a href="http://hl7.org/fhir/R4/valueset-languages.html" opacity="1.0">Common Languages</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
     </td>
   </tr>
-</table>
-</td></tr>
-<tr><td>RiskAssessment.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="The status of the risk assessment; e.g. preliminary, final, amended, etc."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-observation-status.html">ObservationStatus</a><div><code>http://hl7.org/fhir/ValueSet/observation-status|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.method</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td></tr>
-<tr><td>RiskAssessment.prediction.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="The likelihood of the occurrence of a specified outcome."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-risk-probability.html">RiskProbability</a><div><code>http://hl7.org/fhir/ValueSet/risk-probability|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1"></button></div><div>From a norma FHIR</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-fall-risk-outcomes.html">FallRiskOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:fallRisk.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-mobility-decline-outcomes.html">MobilityDeclineOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:mobilityDecline.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.outcome</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-assistance-level-outcomes.html">AssistanceLevelOutcomesValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes"></button></div><div>From este IG</div></td></tr>
-<tr><td>RiskAssessment.prediction:assistanceNeeded.qualitativeRisk</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-risk-level.html">RiskLevelValueSet</a>(a valid code from <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level</code>)<div><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"></button></div><div>From este IG</div></td></tr>
+  <tr>
+    <td>RiskAssessment.status</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td title="The status of the risk assessment; e.g. preliminary, final, amended, etc.">
+      <a href="http://hl7.org/fhir/R4/valueset-observation-status.html" opacity="1.0">ObservationStatus</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/observation-status|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.method</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The mechanism or algorithm used to make the assessment; e.g. TIMI, PRISM, Cardiff Type 2 diabetes, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The condition or other outcome; e.g. death, remission, amputation, infection, etc."></td>
+    <td title="Version is not explicity stated. No matching value sets found">?</td>
+    <td>Unknown</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]" opacity="1.0">example</a>
+    </td>
+    <td title="The likelihood of the occurrence of a specified outcome.">
+      <a href="http://hl7.org/fhir/R4/valueset-risk-probability.html" opacity="1.0">Risk Probability</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/risk-probability|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">a norma FHIR</a>
+    </td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-fall-risk-outcomes.html" opacity="1.0">Fall Risk Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:fallRisk.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-mobility-decline-outcomes.html" opacity="1.0">Mobility Decline Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:mobilityDecline.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​outcome</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-assistance-level-outcomes.html" opacity="1.0">Assistance Level Outcomes Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
+  <tr>
+    <td>RiskAssessment.prediction:assistanceNeeded.​qualitativeRisk</td>
+    <td>Base</td>
+    <td>
+      <a href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]" opacity="1.0">required</a>
+    </td>
+    <td>
+      <a href="ValueSet-risk-level.html" opacity="1.0">Risk Level Value Set</a>
+      <button data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;0.1.0</td>
+    <td>este IG</td>
+  </tr>
 </table>
 
         
@@ -2645,17 +3647,109 @@ filterDesc(document.getElementById('mobility-risk-assessmentSA'), 'binding', doc
             <a name="inv-all-snap"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Restrições</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grau</b></td><td><b>Caminho(s)</b></td><td><b>Detalhes</b></td><td><b>Requisitos</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>RiskAssessment</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>RiskAssessment</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>RiskAssessment</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ras-1</td><td>error</td><td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td><td>low and high must be percentages, if present<br/>: (low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</td><td></td></tr>
-<tr><td>ras-2</td><td>error</td><td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td><td>Must be &lt;= 100<br/>: probability is decimal implies (probability as decimal) &lt;= 100</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grau</b>
+    </td>
+    <td>
+      <b>Caminho(s)</b>
+    </td>
+    <td>
+      <b>Descrição</b>
+    </td>
+    <td>
+      <b>Expressão</b>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-2</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL NOT contain nested Resources</td>
+    <td>
+      <code>contained.contained.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-3</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource</td>
+    <td>
+      <code>contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-4</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated</td>
+    <td>
+      <code>contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-5</td>
+    <td>error</td>
+    <td>RiskAssessment</td>
+    <td>If a resource is contained in another resource, it SHALL NOT have a security label</td>
+    <td>
+      <code>contained.meta.security.empty()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>dom-6</td>
+    <td>best practice</td>
+    <td>RiskAssessment</td>
+    <td>A resource should have narrative for robust management</td>
+    <td>
+      <code>text.`div`.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ele-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** elements</b>
+    </td>
+    <td>All FHIR elements must have a @value or children</td>
+    <td>
+      <code>hasValue() or (children().count() &gt; id.count())</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ext-1</td>
+    <td>error</td>
+    <td>
+      <b>**ALL** extensions</b>
+    </td>
+    <td>Must have either extensions or value[x], not both</td>
+    <td>
+      <code>extension.exists() != value.exists()</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-1</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction.probability[x], RiskAssessment.prediction:fallRisk.probability[x], RiskAssessment.prediction:fallRisk.probability[x]:probabilityDecimal, RiskAssessment.prediction:mobilityDecline.probability[x], RiskAssessment.prediction:mobilityDecline.probability[x]:probabilityDecimal, RiskAssessment.prediction:assistanceNeeded.probability[x], RiskAssessment.prediction:assistanceNeeded.probability[x]:probabilityDecimal</td>
+    <td>low and high must be percentages, if present</td>
+    <td>
+      <code>(low.empty() or ((low.code = '%') and (low.system = %ucum))) and (high.empty() or ((high.code = '%') and (high.system = %ucum)))</code>
+    </td>
+  </tr>
+  <tr>
+    <td>ras-2</td>
+    <td>error</td>
+    <td>RiskAssessment.prediction, RiskAssessment.prediction:fallRisk, RiskAssessment.prediction:mobilityDecline, RiskAssessment.prediction:assistanceNeeded</td>
+    <td>Must be &lt;= 100</td>
+    <td>
+      <code>probability is decimal implies (probability as decimal) &lt;= 100</code>
+    </td>
+  </tr>
 </table>
 
           
@@ -2839,7 +3933,7 @@ Resumo
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Oct 2, 2025 11:14+0100">2025-10-02</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Oct 2, 2025 18:32+0100">2025-10-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

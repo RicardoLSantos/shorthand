@@ -19,7 +19,7 @@
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-10-02T11:12:29+01:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-10-02T18:31:12+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -1831,6 +1831,7 @@
          fhir:reference [ fhir:v "Patient/example" ]
        ] ;
        fhir:name [ fhir:v "example" ] ;
+       fhir:description [ fhir:v "Example patient instance for demonstration purposes" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v true
@@ -2566,6 +2567,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-alert-type> ;
+         fhir:reference [ fhir:v "CodeSystem/mindfulness-alert-type" ]
+       ] ;
+       fhir:name [ fhir:v "Mindfulness Alert Type" ] ;
+       fhir:description [ fhir:v "Types of alerts for mindfulness practice reminders and notifications" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -2656,6 +2675,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-audit-type> ;
+         fhir:reference [ fhir:v "CodeSystem/mindfulness-audit-type" ]
+       ] ;
+       fhir:name [ fhir:v "Mindfulness Audit Type" ] ;
+       fhir:description [ fhir:v "Types of audit events for mindfulness practice tracking" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -2665,6 +2702,24 @@
        ] ;
        fhir:name [ fhir:v "Mindfulness Configuration" ] ;
        fhir:description [ fhir:v "Configuration settings for mindfulness sessions" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-config-type> ;
+         fhir:reference [ fhir:v "CodeSystem/mindfulness-config-type" ]
+       ] ;
+       fhir:name [ fhir:v "Mindfulness Configuration Type" ] ;
+       fhir:description [ fhir:v "Types of configuration settings for mindfulness practice" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -2719,6 +2774,24 @@
        ] ;
        fhir:name [ fhir:v "Mindfulness Message Definition" ] ;
        fhir:description [ fhir:v "Definition for mindfulness session messages" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-message-events> ;
+         fhir:reference [ fhir:v "CodeSystem/mindfulness-message-events" ]
+       ] ;
+       fhir:name [ fhir:v "Mindfulness Message Events" ] ;
+       fhir:description [ fhir:v "Events that trigger mindfulness-related messages" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -2980,6 +3053,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-schedule-type> ;
+         fhir:reference [ fhir:v "CodeSystem/mindfulness-schedule-type" ]
+       ] ;
+       fhir:name [ fhir:v "Mindfulness Schedule Type" ] ;
+       fhir:description [ fhir:v "Types of schedules for mindfulness practice sessions" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
@@ -3042,6 +3133,25 @@
          fhir:reference [ fhir:v "CodeSystem/MindfulnessSettingCS" ]
        ] ;
        fhir:name [ fhir:v "Mindfulness Setting CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem defining different settings where mindfulness practice can occur" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-snomed-vs> ;
+         fhir:reference [ fhir:v "ValueSet/mindfulness-snomed-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Mindfulness SNOMED CT Value Set" ] ;
+       fhir:description [ fhir:v "SNOMED CT codes for mindfulness-related concepts" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3077,6 +3187,7 @@
          fhir:reference [ fhir:v "Consent/MindfulnessAccessPolicy" ]
        ] ;
        fhir:name [ fhir:v "MindfulnessAccessPolicy" ] ;
+       fhir:description [ fhir:v "Consent instance defining access control policies and authorized actions for mindfulness data under GDPR, EHDS, HIPAA, and LGPD compliance" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v true
@@ -3094,6 +3205,7 @@
          fhir:reference [ fhir:v "Consent/MindfulnessSecurityDefinition" ]
        ] ;
        fhir:name [ fhir:v "MindfulnessSecurityDefinition" ] ;
+       fhir:description [ fhir:v "Consent instance defining security requirements and data classification for mindfulness data" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v true
@@ -3166,6 +3278,24 @@
        ] ;
        fhir:name [ fhir:v "Mobility Alert Level Value Set" ] ;
        fhir:description [ fhir:v "Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-assessment-method> ;
+         fhir:reference [ fhir:v "CodeSystem/mobility-assessment-method" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Assessment Method" ] ;
+       fhir:description [ fhir:v "Methods used to assess mobility and balance" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3400,6 +3530,7 @@
          fhir:reference [ fhir:v "Organization/Org2RDoc" ]
        ] ;
        fhir:name [ fhir:v "Org2RDoc" ] ;
+       fhir:description [ fhir:v "2RDoc organization instance for consent and data governance examples" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v true
@@ -3417,6 +3548,7 @@
          fhir:reference [ fhir:v "Practitioner/osa-practitioner-kyle-anydoc" ]
        ] ;
        fhir:name [ fhir:v "osa-practitioner-kyle-anydoc" ] ;
+       fhir:description [ fhir:v "Example practitioner for OSA-related care scenarios" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v true
@@ -3506,6 +3638,7 @@
          fhir:reference [ fhir:v "Patient/PatientMindfulness" ]
        ] ;
        fhir:name [ fhir:v "PatientMindfulness" ] ;
+       fhir:description [ fhir:v "Example patient for mindfulness-related scenarios and consent examples" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v true

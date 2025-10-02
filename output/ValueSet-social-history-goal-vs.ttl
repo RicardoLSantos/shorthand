@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "social-history-goal-vs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet social-history-goal-vs</b></p><a name=\"social-history-goal-vs\"> </a><a name=\"hcsocial-history-goal-vs\"> </a><p>Este conjunto de valores inclui códigos baseados nas seguintes regras:</p><ul><li>Incluir estes códigos, tal como definidos em <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"https://loinc.org/8708-0/\">8708-0</a></td><td>Menstrual cycle length</td></tr><tr><td><a href=\"https://loinc.org/55284-4/\">55284-4</a></td><td>Blood pressure</td></tr><tr><td><a href=\"https://loinc.org/8310-5/\">8310-5</a></td><td>Body temperature</td></tr><tr><td><a href=\"https://loinc.org/8302-2/\">8302-2</a></td><td>Body height</td></tr><tr><td><a href=\"https://loinc.org/29463-7/\">29463-7</a></td><td>Body weight</td></tr></table></li><li>Incluir estes códigos, tal como definidos em <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"http://snomed.info/id/405191000\">405191000</a></td><td>Menstrual cycle monitoring</td></tr><tr><td><a href=\"http://snomed.info/id/289530006\">289530006</a></td><td>Reproductive health finding</td></tr></table></li></ul></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet social-history-goal-vs</b></p><a name=\"social-history-goal-vs\"> </a><a name=\"hcsocial-history-goal-vs\"> </a><p>Este conjunto de valores inclui códigos baseados nas seguintes regras:</p><ul><li>Incluir estes códigos, tal como definidos em <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"https://loinc.org/8665-2/\">8665-2</a></td><td>Date last menstrual period</td></tr><tr><td><a href=\"https://loinc.org/49033-4/\">49033-4</a></td><td>Menstrual cycle duration</td></tr><tr><td><a href=\"https://loinc.org/55284-4/\">55284-4</a></td><td>Blood pressure</td></tr><tr><td><a href=\"https://loinc.org/8310-5/\">8310-5</a></td><td>Body temperature</td></tr><tr><td><a href=\"https://loinc.org/8302-2/\">8302-2</a></td><td>Body height</td></tr><tr><td><a href=\"https://loinc.org/29463-7/\">29463-7</a></td><td>Body weight</td></tr></table></li><li>Incluir estes códigos, tal como definidos em <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"http://snomed.info/id/289530006\">289530006</a></td><td>Reproductive health finding</td></tr></table></li></ul></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/social-history-goal-vs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
@@ -80,8 +80,11 @@
      fhir:include ( [
        fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
        fhir:concept ( [
-         fhir:code [ fhir:v "8708-0" ] ;
-         fhir:display [ fhir:v "Menstrual cycle length" ]
+         fhir:code [ fhir:v "8665-2" ] ;
+         fhir:display [ fhir:v "Date last menstrual period" ]
+       ] [
+         fhir:code [ fhir:v "49033-4" ] ;
+         fhir:display [ fhir:v "Menstrual cycle duration" ]
        ] [
          fhir:code [ fhir:v "55284-4" ] ;
          fhir:display [ fhir:v "Blood pressure" ]
@@ -98,9 +101,6 @@
      ] [
        fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
        fhir:concept ( [
-         fhir:code [ fhir:v "405191000" ] ;
-         fhir:display [ fhir:v "Menstrual cycle monitoring" ]
-       ] [
          fhir:code [ fhir:v "289530006" ] ;
          fhir:display [ fhir:v "Reproductive health finding" ]
        ] )

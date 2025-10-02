@@ -3,6 +3,7 @@ Id: symptom-severity-cs
 Title: "Symptom Severity Code System"
 Description: "Severity levels for symptoms"
 * ^experimental = false
+* ^caseSensitive = true
 
 * #1-3 "Light" "Symptom barely noticeable"
 * #4-6 "Mild" "Symptom noticeable but not interfering with daily activities"
@@ -39,6 +40,7 @@ Id: symptom-frequency-cs
 Title: "Symptom Frequency Code System"
 Description: "Frequency patterns for symptoms"
 * ^experimental = false
+* ^caseSensitive = true
 * #rare "Rare" "Less than once per month"
 * #occasional "Occasional" "Several times per month"
 * #frequent "Frequent" "Several times per week"
@@ -57,6 +59,7 @@ Id: symptom-impact-cs
 Title: "Symptom Impact Code System"
 Description: "Impact levels of symptoms on daily activities"
 * ^experimental = false
+* ^caseSensitive = true
 * #none "No impact"
 * #mild "Mild impact"
 * #moderate "Moderate impact"

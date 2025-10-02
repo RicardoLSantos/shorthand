@@ -22,7 +22,7 @@ Description: "Index representing overall physiological stress based on multiple 
 
 * value[x] only Quantity
 * valueQuantity.system = $UCUM
-* valueQuantity.code = #{index}
+* valueQuantity.code = #1
 * valueQuantity ^short = "Physiological stress index value"
 * valueQuantity ^definition = "Normalized index value representing overall physiological stress"
 
@@ -100,7 +100,7 @@ Description: "Measure of cumulative physiological burden over time"
 
 * value[x] only Quantity
 * valueQuantity.system = $UCUM
-* valueQuantity.code = #{score}
+* valueQuantity.code = #1
 * valueQuantity ^short = "Allostatic load score"
 * valueQuantity ^definition = "Score representing cumulative physiological burden"
 

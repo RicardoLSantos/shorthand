@@ -41,11 +41,11 @@ Description: "Profile for heart rate measurements from iOS Health App"
 * component[restingHeartRate].valueQuantity.system = $UCUM
 * component[restingHeartRate].valueQuantity.code = #/min
 
-* component[exerciseHeartRate].code = $LOINC#55425-3 "Heart rate --during exercise"
+* component[exerciseHeartRate].code = $LOINC#55425-3 "Heart rate unspecified time mean by Pedometer"
 * component[exerciseHeartRate].valueQuantity.system = $UCUM
 * component[exerciseHeartRate].valueQuantity.code = #/min
 
-* component[recoveryHeartRate].code = $LOINC#69999-9 "Heart rate --post exercise"
+* component[recoveryHeartRate].code = $LOINC#8867-4 "Heart rate"
 * component[recoveryHeartRate].valueQuantity.system = $UCUM
 * component[recoveryHeartRate].valueQuantity.code = #/min
 

@@ -19,7 +19,7 @@ Description: "Profile for assessing mobility-related risks"
   * coding contains
       mobilityAssessment 1..1 MS
 
-* method.coding[mobilityAssessment] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-assessment-method#standardized "Standardized Mobility Assessment"
+* method.coding[mobilityAssessment] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-assessment-method#standardized "Standardized Test"
 
 * prediction ^slicing.discriminator.type = #value
 * prediction ^slicing.discriminator.path = "outcome"

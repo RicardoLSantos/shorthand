@@ -19,6 +19,7 @@ Id: stress-chronicity-cs
 Title: "Stress Chronicity Code System"
 Description: "Code system for stress chronicity classification"
 * ^experimental = false
+* ^caseSensitive = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-chronicity-cs"
 * #acute "Acute" "Short-term stress response"
 * #subacute "Subacute" "Medium-term stress response"
@@ -31,6 +32,7 @@ Id: stress-impact-cs
 Title: "Stress Impact Code System"
 Description: "Code system for stress impact levels"
 * ^experimental = false
+* ^caseSensitive = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-impact-cs"
 * #minimal "Minimal Impact" "Little to no interference with daily activities"
 * #mild "Mild Impact" "Some interference with daily activities"

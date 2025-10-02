@@ -53,7 +53,7 @@ Title: "Complete Mindfulness Session Response"
   * linkId = "mood_assessment"
   * item[0]
     * linkId = "current_mood"
-    * answer.valueCoding = $SCT#112080002 "Happiness"
+    * answer.valueCoding = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood#elevated "Elevated"
   * item[1]
     * linkId = "mood_intensity"
     * answer.valueInteger = 3

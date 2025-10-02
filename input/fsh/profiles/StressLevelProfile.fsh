@@ -33,13 +33,13 @@ Description: "Profile for recording stress level measurements from iOS Health Ap
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-physiological "Physiological stress indicator"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
-  * valueQuantity.code = #{score}
+  * valueQuantity.code = #1
 
 * component[psychologicalStress]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-psychological "Psychological stress score"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
-  * valueQuantity.code = #{score}
+  * valueQuantity.code = #1
 
 * component[chronicity]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-chronicity "Stress chronicity assessment"

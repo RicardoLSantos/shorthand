@@ -42,7 +42,7 @@ Description: "Daily questionnaire for social-history health tracking"
     * linkId = "symptom_type"
     * text = "Symptom type"
     * type = #choice
-    * answerValueSet = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/social-history-symptoms"
+    * answerValueSet = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/symptom-frequency-vs"
  
   * item[1]
     * linkId = "symptom_severity"
@@ -64,7 +64,7 @@ Description: "Daily questionnaire for social-history health tracking"
     * linkId = "mood_type"
     * text = "Current mood"
     * type = #choice
-    * answerValueSet = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood-types"
+    * answerValueSet = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood"
 
   * item[1]
     * linkId = "mood_severity"

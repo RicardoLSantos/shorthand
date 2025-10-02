@@ -105,7 +105,7 @@
 
 <th scope="row" class="row-header">Measure Scoring</th>
 
-<td class="content-container"><span title="Códigos:">continuous-variable</span></td>
+<td class="content-container"><span title="Códigos:{http://terminology.hl7.org/CodeSystem/measure-scoring continuous-variable}">Continuous Variable</span></td>
 </tr>
 
 
@@ -114,7 +114,7 @@
 
 <th scope="row" class="row-header">Measure Type</th>
 
-<td class="content-container"><span title="Códigos:">process</span></td>
+<td class="content-container"><span title="Códigos:{http://terminology.hl7.org/CodeSystem/measure-type process}">Process</span></td>
 </tr>
 
 
@@ -368,11 +368,13 @@
   </jurisdiction>
   <scoring>
     <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-scoring"/>
       <code value="continuous-variable"/>
     </coding>
   </scoring>
   <type>
     <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/measure-type"/>
       <code value="process"/>
     </coding>
   </type>
@@ -380,14 +382,13 @@
   <rateAggregation value="Average values over time period"/>
   <group>
     <code>
-      <coding>
-        <code value="practice-frequency"/>
-      </coding>
+      <text value="practice-frequency"/>
     </code>
     <description value="Frequency of mindfulness practice"/>
     <population>
       <code>
         <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
           <code value="denominator"/>
         </coding>
       </code>
@@ -398,9 +399,7 @@
     </population>
     <stratifier>
       <code>
-        <coding>
-          <code value="weekly"/>
-        </coding>
+        <text value="weekly"/>
       </code>
       <criteria>
         <language value="text/fhirpath"/>
@@ -410,14 +409,13 @@
   </group>
   <group>
     <code>
-      <coding>
-        <code value="stress-reduction"/>
-      </coding>
+      <text value="stress-reduction"/>
     </code>
     <description value="Stress level changes over time"/>
     <population>
       <code>
         <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
           <code value="denominator"/>
         </coding>
       </code>
@@ -428,9 +426,7 @@
     </population>
     <stratifier>
       <code>
-        <coding>
-          <code value="trend"/>
-        </coding>
+        <text value="trend"/>
       </code>
       <criteria>
         <language value="text/fhirpath"/>

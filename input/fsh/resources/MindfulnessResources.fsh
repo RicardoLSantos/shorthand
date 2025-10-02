@@ -42,6 +42,7 @@ Usage: #definition
 * version = "1.0.0"
 * name = "MindfulnessSettingCS"
 * title = "Mindfulness Setting CodeSystem"
+* description = "CodeSystem defining different settings where mindfulness practice can occur"
 * status = #active
 * experimental = false
 * caseSensitive = true

@@ -9,32 +9,32 @@ Description: "Example instance of MindfulnessProgressReport"
 * publisher = "Example Organization"
 * description = "Measures progress in mindfulness practice over time"
 
-* scoring = #continuous-variable
-* type = #process
+* scoring = http://terminology.hl7.org/CodeSystem/measure-scoring#continuous-variable
+* type = http://terminology.hl7.org/CodeSystem/measure-type#process
 * riskAdjustment = "none"
 * rateAggregation = "Average values over time period"
 
 * group[0]
-  * code = #practice-frequency
+  * code.text = "practice-frequency"
   * description = "Frequency of mindfulness practice"
   * population[0]
-    * code = #denominator
+    * code = http://terminology.hl7.org/CodeSystem/measure-population#denominator
     * criteria.language = #text/fhirpath
     * criteria.expression = "Observation.where(code.coding.code='711415009')"
   * stratifier[0]
-    * code = #weekly
+    * code.text = "weekly"
     * criteria.language = #text/fhirpath
     * criteria.expression = "Observation.effective.as(DateTime).truncate(@T).truncate(@W)"
 
 * group[1]
-  * code = #stress-reduction
+  * code.text = "stress-reduction"
   * description = "Stress level changes over time"
   * population[0]
-    * code = #denominator
+    * code = http://terminology.hl7.org/CodeSystem/measure-population#denominator
     * criteria.language = #text/fhirpath
     * criteria.expression = "Observation.where(component.code.coding.code='725854004')"
   * stratifier[0]
-    * code = #trend
+    * code.text = "trend"
     * criteria.language = #text/fhirpath
     * criteria.expression = "component.where(code.coding.code='725854004').value.value"
 

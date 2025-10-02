@@ -82,7 +82,7 @@ Description: "Profile for UV exposure measurements from iOS Health App"
 
 * component[index].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-index "UV index"
 * component[index].valueQuantity.system = $UCUM
-* component[index].valueQuantity.code = #{index}
+* component[index].valueQuantity.code = #1
 * component[index].valueQuantity ^short = "UV index value"
 
 * component[duration].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-duration "UV exposure duration"

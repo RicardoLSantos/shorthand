@@ -3,6 +3,7 @@
 Instance: example
 InstanceOf: Patient
 Usage: #example
+Description: "Example patient instance for demonstration purposes"
 * identifier.system = "http://example.org/patients"
 * identifier.value = "example-patient"
 * name.family = "Example"
@@ -13,6 +14,7 @@ Usage: #example
 Instance: osa-practitioner-kyle-anydoc
 InstanceOf: Practitioner
 Usage: #example
+Description: "Example practitioner for OSA-related care scenarios"
 * identifier.system = "http://example.org/practitioners"
 * identifier.value = "kyle-anydoc"
 * name.family = "Anydoc"
@@ -22,6 +24,7 @@ Usage: #example
 Instance: PatientMindfulness
 InstanceOf: Patient
 Usage: #example
+Description: "Example patient for mindfulness-related scenarios and consent examples"
 * identifier.system = "http://example.org/patients"
 * identifier.value = "mindfulness-patient"
 * name.family = "Mindfulness"
@@ -32,6 +35,7 @@ Usage: #example
 Instance: Org2RDoc
 InstanceOf: Organization
 Usage: #example
+Description: "2RDoc organization instance for consent and data governance examples"
 * identifier.system = "http://example.org/organizations"
 * identifier.value = "2rdoc"
 * name = "2RDoc Healthcare Solutions"

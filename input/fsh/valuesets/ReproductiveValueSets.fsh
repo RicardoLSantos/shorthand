@@ -17,12 +17,12 @@ Description: "Goals related to social-history health tracking and planning"
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^date = "2024-03-19"
 
-* $LOINC#8708-0 "Menstrual cycle length"
+* $LOINC#8665-2 "Date last menstrual period"
+* $LOINC#49033-4 "Menstrual cycle duration"
 * $LOINC#55284-4 "Blood pressure"
 * $LOINC#8310-5 "Body temperature"
 * $LOINC#8302-2 "Body height"
 * $LOINC#29463-7 "Body weight"
-* $SCT#405191000 "Menstrual cycle monitoring"
 * $SCT#289530006 "Reproductive health finding"
 
 ValueSet: ReproductiveActivityVS

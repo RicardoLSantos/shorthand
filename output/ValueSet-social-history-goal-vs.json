@@ -3,7 +3,7 @@
   "id" : "social-history-goal-vs",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet social-history-goal-vs</b></p><a name=\"social-history-goal-vs\"> </a><a name=\"hcsocial-history-goal-vs\"> </a><p>Este conjunto de valores inclui códigos baseados nas seguintes regras:</p><ul><li>Incluir estes códigos, tal como definidos em <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"https://loinc.org/8708-0/\">8708-0</a></td><td>Menstrual cycle length</td></tr><tr><td><a href=\"https://loinc.org/55284-4/\">55284-4</a></td><td>Blood pressure</td></tr><tr><td><a href=\"https://loinc.org/8310-5/\">8310-5</a></td><td>Body temperature</td></tr><tr><td><a href=\"https://loinc.org/8302-2/\">8302-2</a></td><td>Body height</td></tr><tr><td><a href=\"https://loinc.org/29463-7/\">29463-7</a></td><td>Body weight</td></tr></table></li><li>Incluir estes códigos, tal como definidos em <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"http://snomed.info/id/405191000\">405191000</a></td><td>Menstrual cycle monitoring</td></tr><tr><td><a href=\"http://snomed.info/id/289530006\">289530006</a></td><td>Reproductive health finding</td></tr></table></li></ul></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet social-history-goal-vs</b></p><a name=\"social-history-goal-vs\"> </a><a name=\"hcsocial-history-goal-vs\"> </a><p>Este conjunto de valores inclui códigos baseados nas seguintes regras:</p><ul><li>Incluir estes códigos, tal como definidos em <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"https://loinc.org/8665-2/\">8665-2</a></td><td>Date last menstrual period</td></tr><tr><td><a href=\"https://loinc.org/49033-4/\">49033-4</a></td><td>Menstrual cycle duration</td></tr><tr><td><a href=\"https://loinc.org/55284-4/\">55284-4</a></td><td>Blood pressure</td></tr><tr><td><a href=\"https://loinc.org/8310-5/\">8310-5</a></td><td>Body temperature</td></tr><tr><td><a href=\"https://loinc.org/8302-2/\">8302-2</a></td><td>Body height</td></tr><tr><td><a href=\"https://loinc.org/29463-7/\">29463-7</a></td><td>Body weight</td></tr></table></li><li>Incluir estes códigos, tal como definidos em <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"http://snomed.info/id/289530006\">289530006</a></td><td>Reproductive health finding</td></tr></table></li></ul></div>"
   },
   "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/social-history-goal-vs",
   "version" : "0.1.0",
@@ -76,8 +76,12 @@
     "include" : [{
       "system" : "http://loinc.org",
       "concept" : [{
-        "code" : "8708-0",
-        "display" : "Menstrual cycle length"
+        "code" : "8665-2",
+        "display" : "Date last menstrual period"
+      },
+      {
+        "code" : "49033-4",
+        "display" : "Menstrual cycle duration"
       },
       {
         "code" : "55284-4",
@@ -99,10 +103,6 @@
     {
       "system" : "http://snomed.info/sct",
       "concept" : [{
-        "code" : "405191000",
-        "display" : "Menstrual cycle monitoring"
-      },
-      {
         "code" : "289530006",
         "display" : "Reproductive health finding"
       }]

@@ -11,7 +11,7 @@
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-02T11:12:29+01:00",
+  "date" : "2025-10-02T18:31:12+01:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -1285,6 +1285,7 @@
         "reference" : "Patient/example"
       },
       "name" : "example",
+      "description" : "Example patient instance for demonstration purposes",
       "exampleBoolean" : true
     },
     {
@@ -1770,6 +1771,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-alert-type"
+      },
+      "name" : "Mindfulness Alert Type",
+      "description" : "Types of alerts for mindfulness practice reminders and notifications",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -1830,6 +1843,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-audit-type"
+      },
+      "name" : "Mindfulness Audit Type",
+      "description" : "Types of audit events for mindfulness practice tracking",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -1837,6 +1862,18 @@
       },
       "name" : "Mindfulness Configuration",
       "description" : "Configuration settings for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-config-type"
+      },
+      "name" : "Mindfulness Configuration Type",
+      "description" : "Types of configuration settings for mindfulness practice",
       "exampleBoolean" : false
     },
     {
@@ -1873,6 +1910,18 @@
       },
       "name" : "Mindfulness Message Definition",
       "description" : "Definition for mindfulness session messages",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-message-events"
+      },
+      "name" : "Mindfulness Message Events",
+      "description" : "Events that trigger mindfulness-related messages",
       "exampleBoolean" : false
     },
     {
@@ -2046,6 +2095,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-schedule-type"
+      },
+      "name" : "Mindfulness Schedule Type",
+      "description" : "Types of schedules for mindfulness practice sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -2088,6 +2149,19 @@
         "reference" : "CodeSystem/MindfulnessSettingCS"
       },
       "name" : "Mindfulness Setting CodeSystem",
+      "description" : "CodeSystem defining different settings where mindfulness practice can occur",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-snomed-vs"
+      },
+      "name" : "Mindfulness SNOMED CT Value Set",
+      "description" : "SNOMED CT codes for mindfulness-related concepts",
       "exampleBoolean" : false
     },
     {
@@ -2111,6 +2185,7 @@
         "reference" : "Consent/MindfulnessAccessPolicy"
       },
       "name" : "MindfulnessAccessPolicy",
+      "description" : "Consent instance defining access control policies and authorized actions for mindfulness data under GDPR, EHDS, HIPAA, and LGPD compliance",
       "exampleBoolean" : true
     },
     {
@@ -2122,6 +2197,7 @@
         "reference" : "Consent/MindfulnessSecurityDefinition"
       },
       "name" : "MindfulnessSecurityDefinition",
+      "description" : "Consent instance defining security requirements and data classification for mindfulness data",
       "exampleBoolean" : true
     },
     {
@@ -2170,6 +2246,18 @@
       },
       "name" : "Mobility Alert Level Value Set",
       "description" : "Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mobility-assessment-method"
+      },
+      "name" : "Mobility Assessment Method",
+      "description" : "Methods used to assess mobility and balance",
       "exampleBoolean" : false
     },
     {
@@ -2325,6 +2413,7 @@
         "reference" : "Organization/Org2RDoc"
       },
       "name" : "Org2RDoc",
+      "description" : "2RDoc organization instance for consent and data governance examples",
       "exampleBoolean" : true
     },
     {
@@ -2336,6 +2425,7 @@
         "reference" : "Practitioner/osa-practitioner-kyle-anydoc"
       },
       "name" : "osa-practitioner-kyle-anydoc",
+      "description" : "Example practitioner for OSA-related care scenarios",
       "exampleBoolean" : true
     },
     {
@@ -2395,6 +2485,7 @@
         "reference" : "Patient/PatientMindfulness"
       },
       "name" : "PatientMindfulness",
+      "description" : "Example patient for mindfulness-related scenarios and consent examples",
       "exampleBoolean" : true
     },
     {

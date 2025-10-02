@@ -28,7 +28,7 @@ Description: "Message definition for starting a mindfulness session"
 * focus.code = #Observation
 * focus.min = 1
 * focus.max = "*"
-* focus.profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session"
+* focus.profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation"
 
 Instance: end-session
 InstanceOf: MindfulnessMessageDefinition
@@ -43,4 +43,4 @@ Description: "Message definition for ending a mindfulness session"
 * focus.code = #Observation
 * focus.min = 1
 * focus.max = "*"
-* focus.profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session"
+* focus.profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation"

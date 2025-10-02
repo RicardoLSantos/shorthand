@@ -50,7 +50,7 @@ Title: "UV Exposure Measurement Example"
 
 * component[index]
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-index "UV index"
-  * valueQuantity = 8 '{index}'
+  * valueQuantity = 8 '1' "index"
   * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 
 * component[duration]

@@ -3,6 +3,7 @@
 Instance: MindfulnessSecurityDefinition
 InstanceOf: Consent
 Usage: #example
+Description: "Consent instance defining security requirements and data classification for mindfulness data"
 * status = #active
 * scope = $consentscope#patient-privacy "Privacy Consent"
 * category[0] = $loinc#59284-0 "Consent Document"
@@ -25,6 +26,7 @@ Usage: #example
 Instance: MindfulnessAccessPolicy
 InstanceOf: Consent
 Usage: #example
+Description: "Consent instance defining access control policies and authorized actions for mindfulness data under GDPR, EHDS, HIPAA, and LGPD compliance"
 * status = #active
 * scope = $consentscope#patient-privacy "Privacy Consent"
 * category[0] = $loinc#59284-0 "Consent Document"

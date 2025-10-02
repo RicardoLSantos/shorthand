@@ -72,5 +72,5 @@ Description: "Profile for recording activity data from iOS Health App"
 * component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-awakenings "Number of sleep awakenings"
 * component[interruptions].valueQuantity only Quantity
 * component[interruptions].valueQuantity.system = $UCUM
-* component[interruptions].valueQuantity.code = #{count}
+* component[interruptions].valueQuantity.code = #1
 * extension contains SleepQuality named quality 0..1

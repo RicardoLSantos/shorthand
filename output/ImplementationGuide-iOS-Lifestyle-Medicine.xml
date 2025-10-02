@@ -11,7 +11,7 @@
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2025-10-02T11:12:29+01:00"/>
+  <date value="2025-10-02T18:31:12+01:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -1075,6 +1075,7 @@
         <reference value="Patient/example"/>
       </reference>
       <name value="example"/>
+      <description value="Example patient instance for demonstration purposes"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1519,6 +1520,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-alert-type"/>
+      </reference>
+      <name value="Mindfulness Alert Type"/>
+      <description value="Types of alerts for mindfulness practice reminders and notifications"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1574,6 +1586,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-audit-type"/>
+      </reference>
+      <name value="Mindfulness Audit Type"/>
+      <description value="Types of audit events for mindfulness practice tracking"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1581,6 +1604,17 @@
       </reference>
       <name value="Mindfulness Configuration"/>
       <description value="Configuration settings for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-config-type"/>
+      </reference>
+      <name value="Mindfulness Configuration Type"/>
+      <description value="Types of configuration settings for mindfulness practice"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1614,6 +1648,17 @@
       </reference>
       <name value="Mindfulness Message Definition"/>
       <description value="Definition for mindfulness session messages"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-message-events"/>
+      </reference>
+      <name value="Mindfulness Message Events"/>
+      <description value="Events that trigger mindfulness-related messages"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1772,6 +1817,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mindfulness-schedule-type"/>
+      </reference>
+      <name value="Mindfulness Schedule Type"/>
+      <description value="Types of schedules for mindfulness practice sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1811,6 +1867,18 @@
         <reference value="CodeSystem/MindfulnessSettingCS"/>
       </reference>
       <name value="Mindfulness Setting CodeSystem"/>
+      <description value="CodeSystem defining different settings where mindfulness practice can occur"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/mindfulness-snomed-vs"/>
+      </reference>
+      <name value="Mindfulness SNOMED CT Value Set"/>
+      <description value="SNOMED CT codes for mindfulness-related concepts"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1832,6 +1900,7 @@
         <reference value="Consent/MindfulnessAccessPolicy"/>
       </reference>
       <name value="MindfulnessAccessPolicy"/>
+      <description value="Consent instance defining access control policies and authorized actions for mindfulness data under GDPR, EHDS, HIPAA, and LGPD compliance"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1842,6 +1911,7 @@
         <reference value="Consent/MindfulnessSecurityDefinition"/>
       </reference>
       <name value="MindfulnessSecurityDefinition"/>
+      <description value="Consent instance defining security requirements and data classification for mindfulness data"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1886,6 +1956,17 @@
       </reference>
       <name value="Mobility Alert Level Value Set"/>
       <description value="Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mobility-assessment-method"/>
+      </reference>
+      <name value="Mobility Assessment Method"/>
+      <description value="Methods used to assess mobility and balance"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2028,6 +2109,7 @@
         <reference value="Organization/Org2RDoc"/>
       </reference>
       <name value="Org2RDoc"/>
+      <description value="2RDoc organization instance for consent and data governance examples"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -2038,6 +2120,7 @@
         <reference value="Practitioner/osa-practitioner-kyle-anydoc"/>
       </reference>
       <name value="osa-practitioner-kyle-anydoc"/>
+      <description value="Example practitioner for OSA-related care scenarios"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -2092,6 +2175,7 @@
         <reference value="Patient/PatientMindfulness"/>
       </reference>
       <name value="PatientMindfulness"/>
+      <description value="Example patient for mindfulness-related scenarios and consent examples"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

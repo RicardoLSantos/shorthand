@@ -59,7 +59,7 @@ Description: "Profile for advanced vital signs data from iOS Health App"
 
 * component[pulseWaveAnalysis].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#pulse-wave "Pulse wave analysis"
 * component[pulseWaveAnalysis].valueQuantity.system = $UCUM
-* component[pulseWaveAnalysis].valueQuantity.code = #{index}
+* component[pulseWaveAnalysis].valueQuantity.code = #1
 * component[pulseWaveAnalysis] ^short = "Analysis of arterial pulse wave"
 
 * component[respiratoryVariability].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#respiratory-variability "Respiratory rate variability"
@@ -74,7 +74,7 @@ Description: "Profile for advanced vital signs data from iOS Health App"
 
 * component[stressIndex].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#physiological-stress "Physiological stress index"
 * component[stressIndex].valueQuantity.system = $UCUM
-* component[stressIndex].valueQuantity.code = #{index}
+* component[stressIndex].valueQuantity.code = #1
 * component[stressIndex] ^short = "Index of physiological stress"
 
 * component[thermalGradient].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#temperature-gradient "Temperature gradient"
@@ -94,7 +94,7 @@ Description: "Profile for advanced vital signs data from iOS Health App"
 
 * component[allostaticLoad].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#allostatic-load "Allostatic load index"
 * component[allostaticLoad].valueQuantity.system = $UCUM
-* component[allostaticLoad].valueQuantity.code = #{score}
+* component[allostaticLoad].valueQuantity.code = #1
 * component[allostaticLoad] ^short = "Measure of cumulative physiological burden"
 
 Extension: AdvancedVitalSignsContext

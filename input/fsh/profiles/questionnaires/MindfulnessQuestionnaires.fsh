@@ -46,7 +46,7 @@ Description: "Questionnaire for capturing daily mindfulness practice and associa
     * text = "How is your mood now?"
     * type = #choice
     * required = true
-    * answerValueSet = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood-vs"
+    * answerValueSet = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood"
 
   * item[1]
     * linkId = "mood_intensity"

@@ -9,10 +9,10 @@ Title: "Stress Level Measurement Example"
 * code = $LOINC#64394-0 "PhenX - perceived stress protocol 180801"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-01-03T15:30:00Z"
-* valueQuantity = 7 '{score}' "score"
+* valueQuantity = 7 '1' "score"
 
-* component[physiologicalStress].valueQuantity = 6 '{score}' "score"
-* component[psychologicalStress].valueQuantity = 8 '{score}' "score"
+* component[physiologicalStress].valueQuantity = 6 '1' "score"
+* component[psychologicalStress].valueQuantity = 8 '1' "score"
 * component[chronicity].valueCodeableConcept = StressChronicityCS#subacute
 * component[impact].valueCodeableConcept = StressImpactCS#moderate
 

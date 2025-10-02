@@ -33,6 +33,7 @@ Id: stress-triggers-cs
 Title: "Stress Triggers Code System"
 Description: "Code system for common stress triggers"
 * ^experimental = false
+* ^caseSensitive = true
 * #work "Work-related" "Stress from work or professional activities"
 * #financial "Financial" "Financial-related stress"
 * #relationships "Relationships" "Stress from personal relationships"
@@ -46,6 +47,7 @@ Id: stress-coping-cs
 Title: "Stress Coping Code System"
 Description: "Code system for stress coping mechanisms"
 * ^experimental = false
+* ^caseSensitive = true
 * #exercise "Physical Exercise" "Using exercise to manage stress"
 * #meditation "Meditation" "Meditation and mindfulness practices"
 * #social "Social Support" "Seeking social support"
