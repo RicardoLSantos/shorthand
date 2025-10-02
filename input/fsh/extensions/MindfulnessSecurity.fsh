@@ -14,7 +14,7 @@ Usage: #example
 * provision.type = #permit
 * provision.period.start = "2024-01-01"
 * provision.period.end = "2025-12-31"
-* provision.actor[0].role = $v3-RoleCode#PRO "healthcare provider"
+* provision.actor[0].role = http://terminology.hl7.org/CodeSystem/extra-security-role-type#datacollector "data collector"
 // * provision.actor[0].reference.identifier.system = "http://terminology.hl7.org/CodeSystem/practitioner-identifier" // Invalid - removed
 * provision.actor[0].reference.identifier.value = "1234567890"
 * provision.securityLabel[0] = $v3-Confidentiality#N "normal"
@@ -51,7 +51,7 @@ Usage: #example
 * provision.type = #permit
 * provision.period.start = "2024-01-01"
 * provision.period.end = "2025-12-31"
-* provision.actor[0].role = $v3-RoleCode#PRO "healthcare provider"
+* provision.actor[0].role = http://terminology.hl7.org/CodeSystem/extra-security-role-type#datacollector "data collector"
 // * provision.actor[0].reference.identifier.system = "http://terminology.hl7.org/CodeSystem/practitioner-identifier" // Invalid - removed
 * provision.actor[0].reference.identifier.value = "1234567890"
 * provision.action[0] = $consentaction#access "Access"

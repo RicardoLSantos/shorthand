@@ -41,11 +41,6 @@ Description: "Profile for recording mindfulness practice sessions and outcomes"
 * component[stressLevel]
   * code = $SCT#365949003 "Health-related behavior finding"
   * value[x] only integer
-  * valueInteger
-    * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-minValueInteger"
-    * ^extension[0].valueInteger = 0
-    * ^extension[1].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueInteger"
-    * ^extension[1].valueInteger = 10
 
 * component[moodState]
   * code = $SCT#106131003 "Mood finding"

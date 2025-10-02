@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation WalkingSpeedExample</b></p><a name=\"WalkingSpeedExample\"> </a><a name=\"hcWalkingSpeedExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-walking-speed-observation.html\">Walking Speed Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category activity}\">Activity</span></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs gait-assessment}\">Gait assessment</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>value</b>: 1.2 meters per second<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom/s = 'm/s')</span></p><p><b>device</b>: <a href=\"Device-iphone-example.html\">Device: status = active; manufacturer = Apple Inc.; modelNumber = iPhone 15 Pro; type = Application programme software; note = iPhone 15 Pro running iOS 17.0 - Apple Inc. - iOS Health App data collection device</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 8686-8}\">Walking speed</span></p><p><b>value</b>: 1.2 meters per second<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom/s = 'm/s')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 41950-7}\">Walking distance</span></p><p><b>value</b>: 10 meters<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom = 'm')</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation WalkingSpeedExample</b></p><a name=\"WalkingSpeedExample\"> </a><a name=\"hcWalkingSpeedExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-walking-speed-observation.html\">Walking Speed Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category activity}\">Activity</span></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs gait-assessment}\">Gait assessment</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>value</b>: 1.2 meters per second<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom/s = 'm/s')</span></p><p><b>device</b>: <a href=\"Device-iphone-example.html\">Device: status = active; manufacturer = Apple Inc.; modelNumber = iPhone 15 Pro; type = Application programme software; note = iPhone 15 Pro running iOS 17.0 - Apple Inc. - iOS Health App data collection device</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs walking-speed}\">Walking speed measurement</span></p><p><b>value</b>: 1.2 meters per second<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom/s = 'm/s')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs walking-distance}\">Walking distance measurement</span></p><p><b>value</b>: 10 meters<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom = 'm')</span></p></blockquote></div>"
   },
   "status" : "final",
   "category" : [{
@@ -38,9 +38,9 @@
   "component" : [{
     "code" : {
       "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "8686-8",
-        "display" : "Walking speed"
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "walking-speed",
+        "display" : "Walking speed measurement"
       }]
     },
     "valueQuantity" : {
@@ -53,9 +53,9 @@
   {
     "code" : {
       "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "41950-7",
-        "display" : "Walking distance"
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "walking-distance",
+        "display" : "Walking distance measurement"
       }]
     },
     "valueQuantity" : {

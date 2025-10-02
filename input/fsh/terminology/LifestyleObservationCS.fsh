@@ -12,7 +12,7 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 49
+* ^count = 54
 
 // Sleep Measurements (5 codes)
 * #sleep-panel "Sleep measurement panel"
@@ -174,6 +174,22 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * #water-intake "Water intake volume"
   "Daily water consumption measured in liters or milliliters"
 
+// Mobility Metrics (3 codes)
+* #walking-speed "Walking speed measurement"
+  "Measurement of walking speed during ambulation"
+
+* #walking-distance "Walking distance measurement"
+  "Measurement of total distance walked"
+
+* #walking-steadiness "Walking steadiness measurement"
+  "Measurement of walking balance and steadiness"
+
+// Advanced Vital Signs (2 codes)
+* #heart-rate-exercise "Heart rate during exercise"
+  "Heart rate measurement during physical exercise activity"
+
+* #heart-rate-variability "Heart rate variability"
+  "Measurement of heart rate variability (HRV)"
 
 // ValueSet for all local lifestyle codes
 ValueSet: LifestyleObservationVS

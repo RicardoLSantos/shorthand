@@ -34,6 +34,7 @@ Description: "Code system for balance status types"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
+* #normal "Normal"
 * #veryStable "Very Stable"
 * #stable "Stable"
 * #slightlyUnstable "Slightly Unstable"

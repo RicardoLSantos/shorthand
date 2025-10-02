@@ -1,0 +1,41 @@
+Checking internet connection...
+Online
+
+FHIR IG Publisher Version 2.0.17 (Git# 98facbadd305). Built 2025-09-09T06:53:45.198Z (23 days old)  
+Detected Java version: 23 from /Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home on Mac OS X/aarch64 (64bit). 4096MB available
+dir = /Users/ricardo/shorthand/iOS_Lifestyle_Medicine_HEADS2_FMUP, path = /Users/ricardo/.local/bin:/opt/homebrew/bin:/Users/ricardo/.gem/ruby/3.1.3/bin:/Users/ricardo/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin:/Users/ricardo/.rubies/ruby-3.1.3/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/Users/ricardo/.cache/lm-studio/bin:/Users/ricardo/Library/Python/3.9/bin:/Users/ricardo/.cursor/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts:/Users/ricardo/.cache/lm-studio/bin:/Users/ricardo/Library/Python/3.9/bin:/Users/ricardo/.cache/lm-studio/bin:/Users/ricardo/.radicle/bin
+Parameters: -ig .                                                                                   
+Character encoding = UTF-8 / UTF-8                                                                  
+Start Clock @ quinta-feira, 2 de outubro de 2025, 09:53:14 Hora de verão da Europa Ocidental (2025-10-02T09:53:14+01:00)
+                                                                                                    
+Build FHIR IG from /Users/ricardo/shorthand/iOS_Lifestyle_Medicine_HEADS2_FMUP/.                     (00:00.020 / 00:00.020, 36Mb)
+API keys loaded from /Users/ricardo/.fhir/fhir-settings.json                                         (00:00.002 / 00:00.022, 37Mb)
+Package Cache: /Users/ricardo/.fhir/packages                                                         (00:00.002 / 00:00.025, 37Mb)
+Run Sushi on /Users/ricardo/shorthand/iOS_Lifestyle_Medicine_HEADS2_FMUP                             (00:00.007 / 00:00.033, 16Mb)
+Sushi: info  Running SUSHI v3.16.5 (implements FHIR Shorthand specification v3.0.0)                  (00:04.214 / 00:04.247, 17Mb)
+Sushi: info  Arguments:                                                                              (00:00.001 / 00:04.248, 17Mb)
+Sushi: info    --out /Users/ricardo/shorthand/iOS_Lifestyle_Medicine_HEADS2_FMUP                     (00:00.000 / 00:04.249, 17Mb)
+Sushi: info    /Users/ricardo/shorthand/iOS_Lifestyle_Medicine_HEADS2_FMUP                           (00:00.000 / 00:04.249, 17Mb)
+Sushi: info  Using configuration file: /Users/ricardo/shorthand/iOS_Lifestyle_Medicine_HEADS2_FMUP/sushi-config.yaml (00:01.941 / 00:06.191, 17Mb)
+Sushi: info  Importing FSH text...                                                                   (00:00.061 / 00:06.253, 17Mb)
+Sushi: info  Preprocessed 92 documents with 18 aliases.                                              (00:00.377 / 00:06.630, 17Mb)
+Sushi: info  Imported 164 definitions and 59 instances.                                              (00:00.044 / 00:06.675, 17Mb)
+Sushi: info  Loaded virtual package sushi-r5forR4#1.0.0 with 7 resources                             (00:00.112 / 00:06.788, 17Mb)
+Sushi: warn  Failed to load automatically-provided hl7.fhir.uv.tools.r4#latest                       (01:45.061 / 01:51.849, 17Mb)
+Sushi: warn  Failed to load automatically-provided hl7.terminology.r4#latest                         (01:45.012 / 03:36.862, 17Mb)
+Sushi couldn't be run. Complete output from running Sushi :                                          (01:23.203 / 05:00.065, 17Mb)
+Sushi timeout exceeded: 300 seconds                                                                  (00:00.001 / 05:00.066, 17Mb)
+Exception: Process exited with an error: 143 (Exit value: 143)                                       (00:00.000 / 05:00.067, 17Mb)
+Publishing Content Failed: Process exited with an error: 143 (Exit value: 143)                       (00:00.000 / 05:00.068, 17Mb)
+                                                                                                     (00:00.001 / 05:00.069, 17Mb)
+Use -? to get command line help                                                                      (00:00.000 / 05:00.070, 17Mb)
+                                                                                                     (00:00.000 / 05:00.070, 17Mb)
+Stack Dump (for debugging):                                                                          (00:00.000 / 05:00.071, 17Mb)
+org.apache.commons.exec.ExecuteException: Process exited with an error: 143 (Exit value: 143)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:153)
+	at org.hl7.fhir.igtools.publisher.FSHRunner.runFsh(FSHRunner.java:89)
+	at org.hl7.fhir.igtools.publisher.PublisherIGLoader.initialize(PublisherIGLoader.java:130)
+	at org.hl7.fhir.igtools.publisher.Publisher.execute(Publisher.java:208)
+	at org.hl7.fhir.igtools.publisher.Publisher.main(Publisher.java:1482)

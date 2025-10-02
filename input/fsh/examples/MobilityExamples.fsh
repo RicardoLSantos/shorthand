@@ -10,7 +10,7 @@ Title: "Walking Steadiness Observation Profile"
     balanceStatus 0..1 MS
 
 * component[balanceScore]
-  * code = $LOINC#89236-3 "Balance [Score]"
+  * code = $LIFESTYLEOBS#walking-steadiness "Walking steadiness measurement"
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #%
 
@@ -29,12 +29,12 @@ Description: "Profile for measuring walking speed as part of mobility assessment
     distance 0..1 MS
 
 * component[speed]
-  * code = $LOINC#8686-8 "Walking speed"
+  * code = $LIFESTYLEOBS#walking-speed "Walking speed measurement"
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #m/s
 
 * component[distance]
-  * code = $LOINC#41950-7 "Walking distance"
+  * code = $LIFESTYLEOBS#walking-distance "Walking distance measurement"
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #m
 
@@ -52,7 +52,7 @@ Title: "Walking Steadiness Measurement Example"
 * device = Reference(Device/iphone-example)
 
 * component[balanceScore].valueQuantity = 85 '%' "percent"
-* component[balanceStatus].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* component[balanceStatus].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/balance-status#normal "Normal"
 
 Instance: WalkingSpeedExample
 InstanceOf: WalkingSpeedObservation
