@@ -18,7 +18,7 @@ Description: "Indicates the source of nutrition data"
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
-* ^context[0].type = #element
+* ^context[0].type = #fhirpath
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept

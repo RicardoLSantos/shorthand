@@ -18,7 +18,7 @@ Description: "Records the conditions under which body measurements were taken"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[0].type = #element
+* ^context[0].type = #fhirpath
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept
@@ -42,7 +42,7 @@ Description: "Specifies the type of device used for body measurements"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[0].type = #element
+* ^context[0].type = #fhirpath
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept

@@ -15,7 +15,7 @@ Description: "Extension for recording location of environmental exposure measure
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #element
+* ^context[+].type = #fhirpath
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept
@@ -40,7 +40,7 @@ Description: "Additional conditions during environmental exposure measurement"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #element
+* ^context[+].type = #fhirpath
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept
