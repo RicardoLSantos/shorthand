@@ -1,138 +1,179 @@
-# Continue Aqui - Fase 4.4
+# Continue Aqui - Fase 4.4 (em progresso)
 
-## Estado Atual (2025-10-03 12:26)
+## Estado Atual (2025-10-03 13:05)
 
-**Warnings:** 90 (reduzidos de 96)
+**Warnings:** 86 (reduzidos de 90)
 **Errors:** 0
 **Branch:** main
-**Radicle:** 🔄 Pendente sync
+**Commit:** `3fe09fc5`
+**Progresso:** 4/33 exemplos criados (12%)
 
 ---
 
-## O Que Foi Feito (Fase 4.3)
+## O Que Foi Feito (Fase 4.4 parcial)
 
-**Redução:** 96 → 90 warnings (-6, total acumulado: -15 desde início)
+**Redução:** 90 → 86 warnings (-4, -4.4%)
 
-### Correções (7 arquivos modificados):
+### Exemplos Criados (4):
 
-1. ✅ **Observation.performer** (-5 warnings)
-   - UVExposureExample
-   - SleepObservationExample1
-   - WalkingSteadinessExample
-   - WalkingSpeedExample
-   - PhysicalActivityExample1
+1. ✅ **OxygenSaturationExample** → `input/fsh/examples/VitalSignsExamples.fsh`
+   - Profile: OxygenSaturationObservation
+   - Inclui Device (pulse oximeter)
 
-2. ✅ **CodeSystem.property URIs** (-3 warnings, -1 error)
-   - Property `status`: URI HL7 oficial
-   - Property `severity`: URI custom
+2. ✅ **CalorieIntakeExample** → `input/fsh/examples/NutritionExamples.fsh`
+   - Profile: CalorieIntakeObservation
+   - Total diário: 2100 kcal
 
-3. ✅ **URLs → URNs** (0 resolvidos mas válidos)
-   - GDPR, HIPAA, LGPD: URNs semânticos
-   - Device systems: OID URN
+3. ✅ **MacronutrientsExample** → `input/fsh/examples/NutritionExamples.fsh`
+   - Profile: MacronutrientsObservation
+   - Components: carbs, protein (fat removido - não existe no profile)
 
-4. ⚠️ **Measure criteria language** (0 resolvidos)
-   - Tentado `text/cql-identifier` (não suportado)
+4. ✅ **WaterIntakeExample** → `input/fsh/examples/NutritionExamples.fsh`
+   - Profile: WaterIntakeObservation
+   - Total diário: 2500 mL
 
-**Documentação:** `20251003_122500_phase43_complete.md`
+**Observação:** Cada exemplo criado resolveu ~1 warning. Melhor eficiência que esperado!
 
 ---
 
-## Análise dos 90 Warnings Restantes
+## Próximos Passos - Completar Fase 4.4
 
-### Categorias (por prioridade):
+**Meta:** 86 → 57 warnings (-29 warnings restantes)
+**Restam:** 29 exemplos para criar
 
+### Profiles/Extensions SEM Exemplos (29 restantes):
+
+#### **Vital Signs & Body Metrics** (3)
+- [ ] `advanced-vital-signs` (profile) - usar extensions avançadas
+- [ ] `body-metrics-observation` (profile)
+- [ ] `lifestyle-vital-signs` (profile)
+
+#### **Nutrition** (1)
+- [ ] `nutrition-intake-observation` (profile) - genérico
+
+#### **Reproductive/Fertility** (2)
+- [ ] `fertility-observation` (profile)
+- [ ] `social-history-observation` (profile)
+
+#### **Mobility** (2)
+- [ ] `mobility-profile` (profile) - genérico
+- [ ] `mobility-risk-assessment` (profile)
+
+#### **Environmental** (1)
+- [ ] `environmental-observation` (profile)
+
+#### **Symptom & Questionnaire** (2)
+- [ ] `symptom-questionnaire` (profile)
+- [ ] `multi-jurisdictional-consent` (profile)
+
+#### **Extensions** (18 restantes)
+- [ ] `activity-quality` - adicionar a SleepObservation existente
+- [ ] `advanced-vital-signs-context` - adicionar a exemplo vital signs
+- [ ] `allostatic-load` - stress load index
+- [ ] `circadian-phase` - adicionar a sleep example
+- [ ] `data-localization` - compliance/consent
+- [ ] `environmental-context` - adicionar a environmental observation
+- [ ] `exposure-conditions` - adicionar a UV/noise examples
+- [ ] `exposure-location` - adicionar a UV/noise examples
+- [ ] `homeostasis-index` - stress/recovery
+- [ ] `jurisdiction-applicability` - consent
+- [ ] `measurement-context` - adicionar a vital signs
+- [ ] `measurement-quality` - adicionar a observations
+- [ ] `mindfulness-import-map` - mindfulness
+- [ ] `mobility-alert-level` - mobility
+- [ ] `nutrition-data-source` - nutrition
+- [ ] `physiological-stress-index` - stress
+- [ ] `recovery-efficiency` - sleep/recovery
+- [ ] `regulatory-basis` - consent/compliance
+
+---
+
+## Estratégia Recomendada
+
+### **Abordagem Eficiente:**
+
+1. **Criar profiles simples primeiro** (10 profiles) → ~10 exemplos
+   - Fertility, Social History, Mobility, Environmental, etc.
+
+2. **Adicionar extensions a exemplos existentes** (15-18) → ~15 edições
+   - Mais rápido! Apenas adicionar linhas a exemplos que já existem
+
+3. **Build e verificar** → Validar progresso
+
+### **Template Rápido para Profiles:**
+
+```fsh
+Instance: [Nome]Example
+InstanceOf: [ProfileName]
+Usage: #example
+Description: "[Descrição]"
+Title: "[Título]"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2024-03-19T15:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* valueQuantity = [valor] '[unidade]' "[display]"
+* valueQuantity.system = $UCUM
 ```
-33 - Profiles/Extensions SEM EXEMPLOS  ← FASE 4.4 (prioridade alta)
-27 - Extension context = Element       ← FASE 4.5
-12 - Extension context = fhirpath      ← FASE 4.5
- 8 - URN não resolúveis                ← ACEITAR (válidos)
- 4 - HTML fragments                    ← ACEITAR (informativos)
- 3 - Observation sem performer         ← FASE 4.4
- 2 - Linguagem de expressão            ← FASE 4.6 (investigar)
+
+### **Template para Extensions:**
+
+```fsh
+// Adicionar a exemplo existente:
+* extension[nome-extension].valueCodeableConcept = [codigo]
+// ou
+* extension[nome-extension].valueQuantity = [valor] '[unidade]'
 ```
 
 ---
 
-## Próxima Fase: 4.4 - Criar Exemplos
+## Análise de Eficiência
 
-**Meta:** 90 → 57 warnings (-33)
+| Métrica | Valor | Observação |
+|---------|-------|------------|
+| **Exemplos criados** | 4 | 12% do total |
+| **Warnings resolvidos** | -4 | ~1 warning por exemplo |
+| **Taxa de resolução** | 100% | Cada exemplo resolve o warning |
+| **Tempo por exemplo** | ~2-3 min | Com correções FSH |
+| **Estimativa restante** | ~60-90 min | Para 29 exemplos |
 
-### Estratégia:
+**Insight:** Extensions adicionadas a exemplos existentes podem ser mais rápidas (1 min) que criar profiles novos (2-3 min).
 
-1. **Identificar** os 33 profiles/extensions sem exemplos
-2. **Priorizar** por importância clínica
-3. **Criar** 1 exemplo representativo para cada
-4. **Validar** que os exemplos resolvem os warnings
+---
 
-### Profiles Prioritários (estimados):
-- Advanced Vital Signs
-- Body Metrics (composition, etc.)
-- Environmental profiles
-- Sleep Quality
-- Mobility extensions
-- Social/Stress profiles
-
-### Comandos Úteis:
+## Comandos Úteis
 
 ```bash
+# Build rápido SUSHI (valida FSH)
+sushi .
+
+# Build completo
+./_genonce.sh
+
+# Verificar warnings
+grep "Warnings" output/qa.html
+
 # Listar profiles sem exemplos
 grep "no examples" output/qa.html | sed 's/<[^>]*>//g'
 
-# Build rápido
-./_genonce.sh
-
-# Verificar progresso
-grep "Warnings" output/qa.html
+# Commit progresso
+git add input/fsh/examples/*.fsh
+git commit -m "Phase 4.4 (continue): Add N more examples"
 ```
 
 ---
 
-## Fases Planejadas (Roadmap)
+## Progresso Geral (Fases 4.2 + 4.3 + 4.4 parcial)
 
-| Fase | Meta Warnings | Foco Principal | Esforço |
-|------|---------------|----------------|---------|
-| ~~4.2~~ | ~~96~~ | ~~Experimental, contexts, naming~~ | ~~Médio~~ |
-| ~~4.3~~ | ~~90~~ | ~~Performers, URIs, URLs~~ | ~~Médio~~ |
-| **4.4** | **57** | **Criar 33+ exemplos** | **Alto** |
-| 4.5 | 18-22 | Corrigir 39 extension contexts | Alto |
-| 4.6 | 13-15 | Casos especiais (Measure, etc.) | Médio |
-| **Final** | **~12** | **Aceitar warnings informativos** | - |
-
-**Redução Total Projetada:** 105 → 12 (-93 warnings, 88.5%)
-
----
-
-## Commit & Sync Pendentes
-
-### Arquivos para Commit:
-
-```
-M input/fsh/examples/EnvironmentalExamples.fsh
-M input/fsh/examples/SleepExamples.fsh
-M input/fsh/examples/MobilityExamples.fsh
-M input/fsh/examples/PhysicalActivityExamples.fsh
-M input/fsh/extensions/MobilityExtensions.fsh
-M input/fsh/extensions/MindfulnessSecurity.fsh
-M input/fsh/reports/MindfulnessReports.fsh
-A backups/phase4_research_specifications/20251003_122500_phase43_complete.md
-M backups/phase4_research_specifications/CONTINUE_HERE.md
-```
-
-### Mensagem de Commit:
-
-```
-Phase 4.3: Fix warnings - performers, URIs, URLs
-
-- Add performer to 5 Observation instances (-5 warnings)
-- Fix CodeSystem property URIs (-3 warnings, -1 error)
-- Convert external URLs to URNs (GDPR, HIPAA, LGPD)
-- Attempt Measure criteria language fix (unsuccessful)
-
-Warnings: 96 → 90 (-6)
-Errors: 0 → 0 (maintained)
-
-Next: Phase 4.4 - Create 33 missing examples
-```
+| Fase | Warnings | Redução | Acumulado |
+|------|----------|---------|-----------|
+| Início | 105 | - | - |
+| 4.2 | 96 | -9 | -9 |
+| 4.3 | 90 | -6 | -15 |
+| **4.4 (parcial)** | **86** | **-4** | **-19** |
+| 4.4 (meta final) | 57 | -29 | -48 |
+| 4.5 (planejada) | 18-22 | -35 a -39 | -83 a -87 |
+| **Meta Final** | **~12** | - | **~93 (-88.5%)** |
 
 ---
 
@@ -142,21 +183,39 @@ Next: Phase 4.4 - Create 33 missing examples
 
 ```
 "Continue a Fase 4.4 de redução de warnings.
-Estado: 90 warnings.
-Foco: Criar 33 exemplos para profiles/extensions.
-Meta: chegar a 57 warnings.
+Estado: 86 warnings (restam 29 exemplos).
+Progresso: 4/33 exemplos criados.
+Meta: chegar a 57 warnings (-29).
 Ver CONTINUE_HERE.md"
 ```
 
+**Foco imediato:**
+1. Criar 5-10 profiles simples (fertility, mobility, environmental)
+2. Adicionar 10-15 extensions a exemplos existentes
+3. Build e validar progresso
+4. Commit incremental
+
 ---
 
-## Documentação Completa
+## Arquivos Chave
+
+- **Vital Signs:** `input/fsh/examples/VitalSignsExamples.fsh` ✅ (modificado)
+- **Nutrition:** `input/fsh/examples/NutritionExamples.fsh` ✅ (modificado)
+- **Mobility:** `input/fsh/examples/MobilityExamples.fsh`
+- **Sleep:** `input/fsh/examples/SleepExamples.fsh`
+- **Environmental:** `input/fsh/examples/EnvironmentalExamples.fsh`
+- **Reproductive:** `input/fsh/examples/ReproductiveExamples.fsh` (criar se necessário)
+
+---
+
+## Documentação
 
 - **Fase 4.2:** `backups/phase4_research_specifications/20251003_102500_phase42_complete.md`
 - **Fase 4.3:** `backups/phase4_research_specifications/20251003_122500_phase43_complete.md`
-- **Quick Ref:** `backups/phase4_research_specifications/phase4_quick_reference.md`
+- **Fase 4.4 (parcial):** Este arquivo + commit `3fe09fc5`
 
 ---
 
-**Status:** ✅ Pronto para commit → sync → Fase 4.4
-**Última atualização:** 2025-10-03 12:26
+**Status:** 🔄 Fase 4.4 em progresso (12% completo)
+**Próximo:** Criar 29 exemplos restantes
+**Última atualização:** 2025-10-03 13:05
