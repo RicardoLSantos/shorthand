@@ -3,7 +3,7 @@ InstanceOf: ConceptMap
 Usage: #definition
 Title: "Mindfulness Diagnostic Mappings"
 Description: "Mapping of mindfulness outcomes to diagnostic codes"
-
+* name = "MindfulnessDiagnosticMap"
 * status = #draft
 * experimental = false
 * purpose = "Map mindfulness outcomes to standard diagnostic codes"
