@@ -85,3 +85,34 @@ Title: "Blood Pressure Monitor Device"
 * manufacturer = "HealthTech Devices"
 * modelNumber = "BPM-2024"
 * type = $SCT#258057004 "Non-invasive blood pressure monitor"
+
+Instance: AdvancedVitalSignsExample
+InstanceOf: AdvancedVitalSigns
+Usage: #example
+Description: "Advanced vital signs observation with multiple components"
+Title: "Advanced Vital Signs Example"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2024-03-19T15:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/DeviceHeartRateMonitor)
+* code = $LOINC#85353-1 "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+* component[hrvSpectral].valueQuantity = 42 'ms' "millisecond"
+* component[meanArterialPressure].valueQuantity = 93 'mmHg' "millimeter of mercury"
+* component[autonomicBalance].valueQuantity = 1.2 '{ratio}' "ratio"
+* note.text = "Comprehensive cardiovascular assessment during routine checkup"
+
+Instance: LifestyleVitalSignsExample
+InstanceOf: LifestyleVitalSigns
+Usage: #example
+Description: "Lifestyle vital signs observation example"
+Title: "Lifestyle Vital Signs Example"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2024-03-19T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* code = $LOINC#85354-9 "Blood pressure panel with all children optional"
+* valueQuantity = 110 'mm[Hg]' "millimeter of mercury"
+* valueQuantity.system = $UCUM
+* device = Reference(Device/iphone-example)
+* note.text = "Morning vital signs check via Health app"

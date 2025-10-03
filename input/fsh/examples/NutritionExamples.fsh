@@ -93,3 +93,18 @@ Title: "Daily Water Intake Example"
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "milliliter"
 * note.text = "Total water and fluid intake during the day"
+
+Instance: NutritionIntakeObservationExample
+InstanceOf: NutritionIntakeObservation
+Usage: #example
+Description: "Generic nutrition intake observation example"
+Title: "Nutrition Intake Observation Example"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2024-03-19T12:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* code = $LOINC#9052-2 "Calorie intake total"
+* valueQuantity = 650 'kcal' "kilocalorie"
+* valueQuantity.system = $UCUM
+* method = $SCT#229059009 "Food diary"
+* note.text = "Lunch meal - Mediterranean diet"

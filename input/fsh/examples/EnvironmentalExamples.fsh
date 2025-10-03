@@ -68,6 +68,21 @@ Title: "UV Exposure Measurement Example"
 
 * note.text = "Measurement taken during outdoor activity"
 
+Instance: EnvironmentalObservationExample
+InstanceOf: EnvironmentalObservation
+Usage: #example
+Description: "Generic environmental observation example"
+Title: "Environmental Observation Example"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2024-03-19T14:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/EnvironmentalDeviceExample)
+* code = $SCT#276885007 "Environmental assessment"
+* valueQuantity = 22 'Cel' "degree Celsius"
+* valueQuantity.system = $UCUM
+* note.text = "Ambient temperature measurement"
+
 Instance: EnvironmentalDeviceExample
 InstanceOf: Device
 Usage: #example

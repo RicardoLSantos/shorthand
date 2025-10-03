@@ -95,7 +95,21 @@ Title: "Smart Scale Device"
 * modelNumber = "SBA-2024"
 * type = $SCT#5159002 "Physiologic monitoring system"
 
-Instance: BioimpedanceAnalyzer  
+Instance: BodyMetricsObservationExample
+InstanceOf: BodyMetricsObservation
+Usage: #example
+Description: "Generic body metrics observation example"
+Title: "Body Metrics Observation Example"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2024-03-19T08:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* code = $LOINC#8716-3 "Vital signs"
+* valueQuantity = 98.6 '[degF]' "degree Fahrenheit"
+* valueQuantity.system = $UCUM
+* note.text = "Baseline body temperature measurement"
+
+Instance: BioimpedanceAnalyzer
 InstanceOf: Device
 Usage: #example
 Description: "Bioimpedance analyzer device example"

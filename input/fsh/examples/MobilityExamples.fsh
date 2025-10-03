@@ -72,3 +72,34 @@ Title: "Walking Speed Measurement Example"
 
 * component[speed].valueQuantity = 1.2 'm/s' "meters per second"
 * component[distance].valueQuantity = 10 'm' "meters"
+
+Instance: MobilityProfileExample
+InstanceOf: MobilityProfile
+Usage: #example
+Description: "Comprehensive mobility assessment example"
+Title: "Mobility Profile Assessment Example"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2024-03-19T09:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/iphone-example)
+* code = $LIFESTYLEOBS#balance-assessment "Balance assessment"
+* component[steadiness].valueQuantity = 82 '%' "percent"
+* component[balance].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/balance-status#normal "Normal"
+* component[gait].valueQuantity = 1.1 'm/s' "meters per second"
+* component[movement].valueString = "Independent ambulation"
+
+Instance: MobilityRiskAssessmentExample
+InstanceOf: MobilityRiskAssessment
+Usage: #example
+Description: "Mobility risk assessment example"
+Title: "Mobility Risk Assessment Example"
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* occurrenceDateTime = "2024-03-19T09:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* basis = Reference(MobilityProfileExample)
+* prediction[fallRisk].outcome = $SCT#217082002 "Fall risk"
+* prediction[fallRisk].probabilityDecimal = 0.15
+* prediction[fallRisk].qualitativeRisk = http://terminology.hl7.org/CodeSystem/risk-probability#low "Low risk"
+* note.text = "Patient shows good mobility metrics with low fall risk based on walking steadiness assessment"

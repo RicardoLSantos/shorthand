@@ -21,3 +21,24 @@ Description: "Symptom severity observation example"
 * performer = Reference(Practitioner/PractitionerExample)
 * effectiveDateTime = "2024-03-19T10:30:00Z"
 // ... resto do exemplo ...
+
+Instance: SymptomQuestionnaireExample
+InstanceOf: SymptomQuestionnaire
+Usage: #example
+Description: "Symptom assessment questionnaire example"
+Title: "Symptom Assessment Questionnaire Example"
+* status = #active
+* title = "Daily Symptom Assessment"
+* item[symptomType].linkId = "symptom-type"
+* item[symptomType].text = "Type of Symptom"
+* item[symptomType].type = #choice
+* item[symptomType].required = true
+* item[location].linkId = "location"
+* item[location].text = "Location"
+* item[location].type = #string
+* item[onset].linkId = "onset"
+* item[onset].text = "When did it start?"
+* item[onset].type = #dateTime
+* item[description].linkId = "description"
+* item[description].text = "Description"
+* item[description].type = #text
