@@ -23,11 +23,11 @@ Description: "Profile for recording mindfulness practice sessions and outcomes"
 * component ^slicing.rules = #open
 
 * component contains
-    sessionDuration 0..1 and
-    stressLevel 0..1 and
-    moodState 0..1 and
-    relaxationResponse 0..1 and
-    mindfulnessType 0..1
+    sessionDuration 0..1 MS and
+    stressLevel 0..1 MS and
+    moodState 0..1 MS and
+    relaxationResponse 0..1 MS and
+    mindfulnessType 0..1 MS
 
 * component[sessionDuration]
   * code = $SCT#704323007 "Process duration"
