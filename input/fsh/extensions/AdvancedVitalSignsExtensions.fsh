@@ -132,7 +132,7 @@ Id: circadian-phase-vs
 Title: "Circadian Phase Value Set"
 Description: "Value set for circadian rhythm phases"
 
-* ^experimental = true
+* ^experimental = false
 * codes from system CircadianPhaseCS
 
 CodeSystem: CircadianPhaseCS
@@ -140,7 +140,7 @@ Id: circadian-phase-cs
 Title: "Circadian Phase Code System"
 Description: "Code system for circadian rhythm phases"
 
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = true
 
 * #early-morning "Early Morning Phase" "Period shortly after awakening"
@@ -178,7 +178,7 @@ Id: measurement-quality-vs
 Title: "Measurement Quality Value Set"
 Description: "Value set for measurement quality indicators"
 
-* ^experimental = true
+* ^experimental = false
 * codes from system MeasurementQualityCS
 
 CodeSystem: MeasurementQualityCS
@@ -186,7 +186,7 @@ Id: measurement-quality-cs
 Title: "Measurement Quality Code System"
 Description: "Code system for measurement quality indicators"
 
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = true
 
 * #excellent "Excellent Quality" "High quality measurement with minimal noise"
