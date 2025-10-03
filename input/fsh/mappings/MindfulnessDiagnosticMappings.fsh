@@ -11,7 +11,7 @@ Description: "Mapping of mindfulness outcomes to diagnostic codes"
 * targetUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-snomed-vs"
 
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-outcome-cs"
-* group[0].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-snomed-vs"
+* group[0].target = "http://snomed.info/sct"
 * group[0].element[0]
   * code = #stressReduction
   * target[0]
