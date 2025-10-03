@@ -20,10 +20,10 @@ Description: "Profile for fertility signs and symptoms"
     ovulationTest 0..1 MS and
     fertilityStatus 0..1 MS
 
-* component[cervicalMucus].code = $LOINC#45687-1 "Cervical mucus quality"
+* component[cervicalMucus].code = $LOINC#10570-0 "Consistency of Cervical mucus"
 * component[cervicalMucus].valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cervical-mucus-vs (required)
 
-* component[ovulationTest].code = $LOINC#45700-2 "Ovulation test"
+* component[ovulationTest].code = $LOINC#11976-8 "Ovulation date"
 * component[ovulationTest].valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ovulation-test-vs (required)
 
 * component[fertilityStatus].code = $LOINC#82810-3 "Pregnancy status"

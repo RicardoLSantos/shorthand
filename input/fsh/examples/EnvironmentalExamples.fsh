@@ -78,8 +78,8 @@ Title: "Environmental Observation Example"
 * effectiveDateTime = "2024-03-19T14:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/EnvironmentalDeviceExample)
-* code = $LOINC#69968-8 "Environment observation"
-* valueString = "Indoor office environment"
+* code = $LOINC#60832-3 "Room temperature"
+* valueQuantity = 22 'Cel' "degrees Celsius"
 * note.text = "Environmental context observation"
 
 Instance: EnvironmentalDeviceExample
