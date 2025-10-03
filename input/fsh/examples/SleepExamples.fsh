@@ -3,8 +3,9 @@ InstanceOf: SleepObservation
 Usage: #example
 Description: "Sleep observation example"
 Title: "Example of Sleep Record"
- 
+
 * status = #final
+* performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-panel "Sleep measurement panel"
 * subject = Reference(PatientExample)

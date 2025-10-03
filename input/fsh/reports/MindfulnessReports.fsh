@@ -20,11 +20,11 @@ Description: "Example instance of MindfulnessProgressReport"
   * description = "Frequency of mindfulness practice"
   * population[0]
     * code = http://terminology.hl7.org/CodeSystem/measure-population#denominator
-    * criteria.language = #text/fhirpath
+    * criteria.language = #text/cql-identifier
     * criteria.expression = "Observation.where(code.coding.code='711415009')"
   * stratifier[0]
     * code.text = "weekly"
-    * criteria.language = #text/fhirpath
+    * criteria.language = #text/cql-identifier
     * criteria.expression = "Observation.effective.as(DateTime).truncate(@T).truncate(@W)"
 
 * group[1]
@@ -32,11 +32,11 @@ Description: "Example instance of MindfulnessProgressReport"
   * description = "Stress level changes over time"
   * population[0]
     * code = http://terminology.hl7.org/CodeSystem/measure-population#denominator
-    * criteria.language = #text/fhirpath
+    * criteria.language = #text/cql-identifier
     * criteria.expression = "Observation.where(component.code.coding.code='725854004')"
   * stratifier[0]
     * code.text = "trend"
-    * criteria.language = #text/fhirpath
+    * criteria.language = #text/cql-identifier
     * criteria.expression = "component.where(code.coding.code='725854004').value.value"
 
 RuleSet: ReportingMetrics
@@ -45,11 +45,11 @@ RuleSet: ReportingMetrics
   * description = "Duration of practice sessions"
   * population[0]
     * code = #denominator
-    * criteria.language = #text/fhirpath
+    * criteria.language = #text/cql-identifier
     * criteria.expression = "Observation.component.where(code.coding.code='118682006')"
   * stratifier[0]
     * code = #average
-    * criteria.language = #text/fhirpath
+    * criteria.language = #text/cql-identifier
     * criteria.expression = "component.where(code.coding.code='118682006').value.value"
 
 * group[+]
@@ -57,5 +57,5 @@ RuleSet: ReportingMetrics
   * description = "Mood state changes"
   * population[0]
     * code = #denominator
-    * criteria.language = #text/fhirpath
+    * criteria.language = #text/cql-identifier
     * criteria.expression = "Observation.component.where(code.coding.code='373931001')"

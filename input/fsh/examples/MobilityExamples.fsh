@@ -45,6 +45,7 @@ Description: "Walking steadiness observation example"
 Title: "Walking Steadiness Measurement Example"
 
 * status = #final
+* performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $LIFESTYLEOBS#balance-assessment "Balance assessment"
 * subject = Reference(Patient/PatientExample)
@@ -61,6 +62,7 @@ Description: "Walking speed observation example"
 Title: "Walking Speed Measurement Example"
 
 * status = #final
+* performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#gait-assessment "Gait assessment"
 * subject = Reference(Patient/PatientExample)

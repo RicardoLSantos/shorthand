@@ -4,6 +4,7 @@ Usage: #example
 Description: "Physical activity observation example"
 Title: "Example of Walking Activity"
 * status = #final
+* performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $SNOMED#129006008 "Walking"
 * subject = Reference(PatientExample)

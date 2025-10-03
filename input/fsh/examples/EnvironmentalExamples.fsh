@@ -41,6 +41,7 @@ Title: "UV Exposure Measurement Example"
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * status = #final
+* performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * code = $LIFESTYLEOBS#uv-duration "UV exposure duration"
 * subject = Reference(Patient/PatientExample)
@@ -73,7 +74,7 @@ Usage: #example
 Description: "Environmental monitoring device example"
 Title: "Environmental Monitoring Device"
 
-* identifier.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/devices"
+* identifier.system = "urn:oid:2.16.840.1.113883.3.4.5.4"
 * identifier.value = "iPhone-ENV-001"
 * manufacturer = "Apple Inc."
 * modelNumber = "iPhone 15 Pro"

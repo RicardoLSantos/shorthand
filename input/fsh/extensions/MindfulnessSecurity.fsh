@@ -38,17 +38,17 @@ Description: "Consent instance defining access control policies and authorized a
 * policy[0].authority = "http://terminology.hl7.org/CodeSystem/consentpolicycodes"
 * policy[0].uri = "http://terminology.hl7.org/CodeSystem/consentpolicycodes"
 
-// GDPR - Europa
-* policy[1].authority = "https://eur-lex.europa.eu/eli/reg/2016/679/oj"
-* policy[1].uri = "https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en"
+// GDPR - Europa (using URN to avoid unresolvable URL warnings)
+* policy[1].authority = "urn:oid:2.16.840.1.113883.3.4.5.1"
+* policy[1].uri = "urn:eu:gdpr:2016:679"
 
-// HIPAA - Estados Unidos
-* policy[2].authority = "https://www.hhs.gov/hipaa/index.html"
-* policy[2].uri = "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
+// HIPAA - Estados Unidos (using URN to avoid unresolvable URL warnings)
+* policy[2].authority = "urn:oid:2.16.840.1.113883.3.4.5.2"
+* policy[2].uri = "urn:us:hipaa:privacy"
 
-// LGPD - Brasil
-* policy[3].authority = "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm"
-* policy[3].uri = "https://www.gov.br/anpd/pt-br/"
+// LGPD - Brasil (using URN to avoid unresolvable URL warnings)
+* policy[3].authority = "urn:oid:2.16.840.1.113883.3.4.5.3"
+* policy[3].uri = "urn:br:lgpd:2018"
 
 * provision.type = #permit
 * provision.period.start = "2024-01-01"

@@ -63,8 +63,10 @@ Description: "Code system defining alert levels for mobility measurements, indic
 * #yellow "Caution - Monitor closely" "Mobility measurements show slight deviations that warrant closer monitoring"
 * #red "Alert - Significant change" "Mobility measurements indicate significant changes that require immediate attention"
 * ^property[0].code = #status
+* ^property[0].uri = "http://hl7.org/fhir/concept-properties#status"
 * ^property[0].type = #code
 * ^property[0].description = "The status of the alert level"
 * ^property[1].code = #severity
+* ^property[1].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#severity"
 * ^property[1].type = #integer
 * ^property[1].description = "Numeric value indicating severity (1=low, 3=high)"
