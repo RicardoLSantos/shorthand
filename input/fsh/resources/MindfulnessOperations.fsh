@@ -22,7 +22,7 @@ Description: "Operation to start a new mindfulness session"
 
 * status = #active
 * kind = #operation
-* name = "start-session"
+* name = "StartSession"
 * code = #start
 * resource = #Observation
 * system = false
@@ -43,7 +43,7 @@ Description: "Operation to end an ongoing mindfulness session"
 
 * status = #active
 * kind = #operation
-* name = "end-session"
+* name = "EndSession"
 * code = #end
 * resource = #Observation
 * system = false
