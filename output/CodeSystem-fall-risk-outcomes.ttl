@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fall-risk-outcomes"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem fall-risk-outcomes</b></p><a name=\"fall-risk-outcomes\"> </a><a name=\"hcfall-risk-outcomes\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">low-risk<a name=\"fall-risk-outcomes-low-risk\"> </a></td><td>Low Risk</td><td>Low risk of falling - minimal intervention needed</td></tr><tr><td style=\"white-space:nowrap\">moderate-risk<a name=\"fall-risk-outcomes-moderate-risk\"> </a></td><td>Moderate Risk</td><td>Moderate risk of falling - preventive measures recommended</td></tr><tr><td style=\"white-space:nowrap\">high-risk<a name=\"fall-risk-outcomes-high-risk\"> </a></td><td>High Risk</td><td>High risk of falling - immediate intervention required</td></tr><tr><td style=\"white-space:nowrap\">fall-occurred<a name=\"fall-risk-outcomes-fall-occurred\"> </a></td><td>Fall Occurred</td><td>Patient experienced an actual fall event</td></tr><tr><td style=\"white-space:nowrap\">near-fall<a name=\"fall-risk-outcomes-near-fall\"> </a></td><td>Near Fall</td><td>Patient experienced a near fall event or loss of balance</td></tr><tr><td style=\"white-space:nowrap\">recurrent-falls<a name=\"fall-risk-outcomes-recurrent-falls\"> </a></td><td>Recurrent Falls</td><td>Patient has history of multiple fall events</td></tr><tr><td style=\"white-space:nowrap\">fall-with-injury<a name=\"fall-risk-outcomes-fall-with-injury\"> </a></td><td>Fall with Injury</td><td>Fall event resulted in injury</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "FallRiskOutcomes"] ; # 
+  fhir:title [ fhir:v "Fall Risk Outcomes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-10-03T16:37:46+01:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Outcomes and assessment results related to fall risk in mobility evaluations"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "low-risk" ] ;
+     fhir:display [ fhir:v "Low Risk" ] ;
+     fhir:definition [ fhir:v "Low risk of falling - minimal intervention needed" ]
+  ] [
+     fhir:code [ fhir:v "moderate-risk" ] ;
+     fhir:display [ fhir:v "Moderate Risk" ] ;
+     fhir:definition [ fhir:v "Moderate risk of falling - preventive measures recommended" ]
+  ] [
+     fhir:code [ fhir:v "high-risk" ] ;
+     fhir:display [ fhir:v "High Risk" ] ;
+     fhir:definition [ fhir:v "High risk of falling - immediate intervention required" ]
+  ] [
+     fhir:code [ fhir:v "fall-occurred" ] ;
+     fhir:display [ fhir:v "Fall Occurred" ] ;
+     fhir:definition [ fhir:v "Patient experienced an actual fall event" ]
+  ] [
+     fhir:code [ fhir:v "near-fall" ] ;
+     fhir:display [ fhir:v "Near Fall" ] ;
+     fhir:definition [ fhir:v "Patient experienced a near fall event or loss of balance" ]
+  ] [
+     fhir:code [ fhir:v "recurrent-falls" ] ;
+     fhir:display [ fhir:v "Recurrent Falls" ] ;
+     fhir:definition [ fhir:v "Patient has history of multiple fall events" ]
+  ] [
+     fhir:code [ fhir:v "fall-with-injury" ] ;
+     fhir:display [ fhir:v "Fall with Injury" ] ;
+     fhir:definition [ fhir:v "Fall event resulted in injury" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

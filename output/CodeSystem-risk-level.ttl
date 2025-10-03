@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "risk-level"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem risk-level</b></p><a name=\"risk-level\"> </a><a name=\"hcrisk-level\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">none<a name=\"risk-level-none\"> </a></td><td>None</td><td>No risk identified - normal or optimal status</td></tr><tr><td style=\"white-space:nowrap\">low<a name=\"risk-level-low\"> </a></td><td>Low</td><td>Low risk level - routine monitoring sufficient</td></tr><tr><td style=\"white-space:nowrap\">moderate<a name=\"risk-level-moderate\"> </a></td><td>Moderate</td><td>Moderate risk level - increased surveillance recommended</td></tr><tr><td style=\"white-space:nowrap\">high<a name=\"risk-level-high\"> </a></td><td>High</td><td>High risk level - active intervention required</td></tr><tr><td style=\"white-space:nowrap\">critical<a name=\"risk-level-critical\"> </a></td><td>Critical</td><td>Critical risk level - immediate action essential</td></tr><tr><td style=\"white-space:nowrap\">unknown<a name=\"risk-level-unknown\"> </a></td><td>Unknown</td><td>Risk level cannot be determined with available information</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "RiskLevel"] ; # 
+  fhir:title [ fhir:v "Risk Level"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-10-03T16:37:46+01:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "General risk level classification for health assessments and clinical decision support"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "none" ] ;
+     fhir:display [ fhir:v "None" ] ;
+     fhir:definition [ fhir:v "No risk identified - normal or optimal status" ]
+  ] [
+     fhir:code [ fhir:v "low" ] ;
+     fhir:display [ fhir:v "Low" ] ;
+     fhir:definition [ fhir:v "Low risk level - routine monitoring sufficient" ]
+  ] [
+     fhir:code [ fhir:v "moderate" ] ;
+     fhir:display [ fhir:v "Moderate" ] ;
+     fhir:definition [ fhir:v "Moderate risk level - increased surveillance recommended" ]
+  ] [
+     fhir:code [ fhir:v "high" ] ;
+     fhir:display [ fhir:v "High" ] ;
+     fhir:definition [ fhir:v "High risk level - active intervention required" ]
+  ] [
+     fhir:code [ fhir:v "critical" ] ;
+     fhir:display [ fhir:v "Critical" ] ;
+     fhir:definition [ fhir:v "Critical risk level - immediate action essential" ]
+  ] [
+     fhir:code [ fhir:v "unknown" ] ;
+     fhir:display [ fhir:v "Unknown" ] ;
+     fhir:definition [ fhir:v "Risk level cannot be determined with available information" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

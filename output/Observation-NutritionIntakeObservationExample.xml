@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="NutritionIntakeObservationExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-intake-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation NutritionIntakeObservationExample</b></p><a name="NutritionIntakeObservationExample"> </a><a name="hcNutritionIntakeObservationExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-nutrition-intake-observation.html">Nutrition Intake Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category survey}">Survey</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 9052-2}">Calorie intake total</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 12:30:00+0000</p><p><b>performer</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Jane Smith </a></p><p><b>value</b>: 650 kilocalorie<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigokcal = 'kcal')</span></p><p><b>note</b>: </p><blockquote><div><p>Lunch meal - Mediterranean diet</p>
+</div></blockquote><p><b>method</b>: <span title="Códigos:{http://snomed.info/sct 229059009}">Report</span></p></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="survey"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="9052-2"/>
+      <display value="Calorie intake total"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T12:30:00Z"/>
+  <performer>
+    <reference value="Practitioner/PractitionerExample"/>
+  </performer>
+  <valueQuantity>
+    <value value="650"/>
+    <unit value="kilocalorie"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="kcal"/>
+  </valueQuantity>
+  <note>
+    <text value="Lunch meal - Mediterranean diet"/>
+  </note>
+  <method>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="229059009"/>
+      <display value="Report"/>
+    </coding>
+  </method>
+</Observation>

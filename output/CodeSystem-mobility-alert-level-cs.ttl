@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "mobility-alert-level-cs"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mobility-alert-level-cs</b></p><a name=\"mobility-alert-level-cs\"> </a><a name=\"hcmobility-alert-level-cs\"> </a><p><b>Propriedades</b></p><p><b>Este sistema de códigos define as seguintes propriedades para os seus conceitos</b></p><table class=\"grid\"><tr><td><b>Nome</b></td><td><b>Código</b></td><td><b>Tipo</b></td><td><b>Descrição</b></td></tr><tr><td>status</td><td>status</td><td>code</td><td>The status of the alert level</td></tr><tr><td>severity</td><td>severity</td><td>integer</td><td>Numeric value indicating severity (1=low, 3=high)</td></tr></table><p><b>Conceitos</b></p><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">green<a name=\"mobility-alert-level-cs-green\"> </a></td><td>Normal - No concern</td><td>Mobility measurements are within normal range and show no concerning patterns</td></tr><tr><td style=\"white-space:nowrap\">yellow<a name=\"mobility-alert-level-cs-yellow\"> </a></td><td>Caution - Monitor closely</td><td>Mobility measurements show slight deviations that warrant closer monitoring</td></tr><tr><td style=\"white-space:nowrap\">red<a name=\"mobility-alert-level-cs-red\"> </a></td><td>Alert - Significant change</td><td>Mobility measurements indicate significant changes that require immediate attention</td></tr></table></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mobility-alert-level-cs</b></p><a name=\"mobility-alert-level-cs\"> </a><a name=\"hcmobility-alert-level-cs\"> </a><p><b>Propriedades</b></p><p><b>Este sistema de códigos define as seguintes propriedades para os seus conceitos</b></p><table class=\"grid\"><tr><td><b>Nome</b></td><td><b>Código</b></td><td><b>URI</b></td><td><b>Tipo</b></td><td><b>Descrição</b></td></tr><tr><td>status</td><td>status</td><td>http://hl7.org/fhir/concept-properties#status</td><td>code</td><td>The status of the alert level</td></tr><tr><td>severity</td><td>severity</td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#severity</td><td>integer</td><td>Numeric value indicating severity (1=low, 3=high)</td></tr></table><p><b>Conceitos</b></p><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">green<a name=\"mobility-alert-level-cs-green\"> </a></td><td>Normal - No concern</td><td>Mobility measurements are within normal range and show no concerning patterns</td></tr><tr><td style=\"white-space:nowrap\">yellow<a name=\"mobility-alert-level-cs-yellow\"> </a></td><td>Caution - Monitor closely</td><td>Mobility measurements show slight deviations that warrant closer monitoring</td></tr><tr><td style=\"white-space:nowrap\">red<a name=\"mobility-alert-level-cs-red\"> </a></td><td>Alert - Significant change</td><td>Mobility measurements indicate significant changes that require immediate attention</td></tr></table></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
@@ -19,7 +19,7 @@
   fhir:title [ fhir:v "Mobility Alert Level Code System"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-10-02T18:31:12+01:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-10-03T16:37:46+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -81,10 +81,12 @@
   fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
   fhir:property ( [
      fhir:code [ fhir:v "status" ] ;
+     fhir:uri [ fhir:v "http://hl7.org/fhir/concept-properties#status"^^xsd:anyURI ] ;
      fhir:description [ fhir:v "The status of the alert level" ] ;
      fhir:type [ fhir:v "code" ]
   ] [
      fhir:code [ fhir:v "severity" ] ;
+     fhir:uri [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#severity"^^xsd:anyURI ] ;
      fhir:description [ fhir:v "Numeric value indicating severity (1=low, 3=high)" ] ;
      fhir:type [ fhir:v "integer" ]
   ] ) ; # 

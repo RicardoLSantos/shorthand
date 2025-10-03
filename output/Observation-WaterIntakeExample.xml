@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="WaterIntakeExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation WaterIntakeExample</b></p><a name="WaterIntakeExample"> </a><a name="hcWaterIntakeExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-water-intake-observation.html">Water Intake Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category survey}">Survey</span></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs water-intake}">Water intake volume</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 20:00:00+0000</p><p><b>performer</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Jane Smith </a></p><p><b>value</b>: 2500 milliliter<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomL = 'mL')</span></p><p><b>note</b>: </p><blockquote><div><p>Total water and fluid intake during the day</p>
+</div></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="survey"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+      <code value="water-intake"/>
+      <display value="Water intake volume"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T20:00:00Z"/>
+  <performer>
+    <reference value="Practitioner/PractitionerExample"/>
+  </performer>
+  <valueQuantity>
+    <value value="2500"/>
+    <unit value="milliliter"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="mL"/>
+  </valueQuantity>
+  <note>
+    <text value="Total water and fluid intake during the day"/>
+  </note>
+</Observation>

@@ -20,11 +20,11 @@ Description: "Profile for fertility signs and symptoms"
     ovulationTest 0..1 MS and
     fertilityStatus 0..1 MS
 
-* component[cervicalMucus].code = $SCT#289567002 "Cervical mucus"
+* component[cervicalMucus].code = $LOINC#45687-1 "Cervical mucus quality"
 * component[cervicalMucus].valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cervical-mucus-vs (required)
 
-* component[ovulationTest].code = $SCT#252366009 "Ovulation test"
+* component[ovulationTest].code = $LOINC#45700-2 "Ovulation test"
 * component[ovulationTest].valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ovulation-test-vs (required)
 
-* component[fertilityStatus].code = $SCT#87527008 "Fertility status"
+* component[fertilityStatus].code = $LOINC#82810-3 "Pregnancy status"
 * component[fertilityStatus].valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fertility-status-vs (required)

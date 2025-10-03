@@ -3,15 +3,15 @@
   "id" : "iOS-Lifestyle-Medicine",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name=\"iOS-Lifestyle-Medicine\"> </a><a name=\"hciOS-Lifestyle-Medicine\"> </a><h2>iOS_Lifestyle_Medicine_HEADS2_FMUP</h2><p>O URL oficial para este guia de implementação é: </p><pre>https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name=\"iOS-Lifestyle-Medicine\"> </a><a name=\"hciOS-Lifestyle-Medicine\"> </a><h2>IOSLifestyleMedicineHEADS2FMUP</h2><p>O URL oficial para este guia de implementação é: </p><pre>https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>"
   },
   "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine",
   "version" : "0.1.0",
-  "name" : "iOS_Lifestyle_Medicine_HEADS2_FMUP",
+  "name" : "IOSLifestyleMedicineHEADS2FMUP",
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-10-02T18:31:12+01:00",
+  "date" : "2025-10-03T16:37:46+01:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -703,6 +703,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/AdvancedVitalSignsExample"
+      },
+      "name" : "Advanced Vital Signs Example",
+      "description" : "Advanced vital signs observation with multiple components",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -746,6 +758,18 @@
       },
       "name" : "Allostatic Load Extension",
       "description" : "Measure of cumulative physiological burden over time",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/assistance-level-outcomes"
+      },
+      "name" : "Assistance Level Outcomes",
+      "description" : "Outcomes related to assistance levels in mobility assessments",
       "exampleBoolean" : false
     },
     {
@@ -979,6 +1003,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BodyMetricsObservationExample"
+      },
+      "name" : "Body Metrics Observation Example",
+      "description" : "Generic body metrics observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-metrics-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -1099,6 +1135,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CalorieIntakeExample"
+      },
+      "name" : "Daily Calorie Intake Example",
+      "description" : "Daily calorie intake observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/calorie-intake-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/MacronutrientsExample"
+      },
+      "name" : "Daily Macronutrients Distribution Example",
+      "description" : "Daily macronutrients observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/macronutrients-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Basic"
       }],
       "reference" : {
@@ -1143,6 +1203,18 @@
       "name" : "Daily Nutrition Questionnaire Response Example",
       "description" : "Nutrition questionnaire response example",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WaterIntakeExample"
+      },
+      "name" : "Daily Water Intake Example",
+      "description" : "Daily water intake observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation"
     },
     {
       "extension" : [{
@@ -1231,6 +1303,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/environmental-context"
+      },
+      "name" : "Environmental Context Code System",
+      "description" : "Environmental factors and settings affecting health measurements and observations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1263,6 +1347,18 @@
       "name" : "Environmental Monitoring Device",
       "description" : "Environmental monitoring device example",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/EnvironmentalObservationExample"
+      },
+      "name" : "Environmental Observation Example",
+      "description" : "Generic environmental observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation"
     },
     {
       "extension" : [{
@@ -1447,6 +1543,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/fall-risk-outcomes"
+      },
+      "name" : "Fall Risk Outcomes",
+      "description" : "Outcomes and assessment results related to fall risk in mobility evaluations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -1455,6 +1563,18 @@
       "name" : "Fall Risk Outcomes Value Set",
       "description" : "Value set for fall risk assessment outcomes",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/FertilityObservationExample"
+      },
+      "name" : "Fertility Observation Example",
+      "description" : "Fertility observation with cervical mucus and ovulation test",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/fertility-observation"
     },
     {
       "extension" : [{
@@ -1623,6 +1743,18 @@
       "name" : "Lifestyle Medicine Vital Signs Profile",
       "description" : "Profile for vital signs data from iOS Health App",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/LifestyleVitalSignsExample"
+      },
+      "name" : "Lifestyle Vital Signs Example",
+      "description" : "Lifestyle vital signs observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/lifestyle-vital-signs"
     },
     {
       "extension" : [{
@@ -2263,6 +2395,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mobility-decline-outcomes"
+      },
+      "name" : "Mobility Decline Outcomes",
+      "description" : "Outcomes and trends related to mobility decline assessments over time",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -2283,6 +2427,30 @@
       "name" : "Mobility Profile",
       "description" : "Profile for mobility data from iOS Health App",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/MobilityProfileExample"
+      },
+      "name" : "Mobility Profile Assessment Example",
+      "description" : "Comprehensive mobility assessment example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-profile"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RiskAssessment"
+      }],
+      "reference" : {
+        "reference" : "RiskAssessment/MobilityRiskAssessmentExample"
+      },
+      "name" : "Mobility Risk Assessment Example",
+      "description" : "Mobility risk assessment example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-risk-assessment"
     },
     {
       "extension" : [{
@@ -2319,6 +2487,18 @@
       "name" : "Mood Value Set",
       "description" : "Value set for mood states",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/MultiJurisdictionalConsentExample"
+      },
+      "name" : "Multi-Jurisdictional Consent Example",
+      "description" : "Multi-jurisdictional healthcare consent supporting GDPR, HIPAA, and LGPD",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent"
     },
     {
       "extension" : [{
@@ -2395,6 +2575,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/NutritionIntakeObservationExample"
+      },
+      "name" : "Nutrition Intake Observation Example",
+      "description" : "Generic nutrition intake observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-intake-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -2451,6 +2643,18 @@
       "name" : "Ovulation Test Value Set",
       "description" : "Value set for ovulation test results",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/OxygenSaturationExample"
+      },
+      "name" : "Oxygen Saturation Measurement Example",
+      "description" : "Oxygen saturation observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/oxygen-saturation-observation"
     },
     {
       "extension" : [{
@@ -2587,6 +2791,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DevicePulseOximeter"
+      },
+      "name" : "Pulse Oximeter Device",
+      "description" : "Pulse oximeter device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -2690,6 +2906,18 @@
       },
       "name" : "Reproductive Health Tracking Questionnaire",
       "description" : "Daily questionnaire for social-history health tracking",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/risk-level"
+      },
+      "name" : "Risk Level",
+      "description" : "General risk level classification for health assessments and clinical decision support",
       "exampleBoolean" : false
     },
     {
@@ -3159,6 +3387,18 @@
       "name" : "Symptom Assessment Questionnaire",
       "description" : "Questionnaire template for symptom assessments",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/SymptomQuestionnaireExample"
+      },
+      "name" : "Symptom Assessment Questionnaire Example",
+      "description" : "Symptom assessment questionnaire example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire"
     },
     {
       "extension" : [{

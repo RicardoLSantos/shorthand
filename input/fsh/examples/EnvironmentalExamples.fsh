@@ -78,8 +78,8 @@ Title: "Environmental Observation Example"
 * effectiveDateTime = "2024-03-19T14:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/EnvironmentalDeviceExample)
-* code = $SCT#31032004 "Body position finding"
-* valueCodeableConcept = $SCT#33586001 "Sitting position"
+* code = $LOINC#69968-8 "Environment observation"
+* valueString = "Indoor office environment"
 * note.text = "Environmental context observation"
 
 Instance: EnvironmentalDeviceExample

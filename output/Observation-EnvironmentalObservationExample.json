@@ -1,0 +1,45 @@
+{
+  "resourceType" : "Observation",
+  "id" : "EnvironmentalObservationExample",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation EnvironmentalObservationExample</b></p><a name=\"EnvironmentalObservationExample\"> </a><a name=\"hcEnvironmentalObservationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-environmental-observation.html\">Environmental Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 31032004}\">Body position finding</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 14:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 33586001}\">Sitting position</span></p><p><b>note</b>: </p><blockquote><div><p>Environmental context observation</p>\n</div></blockquote><p><b>device</b>: <a href=\"Device-EnvironmentalDeviceExample.html\">Device: identifier = urn:oid:2.16.840.1.113883.3.4.5.4#iPhone-ENV-001; status = active; manufacturer = Apple Inc.; modelNumber = iPhone 15 Pro; type = Environmental sensor device</a></p></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "survey"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "31032004",
+      "display" : "Body position finding"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2024-03-19T14:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/PractitionerExample"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "33586001",
+      "display" : "Sitting position"
+    }]
+  },
+  "note" : [{
+    "text" : "Environmental context observation"
+  }],
+  "device" : {
+    "reference" : "Device/EnvironmentalDeviceExample"
+  }
+}

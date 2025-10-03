@@ -3,15 +3,15 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="iOS-Lifestyle-Medicine"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name="iOS-Lifestyle-Medicine"> </a><a name="hciOS-Lifestyle-Medicine"> </a><h2>iOS_Lifestyle_Medicine_HEADS2_FMUP</h2><p>O URL oficial para este guia de implementação é: </p><pre>https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name="iOS-Lifestyle-Medicine"> </a><a name="hciOS-Lifestyle-Medicine"> </a><h2>IOSLifestyleMedicineHEADS2FMUP</h2><p>O URL oficial para este guia de implementação é: </p><pre>https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>
   </text>
   <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine"/>
   <version value="0.1.0"/>
-  <name value="iOS_Lifestyle_Medicine_HEADS2_FMUP"/>
+  <name value="IOSLifestyleMedicineHEADS2FMUP"/>
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2025-10-02T18:31:12+01:00"/>
+  <date value="2025-10-03T16:37:46+01:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -541,6 +541,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AdvancedVitalSignsExample"/>
+      </reference>
+      <name value="Advanced Vital Signs Example"/>
+      <description value="Advanced vital signs observation with multiple components"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -581,6 +592,17 @@
       </reference>
       <name value="Allostatic Load Extension"/>
       <description value="Measure of cumulative physiological burden over time"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/assistance-level-outcomes"/>
+      </reference>
+      <name value="Assistance Level Outcomes"/>
+      <description value="Outcomes related to assistance levels in mobility assessments"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -794,6 +816,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/BodyMetricsObservationExample"/>
+      </reference>
+      <name value="Body Metrics Observation Example"/>
+      <description value="Generic body metrics observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-metrics-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -904,6 +937,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CalorieIntakeExample"/>
+      </reference>
+      <name value="Daily Calorie Intake Example"/>
+      <description value="Daily calorie intake observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/calorie-intake-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/MacronutrientsExample"/>
+      </reference>
+      <name value="Daily Macronutrients Distribution Example"/>
+      <description value="Daily macronutrients observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/macronutrients-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Basic"/>
       </extension>
       <reference>
@@ -945,6 +1000,17 @@
       <name value="Daily Nutrition Questionnaire Response Example"/>
       <description value="Nutrition questionnaire response example"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/WaterIntakeExample"/>
+      </reference>
+      <name value="Daily Water Intake Example"/>
+      <description value="Daily water intake observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1025,6 +1091,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/environmental-context"/>
+      </reference>
+      <name value="Environmental Context Code System"/>
+      <description value="Environmental factors and settings affecting health measurements and observations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1055,6 +1132,17 @@
       <name value="Environmental Monitoring Device"/>
       <description value="Environmental monitoring device example"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/EnvironmentalObservationExample"/>
+      </reference>
+      <name value="Environmental Observation Example"/>
+      <description value="Generic environmental observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1223,6 +1311,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/fall-risk-outcomes"/>
+      </reference>
+      <name value="Fall Risk Outcomes"/>
+      <description value="Outcomes and assessment results related to fall risk in mobility evaluations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -1231,6 +1330,17 @@
       <name value="Fall Risk Outcomes Value Set"/>
       <description value="Value set for fall risk assessment outcomes"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/FertilityObservationExample"/>
+      </reference>
+      <name value="Fertility Observation Example"/>
+      <description value="Fertility observation with cervical mucus and ovulation test"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/fertility-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1385,6 +1495,17 @@
       <name value="Lifestyle Medicine Vital Signs Profile"/>
       <description value="Profile for vital signs data from iOS Health App"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/LifestyleVitalSignsExample"/>
+      </reference>
+      <name value="Lifestyle Vital Signs Example"/>
+      <description value="Lifestyle vital signs observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/lifestyle-vital-signs"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1971,6 +2092,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/mobility-decline-outcomes"/>
+      </reference>
+      <name value="Mobility Decline Outcomes"/>
+      <description value="Outcomes and trends related to mobility decline assessments over time"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -1990,6 +2122,28 @@
       <name value="Mobility Profile"/>
       <description value="Profile for mobility data from iOS Health App"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/MobilityProfileExample"/>
+      </reference>
+      <name value="Mobility Profile Assessment Example"/>
+      <description value="Comprehensive mobility assessment example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-profile"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RiskAssessment"/>
+      </extension>
+      <reference>
+        <reference value="RiskAssessment/MobilityRiskAssessmentExample"/>
+      </reference>
+      <name value="Mobility Risk Assessment Example"/>
+      <description value="Mobility risk assessment example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-risk-assessment"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2023,6 +2177,17 @@
       <name value="Mood Value Set"/>
       <description value="Value set for mood states"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/MultiJurisdictionalConsentExample"/>
+      </reference>
+      <name value="Multi-Jurisdictional Consent Example"/>
+      <description value="Multi-jurisdictional healthcare consent supporting GDPR, HIPAA, and LGPD"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2092,6 +2257,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/NutritionIntakeObservationExample"/>
+      </reference>
+      <name value="Nutrition Intake Observation Example"/>
+      <description value="Generic nutrition intake observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-intake-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -2144,6 +2320,17 @@
       <name value="Ovulation Test Value Set"/>
       <description value="Value set for ovulation test results"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/OxygenSaturationExample"/>
+      </reference>
+      <name value="Oxygen Saturation Measurement Example"/>
+      <description value="Oxygen saturation observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/oxygen-saturation-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2268,6 +2455,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/DevicePulseOximeter"/>
+      </reference>
+      <name value="Pulse Oximeter Device"/>
+      <description value="Pulse oximeter device example"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -2363,6 +2561,17 @@
       </reference>
       <name value="Reproductive Health Tracking Questionnaire"/>
       <description value="Daily questionnaire for social-history health tracking"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/risk-level"/>
+      </reference>
+      <name value="Risk Level"/>
+      <description value="General risk level classification for health assessments and clinical decision support"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2793,6 +3002,17 @@
       <name value="Symptom Assessment Questionnaire"/>
       <description value="Questionnaire template for symptom assessments"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/SymptomQuestionnaireExample"/>
+      </reference>
+      <name value="Symptom Assessment Questionnaire Example"/>
+      <description value="Symptom assessment questionnaire example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

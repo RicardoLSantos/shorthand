@@ -246,8 +246,8 @@
       "description" : "One of the resource types defined as part of this version of FHIR.",
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType",
       "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class",
+      "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType",
       "http://hl7.org/fhir/R4/valueset-all-types.html" : "FHIRAllTypes"
     },
     {
@@ -272,12 +272,12 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-consent-content-code.html" : "Consent Content Codes",
-      "http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html" : "Vital Signs",
+      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes",
       "http://hl7.org/fhir/R4/valueset-consent-category.html" : "Consent Category Codes",
-      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
       "http://hl7.org/fhir/R4/valueset-questionnaire-questions.html" : "Questionnaire Question Codes",
-      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes"
+      "http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html" : "Vital Signs",
+      "http://hl7.org/fhir/R4/valueset-consent-content-code.html" : "Consent Content Codes",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set"
     },
     {
       "url" : "http://snomed.info/sct",
@@ -289,23 +289,24 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
+      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
       "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
+      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
+      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
+      "ValueSet-activity-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
+      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
+      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
+      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
+      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
       "http://hl7.org/fhir/R4/valueset-questionnaire-answers.html" : "Questionnaire Answer Codes",
       "ValueSet-time-of-day-vs.html" : "Time of Day Value Set",
-      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
-      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
-      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
-      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
-      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
-      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
-      "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
-      "ValueSet-activity-quality-extended-vs.html" : "Sleep Quality Value Set",
-      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
-      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
-      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
-      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
-      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
-      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures"
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/basic-resource-type",
@@ -544,9 +545,9 @@
       "oids" : ["2.16.840.1.113883.6.8"],
       "uses" : {
       },
+      "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime",
       "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units",
-      "ValueSet-duration-units-vs.html" : "Duration Units Value Set",
-      "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime"
+      "ValueSet-duration-units-vs.html" : "Duration Units Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs",
@@ -558,6 +559,17 @@
       "uses" : {
       },
       "ValueSet-advanced-vital-signs-context-vs.html" : "Advanced Vital Signs Context Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AssistanceLevelOutcomes",
+      "title" : "Assistance Level Outcomes",
+      "description" : "Outcomes related to assistance levels in mobility assessments",
+      "uses" : {
+      },
+      "ValueSet-assistance-level-outcomes.html" : "Assistance Level Outcomes Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-formats",
@@ -627,6 +639,17 @@
       "ValueSet-environment-type-vs.html" : "Practice Environment Types Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "EnvironmentalContextCS",
+      "title" : "Environmental Context Code System",
+      "description" : "Environmental factors and settings affecting health measurements and observations",
+      "uses" : {
+      },
+      "ValueSet-environmental-context.html" : "Environmental Context Value Set"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -647,6 +670,17 @@
       "uses" : {
       },
       "ValueSet-exposure-location-vs.html" : "Exposure Location Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FallRiskOutcomes",
+      "title" : "Fall Risk Outcomes",
+      "description" : "Outcomes and assessment results related to fall risk in mobility evaluations",
+      "uses" : {
+      },
+      "ValueSet-fall-risk-outcomes.html" : "Fall Risk Outcomes Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs",
@@ -690,8 +724,8 @@
       "description" : "Outcomes and effects of mindfulness practice",
       "uses" : {
       },
-      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
-      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set"
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-qualifier-cs",
@@ -726,6 +760,17 @@
       "uses" : {
       },
       "ValueSet-mobility-alert-level-vs.html" : "Mobility Alert Level Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MobilityDeclineOutcomes",
+      "title" : "Mobility Decline Outcomes",
+      "description" : "Outcomes and trends related to mobility decline assessments over time",
+      "uses" : {
+      },
+      "ValueSet-mobility-decline-outcomes.html" : "Mobility Decline Outcomes Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood",
@@ -781,6 +826,17 @@
       "uses" : {
       },
       "ValueSet-regulatory-framework-vs.html" : "Regulatory Framework Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "RiskLevel",
+      "title" : "Risk Level",
+      "description" : "General risk level classification for health assessments and clinical decision support",
+      "uses" : {
+      },
+      "ValueSet-risk-level.html" : "Risk Level Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-activity-cs",

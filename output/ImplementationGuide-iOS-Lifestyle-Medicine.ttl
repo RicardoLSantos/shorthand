@@ -11,15 +11,15 @@
   fhir:id [ fhir:v "iOS-Lifestyle-Medicine"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name=\"iOS-Lifestyle-Medicine\"> </a><a name=\"hciOS-Lifestyle-Medicine\"> </a><h2>iOS_Lifestyle_Medicine_HEADS2_FMUP</h2><p>O URL oficial para este guia de implementação é: </p><pre>https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name=\"iOS-Lifestyle-Medicine\"> </a><a name=\"hciOS-Lifestyle-Medicine\"> </a><h2>IOSLifestyleMedicineHEADS2FMUP</h2><p>O URL oficial para este guia de implementação é: </p><pre>https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
-  fhir:name [ fhir:v "iOS_Lifestyle_Medicine_HEADS2_FMUP"] ; # 
+  fhir:name [ fhir:v "IOSLifestyleMedicineHEADS2FMUP"] ; # 
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-10-02T18:31:12+01:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-10-03T16:37:46+01:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -950,6 +950,25 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/AdvancedVitalSignsExample> ;
+         fhir:reference [ fhir:v "Observation/AdvancedVitalSignsExample" ]
+       ] ;
+       fhir:name [ fhir:v "Advanced Vital Signs Example" ] ;
+       fhir:description [ fhir:v "Advanced vital signs observation with multiple components" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -1013,6 +1032,24 @@
        ] ;
        fhir:name [ fhir:v "Allostatic Load Extension" ] ;
        fhir:description [ fhir:v "Measure of cumulative physiological burden over time" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes> ;
+         fhir:reference [ fhir:v "CodeSystem/assistance-level-outcomes" ]
+       ] ;
+       fhir:name [ fhir:v "Assistance Level Outcomes" ] ;
+       fhir:description [ fhir:v "Outcomes related to assistance levels in mobility assessments" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -1367,6 +1404,25 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/BodyMetricsObservationExample> ;
+         fhir:reference [ fhir:v "Observation/BodyMetricsObservationExample" ]
+       ] ;
+       fhir:name [ fhir:v "Body Metrics Observation Example" ] ;
+       fhir:description [ fhir:v "Generic body metrics observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-metrics-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-metrics-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -1548,6 +1604,44 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/CalorieIntakeExample> ;
+         fhir:reference [ fhir:v "Observation/CalorieIntakeExample" ]
+       ] ;
+       fhir:name [ fhir:v "Daily Calorie Intake Example" ] ;
+       fhir:description [ fhir:v "Daily calorie intake observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/calorie-intake-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/calorie-intake-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/MacronutrientsExample> ;
+         fhir:reference [ fhir:v "Observation/MacronutrientsExample" ]
+       ] ;
+       fhir:name [ fhir:v "Daily Macronutrients Distribution Example" ] ;
+       fhir:description [ fhir:v "Daily macronutrients observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/macronutrients-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/macronutrients-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Basic"
          ]
        ] ) ;
@@ -1615,6 +1709,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/WaterIntakeExample> ;
+         fhir:reference [ fhir:v "Observation/WaterIntakeExample" ]
+       ] ;
+       fhir:name [ fhir:v "Daily Water Intake Example" ] ;
+       fhir:description [ fhir:v "Daily water intake observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation>
        ]
      ] [
        fhir:extension ( [
@@ -1751,6 +1864,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context> ;
+         fhir:reference [ fhir:v "CodeSystem/environmental-context" ]
+       ] ;
+       fhir:name [ fhir:v "Environmental Context Code System" ] ;
+       fhir:description [ fhir:v "Environmental factors and settings affecting health measurements and observations" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
@@ -1799,6 +1930,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/EnvironmentalObservationExample> ;
+         fhir:reference [ fhir:v "Observation/EnvironmentalObservationExample" ]
+       ] ;
+       fhir:name [ fhir:v "Environmental Observation Example" ] ;
+       fhir:description [ fhir:v "Generic environmental observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation>
        ]
      ] [
        fhir:extension ( [
@@ -2079,6 +2229,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes> ;
+         fhir:reference [ fhir:v "CodeSystem/fall-risk-outcomes" ]
+       ] ;
+       fhir:name [ fhir:v "Fall Risk Outcomes" ] ;
+       fhir:description [ fhir:v "Outcomes and assessment results related to fall risk in mobility evaluations" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
@@ -2091,6 +2259,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/FertilityObservationExample> ;
+         fhir:reference [ fhir:v "Observation/FertilityObservationExample" ]
+       ] ;
+       fhir:name [ fhir:v "Fertility Observation Example" ] ;
+       fhir:description [ fhir:v "Fertility observation with cervical mucus and ovulation test" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/fertility-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/fertility-observation>
        ]
      ] [
        fhir:extension ( [
@@ -2345,6 +2532,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/LifestyleVitalSignsExample> ;
+         fhir:reference [ fhir:v "Observation/LifestyleVitalSignsExample" ]
+       ] ;
+       fhir:name [ fhir:v "Lifestyle Vital Signs Example" ] ;
+       fhir:description [ fhir:v "Lifestyle vital signs observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/lifestyle-vital-signs"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/lifestyle-vital-signs>
        ]
      ] [
        fhir:extension ( [
@@ -3305,6 +3511,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes> ;
+         fhir:reference [ fhir:v "CodeSystem/mobility-decline-outcomes" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Decline Outcomes" ] ;
+       fhir:description [ fhir:v "Outcomes and trends related to mobility decline assessments over time" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
@@ -3335,6 +3559,44 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/MobilityProfileExample> ;
+         fhir:reference [ fhir:v "Observation/MobilityProfileExample" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Profile Assessment Example" ] ;
+       fhir:description [ fhir:v "Comprehensive mobility assessment example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-profile"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-profile>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "RiskAssessment"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/RiskAssessment/MobilityRiskAssessmentExample> ;
+         fhir:reference [ fhir:v "RiskAssessment/MobilityRiskAssessmentExample" ]
+       ] ;
+       fhir:name [ fhir:v "Mobility Risk Assessment Example" ] ;
+       fhir:description [ fhir:v "Mobility risk assessment example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-risk-assessment"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-risk-assessment>
        ]
      ] [
        fhir:extension ( [
@@ -3389,6 +3651,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Consent"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Consent/MultiJurisdictionalConsentExample> ;
+         fhir:reference [ fhir:v "Consent/MultiJurisdictionalConsentExample" ]
+       ] ;
+       fhir:name [ fhir:v "Multi-Jurisdictional Consent Example" ] ;
+       fhir:description [ fhir:v "Multi-jurisdictional healthcare consent supporting GDPR, HIPAA, and LGPD" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent>
        ]
      ] [
        fhir:extension ( [
@@ -3504,6 +3785,25 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/NutritionIntakeObservationExample> ;
+         fhir:reference [ fhir:v "Observation/NutritionIntakeObservationExample" ]
+       ] ;
+       fhir:name [ fhir:v "Nutrition Intake Observation Example" ] ;
+       fhir:description [ fhir:v "Generic nutrition intake observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-intake-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-intake-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -3588,6 +3888,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/OxygenSaturationExample> ;
+         fhir:reference [ fhir:v "Observation/OxygenSaturationExample" ]
+       ] ;
+       fhir:name [ fhir:v "Oxygen Saturation Measurement Example" ] ;
+       fhir:description [ fhir:v "Oxygen saturation observation example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/oxygen-saturation-observation"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/oxygen-saturation-observation>
        ]
      ] [
        fhir:extension ( [
@@ -3792,6 +4111,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Device"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/DevicePulseOximeter> ;
+         fhir:reference [ fhir:v "Device/DevicePulseOximeter" ]
+       ] ;
+       fhir:name [ fhir:v "Pulse Oximeter Device" ] ;
+       fhir:description [ fhir:v "Pulse oximeter device example" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
@@ -3945,6 +4282,24 @@
        ] ;
        fhir:name [ fhir:v "Reproductive Health Tracking Questionnaire" ] ;
        fhir:description [ fhir:v "Daily questionnaire for social-history health tracking" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level> ;
+         fhir:reference [ fhir:v "CodeSystem/risk-level" ]
+       ] ;
+       fhir:name [ fhir:v "Risk Level" ] ;
+       fhir:description [ fhir:v "General risk level classification for health assessments and clinical decision support" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -4654,6 +5009,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/SymptomQuestionnaireExample> ;
+         fhir:reference [ fhir:v "Questionnaire/SymptomQuestionnaireExample" ]
+       ] ;
+       fhir:name [ fhir:v "Symptom Assessment Questionnaire Example" ] ;
+       fhir:description [ fhir:v "Symptom assessment questionnaire example" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire>
        ]
      ] [
        fhir:extension ( [

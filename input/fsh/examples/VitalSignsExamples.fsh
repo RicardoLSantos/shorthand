@@ -96,7 +96,7 @@ Title: "Advanced Vital Signs Example"
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/DeviceHeartRateMonitor)
-* code = $LOINC#85353-1 "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+* code = $LOINC#8716-3 "Vital signs note"
 * component[hrvSpectral].valueQuantity = 42 'ms' "millisecond"
 * component[meanArterialPressure].valueQuantity = 93 'mm[Hg]' "millimeter of mercury"
 * component[autonomicBalance].valueQuantity = 1.2 '{ratio}' "ratio"
