@@ -48,6 +48,33 @@ Title: "Heart Rate Monitor Device"
 * modelNumber = "HRM-2024"
 * type = $SCT#364075005 "Heart rate"
 
+Instance: OxygenSaturationExample
+InstanceOf: OxygenSaturationObservation
+Usage: #example
+Description: "Oxygen saturation observation example"
+Title: "Oxygen Saturation Measurement Example"
+* status = #final
+* code = $LOINC#2708-6 "Oxygen saturation in Arterial blood"
+* subject = Reference(PatientExample)
+* effectiveDateTime = "2024-03-19T15:30:00Z"
+* valueQuantity = 98 '%' "percent"
+* valueQuantity.system = $UCUM
+* valueQuantity.unit = "percent"
+* device = Reference(DevicePulseOximeter)
+* performer = Reference(PractitionerExample)
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+
+Instance: DevicePulseOximeter
+InstanceOf: Device
+Usage: #example
+Description: "Pulse oximeter device example"
+Title: "Pulse Oximeter Device"
+* deviceName.name = "Digital Pulse Oximeter"
+* deviceName.type = #user-friendly-name
+* manufacturer = "HealthTech Devices"
+* modelNumber = "POX-2024"
+* type = $SCT#448703006 "Pulse oximeter"
+
 Instance: DeviceBloodPressureMonitor
 InstanceOf: Device
 Usage: #example
