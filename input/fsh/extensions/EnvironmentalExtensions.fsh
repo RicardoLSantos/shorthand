@@ -64,7 +64,7 @@ Description: "Value set for environmental exposure locations"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^experimental = true
+* ^experimental = false
 * codes from system ExposureLocationCS
 
 ValueSet: ExposureConditionsVS
@@ -84,7 +84,7 @@ Description: "Value set for environmental exposure conditions"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^experimental = true
+* ^experimental = false
 * codes from system ExposureConditionsCS
 
 CodeSystem: ExposureLocationCS
@@ -105,7 +105,7 @@ Description: "Code system for environmental exposure locations"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
-* ^experimental = true
+* ^experimental = false
 
 * #indoor "Indoor environment" "Environment within buildings or enclosed spaces"
 * #outdoor "Outdoor environment" "Open-air environment"
@@ -133,7 +133,7 @@ Description: "Code system for conditions during environmental exposure"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^caseSensitive = true
-* ^experimental = true
+* ^experimental = false
 
 * #normal "Normal conditions" "Standard environmental conditions"
 * #extreme "Extreme conditions" "Unusual or severe environmental conditions"
