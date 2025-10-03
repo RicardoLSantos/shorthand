@@ -78,10 +78,9 @@ Title: "Environmental Observation Example"
 * effectiveDateTime = "2024-03-19T14:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/EnvironmentalDeviceExample)
-* code = $SCT#276885007 "Environmental assessment"
-* valueQuantity = 22 'Cel' "degree Celsius"
-* valueQuantity.system = $UCUM
-* note.text = "Ambient temperature measurement"
+* code = $SCT#31032004 "Body position finding"
+* valueCodeableConcept = $SCT#33586001 "Sitting position"
+* note.text = "Environmental context observation"
 
 Instance: EnvironmentalDeviceExample
 InstanceOf: Device

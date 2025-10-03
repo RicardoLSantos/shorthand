@@ -54,7 +54,7 @@ Description: "Profile for advanced vital signs data from iOS Health App"
 
 * component[meanArterialPressure].code = $LOINC#8478-0 "Mean blood pressure"
 * component[meanArterialPressure].valueQuantity.system = $UCUM
-* component[meanArterialPressure].valueQuantity.code = #mmHg
+* component[meanArterialPressure].valueQuantity.code = #mm[Hg]
 * component[meanArterialPressure] ^short = "Mean arterial blood pressure"
 
 * component[pulseWaveAnalysis].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#pulse-wave "Pulse wave analysis"

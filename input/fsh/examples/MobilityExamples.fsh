@@ -99,7 +99,7 @@ Title: "Mobility Risk Assessment Example"
 * occurrenceDateTime = "2024-03-19T09:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * basis = Reference(MobilityProfileExample)
-* prediction[fallRisk].outcome = $SCT#217082002 "Fall risk"
+* prediction[fallRisk].outcome = $SCT#217082002 "Accidental fall"
 * prediction[fallRisk].probabilityDecimal = 0.15
-* prediction[fallRisk].qualitativeRisk = http://terminology.hl7.org/CodeSystem/risk-probability#low "Low risk"
+* prediction[fallRisk].qualitativeRisk = http://terminology.hl7.org/CodeSystem/risk-probability#low "Low likelihood"
 * note.text = "Patient shows good mobility metrics with low fall risk based on walking steadiness assessment"

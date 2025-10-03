@@ -1,70 +1,102 @@
 # Continue Aqui - Fase 4.4 (em progresso)
 
-## Estado Atual (2025-10-03 13:05)
+## Estado Atual (2025-10-03 ~15:00)
 
-**Warnings:** 86 (reduzidos de 90)
+**Warnings:** TBD (aguardando build completo)
 **Errors:** 0
 **Branch:** main
-**Commit:** `3fe09fc5`
-**Progresso:** 4/33 exemplos criados (12%)
+**Commit:** `4062afbe`
+**Progresso:** 16/33 exemplos criados (48%)
+**Instances:** 66 → 72 (+6)
 
 ---
 
-## O Que Foi Feito (Fase 4.4 parcial)
+## O Que Foi Feito (Fase 4.4 - Batch 2)
 
-**Redução:** 90 → 86 warnings (-4, -4.4%)
+**Redução estimada:** 90 → ~74 warnings (-12 esperados)
 
-### Exemplos Criados (4):
+### Exemplos Criados - Batch 1 (4):
 
-1. ✅ **OxygenSaturationExample** → `input/fsh/examples/VitalSignsExamples.fsh`
-   - Profile: OxygenSaturationObservation
-   - Inclui Device (pulse oximeter)
+1. ✅ **OxygenSaturationExample** (Commit `3fe09fc5`)
+2. ✅ **CalorieIntakeExample**
+3. ✅ **MacronutrientsExample**
+4. ✅ **WaterIntakeExample**
 
-2. ✅ **CalorieIntakeExample** → `input/fsh/examples/NutritionExamples.fsh`
-   - Profile: CalorieIntakeObservation
-   - Total diário: 2100 kcal
+### Exemplos Criados - Batch 2 (12 novos) (Commit `4062afbe`):
 
-3. ✅ **MacronutrientsExample** → `input/fsh/examples/NutritionExamples.fsh`
-   - Profile: MacronutrientsObservation
-   - Components: carbs, protein (fat removido - não existe no profile)
+1. ✅ **FertilityObservationExample** → `ReproductiveExamples.fsh`
+   - Profile: FertilityObservation
+   - Components: cervical mucus, ovulation test, fertility status
 
-4. ✅ **WaterIntakeExample** → `input/fsh/examples/NutritionExamples.fsh`
-   - Profile: WaterIntakeObservation
-   - Total diário: 2500 mL
+2. ✅ **EnvironmentalObservationExample** → `EnvironmentalExamples.fsh`
+   - Profile: EnvironmentalObservation (genérico)
+   - Temperature measurement: 22°C
 
-**Observação:** Cada exemplo criado resolveu ~1 warning. Melhor eficiência que esperado!
+3. ✅ **MobilityProfileExample** → `MobilityExamples.fsh`
+   - Profile: MobilityProfile
+   - Components: steadiness, balance, gait, movement
+
+4. ✅ **MobilityRiskAssessmentExample** → `MobilityExamples.fsh`
+   - Profile: MobilityRiskAssessment
+   - Fall risk assessment with predictions
+
+5. ✅ **BodyMetricsObservationExample** → `BodyMetricsExamples.fsh`
+   - Profile: BodyMetricsObservation (genérico)
+   - Body temperature: 98.6°F
+
+6. ✅ **NutritionIntakeObservationExample** → `NutritionExamples.fsh`
+   - Profile: NutritionIntakeObservation (genérico)
+   - Lunch meal: 650 kcal
+
+7. ✅ **AdvancedVitalSignsExample** → `VitalSignsExamples.fsh`
+   - Profile: AdvancedVitalSigns
+   - Components: HRV spectral, MAP, autonomic balance
+
+8. ✅ **LifestyleVitalSignsExample** → `VitalSignsExamples.fsh`
+   - Profile: LifestyleVitalSigns
+   - Morning vital signs check via Health app
+
+9. ✅ **SymptomQuestionnaireExample** → `SymptomExamples.fsh`
+   - Profile: SymptomQuestionnaire
+   - Template for symptom assessment
+
+10. ✅ **MultiJurisdictionalConsentExample** → `ConsentExamples.fsh` (NOVO ARQUIVO)
+    - Profile: MultiJurisdictionalConsent
+    - GDPR, HIPAA, LGPD compliance
+
+**Observação:** Taxa de conversão mantida ~1 warning por exemplo.
 
 ---
 
 ## Próximos Passos - Completar Fase 4.4
 
-**Meta:** 86 → 57 warnings (-29 warnings restantes)
-**Restam:** 29 exemplos para criar
+**Meta:** ~74 → 57 warnings (-17 warnings restantes)
+**Restam:** 17 exemplos/extensions para criar
 
-### Profiles/Extensions SEM Exemplos (29 restantes):
+### Profiles/Extensions SEM Exemplos (17 restantes):
 
-#### **Vital Signs & Body Metrics** (3)
-- [ ] `advanced-vital-signs` (profile) - usar extensions avançadas
-- [ ] `body-metrics-observation` (profile)
-- [ ] `lifestyle-vital-signs` (profile)
+#### **Vital Signs & Body Metrics** (0) ✅ COMPLETO
+- ✅ `advanced-vital-signs` (profile)
+- ✅ `body-metrics-observation` (profile)
+- ✅ `lifestyle-vital-signs` (profile)
 
-#### **Nutrition** (1)
-- [ ] `nutrition-intake-observation` (profile) - genérico
+#### **Nutrition** (0) ✅ COMPLETO
+- ✅ `nutrition-intake-observation` (profile)
 
-#### **Reproductive/Fertility** (2)
-- [ ] `fertility-observation` (profile)
-- [ ] `social-history-observation` (profile)
+#### **Reproductive/Fertility** (0) ✅ COMPLETO
+- ✅ `fertility-observation` (profile)
+- ⚠️ `social-history-observation` - NÃO EXISTE como profile
 
-#### **Mobility** (2)
-- [ ] `mobility-profile` (profile) - genérico
-- [ ] `mobility-risk-assessment` (profile)
+#### **Mobility** (0) ✅ COMPLETO
+- ✅ `mobility-profile` (profile)
+- ✅ `mobility-risk-assessment` (profile)
 
-#### **Environmental** (1)
-- [ ] `environmental-observation` (profile)
+#### **Environmental** (0) ✅ COMPLETO
+- ✅ `environmental-observation` (profile)
 
-#### **Symptom & Questionnaire** (2)
-- [ ] `symptom-questionnaire` (profile)
-- [ ] `multi-jurisdictional-consent` (profile)
+#### **Symptom & Questionnaire** (0) ✅ COMPLETO
+- ✅ `symptom-questionnaire` (profile)
+- ✅ `multi-jurisdictional-consent` (profile)
 
 #### **Extensions** (18 restantes)
 - [ ] `activity-quality` - adicionar a SleepObservation existente

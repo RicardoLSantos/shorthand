@@ -104,10 +104,10 @@ Title: "Body Metrics Observation Example"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* code = $LOINC#8716-3 "Vital signs"
-* valueQuantity = 98.6 '[degF]' "degree Fahrenheit"
+* code = $LOINC#8302-2 "Body height"
+* valueQuantity = 170 'cm' "centimeter"
 * valueQuantity.system = $UCUM
-* note.text = "Baseline body temperature measurement"
+* note.text = "Generic body measurement - height"
 
 Instance: BioimpedanceAnalyzer
 InstanceOf: Device

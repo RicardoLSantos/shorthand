@@ -98,7 +98,7 @@ Title: "Advanced Vital Signs Example"
 * device = Reference(Device/DeviceHeartRateMonitor)
 * code = $LOINC#85353-1 "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
 * component[hrvSpectral].valueQuantity = 42 'ms' "millisecond"
-* component[meanArterialPressure].valueQuantity = 93 'mmHg' "millimeter of mercury"
+* component[meanArterialPressure].valueQuantity = 93 'mm[Hg]' "millimeter of mercury"
 * component[autonomicBalance].valueQuantity = 1.2 '{ratio}' "ratio"
 * note.text = "Comprehensive cardiovascular assessment during routine checkup"
 
@@ -111,8 +111,8 @@ Title: "Lifestyle Vital Signs Example"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-03-19T10:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* code = $LOINC#85354-9 "Blood pressure panel with all children optional"
-* valueQuantity = 110 'mm[Hg]' "millimeter of mercury"
+* code = $LOINC#8867-4 "Heart rate"
+* valueQuantity = 72 '/min' "per minute"
 * valueQuantity.system = $UCUM
 * device = Reference(Device/iphone-example)
 * note.text = "Morning vital signs check via Health app"

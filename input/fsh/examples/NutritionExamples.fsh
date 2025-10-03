@@ -106,5 +106,5 @@ Title: "Nutrition Intake Observation Example"
 * code = $LOINC#9052-2 "Calorie intake total"
 * valueQuantity = 650 'kcal' "kilocalorie"
 * valueQuantity.system = $UCUM
-* method = $SCT#229059009 "Food diary"
+* method = $SCT#229059009 "Report"
 * note.text = "Lunch meal - Mediterranean diet"
