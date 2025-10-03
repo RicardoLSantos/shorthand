@@ -88,6 +88,10 @@ Title: "Mobility Profile Assessment Example"
 * component[balance].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/balance-status#normal "Normal"
 * component[gait].valueQuantity = 1.1 'm/s' "meters per second"
 * component[movement].valueString = "Independent ambulation"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-alert-level"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#green "Normal - No concern"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/homeostasis-index"
+* extension[=].valueQuantity = 0.88 '{ratio}' "ratio"
 
 Instance: MobilityRiskAssessmentExample
 InstanceOf: MobilityRiskAssessment

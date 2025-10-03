@@ -102,6 +102,10 @@ Title: "Advanced Vital Signs Example"
 * component[autonomicBalance].valueQuantity = 1.2 '{ratio}' "ratio"
 * note.text = "Comprehensive cardiovascular assessment during routine checkup"
 
+// Extensions
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-quality"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs#excellent "Excellent Quality"
+
 Instance: LifestyleVitalSignsExample
 InstanceOf: LifestyleVitalSigns
 Usage: #example

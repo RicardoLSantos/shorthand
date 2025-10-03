@@ -19,3 +19,16 @@ Title: "Multi-Jurisdictional Consent Example"
 * provision.period.end = "2025-03-19"
 * provision.action = http://terminology.hl7.org/CodeSystem/consentaction#access "Access"
 * provision.securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N "normal"
+
+// Extensions
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-localization"
+* extension[=].extension[+].url = "jurisdiction"
+* extension[=].extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/regulatory-framework-cs#gdpr "GDPR - General Data Protection Regulation"
+* extension[=].extension[+].url = "storageLocation"
+* extension[=].extension[=].valueString = "EU-based servers"
+* extension[=].extension[+].url = "residencyRequired"
+* extension[=].extension[=].valueBoolean = true
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/jurisdiction-applicability"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/regulatory-framework-cs#gdpr "GDPR - General Data Protection Regulation"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/regulatory-basis"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/regulatory-framework-cs#gdpr "GDPR - General Data Protection Regulation"

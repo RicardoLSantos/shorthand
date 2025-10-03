@@ -108,3 +108,5 @@ Title: "Nutrition Intake Observation Example"
 * valueQuantity.system = $UCUM
 * method = $SCT#229059009 "Report"
 * note.text = "Lunch meal - Mediterranean diet"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-data-source"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-data-source-cs#manual "Manual Entry"

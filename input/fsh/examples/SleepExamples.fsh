@@ -53,6 +53,12 @@ Title: "Example of Sleep Record"
 * component[interruptions].valueQuantity.system = $UCUM
 * component[interruptions].valueQuantity.unit = "count"
 
+// Extensions
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/circadian-phase"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs#night "Night Phase"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-efficiency"
+* extension[=].valueQuantity = 85 '%' "percent"
+
 Instance: DeviceSleepMonitor
 InstanceOf: Device
 Usage: #example

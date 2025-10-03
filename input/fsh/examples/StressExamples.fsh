@@ -18,3 +18,7 @@ Title: "Stress Level Measurement Example"
 
 * extension[triggers].valueCodeableConcept = StressTriggersCS#work
 * extension[coping].valueCodeableConcept = StressCopingCS#meditation
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/allostatic-load"
+* extension[=].valueQuantity = 0.72 '1' "score"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/physiological-stress-index"
+* extension[=].valueQuantity = 6.5 '1' "score"
