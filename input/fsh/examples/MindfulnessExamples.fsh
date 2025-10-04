@@ -58,3 +58,23 @@ Title: "Example of Mindfulness Questionnaire"
     * answerOption[0].valueString = "Mindful Breathing"
     * answerOption[1].valueString = "Body Scan"
     * answerOption[2].valueString = "Walking Meditation"
+
+Instance: MindfulnessImportMappingExample
+InstanceOf: Basic
+Usage: #example
+Description: "Example of a Basic resource containing mindfulness import mapping configuration"
+Title: "Mindfulness Import Mapping Configuration Example"
+
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-config-type#settings "Mindfulness Settings"
+* subject = Reference(Patient/PatientExample)
+* created = "2024-03-19"
+* author = Reference(Practitioner/PractitionerExample)
+
+// mindfulness-import-map extension
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-import-map"
+* extension[=].extension[+].url = "source"
+* extension[=].extension[=].valueString = "HKCategoryTypeIdentifierMindfulSession"
+* extension[=].extension[+].url = "target"
+* extension[=].extension[=].valueString = "Observation"
+* extension[=].extension[+].url = "mapping"
+* extension[=].extension[=].valueString = "duration->component[sessionDuration].valueQuantity"

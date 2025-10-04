@@ -58,6 +58,8 @@ Title: "Example of Sleep Record"
 * extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs#night "Night Phase"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-efficiency"
 * extension[=].valueQuantity = 85 '%' "percent"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality"
+* extension[=].valueCodeableConcept = $SCT#248221007 "Consciousness clear"
 
 Instance: DeviceSleepMonitor
 InstanceOf: Device

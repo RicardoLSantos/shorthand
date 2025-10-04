@@ -36,6 +36,9 @@ Title: "Blood Pressure Measurement Example"
 * component[diastolic].valueQuantity = 80 'mm[Hg]' "millimeter of mercury"
 * component[diastolic].valueQuantity.system = $UCUM
 * component[diastolic].valueQuantity.unit = "millimeter of mercury"
+// Extensions
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-context"
+* extension[=].valueCodeableConcept = $SCT#307818003 "Weight monitoring"
 
 Instance: DeviceHeartRateMonitor
 InstanceOf: Device
@@ -105,6 +108,8 @@ Title: "Advanced Vital Signs Example"
 // Extensions
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-quality"
 * extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs#excellent "Excellent Quality"
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs-context"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs#resting "Resting state"
 
 Instance: LifestyleVitalSignsExample
 InstanceOf: LifestyleVitalSigns
