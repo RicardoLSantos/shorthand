@@ -31,6 +31,10 @@ Title: "Noise Exposure Measurement Example"
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-background "Background environmental noise level"
   * valueQuantity = 45 'dB'
 
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#urban "Urban"
+* extension[exposure-location].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-location-cs#transit "In transit"
+* extension[exposure-conditions].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs#normal "Normal conditions"
+
 * note.text = "Measurement taken during urban commute"
 
 Instance: UVExposureExample
@@ -66,6 +70,10 @@ Title: "UV Exposure Measurement Example"
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-intensity "UV intensity"
   * valueQuantity = 0.3 'W/m2'
 
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#outdoor "Outdoor"
+* extension[exposure-location].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-location-cs#recreational "Recreational area"
+* extension[exposure-conditions].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs#normal "Normal conditions"
+
 * note.text = "Measurement taken during outdoor activity"
 
 Instance: EnvironmentalObservationExample
@@ -80,6 +88,7 @@ Title: "Environmental Observation Example"
 * device = Reference(Device/EnvironmentalDeviceExample)
 * code = $LOINC#60832-3 "Room temperature"
 * valueQuantity = 22 'Cel' "degrees Celsius"
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#indoor "Indoor"
 * note.text = "Environmental context observation"
 
 Instance: EnvironmentalDeviceExample

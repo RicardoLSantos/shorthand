@@ -1,5 +1,5 @@
 ValueSet: EnvironmentalContextValueSet
-Id: environmental-context
+Id: environmental-context-vs
 Title: "Environmental Context Value Set"
 Description: "Valid contexts for environmental measurements"
 * ^experimental = false
@@ -15,5 +15,5 @@ Description: "Valid contexts for environmental measurements"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environmental-context"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environmental-context-vs"
 * include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context

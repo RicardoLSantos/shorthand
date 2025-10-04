@@ -105,4 +105,4 @@ Title: "Environmental Context Extension"
 Description: "Additional context about environmental measurements"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environmental-context (required)
+* valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environmental-context-vs (required)
