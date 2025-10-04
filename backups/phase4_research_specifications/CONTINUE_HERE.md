@@ -1,19 +1,59 @@
-# Continue Aqui - Fase 4.6 COMPLETA ✅
+# Continue Aqui - Fase 4.7 COMPLETA ✅
 
-## Estado Atual (2025-10-04 13:01)
+## Estado Atual (2025-10-04 14:49)
 
-**Warnings:** 27 (reduzidos de 31)
+**Warnings:** 20 (reduzidos de 27)
 **Errors:** 0 ✅
 **Branch:** main
 **Commit:** (pendente)
-**Progresso:** Fase 4.6 completa - 4 extension examples adicionadas
-**Instances:** 74 (+1 novo: MindfulnessImportMappingExample)
-**Redução total Fase 4.6:** 31 → 27 warnings (-4) ✅
-**Redução acumulada:** 105 → 27 warnings (-78, 74.3%)
+**Progresso:** Fase 4.7 completa - Best practices & optimization
+**Instances:** 74
+**Redução total Fase 4.7:** 27 → 20 warnings (-7) ✅
+**Redução acumulada:** 105 → 20 warnings (-85, 81.0%) 🎉
 
 ---
 
-## O Que Foi Feito (Fase 4.6 - Extension Examples) - Commit `(pendente)`
+## O Que Foi Feito (Fase 4.7 - Best Practices) - Commit `(pendente)`
+
+**Redução:** 27 → 20 warnings (-7) ✅
+**Errors:** 0 ✅
+
+### Correções Aplicadas
+
+1. **Performers adicionados (3 examples)** → -3 warnings
+   - SocialInteractionExample
+   - StressLevelExample
+   - WeightWithConditions
+
+2. **UCUM annotations corrigidas (5 locais)** → -2 warnings
+   - VitalSignsExamples.fsh: `{ratio}` → `1`
+   - MobilityExamples.fsh: `{ratio}` → `1`
+   - AdvancedVitalSignsProfiles.fsh: 2× `#{ratio}` → `#1`
+   - AdvancedVitalSignsExtensions.fsh: `#{ratio}` → `#1`
+
+3. **Package version atualizada** → -1 warning
+   - sushi-config.yaml: hl7.fhir.uv.ips 1.1.0 → 2.0.0
+
+4. **ValueSet version fixada** → -1 warning
+   - MultiJurisdictionalConsent.fsh: v3-PurposeOfUse versão 3.1.0
+
+### Arquivos Modificados (9)
+- input/fsh/examples/SocialInteractionExamples.fsh
+- input/fsh/examples/StressExamples.fsh
+- input/fsh/examples/VitalSignsExamples.fsh
+- input/fsh/examples/MobilityExamples.fsh
+- input/fsh/extensions/BodyMetricsExtensions.fsh
+- input/fsh/extensions/AdvancedVitalSignsExtensions.fsh
+- input/fsh/profiles/AdvancedVitalSignsProfiles.fsh
+- input/fsh/profiles/MultiJurisdictionalConsent.fsh
+- sushi-config.yaml
+
+**Status:** Fase 4.7 COMPLETA ✅
+**Documentação:** `backups/phase4_research_specifications/20251004_144900_phase47_complete.md`
+
+---
+
+## O Que Foi Feito (Fase 4.6 - Extension Examples) - Commit `92740333`
 
 **Redução:** 31 → 27 warnings (-4) ✅
 **Errors:** 0 ✅

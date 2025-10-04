@@ -102,7 +102,7 @@ Title: "Advanced Vital Signs Example"
 * code = $LOINC#8716-3 "Vital signs note"
 * component[hrvSpectral].valueQuantity = 42 'ms' "millisecond"
 * component[meanArterialPressure].valueQuantity = 93 'mm[Hg]' "millimeter of mercury"
-* component[autonomicBalance].valueQuantity = 1.2 '{ratio}' "ratio"
+* component[autonomicBalance].valueQuantity = 1.2 '1' "ratio"
 * note.text = "Comprehensive cardiovascular assessment during routine checkup"
 
 // Extensions

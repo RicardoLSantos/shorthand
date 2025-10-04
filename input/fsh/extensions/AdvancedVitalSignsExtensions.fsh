@@ -48,7 +48,7 @@ Description: "Composite measure of physiological balance and adaptation"
 
 * value[x] only Quantity
 * valueQuantity.system = $UCUM
-* valueQuantity.code = #{ratio}
+* valueQuantity.code = #1
 * valueQuantity ^short = "Homeostasis index value"
 * valueQuantity ^definition = "Normalized ratio representing physiological balance"
 

@@ -69,7 +69,7 @@ Description: "Profile for advanced vital signs data from iOS Health App"
 
 * component[oxygenationIndex].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#oxygenation-index "Oxygenation index"
 * component[oxygenationIndex].valueQuantity.system = $UCUM
-* component[oxygenationIndex].valueQuantity.code = #{ratio}
+* component[oxygenationIndex].valueQuantity.code = #1
 * component[oxygenationIndex] ^short = "Index of blood oxygenation"
 
 * component[stressIndex].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#physiological-stress "Physiological stress index"
@@ -84,7 +84,7 @@ Description: "Profile for advanced vital signs data from iOS Health App"
 
 * component[autonomicBalance].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#autonomic-balance "Autonomic balance index"
 * component[autonomicBalance].valueQuantity.system = $UCUM
-* component[autonomicBalance].valueQuantity.code = #{ratio}
+* component[autonomicBalance].valueQuantity.code = #1
 * component[autonomicBalance] ^short = "Balance of autonomic nervous system"
 
 * component[recoveryRate].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#recovery-rate "Recovery rate index"

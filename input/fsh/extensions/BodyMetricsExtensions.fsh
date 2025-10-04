@@ -110,6 +110,7 @@ Title: "Weight Measurement with Conditions Example"
 * code = $LOINC#29463-7 "Body weight"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T08:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity = 70.5 'kg' "kilogram"
 
 * extension[measurement-conditions].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions"

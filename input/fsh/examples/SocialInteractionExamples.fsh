@@ -9,6 +9,7 @@ Title: "Social Interaction Example"
 * code = $LOINC#76506-5 "Social connection and isolation panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2024-01-03T14:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = SocialInteractionTypeCS#family
 
 * component[duration].valueQuantity = 120 'min' "minutes"

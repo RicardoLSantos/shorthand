@@ -46,4 +46,5 @@ Description: "Consent profile supporting GDPR, HIPAA, and LGPD compliance"
 * provision.action MS
 * provision.securityLabel MS
 * provision.purpose MS
+* provision.purpose from http://terminology.hl7.org/ValueSet/v3-PurposeOfUse|3.1.0 (extensible)
 * provision.dataPeriod MS

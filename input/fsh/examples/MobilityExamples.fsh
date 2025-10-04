@@ -91,7 +91,7 @@ Title: "Mobility Profile Assessment Example"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-alert-level"
 * extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#green "Normal - No concern"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/homeostasis-index"
-* extension[=].valueQuantity = 0.88 '{ratio}' "ratio"
+* extension[=].valueQuantity = 0.88 '1' "ratio"
 
 Instance: MobilityRiskAssessmentExample
 InstanceOf: MobilityRiskAssessment
