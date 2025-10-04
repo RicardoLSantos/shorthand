@@ -11,6 +11,8 @@ Extension: MindfulnessScheduleTiming
 Id: mindfulness-schedule-timing
 Title: "Mindfulness Schedule Timing"
 Description: "Timing configuration for mindfulness sessions"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only Timing
 
 Instance: WeeklyMindfulnessSchedule

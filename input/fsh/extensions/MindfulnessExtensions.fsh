@@ -8,6 +8,8 @@ Description: "Additional context about the mindfulness practice session"
 * ^status = #draft
 * ^date = "2024-03-19"
 * ^publisher = "Example Organization"
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 
 * extension contains
     location 0..1 and

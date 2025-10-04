@@ -3,6 +3,8 @@ Id: measurement-context
 Title: "Measurement Context Extension"
 Description: "Additional context about the vital sign measurement"
 * ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
 * valueCodeableConcept from MeasurementContextVS (required)
 

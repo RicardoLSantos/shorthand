@@ -13,7 +13,7 @@ Description: "Extension for mobility measurements alert levels to indicate the s
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[0].type = #fhirpath
+* ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * . ^short = "Mobility alert level indicator"
 * . ^definition = "Indicates the severity level of mobility changes or concerns based on device measurements"

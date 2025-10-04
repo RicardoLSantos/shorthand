@@ -6,19 +6,25 @@ Extension: AuditLevelExtension
 Id: audit-level
 Title: "Audit Level Extension"
 Description: "Level of detail for audit records"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only code
 * valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-levels (required)
 
 Extension: AuditRetentionExtension
 Id: audit-retention
-Title: "Audit Retention Extension" 
+Title: "Audit Retention Extension"
 Description: "Period to retain audit records"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only Duration
 
 Extension: AuditFormatExtension
 Id: audit-format
 Title: "Audit Format Extension"
 Description: "Format for audit records"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only code
 * valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-formats (required)
 

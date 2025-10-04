@@ -3,6 +3,8 @@ Id: social-context
 Title: "Social Context Extension"
 Description: "Extension for recording the context of social interaction"
 * ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
 * valueCodeableConcept from SocialContextVS (required)
 
@@ -11,6 +13,8 @@ Id: social-support
 Title: "Social Support Extension"
 Description: "Extension for recording perceived social support"
 * ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
 * valueCodeableConcept from SocialSupportVS (required)
 
@@ -19,6 +23,8 @@ Id: social-activity
 Title: "Social Activity Extension"
 Description: "Extension for recording specific social activities"
 * ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
 * valueCodeableConcept from SocialActivityVS (required)
 

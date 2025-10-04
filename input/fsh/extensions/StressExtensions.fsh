@@ -3,6 +3,8 @@ Id: stress-triggers
 Title: "Stress Triggers Extension"
 Description: "Extension for recording identified stress triggers"
 * ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
 * valueCodeableConcept from StressTriggersVS (required)
 
@@ -11,6 +13,8 @@ Id: stress-coping
 Title: "Stress Coping Extension"
 Description: "Extension for recording stress coping mechanisms"
 * ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
 * valueCodeableConcept from StressCopingVS (required)
 

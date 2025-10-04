@@ -2,6 +2,8 @@ Extension: AlertTiming
 Id: alert-timing
 Title: "Alert Timing Extension"
 Description: "Defines when alerts should be triggered"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only Timing
 * valueTiming.repeat 1..1 MS
 * valueTiming.repeat.frequency MS
@@ -12,6 +14,8 @@ Extension: AlertMessage
 Id: alert-message
 Title: "Alert Message Extension"
 Description: "Defines the alert message content"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only string
 
 Profile: MindfulnessAlert

@@ -17,7 +17,7 @@ Description: "Index representing overall physiological stress based on multiple 
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #fhirpath
+* ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
 * value[x] only Quantity
@@ -43,7 +43,7 @@ Description: "Composite measure of physiological balance and adaptation"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #fhirpath
+* ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
 * value[x] only Quantity
@@ -69,7 +69,7 @@ Description: "Measure of how efficiently the body recovers from stress or exerti
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #fhirpath
+* ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
 * value[x] only Quantity
@@ -95,7 +95,7 @@ Description: "Measure of cumulative physiological burden over time"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #fhirpath
+* ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
 * value[x] only Quantity
@@ -121,7 +121,7 @@ Description: "Indicator of position in circadian rhythm cycle"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #fhirpath
+* ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept
@@ -167,7 +167,7 @@ Description: "Indicator of the quality and reliability of the measurement"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^context[+].type = #fhirpath
+* ^context[+].type = #element
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept

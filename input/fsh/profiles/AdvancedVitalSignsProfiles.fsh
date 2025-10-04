@@ -102,6 +102,9 @@ Id: advanced-vital-signs-context
 Title: "Advanced Vital Signs Context Extension"
 Description: "Additional context about advanced vital sign measurements"
 
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
+
 * value[x] only CodeableConcept
 * valueCodeableConcept from AdvancedVitalSignsContextVS (required)
 

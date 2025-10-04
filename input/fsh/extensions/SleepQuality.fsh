@@ -3,6 +3,8 @@ Id: activity-quality
 Title: "Sleep Quality Extension"
 Description: "Extension for recording subjective activity quality"
 * ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
 * valueCodeableConcept from SleepQualityExtendedVS (required)
  

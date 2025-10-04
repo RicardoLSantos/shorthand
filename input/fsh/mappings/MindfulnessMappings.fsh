@@ -38,6 +38,8 @@ Description: "Mapping instructions for importing mindfulness data"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-import-map"
 * ^version = "1.0.0"
 * ^status = #draft
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 
 * extension contains
     source 1..1 MS and

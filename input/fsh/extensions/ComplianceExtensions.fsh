@@ -4,13 +4,17 @@ Extension: RegulatoryBasis
 Id: regulatory-basis
 Title: "Regulatory Basis for Consent"
 Description: "Identifies the regulatory framework(s) that govern this consent"
+* ^context[0].type = #element
+* ^context[0].expression = "Consent"
 * value[x] only CodeableConcept
 * valueCodeableConcept from RegulatoryFrameworkVS (extensible)
 
-Extension: JurisdictionApplicability  
+Extension: JurisdictionApplicability
 Id: jurisdiction-applicability
 Title: "Jurisdiction Applicability"
 Description: "Specifies which jurisdictions this consent applies to"
+* ^context[0].type = #element
+* ^context[0].expression = "Consent"
 * value[x] only CodeableConcept
 * valueCodeableConcept from http://hl7.org/fhir/ValueSet/jurisdiction (extensible)
 
@@ -18,6 +22,8 @@ Extension: DataLocalization
 Id: data-localization
 Title: "Data Localization Requirements"
 Description: "Specifies data localization requirements per jurisdiction"
+* ^context[0].type = #element
+* ^context[0].expression = "Consent"
 * extension contains
     jurisdiction 1..1 MS and
     storageLocation 1..1 MS and

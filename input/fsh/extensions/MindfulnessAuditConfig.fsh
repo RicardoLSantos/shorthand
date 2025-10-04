@@ -6,6 +6,8 @@ Extension: MindfulnessAuditLevel
 Id: mindfulness-audit-level
 Title: "Mindfulness Audit Level"
 Description: "Level of detail for audit records"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only code
 * valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-levels (required)
 
@@ -13,12 +15,16 @@ Extension: MindfulnessAuditRetention
 Id: mindfulness-audit-retention
 Title: "Mindfulness Audit Retention"
 Description: "Period to retain audit records"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only Duration
 
 Extension: MindfulnessAuditFormat
 Id: mindfulness-audit-format
 Title: "Mindfulness Audit Format"
 Description: "Format for audit records"
+* ^context[0].type = #element
+* ^context[0].expression = "Basic"
 * value[x] only code
 * valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-formats (required)
 
