@@ -1,0 +1,107 @@
+{
+  "resource(Type|)": "(CapabilityStatement|)",
+  "id": "(MindfulnessCapabilityStatement|)",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(CapabilityStatement|)/(MindfulnessCapabilityStatement|)",
+  "title": "(Mindfulness|) (Module|) (Capabilities|)",
+  "description": "(Capabilities|) supported by the mindfulness module implementation",
+  "format": [
+    "json",
+    "xml"
+  ],
+  "rest": [
+    {
+      "resource": [
+        {
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "search(Param|)": [
+            {
+              "name": "patient",
+              "type": "reference",
+              "documentation": "(Search|) by patient reference"
+            },
+            {
+              "name": "date",
+              "type": "date",
+              "documentation": "(Search|) by session date"
+            },
+            {
+              "name": "code",
+              "type": "token",
+              "documentation": "(Search|) by observation type"
+            }
+          ],
+          "type": "(Observation|)",
+          "documentation": "(Supports|) mindfulness session observations",
+          "profile": "https://example.org/(StructureDefinition|)/mindfulness-observation"
+        },
+        {
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "search(Param|)": [
+            {
+              "name": "title",
+              "type": "string",
+              "documentation": "(Search|) by questionnaire title"
+            }
+          ],
+          "type": "(Questionnaire|)",
+          "documentation": "(Supports|) mindfulness questionnaires",
+          "profile": "https://example.org/(StructureDefinition|)/mindfulness-questionnaire"
+        },
+        {
+          "interaction": [
+            {
+              "code": "create"
+            },
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "search(Param|)": [
+            {
+              "name": "patient",
+              "type": "reference",
+              "documentation": "(Search|) by patient reference"
+            },
+            {
+              "name": "authored",
+              "type": "date",
+              "documentation": "(Search|) by response date"
+            }
+          ],
+          "type": "(QuestionnaireResponse|)",
+          "documentation": "(Supports|) mindfulness questionnaire responses",
+          "profile": "https://example.org/(StructureDefinition|)/mindfulness-questionnaire-response"
+        }
+      ],
+      "mode": "server",
+      "documentation": "(RESTful|) server capabilities for mindfulness data"
+    }
+  ],
+  "status": "draft",
+  "date": "2024-03-19",
+  "kind": "requirements",
+  "fhir(Version|)": "4.0.1"
+}

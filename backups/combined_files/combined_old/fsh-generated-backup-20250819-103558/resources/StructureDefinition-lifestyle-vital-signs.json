@@ -1,0 +1,51 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "lifestyle-vital-signs",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/lifestyle-vital-signs",
+  "name": "(LifestyleVitalSigns|)",
+  "title": "(Lifestyle|) (Medicine|) (Vital|) (Signs|) (Profile|)",
+  "status": "draft",
+  "description": "(Profile|) for vital signs data from i(OS|) (Health|) (App|)",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Observation|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/vitalsigns",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Observation|).effective[x]",
+        "path": "(Observation|).effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).effective[x]:effective(DateTime|)",
+        "path": "(Observation|).effective[x]",
+        "slice(Name|)": "effective(DateTime|)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date(Time|)"
+          }
+        ],
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).device",
+        "path": "(Observation|).device",
+        "must(Support|)": true
+      }
+    ]
+  }
+}

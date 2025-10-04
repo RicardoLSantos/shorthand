@@ -1,0 +1,99 @@
+Total errors found: 17
+
+================================================================================
+
+1. File: ConceptMap-MindfulnessDiagnosticMap
+   Expression: ConceptMap/MindfulnessDiagnosticMap: ConceptMap.target
+   ID: CONCEPTMAP_VS_NOT_A_VS
+   Message: A referência deve ser a um ValueSet, mas em vez disso encontrou um CodeSystem
+
+2. File: Consent-MindfulnessAccessPolicy
+   Expression: Consent/MindfulnessAccessPolicy: Consent.provision.actor[0].role.coding[0].code
+   ID: Unknown_Code_in_Version
+   Message: Código desconhecido 'PROV' no CodeSystem 'http://terminology.hl7.org/CodeSystem/v3-RoleCode' versão '3.0.0'
+
+3. File: Consent-MindfulnessSecurityDefinition
+   Expression: Consent/MindfulnessSecurityDefinition: Consent.provision.actor[0].role.coding[0].code
+   ID: Unknown_Code_in_Version
+   Message: Código desconhecido 'PROV' no CodeSystem 'http://terminology.hl7.org/CodeSystem/v3-RoleCode' versão '3.0.0'
+
+4. File: Observation-WalkingSpeedExample
+   Expression: Observation/WalkingSpeedExample: Observation.component[0].code.coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Walking speed' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-speed. Valid display is 'Walking speed measurement' (for the language(s) '
+            ... (truncated)
+
+5. File: Observation-WalkingSpeedExample
+   Expression: Observation/WalkingSpeedExample: Observation.component[1].code.coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Walking distance' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-distance. Valid display is 'Walking distance measurement' (for the lang
+            ... (truncated)
+
+6. File: Observation-WalkingSteadinessExample
+   Expression: Observation/WalkingSteadinessExample: Observation.component[0].code.coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Balance [Score]' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-steadiness. Valid display is 'Walking steadiness measurement' (for the l
+            ... (truncated)
+
+7. File: StructureDefinition-walking-speed-observation
+   Expression: StructureDefinition/walking-speed-observation: StructureDefinition.snapshot.element[91].pattern.ofType(CodeableConcept).coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Walking speed' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-speed. Valid display is 'Walking speed measurement' (for the language(s) '
+            ... (truncated)
+
+8. File: StructureDefinition-walking-speed-observation
+   Expression: StructureDefinition/walking-speed-observation: StructureDefinition.snapshot.element[108].pattern.ofType(CodeableConcept).coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Walking distance' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-distance. Valid display is 'Walking distance measurement' (for the lang
+            ... (truncated)
+
+9. File: StructureDefinition-walking-speed-observation
+   Expression: StructureDefinition/walking-speed-observation: StructureDefinition.differential.element[3].pattern.ofType(CodeableConcept).coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Walking speed' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-speed. Valid display is 'Walking speed measurement' (for the language(s) '
+            ... (truncated)
+
+10. File: StructureDefinition-walking-speed-observation
+   Expression: StructureDefinition/walking-speed-observation: StructureDefinition.differential.element[9].pattern.ofType(CodeableConcept).coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Walking distance' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-distance. Valid display is 'Walking distance measurement' (for the lang
+            ... (truncated)
+
+11. File: StructureDefinition-walking-steadiness-observation
+   Expression: StructureDefinition/walking-steadiness-observation: StructureDefinition.snapshot.element[91].pattern.ofType(CodeableConcept).coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Balance [Score]' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-steadiness. Valid display is 'Walking steadiness measurement' (for the l
+            ... (truncated)
+
+12. File: StructureDefinition-walking-steadiness-observation
+   Expression: StructureDefinition/walking-steadiness-observation: StructureDefinition.differential.element[3].pattern.ofType(CodeableConcept).coding[0].display
+   ID: Display_Name_for__should_be_one_of__instead_of
+   Message: Wrong Display Name 'Balance [Score]' for https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#walking-steadiness. Valid display is 'Walking steadiness measurement' (for the l
+            ... (truncated)
+
+13. File: StructureMap-MindfulnessCSVTransform
+   Expression: StructureMap/MindfulnessCSVTransform: StructureMap.group[0].input[0]
+   ID: SM_GROUP_INPUT_TYPE_UNKNOWN_TYPE
+   Message: O tipo CSVMindfulness não é conhecido, pelo que os caminhos não podem ser validados
+
+14. File: StructureMap-MindfulnessCSVTransform
+   Expression: StructureMap/MindfulnessCSVTransform: StructureMap.group[0].rule[0].target[0]
+   ID: SM_TARGET_PATH_INVALID
+   Message: A trajetória de destino target.effectiveDateTime refere-se à trajetória Observation.effectiveDateTime que é desconhecida
+
+15. File: StructureMap-MindfulnessHealthKitTransform
+   Expression: StructureMap/MindfulnessHealthKitTransform: StructureMap.group[0].input[0]
+   ID: SM_GROUP_INPUT_TYPE_UNKNOWN_TYPE
+   Message: O tipo HealthKitMindfulness não é conhecido, pelo que os caminhos não podem ser validados
+
+16. File: StructureMap-MindfulnessHealthKitTransform
+   Expression: StructureMap/MindfulnessHealthKitTransform: StructureMap.group[0].rule[0].target[0]
+   ID: SM_TARGET_PATH_INVALID
+   Message: A trajetória de destino target.effectiveDateTime refere-se à trajetória Observation.effectiveDateTime que é desconhecida
+
+17. File: StructureMap-MindfulnessHealthKitTransform
+   Expression: StructureMap/MindfulnessHealthKitTransform: StructureMap.group[0].rule[1].target[0]
+   ID: SM_TARGET_PATH_INVALID
+   Message: A trajetória de destino target.component.where(code.coding.code='118682006').valueQuantity refere-se à trajetória Observation.component.where(code.coding.code='118682006').valueQuantity que é desconhe
+            ... (truncated)
+

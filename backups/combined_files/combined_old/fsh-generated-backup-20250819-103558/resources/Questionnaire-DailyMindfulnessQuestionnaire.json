@@ -1,0 +1,142 @@
+{
+  "resource(Type|)": "(Questionnaire|)",
+  "id": "(DailyMindfulnessQuestionnaire|)",
+  "url": "http://example.org/(Questionnaire|)/daily-mindfulness",
+  "title": "(Daily|) (Mindfulness|) (Practice|)",
+  "description": "(Questionnaire|) for capturing daily mindfulness practice and associated effects",
+  "subject(Type|)": [
+    "(Patient|)"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/(StructureDefinition|)/min(Value|)",
+              "value(Integer|)": 1
+            }
+          ],
+          "link(Id|)": "session_duration",
+          "text": "(Session|) duration (minutes)",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "answer(Option|)": [
+            {
+              "value(String|)": "(Meditation|)"
+            },
+            {
+              "value(String|)": "(Breathing|) exercise"
+            },
+            {
+              "value(String|)": "(Body|) scan"
+            },
+            {
+              "value(String|)": "(Mindful|) walking"
+            }
+          ],
+          "link(Id|)": "practice_type",
+          "text": "(Practice|) type",
+          "type": "choice",
+          "required": true
+        }
+      ],
+      "link(Id|)": "mindful_session",
+      "text": "(Mindfulness|) (Session|)",
+      "type": "group",
+      "repeats": false
+    },
+    {
+      "item": [
+        {
+          "link(Id|)": "current_mood",
+          "text": "(How|) is your mood now?",
+          "type": "choice",
+          "required": true,
+          "answer(ValueSet|)": "https://example.org/fhir/(ValueSet|)/mood-vs"
+        },
+        {
+          "link(Id|)": "mood_intensity",
+          "text": "(Mood|) intensity (1-5)",
+          "type": "integer",
+          "required": true
+        }
+      ],
+      "link(Id|)": "mood_assessment",
+      "text": "(Mood|) (Assessment|)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "link(Id|)": "stress_level",
+          "text": "(Stress|) level (0-10)",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "answer(Option|)": [
+            {
+              "value(String|)": "(Muscle|) tension"
+            },
+            {
+              "value(String|)": "(Anxiety|)"
+            },
+            {
+              "value(String|)": "(Headache|)"
+            },
+            {
+              "value(String|)": "(Fatigue|)"
+            }
+          ],
+          "link(Id|)": "stress_symptoms",
+          "text": "(Stress|) symptoms",
+          "type": "choice",
+          "repeats": true
+        }
+      ],
+      "link(Id|)": "stress_assessment",
+      "text": "(Stress|) (Assessment|)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "link(Id|)": "relaxation_duration",
+          "text": "(Relaxation|) time (minutes)",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "answer(Option|)": [
+            {
+              "value(String|)": "(Deep|) breathing"
+            },
+            {
+              "value(String|)": "(Progressive|) relaxation"
+            },
+            {
+              "value(String|)": "(Visualization|)"
+            },
+            {
+              "value(String|)": "(Mindful|) awareness"
+            }
+          ],
+          "link(Id|)": "relaxation_technique",
+          "text": "(Technique|) used",
+          "type": "choice",
+          "required": true
+        }
+      ],
+      "link(Id|)": "relaxation",
+      "text": "(Relaxation|)",
+      "type": "group"
+    }
+  ],
+  "status": "active",
+  "version": "1.0.0",
+  "name": "(DailyMindfulnessQuestionnaire|)",
+  "date": "2024-03-19"
+}

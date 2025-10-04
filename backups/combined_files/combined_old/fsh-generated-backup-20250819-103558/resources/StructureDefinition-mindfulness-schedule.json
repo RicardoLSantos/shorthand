@@ -1,0 +1,33 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-schedule",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-schedule",
+  "name": "(MindfulnessSchedule|)",
+  "title": "(Mindfulness|) (Schedule|)",
+  "status": "draft",
+  "description": "(Schedule|) configuration for mindfulness sessions",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Basic|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Basic|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Basic|).code",
+        "path": "(Basic|).code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "recurring",
+              "system": "http://example.org/(CodeSystem|)/mindfulness-schedule-type",
+              "display": "(Recurring|) (Schedule|)"
+            }
+          ]
+        },
+        "must(Support|)": true
+      }
+    ]
+  }
+}

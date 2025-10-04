@@ -1,0 +1,51 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-message-definition",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/mindfulness-message-definition",
+  "name": "(MindfulnessMessageDefinition|)",
+  "title": "(Mindfulness|) (Message|) (Definition|)",
+  "status": "draft",
+  "description": "(Definition|) for mindfulness session messages",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(MessageDefinition|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(MessageDefinition|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(MessageDefinition|).url",
+        "path": "(MessageDefinition|).url",
+        "min": 1,
+        "must(Support|)": true
+      },
+      {
+        "id": "(MessageDefinition|).status",
+        "path": "(MessageDefinition|).status",
+        "must(Support|)": true
+      },
+      {
+        "id": "(MessageDefinition|).date",
+        "path": "(MessageDefinition|).date",
+        "must(Support|)": true
+      },
+      {
+        "id": "(MessageDefinition|).event[x]",
+        "path": "(MessageDefinition|).event[x]",
+        "must(Support|)": true
+      },
+      {
+        "id": "(MessageDefinition|).category",
+        "path": "(MessageDefinition|).category",
+        "must(Support|)": true
+      },
+      {
+        "id": "(MessageDefinition|).focus",
+        "path": "(MessageDefinition|).focus",
+        "min": 1,
+        "must(Support|)": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+CONSENT ERRORS - Phase 2.5 Analysis
+====================================
+Generated: 2025-09-30 14:25:00
+Total: 6 errors (3 per Consent resource)
+
+AFFECTED RESOURCES:
+1. Consent/MindfulnessAccessPolicy (3 errors)
+2. Consent/MindfulnessSecurityDefinition (3 errors)
+
+ERROR PATTERNS:
+
+A. WRONG DISPLAY NAME (2 errors - 1 per resource)
+   Current: 'Patient Consent'
+   Expected: 'Consent Document' or 'Consent'
+   Code: http://loinc.org#59284-0
+   Location: Consent.category[0].coding[0].display
+   
+B. UNKNOWN ROLECODE (2 errors - 1 per resource)
+   Code: 'TREAT'
+   System: http://terminology.hl7.org/CodeSystem/v3-RoleCode v3.0.0
+   Location: Consent.provision.actor[0].role.coding[0].code
+   Issue: Code 'TREAT' not found in v3-RoleCode
+   
+   Research needed: Check if TREAT is valid in newer version or use alternative
+   
+C. INVALID SYSTEM URL (2 errors - 1 per resource)
+   URL: http://terminology.hl7.org/CodeSystem/practitioner-identifier
+   Location: Consent.provision.actor[0].reference.identifier.system
+   Issue: This CodeSystem doesn't exist in HL7 terminology
+   
+   Options:
+   - Use http://hl7.org/fhir/sid/us-npi (US National Provider Identifier)
+   - Use local system: https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/practitioner-identifier
+   - Remove identifier.system if not essential
+
+FIXES REQUIRED:
+
+1. Change display: 'Patient Consent' → 'Consent Document'
+   (LOINC#59284-0 official short name)
+
+2. Check TREAT code validity:
+   - If invalid: use alternative like 'PROV' (healthcare provider)
+   - Or research correct RoleCode
+
+3. Fix practitioner-identifier system:
+   - Option A: Use local CodeSystem (need to create)
+   - Option B: Remove if not essential
+   - Option C: Use standard identifier system
+
+FSH FILES TO FIX:
+- input/fsh/security/MindfulnessSecurity.fsh
+  OR
+- Separate Consent instance files if they exist

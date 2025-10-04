@@ -1,0 +1,128 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "mindfulness-import-map",
+  "url": "https://example.org/(StructureDefinition|)/mindfulness-import-map",
+  "version": "1.0.0",
+  "name": "(MindfulnessImportMap|)",
+  "title": "(Mindfulness|) (Import|) (Mapping|)",
+  "status": "draft",
+  "description": "(Mapping|) instructions for importing mindfulness data",
+  "fhir(Version|)": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "(Element|)"
+    }
+  ],
+  "type": "(Extension|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Extension|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Extension|)",
+        "path": "(Extension|)",
+        "short": "(Mindfulness|) (Import|) (Mapping|)",
+        "definition": "(Mapping|) instructions for importing mindfulness data"
+      },
+      {
+        "id": "(Extension|).extension",
+        "path": "(Extension|).extension",
+        "min": 3
+      },
+      {
+        "id": "(Extension|).extension:source",
+        "path": "(Extension|).extension",
+        "slice(Name|)": "source",
+        "min": 1,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Extension|).extension:source.extension",
+        "path": "(Extension|).extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).extension:source.url",
+        "path": "(Extension|).extension.url",
+        "fixed(Uri|)": "source"
+      },
+      {
+        "id": "(Extension|).extension:source.value[x]",
+        "path": "(Extension|).extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "(Extension|).extension:target",
+        "path": "(Extension|).extension",
+        "slice(Name|)": "target",
+        "min": 1,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Extension|).extension:target.extension",
+        "path": "(Extension|).extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).extension:target.url",
+        "path": "(Extension|).extension.url",
+        "fixed(Uri|)": "target"
+      },
+      {
+        "id": "(Extension|).extension:target.value[x]",
+        "path": "(Extension|).extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "(Extension|).extension:mapping",
+        "path": "(Extension|).extension",
+        "slice(Name|)": "mapping",
+        "min": 1,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Extension|).extension:mapping.extension",
+        "path": "(Extension|).extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).extension:mapping.url",
+        "path": "(Extension|).extension.url",
+        "fixed(Uri|)": "mapping"
+      },
+      {
+        "id": "(Extension|).extension:mapping.value[x]",
+        "path": "(Extension|).extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "(Extension|).url",
+        "path": "(Extension|).url",
+        "fixed(Uri|)": "https://example.org/(StructureDefinition|)/mindfulness-import-map"
+      },
+      {
+        "id": "(Extension|).value[x]",
+        "path": "(Extension|).value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}
