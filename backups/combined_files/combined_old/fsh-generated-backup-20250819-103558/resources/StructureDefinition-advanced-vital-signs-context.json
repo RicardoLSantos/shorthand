@@ -1,0 +1,54 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "advanced-vital-signs-context",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/advanced-vital-signs-context",
+  "name": "(AdvancedVitalSignsContext|)",
+  "title": "(Advanced|) (Vital|) (Signs|) (Context|) (Extension|)",
+  "status": "draft",
+  "description": "(Additional|) context about advanced vital sign measurements",
+  "fhir(Version|)": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "(Element|)"
+    }
+  ],
+  "type": "(Extension|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Extension|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Extension|)",
+        "path": "(Extension|)",
+        "short": "(Advanced|) (Vital|) (Signs|) (Context|) (Extension|)",
+        "definition": "(Additional|) context about advanced vital sign measurements"
+      },
+      {
+        "id": "(Extension|).extension",
+        "path": "(Extension|).extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).url",
+        "path": "(Extension|).url",
+        "fixed(Uri|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/advanced-vital-signs-context"
+      },
+      {
+        "id": "(Extension|).value[x]",
+        "path": "(Extension|).value[x]",
+        "type": [
+          {
+            "code": "(CodeableConcept|)"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "value(Set|)": "https://github.com/(RicardoLSantos|)/shorthand/(ValueSet|)/advanced-vital-signs-context-vs"
+        }
+      }
+    ]
+  }
+}

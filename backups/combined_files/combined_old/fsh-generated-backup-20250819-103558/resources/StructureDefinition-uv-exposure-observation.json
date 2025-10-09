@@ -1,0 +1,271 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "uv-exposure-observation",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/uv-exposure-observation",
+  "name": "(UVExposureObservation|)",
+  "title": "(UV|) (Exposure|) (Observation|) (Profile|)",
+  "status": "draft",
+  "description": "(Profile|) for (UV|) exposure measurements from i(OS|) (Health|) (App|)",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Observation|)",
+  "base(Definition|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/environmental-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Observation|).code",
+        "path": "(Observation|).code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "28574-5",
+              "system": "http://loinc.org",
+              "display": "(UV|) exposure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component",
+        "path": "(Observation|).component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "(UV|) exposure components",
+        "definition": "(Components|) of (UV|) exposure measurement",
+        "min": 2
+      },
+      {
+        "id": "(Observation|).component:index",
+        "path": "(Observation|).component",
+        "slice(Name|)": "index",
+        "min": 1,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:index.code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "89022-8",
+              "system": "http://loinc.org",
+              "display": "(UV|) index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:index.value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:index.value[x]:value(Quantity|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(Quantity|)",
+        "short": "(UV|) index value",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:index.value[x]:value(Quantity|).system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:index.value[x]:value(Quantity|).code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "{index}"
+      },
+      {
+        "id": "(Observation|).component:duration",
+        "path": "(Observation|).component",
+        "slice(Name|)": "duration",
+        "min": 1,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:duration.code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "89023-6",
+              "system": "http://loinc.org",
+              "display": "(UV|) exposure duration"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:duration.value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:duration.value[x]:value(Quantity|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(Quantity|)",
+        "short": "(Duration|) of (UV|) exposure",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:duration.value[x]:value(Quantity|).system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:duration.value[x]:value(Quantity|).code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "min"
+      },
+      {
+        "id": "(Observation|).component:time(OfDay|)",
+        "path": "(Observation|).component",
+        "slice(Name|)": "time(OfDay|)",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:time(OfDay|).code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "89026-9",
+              "system": "http://loinc.org",
+              "display": "(Time|) of exposure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:time(OfDay|).value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "(Observation|).component:time(OfDay|).value[x]:value(DateTime|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(DateTime|)",
+        "short": "(Time|) of (UV|) exposure",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "date(Time|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:intensity",
+        "path": "(Observation|).component",
+        "slice(Name|)": "intensity",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:intensity.code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "89027-7",
+              "system": "http://loinc.org",
+              "display": "(UV|) intensity"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:intensity.value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:intensity.value[x]:value(Quantity|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(Quantity|)",
+        "short": "(UV|) radiation intensity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:intensity.value[x]:value(Quantity|).system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:intensity.value[x]:value(Quantity|).code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "(W|)/m2"
+      }
+    ]
+  }
+}

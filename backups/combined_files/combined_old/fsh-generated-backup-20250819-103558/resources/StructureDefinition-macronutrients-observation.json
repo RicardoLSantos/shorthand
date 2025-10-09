@@ -1,0 +1,233 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "macronutrients-observation",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/macronutrients-observation",
+  "version": "0.1.0",
+  "name": "(MacronutrientsObservation|)",
+  "title": "(Macronutrients|) (Observation|) (Profile|)",
+  "status": "draft",
+  "publisher": "(Ricardo|) (Louren|)ço dos (Santos|)",
+  "description": "(Profile|) for macronutrient intake measurements",
+  "fhir(Version|)": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "(Observation|)",
+  "base(Definition|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/nutrition-intake-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Observation|).code",
+        "path": "(Observation|).code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "(LP|)199119-9",
+              "system": "http://loinc.org",
+              "display": "(Macronutrients|) panel"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component",
+        "path": "(Observation|).component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:carbohydrates",
+        "path": "(Observation|).component",
+        "slice(Name|)": "carbohydrates",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:carbohydrates.code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "(LP|)35925-4",
+              "system": "http://loinc.org",
+              "display": "(Carbohydrates|)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:carbohydrates.value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:carbohydrates.value[x]:value(Quantity|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(Quantity|)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:carbohydrates.value[x]:value(Quantity|).unit",
+        "path": "(Observation|).component.value[x].unit",
+        "pattern(String|)": "gram"
+      },
+      {
+        "id": "(Observation|).component:carbohydrates.value[x]:value(Quantity|).system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:carbohydrates.value[x]:value(Quantity|).code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "g"
+      },
+      {
+        "id": "(Observation|).component:proteins",
+        "path": "(Observation|).component",
+        "slice(Name|)": "proteins",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:proteins.code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "(LP|)35921-3",
+              "system": "http://loinc.org",
+              "display": "(Proteins|)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:proteins.value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:proteins.value[x]:value(Quantity|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(Quantity|)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:proteins.value[x]:value(Quantity|).unit",
+        "path": "(Observation|).component.value[x].unit",
+        "pattern(String|)": "gram"
+      },
+      {
+        "id": "(Observation|).component:proteins.value[x]:value(Quantity|).system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:proteins.value[x]:value(Quantity|).code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "g"
+      },
+      {
+        "id": "(Observation|).component:fats",
+        "path": "(Observation|).component",
+        "slice(Name|)": "fats",
+        "min": 0,
+        "max": "1",
+        "must(Support|)": true
+      },
+      {
+        "id": "(Observation|).component:fats.code",
+        "path": "(Observation|).component.code",
+        "pattern(CodeableConcept|)": {
+          "coding": [
+            {
+              "code": "(LP|)35922-1",
+              "system": "http://loinc.org",
+              "display": "(Fats|)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "(Observation|).component:fats.value[x]",
+        "path": "(Observation|).component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "(Observation|).component:fats.value[x]:value(Quantity|)",
+        "path": "(Observation|).component.value[x]",
+        "slice(Name|)": "value(Quantity|)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "(Quantity|)"
+          }
+        ]
+      },
+      {
+        "id": "(Observation|).component:fats.value[x]:value(Quantity|).unit",
+        "path": "(Observation|).component.value[x].unit",
+        "pattern(String|)": "gram"
+      },
+      {
+        "id": "(Observation|).component:fats.value[x]:value(Quantity|).system",
+        "path": "(Observation|).component.value[x].system",
+        "pattern(Uri|)": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "(Observation|).component:fats.value[x]:value(Quantity|).code",
+        "path": "(Observation|).component.value[x].code",
+        "pattern(Code|)": "g"
+      }
+    ]
+  }
+}

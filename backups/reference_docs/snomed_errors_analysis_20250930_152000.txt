@@ -1,0 +1,124 @@
+SNOMED CT ERRORS - Phase 3.1 Analysis
+======================================
+Generated: 2025-09-30 15:20:00
+Total SNOMED errors: ~42 errors identified
+
+ERROR CATEGORIES:
+
+A. UNKNOWN CODES (codes don't exist in SNOMED CT 20250201):
+
+   1. Code: 706172001 - "Sleep monitoring device"
+      Location: Device/DeviceSleepMonitor
+      Issue: Code not found in SNOMED CT
+
+   2. Code: 118682006 - Duration component
+      Locations:
+        - Observation/CompleteMindfulnessSession
+        - Observation/MindfulnessObservationExample
+        - StructureDefinition/mindfulness-observation
+      Issue: Code not found in SNOMED CT
+
+   3. Code: 725854004 - Intensity component
+      Locations: (same as #2)
+      Issue: Code not found in SNOMED CT
+
+   4. Code: 246604007 - Symptom severity
+      Location: Observation/ExampleSymptomSeverity
+      Issue: Code not found in SNOMED CT
+
+   5. Code: 37016008 - Measurement method
+      Locations:
+        - Observation/NoiseExposureExample
+        - Observation/UVExposureExample
+      Issue: Code not found in SNOMED CT
+
+   6. Code: 364311006 - Social history goals
+      Location: ValueSet/social-history-goal-vs
+      Issue: Code not found in SNOMED CT
+
+B. WRONG DISPLAY NAMES (code exists but wrong concept):
+
+   1. Code: 258158006
+      Used for: "Breathing rate"
+      Actual SNOMED meaning: "Sleep"
+      Location: Device/DeviceActivityTracker
+      Problem: Wrong code chosen
+
+   2. Code: 43770009
+      Used for: "Blood pressure monitor"
+      Actual SNOMED meaning: "Doppler device"
+      Location: Device/DeviceBloodPressureMonitor
+      Problem: Wrong code chosen
+
+   3. Code: 720737000
+      Used for: "Pulse rate monitoring device"
+      Actual SNOMED meaning: "Blood pressure cuff, adult size"
+      Location: Device/DeviceHeartRateMonitor
+      Problem: Wrong code chosen
+
+   4. Code: 706689003
+      Used for: "Environmental monitoring device" / "Mobile telephone"
+      Actual SNOMED meaning: "Application programme software"
+      Locations:
+        - Device/EnvironmentalDeviceExample
+        - Device/iphone-example
+      Problem: Wrong code chosen
+
+   5. Code: 267036007
+      Used for: "Fatigue"
+      Actual SNOMED meaning: "Dyspnea"
+      Location: Observation/ChronicSymptomExample
+      Problem: Wrong code chosen
+
+   6. Code: 373931001
+      Used for: "Mood finding"
+      Actual SNOMED meaning: "Sensation of heaviness in limbs"
+      Locations:
+        - Observation/CompleteMindfulnessSession
+        - Observation/MindfulnessObservationExample
+        - StructureDefinition/mindfulness-observation
+      Problem: Wrong code chosen
+
+   7. Code: 130991005
+      Used for: "Neutral mood"
+      Actual SNOMED meaning: "Transcortical sensory aphasia"
+      Locations: (same as #6 + QuestionnaireResponse)
+      Problem: Wrong code chosen
+
+   8. Code: 276241001
+      Used for: "Relaxation technique"
+      Actual SNOMED meaning: "Fear of heights"
+      Locations: (same as #6)
+      Problem: Wrong code chosen
+
+   9. Code: 228557008
+      Used for: "Walking"
+      Actual SNOMED meaning: "Cognitive and behavioral therapy"
+      Location: Observation/PhysicalActivityExample1
+      Problem: Wrong code chosen
+
+   10. Code: 307818003
+       Used for: "Pre-breakfast"
+       Actual SNOMED meaning: "Weight monitoring"
+       Location: Observation/WeightWithConditions
+       Problem: Wrong code chosen
+
+AFFECTED FILES (estimated):
+1. input/fsh/examples/MindfulnessCompleteExamples.fsh
+2. input/fsh/examples/MindfulnessExamples.fsh
+3. input/fsh/examples/SymptomExamples.fsh
+4. input/fsh/examples/EnvironmentalExamples.fsh
+5. input/fsh/examples/PhysicalActivityExamples.fsh
+6. input/fsh/examples/VitalSignsExamples.fsh
+7. input/fsh/profiles/MindfulnessProfiles.fsh
+8. input/fsh/valuesets/ReproductiveValueSets.fsh
+9. Device example files (need to locate)
+
+NEXT STEPS:
+1. Research correct SNOMED CT codes for each concept
+2. Identify which files contain these errors
+3. Create fix script with proper replacements
+4. Consider alternative coding systems (LOINC) where appropriate
+
+NOTE: This requires detailed SNOMED CT terminology research
+      using official SNOMED browser or terminology server.

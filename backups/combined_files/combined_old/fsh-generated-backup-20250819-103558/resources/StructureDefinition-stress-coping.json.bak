@@ -1,0 +1,54 @@
+{
+  "resource(Type|)": "(StructureDefinition|)",
+  "id": "stress-coping",
+  "url": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/stress-coping",
+  "name": "(StressCoping|)",
+  "title": "(Stress|) (Coping|) (Extension|)",
+  "status": "draft",
+  "description": "(Extension|) for recording stress coping mechanisms",
+  "fhir(Version|)": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "(Element|)"
+    }
+  ],
+  "type": "(Extension|)",
+  "base(Definition|)": "http://hl7.org/fhir/(StructureDefinition|)/(Extension|)",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "(Extension|)",
+        "path": "(Extension|)",
+        "short": "(Stress|) (Coping|) (Extension|)",
+        "definition": "(Extension|) for recording stress coping mechanisms"
+      },
+      {
+        "id": "(Extension|).extension",
+        "path": "(Extension|).extension",
+        "max": "0"
+      },
+      {
+        "id": "(Extension|).url",
+        "path": "(Extension|).url",
+        "fixed(Uri|)": "https://github.com/(RicardoLSantos|)/shorthand/(StructureDefinition|)/stress-coping"
+      },
+      {
+        "id": "(Extension|).value[x]",
+        "path": "(Extension|).value[x]",
+        "type": [
+          {
+            "code": "(CodeableConcept|)"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "value(Set|)": "https://github.com/(RicardoLSantos|)/shorthand/(ValueSet|)/stress-coping-vs"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # Procedimentos Operacionais Padr\'c3\'a3o (SOP) e Diretrizes para Implementation Guides HL7 FHIR\
+\
+## Vis\'c3\'a3o Geral\
+\
+Este documento detalha metodologias SOP-like, melhores pr\'c3\'a1ticas, processos de qualidade, reposit\'c3\'b3rios p\'c3\'bablicos, iniciativas interagenciais e nacionais, e exemplos internacionais para o desenvolvimento e publica\'c3\'a7\'c3\'a3o de Implementation Guides (IGs) HL7 FHIR. Tamb\'c3\'a9m orienta onde encontrar IGs j\'c3\'a1 publicados e d\'c3\'a1 exemplos de iniciativas de \'c3\'b3rg\'c3\'a3os globais, incluindo FDA, EMA, NHS, CDC, ONC, IHE, OMS e HL7 internacional.\
+\
+---\
+\
+## 1. Conceito de SOP para Implementation Guides FHIR\
+\
+Assim como SOPs tradicionais, diferentes \'c3\'b3rg\'c3\'a3os criaram metodologias formais abrangentes para a constru\'c3\'a7\'c3\'a3o, valida\'c3\'a7\'c3\'a3o, publica\'c3\'a7\'c3\'a3o e revis\'c3\'a3o de IGs FHIR.\
+\
+### 1.1. HL7 Internacional\
+- **Processo Oficial para Publica\'c3\'a7\'c3\'a3o de IG:** Define fases como PSS (Project Scope Statement), Proposal, Quality Checklist, valida\'c3\'a7\'c3\'b5es t\'c3\'a9cnicas e publica\'c3\'a7\'c3\'a3o formal.\
+  - [FHIR IG Process Flow](https://confluence.hl7.org/display/FHIR/FHIR+Implementation+Guide+Process+Flow)\
+- **Diretrizes e Checklists:** Incluem padroniza\'c3\'a7\'c3\'a3o de nomes, estrutura de t\'c3\'b3picos, detalhamento de artefatos obrigat\'c3\'b3rios, artefatos de vers\'c3\'b5es, regras de publica\'c3\'a7\'c3\'a3o e processos de revis\'c3\'a3o ([Publishing Requirements](https://confluence.hl7.org/display/FHIR/FHIR+Implementation+Guide+Publishing+Requirements))\
+- **Automa\'c3\'a7\'c3\'a3o de Qualidade:** Arquivos QA.html, verifica\'c3\'a7\'c3\'b5es automatizadas e relat\'c3\'b3rios de valida\'c3\'a7\'c3\'a3o.\
+- **Valida\'c3\'a7\'c3\'a3o T\'c3\'a9cnica:** Uso de ferramentas como FHIR Validator e IG Publisher.[32]\
+- **Reposit\'c3\'b3rio Oficial de Implementation Guides:**\
+  - [Registry.fhir.org](http://registry.fhir.org)\
+  - [GitHub HL7 IG Registry](https://github.com/FHIR/ig-registry)\
+\
+### 1.2. OMS (WHO) - SMART Guidelines Starter Kit\
+- Estrutura completa de SOPs para IGs FHIR voltados \'c3  sa\'c3\'bade p\'c3\'bablica global.\
+- Inclui checklists de qualidade, valida\'c3\'a7\'c3\'a3o, instru\'c3\'a7\'c3\'b5es de controle de vers\'c3\'b5es, processos de autoriza\'c3\'a7\'c3\'a3o e publica\'c3\'a7\'c3\'a3o, adapta\'c3\'a7\'c3\'a3o para necessidades nacionais e listas de verifica\'c3\'a7\'c3\'a3o por camada de maturidade de conhecimento.\
+  - [Starter Kit OMS](https://smart.who.int/ig-starter-kit/)\
+  - [Quality Checklist](https://smart.who.int/ig-starter-kit/checklist.html)\
+  - [Diretrizes OMS](https://www.who.int/teams/digital-health-and-innovation/smart-guidelines/fhir-based-smart-guidelines)\
+\
+### 1.3. CDC (Estados Unidos)\
+- Checklist espec\'c3\'adficos para ado\'c3\'a7\'c3\'a3o FHIR em programas de sa\'c3\'bade e alinhamento com requisitos do ONC USCDI.\
+  - [CDC FHIR Implementation Guidance Checklist](https://www.cdc.gov/nchs/nvss/modernization/pdf/fhir-implimentation-guidance-checklist.pdf)[11]\
+\
+### 1.4. FDA (Estados Unidos)\
+- SOPs e guias para submiss\'c3\'a3o de dados estruturados (PQ/CMC) pelo FHIR.[34][37][43][46]\
+  - [FDA FHIR PQ/CMC](https://www.fda.gov/industry/pharmaceutical-quality-chemistry-manufacturing-controls-pqcmc/pqcmc-and-hl7-fhir)\
+  - [HL7 PQ/CMC Guide](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/)\
+\
+### 1.5. EMA (Uni\'c3\'a3o Europeia)\
+- Guia para informa\'c3\'a7\'c3\'b5es eletr\'c3\'b4nicas de produto (ePI) baseada em FHIR.\
+  - [PLM Portal EMA ePI](https://plm-portal.ema.europa.eu/Guidance/article/KA-01073/en-us)\
+  - [GitHub ePI EU](https://github.com/EuropeanMedicinesAgency/EU-ePI-common-standard)\
+  - [EMA FHIR Conceptual Data Model](https://www.extedo.com/blog/the-ema-published-the-fhir-conceptual-data-model-cdm)\
+\
+### 1.6. NHS Inglaterra e outros pa\'c3\'adses\
+- Guia FHIR Core (UK), guias nacionais e APIs documentam processos, valida\'c3\'a7\'c3\'a3o, seguran\'c3\'a7a e interoperabilidade.\
+  - [NHS FHIR UK Core](https://standards.nhs.uk/published-standards/uk-core-implementation-guide-100-stu1)\
+  - [NHS England IG](https://simplifier.net/guide/nhsdigital)\
+  - [FHIR Genomics IG NHS](https://standards.nhs.uk/published-standards/fhir-genomics-implementation-guide)\
+  - [GP Connect FHIR API](https://developer.nhs.uk/apis/gpconnect/development_fhir_api_guidance.html)\
+\
+### 1.7. ONC (Estados Unidos)\
+- Define requisitos obrigat\'c3\'b3rios de certifica\'c3\'a7\'c3\'a3o usando USCDI, US Core IG, conformance, documenta\'c3\'a7\'c3\'a3o p\'c3\'bablica e valida\'c3\'a7\'c3\'a3o dos aplicativos FHIR.\
+  - [ONC FHIR API Criterion](https://onc-healthit.github.io/api-resource-guide/g10-criterion/)\
+  - [US Core IG](https://build.fhir.org/ig/HL7/US-Core/)\
+  - [ONC Health IT Cures Act](https://www.healthit.gov/curesrule/)\
+\
+### 1.8. IHE International\
+- Framework de perfis interoper\'c3\'a1veis (IHE Profiles) com metodologia ISO e integra\'c3\'a7\'c3\'a3o FHIR para casos de uso cl\'c3\'adnico e processos administrativos.\
+  - [IHE Profiles and FHIR](https://kodjin.com/blog/ihe-profiles-and-fhir/)\
+\
+---\
+\
+## 2. Reposit\'c3\'b3rios e Locais para Encontrar Implementation Guides Publicados\
+\
+- **HL7 International Registry**: https://registry.fhir.org/guides\
+- **GitHub FHIR IG Registry:** https://github.com/FHIR/ig-registry\
+- **Simplifier.net (registro global e autorias colaborativas):** https://simplifier.net/\
+- **Canadian FHIR Registry:** https://ehealthontario.on.ca/en/standards/provincial-client-registry-hl7-fhir-implementation-guide-version-2\
+- **US Core Implementation Guide:** http://hl7.org/fhir/us/core/\
+- **DK FHIR Core (Dinamarca):** https://hl7.dk/fhir/core/\
+- **UK Core Implementation Guide:** https://standards.nhs.uk/published-standards/uk-core-implementation-guide-100-stu1\
+- **International Patient Summary Guide:** https://build.fhir.org/ig/HL7/fhir-ips/\
+- **NHS Guide Examples:** https://simplifier.net/guide/nhsdigital | https://standards.nhs.uk/published-standards/fhir-genomics-implementation-guide\
+\
+Confira tamb\'c3\'a9m as p\'c3\'a1ginas: \
+- [CMS IG Index (EUA)](https://www.cms.gov/priorities/burden-reduction/overview/interoperability/implementation-guides-and-standards/standards-and-igs-index-and-resources)\
+- [Firely FHIR Registry overview](https://fire.ly/blog/the-new-fhir-package-registry/)\
+\
+---\
+\
+## 3. Outros \'c3\'93rg\'c3\'a3os Globais com Diretrizes\
+\
+- **CDC (EUA):** Checklist de implementa\'c3\'a7\'c3\'a3o e alinhamento nacional USCDI.\
+- **FDA (EUA):** SOP espec\'c3\'adfica para ind\'c3\'bastria farmac\'c3\'aautica; processo de balloting, publica\'c3\'a7\'c3\'b5es e Connectathon.\
+- **EMA (Uni\'c3\'a3o Europeia):** Projeto ePI para bula digital usando FHIR, desenvolvimento de modelos conceituais, guias-piloto.\
+- **NHS/UK:** Publica\'c3\'a7\'c3\'a3o de m\'c3\'baltiplos IGs nacionais e regionais; controle/valida\'c3\'a7\'c3\'a3o por \'c3\'b3rg\'c3\'a3os oficiais.\
+- **Canada Health Infoway:** Plataforma Simplifier.net e projetos nacionais.\
+- **IHE:** Processo ISO para cria\'c3\'a7\'c3\'a3o de perfis de integra\'c3\'a7\'c3\'a3o com FHIR.\
+- **WHO/OMS:** Estrutura global para adapta\'c3\'a7\'c3\'a3o, cria\'c3\'a7\'c3\'a3o e governan\'c3\'a7a de IGs, checklists e starter kit para pa\'c3\'adses e regi\'c3\'b5es.\
+\
+\
+---\
+\
+## 4. Processos de Qualidade e Checklist SOP-like\
+\
+- **Checklist CDC:** [Implementation Guidance Checklist PDF](https://www.cdc.gov/nchs/nvss/modernization/pdf/fhir-implimentation-guidance-checklist.pdf)\
+- **OMS Quality Checklist:** [SMART Starter Kit Checklist](https://smart.who.int/ig-starter-kit/checklist.html)\
+- **HL7 QA Process:** [Quality Process Improvements](https://confluence.hl7.org/spaces/FHIR/pages/91989967/FHIR+Implementation+Guide+Quality+Process+Improvements)\
+\
+### Valida\'c3\'a7\'c3\'a3o e Ferramentas\
+- **HL7 FHIR IG Publisher Tool:** https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation\
+- **Simplifier Forge:** https://fire.ly/products/simplifier-net/\
+- **FHIR Validator e Ferramentas de Valida\'c3\'a7\'c3\'a3o:** https://inferno-framework.github.io/docs/writing-tests/fhir-validation.html\
+- **Valida\'c3\'a7\'c3\'a3o no GCP:** https://cloud.google.com/healthcare-api/docs/how-tos/fhir-profiles\
+- **Testes automatizados:** Ferramentas como Inferno, Touchstone e outros.\
+\
+\
+---\
+\
+## 5. Principais Exemplos de Implementation Guides FHIR Publicados e Locais de Busca\
+\
+- [HL7 FHIR International Registry](http://registry.fhir.org/)\
+- [Simplifier.net](https://simplifier.net/)\
+- [GitHub HL7 IG Registry](https://github.com/FHIR/ig-registry)\
+- [Canadian FHIR Registry](https://ehealthontario.on.ca/en/standards/provincial-client-registry-hl7-fhir-implementation-guide-version-2)\
+- [US Core IG](http://hl7.org/fhir/us/core/)\
+- [DK Core IG](https://hl7.dk/fhir/core/)\
+- [UK Core IG](https://standards.nhs.uk/published-standards/uk-core-implementation-guide-100-stu1)\
+\
+\
+---\
+\
+## 6. Refer\'c3\'aancias Citadas (para consulta e links clic\'c3\'a1veis)\
+\
+1. [SOP Facilitated FHIR Implementation RCE (PDF)](https://rce.sequoiaproject.org/wp-content/uploads/2024/07/SOP-Facilitated-FHIR-Implementation_508-1.pdf)\
+2. [WHO SMART Guidelines Starter Kit](https://smart.who.int/ig-starter-kit/)\
+3. [CDC FHIR Implementation Guidance Checklist (PDF)](https://www.cdc.gov/nchs/nvss/modernization/pdf/fhir-implimentation-guidance-checklist.pdf)\
+4. [HL7 IG Process Flow](https://confluence.hl7.org/display/FHIR/FHIR+Implementation+Guide+Process+Flow)\
+5. [Onc FHIR API Criterion](https://onc-healthit.github.io/api-resource-guide/g10-criterion/)\
+6. [Registry.fhir.org](http://registry.fhir.org)\
+7. [HL7 IG Registry (github)](https://github.com/FHIR/ig-registry)\
+8. [Simplifier.net HL7 FHIR Registry](https://simplifier.net/)\
+9. [FDA PQ/CMC FHIR IG](https://www.fda.gov/industry/pharmaceutical-quality-chemistry-manufacturing-controls-pqcmc/pqcmc-and-hl7-fhir)\
+10. [EMA ePI PLM Portal](https://plm-portal.ema.europa.eu/Guidance/article/KA-01073/en-us)\
+11. [UK Core Implementation Guide](https://standards.nhs.uk/published-standards/uk-core-implementation-guide-100-stu1)\
+12. [CMS IG Index](https://www.cms.gov/priorities/burden-reduction/overview/interoperability/implementation-guides-and-standards/standards-and-igs-index-and-resources)\
+13. [International Patient Summary IG](https://build.fhir.org/ig/HL7/fhir-ips/)\
+14. [DK FHIR Core IG](https://hl7.dk/fhir/core/)\
+15. [FHIR Genomics IG NHS](https://standards.nhs.uk/published-standards/fhir-genomics-implementation-guide)\
+16. [IHE Perfis e FHIR](https://kodjin.com/blog/ihe-profiles-and-fhir/)\
+17. [Forge & Simplifier.net](https://fire.ly/products/simplifier-net/)\
+18. [FHIR Package Registry overview (Firely)](https://fire.ly/blog/the-new-fhir-package-registry/)\
+19. [US Core IG HL7](https://build.fhir.org/ig/HL7/US-Core/)\
+20. [FHIR Validator (Inferno)](https://inferno-framework.github.io/docs/writing-tests/fhir-validation.html)\
+21. [Smart Starter Kit Checklist (OMS)](https://smart.who.int/ig-starter-kit/checklist.html)\
+22. [HL7 Publishing Requirements](https://confluence.hl7.org/display/FHIR/FHIR+Implementation+Guide+Publishing+Requirements)\
+23. [GitHub European EMA ePI Guide](https://github.com/EuropeanMedicinesAgency/EU-ePI-common-standard)\
+24. [NHS Digital GP Connect FHIR Guidance](https://developer.nhs.uk/apis/gpconnect/development_fhir_api_guidance.html)\
+25. [Provincial Client Registry Canada](https://ehealthontario.on.ca/en/standards/provincial-client-registry-hl7-fhir-implementation-guide-version-2)\
+26. [HL7 IG Publisher Documentation](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)\
+27. [Quality Process Improvements HL7](https://confluence.hl7.org/spaces/FHIR/pages/91989967/FHIR+Implementation+Guide+Quality+Process+Improvements)\
+28. [FHIR-US PQ/CMC IG (FDA)](https://build.fhir.org/ig/HL7/FHIR-us-pq-cmc-fda/)\
+\
+---\
+\
+*Documento gerado automaticamente. Consulte sempre as fontes e \'c3\'b3rg\'c3\'a3os oficiais para garantir acesso \'c3  vers\'c3\'a3o mais atualizada dos documentos e processos.*}
