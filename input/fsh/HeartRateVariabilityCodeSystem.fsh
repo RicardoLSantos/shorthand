@@ -82,6 +82,7 @@ Description: "Complete set of HRV metrics combining LOINC codes where available 
 * http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 
 // Include custom codes for gaps
+* HeartRateVariabilityCS#hrv-sdnn "HRV SDNN"
 * HeartRateVariabilityCS#hrv-rmssd "HRV RMSSD"
 * HeartRateVariabilityCS#hrv-pnn50 "HRV pNN50"
 * HeartRateVariabilityCS#hrv-lf-hf-ratio "HRV LF/HF Ratio"
