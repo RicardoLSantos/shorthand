@@ -51,7 +51,7 @@ Aligned with:
     startAge 0..1 MS
 
 * component[packYears]
-  * code = $LOINC#8663-7 "Cigarette pack-years"
+  * code = $LOINC#8664-5 "Cigarettes smoked total (pack per year) - Reported"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #{pack-years}
@@ -61,13 +61,13 @@ Aligned with:
   * value[x] only dateTime
 
 * component[cigarettesPerDay]
-  * code = $LOINC#64218-1 "How many cigarettes do you smoke per day"
+  * code = $LOINC#64218-1 "How many cigarettes do you smoke per day now [PhenX]"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #/d
 
 * component[tobaccoType]
-  * code = $LOINC#81229-7 "Tobacco product"
+  * code = $LOINC#81228-9 "Tobacco product"
   * value[x] only CodeableConcept
   * valueCodeableConcept from TobaccoProductTypeVS (extensible)
 
@@ -79,7 +79,7 @@ Aligned with:
   * valueQuantity.unit = "years"
 
 * component[startAge]
-  * code = $LOINC#81023-4 "Age started tobacco smoking"
+  * code = $LOINC#63610-0 "Age when first started smoking cigarettes fairly regularly"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #a
@@ -116,7 +116,7 @@ Clinical Context:
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = $LOINC#11367-0 "History of alcohol use"
+* code = $LOINC#11331-6 "History of Alcohol use"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * value[x] only CodeableConcept
@@ -141,18 +141,18 @@ Clinical Context:
   * valueQuantity.code = #/d
 
 * component[drinksPerWeek]
-  * code = $LOINC#68518-0 "How many standard drinks containing alcohol do you have on a typical day"
+  * code = $LOINC#68519-8 "How many standard drinks containing alcohol do you have on a typical day"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #/wk
 
 * component[drinkingFrequency]
-  * code = $LOINC#68519-8 "How often do you have a drink containing alcohol"
+  * code = $LOINC#68518-0 "How often do you have a drink containing alcohol"
   * value[x] only CodeableConcept
   * valueCodeableConcept from AlcoholDrinkingFrequencyVS (required)
 
 * component[bingeEpisodes]
-  * code = $LOINC#68520-6 "Binge drinking episodes per month"
+  * code = $LOINC#68520-6 "How often do you have 6 or more drinks on 1 occasion"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #/mo
@@ -163,7 +163,7 @@ Clinical Context:
   * valueCodeableConcept from AlcoholBeverageTypeVS (extensible)
 
 * component[auditCScore]
-  * code = $LOINC#75626-2 "AUDIT-C Total score"
+  * code = $LOINC#75626-2 "Total score [AUDIT-C]"
   * value[x] only integer
   * valueInteger 0..1
 
@@ -197,7 +197,7 @@ Guidelines:
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = $LOINC#89574-8 "Caffeine intake"
+* code = $LOINC#80489-8 "Caffeine intake 24 hour Estimated"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * value[x] only Quantity
@@ -247,7 +247,7 @@ clinically appropriate. Privacy and confidentiality considerations are paramount
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = $LOINC#68524-8 "Drug abuse"
+* code = $LOINC#68524-8 "How many times in the past year have you used an illegal drug or used a prescription medication for non-medical reasons"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * value[x] only CodeableConcept
@@ -263,7 +263,7 @@ clinically appropriate. Privacy and confidentiality considerations are paramount
     lastUseDate 0..1 MS
 
 * component[substanceType]
-  * code = $LOINC#74204-9 "Type of recreational drug used"
+  * code = $LOINC#74204-9 "Drug use [NTDS]"
   * value[x] only CodeableConcept
   * valueCodeableConcept from RecreationalSubstanceTypeVS (extensible)
 
@@ -320,12 +320,12 @@ with their current status and risk assessment.
   * valueCodeableConcept from TobaccoUseStatusVS (required)
 
 * component[alcoholStatus]
-  * code = $LOINC#11367-0 "History of alcohol use"
+  * code = $LOINC#11331-6 "History of Alcohol use"
   * value[x] only CodeableConcept
   * valueCodeableConcept from AlcoholUseStatusVS (required)
 
 * component[caffeineStatus]
-  * code = $LOINC#89574-8 "Caffeine intake"
+  * code = $LOINC#80489-8 "Caffeine intake 24 hour Estimated"
   * value[x] only CodeableConcept
   * valueCodeableConcept from CaffeineIntakeLevelVS (required)
 

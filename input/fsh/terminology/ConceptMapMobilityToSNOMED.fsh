@@ -23,8 +23,8 @@ Usage: #definition
 * description = "Operational ConceptMap for mobility assessment terminology translation. Enables runtime $translate operations for semantic interoperability between consumer mobility monitoring wearables and SNOMED CT standard terminology."
 * purpose = "Provides semantic mappings from custom mobility assessment codes to standard SNOMED CT codes. Consumer wearables (Apple Watch, Garmin) increasingly provide gait analysis and mobility assessments but use proprietary terminology."
 
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"
-* targetCanonical = "http://hl7.org/fhir/ValueSet/all-snomed-ct"
+// ARCHITECTURE NOTE (2025-11-25): Removed sourceCanonical/targetCanonical
+// See design-decisions.md for rationale. Source validation via group.source CodeSystem.
 
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://snomed.info/sct"

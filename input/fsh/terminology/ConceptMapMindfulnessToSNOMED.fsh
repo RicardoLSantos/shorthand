@@ -23,8 +23,8 @@ Usage: #definition
 * description = "Operational ConceptMap for mindfulness observation terminology translation. Enables runtime $translate operations for semantic interoperability between mindfulness/meditation tracking applications and SNOMED CT standard terminology."
 * purpose = "Provides semantic mappings from custom mindfulness observation codes to standard SNOMED CT codes. Mindfulness and meditation tracking is increasingly common in consumer health apps but lacks standardized clinical terminology."
 
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"
-* targetCanonical = "http://hl7.org/fhir/ValueSet/all-snomed-ct"
+// ARCHITECTURE NOTE (2025-11-25): Removed sourceCanonical/targetCanonical
+// See design-decisions.md for rationale. Source validation via group.source CodeSystem.
 
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://snomed.info/sct"

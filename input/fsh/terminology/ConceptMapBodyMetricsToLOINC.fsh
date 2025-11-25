@@ -23,16 +23,19 @@ Usage: #definition
 * description = "Operational ConceptMap for body composition measurement terminology translation. Enables runtime $translate operations for semantic interoperability between consumer bioimpedance scales and LOINC standard terminology."
 * purpose = "Provides semantic mappings from custom body composition codes to standard LOINC codes. Consumer body composition scales measure metrics like body fat percentage, lean mass, BMI via bioimpedance analysis (BIA)."
 
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"
-* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
+// ARCHITECTURE NOTE (2025-11-25):
+// Removed sourceCanonical/targetCanonical - source validation via group.source CodeSystem.
+// See design-decisions.md for rationale.
 
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://loinc.org"
 
-// BODY COMPOSITION PANEL - LOINC PANEL ✅
+// BODY COMPOSITION - Individual codes (no BIA panel in LOINC)
+// Note: LOINC has no dedicated BIA body composition panel code.
+// Using individual measurement codes instead.
 * group[0].element[0].code = #body-composition-panel
 * group[0].element[0].display = "Body composition measurement panel"
-* group[0].element[0].target[0].code = #89273-6
-* group[0].element[0].target[0].display = "Body composition panel by Bioelectric impedance"
-* group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "Body composition panel from consumer BIA scales maps directly to LOINC 89273-6 panel. This LOINC panel includes body fat %, lean mass, total body water, and related metrics from bioimpedance analysis."
+* group[0].element[0].target[0].code = #77233-5
+* group[0].element[0].target[0].display = "Percentage of body fat by Bioelectrical impedance analysis"
+* group[0].element[0].target[0].equivalence = #relatedto
+* group[0].element[0].target[0].comment = "LOINC has no dedicated BIA panel code. Map to individual BIA measurement codes: 77233-5 (body fat %), 73965-6 (muscle mass %), 73708-0 (fat mass). This maps to the primary BIA metric."

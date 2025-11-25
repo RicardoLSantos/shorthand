@@ -23,11 +23,13 @@ Usage: #definition
 * description = "Operational ConceptMap for physical activity terminology translation. Enables runtime $translate operations for semantic interoperability between Apple HealthKit activity types and SNOMED CT standard terminology. Critical for iOS Health App data integration into EHR systems."
 * purpose = "Provides semantic mappings from Apple HealthKit physical activity types (HKWorkoutActivityType) to standard SNOMED CT codes. Enables clinical decision support systems to interpret wearable device activity data using standardized terminology."
 
-// CORRECTED STRUCTURE per HL7 spec and validated ConceptMap pattern:
-// - sourceCanonical/targetCanonical → ValueSets (business context, implementation scope)
-// - group.source/group.target → CodeSystems (actual concept definitions)
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/physical-activity-type-vs"
-* targetCanonical = "http://hl7.org/fhir/ValueSet/all-snomed-ct"
+// ARCHITECTURE NOTE (2025-11-25):
+// Removed sourceCanonical to preserve SNOMED codes in ValueSets for interoperability.
+// Source validation is handled by group.source CodeSystem reference.
+// See design-decisions.md for rationale and reversal instructions.
+//
+// Target uses SNOMED CT CodeSystem directly (no ValueSet constraint needed)
+// as SNOMED CT is an external terminology validated by tx.fhir.org
 
 // Group 1: iOS Physical Activity CodeSystem → SNOMED CT
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ios-physical-activity-cs"

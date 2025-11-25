@@ -23,8 +23,8 @@ Usage: #definition
 * description = "Operational ConceptMap for nutrition measurement terminology translation. Enables runtime $translate operations for semantic interoperability between consumer nutrition tracking applications and SNOMED CT standard terminology."
 * purpose = "Provides semantic mappings from custom nutrition measurement codes to standard SNOMED CT codes. Consumer nutrition tracking uses proprietary measurements not fully covered by SNOMED CT. This ConceptMap enables clinical decision support systems to interpret consumer nutrition data using standardized terminology where available."
 
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"
-* targetCanonical = "http://hl7.org/fhir/ValueSet/all-snomed-ct"
+// ARCHITECTURE NOTE (2025-11-25): Removed sourceCanonical/targetCanonical
+// See design-decisions.md for rationale. Source validation via group.source CodeSystem.
 
 // Group 1: LifestyleObservationCS → SNOMED CT
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"

@@ -38,10 +38,10 @@ Architecture:
 """
 * purpose = "Enable data transformation from FHIR servers to openEHR Clinical Data Repositories (CDRs) for wearable health data in Learning Health Systems."
 
-// Source: FHIR resource namespace
-// Target: openEHR archetype namespace (conceptual)
-* sourceUri = "http://hl7.org/fhir"
-* targetUri = "https://ckm.openehr.org/ckm"
+// ARCHITECTURE NOTE (2025-11-25):
+// sourceUri/targetUri removed - http://hl7.org/fhir is a conceptual namespace,
+// not a resolvable terminology for tx.fhir.org validation.
+// Source/target defined at group level using StructureDefinition/Archetype IDs.
 
 // ============================================================================
 // GROUP 1: FHIR Observation (HRV) → openEHR HRV Archetype
