@@ -1,0 +1,364 @@
+archetype (adl_version=2.0.6; rm_release=1.1.0; generated)
+    openEHR-EHR-CLUSTER.wearable_device.v0.0.1
+
+language
+    original_language = <[ISO_639-1::en]>
+    translations = <
+        ["pt"] = <
+            language = <[ISO_639-1::pt]>
+            author = <
+                ["name"] = <"Ricardo Lourenco dos Santos">
+                ["organisation"] = <"FMUP">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-25">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record details about consumer wearable devices used for health monitoring, including smartwatches, fitness trackers, smart rings, and chest straps.">
+            use = <"Use as a nested CLUSTER within OBSERVATION archetypes (HRV, physical activity, sleep) to document the source device. Specialization of CLUSTER.device for wearable-specific metadata including:
+- Device platform (Apple, Fitbit, Garmin, Polar, Oura, etc.)
+- Sensor types (PPG, ECG, accelerometer, gyroscope)
+- API version and data export method
+- Firmware/software version
+- Wearing location (wrist, finger, chest)
+- Data quality indicators">
+            keywords = <"wearable", "smartwatch", "fitness tracker", "Apple Watch", "Fitbit", "Oura", "Polar", "Garmin", "Whoop", "health monitoring", "consumer device">
+            misuse = <"Not to be used for clinical-grade medical devices requiring MDR/FDA certification details. Use CLUSTER.device for general medical devices.">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    CLUSTER[id1] matches {    -- Wearable device
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[id2] occurrences matches {1} matches {    -- Device platform
+                value matches {
+                    DV_CODED_TEXT[id100] matches {
+                        defining_code matches {
+                            [local::
+                            at10,    -- Apple (HealthKit)
+                            at11,    -- Fitbit (Google)
+                            at12,    -- Garmin (Connect)
+                            at13,    -- Polar (Flow)
+                            at14,    -- Oura
+                            at15,    -- Samsung (Health)
+                            at16,    -- Whoop
+                            at17,    -- Withings
+                            at18,    -- Xiaomi (Mi Fit)
+                            at19,    -- Amazfit (Zepp)
+                            at20,    -- Biostrap
+                            at21,    -- COROS
+                            at22,    -- Suunto
+                            at23]    -- Other
+                        }
+                    }
+                }
+            }
+            ELEMENT[id3] occurrences matches {0..1} matches {    -- Device model
+                value matches {
+                    DV_TEXT[id101]
+                }
+            }
+            ELEMENT[id4] occurrences matches {0..1} matches {    -- Device category
+                value matches {
+                    DV_CODED_TEXT[id102] matches {
+                        defining_code matches {
+                            [local::
+                            at30,    -- Smartwatch
+                            at31,    -- Fitness band
+                            at32,    -- Smart ring
+                            at33,    -- Chest strap HRM
+                            at34,    -- Arm band
+                            at35,    -- Clip-on tracker
+                            at36,    -- Smart scale
+                            at37,    -- CGM (continuous glucose monitor)
+                            at38]    -- Smart clothing
+                        }
+                    }
+                }
+            }
+            ELEMENT[id5] occurrences matches {0..1} matches {    -- Wearing location
+                value matches {
+                    DV_CODED_TEXT[id103] matches {
+                        defining_code matches {
+                            [local::
+                            at40,    -- Left wrist
+                            at41,    -- Right wrist
+                            at42,    -- Finger (ring)
+                            at43,    -- Chest (strap)
+                            at44,    -- Upper arm
+                            at45,    -- Waist/hip
+                            at46,    -- Ankle
+                            at47]    -- Under mattress
+                        }
+                    }
+                }
+            }
+            CLUSTER[id10] occurrences matches {0..1} matches {    -- Sensors available
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[id11] occurrences matches {0..1} matches {    -- PPG optical sensor
+                        value matches {
+                            DV_BOOLEAN[id110]
+                        }
+                    }
+                    ELEMENT[id12] occurrences matches {0..1} matches {    -- ECG sensor
+                        value matches {
+                            DV_BOOLEAN[id111]
+                        }
+                    }
+                    ELEMENT[id13] occurrences matches {0..1} matches {    -- Accelerometer
+                        value matches {
+                            DV_BOOLEAN[id112]
+                        }
+                    }
+                    ELEMENT[id14] occurrences matches {0..1} matches {    -- Gyroscope
+                        value matches {
+                            DV_BOOLEAN[id113]
+                        }
+                    }
+                    ELEMENT[id15] occurrences matches {0..1} matches {    -- SpO2 sensor
+                        value matches {
+                            DV_BOOLEAN[id114]
+                        }
+                    }
+                    ELEMENT[id16] occurrences matches {0..1} matches {    -- Temperature sensor
+                        value matches {
+                            DV_BOOLEAN[id115]
+                        }
+                    }
+                    ELEMENT[id17] occurrences matches {0..1} matches {    -- GPS
+                        value matches {
+                            DV_BOOLEAN[id116]
+                        }
+                    }
+                    ELEMENT[id18] occurrences matches {0..1} matches {    -- Barometer
+                        value matches {
+                            DV_BOOLEAN[id117]
+                        }
+                    }
+                }
+            }
+            ELEMENT[id20] occurrences matches {0..1} matches {    -- Firmware version
+                value matches {
+                    DV_TEXT[id120]
+                }
+            }
+            ELEMENT[id21] occurrences matches {0..1} matches {    -- App version
+                value matches {
+                    DV_TEXT[id121]
+                }
+            }
+            ELEMENT[id22] occurrences matches {0..1} matches {    -- API version
+                value matches {
+                    DV_TEXT[id122]
+                }
+            }
+            ELEMENT[id23] occurrences matches {0..1} matches {    -- Serial number
+                value matches {
+                    DV_IDENTIFIER[id123]
+                }
+            }
+            ELEMENT[id24] occurrences matches {0..1} matches {    -- Data export method
+                value matches {
+                    DV_CODED_TEXT[id124] matches {
+                        defining_code matches {
+                            [local::
+                            at50,    -- Native API
+                            at51,    -- HealthKit sync
+                            at52,    -- Google Fit sync
+                            at53,    -- Manual export (JSON)
+                            at54,    -- Manual export (CSV)
+                            at55,    -- FHIR export
+                            at56]    -- Bluetooth direct
+                        }
+                    }
+                }
+            }
+            ELEMENT[id25] occurrences matches {0..1} matches {    -- Last sync timestamp
+                value matches {
+                    DV_DATE_TIME[id125]
+                }
+            }
+            ELEMENT[id26] occurrences matches {0..1} matches {    -- Battery level at measurement
+                value matches {
+                    DV_PROPORTION[id126] matches {
+                        numerator matches {|0.0..100.0|}
+                        type matches {2}    -- percent
+                    }
+                }
+            }
+            ELEMENT[id27] occurrences matches {0..1} matches {    -- Data quality indicator
+                value matches {
+                    DV_CODED_TEXT[id127] matches {
+                        defining_code matches {
+                            [local::
+                            at60,    -- High quality
+                            at61,    -- Moderate quality
+                            at62,    -- Low quality
+                            at63]    -- Quality unknown
+                        }
+                    }
+                }
+            }
+            ELEMENT[id28] occurrences matches {0..1} matches {    -- Quality notes
+                value matches {
+                    DV_TEXT[id128]
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1"] = <
+                text = <"Wearable device">
+                description = <"Details about a consumer wearable health monitoring device.">
+            >
+            ["id2"] = <
+                text = <"Device platform">
+                description = <"The manufacturer and ecosystem platform of the wearable device.">
+            >
+            ["id3"] = <
+                text = <"Device model">
+                description = <"Specific model name (e.g., Apple Watch Series 9, Fitbit Sense 2, Oura Ring Gen 3).">
+            >
+            ["id4"] = <
+                text = <"Device category">
+                description = <"The type/category of wearable device.">
+            >
+            ["id5"] = <
+                text = <"Wearing location">
+                description = <"The body location where the device is worn.">
+            >
+            ["id10"] = <
+                text = <"Sensors available">
+                description = <"Sensors present on the device.">
+            >
+            ["id11"] = <
+                text = <"PPG optical sensor">
+                description = <"Photoplethysmography sensor for heart rate and blood oxygen.">
+            >
+            ["id12"] = <
+                text = <"ECG sensor">
+                description = <"Electrocardiogram sensor for electrical heart activity.">
+            >
+            ["id13"] = <
+                text = <"Accelerometer">
+                description = <"Motion sensor for activity tracking.">
+            >
+            ["id14"] = <
+                text = <"Gyroscope">
+                description = <"Orientation sensor.">
+            >
+            ["id15"] = <
+                text = <"SpO2 sensor">
+                description = <"Blood oxygen saturation sensor.">
+            >
+            ["id16"] = <
+                text = <"Temperature sensor">
+                description = <"Skin or ambient temperature sensor.">
+            >
+            ["id17"] = <
+                text = <"GPS">
+                description = <"Global positioning system for location tracking.">
+            >
+            ["id18"] = <
+                text = <"Barometer">
+                description = <"Atmospheric pressure sensor for altitude.">
+            >
+            ["id20"] = <
+                text = <"Firmware version">
+                description = <"Version of the device firmware/operating system.">
+            >
+            ["id21"] = <
+                text = <"App version">
+                description = <"Version of the companion mobile app.">
+            >
+            ["id22"] = <
+                text = <"API version">
+                description = <"Version of the data API used for export.">
+            >
+            ["id23"] = <
+                text = <"Serial number">
+                description = <"Device serial number or unique identifier.">
+            >
+            ["id24"] = <
+                text = <"Data export method">
+                description = <"Method used to export data from the device.">
+            >
+            ["id25"] = <
+                text = <"Last sync timestamp">
+                description = <"When the device last synchronized data.">
+            >
+            ["id26"] = <
+                text = <"Battery level at measurement">
+                description = <"Device battery percentage at time of measurement.">
+            >
+            ["id27"] = <
+                text = <"Data quality indicator">
+                description = <"Overall quality assessment of the data from this device.">
+            >
+            ["id28"] = <
+                text = <"Quality notes">
+                description = <"Notes about data quality issues or limitations.">
+            >
+            ["at10"] = <text = <"Apple (HealthKit)">; description = <"Apple Watch and HealthKit ecosystem.">>
+            ["at11"] = <text = <"Fitbit (Google)">; description = <"Fitbit devices and Web API.">>
+            ["at12"] = <text = <"Garmin (Connect)">; description = <"Garmin devices and Connect platform.">>
+            ["at13"] = <text = <"Polar (Flow)">; description = <"Polar devices and Flow/AccessLink API.">>
+            ["at14"] = <text = <"Oura">; description = <"Oura Ring and Cloud API.">>
+            ["at15"] = <text = <"Samsung (Health)">; description = <"Samsung Galaxy Watch and Health platform.">>
+            ["at16"] = <text = <"Whoop">; description = <"Whoop strap and platform.">>
+            ["at17"] = <text = <"Withings">; description = <"Withings devices and Health Mate.">>
+            ["at18"] = <text = <"Xiaomi (Mi Fit)">; description = <"Xiaomi Mi Band and Mi Fit app.">>
+            ["at19"] = <text = <"Amazfit (Zepp)">; description = <"Amazfit devices and Zepp app.">>
+            ["at20"] = <text = <"Biostrap">; description = <"Biostrap clinical-grade wearable.">>
+            ["at21"] = <text = <"COROS">; description = <"COROS sports watches.">>
+            ["at22"] = <text = <"Suunto">; description = <"Suunto sports watches.">>
+            ["at23"] = <text = <"Other">; description = <"Other wearable platform.">>
+            ["at30"] = <text = <"Smartwatch">; description = <"Full-featured smartwatch.">>
+            ["at31"] = <text = <"Fitness band">; description = <"Slim fitness tracking band.">>
+            ["at32"] = <text = <"Smart ring">; description = <"Ring-form factor wearable.">>
+            ["at33"] = <text = <"Chest strap HRM">; description = <"Chest-worn heart rate monitor.">>
+            ["at34"] = <text = <"Arm band">; description = <"Upper arm heart rate monitor.">>
+            ["at35"] = <text = <"Clip-on tracker">; description = <"Clip-on activity tracker.">>
+            ["at36"] = <text = <"Smart scale">; description = <"Connected weighing scale.">>
+            ["at37"] = <text = <"CGM (continuous glucose monitor)">; description = <"Continuous glucose monitoring device.">>
+            ["at38"] = <text = <"Smart clothing">; description = <"Clothing with embedded sensors.">>
+            ["at40"] = <text = <"Left wrist">; description = <"Worn on left wrist.">>
+            ["at41"] = <text = <"Right wrist">; description = <"Worn on right wrist.">>
+            ["at42"] = <text = <"Finger (ring)">; description = <"Worn on finger.">>
+            ["at43"] = <text = <"Chest (strap)">; description = <"Worn on chest.">>
+            ["at44"] = <text = <"Upper arm">; description = <"Worn on upper arm.">>
+            ["at45"] = <text = <"Waist/hip">; description = <"Worn at waist or hip.">>
+            ["at46"] = <text = <"Ankle">; description = <"Worn on ankle.">>
+            ["at47"] = <text = <"Under mattress">; description = <"Placed under mattress for sleep tracking.">>
+            ["at50"] = <text = <"Native API">; description = <"Direct API access from vendor.">>
+            ["at51"] = <text = <"HealthKit sync">; description = <"Synced via Apple HealthKit.">>
+            ["at52"] = <text = <"Google Fit sync">; description = <"Synced via Google Fit.">>
+            ["at53"] = <text = <"Manual export (JSON)">; description = <"Manually exported as JSON.">>
+            ["at54"] = <text = <"Manual export (CSV)">; description = <"Manually exported as CSV.">>
+            ["at55"] = <text = <"FHIR export">; description = <"Exported as FHIR resources.">>
+            ["at56"] = <text = <"Bluetooth direct">; description = <"Direct Bluetooth connection.">>
+            ["at60"] = <text = <"High quality">; description = <"Data meets clinical quality standards.">>
+            ["at61"] = <text = <"Moderate quality">; description = <"Data has minor quality issues.">>
+            ["at62"] = <text = <"Low quality">; description = <"Data has significant quality issues.">>
+            ["at63"] = <text = <"Quality unknown">; description = <"Data quality not assessed.">>
+        >
+    >

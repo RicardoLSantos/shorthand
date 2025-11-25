@@ -1,0 +1,360 @@
+archetype (adl_version=2.0.6; rm_release=1.1.0; generated)
+    openEHR-EHR-OBSERVATION.sleep_architecture.v0.0.1
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-25">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record sleep architecture data from wearable devices including sleep stages, sleep quality scores, and related metrics for lifestyle medicine sleep pillar interventions.">
+            use = <"Use to record nightly sleep data from consumer wearables (Oura, Fitbit, Apple Watch, Garmin, Whoop). Supports lifestyle medicine's sleep pillar. Includes sleep stages (wake, light, deep, REM), sleep quality scores, and related metrics like HRV during sleep. Compatible with vendor APIs and aggregation platforms.">
+            keywords = <"sleep", "sleep stages", "REM", "deep sleep", "sleep quality", "insomnia", "wearable", "Oura", "Fitbit", "lifestyle medicine", "circadian">
+            misuse = <"Not for clinical polysomnography (PSG) data which requires specialized archetypes with EEG/EMG details. Not for sleep apnea diagnosis.">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    OBSERVATION[id1] matches {    -- Sleep architecture
+        data matches {
+            HISTORY[id2] matches {
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[id3] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[id4] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    -- TIMING
+                                    ELEMENT[id10] occurrences matches {0..1} matches {    -- Bedtime
+                                        value matches {
+                                            DV_TIME[id100]
+                                        }
+                                    }
+                                    ELEMENT[id11] occurrences matches {0..1} matches {    -- Wake time
+                                        value matches {
+                                            DV_TIME[id101]
+                                        }
+                                    }
+                                    ELEMENT[id12] occurrences matches {0..1} matches {    -- Time in bed
+                                        value matches {
+                                            DV_DURATION[id102] matches {
+                                                value matches {PTHM/|PT0M..PT24H|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id13] occurrences matches {0..1} matches {    -- Total sleep time
+                                        value matches {
+                                            DV_DURATION[id103] matches {
+                                                value matches {PTHM/|PT0M..PT24H|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id14] occurrences matches {0..1} matches {    -- Sleep onset latency
+                                        value matches {
+                                            DV_DURATION[id104] matches {
+                                                value matches {PTHM/|PT0M..PT4H|}
+                                            }
+                                        }
+                                    }
+                                    -- SLEEP STAGES
+                                    CLUSTER[id20] occurrences matches {0..1} matches {    -- Sleep stages
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[id21] occurrences matches {0..1} matches {    -- Awake duration
+                                                value matches {
+                                                    DV_DURATION[id110] matches {
+                                                        value matches {PTHM/|PT0M..PT8H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id22] occurrences matches {0..1} matches {    -- Light sleep duration
+                                                value matches {
+                                                    DV_DURATION[id111] matches {
+                                                        value matches {PTHM/|PT0M..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id23] occurrences matches {0..1} matches {    -- Deep sleep duration
+                                                value matches {
+                                                    DV_DURATION[id112] matches {
+                                                        value matches {PTHM/|PT0M..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id24] occurrences matches {0..1} matches {    -- REM sleep duration
+                                                value matches {
+                                                    DV_DURATION[id113] matches {
+                                                        value matches {PTHM/|PT0M..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id25] occurrences matches {0..1} matches {    -- Deep sleep percentage
+                                                value matches {
+                                                    DV_PROPORTION[id114] matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id26] occurrences matches {0..1} matches {    -- REM sleep percentage
+                                                value matches {
+                                                    DV_PROPORTION[id115] matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    -- EFFICIENCY METRICS
+                                    ELEMENT[id30] occurrences matches {0..1} matches {    -- Sleep efficiency
+                                        value matches {
+                                            DV_PROPORTION[id120] matches {
+                                                numerator matches {|0.0..100.0|}
+                                                type matches {2}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id31] occurrences matches {0..1} matches {    -- Number of awakenings
+                                        value matches {
+                                            DV_COUNT[id121] matches {
+                                                magnitude matches {|0..100|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id32] occurrences matches {0..1} matches {    -- Wake after sleep onset (WASO)
+                                        value matches {
+                                            DV_DURATION[id122] matches {
+                                                value matches {PTHM/|PT0M..PT8H|}
+                                            }
+                                        }
+                                    }
+                                    -- QUALITY SCORES
+                                    ELEMENT[id40] occurrences matches {0..1} matches {    -- Sleep score
+                                        value matches {
+                                            DV_COUNT[id130] matches {
+                                                magnitude matches {|0..100|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id41] occurrences matches {0..1} matches {    -- Restfulness score
+                                        value matches {
+                                            DV_COUNT[id131] matches {
+                                                magnitude matches {|0..100|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id42] occurrences matches {0..1} matches {    -- Readiness score
+                                        value matches {
+                                            DV_COUNT[id132] matches {
+                                                magnitude matches {|0..100|}
+                                            }
+                                        }
+                                    }
+                                    -- PHYSIOLOGICAL METRICS DURING SLEEP
+                                    CLUSTER[id50] occurrences matches {0..1} matches {    -- Sleep physiology
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[id51] occurrences matches {0..1} matches {    -- Average heart rate
+                                                value matches {
+                                                    DV_QUANTITY[id140] matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|30.0..150.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id52] occurrences matches {0..1} matches {    -- Lowest heart rate
+                                                value matches {
+                                                    DV_QUANTITY[id141] matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|30.0..150.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id53] occurrences matches {0..1} matches {    -- Average HRV (RMSSD)
+                                                value matches {
+                                                    DV_QUANTITY[id142] matches {
+                                                        property matches {[openehr::128]}
+                                                        units matches {"ms"}
+                                                        magnitude matches {|0.0..200.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id54] occurrences matches {0..1} matches {    -- Average SpO2
+                                                value matches {
+                                                    DV_PROPORTION[id143] matches {
+                                                        numerator matches {|80.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id55] occurrences matches {0..1} matches {    -- Respiratory rate
+                                                value matches {
+                                                    DV_QUANTITY[id144] matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|4.0..30.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[id56] occurrences matches {0..1} matches {    -- Skin temperature deviation
+                                                value matches {
+                                                    DV_QUANTITY[id145] matches {
+                                                        property matches {[openehr::127]}    -- Temperature
+                                                        units matches {"Cel"}
+                                                        magnitude matches {|-3.0..3.0|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    -- CIRCADIAN
+                                    ELEMENT[id60] occurrences matches {0..1} matches {    -- Sleep midpoint
+                                        value matches {
+                                            DV_TIME[id150]
+                                        }
+                                    }
+                                    ELEMENT[id61] occurrences matches {0..1} matches {    -- Circadian alignment
+                                        value matches {
+                                            DV_CODED_TEXT[id151] matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at70,    -- Optimal
+                                                    at71,    -- Slightly early
+                                                    at72,    -- Slightly late
+                                                    at73,    -- Early
+                                                    at74,    -- Late
+                                                    at75]    -- Irregular
+                                                }
+                                            }
+                                        }
+                                    }
+                                    -- DISTURBANCES
+                                    ELEMENT[id65] occurrences matches {0..1} matches {    -- Snoring duration
+                                        value matches {
+                                            DV_DURATION[id155] matches {
+                                                value matches {PTHM/|PT0M..PT8H|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id66] occurrences matches {0..1} matches {    -- Movement count
+                                        value matches {
+                                            DV_COUNT[id156] matches {
+                                                magnitude matches {|0..1000|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id70] occurrences matches {0..1} matches {    -- Comment
+                                        value matches {
+                                            DV_TEXT[id160]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[id80] occurrences matches {0..1} matches {    -- Nightly sleep
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {[openehr::148]}
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {PT12H}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[id90] matches {
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[id91] occurrences matches {0..1} matches {    -- Sleep detection algorithm
+                        value matches {
+                            DV_CODED_TEXT[id170] matches {
+                                defining_code matches {
+                                    [local::
+                                    at80,    -- Actigraphy-based
+                                    at81,    -- HR + movement
+                                    at82,    -- PPG-based
+                                    at83,    -- Multi-sensor fusion
+                                    at84]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[id92] occurrences matches {0..*} matches {    -- Wearable device
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1"] = <text = <"Sleep architecture">; description = <"Sleep staging and quality metrics from wearable devices.">>
+            ["id3"] = <text = <"Any event">; description = <"Default event.">>
+            ["id10"] = <text = <"Bedtime">; description = <"Time went to bed.">>
+            ["id11"] = <text = <"Wake time">; description = <"Time of final awakening.">>
+            ["id12"] = <text = <"Time in bed">; description = <"Total time spent in bed.">>
+            ["id13"] = <text = <"Total sleep time">; description = <"Actual time asleep (excluding awakenings).">>
+            ["id14"] = <text = <"Sleep onset latency">; description = <"Time to fall asleep after going to bed.">>
+            ["id20"] = <text = <"Sleep stages">; description = <"Duration of each sleep stage.">>
+            ["id21"] = <text = <"Awake duration">; description = <"Time spent awake during sleep period.">>
+            ["id22"] = <text = <"Light sleep duration">; description = <"Time in N1+N2 light sleep stages.">>
+            ["id23"] = <text = <"Deep sleep duration">; description = <"Time in N3 slow-wave sleep (SWS).">>
+            ["id24"] = <text = <"REM sleep duration">; description = <"Time in REM (rapid eye movement) sleep.">>
+            ["id25"] = <text = <"Deep sleep percentage">; description = <"Percentage of total sleep in deep sleep.">>
+            ["id26"] = <text = <"REM sleep percentage">; description = <"Percentage of total sleep in REM.">>
+            ["id30"] = <text = <"Sleep efficiency">; description = <"Total sleep time / Time in bed x 100.">>
+            ["id31"] = <text = <"Number of awakenings">; description = <"Count of awakenings during sleep.">>
+            ["id32"] = <text = <"Wake after sleep onset (WASO)">; description = <"Total time awake after initially falling asleep.">>
+            ["id40"] = <text = <"Sleep score">; description = <"Vendor-calculated composite sleep quality score (0-100).">>
+            ["id41"] = <text = <"Restfulness score">; description = <"Score for sleep restfulness/disturbances.">>
+            ["id42"] = <text = <"Readiness score">; description = <"Next-day readiness based on sleep quality.">>
+            ["id50"] = <text = <"Sleep physiology">; description = <"Physiological metrics during sleep.">>
+            ["id51"] = <text = <"Average heart rate">; description = <"Mean HR during sleep.">>
+            ["id52"] = <text = <"Lowest heart rate">; description = <"Minimum HR reached during sleep.">>
+            ["id53"] = <text = <"Average HRV (RMSSD)">; description = <"Mean RMSSD during sleep (higher = better recovery).">>
+            ["id54"] = <text = <"Average SpO2">; description = <"Mean blood oxygen saturation during sleep.">>
+            ["id55"] = <text = <"Respiratory rate">; description = <"Average breaths per minute during sleep.">>
+            ["id56"] = <text = <"Skin temperature deviation">; description = <"Deviation from personal baseline skin temperature.">>
+            ["id60"] = <text = <"Sleep midpoint">; description = <"Midpoint time of sleep period (circadian marker).">>
+            ["id61"] = <text = <"Circadian alignment">; description = <"Assessment of sleep timing relative to circadian rhythm.">>
+            ["id65"] = <text = <"Snoring duration">; description = <"Total time snoring detected.">>
+            ["id66"] = <text = <"Movement count">; description = <"Number of significant movements during sleep.">>
+            ["id70"] = <text = <"Comment">; description = <"Additional notes about the sleep session.">>
+            ["id80"] = <text = <"Nightly sleep">; description = <"Single night sleep session.">>
+            ["id91"] = <text = <"Sleep detection algorithm">; description = <"Method used by device to detect sleep stages.">>
+            ["id92"] = <text = <"Wearable device">; description = <"Details of the device used.">>
+            ["at70"] = <text = <"Optimal">; description = <"Sleep timing well aligned with circadian rhythm.">>
+            ["at71"] = <text = <"Slightly early">; description = <"Sleep timing slightly earlier than optimal.">>
+            ["at72"] = <text = <"Slightly late">; description = <"Sleep timing slightly later than optimal.">>
+            ["at73"] = <text = <"Early">; description = <"Sleep timing significantly early.">>
+            ["at74"] = <text = <"Late">; description = <"Sleep timing significantly late.">>
+            ["at75"] = <text = <"Irregular">; description = <"Inconsistent sleep timing pattern.">>
+            ["at80"] = <text = <"Actigraphy-based">; description = <"Movement-only sleep detection.">>
+            ["at81"] = <text = <"HR + movement">; description = <"Heart rate and movement combined.">>
+            ["at82"] = <text = <"PPG-based">; description = <"Optical PPG signal analysis.">>
+            ["at83"] = <text = <"Multi-sensor fusion">; description = <"Multiple sensors (HR, movement, SpO2, temp).">>
+            ["at84"] = <text = <"Unknown">; description = <"Algorithm not specified.">>
+        >
+    >
