@@ -68,5 +68,5 @@ Usage: #definition
 * group[0].element[4].display = "Number of sleep awakenings"
 * group[0].element[4].target[0].code = #103215-0
 * group[0].element[4].target[0].display = "Wake time after sleep onset"
-* group[0].element[4].target[0].equivalence = #related-to
+* group[0].element[4].target[0].equivalence = #relatedto
 * group[0].element[4].target[0].comment = "Sleep awakenings count is related to but distinct from 'Wake time after sleep onset' (LOINC 103215-0). Source measures NUMBER of awakenings (discrete count), target measures DURATION of wakefulness after initial sleep onset (time in minutes). Both concepts assess sleep fragmentation but from different perspectives. No exact LOINC match for awakening count exists as of November 2025."

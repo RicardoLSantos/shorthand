@@ -42,7 +42,7 @@ Usage: #definition
 * group[0].element[1].display = "Relaxation response observation"
 * group[0].element[1].target[0].code = #398144009
 * group[0].element[1].target[0].display = "Relaxation (observable entity)"
-* group[0].element[1].target[0].equivalence = #related-to
+* group[0].element[1].target[0].equivalence = #relatedto
 * group[0].element[1].target[0].comment = "Relaxation response observation relates to SNOMED 'Relaxation' concept but measures subjective experience vs objective state. Code 398144009 should be verified."
 
 // MINDFULNESS TYPE - NO EXACT MATCH ⚠️
