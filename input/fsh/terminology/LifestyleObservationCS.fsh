@@ -12,7 +12,7 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 54
+* ^count = 61
 
 // Sleep Measurements (5 codes)
 * #sleep-panel "Sleep measurement panel"
@@ -190,6 +190,28 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 
 * #heart-rate-variability "Heart rate variability"
   "Measurement of heart rate variability (HRV)"
+
+// Substance Use (6th Pillar) - Added 2025-11-25
+* #alcohol-type "Type of alcoholic beverage"
+  "Type of alcoholic beverage consumed (beer, wine, spirits, etc.)"
+
+* #caffeine-source "Caffeine source"
+  "Source of dietary caffeine intake (coffee, tea, energy drinks, etc.)"
+
+* #last-caffeine-time "Time of last caffeine intake"
+  "Date and time of the most recent caffeine consumption"
+
+* #substance-frequency "Frequency of substance use"
+  "How often a substance is used (daily, weekly, monthly, etc.)"
+
+* #last-use-date "Date of last substance use"
+  "Date when a substance was last used"
+
+* #substance-use-summary "Substance use summary"
+  "Comprehensive summary of all substance use patterns for lifestyle medicine assessment"
+
+* #substance-risk-level "Overall substance use risk level"
+  "Aggregate risk assessment based on all substance use patterns"
 
 // ValueSet for all local lifestyle codes
 ValueSet: LifestyleObservationVS
