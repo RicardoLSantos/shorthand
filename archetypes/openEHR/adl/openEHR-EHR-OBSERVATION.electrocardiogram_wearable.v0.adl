@@ -1,0 +1,1192 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.electrocardiogram_wearable.v0
+
+concept
+	[at0000]	-- Wearable ECG recording
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"HEADS Lab - Faculty of Medicine University of Porto">
+		["email"] = <"ricardo.lourenco@medfac.up.pt">
+		["date"] = <"2025-11-27">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record single-lead ECG data from consumer wearable devices with automated rhythm classification and atrial fibrillation detection capabilities.">
+			use = <"Use to record:
+- Single-lead ECG recordings from consumer wearables
+- Automated rhythm classifications (sinus rhythm, AFib, inconclusive)
+- Heart rate derived from ECG
+- Recording quality and signal characteristics
+- User-reported symptoms during recording
+- Clinical review status and physician interpretation
+- PDF/waveform export references
+
+This archetype supports integration with:
+- Apple Watch (ECG app, FDA-cleared)
+- Samsung Galaxy Watch (ECG feature)
+- Withings ScanWatch (AFib detection)
+- Fitbit Sense (ECG app)
+- AliveCor KardiaMobile
+- Polar H10 (single-lead ECG)
+- Other FDA/CE cleared consumer ECG devices
+
+Intended for use in:
+- AFib screening programs
+- Post-ablation monitoring
+- Stroke prevention programs
+- Palpitation evaluation
+- Remote cardiac monitoring
+- Lifestyle medicine cardiovascular assessment
+- Research on consumer ECG accuracy.">
+			misuse = <"Not to be used for diagnostic 12-lead ECG - use appropriate clinical ECG archetypes.
+Not to be used as sole basis for AFib diagnosis without clinical confirmation.
+Not to be used for acute cardiac event detection (chest pain, STEMI).
+Not to be used in place of Holter monitoring for comprehensive arrhythmia evaluation.
+Device classifications are screening tools only and require clinical validation.">
+			copyright = <"HEADS Lab - Faculty of Medicine University of Porto">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International">
+		["custodian_organisation"] = <"openEHR Foundation / HEADS Lab FMUP">
+		["references"] = <"Perez MV, Mahaffey KW, Hedlin H, et al. Large-Scale Assessment of a Smartwatch to Identify Atrial Fibrillation. N Engl J Med. 2019;381(20):1909-1917.
+Seshadri DR, Bittel B, Engelman D, et al. Accuracy of Apple Watch for Detection of Atrial Fibrillation. Circulation. 2020;141(8):702-703.
+Apple Inc. Using Apple Watch for Electrocardiogram (ECG) Notifications. White Paper. 2024.
+Samsung Electronics. Galaxy Watch ECG Application Technical Documentation. 2024.
+Withings. ScanWatch ECG and AFib Detection Clinical Validation. 2024.
+AliveCor. KardiaMobile Clinical Evidence Summary. 2024.
+Hindricks G, Potpara T, Dagres N, et al. 2020 ESC Guidelines for the diagnosis and management of atrial fibrillation. Eur Heart J. 2021;42(5):373-498.">
+		["original_namespace"] = <"pt.up.med.heads">
+		["original_publisher"] = <"HEADS Lab - FMUP">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+		["build_uid"] = <"e1b2g7i5-3d9f-8e6g-f0b2-4j5i6d7e8f9g">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Wearable ECG recording
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {	-- Rhythm classification
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {	-- Automated classification
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0200,	-- Sinus rhythm
+															at0201,	-- Atrial fibrillation
+															at0202,	-- Inconclusive - high heart rate
+															at0203,	-- Inconclusive - low heart rate
+															at0204,	-- Inconclusive - poor signal
+															at0205,	-- Inconclusive - other
+															at0206]	-- Unable to classify
+														}
+													}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Classification confidence
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Algorithm version
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Regulatory clearance
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0210,	-- FDA cleared
+															at0211,	-- CE marked
+															at0212,	-- FDA and CE
+															at0213,	-- Other regulatory approval
+															at0214]	-- Not cleared/research only
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- Heart rate from ECG
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Average heart rate
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::382]>
+														list = <
+															["1"] = <
+																units = <"/min">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Minimum heart rate
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::382]>
+														list = <
+															["1"] = <
+																units = <"/min">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Maximum heart rate
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::382]>
+														list = <
+															["1"] = <
+																units = <"/min">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Heart rate variability
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0220,	-- Regular
+															at0221,	-- Irregular
+															at0222]	-- Variable
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- Recording details
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Recording duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT5M|}
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Sampling rate
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::382]>
+														list = <
+															["1"] = <
+																units = <"Hz">
+																magnitude = <|0.0..1000.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Lead configuration
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0230,	-- Lead I equivalent
+															at0231,	-- Modified Lead I
+															at0232,	-- Wrist-to-wrist
+															at0233,	-- Single lead (other)
+															at0234]	-- Unknown configuration
+														}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Recording trigger
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0240,	-- User initiated
+															at0241,	-- Automatic (irregular rhythm alert)
+															at0242,	-- Automatic (high heart rate)
+															at0243,	-- Automatic (low heart rate)
+															at0244,	-- Scheduled
+															at0245]	-- Symptom-triggered
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0030] occurrences matches {0..1} matches {	-- Signal quality
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- Overall quality
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0250,	-- Good
+															at0251,	-- Acceptable
+															at0252,	-- Poor
+															at0253]	-- Uninterpretable
+														}
+													}
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..1} matches {	-- Noise level
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Minimal
+															at0261,	-- Moderate
+															at0262]	-- Significant
+														}
+													}
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- Baseline wander
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- Motion artifact detected
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {	-- Electrode contact quality
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0270,	-- Good contact
+															at0271,	-- Intermittent contact
+															at0272]	-- Poor contact
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0040] occurrences matches {0..1} matches {	-- Additional findings
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- Premature beats detected
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0280,	-- None detected
+															at0281,	-- Occasional (<5%)
+															at0282,	-- Frequent (5-20%)
+															at0283]	-- Very frequent (>20%)
+														}
+													}
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- Pause detected
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Longest pause duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT10S|}
+													}
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {	-- Other rhythm observations
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0050] occurrences matches {0..1} matches {	-- User-reported symptoms
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0051] occurrences matches {0..1} matches {	-- Symptoms during recording
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..*} matches {	-- Symptom type
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0290,	-- Palpitations
+															at0291,	-- Racing heart
+															at0292,	-- Skipped beats
+															at0293,	-- Chest discomfort
+															at0294,	-- Shortness of breath
+															at0295,	-- Dizziness
+															at0296,	-- Fatigue
+															at0297,	-- Near-syncope
+															at0298,	-- None
+															at0299]	-- Other
+														}
+													}
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {	-- Symptom description
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0060] occurrences matches {0..1} matches {	-- Clinical review
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0061] occurrences matches {0..1} matches {	-- Review status
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0300,	-- Not reviewed
+															at0301,	-- Pending review
+															at0302,	-- Reviewed - agrees with device
+															at0303,	-- Reviewed - disagrees with device
+															at0304]	-- Reviewed - requires further testing
+														}
+													}
+												}
+											}
+											ELEMENT[at0062] occurrences matches {0..1} matches {	-- Physician classification
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0310,	-- Normal sinus rhythm
+															at0311,	-- Atrial fibrillation confirmed
+															at0312,	-- Atrial flutter
+															at0313,	-- Other arrhythmia
+															at0314,	-- Unable to determine
+															at0315]	-- Artifact - non-diagnostic
+														}
+													}
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {	-- Review date
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {	-- Reviewer
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0065] occurrences matches {0..1} matches {	-- Clinical notes
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0070] occurrences matches {0..1} matches {	-- Waveform data
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0071] occurrences matches {0..1} matches {	-- PDF report available
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0072] occurrences matches {0..1} matches {	-- PDF reference
+												value matches {
+													DV_URI matches {*}
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {	-- Raw waveform available
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0074] occurrences matches {0..1} matches {	-- Waveform format
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0320,	-- Apple Health XML
+															at0321,	-- HL7 aECG
+															at0322,	-- SCP-ECG
+															at0323,	-- CSV/text
+															at0324,	-- Proprietary format
+															at0325]	-- Other
+														}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0080] occurrences matches {0..*} matches {	-- Data quality indicator
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+									}
+									allow_archetype CLUSTER[at0081] occurrences matches {0..*} matches {	-- Vendor data provenance
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+									}
+									ELEMENT[at0082] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0090] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0091] occurrences matches {0..1} matches {	-- Body position
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0330,	-- Sitting
+													at0331,	-- Standing
+													at0332,	-- Lying
+													at0333,	-- Reclining
+													at0334]	-- Moving
+												}
+											}
+										}
+									}
+									ELEMENT[at0092] occurrences matches {0..1} matches {	-- Activity level
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0340,	-- At rest
+													at0341,	-- Light activity
+													at0342,	-- Moderate activity
+													at0343]	-- Post-exercise
+												}
+											}
+										}
+									}
+									ELEMENT[at0093] occurrences matches {0..1} matches {	-- Time since caffeine
+										value matches {
+											DV_DURATION matches {
+												value matches {PTH/|PT0H..PT24H|}
+											}
+										}
+									}
+									ELEMENT[at0094] occurrences matches {0..1} matches {	-- Medications that may affect ECG
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									allow_archetype CLUSTER[at0095] occurrences matches {0..*} matches {	-- Physiological context
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v0/}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0100] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0101] occurrences matches {0..1} matches {	-- Device vendor
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0350,	-- Apple Watch
+									at0351,	-- Samsung Galaxy Watch
+									at0352,	-- Withings ScanWatch
+									at0353,	-- Fitbit Sense
+									at0354,	-- AliveCor KardiaMobile
+									at0355,	-- Polar H10
+									at0356,	-- Omron HeartGuide
+									at0357,	-- Amazfit
+									at0358]	-- Other
+								}
+							}
+						}
+					}
+					ELEMENT[at0102] occurrences matches {0..1} matches {	-- Device model
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0103] occurrences matches {0..1} matches {	-- Firmware version
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0104] occurrences matches {0..1} matches {	-- Electrode type
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0360,	-- Built-in watch electrodes
+									at0361,	-- External finger electrodes
+									at0362,	-- Chest strap electrodes
+									at0363,	-- Adhesive patch electrodes
+									at0364]	-- Other
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0105] occurrences matches {0..*} matches {	-- Wearable device
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+					}
+					allow_archetype CLUSTER[at0106] occurrences matches {0..*} matches {	-- Recording context
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v0/}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Wearable ECG recording">
+					description = <"Single-lead ECG recording from consumer wearable device with automated rhythm classification.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"Event history.">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"Data tree.">
+				>
+				["at0004"] = <
+					text = <"Rhythm classification">
+					description = <"Automated rhythm classification results.">
+				>
+				["at0005"] = <
+					text = <"Automated classification">
+					description = <"Device algorithm rhythm classification.">
+				>
+				["at0006"] = <
+					text = <"Classification confidence">
+					description = <"Algorithm confidence in classification (if provided).">
+				>
+				["at0007"] = <
+					text = <"Algorithm version">
+					description = <"Version of classification algorithm used.">
+				>
+				["at0008"] = <
+					text = <"Regulatory clearance">
+					description = <"Regulatory status of the ECG classification feature.">
+				>
+				["at0010"] = <
+					text = <"Heart rate from ECG">
+					description = <"Heart rate measurements derived from ECG.">
+				>
+				["at0011"] = <
+					text = <"Average heart rate">
+					description = <"Average heart rate during recording.">
+				>
+				["at0012"] = <
+					text = <"Minimum heart rate">
+					description = <"Minimum heart rate during recording.">
+				>
+				["at0013"] = <
+					text = <"Maximum heart rate">
+					description = <"Maximum heart rate during recording.">
+				>
+				["at0014"] = <
+					text = <"Heart rate variability">
+					description = <"Qualitative assessment of rhythm regularity.">
+				>
+				["at0020"] = <
+					text = <"Recording details">
+					description = <"Technical details of the ECG recording.">
+				>
+				["at0021"] = <
+					text = <"Recording duration">
+					description = <"Duration of the ECG recording.">
+				>
+				["at0022"] = <
+					text = <"Sampling rate">
+					description = <"Sampling rate of the ECG recording.">
+				>
+				["at0023"] = <
+					text = <"Lead configuration">
+					description = <"Type of single-lead configuration used.">
+				>
+				["at0024"] = <
+					text = <"Recording trigger">
+					description = <"What triggered the ECG recording.">
+				>
+				["at0030"] = <
+					text = <"Signal quality">
+					description = <"Assessment of ECG signal quality.">
+				>
+				["at0031"] = <
+					text = <"Overall quality">
+					description = <"Overall quality of the ECG recording.">
+				>
+				["at0032"] = <
+					text = <"Noise level">
+					description = <"Level of noise in the recording.">
+				>
+				["at0033"] = <
+					text = <"Baseline wander">
+					description = <"Whether baseline wander is present.">
+				>
+				["at0034"] = <
+					text = <"Motion artifact detected">
+					description = <"Whether motion artifact is present.">
+				>
+				["at0035"] = <
+					text = <"Electrode contact quality">
+					description = <"Quality of electrode contact during recording.">
+				>
+				["at0040"] = <
+					text = <"Additional findings">
+					description = <"Additional rhythm findings from analysis.">
+				>
+				["at0041"] = <
+					text = <"Premature beats detected">
+					description = <"Presence and frequency of premature beats.">
+				>
+				["at0042"] = <
+					text = <"Pause detected">
+					description = <"Whether significant pauses were detected.">
+				>
+				["at0043"] = <
+					text = <"Longest pause duration">
+					description = <"Duration of longest detected pause.">
+				>
+				["at0044"] = <
+					text = <"Other rhythm observations">
+					description = <"Other observations about the rhythm.">
+				>
+				["at0050"] = <
+					text = <"User-reported symptoms">
+					description = <"Symptoms reported by user during recording.">
+				>
+				["at0051"] = <
+					text = <"Symptoms during recording">
+					description = <"Whether symptoms were present during recording.">
+				>
+				["at0052"] = <
+					text = <"Symptom type">
+					description = <"Type of symptom experienced.">
+				>
+				["at0053"] = <
+					text = <"Symptom description">
+					description = <"Free text description of symptoms.">
+				>
+				["at0060"] = <
+					text = <"Clinical review">
+					description = <"Clinical review of the ECG recording.">
+				>
+				["at0061"] = <
+					text = <"Review status">
+					description = <"Status of clinical review.">
+				>
+				["at0062"] = <
+					text = <"Physician classification">
+					description = <"Rhythm classification by reviewing physician.">
+				>
+				["at0063"] = <
+					text = <"Review date">
+					description = <"Date of clinical review.">
+				>
+				["at0064"] = <
+					text = <"Reviewer">
+					description = <"Name or identifier of reviewer.">
+				>
+				["at0065"] = <
+					text = <"Clinical notes">
+					description = <"Clinical notes from review.">
+				>
+				["at0070"] = <
+					text = <"Waveform data">
+					description = <"References to waveform data and exports.">
+				>
+				["at0071"] = <
+					text = <"PDF report available">
+					description = <"Whether PDF report is available.">
+				>
+				["at0072"] = <
+					text = <"PDF reference">
+					description = <"Reference/URI to PDF report.">
+				>
+				["at0073"] = <
+					text = <"Raw waveform available">
+					description = <"Whether raw waveform data is available.">
+				>
+				["at0074"] = <
+					text = <"Waveform format">
+					description = <"Format of available waveform data.">
+				>
+				["at0080"] = <
+					text = <"Data quality indicator">
+					description = <"Slot for data quality assessment cluster.">
+				>
+				["at0081"] = <
+					text = <"Vendor data provenance">
+					description = <"Slot for vendor data origin and processing details.">
+				>
+				["at0082"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the recording.">
+				>
+				["at0090"] = <
+					text = <"State tree">
+					description = <"State tree.">
+				>
+				["at0091"] = <
+					text = <"Body position">
+					description = <"Body position during recording.">
+				>
+				["at0092"] = <
+					text = <"Activity level">
+					description = <"Activity level during recording.">
+				>
+				["at0093"] = <
+					text = <"Time since caffeine">
+					description = <"Time since last caffeine consumption.">
+				>
+				["at0094"] = <
+					text = <"Medications that may affect ECG">
+					description = <"Medications that may affect ECG interpretation.">
+				>
+				["at0095"] = <
+					text = <"Physiological context">
+					description = <"Slot for physiological context cluster.">
+				>
+				["at0100"] = <
+					text = <"Protocol tree">
+					description = <"Protocol tree.">
+				>
+				["at0101"] = <
+					text = <"Device vendor">
+					description = <"Manufacturer of the ECG device.">
+				>
+				["at0102"] = <
+					text = <"Device model">
+					description = <"Specific model of the device.">
+				>
+				["at0103"] = <
+					text = <"Firmware version">
+					description = <"Firmware version of the device.">
+				>
+				["at0104"] = <
+					text = <"Electrode type">
+					description = <"Type of electrodes used for recording.">
+				>
+				["at0105"] = <
+					text = <"Wearable device">
+					description = <"Slot for wearable device details.">
+				>
+				["at0106"] = <
+					text = <"Recording context">
+					description = <"Slot for recording context details.">
+				>
+				["at0200"] = <
+					text = <"Sinus rhythm">
+					description = <"Normal sinus rhythm detected.">
+				>
+				["at0201"] = <
+					text = <"Atrial fibrillation">
+					description = <"Atrial fibrillation detected.">
+				>
+				["at0202"] = <
+					text = <"Inconclusive - high heart rate">
+					description = <"Cannot classify due to heart rate too high.">
+				>
+				["at0203"] = <
+					text = <"Inconclusive - low heart rate">
+					description = <"Cannot classify due to heart rate too low.">
+				>
+				["at0204"] = <
+					text = <"Inconclusive - poor signal">
+					description = <"Cannot classify due to poor signal quality.">
+				>
+				["at0205"] = <
+					text = <"Inconclusive - other">
+					description = <"Cannot classify for other reasons.">
+				>
+				["at0206"] = <
+					text = <"Unable to classify">
+					description = <"Device unable to provide classification.">
+				>
+				["at0210"] = <
+					text = <"FDA cleared">
+					description = <"Feature is FDA cleared.">
+				>
+				["at0211"] = <
+					text = <"CE marked">
+					description = <"Feature is CE marked.">
+				>
+				["at0212"] = <
+					text = <"FDA and CE">
+					description = <"Feature has both FDA clearance and CE mark.">
+				>
+				["at0213"] = <
+					text = <"Other regulatory approval">
+					description = <"Has other regional regulatory approval.">
+				>
+				["at0214"] = <
+					text = <"Not cleared/research only">
+					description = <"Not cleared for clinical use.">
+				>
+				["at0220"] = <
+					text = <"Regular">
+					description = <"Regular rhythm.">
+				>
+				["at0221"] = <
+					text = <"Irregular">
+					description = <"Irregular rhythm.">
+				>
+				["at0222"] = <
+					text = <"Variable">
+					description = <"Variable rhythm pattern.">
+				>
+				["at0230"] = <
+					text = <"Lead I equivalent">
+					description = <"Configuration equivalent to standard Lead I.">
+				>
+				["at0231"] = <
+					text = <"Modified Lead I">
+					description = <"Modified Lead I configuration.">
+				>
+				["at0232"] = <
+					text = <"Wrist-to-wrist">
+					description = <"Wrist to opposite wrist measurement.">
+				>
+				["at0233"] = <
+					text = <"Single lead (other)">
+					description = <"Other single lead configuration.">
+				>
+				["at0234"] = <
+					text = <"Unknown configuration">
+					description = <"Lead configuration unknown.">
+				>
+				["at0240"] = <
+					text = <"User initiated">
+					description = <"Recording initiated by user.">
+				>
+				["at0241"] = <
+					text = <"Automatic (irregular rhythm alert)">
+					description = <"Triggered by irregular rhythm detection.">
+				>
+				["at0242"] = <
+					text = <"Automatic (high heart rate)">
+					description = <"Triggered by high heart rate alert.">
+				>
+				["at0243"] = <
+					text = <"Automatic (low heart rate)">
+					description = <"Triggered by low heart rate alert.">
+				>
+				["at0244"] = <
+					text = <"Scheduled">
+					description = <"Scheduled recording.">
+				>
+				["at0245"] = <
+					text = <"Symptom-triggered">
+					description = <"Triggered when user reported symptoms.">
+				>
+				["at0250"] = <
+					text = <"Good">
+					description = <"Good signal quality.">
+				>
+				["at0251"] = <
+					text = <"Acceptable">
+					description = <"Acceptable signal quality.">
+				>
+				["at0252"] = <
+					text = <"Poor">
+					description = <"Poor signal quality.">
+				>
+				["at0253"] = <
+					text = <"Uninterpretable">
+					description = <"Signal quality too poor to interpret.">
+				>
+				["at0260"] = <
+					text = <"Minimal">
+					description = <"Minimal noise.">
+				>
+				["at0261"] = <
+					text = <"Moderate">
+					description = <"Moderate noise.">
+				>
+				["at0262"] = <
+					text = <"Significant">
+					description = <"Significant noise.">
+				>
+				["at0270"] = <
+					text = <"Good contact">
+					description = <"Good electrode contact throughout.">
+				>
+				["at0271"] = <
+					text = <"Intermittent contact">
+					description = <"Intermittent electrode contact.">
+				>
+				["at0272"] = <
+					text = <"Poor contact">
+					description = <"Poor electrode contact.">
+				>
+				["at0280"] = <
+					text = <"None detected">
+					description = <"No premature beats detected.">
+				>
+				["at0281"] = <
+					text = <"Occasional (<5%)">
+					description = <"Occasional premature beats (<5% of beats).">
+				>
+				["at0282"] = <
+					text = <"Frequent (5-20%)">
+					description = <"Frequent premature beats (5-20% of beats).">
+				>
+				["at0283"] = <
+					text = <"Very frequent (>20%)">
+					description = <"Very frequent premature beats (>20% of beats).">
+				>
+				["at0290"] = <
+					text = <"Palpitations">
+					description = <"Awareness of heartbeat.">
+				>
+				["at0291"] = <
+					text = <"Racing heart">
+					description = <"Sensation of rapid heartbeat.">
+				>
+				["at0292"] = <
+					text = <"Skipped beats">
+					description = <"Sensation of skipped or irregular beats.">
+				>
+				["at0293"] = <
+					text = <"Chest discomfort">
+					description = <"Chest discomfort or pressure.">
+				>
+				["at0294"] = <
+					text = <"Shortness of breath">
+					description = <"Difficulty breathing.">
+				>
+				["at0295"] = <
+					text = <"Dizziness">
+					description = <"Feeling dizzy or lightheaded.">
+				>
+				["at0296"] = <
+					text = <"Fatigue">
+					description = <"Unusual tiredness.">
+				>
+				["at0297"] = <
+					text = <"Near-syncope">
+					description = <"Feeling like going to faint.">
+				>
+				["at0298"] = <
+					text = <"None">
+					description = <"No symptoms.">
+				>
+				["at0299"] = <
+					text = <"Other">
+					description = <"Other symptom.">
+				>
+				["at0300"] = <
+					text = <"Not reviewed">
+					description = <"Recording has not been clinically reviewed.">
+				>
+				["at0301"] = <
+					text = <"Pending review">
+					description = <"Recording is pending clinical review.">
+				>
+				["at0302"] = <
+					text = <"Reviewed - agrees with device">
+					description = <"Physician agrees with device classification.">
+				>
+				["at0303"] = <
+					text = <"Reviewed - disagrees with device">
+					description = <"Physician disagrees with device classification.">
+				>
+				["at0304"] = <
+					text = <"Reviewed - requires further testing">
+					description = <"Further testing recommended.">
+				>
+				["at0310"] = <
+					text = <"Normal sinus rhythm">
+					description = <"Physician confirms normal sinus rhythm.">
+				>
+				["at0311"] = <
+					text = <"Atrial fibrillation confirmed">
+					description = <"Physician confirms atrial fibrillation.">
+				>
+				["at0312"] = <
+					text = <"Atrial flutter">
+					description = <"Physician identifies atrial flutter.">
+				>
+				["at0313"] = <
+					text = <"Other arrhythmia">
+					description = <"Physician identifies other arrhythmia.">
+				>
+				["at0314"] = <
+					text = <"Unable to determine">
+					description = <"Unable to determine rhythm from recording.">
+				>
+				["at0315"] = <
+					text = <"Artifact - non-diagnostic">
+					description = <"Recording not diagnostic due to artifact.">
+				>
+				["at0320"] = <
+					text = <"Apple Health XML">
+					description = <"Apple HealthKit XML format.">
+				>
+				["at0321"] = <
+					text = <"HL7 aECG">
+					description = <"HL7 annotated ECG format.">
+				>
+				["at0322"] = <
+					text = <"SCP-ECG">
+					description = <"SCP-ECG standard format.">
+				>
+				["at0323"] = <
+					text = <"CSV/text">
+					description = <"CSV or text format.">
+				>
+				["at0324"] = <
+					text = <"Proprietary format">
+					description = <"Vendor proprietary format.">
+				>
+				["at0325"] = <
+					text = <"Other">
+					description = <"Other format.">
+				>
+				["at0330"] = <
+					text = <"Sitting">
+					description = <"Seated position.">
+				>
+				["at0331"] = <
+					text = <"Standing">
+					description = <"Standing position.">
+				>
+				["at0332"] = <
+					text = <"Lying">
+					description = <"Lying down.">
+				>
+				["at0333"] = <
+					text = <"Reclining">
+					description = <"Reclining position.">
+				>
+				["at0334"] = <
+					text = <"Moving">
+					description = <"Moving during recording.">
+				>
+				["at0340"] = <
+					text = <"At rest">
+					description = <"At rest during recording.">
+				>
+				["at0341"] = <
+					text = <"Light activity">
+					description = <"Light activity during recording.">
+				>
+				["at0342"] = <
+					text = <"Moderate activity">
+					description = <"Moderate activity during recording.">
+				>
+				["at0343"] = <
+					text = <"Post-exercise">
+					description = <"Recording taken after exercise.">
+				>
+				["at0350"] = <
+					text = <"Apple Watch">
+					description = <"Apple Watch ECG.">
+				>
+				["at0351"] = <
+					text = <"Samsung Galaxy Watch">
+					description = <"Samsung Galaxy Watch ECG.">
+				>
+				["at0352"] = <
+					text = <"Withings ScanWatch">
+					description = <"Withings ScanWatch ECG.">
+				>
+				["at0353"] = <
+					text = <"Fitbit Sense">
+					description = <"Fitbit Sense ECG.">
+				>
+				["at0354"] = <
+					text = <"AliveCor KardiaMobile">
+					description = <"AliveCor KardiaMobile device.">
+				>
+				["at0355"] = <
+					text = <"Polar H10">
+					description = <"Polar H10 chest strap ECG.">
+				>
+				["at0356"] = <
+					text = <"Omron HeartGuide">
+					description = <"Omron HeartGuide device.">
+				>
+				["at0357"] = <
+					text = <"Amazfit">
+					description = <"Amazfit smartwatch ECG.">
+				>
+				["at0358"] = <
+					text = <"Other">
+					description = <"Other ECG device.">
+				>
+				["at0360"] = <
+					text = <"Built-in watch electrodes">
+					description = <"Electrodes built into smartwatch.">
+				>
+				["at0361"] = <
+					text = <"External finger electrodes">
+					description = <"External electrodes touched with finger.">
+				>
+				["at0362"] = <
+					text = <"Chest strap electrodes">
+					description = <"Electrodes in chest strap.">
+				>
+				["at0363"] = <
+					text = <"Adhesive patch electrodes">
+					description = <"Adhesive patch electrodes.">
+				>
+				["at0364"] = <
+					text = <"Other">
+					description = <"Other electrode type.">
+				>
+			>
+		>
+	>

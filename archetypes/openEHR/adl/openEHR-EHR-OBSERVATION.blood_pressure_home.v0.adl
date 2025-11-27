@@ -1,0 +1,1239 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.blood_pressure_home.v0
+
+concept
+	[at0000]	-- Home blood pressure monitoring
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"HEADS Lab - Faculty of Medicine University of Porto">
+		["email"] = <"ricardo.lourenco@medfac.up.pt">
+		["date"] = <"2025-11-27">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record blood pressure measurements from connected home monitoring devices and wearables for hypertension management and lifestyle medicine applications.">
+			use = <"Use to record:
+- Home blood pressure measurements from connected cuff devices
+- Cuffless blood pressure estimates from wearables (with appropriate caveats)
+- Ambulatory blood pressure monitoring (ABPM) data
+- Measurement context (position, arm, cuff size, time of day)
+- BP averaging and trend calculations
+- Hypertension classification per guidelines
+- Medication timing relative to measurements
+
+This archetype supports integration with:
+- Withings BPM Connect/Core
+- Omron HeartGuide and connected monitors
+- iHealth connected monitors
+- Samsung Galaxy Watch (cuffless estimates)
+- Aktiia (cuffless continuous monitoring)
+- QardioArm
+- Apple Health BP data
+- OSCAR CPAP integration (BP monitoring)
+
+Intended for use in:
+- Hypertension management programs
+- Lifestyle medicine interventions
+- Telemedicine BP monitoring
+- Research on home BP monitoring
+- White coat hypertension assessment
+- Masked hypertension detection.">
+			misuse = <"Not to be used for clinical in-office blood pressure measurements - use standard blood_pressure archetype.
+Not to be used as sole basis for hypertension diagnosis without clinical validation.
+Not to be used for invasive arterial blood pressure monitoring.
+Cuffless measurements require clinical validation and should be interpreted with caution.">
+			copyright = <"HEADS Lab - Faculty of Medicine University of Porto">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International">
+		["custodian_organisation"] = <"openEHR Foundation / HEADS Lab FMUP">
+		["references"] = <"Whelton PK, Carey RM, Aronow WS, et al. 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults. J Am Coll Cardiol. 2018;71(19):e127-e248.
+Williams B, Mancia G, Spiering W, et al. 2018 ESC/ESH Guidelines for the management of arterial hypertension. Eur Heart J. 2018;39(33):3021-3104.
+Stergiou GS, Palatini P, Parati G, et al. 2021 European Society of Hypertension practice guidelines for office and out-of-office blood pressure measurement. J Hypertens. 2021;39(7):1293-1302.
+Withings. BPM Connect Clinical Validation Studies. Technical Documentation. 2024.
+Aktiia. Cuffless Blood Pressure Monitoring Technology. White Paper. 2024.
+Omron Healthcare. HeartGuide Wrist Blood Pressure Monitor. Clinical Documentation. 2024.">
+		["original_namespace"] = <"pt.up.med.heads">
+		["original_publisher"] = <"HEADS Lab - FMUP">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+		["build_uid"] = <"d0a1f6h4-2c8e-7d5f-e9a1-3i4h5c6d7e8f">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Home blood pressure monitoring
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {	-- Blood pressure measurement
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {	-- Systolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Diastolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..200.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Mean arterial pressure
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..250.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Pulse pressure
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..150.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- Heart rate
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::382]>
+														list = <
+															["1"] = <
+																units = <"/min">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- Classification
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- ACC/AHA category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0200,	-- Normal (<120/<80)
+															at0201,	-- Elevated (120-129/<80)
+															at0202,	-- Stage 1 HTN (130-139/80-89)
+															at0203,	-- Stage 2 HTN (≥140/≥90)
+															at0204]	-- Hypertensive crisis (>180/>120)
+														}
+													}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- ESC/ESH category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0210,	-- Optimal (<120/<80)
+															at0211,	-- Normal (120-129/80-84)
+															at0212,	-- High normal (130-139/85-89)
+															at0213,	-- Grade 1 HTN (140-159/90-99)
+															at0214,	-- Grade 2 HTN (160-179/100-109)
+															at0215,	-- Grade 3 HTN (≥180/≥110)
+															at0216]	-- Isolated systolic (≥140/<90)
+														}
+													}
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Home BP target achieved
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- Measurement context
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Time of day
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0220,	-- Morning (before medication)
+															at0221,	-- Morning (after medication)
+															at0222,	-- Afternoon
+															at0223,	-- Evening
+															at0224,	-- Before bed
+															at0225,	-- Night/Nocturnal
+															at0226]	-- Other
+														}
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Rest period before measurement
+												value matches {
+													DV_DURATION matches {
+														value matches {PTM/|PT0M..PT30M|}
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Measurement number in session
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|1..10|}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Time since last caffeine
+												value matches {
+													DV_DURATION matches {
+														value matches {PTH/|PT0H..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {	-- Time since last meal
+												value matches {
+													DV_DURATION matches {
+														value matches {PTH/|PT0H..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0026] occurrences matches {0..1} matches {	-- Bladder emptied
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0030] occurrences matches {0..1} matches {	-- Averaged values
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- Average systolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..1} matches {	-- Average diastolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..200.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- Averaging period
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0230,	-- Session (2-3 readings)
+															at0231,	-- Morning average (7 days)
+															at0232,	-- Evening average (7 days)
+															at0233,	-- Weekly average
+															at0234,	-- Monthly average
+															at0235]	-- ABPM 24-hour
+														}
+													}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- Readings included
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=1|}
+													}
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {	-- Standard deviation systolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..50.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0040] occurrences matches {0..1} matches {	-- ABPM data
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- Daytime average systolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- Daytime average diastolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..200.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Nighttime average systolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..300.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {	-- Nighttime average diastolic
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..200.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0045] occurrences matches {0..1} matches {	-- Nocturnal dipping
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0046] occurrences matches {0..1} matches {	-- Dipping pattern
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0240,	-- Normal dipper (10-20%)
+															at0241,	-- Non-dipper (<10%)
+															at0242,	-- Extreme dipper (>20%)
+															at0243]	-- Reverse dipper (night > day)
+														}
+													}
+												}
+											}
+											ELEMENT[at0047] occurrences matches {0..1} matches {	-- Morning surge
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::125]>
+														list = <
+															["1"] = <
+																units = <"mm[Hg]">
+																magnitude = <|0.0..100.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0048] occurrences matches {0..1} matches {	-- BP load (% above threshold)
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0050] occurrences matches {0..1} matches {	-- Arrhythmia detection
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0051] occurrences matches {0..1} matches {	-- Irregular heartbeat detected
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {	-- Possible AFib indicator
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {	-- Movement during measurement
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0060] occurrences matches {0..*} matches {	-- Data quality indicator
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+									}
+									allow_archetype CLUSTER[at0061] occurrences matches {0..*} matches {	-- Vendor data provenance
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+									}
+									ELEMENT[at0062] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0070] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0071] occurrences matches {0..1} matches {	-- Body position
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0250,	-- Sitting
+													at0251,	-- Standing
+													at0252,	-- Lying/Supine
+													at0253,	-- Reclining
+													at0254]	-- Unknown
+												}
+											}
+										}
+									}
+									ELEMENT[at0072] occurrences matches {0..1} matches {	-- Arm supported
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0073] occurrences matches {0..1} matches {	-- Back supported
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0074] occurrences matches {0..1} matches {	-- Feet flat on floor
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0075] occurrences matches {0..1} matches {	-- Legs uncrossed
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0076] occurrences matches {0..1} matches {	-- Talking during measurement
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0077] occurrences matches {0..1} matches {	-- Antihypertensive medication taken
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0260,	-- Before medication
+													at0261,	-- After medication (trough)
+													at0262,	-- After medication (peak)
+													at0263,	-- Not on medication
+													at0264]	-- Unknown
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0078] occurrences matches {0..*} matches {	-- Physiological context
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v0/}
+									}
+								}
+							}
+						}
+					}
+					INTERVAL_EVENT[at0080] occurrences matches {0..*} matches {	-- Morning reading
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[openehr::146]}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {PT2H}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0070]
+						}
+					}
+					INTERVAL_EVENT[at0081] occurrences matches {0..*} matches {	-- Evening reading
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[openehr::146]}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {PT2H}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0070]
+						}
+					}
+					INTERVAL_EVENT[at0082] occurrences matches {0..*} matches {	-- 24-hour ABPM
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[openehr::146]}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {PT24H}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0070]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0090] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0091] occurrences matches {0..1} matches {	-- Measurement method
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0270,	-- Oscillometric cuff (upper arm)
+									at0271,	-- Oscillometric cuff (wrist)
+									at0272,	-- Cuffless (PPG-based)
+									at0273,	-- Cuffless (tonometry)
+									at0274,	-- Auscultatory
+									at0275]	-- Unknown
+								}
+							}
+						}
+					}
+					ELEMENT[at0092] occurrences matches {0..1} matches {	-- Location of measurement
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0280,	-- Left upper arm
+									at0281,	-- Right upper arm
+									at0282,	-- Left wrist
+									at0283,	-- Right wrist
+									at0284,	-- Finger
+									at0285]	-- Other
+								}
+							}
+						}
+					}
+					ELEMENT[at0093] occurrences matches {0..1} matches {	-- Cuff size
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0290,	-- Small adult (22-26 cm)
+									at0291,	-- Adult (27-34 cm)
+									at0292,	-- Large adult (35-44 cm)
+									at0293,	-- Extra large (45-52 cm)
+									at0294,	-- Pediatric
+									at0295]	-- Not applicable (cuffless)
+								}
+							}
+						}
+					}
+					ELEMENT[at0094] occurrences matches {0..1} matches {	-- Device vendor
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0300,	-- Withings
+									at0301,	-- Omron
+									at0302,	-- iHealth
+									at0303,	-- QardioArm
+									at0304,	-- Samsung
+									at0305,	-- Aktiia
+									at0306,	-- A&D Medical
+									at0307,	-- Beurer
+									at0308,	-- Braun
+									at0309]	-- Other
+								}
+							}
+						}
+					}
+					ELEMENT[at0095] occurrences matches {0..1} matches {	-- Clinical validation status
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0310,	-- ESH/AAMI/ISO validated
+									at0311,	-- Partially validated
+									at0312,	-- Not validated
+									at0313]	-- Unknown
+								}
+							}
+						}
+					}
+					ELEMENT[at0096] occurrences matches {0..1} matches {	-- Last calibration date
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0097] occurrences matches {0..*} matches {	-- Wearable device
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+					}
+					allow_archetype CLUSTER[at0098] occurrences matches {0..*} matches {	-- Recording context
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v0/}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Home blood pressure monitoring">
+					description = <"Blood pressure measurements from connected home monitoring devices and wearables.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"Event history.">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"Data tree.">
+				>
+				["at0004"] = <
+					text = <"Blood pressure measurement">
+					description = <"Blood pressure values.">
+				>
+				["at0005"] = <
+					text = <"Systolic">
+					description = <"Peak systolic blood pressure.">
+				>
+				["at0006"] = <
+					text = <"Diastolic">
+					description = <"Minimum diastolic blood pressure.">
+				>
+				["at0007"] = <
+					text = <"Mean arterial pressure">
+					description = <"Calculated mean arterial pressure.">
+				>
+				["at0008"] = <
+					text = <"Pulse pressure">
+					description = <"Difference between systolic and diastolic.">
+				>
+				["at0009"] = <
+					text = <"Heart rate">
+					description = <"Heart rate measured during BP measurement.">
+				>
+				["at0010"] = <
+					text = <"Classification">
+					description = <"BP classification per clinical guidelines.">
+				>
+				["at0011"] = <
+					text = <"ACC/AHA category">
+					description = <"Classification per ACC/AHA 2017 guidelines.">
+				>
+				["at0012"] = <
+					text = <"ESC/ESH category">
+					description = <"Classification per ESC/ESH 2018 guidelines.">
+				>
+				["at0013"] = <
+					text = <"Home BP target achieved">
+					description = <"Whether home BP target (<135/85 typically) is achieved.">
+				>
+				["at0020"] = <
+					text = <"Measurement context">
+					description = <"Context surrounding the measurement.">
+				>
+				["at0021"] = <
+					text = <"Time of day">
+					description = <"Time of day relative to medication and routine.">
+				>
+				["at0022"] = <
+					text = <"Rest period before measurement">
+					description = <"Duration of rest before measurement (recommended 5 min).">
+				>
+				["at0023"] = <
+					text = <"Measurement number in session">
+					description = <"Which measurement in a series (1st, 2nd, 3rd).">
+				>
+				["at0024"] = <
+					text = <"Time since last caffeine">
+					description = <"Time since last caffeine consumption.">
+				>
+				["at0025"] = <
+					text = <"Time since last meal">
+					description = <"Time since last meal.">
+				>
+				["at0026"] = <
+					text = <"Bladder emptied">
+					description = <"Whether bladder was emptied before measurement.">
+				>
+				["at0030"] = <
+					text = <"Averaged values">
+					description = <"Averaged BP values over multiple readings.">
+				>
+				["at0031"] = <
+					text = <"Average systolic">
+					description = <"Average systolic BP over the period.">
+				>
+				["at0032"] = <
+					text = <"Average diastolic">
+					description = <"Average diastolic BP over the period.">
+				>
+				["at0033"] = <
+					text = <"Averaging period">
+					description = <"Period over which BP is averaged.">
+				>
+				["at0034"] = <
+					text = <"Readings included">
+					description = <"Number of readings included in average.">
+				>
+				["at0035"] = <
+					text = <"Standard deviation systolic">
+					description = <"Standard deviation of systolic readings.">
+				>
+				["at0040"] = <
+					text = <"ABPM data">
+					description = <"Ambulatory blood pressure monitoring specific data.">
+				>
+				["at0041"] = <
+					text = <"Daytime average systolic">
+					description = <"Average systolic during daytime hours.">
+				>
+				["at0042"] = <
+					text = <"Daytime average diastolic">
+					description = <"Average diastolic during daytime hours.">
+				>
+				["at0043"] = <
+					text = <"Nighttime average systolic">
+					description = <"Average systolic during nighttime hours.">
+				>
+				["at0044"] = <
+					text = <"Nighttime average diastolic">
+					description = <"Average diastolic during nighttime hours.">
+				>
+				["at0045"] = <
+					text = <"Nocturnal dipping">
+					description = <"Percentage drop in BP from day to night.">
+				>
+				["at0046"] = <
+					text = <"Dipping pattern">
+					description = <"Classification of nocturnal dipping pattern.">
+				>
+				["at0047"] = <
+					text = <"Morning surge">
+					description = <"Magnitude of morning BP surge.">
+				>
+				["at0048"] = <
+					text = <"BP load (% above threshold)">
+					description = <"Percentage of readings above threshold.">
+				>
+				["at0050"] = <
+					text = <"Arrhythmia detection">
+					description = <"Arrhythmia indicators detected during measurement.">
+				>
+				["at0051"] = <
+					text = <"Irregular heartbeat detected">
+					description = <"Whether device detected irregular heartbeat.">
+				>
+				["at0052"] = <
+					text = <"Possible AFib indicator">
+					description = <"Whether device flagged possible atrial fibrillation.">
+				>
+				["at0053"] = <
+					text = <"Movement during measurement">
+					description = <"Whether movement was detected during measurement.">
+				>
+				["at0060"] = <
+					text = <"Data quality indicator">
+					description = <"Slot for data quality assessment cluster.">
+				>
+				["at0061"] = <
+					text = <"Vendor data provenance">
+					description = <"Slot for vendor data origin and processing details.">
+				>
+				["at0062"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the measurement.">
+				>
+				["at0070"] = <
+					text = <"State tree">
+					description = <"State tree.">
+				>
+				["at0071"] = <
+					text = <"Body position">
+					description = <"Position of the body during measurement.">
+				>
+				["at0072"] = <
+					text = <"Arm supported">
+					description = <"Whether the arm was supported at heart level.">
+				>
+				["at0073"] = <
+					text = <"Back supported">
+					description = <"Whether the back was supported.">
+				>
+				["at0074"] = <
+					text = <"Feet flat on floor">
+					description = <"Whether feet were flat on the floor.">
+				>
+				["at0075"] = <
+					text = <"Legs uncrossed">
+					description = <"Whether legs were uncrossed.">
+				>
+				["at0076"] = <
+					text = <"Talking during measurement">
+					description = <"Whether patient was talking during measurement.">
+				>
+				["at0077"] = <
+					text = <"Antihypertensive medication taken">
+					description = <"Timing of measurement relative to medication.">
+				>
+				["at0078"] = <
+					text = <"Physiological context">
+					description = <"Slot for physiological context cluster.">
+				>
+				["at0080"] = <
+					text = <"Morning reading">
+					description = <"Morning BP reading session.">
+				>
+				["at0081"] = <
+					text = <"Evening reading">
+					description = <"Evening BP reading session.">
+				>
+				["at0082"] = <
+					text = <"24-hour ABPM">
+					description = <"24-hour ambulatory BP monitoring period.">
+				>
+				["at0090"] = <
+					text = <"Protocol tree">
+					description = <"Protocol tree.">
+				>
+				["at0091"] = <
+					text = <"Measurement method">
+					description = <"Method used for BP measurement.">
+				>
+				["at0092"] = <
+					text = <"Location of measurement">
+					description = <"Body location where measurement was taken.">
+				>
+				["at0093"] = <
+					text = <"Cuff size">
+					description = <"Size of cuff used for measurement.">
+				>
+				["at0094"] = <
+					text = <"Device vendor">
+					description = <"Manufacturer of the BP monitoring device.">
+				>
+				["at0095"] = <
+					text = <"Clinical validation status">
+					description = <"Whether device has clinical validation.">
+				>
+				["at0096"] = <
+					text = <"Last calibration date">
+					description = <"Date of last device calibration.">
+				>
+				["at0097"] = <
+					text = <"Wearable device">
+					description = <"Slot for wearable device details.">
+				>
+				["at0098"] = <
+					text = <"Recording context">
+					description = <"Slot for recording context details.">
+				>
+				["at0200"] = <
+					text = <"Normal (<120/<80)">
+					description = <"Normal blood pressure.">
+				>
+				["at0201"] = <
+					text = <"Elevated (120-129/<80)">
+					description = <"Elevated blood pressure.">
+				>
+				["at0202"] = <
+					text = <"Stage 1 HTN (130-139/80-89)">
+					description = <"Stage 1 hypertension.">
+				>
+				["at0203"] = <
+					text = <"Stage 2 HTN (≥140/≥90)">
+					description = <"Stage 2 hypertension.">
+				>
+				["at0204"] = <
+					text = <"Hypertensive crisis (>180/>120)">
+					description = <"Hypertensive crisis requiring urgent attention.">
+				>
+				["at0210"] = <
+					text = <"Optimal (<120/<80)">
+					description = <"Optimal blood pressure per ESC/ESH.">
+				>
+				["at0211"] = <
+					text = <"Normal (120-129/80-84)">
+					description = <"Normal blood pressure per ESC/ESH.">
+				>
+				["at0212"] = <
+					text = <"High normal (130-139/85-89)">
+					description = <"High normal blood pressure.">
+				>
+				["at0213"] = <
+					text = <"Grade 1 HTN (140-159/90-99)">
+					description = <"Grade 1 hypertension.">
+				>
+				["at0214"] = <
+					text = <"Grade 2 HTN (160-179/100-109)">
+					description = <"Grade 2 hypertension.">
+				>
+				["at0215"] = <
+					text = <"Grade 3 HTN (≥180/≥110)">
+					description = <"Grade 3 hypertension.">
+				>
+				["at0216"] = <
+					text = <"Isolated systolic (≥140/<90)">
+					description = <"Isolated systolic hypertension.">
+				>
+				["at0220"] = <
+					text = <"Morning (before medication)">
+					description = <"Morning measurement before taking medication.">
+				>
+				["at0221"] = <
+					text = <"Morning (after medication)">
+					description = <"Morning measurement after taking medication.">
+				>
+				["at0222"] = <
+					text = <"Afternoon">
+					description = <"Afternoon measurement.">
+				>
+				["at0223"] = <
+					text = <"Evening">
+					description = <"Evening measurement.">
+				>
+				["at0224"] = <
+					text = <"Before bed">
+					description = <"Measurement taken before going to bed.">
+				>
+				["at0225"] = <
+					text = <"Night/Nocturnal">
+					description = <"Nighttime/nocturnal measurement.">
+				>
+				["at0226"] = <
+					text = <"Other">
+					description = <"Other time of day.">
+				>
+				["at0230"] = <
+					text = <"Session (2-3 readings)">
+					description = <"Average of readings in single session.">
+				>
+				["at0231"] = <
+					text = <"Morning average (7 days)">
+					description = <"7-day average of morning readings.">
+				>
+				["at0232"] = <
+					text = <"Evening average (7 days)">
+					description = <"7-day average of evening readings.">
+				>
+				["at0233"] = <
+					text = <"Weekly average">
+					description = <"Full week average of all readings.">
+				>
+				["at0234"] = <
+					text = <"Monthly average">
+					description = <"Monthly average of all readings.">
+				>
+				["at0235"] = <
+					text = <"ABPM 24-hour">
+					description = <"24-hour ambulatory monitoring average.">
+				>
+				["at0240"] = <
+					text = <"Normal dipper (10-20%)">
+					description = <"Normal nocturnal dipping 10-20%.">
+				>
+				["at0241"] = <
+					text = <"Non-dipper (<10%)">
+					description = <"Insufficient nocturnal dipping.">
+				>
+				["at0242"] = <
+					text = <"Extreme dipper (>20%)">
+					description = <"Excessive nocturnal dipping.">
+				>
+				["at0243"] = <
+					text = <"Reverse dipper (night > day)">
+					description = <"Reverse pattern with higher night BP.">
+				>
+				["at0250"] = <
+					text = <"Sitting">
+					description = <"Seated position.">
+				>
+				["at0251"] = <
+					text = <"Standing">
+					description = <"Standing position.">
+				>
+				["at0252"] = <
+					text = <"Lying/Supine">
+					description = <"Lying down/supine position.">
+				>
+				["at0253"] = <
+					text = <"Reclining">
+					description = <"Reclining position.">
+				>
+				["at0254"] = <
+					text = <"Unknown">
+					description = <"Position unknown.">
+				>
+				["at0260"] = <
+					text = <"Before medication">
+					description = <"Measurement taken before daily medication.">
+				>
+				["at0261"] = <
+					text = <"After medication (trough)">
+					description = <"Trough measurement, just before next dose.">
+				>
+				["at0262"] = <
+					text = <"After medication (peak)">
+					description = <"Peak effect time after medication.">
+				>
+				["at0263"] = <
+					text = <"Not on medication">
+					description = <"Patient not taking antihypertensive medication.">
+				>
+				["at0264"] = <
+					text = <"Unknown">
+					description = <"Medication timing unknown.">
+				>
+				["at0270"] = <
+					text = <"Oscillometric cuff (upper arm)">
+					description = <"Upper arm cuff with oscillometric method.">
+				>
+				["at0271"] = <
+					text = <"Oscillometric cuff (wrist)">
+					description = <"Wrist cuff with oscillometric method.">
+				>
+				["at0272"] = <
+					text = <"Cuffless (PPG-based)">
+					description = <"Cuffless measurement using PPG.">
+				>
+				["at0273"] = <
+					text = <"Cuffless (tonometry)">
+					description = <"Cuffless measurement using tonometry.">
+				>
+				["at0274"] = <
+					text = <"Auscultatory">
+					description = <"Traditional auscultatory method.">
+				>
+				["at0275"] = <
+					text = <"Unknown">
+					description = <"Measurement method unknown.">
+				>
+				["at0280"] = <
+					text = <"Left upper arm">
+					description = <"Left upper arm measurement.">
+				>
+				["at0281"] = <
+					text = <"Right upper arm">
+					description = <"Right upper arm measurement.">
+				>
+				["at0282"] = <
+					text = <"Left wrist">
+					description = <"Left wrist measurement.">
+				>
+				["at0283"] = <
+					text = <"Right wrist">
+					description = <"Right wrist measurement.">
+				>
+				["at0284"] = <
+					text = <"Finger">
+					description = <"Finger measurement.">
+				>
+				["at0285"] = <
+					text = <"Other">
+					description = <"Other measurement location.">
+				>
+				["at0290"] = <
+					text = <"Small adult (22-26 cm)">
+					description = <"Small adult cuff size.">
+				>
+				["at0291"] = <
+					text = <"Adult (27-34 cm)">
+					description = <"Standard adult cuff size.">
+				>
+				["at0292"] = <
+					text = <"Large adult (35-44 cm)">
+					description = <"Large adult cuff size.">
+				>
+				["at0293"] = <
+					text = <"Extra large (45-52 cm)">
+					description = <"Extra large cuff size.">
+				>
+				["at0294"] = <
+					text = <"Pediatric">
+					description = <"Pediatric cuff size.">
+				>
+				["at0295"] = <
+					text = <"Not applicable (cuffless)">
+					description = <"Cuffless device, no cuff size.">
+				>
+				["at0300"] = <
+					text = <"Withings">
+					description = <"Withings BP monitor.">
+				>
+				["at0301"] = <
+					text = <"Omron">
+					description = <"Omron BP monitor.">
+				>
+				["at0302"] = <
+					text = <"iHealth">
+					description = <"iHealth BP monitor.">
+				>
+				["at0303"] = <
+					text = <"QardioArm">
+					description = <"Qardio BP monitor.">
+				>
+				["at0304"] = <
+					text = <"Samsung">
+					description = <"Samsung Galaxy Watch BP.">
+				>
+				["at0305"] = <
+					text = <"Aktiia">
+					description = <"Aktiia cuffless monitor.">
+				>
+				["at0306"] = <
+					text = <"A&D Medical">
+					description = <"A&D Medical BP monitor.">
+				>
+				["at0307"] = <
+					text = <"Beurer">
+					description = <"Beurer BP monitor.">
+				>
+				["at0308"] = <
+					text = <"Braun">
+					description = <"Braun BP monitor.">
+				>
+				["at0309"] = <
+					text = <"Other">
+					description = <"Other BP monitor vendor.">
+				>
+				["at0310"] = <
+					text = <"ESH/AAMI/ISO validated">
+					description = <"Device validated per ESH/AAMI/ISO protocols.">
+				>
+				["at0311"] = <
+					text = <"Partially validated">
+					description = <"Device partially validated.">
+				>
+				["at0312"] = <
+					text = <"Not validated">
+					description = <"Device not clinically validated.">
+				>
+				["at0313"] = <
+					text = <"Unknown">
+					description = <"Validation status unknown.">
+				>
+			>
+		>
+	>

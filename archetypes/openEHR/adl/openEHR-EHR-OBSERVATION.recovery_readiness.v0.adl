@@ -1,0 +1,1254 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.recovery_readiness.v0
+
+concept
+	[at0000]	-- Recovery and readiness assessment
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"HEADS Lab - Faculty of Medicine University of Porto">
+		["email"] = <"ricardo.lourenco@medfac.up.pt">
+		["date"] = <"2025-11-27">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record composite recovery and readiness scores from wearable devices that integrate multiple physiological parameters to assess overall recovery status and training readiness.">
+			use = <"Use to record:
+- Vendor-specific readiness scores (Oura Readiness, WHOOP Recovery, Garmin Body Battery)
+- Recovery contributing factors (sleep, HRV, resting HR, activity balance)
+- Training readiness assessment and recommendations
+- Strain-recovery balance metrics
+- Day-over-day recovery trends
+- Optimal activity recommendations
+
+This archetype supports integration with:
+- Oura Ring (Readiness Score, contributors)
+- WHOOP (Recovery Score, HRV, strain balance)
+- Garmin (Body Battery, training readiness, training status)
+- Polar (Nightly Recharge, FitSpark)
+- Fitbit (Daily Readiness Score)
+- Apple Watch (training load insights)
+- Samsung Galaxy Watch (body composition, energy score)
+
+Intended for use in:
+- Athletic performance optimization
+- Overtraining prevention
+- Lifestyle medicine coaching
+- Chronic disease management
+- Research on recovery physiology.">
+			misuse = <"Not to be used for recording individual HRV or sleep metrics - use dedicated archetypes.
+Not to be used for clinical fatigue assessment - use fatigue_assessment archetype.
+Not to be used for post-surgical or post-illness recovery monitoring in clinical settings.
+Not to be used as sole basis for medical decisions.">
+			copyright = <"HEADS Lab - Faculty of Medicine University of Porto">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International">
+		["custodian_organisation"] = <"openEHR Foundation / HEADS Lab FMUP">
+		["references"] = <"Oura Health. Readiness Score Methodology. Technical Documentation. 2024.
+WHOOP. Recovery and Strain Algorithms. Performance Optimization Platform. 2024.
+Garmin. Body Battery and Training Status. Developer Documentation. 2024.
+Polar. Nightly Recharge and Sleep Plus Stages. Technical White Paper. 2024.
+Kellmann M, Bertollo M, Bosquet L, et al. Recovery and Performance in Sport: Consensus Statement. Int J Sports Physiol Perform. 2018;13(2):240-245.
+Halson SL. Monitoring training load to understand fatigue in athletes. Sports Med. 2014;44 Suppl 2:S139-47.">
+		["original_namespace"] = <"pt.up.med.heads">
+		["original_publisher"] = <"HEADS Lab - FMUP">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+		["build_uid"] = <"c9f0e5g3-1b7d-6c4e-d8f0-2h3g4b5c6d7e">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Recovery and readiness assessment
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {	-- Overall readiness
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {	-- Readiness score
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Readiness category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0200,	-- Optimal (85-100)
+															at0201,	-- Good (70-84)
+															at0202,	-- Fair (50-69)
+															at0203,	-- Low (30-49)
+															at0204]	-- Pay attention (<30)
+														}
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Compared to baseline
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0210,	-- Above baseline
+															at0211,	-- At baseline
+															at0212]	-- Below baseline
+														}
+													}
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Trend direction
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0220,	-- Improving
+															at0221,	-- Stable
+															at0222]	-- Declining
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- Vendor-specific scores
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Oura Readiness Score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..100|}
+													}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- WHOOP Recovery Score
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Garmin Body Battery
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..100|}
+													}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Polar Nightly Recharge
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0230,	-- Very good (6)
+															at0231,	-- Good (5)
+															at0232,	-- OK (4)
+															at0233,	-- Slightly compromised (3)
+															at0234,	-- Compromised (2)
+															at0235]	-- Heavily compromised (1)
+														}
+													}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- Fitbit Daily Readiness
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|1..100|}
+													}
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Samsung Energy Score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..100|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- Contributing factors
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Sleep contribution
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Sleep quality impact
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0240,	-- Positive
+															at0241,	-- Neutral
+															at0242]	-- Negative
+														}
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- HRV contribution
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- HRV status
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0240,	-- Positive
+															at0241,	-- Neutral
+															at0242]	-- Negative
+														}
+													}
+												}
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {	-- Resting HR contribution
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0026] occurrences matches {0..1} matches {	-- Resting HR status
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0240,	-- Positive
+															at0241,	-- Neutral
+															at0242]	-- Negative
+														}
+													}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {	-- Activity balance contribution
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0028] occurrences matches {0..1} matches {	-- Activity balance status
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0250,	-- Well balanced
+															at0251,	-- Slightly overtrained
+															at0252,	-- Undertrained
+															at0253]	-- Significantly overtrained
+														}
+													}
+												}
+											}
+											ELEMENT[at0029] occurrences matches {0..1} matches {	-- Body temperature contribution
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0030] occurrences matches {0..1} matches {	-- Temperature deviation status
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Normal
+															at0261,	-- Elevated
+															at0262]	-- Below normal
+														}
+													}
+												}
+											}
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- Respiratory rate contribution
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0040] occurrences matches {0..1} matches {	-- Strain-recovery balance
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- Previous day strain
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..21.0|}
+														precision matches {1}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- Strain category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0270,	-- Light (0-9)
+															at0271,	-- Moderate (10-13)
+															at0272,	-- Strenuous (14-17)
+															at0273]	-- All out (18-21)
+														}
+													}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Cumulative strain (7 day)
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|>=0.0|}
+														precision matches {1}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {	-- Recovery debt
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0280,	-- No debt
+															at0281,	-- Mild debt
+															at0282,	-- Moderate debt
+															at0283]	-- Significant debt
+														}
+													}
+												}
+											}
+											ELEMENT[at0045] occurrences matches {0..1} matches {	-- Days to full recovery
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|0..14|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0050] occurrences matches {0..1} matches {	-- Training readiness
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0051] occurrences matches {0..1} matches {	-- Training status
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0290,	-- Peaking
+															at0291,	-- Productive
+															at0292,	-- Maintaining
+															at0293,	-- Recovery
+															at0294,	-- Unproductive
+															at0295,	-- Detraining
+															at0296]	-- Overreaching
+														}
+													}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {	-- VO2max trend
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0300,	-- Improving
+															at0301,	-- Stable
+															at0302]	-- Declining
+														}
+													}
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {	-- Optimal strain today
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..21.0|}
+														precision matches {1}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0054] occurrences matches {0..1} matches {	-- Recommended activity type
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0310,	-- High intensity training
+															at0311,	-- Moderate training
+															at0312,	-- Light activity
+															at0313,	-- Active recovery
+															at0314,	-- Rest day
+															at0315]	-- Recovery focus
+														}
+													}
+												}
+											}
+											ELEMENT[at0055] occurrences matches {0..1} matches {	-- Primary training focus
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0320,	-- Aerobic base
+															at0321,	-- Aerobic endurance
+															at0322,	-- Anaerobic capacity
+															at0323,	-- Speed
+															at0324,	-- Strength
+															at0325]	-- Recovery
+														}
+													}
+												}
+											}
+											ELEMENT[at0056] occurrences matches {0..1} matches {	-- Time to peak performance
+												value matches {
+													DV_DURATION matches {
+														value matches {PD/|P0D..P90D|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0060] occurrences matches {0..1} matches {	-- Recovery insights
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0061] occurrences matches {0..*} matches {	-- Key insight
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0062] occurrences matches {0..*} matches {	-- Recommendation
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {	-- Sleep recommendation
+												value matches {
+													DV_DURATION matches {
+														value matches {PTH/|PT0H..PT12H|}
+													}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {	-- Hydration reminder
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0065] occurrences matches {0..1} matches {	-- Stress management reminder
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0070] occurrences matches {0..1} matches {	-- Historical comparison
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0071] occurrences matches {0..1} matches {	-- 7-day average readiness
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0072] occurrences matches {0..1} matches {	-- 30-day average readiness
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {	-- Personal baseline
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..100.0|}
+														precision matches {0}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0074] occurrences matches {0..1} matches {	-- Percentile rank
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0080] occurrences matches {0..*} matches {	-- Data quality indicator
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+									}
+									allow_archetype CLUSTER[at0081] occurrences matches {0..*} matches {	-- Vendor data provenance
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+									}
+									ELEMENT[at0082] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0090] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0091] occurrences matches {0..1} matches {	-- Illness present
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0092] occurrences matches {0..1} matches {	-- Injury present
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0093] occurrences matches {0..1} matches {	-- Travel/Jet lag
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0094] occurrences matches {0..1} matches {	-- Alcohol consumed
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0095] occurrences matches {0..1} matches {	-- Menstrual phase
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0330,	-- Menstrual
+													at0331,	-- Follicular
+													at0332,	-- Ovulatory
+													at0333,	-- Luteal
+													at0334]	-- Not applicable
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0096] occurrences matches {0..*} matches {	-- Physiological context
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v0/}
+									}
+								}
+							}
+						}
+					}
+					INTERVAL_EVENT[at0100] occurrences matches {0..*} matches {	-- Morning assessment
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[openehr::146]}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {PT24H}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0090]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0110] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0111] occurrences matches {0..1} matches {	-- Primary vendor
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0340,	-- Oura
+									at0341,	-- WHOOP
+									at0342,	-- Garmin
+									at0343,	-- Polar
+									at0344,	-- Fitbit
+									at0345,	-- Apple
+									at0346,	-- Samsung
+									at0347,	-- Withings
+									at0348]	-- Other
+								}
+							}
+						}
+					}
+					ELEMENT[at0112] occurrences matches {0..1} matches {	-- Algorithm version
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0113] occurrences matches {0..1} matches {	-- Calibration status
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0350,	-- Fully calibrated
+									at0351,	-- Calibrating
+									at0352]	-- Not calibrated
+								}
+							}
+						}
+					}
+					ELEMENT[at0114] occurrences matches {0..1} matches {	-- Days of data for baseline
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|>=0|}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0115] occurrences matches {0..*} matches {	-- Wearable device
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+					}
+					allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {	-- Recording context
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v0/}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Recovery and readiness assessment">
+					description = <"Composite recovery and readiness scores from wearable devices integrating multiple physiological parameters.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"Event history.">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"Data tree.">
+				>
+				["at0004"] = <
+					text = <"Overall readiness">
+					description = <"Composite readiness assessment.">
+				>
+				["at0005"] = <
+					text = <"Readiness score">
+					description = <"Normalized readiness score 0-100.">
+				>
+				["at0006"] = <
+					text = <"Readiness category">
+					description = <"Categorical interpretation of readiness score.">
+				>
+				["at0007"] = <
+					text = <"Compared to baseline">
+					description = <"How current readiness compares to personal baseline.">
+				>
+				["at0008"] = <
+					text = <"Trend direction">
+					description = <"Direction of readiness trend over recent days.">
+				>
+				["at0010"] = <
+					text = <"Vendor-specific scores">
+					description = <"Recovery scores from specific wearable vendors.">
+				>
+				["at0011"] = <
+					text = <"Oura Readiness Score">
+					description = <"Oura Ring readiness score (0-100).">
+				>
+				["at0012"] = <
+					text = <"WHOOP Recovery Score">
+					description = <"WHOOP recovery percentage (0-100%).">
+				>
+				["at0013"] = <
+					text = <"Garmin Body Battery">
+					description = <"Garmin Body Battery energy level (0-100).">
+				>
+				["at0014"] = <
+					text = <"Polar Nightly Recharge">
+					description = <"Polar Nightly Recharge status.">
+				>
+				["at0015"] = <
+					text = <"Fitbit Daily Readiness">
+					description = <"Fitbit Daily Readiness Score.">
+				>
+				["at0016"] = <
+					text = <"Samsung Energy Score">
+					description = <"Samsung Galaxy Watch energy score.">
+				>
+				["at0020"] = <
+					text = <"Contributing factors">
+					description = <"Individual factors contributing to overall readiness.">
+				>
+				["at0021"] = <
+					text = <"Sleep contribution">
+					description = <"Sleep quality contribution to readiness (0-100).">
+				>
+				["at0022"] = <
+					text = <"Sleep quality impact">
+					description = <"Whether sleep quality positively or negatively impacts readiness.">
+				>
+				["at0023"] = <
+					text = <"HRV contribution">
+					description = <"HRV contribution to readiness (0-100).">
+				>
+				["at0024"] = <
+					text = <"HRV status">
+					description = <"Whether HRV positively or negatively impacts readiness.">
+				>
+				["at0025"] = <
+					text = <"Resting HR contribution">
+					description = <"Resting heart rate contribution to readiness (0-100).">
+				>
+				["at0026"] = <
+					text = <"Resting HR status">
+					description = <"Whether resting HR positively or negatively impacts readiness.">
+				>
+				["at0027"] = <
+					text = <"Activity balance contribution">
+					description = <"Activity balance contribution to readiness (0-100).">
+				>
+				["at0028"] = <
+					text = <"Activity balance status">
+					description = <"Status of activity balance (training vs recovery).">
+				>
+				["at0029"] = <
+					text = <"Body temperature contribution">
+					description = <"Body temperature contribution to readiness (0-100).">
+				>
+				["at0030"] = <
+					text = <"Temperature deviation status">
+					description = <"Body temperature deviation from baseline.">
+				>
+				["at0031"] = <
+					text = <"Respiratory rate contribution">
+					description = <"Respiratory rate contribution to readiness (0-100).">
+				>
+				["at0040"] = <
+					text = <"Strain-recovery balance">
+					description = <"Balance between training strain and recovery.">
+				>
+				["at0041"] = <
+					text = <"Previous day strain">
+					description = <"Strain score from the previous day (WHOOP scale 0-21).">
+				>
+				["at0042"] = <
+					text = <"Strain category">
+					description = <"Categorical classification of strain.">
+				>
+				["at0043"] = <
+					text = <"Cumulative strain (7 day)">
+					description = <"Total strain accumulated over past 7 days.">
+				>
+				["at0044"] = <
+					text = <"Recovery debt">
+					description = <"Accumulated recovery debt from insufficient recovery.">
+				>
+				["at0045"] = <
+					text = <"Days to full recovery">
+					description = <"Estimated days needed for full recovery.">
+				>
+				["at0050"] = <
+					text = <"Training readiness">
+					description = <"Assessment of readiness for training activities.">
+				>
+				["at0051"] = <
+					text = <"Training status">
+					description = <"Current training status classification.">
+				>
+				["at0052"] = <
+					text = <"VO2max trend">
+					description = <"Trend direction of estimated VO2max.">
+				>
+				["at0053"] = <
+					text = <"Optimal strain today">
+					description = <"Recommended strain level for today.">
+				>
+				["at0054"] = <
+					text = <"Recommended activity type">
+					description = <"Type of activity recommended based on recovery.">
+				>
+				["at0055"] = <
+					text = <"Primary training focus">
+					description = <"Recommended primary training focus.">
+				>
+				["at0056"] = <
+					text = <"Time to peak performance">
+					description = <"Estimated time until peak performance readiness.">
+				>
+				["at0060"] = <
+					text = <"Recovery insights">
+					description = <"AI-generated insights and recommendations.">
+				>
+				["at0061"] = <
+					text = <"Key insight">
+					description = <"Key insight about recovery status.">
+				>
+				["at0062"] = <
+					text = <"Recommendation">
+					description = <"Recommendation for improving recovery.">
+				>
+				["at0063"] = <
+					text = <"Sleep recommendation">
+					description = <"Recommended sleep duration.">
+				>
+				["at0064"] = <
+					text = <"Hydration reminder">
+					description = <"Whether hydration is flagged as important.">
+				>
+				["at0065"] = <
+					text = <"Stress management reminder">
+					description = <"Whether stress management is recommended.">
+				>
+				["at0070"] = <
+					text = <"Historical comparison">
+					description = <"Comparison with historical readiness data.">
+				>
+				["at0071"] = <
+					text = <"7-day average readiness">
+					description = <"Average readiness score over past 7 days.">
+				>
+				["at0072"] = <
+					text = <"30-day average readiness">
+					description = <"Average readiness score over past 30 days.">
+				>
+				["at0073"] = <
+					text = <"Personal baseline">
+					description = <"Established personal baseline readiness.">
+				>
+				["at0074"] = <
+					text = <"Percentile rank">
+					description = <"Percentile rank compared to similar users.">
+				>
+				["at0080"] = <
+					text = <"Data quality indicator">
+					description = <"Slot for data quality assessment cluster.">
+				>
+				["at0081"] = <
+					text = <"Vendor data provenance">
+					description = <"Slot for vendor data origin and processing details.">
+				>
+				["at0082"] = <
+					text = <"Comment">
+					description = <"Additional narrative about recovery status.">
+				>
+				["at0090"] = <
+					text = <"State tree">
+					description = <"State tree.">
+				>
+				["at0091"] = <
+					text = <"Illness present">
+					description = <"Whether illness is currently present.">
+				>
+				["at0092"] = <
+					text = <"Injury present">
+					description = <"Whether injury is currently present.">
+				>
+				["at0093"] = <
+					text = <"Travel/Jet lag">
+					description = <"Whether affected by travel or jet lag.">
+				>
+				["at0094"] = <
+					text = <"Alcohol consumed">
+					description = <"Whether alcohol was consumed recently.">
+				>
+				["at0095"] = <
+					text = <"Menstrual phase">
+					description = <"Current menstrual cycle phase if applicable.">
+				>
+				["at0096"] = <
+					text = <"Physiological context">
+					description = <"Slot for physiological context cluster.">
+				>
+				["at0100"] = <
+					text = <"Morning assessment">
+					description = <"Daily morning readiness assessment.">
+				>
+				["at0110"] = <
+					text = <"Protocol tree">
+					description = <"Protocol tree.">
+				>
+				["at0111"] = <
+					text = <"Primary vendor">
+					description = <"Primary wearable vendor providing readiness data.">
+				>
+				["at0112"] = <
+					text = <"Algorithm version">
+					description = <"Version of the readiness algorithm used.">
+				>
+				["at0113"] = <
+					text = <"Calibration status">
+					description = <"Calibration status of the readiness algorithm.">
+				>
+				["at0114"] = <
+					text = <"Days of data for baseline">
+					description = <"Number of days of data used to establish baseline.">
+				>
+				["at0115"] = <
+					text = <"Wearable device">
+					description = <"Slot for wearable device details.">
+				>
+				["at0116"] = <
+					text = <"Recording context">
+					description = <"Slot for recording context details.">
+				>
+				["at0200"] = <
+					text = <"Optimal (85-100)">
+					description = <"Excellent recovery, ready for peak performance.">
+				>
+				["at0201"] = <
+					text = <"Good (70-84)">
+					description = <"Good recovery, ready for training.">
+				>
+				["at0202"] = <
+					text = <"Fair (50-69)">
+					description = <"Moderate recovery, light activity recommended.">
+				>
+				["at0203"] = <
+					text = <"Low (30-49)">
+					description = <"Low recovery, rest or active recovery recommended.">
+				>
+				["at0204"] = <
+					text = <"Pay attention (<30)">
+					description = <"Very low recovery, focus on rest and recovery.">
+				>
+				["at0210"] = <
+					text = <"Above baseline">
+					description = <"Currently above personal baseline.">
+				>
+				["at0211"] = <
+					text = <"At baseline">
+					description = <"Currently at personal baseline.">
+				>
+				["at0212"] = <
+					text = <"Below baseline">
+					description = <"Currently below personal baseline.">
+				>
+				["at0220"] = <
+					text = <"Improving">
+					description = <"Readiness is improving.">
+				>
+				["at0221"] = <
+					text = <"Stable">
+					description = <"Readiness is stable.">
+				>
+				["at0222"] = <
+					text = <"Declining">
+					description = <"Readiness is declining.">
+				>
+				["at0230"] = <
+					text = <"Very good (6)">
+					description = <"Very good ANS recovery.">
+				>
+				["at0231"] = <
+					text = <"Good (5)">
+					description = <"Good ANS recovery.">
+				>
+				["at0232"] = <
+					text = <"OK (4)">
+					description = <"OK ANS recovery.">
+				>
+				["at0233"] = <
+					text = <"Slightly compromised (3)">
+					description = <"Slightly compromised ANS recovery.">
+				>
+				["at0234"] = <
+					text = <"Compromised (2)">
+					description = <"Compromised ANS recovery.">
+				>
+				["at0235"] = <
+					text = <"Heavily compromised (1)">
+					description = <"Heavily compromised ANS recovery.">
+				>
+				["at0240"] = <
+					text = <"Positive">
+					description = <"Positive contribution to readiness.">
+				>
+				["at0241"] = <
+					text = <"Neutral">
+					description = <"Neutral contribution to readiness.">
+				>
+				["at0242"] = <
+					text = <"Negative">
+					description = <"Negative contribution to readiness.">
+				>
+				["at0250"] = <
+					text = <"Well balanced">
+					description = <"Activity and recovery are well balanced.">
+				>
+				["at0251"] = <
+					text = <"Slightly overtrained">
+					description = <"Slightly more activity than recovery.">
+				>
+				["at0252"] = <
+					text = <"Undertrained">
+					description = <"Less activity than optimal.">
+				>
+				["at0253"] = <
+					text = <"Significantly overtrained">
+					description = <"Significantly more activity than recovery.">
+				>
+				["at0260"] = <
+					text = <"Normal">
+					description = <"Body temperature within normal range.">
+				>
+				["at0261"] = <
+					text = <"Elevated">
+					description = <"Body temperature elevated from baseline.">
+				>
+				["at0262"] = <
+					text = <"Below normal">
+					description = <"Body temperature below baseline.">
+				>
+				["at0270"] = <
+					text = <"Light (0-9)">
+					description = <"Light strain level.">
+				>
+				["at0271"] = <
+					text = <"Moderate (10-13)">
+					description = <"Moderate strain level.">
+				>
+				["at0272"] = <
+					text = <"Strenuous (14-17)">
+					description = <"Strenuous strain level.">
+				>
+				["at0273"] = <
+					text = <"All out (18-21)">
+					description = <"All-out maximum strain.">
+				>
+				["at0280"] = <
+					text = <"No debt">
+					description = <"No accumulated recovery debt.">
+				>
+				["at0281"] = <
+					text = <"Mild debt">
+					description = <"Mild accumulated recovery debt.">
+				>
+				["at0282"] = <
+					text = <"Moderate debt">
+					description = <"Moderate accumulated recovery debt.">
+				>
+				["at0283"] = <
+					text = <"Significant debt">
+					description = <"Significant accumulated recovery debt.">
+				>
+				["at0290"] = <
+					text = <"Peaking">
+					description = <"In peak form, ideal for competition.">
+				>
+				["at0291"] = <
+					text = <"Productive">
+					description = <"Training is producing improvements.">
+				>
+				["at0292"] = <
+					text = <"Maintaining">
+					description = <"Maintaining current fitness level.">
+				>
+				["at0293"] = <
+					text = <"Recovery">
+					description = <"In recovery phase.">
+				>
+				["at0294"] = <
+					text = <"Unproductive">
+					description = <"Training is not producing improvements.">
+				>
+				["at0295"] = <
+					text = <"Detraining">
+					description = <"Fitness is declining due to inactivity.">
+				>
+				["at0296"] = <
+					text = <"Overreaching">
+					description = <"Training load exceeds recovery capacity.">
+				>
+				["at0300"] = <
+					text = <"Improving">
+					description = <"VO2max estimate is improving.">
+				>
+				["at0301"] = <
+					text = <"Stable">
+					description = <"VO2max estimate is stable.">
+				>
+				["at0302"] = <
+					text = <"Declining">
+					description = <"VO2max estimate is declining.">
+				>
+				["at0310"] = <
+					text = <"High intensity training">
+					description = <"Ready for high intensity training.">
+				>
+				["at0311"] = <
+					text = <"Moderate training">
+					description = <"Ready for moderate intensity training.">
+				>
+				["at0312"] = <
+					text = <"Light activity">
+					description = <"Light activity recommended.">
+				>
+				["at0313"] = <
+					text = <"Active recovery">
+					description = <"Active recovery activities recommended.">
+				>
+				["at0314"] = <
+					text = <"Rest day">
+					description = <"Complete rest recommended.">
+				>
+				["at0315"] = <
+					text = <"Recovery focus">
+					description = <"Focus on recovery activities.">
+				>
+				["at0320"] = <
+					text = <"Aerobic base">
+					description = <"Focus on building aerobic base.">
+				>
+				["at0321"] = <
+					text = <"Aerobic endurance">
+					description = <"Focus on aerobic endurance.">
+				>
+				["at0322"] = <
+					text = <"Anaerobic capacity">
+					description = <"Focus on anaerobic capacity.">
+				>
+				["at0323"] = <
+					text = <"Speed">
+					description = <"Focus on speed development.">
+				>
+				["at0324"] = <
+					text = <"Strength">
+					description = <"Focus on strength training.">
+				>
+				["at0325"] = <
+					text = <"Recovery">
+					description = <"Focus on recovery.">
+				>
+				["at0330"] = <
+					text = <"Menstrual">
+					description = <"Menstrual phase.">
+				>
+				["at0331"] = <
+					text = <"Follicular">
+					description = <"Follicular phase.">
+				>
+				["at0332"] = <
+					text = <"Ovulatory">
+					description = <"Ovulatory phase.">
+				>
+				["at0333"] = <
+					text = <"Luteal">
+					description = <"Luteal phase.">
+				>
+				["at0334"] = <
+					text = <"Not applicable">
+					description = <"Menstrual tracking not applicable.">
+				>
+				["at0340"] = <
+					text = <"Oura">
+					description = <"Oura Ring.">
+				>
+				["at0341"] = <
+					text = <"WHOOP">
+					description = <"WHOOP band.">
+				>
+				["at0342"] = <
+					text = <"Garmin">
+					description = <"Garmin device.">
+				>
+				["at0343"] = <
+					text = <"Polar">
+					description = <"Polar device.">
+				>
+				["at0344"] = <
+					text = <"Fitbit">
+					description = <"Fitbit device.">
+				>
+				["at0345"] = <
+					text = <"Apple">
+					description = <"Apple Watch.">
+				>
+				["at0346"] = <
+					text = <"Samsung">
+					description = <"Samsung Galaxy Watch.">
+				>
+				["at0347"] = <
+					text = <"Withings">
+					description = <"Withings device.">
+				>
+				["at0348"] = <
+					text = <"Other">
+					description = <"Other wearable vendor.">
+				>
+				["at0350"] = <
+					text = <"Fully calibrated">
+					description = <"Algorithm is fully calibrated to user.">
+				>
+				["at0351"] = <
+					text = <"Calibrating">
+					description = <"Algorithm is still calibrating.">
+				>
+				["at0352"] = <
+					text = <"Not calibrated">
+					description = <"Algorithm is not yet calibrated.">
+				>
+			>
+		>
+	>
