@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (21 Total)
+## Archetypes Included (24 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (16)
+### OBSERVATION Archetypes (19)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -44,6 +44,9 @@ archetypes/openEHR/
 | `menstrual_cycle.v0.adl` | Cycle tracking, symptoms, flow patterns | ~1300 | CKM Ready |
 | `fertility_indicators.v0.adl` | BBT, cervical mucus, LH surge, ovulation | ~1275 | CKM Ready |
 | `pregnancy_tracking.v0.adl` | Gestational tracking, movements, symptoms | ~1130 | CKM Ready |
+| `social_engagement.v0.adl` | Communication, loneliness, UCLA scale | ~1150 | CKM Ready |
+| `mental_wellness.v0.adl` | Mood, PHQ-9, GAD-7, mindfulness, journaling | ~1350 | CKM Ready |
+| `cognitive_assessment.v0.adl` | Brain training, reaction time, working memory | ~1250 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -82,13 +85,14 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 21 archetypes validated with ADL 1.4 structural validator:
+All 24 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
 - **Warnings**: Minor (false positives on term_bindings detection)
 - **Phase 1A-1B**: 7 archetypes validated 2025-11-27
 - **Phase 2A**: 3 archetypes validated 2025-11-27
 - **Phase 2B**: 3 archetypes validated 2025-11-27
 - **Phase 3A**: 3 archetypes validated 2025-11-27
+- **Phase 3B**: 3 archetypes validated 2025-11-27
 
 ## Related Resources
 
@@ -100,4 +104,4 @@ All 21 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 21 (5 CLUSTERs + 16 OBSERVATIONs)*
+*Archetypes: 24 (5 CLUSTERs + 19 OBSERVATIONs)*
