@@ -1,0 +1,1022 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.yoga_session.v0
+
+concept
+    [at0000]    -- Yoga session
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Correia">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"correia@med.up.pt">
+        ["date"] = <"2025-11-27">
+    >
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record yoga practice sessions from wearable devices and fitness apps, including style, poses, breathwork, and physiological responses for lifestyle medicine applications.">
+            use = <"Use to record:
+- Yoga practice details (style, duration, intensity)
+- Pose sequences and hold times
+- Breathwork (pranayama) practices
+- Heart rate and HRV during practice
+- Mindfulness and meditation components
+- Flexibility and balance metrics from wearables
+- Energy expenditure and recovery effects
+
+This archetype supports data from:
+- Apple Watch yoga workouts
+- Fitbit mindfulness sessions
+- Garmin yoga activities
+- Specialized yoga apps (Down Dog, Yoga Studio, Asana Rebel)
+- Smart yoga mats with pose detection
+
+Designed for lifestyle medicine focusing on mind-body practices and stress reduction.">
+            keywords = <"yoga", "mindfulness", "asana", "pranayama", "flexibility", "meditation", "wearable", "wellness">
+            misuse = <"Not to be used for:
+- General meditation - use mental_wellness or mindfulness archetype
+- Strength training - use strength_training archetype
+- General physical activity - use physical_activity_detailed archetype">
+            copyright = <"© openEHR Foundation, HEADS#2 FMUP">
+        >
+    >
+    lifecycle_state = <"in_development">
+    other_contributors = <"HEADS#2 PhD Project, FMUP", "openEHR Lifestyle Medicine Working Group">
+    other_details = <
+        ["licence"] = <"Creative Commons CC-BY-SA 4.0">
+        ["custodian_organisation"] = <"openEHR Foundation">
+        ["references"] = <"Pascoe MC, et al. Yoga, mindfulness-based stress reduction and stress-related physiological measures: A meta-analysis. Psychoneuroendocrinology. 2017;86:152-168.
+Woodyard C. Exploring the therapeutic effects of yoga and its ability to increase quality of life. Int J Yoga. 2011;4(2):49-54.
+Ross A, Thomas S. The health benefits of yoga and exercise: a review of comparison studies. J Altern Complement Med. 2010;16(1):3-12.">
+        ["original_namespace"] = <"org.openehr">
+        ["original_publisher"] = <"openEHR Foundation">
+        ["custodian_namespace"] = <"org.openehr">
+        ["MD5-CAM-1.0.1"] = <"yoga_session_v0_md5">
+        ["build_uid"] = <"yoga_session_v0_build_001">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Yoga session
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Any point in time event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Session details
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Yoga style
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- Hatha
+                                                            at0201,    -- Vinyasa/Flow
+                                                            at0202,    -- Ashtanga
+                                                            at0203,    -- Yin
+                                                            at0204,    -- Restorative
+                                                            at0205,    -- Power yoga
+                                                            at0206,    -- Bikram/Hot yoga
+                                                            at0207,    -- Iyengar
+                                                            at0208,    -- Kundalini
+                                                            at0209,    -- Prenatal
+                                                            at0210,    -- Chair yoga
+                                                            at0211,    -- Yoga Nidra
+                                                            at0212]    -- Mixed/Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Session duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Intensity level
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0220,    -- Gentle/Beginner
+                                                            at0221,    -- Moderate
+                                                            at0222,    -- Vigorous
+                                                            at0223]    -- Advanced/Intense
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Focus area
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0230,    -- Full body
+                                                            at0231,    -- Core strength
+                                                            at0232,    -- Hip opening
+                                                            at0233,    -- Back/Spine
+                                                            at0234,    -- Upper body
+                                                            at0235,    -- Lower body
+                                                            at0236,    -- Balance
+                                                            at0237,    -- Flexibility
+                                                            at0238,    -- Stress relief
+                                                            at0239,    -- Energy/Morning
+                                                            at0240]    -- Relaxation/Evening
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Guided session
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {True, False}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0016] occurrences matches {0..1} matches {    -- Instructor/App
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Pose metrics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Number of poses
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Total pose hold time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTM/|PT0S..PT2H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Average hold time per pose
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTS/|PT0S..PT10M|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Pose categories
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- Standing poses
+                                                            at0251,    -- Seated poses
+                                                            at0252,    -- Supine poses
+                                                            at0253,    -- Prone poses
+                                                            at0254,    -- Inversions
+                                                            at0255,    -- Arm balances
+                                                            at0256,    -- Backbends
+                                                            at0257,    -- Forward folds
+                                                            at0258,    -- Twists
+                                                            at0259]    -- Hip openers
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Pose accuracy score
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        denominator matches {|100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Breathwork (Pranayama)
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Pranayama included
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {True, False}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Breathwork duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTM/|PT0S..PT30M|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Breathing technique
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0260,    -- Ujjayi (Ocean breath)
+                                                            at0261,    -- Kapalabhati (Breath of fire)
+                                                            at0262,    -- Nadi Shodhana (Alternate nostril)
+                                                            at0263,    -- Bhramari (Bee breath)
+                                                            at0264,    -- Box breathing
+                                                            at0265,    -- 4-7-8 breathing
+                                                            at0266,    -- Diaphragmatic breathing
+                                                            at0267]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Average breath rate during practice
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|2.0..30.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Physiological response
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Average heart rate
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|30.0..220.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Maximum heart rate
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|30.0..220.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Minimum heart rate
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|30.0..220.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- HRV during session (RMSSD)
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::128]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ms">
+                                                                magnitude = <|0.0..300.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Calories burned
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::121]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kcal">
+                                                                magnitude = <|0.0..2000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0046] occurrences matches {0..1} matches {    -- Heart rate zone time
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0270,    -- Mostly resting (<50% max HR)
+                                                            at0271,    -- Mostly light (50-60% max HR)
+                                                            at0272,    -- Mixed (light-moderate)
+                                                            at0273]    -- Moderate intensity (60-70% max HR)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Meditation/Savasana
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Meditation included
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {True, False}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Meditation duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTM/|PT0S..PT60M|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Savasana duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTM/|PT0S..PT20M|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Mindfulness score
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::380]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"1">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Subjective assessment
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Pre-session stress level
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|1..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Post-session stress level
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|1..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Session satisfaction
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|1..5|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- Perceived difficulty
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0280,    -- Too easy
+                                                            at0281,    -- Just right
+                                                            at0282,    -- Challenging
+                                                            at0283]    -- Too difficult
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {    -- Session notes
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0080] occurrences matches {0..*} matches {    -- Wearable device
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0|openEHR-EHR-CLUSTER\.device\.v1/}
+                                    }
+                                    allow_archetype CLUSTER[at0081] occurrences matches {0..*} matches {    -- Data quality indicator
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0090] matches {    -- State
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0091] occurrences matches {0..1} matches {    -- Environment
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0290,    -- Home
+                                                    at0291,    -- Yoga studio
+                                                    at0292,    -- Gym
+                                                    at0293,    -- Outdoors
+                                                    at0294]    -- Other
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0092] occurrences matches {0..1} matches {    -- Room temperature
+                                        value matches {
+                                            C_DV_QUANTITY <
+                                                property = <[openehr::127]>
+                                                list = <
+                                                    ["1"] = <
+                                                        units = <"Cel">
+                                                        magnitude = <|15.0..45.0|>
+                                                        precision = <|1|>
+                                                    >
+                                                >
+                                            >
+                                        }
+                                    }
+                                    ELEMENT[at0093] occurrences matches {0..1} matches {    -- Props used
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0100] occurrences matches {0..*} matches {    -- Weekly summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1W}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0090]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0110] matches {    -- Protocol
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0111] occurrences matches {0..1} matches {    -- Data source
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0300,    -- Apple Fitness+
+                                    at0301,    -- Down Dog
+                                    at0302,    -- Yoga Studio
+                                    at0303,    -- Asana Rebel
+                                    at0304,    -- Peloton
+                                    at0305,    -- Glo
+                                    at0306,    -- Alo Moves
+                                    at0307,    -- Garmin Connect
+                                    at0308,    -- Fitbit
+                                    at0309,    -- Manual entry
+                                    at0310]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0112] occurrences matches {0..1} matches {    -- Smart mat used
+                        value matches {
+                            DV_BOOLEAN matches {
+                                value matches {True, False}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0120] occurrences matches {0..*} matches {    -- Vendor data provenance
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Yoga session">
+                    description = <"Recording of yoga practice sessions from wearable devices and fitness apps.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any point in time event">
+                    description = <"Default, unspecified point in time event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0010"] = <
+                    text = <"Session details">
+                    description = <"General information about the yoga session.">
+                >
+                ["at0011"] = <
+                    text = <"Yoga style">
+                    description = <"The style or tradition of yoga practiced.">
+                >
+                ["at0012"] = <
+                    text = <"Session duration">
+                    description = <"Total duration of the yoga session.">
+                >
+                ["at0013"] = <
+                    text = <"Intensity level">
+                    description = <"Overall intensity of the session.">
+                >
+                ["at0014"] = <
+                    text = <"Focus area">
+                    description = <"Primary focus or theme of the session.">
+                >
+                ["at0015"] = <
+                    text = <"Guided session">
+                    description = <"Whether the session was guided by an instructor or app.">
+                >
+                ["at0016"] = <
+                    text = <"Instructor/App">
+                    description = <"Name of instructor or app providing guidance.">
+                >
+                ["at0020"] = <
+                    text = <"Pose metrics">
+                    description = <"Metrics related to yoga poses (asanas).">
+                >
+                ["at0021"] = <
+                    text = <"Number of poses">
+                    description = <"Total number of distinct poses practiced.">
+                >
+                ["at0022"] = <
+                    text = <"Total pose hold time">
+                    description = <"Cumulative time spent holding poses.">
+                >
+                ["at0023"] = <
+                    text = <"Average hold time per pose">
+                    description = <"Mean duration of each pose hold.">
+                >
+                ["at0024"] = <
+                    text = <"Pose categories">
+                    description = <"Categories of poses included in the session.">
+                >
+                ["at0025"] = <
+                    text = <"Pose accuracy score">
+                    description = <"AI-assessed accuracy of pose execution (from smart mats or cameras).">
+                >
+                ["at0030"] = <
+                    text = <"Breathwork (Pranayama)">
+                    description = <"Breathing exercises practiced during the session.">
+                >
+                ["at0031"] = <
+                    text = <"Pranayama included">
+                    description = <"Whether breathwork was part of the session.">
+                >
+                ["at0032"] = <
+                    text = <"Breathwork duration">
+                    description = <"Time dedicated to pranayama practice.">
+                >
+                ["at0033"] = <
+                    text = <"Breathing technique">
+                    description = <"Specific pranayama technique practiced.">
+                >
+                ["at0034"] = <
+                    text = <"Average breath rate during practice">
+                    description = <"Mean respiratory rate during the session.">
+                >
+                ["at0040"] = <
+                    text = <"Physiological response">
+                    description = <"Physiological metrics recorded during the session.">
+                >
+                ["at0041"] = <
+                    text = <"Average heart rate">
+                    description = <"Mean heart rate during the session.">
+                >
+                ["at0042"] = <
+                    text = <"Maximum heart rate">
+                    description = <"Peak heart rate during the session.">
+                >
+                ["at0043"] = <
+                    text = <"Minimum heart rate">
+                    description = <"Lowest heart rate during the session.">
+                >
+                ["at0044"] = <
+                    text = <"HRV during session (RMSSD)">
+                    description = <"Heart rate variability measured during practice.">
+                >
+                ["at0045"] = <
+                    text = <"Calories burned">
+                    description = <"Estimated energy expenditure.">
+                >
+                ["at0046"] = <
+                    text = <"Heart rate zone time">
+                    description = <"Predominant heart rate zone during the session.">
+                >
+                ["at0050"] = <
+                    text = <"Meditation/Savasana">
+                    description = <"Meditation and final relaxation components.">
+                >
+                ["at0051"] = <
+                    text = <"Meditation included">
+                    description = <"Whether seated meditation was part of the session.">
+                >
+                ["at0052"] = <
+                    text = <"Meditation duration">
+                    description = <"Time spent in meditation.">
+                >
+                ["at0053"] = <
+                    text = <"Savasana duration">
+                    description = <"Time spent in final relaxation pose.">
+                >
+                ["at0054"] = <
+                    text = <"Mindfulness score">
+                    description = <"App-generated mindfulness or focus score.">
+                >
+                ["at0060"] = <
+                    text = <"Subjective assessment">
+                    description = <"Self-reported assessments before and after the session.">
+                >
+                ["at0061"] = <
+                    text = <"Pre-session stress level">
+                    description = <"Self-reported stress level before starting (1-10).">
+                >
+                ["at0062"] = <
+                    text = <"Post-session stress level">
+                    description = <"Self-reported stress level after completion (1-10).">
+                >
+                ["at0063"] = <
+                    text = <"Session satisfaction">
+                    description = <"Overall satisfaction with the session (1-5 stars).">
+                >
+                ["at0064"] = <
+                    text = <"Perceived difficulty">
+                    description = <"How challenging the session felt.">
+                >
+                ["at0065"] = <
+                    text = <"Session notes">
+                    description = <"Free text notes about the session.">
+                >
+                ["at0080"] = <
+                    text = <"Wearable device">
+                    description = <"Details of the recording device.">
+                >
+                ["at0081"] = <
+                    text = <"Data quality indicator">
+                    description = <"Information about data reliability.">
+                >
+                ["at0090"] = <
+                    text = <"State">
+                    description = <"@ internal @">
+                >
+                ["at0091"] = <
+                    text = <"Environment">
+                    description = <"Where the yoga session took place.">
+                >
+                ["at0092"] = <
+                    text = <"Room temperature">
+                    description = <"Temperature of the practice environment (relevant for hot yoga).">
+                >
+                ["at0093"] = <
+                    text = <"Props used">
+                    description = <"Yoga props used during the session (blocks, straps, bolsters, etc.).">
+                >
+                ["at0100"] = <
+                    text = <"Weekly summary">
+                    description = <"Aggregated data over one week.">
+                >
+                ["at0110"] = <
+                    text = <"Protocol">
+                    description = <"@ internal @">
+                >
+                ["at0111"] = <
+                    text = <"Data source">
+                    description = <"Application or platform providing the data.">
+                >
+                ["at0112"] = <
+                    text = <"Smart mat used">
+                    description = <"Whether a smart yoga mat with pose detection was used.">
+                >
+                ["at0120"] = <
+                    text = <"Vendor data provenance">
+                    description = <"Details about data origin.">
+                >
+                ["at0200"] = <
+                    text = <"Hatha">
+                    description = <"Traditional physical yoga focusing on poses and breath.">
+                >
+                ["at0201"] = <
+                    text = <"Vinyasa/Flow">
+                    description = <"Dynamic practice linking breath with movement.">
+                >
+                ["at0202"] = <
+                    text = <"Ashtanga">
+                    description = <"Athletic, structured sequence of poses.">
+                >
+                ["at0203"] = <
+                    text = <"Yin">
+                    description = <"Slow-paced with long-held passive poses.">
+                >
+                ["at0204"] = <
+                    text = <"Restorative">
+                    description = <"Gentle practice with prop-supported poses.">
+                >
+                ["at0205"] = <
+                    text = <"Power yoga">
+                    description = <"Fitness-based vigorous vinyasa style.">
+                >
+                ["at0206"] = <
+                    text = <"Bikram/Hot yoga">
+                    description = <"Practice in heated room (typically 40°C).">
+                >
+                ["at0207"] = <
+                    text = <"Iyengar">
+                    description = <"Precision-focused with detailed alignment cues.">
+                >
+                ["at0208"] = <
+                    text = <"Kundalini">
+                    description = <"Combines poses, breathing, and chanting.">
+                >
+                ["at0209"] = <
+                    text = <"Prenatal">
+                    description = <"Modified practice for pregnancy.">
+                >
+                ["at0210"] = <
+                    text = <"Chair yoga">
+                    description = <"Accessible practice using chair for support.">
+                >
+                ["at0211"] = <
+                    text = <"Yoga Nidra">
+                    description = <"Guided meditation in relaxed state (yogic sleep).">
+                >
+                ["at0212"] = <
+                    text = <"Mixed/Other">
+                    description = <"Combined styles or other traditions.">
+                >
+                ["at0220"] = <
+                    text = <"Gentle/Beginner">
+                    description = <"Low intensity, suitable for beginners.">
+                >
+                ["at0221"] = <
+                    text = <"Moderate">
+                    description = <"Medium intensity, some challenge.">
+                >
+                ["at0222"] = <
+                    text = <"Vigorous">
+                    description = <"Higher intensity, physically demanding.">
+                >
+                ["at0223"] = <
+                    text = <"Advanced/Intense">
+                    description = <"High intensity for experienced practitioners.">
+                >
+                ["at0230"] = <
+                    text = <"Full body">
+                    description = <"Balanced practice for entire body.">
+                >
+                ["at0231"] = <
+                    text = <"Core strength">
+                    description = <"Focus on abdominal and core muscles.">
+                >
+                ["at0232"] = <
+                    text = <"Hip opening">
+                    description = <"Focus on hip flexibility and mobility.">
+                >
+                ["at0233"] = <
+                    text = <"Back/Spine">
+                    description = <"Focus on spinal health and back stretches.">
+                >
+                ["at0234"] = <
+                    text = <"Upper body">
+                    description = <"Focus on arms, shoulders, chest.">
+                >
+                ["at0235"] = <
+                    text = <"Lower body">
+                    description = <"Focus on legs, hips, feet.">
+                >
+                ["at0236"] = <
+                    text = <"Balance">
+                    description = <"Focus on balance poses.">
+                >
+                ["at0237"] = <
+                    text = <"Flexibility">
+                    description = <"Focus on stretching and flexibility.">
+                >
+                ["at0238"] = <
+                    text = <"Stress relief">
+                    description = <"Focus on relaxation and stress reduction.">
+                >
+                ["at0239"] = <
+                    text = <"Energy/Morning">
+                    description = <"Energizing practice for morning.">
+                >
+                ["at0240"] = <
+                    text = <"Relaxation/Evening">
+                    description = <"Calming practice for evening wind-down.">
+                >
+                ["at0250"] = <
+                    text = <"Standing poses">
+                    description = <"Poses performed while standing.">
+                >
+                ["at0251"] = <
+                    text = <"Seated poses">
+                    description = <"Poses performed while seated.">
+                >
+                ["at0252"] = <
+                    text = <"Supine poses">
+                    description = <"Poses performed lying on back.">
+                >
+                ["at0253"] = <
+                    text = <"Prone poses">
+                    description = <"Poses performed lying face down.">
+                >
+                ["at0254"] = <
+                    text = <"Inversions">
+                    description = <"Poses where head is below heart.">
+                >
+                ["at0255"] = <
+                    text = <"Arm balances">
+                    description = <"Poses balancing on hands/arms.">
+                >
+                ["at0256"] = <
+                    text = <"Backbends">
+                    description = <"Poses arching the spine backward.">
+                >
+                ["at0257"] = <
+                    text = <"Forward folds">
+                    description = <"Poses folding forward at hips.">
+                >
+                ["at0258"] = <
+                    text = <"Twists">
+                    description = <"Poses rotating the spine.">
+                >
+                ["at0259"] = <
+                    text = <"Hip openers">
+                    description = <"Poses opening the hip joints.">
+                >
+                ["at0260"] = <
+                    text = <"Ujjayi (Ocean breath)">
+                    description = <"Victorious breath with throat constriction.">
+                >
+                ["at0261"] = <
+                    text = <"Kapalabhati (Breath of fire)">
+                    description = <"Rapid abdominal breathing technique.">
+                >
+                ["at0262"] = <
+                    text = <"Nadi Shodhana (Alternate nostril)">
+                    description = <"Alternating nostril breathing for balance.">
+                >
+                ["at0263"] = <
+                    text = <"Bhramari (Bee breath)">
+                    description = <"Humming breath for calming.">
+                >
+                ["at0264"] = <
+                    text = <"Box breathing">
+                    description = <"Equal-count breathing in square pattern.">
+                >
+                ["at0265"] = <
+                    text = <"4-7-8 breathing">
+                    description = <"Relaxing breath pattern (inhale 4, hold 7, exhale 8).">
+                >
+                ["at0266"] = <
+                    text = <"Diaphragmatic breathing">
+                    description = <"Deep belly breathing.">
+                >
+                ["at0267"] = <
+                    text = <"Other">
+                    description = <"Other breathing technique.">
+                >
+                ["at0270"] = <
+                    text = <"Mostly resting (<50% max HR)">
+                    description = <"Heart rate primarily in resting zone.">
+                >
+                ["at0271"] = <
+                    text = <"Mostly light (50-60% max HR)">
+                    description = <"Heart rate primarily in light activity zone.">
+                >
+                ["at0272"] = <
+                    text = <"Mixed (light-moderate)">
+                    description = <"Heart rate varying between light and moderate.">
+                >
+                ["at0273"] = <
+                    text = <"Moderate intensity (60-70% max HR)">
+                    description = <"Heart rate primarily in moderate zone (vigorous yoga).">
+                >
+                ["at0280"] = <
+                    text = <"Too easy">
+                    description = <"Session was not challenging enough.">
+                >
+                ["at0281"] = <
+                    text = <"Just right">
+                    description = <"Session difficulty was appropriate.">
+                >
+                ["at0282"] = <
+                    text = <"Challenging">
+                    description = <"Session was appropriately challenging.">
+                >
+                ["at0283"] = <
+                    text = <"Too difficult">
+                    description = <"Session was too hard.">
+                >
+                ["at0290"] = <
+                    text = <"Home">
+                    description = <"Practice at home.">
+                >
+                ["at0291"] = <
+                    text = <"Yoga studio">
+                    description = <"Practice at dedicated yoga studio.">
+                >
+                ["at0292"] = <
+                    text = <"Gym">
+                    description = <"Practice at fitness center.">
+                >
+                ["at0293"] = <
+                    text = <"Outdoors">
+                    description = <"Practice in outdoor setting.">
+                >
+                ["at0294"] = <
+                    text = <"Other">
+                    description = <"Other practice location.">
+                >
+                ["at0300"] = <
+                    text = <"Apple Fitness+">
+                    description = <"Apple Fitness+ yoga workouts.">
+                >
+                ["at0301"] = <
+                    text = <"Down Dog">
+                    description = <"Down Dog yoga app.">
+                >
+                ["at0302"] = <
+                    text = <"Yoga Studio">
+                    description = <"Yoga Studio app.">
+                >
+                ["at0303"] = <
+                    text = <"Asana Rebel">
+                    description = <"Asana Rebel fitness yoga app.">
+                >
+                ["at0304"] = <
+                    text = <"Peloton">
+                    description = <"Peloton yoga classes.">
+                >
+                ["at0305"] = <
+                    text = <"Glo">
+                    description = <"Glo yoga and meditation platform.">
+                >
+                ["at0306"] = <
+                    text = <"Alo Moves">
+                    description = <"Alo Moves yoga platform.">
+                >
+                ["at0307"] = <
+                    text = <"Garmin Connect">
+                    description = <"Garmin Connect yoga activity.">
+                >
+                ["at0308"] = <
+                    text = <"Fitbit">
+                    description = <"Fitbit exercise logging.">
+                >
+                ["at0309"] = <
+                    text = <"Manual entry">
+                    description = <"Manually recorded session.">
+                >
+                ["at0310"] = <
+                    text = <"Other">
+                    description = <"Other data source.">
+                >
+            >
+        >
+    >

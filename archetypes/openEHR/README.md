@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (42 Total)
+## Archetypes Included (45 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (37)
+### OBSERVATION Archetypes (40)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -65,6 +65,9 @@ archetypes/openEHR/
 | `swimming_metrics.v0.adl` | Stroke detection, SWOLF score, lap analysis, CSS pace | ~1200 | CKM Ready |
 | `cycling_dynamics.v0.adl` | FTP, TSS, pedaling dynamics, power metrics, smart trainers | ~1300 | CKM Ready |
 | `strength_training.v0.adl` | VBT metrics, 1RM tracking, sets/reps/load, RPE | ~1350 | CKM Ready |
+| `yoga_session.v0.adl` | Yoga styles, poses, pranayama, mindfulness metrics | ~1250 | CKM Ready |
+| `hiking_activity.v0.adl` | Elevation, terrain, GPS tracking, outdoor wellness | ~1200 | CKM Ready |
+| `screen_time.v0.adl` | Digital wellness, app usage, notifications, sleep impact | ~1100 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -103,7 +106,7 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 42 archetypes validated with ADL 1.4 structural validator:
+All 45 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
 - **Warnings**: Minor (false positives on term_bindings detection)
 - **Phase 1A-1B**: 7 archetypes validated 2025-11-27
@@ -117,6 +120,7 @@ All 42 archetypes validated with ADL 1.4 structural validator:
 - **Phase 7**: 3 archetypes validated 2025-11-27 (mobility/safety)
 - **Phase 8**: 3 archetypes validated 2025-11-27 (advanced fitness)
 - **Phase 9**: 3 archetypes validated 2025-11-27 (sports-specific: swimming, cycling, strength)
+- **Phase 10**: 3 archetypes validated 2025-11-27 (wellness: yoga, hiking, screen time)
 
 ## Related Resources
 
@@ -128,4 +132,4 @@ All 42 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 42 (5 CLUSTERs + 37 OBSERVATIONs)*
+*Archetypes: 45 (5 CLUSTERs + 40 OBSERVATIONs)*

@@ -1,0 +1,820 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.screen_time.v0
+
+concept
+    [at0000]    -- Screen time
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Correia">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"correia@med.up.pt">
+        ["date"] = <"2025-11-27">
+    >
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record screen time and digital device usage patterns from smartphones, tablets, and computers for digital wellness assessment in lifestyle medicine applications.">
+            use = <"Use to record:
+- Total daily screen time across devices
+- App category usage breakdown (social media, entertainment, productivity)
+- Device pickups and notifications
+- Focus time and downtime periods
+- Bedtime and night-time device usage
+- Blue light filter usage
+- Digital wellbeing scores from device platforms
+
+This archetype supports data from:
+- Apple Screen Time (iOS/macOS)
+- Google Digital Wellbeing (Android)
+- Samsung Digital Wellbeing
+- Third-party apps (RescueTime, Moment, Forest)
+- Computer usage tracking software
+
+Designed for lifestyle medicine focusing on digital wellness and its impact on sleep, mental health, and social connections.">
+            keywords = <"screen time", "digital wellness", "smartphone", "social media", "notifications", "blue light", "sleep hygiene">
+            misuse = <"Not to be used for:
+- Clinical assessment of technology addiction - requires specialized psychological evaluation
+- Workplace productivity monitoring without consent
+- Child monitoring without appropriate safeguards">
+            copyright = <"© openEHR Foundation, HEADS#2 FMUP">
+        >
+    >
+    lifecycle_state = <"in_development">
+    other_contributors = <"HEADS#2 PhD Project, FMUP", "openEHR Lifestyle Medicine Working Group">
+    other_details = <
+        ["licence"] = <"Creative Commons CC-BY-SA 4.0">
+        ["custodian_organisation"] = <"openEHR Foundation">
+        ["references"] = <"Twenge JM, et al. Increases in Depressive Symptoms, Suicide-Related Outcomes, and Suicide Rates Among U.S. Adolescents After 2010. Clin Psychol Sci. 2018;6(1):3-17.
+Christensen MA, et al. Direct Measurements of Smartphone Screen-Time: Relationships with Demographics and Sleep. PLoS One. 2016;11(11):e0165331.
+WHO guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age. WHO; 2019.">
+        ["original_namespace"] = <"org.openehr">
+        ["original_publisher"] = <"openEHR Foundation">
+        ["custodian_namespace"] = <"org.openehr">
+        ["MD5-CAM-1.0.1"] = <"screen_time_v0_md5">
+        ["build_uid"] = <"screen_time_v0_build_001">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Screen time
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Any point in time event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Total screen time
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Daily screen time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Smartphone time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Tablet time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Computer time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- TV/Streaming time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0016] occurrences matches {0..1} matches {    -- Gaming time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- App category usage
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Social media time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Entertainment time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Productivity time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Communication time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Education/Reading time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0026] occurrences matches {0..1} matches {    -- Health and fitness time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0027] occurrences matches {0..1} matches {    -- News time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Interaction metrics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Device pickups
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..500|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- First pickup time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Notifications received
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..2000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Apps opened
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..500|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {    -- Screen unlocks
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..300|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Focus and limits
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Focus/DND time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Downtime scheduled
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {True, False}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- App limits set
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..50|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- App limits exceeded
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..50|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Screen time goal
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0046] occurrences matches {0..1} matches {    -- Goal achieved
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {True, False}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Sleep-related usage
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Screen time before bed
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Last screen activity time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Night mode/Blue light filter active
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {True, False}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Bedtime mode active
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {True, False}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Screen time after waking
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Social media details
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Instagram time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT8H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- TikTok time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT8H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Facebook time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT8H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- X/Twitter time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT8H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {    -- YouTube time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT8H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0066] occurrences matches {0..1} matches {    -- Other social media time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0S..PT8H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0070] occurrences matches {0..1} matches {    -- Wellbeing scores
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0071] occurrences matches {0..1} matches {    -- Digital wellbeing score
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::380]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"1">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0072] occurrences matches {0..1} matches {    -- Compared to average
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- Much less than usual
+                                                            at0201,    -- Less than usual
+                                                            at0202,    -- About average
+                                                            at0203,    -- More than usual
+                                                            at0204]    -- Much more than usual
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0073] occurrences matches {0..1} matches {    -- Week over week change
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|-100.0..500.0|}
+                                                        denominator matches {|100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0080] occurrences matches {0..*} matches {    -- Device details
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.device\.v1|openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0090] matches {    -- State
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0091] occurrences matches {0..1} matches {    -- Day type
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0210,    -- Weekday
+                                                    at0211,    -- Weekend
+                                                    at0212,    -- Holiday
+                                                    at0213]    -- Vacation
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0092] occurrences matches {0..1} matches {    -- Work from home
+                                        value matches {
+                                            DV_BOOLEAN matches {
+                                                value matches {True, False}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0100] occurrences matches {0..*} matches {    -- Daily summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1D}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0090]
+                        }
+                    }
+                    INTERVAL_EVENT[at0101] occurrences matches {0..*} matches {    -- Weekly summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1W}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0090]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0110] matches {    -- Protocol
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0111] occurrences matches {0..1} matches {    -- Data source
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0220,    -- Apple Screen Time
+                                    at0221,    -- Google Digital Wellbeing
+                                    at0222,    -- Samsung Digital Wellbeing
+                                    at0223,    -- RescueTime
+                                    at0224,    -- Moment
+                                    at0225,    -- Forest
+                                    at0226,    -- Opal
+                                    at0227,    -- One Sec
+                                    at0228,    -- Manual entry
+                                    at0229]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0112] occurrences matches {0..1} matches {    -- Cross-device tracking
+                        value matches {
+                            DV_BOOLEAN matches {
+                                value matches {True, False}
+                            }
+                        }
+                    }
+                    ELEMENT[at0113] occurrences matches {0..1} matches {    -- Family sharing enabled
+                        value matches {
+                            DV_BOOLEAN matches {
+                                value matches {True, False}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0120] occurrences matches {0..*} matches {    -- Vendor data provenance
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Screen time">
+                    description = <"Recording of screen time and digital device usage patterns for digital wellness assessment.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any point in time event">
+                    description = <"Default, unspecified point in time event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0010"] = <
+                    text = <"Total screen time">
+                    description = <"Overall screen time across all devices.">
+                >
+                ["at0011"] = <
+                    text = <"Daily screen time">
+                    description = <"Total time spent on screens during the day.">
+                >
+                ["at0012"] = <
+                    text = <"Smartphone time">
+                    description = <"Time spent on smartphone.">
+                >
+                ["at0013"] = <
+                    text = <"Tablet time">
+                    description = <"Time spent on tablet devices.">
+                >
+                ["at0014"] = <
+                    text = <"Computer time">
+                    description = <"Time spent on desktop/laptop computers.">
+                >
+                ["at0015"] = <
+                    text = <"TV/Streaming time">
+                    description = <"Time spent watching TV or streaming content.">
+                >
+                ["at0016"] = <
+                    text = <"Gaming time">
+                    description = <"Time spent on video games (console, PC, mobile).">
+                >
+                ["at0020"] = <
+                    text = <"App category usage">
+                    description = <"Time spent by app category.">
+                >
+                ["at0021"] = <
+                    text = <"Social media time">
+                    description = <"Time spent on social media applications.">
+                >
+                ["at0022"] = <
+                    text = <"Entertainment time">
+                    description = <"Time spent on entertainment apps (video, music, games).">
+                >
+                ["at0023"] = <
+                    text = <"Productivity time">
+                    description = <"Time spent on productivity apps (email, documents, calendar).">
+                >
+                ["at0024"] = <
+                    text = <"Communication time">
+                    description = <"Time spent on messaging and communication apps.">
+                >
+                ["at0025"] = <
+                    text = <"Education/Reading time">
+                    description = <"Time spent on educational apps and reading.">
+                >
+                ["at0026"] = <
+                    text = <"Health and fitness time">
+                    description = <"Time spent on health and fitness apps.">
+                >
+                ["at0027"] = <
+                    text = <"News time">
+                    description = <"Time spent on news apps and websites.">
+                >
+                ["at0030"] = <
+                    text = <"Interaction metrics">
+                    description = <"Metrics about device interactions.">
+                >
+                ["at0031"] = <
+                    text = <"Device pickups">
+                    description = <"Number of times device was picked up.">
+                >
+                ["at0032"] = <
+                    text = <"First pickup time">
+                    description = <"Time of first device pickup of the day.">
+                >
+                ["at0033"] = <
+                    text = <"Notifications received">
+                    description = <"Total notifications received during the day.">
+                >
+                ["at0034"] = <
+                    text = <"Apps opened">
+                    description = <"Number of times apps were opened.">
+                >
+                ["at0035"] = <
+                    text = <"Screen unlocks">
+                    description = <"Number of times screen was unlocked.">
+                >
+                ["at0040"] = <
+                    text = <"Focus and limits">
+                    description = <"Settings and compliance with screen time limits.">
+                >
+                ["at0041"] = <
+                    text = <"Focus/DND time">
+                    description = <"Time spent in focus or do not disturb mode.">
+                >
+                ["at0042"] = <
+                    text = <"Downtime scheduled">
+                    description = <"Whether scheduled downtime was active.">
+                >
+                ["at0043"] = <
+                    text = <"App limits set">
+                    description = <"Number of apps with time limits configured.">
+                >
+                ["at0044"] = <
+                    text = <"App limits exceeded">
+                    description = <"Number of app limits that were exceeded.">
+                >
+                ["at0045"] = <
+                    text = <"Screen time goal">
+                    description = <"Daily screen time target if set.">
+                >
+                ["at0046"] = <
+                    text = <"Goal achieved">
+                    description = <"Whether the screen time goal was met.">
+                >
+                ["at0050"] = <
+                    text = <"Sleep-related usage">
+                    description = <"Screen usage patterns related to sleep.">
+                >
+                ["at0051"] = <
+                    text = <"Screen time before bed">
+                    description = <"Screen time in the hour before sleep.">
+                >
+                ["at0052"] = <
+                    text = <"Last screen activity time">
+                    description = <"Time of last screen activity before sleep.">
+                >
+                ["at0053"] = <
+                    text = <"Night mode/Blue light filter active">
+                    description = <"Whether blue light filter was active during evening.">
+                >
+                ["at0054"] = <
+                    text = <"Bedtime mode active">
+                    description = <"Whether bedtime/wind down mode was active.">
+                >
+                ["at0055"] = <
+                    text = <"Screen time after waking">
+                    description = <"Screen time in the first hour after waking.">
+                >
+                ["at0060"] = <
+                    text = <"Social media details">
+                    description = <"Breakdown of time by social media platform.">
+                >
+                ["at0061"] = <
+                    text = <"Instagram time">
+                    description = <"Time spent on Instagram.">
+                >
+                ["at0062"] = <
+                    text = <"TikTok time">
+                    description = <"Time spent on TikTok.">
+                >
+                ["at0063"] = <
+                    text = <"Facebook time">
+                    description = <"Time spent on Facebook.">
+                >
+                ["at0064"] = <
+                    text = <"X/Twitter time">
+                    description = <"Time spent on X (formerly Twitter).">
+                >
+                ["at0065"] = <
+                    text = <"YouTube time">
+                    description = <"Time spent on YouTube.">
+                >
+                ["at0066"] = <
+                    text = <"Other social media time">
+                    description = <"Time spent on other social platforms.">
+                >
+                ["at0070"] = <
+                    text = <"Wellbeing scores">
+                    description = <"Digital wellbeing assessment scores.">
+                >
+                ["at0071"] = <
+                    text = <"Digital wellbeing score">
+                    description = <"Platform-generated wellbeing score.">
+                >
+                ["at0072"] = <
+                    text = <"Compared to average">
+                    description = <"How today's usage compares to personal average.">
+                >
+                ["at0073"] = <
+                    text = <"Week over week change">
+                    description = <"Percentage change from previous week.">
+                >
+                ["at0080"] = <
+                    text = <"Device details">
+                    description = <"Details of devices tracked.">
+                >
+                ["at0090"] = <
+                    text = <"State">
+                    description = <"@ internal @">
+                >
+                ["at0091"] = <
+                    text = <"Day type">
+                    description = <"Type of day affecting usage patterns.">
+                >
+                ["at0092"] = <
+                    text = <"Work from home">
+                    description = <"Whether working from home (affects computer usage).">
+                >
+                ["at0100"] = <
+                    text = <"Daily summary">
+                    description = <"Aggregated data for one day.">
+                >
+                ["at0101"] = <
+                    text = <"Weekly summary">
+                    description = <"Aggregated data over one week.">
+                >
+                ["at0110"] = <
+                    text = <"Protocol">
+                    description = <"@ internal @">
+                >
+                ["at0111"] = <
+                    text = <"Data source">
+                    description = <"Application providing the screen time data.">
+                >
+                ["at0112"] = <
+                    text = <"Cross-device tracking">
+                    description = <"Whether data is aggregated across multiple devices.">
+                >
+                ["at0113"] = <
+                    text = <"Family sharing enabled">
+                    description = <"Whether family sharing/parental controls are active.">
+                >
+                ["at0120"] = <
+                    text = <"Vendor data provenance">
+                    description = <"Details about data origin.">
+                >
+                ["at0200"] = <
+                    text = <"Much less than usual">
+                    description = <"Significantly below personal average.">
+                >
+                ["at0201"] = <
+                    text = <"Less than usual">
+                    description = <"Below personal average.">
+                >
+                ["at0202"] = <
+                    text = <"About average">
+                    description = <"Similar to personal average.">
+                >
+                ["at0203"] = <
+                    text = <"More than usual">
+                    description = <"Above personal average.">
+                >
+                ["at0204"] = <
+                    text = <"Much more than usual">
+                    description = <"Significantly above personal average.">
+                >
+                ["at0210"] = <
+                    text = <"Weekday">
+                    description = <"Regular working weekday.">
+                >
+                ["at0211"] = <
+                    text = <"Weekend">
+                    description = <"Saturday or Sunday.">
+                >
+                ["at0212"] = <
+                    text = <"Holiday">
+                    description = <"Public holiday.">
+                >
+                ["at0213"] = <
+                    text = <"Vacation">
+                    description = <"Vacation day.">
+                >
+                ["at0220"] = <
+                    text = <"Apple Screen Time">
+                    description = <"Apple Screen Time feature on iOS/macOS.">
+                >
+                ["at0221"] = <
+                    text = <"Google Digital Wellbeing">
+                    description = <"Google Digital Wellbeing on Android.">
+                >
+                ["at0222"] = <
+                    text = <"Samsung Digital Wellbeing">
+                    description = <"Samsung's digital wellbeing implementation.">
+                >
+                ["at0223"] = <
+                    text = <"RescueTime">
+                    description = <"RescueTime productivity tracking.">
+                >
+                ["at0224"] = <
+                    text = <"Moment">
+                    description = <"Moment screen time app.">
+                >
+                ["at0225"] = <
+                    text = <"Forest">
+                    description = <"Forest focus app.">
+                >
+                ["at0226"] = <
+                    text = <"Opal">
+                    description = <"Opal screen time management.">
+                >
+                ["at0227"] = <
+                    text = <"One Sec">
+                    description = <"One Sec app blocker.">
+                >
+                ["at0228"] = <
+                    text = <"Manual entry">
+                    description = <"Manually recorded data.">
+                >
+                ["at0229"] = <
+                    text = <"Other">
+                    description = <"Other data source.">
+                >
+            >
+        >
+    >
