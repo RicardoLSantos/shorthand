@@ -1,0 +1,297 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapVendorToLOINC> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ConceptMapVendorToLOINC"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapVendorToLOINC</b></p><a name=\"ConceptMapVendorToLOINC\"> </a><a name=\"hcConceptMapVendorToLOINC\"> </a><p>Mapeamento de <a href=\"ValueSet-vendor-codes-vs.html\">Vendor Proprietary Wearable Device Codes</a> para <a href=\"ValueSet-loinc-observations-vs.html\">LOINC Observation Codes for Lifestyle Medicine</a></p><br/><p><b>Grupo 1 </b>Mapeamento de <code>https://developer.apple.com/documentation/healthkit</code> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKQuantityTypeIdentifierHeartRateVariabilitySDNN (Heart Rate Variability SDNN)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>80404-7 (R-R interval.standard deviation (Heart rate variability))</td><td>CRITICAL VENDOR ERROR: Apple mislabels this metric. Despite the identifier name containing 'SDNN', Apple Watch actually measures and returns RMSSD (Root Mean Square of Successive Differences), NOT SDNN. This is a well-documented naming error in Apple's HealthKit API. Implementers must map to LOINC 80404-7 but understand the actual metric is RMSSD. See: Hernando et al. 2018, Sensors 18(8):2619.</td></tr><tr><td>HKQuantityTypeIdentifierHeartRate (Heart Rate)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>8867-4 (Heart rate)</td><td/></tr><tr><td>HKQuantityTypeIdentifierRestingHeartRate (Resting Heart Rate)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>40443-4 (Heart rate --resting)</td><td/></tr><tr><td>HKQuantityTypeIdentifierStepCount (Step Count)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>55423-8 (Number of steps in 24 hour Measured)</td><td/></tr><tr><td>HKQuantityTypeIdentifierDistanceWalkingRunning (Walking + Running Distance)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider\" title=\"wider\">maps to wider concept</a></td><td>41950-7 (Number of steps)</td><td>Distance is wider concept than step count; approximate mapping</td></tr><tr><td>HKQuantityTypeIdentifierOxygenSaturation (Oxygen Saturation)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>2708-6 (Oxygen saturation in Arterial blood)</td><td/></tr><tr><td>HKQuantityTypeIdentifierRespiratoryRate (Respiratory Rate)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>9279-1 (Respiratory rate)</td><td/></tr><tr><td>HKQuantityTypeIdentifierBodyMass (Body Mass)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>29463-7 (Body weight)</td><td/></tr><tr><td>HKQuantityTypeIdentifierHeight (Height)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>8302-2 (Body height)</td><td/></tr><tr><td>HKQuantityTypeIdentifierBodyMassIndex (Body Mass Index)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>39156-5 (Body mass index (BMI) [Ratio])</td><td/></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <code>https://dev.fitbit.com/build/reference/web-api</code> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>activities-heart-hrv-dailyRmssd (Daily RMSSD)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Fitbit correctly labels RMSSD (unlike Apple). However, NO LOINC code exists for RMSSD as of November 2024. Maps conceptually to parasympathetic activity. Fitbit API: GET /1/user/-/hrv/date/{date}.json</td></tr><tr><td>activities-steps (Daily Steps)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>55423-8 (Number of steps in 24 hour Measured)</td><td/></tr><tr><td>activities-heart-restingHeartRate (Resting Heart Rate)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>40443-4 (Heart rate --resting)</td><td/></tr><tr><td>sleep-efficiency</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>93832-4 (Sleep efficiency)</td><td/></tr></table><hr/><p><b>Grupo 3 </b>Mapeamento de <code>https://developer.garmin.com/health-api</code> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td></tr><tr><td>dailySteps</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>55423-8 (Number of steps in 24 hour Measured)</td></tr><tr><td>restingHeartRate</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>40443-4 (Heart rate --resting)</td></tr><tr><td>maxHeartRate (Maximum Heart Rate)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>8889-8 (Heart rate 24 hour maximum)</td></tr><tr><td>avgSpo2 (Average SpO2)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>2708-6 (Oxygen saturation in Arterial blood)</td></tr></table><hr/><p><b>Grupo 4 </b>Mapeamento de <code>https://www.polaraccesslink.com/v3</code> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>heart-rate</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>8867-4 (Heart rate)</td><td>Polar H10 chest strap provides ECG-quality heart rate. Gold standard for wearable HRV measurement.</td></tr><tr><td>rr-intervals</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>8636-3 (R-R interval in EKG)</td><td/></tr></table><hr/><p><b>Grupo 5 </b>Mapeamento de <code>https://cloud.ouraring.com/v2/usercollection</code> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>hrv_balance (HRV Balance Score)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Oura's proprietary HRV score (0-100). NOT raw RMSSD or SDNN. Derived from nocturnal RMSSD but normalized to individual baseline. No direct LOINC equivalent - this is a processed/scored metric, not a physiological measurement.</td></tr><tr><td>hr_lowest (Lowest Heart Rate (overnight))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>8891-4 (Heart rate 24 hour minimum)</td><td/></tr><tr><td>hr_average (Average Heart Rate (overnight))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>8890-6 (Heart rate 24 hour mean)</td><td>Oura measures overnight only, not full 24 hours</td></tr><tr><td>breathing_rate (Breathing Rate (overnight))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>9279-1 (Respiratory rate)</td><td/></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapVendorToLOINC"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ConceptMapVendorToLOINC"] ; # 
+  fhir:title [ fhir:v "Vendor Proprietary Codes to LOINC Mapping"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2024-11-21"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Operational ConceptMap for translating proprietary wearable device codes to LOINC standard terminology. Based on gray literature analysis of 75 sources documenting 11 major vendors with 0% LOINC adoption rate."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "Enables semantic interoperability between vendor-specific wearable device data and EHR systems using LOINC. Critical for multi-vendor data aggregation in Learning Health Systems and lifestyle medicine research."] ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vendor-codes-vs"^^xsd:anyURI ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vendor-codes-vs>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"^^xsd:anyURI ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "https://developer.apple.com/documentation/healthkit"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierHeartRateVariabilitySDNN" ] ;
+       fhir:display [ fhir:v "Heart Rate Variability SDNN" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "80404-7" ] ;
+         fhir:display [ fhir:v "R-R interval.standard deviation (Heart rate variability)" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "CRITICAL VENDOR ERROR: Apple mislabels this metric. Despite the identifier name containing 'SDNN', Apple Watch actually measures and returns RMSSD (Root Mean Square of Successive Differences), NOT SDNN. This is a well-documented naming error in Apple's HealthKit API. Implementers must map to LOINC 80404-7 but understand the actual metric is RMSSD. See: Hernando et al. 2018, Sensors 18(8):2619." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierHeartRate" ] ;
+       fhir:display [ fhir:v "Heart Rate" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8867-4" ] ;
+         fhir:display [ fhir:v "Heart rate" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierRestingHeartRate" ] ;
+       fhir:display [ fhir:v "Resting Heart Rate" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "40443-4" ] ;
+         fhir:display [ fhir:v "Heart rate --resting" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierStepCount" ] ;
+       fhir:display [ fhir:v "Step Count" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "55423-8" ] ;
+         fhir:display [ fhir:v "Number of steps in 24 hour Measured" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierDistanceWalkingRunning" ] ;
+       fhir:display [ fhir:v "Walking + Running Distance" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "41950-7" ] ;
+         fhir:display [ fhir:v "Number of steps" ] ;
+         fhir:equivalence [ fhir:v "wider" ] ;
+         fhir:comment [ fhir:v "Distance is wider concept than step count; approximate mapping" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierOxygenSaturation" ] ;
+       fhir:display [ fhir:v "Oxygen Saturation" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "2708-6" ] ;
+         fhir:display [ fhir:v "Oxygen saturation in Arterial blood" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierRespiratoryRate" ] ;
+       fhir:display [ fhir:v "Respiratory Rate" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "9279-1" ] ;
+         fhir:display [ fhir:v "Respiratory rate" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierBodyMass" ] ;
+       fhir:display [ fhir:v "Body Mass" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "29463-7" ] ;
+         fhir:display [ fhir:v "Body weight" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierHeight" ] ;
+       fhir:display [ fhir:v "Height" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8302-2" ] ;
+         fhir:display [ fhir:v "Body height" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HKQuantityTypeIdentifierBodyMassIndex" ] ;
+       fhir:display [ fhir:v "Body Mass Index" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "39156-5" ] ;
+         fhir:display [ fhir:v "Body mass index (BMI) [Ratio]" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "https://dev.fitbit.com/build/reference/web-api"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "activities-heart-hrv-dailyRmssd" ] ;
+       fhir:display [ fhir:v "Daily RMSSD" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Fitbit correctly labels RMSSD (unlike Apple). However, NO LOINC code exists for RMSSD as of November 2024. Maps conceptually to parasympathetic activity. Fitbit API: GET /1/user/-/hrv/date/{date}.json" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "activities-steps" ] ;
+       fhir:display [ fhir:v "Daily Steps" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "55423-8" ] ;
+         fhir:display [ fhir:v "Number of steps in 24 hour Measured" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "activities-heart-restingHeartRate" ] ;
+       fhir:display [ fhir:v "Resting Heart Rate" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "40443-4" ] ;
+         fhir:display [ fhir:v "Heart rate --resting" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "sleep-efficiency" ] ;
+       fhir:display [ fhir:v "Sleep Efficiency" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "93832-4" ] ;
+         fhir:display [ fhir:v "Sleep efficiency" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "https://developer.garmin.com/health-api"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "dailySteps" ] ;
+       fhir:display [ fhir:v "Daily Steps" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "55423-8" ] ;
+         fhir:display [ fhir:v "Number of steps in 24 hour Measured" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "restingHeartRate" ] ;
+       fhir:display [ fhir:v "Resting Heart Rate" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "40443-4" ] ;
+         fhir:display [ fhir:v "Heart rate --resting" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "maxHeartRate" ] ;
+       fhir:display [ fhir:v "Maximum Heart Rate" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8889-8" ] ;
+         fhir:display [ fhir:v "Heart rate 24 hour maximum" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "avgSpo2" ] ;
+       fhir:display [ fhir:v "Average SpO2" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "2708-6" ] ;
+         fhir:display [ fhir:v "Oxygen saturation in Arterial blood" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "https://www.polaraccesslink.com/v3"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "heart-rate" ] ;
+       fhir:display [ fhir:v "Heart Rate" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8867-4" ] ;
+         fhir:display [ fhir:v "Heart rate" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Polar H10 chest strap provides ECG-quality heart rate. Gold standard for wearable HRV measurement." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "rr-intervals" ] ;
+       fhir:display [ fhir:v "RR Intervals" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8636-3" ] ;
+         fhir:display [ fhir:v "R-R interval in EKG" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "https://cloud.ouraring.com/v2/usercollection"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "hrv_balance" ] ;
+       fhir:display [ fhir:v "HRV Balance Score" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Oura's proprietary HRV score (0-100). NOT raw RMSSD or SDNN. Derived from nocturnal RMSSD but normalized to individual baseline. No direct LOINC equivalent - this is a processed/scored metric, not a physiological measurement." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "hr_lowest" ] ;
+       fhir:display [ fhir:v "Lowest Heart Rate (overnight)" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8891-4" ] ;
+         fhir:display [ fhir:v "Heart rate 24 hour minimum" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "hr_average" ] ;
+       fhir:display [ fhir:v "Average Heart Rate (overnight)" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8890-6" ] ;
+         fhir:display [ fhir:v "Heart rate 24 hour mean" ] ;
+         fhir:equivalence [ fhir:v "narrower" ] ;
+         fhir:comment [ fhir:v "Oura measures overnight only, not full 24 hours" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "breathing_rate" ] ;
+       fhir:display [ fhir:v "Breathing Rate (overnight)" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "9279-1" ] ;
+         fhir:display [ fhir:v "Respiratory rate" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

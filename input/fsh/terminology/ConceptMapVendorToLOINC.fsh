@@ -22,11 +22,19 @@ Usage: #definition
 * description = "Operational ConceptMap for translating proprietary wearable device codes to LOINC standard terminology. Based on gray literature analysis of 75 sources documenting 11 major vendors with 0% LOINC adoption rate."
 * purpose = "Enables semantic interoperability between vendor-specific wearable device data and EHR systems using LOINC. Critical for multi-vendor data aggregation in Learning Health Systems and lifestyle medicine research."
 
-// CORRECTED STRUCTURE per HL7 spec and existing MindfulnessDiagnosticMap pattern:
-// - sourceCanonical/targetCanonical → ValueSets (business context)
-// - group.source/group.target → CodeSystems (vendor-specific systems)
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vendor-codes-vs"
-* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
+// ARCHITECTURAL NOTE (2025-11-27):
+// sourceCanonical/targetCanonical REMOVED per thesis semantic hierarchy decision (Opção B)
+//
+// Rationale: Vendor codes are NOT clinical terminology - they are proprietary identifiers.
+// Per thesis Chapter 5: "ConceptMaps são para tradução entre sistemas, NÃO para substituir
+// terminologia padrão."
+//
+// - Profiles bind directly to LOINC (Semantic Layer - Level 1)
+// - ConceptMaps handle vendor→LOINC translation (Infrastructure Layer)
+// - ValueSets should NOT contain vendor codes (archived: ValueSetVendorCodes.fsh)
+//
+// See: /input/fsh/archive/README.md for full decision rationale
+* targetCanonical = "http://loinc.org"
 
 // =============================================================================
 // GROUP 1: Apple HealthKit → LOINC

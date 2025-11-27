@@ -12,7 +12,7 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 61
+* ^count = 62
 
 // Sleep Measurements (5 codes)
 * #sleep-panel "Sleep measurement panel"
@@ -212,6 +212,11 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 
 * #substance-risk-level "Overall substance use risk level"
   "Aggregate risk assessment based on all substance use patterns"
+
+// HRV-Inflammation Correlation (Added 2025-11-27)
+// Supports RS1 systematic review finding on inverse HRV-inflammation relationship
+* #hrv-inflammation-correlation "HRV-Inflammation correlation assessment"
+  "Assessment of the correlation between heart rate variability metrics (especially RMSSD) and inflammatory biomarkers (CRP, IL-6). Based on RS1 systematic review finding: inverse correlation between vagal tone and systemic inflammation via cholinergic anti-inflammatory pathway (Tracey 2002)."
 
 // ValueSet for all local lifestyle codes
 ValueSet: LifestyleObservationVS

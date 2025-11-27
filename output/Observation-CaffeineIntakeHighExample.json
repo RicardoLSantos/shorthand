@@ -1,0 +1,68 @@
+{
+  "resourceType" : "Observation",
+  "id" : "CaffeineIntakeHighExample",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/caffeine-intake-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation CaffeineIntakeHighExample</b></p><a name=\"CaffeineIntakeHighExample\"> </a><a name=\"hcCaffeineIntakeHighExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-caffeine-intake-observation.html\">Caffeine Intake Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 80489-8}\">Caffeine intake 24 hour Estimated</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-25 10:00:00+0000</p><p><b>value</b>: 600 mg<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomg = 'mg')</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs caffeine-source}\">Caffeine source</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs energy-drink}\">Energy drink</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs caffeine-source}\">Caffeine source</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs coffee}\">Coffee</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "social-history",
+      "display" : "Social History"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "80489-8",
+      "display" : "Caffeine intake 24 hour Estimated"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2025-11-25T10:00:00Z",
+  "valueQuantity" : {
+    "value" : 600,
+    "unit" : "mg",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "mg"
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "caffeine-source",
+        "display" : "Caffeine source"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs",
+        "code" : "energy-drink",
+        "display" : "Energy drink"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "caffeine-source",
+        "display" : "Caffeine source"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs",
+        "code" : "coffee",
+        "display" : "Coffee"
+      }]
+    }
+  }]
+}

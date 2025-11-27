@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="heart-rate-variability-vs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ValueSet heart-rate-variability-vs</b></p><a name="heart-rate-variability-vs"> </a><a name="hcheart-rate-variability-vs"> </a><p>Este conjunto de valores inclui códigos baseados nas seguintes regras:</p><ul><li>Incluir estes códigos, tal como definidos em <a href="http://loinc.org"><code>http://loinc.org</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Código</b></td><td><b>Ecrã</b></td><td><b><a href="ValueSet-loinc-observations-vs.html">Heart Rate Variability to LOINC Mapping</a></b></td></tr><tr><td><a href="https://loinc.org/8867-4/">8867-4</a></td><td>Heart rate</td><td/></tr><tr><td><a href="https://loinc.org/80404-7/">80404-7</a></td><td>R-R interval.standard deviation (Heart rate variability)</td><td/></tr></table></li><li>Incluir estes códigos, tal como definidos em <a href="CodeSystem-heart-rate-variability-cs.html"><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Código</b></td><td><b>Ecrã</b></td><td><b><a href="ValueSet-loinc-observations-vs.html">Heart Rate Variability to LOINC Mapping</a></b></td></tr><tr><td><a href="CodeSystem-heart-rate-variability-cs.html#heart-rate-variability-cs-hrv-sdnn">hrv-sdnn</a></td><td>HRV SDNN</td><td><span title="EQUIVALENT">~</span><a href="https://loinc.org/80404-7/">80404-7</a><i>(Confirmed LOINC code for SDNN, created in LOINC v2.72 (June 2022). Time-domain HRV measure representing total variability.)</i></td></tr><tr><td><a href="CodeSystem-heart-rate-variability-cs.html#heart-rate-variability-cs-hrv-rmssd">hrv-rmssd</a></td><td>HRV RMSSD</td><td/></tr><tr><td><a href="CodeSystem-heart-rate-variability-cs.html#heart-rate-variability-cs-hrv-pnn50">hrv-pnn50</a></td><td>HRV pNN50</td><td/></tr><tr><td><a href="CodeSystem-heart-rate-variability-cs.html#heart-rate-variability-cs-hrv-lf-hf-ratio">hrv-lf-hf-ratio</a></td><td>HRV LF/HF Ratio</td><td/></tr><tr><td><a href="CodeSystem-heart-rate-variability-cs.html#heart-rate-variability-cs-hrv-lf-power">hrv-lf-power</a></td><td>HRV LF Power</td><td/></tr><tr><td><a href="CodeSystem-heart-rate-variability-cs.html#heart-rate-variability-cs-hrv-hf-power">hrv-hf-power</a></td><td>HRV HF Power</td><td/></tr></table></li></ul></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/heart-rate-variability-vs"/>
+  <version value="0.1.0"/>
+  <name value="HeartRateVariabilityVS"/>
+  <title value="Heart Rate Variability ValueSet"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-27T11:57:11+00:00"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Complete set of HRV metrics combining LOINC codes where available and custom codes for gaps"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://loinc.org"/>
+      <concept>
+        <code value="8867-4"/>
+        <display value="Heart rate"/>
+      </concept>
+      <concept>
+        <code value="80404-7"/>
+        <display value="R-R interval.standard deviation (Heart rate variability)"/>
+      </concept>
+    </include>
+    <include>
+      <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs"/>
+      <concept>
+        <code value="hrv-sdnn"/>
+        <display value="HRV SDNN"/>
+      </concept>
+      <concept>
+        <code value="hrv-rmssd"/>
+        <display value="HRV RMSSD"/>
+      </concept>
+      <concept>
+        <code value="hrv-pnn50"/>
+        <display value="HRV pNN50"/>
+      </concept>
+      <concept>
+        <code value="hrv-lf-hf-ratio"/>
+        <display value="HRV LF/HF Ratio"/>
+      </concept>
+      <concept>
+        <code value="hrv-lf-power"/>
+        <display value="HRV LF Power"/>
+      </concept>
+      <concept>
+        <code value="hrv-hf-power"/>
+        <display value="HRV HF Power"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

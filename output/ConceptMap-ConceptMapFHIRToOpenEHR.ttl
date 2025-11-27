@@ -1,0 +1,300 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapFHIRToOpenEHR> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ConceptMapFHIRToOpenEHR"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapFHIRToOpenEHR</b></p><a name=\"ConceptMapFHIRToOpenEHR\"> </a><a name=\"hcConceptMapFHIRToOpenEHR\"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>Observation.component:sdnn (SDNN component with LOINC 80404-7)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id5 (SDNN - Standard deviation of NN intervals)</td><td>Map from Observation.component with code LOINC 80404-7. Unit: ms</td></tr><tr><td>Observation.component:rmssd (RMSSD component with HeartRateVariabilityCS#hrv-rmssd)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id6 (RMSSD - Root mean square of successive differences)</td><td>Map from component with HeartRateVariabilityCS#hrv-rmssd. No LOINC code. Unit: ms</td></tr><tr><td>Observation.component:pnn50 (pNN50 component with HeartRateVariabilityCS#hrv-pnn50)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id7 (pNN50 - Percentage of NN intervals &gt;50ms)</td><td>Map from component with HeartRateVariabilityCS#hrv-pnn50. Unit: %</td></tr><tr><td>Observation.component:lf-hf-ratio (LF/HF ratio component)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id13 (LF/HF Ratio)</td><td>Map from component with HeartRateVariabilityCS#hrv-lf-hf-ratio. Dimensionless ratio</td></tr><tr><td>Observation.effectivePeriod (Observation.effectivePeriod (start/end))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id32 (Recording duration)</td><td>Calculate duration from effectivePeriod.end - effectivePeriod.start</td></tr><tr><td>Observation.component:state (Physiological state component)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id41 (Physiological state)</td><td>Map resting/active/sleep states from component</td></tr><tr><td>Observation.device (Observation.device reference)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id51 (Device type)</td><td>Resolve Device reference and map to CLUSTER.wearable_device</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a> to <code>openEHR-EHR-OBSERVATION.physical_activity_detailed.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>Observation.valueQuantity (Observation.valueQuantity (steps))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id10 (Step count)</td><td>When Observation.code is LOINC 55423-8 (Number of steps). Unit: steps</td></tr><tr><td>Observation.component:distance (Distance component with LOINC 55430-3)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id11 (Distance)</td><td>Map from component with LOINC 55430-3. Unit: km or m</td></tr><tr><td>Observation.component:active-calories (Active calories component with LOINC 41979-6)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id20 (Active calories)</td><td>Map from component with LOINC 41979-6. Unit: kcal</td></tr><tr><td>Observation.component:moderate-minutes (Moderate activity minutes with LOINC 77592-4)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id32 (Moderately active minutes)</td><td>Map from component with LOINC 77592-4. Unit: min</td></tr><tr><td>Observation.component:vigorous-minutes (Vigorous activity minutes with LOINC 77593-2)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id33 (Vigorously active minutes)</td><td>Map from component with LOINC 77593-2. Unit: min</td></tr></table><hr/><p><b>Grupo 3 </b>Mapeamento de <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a> to <code>openEHR-EHR-OBSERVATION.sleep_architecture.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>Observation.valueQuantity (Observation.valueQuantity (sleep duration))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id13 (Total sleep time)</td><td>When Observation.code is LOINC 93832-4 (Sleep duration). Unit: h or min</td></tr><tr><td>Observation.component:deep-sleep (Deep sleep duration component)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id23 (Deep sleep duration)</td><td>N3/SWS stage duration. Custom code - no LOINC</td></tr><tr><td>Observation.component:rem-sleep (REM sleep duration component)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id24 (REM sleep duration)</td><td>REM stage duration. Custom code - no LOINC</td></tr><tr><td>Observation.component:efficiency (Sleep efficiency component)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id30 (Sleep efficiency)</td><td>TST/TIB ratio as percentage. Custom code - no LOINC</td></tr><tr><td>Observation.component:score (Sleep score component)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id40 (Sleep score)</td><td>Vendor-specific composite score (0-100). Proprietary algorithm</td></tr><tr><td>Observation.component:sleep-hrv (Average HRV during sleep component)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id53 (Average HRV (RMSSD) during sleep)</td><td>Use HeartRateVariabilityCS#hrv-rmssd with context. Unit: ms</td></tr></table><hr/><p><b>Grupo 4 </b>Mapeamento de <a href=\"http://hl7.org/fhir/R4/device.html\">Device</a> to <code>openEHR-EHR-CLUSTER.wearable_device.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>Device.manufacturer</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id2 (Device platform)</td><td>Map manufacturer string to vendor code (Apple, Fitbit, Garmin, etc.)</td></tr><tr><td>Device.modelNumber</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id3 (Device model)</td><td>Specific model name</td></tr><tr><td>Device.type</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id4 (Device category)</td><td>Map from SNOMED CT device type codes where available</td></tr><tr><td>Device.serialNumber</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id23 (Serial number)</td><td/></tr><tr><td>Device.version:firmware (Device.version[firmware])</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id20 (Firmware version)</td><td>Filter by version.type = firmware</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapFHIRToOpenEHR"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ConceptMapFHIRToOpenEHR"] ; # 
+  fhir:title [ fhir:v "FHIR Resource to openEHR Archetype Mapping"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-25"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Reverse mapping from FHIR R4 resources to custom openEHR archetypes for wearable lifestyle medicine data.\n\nSupported FHIR → openEHR mappings:\n- Observation (HRV profile) → OBSERVATION.heart_rate_variability.v0\n- Observation (activity profile) → OBSERVATION.physical_activity_detailed.v0\n- Observation (sleep profile) → OBSERVATION.sleep_architecture.v0\n- Device → CLUSTER.wearable_device.v0\n\nArchitecture:\n- Complements ConceptMapOpenEHRToFHIR for bidirectional transformation\n- Compatible with NUM-FHIR-Bridge Apache Camel routes\n- Supports EHRbase CDR as target system"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "Enable data transformation from FHIR servers to openEHR Clinical Data Repositories (CDRs) for wearable health data in Learning Health Systems."] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "openEHR-EHR-OBSERVATION.heart_rate_variability.v0"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "Observation.component:sdnn" ] ;
+       fhir:display [ fhir:v "SDNN component with LOINC 80404-7" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id5" ] ;
+         fhir:display [ fhir:v "SDNN - Standard deviation of NN intervals" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from Observation.component with code LOINC 80404-7. Unit: ms" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:rmssd" ] ;
+       fhir:display [ fhir:v "RMSSD component with HeartRateVariabilityCS#hrv-rmssd" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id6" ] ;
+         fhir:display [ fhir:v "RMSSD - Root mean square of successive differences" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from component with HeartRateVariabilityCS#hrv-rmssd. No LOINC code. Unit: ms" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:pnn50" ] ;
+       fhir:display [ fhir:v "pNN50 component with HeartRateVariabilityCS#hrv-pnn50" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id7" ] ;
+         fhir:display [ fhir:v "pNN50 - Percentage of NN intervals >50ms" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from component with HeartRateVariabilityCS#hrv-pnn50. Unit: %" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:lf-hf-ratio" ] ;
+       fhir:display [ fhir:v "LF/HF ratio component" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id13" ] ;
+         fhir:display [ fhir:v "LF/HF Ratio" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from component with HeartRateVariabilityCS#hrv-lf-hf-ratio. Dimensionless ratio" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.effectivePeriod" ] ;
+       fhir:display [ fhir:v "Observation.effectivePeriod (start/end)" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id32" ] ;
+         fhir:display [ fhir:v "Recording duration" ] ;
+         fhir:equivalence [ fhir:v "relatedto" ] ;
+         fhir:comment [ fhir:v "Calculate duration from effectivePeriod.end - effectivePeriod.start" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:state" ] ;
+       fhir:display [ fhir:v "Physiological state component" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id41" ] ;
+         fhir:display [ fhir:v "Physiological state" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map resting/active/sleep states from component" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.device" ] ;
+       fhir:display [ fhir:v "Observation.device reference" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id51" ] ;
+         fhir:display [ fhir:v "Device type" ] ;
+         fhir:equivalence [ fhir:v "relatedto" ] ;
+         fhir:comment [ fhir:v "Resolve Device reference and map to CLUSTER.wearable_device" ]
+       ] )
+     ] ) ;
+     fhir:unmapped [
+       fhir:mode [ fhir:v "fixed" ] ;
+       fhir:code [ fhir:v "other" ] ;
+       fhir:display [ fhir:v "Unmapped FHIR HRV element" ]
+     ]
+  ] [
+     fhir:source [ fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "Observation.valueQuantity" ] ;
+       fhir:display [ fhir:v "Observation.valueQuantity (steps)" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id10" ] ;
+         fhir:display [ fhir:v "Step count" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "When Observation.code is LOINC 55423-8 (Number of steps). Unit: steps" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:distance" ] ;
+       fhir:display [ fhir:v "Distance component with LOINC 55430-3" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id11" ] ;
+         fhir:display [ fhir:v "Distance" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from component with LOINC 55430-3. Unit: km or m" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:active-calories" ] ;
+       fhir:display [ fhir:v "Active calories component with LOINC 41979-6" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id20" ] ;
+         fhir:display [ fhir:v "Active calories" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from component with LOINC 41979-6. Unit: kcal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:moderate-minutes" ] ;
+       fhir:display [ fhir:v "Moderate activity minutes with LOINC 77592-4" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id32" ] ;
+         fhir:display [ fhir:v "Moderately active minutes" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from component with LOINC 77592-4. Unit: min" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:vigorous-minutes" ] ;
+       fhir:display [ fhir:v "Vigorous activity minutes with LOINC 77593-2" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id33" ] ;
+         fhir:display [ fhir:v "Vigorously active minutes" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from component with LOINC 77593-2. Unit: min" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "openEHR-EHR-OBSERVATION.sleep_architecture.v0"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "Observation.valueQuantity" ] ;
+       fhir:display [ fhir:v "Observation.valueQuantity (sleep duration)" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id13" ] ;
+         fhir:display [ fhir:v "Total sleep time" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "When Observation.code is LOINC 93832-4 (Sleep duration). Unit: h or min" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:deep-sleep" ] ;
+       fhir:display [ fhir:v "Deep sleep duration component" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id23" ] ;
+         fhir:display [ fhir:v "Deep sleep duration" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "N3/SWS stage duration. Custom code - no LOINC" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:rem-sleep" ] ;
+       fhir:display [ fhir:v "REM sleep duration component" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id24" ] ;
+         fhir:display [ fhir:v "REM sleep duration" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "REM stage duration. Custom code - no LOINC" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:efficiency" ] ;
+       fhir:display [ fhir:v "Sleep efficiency component" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id30" ] ;
+         fhir:display [ fhir:v "Sleep efficiency" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "TST/TIB ratio as percentage. Custom code - no LOINC" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:score" ] ;
+       fhir:display [ fhir:v "Sleep score component" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id40" ] ;
+         fhir:display [ fhir:v "Sleep score" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Vendor-specific composite score (0-100). Proprietary algorithm" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Observation.component:sleep-hrv" ] ;
+       fhir:display [ fhir:v "Average HRV during sleep component" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id53" ] ;
+         fhir:display [ fhir:v "Average HRV (RMSSD) during sleep" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Use HeartRateVariabilityCS#hrv-rmssd with context. Unit: ms" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "http://hl7.org/fhir/StructureDefinition/Device"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "openEHR-EHR-CLUSTER.wearable_device.v0"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "Device.manufacturer" ] ;
+       fhir:display [ fhir:v "Device.manufacturer" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id2" ] ;
+         fhir:display [ fhir:v "Device platform" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map manufacturer string to vendor code (Apple, Fitbit, Garmin, etc.)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Device.modelNumber" ] ;
+       fhir:display [ fhir:v "Device.modelNumber" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id3" ] ;
+         fhir:display [ fhir:v "Device model" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Specific model name" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Device.type" ] ;
+       fhir:display [ fhir:v "Device.type" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id4" ] ;
+         fhir:display [ fhir:v "Device category" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Map from SNOMED CT device type codes where available" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Device.serialNumber" ] ;
+       fhir:display [ fhir:v "Device.serialNumber" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id23" ] ;
+         fhir:display [ fhir:v "Serial number" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "Device.version:firmware" ] ;
+       fhir:display [ fhir:v "Device.version[firmware]" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "id20" ] ;
+         fhir:display [ fhir:v "Firmware version" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Filter by version.type = firmware" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

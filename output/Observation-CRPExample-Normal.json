@@ -1,0 +1,46 @@
+{
+  "resourceType" : "Observation",
+  "id" : "CRPExample-Normal",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/crp-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation CRPExample-Normal</b></p><a name=\"CRPExample-Normal\"> </a><a name=\"hcCRPExample-Normal\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-crp-observation.html\">C-Reactive Protein (CRP) Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 1988-5}\">C reactive protein [Mass/volume] in Serum or Plasma</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2025-11-27 08:30:00+0000</p><p><b>value</b>: 1.2 mg/L<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomg/L = 'mg/L')</span></p><p><b>interpretation</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs low-risk}\">Low cardiovascular risk</span></p><p><b>note</b>: </p><blockquote><div><p>Normal CRP level consistent with low systemic inflammation. Patient has good HRV metrics (RMSSD 45ms).</p>\n</div></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory",
+      "display" : "Laboratory"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "1988-5",
+      "display" : "C reactive protein [Mass/volume] in Serum or Plasma"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "effectiveDateTime" : "2025-11-27T08:30:00Z",
+  "valueQuantity" : {
+    "value" : 1.2,
+    "unit" : "mg/L",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "mg/L"
+  },
+  "interpretation" : [{
+    "coding" : [{
+      "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs",
+      "code" : "low-risk",
+      "display" : "Low cardiovascular risk"
+    }]
+  }],
+  "note" : [{
+    "text" : "Normal CRP level consistent with low systemic inflammation. Patient has good HRV metrics (RMSSD 45ms)."
+  }]
+}

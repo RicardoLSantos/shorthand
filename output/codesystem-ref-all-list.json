@@ -2,11 +2,11 @@
   "codeSystems" : [
     {
       "url" : "http://dicom.nema.org/resources/ontology/DCM",
-      "version" : "2022.4.20221006",
+      "version" : "01",
       "status" : "active",
-      "name" : "DICOMTerminologyDefinitions",
-      "title" : "DICOM Controlled Terminology Definitions",
-      "description" : "DICOM Code Definitions (Coding Scheme Designator \"DCM\" Coding Scheme Version 2022.4.20221006",
+      "name" : "DICOM Controlled Terminology Definitions",
+      "title" : null,
+      "description" : "DICOM Code Definitions (Coding Scheme Designator \"DCM\" Coding Scheme Version \"01\")",
       "oids" : ["1.2.840.10008.2.16.4"],
       "uses" : {
       },
@@ -190,6 +190,18 @@
       "http://hl7.org/fhir/R4/valueset-operation-parameter-use.html" : "OperationParameterUse"
     },
     {
+      "url" : "http://hl7.org/fhir/provenance-entity-role",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "ProvenanceEntityRole",
+      "title" : "ProvenanceEntityRole",
+      "description" : "How an entity was used in an activity.",
+      "oids" : ["2.16.840.1.113883.4.642.4.437"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-provenance-entity-role.html" : "ProvenanceEntityRole"
+    },
+    {
       "url" : "http://hl7.org/fhir/publication-status",
       "version" : "4.0.1",
       "status" : "active",
@@ -246,9 +258,9 @@
       "description" : "One of the resource types defined as part of this version of FHIR.",
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class",
+      "http://hl7.org/fhir/R4/valueset-all-types.html" : "FHIRAllTypes",
       "http://hl7.org/fhir/R4/valueset-resource-types.html" : "ResourceType",
-      "http://hl7.org/fhir/R4/valueset-all-types.html" : "FHIRAllTypes"
+      "http://hl7.org/fhir/R4/valueset-consent-content-class.html" : "Consent Content Class"
     },
     {
       "url" : "http://hl7.org/fhir/search-param-type",
@@ -272,12 +284,20 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes",
-      "http://hl7.org/fhir/R4/valueset-consent-category.html" : "Consent Category Codes",
-      "http://hl7.org/fhir/R4/valueset-questionnaire-questions.html" : "Questionnaire Question Codes",
+      "ValueSet-inflammatory-marker-vs.html" : "Inflammatory Marker ValueSet",
       "http://hl7.org/fhir/R4/valueset-observation-vitalsignresult.html" : "Vital Signs",
+      "ConceptMap-ConceptMapSleepToLOINC.html" : "Sleep Measurements to LOINC Mapping",
+      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping",
+      "http://hl7.org/fhir/R4/valueset-questionnaire-questions.html" : "Questionnaire Question Codes",
+      "ValueSet-loinc-observations-vs.html" : "LOINC Observation Codes for Lifestyle Medicine",
+      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes",
+      "ConceptMap-ConceptMapHRVToLOINC.html" : "Heart Rate Variability to LOINC Mapping",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "ValueSet-heart-rate-variability-vs.html" : "Heart Rate Variability ValueSet",
+      "ConceptMap-ConceptMapBodyMetricsToLOINC.html" : "Body Metrics to LOINC Mapping",
+      "http://hl7.org/fhir/R4/valueset-consent-category.html" : "Consent Category Codes",
       "http://hl7.org/fhir/R4/valueset-consent-content-code.html" : "Consent Content Codes",
-      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set"
+      "ConceptMap-ConceptMapVendorToLOINC.html" : "Vendor Proprietary Codes to LOINC Mapping"
     },
     {
       "url" : "http://snomed.info/sct",
@@ -289,24 +309,35 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
-      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
-      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
-      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
-      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
-      "ValueSet-activity-quality-extended-vs.html" : "Sleep Quality Value Set",
-      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
-      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
-      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
-      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
       "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
+      "ConceptMap-ConceptMapMobilityToSNOMED.html" : "Mobility Assessments to SNOMED CT Mapping",
+      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
+      "ConceptMap-ConceptMapNutritionToSNOMED.html" : "Nutrition Measurements to SNOMED CT Mapping",
+      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
+      "ValueSet-tobacco-use-status-vs.html" : "Tobacco Use Status ValueSet",
+      "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
+      "ValueSet-alcohol-use-status-vs.html" : "Alcohol Use Status ValueSet",
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
       "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
-      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
-      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
-      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
-      "http://hl7.org/fhir/R4/valueset-questionnaire-answers.html" : "Questionnaire Answer Codes",
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
+      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
+      "ConceptMap-ConceptMapMindfulnessToSNOMED.html" : "Mindfulness Observations to SNOMED CT Mapping",
       "ValueSet-time-of-day-vs.html" : "Time of Day Value Set",
-      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set"
+      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
+      "http://hl7.org/fhir/R4/valueset-questionnaire-answers.html" : "Questionnaire Answer Codes",
+      "ValueSet-recreational-substance-use-status-vs.html" : "Recreational Substance Use Status ValueSet",
+      "ValueSet-activity-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
+      "ValueSet-tobacco-product-type-vs.html" : "Tobacco Product Type ValueSet",
+      "ConceptMap-ConceptMapPhysicalActivityToSNOMED.html" : "iOS Physical Activity to SNOMED CT Mapping",
+      "ValueSet-recreational-substance-type-vs.html" : "Recreational Substance Type ValueSet",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
+      "ValueSet-hrv-inflammation-trend-vs.html" : "HRV-Inflammation Trend ValueSet",
+      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
+      "ConceptMap-ConceptMapEnvironmentalToSNOMED.html" : "Environmental Exposures to SNOMED CT Mapping"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/basic-resource-type",
@@ -404,8 +435,19 @@
       "http://hl7.org/fhir/R4/valueset-security-role-type.html" : "SecurityRoleType"
     },
     {
+      "url" : "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "Iso_21089_2017_Health_Record_Lifecycle_Events",
+      "title" : "ISO 21089 2017 Health Record Lifecycle Events",
+      "description" : "Attached is vocabulary for the 27 record lifecycle events, as per ISO TS 21089-2017, Health Informatics - Trusted End-to-End Information Flows, Section 3, Terms and Definitions (2017, at ISO Central Secretariat, passed ballot and ready for publication).  This will also be included in the FHIR EHR Record Lifecycle Event Implementation Guide, balloted and (to be) published with FHIR STU-3.",
+      "uses" : {
+      },
+      "ValueSet-pghd-provenance-activity-vs.html" : "PGHD Provenance Activity ValueSet"
+    },
+    {
       "url" : "http://terminology.hl7.org/CodeSystem/observation-category",
-      "version" : "1.0.1",
+      "version" : "2.0.0",
       "status" : "active",
       "name" : "ObservationCategoryCodes",
       "title" : "Observation Category Codes",
@@ -414,6 +456,18 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R4/valueset-observation-category.html" : "Observation Category Codes"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+      "version" : "2.0.0",
+      "status" : "active",
+      "name" : "ProvenanceParticipantType",
+      "title" : "Provenance participant type",
+      "description" : "These codes define the type of participation by an agent in a provenance activity. An agent is something that bears the responsibility identified by the type of participation in the activity taking place, for the existence of an entity, or for another agent's activity. An Agent may be An agent, device, system, organization, group, care-team, or other identifiable thing.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1131"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-provenance-agent-type.html" : "Provenance participant type"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
@@ -449,7 +503,19 @@
       "oids" : ["2.16.840.1.113883.5.8"],
       "uses" : {
       },
-      "http://terminology.hl7.org/6.5.0/ValueSet-v3-PurposeOfUse.html" : "PurposeOfUse"
+      "http://terminology.hl7.org/7.0.0/ValueSet-v3-PurposeOfUse.html" : "PurposeOfUse"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "DataOperation",
+      "title" : "DataOperation",
+      "description" : "**** MISSING DESCRIPTION ****",
+      "oids" : ["2.16.840.1.113883.5.1123"],
+      "uses" : {
+      },
+      "ValueSet-pghd-provenance-activity-vs.html" : "PGHD Provenance Activity ValueSet"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
@@ -545,8 +611,8 @@
       "oids" : ["2.16.840.1.113883.6.8"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime",
       "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units",
+      "http://hl7.org/fhir/R4/valueset-units-of-time.html" : "UnitsOfTime",
       "ValueSet-duration-units-vs.html" : "Duration Units Value Set"
     },
     {
@@ -559,6 +625,28 @@
       "uses" : {
       },
       "ValueSet-advanced-vital-signs-context-vs.html" : "Advanced Vital Signs Context Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/alcohol-beverage-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AlcoholBeverageTypeCS",
+      "title" : "Alcohol Beverage Type CodeSystem",
+      "description" : "Common alcoholic beverage types",
+      "uses" : {
+      },
+      "ValueSet-alcohol-beverage-type-vs.html" : "Alcohol Beverage Type ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/alcohol-drinking-frequency-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AlcoholDrinkingFrequencyCS",
+      "title" : "Alcohol Drinking Frequency CodeSystem",
+      "description" : "AUDIT-C style frequency categories",
+      "uses" : {
+      },
+      "ValueSet-alcohol-drinking-frequency-vs.html" : "Alcohol Drinking Frequency ValueSet"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes",
@@ -605,6 +693,28 @@
       "ValueSet-balance-status.html" : "Balance Status Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CaffeineIntakeLevelCS",
+      "title" : "Caffeine Intake Level CodeSystem",
+      "description" : "Risk levels for caffeine intake",
+      "uses" : {
+      },
+      "ValueSet-caffeine-intake-level-vs.html" : "Caffeine Intake Level ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CaffeineSourceCS",
+      "title" : "Caffeine Source CodeSystem",
+      "description" : "Sources of caffeine in diet",
+      "uses" : {
+      },
+      "ValueSet-caffeine-source-vs.html" : "Caffeine Source ValueSet"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cervical-mucus-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -614,6 +724,28 @@
       "uses" : {
       },
       "ValueSet-cervical-mucus-vs.html" : "Cervical Mucus Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cessation-support-method-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CessationSupportMethodCS",
+      "title" : "Cessation Support Method CodeSystem",
+      "description" : "Methods used to support cessation of substance use",
+      "uses" : {
+      },
+      "ValueSet-cessation-support-method-vs.html" : "Cessation Support Method ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cessation-support-status-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CessationSupportStatusCS",
+      "title" : "Cessation Support Status CodeSystem",
+      "description" : "Status of cessation support",
+      "uses" : {
+      },
+      "ValueSet-cessation-support-status-vs.html" : "Cessation Support Status ValueSet"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs",
@@ -627,6 +759,28 @@
       "ValueSet-circadian-phase-vs.html" : "Circadian Phase Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/data-capture-method-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "DataCaptureMethodCS",
+      "title" : "Data Capture Method CodeSystem",
+      "description" : "Methods for capturing patient-generated health data",
+      "uses" : {
+      },
+      "ValueSet-data-capture-method-vs.html" : "Data Capture Method ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/drinking-context-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "DrinkingContextCS",
+      "title" : "Drinking Context CodeSystem",
+      "description" : "Settings and contexts for alcohol consumption",
+      "uses" : {
+      },
+      "ValueSet-drinking-context-vs.html" : "Drinking Context ValueSet"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environment-type-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -635,8 +789,8 @@
       "description" : "Types of environments for mindfulness practice",
       "uses" : {
       },
-      "ValueSet-environment-type.html" : "Environment Type Value Set",
-      "ValueSet-environment-type-vs.html" : "Practice Environment Types Value Set"
+      "ValueSet-environment-type-vs.html" : "Practice Environment Types Value Set",
+      "ValueSet-environment-type.html" : "Environment Type Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context",
@@ -647,7 +801,7 @@
       "description" : "Environmental factors and settings affecting health measurements and observations",
       "uses" : {
       },
-      "ValueSet-environmental-context.html" : "Environmental Context Value Set"
+      "ValueSet-environmental-context-vs.html" : "Environmental Context Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs",
@@ -694,6 +848,40 @@
       "ValueSet-fertility-status-vs.html" : "Fertility Status Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "HeartRateVariabilityCS",
+      "title" : "Heart Rate Variability CodeSystem",
+      "description" : "Custom codes for HRV metrics with LOINC mappings where available. SDNN maps to LOINC 80404-7, other metrics await LOINC assignment.",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapHRVToLOINC.html" : "Heart Rate Variability to LOINC Mapping",
+      "ValueSet-heart-rate-variability-vs.html" : "Heart Rate Variability ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "HsCRPRiskCS",
+      "title" : "hs-CRP Cardiovascular Risk CodeSystem",
+      "description" : "Cardiovascular risk classification based on high-sensitivity C-Reactive Protein levels.\n\nBased on AHA/CDC Scientific Statement on Markers of Inflammation and Cardiovascular Disease:\n- Pearson TA, et al. Circulation. 2003;107(3):499-511. doi:10.1161/01.CIR.0000052939.59093.45\n- Ridker PM, et al. Circulation. 2003;107(3):363-369. doi:10.1161/01.CIR.0000053730.47739.3C\n\nRisk stratification thresholds:\n- Low risk: hs-CRP < 1.0 mg/L\n- Average risk: hs-CRP 1.0-3.0 mg/L\n- High risk: hs-CRP > 3.0 mg/L\n\nNote: No SNOMED-CT codes exist for this specific clinical classification as of 2025.\nThis CodeSystem follows thesis semantic hierarchy Level 3: local codes with documented source\nand migration pathway when standard terminology becomes available.\n\nFuture migration: Monitor SNOMED-CT International Edition for cardiovascular risk finding codes.",
+      "uses" : {
+      },
+      "ValueSet-hscrp-interpretation-vs.html" : "hs-CRP Interpretation ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ios-physical-activity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "IOSPhysicalActivityCS",
+      "title" : "iOS Physical Activity CodeSystem",
+      "description" : "CodeSystem for physical activity types from Apple HealthKit HKWorkoutActivityType. Enables interoperability between iOS Health App data and standard terminologies (SNOMED CT, LOINC).",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapPhysicalActivityToSNOMED.html" : "iOS Physical Activity to SNOMED CT Mapping"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -702,7 +890,14 @@
       "description" : "Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist.",
       "uses" : {
       },
-      "ValueSet-lifestyle-observation-vs.html" : "Lifestyle Medicine Observation Value Set"
+      "ConceptMap-ConceptMapMobilityToSNOMED.html" : "Mobility Assessments to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapMindfulnessToSNOMED.html" : "Mindfulness Observations to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapNutritionToSNOMED.html" : "Nutrition Measurements to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapSleepToLOINC.html" : "Sleep Measurements to LOINC Mapping",
+      "ConceptMap-ConceptMapBodyMetricsToLOINC.html" : "Body Metrics to LOINC Mapping",
+      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping",
+      "ValueSet-lifestyle-observation-vs.html" : "Lifestyle Medicine Observation Value Set",
+      "ConceptMap-ConceptMapEnvironmentalToSNOMED.html" : "Environmental Exposures to SNOMED CT Mapping"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs",
@@ -724,8 +919,8 @@
       "description" : "Outcomes and effects of mindfulness practice",
       "uses" : {
       },
-      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
-      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings"
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-qualifier-cs",
@@ -960,6 +1155,50 @@
       "ValueSet-stress-triggers-vs.html" : "Stress Triggers Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-frequency-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseFrequencyCS",
+      "title" : "Substance Use Frequency CodeSystem",
+      "description" : "Frequency categories for substance use reporting",
+      "uses" : {
+      },
+      "ValueSet-substance-use-frequency-vs.html" : "Substance Use Frequency ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-motivation-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseMotivationCS",
+      "title" : "Substance Use Motivation CodeSystem",
+      "description" : "Motivation stages based on Transtheoretical Model (Prochaska)",
+      "uses" : {
+      },
+      "ValueSet-substance-use-motivation-vs.html" : "Substance Use Motivation ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-risk-level-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseRiskLevelCS",
+      "title" : "Substance Use Risk Level CodeSystem",
+      "description" : "Risk levels for substance use assessment in lifestyle medicine",
+      "uses" : {
+      },
+      "ValueSet-substance-use-risk-level-vs.html" : "Substance Use Risk Level ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-trigger-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseTriggerCS",
+      "title" : "Substance Use Trigger CodeSystem",
+      "description" : "Common triggers for substance use behavior",
+      "uses" : {
+      },
+      "ValueSet-substance-use-trigger-vs.html" : "Substance Use Trigger ValueSet"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/symptom-frequency-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -982,6 +1221,17 @@
       "ValueSet-symptom-impact-vs.html" : "Symptom Impact Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-sensor-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "WearableSensorTypeCS",
+      "title" : "Wearable Sensor Type CodeSystem",
+      "description" : "Sensor types found in consumer wearable devices",
+      "uses" : {
+      },
+      "ValueSet-wearable-sensor-type-vs.html" : "Wearable Sensor Type ValueSet"
+    },
+    {
       "url" : "urn:ietf:bcp:47",
       "version" : "2.0.1",
       "status" : "active",
@@ -992,6 +1242,18 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R4/valueset-languages.html" : "Common Languages"
+    },
+    {
+      "url" : "urn:iso-astm:E1762-95:2013",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "SignatureTypeCodes",
+      "title" : "Signature Type Codes",
+      "description" : "The Digital Signature Purposes, an indication of the reason an entity signs a document. This is included in the signed information and can be used when determining accountability for various actions concerning the document. Examples include: author, transcriptionist/recorder, and witness.",
+      "oids" : ["2.16.840.1.113883.4.642.4.64"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-signature-type.html" : "Signature Type Codes"
     },
     {
       "url" : "urn:iso:std:iso:3166",

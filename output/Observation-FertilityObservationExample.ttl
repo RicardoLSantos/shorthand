@@ -1,8 +1,8 @@
 @prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -18,7 +18,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation FertilityObservationExample</b></p><a name=\"FertilityObservationExample\"> </a><a name=\"hcFertilityObservationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-fertility-observation.html\">Fertility Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs ovulation-status}\">Ovulation status</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 289567002}\">Cervical mucus</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cervical-mucus-cs eggWhite}\">Egg White</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 252366009}\">Ovulation test</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs positive}\">Positive</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 87527008}\">Fertility status</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs fertile}\">Fertile</span></p></blockquote></div>"^^rdf:XMLLiteral
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation FertilityObservationExample</b></p><a name=\"FertilityObservationExample\"> </a><a name=\"hcFertilityObservationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-fertility-observation.html\">Fertility Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs ovulation-status}\">Ovulation status</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 10570-0}\">Consistency of Cervical mucus</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cervical-mucus-cs eggWhite}\">Egg White</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 11976-8}\">Ovulation date</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs positive}\">Positive</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 82810-3}\">Pregnancy status</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs fertile}\">Fertile</span></p></blockquote></div>"^^rdf:XMLLiteral
   ] ; # 
   fhir:status [ fhir:v "final"] ; # 
   fhir:category ( [
@@ -49,10 +49,10 @@
   fhir:component ( [
      fhir:code [
        fhir:coding ( [
-         a sct:289567002 ;
-         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "289567002" ] ;
-         fhir:display [ fhir:v "Cervical mucus" ]
+         a loinc:10570-0 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "10570-0" ] ;
+         fhir:display [ fhir:v "Consistency of Cervical mucus" ]
        ] )
      ] ;
      fhir:value [
@@ -66,10 +66,10 @@
   ] [
      fhir:code [
        fhir:coding ( [
-         a sct:252366009 ;
-         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "252366009" ] ;
-         fhir:display [ fhir:v "Ovulation test" ]
+         a loinc:11976-8 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "11976-8" ] ;
+         fhir:display [ fhir:v "Ovulation date" ]
        ] )
      ] ;
      fhir:value [
@@ -83,10 +83,10 @@
   ] [
      fhir:code [
        fhir:coding ( [
-         a sct:87527008 ;
-         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "87527008" ] ;
-         fhir:display [ fhir:v "Fertility status" ]
+         a loinc:82810-3 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "82810-3" ] ;
+         fhir:display [ fhir:v "Pregnancy status" ]
        ] )
      ] ;
      fhir:value [

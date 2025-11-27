@@ -1,0 +1,129 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/SubstanceUseSummaryExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SubstanceUseSummaryExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-summary"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-summary>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation SubstanceUseSummaryExample</b></p><a name=\"SubstanceUseSummaryExample\"> </a><a name=\"hcSubstanceUseSummaryExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-substance-use-summary.html\">Substance Use Summary Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs substance-use-summary}\">Substance use summary</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-25 10:00:00+0000</p><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-TobaccoUseExSmokerExample.html\">Observation Tobacco smoking status</a></li><li><a href=\"Observation-AlcoholUseModerateExample.html\">Observation History of Alcohol use</a></li><li><a href=\"Observation-CaffeineIntakeModerateExample.html\">Observation Caffeine intake 24 hour Estimated</a></li></ul><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 72166-2}\">Tobacco smoking status</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 8517006}\">Ex-smoker (finding)</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 11331-6}\">History of Alcohol use</span></p><p><b>value</b>: <span title=\"Códigos:{http://snomed.info/sct 43783005}\">Moderate drinker (finding)</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 80489-8}\">Caffeine intake 24 hour Estimated</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs moderate}\">Moderate</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs substance-risk-level}\">Overall substance use risk level</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-risk-level-cs low}\">Low risk</span></p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "social-history" ] ;
+       fhir:display [ fhir:v "Social History" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "substance-use-summary" ] ;
+       fhir:display [ fhir:v "Substance use summary" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2025-11-25T10:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:hasMember ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/TobaccoUseExSmokerExample> ;
+     fhir:reference [ fhir:v "Observation/TobaccoUseExSmokerExample" ]
+  ] [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/AlcoholUseModerateExample> ;
+     fhir:reference [ fhir:v "Observation/AlcoholUseModerateExample" ]
+  ] [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/CaffeineIntakeModerateExample> ;
+     fhir:reference [ fhir:v "Observation/CaffeineIntakeModerateExample" ]
+  ] ) ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:72166-2 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "72166-2" ] ;
+         fhir:display [ fhir:v "Tobacco smoking status" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:8517006 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "8517006" ] ;
+         fhir:display [ fhir:v "Ex-smoker (finding)" ]
+       ] )
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:11331-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "11331-6" ] ;
+         fhir:display [ fhir:v "History of Alcohol use" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:43783005 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "43783005" ] ;
+         fhir:display [ fhir:v "Moderate drinker (finding)" ]
+       ] )
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:80489-8 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "80489-8" ] ;
+         fhir:display [ fhir:v "Caffeine intake 24 hour Estimated" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "moderate" ] ;
+         fhir:display [ fhir:v "Moderate" ]
+       ] )
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "substance-risk-level" ] ;
+         fhir:display [ fhir:v "Overall substance use risk level" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-risk-level-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "low" ] ;
+         fhir:display [ fhir:v "Low risk" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

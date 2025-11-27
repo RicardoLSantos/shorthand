@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "caffeine-intake-level-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem caffeine-intake-level-cs</b></p><a name=\"caffeine-intake-level-cs\"> </a><a name=\"hccaffeine-intake-level-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">none<a name=\"caffeine-intake-level-cs-none\"> </a></td><td>None</td><td>No caffeine intake (0mg/day)</td></tr><tr><td style=\"white-space:nowrap\">low<a name=\"caffeine-intake-level-cs-low\"> </a></td><td>Low</td><td>Low caffeine intake (&lt;100mg/day)</td></tr><tr><td style=\"white-space:nowrap\">moderate<a name=\"caffeine-intake-level-cs-moderate\"> </a></td><td>Moderate</td><td>Moderate caffeine intake (100-400mg/day)</td></tr><tr><td style=\"white-space:nowrap\">high<a name=\"caffeine-intake-level-cs-high\"> </a></td><td>High</td><td>High caffeine intake (&gt;400mg/day)</td></tr><tr><td style=\"white-space:nowrap\">excessive<a name=\"caffeine-intake-level-cs-excessive\"> </a></td><td>Excessive</td><td>Excessive caffeine intake (&gt;600mg/day)</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CaffeineIntakeLevelCS"] ; # 
+  fhir:title [ fhir:v "Caffeine Intake Level CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T11:57:11+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Risk levels for caffeine intake"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "none" ] ;
+     fhir:display [ fhir:v "None" ] ;
+     fhir:definition [ fhir:v "No caffeine intake (0mg/day)" ]
+  ] [
+     fhir:code [ fhir:v "low" ] ;
+     fhir:display [ fhir:v "Low" ] ;
+     fhir:definition [ fhir:v "Low caffeine intake (<100mg/day)" ]
+  ] [
+     fhir:code [ fhir:v "moderate" ] ;
+     fhir:display [ fhir:v "Moderate" ] ;
+     fhir:definition [ fhir:v "Moderate caffeine intake (100-400mg/day)" ]
+  ] [
+     fhir:code [ fhir:v "high" ] ;
+     fhir:display [ fhir:v "High" ] ;
+     fhir:definition [ fhir:v "High caffeine intake (>400mg/day)" ]
+  ] [
+     fhir:code [ fhir:v "excessive" ] ;
+     fhir:display [ fhir:v "Excessive" ] ;
+     fhir:definition [ fhir:v "Excessive caffeine intake (>600mg/day)" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

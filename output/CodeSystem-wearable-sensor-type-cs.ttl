@@ -1,0 +1,111 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-sensor-type-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "wearable-sensor-type-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem wearable-sensor-type-cs</b></p><a name=\"wearable-sensor-type-cs\"> </a><a name=\"hcwearable-sensor-type-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">ppg<a name=\"wearable-sensor-type-cs-ppg\"> </a></td><td>Photoplethysmography (PPG)</td><td>Optical heart rate sensor</td></tr><tr><td style=\"white-space:nowrap\">ecg<a name=\"wearable-sensor-type-cs-ecg\"> </a></td><td>Electrocardiogram (ECG)</td><td>Electrical heart activity sensor</td></tr><tr><td style=\"white-space:nowrap\">accelerometer<a name=\"wearable-sensor-type-cs-accelerometer\"> </a></td><td>Accelerometer</td><td>Motion and activity sensor</td></tr><tr><td style=\"white-space:nowrap\">gyroscope<a name=\"wearable-sensor-type-cs-gyroscope\"> </a></td><td>Gyroscope</td><td>Orientation sensor</td></tr><tr><td style=\"white-space:nowrap\">barometer<a name=\"wearable-sensor-type-cs-barometer\"> </a></td><td>Barometer</td><td>Altitude/pressure sensor</td></tr><tr><td style=\"white-space:nowrap\">spo2<a name=\"wearable-sensor-type-cs-spo2\"> </a></td><td>Pulse Oximeter</td><td>Blood oxygen saturation sensor</td></tr><tr><td style=\"white-space:nowrap\">temperature<a name=\"wearable-sensor-type-cs-temperature\"> </a></td><td>Temperature</td><td>Skin/body temperature sensor</td></tr><tr><td style=\"white-space:nowrap\">bioimpedance<a name=\"wearable-sensor-type-cs-bioimpedance\"> </a></td><td>Bioimpedance</td><td>Body composition sensor</td></tr><tr><td style=\"white-space:nowrap\">gps<a name=\"wearable-sensor-type-cs-gps\"> </a></td><td>GPS</td><td>Location sensor</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-sensor-type-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "WearableSensorTypeCS"] ; # 
+  fhir:title [ fhir:v "Wearable Sensor Type CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T11:57:11+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Sensor types found in consumer wearable devices"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "9"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "ppg" ] ;
+     fhir:display [ fhir:v "Photoplethysmography (PPG)" ] ;
+     fhir:definition [ fhir:v "Optical heart rate sensor" ]
+  ] [
+     fhir:code [ fhir:v "ecg" ] ;
+     fhir:display [ fhir:v "Electrocardiogram (ECG)" ] ;
+     fhir:definition [ fhir:v "Electrical heart activity sensor" ]
+  ] [
+     fhir:code [ fhir:v "accelerometer" ] ;
+     fhir:display [ fhir:v "Accelerometer" ] ;
+     fhir:definition [ fhir:v "Motion and activity sensor" ]
+  ] [
+     fhir:code [ fhir:v "gyroscope" ] ;
+     fhir:display [ fhir:v "Gyroscope" ] ;
+     fhir:definition [ fhir:v "Orientation sensor" ]
+  ] [
+     fhir:code [ fhir:v "barometer" ] ;
+     fhir:display [ fhir:v "Barometer" ] ;
+     fhir:definition [ fhir:v "Altitude/pressure sensor" ]
+  ] [
+     fhir:code [ fhir:v "spo2" ] ;
+     fhir:display [ fhir:v "Pulse Oximeter" ] ;
+     fhir:definition [ fhir:v "Blood oxygen saturation sensor" ]
+  ] [
+     fhir:code [ fhir:v "temperature" ] ;
+     fhir:display [ fhir:v "Temperature" ] ;
+     fhir:definition [ fhir:v "Skin/body temperature sensor" ]
+  ] [
+     fhir:code [ fhir:v "bioimpedance" ] ;
+     fhir:display [ fhir:v "Bioimpedance" ] ;
+     fhir:definition [ fhir:v "Body composition sensor" ]
+  ] [
+     fhir:code [ fhir:v "gps" ] ;
+     fhir:display [ fhir:v "GPS" ] ;
+     fhir:definition [ fhir:v "Location sensor" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

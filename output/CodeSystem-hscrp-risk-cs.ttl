@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "hscrp-risk-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem hscrp-risk-cs</b></p><a name=\"hscrp-risk-cs\"> </a><a name=\"hchscrp-risk-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">low-risk<a name=\"hscrp-risk-cs-low-risk\"> </a></td><td>Low cardiovascular risk</td><td>hs-CRP &lt; 1.0 mg/L - Low risk of future cardiovascular events</td></tr><tr><td style=\"white-space:nowrap\">average-risk<a name=\"hscrp-risk-cs-average-risk\"> </a></td><td>Average cardiovascular risk</td><td>hs-CRP 1.0-3.0 mg/L - Intermediate risk requiring lifestyle assessment</td></tr><tr><td style=\"white-space:nowrap\">high-risk<a name=\"hscrp-risk-cs-high-risk\"> </a></td><td>High cardiovascular risk</td><td>hs-CRP &gt; 3.0 mg/L - High risk warranting intensive intervention</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "HsCRPRiskCS"] ; # 
+  fhir:title [ fhir:v "hs-CRP Cardiovascular Risk CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T11:57:11+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Cardiovascular risk classification based on high-sensitivity C-Reactive Protein levels.\n\nBased on AHA/CDC Scientific Statement on Markers of Inflammation and Cardiovascular Disease:\n- Pearson TA, et al. Circulation. 2003;107(3):499-511. doi:10.1161/01.CIR.0000052939.59093.45\n- Ridker PM, et al. Circulation. 2003;107(3):363-369. doi:10.1161/01.CIR.0000053730.47739.3C\n\nRisk stratification thresholds:\n- Low risk: hs-CRP < 1.0 mg/L\n- Average risk: hs-CRP 1.0-3.0 mg/L\n- High risk: hs-CRP > 3.0 mg/L\n\nNote: No SNOMED-CT codes exist for this specific clinical classification as of 2025.\nThis CodeSystem follows thesis semantic hierarchy Level 3: local codes with documented source\nand migration pathway when standard terminology becomes available.\n\nFuture migration: Monitor SNOMED-CT International Edition for cardiovascular risk finding codes."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "Enable structured capture of cardiovascular risk stratification based on hs-CRP levels per AHA/CDC guidelines"] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "low-risk" ] ;
+     fhir:display [ fhir:v "Low cardiovascular risk" ] ;
+     fhir:definition [ fhir:v "hs-CRP < 1.0 mg/L - Low risk of future cardiovascular events" ]
+  ] [
+     fhir:code [ fhir:v "average-risk" ] ;
+     fhir:display [ fhir:v "Average cardiovascular risk" ] ;
+     fhir:definition [ fhir:v "hs-CRP 1.0-3.0 mg/L - Intermediate risk requiring lifestyle assessment" ]
+  ] [
+     fhir:code [ fhir:v "high-risk" ] ;
+     fhir:display [ fhir:v "High cardiovascular risk" ] ;
+     fhir:definition [ fhir:v "hs-CRP > 3.0 mg/L - High risk warranting intensive intervention" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

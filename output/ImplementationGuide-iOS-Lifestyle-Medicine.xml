@@ -11,7 +11,7 @@
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2025-10-03T16:37:46+01:00"/>
+  <date value="2025-11-27T11:57:11+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -71,7 +71,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="6.5.0"/>
+    <version value="7.0.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -89,7 +89,7 @@
   <dependsOn id="hl7_fhir_uv_ips">
     <uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
     <packageId value="hl7.fhir.uv.ips"/>
-    <version value="1.1.0"/>
+    <version value="2.0.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -563,6 +563,72 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/alcohol-beverage-type-cs"/>
+      </reference>
+      <name value="Alcohol Beverage Type CodeSystem"/>
+      <description value="Common alcoholic beverage types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/alcohol-beverage-type-vs"/>
+      </reference>
+      <name value="Alcohol Beverage Type ValueSet"/>
+      <description value="Types of alcoholic beverages"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/alcohol-drinking-frequency-cs"/>
+      </reference>
+      <name value="Alcohol Drinking Frequency CodeSystem"/>
+      <description value="AUDIT-C style frequency categories"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/alcohol-drinking-frequency-vs"/>
+      </reference>
+      <name value="Alcohol Drinking Frequency ValueSet"/>
+      <description value="AUDIT-style frequency categories for alcohol consumption"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alcohol-use-observation"/>
+      </reference>
+      <name value="Alcohol Use Observation Profile"/>
+      <description value="Profile for recording alcohol consumption patterns from patient-reported data&#xA;and lifestyle tracking applications. Supports monitoring alcohol intake relative&#xA;to recommended guidelines (e.g., AUDIT-C screening, CDC guidelines).&#xA;&#xA;Clinical Context:&#xA;- Low-risk drinking: ≤14 drinks/week (men), ≤7 drinks/week (women)&#xA;- One standard drink: 14g pure alcohol"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/alcohol-use-status-vs"/>
+      </reference>
+      <name value="Alcohol Use Status ValueSet"/>
+      <description value="Status categories for alcohol consumption"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -838,6 +904,83 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapBodyMetricsToLOINC"/>
+      </reference>
+      <name value="Body Metrics to LOINC Mapping"/>
+      <description value="Maps custom body composition measurement codes to LOINC codes where available. Enables interoperability between consumer body composition scales (Withings, Fitbit Aria, etc.) and clinical systems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/crp-observation"/>
+      </reference>
+      <name value="C-Reactive Protein (CRP) Observation Profile"/>
+      <description value="Profile for C-Reactive Protein measurements.&#xA;&#xA;LOINC: 1988-5 'C reactive protein [Mass/volume] in Serum or Plasma'&#xA;&#xA;Clinical interpretation:&#xA;- Normal: &lt; 3.0 mg/L&#xA;- Elevated: 3.0-10.0 mg/L (low-grade inflammation)&#xA;- High: &gt; 10.0 mg/L (acute inflammation/infection)&#xA;&#xA;HRV correlation: Inverse relationship with RMSSD (Williams 2019).&#xA;Higher vagal tone associated with lower CRP levels."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/caffeine-intake-level-cs"/>
+      </reference>
+      <name value="Caffeine Intake Level CodeSystem"/>
+      <description value="Risk levels for caffeine intake"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/caffeine-intake-level-vs"/>
+      </reference>
+      <name value="Caffeine Intake Level ValueSet"/>
+      <description value="Categorical assessment of daily caffeine intake"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/caffeine-intake-observation"/>
+      </reference>
+      <name value="Caffeine Intake Observation Profile"/>
+      <description value="Profile for recording daily caffeine consumption. Relevant to lifestyle medicine&#xA;as excessive caffeine can affect sleep quality, stress levels, and cardiovascular health.&#xA;&#xA;Guidelines:&#xA;- FDA safe limit: ≤400mg/day for healthy adults&#xA;- Sleep hygiene: No caffeine 6+ hours before bed"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/caffeine-source-cs"/>
+      </reference>
+      <name value="Caffeine Source CodeSystem"/>
+      <description value="Sources of caffeine in diet"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/caffeine-source-vs"/>
+      </reference>
+      <name value="Caffeine Source ValueSet"/>
+      <description value="Common sources of dietary caffeine"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -867,6 +1010,61 @@
       </reference>
       <name value="Cervical Mucus Value Set"/>
       <description value="Value set for cervical mucus observations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/cessation-support"/>
+      </reference>
+      <name value="Cessation Support"/>
+      <description value="Support methods being used or considered for substance cessation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cessation-support-method-cs"/>
+      </reference>
+      <name value="Cessation Support Method CodeSystem"/>
+      <description value="Methods used to support cessation of substance use"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cessation-support-method-vs"/>
+      </reference>
+      <name value="Cessation Support Method ValueSet"/>
+      <description value="Methods of support for substance use cessation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/cessation-support-status-cs"/>
+      </reference>
+      <name value="Cessation Support Status CodeSystem"/>
+      <description value="Status of cessation support"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/cessation-support-status-vs"/>
+      </reference>
+      <name value="Cessation Support Status ValueSet"/>
+      <description value="Status of cessation support engagement"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -934,6 +1132,39 @@
       <name value="Complete Mindfulness Session Response"/>
       <description value="Complete mindfulness questionnaire response example"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CRPExample-Elevated"/>
+      </reference>
+      <name value="CRP Example - Elevated Value"/>
+      <description value="Example of elevated C-Reactive Protein indicating inflammation"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/crp-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CRPExample-Normal"/>
+      </reference>
+      <name value="CRP Example - Normal Value"/>
+      <description value="Example of normal C-Reactive Protein measurement"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/crp-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/TobaccoUseCurrentSmokerExample"/>
+      </reference>
+      <name value="Current Daily Smoker"/>
+      <description value="Example of a current smoker with motivation assessment"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1014,6 +1245,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/data-capture-method-cs"/>
+      </reference>
+      <name value="Data Capture Method CodeSystem"/>
+      <description value="Methods for capturing patient-generated health data"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/data-capture-method-vs"/>
+      </reference>
+      <name value="Data Capture Method ValueSet"/>
+      <description value="Methods by which PGHD data was captured"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1044,6 +1297,50 @@
       <name value="Default Mindfulness Configuration"/>
       <description value="Default configuration settings for mindfulness sessions"/>
       <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-configuration"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/device-capture-metadata"/>
+      </reference>
+      <name value="Device Capture Metadata"/>
+      <description value="Additional metadata about how data was captured by the device"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/drinking-context"/>
+      </reference>
+      <name value="Drinking Context"/>
+      <description value="Context or setting in which alcohol consumption typically occurs"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/drinking-context-cs"/>
+      </reference>
+      <name value="Drinking Context CodeSystem"/>
+      <description value="Settings and contexts for alcohol consumption"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/drinking-context-vs"/>
+      </reference>
+      <name value="Drinking Context ValueSet"/>
+      <description value="Contexts where alcohol consumption typically occurs"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1116,10 +1413,21 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/environmental-context"/>
+        <reference value="ValueSet/environmental-context-vs"/>
       </reference>
       <name value="Environmental Context Value Set"/>
       <description value="Valid contexts for environmental measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapEnvironmentalToSNOMED"/>
+      </reference>
+      <name value="Environmental Exposures to SNOMED CT Mapping"/>
+      <description value="Maps custom environmental exposure measurement codes to SNOMED CT codes where available. Enables interoperability between environmental monitoring devices (Apple Watch noise monitoring, UV sensors) and clinical systems."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1154,6 +1462,17 @@
       <name value="Environmental Observation Profile"/>
       <description value="Base profile for environmental measurements from iOS Health App"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/TobaccoUseExSmokerExample"/>
+      </reference>
+      <name value="Ex-Smoker with Pack-Years History"/>
+      <description value="Example of a former smoker with documented pack-years and quit date"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1377,6 +1696,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapFHIRToOpenEHR"/>
+      </reference>
+      <name value="FHIR Resource to openEHR Archetype Mapping"/>
+      <description value="Maps FHIR R4 resources to custom openEHR archetypes for wearable lifestyle medicine data. Enables data flow from FHIR servers to openEHR CDRs."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -1410,6 +1740,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/heart-rate-variability-cs"/>
+      </reference>
+      <name value="Heart Rate Variability CodeSystem"/>
+      <description value="Custom codes for HRV metrics with LOINC mappings where available. SDNN maps to LOINC 80404-7, other metrics await LOINC assignment."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapHRVToLOINC"/>
+      </reference>
+      <name value="Heart Rate Variability to LOINC Mapping"/>
+      <description value="Maps custom HRV codes to LOINC codes where available, with migration path for future LOINC assignments. This is an operational ConceptMap that enables $translate operations, unlike FSH Mapping which is documentation-only."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/heart-rate-variability-vs"/>
+      </reference>
+      <name value="Heart Rate Variability ValueSet"/>
+      <description value="Complete set of HRV metrics combining LOINC codes where available and custom codes for gaps"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -1432,6 +1795,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CaffeineIntakeHighExample"/>
+      </reference>
+      <name value="High Caffeine Consumer"/>
+      <description value="Example of excessive caffeine intake requiring intervention"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/caffeine-intake-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AlcoholUseHighRiskExample"/>
+      </reference>
+      <name value="High-Risk Drinker"/>
+      <description value="Example of high-risk alcohol consumption with binge episodes"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alcohol-use-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/hscrp-observation"/>
+      </reference>
+      <name value="High-Sensitivity C-Reactive Protein (hs-CRP) Observation Profile"/>
+      <description value="Profile for high-sensitivity C-Reactive Protein measurements.&#xA;&#xA;LOINC: 30522-7 'C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method'&#xA;&#xA;Cardiovascular risk stratification (AHA/CDC guidelines):&#xA;- Low risk: &lt; 1.0 mg/L&#xA;- Average risk: 1.0-3.0 mg/L&#xA;- High risk: &gt; 3.0 mg/L&#xA;&#xA;Primary marker for subclinical inflammation and cardiovascular risk.&#xA;Strong inverse correlation with HRV in lifestyle medicine assessment."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1439,6 +1835,149 @@
       </reference>
       <name value="Homeostasis Index Extension"/>
       <description value="Composite measure of physiological balance and adaptation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/HRVInflammationCorrelationExample"/>
+      </reference>
+      <name value="HRV-Inflammation Correlation Example"/>
+      <description value="Example of HRV-Inflammation correlation assessment showing inverse relationship"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hrv-inflammation-correlation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/hrv-inflammation-correlation"/>
+      </reference>
+      <name value="HRV-Inflammation Correlation Observation Profile"/>
+      <description value="Profile to capture the correlation between Heart Rate Variability and inflammatory markers.&#xA;&#xA;This profile supports the RS1 systematic review finding:&#xA;'Inverse correlation between HRV (especially RMSSD) and inflammatory biomarkers (CRP, IL-6)'&#xA;&#xA;Key relationships documented in literature:&#xA;- RMSSD inversely correlates with CRP (r = -0.15 to -0.35)&#xA;- Higher vagal tone → Lower inflammation&#xA;- Mechanism: Cholinergic anti-inflammatory pathway (Tracey 2002)&#xA;&#xA;Use case: Track changes in HRV alongside inflammatory markers to assess&#xA;autonomic-immune axis in lifestyle medicine interventions."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/hrv-inflammation-trend-vs"/>
+      </reference>
+      <name value="HRV-Inflammation Trend ValueSet"/>
+      <description value="Trend direction for HRV-Inflammation correlation assessment.&#xA;Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.&#xA;&#xA;Source: HL7 mCODE Implementation Guide v4.0.0&#xA;  - https://build.fhir.org/ig/HL7/fhir-mCODE-ig/ValueSet-mcode-condition-status-trend-vs.html&#xA;&#xA;SNOMED-CT codes validated via mCODE IG (HL7 International / Clinical Interoperability Council)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/hscrp-risk-cs"/>
+      </reference>
+      <name value="hs-CRP Cardiovascular Risk CodeSystem"/>
+      <description value="Cardiovascular risk classification based on high-sensitivity C-Reactive Protein levels.&#xA;&#xA;Based on AHA/CDC Scientific Statement on Markers of Inflammation and Cardiovascular Disease:&#xA;- Pearson TA, et al. Circulation. 2003;107(3):499-511. doi:10.1161/01.CIR.0000052939.59093.45&#xA;- Ridker PM, et al. Circulation. 2003;107(3):363-369. doi:10.1161/01.CIR.0000053730.47739.3C&#xA;&#xA;Risk stratification thresholds:&#xA;- Low risk: hs-CRP &lt; 1.0 mg/L&#xA;- Average risk: hs-CRP 1.0-3.0 mg/L&#xA;- High risk: hs-CRP &gt; 3.0 mg/L&#xA;&#xA;Note: No SNOMED-CT codes exist for this specific clinical classification as of 2025.&#xA;This CodeSystem follows thesis semantic hierarchy Level 3: local codes with documented source&#xA;and migration pathway when standard terminology becomes available.&#xA;&#xA;Future migration: Monitor SNOMED-CT International Edition for cardiovascular risk finding codes."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/HsCRPExample-CardiovascularRisk"/>
+      </reference>
+      <name value="hs-CRP Example - Cardiovascular Risk Assessment"/>
+      <description value="High-sensitivity CRP for cardiovascular risk stratification"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hscrp-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/hscrp-interpretation-vs"/>
+      </reference>
+      <name value="hs-CRP Interpretation ValueSet"/>
+      <description value="Cardiovascular risk interpretation for hs-CRP results (AHA/CDC guidelines)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/IL6Example-Elevated"/>
+      </reference>
+      <name value="IL-6 Example - Elevated"/>
+      <description value="Example of elevated Interleukin-6"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/il6-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inflammatory-marker-observation"/>
+      </reference>
+      <name value="Inflammatory Marker Observation Profile"/>
+      <description value="Base profile for inflammatory biomarker measurements used in lifestyle medicine.&#xA;Supports integration with HRV data to assess autonomic-immune interactions.&#xA;&#xA;Key inflammatory markers include:&#xA;- C-Reactive Protein (CRP) - acute phase reactant&#xA;- High-sensitivity CRP (hs-CRP) - cardiovascular risk marker&#xA;- Interleukin-6 (IL-6) - pro-inflammatory cytokine&#xA;- Tumor Necrosis Factor Alpha (TNF-α) - inflammatory mediator&#xA;&#xA;Clinical context: Higher HRV (especially RMSSD) correlates with lower inflammation,&#xA;reflecting the cholinergic anti-inflammatory pathway (Tracey 2002)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/inflammatory-marker-vs"/>
+      </reference>
+      <name value="Inflammatory Marker ValueSet"/>
+      <description value="LOINC codes for inflammatory biomarkers used in lifestyle medicine"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/InflammatoryPanelExample"/>
+      </reference>
+      <name value="Inflammatory Panel Example"/>
+      <description value="Comprehensive inflammatory marker panel for lifestyle medicine assessment"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/inflammatory-marker-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/il6-observation"/>
+      </reference>
+      <name value="Interleukin-6 (IL-6) Observation Profile"/>
+      <description value="Profile for Interleukin-6 measurements.&#xA;&#xA;LOINC: 26881-3 'Interleukin 6 [Mass/volume] in Serum or Plasma'&#xA;&#xA;Clinical interpretation:&#xA;- Normal: &lt; 7 pg/mL (varies by assay)&#xA;- Elevated: Associated with chronic inflammation, aging, obesity&#xA;&#xA;IL-6 is a key mediator of the acute phase response and stimulates CRP production.&#xA;Vagal nerve stimulation reduces IL-6 (cholinergic anti-inflammatory pathway)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ios-physical-activity-cs"/>
+      </reference>
+      <name value="iOS Physical Activity CodeSystem"/>
+      <description value="CodeSystem for physical activity types from Apple HealthKit HKWorkoutActivityType. Enables interoperability between iOS Health App data and standard terminologies (SNOMED CT, LOINC)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapPhysicalActivityToSNOMED"/>
+      </reference>
+      <name value="iOS Physical Activity to SNOMED CT Mapping"/>
+      <description value="Maps iOS/Apple HealthKit physical activity codes (HKWorkoutActivityType) to SNOMED CT codes. This is an operational ConceptMap that enables $translate operations for semantic interoperability between wearable device data and clinical systems."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1506,6 +2045,17 @@
       <name value="Lifestyle Vital Signs Example"/>
       <description value="Lifestyle vital signs observation example"/>
       <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/lifestyle-vital-signs"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/loinc-observations-vs"/>
+      </reference>
+      <name value="LOINC Observation Codes for Lifestyle Medicine"/>
+      <description value="LOINC codes relevant for lifestyle medicine observations including HRV, vital signs, anthropometrics, and physical activity metrics. Used as target ValueSet in ConceptMaps for semantic interoperability."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1762,6 +2312,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Basic"/>
+      </extension>
+      <reference>
+        <reference value="Basic/MindfulnessImportMappingExample"/>
+      </reference>
+      <name value="Mindfulness Import Mapping Configuration Example"/>
+      <description value="Example of a Basic resource containing mindfulness import mapping configuration"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1802,6 +2363,17 @@
       </reference>
       <name value="Mindfulness Notification Enabled"/>
       <description value="Whether notifications are enabled for mindfulness sessions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapMindfulnessToSNOMED"/>
+      </reference>
+      <name value="Mindfulness Observations to SNOMED CT Mapping"/>
+      <description value="Maps custom mindfulness observation codes to SNOMED CT codes where available. Enables interoperability between mindfulness apps (Headspace, Calm, Apple Mindfulness Minutes) and clinical systems."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2092,6 +2664,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapMobilityToSNOMED"/>
+      </reference>
+      <name value="Mobility Assessments to SNOMED CT Mapping"/>
+      <description value="Maps custom mobility and gait assessment codes to SNOMED CT codes where available. Enables interoperability between mobility monitoring devices (Apple Watch walking steadiness, gait analysis tools) and clinical systems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -2158,6 +2741,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CaffeineIntakeModerateExample"/>
+      </reference>
+      <name value="Moderate Caffeine Consumer"/>
+      <description value="Example of moderate daily caffeine intake from multiple sources"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/caffeine-intake-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AlcoholUseModerateExample"/>
+      </reference>
+      <name value="Moderate Social Drinker"/>
+      <description value="Example of moderate alcohol consumption with AUDIT-C score"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alcohol-use-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -2205,6 +2810,17 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
+        <reference value="Observation/TobaccoUseNeverSmokerExample"/>
+      </reference>
+      <name value="Never Smoker"/>
+      <description value="Example of a patient who has never smoked tobacco"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
         <reference value="Observation/NoiseExposureExample"/>
       </reference>
       <name value="Noise Exposure Measurement Example"/>
@@ -2221,6 +2837,17 @@
       <name value="Noise Exposure Observation Profile"/>
       <description value="Profile for noise exposure measurements from iOS Health App"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AlcoholUseNonDrinkerExample"/>
+      </reference>
+      <name value="Non-Drinker"/>
+      <description value="Example of a patient who does not consume alcohol"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alcohol-use-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2275,6 +2902,39 @@
       </reference>
       <name value="Nutrition Intake Observation Profile"/>
       <description value="Profile for nutrition intake data from iOS Health App and user input"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapNutritionToSNOMED"/>
+      </reference>
+      <name value="Nutrition Measurements to SNOMED CT Mapping"/>
+      <description value="Maps custom nutrition measurement codes to SNOMED CT codes where available. Enables interoperability between consumer nutrition tracking apps (iOS Health App, MyFitnessPal, etc.) and clinical systems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapOpenEHRToFHIR"/>
+      </reference>
+      <name value="openEHR Archetype to FHIR Resource Mapping"/>
+      <description value="Maps openEHR archetype elements for wearable lifestyle medicine data to FHIR resource elements. Enables semantic interoperability via NUM-FHIR-Bridge or similar transformation layers."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapOpenEHRToOMOP"/>
+      </reference>
+      <name value="openEHR Archetype to OMOP CDM Mapping"/>
+      <description value="Maps openEHR archetype elements for wearable lifestyle medicine data to OMOP Common Data Model for federated research analytics via OHDSI network."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2345,6 +3005,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pghd-provenance"/>
+      </reference>
+      <name value="Patient-Generated Health Data Provenance"/>
+      <description value="Provenance profile for tracking the origin and transformation history of PGHD from wearable devices"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
       </extension>
       <reference>
@@ -2364,6 +3035,17 @@
       <name value="PatientMindfulness"/>
       <description value="Example patient for mindfulness-related scenarios and consent examples"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/pghd-provenance-activity-vs"/>
+      </reference>
+      <name value="PGHD Provenance Activity ValueSet"/>
+      <description value="Activities related to PGHD data capture and transformation"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2477,6 +3159,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/recreational-substance-type-vs"/>
+      </reference>
+      <name value="Recreational Substance Type ValueSet"/>
+      <description value="Types of recreational substances (where legal and clinically appropriate)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/recreational-substance-use-observation"/>
+      </reference>
+      <name value="Recreational Substance Use Observation Profile"/>
+      <description value="Profile for recording use of recreational substances relevant to lifestyle medicine&#xA;assessment. Includes cannabis (where legal), and other substances that may affect&#xA;health outcomes and lifestyle interventions.&#xA;&#xA;Note: This is for health assessment purposes only, in contexts where legal and&#xA;clinically appropriate. Privacy and confidentiality considerations are paramount."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/recreational-substance-use-status-vs"/>
+      </reference>
+      <name value="Recreational Substance Use Status ValueSet"/>
+      <description value="Status categories for recreational substance use"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -2554,6 +3269,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapReproductiveToLOINC"/>
+      </reference>
+      <name value="Reproductive Health to LOINC Mapping"/>
+      <description value="Maps custom reproductive health observation codes to LOINC codes where available. Enables interoperability between fertility tracking apps (Apple Health, Clue, Flo) and clinical systems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
@@ -2583,6 +3309,17 @@
       </reference>
       <name value="Risk Level Value Set"/>
       <description value="Value set for general risk levels"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapSleepToLOINC"/>
+      </reference>
+      <name value="Sleep Measurements to LOINC Mapping"/>
+      <description value="Maps custom sleep measurement codes to LOINC codes where available, with migration path for future LOINC assignments. Enables interoperability between consumer sleep tracking devices (Apple HealthKit, Fitbit, Oura, etc.) and clinical systems."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2716,6 +3453,17 @@
       <name value="Social Context Value Set"/>
       <description value="Value set for social interaction contexts"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/SocialHistoryObservationExample"/>
+      </reference>
+      <name value="Social History Observation Example"/>
+      <description value="Social history observation example"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-history-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2994,6 +3742,138 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/substance-use-frequency-cs"/>
+      </reference>
+      <name value="Substance Use Frequency CodeSystem"/>
+      <description value="Frequency categories for substance use reporting"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/substance-use-frequency-vs"/>
+      </reference>
+      <name value="Substance Use Frequency ValueSet"/>
+      <description value="Frequency categories for substance use"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/substance-use-motivation"/>
+      </reference>
+      <name value="Substance Use Motivation"/>
+      <description value="Patient's motivation level for changing substance use behavior (readiness to change)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/substance-use-motivation-cs"/>
+      </reference>
+      <name value="Substance Use Motivation CodeSystem"/>
+      <description value="Motivation stages based on Transtheoretical Model (Prochaska)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/substance-use-motivation-vs"/>
+      </reference>
+      <name value="Substance Use Motivation ValueSet"/>
+      <description value="Stages of change / motivation levels based on Transtheoretical Model"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/substance-use-risk-level-cs"/>
+      </reference>
+      <name value="Substance Use Risk Level CodeSystem"/>
+      <description value="Risk levels for substance use assessment in lifestyle medicine"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/substance-use-risk-level-vs"/>
+      </reference>
+      <name value="Substance Use Risk Level ValueSet"/>
+      <description value="Overall risk assessment for substance use patterns"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/SubstanceUseSummaryExample"/>
+      </reference>
+      <name value="Substance Use Summary"/>
+      <description value="Comprehensive summary of patient's substance use patterns for lifestyle medicine assessment"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-summary"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/substance-use-summary"/>
+      </reference>
+      <name value="Substance Use Summary Profile"/>
+      <description value="Aggregated profile summarizing all substance use relevant to lifestyle medicine&#xA;interventions. Provides a holistic view of the 6th pillar: avoidance of risky substances.&#xA;&#xA;Components include tobacco, alcohol, caffeine, and recreational substances&#xA;with their current status and risk assessment."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/substance-use-trigger"/>
+      </reference>
+      <name value="Substance Use Trigger"/>
+      <description value="Identified triggers that prompt substance use behavior"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/substance-use-trigger-cs"/>
+      </reference>
+      <name value="Substance Use Trigger CodeSystem"/>
+      <description value="Common triggers for substance use behavior"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/substance-use-trigger-vs"/>
+      </reference>
+      <name value="Substance Use Trigger ValueSet"/>
+      <description value="Common triggers for substance use"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -3096,6 +3976,61 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
+        <reference value="Observation/TNFAlphaExample-Normal"/>
+      </reference>
+      <name value="TNF-α Example - Normal"/>
+      <description value="Example of normal Tumor Necrosis Factor Alpha"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tnf-alpha-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/tobacco-product-type-vs"/>
+      </reference>
+      <name value="Tobacco Product Type ValueSet"/>
+      <description value="Types of tobacco products"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/tobacco-use-observation"/>
+      </reference>
+      <name value="Tobacco Use Observation Profile"/>
+      <description value="Profile for recording tobacco use status and history from patient-reported data&#xA;and digital health applications. Supports the 6th pillar of lifestyle medicine:&#xA;avoidance of risky substances.&#xA;&#xA;Aligned with:&#xA;- US Core Smoking Status (LOINC 72166-2)&#xA;- IPS Tobacco Use section&#xA;- ACLM Lifestyle Medicine guidelines"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/tobacco-use-status-vs"/>
+      </reference>
+      <name value="Tobacco Use Status ValueSet"/>
+      <description value="Status categories for tobacco use aligned with US Core and IPS"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/tnf-alpha-observation"/>
+      </reference>
+      <name value="Tumor Necrosis Factor Alpha (TNF-α) Observation Profile"/>
+      <description value="Profile for Tumor Necrosis Factor Alpha measurements.&#xA;&#xA;LOINC: 3074-2 'Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma'&#xA;&#xA;Clinical interpretation:&#xA;- Normal: &lt; 8.1 pg/mL (varies by assay)&#xA;- Elevated: Chronic inflammation, autoimmune conditions, metabolic syndrome&#xA;&#xA;TNF-α is suppressed by acetylcholine via the inflammatory reflex.&#xA;Higher vagal tone (HRV) associated with lower TNF-α levels."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
         <reference value="Observation/UVExposureExample"/>
       </reference>
       <name value="UV Exposure Measurement Example"/>
@@ -3111,6 +4046,28 @@
       </reference>
       <name value="UV Exposure Observation Profile"/>
       <description value="Profile for UV exposure measurements from iOS Health App"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapVendorToLOINC"/>
+      </reference>
+      <name value="Vendor Proprietary Codes to LOINC Mapping"/>
+      <description value="Maps wearable device vendor codes to equivalent LOINC codes for semantic interoperability. Addresses critical gap: none of the 11 major vendors use LOINC codes natively. Enables $translate operations for vendor data normalization."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/vendor-codes-vs"/>
+      </reference>
+      <name value="Vendor Proprietary Wearable Device Codes"/>
+      <description value="Comprehensive set of proprietary codes from major wearable device vendors (Apple HealthKit, Fitbit, Garmin, Polar, Oura Ring). Used as source ValueSet in ConceptMap for translating vendor-specific codes to LOINC standard terminology. Addresses critical interoperability gap: 0% vendor LOINC adoption documented across 11 major vendors."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3166,6 +4123,39 @@
       </reference>
       <name value="Water Intake Observation Profile"/>
       <description value="Profile for water intake measurements"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/wearable-sensor-type-cs"/>
+      </reference>
+      <name value="Wearable Sensor Type CodeSystem"/>
+      <description value="Sensor types found in consumer wearable devices"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/wearable-sensor-type-vs"/>
+      </reference>
+      <name value="Wearable Sensor Type ValueSet"/>
+      <description value="Types of sensors in consumer wearable devices"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapVendorToOpenEHR"/>
+      </reference>
+      <name value="Wearable Vendor API to openEHR Archetype Mapping"/>
+      <description value="Maps proprietary wearable vendor API data types (Apple HealthKit, Fitbit, Oura, Garmin, Polar) to openEHR archetypes for standardized clinical data capture."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3253,10 +4243,26 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="design-decisions.html"/>
+        </extension>
+        <nameUrl value="design-decisions.html"/>
+        <title value="Design Decisions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="environmental.html"/>
         </extension>
         <nameUrl value="environmental.html"/>
         <title value="Environmental"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhirconnect-architecture.html"/>
+        </extension>
+        <nameUrl value="fhirconnect-architecture.html"/>
+        <title value="Fhirconnect Architecture"/>
         <generation value="markdown"/>
       </page>
       <page>

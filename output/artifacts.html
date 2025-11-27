@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"18"}
-    h3,h4,h5,h6{--heading-prefix:"18.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"20"}
+    h3,h4,h5,h6{--heading-prefix:"20.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -304,6 +304,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-alcohol-use-observation.html"
+                  title="StructureDefinition/alcohol-use-observation">Alcohol Use Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for recording alcohol consumption patterns from patient-reported data
+and lifestyle tracking applications. Supports monitoring alcohol intake relative
+to recommended guidelines (e.g., AUDIT-C screening, CDC guidelines).</p>
+
+<p>Clinical Context:</p>
+<ul>
+  <li>Low-risk drinking: ≤14 drinks/week (men), ≤7 drinks/week (women)</li>
+  <li>One standard drink: 14g pure alcohol</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-bmi-observation.html"
                   title="StructureDefinition/bmi-observation">BMI Measurement Profile</a>
             </td>
@@ -340,6 +357,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-crp-observation.html"
+                  title="StructureDefinition/crp-observation">C-Reactive Protein (CRP) Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for C-Reactive Protein measurements.</p>
+
+<p>LOINC: 1988-5 'C reactive protein [Mass/volume] in Serum or Plasma'</p>
+
+<p>Clinical interpretation:</p>
+<ul>
+  <li>Normal: &lt; 3.0 mg/L</li>
+  <li>Elevated: 3.0-10.0 mg/L (low-grade inflammation)</li>
+  <li>High: &gt; 10.0 mg/L (acute inflammation/infection)</li>
+</ul>
+
+<p>HRV correlation: Inverse relationship with RMSSD (Williams 2019).
+Higher vagal tone associated with lower CRP levels.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-caffeine-intake-observation.html"
+                  title="StructureDefinition/caffeine-intake-observation">Caffeine Intake Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for recording daily caffeine consumption. Relevant to lifestyle medicine
+as excessive caffeine can affect sleep quality, stress levels, and cardiovascular health.</p>
+
+<p>Guidelines:</p>
+<ul>
+  <li>FDA safe limit: ≤400mg/day for healthy adults</li>
+  <li>Sleep hygiene: No caffeine 6+ hours before bed</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-calorie-intake-observation.html"
                   title="StructureDefinition/calorie-intake-observation">Calorie Intake Observation Profile</a>
             </td>
@@ -367,6 +421,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-hrv-inflammation-correlation.html"
+                  title="StructureDefinition/hrv-inflammation-correlation">HRV-Inflammation Correlation Observation Profile</a>
+            </td>
+            <td>
+<p>Profile to capture the correlation between Heart Rate Variability and inflammatory markers.</p>
+
+<p>This profile supports the RS1 systematic review finding:
+'Inverse correlation between HRV (especially RMSSD) and inflammatory biomarkers (CRP, IL-6)'</p>
+
+<p>Key relationships documented in literature:</p>
+<ul>
+  <li>RMSSD inversely correlates with CRP (r = -0.15 to -0.35)</li>
+  <li>Higher vagal tone → Lower inflammation</li>
+  <li>Mechanism: Cholinergic anti-inflammatory pathway (Tracey 2002)</li>
+</ul>
+
+<p>Use case: Track changes in HRV alongside inflammatory markers to assess
+autonomic-immune axis in lifestyle medicine interventions.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-heart-rate-observation.html"
                   title="StructureDefinition/heart-rate-observation">Heart Rate Observation Profile</a>
             </td>
@@ -381,6 +457,68 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Profile for body height measurements</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-hscrp-observation.html"
+                  title="StructureDefinition/hscrp-observation">High-Sensitivity C-Reactive Protein (hs-CRP) Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for high-sensitivity C-Reactive Protein measurements.</p>
+
+<p>LOINC: 30522-7 'C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method'</p>
+
+<p>Cardiovascular risk stratification (AHA/CDC guidelines):</p>
+<ul>
+  <li>Low risk: &lt; 1.0 mg/L</li>
+  <li>Average risk: 1.0-3.0 mg/L</li>
+  <li>High risk: &gt; 3.0 mg/L</li>
+</ul>
+
+<p>Primary marker for subclinical inflammation and cardiovascular risk.
+Strong inverse correlation with HRV in lifestyle medicine assessment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inflammatory-marker-observation.html"
+                  title="StructureDefinition/inflammatory-marker-observation">Inflammatory Marker Observation Profile</a>
+            </td>
+            <td>
+<p>Base profile for inflammatory biomarker measurements used in lifestyle medicine.
+Supports integration with HRV data to assess autonomic-immune interactions.</p>
+
+<p>Key inflammatory markers include:</p>
+<ul>
+  <li>C-Reactive Protein (CRP) - acute phase reactant</li>
+  <li>High-sensitivity CRP (hs-CRP) - cardiovascular risk marker</li>
+  <li>Interleukin-6 (IL-6) - pro-inflammatory cytokine</li>
+  <li>Tumor Necrosis Factor Alpha (TNF-α) - inflammatory mediator</li>
+</ul>
+
+<p>Clinical context: Higher HRV (especially RMSSD) correlates with lower inflammation,
+reflecting the cholinergic anti-inflammatory pathway (Tracey 2002).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-il6-observation.html"
+                  title="StructureDefinition/il6-observation">Interleukin-6 (IL-6) Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for Interleukin-6 measurements.</p>
+
+<p>LOINC: 26881-3 'Interleukin 6 [Mass/volume] in Serum or Plasma'</p>
+
+<p>Clinical interpretation:</p>
+<ul>
+  <li>Normal: &lt; 7 pg/mL (varies by assay)</li>
+  <li>Elevated: Associated with chronic inflammation, aging, obesity</li>
+</ul>
+
+<p>IL-6 is a key mediator of the acute phase response and stimulates CRP production.
+Vagal nerve stimulation reduces IL-6 (cholinergic anti-inflammatory pathway).</p>
 </td>
          </tr>
          <tr>
@@ -529,11 +667,34 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-pghd-provenance.html"
+                  title="StructureDefinition/pghd-provenance">Patient-Generated Health Data Provenance</a>
+            </td>
+            <td>
+<p>Provenance profile for tracking the origin and transformation history of PGHD from wearable devices</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-physical-activity-observation.html"
                   title="StructureDefinition/physical-activity-observation">Physical Activity Observation Profile</a>
             </td>
             <td>
 <p>Profile for recording physical activity data from iOS Health App</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-recreational-substance-use-observation.html"
+                  title="StructureDefinition/recreational-substance-use-observation">Recreational Substance Use Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for recording use of recreational substances relevant to lifestyle medicine
+assessment. Includes cannabis (where legal), and other substances that may affect
+health outcomes and lifestyle interventions.</p>
+
+<p>Note: This is for health assessment purposes only, in contexts where legal and
+clinically appropriate. Privacy and confidentiality considerations are paramount.</p>
 </td>
          </tr>
          <tr>
@@ -574,11 +735,62 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-substance-use-summary.html"
+                  title="StructureDefinition/substance-use-summary">Substance Use Summary Profile</a>
+            </td>
+            <td>
+<p>Aggregated profile summarizing all substance use relevant to lifestyle medicine
+interventions. Provides a holistic view of the 6th pillar: avoidance of risky substances.</p>
+
+<p>Components include tobacco, alcohol, caffeine, and recreational substances
+with their current status and risk assessment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-symptom-questionnaire.html"
                   title="StructureDefinition/symptom-questionnaire">Symptom Assessment Questionnaire</a>
             </td>
             <td>
 <p>Questionnaire template for symptom assessments</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-tobacco-use-observation.html"
+                  title="StructureDefinition/tobacco-use-observation">Tobacco Use Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for recording tobacco use status and history from patient-reported data
+and digital health applications. Supports the 6th pillar of lifestyle medicine:
+avoidance of risky substances.</p>
+
+<p>Aligned with:</p>
+<ul>
+  <li>US Core Smoking Status (LOINC 72166-2)</li>
+  <li>IPS Tobacco Use section</li>
+  <li>ACLM Lifestyle Medicine guidelines</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-tnf-alpha-observation.html"
+                  title="StructureDefinition/tnf-alpha-observation">Tumor Necrosis Factor Alpha (TNF-α) Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for Tumor Necrosis Factor Alpha measurements.</p>
+
+<p>LOINC: 3074-2 'Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma'</p>
+
+<p>Clinical interpretation:</p>
+<ul>
+  <li>Normal: &lt; 8.1 pg/mL (varies by assay)</li>
+  <li>Elevated: Chronic inflammation, autoimmune conditions, metabolic syndrome</li>
+</ul>
+
+<p>TNF-α is suppressed by acetylcholine via the inflammatory reflex.
+Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
 </td>
          </tr>
          <tr>
@@ -699,6 +911,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-cessation-support.html"
+                  title="StructureDefinition/cessation-support">Cessation Support</a>
+            </td>
+            <td>
+<p>Support methods being used or considered for substance cessation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-circadian-phase.html"
                   title="StructureDefinition/circadian-phase">Circadian Phase Extension</a>
             </td>
@@ -713,6 +934,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Specifies data localization requirements per jurisdiction</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-device-capture-metadata.html"
+                  title="StructureDefinition/device-capture-metadata">Device Capture Metadata</a>
+            </td>
+            <td>
+<p>Additional metadata about how data was captured by the device</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-drinking-context.html"
+                  title="StructureDefinition/drinking-context">Drinking Context</a>
+            </td>
+            <td>
+<p>Context or setting in which alcohol consumption typically occurs</p>
 </td>
          </tr>
          <tr>
@@ -985,6 +1224,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Extension for recording identified stress triggers</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-substance-use-motivation.html"
+                  title="StructureDefinition/substance-use-motivation">Substance Use Motivation</a>
+            </td>
+            <td>
+<p>Patient's motivation level for changing substance use behavior (readiness to change)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-substance-use-trigger.html"
+                  title="StructureDefinition/substance-use-trigger">Substance Use Trigger</a>
+            </td>
+            <td>
+<p>Identified triggers that prompt substance use behavior</p>
+</td>
+         </tr>
       </tbody>
    </table>
    <a name="7"> </a>
@@ -1000,6 +1257,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Context codes for advanced vital sign measurements</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-alcohol-beverage-type-vs.html"
+                  title="ValueSet/alcohol-beverage-type-vs">Alcohol Beverage Type ValueSet</a>
+            </td>
+            <td>
+<p>Types of alcoholic beverages</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-alcohol-drinking-frequency-vs.html"
+                  title="ValueSet/alcohol-drinking-frequency-vs">Alcohol Drinking Frequency ValueSet</a>
+            </td>
+            <td>
+<p>AUDIT-style frequency categories for alcohol consumption</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-alcohol-use-status-vs.html"
+                  title="ValueSet/alcohol-use-status-vs">Alcohol Use Status ValueSet</a>
+            </td>
+            <td>
+<p>Status categories for alcohol consumption</p>
 </td>
          </tr>
          <tr>
@@ -1046,6 +1330,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-caffeine-intake-level-vs.html"
+                  title="ValueSet/caffeine-intake-level-vs">Caffeine Intake Level ValueSet</a>
+            </td>
+            <td>
+<p>Categorical assessment of daily caffeine intake</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-caffeine-source-vs.html"
+                  title="ValueSet/caffeine-source-vs">Caffeine Source ValueSet</a>
+            </td>
+            <td>
+<p>Common sources of dietary caffeine</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-cervical-mucus-vs.html"
                   title="ValueSet/cervical-mucus-vs">Cervical Mucus Value Set</a>
             </td>
@@ -1055,11 +1357,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-cessation-support-method-vs.html"
+                  title="ValueSet/cessation-support-method-vs">Cessation Support Method ValueSet</a>
+            </td>
+            <td>
+<p>Methods of support for substance use cessation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-cessation-support-status-vs.html"
+                  title="ValueSet/cessation-support-status-vs">Cessation Support Status ValueSet</a>
+            </td>
+            <td>
+<p>Status of cessation support engagement</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-circadian-phase-vs.html"
                   title="ValueSet/circadian-phase-vs">Circadian Phase Value Set</a>
             </td>
             <td>
 <p>Value set for circadian rhythm phases</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-data-capture-method-vs.html"
+                  title="ValueSet/data-capture-method-vs">Data Capture Method ValueSet</a>
+            </td>
+            <td>
+<p>Methods by which PGHD data was captured</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-drinking-context-vs.html"
+                  title="ValueSet/drinking-context-vs">Drinking Context ValueSet</a>
+            </td>
+            <td>
+<p>Contexts where alcohol consumption typically occurs</p>
 </td>
          </tr>
          <tr>
@@ -1081,8 +1419,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-environmental-context.html"
-                  title="ValueSet/environmental-context">Environmental Context Value Set</a>
+               <a href="ValueSet-environmental-context-vs.html"
+                  title="ValueSet/environmental-context-vs">Environmental Context Value Set</a>
             </td>
             <td>
 <p>Valid contexts for environmental measurements</p>
@@ -1122,6 +1460,50 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Value set for fertility status</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-hrv-inflammation-trend-vs.html"
+                  title="ValueSet/hrv-inflammation-trend-vs">HRV-Inflammation Trend ValueSet</a>
+            </td>
+            <td>
+<p>Trend direction for HRV-Inflammation correlation assessment.
+Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
+
+<p>Source: HL7 mCODE Implementation Guide v4.0.0</p>
+<ul>
+  <li>https://build.fhir.org/ig/HL7/fhir-mCODE-ig/ValueSet-mcode-condition-status-trend-vs.html</li>
+</ul>
+
+<p>SNOMED-CT codes validated via mCODE IG (HL7 International / Clinical Interoperability Council).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-heart-rate-variability-vs.html"
+                  title="ValueSet/heart-rate-variability-vs">Heart Rate Variability ValueSet</a>
+            </td>
+            <td>
+<p>Complete set of HRV metrics combining LOINC codes where available and custom codes for gaps</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-inflammatory-marker-vs.html"
+                  title="ValueSet/inflammatory-marker-vs">Inflammatory Marker ValueSet</a>
+            </td>
+            <td>
+<p>LOINC codes for inflammatory biomarkers used in lifestyle medicine</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-loinc-observations-vs.html"
+                  title="ValueSet/loinc-observations-vs">LOINC Observation Codes for Lifestyle Medicine</a>
+            </td>
+            <td>
+<p>LOINC codes relevant for lifestyle medicine observations including HRV, vital signs, anthropometrics, and physical activity metrics. Used as target ValueSet in ConceptMaps for semantic interoperability.</p>
 </td>
          </tr>
          <tr>
@@ -1268,6 +1650,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-pghd-provenance-activity-vs.html"
+                  title="ValueSet/pghd-provenance-activity-vs">PGHD Provenance Activity ValueSet</a>
+            </td>
+            <td>
+<p>Activities related to PGHD data capture and transformation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-physical-activity-type-vs.html"
                   title="ValueSet/physical-activity-type-vs">Physical Activity Types Value Set</a>
             </td>
@@ -1291,6 +1682,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Value set para identificadores de practitioners</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-recreational-substance-type-vs.html"
+                  title="ValueSet/recreational-substance-type-vs">Recreational Substance Type ValueSet</a>
+            </td>
+            <td>
+<p>Types of recreational substances (where legal and clinically appropriate)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-recreational-substance-use-status-vs.html"
+                  title="ValueSet/recreational-substance-use-status-vs">Recreational Substance Use Status ValueSet</a>
+            </td>
+            <td>
+<p>Status categories for recreational substance use</p>
 </td>
          </tr>
          <tr>
@@ -1436,6 +1845,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-substance-use-frequency-vs.html"
+                  title="ValueSet/substance-use-frequency-vs">Substance Use Frequency ValueSet</a>
+            </td>
+            <td>
+<p>Frequency categories for substance use</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-substance-use-motivation-vs.html"
+                  title="ValueSet/substance-use-motivation-vs">Substance Use Motivation ValueSet</a>
+            </td>
+            <td>
+<p>Stages of change / motivation levels based on Transtheoretical Model</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-substance-use-risk-level-vs.html"
+                  title="ValueSet/substance-use-risk-level-vs">Substance Use Risk Level ValueSet</a>
+            </td>
+            <td>
+<p>Overall risk assessment for substance use patterns</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-substance-use-trigger-vs.html"
+                  title="ValueSet/substance-use-trigger-vs">Substance Use Trigger ValueSet</a>
+            </td>
+            <td>
+<p>Common triggers for substance use</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-symptom-frequency-vs.html"
                   title="ValueSet/symptom-frequency-vs">Symptom Frequency Value Set</a>
             </td>
@@ -1469,6 +1914,50 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Times of day for symptom occurrence</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-tobacco-product-type-vs.html"
+                  title="ValueSet/tobacco-product-type-vs">Tobacco Product Type ValueSet</a>
+            </td>
+            <td>
+<p>Types of tobacco products</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-tobacco-use-status-vs.html"
+                  title="ValueSet/tobacco-use-status-vs">Tobacco Use Status ValueSet</a>
+            </td>
+            <td>
+<p>Status categories for tobacco use aligned with US Core and IPS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vendor-codes-vs.html" title="ValueSet/vendor-codes-vs">Vendor Proprietary Wearable Device Codes</a>
+            </td>
+            <td>
+<p>Comprehensive set of proprietary codes from major wearable device vendors (Apple HealthKit, Fitbit, Garmin, Polar, Oura Ring). Used as source ValueSet in ConceptMap for translating vendor-specific codes to LOINC standard terminology. Addresses critical interoperability gap: 0% vendor LOINC adoption documented across 11 major vendors.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-wearable-sensor-type-vs.html"
+                  title="ValueSet/wearable-sensor-type-vs">Wearable Sensor Type ValueSet</a>
+            </td>
+            <td>
+<p>Types of sensors in consumer wearable devices</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-hscrp-interpretation-vs.html"
+                  title="ValueSet/hscrp-interpretation-vs">hs-CRP Interpretation ValueSet</a>
+            </td>
+            <td>
+<p>Cardiovascular risk interpretation for hs-CRP results (AHA/CDC guidelines)</p>
+</td>
+         </tr>
       </tbody>
    </table>
    <a name="8"> </a>
@@ -1484,6 +1973,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Codes for advanced vital signs measurement context</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-alcohol-beverage-type-cs.html"
+                  title="CodeSystem/alcohol-beverage-type-cs">Alcohol Beverage Type CodeSystem</a>
+            </td>
+            <td>
+<p>Common alcoholic beverage types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-alcohol-drinking-frequency-cs.html"
+                  title="CodeSystem/alcohol-drinking-frequency-cs">Alcohol Drinking Frequency CodeSystem</a>
+            </td>
+            <td>
+<p>AUDIT-C style frequency categories</p>
 </td>
          </tr>
          <tr>
@@ -1521,6 +2028,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-caffeine-intake-level-cs.html"
+                  title="CodeSystem/caffeine-intake-level-cs">Caffeine Intake Level CodeSystem</a>
+            </td>
+            <td>
+<p>Risk levels for caffeine intake</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-caffeine-source-cs.html"
+                  title="CodeSystem/caffeine-source-cs">Caffeine Source CodeSystem</a>
+            </td>
+            <td>
+<p>Sources of caffeine in diet</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-cervical-mucus-cs.html"
                   title="CodeSystem/cervical-mucus-cs">Cervical Mucus Code System</a>
             </td>
@@ -1530,11 +2055,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-cessation-support-method-cs.html"
+                  title="CodeSystem/cessation-support-method-cs">Cessation Support Method CodeSystem</a>
+            </td>
+            <td>
+<p>Methods used to support cessation of substance use</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-cessation-support-status-cs.html"
+                  title="CodeSystem/cessation-support-status-cs">Cessation Support Status CodeSystem</a>
+            </td>
+            <td>
+<p>Status of cessation support</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-circadian-phase-cs.html"
                   title="CodeSystem/circadian-phase-cs">Circadian Phase Code System</a>
             </td>
             <td>
 <p>Code system for circadian rhythm phases</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-data-capture-method-cs.html"
+                  title="CodeSystem/data-capture-method-cs">Data Capture Method CodeSystem</a>
+            </td>
+            <td>
+<p>Methods for capturing patient-generated health data</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-drinking-context-cs.html"
+                  title="CodeSystem/drinking-context-cs">Drinking Context CodeSystem</a>
+            </td>
+            <td>
+<p>Settings and contexts for alcohol consumption</p>
 </td>
          </tr>
          <tr>
@@ -1580,6 +2141,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Code system for fertility status indicators</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-heart-rate-variability-cs.html"
+                  title="CodeSystem/heart-rate-variability-cs">Heart Rate Variability CodeSystem</a>
+            </td>
+            <td>
+<p>Custom codes for HRV metrics with LOINC mappings where available. SDNN maps to LOINC 80404-7, other metrics await LOINC assignment.</p>
 </td>
          </tr>
          <tr>
@@ -1870,6 +2440,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-substance-use-frequency-cs.html"
+                  title="CodeSystem/substance-use-frequency-cs">Substance Use Frequency CodeSystem</a>
+            </td>
+            <td>
+<p>Frequency categories for substance use reporting</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-substance-use-motivation-cs.html"
+                  title="CodeSystem/substance-use-motivation-cs">Substance Use Motivation CodeSystem</a>
+            </td>
+            <td>
+<p>Motivation stages based on Transtheoretical Model (Prochaska)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-substance-use-risk-level-cs.html"
+                  title="CodeSystem/substance-use-risk-level-cs">Substance Use Risk Level CodeSystem</a>
+            </td>
+            <td>
+<p>Risk levels for substance use assessment in lifestyle medicine</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-substance-use-trigger-cs.html"
+                  title="CodeSystem/substance-use-trigger-cs">Substance Use Trigger CodeSystem</a>
+            </td>
+            <td>
+<p>Common triggers for substance use behavior</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-symptom-frequency-cs.html"
                   title="CodeSystem/symptom-frequency-cs">Symptom Frequency Code System</a>
             </td>
@@ -1895,6 +2501,51 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Severity levels for symptoms</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-wearable-sensor-type-cs.html"
+                  title="CodeSystem/wearable-sensor-type-cs">Wearable Sensor Type CodeSystem</a>
+            </td>
+            <td>
+<p>Sensor types found in consumer wearable devices</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-hscrp-risk-cs.html" title="CodeSystem/hscrp-risk-cs">hs-CRP Cardiovascular Risk CodeSystem</a>
+            </td>
+            <td>
+<p>Cardiovascular risk classification based on high-sensitivity C-Reactive Protein levels.</p>
+
+<p>Based on AHA/CDC Scientific Statement on Markers of Inflammation and Cardiovascular Disease:</p>
+<ul>
+  <li>Pearson TA, et al. Circulation. 2003;107(3):499-511. doi:10.1161/01.CIR.0000052939.59093.45</li>
+  <li>Ridker PM, et al. Circulation. 2003;107(3):363-369. doi:10.1161/01.CIR.0000053730.47739.3C</li>
+</ul>
+
+<p>Risk stratification thresholds:</p>
+<ul>
+  <li>Low risk: hs-CRP &lt; 1.0 mg/L</li>
+  <li>Average risk: hs-CRP 1.0-3.0 mg/L</li>
+  <li>High risk: hs-CRP &gt; 3.0 mg/L</li>
+</ul>
+
+<p>Note: No SNOMED-CT codes exist for this specific clinical classification as of 2025.
+This CodeSystem follows thesis semantic hierarchy Level 3: local codes with documented source
+and migration pathway when standard terminology becomes available.</p>
+
+<p>Future migration: Monitor SNOMED-CT International Edition for cardiovascular risk finding codes.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ios-physical-activity-cs.html"
+                  title="CodeSystem/ios-physical-activity-cs">iOS Physical Activity CodeSystem</a>
+            </td>
+            <td>
+<p>CodeSystem for physical activity types from Apple HealthKit HKWorkoutActivityType. Enables interoperability between iOS Health App data and standard terminologies (SNOMED CT, LOINC).</p>
+</td>
+         </tr>
       </tbody>
    </table>
    <a name="9"> </a>
@@ -1905,11 +2556,137 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapBodyMetricsToLOINC.html"
+                  title="ConceptMap/ConceptMapBodyMetricsToLOINC">Body Metrics to LOINC Mapping</a>
+            </td>
+            <td>
+<p>Maps custom body composition measurement codes to LOINC codes where available. Enables interoperability between consumer body composition scales (Withings, Fitbit Aria, etc.) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapEnvironmentalToSNOMED.html"
+                  title="ConceptMap/ConceptMapEnvironmentalToSNOMED">Environmental Exposures to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps custom environmental exposure measurement codes to SNOMED CT codes where available. Enables interoperability between environmental monitoring devices (Apple Watch noise monitoring, UV sensors) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapFHIRToOpenEHR.html"
+                  title="ConceptMap/ConceptMapFHIRToOpenEHR">FHIR Resource to openEHR Archetype Mapping</a>
+            </td>
+            <td>
+<p>Maps FHIR R4 resources to custom openEHR archetypes for wearable lifestyle medicine data. Enables data flow from FHIR servers to openEHR CDRs.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapHRVToLOINC.html"
+                  title="ConceptMap/ConceptMapHRVToLOINC">Heart Rate Variability to LOINC Mapping</a>
+            </td>
+            <td>
+<p>Maps custom HRV codes to LOINC codes where available, with migration path for future LOINC assignments. This is an operational ConceptMap that enables $translate operations, unlike FSH Mapping which is documentation-only.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ConceptMap-MindfulnessDiagnosticMap.html"
                   title="ConceptMap/MindfulnessDiagnosticMap">Mindfulness Diagnostic Mappings</a>
             </td>
             <td>
 <p>Mapping of mindfulness outcomes to diagnostic codes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapMindfulnessToSNOMED.html"
+                  title="ConceptMap/ConceptMapMindfulnessToSNOMED">Mindfulness Observations to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps custom mindfulness observation codes to SNOMED CT codes where available. Enables interoperability between mindfulness apps (Headspace, Calm, Apple Mindfulness Minutes) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapMobilityToSNOMED.html"
+                  title="ConceptMap/ConceptMapMobilityToSNOMED">Mobility Assessments to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps custom mobility and gait assessment codes to SNOMED CT codes where available. Enables interoperability between mobility monitoring devices (Apple Watch walking steadiness, gait analysis tools) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapNutritionToSNOMED.html"
+                  title="ConceptMap/ConceptMapNutritionToSNOMED">Nutrition Measurements to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps custom nutrition measurement codes to SNOMED CT codes where available. Enables interoperability between consumer nutrition tracking apps (iOS Health App, MyFitnessPal, etc.) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapReproductiveToLOINC.html"
+                  title="ConceptMap/ConceptMapReproductiveToLOINC">Reproductive Health to LOINC Mapping</a>
+            </td>
+            <td>
+<p>Maps custom reproductive health observation codes to LOINC codes where available. Enables interoperability between fertility tracking apps (Apple Health, Clue, Flo) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapSleepToLOINC.html"
+                  title="ConceptMap/ConceptMapSleepToLOINC">Sleep Measurements to LOINC Mapping</a>
+            </td>
+            <td>
+<p>Maps custom sleep measurement codes to LOINC codes where available, with migration path for future LOINC assignments. Enables interoperability between consumer sleep tracking devices (Apple HealthKit, Fitbit, Oura, etc.) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapVendorToLOINC.html"
+                  title="ConceptMap/ConceptMapVendorToLOINC">Vendor Proprietary Codes to LOINC Mapping</a>
+            </td>
+            <td>
+<p>Maps wearable device vendor codes to equivalent LOINC codes for semantic interoperability. Addresses critical gap: none of the 11 major vendors use LOINC codes natively. Enables $translate operations for vendor data normalization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapVendorToOpenEHR.html"
+                  title="ConceptMap/ConceptMapVendorToOpenEHR">Wearable Vendor API to openEHR Archetype Mapping</a>
+            </td>
+            <td>
+<p>Maps proprietary wearable vendor API data types (Apple HealthKit, Fitbit, Oura, Garmin, Polar) to openEHR archetypes for standardized clinical data capture.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapPhysicalActivityToSNOMED.html"
+                  title="ConceptMap/ConceptMapPhysicalActivityToSNOMED">iOS Physical Activity to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps iOS/Apple HealthKit physical activity codes (HKWorkoutActivityType) to SNOMED CT codes. This is an operational ConceptMap that enables $translate operations for semantic interoperability between wearable device data and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapOpenEHRToFHIR.html"
+                  title="ConceptMap/ConceptMapOpenEHRToFHIR">openEHR Archetype to FHIR Resource Mapping</a>
+            </td>
+            <td>
+<p>Maps openEHR archetype elements for wearable lifestyle medicine data to FHIR resource elements. Enables semantic interoperability via NUM-FHIR-Bridge or similar transformation layers.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapOpenEHRToOMOP.html"
+                  title="ConceptMap/ConceptMapOpenEHRToOMOP">openEHR Archetype to OMOP CDM Mapping</a>
+            </td>
+            <td>
+<p>Maps openEHR archetype elements for wearable lifestyle medicine data to OMOP Common Data Model for federated research analytics via OHDSI network.</p>
 </td>
          </tr>
       </tbody>
@@ -1993,6 +2770,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-CRPExample-Elevated.html"
+                  title="Observation/CRPExample-Elevated">CRP Example - Elevated Value</a>
+            </td>
+            <td>
+<p>Example of elevated C-Reactive Protein indicating inflammation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CRPExample-Normal.html"
+                  title="Observation/CRPExample-Normal">CRP Example - Normal Value</a>
+            </td>
+            <td>
+<p>Example of normal C-Reactive Protein measurement</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-ChronicSymptomExample.html"
                   title="Observation/ChronicSymptomExample">ChronicSymptomExample</a>
             </td>
@@ -2016,6 +2811,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Complete mindfulness questionnaire response example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-TobaccoUseCurrentSmokerExample.html"
+                  title="Observation/TobaccoUseCurrentSmokerExample">Current Daily Smoker</a>
+            </td>
+            <td>
+<p>Example of a current smoker with motivation assessment</p>
 </td>
          </tr>
          <tr>
@@ -2118,6 +2922,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-TobaccoUseExSmokerExample.html"
+                  title="Observation/TobaccoUseExSmokerExample">Ex-Smoker with Pack-Years History</a>
+            </td>
+            <td>
+<p>Example of a former smoker with documented pack-years and quit date</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Basic-MindfulnessAuditExample.html"
                   title="Basic/MindfulnessAuditExample">Example Mindfulness Audit</a>
             </td>
@@ -2190,6 +3003,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-HRVInflammationCorrelationExample.html"
+                  title="Observation/HRVInflammationCorrelationExample">HRV-Inflammation Correlation Example</a>
+            </td>
+            <td>
+<p>Example of HRV-Inflammation correlation assessment showing inverse relationship</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-HeartRateExample.html"
                   title="Observation/HeartRateExample">Heart Rate Measurement Example</a>
             </td>
@@ -2216,11 +3038,56 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-CaffeineIntakeHighExample.html"
+                  title="Observation/CaffeineIntakeHighExample">High Caffeine Consumer</a>
+            </td>
+            <td>
+<p>Example of excessive caffeine intake requiring intervention</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-AlcoholUseHighRiskExample.html"
+                  title="Observation/AlcoholUseHighRiskExample">High-Risk Drinker</a>
+            </td>
+            <td>
+<p>Example of high-risk alcohol consumption with binge episodes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-IL6Example-Elevated.html"
+                  title="Observation/IL6Example-Elevated">IL-6 Example - Elevated</a>
+            </td>
+            <td>
+<p>Example of elevated Interleukin-6</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-InflammatoryPanelExample.html"
+                  title="Observation/InflammatoryPanelExample">Inflammatory Panel Example</a>
+            </td>
+            <td>
+<p>Comprehensive inflammatory marker panel for lifestyle medicine assessment</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-LifestyleVitalSignsExample.html"
                   title="Observation/LifestyleVitalSignsExample">Lifestyle Vital Signs Example</a>
             </td>
             <td>
 <p>Lifestyle vital signs observation example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Basic-MindfulnessImportMappingExample.html"
+                  title="Basic/MindfulnessImportMappingExample">Mindfulness Import Mapping Configuration Example</a>
+            </td>
+            <td>
+<p>Example of a Basic resource containing mindfulness import mapping configuration</p>
 </td>
          </tr>
          <tr>
@@ -2261,6 +3128,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-CaffeineIntakeModerateExample.html"
+                  title="Observation/CaffeineIntakeModerateExample">Moderate Caffeine Consumer</a>
+            </td>
+            <td>
+<p>Example of moderate daily caffeine intake from multiple sources</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-AlcoholUseModerateExample.html"
+                  title="Observation/AlcoholUseModerateExample">Moderate Social Drinker</a>
+            </td>
+            <td>
+<p>Example of moderate alcohol consumption with AUDIT-C score</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Consent-MultiJurisdictionalConsentExample.html"
                   title="Consent/MultiJurisdictionalConsentExample">Multi-Jurisdictional Consent Example</a>
             </td>
@@ -2270,11 +3155,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-TobaccoUseNeverSmokerExample.html"
+                  title="Observation/TobaccoUseNeverSmokerExample">Never Smoker</a>
+            </td>
+            <td>
+<p>Example of a patient who has never smoked tobacco</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-NoiseExposureExample.html"
                   title="Observation/NoiseExposureExample">Noise Exposure Measurement Example</a>
             </td>
             <td>
 <p>Noise exposure observation example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-AlcoholUseNonDrinkerExample.html"
+                  title="Observation/AlcoholUseNonDrinkerExample">Non-Drinker</a>
+            </td>
+            <td>
+<p>Example of a patient who does not consume alcohol</p>
 </td>
          </tr>
          <tr>
@@ -2356,6 +3259,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-SocialHistoryObservationExample.html"
+                  title="Observation/SocialHistoryObservationExample">Social History Observation Example</a>
+            </td>
+            <td>
+<p>Social history observation example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-SocialInteractionExample.html"
                   title="Observation/SocialInteractionExample">Social Interaction Example</a>
             </td>
@@ -2392,11 +3304,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-SubstanceUseSummaryExample.html"
+                  title="Observation/SubstanceUseSummaryExample">Substance Use Summary</a>
+            </td>
+            <td>
+<p>Comprehensive summary of patient's substance use patterns for lifestyle medicine assessment</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Questionnaire-SymptomQuestionnaireExample.html"
                   title="Questionnaire/SymptomQuestionnaireExample">Symptom Assessment Questionnaire Example</a>
             </td>
             <td>
 <p>Symptom assessment questionnaire example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-TNFAlphaExample-Normal.html"
+                  title="Observation/TNFAlphaExample-Normal">TNF-α Example - Normal</a>
+            </td>
+            <td>
+<p>Example of normal Tumor Necrosis Factor Alpha</p>
 </td>
          </tr>
          <tr>
@@ -2462,6 +3392,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-HsCRPExample-CardiovascularRisk.html"
+                  title="Observation/HsCRPExample-CardiovascularRisk">hs-CRP Example - Cardiovascular Risk Assessment</a>
+            </td>
+            <td>
+<p>High-sensitivity CRP for cardiovascular risk stratification</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Device-iphone-example.html" title="Device/iphone-example">iPhone Device Example</a>
             </td>
             <td>
@@ -2497,7 +3436,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 3, 2025 16:38+0100">2025-10-03</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 27, 2025 11:58+0000">2025-11-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

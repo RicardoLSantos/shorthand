@@ -1,0 +1,321 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "ConceptMapVendorToOpenEHR",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapVendorToOpenEHR</b></p><a name=\"ConceptMapVendorToOpenEHR\"> </a><a name=\"hcConceptMapVendorToOpenEHR\"> </a><p>Mapeamento de https://2rdoc.pt/ig/ios-lifestyle-medicine/vendor-apis para https://ckm.openehr.org/ckm</p><br/><p><b>Grupo 1 </b>Mapeamento de <code>com.apple.health</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKQuantityTypeIdentifierHeartRateVariabilitySDNN (Apple HealthKit: Heart Rate Variability SDNN)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id5 (SDNN - Standard deviation of NN intervals)</td><td>HealthKit provides SDNN in milliseconds. Direct mapping. Note: Apple uses proprietary algorithm from PPG.</td></tr><tr><td>HKQuantityTypeIdentifierHeartRate (Apple HealthKit: Heart Rate)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id50 (Mean heart rate during recording)</td><td>Use mean HR from same recording period for HRV context. Unit: bpm</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <code>com.fitbit.hrv</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>dailyRmssd (Fitbit: Daily RMSSD average)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id6 (RMSSD - Root mean square of successive differences)</td><td>Fitbit provides daily RMSSD average. CAUTION: This is AVERAGED across deep sleep periods, not a single measurement.</td></tr><tr><td>deepRmssd (Fitbit: Deep sleep RMSSD)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id6 (RMSSD during deep sleep)</td><td>Fitbit provides RMSSD specifically from deep sleep stages. Set physiological_state (id41) = 'sleep'</td></tr><tr><td>coverage (Fitbit: HRV data coverage percentage)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id60 (Data quality indicator)</td><td>Percentage of night with valid HRV data. Use as quality indicator. &lt;80% suggests poor data quality.</td></tr></table><hr/><p><b>Grupo 3 </b>Mapeamento de <code>com.ouraring</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>average_hrv (Oura: Average nightly HRV (RMSSD))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id6 (RMSSD - Root mean square of successive differences)</td><td>Oura provides nightly average RMSSD. Measured during sleep. Unit: ms. Set physiological_state = 'sleep'</td></tr><tr><td>hrv_balance (Oura: HRV Balance score)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id70 (Vendor-specific recovery score)</td><td>PROPRIETARY: Oura HRV Balance is a 7-day trend normalized score. NOT comparable to raw RMSSD.</td></tr><tr><td>readiness_score (Oura: Readiness Score)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id71 (Vendor-specific readiness score)</td><td>PROPRIETARY: Composite score including HRV, sleep, activity, temperature. Scale 0-100. NOT suitable for cross-vendor comparison.</td></tr></table><hr/><p><b>Grupo 4 </b>Mapeamento de <code>com.garmin.connect</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>avgHrv (Garmin: Average overnight HRV)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id6 (RMSSD - Root mean square of successive differences)</td><td>Garmin provides average overnight RMSSD. Set physiological_state = 'sleep'. Unit: ms</td></tr><tr><td>stressLevel (Garmin: Stress Level)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id72 (Vendor-specific stress score)</td><td>PROPRIETARY: Garmin stress level is DERIVED from HRV. Scale 0-100 (inverted: low = relaxed). Formula not disclosed.</td></tr><tr><td>hrvStatus (Garmin: HRV Status)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto\" title=\"relatedto\">is related to</a></td><td>id73 (Vendor-specific HRV status)</td><td>Categorical status: Low, Balanced, High. Relative to personal baseline. PROPRIETARY algorithm.</td></tr></table><hr/><p><b>Grupo 5 </b>Mapeamento de <code>com.polar</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>hrv_rmssd (Polar: HRV RMSSD)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id6 (SDNN - Standard deviation of NN intervals)</td><td>Polar H10 provides RMSSD from ECG (gold standard). Higher accuracy than PPG-based wearables. Unit: ms</td></tr><tr><td>hrv_sdnn (Polar: HRV SDNN)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id5</td><td>Polar provides SDNN from ECG. High accuracy. Unit: ms</td></tr><tr><td>hrv_pnn50 (Polar: HRV pNN50)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id7 (pNN50 - Percentage of NN intervals &gt;50ms)</td><td>Polar provides pNN50 from ECG. Unit: percentage (0-100)</td></tr></table><hr/><p><b>Grupo 6 </b>Mapeamento de <code>com.apple.health</code> to <code>openEHR-EHR-OBSERVATION.sleep_architecture.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKCategoryValueSleepAnalysisAsleepCore (Apple HealthKit: Core Sleep)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id21 (Light sleep duration (N1+N2))</td><td>Apple 'Core' sleep maps to light sleep (N1+N2 equivalent). watchOS 9+.</td></tr><tr><td>HKCategoryValueSleepAnalysisAsleepDeep (Apple HealthKit: Deep Sleep)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id23 (Deep sleep duration (N3/SWS))</td><td>Apple 'Deep' sleep maps to N3/SWS. watchOS 9+.</td></tr><tr><td>HKCategoryValueSleepAnalysisAsleepREM (Apple HealthKit: REM Sleep)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id24 (REM sleep duration)</td><td>Apple 'REM' sleep maps directly. watchOS 9+.</td></tr><tr><td>HKCategoryValueSleepAnalysisAwake (Apple HealthKit: Awake during sleep)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id20 (Awake time during sleep period)</td><td>Contributes to WASO (Wake After Sleep Onset) calculation.</td></tr></table><hr/><p><b>Grupo 7 </b>Mapeamento de <code>com.apple.health</code> to <code>openEHR-EHR-OBSERVATION.physical_activity_detailed.v0</code></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKQuantityTypeIdentifierStepCount (Apple HealthKit: Step Count)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id10 (Step count)</td><td>Direct mapping. Unit: count. Aggregate daily total.</td></tr><tr><td>HKQuantityTypeIdentifierDistanceWalkingRunning (Apple HealthKit: Distance Walking/Running)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id11 (Distance)</td><td>Convert from meters to km if needed. Aggregate daily total.</td></tr><tr><td>HKQuantityTypeIdentifierActiveEnergyBurned (Apple HealthKit: Active Energy Burned)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>id20 (Active calories)</td><td>HealthKit provides in kilocalories (kcal). Direct mapping.</td></tr><tr><td>HKQuantityTypeIdentifierAppleExerciseTime (Apple HealthKit: Exercise Time)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider\" title=\"wider\">maps to wider concept</a></td><td>id35 (Exercise session duration)</td><td>Apple Exercise Time threshold: HR &gt; ~60-70% of estimated max. Maps to moderate+vigorous combined.</td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapVendorToOpenEHR",
+  "version" : "0.1.0",
+  "name" : "ConceptMapVendorToOpenEHR",
+  "title" : "Wearable Vendor API to openEHR Archetype Mapping",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-25",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "Direct mapping from proprietary wearable vendor API data types to openEHR archetypes.\n\nSupported Vendors:\n- Apple HealthKit (HKQuantityType, HKCategoryType)\n- Fitbit Web API (activities, sleep, hrv endpoints)\n- Oura Ring API (readiness, sleep, activity)\n- Garmin Connect API (activities, wellness, sleep)\n- Polar Flow API (training, recovery)\n\nArchitecture:\n- Enables direct ETL from vendor export to EHRbase CDR\n- Normalizes proprietary units to UCUM\n- Handles vendor-specific scoring algorithms\n- Documents transformation caveats and data quality considerations\n\nUse Cases:\n- Patient-generated health data (PGHD) capture\n- Multi-vendor data aggregation\n- Longitudinal wearable data repositories",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "purpose" : "Enable standardized capture of wearable data from multiple vendors into openEHR Clinical Data Repositories via direct ETL pipelines.",
+  "sourceUri" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/vendor-apis",
+  "targetUri" : "https://ckm.openehr.org/ckm",
+  "group" : [{
+    "source" : "com.apple.health",
+    "target" : "openEHR-EHR-OBSERVATION.heart_rate_variability.v0",
+    "element" : [{
+      "code" : "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+      "display" : "Apple HealthKit: Heart Rate Variability SDNN",
+      "target" : [{
+        "code" : "id5",
+        "display" : "SDNN - Standard deviation of NN intervals",
+        "equivalence" : "equivalent",
+        "comment" : "HealthKit provides SDNN in milliseconds. Direct mapping. Note: Apple uses proprietary algorithm from PPG."
+      }]
+    },
+    {
+      "code" : "HKQuantityTypeIdentifierHeartRate",
+      "display" : "Apple HealthKit: Heart Rate",
+      "target" : [{
+        "code" : "id50",
+        "display" : "Mean heart rate during recording",
+        "equivalence" : "relatedto",
+        "comment" : "Use mean HR from same recording period for HRV context. Unit: bpm"
+      }]
+    }],
+    "unmapped" : {
+      "mode" : "fixed",
+      "code" : "other",
+      "display" : "Unmapped HealthKit HRV type"
+    }
+  },
+  {
+    "source" : "com.fitbit.hrv",
+    "target" : "openEHR-EHR-OBSERVATION.heart_rate_variability.v0",
+    "element" : [{
+      "code" : "dailyRmssd",
+      "display" : "Fitbit: Daily RMSSD average",
+      "target" : [{
+        "code" : "id6",
+        "display" : "RMSSD - Root mean square of successive differences",
+        "equivalence" : "equivalent",
+        "comment" : "Fitbit provides daily RMSSD average. CAUTION: This is AVERAGED across deep sleep periods, not a single measurement."
+      }]
+    },
+    {
+      "code" : "deepRmssd",
+      "display" : "Fitbit: Deep sleep RMSSD",
+      "target" : [{
+        "code" : "id6",
+        "display" : "RMSSD during deep sleep",
+        "equivalence" : "equivalent",
+        "comment" : "Fitbit provides RMSSD specifically from deep sleep stages. Set physiological_state (id41) = 'sleep'"
+      }]
+    },
+    {
+      "code" : "coverage",
+      "display" : "Fitbit: HRV data coverage percentage",
+      "target" : [{
+        "code" : "id60",
+        "display" : "Data quality indicator",
+        "equivalence" : "relatedto",
+        "comment" : "Percentage of night with valid HRV data. Use as quality indicator. <80% suggests poor data quality."
+      }]
+    }]
+  },
+  {
+    "source" : "com.ouraring",
+    "target" : "openEHR-EHR-OBSERVATION.heart_rate_variability.v0",
+    "element" : [{
+      "code" : "average_hrv",
+      "display" : "Oura: Average nightly HRV (RMSSD)",
+      "target" : [{
+        "code" : "id6",
+        "display" : "RMSSD - Root mean square of successive differences",
+        "equivalence" : "equivalent",
+        "comment" : "Oura provides nightly average RMSSD. Measured during sleep. Unit: ms. Set physiological_state = 'sleep'"
+      }]
+    },
+    {
+      "code" : "hrv_balance",
+      "display" : "Oura: HRV Balance score",
+      "target" : [{
+        "code" : "id70",
+        "display" : "Vendor-specific recovery score",
+        "equivalence" : "relatedto",
+        "comment" : "PROPRIETARY: Oura HRV Balance is a 7-day trend normalized score. NOT comparable to raw RMSSD."
+      }]
+    },
+    {
+      "code" : "readiness_score",
+      "display" : "Oura: Readiness Score",
+      "target" : [{
+        "code" : "id71",
+        "display" : "Vendor-specific readiness score",
+        "equivalence" : "relatedto",
+        "comment" : "PROPRIETARY: Composite score including HRV, sleep, activity, temperature. Scale 0-100. NOT suitable for cross-vendor comparison."
+      }]
+    }]
+  },
+  {
+    "source" : "com.garmin.connect",
+    "target" : "openEHR-EHR-OBSERVATION.heart_rate_variability.v0",
+    "element" : [{
+      "code" : "avgHrv",
+      "display" : "Garmin: Average overnight HRV",
+      "target" : [{
+        "code" : "id6",
+        "display" : "RMSSD - Root mean square of successive differences",
+        "equivalence" : "equivalent",
+        "comment" : "Garmin provides average overnight RMSSD. Set physiological_state = 'sleep'. Unit: ms"
+      }]
+    },
+    {
+      "code" : "stressLevel",
+      "display" : "Garmin: Stress Level",
+      "target" : [{
+        "code" : "id72",
+        "display" : "Vendor-specific stress score",
+        "equivalence" : "relatedto",
+        "comment" : "PROPRIETARY: Garmin stress level is DERIVED from HRV. Scale 0-100 (inverted: low = relaxed). Formula not disclosed."
+      }]
+    },
+    {
+      "code" : "hrvStatus",
+      "display" : "Garmin: HRV Status",
+      "target" : [{
+        "code" : "id73",
+        "display" : "Vendor-specific HRV status",
+        "equivalence" : "relatedto",
+        "comment" : "Categorical status: Low, Balanced, High. Relative to personal baseline. PROPRIETARY algorithm."
+      }]
+    }]
+  },
+  {
+    "source" : "com.polar",
+    "target" : "openEHR-EHR-OBSERVATION.heart_rate_variability.v0",
+    "element" : [{
+      "code" : "hrv_rmssd",
+      "display" : "Polar: HRV RMSSD",
+      "target" : [{
+        "code" : "id6",
+        "display" : "SDNN - Standard deviation of NN intervals",
+        "equivalence" : "equivalent",
+        "comment" : "Polar H10 provides RMSSD from ECG (gold standard). Higher accuracy than PPG-based wearables. Unit: ms"
+      }]
+    },
+    {
+      "code" : "hrv_sdnn",
+      "display" : "Polar: HRV SDNN",
+      "target" : [{
+        "code" : "id5",
+        "equivalence" : "equivalent",
+        "comment" : "Polar provides SDNN from ECG. High accuracy. Unit: ms"
+      }]
+    },
+    {
+      "code" : "hrv_pnn50",
+      "display" : "Polar: HRV pNN50",
+      "target" : [{
+        "code" : "id7",
+        "display" : "pNN50 - Percentage of NN intervals >50ms",
+        "equivalence" : "equivalent",
+        "comment" : "Polar provides pNN50 from ECG. Unit: percentage (0-100)"
+      }]
+    }]
+  },
+  {
+    "source" : "com.apple.health",
+    "target" : "openEHR-EHR-OBSERVATION.sleep_architecture.v0",
+    "element" : [{
+      "code" : "HKCategoryValueSleepAnalysisAsleepCore",
+      "display" : "Apple HealthKit: Core Sleep",
+      "target" : [{
+        "code" : "id21",
+        "display" : "Light sleep duration (N1+N2)",
+        "equivalence" : "equivalent",
+        "comment" : "Apple 'Core' sleep maps to light sleep (N1+N2 equivalent). watchOS 9+."
+      }]
+    },
+    {
+      "code" : "HKCategoryValueSleepAnalysisAsleepDeep",
+      "display" : "Apple HealthKit: Deep Sleep",
+      "target" : [{
+        "code" : "id23",
+        "display" : "Deep sleep duration (N3/SWS)",
+        "equivalence" : "equivalent",
+        "comment" : "Apple 'Deep' sleep maps to N3/SWS. watchOS 9+."
+      }]
+    },
+    {
+      "code" : "HKCategoryValueSleepAnalysisAsleepREM",
+      "display" : "Apple HealthKit: REM Sleep",
+      "target" : [{
+        "code" : "id24",
+        "display" : "REM sleep duration",
+        "equivalence" : "equivalent",
+        "comment" : "Apple 'REM' sleep maps directly. watchOS 9+."
+      }]
+    },
+    {
+      "code" : "HKCategoryValueSleepAnalysisAwake",
+      "display" : "Apple HealthKit: Awake during sleep",
+      "target" : [{
+        "code" : "id20",
+        "display" : "Awake time during sleep period",
+        "equivalence" : "equivalent",
+        "comment" : "Contributes to WASO (Wake After Sleep Onset) calculation."
+      }]
+    }]
+  },
+  {
+    "source" : "com.apple.health",
+    "target" : "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0",
+    "element" : [{
+      "code" : "HKQuantityTypeIdentifierStepCount",
+      "display" : "Apple HealthKit: Step Count",
+      "target" : [{
+        "code" : "id10",
+        "display" : "Step count",
+        "equivalence" : "equivalent",
+        "comment" : "Direct mapping. Unit: count. Aggregate daily total."
+      }]
+    },
+    {
+      "code" : "HKQuantityTypeIdentifierDistanceWalkingRunning",
+      "display" : "Apple HealthKit: Distance Walking/Running",
+      "target" : [{
+        "code" : "id11",
+        "display" : "Distance",
+        "equivalence" : "equivalent",
+        "comment" : "Convert from meters to km if needed. Aggregate daily total."
+      }]
+    },
+    {
+      "code" : "HKQuantityTypeIdentifierActiveEnergyBurned",
+      "display" : "Apple HealthKit: Active Energy Burned",
+      "target" : [{
+        "code" : "id20",
+        "display" : "Active calories",
+        "equivalence" : "equivalent",
+        "comment" : "HealthKit provides in kilocalories (kcal). Direct mapping."
+      }]
+    },
+    {
+      "code" : "HKQuantityTypeIdentifierAppleExerciseTime",
+      "display" : "Apple HealthKit: Exercise Time",
+      "target" : [{
+        "code" : "id35",
+        "display" : "Exercise session duration",
+        "equivalence" : "wider",
+        "comment" : "Apple Exercise Time threshold: HR > ~60-70% of estimated max. Maps to moderate+vigorous combined."
+      }]
+    }]
+  }]
+}
