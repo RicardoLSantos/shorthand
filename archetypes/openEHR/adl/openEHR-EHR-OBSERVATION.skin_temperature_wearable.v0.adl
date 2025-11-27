@@ -1,0 +1,690 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.skin_temperature_wearable.v0
+
+concept
+	[at0000]	-- Skin Temperature Wearable
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record skin temperature measurements from consumer wearable devices, including continuous monitoring, baseline deviations, and derived metrics for health tracking applications such as menstrual cycle prediction, illness detection, and circadian rhythm assessment.">
+            use = <"Use to record skin temperature data from wearable devices including:
+
+1. Continuous Monitoring: Overnight and daytime skin temperature
+2. Baseline Tracking: Deviation from personal baseline
+3. Menstrual Cycle: Temperature changes across cycle phases
+4. Illness Detection: Elevated temperature indicating fever
+5. Circadian Rhythm: Temperature patterns related to sleep-wake cycle
+
+Measurement Characteristics:
+- Skin temperature differs from core body temperature
+- Wrist skin temperature typically 33-35°C (lower than core 36.5-37.5°C)
+- Highly influenced by ambient temperature and activity
+- Most accurate during sleep (stable conditions)
+
+Key Clinical Applications:
+- Menstrual cycle tracking and ovulation prediction (Oura, Natural Cycles)
+- Early illness/fever detection (COVID-19 studies)
+- Circadian rhythm assessment
+- Sleep onset detection (temperature drop)
+- Thermoregulation monitoring
+- Stress response assessment
+
+Vendor Data Integration:
+- Oura Ring: Skin temperature deviation from baseline (nightly)
+- Apple Watch: Wrist temperature (Series 8+, during sleep)
+- Fitbit Sense: Skin temperature variation
+- Garmin: Body Battery related temperature
+- Withings: Sleep tracking temperature
+- Ava bracelet: Fertility tracking temperature
+
+Important Notes:
+- Wrist temperature is NOT core body temperature
+- Baseline deviation more clinically useful than absolute value
+- Requires consistent measurement conditions (sleep)
+- Ambient temperature significantly affects readings
+- Not for clinical fever diagnosis without confirmation">
+            keywords = <"skin temperature", "body temperature", "wrist temperature", "fever", "menstrual cycle", "ovulation", "circadian rhythm", "thermoregulation", "wearable", "Oura", "Apple Watch", "Fitbit">
+            misuse = <"Not to be used for:
+- Core body temperature measurement (use OBSERVATION.body_temperature.v2)
+- Clinical fever diagnosis without confirmation
+- Tympanic, oral, rectal, or axillary temperature
+- Medical-grade temperature monitoring
+- Critically ill patient monitoring">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"
+1. LOINC 39106-0: Temperature of Skin
+2. Smarr BL, et al. Feasibility of continuous fever monitoring using wearable devices. Sci Rep. 2020;10:21640.
+3. Grant AD, et al. Menstrual Cycle Tracking with Oura Ring. J Med Internet Res. 2022.
+4. Shilaih M, et al. Modern fertility awareness methods: wrist wearables capture changes in temperature. Biosci Rep. 2018;38(6).
+5. Chung MH, et al. Sleep and Circadian Rhythm Disruption and Recognition Using Wearable Accelerometer and Temperature Sensor. IEEE Access. 2021.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardolourencosantos@gmail.com">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Skin Temperature Wearable
+        data matches {
+            HISTORY[at0001] matches {
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0004] occurrences matches {0..1} matches {    -- Skin temperature
+                                        value matches {
+                                            DV_QUANTITY matches {
+                                                property matches {[openehr::127]}
+                                                units matches {"Cel"}
+                                                magnitude matches {|20.0..45.0|}
+                                                precision matches {|2|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0005] occurrences matches {0..1} matches {    -- Baseline deviation
+                                        value matches {
+                                            DV_QUANTITY matches {
+                                                property matches {[openehr::127]}
+                                                units matches {"Cel"}
+                                                magnitude matches {|-5.0..5.0|}
+                                                precision matches {|2|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0006] occurrences matches {0..1} matches {    -- Deviation interpretation
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at200,    -- Below baseline (< -0.5°C)
+                                                    at201,    -- Within baseline (-0.5 to +0.5°C)
+                                                    at202,    -- Above baseline (> +0.5°C)
+                                                    at203,    -- Significantly elevated (> +1.0°C)
+                                                    at204]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Overnight summary
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Mean overnight temperature
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::127]}
+                                                        units matches {"Cel"}
+                                                        magnitude matches {|25.0..42.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Minimum temperature
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::127]}
+                                                        units matches {"Cel"}
+                                                        magnitude matches {|20.0..42.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Maximum temperature
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::127]}
+                                                        units matches {"Cel"}
+                                                        magnitude matches {|25.0..45.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Temperature range
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::127]}
+                                                        units matches {"Cel"}
+                                                        magnitude matches {|0.0..10.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Standard deviation
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::127]}
+                                                        units matches {"Cel"}
+                                                        magnitude matches {|0.0..5.0|}
+                                                        precision matches {|3|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Menstrual cycle context
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Cycle phase
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at210,    -- Menstrual
+                                                            at211,    -- Follicular
+                                                            at212,    -- Ovulation
+                                                            at213,    -- Luteal
+                                                            at214,    -- Unknown
+                                                            at215]    -- Not applicable
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Cycle day
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|1..60|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Temperature shift detected
+                                                value matches {
+                                                    DV_BOOLEAN
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Predicted ovulation
+                                                value matches {
+                                                    DV_DATE
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Fertility window
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at220,    -- Low fertility
+                                                            at221,    -- Fertile
+                                                            at222,    -- Peak fertility
+                                                            at223,    -- Post-ovulation
+                                                            at224]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Illness indicators
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Fever likelihood
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at230,    -- Unlikely
+                                                            at231,    -- Possible
+                                                            at232,    -- Likely
+                                                            at233]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Days elevated
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..30|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Illness onset date
+                                                value matches {
+                                                    DV_DATE
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Trend analysis
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- 7-day trend
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at240,    -- Decreasing
+                                                            at241,    -- Stable
+                                                            at242,    -- Increasing
+                                                            at243]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Personal baseline
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::127]}
+                                                        units matches {"Cel"}
+                                                        magnitude matches {|30.0..38.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Baseline calculation period
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PD/|P7D..P90D|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0050] occurrences matches {0..1} matches {    -- Clinical interpretation
+                                        value matches {
+                                            DV_TEXT
+                                        }
+                                    }
+                                    ELEMENT[at0051] occurrences matches {0..1} matches {    -- Comment
+                                        value matches {
+                                            DV_TEXT
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0052] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v.*/}
+                                    }
+                                }
+                            }
+                            state matches {
+                                ITEM_TREE[at0060] matches {
+                                    items cardinality matches {0..*; unordered} matches {
+                                        ELEMENT[at0061] occurrences matches {0..1} matches {    -- Activity state
+                                            value matches {
+                                                DV_CODED_TEXT matches {
+                                                    defining_code matches {
+                                                        [local::
+                                                        at250,    -- Sleep
+                                                        at251,    -- Resting awake
+                                                        at252,    -- Light activity
+                                                        at253,    -- Moderate activity
+                                                        at254,    -- Vigorous activity
+                                                        at255]    -- Unknown
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ELEMENT[at0062] occurrences matches {0..1} matches {    -- Ambient temperature
+                                            value matches {
+                                                DV_QUANTITY matches {
+                                                    property matches {[openehr::127]}
+                                                    units matches {"Cel"}
+                                                    magnitude matches {|-20.0..50.0|}
+                                                    precision matches {|1|}
+                                                }
+                                            }
+                                        }
+                                        ELEMENT[at0063] occurrences matches {0..1} matches {    -- Clothing/bedding
+                                            value matches {
+                                                DV_CODED_TEXT matches {
+                                                    defining_code matches {
+                                                        [local::
+                                                        at260,    -- Minimal
+                                                        at261,    -- Light
+                                                        at262,    -- Normal
+                                                        at263,    -- Heavy
+                                                        at264]    -- Unknown
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ELEMENT[at0064] occurrences matches {0..1} matches {    -- Recent hot/cold exposure
+                                            value matches {
+                                                DV_BOOLEAN
+                                            }
+                                        }
+                                        allow_archetype CLUSTER[at0065] occurrences matches {0..*} matches {
+                                            include
+                                                archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v.*/}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0070] occurrences matches {0..1} matches {    -- Overnight recording
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {[openehr::146]}    -- mean
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {PT8H}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0060]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0080] matches {
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0081] occurrences matches {0..1} matches {    -- Measurement site
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at270,    -- Wrist (dorsal)
+                                    at271,    -- Wrist (volar)
+                                    at272,    -- Finger
+                                    at273,    -- Under arm
+                                    at274,    -- Chest
+                                    at275,    -- Other
+                                    at276]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0082] occurrences matches {0..1} matches {    -- Sensor type
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at280,    -- Thermistor
+                                    at281,    -- Infrared
+                                    at282,    -- Thermocouple
+                                    at283]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0083] occurrences matches {0..1} matches {    -- Sampling frequency
+                        value matches {
+                            DV_QUANTITY matches {
+                                property matches {[openehr::382]}
+                                units matches {"Hz"}
+                                magnitude matches {|0.001..10.0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0084] occurrences matches {0..1} matches {    -- Accuracy
+                        value matches {
+                            DV_QUANTITY matches {
+                                property matches {[openehr::127]}
+                                units matches {"Cel"}
+                                magnitude matches {|0.01..1.0|}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0090] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v.*/}
+                    }
+                    allow_archetype CLUSTER[at0091] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v.*/}
+                    }
+                    allow_archetype CLUSTER[at0092] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Skin Temperature Wearable">
+                    description = <"Skin temperature measured by consumer wearable devices.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0004"] = <
+                    text = <"Skin temperature">
+                    description = <"Measured skin temperature.">
+                >
+                ["at0005"] = <
+                    text = <"Baseline deviation">
+                    description = <"Deviation from personal baseline temperature.">
+                >
+                ["at0006"] = <
+                    text = <"Deviation interpretation">
+                    description = <"Interpretation of baseline deviation.">
+                >
+                ["at0010"] = <
+                    text = <"Overnight summary">
+                    description = <"Summary statistics from overnight temperature monitoring.">
+                >
+                ["at0011"] = <
+                    text = <"Mean overnight temperature">
+                    description = <"Average temperature during sleep period.">
+                >
+                ["at0012"] = <
+                    text = <"Minimum temperature">
+                    description = <"Lowest temperature during monitoring.">
+                >
+                ["at0013"] = <
+                    text = <"Maximum temperature">
+                    description = <"Highest temperature during monitoring.">
+                >
+                ["at0014"] = <
+                    text = <"Temperature range">
+                    description = <"Difference between maximum and minimum.">
+                >
+                ["at0015"] = <
+                    text = <"Standard deviation">
+                    description = <"Variability of temperature measurements.">
+                >
+                ["at0020"] = <
+                    text = <"Menstrual cycle context">
+                    description = <"Temperature data related to menstrual cycle tracking.">
+                >
+                ["at0021"] = <
+                    text = <"Cycle phase">
+                    description = <"Current phase of menstrual cycle.">
+                >
+                ["at0022"] = <
+                    text = <"Cycle day">
+                    description = <"Day number in current menstrual cycle.">
+                >
+                ["at0023"] = <
+                    text = <"Temperature shift detected">
+                    description = <"Whether biphasic temperature shift was detected.">
+                >
+                ["at0024"] = <
+                    text = <"Predicted ovulation">
+                    description = <"Predicted ovulation date based on temperature pattern.">
+                >
+                ["at0025"] = <
+                    text = <"Fertility window">
+                    description = <"Current fertility status based on temperature.">
+                >
+                ["at0030"] = <
+                    text = <"Illness indicators">
+                    description = <"Temperature-based illness detection.">
+                >
+                ["at0031"] = <
+                    text = <"Fever likelihood">
+                    description = <"Likelihood of fever based on temperature elevation.">
+                >
+                ["at0032"] = <
+                    text = <"Days elevated">
+                    description = <"Number of consecutive days with elevated temperature.">
+                >
+                ["at0033"] = <
+                    text = <"Illness onset date">
+                    description = <"Estimated date when temperature elevation began.">
+                >
+                ["at0040"] = <
+                    text = <"Trend analysis">
+                    description = <"Temperature trend over time.">
+                >
+                ["at0041"] = <
+                    text = <"7-day trend">
+                    description = <"Direction of temperature change over past week.">
+                >
+                ["at0042"] = <
+                    text = <"Personal baseline">
+                    description = <"Individual's typical skin temperature.">
+                >
+                ["at0043"] = <
+                    text = <"Baseline calculation period">
+                    description = <"Time period used to calculate baseline.">
+                >
+                ["at0050"] = <
+                    text = <"Clinical interpretation">
+                    description = <"Clinical interpretation of temperature data.">
+                >
+                ["at0051"] = <
+                    text = <"Comment">
+                    description = <"Additional comments about the measurement.">
+                >
+                ["at0052"] = <
+                    text = <"Data quality">
+                    description = <"Slot for data quality indicator cluster.">
+                >
+                ["at0060"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0061"] = <
+                    text = <"Activity state">
+                    description = <"Physical activity level during measurement.">
+                >
+                ["at0062"] = <
+                    text = <"Ambient temperature">
+                    description = <"Environmental temperature during measurement.">
+                >
+                ["at0063"] = <
+                    text = <"Clothing/bedding">
+                    description = <"Level of clothing or bedding coverage.">
+                >
+                ["at0064"] = <
+                    text = <"Recent hot/cold exposure">
+                    description = <"Whether recently exposed to extreme temperatures.">
+                >
+                ["at0065"] = <
+                    text = <"Physiological context">
+                    description = <"Slot for physiological context cluster.">
+                >
+                ["at0070"] = <
+                    text = <"Overnight recording">
+                    description = <"Temperature data aggregated over overnight sleep period.">
+                >
+                ["at0080"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0081"] = <
+                    text = <"Measurement site">
+                    description = <"Body site where temperature is measured.">
+                >
+                ["at0082"] = <
+                    text = <"Sensor type">
+                    description = <"Type of temperature sensor used.">
+                >
+                ["at0083"] = <
+                    text = <"Sampling frequency">
+                    description = <"Frequency of temperature sampling.">
+                >
+                ["at0084"] = <
+                    text = <"Accuracy">
+                    description = <"Stated accuracy of temperature sensor.">
+                >
+                ["at0090"] = <
+                    text = <"Wearable device">
+                    description = <"Slot for wearable device details.">
+                >
+                ["at0091"] = <
+                    text = <"Vendor provenance">
+                    description = <"Slot for vendor data provenance.">
+                >
+                ["at0092"] = <
+                    text = <"Recording context">
+                    description = <"Slot for recording context details.">
+                >
+                ["at200"] = <text = <"Below baseline (< -0.5°C)">; description = <"Temperature more than 0.5°C below baseline.">>
+                ["at201"] = <text = <"Within baseline (-0.5 to +0.5°C)">; description = <"Temperature within 0.5°C of baseline.">>
+                ["at202"] = <text = <"Above baseline (> +0.5°C)">; description = <"Temperature more than 0.5°C above baseline.">>
+                ["at203"] = <text = <"Significantly elevated (> +1.0°C)">; description = <"Temperature more than 1.0°C above baseline.">>
+                ["at204"] = <text = <"Unknown">; description = <"Deviation interpretation not determined.">>
+                ["at210"] = <text = <"Menstrual">; description = <"Menstruation phase.">>
+                ["at211"] = <text = <"Follicular">; description = <"Follicular phase (pre-ovulation).">>
+                ["at212"] = <text = <"Ovulation">; description = <"Ovulation period.">>
+                ["at213"] = <text = <"Luteal">; description = <"Luteal phase (post-ovulation).">>
+                ["at214"] = <text = <"Unknown">; description = <"Cycle phase not determined.">>
+                ["at215"] = <text = <"Not applicable">; description = <"Menstrual cycle tracking not applicable.">>
+                ["at220"] = <text = <"Low fertility">; description = <"Low fertility period.">>
+                ["at221"] = <text = <"Fertile">; description = <"Fertile window.">>
+                ["at222"] = <text = <"Peak fertility">; description = <"Peak fertility (around ovulation).">>
+                ["at223"] = <text = <"Post-ovulation">; description = <"Post-ovulation (confirmed by temperature shift).">>
+                ["at224"] = <text = <"Unknown">; description = <"Fertility status not determined.">>
+                ["at230"] = <text = <"Unlikely">; description = <"Fever unlikely based on temperature.">>
+                ["at231"] = <text = <"Possible">; description = <"Fever possible, monitoring recommended.">>
+                ["at232"] = <text = <"Likely">; description = <"Fever likely based on sustained elevation.">>
+                ["at233"] = <text = <"Unknown">; description = <"Fever likelihood not determined.">>
+                ["at240"] = <text = <"Decreasing">; description = <"Temperature trending downward.">>
+                ["at241"] = <text = <"Stable">; description = <"Temperature stable.">>
+                ["at242"] = <text = <"Increasing">; description = <"Temperature trending upward.">>
+                ["at243"] = <text = <"Unknown">; description = <"Trend not determined.">>
+                ["at250"] = <text = <"Sleep">; description = <"During sleep.">>
+                ["at251"] = <text = <"Resting awake">; description = <"Awake but at rest.">>
+                ["at252"] = <text = <"Light activity">; description = <"Light physical activity.">>
+                ["at253"] = <text = <"Moderate activity">; description = <"Moderate physical activity.">>
+                ["at254"] = <text = <"Vigorous activity">; description = <"Vigorous physical activity.">>
+                ["at255"] = <text = <"Unknown">; description = <"Activity state not recorded.">>
+                ["at260"] = <text = <"Minimal">; description = <"Minimal clothing/bedding.">>
+                ["at261"] = <text = <"Light">; description = <"Light clothing/bedding.">>
+                ["at262"] = <text = <"Normal">; description = <"Normal clothing/bedding.">>
+                ["at263"] = <text = <"Heavy">; description = <"Heavy clothing/bedding.">>
+                ["at264"] = <text = <"Unknown">; description = <"Clothing level not recorded.">>
+                ["at270"] = <text = <"Wrist (dorsal)">; description = <"Top of wrist.">>
+                ["at271"] = <text = <"Wrist (volar)">; description = <"Inner wrist.">>
+                ["at272"] = <text = <"Finger">; description = <"Finger.">>
+                ["at273"] = <text = <"Under arm">; description = <"Armpit area.">>
+                ["at274"] = <text = <"Chest">; description = <"Chest area.">>
+                ["at275"] = <text = <"Other">; description = <"Other measurement site.">>
+                ["at276"] = <text = <"Unknown">; description = <"Measurement site not specified.">>
+                ["at280"] = <text = <"Thermistor">; description = <"Thermistor temperature sensor.">>
+                ["at281"] = <text = <"Infrared">; description = <"Infrared temperature sensor.">>
+                ["at282"] = <text = <"Thermocouple">; description = <"Thermocouple temperature sensor.">>
+                ["at283"] = <text = <"Unknown">; description = <"Sensor type not specified.">>
+            >
+        >
+    >
+    term_bindings = <
+        ["LOINC"] = <
+            items = <
+                ["at0004"] = <[LOINC::39106-0]>    -- Temperature of Skin
+            >
+        >
+    >
