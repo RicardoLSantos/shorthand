@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (15 Total)
+## Archetypes Included (18 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (10)
+### OBSERVATION Archetypes (13)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -38,6 +38,9 @@ archetypes/openEHR/
 | `blood_glucose_cgm.v0.adl` | CGM data, TIR, glycemic variability, GMI | ~750 | CKM Ready |
 | `body_composition_wearable.v0.adl` | BIA smart scale data, body fat, muscle mass | ~1100 | CKM Ready |
 | `exercise_session.v0.adl` | Workout sessions, training load, TRIMP/TSS | ~1400 | CKM Ready |
+| `nutrition_intake.v0.adl` | Macros, micros, meal tracking, diet patterns | ~1100 | CKM Ready |
+| `hydration_tracking.v0.adl` | Fluid intake, beverages, hydration status | ~900 | CKM Ready |
+| `environmental_exposure.v0.adl` | AQI, UV, noise, pollen, climate data | ~1100 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -76,11 +79,12 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 15 archetypes validated with ADL 1.4 structural validator:
+All 18 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
 - **Warnings**: Minor (false positives on term_bindings detection)
 - **Phase 1A-1B**: 7 archetypes validated 2025-11-27
 - **Phase 2A**: 3 archetypes validated 2025-11-27
+- **Phase 2B**: 3 archetypes validated 2025-11-27
 
 ## Related Resources
 
@@ -92,4 +96,4 @@ All 15 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 15 (5 CLUSTERs + 10 OBSERVATIONs)*
+*Archetypes: 18 (5 CLUSTERs + 13 OBSERVATIONs)*
