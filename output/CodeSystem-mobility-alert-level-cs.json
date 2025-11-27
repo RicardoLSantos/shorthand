@@ -1,0 +1,105 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "mobility-alert-level-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mobility-alert-level-cs</b></p><a name=\"mobility-alert-level-cs\"> </a><a name=\"hcmobility-alert-level-cs\"> </a><p><b>Propriedades</b></p><p><b>Este sistema de códigos define as seguintes propriedades para os seus conceitos</b></p><table class=\"grid\"><tr><td><b>Nome</b></td><td><b>Código</b></td><td><b>URI</b></td><td><b>Tipo</b></td><td><b>Descrição</b></td></tr><tr><td>status</td><td>status</td><td>http://hl7.org/fhir/concept-properties#status</td><td>code</td><td>The status of the alert level</td></tr><tr><td>severity</td><td>severity</td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#severity</td><td>integer</td><td>Numeric value indicating severity (1=low, 3=high)</td></tr></table><p><b>Conceitos</b></p><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">green<a name=\"mobility-alert-level-cs-green\"> </a></td><td>Normal - No concern</td><td>Mobility measurements are within normal range and show no concerning patterns</td></tr><tr><td style=\"white-space:nowrap\">yellow<a name=\"mobility-alert-level-cs-yellow\"> </a></td><td>Caution - Monitor closely</td><td>Mobility measurements show slight deviations that warrant closer monitoring</td></tr><tr><td style=\"white-space:nowrap\">red<a name=\"mobility-alert-level-cs-red\"> </a></td><td>Alert - Significant change</td><td>Mobility measurements indicate significant changes that require immediate attention</td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs",
+  "version" : "0.1.0",
+  "name" : "MobilityAlertLevelCS",
+  "title" : "Mobility Alert Level Code System",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-27T17:03:01+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "program"
+    },
+    "valueCodeableConcept" : {
+      "text" : "iOS Lifestyle Medicine"
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "property" : [{
+    "code" : "status",
+    "uri" : "http://hl7.org/fhir/concept-properties#status",
+    "description" : "The status of the alert level",
+    "type" : "code"
+  },
+  {
+    "code" : "severity",
+    "uri" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#severity",
+    "description" : "Numeric value indicating severity (1=low, 3=high)",
+    "type" : "integer"
+  }],
+  "concept" : [{
+    "code" : "green",
+    "display" : "Normal - No concern",
+    "definition" : "Mobility measurements are within normal range and show no concerning patterns"
+  },
+  {
+    "code" : "yellow",
+    "display" : "Caution - Monitor closely",
+    "definition" : "Mobility measurements show slight deviations that warrant closer monitoring"
+  },
+  {
+    "code" : "red",
+    "display" : "Alert - Significant change",
+    "definition" : "Mobility measurements indicate significant changes that require immediate attention"
+  }]
+}

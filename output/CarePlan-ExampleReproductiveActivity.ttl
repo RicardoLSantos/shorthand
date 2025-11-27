@@ -1,0 +1,36 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CarePlan/ExampleReproductiveActivity> a fhir:CarePlan ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ExampleReproductiveActivity"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CarePlan ExampleReproductiveActivity</b></p><a name=\"ExampleReproductiveActivity\"> </a><a name=\"hcExampleReproductiveActivity\"> </a><p><b>status</b>: Active</p><p><b>intent</b>: Plan</p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><blockquote><p><b>activity</b></p><h3>Details</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Kind</b></td><td><b>Code</b></td><td><b>Status</b></td></tr><tr><td style=\"display: none\">*</td><td>ServiceRequest</td><td><span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-history-activity-cs cycle-tracking}\">Cycle Tracking</span></td><td>Scheduled</td></tr></table></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "plan"] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:activity ( [
+     fhir:detail [
+       fhir:kind [ fhir:v "ServiceRequest" ] ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-history-activity-cs"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "cycle-tracking" ]
+         ] )
+       ] ;
+       fhir:status [ fhir:v "scheduled" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

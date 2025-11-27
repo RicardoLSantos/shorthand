@@ -1,0 +1,890 @@
+{
+  "package": "iOS-Lifestyle-Medicine",
+  "version": "0.1.0",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "150",
+  "extensions": [
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality",
+      "title": "Sleep Quality Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs-context",
+      "title": "Advanced Vital Signs Context Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-message",
+      "title": "Alert Message Extension",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-timing",
+      "title": "Alert Timing Extension",
+      "types": [
+        "Timing",
+        "string",
+        "Extension",
+        "Extension",
+        "dateTime",
+        "Element",
+        "string",
+        "Extension",
+        "Duration",
+        "Range",
+        "Period",
+        "positiveInt",
+        "positiveInt",
+        "decimal",
+        "decimal",
+        "code",
+        "positiveInt",
+        "positiveInt",
+        "decimal",
+        "decimal",
+        "code",
+        "code",
+        "time",
+        "code",
+        "unsignedInt",
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/allostatic-load",
+      "title": "Allostatic Load Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-format",
+      "title": "Audit Format Extension",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-level",
+      "title": "Audit Level Extension",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-retention",
+      "title": "Audit Retention Extension",
+      "types": [
+        "Duration"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cessation-support",
+      "title": "Cessation Support",
+      "types": [
+        "CodeableConcept",
+        "CodeableConcept",
+        "date",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/circadian-phase",
+      "title": "Circadian Phase Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-localization",
+      "title": "Data Localization Requirements",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "boolean",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/device-capture-metadata",
+      "title": "Device Capture Metadata",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code",
+        "CodeableConcept",
+        "CodeableConcept",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/drinking-context",
+      "title": "Drinking Context",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-context",
+      "title": "Environmental Context Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/exposure-conditions",
+      "title": "Exposure Conditions Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/exposure-location",
+      "title": "Exposure Location Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/homeostasis-index",
+      "title": "Homeostasis Index Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/jurisdiction-applicability",
+      "title": "Jurisdiction Applicability",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions",
+      "title": "Measurement Conditions Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-context",
+      "title": "Measurement Context Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-device-type",
+      "title": "Measurement Device Type Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-quality",
+      "title": "Measurement Quality Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit-format",
+      "title": "Mindfulness Audit Format",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit-level",
+      "title": "Mindfulness Audit Level",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit-retention",
+      "title": "Mindfulness Audit Retention",
+      "types": [
+        "Duration"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-context",
+      "title": "Mindfulness Session Context",
+      "types": [
+        "string",
+        "CodeableConcept",
+        "boolean",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-import-map",
+      "title": "Mindfulness Import Mapping",
+      "types": [
+        "string",
+        "string",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-notification-enabled",
+      "title": "Mindfulness Notification Enabled",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-preferred-guide",
+      "title": "Mindfulness Preferred Guide",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-reminder-time",
+      "title": "Mindfulness Reminder Time",
+      "types": [
+        "time"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-schedule-timing",
+      "title": "Mindfulness Schedule Timing",
+      "types": [
+        "Timing"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session-duration",
+      "title": "Mindfulness Session Duration",
+      "types": [
+        "integer"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-alert-level",
+      "title": "Mobility Alert Level Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-data-source",
+      "title": "Nutrition Data Source Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/physiological-stress-index",
+      "title": "Physiological Stress Index Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-efficiency",
+      "title": "Recovery Efficiency Extension",
+      "types": [
+        "Quantity",
+        "string",
+        "Extension",
+        "decimal",
+        "code",
+        "string",
+        "uri",
+        "code"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/regulatory-basis",
+      "title": "Regulatory Basis for Consent",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-activity",
+      "title": "Social Activity Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-context",
+      "title": "Social Context Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-support",
+      "title": "Social Support Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/stress-coping",
+      "title": "Stress Coping Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/stress-triggers",
+      "title": "Stress Triggers Extension",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-motivation",
+      "title": "Substance Use Motivation",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-trigger",
+      "title": "Substance Use Trigger",
+      "types": [
+        "CodeableConcept"
+      ]
+    }
+  ],
+  "profiles": {
+    "Observation": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tnf-alpha-observation",
+        "title": "Tumor Necrosis Factor Alpha (TNF-α) Observation Profile"
+      },
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation",
+        "title": "Tobacco Use Observation Profile"
+      },
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/uv-exposure-observation",
+        "title": "UV Exposure Observation Profile"
+      },
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/walking-speed-observation",
+        "title": "Walking Speed Observation Profile"
+      },
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/walking-steadiness-observation",
+        "title": "Walking Steadiness Observation Profile"
+      },
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation",
+        "title": "Water Intake Observation Profile"
+      },
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/weight-observation",
+        "title": "Weight Measurement Profile"
+      }
+    ],
+    "Basic": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-schedule",
+        "title": "Mindfulness Schedule"
+      }
+    ],
+    "MessageDefinition": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition",
+        "title": "Mindfulness Message Definition"
+      }
+    ],
+    "OperationDefinition": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-operation",
+        "title": "Mindfulness Operation"
+      }
+    ],
+    "RiskAssessment": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-risk-assessment",
+        "title": "Mobility Risk Assessment Profile"
+      }
+    ],
+    "Consent": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent",
+        "title": "Multi-Jurisdictional Healthcare Consent"
+      }
+    ],
+    "Provenance": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance",
+        "title": "Patient-Generated Health Data Provenance"
+      }
+    ],
+    "Questionnaire": [
+      {
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire",
+        "title": "Symptom Assessment Questionnaire"
+      }
+    ]
+  },
+  "usage": {
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/maxValue": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/minValue": [
+      "Questionnaire.item.item"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs-context": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-message": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alert-timing": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/allostatic-load": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-format": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-level": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-retention": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cessation-support": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/circadian-phase": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-localization": [
+      "Consent"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/device-capture-metadata": [
+      "Provenance.agent"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/drinking-context": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-context": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/exposure-conditions": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/exposure-location": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/homeostasis-index": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/jurisdiction-applicability": [
+      "Consent"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-conditions": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-context": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-device-type": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-quality": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit-format": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit-level": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit-retention": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-context": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-import-map": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-notification-enabled": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-preferred-guide": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-reminder-time": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-schedule-timing": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-session-duration": [
+      "Basic"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-alert-level": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-data-source": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/physiological-stress-index": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-efficiency": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/regulatory-basis": [
+      "Consent"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-activity": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-context": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-support": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/stress-coping": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/stress-triggers": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-motivation": [
+      "Observation"
+    ],
+    "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-trigger": [
+      "Observation"
+    ]
+  }
+}

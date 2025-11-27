@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "assistance-level-outcomes"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem assistance-level-outcomes</b></p><a name=\"assistance-level-outcomes\"> </a><a name=\"hcassistance-level-outcomes\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">independent<a name=\"assistance-level-outcomes-independent\"> </a></td><td>Independent</td><td>Patient can perform activity independently without any assistance</td></tr><tr><td style=\"white-space:nowrap\">minimal-assist<a name=\"assistance-level-outcomes-minimal-assist\"> </a></td><td>Minimal Assistance</td><td>Patient requires minimal assistance (supervision or verbal cueing only)</td></tr><tr><td style=\"white-space:nowrap\">moderate-assist<a name=\"assistance-level-outcomes-moderate-assist\"> </a></td><td>Moderate Assistance</td><td>Patient requires moderate assistance (physical support for 25-50% of effort)</td></tr><tr><td style=\"white-space:nowrap\">maximal-assist<a name=\"assistance-level-outcomes-maximal-assist\"> </a></td><td>Maximal Assistance</td><td>Patient requires maximal assistance (physical support for &gt;50% of effort)</td></tr><tr><td style=\"white-space:nowrap\">dependent<a name=\"assistance-level-outcomes-dependent\"> </a></td><td>Dependent</td><td>Patient is fully dependent on others for the activity</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "AssistanceLevelOutcomes"] ; # 
+  fhir:title [ fhir:v "Assistance Level Outcomes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Outcomes related to assistance levels in mobility assessments"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "independent" ] ;
+     fhir:display [ fhir:v "Independent" ] ;
+     fhir:definition [ fhir:v "Patient can perform activity independently without any assistance" ]
+  ] [
+     fhir:code [ fhir:v "minimal-assist" ] ;
+     fhir:display [ fhir:v "Minimal Assistance" ] ;
+     fhir:definition [ fhir:v "Patient requires minimal assistance (supervision or verbal cueing only)" ]
+  ] [
+     fhir:code [ fhir:v "moderate-assist" ] ;
+     fhir:display [ fhir:v "Moderate Assistance" ] ;
+     fhir:definition [ fhir:v "Patient requires moderate assistance (physical support for 25-50% of effort)" ]
+  ] [
+     fhir:code [ fhir:v "maximal-assist" ] ;
+     fhir:display [ fhir:v "Maximal Assistance" ] ;
+     fhir:definition [ fhir:v "Patient requires maximal assistance (physical support for >50% of effort)" ]
+  ] [
+     fhir:code [ fhir:v "dependent" ] ;
+     fhir:display [ fhir:v "Dependent" ] ;
+     fhir:definition [ fhir:v "Patient is fully dependent on others for the activity" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

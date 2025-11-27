@@ -1,0 +1,747 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://loinc.org",
+      "version" : "3.1.0",
+      "status" : "active",
+      "name" : "LOINC",
+      "title" : "Logical Observation Identifiers, Names and Codes (LOINC)",
+      "description" : "LOINC provides a set of universal names and ID codes for identifying laboratory and clinical test results.1,2 LOINC facilitates the exchange and pooling of results, such as blood hemoglobin, serum potassium, or vital signs, for clinical care, outcomes management, and research. LOINC's universal identifiers (names and codes) can be used in the context of order and observation exchanges between information systems that use syntax standards such as HL73, CEN TC251, ISO TC215, ASTM4, and DICOM. Specifically, the identifier can be used as the coded value for an observation in any other standard that uses the observation/observation value paradigm, whether messages, documents, application programming interface (API), etc. For example, LOINC codes are used widely in the OBX segment Observation Identifier field (OBX-3) of an ORU HL7 (HL7 version 2.x or ASTM 1238-9410) message that may be sent between a Clinical Laboratory Information Management Systems (LIMS) and Electronic Health Record Systems (EHR).5, 6 In this way, LOINC codes provide universal identifiers that allow the exchange of clinical data between heterogeneous computing environments.",
+      "oids" : ["2.16.840.1.113883.6.1"],
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapHRVToLOINC.html" : "Heart Rate Variability to LOINC Mapping",
+      "ValueSet-inflammatory-marker-vs.html" : "Inflammatory Marker ValueSet",
+      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping",
+      "ConceptMap-ConceptMapVendorToLOINC.html" : "Vendor Proprietary Codes to LOINC Mapping",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "ValueSet-heart-rate-variability-vs.html" : "Heart Rate Variability ValueSet",
+      "ConceptMap-ConceptMapBodyMetricsToLOINC.html" : "Body Metrics to LOINC Mapping",
+      "ConceptMap-ConceptMapSleepToLOINC.html" : "Sleep Measurements to LOINC Mapping",
+      "ValueSet-loinc-observations-vs.html" : "LOINC Observation Codes for Lifestyle Medicine"
+    },
+    {
+      "url" : "http://snomed.info/sct",
+      "version" : null,
+      "status" : "active",
+      "name" : "SNOMED_CT",
+      "title" : "SNOMED CT (all versions)",
+      "description" : "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+      "oids" : ["2.16.840.1.113883.6.96"],
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapMindfulnessToSNOMED.html" : "Mindfulness Observations to SNOMED CT Mapping",
+      "ValueSet-recreational-substance-type-vs.html" : "Recreational Substance Type ValueSet",
+      "ValueSet-hrv-inflammation-trend-vs.html" : "HRV-Inflammation Trend ValueSet",
+      "ConceptMap-ConceptMapMobilityToSNOMED.html" : "Mobility Assessments to SNOMED CT Mapping",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
+      "ValueSet-tobacco-use-status-vs.html" : "Tobacco Use Status ValueSet",
+      "ValueSet-tobacco-product-type-vs.html" : "Tobacco Product Type ValueSet",
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
+      "ConceptMap-ConceptMapNutritionToSNOMED.html" : "Nutrition Measurements to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapEnvironmentalToSNOMED.html" : "Environmental Exposures to SNOMED CT Mapping",
+      "ValueSet-alcohol-use-status-vs.html" : "Alcohol Use Status ValueSet",
+      "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "ValueSet-activity-quality-extended-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
+      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
+      "ConceptMap-ConceptMapPhysicalActivityToSNOMED.html" : "iOS Physical Activity to SNOMED CT Mapping",
+      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
+      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
+      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
+      "ValueSet-time-of-day-vs.html" : "Time of Day Value Set",
+      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
+      "ValueSet-recreational-substance-use-status-vs.html" : "Recreational Substance Use Status ValueSet",
+      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "Iso_21089_2017_Health_Record_Lifecycle_Events",
+      "title" : "ISO 21089 2017 Health Record Lifecycle Events",
+      "description" : "Attached is vocabulary for the 27 record lifecycle events, as per ISO TS 21089-2017, Health Informatics - Trusted End-to-End Information Flows, Section 3, Terms and Definitions (2017, at ISO Central Secretariat, passed ballot and ready for publication).  This will also be included in the FHIR EHR Record Lifecycle Event Implementation Guide, balloted and (to be) published with FHIR STU-3.",
+      "uses" : {
+      },
+      "ValueSet-pghd-provenance-activity-vs.html" : "PGHD Provenance Activity ValueSet"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "version" : "3.1.0",
+      "status" : "active",
+      "name" : "ActReason",
+      "title" : "ActReason",
+      "description" : "A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type \"has reason\" linking to another Act.\r\n\r\n*Examples:* Example reasons that might qualify for being coded in this field might be: \"routine requirement\", \"infectious disease reporting requirement\", \"on patient request\", \"required by law\".",
+      "oids" : ["2.16.840.1.113883.5.8"],
+      "uses" : {
+      },
+      "http://terminology.hl7.org/7.0.0/ValueSet-v3-PurposeOfUse.html" : "PurposeOfUse"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+      "version" : "5.0.0",
+      "status" : "active",
+      "name" : "DataOperation",
+      "title" : "DataOperation",
+      "description" : "**** MISSING DESCRIPTION ****",
+      "oids" : ["2.16.840.1.113883.5.1123"],
+      "uses" : {
+      },
+      "ValueSet-pghd-provenance-activity-vs.html" : "PGHD Provenance Activity ValueSet"
+    },
+    {
+      "url" : "http://unitsofmeasure.org",
+      "version" : "3.0.1",
+      "status" : "active",
+      "name" : "UCUM",
+      "title" : "Unified Code for Units of Measure (UCUM)",
+      "description" : "The Unified Code for Units of Measure (UCUM) is a code system intended to include all units of measures being contemporarily used in international science, engineering, and business. The purpose is to facilitate unambiguous electronic communication of quantities together with their units. The focus is on electronic communication, as opposed to communication between humans. A typical application of The Unified Code for Units of Measure are electronic data interchange (EDI) protocols, but there is nothing that prevents it from being used in other types of machine communication.",
+      "oids" : ["2.16.840.1.113883.6.8"],
+      "uses" : {
+      },
+      "ValueSet-duration-units-vs.html" : "Duration Units Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AdvancedVitalSignsContextCS",
+      "title" : "Advanced Vital Signs Context Code System",
+      "description" : "Codes for advanced vital signs measurement context",
+      "uses" : {
+      },
+      "ValueSet-advanced-vital-signs-context-vs.html" : "Advanced Vital Signs Context Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/alcohol-beverage-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AlcoholBeverageTypeCS",
+      "title" : "Alcohol Beverage Type CodeSystem",
+      "description" : "Common alcoholic beverage types",
+      "uses" : {
+      },
+      "ValueSet-alcohol-beverage-type-vs.html" : "Alcohol Beverage Type ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/alcohol-drinking-frequency-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AlcoholDrinkingFrequencyCS",
+      "title" : "Alcohol Drinking Frequency CodeSystem",
+      "description" : "AUDIT-C style frequency categories",
+      "uses" : {
+      },
+      "ValueSet-alcohol-drinking-frequency-vs.html" : "Alcohol Drinking Frequency ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AssistanceLevelOutcomes",
+      "title" : "Assistance Level Outcomes",
+      "description" : "Outcomes related to assistance levels in mobility assessments",
+      "uses" : {
+      },
+      "ValueSet-assistance-level-outcomes.html" : "Assistance Level Outcomes Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-formats",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AuditFormatsCodeSystem",
+      "title" : "Audit Formats Code System",
+      "description" : "Code system for audit format types",
+      "uses" : {
+      },
+      "ValueSet-audit-formats.html" : "Audit Formats Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-levels",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AuditLevelsCodeSystem",
+      "title" : "Audit Levels Code System",
+      "description" : "Code system for audit level types",
+      "uses" : {
+      },
+      "ValueSet-audit-levels.html" : "Audit Levels Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/balance-status",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "BalanceStatusCodeSystem",
+      "title" : "Balance Status Code System",
+      "description" : "Code system for balance status types",
+      "uses" : {
+      },
+      "ValueSet-balance-status.html" : "Balance Status Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CaffeineIntakeLevelCS",
+      "title" : "Caffeine Intake Level CodeSystem",
+      "description" : "Risk levels for caffeine intake",
+      "uses" : {
+      },
+      "ValueSet-caffeine-intake-level-vs.html" : "Caffeine Intake Level ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CaffeineSourceCS",
+      "title" : "Caffeine Source CodeSystem",
+      "description" : "Sources of caffeine in diet",
+      "uses" : {
+      },
+      "ValueSet-caffeine-source-vs.html" : "Caffeine Source ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cervical-mucus-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CervicalMucusCodeSystem",
+      "title" : "Cervical Mucus Code System",
+      "description" : "Code system for cervical mucus classification",
+      "uses" : {
+      },
+      "ValueSet-cervical-mucus-vs.html" : "Cervical Mucus Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cessation-support-method-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CessationSupportMethodCS",
+      "title" : "Cessation Support Method CodeSystem",
+      "description" : "Methods used to support cessation of substance use",
+      "uses" : {
+      },
+      "ValueSet-cessation-support-method-vs.html" : "Cessation Support Method ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cessation-support-status-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CessationSupportStatusCS",
+      "title" : "Cessation Support Status CodeSystem",
+      "description" : "Status of cessation support",
+      "uses" : {
+      },
+      "ValueSet-cessation-support-status-vs.html" : "Cessation Support Status ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CircadianPhaseCS",
+      "title" : "Circadian Phase Code System",
+      "description" : "Code system for circadian rhythm phases",
+      "uses" : {
+      },
+      "ValueSet-circadian-phase-vs.html" : "Circadian Phase Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/data-capture-method-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "DataCaptureMethodCS",
+      "title" : "Data Capture Method CodeSystem",
+      "description" : "Methods for capturing patient-generated health data",
+      "uses" : {
+      },
+      "ValueSet-data-capture-method-vs.html" : "Data Capture Method ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/drinking-context-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "DrinkingContextCS",
+      "title" : "Drinking Context CodeSystem",
+      "description" : "Settings and contexts for alcohol consumption",
+      "uses" : {
+      },
+      "ValueSet-drinking-context-vs.html" : "Drinking Context ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environment-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "EnvironmentTypeCS",
+      "title" : "Practice Environment Types",
+      "description" : "Types of environments for mindfulness practice",
+      "uses" : {
+      },
+      "ValueSet-environment-type-vs.html" : "Practice Environment Types Value Set",
+      "ValueSet-environment-type.html" : "Environment Type Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "EnvironmentalContextCS",
+      "title" : "Environmental Context Code System",
+      "description" : "Environmental factors and settings affecting health measurements and observations",
+      "uses" : {
+      },
+      "ValueSet-environmental-context-vs.html" : "Environmental Context Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ExposureConditionsCS",
+      "title" : "Exposure Conditions Code System",
+      "description" : "Code system for conditions during environmental exposure",
+      "uses" : {
+      },
+      "ValueSet-exposure-conditions-vs.html" : "Exposure Conditions Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-location-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ExposureLocationCS",
+      "title" : "Exposure Location Code System",
+      "description" : "Code system for environmental exposure locations",
+      "uses" : {
+      },
+      "ValueSet-exposure-location-vs.html" : "Exposure Location Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FallRiskOutcomes",
+      "title" : "Fall Risk Outcomes",
+      "description" : "Outcomes and assessment results related to fall risk in mobility evaluations",
+      "uses" : {
+      },
+      "ValueSet-fall-risk-outcomes.html" : "Fall Risk Outcomes Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fertility-status-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FertilityStatusCodeSystem",
+      "title" : "Fertility Status Code System",
+      "description" : "Code system for fertility status indicators",
+      "uses" : {
+      },
+      "ValueSet-fertility-status-vs.html" : "Fertility Status Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "HeartRateVariabilityCS",
+      "title" : "Heart Rate Variability CodeSystem",
+      "description" : "Custom codes for HRV metrics with LOINC mappings where available. SDNN maps to LOINC 80404-7, other metrics await LOINC assignment.",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapHRVToLOINC.html" : "Heart Rate Variability to LOINC Mapping",
+      "ValueSet-heart-rate-variability-vs.html" : "Heart Rate Variability ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "HsCRPRiskCS",
+      "title" : "hs-CRP Cardiovascular Risk CodeSystem",
+      "description" : "Cardiovascular risk classification based on high-sensitivity C-Reactive Protein levels.\n\nBased on AHA/CDC Scientific Statement on Markers of Inflammation and Cardiovascular Disease:\n- Pearson TA, et al. Circulation. 2003;107(3):499-511. doi:10.1161/01.CIR.0000052939.59093.45\n- Ridker PM, et al. Circulation. 2003;107(3):363-369. doi:10.1161/01.CIR.0000053730.47739.3C\n\nRisk stratification thresholds:\n- Low risk: hs-CRP < 1.0 mg/L\n- Average risk: hs-CRP 1.0-3.0 mg/L\n- High risk: hs-CRP > 3.0 mg/L\n\nNote: No SNOMED-CT codes exist for this specific clinical classification as of 2025.\nThis CodeSystem follows thesis semantic hierarchy Level 3: local codes with documented source\nand migration pathway when standard terminology becomes available.\n\nFuture migration: Monitor SNOMED-CT International Edition for cardiovascular risk finding codes.",
+      "uses" : {
+      },
+      "ValueSet-hscrp-interpretation-vs.html" : "hs-CRP Interpretation ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ios-physical-activity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "IOSPhysicalActivityCS",
+      "title" : "iOS Physical Activity CodeSystem",
+      "description" : "CodeSystem for physical activity types from Apple HealthKit HKWorkoutActivityType. Enables interoperability between iOS Health App data and standard terminologies (SNOMED CT, LOINC).",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapPhysicalActivityToSNOMED.html" : "iOS Physical Activity to SNOMED CT Mapping"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "LifestyleObservationCS",
+      "title" : "Lifestyle Medicine Observation Codes",
+      "description" : "Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist.",
+      "uses" : {
+      },
+      "ValueSet-lifestyle-observation-vs.html" : "Lifestyle Medicine Observation Value Set",
+      "ConceptMap-ConceptMapMindfulnessToSNOMED.html" : "Mindfulness Observations to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapNutritionToSNOMED.html" : "Nutrition Measurements to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapEnvironmentalToSNOMED.html" : "Environmental Exposures to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping",
+      "ConceptMap-ConceptMapBodyMetricsToLOINC.html" : "Body Metrics to LOINC Mapping",
+      "ConceptMap-ConceptMapMobilityToSNOMED.html" : "Mobility Assessments to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapSleepToLOINC.html" : "Sleep Measurements to LOINC Mapping"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MeasurementQualityCS",
+      "title" : "Measurement Quality Code System",
+      "description" : "Code system for measurement quality indicators",
+      "uses" : {
+      },
+      "ValueSet-measurement-quality-vs.html" : "Measurement Quality Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-outcome-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MindfulnessOutcomeCS",
+      "title" : "Mindfulness Outcomes",
+      "description" : "Outcomes and effects of mindfulness practice",
+      "uses" : {
+      },
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-qualifier-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MindfulnessQualifierCS",
+      "title" : "Mindfulness Practice Qualifiers",
+      "description" : "Qualifiers for mindfulness practice characteristics",
+      "uses" : {
+      },
+      "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MindfulnessTypeCS",
+      "title" : "Mindfulness Practice Types",
+      "description" : "Types of mindfulness practices and techniques",
+      "uses" : {
+      },
+      "ValueSet-mindfulness-type-vs.html" : "Mindfulness Practice Types Value Set",
+      "ValueSet-mindfulness-type.html" : "Mindfulness Type Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MobilityAlertLevelCS",
+      "title" : "Mobility Alert Level Code System",
+      "description" : "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns",
+      "uses" : {
+      },
+      "ValueSet-mobility-alert-level-vs.html" : "Mobility Alert Level Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MobilityDeclineOutcomes",
+      "title" : "Mobility Decline Outcomes",
+      "description" : "Outcomes and trends related to mobility decline assessments over time",
+      "uses" : {
+      },
+      "ValueSet-mobility-decline-outcomes.html" : "Mobility Decline Outcomes Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "MoodCodeSystem",
+      "title" : "Mood Code System",
+      "description" : "Code system for mood states",
+      "uses" : {
+      },
+      "ValueSet-mood.html" : "Mood Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-data-source-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "NutritionDataSourceCS",
+      "title" : "Nutrition Data Source Code System",
+      "description" : "Code system for nutrition data sources",
+      "uses" : {
+      },
+      "ValueSet-nutrition-data-source-vs.html" : "Nutrition Data Source Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "OvulationTestCodeSystem",
+      "title" : "Ovulation Test Code System",
+      "description" : "Code system for ovulation test results",
+      "uses" : {
+      },
+      "ValueSet-ovulation-test-vs.html" : "Ovulation Test Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/practitioner-identifier-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "PractitionerIdentifierCS",
+      "title" : "Practitioner Identifier Code System",
+      "description" : "Sistema de códigos para identificação de practitioners",
+      "uses" : {
+      },
+      "ValueSet-practitioner-identifier-vs.html" : "Practitioner Identifier Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/regulatory-framework-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "RegulatoryFrameworkCS",
+      "title" : "Regulatory Framework Code System",
+      "description" : "Codes for healthcare regulatory frameworks",
+      "uses" : {
+      },
+      "ValueSet-regulatory-framework-vs.html" : "Regulatory Framework Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "RiskLevel",
+      "title" : "Risk Level",
+      "description" : "General risk level classification for health assessments and clinical decision support",
+      "uses" : {
+      },
+      "ValueSet-risk-level.html" : "Risk Level Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-activity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SocialActivityCS",
+      "title" : "Social Activity Code System",
+      "description" : "Code system for types of social activities",
+      "uses" : {
+      },
+      "ValueSet-social-activity-vs.html" : "Social Activity Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-context-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SocialContextCS",
+      "title" : "Social Context Code System",
+      "description" : "Code system for social interaction contexts",
+      "uses" : {
+      },
+      "ValueSet-social-context-vs.html" : "Social Context Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-history-activity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ReproductiveActivityCS",
+      "title" : "Reproductive Health Activities Code System",
+      "description" : "Code system for social-history health monitoring activities",
+      "uses" : {
+      },
+      "ValueSet-social-history-activity-vs.html" : "Reproductive Health Activities Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-medium-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SocialInteractionMediumCS",
+      "title" : "Social Interaction Medium Code System",
+      "description" : "Mediums through which social interaction occurs",
+      "uses" : {
+      },
+      "ValueSet-social-interaction-medium-vs.html" : "Social Interaction Medium Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-quality-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SocialInteractionQualityCS",
+      "title" : "Social Interaction Quality Code System",
+      "description" : "Quality measures for social interactions",
+      "uses" : {
+      },
+      "ValueSet-social-interaction-quality-vs.html" : "Social Interaction Quality Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SocialInteractionTypeCS",
+      "title" : "Social Interaction Type Code System",
+      "description" : "Types of social interactions",
+      "uses" : {
+      },
+      "ValueSet-social-interaction-type-vs.html" : "Social Interaction Type Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SocialSupportCS",
+      "title" : "Social Support Code System",
+      "description" : "Code system for levels of social support",
+      "uses" : {
+      },
+      "ValueSet-social-support-vs.html" : "Social Support Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-chronicity-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "StressChronicityCS",
+      "title" : "Stress Chronicity Code System",
+      "description" : "Code system for stress chronicity classification",
+      "uses" : {
+      },
+      "ValueSet-stress-chronicity-vs.html" : "Stress Chronicity Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-coping-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "StressCopingCS",
+      "title" : "Stress Coping Code System",
+      "description" : "Code system for stress coping mechanisms",
+      "uses" : {
+      },
+      "ValueSet-stress-coping-vs.html" : "Stress Coping Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-impact-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "StressImpactCS",
+      "title" : "Stress Impact Code System",
+      "description" : "Code system for stress impact levels",
+      "uses" : {
+      },
+      "ValueSet-stress-impact-vs.html" : "Stress Impact Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-triggers-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "StressTriggersCS",
+      "title" : "Stress Triggers Code System",
+      "description" : "Code system for common stress triggers",
+      "uses" : {
+      },
+      "ValueSet-stress-triggers-vs.html" : "Stress Triggers Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-frequency-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseFrequencyCS",
+      "title" : "Substance Use Frequency CodeSystem",
+      "description" : "Frequency categories for substance use reporting",
+      "uses" : {
+      },
+      "ValueSet-substance-use-frequency-vs.html" : "Substance Use Frequency ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-motivation-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseMotivationCS",
+      "title" : "Substance Use Motivation CodeSystem",
+      "description" : "Motivation stages based on Transtheoretical Model (Prochaska)",
+      "uses" : {
+      },
+      "ValueSet-substance-use-motivation-vs.html" : "Substance Use Motivation ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-risk-level-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseRiskLevelCS",
+      "title" : "Substance Use Risk Level CodeSystem",
+      "description" : "Risk levels for substance use assessment in lifestyle medicine",
+      "uses" : {
+      },
+      "ValueSet-substance-use-risk-level-vs.html" : "Substance Use Risk Level ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-trigger-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SubstanceUseTriggerCS",
+      "title" : "Substance Use Trigger CodeSystem",
+      "description" : "Common triggers for substance use behavior",
+      "uses" : {
+      },
+      "ValueSet-substance-use-trigger-vs.html" : "Substance Use Trigger ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/symptom-frequency-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SymptomFrequencyCS",
+      "title" : "Symptom Frequency Code System",
+      "description" : "Frequency patterns for symptoms",
+      "uses" : {
+      },
+      "ValueSet-symptom-frequency-vs.html" : "Symptom Frequency Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/symptom-impact-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "SymptomImpactCS",
+      "title" : "Symptom Impact Code System",
+      "description" : "Impact levels of symptoms on daily activities",
+      "uses" : {
+      },
+      "ValueSet-symptom-impact-vs.html" : "Symptom Impact Value Set"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-sensor-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "WearableSensorTypeCS",
+      "title" : "Wearable Sensor Type CodeSystem",
+      "description" : "Sensor types found in consumer wearable devices",
+      "uses" : {
+      },
+      "ValueSet-wearable-sensor-type-vs.html" : "Wearable Sensor Type ValueSet"
+    },
+    {
+      "url" : "urn:iso:std:iso:3166",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ISO3166Part1",
+      "title" : "ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code",
+      "description" : "ISO 3166-1 establishes codes that represent the current names of countries, dependencies, and other areas of particular geopolitical interest, on the basis of country names obtained from the United Nations.",
+      "oids" : ["1.0.3166.1"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-jurisdiction.html" : "Jurisdiction"
+    },
+    {
+      "url" : "urn:iso:std:iso:3166:-2",
+      "version" : "1.0.1",
+      "status" : "active",
+      "name" : "ISO3166Part2",
+      "title" : "ISO 3166-2 Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code",
+      "description" : "ISO 3166-2 establishes a code that represents the names of the principal administrative divisions, or similar areas, of the countries and entities included in ISO 3166-1.",
+      "oids" : ["1.0.3166.2"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-jurisdiction.html" : "Jurisdiction"
+    }
+  ]
+}

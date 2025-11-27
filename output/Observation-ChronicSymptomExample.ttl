@@ -1,0 +1,46 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/ChronicSymptomExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ChronicSymptomExample"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation ChronicSymptomExample</b></p><a name=\"ChronicSymptomExample\"> </a><a name=\"hcChronicSymptomExample\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 84229001}\">Fatigue</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 14:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:84229001 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "84229001" ] ;
+       fhir:display [ fhir:v "Fatigue" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2024-03-19T14:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/PractitionerExample> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

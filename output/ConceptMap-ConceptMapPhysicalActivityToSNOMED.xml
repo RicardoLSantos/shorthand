@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="ConceptMapPhysicalActivityToSNOMED"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapPhysicalActivityToSNOMED</b></p><a name="ConceptMapPhysicalActivityToSNOMED"> </a><a name="hcConceptMapPhysicalActivityToSNOMED"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href="CodeSystem-ios-physical-activity-cs.html">iOS Physical Activity CodeSystem</a> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>walking</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>129006008 (Walking (observable entity))</td><td>Direct mapping from HKWorkoutActivityType.walking to SNOMED CT. Includes both indoor and outdoor walking activities.</td></tr><tr><td>running</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>229065009 (Running (observable entity))</td><td>Direct mapping from HKWorkoutActivityType.running to SNOMED CT. Includes both indoor and outdoor running activities.</td></tr><tr><td>cycling</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>266940006 (Cycling (regime/therapy))</td><td>Direct mapping from HKWorkoutActivityType.cycling to SNOMED CT. Includes outdoor cycling and stationary cycling.</td></tr><tr><td>swimming</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>266938001 (Swimming (regime/therapy))</td><td>Direct mapping from HKWorkoutActivityType.swimming to SNOMED CT. Includes pool and open water swimming.</td></tr><tr><td>hiking</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>71537002 (Hiking (physical activity))</td><td>Mapping from HKWorkoutActivityType.hiking to SNOMED CT code 71537002. Note: SNOMED code should be verified via official SNOMED CT Browser before clinical use.</td></tr><tr><td>yoga</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider" title="wider">maps to wider concept</a></td><td>48761009 (Regular exercise (regime/therapy))</td><td>HKWorkoutActivityType.yoga maps to broader SNOMED concept 'Regular exercise'. Specific SNOMED code for yoga may exist but requires verification. Equivalence marked as 'wider' because target concept is less specific than source.</td></tr><tr><td>dancing</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider" title="wider">maps to wider concept</a></td><td>48761009 (Regular exercise (regime/therapy))</td><td>HKWorkoutActivityType.dance/socialDance maps to broader SNOMED concept 'Regular exercise'. Specific SNOMED code for dancing may exist (search: 'dancing' in SNOMED CT Browser).</td></tr><tr><td>strength-training</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower" title="narrower">narrower</a></td><td>229070001 (Exercise training (regime/therapy))</td><td>HKWorkoutActivityType.traditionalStrengthTraining maps to broader SNOMED concept 'Exercise training'. Target is less specific than source (which specifies strength/resistance training).</td></tr><tr><td>tennis</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>85098004 (Tennis (physical activity))</td><td>Mapping from HKWorkoutActivityType.tennis to SNOMED CT code 85098004. Note: SNOMED code should be verified via official SNOMED CT Browser.</td></tr><tr><td>badminton</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No verified SNOMED CT code available for badminton as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Racket sports' if available.</td></tr><tr><td>squash</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No verified SNOMED CT code available for squash as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Racket sports'.</td></tr><tr><td>table-tennis</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No verified SNOMED CT code available for table tennis as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Racket sports'.</td></tr><tr><td>soccer</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>81598007 (Football (physical activity))</td><td>Mapping from HKWorkoutActivityType.soccer to SNOMED CT code 81598007 (Football). Note: SNOMED code should be verified. Regional terminology note: 'Football' in SNOMED may refer to soccer/association football.</td></tr><tr><td>basketball</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>25999001 (Basketball (physical activity))</td><td>Mapping from HKWorkoutActivityType.basketball to SNOMED CT code 25999001. Note: SNOMED code should be verified via official SNOMED CT Browser.</td></tr><tr><td>volleyball</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No verified SNOMED CT code available for volleyball as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Team sports'.</td></tr><tr><td>tai-chi</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>418818004 (Tai chi (regime/therapy))</td><td>Mapping from HKWorkoutActivityType.taiChi to SNOMED CT code 418818004. Note: SNOMED code should be verified.</td></tr><tr><td>pilates</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No verified SNOMED CT code available for Pilates as of 2025-11-22. May map to broader concept 'Exercise training' or 'Mind-body therapy'.</td></tr><tr><td>rowing</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>10335005 (Rowing (physical activity))</td><td>Mapping from HKWorkoutActivityType.rowing to SNOMED CT code 10335005. Note: SNOMED code should be verified.</td></tr><tr><td>paddle-sports</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider" title="wider">maps to wider concept</a></td><td>48761009 (Regular exercise (regime/therapy))</td><td>HKWorkoutActivityType.paddleSports (kayaking, canoeing) maps to broader SNOMED concept 'Regular exercise'. Specific codes for paddle sports may exist.</td></tr><tr><td>skiing</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>71537001 (Skiing (physical activity))</td><td>Mapping from HKWorkoutActivityType.downhillSkiing/crossCountrySkiing to SNOMED CT code 71537001. Note: SNOMED code should be verified. May need separate codes for downhill vs cross-country.</td></tr><tr><td>snowboarding</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No verified SNOMED CT code available for snowboarding as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Winter sports'.</td></tr><tr><td>climbing</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>15128009 (Climbing (physical activity))</td><td>Mapping from HKWorkoutActivityType.climbing to SNOMED CT code 15128009. Note: SNOMED code should be verified.</td></tr><tr><td>golf</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>49774004 (Golf (physical activity))</td><td>Mapping from HKWorkoutActivityType.golf to SNOMED CT code 49774004. Note: SNOMED code should be verified.</td></tr><tr><td>elliptical</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower" title="narrower">narrower</a></td><td>229070001 (Exercise training (regime/therapy))</td><td>HKWorkoutActivityType.elliptical maps to broader SNOMED concept 'Exercise training'. Specific SNOMED code for elliptical trainer may not exist.</td></tr><tr><td>stairs</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower" title="narrower">narrower</a></td><td>15128009 (Climbing (physical activity))</td><td>HKWorkoutActivityType.stairs/stairStepper maps to SNOMED concept 'Climbing'. Target is broader than source (stairs is a specific type of climbing activity).</td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapPhysicalActivityToSNOMED"/>
+  <version value="0.1.0"/>
+  <name value="ConceptMapPhysicalActivityToSNOMED"/>
+  <title value="iOS Physical Activity to SNOMED CT Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-22"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Operational ConceptMap for physical activity terminology translation. Enables runtime $translate operations for semantic interoperability between Apple HealthKit activity types and SNOMED CT standard terminology. Critical for iOS Health App data integration into EHR systems."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Provides semantic mappings from Apple HealthKit physical activity types (HKWorkoutActivityType) to standard SNOMED CT codes. Enables clinical decision support systems to interpret wearable device activity data using standardized terminology."/>
+  <group>
+    <source value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ios-physical-activity-cs"/>
+    <target value="http://snomed.info/sct"/>
+    <element>
+      <code value="walking"/>
+      <display value="Walking"/>
+      <target>
+        <code value="129006008"/>
+        <display value="Walking (observable entity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Direct mapping from HKWorkoutActivityType.walking to SNOMED CT. Includes both indoor and outdoor walking activities."/>
+      </target>
+    </element>
+    <element>
+      <code value="running"/>
+      <display value="Running"/>
+      <target>
+        <code value="229065009"/>
+        <display value="Running (observable entity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Direct mapping from HKWorkoutActivityType.running to SNOMED CT. Includes both indoor and outdoor running activities."/>
+      </target>
+    </element>
+    <element>
+      <code value="cycling"/>
+      <display value="Cycling"/>
+      <target>
+        <code value="266940006"/>
+        <display value="Cycling (regime/therapy)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Direct mapping from HKWorkoutActivityType.cycling to SNOMED CT. Includes outdoor cycling and stationary cycling."/>
+      </target>
+    </element>
+    <element>
+      <code value="swimming"/>
+      <display value="Swimming"/>
+      <target>
+        <code value="266938001"/>
+        <display value="Swimming (regime/therapy)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Direct mapping from HKWorkoutActivityType.swimming to SNOMED CT. Includes pool and open water swimming."/>
+      </target>
+    </element>
+    <element>
+      <code value="hiking"/>
+      <display value="Hiking"/>
+      <target>
+        <code value="71537002"/>
+        <display value="Hiking (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.hiking to SNOMED CT code 71537002. Note: SNOMED code should be verified via official SNOMED CT Browser before clinical use."/>
+      </target>
+    </element>
+    <element>
+      <code value="yoga"/>
+      <display value="Yoga"/>
+      <target>
+        <code value="48761009"/>
+        <display value="Regular exercise (regime/therapy)"/>
+        <equivalence value="wider"/>
+        <comment value="HKWorkoutActivityType.yoga maps to broader SNOMED concept 'Regular exercise'. Specific SNOMED code for yoga may exist but requires verification. Equivalence marked as 'wider' because target concept is less specific than source."/>
+      </target>
+    </element>
+    <element>
+      <code value="dancing"/>
+      <display value="Dancing"/>
+      <target>
+        <code value="48761009"/>
+        <display value="Regular exercise (regime/therapy)"/>
+        <equivalence value="wider"/>
+        <comment value="HKWorkoutActivityType.dance/socialDance maps to broader SNOMED concept 'Regular exercise'. Specific SNOMED code for dancing may exist (search: 'dancing' in SNOMED CT Browser)."/>
+      </target>
+    </element>
+    <element>
+      <code value="strength-training"/>
+      <display value="Strength Training"/>
+      <target>
+        <code value="229070001"/>
+        <display value="Exercise training (regime/therapy)"/>
+        <equivalence value="narrower"/>
+        <comment value="HKWorkoutActivityType.traditionalStrengthTraining maps to broader SNOMED concept 'Exercise training'. Target is less specific than source (which specifies strength/resistance training)."/>
+      </target>
+    </element>
+    <element>
+      <code value="tennis"/>
+      <display value="Tennis"/>
+      <target>
+        <code value="85098004"/>
+        <display value="Tennis (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.tennis to SNOMED CT code 85098004. Note: SNOMED code should be verified via official SNOMED CT Browser."/>
+      </target>
+    </element>
+    <element>
+      <code value="badminton"/>
+      <display value="Badminton"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No verified SNOMED CT code available for badminton as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Racket sports' if available."/>
+      </target>
+    </element>
+    <element>
+      <code value="squash"/>
+      <display value="Squash"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No verified SNOMED CT code available for squash as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Racket sports'."/>
+      </target>
+    </element>
+    <element>
+      <code value="table-tennis"/>
+      <display value="Table Tennis"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No verified SNOMED CT code available for table tennis as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Racket sports'."/>
+      </target>
+    </element>
+    <element>
+      <code value="soccer"/>
+      <display value="Soccer"/>
+      <target>
+        <code value="81598007"/>
+        <display value="Football (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.soccer to SNOMED CT code 81598007 (Football). Note: SNOMED code should be verified. Regional terminology note: 'Football' in SNOMED may refer to soccer/association football."/>
+      </target>
+    </element>
+    <element>
+      <code value="basketball"/>
+      <display value="Basketball"/>
+      <target>
+        <code value="25999001"/>
+        <display value="Basketball (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.basketball to SNOMED CT code 25999001. Note: SNOMED code should be verified via official SNOMED CT Browser."/>
+      </target>
+    </element>
+    <element>
+      <code value="volleyball"/>
+      <display value="Volleyball"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No verified SNOMED CT code available for volleyball as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Team sports'."/>
+      </target>
+    </element>
+    <element>
+      <code value="tai-chi"/>
+      <display value="Tai Chi"/>
+      <target>
+        <code value="418818004"/>
+        <display value="Tai chi (regime/therapy)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.taiChi to SNOMED CT code 418818004. Note: SNOMED code should be verified."/>
+      </target>
+    </element>
+    <element>
+      <code value="pilates"/>
+      <display value="Pilates"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No verified SNOMED CT code available for Pilates as of 2025-11-22. May map to broader concept 'Exercise training' or 'Mind-body therapy'."/>
+      </target>
+    </element>
+    <element>
+      <code value="rowing"/>
+      <display value="Rowing"/>
+      <target>
+        <code value="10335005"/>
+        <display value="Rowing (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.rowing to SNOMED CT code 10335005. Note: SNOMED code should be verified."/>
+      </target>
+    </element>
+    <element>
+      <code value="paddle-sports"/>
+      <display value="Paddle Sports"/>
+      <target>
+        <code value="48761009"/>
+        <display value="Regular exercise (regime/therapy)"/>
+        <equivalence value="wider"/>
+        <comment value="HKWorkoutActivityType.paddleSports (kayaking, canoeing) maps to broader SNOMED concept 'Regular exercise'. Specific codes for paddle sports may exist."/>
+      </target>
+    </element>
+    <element>
+      <code value="skiing"/>
+      <display value="Skiing"/>
+      <target>
+        <code value="71537001"/>
+        <display value="Skiing (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.downhillSkiing/crossCountrySkiing to SNOMED CT code 71537001. Note: SNOMED code should be verified. May need separate codes for downhill vs cross-country."/>
+      </target>
+    </element>
+    <element>
+      <code value="snowboarding"/>
+      <display value="Snowboarding"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No verified SNOMED CT code available for snowboarding as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Winter sports'."/>
+      </target>
+    </element>
+    <element>
+      <code value="climbing"/>
+      <display value="Climbing"/>
+      <target>
+        <code value="15128009"/>
+        <display value="Climbing (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.climbing to SNOMED CT code 15128009. Note: SNOMED code should be verified."/>
+      </target>
+    </element>
+    <element>
+      <code value="golf"/>
+      <display value="Golf"/>
+      <target>
+        <code value="49774004"/>
+        <display value="Golf (physical activity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Mapping from HKWorkoutActivityType.golf to SNOMED CT code 49774004. Note: SNOMED code should be verified."/>
+      </target>
+    </element>
+    <element>
+      <code value="elliptical"/>
+      <display value="Elliptical"/>
+      <target>
+        <code value="229070001"/>
+        <display value="Exercise training (regime/therapy)"/>
+        <equivalence value="narrower"/>
+        <comment value="HKWorkoutActivityType.elliptical maps to broader SNOMED concept 'Exercise training'. Specific SNOMED code for elliptical trainer may not exist."/>
+      </target>
+    </element>
+    <element>
+      <code value="stairs"/>
+      <display value="Stairs"/>
+      <target>
+        <code value="15128009"/>
+        <display value="Climbing (physical activity)"/>
+        <equivalence value="narrower"/>
+        <comment value="HKWorkoutActivityType.stairs/stairStepper maps to SNOMED concept 'Climbing'. Target is broader than source (stairs is a specific type of climbing activity)."/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

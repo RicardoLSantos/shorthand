@@ -1,0 +1,80 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "EndSessionOperation",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-operation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: OperationDefinition EndSessionOperation</b></p><a name=\"EndSessionOperation\"> </a><a name=\"hcEndSessionOperation\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-mindfulness-operation.html\">Mindfulness Operation</a></p></div><p>URL: [base]/Observation/$end</p><p>URL: [base]/Observation/[id]/$end</p><h3>Parâmetros</h3><table class=\"grid\"><tr><td><b>Utilização</b></td><td><b>Nome</b></td><td><b>Âmbito de aplicação</b></td><td><b>Cardinalidade</b></td><td><b>Tipo</b></td><td><b>Vínculo</b></td><td><b>Documentação</b></td></tr><tr><td>IN</td><td>session</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>ID of the session to end</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/OperationDefinition/EndSessionOperation",
+  "version" : "0.1.0",
+  "name" : "EndSession",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2025-11-27T17:03:01+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "code" : "end",
+  "resource" : ["Observation"],
+  "system" : false,
+  "type" : true,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "session",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "ID of the session to end",
+    "type" : "string"
+  }]
+}

@@ -1,0 +1,145 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/CompleteMindfulnessSession> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CompleteMindfulnessSession"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation CompleteMindfulnessSession</b></p><a name=\"CompleteMindfulnessSession\"> </a><a name=\"hcCompleteMindfulnessSession\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-mindfulness-observation.html\">Mindfulness Session Observation</a></p></div><blockquote><p><b>Mindfulness Session Context</b></p><ul><li>location: Home meditation room</li><li>environment: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environment-type-cs quiet}\">Quiet Space</span></li><li>guidance: true</li></ul></blockquote><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs mindfulness-session}\">Mindfulness practice session</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 704323007}\">Process duration</span></p><p><b>value</b>: 20 min<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 365949003}\">Health-related behavior finding</span></p><p><b>value</b>: 3</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 106131003}\">Mood finding</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood calm}\">Calm</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs relaxation-response}\">Relaxation response observation</span></p><p><b>value</b>: Deep breathing exercises with progressive relaxation</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs mindfulness-type}\">Type of mindfulness practice</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs meditation}\">Meditation</span></p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "location"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Home meditation room"
+       ]
+     ] [
+       fhir:url [ fhir:v "environment"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environment-type-cs"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "quiet" ] ;
+           fhir:display [ fhir:v "Quiet Space" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "guidance"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-context"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "mindfulness-session" ] ;
+       fhir:display [ fhir:v "Mindfulness practice session" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/PractitionerExample> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+  ] ) ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a sct:704323007 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "704323007" ] ;
+         fhir:display [ fhir:v "Process duration" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "20"^^xsd:decimal ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "min" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:365949003 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "365949003" ] ;
+         fhir:display [ fhir:v "Health-related behavior finding" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 3
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:106131003 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "106131003" ] ;
+         fhir:display [ fhir:v "Mood finding" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "calm" ] ;
+         fhir:display [ fhir:v "Calm" ]
+       ] )
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "relaxation-response" ] ;
+         fhir:display [ fhir:v "Relaxation response observation" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "Deep breathing exercises with progressive relaxation"
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "mindfulness-type" ] ;
+         fhir:display [ fhir:v "Type of mindfulness practice" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "meditation" ] ;
+         fhir:display [ fhir:v "Meditation" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

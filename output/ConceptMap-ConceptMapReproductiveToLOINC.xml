@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="ConceptMapReproductiveToLOINC"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapReproductiveToLOINC</b></p><a name="ConceptMapReproductiveToLOINC"> </a><a name="hcConceptMapReproductiveToLOINC"> </a><p>Mapeamento de <a href="ValueSet-lifestyle-observation-vs.html">Lifestyle Medicine Observation Value Set</a> para <a href="ValueSet-loinc-observations-vs.html">LOINC Observation Codes for Lifestyle Medicine</a></p><br/><p><b>Grupo 1 </b>Mapeamento de <a href="CodeSystem-lifestyle-observation-cs.html">Lifestyle Medicine Observation Codes</a> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>ovulation-status</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No direct LOINC code for consumer fertility device ovulation status as of November 2025. LOINC has laboratory ovulation predictor tests (e.g., LH surge tests) but not consumer device algorithmic ovulation predictions. Consumer apps use basal body temperature + symptom tracking algorithms. Terminology gap between laboratory ovulation testing and consumer fertility tracking.</td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapReproductiveToLOINC"/>
+  <version value="0.1.0"/>
+  <name value="ConceptMapReproductiveToLOINC"/>
+  <title value="Reproductive Health to LOINC Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-22"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Operational ConceptMap for reproductive health terminology translation. Enables runtime $translate operations for semantic interoperability between consumer fertility tracking applications and LOINC standard terminology."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Provides semantic mappings from custom reproductive health codes to standard LOINC codes. Consumer fertility tracking apps capture ovulation status, menstrual cycle data, but use proprietary coding systems."/>
+  <sourceCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"/>
+  <targetCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"/>
+  <group>
+    <source value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+    <target value="http://loinc.org"/>
+    <element>
+      <code value="ovulation-status"/>
+      <display value="Ovulation status"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No direct LOINC code for consumer fertility device ovulation status as of November 2025. LOINC has laboratory ovulation predictor tests (e.g., LH surge tests) but not consumer device algorithmic ovulation predictions. Consumer apps use basal body temperature + symptom tracking algorithms. Terminology gap between laboratory ovulation testing and consumer fertility tracking."/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

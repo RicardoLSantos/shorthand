@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="AdvancedVitalSignsExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation AdvancedVitalSignsExample</b></p><a name="AdvancedVitalSignsExample"> </a><a name="hcAdvancedVitalSignsExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-advanced-vital-signs.html">Advanced Vital Signs Profile</a></p></div><p><b>Measurement Quality Extension</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs excellent}">Excellent Quality</span></p><p><b>Advanced Vital Signs Context Extension</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs resting}">Resting state</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 8716-3}">Vital signs note</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>performer</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Jane Smith </a></p><p><b>note</b>: </p><blockquote><div><p>Comprehensive cardiovascular assessment during routine checkup</p>
+</div></blockquote><p><b>device</b>: <a href="Device-DeviceHeartRateMonitor.html">Device: manufacturer = HealthTech Devices; modelNumber = HRM-2024; type = Heart rate</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs hrv-frequency}">Heart rate variability frequency band</span></p><p><b>value</b>: 42 millisecond<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigoms = 'ms')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 8478-0}">Mean blood pressure</span></p><p><b>value</b>: 93 millimeter of mercury<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs autonomic-balance}">Autonomic balance index</span></p><p><b>value</b>: 1.2 ratio<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código1 = '1')</span></p></blockquote></div>
+  </text>
+  <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-quality">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs"/>
+        <code value="excellent"/>
+        <display value="Excellent Quality"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs-context">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs"/>
+        <code value="resting"/>
+        <display value="Resting state"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8716-3"/>
+      <display value="Vital signs note"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2024-03-19T15:30:00Z"/>
+  <performer>
+    <reference value="Practitioner/PractitionerExample"/>
+  </performer>
+  <note>
+    <text value="Comprehensive cardiovascular assessment during routine checkup"/>
+  </note>
+  <device>
+    <reference value="Device/DeviceHeartRateMonitor"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+        <code value="hrv-frequency"/>
+        <display value="Heart rate variability frequency band"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="42"/>
+      <unit value="millisecond"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="ms"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="8478-0"/>
+        <display value="Mean blood pressure"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="93"/>
+      <unit value="millimeter of mercury"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mm[Hg]"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+        <code value="autonomic-balance"/>
+        <display value="Autonomic balance index"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="1.2"/>
+      <unit value="ratio"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+</Observation>

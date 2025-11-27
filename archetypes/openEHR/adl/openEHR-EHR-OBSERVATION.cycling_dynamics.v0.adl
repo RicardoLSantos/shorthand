@@ -1,0 +1,1180 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.cycling_dynamics.v0
+
+concept
+	[at0000]	-- Cycling dynamics
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Correia">
+		["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["email"] = <"correia@med.up.pt">
+		["date"] = <"2025-11-27">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record cycling dynamics and power metrics from wearable devices, cycling computers, and smart trainers for performance analysis and training optimization.">
+			use = <"Use to record:
+- Power output metrics from power meters and smart trainers
+- Functional Threshold Power (FTP) and training zones
+- Training Stress Score (TSS), Intensity Factor (IF), Normalized Power
+- Pedaling dynamics including cadence, left/right balance, torque effectiveness
+- Indoor training metrics from smart trainers
+- Segment and interval performance analysis
+
+This archetype supports data from:
+- Cycling power meters (crank-based, pedal-based, hub-based)
+- Smart trainers (Wahoo, Tacx, Elite, Saris)
+- Cycling computers (Garmin, Wahoo, Hammerhead)
+- Wearable devices with cycling profiles
+
+Designed for lifestyle medicine applications focusing on cardiovascular fitness and training load management.">
+			keywords = <"cycling", "power", "FTP", "watts", "cadence", "TSS", "training", "wearable", "pedaling">
+			misuse = <"Not to be used for:
+- General physical activity tracking - use physical_activity_detailed archetype
+- Heart rate variability analysis - use heart_rate_variability archetype
+- VO2max estimation - use vo2max_estimation archetype">
+			copyright = <"© openEHR Foundation, HEADS#2 FMUP">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"HEADS#2 PhD Project, FMUP", "openEHR Lifestyle Medicine Working Group">
+	other_details = <
+		["licence"] = <"Creative Commons CC-BY-SA 4.0">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"Allen H, Coggan A. Training and Racing with a Power Meter. VeloPress; 2010.
+Coggan A. Training Stress Score (TSS) and Intensity Factor (IF). TrainingPeaks; 2003.
+Bini RR, et al. Pedaling technique and energy saving. Sports Biomechanics. 2013;12(4):434-446.">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"cycling_dynamics_v0_md5">
+		["build_uid"] = <"9f8e7d6c-5b4a-3c2d-1e0f-cycling001">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Cycling dynamics
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {	-- Any point in time event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- Power metrics
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Instantaneous power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..2500.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Average power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..2500.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Normalized power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..2500.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Maximum power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..3000.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- Power-to-weight ratio
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::126]>
+														list = <
+															["1"] = <
+																units = <"W/kg">
+																magnitude = <|0.0..10.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Variability index
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::380]>
+														list = <
+															["1"] = <
+																units = <"1">
+																magnitude = <|1.0..2.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- FTP and training zones
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Functional Threshold Power (FTP)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..600.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- FTP as W/kg
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::126]>
+														list = <
+															["1"] = <
+																units = <"W/kg">
+																magnitude = <|0.0..8.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- FTP estimation method
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0200,	-- 20-minute test (95%)
+															at0201,	-- Ramp test
+															at0202,	-- 8-minute test
+															at0203,	-- Race/event data
+															at0204,	-- AI estimation
+															at0205]	-- Manual entry
+														}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Current training zone
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0210,	-- Zone 1 - Active Recovery (<55% FTP)
+															at0211,	-- Zone 2 - Endurance (55-75% FTP)
+															at0212,	-- Zone 3 - Tempo (76-90% FTP)
+															at0213,	-- Zone 4 - Threshold (91-105% FTP)
+															at0214,	-- Zone 5 - VO2max (106-120% FTP)
+															at0215,	-- Zone 6 - Anaerobic (121-150% FTP)
+															at0216]	-- Zone 7 - Neuromuscular (>150% FTP)
+														}
+													}
+												}
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {	-- Intensity Factor (IF)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::380]>
+														list = <
+															["1"] = <
+																units = <"1">
+																magnitude = <|0.0..1.5|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0030] occurrences matches {0..1} matches {	-- Training load metrics
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- Training Stress Score (TSS)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::380]>
+														list = <
+															["1"] = <
+																units = <"1">
+																magnitude = <|0.0..1000.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..1} matches {	-- Kilojoules expended
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::121]>
+														list = <
+															["1"] = <
+																units = <"kJ">
+																magnitude = <|0.0..10000.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- Chronic Training Load (CTL)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::380]>
+														list = <
+															["1"] = <
+																units = <"1">
+																magnitude = <|0.0..200.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- Acute Training Load (ATL)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::380]>
+														list = <
+															["1"] = <
+																units = <"1">
+																magnitude = <|0.0..300.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {	-- Training Stress Balance (TSB)
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::380]>
+														list = <
+															["1"] = <
+																units = <"1">
+																magnitude = <|-100.0..100.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0040] occurrences matches {0..1} matches {	-- Pedaling dynamics
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- Cadence
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::382]>
+														list = <
+															["1"] = <
+																units = <"/min">
+																magnitude = <|0.0..250.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- Average cadence
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::382]>
+														list = <
+															["1"] = <
+																units = <"/min">
+																magnitude = <|0.0..200.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Left/right balance
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														denominator matches {|100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {	-- Left torque effectiveness
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														denominator matches {|100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0045] occurrences matches {0..1} matches {	-- Right torque effectiveness
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														denominator matches {|100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0046] occurrences matches {0..1} matches {	-- Left pedal smoothness
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														denominator matches {|100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0047] occurrences matches {0..1} matches {	-- Right pedal smoothness
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														denominator matches {|100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0048] occurrences matches {0..1} matches {	-- Platform center offset
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"mm">
+																magnitude = <|-20.0..20.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0050] occurrences matches {0..1} matches {	-- Power duration curve
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0051] occurrences matches {0..1} matches {	-- 5-second power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..2500.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {	-- 1-minute power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..1500.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {	-- 5-minute power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..800.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0054] occurrences matches {0..1} matches {	-- 20-minute power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..600.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0055] occurrences matches {0..1} matches {	-- 60-minute power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..500.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0060] occurrences matches {0..1} matches {	-- Indoor trainer metrics
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0061] occurrences matches {0..1} matches {	-- Trainer mode
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0220,	-- ERG mode (power target)
+															at0221,	-- Simulation mode (gradient)
+															at0222,	-- Resistance mode (level)
+															at0223,	-- Standard mode (free ride)
+															at0224]	-- Workout mode (structured)
+														}
+													}
+												}
+											}
+											ELEMENT[at0062] occurrences matches {0..1} matches {	-- Target power
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::374]>
+														list = <
+															["1"] = <
+																units = <"W">
+																magnitude = <|0.0..2000.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {	-- Simulated gradient
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|-20.0..25.0|}
+														denominator matches {|100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {	-- Virtual speed
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::338]>
+														list = <
+															["1"] = <
+																units = <"km/h">
+																magnitude = <|0.0..100.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0065] occurrences matches {0..1} matches {	-- Virtual elevation gain
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"m">
+																magnitude = <|0.0..10000.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+										}
+									}
+									CLUSTER[at0070] occurrences matches {0..1} matches {	-- Session summary
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0071] occurrences matches {0..1} matches {	-- Duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHMS/|PT0S..PT12H|}
+													}
+												}
+											}
+											ELEMENT[at0072] occurrences matches {0..1} matches {	-- Distance
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"km">
+																magnitude = <|0.0..500.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {	-- Average speed
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::338]>
+														list = <
+															["1"] = <
+																units = <"km/h">
+																magnitude = <|0.0..80.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0074] occurrences matches {0..1} matches {	-- Elevation gain
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"m">
+																magnitude = <|0.0..10000.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0075] occurrences matches {0..1} matches {	-- Activity type
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0230,	-- Road cycling
+															at0231,	-- Mountain biking
+															at0232,	-- Gravel riding
+															at0233,	-- Time trial
+															at0234,	-- Indoor training
+															at0235,	-- Virtual cycling (Zwift, etc)
+															at0236,	-- Commuting
+															at0237]	-- Cyclocross
+														}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0080] occurrences matches {0..*} matches {	-- Wearable device
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0|openEHR-EHR-CLUSTER\.device\.v1/}
+									}
+									allow_archetype CLUSTER[at0081] occurrences matches {0..*} matches {	-- Data quality indicator
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0090] matches {	-- State
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0091] occurrences matches {0..1} matches {	-- Workout structure
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0240,	-- Free ride
+													at0241,	-- Structured workout
+													at0242,	-- Intervals
+													at0243,	-- Tempo/Sweet spot
+													at0244,	-- Threshold
+													at0245,	-- Race/Event
+													at0246]	-- Recovery ride
+												}
+											}
+										}
+									}
+									ELEMENT[at0092] occurrences matches {0..1} matches {	-- Fasted state
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					INTERVAL_EVENT[at0100] occurrences matches {0..*} matches {	-- Aggregated interval
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[openehr::146]
+								}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0090]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0110] matches {	-- Protocol
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0111] occurrences matches {0..1} matches {	-- Power meter type
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0250,	-- Crank-based (dual-sided)
+									at0251,	-- Crank-based (single-sided)
+									at0252,	-- Pedal-based (dual)
+									at0253,	-- Pedal-based (single)
+									at0254,	-- Hub-based
+									at0255,	-- Spider-based
+									at0256,	-- Smart trainer
+									at0257]	-- Estimated (no power meter)
+								}
+							}
+						}
+					}
+					ELEMENT[at0112] occurrences matches {0..1} matches {	-- Power meter accuracy
+						value matches {
+							DV_PROPORTION matches {
+								numerator matches {|0.0..5.0|}
+								denominator matches {|100.0|}
+								type matches {2}
+							}
+						}
+					}
+					ELEMENT[at0113] occurrences matches {0..1} matches {	-- Last zero offset calibration
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0114] occurrences matches {0..1} matches {	-- Data source platform
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0260,	-- Garmin Connect
+									at0261,	-- TrainingPeaks
+									at0262,	-- Strava
+									at0263,	-- Zwift
+									at0264,	-- Wahoo SYSTM/ELEMNT
+									at0265,	-- Today's Plan
+									at0266,	-- Golden Cheetah
+									at0267]	-- Other
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0120] occurrences matches {0..*} matches {	-- Vendor data provenance
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Cycling dynamics">
+					description = <"Cycling dynamics and power metrics from wearable devices, cycling computers, and smart trainers.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any point in time event">
+					description = <"Default, unspecified point in time event which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Power metrics">
+					description = <"Core power output measurements.">
+				>
+				["at0011"] = <
+					text = <"Instantaneous power">
+					description = <"Current power output in watts.">
+				>
+				["at0012"] = <
+					text = <"Average power">
+					description = <"Arithmetic mean of power output over the activity.">
+				>
+				["at0013"] = <
+					text = <"Normalized power">
+					description = <"Weighted average power accounting for variability (Dr. Andrew Coggan formula).">
+				>
+				["at0014"] = <
+					text = <"Maximum power">
+					description = <"Peak power achieved during the activity.">
+				>
+				["at0015"] = <
+					text = <"Power-to-weight ratio">
+					description = <"Power output relative to body mass, key performance indicator.">
+				>
+				["at0016"] = <
+					text = <"Variability index">
+					description = <"Ratio of Normalized Power to Average Power (NP/AP). Values close to 1.0 indicate steady effort.">
+				>
+				["at0020"] = <
+					text = <"FTP and training zones">
+					description = <"Functional Threshold Power and derived training zones.">
+				>
+				["at0021"] = <
+					text = <"Functional Threshold Power (FTP)">
+					description = <"Highest power sustainable for approximately one hour, basis for training zones.">
+				>
+				["at0022"] = <
+					text = <"FTP as W/kg">
+					description = <"FTP normalized to body weight for comparison across athletes.">
+				>
+				["at0023"] = <
+					text = <"FTP estimation method">
+					description = <"How FTP was determined.">
+				>
+				["at0024"] = <
+					text = <"Current training zone">
+					description = <"Training zone based on percentage of FTP (Coggan power zones).">
+				>
+				["at0025"] = <
+					text = <"Intensity Factor (IF)">
+					description = <"Ratio of Normalized Power to FTP (NP/FTP). IF of 1.0 means threshold effort.">
+				>
+				["at0030"] = <
+					text = <"Training load metrics">
+					description = <"Metrics for quantifying training stress and load.">
+				>
+				["at0031"] = <
+					text = <"Training Stress Score (TSS)">
+					description = <"Quantifies training load: TSS = (duration × NP × IF) / (FTP × 3600) × 100.">
+				>
+				["at0032"] = <
+					text = <"Kilojoules expended">
+					description = <"Work performed in kilojoules (approximately equals calories for cycling).">
+				>
+				["at0033"] = <
+					text = <"Chronic Training Load (CTL)">
+					description = <"Exponentially weighted average of daily TSS over ~42 days (fitness).">
+				>
+				["at0034"] = <
+					text = <"Acute Training Load (ATL)">
+					description = <"Exponentially weighted average of daily TSS over ~7 days (fatigue).">
+				>
+				["at0035"] = <
+					text = <"Training Stress Balance (TSB)">
+					description = <"CTL minus ATL (form). Positive values indicate freshness, negative indicates fatigue.">
+				>
+				["at0040"] = <
+					text = <"Pedaling dynamics">
+					description = <"Metrics describing pedaling technique and efficiency.">
+				>
+				["at0041"] = <
+					text = <"Cadence">
+					description = <"Current pedaling rate in revolutions per minute.">
+				>
+				["at0042"] = <
+					text = <"Average cadence">
+					description = <"Mean cadence over the activity.">
+				>
+				["at0043"] = <
+					text = <"Left/right balance">
+					description = <"Power distribution between left and right legs. Expressed as left percentage (e.g., 48% left means 52% right).">
+				>
+				["at0044"] = <
+					text = <"Left torque effectiveness">
+					description = <"Percentage of positive torque on left side (power contributing to forward motion).">
+				>
+				["at0045"] = <
+					text = <"Right torque effectiveness">
+					description = <"Percentage of positive torque on right side.">
+				>
+				["at0046"] = <
+					text = <"Left pedal smoothness">
+					description = <"Consistency of power application throughout left pedal stroke.">
+				>
+				["at0047"] = <
+					text = <"Right pedal smoothness">
+					description = <"Consistency of power application throughout right pedal stroke.">
+				>
+				["at0048"] = <
+					text = <"Platform center offset">
+					description = <"Position of force application on pedal platform.">
+				>
+				["at0050"] = <
+					text = <"Power duration curve">
+					description = <"Best power outputs for standard durations (power profile).">
+				>
+				["at0051"] = <
+					text = <"5-second power">
+					description = <"Best 5-second average power (neuromuscular/sprint capacity).">
+				>
+				["at0052"] = <
+					text = <"1-minute power">
+					description = <"Best 1-minute average power (anaerobic capacity).">
+				>
+				["at0053"] = <
+					text = <"5-minute power">
+					description = <"Best 5-minute average power (VO2max power).">
+				>
+				["at0054"] = <
+					text = <"20-minute power">
+					description = <"Best 20-minute average power (used for FTP estimation).">
+				>
+				["at0055"] = <
+					text = <"60-minute power">
+					description = <"Best 60-minute average power (true FTP).">
+				>
+				["at0060"] = <
+					text = <"Indoor trainer metrics">
+					description = <"Metrics specific to smart trainers and indoor cycling.">
+				>
+				["at0061"] = <
+					text = <"Trainer mode">
+					description = <"Operating mode of the smart trainer.">
+				>
+				["at0062"] = <
+					text = <"Target power">
+					description = <"Power target set in ERG or workout mode.">
+				>
+				["at0063"] = <
+					text = <"Simulated gradient">
+					description = <"Virtual gradient being simulated.">
+				>
+				["at0064"] = <
+					text = <"Virtual speed">
+					description = <"Speed in virtual environment (e.g., Zwift).">
+				>
+				["at0065"] = <
+					text = <"Virtual elevation gain">
+					description = <"Cumulative elevation gain in virtual environment.">
+				>
+				["at0070"] = <
+					text = <"Session summary">
+					description = <"Overall session statistics.">
+				>
+				["at0071"] = <
+					text = <"Duration">
+					description = <"Total activity duration.">
+				>
+				["at0072"] = <
+					text = <"Distance">
+					description = <"Total distance covered.">
+				>
+				["at0073"] = <
+					text = <"Average speed">
+					description = <"Mean speed over the activity.">
+				>
+				["at0074"] = <
+					text = <"Elevation gain">
+					description = <"Total vertical meters climbed.">
+				>
+				["at0075"] = <
+					text = <"Activity type">
+					description = <"Type of cycling activity.">
+				>
+				["at0080"] = <
+					text = <"Wearable device">
+					description = <"Details of the recording device (power meter, cycling computer, or smart trainer).">
+				>
+				["at0081"] = <
+					text = <"Data quality indicator">
+					description = <"Information about signal quality and data reliability.">
+				>
+				["at0090"] = <
+					text = <"State">
+					description = <"@ internal @">
+				>
+				["at0091"] = <
+					text = <"Workout structure">
+					description = <"Type of workout being performed.">
+				>
+				["at0092"] = <
+					text = <"Fasted state">
+					description = <"Whether the activity was performed in a fasted state (common for metabolic training).">
+				>
+				["at0100"] = <
+					text = <"Aggregated interval">
+					description = <"Aggregated data over a specified time interval (e.g., weekly TSS, monthly CTL).">
+				>
+				["at0110"] = <
+					text = <"Protocol">
+					description = <"@ internal @">
+				>
+				["at0111"] = <
+					text = <"Power meter type">
+					description = <"Type and configuration of power measurement device.">
+				>
+				["at0112"] = <
+					text = <"Power meter accuracy">
+					description = <"Manufacturer-stated accuracy of the power meter.">
+				>
+				["at0113"] = <
+					text = <"Last zero offset calibration">
+					description = <"Date/time of last zero offset (calibration) procedure.">
+				>
+				["at0114"] = <
+					text = <"Data source platform">
+					description = <"Software platform from which data was exported.">
+				>
+				["at0120"] = <
+					text = <"Vendor data provenance">
+					description = <"Details about data origin and processing.">
+				>
+				["at0200"] = <
+					text = <"20-minute test (95%)">
+					description = <"FTP estimated as 95% of 20-minute max power.">
+				>
+				["at0201"] = <
+					text = <"Ramp test">
+					description = <"FTP from ramp test protocol (typically 75% of max 1-min power).">
+				>
+				["at0202"] = <
+					text = <"8-minute test">
+					description = <"FTP from 8-minute test protocol.">
+				>
+				["at0203"] = <
+					text = <"Race/event data">
+					description = <"FTP derived from race or event power data.">
+				>
+				["at0204"] = <
+					text = <"AI estimation">
+					description = <"FTP estimated by AI/algorithm based on training data.">
+				>
+				["at0205"] = <
+					text = <"Manual entry">
+					description = <"FTP manually entered by user.">
+				>
+				["at0210"] = <
+					text = <"Zone 1 - Active Recovery (<55% FTP)">
+					description = <"Active recovery, very easy.">
+				>
+				["at0211"] = <
+					text = <"Zone 2 - Endurance (55-75% FTP)">
+					description = <"Endurance/base training.">
+				>
+				["at0212"] = <
+					text = <"Zone 3 - Tempo (76-90% FTP)">
+					description = <"Tempo, moderate aerobic intensity.">
+				>
+				["at0213"] = <
+					text = <"Zone 4 - Threshold (91-105% FTP)">
+					description = <"Lactate threshold, race pace.">
+				>
+				["at0214"] = <
+					text = <"Zone 5 - VO2max (106-120% FTP)">
+					description = <"VO2max intervals.">
+				>
+				["at0215"] = <
+					text = <"Zone 6 - Anaerobic (121-150% FTP)">
+					description = <"Anaerobic capacity.">
+				>
+				["at0216"] = <
+					text = <"Zone 7 - Neuromuscular (>150% FTP)">
+					description = <"Neuromuscular power, sprints.">
+				>
+				["at0220"] = <
+					text = <"ERG mode (power target)">
+					description = <"Trainer maintains target power regardless of cadence.">
+				>
+				["at0221"] = <
+					text = <"Simulation mode (gradient)">
+					description = <"Trainer simulates real-world gradient.">
+				>
+				["at0222"] = <
+					text = <"Resistance mode (level)">
+					description = <"Fixed resistance level.">
+				>
+				["at0223"] = <
+					text = <"Standard mode (free ride)">
+					description = <"Standard power curve, no control.">
+				>
+				["at0224"] = <
+					text = <"Workout mode (structured)">
+					description = <"Following structured workout.">
+				>
+				["at0230"] = <
+					text = <"Road cycling">
+					description = <"Road bike riding.">
+				>
+				["at0231"] = <
+					text = <"Mountain biking">
+					description = <"Off-road mountain biking.">
+				>
+				["at0232"] = <
+					text = <"Gravel riding">
+					description = <"Mixed surface gravel riding.">
+				>
+				["at0233"] = <
+					text = <"Time trial">
+					description = <"Individual time trial.">
+				>
+				["at0234"] = <
+					text = <"Indoor training">
+					description = <"Stationary trainer indoors.">
+				>
+				["at0235"] = <
+					text = <"Virtual cycling (Zwift, etc)">
+					description = <"Virtual cycling platform (Zwift, TrainerRoad, etc.).">
+				>
+				["at0236"] = <
+					text = <"Commuting">
+					description = <"Cycling commute.">
+				>
+				["at0237"] = <
+					text = <"Cyclocross">
+					description = <"Cyclocross racing/training.">
+				>
+				["at0240"] = <
+					text = <"Free ride">
+					description = <"Unstructured riding.">
+				>
+				["at0241"] = <
+					text = <"Structured workout">
+					description = <"Following a structured training plan.">
+				>
+				["at0242"] = <
+					text = <"Intervals">
+					description = <"Interval training session.">
+				>
+				["at0243"] = <
+					text = <"Tempo/Sweet spot">
+					description = <"Tempo or sweet spot training (88-94% FTP).">
+				>
+				["at0244"] = <
+					text = <"Threshold">
+					description = <"Threshold training session.">
+				>
+				["at0245"] = <
+					text = <"Race/Event">
+					description = <"Competition or event.">
+				>
+				["at0246"] = <
+					text = <"Recovery ride">
+					description = <"Active recovery session.">
+				>
+				["at0250"] = <
+					text = <"Crank-based (dual-sided)">
+					description = <"Power meter on both crank arms.">
+				>
+				["at0251"] = <
+					text = <"Crank-based (single-sided)">
+					description = <"Power meter on one crank arm, doubled.">
+				>
+				["at0252"] = <
+					text = <"Pedal-based (dual)">
+					description = <"Power-measuring pedals, both sides.">
+				>
+				["at0253"] = <
+					text = <"Pedal-based (single)">
+					description = <"Power-measuring pedal, one side.">
+				>
+				["at0254"] = <
+					text = <"Hub-based">
+					description = <"Power meter in rear hub.">
+				>
+				["at0255"] = <
+					text = <"Spider-based">
+					description = <"Power meter in chainring spider.">
+				>
+				["at0256"] = <
+					text = <"Smart trainer">
+					description = <"Direct-drive or wheel-on smart trainer.">
+				>
+				["at0257"] = <
+					text = <"Estimated (no power meter)">
+					description = <"Power estimated from speed/gradient without direct measurement.">
+				>
+				["at0260"] = <
+					text = <"Garmin Connect">
+					description = <"Garmin Connect platform.">
+				>
+				["at0261"] = <
+					text = <"TrainingPeaks">
+					description = <"TrainingPeaks platform.">
+				>
+				["at0262"] = <
+					text = <"Strava">
+					description = <"Strava platform.">
+				>
+				["at0263"] = <
+					text = <"Zwift">
+					description = <"Zwift virtual cycling platform.">
+				>
+				["at0264"] = <
+					text = <"Wahoo SYSTM/ELEMNT">
+					description = <"Wahoo training ecosystem.">
+				>
+				["at0265"] = <
+					text = <"Today's Plan">
+					description = <"Today's Plan platform.">
+				>
+				["at0266"] = <
+					text = <"Golden Cheetah">
+					description = <"Golden Cheetah open-source analysis.">
+				>
+				["at0267"] = <
+					text = <"Other">
+					description = <"Other data source.">
+				>
+			>
+		>
+	>

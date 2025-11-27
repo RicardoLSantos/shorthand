@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/EnvironmentalObservationExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "EnvironmentalObservationExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation EnvironmentalObservationExample</b></p><a name=\"EnvironmentalObservationExample\"> </a><a name=\"hcEnvironmentalObservationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-environmental-observation.html\">Environmental Observation Profile</a></p></div><p><b>Environmental Context Extension</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context indoor}\">Indoor</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 60832-3}\">Room temperature</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 14:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><p><b>value</b>: 22 degrees Celsius<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigoCel = 'Cel')</span></p><p><b>note</b>: </p><blockquote><div><p>Environmental context observation</p>\n</div></blockquote><p><b>device</b>: <a href=\"Device-EnvironmentalDeviceExample.html\">Device: identifier = urn:oid:2.16.840.1.113883.3.4.5.4#iPhone-ENV-001; status = active; manufacturer = Apple Inc.; modelNumber = iPhone 15 Pro; type = Environmental sensor device</a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-context"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "indoor" ] ;
+         fhir:display [ fhir:v "Indoor" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "survey" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:60832-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "60832-3" ] ;
+       fhir:display [ fhir:v "Room temperature" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2024-03-19T14:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/PractitionerExample> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "22"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "degrees Celsius" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "Cel" ]
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Environmental context observation" ]
+  ] ) ; # 
+  fhir:device [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/EnvironmentalDeviceExample> ;
+     fhir:reference [ fhir:v "Device/EnvironmentalDeviceExample" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

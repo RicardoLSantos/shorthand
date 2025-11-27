@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="InflammatoryPanelExample"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation InflammatoryPanelExample</b></p><a name="InflammatoryPanelExample"> </a><a name="hcInflammatoryPanelExample"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}">Laboratory</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 82335-1}">Lifestyle Medicine Inflammatory Panel</span></p><p><b>subject</b>: <a href="Patient-example.html">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2025-11-27 08:00:00+0000</p><p><b>note</b>: </p><blockquote><div><p>Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation.</p>
+</div></blockquote><p><b>hasMember</b>: </p><ul><li><a href="Observation-CRPExample-Normal.html">CRP measurement</a></li><li><a href="Observation-IL6Example-Elevated.html">IL-6 measurement</a></li><li><a href="Observation-TNFAlphaExample-Normal.html">TNF-α measurement</a></li></ul></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="laboratory"/>
+      <display value="Laboratory"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="82335-1"/>
+      <display value="Cytokines panel - Serum or Plasma"/>
+    </coding>
+    <text value="Lifestyle Medicine Inflammatory Panel"/>
+  </code>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <effectiveDateTime value="2025-11-27T08:00:00Z"/>
+  <note>
+    <text value="Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation."/>
+  </note>
+  <hasMember>
+    <reference value="Observation/CRPExample-Normal"/>
+    <display value="CRP measurement"/>
+  </hasMember>
+  <hasMember>
+    <reference value="Observation/IL6Example-Elevated"/>
+    <display value="IL-6 measurement"/>
+  </hasMember>
+  <hasMember>
+    <reference value="Observation/TNFAlphaExample-Normal"/>
+    <display value="TNF-α measurement"/>
+  </hasMember>
+</Observation>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="ConceptMapNutritionToSNOMED"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapNutritionToSNOMED</b></p><a name="ConceptMapNutritionToSNOMED"> </a><a name="hcConceptMapNutritionToSNOMED"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href="CodeSystem-lifestyle-observation-cs.html">Lifestyle Medicine Observation Codes</a> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>water-intake (Water intake volume)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower" title="narrower">narrower</a></td><td>226364002 (Fluid intake (observable entity))</td><td>Water intake maps to broader SNOMED concept 'Fluid intake'. Target includes all fluids (water, juice, etc.), source is specific to water only. Code 226364002 should be verified via SNOMED CT Browser.</td></tr><tr><td>caloric-intake (Total caloric intake)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>226355004 (Dietary energy intake (observable entity))</td><td>Caloric intake maps to SNOMED 'Dietary energy intake'. Code 226355004 should be verified via SNOMED CT Browser before clinical use.</td></tr><tr><td>macronutrients-panel (Macronutrients intake panel)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">No exact SNOMED CT code for macronutrients panel as of November 2025. SNOMED has individual codes for protein, carbohydrate, and fat intake but not a panel concept. Individual component mappings below.</td></tr><tr><td>protein-intake</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>226357007 (Dietary protein intake (observable entity))</td><td>Protein intake maps to SNOMED 'Dietary protein intake'. Code 226357007 should be verified via SNOMED CT Browser.</td></tr><tr><td>fat-intake</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>226358002 (Dietary fat intake (observable entity))</td><td>Fat intake maps to SNOMED 'Dietary fat intake'. Code 226358002 should be verified via SNOMED CT Browser.</td></tr><tr><td>carbohydrate-intake</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>226359005 (Dietary carbohydrate intake (observable entity))</td><td>Carbohydrate intake maps to SNOMED 'Dietary carbohydrate intake'. Code 226359005 should be verified via SNOMED CT Browser.</td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapNutritionToSNOMED"/>
+  <version value="0.1.0"/>
+  <name value="ConceptMapNutritionToSNOMED"/>
+  <title value="Nutrition Measurements to SNOMED CT Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-22"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Operational ConceptMap for nutrition measurement terminology translation. Enables runtime $translate operations for semantic interoperability between consumer nutrition tracking applications and SNOMED CT standard terminology."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Provides semantic mappings from custom nutrition measurement codes to standard SNOMED CT codes. Consumer nutrition tracking uses proprietary measurements not fully covered by SNOMED CT. This ConceptMap enables clinical decision support systems to interpret consumer nutrition data using standardized terminology where available."/>
+  <group>
+    <source value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+    <target value="http://snomed.info/sct"/>
+    <element>
+      <code value="water-intake"/>
+      <display value="Water intake volume"/>
+      <target>
+        <code value="226364002"/>
+        <display value="Fluid intake (observable entity)"/>
+        <equivalence value="narrower"/>
+        <comment value="Water intake maps to broader SNOMED concept 'Fluid intake'. Target includes all fluids (water, juice, etc.), source is specific to water only. Code 226364002 should be verified via SNOMED CT Browser."/>
+      </target>
+    </element>
+    <element>
+      <code value="caloric-intake"/>
+      <display value="Total caloric intake"/>
+      <target>
+        <code value="226355004"/>
+        <display value="Dietary energy intake (observable entity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Caloric intake maps to SNOMED 'Dietary energy intake'. Code 226355004 should be verified via SNOMED CT Browser before clinical use."/>
+      </target>
+    </element>
+    <element>
+      <code value="macronutrients-panel"/>
+      <display value="Macronutrients intake panel"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="No exact SNOMED CT code for macronutrients panel as of November 2025. SNOMED has individual codes for protein, carbohydrate, and fat intake but not a panel concept. Individual component mappings below."/>
+      </target>
+    </element>
+    <element>
+      <code value="protein-intake"/>
+      <display value="Protein intake"/>
+      <target>
+        <code value="226357007"/>
+        <display value="Dietary protein intake (observable entity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Protein intake maps to SNOMED 'Dietary protein intake'. Code 226357007 should be verified via SNOMED CT Browser."/>
+      </target>
+    </element>
+    <element>
+      <code value="fat-intake"/>
+      <display value="Fat intake"/>
+      <target>
+        <code value="226358002"/>
+        <display value="Dietary fat intake (observable entity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Fat intake maps to SNOMED 'Dietary fat intake'. Code 226358002 should be verified via SNOMED CT Browser."/>
+      </target>
+    </element>
+    <element>
+      <code value="carbohydrate-intake"/>
+      <display value="Carbohydrate intake"/>
+      <target>
+        <code value="226359005"/>
+        <display value="Dietary carbohydrate intake (observable entity)"/>
+        <equivalence value="equivalent"/>
+        <comment value="Carbohydrate intake maps to SNOMED 'Dietary carbohydrate intake'. Code 226359005 should be verified via SNOMED CT Browser."/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

@@ -1,0 +1,117 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-history-activity-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "social-history-activity-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem social-history-activity-cs</b></p><a name=\"social-history-activity-cs\"> </a><a name=\"hcsocial-history-activity-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">cycle-tracking<a name=\"social-history-activity-cs-cycle-tracking\"> </a></td><td>Cycle Tracking</td><td>Track menstrual cycle dates and characteristics</td></tr><tr><td style=\"white-space:nowrap\">temp-monitoring<a name=\"social-history-activity-cs-temp-monitoring\"> </a></td><td>Temperature Monitoring</td><td>Monitor basal body temperature</td></tr><tr><td style=\"white-space:nowrap\">symptom-tracking<a name=\"social-history-activity-cs-symptom-tracking\"> </a></td><td>Symptom Tracking</td><td>Track social-history health symptoms</td></tr><tr><td style=\"white-space:nowrap\">vitals-monitoring<a name=\"social-history-activity-cs-vitals-monitoring\"> </a></td><td>Vitals Monitoring</td><td>Monitor vital signs related to social-history health</td></tr><tr><td style=\"white-space:nowrap\">fertility-signs<a name=\"social-history-activity-cs-fertility-signs\"> </a></td><td>Fertility Signs</td><td>Monitor fertility signs and indicators</td></tr><tr><td style=\"white-space:nowrap\">mood-tracking<a name=\"social-history-activity-cs-mood-tracking\"> </a></td><td>Mood Tracking</td><td>Track mood changes related to social-history cycle</td></tr><tr><td style=\"white-space:nowrap\">medication-log<a name=\"social-history-activity-cs-medication-log\"> </a></td><td>Medication Log</td><td>Log social-history health medications</td></tr><tr><td style=\"white-space:nowrap\">exercise-tracking<a name=\"social-history-activity-cs-exercise-tracking\"> </a></td><td>Exercise Tracking</td><td>Track physical activity during cycle</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-history-activity-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ReproductiveActivityCS"] ; # 
+  fhir:title [ fhir:v "Reproductive Health Activities Code System"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Code system for social-history health monitoring activities"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "program" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "iOS Lifestyle Medicine" ]
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "cycle-tracking" ] ;
+     fhir:display [ fhir:v "Cycle Tracking" ] ;
+     fhir:definition [ fhir:v "Track menstrual cycle dates and characteristics" ]
+  ] [
+     fhir:code [ fhir:v "temp-monitoring" ] ;
+     fhir:display [ fhir:v "Temperature Monitoring" ] ;
+     fhir:definition [ fhir:v "Monitor basal body temperature" ]
+  ] [
+     fhir:code [ fhir:v "symptom-tracking" ] ;
+     fhir:display [ fhir:v "Symptom Tracking" ] ;
+     fhir:definition [ fhir:v "Track social-history health symptoms" ]
+  ] [
+     fhir:code [ fhir:v "vitals-monitoring" ] ;
+     fhir:display [ fhir:v "Vitals Monitoring" ] ;
+     fhir:definition [ fhir:v "Monitor vital signs related to social-history health" ]
+  ] [
+     fhir:code [ fhir:v "fertility-signs" ] ;
+     fhir:display [ fhir:v "Fertility Signs" ] ;
+     fhir:definition [ fhir:v "Monitor fertility signs and indicators" ]
+  ] [
+     fhir:code [ fhir:v "mood-tracking" ] ;
+     fhir:display [ fhir:v "Mood Tracking" ] ;
+     fhir:definition [ fhir:v "Track mood changes related to social-history cycle" ]
+  ] [
+     fhir:code [ fhir:v "medication-log" ] ;
+     fhir:display [ fhir:v "Medication Log" ] ;
+     fhir:definition [ fhir:v "Log social-history health medications" ]
+  ] [
+     fhir:code [ fhir:v "exercise-tracking" ] ;
+     fhir:display [ fhir:v "Exercise Tracking" ] ;
+     fhir:definition [ fhir:v "Track physical activity during cycle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

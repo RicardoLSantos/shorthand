@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-outcome-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mindfulness-outcome-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mindfulness-outcome-cs</b></p><a name=\"mindfulness-outcome-cs\"> </a><a name=\"hcmindfulness-outcome-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">increasedAwareness<a name=\"mindfulness-outcome-cs-increasedAwareness\"> </a></td><td>Increased Awareness</td><td>Greater awareness of thoughts and sensations</td></tr><tr><td style=\"white-space:nowrap\">improvedFocus<a name=\"mindfulness-outcome-cs-improvedFocus\"> </a></td><td>Improved Focus</td><td>Enhanced ability to concentrate</td></tr><tr><td style=\"white-space:nowrap\">stressReduction<a name=\"mindfulness-outcome-cs-stressReduction\"> </a></td><td>Stress Reduction</td><td>Decreased levels of stress and tension</td></tr><tr><td style=\"white-space:nowrap\">emotionalBalance<a name=\"mindfulness-outcome-cs-emotionalBalance\"> </a></td><td>Emotional Balance</td><td>Better emotional regulation</td></tr><tr><td style=\"white-space:nowrap\">improvedSleep<a name=\"mindfulness-outcome-cs-improvedSleep\"> </a></td><td>Improved Sleep</td><td>Enhanced activity quality</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-outcome-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MindfulnessOutcomeCS"] ; # 
+  fhir:title [ fhir:v "Mindfulness Outcomes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Outcomes and effects of mindfulness practice"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "increasedAwareness" ] ;
+     fhir:display [ fhir:v "Increased Awareness" ] ;
+     fhir:definition [ fhir:v "Greater awareness of thoughts and sensations" ]
+  ] [
+     fhir:code [ fhir:v "improvedFocus" ] ;
+     fhir:display [ fhir:v "Improved Focus" ] ;
+     fhir:definition [ fhir:v "Enhanced ability to concentrate" ]
+  ] [
+     fhir:code [ fhir:v "stressReduction" ] ;
+     fhir:display [ fhir:v "Stress Reduction" ] ;
+     fhir:definition [ fhir:v "Decreased levels of stress and tension" ]
+  ] [
+     fhir:code [ fhir:v "emotionalBalance" ] ;
+     fhir:display [ fhir:v "Emotional Balance" ] ;
+     fhir:definition [ fhir:v "Better emotional regulation" ]
+  ] [
+     fhir:code [ fhir:v "improvedSleep" ] ;
+     fhir:display [ fhir:v "Improved Sleep" ] ;
+     fhir:definition [ fhir:v "Enhanced activity quality" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

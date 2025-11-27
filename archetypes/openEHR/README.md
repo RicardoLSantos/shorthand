@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (39 Total)
+## Archetypes Included (42 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (34)
+### OBSERVATION Archetypes (37)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -62,6 +62,9 @@ archetypes/openEHR/
 | `vo2max_estimation.v0.adl` | Estimated VO2max, cardiorespiratory fitness, fitness age | ~1200 | CKM Ready |
 | `running_dynamics.v0.adl` | Ground contact time, vertical oscillation, running power | ~1250 | CKM Ready |
 | `lactate_threshold.v0.adl` | LT1/LT2 thresholds, FTP, training zones | ~1150 | CKM Ready |
+| `swimming_metrics.v0.adl` | Stroke detection, SWOLF score, lap analysis, CSS pace | ~1200 | CKM Ready |
+| `cycling_dynamics.v0.adl` | FTP, TSS, pedaling dynamics, power metrics, smart trainers | ~1300 | CKM Ready |
+| `strength_training.v0.adl` | VBT metrics, 1RM tracking, sets/reps/load, RPE | ~1350 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -100,7 +103,7 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 39 archetypes validated with ADL 1.4 structural validator:
+All 42 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
 - **Warnings**: Minor (false positives on term_bindings detection)
 - **Phase 1A-1B**: 7 archetypes validated 2025-11-27
@@ -113,6 +116,7 @@ All 39 archetypes validated with ADL 1.4 structural validator:
 - **Phase 6**: 3 archetypes validated 2025-11-27
 - **Phase 7**: 3 archetypes validated 2025-11-27 (mobility/safety)
 - **Phase 8**: 3 archetypes validated 2025-11-27 (advanced fitness)
+- **Phase 9**: 3 archetypes validated 2025-11-27 (sports-specific: swimming, cycling, strength)
 
 ## Related Resources
 
@@ -124,4 +128,4 @@ All 39 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 39 (5 CLUSTERs + 34 OBSERVATIONs)*
+*Archetypes: 42 (5 CLUSTERs + 37 OBSERVATIONs)*

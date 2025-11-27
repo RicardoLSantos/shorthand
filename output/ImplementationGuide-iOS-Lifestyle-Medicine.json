@@ -1,0 +1,5030 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "iOS-Lifestyle-Medicine",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ImplementationGuide iOS-Lifestyle-Medicine</b></p><a name=\"iOS-Lifestyle-Medicine\"> </a><a name=\"hciOS-Lifestyle-Medicine\"> </a><h2>IOSLifestyleMedicineHEADS2FMUP</h2><p>O URL oficial para este guia de implementação é: </p><pre>https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine</pre></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine",
+  "version" : "0.1.0",
+  "name" : "IOSLifestyleMedicineHEADS2FMUP",
+  "title" : "iOS Lifestyle Medicine Implementation Guide",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-27T17:03:01+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "packageId" : "iOS-Lifestyle-Medicine",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["4.0.1"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "7.0.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.2.0"
+  },
+  {
+    "id" : "ihe_iti_pcf",
+    "uri" : "https://profiles.ihe.net/ITI/PCF/ImplementationGuide/ihe.iti.pcf",
+    "packageId" : "ihe.iti.pcf",
+    "version" : "1.1.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_ips",
+    "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
+    "packageId" : "hl7.fhir.uv.ips",
+    "version" : "2.0.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2024+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.8.0"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2024+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceActivityTracker"
+      },
+      "name" : "Activity Tracking Device",
+      "description" : "Activity tracker device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/advanced-vital-signs-context-cs"
+      },
+      "name" : "Advanced Vital Signs Context Code System",
+      "description" : "Codes for advanced vital signs measurement context",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/advanced-vital-signs-context"
+      },
+      "name" : "Advanced Vital Signs Context Extension",
+      "description" : "Additional context about advanced vital sign measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/advanced-vital-signs-context-vs"
+      },
+      "name" : "Advanced Vital Signs Context Value Set",
+      "description" : "Context codes for advanced vital sign measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/AdvancedVitalSignsExample"
+      },
+      "name" : "Advanced Vital Signs Example",
+      "description" : "Advanced vital signs observation with multiple components",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/advanced-vital-signs"
+      },
+      "name" : "Advanced Vital Signs Profile",
+      "description" : "Profile for advanced vital signs data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/alcohol-beverage-type-cs"
+      },
+      "name" : "Alcohol Beverage Type CodeSystem",
+      "description" : "Common alcoholic beverage types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/alcohol-beverage-type-vs"
+      },
+      "name" : "Alcohol Beverage Type ValueSet",
+      "description" : "Types of alcoholic beverages",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/alcohol-drinking-frequency-cs"
+      },
+      "name" : "Alcohol Drinking Frequency CodeSystem",
+      "description" : "AUDIT-C style frequency categories",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/alcohol-drinking-frequency-vs"
+      },
+      "name" : "Alcohol Drinking Frequency ValueSet",
+      "description" : "AUDIT-style frequency categories for alcohol consumption",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/alcohol-use-observation"
+      },
+      "name" : "Alcohol Use Observation Profile",
+      "description" : "Profile for recording alcohol consumption patterns from patient-reported data\nand lifestyle tracking applications. Supports monitoring alcohol intake relative\nto recommended guidelines (e.g., AUDIT-C screening, CDC guidelines).\n\nClinical Context:\n- Low-risk drinking: ≤14 drinks/week (men), ≤7 drinks/week (women)\n- One standard drink: 14g pure alcohol",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/alcohol-use-status-vs"
+      },
+      "name" : "Alcohol Use Status ValueSet",
+      "description" : "Status categories for alcohol consumption",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/alert-message"
+      },
+      "name" : "Alert Message Extension",
+      "description" : "Defines the alert message content",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/alert-timing"
+      },
+      "name" : "Alert Timing Extension",
+      "description" : "Defines when alerts should be triggered",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/allostatic-load"
+      },
+      "name" : "Allostatic Load Extension",
+      "description" : "Measure of cumulative physiological burden over time",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/HealthKitDevice"
+      },
+      "name" : "Apple HealthKit",
+      "description" : "Health data aggregation and transformation system",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/AppleWatchDevice"
+      },
+      "name" : "Apple Watch Series 9",
+      "description" : "Consumer wearable device - Apple Watch",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/assistance-level-outcomes"
+      },
+      "name" : "Assistance Level Outcomes",
+      "description" : "Outcomes related to assistance levels in mobility assessments",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/assistance-level-outcomes"
+      },
+      "name" : "Assistance Level Outcomes Value Set",
+      "description" : "Value set for assistance level assessment outcomes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/audit-format"
+      },
+      "name" : "Audit Format Extension",
+      "description" : "Format for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/audit-formats"
+      },
+      "name" : "Audit Formats Code System",
+      "description" : "Code system for audit format types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/audit-formats"
+      },
+      "name" : "Audit Formats Value Set",
+      "description" : "Value set for audit format types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/audit-level"
+      },
+      "name" : "Audit Level Extension",
+      "description" : "Level of detail for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/audit-levels"
+      },
+      "name" : "Audit Levels Code System",
+      "description" : "Code system for audit level types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/audit-levels"
+      },
+      "name" : "Audit Levels Value Set",
+      "description" : "Value set for audit level types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/audit-retention"
+      },
+      "name" : "Audit Retention Extension",
+      "description" : "Period to retain audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/balance-status"
+      },
+      "name" : "Balance Status Code System",
+      "description" : "Code system for balance status types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/balance-status"
+      },
+      "name" : "Balance Status Value Set",
+      "description" : "Value set for walking steadiness balance status",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/BioimpedanceAnalyzer"
+      },
+      "name" : "Bioimpedance Analyzer Device",
+      "description" : "Bioimpedance analyzer device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BloodPressureExample"
+      },
+      "name" : "Blood Pressure Measurement Example",
+      "description" : "Blood pressure observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/blood-pressure-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceBloodPressureMonitor"
+      },
+      "name" : "Blood Pressure Monitor Device",
+      "description" : "Blood pressure monitor device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/blood-pressure-observation"
+      },
+      "name" : "Blood Pressure Observation Profile",
+      "description" : "Profile for blood pressure measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BMIExample"
+      },
+      "name" : "BMI Calculation Example",
+      "description" : "Body Mass Index observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/bmi-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/bmi-observation"
+      },
+      "name" : "BMI Measurement Profile",
+      "description" : "Profile for Body Mass Index calculations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BodyCompositionExample"
+      },
+      "name" : "Body Composition Measurement Example",
+      "description" : "Body composition observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-composition-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/body-composition-observation"
+      },
+      "name" : "Body Composition Profile",
+      "description" : "Profile for body composition measurements including fat, lean mass, and other metrics",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/body-locations-vs"
+      },
+      "name" : "Body Locations Value Set",
+      "description" : "Anatomical locations for symptom recording",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/BodyMetricsObservationExample"
+      },
+      "name" : "Body Metrics Observation Example",
+      "description" : "Generic body metrics observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-metrics-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/body-metrics-observation"
+      },
+      "name" : "Body Metrics Observation Profile",
+      "description" : "Profile for body measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapBodyMetricsToLOINC"
+      },
+      "name" : "Body Metrics to LOINC Mapping",
+      "description" : "Maps custom body composition measurement codes to LOINC codes where available. Enables interoperability between consumer body composition scales (Withings, Fitbit Aria, etc.) and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/crp-observation"
+      },
+      "name" : "C-Reactive Protein (CRP) Observation Profile",
+      "description" : "Profile for C-Reactive Protein measurements.\n\nLOINC: 1988-5 'C reactive protein [Mass/volume] in Serum or Plasma'\n\nClinical interpretation:\n- Normal: < 3.0 mg/L\n- Elevated: 3.0-10.0 mg/L (low-grade inflammation)\n- High: > 10.0 mg/L (acute inflammation/infection)\n\nHRV correlation: Inverse relationship with RMSSD (Williams 2019).\nHigher vagal tone associated with lower CRP levels.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/caffeine-intake-level-cs"
+      },
+      "name" : "Caffeine Intake Level CodeSystem",
+      "description" : "Risk levels for caffeine intake",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/caffeine-intake-level-vs"
+      },
+      "name" : "Caffeine Intake Level ValueSet",
+      "description" : "Categorical assessment of daily caffeine intake",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/caffeine-intake-observation"
+      },
+      "name" : "Caffeine Intake Observation Profile",
+      "description" : "Profile for recording daily caffeine consumption. Relevant to lifestyle medicine\nas excessive caffeine can affect sleep quality, stress levels, and cardiovascular health.\n\nGuidelines:\n- FDA safe limit: ≤400mg/day for healthy adults\n- Sleep hygiene: No caffeine 6+ hours before bed",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/caffeine-source-cs"
+      },
+      "name" : "Caffeine Source CodeSystem",
+      "description" : "Sources of caffeine in diet",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/caffeine-source-vs"
+      },
+      "name" : "Caffeine Source ValueSet",
+      "description" : "Common sources of dietary caffeine",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/calorie-intake-observation"
+      },
+      "name" : "Calorie Intake Observation Profile",
+      "description" : "Profile for caloric intake measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/cervical-mucus-cs"
+      },
+      "name" : "Cervical Mucus Code System",
+      "description" : "Code system for cervical mucus classification",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/cervical-mucus-vs"
+      },
+      "name" : "Cervical Mucus Value Set",
+      "description" : "Value set for cervical mucus observations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/cessation-support"
+      },
+      "name" : "Cessation Support",
+      "description" : "Support methods being used or considered for substance cessation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/cessation-support-method-cs"
+      },
+      "name" : "Cessation Support Method CodeSystem",
+      "description" : "Methods used to support cessation of substance use",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/cessation-support-method-vs"
+      },
+      "name" : "Cessation Support Method ValueSet",
+      "description" : "Methods of support for substance use cessation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/cessation-support-status-cs"
+      },
+      "name" : "Cessation Support Status CodeSystem",
+      "description" : "Status of cessation support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/cessation-support-status-vs"
+      },
+      "name" : "Cessation Support Status ValueSet",
+      "description" : "Status of cessation support engagement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/ChronicSymptomExample"
+      },
+      "name" : "ChronicSymptomExample",
+      "description" : "Chronic symptom observation example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/circadian-phase-cs"
+      },
+      "name" : "Circadian Phase Code System",
+      "description" : "Code system for circadian rhythm phases",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/circadian-phase"
+      },
+      "name" : "Circadian Phase Extension",
+      "description" : "Indicator of position in circadian rhythm cycle",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/circadian-phase-vs"
+      },
+      "name" : "Circadian Phase Value Set",
+      "description" : "Value set for circadian rhythm phases",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CompleteMindfulnessSession"
+      },
+      "name" : "Complete Mindfulness Session Example",
+      "description" : "Complete mindfulness session observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/CompleteMindfulnessResponse"
+      },
+      "name" : "Complete Mindfulness Session Response",
+      "description" : "Complete mindfulness questionnaire response example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CRPExample-Elevated"
+      },
+      "name" : "CRP Example - Elevated Value",
+      "description" : "Example of elevated C-Reactive Protein indicating inflammation",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/crp-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CRPExample-Normal"
+      },
+      "name" : "CRP Example - Normal Value",
+      "description" : "Example of normal C-Reactive Protein measurement",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/crp-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/TobaccoUseCurrentSmokerExample"
+      },
+      "name" : "Current Daily Smoker",
+      "description" : "Example of a current smoker with motivation assessment",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CalorieIntakeExample"
+      },
+      "name" : "Daily Calorie Intake Example",
+      "description" : "Daily calorie intake observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/calorie-intake-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/MacronutrientsExample"
+      },
+      "name" : "Daily Macronutrients Distribution Example",
+      "description" : "Daily macronutrients observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/macronutrients-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/DailyMindfulnessAlert"
+      },
+      "name" : "Daily Mindfulness Alert",
+      "description" : "Example of a daily mindfulness alert configuration",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-alert"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/daily-mindfulness"
+      },
+      "name" : "Daily Mindfulness Questionnaire",
+      "description" : "Questionnaire for capturing daily mindfulness practice and associated effects",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/daily-nutrition"
+      },
+      "name" : "Daily Nutrition Intake Questionnaire",
+      "description" : "Questionnaire for daily nutrition intake tracking",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/NutritionQuestionnaireResponseExample"
+      },
+      "name" : "Daily Nutrition Questionnaire Response Example",
+      "description" : "Nutrition questionnaire response example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WaterIntakeExample"
+      },
+      "name" : "Daily Water Intake Example",
+      "description" : "Daily water intake observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/data-capture-method-cs"
+      },
+      "name" : "Data Capture Method CodeSystem",
+      "description" : "Methods for capturing patient-generated health data",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/data-capture-method-vs"
+      },
+      "name" : "Data Capture Method ValueSet",
+      "description" : "Methods by which PGHD data was captured",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/data-localization"
+      },
+      "name" : "Data Localization Requirements",
+      "description" : "Specifies data localization requirements per jurisdiction",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceTransformationExample"
+      },
+      "name" : "Data Transformation Provenance - HealthKit to FHIR",
+      "description" : "Example of provenance tracking for HRV data transformation from HealthKit to FHIR",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceTransmissionExample"
+      },
+      "name" : "Data Transmission Provenance - App to Server",
+      "description" : "Example of provenance tracking for PGHD transmission from mobile app to healthcare system",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/DefaultAuditConfig"
+      },
+      "name" : "Default Audit Configuration",
+      "description" : "Default configuration for mindfulness session auditing",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit-config"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/DefaultMindfulnessConfig"
+      },
+      "name" : "Default Mindfulness Configuration",
+      "description" : "Default configuration settings for mindfulness sessions",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-configuration"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceDetailedCaptureExample"
+      },
+      "name" : "Detailed Capture Provenance with Metadata",
+      "description" : "Example showing device capture metadata extension for research-grade PGHD",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/device-capture-metadata"
+      },
+      "name" : "Device Capture Metadata",
+      "description" : "Additional metadata about how data was captured by the device",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceDeviceCaptureExample"
+      },
+      "name" : "Device Capture Provenance - Apple Watch HRV",
+      "description" : "Example of provenance tracking for HRV data captured by Apple Watch",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/drinking-context"
+      },
+      "name" : "Drinking Context",
+      "description" : "Context or setting in which alcohol consumption typically occurs",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/drinking-context-cs"
+      },
+      "name" : "Drinking Context CodeSystem",
+      "description" : "Settings and contexts for alcohol consumption",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/drinking-context-vs"
+      },
+      "name" : "Drinking Context ValueSet",
+      "description" : "Contexts where alcohol consumption typically occurs",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/duration-units-vs"
+      },
+      "name" : "Duration Units Value Set",
+      "description" : "Time units for symptom duration",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MessageDefinition"
+      }],
+      "reference" : {
+        "reference" : "MessageDefinition/end-session"
+      },
+      "name" : "End Session Message",
+      "description" : "Message definition for ending a mindfulness session",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/EndSessionOperation"
+      },
+      "name" : "End Session Operation",
+      "description" : "Operation to end an ongoing mindfulness session",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-operation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/environment-type"
+      },
+      "name" : "Environment Type Value Set",
+      "description" : "Value set for environmental context types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/environmental-context"
+      },
+      "name" : "Environmental Context Code System",
+      "description" : "Environmental factors and settings affecting health measurements and observations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/environmental-context"
+      },
+      "name" : "Environmental Context Extension",
+      "description" : "Additional context about environmental measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/environmental-context-vs"
+      },
+      "name" : "Environmental Context Value Set",
+      "description" : "Valid contexts for environmental measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapEnvironmentalToSNOMED"
+      },
+      "name" : "Environmental Exposures to SNOMED CT Mapping",
+      "description" : "Maps custom environmental exposure measurement codes to SNOMED CT codes where available. Enables interoperability between environmental monitoring devices (Apple Watch noise monitoring, UV sensors) and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/EnvironmentalDeviceExample"
+      },
+      "name" : "Environmental Monitoring Device",
+      "description" : "Environmental monitoring device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/EnvironmentalObservationExample"
+      },
+      "name" : "Environmental Observation Example",
+      "description" : "Generic environmental observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/environmental-observation"
+      },
+      "name" : "Environmental Observation Profile",
+      "description" : "Base profile for environmental measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/TobaccoUseExSmokerExample"
+      },
+      "name" : "Ex-Smoker with Pack-Years History",
+      "description" : "Example of a former smoker with documented pack-years and quit date",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/example"
+      },
+      "name" : "example",
+      "description" : "Example patient instance for demonstration purposes",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/MindfulnessAuditExample"
+      },
+      "name" : "Example Mindfulness Audit",
+      "description" : "Example of a mindfulness session audit record",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-audit"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/MindfulnessQuestionnaireExample"
+      },
+      "name" : "Example of Mindfulness Questionnaire",
+      "description" : "Example questionnaire for daily mindfulness practice assessment",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/MindfulnessObservationExample"
+      },
+      "name" : "Example of Mindfulness Session Observation",
+      "description" : "Mindfulness observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/SleepObservationExample1"
+      },
+      "name" : "Example of Sleep Record",
+      "description" : "Sleep observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/PhysicalActivityExample1"
+      },
+      "name" : "Example of Walking Activity",
+      "description" : "Physical activity observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/physical-activity-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/ExampleReproductiveActivity"
+      },
+      "name" : "ExampleReproductiveActivity",
+      "description" : "Reproductive health care plan example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/ExampleSymptomSeverity"
+      },
+      "name" : "ExampleSymptomSeverity",
+      "description" : "Symptom severity observation example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/exposure-conditions-cs"
+      },
+      "name" : "Exposure Conditions Code System",
+      "description" : "Code system for conditions during environmental exposure",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/exposure-conditions"
+      },
+      "name" : "Exposure Conditions Extension",
+      "description" : "Additional conditions during environmental exposure measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/exposure-conditions-vs"
+      },
+      "name" : "Exposure Conditions Value Set",
+      "description" : "Value set for environmental exposure conditions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/exposure-location-cs"
+      },
+      "name" : "Exposure Location Code System",
+      "description" : "Code system for environmental exposure locations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/exposure-location"
+      },
+      "name" : "Exposure Location Extension",
+      "description" : "Extension for recording location of environmental exposure measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/exposure-location-vs"
+      },
+      "name" : "Exposure Location Value Set",
+      "description" : "Value set for environmental exposure locations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/fall-risk-outcomes"
+      },
+      "name" : "Fall Risk Outcomes",
+      "description" : "Outcomes and assessment results related to fall risk in mobility evaluations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/fall-risk-outcomes"
+      },
+      "name" : "Fall Risk Outcomes Value Set",
+      "description" : "Value set for fall risk assessment outcomes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/FertilityObservationExample"
+      },
+      "name" : "Fertility Observation Example",
+      "description" : "Fertility observation with cervical mucus and ovulation test",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/fertility-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/fertility-observation"
+      },
+      "name" : "Fertility Observation Profile",
+      "description" : "Profile for fertility signs and symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/fertility-status-cs"
+      },
+      "name" : "Fertility Status Code System",
+      "description" : "Code system for fertility status indicators",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/fertility-status-vs"
+      },
+      "name" : "Fertility Status Value Set",
+      "description" : "Value set for fertility status",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapFHIRToOpenEHR"
+      },
+      "name" : "FHIR Resource to openEHR Archetype Mapping",
+      "description" : "Maps FHIR R4 resources to custom openEHR archetypes for wearable lifestyle medicine data. Enables data flow from FHIR servers to openEHR CDRs.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/HeartRateExample"
+      },
+      "name" : "Heart Rate Measurement Example",
+      "description" : "Heart rate observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/heart-rate-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceHeartRateMonitor"
+      },
+      "name" : "Heart Rate Monitor Device",
+      "description" : "Heart rate monitor device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/heart-rate-observation"
+      },
+      "name" : "Heart Rate Observation Profile",
+      "description" : "Profile for heart rate measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/heart-rate-variability-cs"
+      },
+      "name" : "Heart Rate Variability CodeSystem",
+      "description" : "Custom codes for HRV metrics with LOINC mappings where available. SDNN maps to LOINC 80404-7, other metrics await LOINC assignment.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapHRVToLOINC"
+      },
+      "name" : "Heart Rate Variability to LOINC Mapping",
+      "description" : "Maps custom HRV codes to LOINC codes where available, with migration path for future LOINC assignments. This is an operational ConceptMap that enables $translate operations, unlike FSH Mapping which is documentation-only.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/heart-rate-variability-vs"
+      },
+      "name" : "Heart Rate Variability ValueSet",
+      "description" : "Complete set of HRV metrics combining LOINC codes where available and custom codes for gaps",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/HeightExample"
+      },
+      "name" : "Height Measurement Example",
+      "description" : "Height observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/height-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/height-observation"
+      },
+      "name" : "Height Measurement Profile",
+      "description" : "Profile for body height measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CaffeineIntakeHighExample"
+      },
+      "name" : "High Caffeine Consumer",
+      "description" : "Example of excessive caffeine intake requiring intervention",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/caffeine-intake-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/AlcoholUseHighRiskExample"
+      },
+      "name" : "High-Risk Drinker",
+      "description" : "Example of high-risk alcohol consumption with binge episodes",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alcohol-use-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/hscrp-observation"
+      },
+      "name" : "High-Sensitivity C-Reactive Protein (hs-CRP) Observation Profile",
+      "description" : "Profile for high-sensitivity C-Reactive Protein measurements.\n\nLOINC: 30522-7 'C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method'\n\nCardiovascular risk stratification (AHA/CDC guidelines):\n- Low risk: < 1.0 mg/L\n- Average risk: 1.0-3.0 mg/L\n- High risk: > 3.0 mg/L\n\nPrimary marker for subclinical inflammation and cardiovascular risk.\nStrong inverse correlation with HRV in lifestyle medicine assessment.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/homeostasis-index"
+      },
+      "name" : "Homeostasis Index Extension",
+      "description" : "Composite measure of physiological balance and adaptation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/HRVObservationExample"
+      },
+      "name" : "HRV Observation - RMSSD",
+      "description" : "Example HRV observation with RMSSD metric captured by Apple Watch",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/HRVInflammationCorrelationExample"
+      },
+      "name" : "HRV-Inflammation Correlation Example",
+      "description" : "Example of HRV-Inflammation correlation assessment showing inverse relationship",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hrv-inflammation-correlation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/hrv-inflammation-correlation"
+      },
+      "name" : "HRV-Inflammation Correlation Observation Profile",
+      "description" : "Profile to capture the correlation between Heart Rate Variability and inflammatory markers.\n\nThis profile supports the RS1 systematic review finding:\n'Inverse correlation between HRV (especially RMSSD) and inflammatory biomarkers (CRP, IL-6)'\n\nKey relationships documented in literature:\n- RMSSD inversely correlates with CRP (r = -0.15 to -0.35)\n- Higher vagal tone → Lower inflammation\n- Mechanism: Cholinergic anti-inflammatory pathway (Tracey 2002)\n\nUse case: Track changes in HRV alongside inflammatory markers to assess\nautonomic-immune axis in lifestyle medicine interventions.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/hrv-inflammation-trend-vs"
+      },
+      "name" : "HRV-Inflammation Trend ValueSet",
+      "description" : "Trend direction for HRV-Inflammation correlation assessment.\nUses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.\n\nSource: HL7 mCODE Implementation Guide v4.0.0\n  - https://build.fhir.org/ig/HL7/fhir-mCODE-ig/ValueSet-mcode-condition-status-trend-vs.html\n\nSNOMED-CT codes validated via mCODE IG (HL7 International / Clinical Interoperability Council).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/hscrp-risk-cs"
+      },
+      "name" : "hs-CRP Cardiovascular Risk CodeSystem",
+      "description" : "Cardiovascular risk classification based on high-sensitivity C-Reactive Protein levels.\n\nBased on AHA/CDC Scientific Statement on Markers of Inflammation and Cardiovascular Disease:\n- Pearson TA, et al. Circulation. 2003;107(3):499-511. doi:10.1161/01.CIR.0000052939.59093.45\n- Ridker PM, et al. Circulation. 2003;107(3):363-369. doi:10.1161/01.CIR.0000053730.47739.3C\n\nRisk stratification thresholds:\n- Low risk: hs-CRP < 1.0 mg/L\n- Average risk: hs-CRP 1.0-3.0 mg/L\n- High risk: hs-CRP > 3.0 mg/L\n\nNote: No SNOMED-CT codes exist for this specific clinical classification as of 2025.\nThis CodeSystem follows thesis semantic hierarchy Level 3: local codes with documented source\nand migration pathway when standard terminology becomes available.\n\nFuture migration: Monitor SNOMED-CT International Edition for cardiovascular risk finding codes.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/HsCRPExample-CardiovascularRisk"
+      },
+      "name" : "hs-CRP Example - Cardiovascular Risk Assessment",
+      "description" : "High-sensitivity CRP for cardiovascular risk stratification",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hscrp-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/hscrp-interpretation-vs"
+      },
+      "name" : "hs-CRP Interpretation ValueSet",
+      "description" : "Cardiovascular risk interpretation for hs-CRP results (AHA/CDC guidelines)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/IL6Example-Elevated"
+      },
+      "name" : "IL-6 Example - Elevated",
+      "description" : "Example of elevated Interleukin-6",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/il6-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/inflammatory-marker-observation"
+      },
+      "name" : "Inflammatory Marker Observation Profile",
+      "description" : "Base profile for inflammatory biomarker measurements used in lifestyle medicine.\nSupports integration with HRV data to assess autonomic-immune interactions.\n\nKey inflammatory markers include:\n- C-Reactive Protein (CRP) - acute phase reactant\n- High-sensitivity CRP (hs-CRP) - cardiovascular risk marker\n- Interleukin-6 (IL-6) - pro-inflammatory cytokine\n- Tumor Necrosis Factor Alpha (TNF-α) - inflammatory mediator\n\nClinical context: Higher HRV (especially RMSSD) correlates with lower inflammation,\nreflecting the cholinergic anti-inflammatory pathway (Tracey 2002).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/inflammatory-marker-vs"
+      },
+      "name" : "Inflammatory Marker ValueSet",
+      "description" : "LOINC codes for inflammatory biomarkers used in lifestyle medicine",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/InflammatoryPanelExample"
+      },
+      "name" : "Inflammatory Panel Example",
+      "description" : "Comprehensive inflammatory marker panel for lifestyle medicine assessment. Combines cytokines panel (IL-6, TNF-α) with CRP measurements per RS1 systematic review findings.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/il6-observation"
+      },
+      "name" : "Interleukin-6 (IL-6) Observation Profile",
+      "description" : "Profile for Interleukin-6 measurements.\n\nLOINC: 26881-3 'Interleukin 6 [Mass/volume] in Serum or Plasma'\n\nClinical interpretation:\n- Normal: < 7 pg/mL (varies by assay)\n- Elevated: Associated with chronic inflammation, aging, obesity\n\nIL-6 is a key mediator of the acute phase response and stimulates CRP production.\nVagal nerve stimulation reduces IL-6 (cholinergic anti-inflammatory pathway).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ios-physical-activity-cs"
+      },
+      "name" : "iOS Physical Activity CodeSystem",
+      "description" : "CodeSystem for physical activity types from Apple HealthKit HKWorkoutActivityType. Enables interoperability between iOS Health App data and standard terminologies (SNOMED CT, LOINC).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapPhysicalActivityToSNOMED"
+      },
+      "name" : "iOS Physical Activity to SNOMED CT Mapping",
+      "description" : "Maps iOS/Apple HealthKit physical activity codes (HKWorkoutActivityType) to SNOMED CT codes. This is an operational ConceptMap that enables $translate operations for semantic interoperability between wearable device data and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/iphone-example"
+      },
+      "name" : "iPhone Device Example",
+      "description" : "Example iPhone device for iOS Health App data collection",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/jurisdiction-applicability"
+      },
+      "name" : "Jurisdiction Applicability",
+      "description" : "Specifies which jurisdictions this consent applies to",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/lifestyle-observation-cs"
+      },
+      "name" : "Lifestyle Medicine Observation Codes",
+      "description" : "Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/lifestyle-observation-vs"
+      },
+      "name" : "Lifestyle Medicine Observation Value Set",
+      "description" : "Value set containing all local lifestyle medicine observation codes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/lifestyle-vital-signs"
+      },
+      "name" : "Lifestyle Medicine Vital Signs Profile",
+      "description" : "Profile for vital signs data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/LifestyleVitalSignsExample"
+      },
+      "name" : "Lifestyle Vital Signs Example",
+      "description" : "Lifestyle vital signs observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/lifestyle-vital-signs"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/loinc-observations-vs"
+      },
+      "name" : "LOINC Observation Codes for Lifestyle Medicine",
+      "description" : "LOINC codes relevant for lifestyle medicine observations including HRV, vital signs, anthropometrics, and physical activity metrics. Used as target ValueSet in ConceptMaps for semantic interoperability.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/macronutrients-observation"
+      },
+      "name" : "Macronutrients Observation Profile",
+      "description" : "Profile for macronutrient intake measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-conditions"
+      },
+      "name" : "Measurement Conditions Extension",
+      "description" : "Records the conditions under which body measurements were taken",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-conditions-vs"
+      },
+      "name" : "Measurement Conditions Value Set",
+      "description" : "Standard conditions under which measurements are taken",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-context"
+      },
+      "name" : "Measurement Context Extension",
+      "description" : "Additional context about the vital sign measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-context-vital-signs"
+      },
+      "name" : "Measurement Context Value Set",
+      "description" : "Value set for measurement context in vital signs observations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-context-vs"
+      },
+      "name" : "Measurement Context Value Set",
+      "description" : "Contexts in which measurements can be taken, including temporal and location-based contexts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-device-type"
+      },
+      "name" : "Measurement Device Type Extension",
+      "description" : "Specifies the type of device used for body measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-device-type-vs"
+      },
+      "name" : "Measurement Device Type Value Set",
+      "description" : "Types of devices used for health and body measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/measurement-quality-cs"
+      },
+      "name" : "Measurement Quality Code System",
+      "description" : "Code system for measurement quality indicators",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/measurement-quality"
+      },
+      "name" : "Measurement Quality Extension",
+      "description" : "Indicator of the quality and reliability of the measurement",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/measurement-quality-vs"
+      },
+      "name" : "Measurement Quality Value Set",
+      "description" : "Value set for measurement quality indicators",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-alert"
+      },
+      "name" : "Mindfulness Alert",
+      "description" : "Alert configuration for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-alert-type"
+      },
+      "name" : "Mindfulness Alert Type",
+      "description" : "Types of alerts for mindfulness practice reminders and notifications",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit"
+      },
+      "name" : "Mindfulness Audit",
+      "description" : "Audit record for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-config"
+      },
+      "name" : "Mindfulness Audit Configuration",
+      "description" : "Configuration for mindfulness session auditing",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-format"
+      },
+      "name" : "Mindfulness Audit Format",
+      "description" : "Format for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-level"
+      },
+      "name" : "Mindfulness Audit Level",
+      "description" : "Level of detail for audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-audit-retention"
+      },
+      "name" : "Mindfulness Audit Retention",
+      "description" : "Period to retain audit records",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-audit-type"
+      },
+      "name" : "Mindfulness Audit Type",
+      "description" : "Types of audit events for mindfulness practice tracking",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-configuration"
+      },
+      "name" : "Mindfulness Configuration",
+      "description" : "Configuration settings for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-config-type"
+      },
+      "name" : "Mindfulness Configuration Type",
+      "description" : "Types of configuration settings for mindfulness practice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/MindfulnessDiagnosticMap"
+      },
+      "name" : "Mindfulness Diagnostic Mappings",
+      "description" : "Mapping of mindfulness outcomes to diagnostic codes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-import-map"
+      },
+      "name" : "Mindfulness Import Mapping",
+      "description" : "Mapping instructions for importing mindfulness data",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/MindfulnessImportMappingExample"
+      },
+      "name" : "Mindfulness Import Mapping Configuration Example",
+      "description" : "Example of a Basic resource containing mindfulness import mapping configuration",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-message-definition"
+      },
+      "name" : "Mindfulness Message Definition",
+      "description" : "Definition for mindfulness session messages",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-message-events"
+      },
+      "name" : "Mindfulness Message Events",
+      "description" : "Events that trigger mindfulness-related messages",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/MindfulnessCapabilityStatement"
+      },
+      "name" : "Mindfulness Module Capabilities",
+      "description" : "Capabilities supported by the mindfulness module implementation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-notification-enabled"
+      },
+      "name" : "Mindfulness Notification Enabled",
+      "description" : "Whether notifications are enabled for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapMindfulnessToSNOMED"
+      },
+      "name" : "Mindfulness Observations to SNOMED CT Mapping",
+      "description" : "Maps custom mindfulness observation codes to SNOMED CT codes where available. Enables interoperability between mindfulness apps (Headspace, Calm, Apple Mindfulness Minutes) and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-operation"
+      },
+      "name" : "Mindfulness Operation",
+      "description" : "Base definition for mindfulness operations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-outcome-cs"
+      },
+      "name" : "Mindfulness Outcomes",
+      "description" : "Outcomes and effects of mindfulness practice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-outcome-vs"
+      },
+      "name" : "Mindfulness Outcomes Value Set",
+      "description" : "Value set for mindfulness practice outcomes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Measure"
+      }],
+      "reference" : {
+        "reference" : "Measure/MindfulnessProgressReport"
+      },
+      "name" : "Mindfulness Practice Progress Report",
+      "description" : "Example instance of MindfulnessProgressReport",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-qualifier-cs"
+      },
+      "name" : "Mindfulness Practice Qualifiers",
+      "description" : "Qualifiers for mindfulness practice characteristics",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-qualifier-vs"
+      },
+      "name" : "Mindfulness Practice Qualifiers Value Set",
+      "description" : "Value set for mindfulness practice qualifiers",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-type-cs"
+      },
+      "name" : "Mindfulness Practice Types",
+      "description" : "Types of mindfulness practices and techniques",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-type-vs"
+      },
+      "name" : "Mindfulness Practice Types Value Set",
+      "description" : "Value set of mindfulness practice types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-preferred-guide"
+      },
+      "name" : "Mindfulness Preferred Guide",
+      "description" : "Preferred guide for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-reminder-time"
+      },
+      "name" : "Mindfulness Reminder Time",
+      "description" : "Default time for daily reminders",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-schedule"
+      },
+      "name" : "Mindfulness Schedule",
+      "description" : "Schedule configuration for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-schedule-timing"
+      },
+      "name" : "Mindfulness Schedule Timing",
+      "description" : "Timing configuration for mindfulness sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mindfulness-schedule-type"
+      },
+      "name" : "Mindfulness Schedule Type",
+      "description" : "Types of schedules for mindfulness practice sessions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-context"
+      },
+      "name" : "Mindfulness Session Context",
+      "description" : "Additional context about the mindfulness practice session",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-session-duration"
+      },
+      "name" : "Mindfulness Session Duration",
+      "description" : "Default duration for mindfulness sessions in minutes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mindfulness-observation"
+      },
+      "name" : "Mindfulness Session Observation",
+      "description" : "Profile for recording mindfulness practice sessions and outcomes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/MindfulnessSettingCS"
+      },
+      "name" : "Mindfulness Setting CodeSystem",
+      "description" : "CodeSystem defining different settings where mindfulness practice can occur",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-snomed-vs"
+      },
+      "name" : "Mindfulness SNOMED CT Value Set",
+      "description" : "SNOMED CT codes for mindfulness-related concepts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mindfulness-type"
+      },
+      "name" : "Mindfulness Type Value Set",
+      "description" : "Value set for types of mindfulness practices",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/MindfulnessAccessPolicy"
+      },
+      "name" : "MindfulnessAccessPolicy",
+      "description" : "Consent instance defining access control policies and authorized actions for mindfulness data under GDPR, EHDS, HIPAA, and LGPD compliance",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/MindfulnessSecurityDefinition"
+      },
+      "name" : "MindfulnessSecurityDefinition",
+      "description" : "Consent instance defining security requirements and data classification for mindfulness data",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/MindfulnessType"
+      },
+      "name" : "MindfulnessType",
+      "description" : "Example instance of MindfulnessType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mobility-alert-level-cs"
+      },
+      "name" : "Mobility Alert Level Code System",
+      "description" : "Code system defining alert levels for mobility measurements, indicating the severity of changes in mobility patterns",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mobility-alert-level"
+      },
+      "name" : "Mobility Alert Level Extension",
+      "description" : "Extension for mobility measurements alert levels to indicate the severity or concern level of mobility changes detected by the device",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mobility-alert-level-vs"
+      },
+      "name" : "Mobility Alert Level Value Set",
+      "description" : "Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mobility-assessment-method"
+      },
+      "name" : "Mobility Assessment Method",
+      "description" : "Methods used to assess mobility and balance",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapMobilityToSNOMED"
+      },
+      "name" : "Mobility Assessments to SNOMED CT Mapping",
+      "description" : "Maps custom mobility and gait assessment codes to SNOMED CT codes where available. Enables interoperability between mobility monitoring devices (Apple Watch walking steadiness, gait analysis tools) and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mobility-decline-outcomes"
+      },
+      "name" : "Mobility Decline Outcomes",
+      "description" : "Outcomes and trends related to mobility decline assessments over time",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mobility-decline-outcomes"
+      },
+      "name" : "Mobility Decline Outcomes Value Set",
+      "description" : "Value set for mobility decline assessment outcomes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mobility-profile"
+      },
+      "name" : "Mobility Profile",
+      "description" : "Profile for mobility data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/MobilityProfileExample"
+      },
+      "name" : "Mobility Profile Assessment Example",
+      "description" : "Comprehensive mobility assessment example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-profile"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RiskAssessment"
+      }],
+      "reference" : {
+        "reference" : "RiskAssessment/MobilityRiskAssessmentExample"
+      },
+      "name" : "Mobility Risk Assessment Example",
+      "description" : "Mobility risk assessment example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-risk-assessment"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/mobility-risk-assessment"
+      },
+      "name" : "Mobility Risk Assessment Profile",
+      "description" : "Profile for assessing mobility-related risks",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/CaffeineIntakeModerateExample"
+      },
+      "name" : "Moderate Caffeine Consumer",
+      "description" : "Example of moderate daily caffeine intake from multiple sources",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/caffeine-intake-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/AlcoholUseModerateExample"
+      },
+      "name" : "Moderate Social Drinker",
+      "description" : "Example of moderate alcohol consumption with AUDIT-C score",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alcohol-use-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mood"
+      },
+      "name" : "Mood Code System",
+      "description" : "Code system for mood states",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/mood"
+      },
+      "name" : "Mood Value Set",
+      "description" : "Value set for mood states",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/MultiJurisdictionalConsentExample"
+      },
+      "name" : "Multi-Jurisdictional Consent Example",
+      "description" : "Multi-jurisdictional healthcare consent supporting GDPR, HIPAA, and LGPD",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/multi-jurisdictional-consent"
+      },
+      "name" : "Multi-Jurisdictional Healthcare Consent",
+      "description" : "Consent profile supporting GDPR, HIPAA, and LGPD compliance",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/TobaccoUseNeverSmokerExample"
+      },
+      "name" : "Never Smoker",
+      "description" : "Example of a patient who has never smoked tobacco",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/NoiseExposureExample"
+      },
+      "name" : "Noise Exposure Measurement Example",
+      "description" : "Noise exposure observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/noise-exposure-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/noise-exposure-observation"
+      },
+      "name" : "Noise Exposure Observation Profile",
+      "description" : "Profile for noise exposure measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/AlcoholUseNonDrinkerExample"
+      },
+      "name" : "Non-Drinker",
+      "description" : "Example of a patient who does not consume alcohol",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alcohol-use-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/nutrition-data-source-cs"
+      },
+      "name" : "Nutrition Data Source Code System",
+      "description" : "Code system for nutrition data sources",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/nutrition-data-source"
+      },
+      "name" : "Nutrition Data Source Extension",
+      "description" : "Indicates the source of nutrition data",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/nutrition-data-source-vs"
+      },
+      "name" : "Nutrition Data Source Value Set",
+      "description" : "Value set for nutrition data sources",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/NutritionIntakeObservationExample"
+      },
+      "name" : "Nutrition Intake Observation Example",
+      "description" : "Generic nutrition intake observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-intake-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/nutrition-intake-observation"
+      },
+      "name" : "Nutrition Intake Observation Profile",
+      "description" : "Profile for nutrition intake data from iOS Health App and user input",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapNutritionToSNOMED"
+      },
+      "name" : "Nutrition Measurements to SNOMED CT Mapping",
+      "description" : "Maps custom nutrition measurement codes to SNOMED CT codes where available. Enables interoperability between consumer nutrition tracking apps (iOS Health App, MyFitnessPal, etc.) and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapOpenEHRToFHIR"
+      },
+      "name" : "openEHR Archetype to FHIR Resource Mapping",
+      "description" : "Maps openEHR archetype elements for wearable lifestyle medicine data to FHIR resource elements. Enables semantic interoperability via NUM-FHIR-Bridge or similar transformation layers.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapOpenEHRToOMOP"
+      },
+      "name" : "openEHR Archetype to OMOP CDM Mapping",
+      "description" : "Maps openEHR archetype elements for wearable lifestyle medicine data to OMOP Common Data Model for federated research analytics via OHDSI network.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/Org2RDoc"
+      },
+      "name" : "Org2RDoc",
+      "description" : "2RDoc organization instance for consent and data governance examples",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/osa-practitioner-kyle-anydoc"
+      },
+      "name" : "osa-practitioner-kyle-anydoc",
+      "description" : "Example practitioner for OSA-related care scenarios",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ovulation-test-cs"
+      },
+      "name" : "Ovulation Test Code System",
+      "description" : "Code system for ovulation test results",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ovulation-test-vs"
+      },
+      "name" : "Ovulation Test Value Set",
+      "description" : "Value set for ovulation test results",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/OxygenSaturationExample"
+      },
+      "name" : "Oxygen Saturation Measurement Example",
+      "description" : "Oxygen saturation observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/oxygen-saturation-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/oxygen-saturation-observation"
+      },
+      "name" : "Oxygen Saturation Observation Profile",
+      "description" : "Profile for SpO2 measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/pghd-provenance"
+      },
+      "name" : "Patient-Generated Health Data Provenance",
+      "description" : "Provenance profile for tracking the origin and transformation history of PGHD from wearable devices",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientExample"
+      },
+      "name" : "PatientExample",
+      "description" : "Patient resource example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientMindfulness"
+      },
+      "name" : "PatientMindfulness",
+      "description" : "Example patient for mindfulness-related scenarios and consent examples",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/pghd-provenance-activity-vs"
+      },
+      "name" : "PGHD Provenance Activity ValueSet",
+      "description" : "Activities related to PGHD data capture and transformation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/physical-activity-observation"
+      },
+      "name" : "Physical Activity Observation Profile",
+      "description" : "Profile for recording physical activity data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/physical-activity-type-vs"
+      },
+      "name" : "Physical Activity Types Value Set",
+      "description" : "Types of physical activities from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/physiological-stress-index"
+      },
+      "name" : "Physiological Stress Index Extension",
+      "description" : "Index representing overall physiological stress based on multiple parameters",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/environment-type-cs"
+      },
+      "name" : "Practice Environment Types",
+      "description" : "Types of environments for mindfulness practice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/environment-type-vs"
+      },
+      "name" : "Practice Environment Types Value Set",
+      "description" : "Value set of practice environment types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/practitioner-identifier-cs"
+      },
+      "name" : "Practitioner Identifier Code System",
+      "description" : "Sistema de códigos para identificação de practitioners",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/practitioner-identifier-vs"
+      },
+      "name" : "Practitioner Identifier Value Set",
+      "description" : "Value set para identificadores de practitioners",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/PractitionerExample"
+      },
+      "name" : "PractitionerExample",
+      "description" : "Practitioner resource example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DevicePulseOximeter"
+      },
+      "name" : "Pulse Oximeter Device",
+      "description" : "Pulse oximeter device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/recovery-efficiency"
+      },
+      "name" : "Recovery Efficiency Extension",
+      "description" : "Measure of how efficiently the body recovers from stress or exertion",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/recreational-substance-type-vs"
+      },
+      "name" : "Recreational Substance Type ValueSet",
+      "description" : "Types of recreational substances (where legal and clinically appropriate)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/recreational-substance-use-observation"
+      },
+      "name" : "Recreational Substance Use Observation Profile",
+      "description" : "Profile for recording use of recreational substances relevant to lifestyle medicine\nassessment. Includes cannabis (where legal), and other substances that may affect\nhealth outcomes and lifestyle interventions.\n\nNote: This is for health assessment purposes only, in contexts where legal and\nclinically appropriate. Privacy and confidentiality considerations are paramount.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/recreational-substance-use-status-vs"
+      },
+      "name" : "Recreational Substance Use Status ValueSet",
+      "description" : "Status categories for recreational substance use",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/regulatory-basis"
+      },
+      "name" : "Regulatory Basis for Consent",
+      "description" : "Identifies the regulatory framework(s) that govern this consent",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/regulatory-framework-cs"
+      },
+      "name" : "Regulatory Framework Code System",
+      "description" : "Codes for healthcare regulatory frameworks",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/regulatory-framework-vs"
+      },
+      "name" : "Regulatory Framework Value Set",
+      "description" : "Regulatory frameworks for healthcare data protection",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-history-activity-cs"
+      },
+      "name" : "Reproductive Health Activities Code System",
+      "description" : "Code system for social-history health monitoring activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-history-activity-vs"
+      },
+      "name" : "Reproductive Health Activities Value Set",
+      "description" : "Activities related to social-history health monitoring",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-history-observation"
+      },
+      "name" : "Reproductive Health Base Profile",
+      "description" : "Base profile for social-history health observations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-history-goal-vs"
+      },
+      "name" : "Reproductive Health Goals Value Set",
+      "description" : "Goals related to social-history health tracking and planning",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapReproductiveToLOINC"
+      },
+      "name" : "Reproductive Health to LOINC Mapping",
+      "description" : "Maps custom reproductive health observation codes to LOINC codes where available. Enables interoperability between fertility tracking apps (Apple Health, Clue, Flo) and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/social-history-health"
+      },
+      "name" : "Reproductive Health Tracking Questionnaire",
+      "description" : "Daily questionnaire for social-history health tracking",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/risk-level"
+      },
+      "name" : "Risk Level",
+      "description" : "General risk level classification for health assessments and clinical decision support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/risk-level"
+      },
+      "name" : "Risk Level Value Set",
+      "description" : "Value set for general risk levels",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapSleepToLOINC"
+      },
+      "name" : "Sleep Measurements to LOINC Mapping",
+      "description" : "Maps custom sleep measurement codes to LOINC codes where available, with migration path for future LOINC assignments. Enables interoperability between consumer sleep tracking devices (Apple HealthKit, Fitbit, Oura, etc.) and clinical systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/DeviceSleepMonitor"
+      },
+      "name" : "Sleep Monitoring Device",
+      "description" : "Sleep monitor device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/activity-observation"
+      },
+      "name" : "Sleep Observation Profile",
+      "description" : "Profile for recording activity data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/activity-quality"
+      },
+      "name" : "Sleep Quality Extension",
+      "description" : "Extension for recording subjective activity quality",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/activity-quality-extended-vs"
+      },
+      "name" : "Sleep Quality Value Set",
+      "description" : "Extended value set for activity quality assessment",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/activity-quality-vs"
+      },
+      "name" : "Sleep Quality Value Set",
+      "description" : "Qualitative assessments of activity quality including subjective measures",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/SmartScale"
+      },
+      "name" : "Smart Scale Device",
+      "description" : "Smart scale device example",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-activity-cs"
+      },
+      "name" : "Social Activity Code System",
+      "description" : "Code system for types of social activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-activity"
+      },
+      "name" : "Social Activity Extension",
+      "description" : "Extension for recording specific social activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-activity-vs"
+      },
+      "name" : "Social Activity Value Set",
+      "description" : "Value set for types of social activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-context-cs"
+      },
+      "name" : "Social Context Code System",
+      "description" : "Code system for social interaction contexts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-context"
+      },
+      "name" : "Social Context Extension",
+      "description" : "Extension for recording the context of social interaction",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-context-vs"
+      },
+      "name" : "Social Context Value Set",
+      "description" : "Value set for social interaction contexts",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/SocialHistoryObservationExample"
+      },
+      "name" : "Social History Observation Example",
+      "description" : "Social history observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-history-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/SocialInteractionExample"
+      },
+      "name" : "Social Interaction Example",
+      "description" : "Social interaction observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-interaction"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-interaction-medium-cs"
+      },
+      "name" : "Social Interaction Medium Code System",
+      "description" : "Mediums through which social interaction occurs",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-interaction-medium-vs"
+      },
+      "name" : "Social Interaction Medium Value Set",
+      "description" : "Mediums through which social interaction occurs",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-interaction"
+      },
+      "name" : "Social Interaction Profile",
+      "description" : "Profile for recording social interaction data from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-interaction-quality-cs"
+      },
+      "name" : "Social Interaction Quality Code System",
+      "description" : "Quality measures for social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-interaction-quality-vs"
+      },
+      "name" : "Social Interaction Quality Value Set",
+      "description" : "Quality measures for social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-interaction-type-cs"
+      },
+      "name" : "Social Interaction Type Code System",
+      "description" : "Types of social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-interaction-type-vs"
+      },
+      "name" : "Social Interaction Type Value Set",
+      "description" : "Types of social interactions",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/social-support-cs"
+      },
+      "name" : "Social Support Code System",
+      "description" : "Code system for levels of social support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/social-support"
+      },
+      "name" : "Social Support Extension",
+      "description" : "Extension for recording perceived social support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/social-support-vs"
+      },
+      "name" : "Social Support Value Set",
+      "description" : "Value set for levels of social support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MessageDefinition"
+      }],
+      "reference" : {
+        "reference" : "MessageDefinition/start-session"
+      },
+      "name" : "Start Session Message",
+      "description" : "Message definition for starting a mindfulness session",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-message-definition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/StartSessionOperation"
+      },
+      "name" : "Start Session Operation",
+      "description" : "Operation to start a new mindfulness session",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-operation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-chronicity-cs"
+      },
+      "name" : "Stress Chronicity Code System",
+      "description" : "Code system for stress chronicity classification",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-chronicity-vs"
+      },
+      "name" : "Stress Chronicity Value Set",
+      "description" : "Value set for classifying stress chronicity",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-coping-cs"
+      },
+      "name" : "Stress Coping Code System",
+      "description" : "Code system for stress coping mechanisms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/stress-coping"
+      },
+      "name" : "Stress Coping Extension",
+      "description" : "Extension for recording stress coping mechanisms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-coping-vs"
+      },
+      "name" : "Stress Coping Value Set",
+      "description" : "Value set for stress coping mechanisms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-impact-cs"
+      },
+      "name" : "Stress Impact Code System",
+      "description" : "Code system for stress impact levels",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-impact-vs"
+      },
+      "name" : "Stress Impact Value Set",
+      "description" : "Value set for describing stress impact levels",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/StressLevelExample"
+      },
+      "name" : "Stress Level Measurement Example",
+      "description" : "Stress level observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/stress-level"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/stress-level"
+      },
+      "name" : "Stress Level Profile",
+      "description" : "Profile for recording stress level measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/stress-triggers-cs"
+      },
+      "name" : "Stress Triggers Code System",
+      "description" : "Code system for common stress triggers",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/stress-triggers"
+      },
+      "name" : "Stress Triggers Extension",
+      "description" : "Extension for recording identified stress triggers",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/stress-triggers-vs"
+      },
+      "name" : "Stress Triggers Value Set",
+      "description" : "Value set for common stress triggers",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/substance-use-frequency-cs"
+      },
+      "name" : "Substance Use Frequency CodeSystem",
+      "description" : "Frequency categories for substance use reporting",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/substance-use-frequency-vs"
+      },
+      "name" : "Substance Use Frequency ValueSet",
+      "description" : "Frequency categories for substance use",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/substance-use-motivation"
+      },
+      "name" : "Substance Use Motivation",
+      "description" : "Patient's motivation level for changing substance use behavior (readiness to change)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/substance-use-motivation-cs"
+      },
+      "name" : "Substance Use Motivation CodeSystem",
+      "description" : "Motivation stages based on Transtheoretical Model (Prochaska)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/substance-use-motivation-vs"
+      },
+      "name" : "Substance Use Motivation ValueSet",
+      "description" : "Stages of change / motivation levels based on Transtheoretical Model",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/substance-use-risk-level-cs"
+      },
+      "name" : "Substance Use Risk Level CodeSystem",
+      "description" : "Risk levels for substance use assessment in lifestyle medicine",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/substance-use-risk-level-vs"
+      },
+      "name" : "Substance Use Risk Level ValueSet",
+      "description" : "Overall risk assessment for substance use patterns",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/SubstanceUseSummaryExample"
+      },
+      "name" : "Substance Use Summary",
+      "description" : "Comprehensive summary of patient's substance use patterns for lifestyle medicine assessment",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-summary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/substance-use-summary"
+      },
+      "name" : "Substance Use Summary Profile",
+      "description" : "Aggregated profile summarizing all substance use relevant to lifestyle medicine\ninterventions. Provides a holistic view of the 6th pillar: avoidance of risky substances.\n\nComponents include tobacco, alcohol, caffeine, and recreational substances\nwith their current status and risk assessment.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/substance-use-trigger"
+      },
+      "name" : "Substance Use Trigger",
+      "description" : "Identified triggers that prompt substance use behavior",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/substance-use-trigger-cs"
+      },
+      "name" : "Substance Use Trigger CodeSystem",
+      "description" : "Common triggers for substance use behavior",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/substance-use-trigger-vs"
+      },
+      "name" : "Substance Use Trigger ValueSet",
+      "description" : "Common triggers for substance use",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/symptom-questionnaire"
+      },
+      "name" : "Symptom Assessment Questionnaire",
+      "description" : "Questionnaire template for symptom assessments",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/SymptomQuestionnaireExample"
+      },
+      "name" : "Symptom Assessment Questionnaire Example",
+      "description" : "Symptom assessment questionnaire example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/symptom-frequency-cs"
+      },
+      "name" : "Symptom Frequency Code System",
+      "description" : "Frequency patterns for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/symptom-frequency-vs"
+      },
+      "name" : "Symptom Frequency Value Set",
+      "description" : "Frequency patterns for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/symptom-impact-cs"
+      },
+      "name" : "Symptom Impact Code System",
+      "description" : "Impact levels of symptoms on daily activities",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/symptom-impact-vs"
+      },
+      "name" : "Symptom Impact Value Set",
+      "description" : "Impact levels for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/symptom-progression-vs"
+      },
+      "name" : "Symptom Progression Value Set",
+      "description" : "Progression patterns for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/symptom-severity-cs"
+      },
+      "name" : "Symptom Severity Code System",
+      "description" : "Severity levels for symptoms",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/time-of-day-vs"
+      },
+      "name" : "Time of Day Value Set",
+      "description" : "Times of day for symptom occurrence",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/TNFAlphaExample-Normal"
+      },
+      "name" : "TNF-α Example - Normal",
+      "description" : "Example of normal Tumor Necrosis Factor Alpha",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tnf-alpha-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tobacco-product-type-vs"
+      },
+      "name" : "Tobacco Product Type ValueSet",
+      "description" : "Types of tobacco products",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tobacco-use-observation"
+      },
+      "name" : "Tobacco Use Observation Profile",
+      "description" : "Profile for recording tobacco use status and history from patient-reported data\nand digital health applications. Supports the 6th pillar of lifestyle medicine:\navoidance of risky substances.\n\nAligned with:\n- US Core Smoking Status (LOINC 72166-2)\n- IPS Tobacco Use section\n- ACLM Lifestyle Medicine guidelines",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/tobacco-use-status-vs"
+      },
+      "name" : "Tobacco Use Status ValueSet",
+      "description" : "Status categories for tobacco use aligned with US Core and IPS",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/tnf-alpha-observation"
+      },
+      "name" : "Tumor Necrosis Factor Alpha (TNF-α) Observation Profile",
+      "description" : "Profile for Tumor Necrosis Factor Alpha measurements.\n\nLOINC: 3074-2 'Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma'\n\nClinical interpretation:\n- Normal: < 8.1 pg/mL (varies by assay)\n- Elevated: Chronic inflammation, autoimmune conditions, metabolic syndrome\n\nTNF-α is suppressed by acetylcholine via the inflammatory reflex.\nHigher vagal tone (HRV) associated with lower TNF-α levels.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/UVExposureExample"
+      },
+      "name" : "UV Exposure Measurement Example",
+      "description" : "UV exposure observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/uv-exposure-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/uv-exposure-observation"
+      },
+      "name" : "UV Exposure Observation Profile",
+      "description" : "Profile for UV exposure measurements from iOS Health App",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapVendorToLOINC"
+      },
+      "name" : "Vendor Proprietary Codes to LOINC Mapping",
+      "description" : "Maps wearable device vendor codes to equivalent LOINC codes for semantic interoperability. Addresses critical gap: none of the 11 major vendors use LOINC codes natively. Enables $translate operations for vendor data normalization.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WalkingSpeedExample"
+      },
+      "name" : "Walking Speed Measurement Example",
+      "description" : "Walking speed observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/walking-speed-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/walking-speed-observation"
+      },
+      "name" : "Walking Speed Observation Profile",
+      "description" : "Profile for measuring walking speed as part of mobility assessment",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WalkingSteadinessExample"
+      },
+      "name" : "Walking Steadiness Measurement Example",
+      "description" : "Walking steadiness observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/walking-steadiness-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/walking-steadiness-observation"
+      },
+      "name" : "Walking Steadiness Observation Profile",
+      "description" : "Profile for assessing walking steadiness and balance",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/water-intake-observation"
+      },
+      "name" : "Water Intake Observation Profile",
+      "description" : "Profile for water intake measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/wearable-sensor-type-cs"
+      },
+      "name" : "Wearable Sensor Type CodeSystem",
+      "description" : "Sensor types found in consumer wearable devices",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/wearable-sensor-type-vs"
+      },
+      "name" : "Wearable Sensor Type ValueSet",
+      "description" : "Types of sensors in consumer wearable devices",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/ConceptMapVendorToOpenEHR"
+      },
+      "name" : "Wearable Vendor API to openEHR Archetype Mapping",
+      "description" : "Maps proprietary wearable vendor API data types (Apple HealthKit, Fitbit, Oura, Garmin, Polar) to openEHR archetypes for standardized clinical data capture.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Basic"
+      }],
+      "reference" : {
+        "reference" : "Basic/WeeklyMindfulnessSchedule"
+      },
+      "name" : "Weekly Mindfulness Schedule",
+      "description" : "Example of a weekly mindfulness schedule",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-schedule"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WeightExample"
+      },
+      "name" : "Weight Measurement Example",
+      "description" : "Weight observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/weight-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/weight-observation"
+      },
+      "name" : "Weight Measurement Profile",
+      "description" : "Profile for body weight measurements",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/WeightWithConditions"
+      },
+      "name" : "Weight Measurement with Conditions Example",
+      "description" : "Weight with conditions observation example",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/weight-observation"
+    }],
+    "page" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+        "valueUrl" : "toc.html"
+      }],
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "advanced_vitalsigns.html"
+        }],
+        "nameUrl" : "advanced_vitalsigns.html",
+        "title" : "Advanced Vitalsigns",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "bodymetrics.html"
+        }],
+        "nameUrl" : "bodymetrics.html",
+        "title" : "Bodymetrics",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "conceptmaps.html"
+        }],
+        "nameUrl" : "conceptmaps.html",
+        "title" : "Conceptmaps",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "data-protection-policies.html"
+        }],
+        "nameUrl" : "data-protection-policies.html",
+        "title" : "Data Protection Policies",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "design-decisions.html"
+        }],
+        "nameUrl" : "design-decisions.html",
+        "title" : "Design Decisions",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "environmental.html"
+        }],
+        "nameUrl" : "environmental.html",
+        "title" : "Environmental",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhirconnect-architecture.html"
+        }],
+        "nameUrl" : "fhirconnect-architecture.html",
+        "title" : "Fhirconnect Architecture",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "inflammatory_markers.html"
+        }],
+        "nameUrl" : "inflammatory_markers.html",
+        "title" : "Inflammatory Markers",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mindfulness.html"
+        }],
+        "nameUrl" : "mindfulness.html",
+        "title" : "Mindfulness",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mindfulness_module.html"
+        }],
+        "nameUrl" : "mindfulness_module.html",
+        "title" : "Mindfulness Module",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mobility.html"
+        }],
+        "nameUrl" : "mobility.html",
+        "title" : "Mobility",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "nutrition.html"
+        }],
+        "nameUrl" : "nutrition.html",
+        "title" : "Nutrition",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "physical_activity.html"
+        }],
+        "nameUrl" : "physical_activity.html",
+        "title" : "Physical Activity",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "practitioner-identifiers.html"
+        }],
+        "nameUrl" : "practitioner-identifiers.html",
+        "title" : "Practitioner Identifiers",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "reproductive.html"
+        }],
+        "nameUrl" : "reproductive.html",
+        "title" : "Reproductive",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "sleep.html"
+        }],
+        "nameUrl" : "sleep.html",
+        "title" : "Sleep",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "social_interaction.html"
+        }],
+        "nameUrl" : "social_interaction.html",
+        "title" : "Social Interaction",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "stress.html"
+        }],
+        "nameUrl" : "stress.html",
+        "title" : "Stress",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "symptoms.html"
+        }],
+        "nameUrl" : "symptoms.html",
+        "title" : "Symptoms",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "vitalsigns.html"
+        }],
+        "nameUrl" : "vitalsigns.html",
+        "title" : "Vitalsigns",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/maps"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
+  }
+}

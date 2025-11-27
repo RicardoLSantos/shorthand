@@ -1,0 +1,127 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/AdvancedVitalSignsExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "AdvancedVitalSignsExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation AdvancedVitalSignsExample</b></p><a name=\"AdvancedVitalSignsExample\"> </a><a name=\"hcAdvancedVitalSignsExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-advanced-vital-signs.html\">Advanced Vital Signs Profile</a></p></div><p><b>Measurement Quality Extension</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs excellent}\">Excellent Quality</span></p><p><b>Advanced Vital Signs Context Extension</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs resting}\">Resting state</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 8716-3}\">Vital signs note</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 15:30:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><p><b>note</b>: </p><blockquote><div><p>Comprehensive cardiovascular assessment during routine checkup</p>\n</div></blockquote><p><b>device</b>: <a href=\"Device-DeviceHeartRateMonitor.html\">Device: manufacturer = HealthTech Devices; modelNumber = HRM-2024; type = Heart rate</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs hrv-frequency}\">Heart rate variability frequency band</span></p><p><b>value</b>: 42 millisecond<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigoms = 'ms')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 8478-0}\">Mean blood pressure</span></p><p><b>value</b>: 93 millimeter of mercury<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomm[Hg] = 'mm[Hg]')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs autonomic-balance}\">Autonomic balance index</span></p><p><b>value</b>: 1.2 ratio<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM código1 = '1')</span></p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-quality"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "excellent" ] ;
+         fhir:display [ fhir:v "Excellent Quality" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs-context"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "resting" ] ;
+         fhir:display [ fhir:v "Resting state" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:8716-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "8716-3" ] ;
+       fhir:display [ fhir:v "Vital signs note" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2024-03-19T15:30:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/PractitionerExample> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Comprehensive cardiovascular assessment during routine checkup" ]
+  ] ) ; # 
+  fhir:device [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/DeviceHeartRateMonitor> ;
+     fhir:reference [ fhir:v "Device/DeviceHeartRateMonitor" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "hrv-frequency" ] ;
+         fhir:display [ fhir:v "Heart rate variability frequency band" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "42"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "millisecond" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ms" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8478-0 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "8478-0" ] ;
+         fhir:display [ fhir:v "Mean blood pressure" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "93"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "millimeter of mercury" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "mm[Hg]" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "autonomic-balance" ] ;
+         fhir:display [ fhir:v "Autonomic balance index" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 1.2 ] ;
+       fhir:unit [ fhir:v "ratio" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "1" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

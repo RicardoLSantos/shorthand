@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="ProvenanceDeviceCaptureExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Provenance ProvenanceDeviceCaptureExample</b></p><a name="ProvenanceDeviceCaptureExample"> </a><a name="hcProvenanceDeviceCaptureExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-pghd-provenance.html">Patient-Generated Health Data Provenance</a></p></div><p>Proveniência para <a href="Observation-HRVObservationExample.html">Observation R-R interval.standard deviation (Heart rate variability)</a></p><p>Resumo</p><table class="grid"><tr><td>Gravado</td><td>2025-01-15 08:30:00+0000</td></tr><tr><td>Localização</td><td>Home - Bedroom</td></tr><tr><td>Atividade</td><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle originate}">Originate/Retain Record Lifecycle Event</span></td></tr></table><p><b>Agentes</b></p><table class="grid"><tr><td><b>Tipo</b></td><td><b>que</b></td></tr><tr><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/provenance-participant-type performer}">Performer</span></td><td><a href="Device-AppleWatchDevice.html">Apple Watch Series 9</a></td></tr><tr><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}">Author</span></td><td><a href="Patient-PatientExample.html">John Smith</a></td></tr></table></div>
+  </text>
+  <target>
+    <reference value="Observation/HRVObservationExample"/>
+  </target>
+  <recorded value="2025-01-15T08:30:00Z"/>
+  <location>
+    <display value="Home - Bedroom"/>
+  </location>
+  <activity>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle"/>
+      <code value="originate"/>
+      <display value="Originate/Retain Record Lifecycle Event"/>
+    </coding>
+  </activity>
+  <agent>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+        <code value="performer"/>
+      </coding>
+    </type>
+    <who>
+      <reference value="Device/AppleWatchDevice"/>
+      <display value="Apple Watch Series 9"/>
+    </who>
+  </agent>
+  <agent>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+        <code value="author"/>
+      </coding>
+    </type>
+    <who>
+      <reference value="Patient/PatientExample"/>
+      <display value="John Smith"/>
+    </who>
+  </agent>
+  <entity>
+    <role value="source"/>
+    <what>
+      <display value="Raw PPG signal from Apple Watch optical sensor"/>
+    </what>
+  </entity>
+</Provenance>

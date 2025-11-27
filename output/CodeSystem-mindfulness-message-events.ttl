@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-message-events> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mindfulness-message-events"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mindfulness-message-events</b></p><a name=\"mindfulness-message-events\"> </a><a name=\"hcmindfulness-message-events\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">start-session<a name=\"mindfulness-message-events-start-session\"> </a></td><td>Start Session</td><td>Event when mindfulness session starts</td></tr><tr><td style=\"white-space:nowrap\">session-start<a name=\"mindfulness-message-events-session-start\"> </a></td><td>Session Start</td><td>Event when mindfulness session starts (alias)</td></tr><tr><td style=\"white-space:nowrap\">end-session<a name=\"mindfulness-message-events-end-session\"> </a></td><td>End Session</td><td>Event when mindfulness session ends</td></tr><tr><td style=\"white-space:nowrap\">session-end<a name=\"mindfulness-message-events-session-end\"> </a></td><td>Session End</td><td>Event when mindfulness session ends (alias)</td></tr><tr><td style=\"white-space:nowrap\">pause<a name=\"mindfulness-message-events-pause\"> </a></td><td>Pause Session</td><td>Event when session is paused</td></tr><tr><td style=\"white-space:nowrap\">resume<a name=\"mindfulness-message-events-resume\"> </a></td><td>Resume Session</td><td>Event when session is resumed</td></tr><tr><td style=\"white-space:nowrap\">complete<a name=\"mindfulness-message-events-complete\"> </a></td><td>Complete Practice</td><td>Event when practice goal is completed</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-message-events"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MindfulnessMessageEventsCS"] ; # 
+  fhir:title [ fhir:v "Mindfulness Message Events"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Events that trigger mindfulness-related messages"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "start-session" ] ;
+     fhir:display [ fhir:v "Start Session" ] ;
+     fhir:definition [ fhir:v "Event when mindfulness session starts" ]
+  ] [
+     fhir:code [ fhir:v "session-start" ] ;
+     fhir:display [ fhir:v "Session Start" ] ;
+     fhir:definition [ fhir:v "Event when mindfulness session starts (alias)" ]
+  ] [
+     fhir:code [ fhir:v "end-session" ] ;
+     fhir:display [ fhir:v "End Session" ] ;
+     fhir:definition [ fhir:v "Event when mindfulness session ends" ]
+  ] [
+     fhir:code [ fhir:v "session-end" ] ;
+     fhir:display [ fhir:v "Session End" ] ;
+     fhir:definition [ fhir:v "Event when mindfulness session ends (alias)" ]
+  ] [
+     fhir:code [ fhir:v "pause" ] ;
+     fhir:display [ fhir:v "Pause Session" ] ;
+     fhir:definition [ fhir:v "Event when session is paused" ]
+  ] [
+     fhir:code [ fhir:v "resume" ] ;
+     fhir:display [ fhir:v "Resume Session" ] ;
+     fhir:definition [ fhir:v "Event when session is resumed" ]
+  ] [
+     fhir:code [ fhir:v "complete" ] ;
+     fhir:display [ fhir:v "Complete Practice" ] ;
+     fhir:definition [ fhir:v "Event when practice goal is completed" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

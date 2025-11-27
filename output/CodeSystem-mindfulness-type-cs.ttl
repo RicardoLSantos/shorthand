@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mindfulness-type-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mindfulness-type-cs</b></p><a name=\"mindfulness-type-cs\"> </a><a name=\"hcmindfulness-type-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">meditation<a name=\"mindfulness-type-cs-meditation\"> </a></td><td>Meditation</td><td>Focused meditation practice</td></tr><tr><td style=\"white-space:nowrap\">breathing<a name=\"mindfulness-type-cs-breathing\"> </a></td><td>Breathing Exercise</td><td>Conscious breathing techniques</td></tr><tr><td style=\"white-space:nowrap\">bodyScan<a name=\"mindfulness-type-cs-bodyScan\"> </a></td><td>Body Scan</td><td>Progressive body awareness practice</td></tr><tr><td style=\"white-space:nowrap\">walking<a name=\"mindfulness-type-cs-walking\"> </a></td><td>Mindful Walking</td><td>Walking meditation practice</td></tr><tr><td style=\"white-space:nowrap\">movement<a name=\"mindfulness-type-cs-movement\"> </a></td><td>Mindful Movement</td><td>Conscious movement practice</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MindfulnessTypeCS"] ; # 
+  fhir:title [ fhir:v "Mindfulness Practice Types"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Types of mindfulness practices and techniques"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "meditation" ] ;
+     fhir:display [ fhir:v "Meditation" ] ;
+     fhir:definition [ fhir:v "Focused meditation practice" ]
+  ] [
+     fhir:code [ fhir:v "breathing" ] ;
+     fhir:display [ fhir:v "Breathing Exercise" ] ;
+     fhir:definition [ fhir:v "Conscious breathing techniques" ]
+  ] [
+     fhir:code [ fhir:v "bodyScan" ] ;
+     fhir:display [ fhir:v "Body Scan" ] ;
+     fhir:definition [ fhir:v "Progressive body awareness practice" ]
+  ] [
+     fhir:code [ fhir:v "walking" ] ;
+     fhir:display [ fhir:v "Mindful Walking" ] ;
+     fhir:definition [ fhir:v "Walking meditation practice" ]
+  ] [
+     fhir:code [ fhir:v "movement" ] ;
+     fhir:display [ fhir:v "Mindful Movement" ] ;
+     fhir:definition [ fhir:v "Conscious movement practice" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

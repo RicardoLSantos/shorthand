@@ -1,0 +1,131 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapHRVToLOINC> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ConceptMapHRVToLOINC"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapHRVToLOINC</b></p><a name=\"ConceptMapHRVToLOINC\"> </a><a name=\"hcConceptMapHRVToLOINC\"> </a><p>Mapeamento de <a href=\"ValueSet-heart-rate-variability-vs.html\">Heart Rate Variability ValueSet</a> para <a href=\"ValueSet-loinc-observations-vs.html\">LOINC Observation Codes for Lifestyle Medicine</a></p><br/><p><b>Grupo 1 </b>Mapeamento de <a href=\"CodeSystem-heart-rate-variability-cs.html\">Heart Rate Variability CodeSystem</a> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>hrv-sdnn (HRV SDNN (Standard Deviation of NN intervals))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>80404-7 (R-R interval.standard deviation (Heart rate variability))</td><td>Confirmed LOINC code for SDNN, created in LOINC v2.72 (June 2022). Time-domain HRV measure representing total variability.</td></tr><tr><td>hrv-rmssd (HRV RMSSD (Root Mean Square of Successive Differences))</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No LOINC code available as of November 2024. RMSSD is the primary parasympathetic marker recommended by HRV Task Force 1996. Submission recommended to LOINC committee. NOTE: Apple HealthKit mislabels this as 'SDNN' (HKQuantityTypeIdentifierHeartRateVariabilitySDNN) - implementers should be aware of this vendor-specific naming error.</td></tr><tr><td>hrv-pnn50 (HRV pNN50 (Percentage of NN intervals &gt;50ms difference))</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No LOINC code available as of November 2024. High correlation with RMSSD (r&gt;0.90), parasympathetic marker. Percentage of successive NN intervals differing by more than 50ms.</td></tr><tr><td>hrv-lf-hf-ratio (HRV LF/HF Ratio (Low Frequency to High Frequency ratio))</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No LOINC code available as of November 2024. Autonomic balance indicator, though clinical interpretation is debated. Ratio of LF power (0.04-0.15 Hz) to HF power (0.15-0.4 Hz).</td></tr><tr><td>hrv-lf-power (HRV LF Power (Low Frequency power 0.04-0.15 Hz))</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No LOINC code available as of November 2024. Low frequency spectral power (0.04-0.15 Hz). Reflects both sympathetic and parasympathetic modulation, with some baroreflex contribution.</td></tr><tr><td>hrv-hf-power (HRV HF Power (High Frequency power 0.15-0.4 Hz))</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No LOINC code available as of November 2024. High frequency spectral power (0.15-0.4 Hz). Reflects parasympathetic (vagal) modulation, synchronized with respiratory rhythm.</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapHRVToLOINC"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ConceptMapHRVToLOINC"] ; # 
+  fhir:title [ fhir:v "Heart Rate Variability to LOINC Mapping"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2024-11-21"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Operational ConceptMap for HRV terminology translation. Enables runtime $translate operations for semantic interoperability between custom HRV codes and LOINC standard terminology."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "Provides semantic mappings from custom HRV metrics to standard LOINC codes where available, with migration path for future LOINC assignments. Critical for wearable device data integration into EHR systems."] ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/heart-rate-variability-vs"^^xsd:anyURI ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/heart-rate-variability-vs>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"^^xsd:anyURI ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "hrv-sdnn" ] ;
+       fhir:display [ fhir:v "HRV SDNN (Standard Deviation of NN intervals)" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "80404-7" ] ;
+         fhir:display [ fhir:v "R-R interval.standard deviation (Heart rate variability)" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Confirmed LOINC code for SDNN, created in LOINC v2.72 (June 2022). Time-domain HRV measure representing total variability." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "hrv-rmssd" ] ;
+       fhir:display [ fhir:v "HRV RMSSD (Root Mean Square of Successive Differences)" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No LOINC code available as of November 2024. RMSSD is the primary parasympathetic marker recommended by HRV Task Force 1996. Submission recommended to LOINC committee. NOTE: Apple HealthKit mislabels this as 'SDNN' (HKQuantityTypeIdentifierHeartRateVariabilitySDNN) - implementers should be aware of this vendor-specific naming error." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "hrv-pnn50" ] ;
+       fhir:display [ fhir:v "HRV pNN50 (Percentage of NN intervals >50ms difference)" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No LOINC code available as of November 2024. High correlation with RMSSD (r>0.90), parasympathetic marker. Percentage of successive NN intervals differing by more than 50ms." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "hrv-lf-hf-ratio" ] ;
+       fhir:display [ fhir:v "HRV LF/HF Ratio (Low Frequency to High Frequency ratio)" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No LOINC code available as of November 2024. Autonomic balance indicator, though clinical interpretation is debated. Ratio of LF power (0.04-0.15 Hz) to HF power (0.15-0.4 Hz)." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "hrv-lf-power" ] ;
+       fhir:display [ fhir:v "HRV LF Power (Low Frequency power 0.04-0.15 Hz)" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No LOINC code available as of November 2024. Low frequency spectral power (0.04-0.15 Hz). Reflects both sympathetic and parasympathetic modulation, with some baroreflex contribution." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "hrv-hf-power" ] ;
+       fhir:display [ fhir:v "HRV HF Power (High Frequency power 0.15-0.4 Hz)" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No LOINC code available as of November 2024. High frequency spectral power (0.15-0.4 Hz). Reflects parasympathetic (vagal) modulation, synchronized with respiratory rhythm." ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

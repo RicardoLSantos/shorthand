@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="SleepObservationExample1"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-observation"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation SleepObservationExample1</b></p><a name="SleepObservationExample1"> </a><a name="hcSleepObservationExample1"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-activity-observation.html">Sleep Observation Profile</a></p></div><p><b>Circadian Phase Extension</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs night}">Night Phase</span></p><p><b>Recovery Efficiency Extension</b>: 85 percent<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código% = '%')</span></p><p><b>Sleep Quality Extension</b>: <span title="Códigos:{http://snomed.info/sct 248221007}">Consciousness clear</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category activity}">Activity</span></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs sleep-panel}">Sleep measurement panel</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 22:00:00+0000 --&gt; 2024-03-20 06:30:00+0000</p><p><b>performer</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Jane Smith </a></p><p><b>device</b>: <a href="Device-DeviceSleepMonitor.html">Device: manufacturer = HealthTech Devices; modelNumber = SQM-2024; type = Sleep monitoring device</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs sleep-time-bed}">Time in bed</span></p><p><b>value</b>: 510 minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 93832-4}">Sleep duration</span></p><p><b>value</b>: 472 minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs sleep-deep}">Deep sleep duration</span></p><p><b>value</b>: 95 minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 93829-0}">REM sleep duration</span></p><p><b>value</b>: 118 minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs sleep-light}">Light sleep duration</span></p><p><b>value</b>: 259 minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 9279-1}">Respiratory rate</span></p><p><b>value</b>: 14 per minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código/min = '/min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 80404-7}">R-R interval.standard deviation (Heart rate variability)</span></p><p><b>value</b>: 45 millisecond<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigoms = 'ms')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs sleep-awakenings}">Number of sleep awakenings</span></p><p><b>value</b>: 3 count<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código1 = '1')</span></p></blockquote></div>
+  </text>
+  <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/circadian-phase">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs"/>
+        <code value="night"/>
+        <display value="Night Phase"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-efficiency">
+    <valueQuantity>
+      <value value="85"/>
+      <unit value="percent"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </extension>
+  <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="248221007"/>
+        <display value="Consciousness clear"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="activity"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+      <code value="sleep-panel"/>
+      <display value="Sleep measurement panel"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectivePeriod>
+    <start value="2024-03-19T22:00:00Z"/>
+    <end value="2024-03-20T06:30:00Z"/>
+  </effectivePeriod>
+  <performer>
+    <reference value="Practitioner/PractitionerExample"/>
+  </performer>
+  <device>
+    <reference value="Device/DeviceSleepMonitor"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+        <code value="sleep-time-bed"/>
+        <display value="Time in bed"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="510"/>
+      <unit value="minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="93832-4"/>
+        <display value="Sleep duration"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="472"/>
+      <unit value="minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+        <code value="sleep-deep"/>
+        <display value="Deep sleep duration"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="95"/>
+      <unit value="minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="93829-0"/>
+        <display value="REM sleep duration"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="118"/>
+      <unit value="minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+        <code value="sleep-light"/>
+        <display value="Light sleep duration"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="259"/>
+      <unit value="minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="9279-1"/>
+        <display value="Respiratory rate"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="14"/>
+      <unit value="per minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="/min"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="80404-7"/>
+        <display value="R-R interval.standard deviation (Heart rate variability)"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="45"/>
+      <unit value="millisecond"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="ms"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+        <code value="sleep-awakenings"/>
+        <display value="Number of sleep awakenings"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="3"/>
+      <unit value="count"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="1"/>
+    </valueQuantity>
+  </component>
+</Observation>

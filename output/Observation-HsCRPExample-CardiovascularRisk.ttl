@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/HsCRPExample-CardiovascularRisk> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HsCRPExample-CardiovascularRisk"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hscrp-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hscrp-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation HsCRPExample-CardiovascularRisk</b></p><a name=\"HsCRPExample-CardiovascularRisk\"> </a><a name=\"hcHsCRPExample-CardiovascularRisk\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-hscrp-observation.html\">High-Sensitivity C-Reactive Protein (hs-CRP) Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 30522-7}\">C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2025-11-27 09:00:00+0000</p><p><b>value</b>: 2.1 mg/L<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomg/L = 'mg/L')</span></p><p><b>interpretation</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs average-risk}\">Average cardiovascular risk</span></p><p><b>note</b>: </p><blockquote><div><p>Average cardiovascular risk based on hs-CRP. Combined with HRV assessment for comprehensive autonomic-inflammatory profiling.</p>\n</div></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:30522-7 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "30522-7" ] ;
+       fhir:display [ fhir:v "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2025-11-27T09:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v 2.1 ] ;
+     fhir:unit [ fhir:v "mg/L" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "mg/L" ]
+  ] ; # 
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "average-risk" ] ;
+       fhir:display [ fhir:v "Average cardiovascular risk" ]
+     ] )
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Average cardiovascular risk based on hs-CRP. Combined with HRV assessment for comprehensive autonomic-inflammatory profiling." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

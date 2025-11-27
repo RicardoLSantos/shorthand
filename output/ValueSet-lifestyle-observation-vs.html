@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Lifestyle Medicine Observation Value Set - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"22.128"}
+    h3,h4,h5,h6{--heading-prefix:"22.128"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">iOS Lifestyle Medicine Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <span title="">150</span>
+
+
+
+  <span title="">021</span>
+
+
+
+  <span title="">005</span>
+
+
+
+  <img alt="Portugal flag" src="assets/images/prt.svg" height="16" title="Portugal"/>
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+
+  <img alt="Brazil flag" src="assets/images/bra.svg" height="16" title="Brazil"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Policies
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="data-protection-policies.html">Overview</a>
+      </li>
+      <li>
+        <a href="practitioner-identifiers.html">Practitioner IDs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Lifestyle Medicine Observation Value Set</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Compilação de desenvolvimento local (v0.1.0) construída pelas ferramentas de compilação FHIR (HL7&reg; FHIR&reg; Standard). Veja o <a href='https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html'>Diretório de versões publicadas</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-lifestyle-observation-vs.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-lifestyle-observation-vs.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-lifestyle-observation-vs.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: Lifestyle Medicine Observation Value Set
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs|0.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2025-11-27
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">LifestyleObservationVS</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Value set containing all local lifestyle medicine observation codes</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-activity-observation.html">Sleep Observation Profile</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"></p><a name="lifestyle-observation-vs"> </a><a name="hclifestyle-observation-vs"> </a>
+<ul><li>Include todos os códigos definidos em <a href="CodeSystem-lifestyle-observation-cs.html"><code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</code></a></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansão efectuada internamente com base em <a href="CodeSystem-lifestyle-observation-cs.html">codesystem Lifestyle Medicine Observation Codes v0.1.0 (CodeSystem)</a></p><p>Este conjunto de valores contém 62 conceitos</p><table class="codes" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Código</b></td><td><b>Sistema</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td><td><b><a href="ValueSet-loinc-observations-vs.html">Reproductive Health to LOINC Mapping</a></b></td><td><b><a href="ValueSet-loinc-observations-vs.html">Sleep Measurements to LOINC Mapping</a></b></td></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-sleep-panel"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-sleep-panel">sleep-panel</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Sleep measurement panel</td><td>Panel for comprehensive sleep measurements including duration, stages, and quality metrics</td><td/><td><span title="SOURCEISBROADERTHANTARGET">&gt;</span><a href="https://loinc.org/ValueSet-loinc-observations-vs.html/">ValueSet-loinc-observations-vs.html</a><i>(Sleep measurement panel from consumer devices maps to broader LOINC Polysomnography panel. Source is more specific (consumer device panel) than target (clinical polysomnography). LOINC 90568-7 contains terms from American Academy of Sleep Medicine (AASM) guidelines. Consumer devices measure subset of clinical polysomnography parameters.)</i><br/><span title="SOURCEISNARROWERTHANTARGET">&lt;</span><a href="https://loinc.org/ValueSet-loinc-observations-vs.html/">ValueSet-loinc-observations-vs.html</a><i>(Alternative mapping to general wearable device panel. Target is less specific (covers all wearable physiologic monitoring) than source (sleep-specific panel).)</i></td></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-noise-avg"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-noise-avg">noise-avg</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Environmental noise average level</td><td>Average environmental noise level measured in decibels (dB) over a specified time period</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-noise-duration"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-noise-duration">noise-duration</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Environmental noise exposure duration</td><td>Duration of exposure to environmental noise above a threshold level</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-noise-peak"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-noise-peak">noise-peak</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Peak environmental sound level</td><td>Maximum (peak) environmental sound level measured during a monitoring period</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-noise-background"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-noise-background">noise-background</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Background environmental noise level</td><td>Baseline or background environmental noise level measured in quiet conditions</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-sleep-deep"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-sleep-deep">sleep-deep</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Deep sleep duration</td><td>Duration of deep (slow-wave) sleep stage as measured by consumer sleep tracking device</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-sleep-light"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-sleep-light">sleep-light</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Light sleep duration</td><td>Duration of light sleep stage as measured by consumer sleep tracking device</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-sleep-awakenings"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-sleep-awakenings">sleep-awakenings</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Number of sleep awakenings</td><td>Count of awakenings or sleep interruptions during a sleep period</td><td/><td><span title="RELATEDTO">?</span><a href="https://loinc.org/ValueSet-loinc-observations-vs.html/">ValueSet-loinc-observations-vs.html</a><i>(Sleep awakenings count is related to but distinct from 'Wake time after sleep onset' (LOINC 103215-0). Source measures NUMBER of awakenings (discrete count), target measures DURATION of wakefulness after initial sleep onset (time in minutes). Both concepts assess sleep fragmentation but from different perspectives. No exact LOINC match for awakening count exists as of November 2025.)</i></td></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-sleep-time-bed"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-sleep-time-bed">sleep-time-bed</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Time in bed</td><td>Total time spent in bed, including time awake before and after sleep</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-social-duration"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-social-duration">social-duration</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Social interaction duration</td><td>Total duration of social interactions or time spent in social activities</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-social-quality"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-social-quality">social-quality</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Social interaction quality score</td><td>Subjective quality rating of social interactions</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-social-medium"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-social-medium">social-medium</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Social interaction medium</td><td>Method or medium of social interaction (in-person, phone, video, text, etc.)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-social-count"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-social-count">social-count</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Number of social interactions</td><td>Count of distinct social interactions or social contacts during a time period</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-stress-physiological"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-stress-physiological">stress-physiological</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Physiological stress indicator</td><td>Physiological markers or indicators of stress response (e.g., heart rate variability, cortisol)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-stress-psychological"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-stress-psychological">stress-psychological</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Psychological stress score</td><td>Self-reported psychological stress level or score from validated assessment</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-stress-chronicity"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-stress-chronicity">stress-chronicity</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Stress chronicity assessment</td><td>Assessment of stress duration and persistence (acute vs. chronic stress)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-stress-impact"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-stress-impact">stress-impact</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Stress impact assessment</td><td>Assessment of the impact or severity of stress on daily functioning and health</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-uv-index"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-uv-index">uv-index</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>UV index</td><td>Ultraviolet radiation index measurement indicating sun exposure intensity</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-uv-duration"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-uv-duration">uv-duration</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>UV exposure duration</td><td>Duration of exposure to ultraviolet radiation</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-uv-intensity"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-uv-intensity">uv-intensity</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>UV intensity</td><td>Intensity of ultraviolet radiation exposure</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-exposure-time"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-exposure-time">exposure-time</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Time of environmental exposure</td><td>Duration of time exposed to a specific environmental condition</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-hrv-frequency"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-hrv-frequency">hrv-frequency</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Heart rate variability frequency band</td><td>Heart rate variability measurement in specific frequency band (LF, HF, VLF)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-hrv-entropy"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-hrv-entropy">hrv-entropy</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Heart rate variability entropy</td><td>Entropy measurement of heart rate variability indicating complexity</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-pulse-wave"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-pulse-wave">pulse-wave</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Pulse wave analysis</td><td>Analysis of arterial pulse wave characteristics</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-respiratory-variability"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-respiratory-variability">respiratory-variability</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Respiratory rate variability</td><td>Variability in respiratory rate over time</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-oxygenation-index"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-oxygenation-index">oxygenation-index</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Oxygenation index</td><td>Calculated index of blood oxygenation efficiency</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-physiological-stress"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-physiological-stress">physiological-stress</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Physiological stress index</td><td>Composite index of physiological stress markers</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-temperature-gradient"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-temperature-gradient">temperature-gradient</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Temperature gradient</td><td>Body temperature gradient measurement</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-autonomic-balance"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-autonomic-balance">autonomic-balance</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Autonomic balance index</td><td>Index measuring balance between sympathetic and parasympathetic activity</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-recovery-rate"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-recovery-rate">recovery-rate</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Recovery rate index</td><td>Index measuring rate of physiological recovery after activity</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-allostatic-load"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-allostatic-load">allostatic-load</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Allostatic load index</td><td>Measure of cumulative physiological burden and wear-and-tear on the body from chronic stress</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-balance-score"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-balance-score">balance-score</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Balance assessment score</td><td>Quantitative score from balance assessment test</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-balance-assessment"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-balance-assessment">balance-assessment</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Balance assessment</td><td>Comprehensive balance and stability assessment</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-balance-status"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-balance-status">balance-status</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Balance status</td><td>Qualitative status of balance (normal, impaired, etc.)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-gait-assessment"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-gait-assessment">gait-assessment</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Gait assessment</td><td>Assessment of walking pattern and gait characteristics</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-movement-assessment"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-movement-assessment">movement-assessment</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Movement assessment</td><td>General movement quality and mobility assessment</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-caloric-intake"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-caloric-intake">caloric-intake</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Total caloric intake</td><td>Total calories consumed in a specified time period</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-macronutrients-panel"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-macronutrients-panel">macronutrients-panel</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Macronutrients intake panel</td><td>Panel for comprehensive macronutrient intake measurements</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-protein-intake"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-protein-intake">protein-intake</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Protein intake</td><td>Amount of protein consumed</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-fat-intake"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-fat-intake">fat-intake</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Fat intake</td><td>Amount of dietary fats consumed</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-carbohydrate-intake"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-carbohydrate-intake">carbohydrate-intake</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Carbohydrate intake</td><td>Amount of carbohydrates consumed</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-ovulation-status"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-ovulation-status">ovulation-status</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Ovulation status</td><td>Status of ovulation as measured by consumer fertility tracking device</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-sleep-monitoring-device"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-sleep-monitoring-device">sleep-monitoring-device</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Sleep monitoring device</td><td>Device for monitoring and tracking sleep patterns and sleep quality metrics</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-environmental-sensor"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-environmental-sensor">environmental-sensor</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Environmental sensor device</td><td>Device for monitoring environmental conditions such as noise, temperature, humidity, and UV exposure</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-body-composition-panel"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-body-composition-panel">body-composition-panel</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Body composition measurement panel</td><td>Panel for comprehensive body composition measurements from bioimpedance analysis</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-mindfulness-session"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-mindfulness-session">mindfulness-session</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Mindfulness practice session</td><td>A session of mindfulness meditation or practice including breathing exercises, body scans, or mindful awareness</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-relaxation-response"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-relaxation-response">relaxation-response</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Relaxation response observation</td><td>Subjective observation of the relaxation response experienced during or after mindfulness or relaxation practice</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-mindfulness-type"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-mindfulness-type">mindfulness-type</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Type of mindfulness practice</td><td>The specific type or technique of mindfulness or meditation practice performed</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-water-intake"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-water-intake">water-intake</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Water intake volume</td><td>Daily water consumption measured in liters or milliliters</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-walking-speed"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-walking-speed">walking-speed</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Walking speed measurement</td><td>Measurement of walking speed during ambulation</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-walking-distance"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-walking-distance">walking-distance</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Walking distance measurement</td><td>Measurement of total distance walked</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-walking-steadiness"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-walking-steadiness">walking-steadiness</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Walking steadiness measurement</td><td>Measurement of walking balance and steadiness</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-heart-rate-exercise"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-heart-rate-exercise">heart-rate-exercise</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Heart rate during exercise</td><td>Heart rate measurement during physical exercise activity</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-heart-rate-variability"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-heart-rate-variability">heart-rate-variability</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Heart rate variability</td><td>Measurement of heart rate variability (HRV)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-alcohol-type"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-alcohol-type">alcohol-type</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Type of alcoholic beverage</td><td>Type of alcoholic beverage consumed (beer, wine, spirits, etc.)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-caffeine-source"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-caffeine-source">caffeine-source</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Caffeine source</td><td>Source of dietary caffeine intake (coffee, tea, energy drinks, etc.)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-last-caffeine-time"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-last-caffeine-time">last-caffeine-time</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Time of last caffeine intake</td><td>Date and time of the most recent caffeine consumption</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-substance-frequency"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-substance-frequency">substance-frequency</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Frequency of substance use</td><td>How often a substance is used (daily, weekly, monthly, etc.)</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-last-use-date"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-last-use-date">last-use-date</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Date of last substance use</td><td>Date when a substance was last used</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-substance-use-summary"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-substance-use-summary">substance-use-summary</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Substance use summary</td><td>Comprehensive summary of all substance use patterns for lifestyle medicine assessment</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-substance-risk-level"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-substance-risk-level">substance-risk-level</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>Overall substance use risk level</td><td>Aggregate risk assessment based on all substance use patterns</td><td/><td/></tr><tr><td style="white-space:nowrap"><a name="x-https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs-hrv-inflammation-correlation"> </a>  <a href="CodeSystem-lifestyle-observation-cs.html#lifestyle-observation-cs-hrv-inflammation-correlation">hrv-inflammation-correlation</a></td><td>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs</td><td>HRV-Inflammation correlation assessment</td><td>Assessment of the correlation between heart rate variability metrics (especially RMSSD) and inflammatory biomarkers (CRP, IL-6). Based on RS1 systematic review finding: inverse correlation between vagal tone and systemic inflammation via cholinergic anti-inflammatory pathway (Tracey 2002).</td><td/><td/></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 27, 2025 17:04+0000">2025-11-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

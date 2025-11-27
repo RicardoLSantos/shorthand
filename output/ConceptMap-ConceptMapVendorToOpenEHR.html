@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Wearable Vendor API to openEHR Archetype Mapping - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"22.255"}
+    h3,h4,h5,h6{--heading-prefix:"22.255"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">iOS Lifestyle Medicine Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <span title="">150</span>
+
+
+
+  <span title="">021</span>
+
+
+
+  <span title="">005</span>
+
+
+
+  <img alt="Portugal flag" src="assets/images/prt.svg" height="16" title="Portugal"/>
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+
+  <img alt="Brazil flag" src="assets/images/bra.svg" height="16" title="Brazil"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Policies
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="data-protection-policies.html">Overview</a>
+      </li>
+      <li>
+        <a href="practitioner-identifiers.html">Practitioner IDs</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Wearable Vendor API to openEHR Archetype Mapping</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Compilação de desenvolvimento local (v0.1.0) construída pelas ferramentas de compilação FHIR (HL7&reg; FHIR&reg; Standard). Veja o <a href='https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html'>Diretório de versões publicadas</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ConceptMap-ConceptMapVendorToOpenEHR.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ConceptMap-ConceptMapVendorToOpenEHR.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ConceptMap-ConceptMapVendorToOpenEHR.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">ConceptMap: Wearable Vendor API to openEHR Archetype Mapping
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapVendorToOpenEHR<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapVendorToOpenEHR"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapVendorToOpenEHR|0.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2025-11-25
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">ConceptMapVendorToOpenEHR</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+<p>
+<p>Direct mapping from proprietary wearable vendor API data types to openEHR archetypes.</p>
+
+<p>Supported Vendors:</p>
+<ul>
+  <li>Apple HealthKit (HKQuantityType, HKCategoryType)</li>
+  <li>Fitbit Web API (activities, sleep, hrv endpoints)</li>
+  <li>Oura Ring API (readiness, sleep, activity)</li>
+  <li>Garmin Connect API (activities, wellness, sleep)</li>
+  <li>Polar Flow API (training, recovery)</li>
+</ul>
+
+<p>Architecture:</p>
+<ul>
+  <li>Enables direct ETL from vendor export to EHRbase CDR</li>
+  <li>Normalizes proprietary units to UCUM</li>
+  <li>Handles vendor-specific scoring algorithms</li>
+  <li>Documents transformation caveats and data quality considerations</li>
+</ul>
+
+<p>Use Cases:</p>
+<ul>
+  <li>Patient-generated health data (PGHD) capture</li>
+  <li>Multi-vendor data aggregation</li>
+  <li>Longitudinal wearable data repositories</li>
+</ul>
+
+</p>
+
+
+<p>
+<p>Enable standardized capture of wearable data from multiple vendors into openEHR Clinical Data Repositories via direct ETL pipelines.</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="ConceptMap-ConceptMapVendorToOpenEHR.xml.html">XML</a>, <a href="ConceptMap-ConceptMapVendorToOpenEHR.json.html">JSON</a>, <a href="ConceptMap-ConceptMapVendorToOpenEHR.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><a name="ConceptMapVendorToOpenEHR"> </a><a name="hcConceptMapVendorToOpenEHR"> </a><p>Mapeamento de https://2rdoc.pt/ig/ios-lifestyle-medicine/vendor-apis para https://ckm.openehr.org/ckm</p><br/><p><b>Grupo 1 </b>Mapeamento de <code>com.apple.health</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKQuantityTypeIdentifierHeartRateVariabilitySDNN (Apple HealthKit: Heart Rate Variability SDNN)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id5 (SDNN - Standard deviation of NN intervals)</td><td>HealthKit provides SDNN in milliseconds. Direct mapping. Note: Apple uses proprietary algorithm from PPG.</td></tr><tr><td>HKQuantityTypeIdentifierHeartRate (Apple HealthKit: Heart Rate)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto" title="relatedto">is related to</a></td><td>id50 (Mean heart rate during recording)</td><td>Use mean HR from same recording period for HRV context. Unit: bpm</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <code>com.fitbit.hrv</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>dailyRmssd (Fitbit: Daily RMSSD average)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id6 (RMSSD - Root mean square of successive differences)</td><td>Fitbit provides daily RMSSD average. CAUTION: This is AVERAGED across deep sleep periods, not a single measurement.</td></tr><tr><td>deepRmssd (Fitbit: Deep sleep RMSSD)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id6 (RMSSD during deep sleep)</td><td>Fitbit provides RMSSD specifically from deep sleep stages. Set physiological_state (id41) = 'sleep'</td></tr><tr><td>coverage (Fitbit: HRV data coverage percentage)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto" title="relatedto">is related to</a></td><td>id60 (Data quality indicator)</td><td>Percentage of night with valid HRV data. Use as quality indicator. &lt;80% suggests poor data quality.</td></tr></table><hr/><p><b>Grupo 3 </b>Mapeamento de <code>com.ouraring</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>average_hrv (Oura: Average nightly HRV (RMSSD))</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id6 (RMSSD - Root mean square of successive differences)</td><td>Oura provides nightly average RMSSD. Measured during sleep. Unit: ms. Set physiological_state = 'sleep'</td></tr><tr><td>hrv_balance (Oura: HRV Balance score)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto" title="relatedto">is related to</a></td><td>id70 (Vendor-specific recovery score)</td><td>PROPRIETARY: Oura HRV Balance is a 7-day trend normalized score. NOT comparable to raw RMSSD.</td></tr><tr><td>readiness_score (Oura: Readiness Score)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto" title="relatedto">is related to</a></td><td>id71 (Vendor-specific readiness score)</td><td>PROPRIETARY: Composite score including HRV, sleep, activity, temperature. Scale 0-100. NOT suitable for cross-vendor comparison.</td></tr></table><hr/><p><b>Grupo 4 </b>Mapeamento de <code>com.garmin.connect</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>avgHrv (Garmin: Average overnight HRV)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id6 (RMSSD - Root mean square of successive differences)</td><td>Garmin provides average overnight RMSSD. Set physiological_state = 'sleep'. Unit: ms</td></tr><tr><td>stressLevel (Garmin: Stress Level)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto" title="relatedto">is related to</a></td><td>id72 (Vendor-specific stress score)</td><td>PROPRIETARY: Garmin stress level is DERIVED from HRV. Scale 0-100 (inverted: low = relaxed). Formula not disclosed.</td></tr><tr><td>hrvStatus (Garmin: HRV Status)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#relatedto" title="relatedto">is related to</a></td><td>id73 (Vendor-specific HRV status)</td><td>Categorical status: Low, Balanced, High. Relative to personal baseline. PROPRIETARY algorithm.</td></tr></table><hr/><p><b>Grupo 5 </b>Mapeamento de <code>com.polar</code> to <code>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>hrv_rmssd (Polar: HRV RMSSD)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id6 (SDNN - Standard deviation of NN intervals)</td><td>Polar H10 provides RMSSD from ECG (gold standard). Higher accuracy than PPG-based wearables. Unit: ms</td></tr><tr><td>hrv_sdnn (Polar: HRV SDNN)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id5</td><td>Polar provides SDNN from ECG. High accuracy. Unit: ms</td></tr><tr><td>hrv_pnn50 (Polar: HRV pNN50)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id7 (pNN50 - Percentage of NN intervals &gt;50ms)</td><td>Polar provides pNN50 from ECG. Unit: percentage (0-100)</td></tr></table><hr/><p><b>Grupo 6 </b>Mapeamento de <code>com.apple.health</code> to <code>openEHR-EHR-OBSERVATION.sleep_architecture.v0</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKCategoryValueSleepAnalysisAsleepCore (Apple HealthKit: Core Sleep)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id21 (Light sleep duration (N1+N2))</td><td>Apple 'Core' sleep maps to light sleep (N1+N2 equivalent). watchOS 9+.</td></tr><tr><td>HKCategoryValueSleepAnalysisAsleepDeep (Apple HealthKit: Deep Sleep)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id23 (Deep sleep duration (N3/SWS))</td><td>Apple 'Deep' sleep maps to N3/SWS. watchOS 9+.</td></tr><tr><td>HKCategoryValueSleepAnalysisAsleepREM (Apple HealthKit: REM Sleep)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id24 (REM sleep duration)</td><td>Apple 'REM' sleep maps directly. watchOS 9+.</td></tr><tr><td>HKCategoryValueSleepAnalysisAwake (Apple HealthKit: Awake during sleep)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id20 (Awake time during sleep period)</td><td>Contributes to WASO (Wake After Sleep Onset) calculation.</td></tr></table><hr/><p><b>Grupo 7 </b>Mapeamento de <code>com.apple.health</code> to <code>openEHR-EHR-OBSERVATION.physical_activity_detailed.v0</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKQuantityTypeIdentifierStepCount (Apple HealthKit: Step Count)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id10 (Step count)</td><td>Direct mapping. Unit: count. Aggregate daily total.</td></tr><tr><td>HKQuantityTypeIdentifierDistanceWalkingRunning (Apple HealthKit: Distance Walking/Running)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id11 (Distance)</td><td>Convert from meters to km if needed. Aggregate daily total.</td></tr><tr><td>HKQuantityTypeIdentifierActiveEnergyBurned (Apple HealthKit: Active Energy Burned)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>id20 (Active calories)</td><td>HealthKit provides in kilocalories (kcal). Direct mapping.</td></tr><tr><td>HKQuantityTypeIdentifierAppleExerciseTime (Apple HealthKit: Exercise Time)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider" title="wider">maps to wider concept</a></td><td>id35 (Exercise session duration)</td><td>Apple Exercise Time threshold: HR &gt; ~60-70% of estimated max. Maps to moderate+vigorous combined.</td></tr></table></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 27, 2025 17:04+0000">2025-11-27</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

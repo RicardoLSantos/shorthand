@@ -1,0 +1,120 @@
+{
+  "resourceType" : "Observation",
+  "id" : "SocialInteractionExample",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-interaction"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation SocialInteractionExample</b></p><a name=\"SocialInteractionExample\"> </a><a name=\"hcSocialInteractionExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-social-interaction.html\">Social Interaction Profile</a></p></div><p><b>Social Context Extension</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-context-cs home}\">Home</span></p><p><b>Social Support Extension</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-cs strong}\">Strong Support</span></p><p><b>Social Activity Extension</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-activity-cs meal}\">Shared Meal</span></p><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 76506-5}\">Social connection and isolation panel</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-01-03 14:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-type-cs family}\">Family Interaction</span></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs social-duration}\">Social interaction duration</span></p><p><b>value</b>: 120 minutes<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs social-quality}\">Social interaction quality score</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-quality-cs meaningful}\">Meaningful</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs social-medium}\">Social interaction medium</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-medium-cs inPerson}\">In Person</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs social-count}\">Number of social interactions</span></p><p><b>value</b>: 4</p></blockquote></div>"
+  },
+  "extension" : [{
+    "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-context",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-context-cs",
+        "code" : "home"
+      }]
+    }
+  },
+  {
+    "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-support",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-cs",
+        "code" : "strong"
+      }]
+    }
+  },
+  {
+    "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/social-activity",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-activity-cs",
+        "code" : "meal"
+      }]
+    }
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "social-history"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "76506-5",
+      "display" : "Social connection and isolation panel"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2024-01-03T14:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/PractitionerExample"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-type-cs",
+      "code" : "family"
+    }]
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "social-duration",
+        "display" : "Social interaction duration"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 120,
+      "unit" : "minutes",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "min"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "social-quality",
+        "display" : "Social interaction quality score"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-quality-cs",
+        "code" : "meaningful"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "social-medium",
+        "display" : "Social interaction medium"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-medium-cs",
+        "code" : "inPerson"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "social-count",
+        "display" : "Number of social interactions"
+      }]
+    },
+    "valueInteger" : 4
+  }]
+}

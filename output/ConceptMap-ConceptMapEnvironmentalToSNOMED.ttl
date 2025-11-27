@@ -1,0 +1,109 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapEnvironmentalToSNOMED> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ConceptMapEnvironmentalToSNOMED"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapEnvironmentalToSNOMED</b></p><a name=\"ConceptMapEnvironmentalToSNOMED\"> </a><a name=\"hcConceptMapEnvironmentalToSNOMED\"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href=\"CodeSystem-lifestyle-observation-cs.html\">Lifestyle Medicine Observation Codes</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>noise-avg (Environmental noise average level)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>60156001 (Noise (physical force))</td><td>Environmental noise average maps to broader SNOMED 'Noise' concept. Source is specific to average noise level over time (dB measurement), target is general noise concept. Code 60156001 should be verified.</td></tr><tr><td>uv-index</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>41355003 (Ultraviolet radiation (physical force))</td><td>UV index measurement maps to broader SNOMED 'Ultraviolet radiation' concept. Source is specific UV index scale (0-11+), target is general UV radiation. Code 41355003 should be verified.</td></tr><tr><td>uv-duration (UV exposure duration)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No specific SNOMED CT code for UV exposure duration as of November 2025. SNOMED has UV radiation concept but not time-based exposure measurement.</td></tr><tr><td>noise-duration (Environmental noise exposure duration)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No specific SNOMED CT code for noise exposure duration as of November 2025. Occupational health codes may exist but consumer environmental monitoring is not well represented.</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapEnvironmentalToSNOMED"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ConceptMapEnvironmentalToSNOMED"] ; # 
+  fhir:title [ fhir:v "Environmental Exposures to SNOMED CT Mapping"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-22"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Operational ConceptMap for environmental exposure terminology translation. Enables runtime $translate operations for semantic interoperability between environmental monitoring wearables and SNOMED CT standard terminology."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "Provides semantic mappings from custom environmental exposure codes to standard SNOMED CT codes. Consumer wearables increasingly monitor environmental factors (noise, UV radiation) but lack standardized clinical terminology."] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "noise-avg" ] ;
+       fhir:display [ fhir:v "Environmental noise average level" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "60156001" ] ;
+         fhir:display [ fhir:v "Noise (physical force)" ] ;
+         fhir:equivalence [ fhir:v "narrower" ] ;
+         fhir:comment [ fhir:v "Environmental noise average maps to broader SNOMED 'Noise' concept. Source is specific to average noise level over time (dB measurement), target is general noise concept. Code 60156001 should be verified." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "uv-index" ] ;
+       fhir:display [ fhir:v "UV index" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "41355003" ] ;
+         fhir:display [ fhir:v "Ultraviolet radiation (physical force)" ] ;
+         fhir:equivalence [ fhir:v "narrower" ] ;
+         fhir:comment [ fhir:v "UV index measurement maps to broader SNOMED 'Ultraviolet radiation' concept. Source is specific UV index scale (0-11+), target is general UV radiation. Code 41355003 should be verified." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "uv-duration" ] ;
+       fhir:display [ fhir:v "UV exposure duration" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No specific SNOMED CT code for UV exposure duration as of November 2025. SNOMED has UV radiation concept but not time-based exposure measurement." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "noise-duration" ] ;
+       fhir:display [ fhir:v "Environmental noise exposure duration" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No specific SNOMED CT code for noise exposure duration as of November 2025. Occupational health codes may exist but consumer environmental monitoring is not well represented." ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

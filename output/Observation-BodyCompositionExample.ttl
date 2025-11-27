@@ -1,0 +1,136 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/BodyCompositionExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "BodyCompositionExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-composition-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-composition-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation BodyCompositionExample</b></p><a name=\"BodyCompositionExample\"> </a><a name=\"hcBodyCompositionExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-body-composition-observation.html\">Body Composition Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs body-composition-panel}\">Body composition measurement panel</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 08:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><p><b>device</b>: <a href=\"Device-BioimpedanceAnalyzer.html\">Device: manufacturer = MedTech Solutions; modelNumber = BCA-Pro; type = Patient data recorder</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 41982-0}\">Percentage of body fat Measured</span></p><p><b>value</b>: 22.5 percent<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM código% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 8342-8}\">Lean body weight Immersion</span></p><p><b>value</b>: 54.6 kilogram<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigokg = 'kg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 101683-1}\">Body water mass</span></p><p><b>value</b>: 39.2 liter<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigoL = 'L')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 73965-6}\">Body muscle mass/Body weight Measured</span></p><p><b>value</b>: 51.8 kilogram<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigokg = 'kg')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 101685-6}\">Body bone mass</span></p><p><b>value</b>: 2.8 kilogram<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigokg = 'kg')</span></p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "body-composition-panel" ] ;
+       fhir:display [ fhir:v "Body composition measurement panel" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2024-03-19T08:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/PractitionerExample> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerExample" ]
+  ] ) ; # 
+  fhir:device [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/BioimpedanceAnalyzer> ;
+     fhir:reference [ fhir:v "Device/BioimpedanceAnalyzer" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:41982-0 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "41982-0" ] ;
+         fhir:display [ fhir:v "Percentage of body fat Measured" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 22.5 ] ;
+       fhir:unit [ fhir:v "percent" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "%" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8342-8 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "8342-8" ] ;
+         fhir:display [ fhir:v "Lean body weight Immersion" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 54.6 ] ;
+       fhir:unit [ fhir:v "kilogram" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "kg" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:101683-1 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "101683-1" ] ;
+         fhir:display [ fhir:v "Body water mass" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 39.2 ] ;
+       fhir:unit [ fhir:v "liter" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "L" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:73965-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "73965-6" ] ;
+         fhir:display [ fhir:v "Body muscle mass/Body weight Measured" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 51.8 ] ;
+       fhir:unit [ fhir:v "kilogram" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "kg" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:101685-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "101685-6" ] ;
+         fhir:display [ fhir:v "Body bone mass" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v 2.8 ] ;
+       fhir:unit [ fhir:v "kilogram" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "kg" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

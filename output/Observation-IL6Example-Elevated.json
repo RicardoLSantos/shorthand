@@ -1,0 +1,42 @@
+{
+  "resourceType" : "Observation",
+  "id" : "IL6Example-Elevated",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/il6-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation IL6Example-Elevated</b></p><a name=\"IL6Example-Elevated\"> </a><a name=\"hcIL6Example-Elevated\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-il6-observation.html\">Interleukin-6 (IL-6) Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 26881-3}\">Interleukin 6 [Mass/volume] in Serum or Plasma</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2025-11-27 09:15:00+0000</p><p><b>value</b>: 12.5 pg/mL<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigopg/mL = 'pg/mL')</span></p><p><b>interpretation</b>: <span title=\"Códigos:\">Elevated - suggests chronic low-grade inflammation</span></p><p><b>note</b>: </p><blockquote><div><p>IL-6 elevation correlates with reduced vagal tone. Patient shows RMSSD decline over past 4 weeks.</p>\n</div></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "laboratory",
+      "display" : "Laboratory"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "26881-3",
+      "display" : "Interleukin 6 [Mass/volume] in Serum or Plasma"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "effectiveDateTime" : "2025-11-27T09:15:00Z",
+  "valueQuantity" : {
+    "value" : 12.5,
+    "unit" : "pg/mL",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "pg/mL"
+  },
+  "interpretation" : [{
+    "text" : "Elevated - suggests chronic low-grade inflammation"
+  }],
+  "note" : [{
+    "text" : "IL-6 elevation correlates with reduced vagal tone. Patient shows RMSSD decline over past 4 weeks."
+  }]
+}

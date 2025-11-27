@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="MindfulnessType"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: SearchParameter MindfulnessType</b></p><a name="MindfulnessType"> </a><a name="hcMindfulnessType"> </a><h2>MindfulnessType</h2><p>Parâmetro <code>mindfulness-type</code>:<code>token</code></p><div><p>Search for mindfulness observations by practice type</p>
+</div><table class="grid"><tr><td>Recursos</td><td><a href="http://hl7.org/fhir/R4/observation.html">Observation</a></td></tr><tr><td>Expressão</td><td><code>Observation.component.where(code.coding.exists(system = 'http://snomed.info/sct' and code = '711415009')).value.as(CodeableConcept)</code></td></tr><tr><td>Modo de processamento</td><td>Normal</td></tr><tr><td>Múltiplos</td><td><ul><li>multipleAnd: Cabe ao servidor decidir se o parâmetro pode ser repetido para especificar valores múltiplos que devem ser todos verdadeiros</li><li>multipleOr: Cabe ao servidor decidir se o parâmetro pode ter vários valores (separados por vírgula) em que pelo menos um tem de ser verdadeiro</li></ul></td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/SearchParameter/MindfulnessType"/>
+  <version value="0.1.0"/>
+  <name value="MindfulnessType"/>
+  <status value="active"/>
+  <date value="2025-11-27T17:03:01+00:00"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Search for mindfulness observations by practice type"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <code value="mindfulness-type"/>
+  <base value="Observation"/>
+  <type value="token"/>
+  <expression value="Observation.component.where(code.coding.exists(system = 'http://snomed.info/sct' and code = '711415009')).value.as(CodeableConcept)"/>
+  <xpathUsage value="normal"/>
+</SearchParameter>

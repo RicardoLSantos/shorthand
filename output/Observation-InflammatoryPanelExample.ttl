@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/InflammatoryPanelExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "InflammatoryPanelExample"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation InflammatoryPanelExample</b></p><a name=\"InflammatoryPanelExample\"> </a><a name=\"hcInflammatoryPanelExample\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 82335-1}\">Lifestyle Medicine Inflammatory Panel</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2025-11-27 08:00:00+0000</p><p><b>note</b>: </p><blockquote><div><p>Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation.</p>\n</div></blockquote><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-CRPExample-Normal.html\">CRP measurement</a></li><li><a href=\"Observation-IL6Example-Elevated.html\">IL-6 measurement</a></li><li><a href=\"Observation-TNFAlphaExample-Normal.html\">TNF-α measurement</a></li></ul></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "laboratory" ] ;
+       fhir:display [ fhir:v "Laboratory" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:82335-1 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "82335-1" ] ;
+       fhir:display [ fhir:v "Cytokines panel - Serum or Plasma" ]
+     ] ) ;
+     fhir:text [ fhir:v "Lifestyle Medicine Inflammatory Panel" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/example> ;
+     fhir:reference [ fhir:v "Patient/example" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2025-11-27T08:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation." ]
+  ] ) ; # 
+  fhir:hasMember ( [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/CRPExample-Normal> ;
+     fhir:reference [ fhir:v "Observation/CRPExample-Normal" ] ;
+     fhir:display [ fhir:v "CRP measurement" ]
+  ] [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/IL6Example-Elevated> ;
+     fhir:reference [ fhir:v "Observation/IL6Example-Elevated" ] ;
+     fhir:display [ fhir:v "IL-6 measurement" ]
+  ] [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/TNFAlphaExample-Normal> ;
+     fhir:reference [ fhir:v "Observation/TNFAlphaExample-Normal" ] ;
+     fhir:display [ fhir:v "TNF-α measurement" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

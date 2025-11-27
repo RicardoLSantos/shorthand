@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="SubstanceUseSummaryExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/substance-use-summary"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation SubstanceUseSummaryExample</b></p><a name="SubstanceUseSummaryExample"> </a><a name="hcSubstanceUseSummaryExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-substance-use-summary.html">Substance Use Summary Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category social-history}">Social History</span></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs substance-use-summary}">Substance use summary</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-25 10:00:00+0000</p><p><b>hasMember</b>: </p><ul><li><a href="Observation-TobaccoUseExSmokerExample.html">Observation Tobacco smoking status</a></li><li><a href="Observation-AlcoholUseModerateExample.html">Observation History of Alcohol use</a></li><li><a href="Observation-CaffeineIntakeModerateExample.html">Observation Caffeine intake 24 hour Estimated</a></li></ul><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 72166-2}">Tobacco smoking status</span></p><p><b>value</b>: <span title="Códigos:{http://snomed.info/sct 8517006}">Ex-smoker (finding)</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 11331-6}">History of Alcohol use</span></p><p><b>value</b>: <span title="Códigos:{http://snomed.info/sct 43783005}">Moderate drinker (finding)</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 80489-8}">Caffeine intake 24 hour Estimated</span></p><p><b>value</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs moderate}">Moderate</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs substance-risk-level}">Overall substance use risk level</span></p><p><b>value</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-risk-level-cs low}">Low risk</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="social-history"/>
+      <display value="Social History"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+      <code value="substance-use-summary"/>
+      <display value="Substance use summary"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2025-11-25T10:00:00Z"/>
+  <hasMember>
+    <reference value="Observation/TobaccoUseExSmokerExample"/>
+  </hasMember>
+  <hasMember>
+    <reference value="Observation/AlcoholUseModerateExample"/>
+  </hasMember>
+  <hasMember>
+    <reference value="Observation/CaffeineIntakeModerateExample"/>
+  </hasMember>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="72166-2"/>
+        <display value="Tobacco smoking status"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="8517006"/>
+        <display value="Ex-smoker (finding)"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="11331-6"/>
+        <display value="History of Alcohol use"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="43783005"/>
+        <display value="Moderate drinker (finding)"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="80489-8"/>
+        <display value="Caffeine intake 24 hour Estimated"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs"/>
+        <code value="moderate"/>
+        <display value="Moderate"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"/>
+        <code value="substance-risk-level"/>
+        <display value="Overall substance use risk level"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-risk-level-cs"/>
+        <code value="low"/>
+        <display value="Low risk"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+</Observation>

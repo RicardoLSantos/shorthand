@@ -1,0 +1,33 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/DevicePulseOximeter> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DevicePulseOximeter"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Device DevicePulseOximeter</b></p><a name=\"DevicePulseOximeter\"> </a><a name=\"hcDevicePulseOximeter\"> </a><p><b>manufacturer</b>: HealthTech Devices</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Digital Pulse Oximeter</td><td>User Friendly name</td></tr></table><p><b>modelNumber</b>: POX-2024</p><p><b>type</b>: <span title=\"Códigos:{http://snomed.info/sct 448703006}\">Pulse oximeter</span></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:manufacturer [ fhir:v "HealthTech Devices"] ; # 
+  fhir:deviceName ( [
+     fhir:name [ fhir:v "Digital Pulse Oximeter" ] ;
+     fhir:type [ fhir:v "user-friendly-name" ]
+  ] ) ; # 
+  fhir:modelNumber [ fhir:v "POX-2024"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a sct:448703006 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "448703006" ] ;
+       fhir:display [ fhir:v "Pulse oximeter" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

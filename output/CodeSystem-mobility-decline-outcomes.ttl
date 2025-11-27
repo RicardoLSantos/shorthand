@@ -1,0 +1,103 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "mobility-decline-outcomes"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem mobility-decline-outcomes</b></p><a name=\"mobility-decline-outcomes\"> </a><a name=\"hcmobility-decline-outcomes\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">no-decline<a name=\"mobility-decline-outcomes-no-decline\"> </a></td><td>No Decline</td><td>No mobility decline detected - stable mobility status</td></tr><tr><td style=\"white-space:nowrap\">mild-decline<a name=\"mobility-decline-outcomes-mild-decline\"> </a></td><td>Mild Decline</td><td>Mild mobility decline - early changes observed</td></tr><tr><td style=\"white-space:nowrap\">moderate-decline<a name=\"mobility-decline-outcomes-moderate-decline\"> </a></td><td>Moderate Decline</td><td>Moderate mobility decline - noticeable functional impact</td></tr><tr><td style=\"white-space:nowrap\">severe-decline<a name=\"mobility-decline-outcomes-severe-decline\"> </a></td><td>Severe Decline</td><td>Severe mobility decline - significant functional limitation</td></tr><tr><td style=\"white-space:nowrap\">improved<a name=\"mobility-decline-outcomes-improved\"> </a></td><td>Improved</td><td>Mobility has improved compared to previous assessment</td></tr><tr><td style=\"white-space:nowrap\">rapid-decline<a name=\"mobility-decline-outcomes-rapid-decline\"> </a></td><td>Rapid Decline</td><td>Rapid or accelerated mobility decline - urgent attention needed</td></tr><tr><td style=\"white-space:nowrap\">plateau<a name=\"mobility-decline-outcomes-plateau\"> </a></td><td>Plateau</td><td>Mobility status has plateaued - no significant change</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MobilityDeclineOutcomes"] ; # 
+  fhir:title [ fhir:v "Mobility Decline Outcomes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Outcomes and trends related to mobility decline assessments over time"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "no-decline" ] ;
+     fhir:display [ fhir:v "No Decline" ] ;
+     fhir:definition [ fhir:v "No mobility decline detected - stable mobility status" ]
+  ] [
+     fhir:code [ fhir:v "mild-decline" ] ;
+     fhir:display [ fhir:v "Mild Decline" ] ;
+     fhir:definition [ fhir:v "Mild mobility decline - early changes observed" ]
+  ] [
+     fhir:code [ fhir:v "moderate-decline" ] ;
+     fhir:display [ fhir:v "Moderate Decline" ] ;
+     fhir:definition [ fhir:v "Moderate mobility decline - noticeable functional impact" ]
+  ] [
+     fhir:code [ fhir:v "severe-decline" ] ;
+     fhir:display [ fhir:v "Severe Decline" ] ;
+     fhir:definition [ fhir:v "Severe mobility decline - significant functional limitation" ]
+  ] [
+     fhir:code [ fhir:v "improved" ] ;
+     fhir:display [ fhir:v "Improved" ] ;
+     fhir:definition [ fhir:v "Mobility has improved compared to previous assessment" ]
+  ] [
+     fhir:code [ fhir:v "rapid-decline" ] ;
+     fhir:display [ fhir:v "Rapid Decline" ] ;
+     fhir:definition [ fhir:v "Rapid or accelerated mobility decline - urgent attention needed" ]
+  ] [
+     fhir:code [ fhir:v "plateau" ] ;
+     fhir:display [ fhir:v "Plateau" ] ;
+     fhir:definition [ fhir:v "Mobility status has plateaued - no significant change" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "caffeine-source-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem caffeine-source-cs</b></p><a name=\"caffeine-source-cs\"> </a><a name=\"hccaffeine-source-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">coffee<a name=\"caffeine-source-cs-coffee\"> </a></td><td>Coffee</td><td>Brewed coffee (~95mg per 8oz)</td></tr><tr><td style=\"white-space:nowrap\">espresso<a name=\"caffeine-source-cs-espresso\"> </a></td><td>Espresso</td><td>Espresso (~63mg per shot)</td></tr><tr><td style=\"white-space:nowrap\">tea<a name=\"caffeine-source-cs-tea\"> </a></td><td>Tea</td><td>Black or green tea (~47mg per 8oz)</td></tr><tr><td style=\"white-space:nowrap\">energy-drink<a name=\"caffeine-source-cs-energy-drink\"> </a></td><td>Energy drink</td><td>Energy drinks (~80-150mg per can)</td></tr><tr><td style=\"white-space:nowrap\">soft-drink<a name=\"caffeine-source-cs-soft-drink\"> </a></td><td>Soft drink</td><td>Caffeinated soft drinks (~35mg per 12oz)</td></tr><tr><td style=\"white-space:nowrap\">chocolate<a name=\"caffeine-source-cs-chocolate\"> </a></td><td>Chocolate</td><td>Dark chocolate (~23mg per oz)</td></tr><tr><td style=\"white-space:nowrap\">supplement<a name=\"caffeine-source-cs-supplement\"> </a></td><td>Supplement</td><td>Caffeine supplements or pills</td></tr><tr><td style=\"white-space:nowrap\">pre-workout<a name=\"caffeine-source-cs-pre-workout\"> </a></td><td>Pre-workout</td><td>Pre-workout supplements</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-source-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CaffeineSourceCS"] ; # 
+  fhir:title [ fhir:v "Caffeine Source CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Sources of caffeine in diet"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "coffee" ] ;
+     fhir:display [ fhir:v "Coffee" ] ;
+     fhir:definition [ fhir:v "Brewed coffee (~95mg per 8oz)" ]
+  ] [
+     fhir:code [ fhir:v "espresso" ] ;
+     fhir:display [ fhir:v "Espresso" ] ;
+     fhir:definition [ fhir:v "Espresso (~63mg per shot)" ]
+  ] [
+     fhir:code [ fhir:v "tea" ] ;
+     fhir:display [ fhir:v "Tea" ] ;
+     fhir:definition [ fhir:v "Black or green tea (~47mg per 8oz)" ]
+  ] [
+     fhir:code [ fhir:v "energy-drink" ] ;
+     fhir:display [ fhir:v "Energy drink" ] ;
+     fhir:definition [ fhir:v "Energy drinks (~80-150mg per can)" ]
+  ] [
+     fhir:code [ fhir:v "soft-drink" ] ;
+     fhir:display [ fhir:v "Soft drink" ] ;
+     fhir:definition [ fhir:v "Caffeinated soft drinks (~35mg per 12oz)" ]
+  ] [
+     fhir:code [ fhir:v "chocolate" ] ;
+     fhir:display [ fhir:v "Chocolate" ] ;
+     fhir:definition [ fhir:v "Dark chocolate (~23mg per oz)" ]
+  ] [
+     fhir:code [ fhir:v "supplement" ] ;
+     fhir:display [ fhir:v "Supplement" ] ;
+     fhir:definition [ fhir:v "Caffeine supplements or pills" ]
+  ] [
+     fhir:code [ fhir:v "pre-workout" ] ;
+     fhir:display [ fhir:v "Pre-workout" ] ;
+     fhir:definition [ fhir:v "Pre-workout supplements" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

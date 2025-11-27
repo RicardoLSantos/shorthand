@@ -1,0 +1,47 @@
+{
+  "resourceType" : "Observation",
+  "id" : "MacronutrientsExample",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/macronutrients-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation MacronutrientsExample</b></p><a name=\"MacronutrientsExample\"> </a><a name=\"hcMacronutrientsExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-macronutrients-observation.html\">Macronutrients Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category survey}\">Survey</span></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs macronutrients-panel}\">Macronutrients intake panel</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2024-03-19 20:00:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Jane Smith </a></p><h3>Components</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs carbohydrate-intake}\">Carbohydrate intake</span></td><td>250 gram<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigog = 'g')</span></td></tr></table></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "survey"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+      "code" : "macronutrients-panel",
+      "display" : "Macronutrients intake panel"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2024-03-19T20:00:00Z",
+  "performer" : [{
+    "reference" : "Practitioner/PractitionerExample"
+  }],
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs",
+        "code" : "carbohydrate-intake",
+        "display" : "Carbohydrate intake"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 250,
+      "unit" : "gram",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "g"
+    }
+  }]
+}

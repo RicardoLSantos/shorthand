@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Consent xmlns="http://hl7.org/fhir">
+  <id value="MindfulnessAccessPolicy"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Consent MindfulnessAccessPolicy</b></p><a name="MindfulnessAccessPolicy"> </a><a name="hcMindfulnessAccessPolicy"> </a><p><b>status</b>: Active</p><p><b>scope</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/consentscope patient-privacy}">Privacy Consent</span></p><p><b>category</b>: <span title="Códigos:{http://loinc.org 59284-0}">Consent Document</span></p><p><b>patient</b>: <a href="Patient-PatientMindfulness.html">Test Mindfulness  Other, DoB: 1980-01-01 ( http://example.org/patients#mindfulness-patient)</a></p><p><b>dateTime</b>: 2024-01-01</p><p><b>organization</b>: <a href="Organization-Org2RDoc.html">Organization 2RDoc Healthcare Solutions</a></p><blockquote><p><b>policy</b></p><p><b>authority</b>: <a href="http://terminology.hl7.org/7.0.0/CodeSystem-consentpolicycodes.html">http://terminology.hl7.org/CodeSystem/consentpolicycodes</a></p><p><b>uri</b>: <a href="http://terminology.hl7.org/7.0.0/CodeSystem-consentpolicycodes.html">http://terminology.hl7.org/CodeSystem/consentpolicycodes</a></p></blockquote><blockquote><p><b>policy</b></p><p><b>authority</b>: urn:oid:2.16.840.1.113883.3.4.5.1</p><p><b>uri</b>: urn:eu:gdpr:2016:679</p></blockquote><blockquote><p><b>policy</b></p><p><b>authority</b>: urn:oid:2.16.840.1.113883.3.4.5.2</p><p><b>uri</b>: urn:us:hipaa:privacy</p></blockquote><blockquote><p><b>policy</b></p><p><b>authority</b>: urn:oid:2.16.840.1.113883.3.4.5.3</p><p><b>uri</b>: urn:br:lgpd:2018</p></blockquote><blockquote><p><b>provision</b></p><p><b>type</b>: Opt In</p><p><b>period</b>: 2024-01-01 --&gt; 2025-12-31</p><h3>Actors</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td style="display: none">*</td><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/extra-security-role-type datacollector}">data collector</span></td><td>Identifier: 1234567890</td></tr></table><p><b>action</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/consentaction access}">Access</span>, <span title="Códigos:{http://terminology.hl7.org/CodeSystem/consentaction use}">Use</span></p><p><b>purpose</b>: <a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActReason.html#v3-ActReason-TREAT">ActReason TREAT</a>: treatment, <a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActReason.html#v3-ActReason-HPAYMT">ActReason HPAYMT</a>: healthcare payment, <a href="http://terminology.hl7.org/7.0.0/CodeSystem-v3-ActReason.html#v3-ActReason-HOPERAT">ActReason HOPERAT</a>: healthcare operations</p><p><b>dataPeriod</b>: 2024-01-01 --&gt; 2025-12-31</p></blockquote></div>
+  </text>
+  <status value="active"/>
+  <scope>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+      <code value="patient-privacy"/>
+      <display value="Privacy Consent"/>
+    </coding>
+  </scope>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="59284-0"/>
+      <display value="Consent Document"/>
+    </coding>
+  </category>
+  <patient>
+    <reference value="Patient/PatientMindfulness"/>
+  </patient>
+  <dateTime value="2024-01-01"/>
+  <organization>
+    <reference value="Organization/Org2RDoc"/>
+  </organization>
+  <policy>
+    <authority value="http://terminology.hl7.org/CodeSystem/consentpolicycodes"/>
+    <uri value="http://terminology.hl7.org/CodeSystem/consentpolicycodes"/>
+  </policy>
+  <policy>
+    <authority value="urn:oid:2.16.840.1.113883.3.4.5.1"/>
+    <uri value="urn:eu:gdpr:2016:679"/>
+  </policy>
+  <policy>
+    <authority value="urn:oid:2.16.840.1.113883.3.4.5.2"/>
+    <uri value="urn:us:hipaa:privacy"/>
+  </policy>
+  <policy>
+    <authority value="urn:oid:2.16.840.1.113883.3.4.5.3"/>
+    <uri value="urn:br:lgpd:2018"/>
+  </policy>
+  <provision>
+    <type value="permit"/>
+    <period>
+      <start value="2024-01-01"/>
+      <end value="2025-12-31"/>
+    </period>
+    <actor>
+      <role>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/extra-security-role-type"/>
+          <code value="datacollector"/>
+          <display value="data collector"/>
+        </coding>
+      </role>
+      <reference>
+        <identifier>
+          <value value="1234567890"/>
+        </identifier>
+      </reference>
+    </actor>
+    <action>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/consentaction"/>
+        <code value="access"/>
+        <display value="Access"/>
+      </coding>
+    </action>
+    <action>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/consentaction"/>
+        <code value="use"/>
+        <display value="Use"/>
+      </coding>
+    </action>
+    <purpose>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="TREAT"/>
+      <display value="treatment"/>
+    </purpose>
+    <purpose>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HPAYMT"/>
+      <display value="healthcare payment"/>
+    </purpose>
+    <purpose>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HOPERAT"/>
+      <display value="healthcare operations"/>
+    </purpose>
+    <dataPeriod>
+      <start value="2024-01-01"/>
+      <end value="2025-12-31"/>
+    </dataPeriod>
+  </provision>
+</Consent>

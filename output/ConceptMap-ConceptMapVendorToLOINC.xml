@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="ConceptMapVendorToLOINC"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapVendorToLOINC</b></p><a name="ConceptMapVendorToLOINC"> </a><a name="hcConceptMapVendorToLOINC"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <code>https://developer.apple.com/documentation/healthkit</code> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>HKQuantityTypeIdentifierHeartRateVariabilitySDNN (Heart Rate Variability SDNN)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>80404-7 (R-R interval.standard deviation (Heart rate variability))</td><td>CRITICAL VENDOR ERROR: Apple mislabels this metric. Despite the identifier name containing 'SDNN', Apple Watch actually measures and returns RMSSD (Root Mean Square of Successive Differences), NOT SDNN. This is a well-documented naming error in Apple's HealthKit API. Implementers must map to LOINC 80404-7 but understand the actual metric is RMSSD. See: Hernando et al. 2018, Sensors 18(8):2619.</td></tr><tr><td>HKQuantityTypeIdentifierHeartRate (Heart Rate)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>8867-4 (Heart rate)</td><td/></tr><tr><td>HKQuantityTypeIdentifierRestingHeartRate (Resting Heart Rate)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>40443-4 (Heart rate --resting)</td><td/></tr><tr><td>HKQuantityTypeIdentifierStepCount (Step Count)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>55423-8 (Number of steps in 24 hour Measured)</td><td/></tr><tr><td>HKQuantityTypeIdentifierDistanceWalkingRunning (Walking + Running Distance)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider" title="wider">maps to wider concept</a></td><td>41950-7 (Number of steps)</td><td>Distance is wider concept than step count; approximate mapping</td></tr><tr><td>HKQuantityTypeIdentifierOxygenSaturation (Oxygen Saturation)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>2708-6 (Oxygen saturation in Arterial blood)</td><td/></tr><tr><td>HKQuantityTypeIdentifierRespiratoryRate (Respiratory Rate)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>9279-1 (Respiratory rate)</td><td/></tr><tr><td>HKQuantityTypeIdentifierBodyMass (Body Mass)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>29463-7 (Body weight)</td><td/></tr><tr><td>HKQuantityTypeIdentifierHeight (Height)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>8302-2 (Body height)</td><td/></tr><tr><td>HKQuantityTypeIdentifierBodyMassIndex (Body Mass Index)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>39156-5 (Body mass index (BMI) [Ratio])</td><td/></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <code>https://dev.fitbit.com/build/reference/web-api</code> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>activities-heart-hrv-dailyRmssd (Daily RMSSD)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Fitbit correctly labels RMSSD (unlike Apple). However, NO LOINC code exists for RMSSD as of November 2024. Maps conceptually to parasympathetic activity. Fitbit API: GET /1/user/-/hrv/date/{date}.json</td></tr><tr><td>activities-steps (Daily Steps)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>55423-8 (Number of steps in 24 hour Measured)</td><td/></tr><tr><td>activities-heart-restingHeartRate (Resting Heart Rate)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>40443-4 (Heart rate --resting)</td><td/></tr><tr><td>sleep-efficiency</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>93832-4 (Sleep efficiency)</td><td/></tr></table><hr/><p><b>Grupo 3 </b>Mapeamento de <code>https://developer.garmin.com/health-api</code> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td></tr><tr><td>dailySteps</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>55423-8 (Number of steps in 24 hour Measured)</td></tr><tr><td>restingHeartRate</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>40443-4 (Heart rate --resting)</td></tr><tr><td>maxHeartRate (Maximum Heart Rate)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>8889-8 (Heart rate 24 hour maximum)</td></tr><tr><td>avgSpo2 (Average SpO2)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>2708-6 (Oxygen saturation in Arterial blood)</td></tr></table><hr/><p><b>Grupo 4 </b>Mapeamento de <code>https://www.polaraccesslink.com/v3</code> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>heart-rate</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>8867-4 (Heart rate)</td><td>Polar H10 chest strap provides ECG-quality heart rate. Gold standard for wearable HRV measurement.</td></tr><tr><td>rr-intervals</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>8636-3 (R-R interval in EKG)</td><td/></tr></table><hr/><p><b>Grupo 5 </b>Mapeamento de <code>https://cloud.ouraring.com/v2/usercollection</code> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>hrv_balance (HRV Balance Score)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Oura's proprietary HRV score (0-100). NOT raw RMSSD or SDNN. Derived from nocturnal RMSSD but normalized to individual baseline. No direct LOINC equivalent - this is a processed/scored metric, not a physiological measurement.</td></tr><tr><td>hr_lowest (Lowest Heart Rate (overnight))</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>8891-4 (Heart rate 24 hour minimum)</td><td/></tr><tr><td>hr_average (Average Heart Rate (overnight))</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower" title="narrower">narrower</a></td><td>8890-6 (Heart rate 24 hour mean)</td><td>Oura measures overnight only, not full 24 hours</td></tr><tr><td>breathing_rate (Breathing Rate (overnight))</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>9279-1 (Respiratory rate)</td><td/></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapVendorToLOINC"/>
+  <version value="0.1.0"/>
+  <name value="ConceptMapVendorToLOINC"/>
+  <title value="Vendor Proprietary Codes to LOINC Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2024-11-21"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Operational ConceptMap for translating proprietary wearable device codes to LOINC standard terminology. Based on gray literature analysis of 75 sources documenting 11 major vendors with 0% LOINC adoption rate."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Enables semantic interoperability between vendor-specific wearable device data and EHR systems using LOINC. Critical for multi-vendor data aggregation in Learning Health Systems and lifestyle medicine research."/>
+  <group>
+    <source value="https://developer.apple.com/documentation/healthkit"/>
+    <target value="http://loinc.org"/>
+    <element>
+      <code value="HKQuantityTypeIdentifierHeartRateVariabilitySDNN"/>
+      <display value="Heart Rate Variability SDNN"/>
+      <target>
+        <code value="80404-7"/>
+        <display value="R-R interval.standard deviation (Heart rate variability)"/>
+        <equivalence value="equivalent"/>
+        <comment value="CRITICAL VENDOR ERROR: Apple mislabels this metric. Despite the identifier name containing 'SDNN', Apple Watch actually measures and returns RMSSD (Root Mean Square of Successive Differences), NOT SDNN. This is a well-documented naming error in Apple's HealthKit API. Implementers must map to LOINC 80404-7 but understand the actual metric is RMSSD. See: Hernando et al. 2018, Sensors 18(8):2619."/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierHeartRate"/>
+      <display value="Heart Rate"/>
+      <target>
+        <code value="8867-4"/>
+        <display value="Heart rate"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierRestingHeartRate"/>
+      <display value="Resting Heart Rate"/>
+      <target>
+        <code value="40443-4"/>
+        <display value="Heart rate --resting"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierStepCount"/>
+      <display value="Step Count"/>
+      <target>
+        <code value="55423-8"/>
+        <display value="Number of steps in 24 hour Measured"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierDistanceWalkingRunning"/>
+      <display value="Walking + Running Distance"/>
+      <target>
+        <code value="41950-7"/>
+        <display value="Number of steps"/>
+        <equivalence value="wider"/>
+        <comment value="Distance is wider concept than step count; approximate mapping"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierOxygenSaturation"/>
+      <display value="Oxygen Saturation"/>
+      <target>
+        <code value="2708-6"/>
+        <display value="Oxygen saturation in Arterial blood"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierRespiratoryRate"/>
+      <display value="Respiratory Rate"/>
+      <target>
+        <code value="9279-1"/>
+        <display value="Respiratory rate"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierBodyMass"/>
+      <display value="Body Mass"/>
+      <target>
+        <code value="29463-7"/>
+        <display value="Body weight"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierHeight"/>
+      <display value="Height"/>
+      <target>
+        <code value="8302-2"/>
+        <display value="Body height"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="HKQuantityTypeIdentifierBodyMassIndex"/>
+      <display value="Body Mass Index"/>
+      <target>
+        <code value="39156-5"/>
+        <display value="Body mass index (BMI) [Ratio]"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+  <group>
+    <source value="https://dev.fitbit.com/build/reference/web-api"/>
+    <target value="http://loinc.org"/>
+    <element>
+      <code value="activities-heart-hrv-dailyRmssd"/>
+      <display value="Daily RMSSD"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Fitbit correctly labels RMSSD (unlike Apple). However, NO LOINC code exists for RMSSD as of November 2024. Maps conceptually to parasympathetic activity. Fitbit API: GET /1/user/-/hrv/date/{date}.json"/>
+      </target>
+    </element>
+    <element>
+      <code value="activities-steps"/>
+      <display value="Daily Steps"/>
+      <target>
+        <code value="55423-8"/>
+        <display value="Number of steps in 24 hour Measured"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="activities-heart-restingHeartRate"/>
+      <display value="Resting Heart Rate"/>
+      <target>
+        <code value="40443-4"/>
+        <display value="Heart rate --resting"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="sleep-efficiency"/>
+      <display value="Sleep Efficiency"/>
+      <target>
+        <code value="93832-4"/>
+        <display value="Sleep efficiency"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+  <group>
+    <source value="https://developer.garmin.com/health-api"/>
+    <target value="http://loinc.org"/>
+    <element>
+      <code value="dailySteps"/>
+      <display value="Daily Steps"/>
+      <target>
+        <code value="55423-8"/>
+        <display value="Number of steps in 24 hour Measured"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="restingHeartRate"/>
+      <display value="Resting Heart Rate"/>
+      <target>
+        <code value="40443-4"/>
+        <display value="Heart rate --resting"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="maxHeartRate"/>
+      <display value="Maximum Heart Rate"/>
+      <target>
+        <code value="8889-8"/>
+        <display value="Heart rate 24 hour maximum"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="avgSpo2"/>
+      <display value="Average SpO2"/>
+      <target>
+        <code value="2708-6"/>
+        <display value="Oxygen saturation in Arterial blood"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+  <group>
+    <source value="https://www.polaraccesslink.com/v3"/>
+    <target value="http://loinc.org"/>
+    <element>
+      <code value="heart-rate"/>
+      <display value="Heart Rate"/>
+      <target>
+        <code value="8867-4"/>
+        <display value="Heart rate"/>
+        <equivalence value="equivalent"/>
+        <comment value="Polar H10 chest strap provides ECG-quality heart rate. Gold standard for wearable HRV measurement."/>
+      </target>
+    </element>
+    <element>
+      <code value="rr-intervals"/>
+      <display value="RR Intervals"/>
+      <target>
+        <code value="8636-3"/>
+        <display value="R-R interval in EKG"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+  <group>
+    <source value="https://cloud.ouraring.com/v2/usercollection"/>
+    <target value="http://loinc.org"/>
+    <element>
+      <code value="hrv_balance"/>
+      <display value="HRV Balance Score"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Oura's proprietary HRV score (0-100). NOT raw RMSSD or SDNN. Derived from nocturnal RMSSD but normalized to individual baseline. No direct LOINC equivalent - this is a processed/scored metric, not a physiological measurement."/>
+      </target>
+    </element>
+    <element>
+      <code value="hr_lowest"/>
+      <display value="Lowest Heart Rate (overnight)"/>
+      <target>
+        <code value="8891-4"/>
+        <display value="Heart rate 24 hour minimum"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="hr_average"/>
+      <display value="Average Heart Rate (overnight)"/>
+      <target>
+        <code value="8890-6"/>
+        <display value="Heart rate 24 hour mean"/>
+        <equivalence value="narrower"/>
+        <comment value="Oura measures overnight only, not full 24 hours"/>
+      </target>
+    </element>
+    <element>
+      <code value="breathing_rate"/>
+      <display value="Breathing Rate (overnight)"/>
+      <target>
+        <code value="9279-1"/>
+        <display value="Respiratory rate"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>
