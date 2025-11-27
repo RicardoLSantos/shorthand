@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (18 Total)
+## Archetypes Included (21 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (13)
+### OBSERVATION Archetypes (16)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -41,6 +41,9 @@ archetypes/openEHR/
 | `nutrition_intake.v0.adl` | Macros, micros, meal tracking, diet patterns | ~1100 | CKM Ready |
 | `hydration_tracking.v0.adl` | Fluid intake, beverages, hydration status | ~900 | CKM Ready |
 | `environmental_exposure.v0.adl` | AQI, UV, noise, pollen, climate data | ~1100 | CKM Ready |
+| `menstrual_cycle.v0.adl` | Cycle tracking, symptoms, flow patterns | ~1300 | CKM Ready |
+| `fertility_indicators.v0.adl` | BBT, cervical mucus, LH surge, ovulation | ~1275 | CKM Ready |
+| `pregnancy_tracking.v0.adl` | Gestational tracking, movements, symptoms | ~1130 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -79,12 +82,13 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 18 archetypes validated with ADL 1.4 structural validator:
+All 21 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
 - **Warnings**: Minor (false positives on term_bindings detection)
 - **Phase 1A-1B**: 7 archetypes validated 2025-11-27
 - **Phase 2A**: 3 archetypes validated 2025-11-27
 - **Phase 2B**: 3 archetypes validated 2025-11-27
+- **Phase 3A**: 3 archetypes validated 2025-11-27
 
 ## Related Resources
 
@@ -96,4 +100,4 @@ All 18 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 18 (5 CLUSTERs + 13 OBSERVATIONs)*
+*Archetypes: 21 (5 CLUSTERs + 16 OBSERVATIONs)*

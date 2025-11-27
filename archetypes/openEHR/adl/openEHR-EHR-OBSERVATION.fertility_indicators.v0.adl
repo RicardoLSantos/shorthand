@@ -1,0 +1,1273 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.fertility_indicators.v0
+
+concept
+    [at0000]    -- Fertility Indicators
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"ricardo.santos@med.up.pt">
+        ["date"] = <"2025-11-27">
+    >
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record fertility-related biomarkers and indicators from consumer health devices and applications, supporting fertility awareness methods (FAM), conception planning, and natural family planning within lifestyle medicine frameworks.">
+            use = <"Use to record fertility indicator data from consumer devices including:
+
+Basal body temperature (BBT):
+- Morning temperature measurements
+- Temperature shift detection
+- Thermal shift confirmation
+- Cover line calculation
+
+Cervical mucus observations:
+- Mucus presence and quantity
+- Mucus quality/type (dry, sticky, creamy, egg white)
+- Peak day identification
+- Mucus pattern tracking
+
+Ovulation testing:
+- LH test results (hormone strips)
+- LH surge detection
+- Digital ovulation test results
+- Progesterone confirmation tests
+
+Cervical position (optional):
+- Height (low/medium/high)
+- Firmness (firm/medium/soft)
+- Opening (closed/partially open/open)
+
+Fertility signs synthesis:
+- Fertile window status
+- Ovulation confirmed/predicted
+- Peak fertility day
+- Days post-ovulation (DPO)
+
+Designed for integration with:
+- Natural Cycles (FDA-cleared)
+- Tempdrop wearable
+- Ava Fertility bracelet
+- Mira Fertility analyzer
+- Clearblue Connected
+- Kindara
+- Fertility Friend
+- Kegg cervical mucus tracker
+- Modern Fertility
+
+This archetype captures self-tracked fertility biomarkers from consumer devices. For clinical fertility assessment or assisted reproduction protocols, use appropriate clinical archetypes.">
+            misuse = <"Not to be used for:
+- Clinical infertility diagnosis
+- IVF or assisted reproduction protocols
+- Clinical hormone level interpretation
+- Medical fertility treatment monitoring
+- Pregnancy confirmation (use pregnancy archetype)
+- Clinical cervical examination findings">
+            keywords = <"fertility", "BBT", "basal temperature", "ovulation", "LH", "cervical mucus", "fertile window", "conception", "FAM", "NFP", "natural family planning", "TTC", "trying to conceive", "wearable", "lifestyle medicine">
+            copyright = <"© openEHR Foundation, HEADS#2 PhD Project FMUP">
+        >
+    >
+    lifecycle_state = <"in_development">
+    other_contributors = <"HEADS#2 PhD Project, FMUP", "openEHR Community">
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"openEHR Foundation">
+        ["references"] = <"Fehring RJ, et al. Efficacy of cervical mucus observations plus electronic hormonal fertility monitoring as a method of natural family planning. JOGNN. 2007.
+Berglund Scherwitzl E, et al. Perfect-use and typical-use Pearl Index of a contraceptive mobile app. Contraception. 2017.
+Natural Cycles Clinical Documentation.
+Tempdrop Algorithm Documentation.
+ACOG Committee Opinion: Fertility Awareness-Based Methods of Family Planning. 2019.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardo.santos@med.up.pt">
+        ["original_namespace"] = <"org.openehr">
+        ["original_publisher"] = <"openEHR Foundation">
+        ["custodian_namespace"] = <"org.openehr">
+        ["MD5-CAM-1.0.1"] = <"generated">
+        ["build_uid"] = <"f5a6b7c8-9d0e-1f2a-3b4c-5d6e7f8a9b0c">
+        ["revision"] = <"0.0.1-alpha">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Fertility Indicators
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Basal body temperature
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- BBT value
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::127]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"Cel">
+                                                                magnitude = <|35.0..40.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[degF]">
+                                                                magnitude = <|95.0..104.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Measurement time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Temperature phase
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- Pre-ovulatory (low)
+                                                            at0201,    -- Thermal shift
+                                                            at0202,    -- Post-ovulatory (high)
+                                                            at0203]    -- Uncertain
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Cover line
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::127]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"Cel">
+                                                                magnitude = <|35.0..40.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Days of high temps
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..20|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0016] occurrences matches {0..1} matches {    -- Disturbed sleep
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0017] occurrences matches {0..1} matches {    -- Disturbance factors
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0210,    -- None
+                                                            at0211,    -- Poor sleep
+                                                            at0212,    -- Alcohol
+                                                            at0213,    -- Illness/fever
+                                                            at0214,    -- Travel/time zone
+                                                            at0215,    -- Late measurement
+                                                            at0216]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Cervical mucus
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Mucus presence
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0220,    -- None/dry
+                                                            at0221,    -- Minimal
+                                                            at0222,    -- Moderate
+                                                            at0223]    -- Abundant
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Mucus type
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0230,    -- Dry
+                                                            at0231,    -- Sticky/tacky
+                                                            at0232,    -- Creamy
+                                                            at0233,    -- Watery
+                                                            at0234,    -- Egg white (EWCM)
+                                                            at0235]    -- Mixed
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Mucus stretch
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- None
+                                                            at0241,    -- Less than 1cm
+                                                            at0242,    -- 1-3cm
+                                                            at0243,    -- More than 3cm
+                                                            at0244]    -- Very stretchy (5cm+)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Mucus color
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- Clear
+                                                            at0251,    -- White
+                                                            at0252,    -- Cloudy
+                                                            at0253,    -- Yellow
+                                                            at0254,    -- Pink/blood-tinged
+                                                            at0255]    -- Brown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Sensation
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0260,    -- Dry
+                                                            at0261,    -- Damp
+                                                            at0262,    -- Wet
+                                                            at0263,    -- Slippery
+                                                            at0264]    -- Very slippery
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0026] occurrences matches {0..1} matches {    -- Peak day
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0027] occurrences matches {0..1} matches {    -- Days post peak
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..20|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Ovulation testing
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- LH test result
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0270,    -- Negative
+                                                            at0271,    -- Low
+                                                            at0272,    -- High
+                                                            at0273,    -- Peak/positive
+                                                            at0274]    -- Invalid
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- LH numeric value
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::119]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"mIU/ml">
+                                                                magnitude = <|0.0..200.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Estrogen test result
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0270,    -- Negative
+                                                            at0271,    -- Low
+                                                            at0272,    -- High
+                                                            at0273,    -- Peak/positive
+                                                            at0274]    -- Invalid
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Progesterone test result
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0280,    -- Not detected
+                                                            at0281,    -- Detected (ovulation confirmed)
+                                                            at0282]    -- Invalid
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {    -- Test brand
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0290,    -- Clearblue
+                                                            at0291,    -- First Response
+                                                            at0292,    -- Easy@Home
+                                                            at0293,    -- Mira
+                                                            at0294,    -- Proov
+                                                            at0295,    -- Modern Fertility
+                                                            at0296]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0036] occurrences matches {0..1} matches {    -- Test time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Cervical position
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Height
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0300,    -- Low
+                                                            at0301,    -- Medium
+                                                            at0302]    -- High
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Firmness
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0310,    -- Firm
+                                                            at0311,    -- Medium
+                                                            at0312]    -- Soft
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Opening
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0320,    -- Closed
+                                                            at0321,    -- Slightly open
+                                                            at0322]    -- Open
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Fertility status
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Fertility level
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0330,    -- Not fertile
+                                                            at0331,    -- Low fertility
+                                                            at0332,    -- Fertile
+                                                            at0333,    -- High fertility
+                                                            at0334,    -- Peak fertility
+                                                            at0335]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Ovulation status
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0340,    -- Pre-ovulation
+                                                            at0341,    -- Ovulation imminent
+                                                            at0342,    -- Ovulation likely today
+                                                            at0343,    -- Ovulation confirmed
+                                                            at0344,    -- Post-ovulation
+                                                            at0345]    -- Uncertain
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Days post ovulation (DPO)
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..20|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- In fertile window
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Conception probability
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Secondary signs
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Mittelschmerz
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0350,    -- None
+                                                            at0351,    -- Mild
+                                                            at0352,    -- Moderate
+                                                            at0353]    -- Strong
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Ovulation side
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0360,    -- Left
+                                                            at0361,    -- Right
+                                                            at0362,    -- Both/central
+                                                            at0363]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Breast changes
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- Libido increase
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {    -- Spotting
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0070] occurrences matches {0..1} matches {    -- Intercourse
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0370,    -- No
+                                                    at0371,    -- Yes - trying to conceive
+                                                    at0372,    -- Yes - protected
+                                                    at0373]    -- Prefer not to say
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0071] occurrences matches {0..1} matches {    -- Notes
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0072] occurrences matches {0..*} matches {    -- Additional details
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0080] occurrences matches {0..*} matches {    -- Cycle summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0090] matches {    -- Tree
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0091] occurrences matches {0..1} matches {    -- Data source
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0380,    -- Natural Cycles
+                                    at0381,    -- Tempdrop
+                                    at0382,    -- Ava bracelet
+                                    at0383,    -- Mira
+                                    at0384,    -- Clearblue Connected
+                                    at0385,    -- Kindara
+                                    at0386,    -- Fertility Friend
+                                    at0387,    -- Kegg
+                                    at0388,    -- Read Your Body
+                                    at0389,    -- Manual tracking
+                                    at0390]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0092] occurrences matches {0..1} matches {    -- BBT device
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0400,    -- Oral thermometer
+                                    at0401,    -- Tempdrop wearable
+                                    at0402,    -- Ava bracelet
+                                    at0403,    -- Oura ring
+                                    at0404,    -- Other wearable
+                                    at0405]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0093] occurrences matches {0..1} matches {    -- Thermometer precision
+                        value matches {
+                            C_DV_QUANTITY <
+                                property = <[openehr::127]>
+                                list = <
+                                    ["1"] = <
+                                        units = <"Cel">
+                                        magnitude = <|0.01..0.1|>
+                                        precision = <|2|>
+                                    >
+                                >
+                            >
+                        }
+                    }
+                    ELEMENT[at0094] occurrences matches {0..1} matches {    -- Fertility goal
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0410,    -- Trying to conceive
+                                    at0411,    -- Avoiding pregnancy
+                                    at0412,    -- Cycle awareness only
+                                    at0413]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0095] occurrences matches {0..*} matches {    -- Device details
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0096] occurrences matches {0..*} matches {    -- Data quality
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0097] occurrences matches {0..*} matches {    -- Extension
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Fertility Indicators">
+                    description = <"Fertility-related biomarkers and indicators from consumer health devices and applications.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0010"] = <
+                    text = <"Basal body temperature">
+                    description = <"BBT measurements and analysis.">
+                >
+                ["at0011"] = <
+                    text = <"BBT value">
+                    description = <"Basal body temperature measurement.">
+                >
+                ["at0012"] = <
+                    text = <"Measurement time">
+                    description = <"Time of temperature measurement.">
+                >
+                ["at0013"] = <
+                    text = <"Temperature phase">
+                    description = <"Phase based on temperature pattern.">
+                >
+                ["at0014"] = <
+                    text = <"Cover line">
+                    description = <"Calculated cover line temperature.">
+                >
+                ["at0015"] = <
+                    text = <"Days of high temps">
+                    description = <"Consecutive days above cover line.">
+                >
+                ["at0016"] = <
+                    text = <"Disturbed sleep">
+                    description = <"Whether sleep was disturbed.">
+                >
+                ["at0017"] = <
+                    text = <"Disturbance factors">
+                    description = <"Factors that may affect temperature.">
+                >
+                ["at0020"] = <
+                    text = <"Cervical mucus">
+                    description = <"Cervical mucus observations.">
+                >
+                ["at0021"] = <
+                    text = <"Mucus presence">
+                    description = <"Amount of mucus observed.">
+                >
+                ["at0022"] = <
+                    text = <"Mucus type">
+                    description = <"Quality/consistency of mucus.">
+                >
+                ["at0023"] = <
+                    text = <"Mucus stretch">
+                    description = <"Stretchiness of mucus (spinnbarkeit).">
+                >
+                ["at0024"] = <
+                    text = <"Mucus color">
+                    description = <"Color of cervical mucus.">
+                >
+                ["at0025"] = <
+                    text = <"Sensation">
+                    description = <"Vaginal sensation.">
+                >
+                ["at0026"] = <
+                    text = <"Peak day">
+                    description = <"Whether this is considered peak mucus day.">
+                >
+                ["at0027"] = <
+                    text = <"Days post peak">
+                    description = <"Days since peak mucus day.">
+                >
+                ["at0030"] = <
+                    text = <"Ovulation testing">
+                    description = <"Ovulation prediction kit results.">
+                >
+                ["at0031"] = <
+                    text = <"LH test result">
+                    description = <"Luteinizing hormone test result.">
+                >
+                ["at0032"] = <
+                    text = <"LH numeric value">
+                    description = <"Quantitative LH value if available.">
+                >
+                ["at0033"] = <
+                    text = <"Estrogen test result">
+                    description = <"Estrogen test result.">
+                >
+                ["at0034"] = <
+                    text = <"Progesterone test result">
+                    description = <"Progesterone confirmation test result.">
+                >
+                ["at0035"] = <
+                    text = <"Test brand">
+                    description = <"Brand of test used.">
+                >
+                ["at0036"] = <
+                    text = <"Test time">
+                    description = <"Time test was taken.">
+                >
+                ["at0040"] = <
+                    text = <"Cervical position">
+                    description = <"Cervical position observations.">
+                >
+                ["at0041"] = <
+                    text = <"Height">
+                    description = <"Cervical height.">
+                >
+                ["at0042"] = <
+                    text = <"Firmness">
+                    description = <"Cervical firmness.">
+                >
+                ["at0043"] = <
+                    text = <"Opening">
+                    description = <"Cervical os opening.">
+                >
+                ["at0050"] = <
+                    text = <"Fertility status">
+                    description = <"Synthesized fertility status.">
+                >
+                ["at0051"] = <
+                    text = <"Fertility level">
+                    description = <"Current fertility level assessment.">
+                >
+                ["at0052"] = <
+                    text = <"Ovulation status">
+                    description = <"Current ovulation status.">
+                >
+                ["at0053"] = <
+                    text = <"Days post ovulation (DPO)">
+                    description = <"Days since confirmed/estimated ovulation.">
+                >
+                ["at0054"] = <
+                    text = <"In fertile window">
+                    description = <"Whether currently in fertile window.">
+                >
+                ["at0055"] = <
+                    text = <"Conception probability">
+                    description = <"Estimated conception probability.">
+                >
+                ["at0060"] = <
+                    text = <"Secondary signs">
+                    description = <"Secondary fertility signs.">
+                >
+                ["at0061"] = <
+                    text = <"Mittelschmerz">
+                    description = <"Ovulation pain.">
+                >
+                ["at0062"] = <
+                    text = <"Ovulation side">
+                    description = <"Side of ovulation pain.">
+                >
+                ["at0063"] = <
+                    text = <"Breast changes">
+                    description = <"Post-ovulation breast changes.">
+                >
+                ["at0064"] = <
+                    text = <"Libido increase">
+                    description = <"Increased libido around ovulation.">
+                >
+                ["at0065"] = <
+                    text = <"Spotting">
+                    description = <"Ovulation spotting.">
+                >
+                ["at0070"] = <
+                    text = <"Intercourse">
+                    description = <"Intercourse logging.">
+                >
+                ["at0071"] = <
+                    text = <"Notes">
+                    description = <"Additional notes.">
+                >
+                ["at0072"] = <
+                    text = <"Additional details">
+                    description = <"Additional structured details.">
+                >
+                ["at0080"] = <
+                    text = <"Cycle summary">
+                    description = <"Summary for a complete cycle.">
+                >
+                ["at0090"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0091"] = <
+                    text = <"Data source">
+                    description = <"App or device used.">
+                >
+                ["at0092"] = <
+                    text = <"BBT device">
+                    description = <"Device used for BBT.">
+                >
+                ["at0093"] = <
+                    text = <"Thermometer precision">
+                    description = <"Precision of thermometer.">
+                >
+                ["at0094"] = <
+                    text = <"Fertility goal">
+                    description = <"User's fertility tracking goal.">
+                >
+                ["at0095"] = <
+                    text = <"Device details">
+                    description = <"Details about tracking device.">
+                >
+                ["at0096"] = <
+                    text = <"Data quality">
+                    description = <"Quality indicators.">
+                >
+                ["at0097"] = <
+                    text = <"Extension">
+                    description = <"Additional information for extension.">
+                >
+                ["at0200"] = <
+                    text = <"Pre-ovulatory (low)">
+                    description = <"Lower temperatures before ovulation.">
+                >
+                ["at0201"] = <
+                    text = <"Thermal shift">
+                    description = <"Temperature shift occurring.">
+                >
+                ["at0202"] = <
+                    text = <"Post-ovulatory (high)">
+                    description = <"Higher temperatures after ovulation.">
+                >
+                ["at0203"] = <
+                    text = <"Uncertain">
+                    description = <"Phase uncertain.">
+                >
+                ["at0210"] = <
+                    text = <"None">
+                    description = <"No disturbance.">
+                >
+                ["at0211"] = <
+                    text = <"Poor sleep">
+                    description = <"Poor or insufficient sleep.">
+                >
+                ["at0212"] = <
+                    text = <"Alcohol">
+                    description = <"Alcohol consumption.">
+                >
+                ["at0213"] = <
+                    text = <"Illness/fever">
+                    description = <"Illness or fever.">
+                >
+                ["at0214"] = <
+                    text = <"Travel/time zone">
+                    description = <"Travel or time zone change.">
+                >
+                ["at0215"] = <
+                    text = <"Late measurement">
+                    description = <"Measurement taken late.">
+                >
+                ["at0216"] = <
+                    text = <"Other">
+                    description = <"Other disturbance.">
+                >
+                ["at0220"] = <
+                    text = <"None/dry">
+                    description = <"No mucus or dry.">
+                >
+                ["at0221"] = <
+                    text = <"Minimal">
+                    description = <"Minimal mucus.">
+                >
+                ["at0222"] = <
+                    text = <"Moderate">
+                    description = <"Moderate amount.">
+                >
+                ["at0223"] = <
+                    text = <"Abundant">
+                    description = <"Abundant mucus.">
+                >
+                ["at0230"] = <
+                    text = <"Dry">
+                    description = <"No mucus/dry.">
+                >
+                ["at0231"] = <
+                    text = <"Sticky/tacky">
+                    description = <"Sticky or tacky mucus.">
+                >
+                ["at0232"] = <
+                    text = <"Creamy">
+                    description = <"Creamy lotion-like mucus.">
+                >
+                ["at0233"] = <
+                    text = <"Watery">
+                    description = <"Watery mucus.">
+                >
+                ["at0234"] = <
+                    text = <"Egg white (EWCM)">
+                    description = <"Egg white cervical mucus - most fertile.">
+                >
+                ["at0235"] = <
+                    text = <"Mixed">
+                    description = <"Mixed types.">
+                >
+                ["at0240"] = <
+                    text = <"None">
+                    description = <"No stretch.">
+                >
+                ["at0241"] = <
+                    text = <"Less than 1cm">
+                    description = <"Minimal stretch.">
+                >
+                ["at0242"] = <
+                    text = <"1-3cm">
+                    description = <"Moderate stretch.">
+                >
+                ["at0243"] = <
+                    text = <"More than 3cm">
+                    description = <"Good stretch.">
+                >
+                ["at0244"] = <
+                    text = <"Very stretchy (5cm+)">
+                    description = <"Peak fertility stretch.">
+                >
+                ["at0250"] = <
+                    text = <"Clear">
+                    description = <"Clear/transparent.">
+                >
+                ["at0251"] = <
+                    text = <"White">
+                    description = <"White.">
+                >
+                ["at0252"] = <
+                    text = <"Cloudy">
+                    description = <"Cloudy/opaque.">
+                >
+                ["at0253"] = <
+                    text = <"Yellow">
+                    description = <"Yellow.">
+                >
+                ["at0254"] = <
+                    text = <"Pink/blood-tinged">
+                    description = <"Pink or blood-tinged.">
+                >
+                ["at0255"] = <
+                    text = <"Brown">
+                    description = <"Brown.">
+                >
+                ["at0260"] = <
+                    text = <"Dry">
+                    description = <"Dry sensation.">
+                >
+                ["at0261"] = <
+                    text = <"Damp">
+                    description = <"Damp sensation.">
+                >
+                ["at0262"] = <
+                    text = <"Wet">
+                    description = <"Wet sensation.">
+                >
+                ["at0263"] = <
+                    text = <"Slippery">
+                    description = <"Slippery sensation.">
+                >
+                ["at0264"] = <
+                    text = <"Very slippery">
+                    description = <"Very slippery - peak fertility.">
+                >
+                ["at0270"] = <
+                    text = <"Negative">
+                    description = <"Negative result.">
+                >
+                ["at0271"] = <
+                    text = <"Low">
+                    description = <"Low level detected.">
+                >
+                ["at0272"] = <
+                    text = <"High">
+                    description = <"High level detected.">
+                >
+                ["at0273"] = <
+                    text = <"Peak/positive">
+                    description = <"Peak/positive result.">
+                >
+                ["at0274"] = <
+                    text = <"Invalid">
+                    description = <"Invalid test result.">
+                >
+                ["at0280"] = <
+                    text = <"Not detected">
+                    description = <"Progesterone not detected.">
+                >
+                ["at0281"] = <
+                    text = <"Detected (ovulation confirmed)">
+                    description = <"Progesterone detected - ovulation confirmed.">
+                >
+                ["at0282"] = <
+                    text = <"Invalid">
+                    description = <"Invalid result.">
+                >
+                ["at0290"] = <
+                    text = <"Clearblue">
+                    description = <"Clearblue brand.">
+                >
+                ["at0291"] = <
+                    text = <"First Response">
+                    description = <"First Response brand.">
+                >
+                ["at0292"] = <
+                    text = <"Easy@Home">
+                    description = <"Easy@Home brand.">
+                >
+                ["at0293"] = <
+                    text = <"Mira">
+                    description = <"Mira analyzer.">
+                >
+                ["at0294"] = <
+                    text = <"Proov">
+                    description = <"Proov PdG test.">
+                >
+                ["at0295"] = <
+                    text = <"Modern Fertility">
+                    description = <"Modern Fertility.">
+                >
+                ["at0296"] = <
+                    text = <"Other">
+                    description = <"Other brand.">
+                >
+                ["at0300"] = <
+                    text = <"Low">
+                    description = <"Low position.">
+                >
+                ["at0301"] = <
+                    text = <"Medium">
+                    description = <"Medium position.">
+                >
+                ["at0302"] = <
+                    text = <"High">
+                    description = <"High position.">
+                >
+                ["at0310"] = <
+                    text = <"Firm">
+                    description = <"Firm like nose tip.">
+                >
+                ["at0311"] = <
+                    text = <"Medium">
+                    description = <"Medium firmness.">
+                >
+                ["at0312"] = <
+                    text = <"Soft">
+                    description = <"Soft like lips.">
+                >
+                ["at0320"] = <
+                    text = <"Closed">
+                    description = <"Os closed.">
+                >
+                ["at0321"] = <
+                    text = <"Slightly open">
+                    description = <"Os slightly open.">
+                >
+                ["at0322"] = <
+                    text = <"Open">
+                    description = <"Os open.">
+                >
+                ["at0330"] = <
+                    text = <"Not fertile">
+                    description = <"Not in fertile window.">
+                >
+                ["at0331"] = <
+                    text = <"Low fertility">
+                    description = <"Low fertility.">
+                >
+                ["at0332"] = <
+                    text = <"Fertile">
+                    description = <"Fertile.">
+                >
+                ["at0333"] = <
+                    text = <"High fertility">
+                    description = <"High fertility.">
+                >
+                ["at0334"] = <
+                    text = <"Peak fertility">
+                    description = <"Peak fertility.">
+                >
+                ["at0335"] = <
+                    text = <"Unknown">
+                    description = <"Fertility unknown.">
+                >
+                ["at0340"] = <
+                    text = <"Pre-ovulation">
+                    description = <"Before ovulation.">
+                >
+                ["at0341"] = <
+                    text = <"Ovulation imminent">
+                    description = <"Ovulation expected soon.">
+                >
+                ["at0342"] = <
+                    text = <"Ovulation likely today">
+                    description = <"Ovulation likely occurring today.">
+                >
+                ["at0343"] = <
+                    text = <"Ovulation confirmed">
+                    description = <"Ovulation confirmed by temperature/test.">
+                >
+                ["at0344"] = <
+                    text = <"Post-ovulation">
+                    description = <"After ovulation.">
+                >
+                ["at0345"] = <
+                    text = <"Uncertain">
+                    description = <"Ovulation status uncertain.">
+                >
+                ["at0350"] = <
+                    text = <"None">
+                    description = <"No ovulation pain.">
+                >
+                ["at0351"] = <
+                    text = <"Mild">
+                    description = <"Mild pain.">
+                >
+                ["at0352"] = <
+                    text = <"Moderate">
+                    description = <"Moderate pain.">
+                >
+                ["at0353"] = <
+                    text = <"Strong">
+                    description = <"Strong pain.">
+                >
+                ["at0360"] = <
+                    text = <"Left">
+                    description = <"Left side.">
+                >
+                ["at0361"] = <
+                    text = <"Right">
+                    description = <"Right side.">
+                >
+                ["at0362"] = <
+                    text = <"Both/central">
+                    description = <"Both sides or central.">
+                >
+                ["at0363"] = <
+                    text = <"Unknown">
+                    description = <"Side unknown.">
+                >
+                ["at0370"] = <
+                    text = <"No">
+                    description = <"No intercourse.">
+                >
+                ["at0371"] = <
+                    text = <"Yes - trying to conceive">
+                    description = <"Intercourse while TTC.">
+                >
+                ["at0372"] = <
+                    text = <"Yes - protected">
+                    description = <"Protected intercourse.">
+                >
+                ["at0373"] = <
+                    text = <"Prefer not to say">
+                    description = <"Prefer not to disclose.">
+                >
+                ["at0380"] = <
+                    text = <"Natural Cycles">
+                    description = <"Natural Cycles app.">
+                >
+                ["at0381"] = <
+                    text = <"Tempdrop">
+                    description = <"Tempdrop wearable.">
+                >
+                ["at0382"] = <
+                    text = <"Ava bracelet">
+                    description = <"Ava fertility bracelet.">
+                >
+                ["at0383"] = <
+                    text = <"Mira">
+                    description = <"Mira fertility analyzer.">
+                >
+                ["at0384"] = <
+                    text = <"Clearblue Connected">
+                    description = <"Clearblue Connected system.">
+                >
+                ["at0385"] = <
+                    text = <"Kindara">
+                    description = <"Kindara app.">
+                >
+                ["at0386"] = <
+                    text = <"Fertility Friend">
+                    description = <"Fertility Friend app.">
+                >
+                ["at0387"] = <
+                    text = <"Kegg">
+                    description = <"Kegg cervical mucus tracker.">
+                >
+                ["at0388"] = <
+                    text = <"Read Your Body">
+                    description = <"Read Your Body app.">
+                >
+                ["at0389"] = <
+                    text = <"Manual tracking">
+                    description = <"Manual paper/chart tracking.">
+                >
+                ["at0390"] = <
+                    text = <"Other">
+                    description = <"Other source.">
+                >
+                ["at0400"] = <
+                    text = <"Oral thermometer">
+                    description = <"Standard oral BBT thermometer.">
+                >
+                ["at0401"] = <
+                    text = <"Tempdrop wearable">
+                    description = <"Tempdrop armband.">
+                >
+                ["at0402"] = <
+                    text = <"Ava bracelet">
+                    description = <"Ava wrist sensor.">
+                >
+                ["at0403"] = <
+                    text = <"Oura ring">
+                    description = <"Oura ring temperature.">
+                >
+                ["at0404"] = <
+                    text = <"Other wearable">
+                    description = <"Other wearable temperature sensor.">
+                >
+                ["at0405"] = <
+                    text = <"Other">
+                    description = <"Other device.">
+                >
+                ["at0410"] = <
+                    text = <"Trying to conceive">
+                    description = <"Actively trying to conceive.">
+                >
+                ["at0411"] = <
+                    text = <"Avoiding pregnancy">
+                    description = <"Using FAM to avoid pregnancy.">
+                >
+                ["at0412"] = <
+                    text = <"Cycle awareness only">
+                    description = <"Just tracking for awareness.">
+                >
+                ["at0413"] = <
+                    text = <"Other">
+                    description = <"Other goal.">
+                >
+            >
+        >
+    >
+
+    term_binding = <
+        ["LOINC"] = <
+            items = <
+                ["at0011"] = <[LOINC::8310-5]>
+                ["at0032"] = <[LOINC::10501-5]>
+            >
+        >
+    >

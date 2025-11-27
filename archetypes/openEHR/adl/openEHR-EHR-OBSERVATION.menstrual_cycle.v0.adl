@@ -1,0 +1,1295 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.menstrual_cycle.v0
+
+concept
+    [at0000]    -- Menstrual Cycle
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"ricardo.santos@med.up.pt">
+        ["date"] = <"2025-11-27">
+    >
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record menstrual cycle data from consumer health applications and wearable devices, supporting reproductive health tracking, fertility awareness, and lifestyle medicine interventions for hormonal health optimization.">
+            use = <"Use to record menstrual cycle data from consumer apps and devices including:
+
+Cycle tracking:
+- Period start and end dates
+- Cycle length and regularity
+- Period duration
+- Flow intensity by day
+- Spotting between periods
+
+Symptoms tracking:
+- Physical symptoms (cramps, bloating, headache, breast tenderness)
+- Emotional symptoms (mood changes, anxiety, irritability)
+- Energy levels
+- Sleep quality changes
+- Skin changes (acne)
+- Digestive symptoms
+
+Cycle phases:
+- Menstrual phase
+- Follicular phase
+- Ovulation window (predicted)
+- Luteal phase
+- PMS/PMDD symptoms
+
+Predictions and insights:
+- Next period prediction
+- Fertile window prediction
+- Cycle pattern analysis
+- Irregularity alerts
+
+Designed for integration with:
+- Apple Health Cycle Tracking
+- Clue
+- Flo
+- Natural Cycles
+- Ovia
+- Glow
+- Fitbit Female Health
+- Garmin menstrual tracking
+- Samsung Health cycles
+
+This archetype captures self-reported menstrual data from consumer applications. For clinical gynecological assessment or menstrual disorder diagnosis, use appropriate clinical archetypes.">
+            misuse = <"Not to be used for:
+- Clinical gynecological examination findings
+- Diagnosis of menstrual disorders (amenorrhea, dysmenorrhea, menorrhagia)
+- Endometriosis or PCOS clinical documentation
+- Hormone therapy monitoring requiring clinical oversight
+- Menopausal hormone therapy documentation
+- Clinical fertility treatment protocols">
+            keywords = <"menstrual", "period", "cycle", "menstruation", "ovulation", "fertility", "PMS", "reproductive health", "women's health", "cycle tracking", "Clue", "Flo", "lifestyle medicine", "hormonal health">
+            copyright = <"© openEHR Foundation, HEADS#2 PhD Project FMUP">
+        >
+    >
+    lifecycle_state = <"in_development">
+    other_contributors = <"HEADS#2 PhD Project, FMUP", "openEHR Community">
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"openEHR Foundation">
+        ["references"] = <"FIGO recommendations on terminologies and definitions for normal and abnormal uterine bleeding. Int J Gynaecol Obstet. 2011.
+Bull JR, et al. Real-world menstrual cycle characteristics of more than 600,000 menstrual cycles. NPJ Digit Med. 2019.
+Apple HealthKit Cycle Tracking Documentation.
+Clue Period & Cycle Tracker Research Publications.
+Natural Cycles Clinical Documentation.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardo.santos@med.up.pt">
+        ["original_namespace"] = <"org.openehr">
+        ["original_publisher"] = <"openEHR Foundation">
+        ["custodian_namespace"] = <"org.openehr">
+        ["MD5-CAM-1.0.1"] = <"generated">
+        ["build_uid"] = <"e4f5a6b7-8c9d-0e1f-2a3b-4c5d6e7f8a9b">
+        ["revision"] = <"0.0.1-alpha">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Menstrual Cycle
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Current cycle
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Cycle day
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|1..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Current phase
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- Menstrual
+                                                            at0201,    -- Follicular
+                                                            at0202,    -- Ovulation
+                                                            at0203,    -- Luteal
+                                                            at0204]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Period active
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Period start date
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Period end date
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Flow details
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Flow intensity
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0210,    -- Spotting
+                                                            at0211,    -- Light
+                                                            at0212,    -- Medium
+                                                            at0213,    -- Heavy
+                                                            at0214]    -- Very heavy
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Flow score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Clots present
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Flow color
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0220,    -- Bright red
+                                                            at0221,    -- Dark red
+                                                            at0222,    -- Brown
+                                                            at0223,    -- Pink
+                                                            at0224]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Products used
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0230,    -- Pads
+                                                            at0231,    -- Tampons
+                                                            at0232,    -- Menstrual cup
+                                                            at0233,    -- Period underwear
+                                                            at0234,    -- Combination
+                                                            at0235]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0026] occurrences matches {0..1} matches {    -- Products changed
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..20|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Physical symptoms
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Cramps
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- None
+                                                            at0241,    -- Mild
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- Severe
+                                                            at0244]    -- Debilitating
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Cramp location
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- Lower abdomen
+                                                            at0251,    -- Lower back
+                                                            at0252,    -- Both
+                                                            at0253]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Headache
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- None
+                                                            at0241,    -- Mild
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- Severe
+                                                            at0244]    -- Debilitating
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Bloating
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- None
+                                                            at0241,    -- Mild
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- Severe
+                                                            at0244]    -- Debilitating
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {    -- Breast tenderness
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- None
+                                                            at0241,    -- Mild
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- Severe
+                                                            at0244]    -- Debilitating
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0036] occurrences matches {0..1} matches {    -- Acne
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- None
+                                                            at0241,    -- Mild
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- Severe
+                                                            at0244]    -- Debilitating
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0037] occurrences matches {0..1} matches {    -- Fatigue
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- None
+                                                            at0241,    -- Mild
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- Severe
+                                                            at0244]    -- Debilitating
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0038] occurrences matches {0..1} matches {    -- Nausea
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0039] occurrences matches {0..1} matches {    -- Digestive changes
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0260,    -- None
+                                                            at0261,    -- Constipation
+                                                            at0262,    -- Diarrhea
+                                                            at0263]    -- Both
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Emotional symptoms
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Mood
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0270,    -- Happy
+                                                            at0271,    -- Calm
+                                                            at0272,    -- Neutral
+                                                            at0273,    -- Irritable
+                                                            at0274,    -- Sad
+                                                            at0275,    -- Anxious
+                                                            at0276,    -- Emotional/tearful
+                                                            at0277]    -- Mood swings
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Energy level
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0280,    -- Very high
+                                                            at0281,    -- High
+                                                            at0282,    -- Normal
+                                                            at0283,    -- Low
+                                                            at0284]    -- Very low
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Libido
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0280,    -- Very high
+                                                            at0281,    -- High
+                                                            at0282,    -- Normal
+                                                            at0283,    -- Low
+                                                            at0284]    -- Very low
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- Cravings
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0290,    -- None
+                                                            at0291,    -- Sweet
+                                                            at0292,    -- Salty
+                                                            at0293,    -- Carbs
+                                                            at0294,    -- Chocolate
+                                                            at0295]    -- Mixed
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Sleep quality
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0300,    -- Excellent
+                                                            at0301,    -- Good
+                                                            at0302,    -- Fair
+                                                            at0303,    -- Poor
+                                                            at0304]    -- Very poor
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Cycle statistics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Average cycle length
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PD/|P1D..P100D|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Last cycle length
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PD/|P1D..P100D|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Average period length
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PD/|P1D..P20D|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Cycle regularity
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0310,    -- Regular (±2 days)
+                                                            at0311,    -- Slightly irregular (±4 days)
+                                                            at0312,    -- Irregular (±7 days)
+                                                            at0313,    -- Very irregular (>7 days)
+                                                            at0314]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Cycles tracked
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..500|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Predictions
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Next period start
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Days until next period
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Fertile window start
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- Fertile window end
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {    -- Predicted ovulation
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0066] occurrences matches {0..1} matches {    -- In fertile window
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0067] occurrences matches {0..1} matches {    -- Prediction confidence
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0070] occurrences matches {0..1} matches {    -- Sexual activity
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0320,    -- Protected
+                                                    at0321,    -- Unprotected
+                                                    at0322,    -- Withdrawal
+                                                    at0323,    -- None
+                                                    at0324]    -- Prefer not to say
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0071] occurrences matches {0..1} matches {    -- Contraception used
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0330,    -- None
+                                                    at0331,    -- Hormonal pill
+                                                    at0332,    -- IUD (hormonal)
+                                                    at0333,    -- IUD (copper)
+                                                    at0334,    -- Condom
+                                                    at0335,    -- Implant
+                                                    at0336,    -- Patch
+                                                    at0337,    -- Ring
+                                                    at0338,    -- FAM/NFP
+                                                    at0339]    -- Other
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0072] occurrences matches {0..1} matches {    -- Medication taken
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0340,    -- None
+                                                    at0341,    -- Pain reliever
+                                                    at0342,    -- Hormonal medication
+                                                    at0343,    -- Supplements
+                                                    at0344]    -- Multiple
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0073] occurrences matches {0..1} matches {    -- Notes
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0074] occurrences matches {0..*} matches {    -- Additional details
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0080] occurrences matches {0..*} matches {    -- Cycle summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0090] matches {    -- Tree
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0091] occurrences matches {0..1} matches {    -- Data source
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0350,    -- Apple Health Cycle Tracking
+                                    at0351,    -- Clue
+                                    at0352,    -- Flo
+                                    at0353,    -- Natural Cycles
+                                    at0354,    -- Ovia
+                                    at0355,    -- Glow
+                                    at0356,    -- Fitbit
+                                    at0357,    -- Garmin
+                                    at0358,    -- Samsung Health
+                                    at0359,    -- Period Tracker
+                                    at0360,    -- Manual entry
+                                    at0361]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0092] occurrences matches {0..1} matches {    -- Tracking method
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0370,    -- Calendar only
+                                    at0371,    -- Symptom-based
+                                    at0372,    -- Temperature-based (BBT)
+                                    at0373,    -- Hormone testing
+                                    at0374,    -- Wearable sensor data
+                                    at0375,    -- Algorithm/AI prediction
+                                    at0376]    -- Combination
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0093] occurrences matches {0..1} matches {    -- Algorithm version
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    allow_archetype CLUSTER[at0094] occurrences matches {0..*} matches {    -- Device details
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0095] occurrences matches {0..*} matches {    -- Data quality
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0096] occurrences matches {0..*} matches {    -- Extension
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Menstrual Cycle">
+                    description = <"Menstrual cycle data from consumer health applications and wearable devices.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0010"] = <
+                    text = <"Current cycle">
+                    description = <"Current cycle status and phase.">
+                >
+                ["at0011"] = <
+                    text = <"Cycle day">
+                    description = <"Current day of the menstrual cycle (day 1 = first day of period).">
+                >
+                ["at0012"] = <
+                    text = <"Current phase">
+                    description = <"Current phase of the menstrual cycle.">
+                >
+                ["at0013"] = <
+                    text = <"Period active">
+                    description = <"Whether menstruation is currently occurring.">
+                >
+                ["at0014"] = <
+                    text = <"Period start date">
+                    description = <"Date when current/last period started.">
+                >
+                ["at0015"] = <
+                    text = <"Period end date">
+                    description = <"Date when current/last period ended.">
+                >
+                ["at0020"] = <
+                    text = <"Flow details">
+                    description = <"Details about menstrual flow.">
+                >
+                ["at0021"] = <
+                    text = <"Flow intensity">
+                    description = <"Intensity of menstrual flow.">
+                >
+                ["at0022"] = <
+                    text = <"Flow score">
+                    description = <"Numeric flow score (0-10).">
+                >
+                ["at0023"] = <
+                    text = <"Clots present">
+                    description = <"Whether blood clots are present.">
+                >
+                ["at0024"] = <
+                    text = <"Flow color">
+                    description = <"Color of menstrual flow.">
+                >
+                ["at0025"] = <
+                    text = <"Products used">
+                    description = <"Menstrual products being used.">
+                >
+                ["at0026"] = <
+                    text = <"Products changed">
+                    description = <"Number of products changed today.">
+                >
+                ["at0030"] = <
+                    text = <"Physical symptoms">
+                    description = <"Physical symptoms experienced.">
+                >
+                ["at0031"] = <
+                    text = <"Cramps">
+                    description = <"Severity of menstrual cramps.">
+                >
+                ["at0032"] = <
+                    text = <"Cramp location">
+                    description = <"Location of cramps.">
+                >
+                ["at0033"] = <
+                    text = <"Headache">
+                    description = <"Severity of headache.">
+                >
+                ["at0034"] = <
+                    text = <"Bloating">
+                    description = <"Severity of bloating.">
+                >
+                ["at0035"] = <
+                    text = <"Breast tenderness">
+                    description = <"Severity of breast tenderness.">
+                >
+                ["at0036"] = <
+                    text = <"Acne">
+                    description = <"Severity of acne.">
+                >
+                ["at0037"] = <
+                    text = <"Fatigue">
+                    description = <"Severity of fatigue.">
+                >
+                ["at0038"] = <
+                    text = <"Nausea">
+                    description = <"Whether nausea is present.">
+                >
+                ["at0039"] = <
+                    text = <"Digestive changes">
+                    description = <"Changes in digestion.">
+                >
+                ["at0040"] = <
+                    text = <"Emotional symptoms">
+                    description = <"Emotional and mood symptoms.">
+                >
+                ["at0041"] = <
+                    text = <"Mood">
+                    description = <"Current mood state.">
+                >
+                ["at0042"] = <
+                    text = <"Energy level">
+                    description = <"Current energy level.">
+                >
+                ["at0043"] = <
+                    text = <"Libido">
+                    description = <"Current libido level.">
+                >
+                ["at0044"] = <
+                    text = <"Cravings">
+                    description = <"Food cravings experienced.">
+                >
+                ["at0045"] = <
+                    text = <"Sleep quality">
+                    description = <"Sleep quality rating.">
+                >
+                ["at0050"] = <
+                    text = <"Cycle statistics">
+                    description = <"Statistical information about cycles.">
+                >
+                ["at0051"] = <
+                    text = <"Average cycle length">
+                    description = <"Average length of menstrual cycle.">
+                >
+                ["at0052"] = <
+                    text = <"Last cycle length">
+                    description = <"Length of most recent complete cycle.">
+                >
+                ["at0053"] = <
+                    text = <"Average period length">
+                    description = <"Average duration of menstrual period.">
+                >
+                ["at0054"] = <
+                    text = <"Cycle regularity">
+                    description = <"Regularity of menstrual cycles.">
+                >
+                ["at0055"] = <
+                    text = <"Cycles tracked">
+                    description = <"Total number of cycles tracked.">
+                >
+                ["at0060"] = <
+                    text = <"Predictions">
+                    description = <"Predictions for cycle events.">
+                >
+                ["at0061"] = <
+                    text = <"Next period start">
+                    description = <"Predicted start date of next period.">
+                >
+                ["at0062"] = <
+                    text = <"Days until next period">
+                    description = <"Days until next predicted period.">
+                >
+                ["at0063"] = <
+                    text = <"Fertile window start">
+                    description = <"Predicted start of fertile window.">
+                >
+                ["at0064"] = <
+                    text = <"Fertile window end">
+                    description = <"Predicted end of fertile window.">
+                >
+                ["at0065"] = <
+                    text = <"Predicted ovulation">
+                    description = <"Predicted ovulation date.">
+                >
+                ["at0066"] = <
+                    text = <"In fertile window">
+                    description = <"Whether currently in fertile window.">
+                >
+                ["at0067"] = <
+                    text = <"Prediction confidence">
+                    description = <"Confidence level of predictions.">
+                >
+                ["at0070"] = <
+                    text = <"Sexual activity">
+                    description = <"Sexual activity and protection used.">
+                >
+                ["at0071"] = <
+                    text = <"Contraception used">
+                    description = <"Current contraception method.">
+                >
+                ["at0072"] = <
+                    text = <"Medication taken">
+                    description = <"Cycle-related medication taken.">
+                >
+                ["at0073"] = <
+                    text = <"Notes">
+                    description = <"Additional notes.">
+                >
+                ["at0074"] = <
+                    text = <"Additional details">
+                    description = <"Additional structured details.">
+                >
+                ["at0080"] = <
+                    text = <"Cycle summary">
+                    description = <"Summary for a complete cycle.">
+                >
+                ["at0090"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0091"] = <
+                    text = <"Data source">
+                    description = <"Application used for tracking.">
+                >
+                ["at0092"] = <
+                    text = <"Tracking method">
+                    description = <"Method used for cycle tracking.">
+                >
+                ["at0093"] = <
+                    text = <"Algorithm version">
+                    description = <"Version of prediction algorithm.">
+                >
+                ["at0094"] = <
+                    text = <"Device details">
+                    description = <"Details about tracking device.">
+                >
+                ["at0095"] = <
+                    text = <"Data quality">
+                    description = <"Quality indicators.">
+                >
+                ["at0096"] = <
+                    text = <"Extension">
+                    description = <"Additional information for extension.">
+                >
+                ["at0200"] = <
+                    text = <"Menstrual">
+                    description = <"Menstrual phase (period).">
+                >
+                ["at0201"] = <
+                    text = <"Follicular">
+                    description = <"Follicular phase.">
+                >
+                ["at0202"] = <
+                    text = <"Ovulation">
+                    description = <"Ovulation phase.">
+                >
+                ["at0203"] = <
+                    text = <"Luteal">
+                    description = <"Luteal phase.">
+                >
+                ["at0204"] = <
+                    text = <"Unknown">
+                    description = <"Phase unknown.">
+                >
+                ["at0210"] = <
+                    text = <"Spotting">
+                    description = <"Very light spotting.">
+                >
+                ["at0211"] = <
+                    text = <"Light">
+                    description = <"Light flow.">
+                >
+                ["at0212"] = <
+                    text = <"Medium">
+                    description = <"Medium flow.">
+                >
+                ["at0213"] = <
+                    text = <"Heavy">
+                    description = <"Heavy flow.">
+                >
+                ["at0214"] = <
+                    text = <"Very heavy">
+                    description = <"Very heavy flow.">
+                >
+                ["at0220"] = <
+                    text = <"Bright red">
+                    description = <"Bright red color.">
+                >
+                ["at0221"] = <
+                    text = <"Dark red">
+                    description = <"Dark red color.">
+                >
+                ["at0222"] = <
+                    text = <"Brown">
+                    description = <"Brown color.">
+                >
+                ["at0223"] = <
+                    text = <"Pink">
+                    description = <"Pink color.">
+                >
+                ["at0224"] = <
+                    text = <"Other">
+                    description = <"Other color.">
+                >
+                ["at0230"] = <
+                    text = <"Pads">
+                    description = <"Sanitary pads.">
+                >
+                ["at0231"] = <
+                    text = <"Tampons">
+                    description = <"Tampons.">
+                >
+                ["at0232"] = <
+                    text = <"Menstrual cup">
+                    description = <"Menstrual cup.">
+                >
+                ["at0233"] = <
+                    text = <"Period underwear">
+                    description = <"Period underwear.">
+                >
+                ["at0234"] = <
+                    text = <"Combination">
+                    description = <"Combination of products.">
+                >
+                ["at0235"] = <
+                    text = <"Other">
+                    description = <"Other products.">
+                >
+                ["at0240"] = <
+                    text = <"None">
+                    description = <"No symptom.">
+                >
+                ["at0241"] = <
+                    text = <"Mild">
+                    description = <"Mild severity.">
+                >
+                ["at0242"] = <
+                    text = <"Moderate">
+                    description = <"Moderate severity.">
+                >
+                ["at0243"] = <
+                    text = <"Severe">
+                    description = <"Severe.">
+                >
+                ["at0244"] = <
+                    text = <"Debilitating">
+                    description = <"Debilitating severity.">
+                >
+                ["at0250"] = <
+                    text = <"Lower abdomen">
+                    description = <"Lower abdominal area.">
+                >
+                ["at0251"] = <
+                    text = <"Lower back">
+                    description = <"Lower back area.">
+                >
+                ["at0252"] = <
+                    text = <"Both">
+                    description = <"Both locations.">
+                >
+                ["at0253"] = <
+                    text = <"Other">
+                    description = <"Other location.">
+                >
+                ["at0260"] = <
+                    text = <"None">
+                    description = <"No digestive changes.">
+                >
+                ["at0261"] = <
+                    text = <"Constipation">
+                    description = <"Constipation.">
+                >
+                ["at0262"] = <
+                    text = <"Diarrhea">
+                    description = <"Diarrhea.">
+                >
+                ["at0263"] = <
+                    text = <"Both">
+                    description = <"Both symptoms.">
+                >
+                ["at0270"] = <
+                    text = <"Happy">
+                    description = <"Happy mood.">
+                >
+                ["at0271"] = <
+                    text = <"Calm">
+                    description = <"Calm mood.">
+                >
+                ["at0272"] = <
+                    text = <"Neutral">
+                    description = <"Neutral mood.">
+                >
+                ["at0273"] = <
+                    text = <"Irritable">
+                    description = <"Irritable mood.">
+                >
+                ["at0274"] = <
+                    text = <"Sad">
+                    description = <"Sad mood.">
+                >
+                ["at0275"] = <
+                    text = <"Anxious">
+                    description = <"Anxious mood.">
+                >
+                ["at0276"] = <
+                    text = <"Emotional/tearful">
+                    description = <"Emotional or tearful.">
+                >
+                ["at0277"] = <
+                    text = <"Mood swings">
+                    description = <"Mood swings.">
+                >
+                ["at0280"] = <
+                    text = <"Very high">
+                    description = <"Very high level.">
+                >
+                ["at0281"] = <
+                    text = <"High">
+                    description = <"High level.">
+                >
+                ["at0282"] = <
+                    text = <"Normal">
+                    description = <"Normal level.">
+                >
+                ["at0283"] = <
+                    text = <"Low">
+                    description = <"Low level.">
+                >
+                ["at0284"] = <
+                    text = <"Very low">
+                    description = <"Very low level.">
+                >
+                ["at0290"] = <
+                    text = <"None">
+                    description = <"No cravings.">
+                >
+                ["at0291"] = <
+                    text = <"Sweet">
+                    description = <"Sweet cravings.">
+                >
+                ["at0292"] = <
+                    text = <"Salty">
+                    description = <"Salty cravings.">
+                >
+                ["at0293"] = <
+                    text = <"Carbs">
+                    description = <"Carbohydrate cravings.">
+                >
+                ["at0294"] = <
+                    text = <"Chocolate">
+                    description = <"Chocolate cravings.">
+                >
+                ["at0295"] = <
+                    text = <"Mixed">
+                    description = <"Mixed cravings.">
+                >
+                ["at0300"] = <
+                    text = <"Excellent">
+                    description = <"Excellent sleep.">
+                >
+                ["at0301"] = <
+                    text = <"Good">
+                    description = <"Good sleep.">
+                >
+                ["at0302"] = <
+                    text = <"Fair">
+                    description = <"Fair sleep.">
+                >
+                ["at0303"] = <
+                    text = <"Poor">
+                    description = <"Poor sleep.">
+                >
+                ["at0304"] = <
+                    text = <"Very poor">
+                    description = <"Very poor sleep.">
+                >
+                ["at0310"] = <
+                    text = <"Regular (±2 days)">
+                    description = <"Regular cycles.">
+                >
+                ["at0311"] = <
+                    text = <"Slightly irregular (±4 days)">
+                    description = <"Slightly irregular.">
+                >
+                ["at0312"] = <
+                    text = <"Irregular (±7 days)">
+                    description = <"Irregular cycles.">
+                >
+                ["at0313"] = <
+                    text = <"Very irregular (>7 days)">
+                    description = <"Very irregular.">
+                >
+                ["at0314"] = <
+                    text = <"Unknown">
+                    description = <"Regularity unknown.">
+                >
+                ["at0320"] = <
+                    text = <"Protected">
+                    description = <"Protected intercourse.">
+                >
+                ["at0321"] = <
+                    text = <"Unprotected">
+                    description = <"Unprotected intercourse.">
+                >
+                ["at0322"] = <
+                    text = <"Withdrawal">
+                    description = <"Withdrawal method.">
+                >
+                ["at0323"] = <
+                    text = <"None">
+                    description = <"No sexual activity.">
+                >
+                ["at0324"] = <
+                    text = <"Prefer not to say">
+                    description = <"Prefer not to disclose.">
+                >
+                ["at0330"] = <
+                    text = <"None">
+                    description = <"No contraception.">
+                >
+                ["at0331"] = <
+                    text = <"Hormonal pill">
+                    description = <"Hormonal birth control pill.">
+                >
+                ["at0332"] = <
+                    text = <"IUD (hormonal)">
+                    description = <"Hormonal IUD.">
+                >
+                ["at0333"] = <
+                    text = <"IUD (copper)">
+                    description = <"Copper IUD.">
+                >
+                ["at0334"] = <
+                    text = <"Condom">
+                    description = <"Condom.">
+                >
+                ["at0335"] = <
+                    text = <"Implant">
+                    description = <"Contraceptive implant.">
+                >
+                ["at0336"] = <
+                    text = <"Patch">
+                    description = <"Contraceptive patch.">
+                >
+                ["at0337"] = <
+                    text = <"Ring">
+                    description = <"Vaginal ring.">
+                >
+                ["at0338"] = <
+                    text = <"FAM/NFP">
+                    description = <"Fertility awareness method.">
+                >
+                ["at0339"] = <
+                    text = <"Other">
+                    description = <"Other method.">
+                >
+                ["at0340"] = <
+                    text = <"None">
+                    description = <"No medication.">
+                >
+                ["at0341"] = <
+                    text = <"Pain reliever">
+                    description = <"Pain relief medication.">
+                >
+                ["at0342"] = <
+                    text = <"Hormonal medication">
+                    description = <"Hormonal medication.">
+                >
+                ["at0343"] = <
+                    text = <"Supplements">
+                    description = <"Supplements.">
+                >
+                ["at0344"] = <
+                    text = <"Multiple">
+                    description = <"Multiple medications.">
+                >
+                ["at0350"] = <
+                    text = <"Apple Health Cycle Tracking">
+                    description = <"Apple Health Cycle Tracking.">
+                >
+                ["at0351"] = <
+                    text = <"Clue">
+                    description = <"Clue app.">
+                >
+                ["at0352"] = <
+                    text = <"Flo">
+                    description = <"Flo app.">
+                >
+                ["at0353"] = <
+                    text = <"Natural Cycles">
+                    description = <"Natural Cycles app.">
+                >
+                ["at0354"] = <
+                    text = <"Ovia">
+                    description = <"Ovia app.">
+                >
+                ["at0355"] = <
+                    text = <"Glow">
+                    description = <"Glow app.">
+                >
+                ["at0356"] = <
+                    text = <"Fitbit">
+                    description = <"Fitbit.">
+                >
+                ["at0357"] = <
+                    text = <"Garmin">
+                    description = <"Garmin.">
+                >
+                ["at0358"] = <
+                    text = <"Samsung Health">
+                    description = <"Samsung Health.">
+                >
+                ["at0359"] = <
+                    text = <"Period Tracker">
+                    description = <"Period Tracker app.">
+                >
+                ["at0360"] = <
+                    text = <"Manual entry">
+                    description = <"Manual tracking.">
+                >
+                ["at0361"] = <
+                    text = <"Other">
+                    description = <"Other app.">
+                >
+                ["at0370"] = <
+                    text = <"Calendar only">
+                    description = <"Calendar-based tracking.">
+                >
+                ["at0371"] = <
+                    text = <"Symptom-based">
+                    description = <"Symptom-based tracking.">
+                >
+                ["at0372"] = <
+                    text = <"Temperature-based (BBT)">
+                    description = <"Basal body temperature tracking.">
+                >
+                ["at0373"] = <
+                    text = <"Hormone testing">
+                    description = <"Hormone testing (LH strips, etc.).">
+                >
+                ["at0374"] = <
+                    text = <"Wearable sensor data">
+                    description = <"Wearable sensor-based.">
+                >
+                ["at0375"] = <
+                    text = <"Algorithm/AI prediction">
+                    description = <"AI-based predictions.">
+                >
+                ["at0376"] = <
+                    text = <"Combination">
+                    description = <"Combination of methods.">
+                >
+            >
+        >
+    >
+
+    term_binding = <
+        ["LOINC"] = <
+            items = <
+                ["at0014"] = <[LOINC::8665-2]>
+                ["at0051"] = <[LOINC::8678-5]>
+            >
+        >
+    >

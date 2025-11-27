@@ -1,0 +1,1127 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.pregnancy_tracking.v0
+
+concept
+    [at0000]    -- Pregnancy Tracking
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"ricardo.santos@med.up.pt">
+        ["date"] = <"2025-11-27">
+    >
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record pregnancy-related tracking data from consumer health applications, supporting self-monitoring during pregnancy and integration with prenatal care within lifestyle medicine frameworks.">
+            use = <"Use to record pregnancy tracking data from consumer apps including:
+
+Pregnancy progress:
+- Gestational age (weeks and days)
+- Trimester
+- Due date (EDD)
+- Days until due date
+
+Self-monitoring:
+- Weight tracking
+- Blood pressure (if home monitoring)
+- Kick counts
+- Contraction timing
+
+Symptoms tracking:
+- Nausea/morning sickness
+- Fatigue
+- Mood changes
+- Sleep quality
+- Physical discomfort
+
+Baby development:
+- Size comparisons
+- Milestone tracking
+- Movement patterns
+
+Wellness tracking:
+- Prenatal vitamins
+- Exercise
+- Nutrition
+- Hydration
+
+Designed for integration with:
+- Ovia Pregnancy
+- The Bump
+- What to Expect
+- BabyCenter
+- Pregnancy+
+- Glow Nurture
+- Apple Health pregnancy data
+- Fitbit pregnancy mode
+
+This archetype captures self-reported pregnancy tracking data from consumer applications. For clinical prenatal care documentation, obstetric assessments, or high-risk pregnancy monitoring, use appropriate clinical archetypes.">
+            misuse = <"Not to be used for:
+- Clinical prenatal care documentation
+- Obstetric examination findings
+- High-risk pregnancy monitoring
+- Labor and delivery documentation
+- Fetal assessment requiring clinical interpretation
+- Gestational diabetes management protocols
+- Pre-eclampsia monitoring requiring clinical oversight">
+            keywords = <"pregnancy", "prenatal", "gestation", "trimester", "due date", "kick count", "contraction", "morning sickness", "baby", "fetal", "maternal", "wellness", "tracking", "lifestyle medicine">
+            copyright = <"© openEHR Foundation, HEADS#2 PhD Project FMUP">
+        >
+    >
+    lifecycle_state = <"in_development">
+    other_contributors = <"HEADS#2 PhD Project, FMUP", "openEHR Community">
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"openEHR Foundation">
+        ["references"] = <"ACOG Committee Opinion: Physical Activity and Exercise During Pregnancy and the Postpartum Period. 2020.
+WHO recommendations on antenatal care. World Health Organization. 2016.
+Ovia Health Research Publications.
+Apple HealthKit Pregnancy Documentation.
+American Pregnancy Association Guidelines.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardo.santos@med.up.pt">
+        ["original_namespace"] = <"org.openehr">
+        ["original_publisher"] = <"openEHR Foundation">
+        ["custodian_namespace"] = <"org.openehr">
+        ["MD5-CAM-1.0.1"] = <"generated">
+        ["build_uid"] = <"a6b7c8d9-0e1f-2a3b-4c5d-6e7f8a9b0c1d">
+        ["revision"] = <"0.0.1-alpha">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Pregnancy Tracking
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Pregnancy progress
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Gestational weeks
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..45|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Gestational days
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..6|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Trimester
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- First trimester
+                                                            at0201,    -- Second trimester
+                                                            at0202]    -- Third trimester
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Due date
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Days until due date
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|-30..300|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0016] occurrences matches {0..1} matches {    -- LMP date
+                                                value matches {
+                                                    DV_DATE matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0017] occurrences matches {0..1} matches {    -- Pregnancy number
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|1..20|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Weight tracking
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Current weight
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::124]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kg">
+                                                                magnitude = <|30.0..200.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[lb_av]">
+                                                                magnitude = <|65.0..440.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Pre-pregnancy weight
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::124]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kg">
+                                                                magnitude = <|30.0..200.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Weight gain
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::124]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kg">
+                                                                magnitude = <|-10.0..50.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[lb_av]">
+                                                                magnitude = <|-22.0..110.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Weight gain status
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0210,    -- Below recommended
+                                                            at0211,    -- Within recommended
+                                                            at0212]    -- Above recommended
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Kick counts
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Kicks counted
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..200|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Count duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Time to 10 kicks
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Movement pattern
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0220,    -- Normal
+                                                            at0221,    -- More active than usual
+                                                            at0222,    -- Less active than usual
+                                                            at0223]    -- Concerned
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {    -- Start time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Contraction tracking
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Contractions present
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Contraction count
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Average duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTS/|PT0S..PT5M|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- Average interval
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTM/|PT1M..PT60M|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Contraction intensity
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0230,    -- Mild
+                                                            at0231,    -- Moderate
+                                                            at0232,    -- Strong
+                                                            at0233]    -- Very strong
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0046] occurrences matches {0..1} matches {    -- Contraction type
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- Braxton Hicks
+                                                            at0241,    -- Possible labor
+                                                            at0242,    -- Active labor
+                                                            at0243]    -- Uncertain
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Symptoms
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Nausea
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- None
+                                                            at0251,    -- Mild
+                                                            at0252,    -- Moderate
+                                                            at0253,    -- Severe
+                                                            at0254]    -- Very severe
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Vomiting episodes
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..20|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Fatigue
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- None
+                                                            at0251,    -- Mild
+                                                            at0252,    -- Moderate
+                                                            at0253,    -- Severe
+                                                            at0254]    -- Very severe
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Back pain
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- None
+                                                            at0251,    -- Mild
+                                                            at0252,    -- Moderate
+                                                            at0253,    -- Severe
+                                                            at0254]    -- Very severe
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Heartburn
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- None
+                                                            at0251,    -- Mild
+                                                            at0252,    -- Moderate
+                                                            at0253,    -- Severe
+                                                            at0254]    -- Very severe
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0056] occurrences matches {0..1} matches {    -- Swelling
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- None
+                                                            at0251,    -- Mild
+                                                            at0252,    -- Moderate
+                                                            at0253,    -- Severe
+                                                            at0254]    -- Very severe
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0057] occurrences matches {0..1} matches {    -- Headache
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- None
+                                                            at0251,    -- Mild
+                                                            at0252,    -- Moderate
+                                                            at0253,    -- Severe
+                                                            at0254]    -- Very severe
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0058] occurrences matches {0..1} matches {    -- Sleep quality
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0260,    -- Excellent
+                                                            at0261,    -- Good
+                                                            at0262,    -- Fair
+                                                            at0263,    -- Poor
+                                                            at0264]    -- Very poor
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0059] occurrences matches {0..1} matches {    -- Mood
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0270,    -- Great
+                                                            at0271,    -- Good
+                                                            at0272,    -- Okay
+                                                            at0273,    -- Low
+                                                            at0274,    -- Anxious
+                                                            at0275]    -- Mood swings
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Wellness activities
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Prenatal vitamin taken
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Exercise done
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Exercise type
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0280,    -- Walking
+                                                            at0281,    -- Swimming
+                                                            at0282,    -- Prenatal yoga
+                                                            at0283,    -- Strength training
+                                                            at0284,    -- Other
+                                                            at0285]    -- None
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- Exercise duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {    -- Water intake
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::129]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ml">
+                                                                magnitude = <|0.0..10000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[foz_us]">
+                                                                magnitude = <|0.0..340.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0070] occurrences matches {0..1} matches {    -- Baby info
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0071] occurrences matches {0..1} matches {    -- Baby size comparison
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0072] occurrences matches {0..1} matches {    -- Estimated baby length
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"cm">
+                                                                magnitude = <|0.0..60.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[in_i]">
+                                                                magnitude = <|0.0..24.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0073] occurrences matches {0..1} matches {    -- Estimated baby weight
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::124]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"g">
+                                                                magnitude = <|0.0..5000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"kg">
+                                                                magnitude = <|0.0..5.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0074] occurrences matches {0..1} matches {    -- Development milestone
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0080] occurrences matches {0..1} matches {    -- Notes
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0081] occurrences matches {0..1} matches {    -- Photo taken
+                                        value matches {
+                                            DV_BOOLEAN matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0082] occurrences matches {0..*} matches {    -- Additional details
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0090] occurrences matches {0..*} matches {    -- Weekly summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1W}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0100] matches {    -- Tree
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0101] occurrences matches {0..1} matches {    -- Data source
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0290,    -- Ovia Pregnancy
+                                    at0291,    -- The Bump
+                                    at0292,    -- What to Expect
+                                    at0293,    -- BabyCenter
+                                    at0294,    -- Pregnancy+
+                                    at0295,    -- Glow Nurture
+                                    at0296,    -- Apple Health
+                                    at0297,    -- Fitbit
+                                    at0298,    -- Manual tracking
+                                    at0299]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0102] occurrences matches {0..1} matches {    -- Due date calculation method
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0300,    -- LMP (last menstrual period)
+                                    at0301,    -- Ultrasound dating
+                                    at0302,    -- IVF transfer date
+                                    at0303,    -- Ovulation date known
+                                    at0304]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0103] occurrences matches {0..*} matches {    -- Device details
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0104] occurrences matches {0..*} matches {    -- Data quality
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0105] occurrences matches {0..*} matches {    -- Extension
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Pregnancy Tracking">
+                    description = <"Pregnancy-related tracking data from consumer health applications.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0010"] = <
+                    text = <"Pregnancy progress">
+                    description = <"Current pregnancy progress.">
+                >
+                ["at0011"] = <
+                    text = <"Gestational weeks">
+                    description = <"Current gestational age in weeks.">
+                >
+                ["at0012"] = <
+                    text = <"Gestational days">
+                    description = <"Additional days beyond complete weeks.">
+                >
+                ["at0013"] = <
+                    text = <"Trimester">
+                    description = <"Current trimester.">
+                >
+                ["at0014"] = <
+                    text = <"Due date">
+                    description = <"Estimated due date.">
+                >
+                ["at0015"] = <
+                    text = <"Days until due date">
+                    description = <"Days remaining until due date.">
+                >
+                ["at0016"] = <
+                    text = <"LMP date">
+                    description = <"Last menstrual period date.">
+                >
+                ["at0017"] = <
+                    text = <"Pregnancy number">
+                    description = <"Number of pregnancies (gravida).">
+                >
+                ["at0020"] = <
+                    text = <"Weight tracking">
+                    description = <"Weight monitoring during pregnancy.">
+                >
+                ["at0021"] = <
+                    text = <"Current weight">
+                    description = <"Current body weight.">
+                >
+                ["at0022"] = <
+                    text = <"Pre-pregnancy weight">
+                    description = <"Weight before pregnancy.">
+                >
+                ["at0023"] = <
+                    text = <"Weight gain">
+                    description = <"Total weight gain during pregnancy.">
+                >
+                ["at0024"] = <
+                    text = <"Weight gain status">
+                    description = <"Weight gain relative to recommendations.">
+                >
+                ["at0030"] = <
+                    text = <"Kick counts">
+                    description = <"Fetal movement counting.">
+                >
+                ["at0031"] = <
+                    text = <"Kicks counted">
+                    description = <"Number of movements counted.">
+                >
+                ["at0032"] = <
+                    text = <"Count duration">
+                    description = <"Duration of counting session.">
+                >
+                ["at0033"] = <
+                    text = <"Time to 10 kicks">
+                    description = <"Time taken to count 10 movements.">
+                >
+                ["at0034"] = <
+                    text = <"Movement pattern">
+                    description = <"Assessment of movement pattern.">
+                >
+                ["at0035"] = <
+                    text = <"Start time">
+                    description = <"Time kick count started.">
+                >
+                ["at0040"] = <
+                    text = <"Contraction tracking">
+                    description = <"Contraction monitoring.">
+                >
+                ["at0041"] = <
+                    text = <"Contractions present">
+                    description = <"Whether contractions are occurring.">
+                >
+                ["at0042"] = <
+                    text = <"Contraction count">
+                    description = <"Number of contractions.">
+                >
+                ["at0043"] = <
+                    text = <"Average duration">
+                    description = <"Average contraction duration.">
+                >
+                ["at0044"] = <
+                    text = <"Average interval">
+                    description = <"Average time between contractions.">
+                >
+                ["at0045"] = <
+                    text = <"Contraction intensity">
+                    description = <"Intensity of contractions.">
+                >
+                ["at0046"] = <
+                    text = <"Contraction type">
+                    description = <"Type of contractions.">
+                >
+                ["at0050"] = <
+                    text = <"Symptoms">
+                    description = <"Pregnancy symptoms.">
+                >
+                ["at0051"] = <
+                    text = <"Nausea">
+                    description = <"Nausea severity.">
+                >
+                ["at0052"] = <
+                    text = <"Vomiting episodes">
+                    description = <"Number of vomiting episodes.">
+                >
+                ["at0053"] = <
+                    text = <"Fatigue">
+                    description = <"Fatigue severity.">
+                >
+                ["at0054"] = <
+                    text = <"Back pain">
+                    description = <"Back pain severity.">
+                >
+                ["at0055"] = <
+                    text = <"Heartburn">
+                    description = <"Heartburn severity.">
+                >
+                ["at0056"] = <
+                    text = <"Swelling">
+                    description = <"Swelling severity.">
+                >
+                ["at0057"] = <
+                    text = <"Headache">
+                    description = <"Headache severity.">
+                >
+                ["at0058"] = <
+                    text = <"Sleep quality">
+                    description = <"Sleep quality rating.">
+                >
+                ["at0059"] = <
+                    text = <"Mood">
+                    description = <"Current mood.">
+                >
+                ["at0060"] = <
+                    text = <"Wellness activities">
+                    description = <"Health and wellness activities.">
+                >
+                ["at0061"] = <
+                    text = <"Prenatal vitamin taken">
+                    description = <"Whether prenatal vitamin was taken.">
+                >
+                ["at0062"] = <
+                    text = <"Exercise done">
+                    description = <"Whether exercise was done.">
+                >
+                ["at0063"] = <
+                    text = <"Exercise type">
+                    description = <"Type of exercise performed.">
+                >
+                ["at0064"] = <
+                    text = <"Exercise duration">
+                    description = <"Duration of exercise.">
+                >
+                ["at0065"] = <
+                    text = <"Water intake">
+                    description = <"Water consumption.">
+                >
+                ["at0070"] = <
+                    text = <"Baby info">
+                    description = <"Baby development information.">
+                >
+                ["at0071"] = <
+                    text = <"Baby size comparison">
+                    description = <"Fruit/vegetable size comparison.">
+                >
+                ["at0072"] = <
+                    text = <"Estimated baby length">
+                    description = <"Estimated fetal length.">
+                >
+                ["at0073"] = <
+                    text = <"Estimated baby weight">
+                    description = <"Estimated fetal weight.">
+                >
+                ["at0074"] = <
+                    text = <"Development milestone">
+                    description = <"Current development milestone.">
+                >
+                ["at0080"] = <
+                    text = <"Notes">
+                    description = <"Additional notes.">
+                >
+                ["at0081"] = <
+                    text = <"Photo taken">
+                    description = <"Whether bump photo was taken.">
+                >
+                ["at0082"] = <
+                    text = <"Additional details">
+                    description = <"Additional structured details.">
+                >
+                ["at0090"] = <
+                    text = <"Weekly summary">
+                    description = <"Weekly pregnancy summary.">
+                >
+                ["at0100"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0101"] = <
+                    text = <"Data source">
+                    description = <"App used for tracking.">
+                >
+                ["at0102"] = <
+                    text = <"Due date calculation method">
+                    description = <"Method used to calculate due date.">
+                >
+                ["at0103"] = <
+                    text = <"Device details">
+                    description = <"Details about tracking device.">
+                >
+                ["at0104"] = <
+                    text = <"Data quality">
+                    description = <"Quality indicators.">
+                >
+                ["at0105"] = <
+                    text = <"Extension">
+                    description = <"Additional information for extension.">
+                >
+                ["at0200"] = <
+                    text = <"First trimester">
+                    description = <"Weeks 1-12.">
+                >
+                ["at0201"] = <
+                    text = <"Second trimester">
+                    description = <"Weeks 13-26.">
+                >
+                ["at0202"] = <
+                    text = <"Third trimester">
+                    description = <"Weeks 27-40+.">
+                >
+                ["at0210"] = <
+                    text = <"Below recommended">
+                    description = <"Weight gain below recommendations.">
+                >
+                ["at0211"] = <
+                    text = <"Within recommended">
+                    description = <"Weight gain within recommendations.">
+                >
+                ["at0212"] = <
+                    text = <"Above recommended">
+                    description = <"Weight gain above recommendations.">
+                >
+                ["at0220"] = <
+                    text = <"Normal">
+                    description = <"Normal movement pattern.">
+                >
+                ["at0221"] = <
+                    text = <"More active than usual">
+                    description = <"More active than usual.">
+                >
+                ["at0222"] = <
+                    text = <"Less active than usual">
+                    description = <"Less active than usual.">
+                >
+                ["at0223"] = <
+                    text = <"Concerned">
+                    description = <"Concerned about movement.">
+                >
+                ["at0230"] = <
+                    text = <"Mild">
+                    description = <"Mild intensity.">
+                >
+                ["at0231"] = <
+                    text = <"Moderate">
+                    description = <"Moderate intensity.">
+                >
+                ["at0232"] = <
+                    text = <"Strong">
+                    description = <"Strong intensity.">
+                >
+                ["at0233"] = <
+                    text = <"Very strong">
+                    description = <"Very strong intensity.">
+                >
+                ["at0240"] = <
+                    text = <"Braxton Hicks">
+                    description = <"Practice contractions.">
+                >
+                ["at0241"] = <
+                    text = <"Possible labor">
+                    description = <"Possibly early labor.">
+                >
+                ["at0242"] = <
+                    text = <"Active labor">
+                    description = <"Active labor contractions.">
+                >
+                ["at0243"] = <
+                    text = <"Uncertain">
+                    description = <"Type uncertain.">
+                >
+                ["at0250"] = <
+                    text = <"None">
+                    description = <"No symptom.">
+                >
+                ["at0251"] = <
+                    text = <"Mild">
+                    description = <"Mild severity.">
+                >
+                ["at0252"] = <
+                    text = <"Moderate">
+                    description = <"Moderate severity.">
+                >
+                ["at0253"] = <
+                    text = <"Severe">
+                    description = <"Severe.">
+                >
+                ["at0254"] = <
+                    text = <"Very severe">
+                    description = <"Very severe.">
+                >
+                ["at0260"] = <
+                    text = <"Excellent">
+                    description = <"Excellent sleep.">
+                >
+                ["at0261"] = <
+                    text = <"Good">
+                    description = <"Good sleep.">
+                >
+                ["at0262"] = <
+                    text = <"Fair">
+                    description = <"Fair sleep.">
+                >
+                ["at0263"] = <
+                    text = <"Poor">
+                    description = <"Poor sleep.">
+                >
+                ["at0264"] = <
+                    text = <"Very poor">
+                    description = <"Very poor sleep.">
+                >
+                ["at0270"] = <
+                    text = <"Great">
+                    description = <"Great mood.">
+                >
+                ["at0271"] = <
+                    text = <"Good">
+                    description = <"Good mood.">
+                >
+                ["at0272"] = <
+                    text = <"Okay">
+                    description = <"Okay mood.">
+                >
+                ["at0273"] = <
+                    text = <"Low">
+                    description = <"Low mood.">
+                >
+                ["at0274"] = <
+                    text = <"Anxious">
+                    description = <"Anxious.">
+                >
+                ["at0275"] = <
+                    text = <"Mood swings">
+                    description = <"Mood swings.">
+                >
+                ["at0280"] = <
+                    text = <"Walking">
+                    description = <"Walking.">
+                >
+                ["at0281"] = <
+                    text = <"Swimming">
+                    description = <"Swimming.">
+                >
+                ["at0282"] = <
+                    text = <"Prenatal yoga">
+                    description = <"Prenatal yoga.">
+                >
+                ["at0283"] = <
+                    text = <"Strength training">
+                    description = <"Strength training.">
+                >
+                ["at0284"] = <
+                    text = <"Other">
+                    description = <"Other exercise.">
+                >
+                ["at0285"] = <
+                    text = <"None">
+                    description = <"No exercise.">
+                >
+                ["at0290"] = <
+                    text = <"Ovia Pregnancy">
+                    description = <"Ovia Pregnancy app.">
+                >
+                ["at0291"] = <
+                    text = <"The Bump">
+                    description = <"The Bump app.">
+                >
+                ["at0292"] = <
+                    text = <"What to Expect">
+                    description = <"What to Expect app.">
+                >
+                ["at0293"] = <
+                    text = <"BabyCenter">
+                    description = <"BabyCenter app.">
+                >
+                ["at0294"] = <
+                    text = <"Pregnancy+">
+                    description = <"Pregnancy+ app.">
+                >
+                ["at0295"] = <
+                    text = <"Glow Nurture">
+                    description = <"Glow Nurture app.">
+                >
+                ["at0296"] = <
+                    text = <"Apple Health">
+                    description = <"Apple Health.">
+                >
+                ["at0297"] = <
+                    text = <"Fitbit">
+                    description = <"Fitbit.">
+                >
+                ["at0298"] = <
+                    text = <"Manual tracking">
+                    description = <"Manual tracking.">
+                >
+                ["at0299"] = <
+                    text = <"Other">
+                    description = <"Other app.">
+                >
+                ["at0300"] = <
+                    text = <"LMP (last menstrual period)">
+                    description = <"Based on LMP.">
+                >
+                ["at0301"] = <
+                    text = <"Ultrasound dating">
+                    description = <"Based on ultrasound.">
+                >
+                ["at0302"] = <
+                    text = <"IVF transfer date">
+                    description = <"Based on IVF transfer.">
+                >
+                ["at0303"] = <
+                    text = <"Ovulation date known">
+                    description = <"Based on known ovulation.">
+                >
+                ["at0304"] = <
+                    text = <"Other">
+                    description = <"Other method.">
+                >
+            >
+        >
+    >
+
+    term_binding = <
+        ["LOINC"] = <
+            items = <
+                ["at0011"] = <[LOINC::11884-4]>
+                ["at0014"] = <[LOINC::11778-8]>
+                ["at0021"] = <[LOINC::29463-7]>
+            >
+        >
+    >
