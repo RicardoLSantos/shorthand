@@ -1,0 +1,1161 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.balance_assessment.v0
+
+concept
+	[at0000]	-- Balance assessment
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"HEADS Lab - Faculty of Medicine University of Porto">
+		["email"] = <"ricardo.lourenco@medfac.up.pt">
+		["date"] = <"2025-11-27">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record balance and postural stability assessments from wearable devices and self-reported measures for fall risk evaluation and mobility tracking.">
+			use = <"Use to record:
+- Functional balance tests (single leg stance, tandem stance)
+- Timed Up and Go (TUG) test results
+- Postural sway measurements from wearables
+- Balance confidence scales (ABC scale)
+- Static and dynamic balance metrics
+- Romberg test approximations
+- Wearable-guided balance exercises
+- Balance trend tracking over time
+
+This archetype supports integration with:
+- Apple Watch/iPhone (balance exercises, motion sensors)
+- Specialized balance assessment apps
+- Force plate alternatives using smartphone sensors
+- Wii Balance Board compatible apps
+- Physical therapy tracking applications
+- Smart insoles with pressure mapping
+
+Intended for use in:
+- Fall prevention programs
+- Vestibular rehabilitation
+- Geriatric assessment
+- Sports performance training
+- Post-injury rehabilitation
+- Lifestyle medicine balance coaching
+- Research on postural control.">
+			misuse = <"Not to be used for formal clinical balance laboratory testing.
+Not to be used as diagnostic tool for vestibular disorders.
+Not to be used in place of standardized clinical balance scales without validation.
+Consumer device measurements have limitations in accuracy.">
+			copyright = <"HEADS Lab - Faculty of Medicine University of Porto">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International">
+		["custodian_organisation"] = <"openEHR Foundation / HEADS Lab FMUP">
+		["references"] = <"Podsiadlo D, Richardson S. The timed Up & Go: a test of basic functional mobility for frail elderly persons. J Am Geriatr Soc. 1991;39(2):142-8.
+Powell LE, Myers AM. The Activities-specific Balance Confidence (ABC) Scale. J Gerontol A Biol Sci Med Sci. 1995;50A(1):M28-34.
+Mancini M, Horak FB. The relevance of clinical balance assessment tools to differentiate balance deficits. Eur J Phys Rehabil Med. 2010;46(2):239-48.
+Howcroft J, Kofman J, Lemaire ED. Review of fall risk assessment in geriatric populations using inertial sensors. J Neuroeng Rehabil. 2013;10:91.
+Hsieh KL, Roach KL, Wajda DA, Sosnoff JJ. Smartphone technology can measure postural stability and discriminate fall risk in older adults. Gait Posture. 2019;67:160-165.">
+		["original_namespace"] = <"pt.up.med.heads">
+		["original_publisher"] = <"HEADS Lab - FMUP">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+		["build_uid"] = <"h4e5j0l8-6g2i-1h9j-i3e5-7m8l9g0h1i2j">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Balance assessment
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {	-- Single leg stance
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {	-- Duration - left leg
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT120S|}
+													}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Duration - right leg
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT120S|}
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Eyes condition
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0200,	-- Eyes open
+															at0201]	-- Eyes closed
+														}
+													}
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Result category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0210,	-- Good (>30s)
+															at0211,	-- Moderate (10-30s)
+															at0212,	-- Poor (<10s)
+															at0213]	-- Unable to perform
+														}
+													}
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- Support touches
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- Tandem stance
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Duration achieved
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT60S|}
+													}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Target duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT60S|}
+													}
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Front foot
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0220,	-- Left foot forward
+															at0221]	-- Right foot forward
+														}
+													}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Completed successfully
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- Timed Up and Go
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- TUG time
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT120S|}
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- TUG result category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0230,	-- Normal (<10s)
+															at0231,	-- Mild impairment (10-14s)
+															at0232,	-- Moderate impairment (14-20s)
+															at0233]	-- Significant impairment (>20s)
+														}
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Walking aid used
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0240,	-- None
+															at0241,	-- Cane
+															at0242,	-- Walker
+															at0243]	-- Other
+														}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Number of steps
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0030] occurrences matches {0..1} matches {	-- Postural sway
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- Sway area
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::335]>
+														list = <
+															["1"] = <
+																units = <"cm2">
+																magnitude = <|>=0.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..1} matches {	-- Sway velocity
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::338]>
+														list = <
+															["1"] = <
+																units = <"cm/s">
+																magnitude = <|>=0.0|>
+																precision = <|2|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- Anterior-posterior sway
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"cm">
+																magnitude = <|>=0.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- Medial-lateral sway
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"cm">
+																magnitude = <|>=0.0|>
+																precision = <|1|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {	-- Sway category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0250,	-- Normal
+															at0251,	-- Mildly increased
+															at0252,	-- Moderately increased
+															at0253]	-- Severely increased
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0040] occurrences matches {0..1} matches {	-- ABC Scale
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- ABC total score
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- ABC category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- High confidence (>80%)
+															at0261,	-- Moderate confidence (50-80%)
+															at0262]	-- Low confidence (<50%)
+														}
+													}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Fall risk prediction
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0270,	-- Low risk
+															at0271,	-- Moderate risk
+															at0272]	-- High risk
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0050] occurrences matches {0..1} matches {	-- Romberg test
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0051] occurrences matches {0..1} matches {	-- Eyes open duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT60S|}
+													}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {	-- Eyes closed duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTS/|PT0S..PT60S|}
+													}
+												}
+											}
+											ELEMENT[at0053] occurrences matches {0..1} matches {	-- Romberg ratio
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..10.0|}
+														type matches {1}
+													}
+												}
+											}
+											ELEMENT[at0054] occurrences matches {0..1} matches {	-- Result interpretation
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0280,	-- Normal
+															at0281,	-- Abnormal (proprioceptive deficit)
+															at0282]	-- Unable to complete
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0060] occurrences matches {0..1} matches {	-- Dynamic balance
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0061] occurrences matches {0..1} matches {	-- Functional reach
+												value matches {
+													C_DV_QUANTITY <
+														property = <[openehr::122]>
+														list = <
+															["1"] = <
+																units = <"cm">
+																magnitude = <|0.0..100.0|>
+																precision = <|0|>
+															>
+														>
+													>
+												}
+											}
+											ELEMENT[at0062] occurrences matches {0..1} matches {	-- Weight shift accuracy
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {	-- Limits of stability score
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {	-- Turn quality
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0290,	-- Normal (smooth, few steps)
+															at0291,	-- Mildly impaired
+															at0292,	-- Moderately impaired
+															at0293]	-- Severely impaired (multiple steps, unsteady)
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0070] occurrences matches {0..1} matches {	-- Overall assessment
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0071] occurrences matches {0..1} matches {	-- Composite balance score
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0072] occurrences matches {0..1} matches {	-- Balance category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0300,	-- Excellent
+															at0301,	-- Good
+															at0302,	-- Fair
+															at0303,	-- Poor
+															at0304]	-- Very poor
+														}
+													}
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {	-- Fall risk assessment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0310,	-- Low risk
+															at0311,	-- Moderate risk
+															at0312]	-- High risk
+														}
+													}
+												}
+											}
+											ELEMENT[at0074] occurrences matches {0..1} matches {	-- Trend
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0320,	-- Improving
+															at0321,	-- Stable
+															at0322]	-- Declining
+														}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0080] occurrences matches {0..*} matches {	-- Data quality indicator
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+									}
+									allow_archetype CLUSTER[at0081] occurrences matches {0..*} matches {	-- Vendor data provenance
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+									}
+									ELEMENT[at0082] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0090] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0091] occurrences matches {0..1} matches {	-- Footwear
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0330,	-- Barefoot
+													at0331,	-- Flat shoes
+													at0332,	-- Athletic shoes
+													at0333]	-- Other
+												}
+											}
+										}
+									}
+									ELEMENT[at0092] occurrences matches {0..1} matches {	-- Surface type
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0340,	-- Hard floor
+													at0341,	-- Carpet
+													at0342,	-- Foam pad
+													at0343]	-- Other
+												}
+											}
+										}
+									}
+									ELEMENT[at0093] occurrences matches {0..1} matches {	-- Fatigue level
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0350,	-- Rested
+													at0351,	-- Mild fatigue
+													at0352,	-- Moderate fatigue
+													at0353]	-- Significant fatigue
+												}
+											}
+										}
+									}
+									ELEMENT[at0094] occurrences matches {0..1} matches {	-- Medications affecting balance
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0095] occurrences matches {0..*} matches {	-- Physiological context
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v0/}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0100] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0101] occurrences matches {0..1} matches {	-- Assessment method
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0360,	-- Wearable sensors
+									at0361,	-- Smartphone app
+									at0362,	-- Smart insole
+									at0363,	-- Balance board
+									at0364,	-- Clinical assessment
+									at0365]	-- Mixed methods
+								}
+							}
+						}
+					}
+					ELEMENT[at0102] occurrences matches {0..1} matches {	-- Device vendor
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0370,	-- Apple
+									at0371,	-- Garmin
+									at0372,	-- Fitbit
+									at0373,	-- Samsung
+									at0374,	-- Nintendo (Wii)
+									at0375,	-- Specialized balance device
+									at0376]	-- Other
+								}
+							}
+						}
+					}
+					ELEMENT[at0103] occurrences matches {0..1} matches {	-- Supervision
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0380,	-- Self-administered
+									at0381,	-- Caregiver present
+									at0382,	-- Therapist supervised
+									at0383]	-- Research setting
+								}
+							}
+						}
+					}
+					ELEMENT[at0104] occurrences matches {0..1} matches {	-- Safety precautions
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0390,	-- Support available within reach
+									at0391,	-- Spotter present
+									at0392,	-- Safety harness used
+									at0393]	-- None specified
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0105] occurrences matches {0..*} matches {	-- Wearable device
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+					}
+					allow_archetype CLUSTER[at0106] occurrences matches {0..*} matches {	-- Recording context
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v0/}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Balance assessment">
+					description = <"Assessment of balance and postural stability using wearable devices and functional tests.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"Event history.">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"Data tree.">
+				>
+				["at0004"] = <
+					text = <"Single leg stance">
+					description = <"Single leg standing balance test.">
+				>
+				["at0005"] = <
+					text = <"Duration - left leg">
+					description = <"Time balanced on left leg.">
+				>
+				["at0006"] = <
+					text = <"Duration - right leg">
+					description = <"Time balanced on right leg.">
+				>
+				["at0007"] = <
+					text = <"Eyes condition">
+					description = <"Whether eyes were open or closed.">
+				>
+				["at0008"] = <
+					text = <"Result category">
+					description = <"Categorization of single leg stance result.">
+				>
+				["at0009"] = <
+					text = <"Support touches">
+					description = <"Number of times support was touched.">
+				>
+				["at0010"] = <
+					text = <"Tandem stance">
+					description = <"Heel-to-toe standing balance test.">
+				>
+				["at0011"] = <
+					text = <"Duration achieved">
+					description = <"Time maintained in tandem position.">
+				>
+				["at0012"] = <
+					text = <"Target duration">
+					description = <"Target duration for the test.">
+				>
+				["at0013"] = <
+					text = <"Front foot">
+					description = <"Which foot was positioned in front.">
+				>
+				["at0014"] = <
+					text = <"Completed successfully">
+					description = <"Whether test was completed successfully.">
+				>
+				["at0020"] = <
+					text = <"Timed Up and Go">
+					description = <"Timed Up and Go (TUG) test results.">
+				>
+				["at0021"] = <
+					text = <"TUG time">
+					description = <"Time to complete TUG test.">
+				>
+				["at0022"] = <
+					text = <"TUG result category">
+					description = <"Categorization of TUG result.">
+				>
+				["at0023"] = <
+					text = <"Walking aid used">
+					description = <"Walking aid used during test.">
+				>
+				["at0024"] = <
+					text = <"Number of steps">
+					description = <"Number of steps taken during test.">
+				>
+				["at0030"] = <
+					text = <"Postural sway">
+					description = <"Measurement of postural sway.">
+				>
+				["at0031"] = <
+					text = <"Sway area">
+					description = <"Area of center of pressure movement.">
+				>
+				["at0032"] = <
+					text = <"Sway velocity">
+					description = <"Velocity of center of pressure movement.">
+				>
+				["at0033"] = <
+					text = <"Anterior-posterior sway">
+					description = <"Sway in forward-backward direction.">
+				>
+				["at0034"] = <
+					text = <"Medial-lateral sway">
+					description = <"Sway in side-to-side direction.">
+				>
+				["at0035"] = <
+					text = <"Sway category">
+					description = <"Categorization of postural sway.">
+				>
+				["at0040"] = <
+					text = <"ABC Scale">
+					description = <"Activities-specific Balance Confidence Scale.">
+				>
+				["at0041"] = <
+					text = <"ABC total score">
+					description = <"Total ABC scale score (0-100%).">
+				>
+				["at0042"] = <
+					text = <"ABC category">
+					description = <"Categorization of ABC score.">
+				>
+				["at0043"] = <
+					text = <"Fall risk prediction">
+					description = <"Fall risk based on ABC score.">
+				>
+				["at0050"] = <
+					text = <"Romberg test">
+					description = <"Romberg test for proprioception.">
+				>
+				["at0051"] = <
+					text = <"Eyes open duration">
+					description = <"Duration with eyes open.">
+				>
+				["at0052"] = <
+					text = <"Eyes closed duration">
+					description = <"Duration with eyes closed.">
+				>
+				["at0053"] = <
+					text = <"Romberg ratio">
+					description = <"Ratio of eyes closed to eyes open performance.">
+				>
+				["at0054"] = <
+					text = <"Result interpretation">
+					description = <"Interpretation of Romberg test result.">
+				>
+				["at0060"] = <
+					text = <"Dynamic balance">
+					description = <"Dynamic balance assessments.">
+				>
+				["at0061"] = <
+					text = <"Functional reach">
+					description = <"Maximum forward reach distance.">
+				>
+				["at0062"] = <
+					text = <"Weight shift accuracy">
+					description = <"Accuracy of voluntary weight shifts.">
+				>
+				["at0063"] = <
+					text = <"Limits of stability score">
+					description = <"Score for limits of stability test.">
+				>
+				["at0064"] = <
+					text = <"Turn quality">
+					description = <"Quality of turning movements.">
+				>
+				["at0070"] = <
+					text = <"Overall assessment">
+					description = <"Overall balance assessment.">
+				>
+				["at0071"] = <
+					text = <"Composite balance score">
+					description = <"Composite balance score combining multiple measures.">
+				>
+				["at0072"] = <
+					text = <"Balance category">
+					description = <"Overall balance category.">
+				>
+				["at0073"] = <
+					text = <"Fall risk assessment">
+					description = <"Overall fall risk based on balance assessment.">
+				>
+				["at0074"] = <
+					text = <"Trend">
+					description = <"Trend in balance over time.">
+				>
+				["at0080"] = <
+					text = <"Data quality indicator">
+					description = <"Slot for data quality assessment cluster.">
+				>
+				["at0081"] = <
+					text = <"Vendor data provenance">
+					description = <"Slot for vendor data origin and processing details.">
+				>
+				["at0082"] = <
+					text = <"Comment">
+					description = <"Additional narrative about balance assessment.">
+				>
+				["at0090"] = <
+					text = <"State tree">
+					description = <"State tree.">
+				>
+				["at0091"] = <
+					text = <"Footwear">
+					description = <"Footwear during assessment.">
+				>
+				["at0092"] = <
+					text = <"Surface type">
+					description = <"Type of surface for assessment.">
+				>
+				["at0093"] = <
+					text = <"Fatigue level">
+					description = <"Level of fatigue at time of assessment.">
+				>
+				["at0094"] = <
+					text = <"Medications affecting balance">
+					description = <"Whether taking medications that affect balance.">
+				>
+				["at0095"] = <
+					text = <"Physiological context">
+					description = <"Slot for physiological context cluster.">
+				>
+				["at0100"] = <
+					text = <"Protocol tree">
+					description = <"Protocol tree.">
+				>
+				["at0101"] = <
+					text = <"Assessment method">
+					description = <"Method used for balance assessment.">
+				>
+				["at0102"] = <
+					text = <"Device vendor">
+					description = <"Vendor of assessment device.">
+				>
+				["at0103"] = <
+					text = <"Supervision">
+					description = <"Level of supervision during assessment.">
+				>
+				["at0104"] = <
+					text = <"Safety precautions">
+					description = <"Safety precautions in place.">
+				>
+				["at0105"] = <
+					text = <"Wearable device">
+					description = <"Slot for wearable device details.">
+				>
+				["at0106"] = <
+					text = <"Recording context">
+					description = <"Slot for recording context details.">
+				>
+				["at0200"] = <
+					text = <"Eyes open">
+					description = <"Test performed with eyes open.">
+				>
+				["at0201"] = <
+					text = <"Eyes closed">
+					description = <"Test performed with eyes closed.">
+				>
+				["at0210"] = <
+					text = <"Good (>30s)">
+					description = <"Good balance, greater than 30 seconds.">
+				>
+				["at0211"] = <
+					text = <"Moderate (10-30s)">
+					description = <"Moderate balance, 10-30 seconds.">
+				>
+				["at0212"] = <
+					text = <"Poor (<10s)">
+					description = <"Poor balance, less than 10 seconds.">
+				>
+				["at0213"] = <
+					text = <"Unable to perform">
+					description = <"Unable to perform the test.">
+				>
+				["at0220"] = <
+					text = <"Left foot forward">
+					description = <"Left foot positioned in front.">
+				>
+				["at0221"] = <
+					text = <"Right foot forward">
+					description = <"Right foot positioned in front.">
+				>
+				["at0230"] = <
+					text = <"Normal (<10s)">
+					description = <"Normal TUG time.">
+				>
+				["at0231"] = <
+					text = <"Mild impairment (10-14s)">
+					description = <"Mildly impaired mobility.">
+				>
+				["at0232"] = <
+					text = <"Moderate impairment (14-20s)">
+					description = <"Moderately impaired mobility.">
+				>
+				["at0233"] = <
+					text = <"Significant impairment (>20s)">
+					description = <"Significantly impaired mobility.">
+				>
+				["at0240"] = <
+					text = <"None">
+					description = <"No walking aid used.">
+				>
+				["at0241"] = <
+					text = <"Cane">
+					description = <"Cane used.">
+				>
+				["at0242"] = <
+					text = <"Walker">
+					description = <"Walker used.">
+				>
+				["at0243"] = <
+					text = <"Other">
+					description = <"Other walking aid used.">
+				>
+				["at0250"] = <
+					text = <"Normal">
+					description = <"Normal postural sway.">
+				>
+				["at0251"] = <
+					text = <"Mildly increased">
+					description = <"Mildly increased sway.">
+				>
+				["at0252"] = <
+					text = <"Moderately increased">
+					description = <"Moderately increased sway.">
+				>
+				["at0253"] = <
+					text = <"Severely increased">
+					description = <"Severely increased sway.">
+				>
+				["at0260"] = <
+					text = <"High confidence (>80%)">
+					description = <"High balance confidence.">
+				>
+				["at0261"] = <
+					text = <"Moderate confidence (50-80%)">
+					description = <"Moderate balance confidence.">
+				>
+				["at0262"] = <
+					text = <"Low confidence (<50%)">
+					description = <"Low balance confidence.">
+				>
+				["at0270"] = <
+					text = <"Low risk">
+					description = <"Low fall risk.">
+				>
+				["at0271"] = <
+					text = <"Moderate risk">
+					description = <"Moderate fall risk.">
+				>
+				["at0272"] = <
+					text = <"High risk">
+					description = <"High fall risk.">
+				>
+				["at0280"] = <
+					text = <"Normal">
+					description = <"Normal Romberg test result.">
+				>
+				["at0281"] = <
+					text = <"Abnormal (proprioceptive deficit)">
+					description = <"Abnormal result suggesting proprioceptive deficit.">
+				>
+				["at0282"] = <
+					text = <"Unable to complete">
+					description = <"Unable to complete the test.">
+				>
+				["at0290"] = <
+					text = <"Normal (smooth, few steps)">
+					description = <"Normal turning ability.">
+				>
+				["at0291"] = <
+					text = <"Mildly impaired">
+					description = <"Mildly impaired turning.">
+				>
+				["at0292"] = <
+					text = <"Moderately impaired">
+					description = <"Moderately impaired turning.">
+				>
+				["at0293"] = <
+					text = <"Severely impaired (multiple steps, unsteady)">
+					description = <"Severely impaired turning.">
+				>
+				["at0300"] = <
+					text = <"Excellent">
+					description = <"Excellent balance.">
+				>
+				["at0301"] = <
+					text = <"Good">
+					description = <"Good balance.">
+				>
+				["at0302"] = <
+					text = <"Fair">
+					description = <"Fair balance.">
+				>
+				["at0303"] = <
+					text = <"Poor">
+					description = <"Poor balance.">
+				>
+				["at0304"] = <
+					text = <"Very poor">
+					description = <"Very poor balance.">
+				>
+				["at0310"] = <
+					text = <"Low risk">
+					description = <"Low overall fall risk.">
+				>
+				["at0311"] = <
+					text = <"Moderate risk">
+					description = <"Moderate overall fall risk.">
+				>
+				["at0312"] = <
+					text = <"High risk">
+					description = <"High overall fall risk.">
+				>
+				["at0320"] = <
+					text = <"Improving">
+					description = <"Balance is improving.">
+				>
+				["at0321"] = <
+					text = <"Stable">
+					description = <"Balance is stable.">
+				>
+				["at0322"] = <
+					text = <"Declining">
+					description = <"Balance is declining.">
+				>
+				["at0330"] = <
+					text = <"Barefoot">
+					description = <"No footwear.">
+				>
+				["at0331"] = <
+					text = <"Flat shoes">
+					description = <"Flat footwear.">
+				>
+				["at0332"] = <
+					text = <"Athletic shoes">
+					description = <"Athletic footwear.">
+				>
+				["at0333"] = <
+					text = <"Other">
+					description = <"Other footwear.">
+				>
+				["at0340"] = <
+					text = <"Hard floor">
+					description = <"Hard floor surface.">
+				>
+				["at0341"] = <
+					text = <"Carpet">
+					description = <"Carpeted surface.">
+				>
+				["at0342"] = <
+					text = <"Foam pad">
+					description = <"Foam pad surface.">
+				>
+				["at0343"] = <
+					text = <"Other">
+					description = <"Other surface.">
+				>
+				["at0350"] = <
+					text = <"Rested">
+					description = <"Well rested.">
+				>
+				["at0351"] = <
+					text = <"Mild fatigue">
+					description = <"Mildly fatigued.">
+				>
+				["at0352"] = <
+					text = <"Moderate fatigue">
+					description = <"Moderately fatigued.">
+				>
+				["at0353"] = <
+					text = <"Significant fatigue">
+					description = <"Significantly fatigued.">
+				>
+				["at0360"] = <
+					text = <"Wearable sensors">
+					description = <"Using wearable sensors.">
+				>
+				["at0361"] = <
+					text = <"Smartphone app">
+					description = <"Using smartphone application.">
+				>
+				["at0362"] = <
+					text = <"Smart insole">
+					description = <"Using smart insoles.">
+				>
+				["at0363"] = <
+					text = <"Balance board">
+					description = <"Using balance board.">
+				>
+				["at0364"] = <
+					text = <"Clinical assessment">
+					description = <"Clinical assessment method.">
+				>
+				["at0365"] = <
+					text = <"Mixed methods">
+					description = <"Combination of methods.">
+				>
+				["at0370"] = <
+					text = <"Apple">
+					description = <"Apple device.">
+				>
+				["at0371"] = <
+					text = <"Garmin">
+					description = <"Garmin device.">
+				>
+				["at0372"] = <
+					text = <"Fitbit">
+					description = <"Fitbit device.">
+				>
+				["at0373"] = <
+					text = <"Samsung">
+					description = <"Samsung device.">
+				>
+				["at0374"] = <
+					text = <"Nintendo (Wii)">
+					description = <"Nintendo Wii Balance Board.">
+				>
+				["at0375"] = <
+					text = <"Specialized balance device">
+					description = <"Specialized balance assessment device.">
+				>
+				["at0376"] = <
+					text = <"Other">
+					description = <"Other device.">
+				>
+				["at0380"] = <
+					text = <"Self-administered">
+					description = <"Self-administered test.">
+				>
+				["at0381"] = <
+					text = <"Caregiver present">
+					description = <"Caregiver present during test.">
+				>
+				["at0382"] = <
+					text = <"Therapist supervised">
+					description = <"Supervised by therapist.">
+				>
+				["at0383"] = <
+					text = <"Research setting">
+					description = <"Performed in research setting.">
+				>
+				["at0390"] = <
+					text = <"Support available within reach">
+					description = <"Support available if needed.">
+				>
+				["at0391"] = <
+					text = <"Spotter present">
+					description = <"Spotter present for safety.">
+				>
+				["at0392"] = <
+					text = <"Safety harness used">
+					description = <"Safety harness in use.">
+				>
+				["at0393"] = <
+					text = <"None specified">
+					description = <"No safety precautions specified.">
+				>
+			>
+		>
+	>
