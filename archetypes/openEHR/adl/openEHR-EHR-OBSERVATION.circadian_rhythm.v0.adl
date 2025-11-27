@@ -1,0 +1,1235 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.circadian_rhythm.v0
+
+concept
+    [at0000]    -- Circadian Rhythm
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"ricardo.santos@medsci.org">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record circadian rhythm metrics, chronotype assessment, and light exposure data from wearable devices and digital health platforms for lifestyle medicine and sleep health optimization.">
+            use = <"Use to record:
+- Light exposure patterns (lux levels, blue light, daylight)
+- Chronotype assessment (morningness-eveningness questionnaire)
+- Sleep timing consistency and social jet lag
+- Circadian phase markers (temperature rhythm, activity patterns)
+- Shift work patterns and adaptation
+- Light therapy compliance and effectiveness
+- Seasonal variation in circadian patterns
+
+This archetype supports data from wearable light sensors, smartphone ambient light detection, and validated chronotype questionnaires.
+
+Typical use cases include:
+- Sleep disorder assessment
+- Shift work health management
+- Seasonal affective disorder monitoring
+- Jet lag recovery tracking
+- Circadian-based medication timing
+- Lifestyle medicine interventions">
+            misuse = <"Not to be used for:
+- Clinical sleep study diagnosis (requires polysomnography)
+- Melatonin level measurement (requires laboratory testing)
+- Diagnosing circadian rhythm disorders (requires specialist evaluation)
+
+Light exposure and timing data are behavioral metrics supporting circadian health assessment.">
+            keywords = <"circadian", "rhythm", "chronotype", "light", "exposure", "sleep", "timing", "jet lag", "shift work", "morningness", "eveningness", "wearable", "lifestyle">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons CC-BY-SA 4.0">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"1. Horne JA, Ostberg O. A self-assessment questionnaire to determine morningness-eveningness in human circadian rhythms. Int J Chronobiol. 1976;4(2):97-110.
+2. Roenneberg T, et al. Social jetlag and obesity. Curr Biol. 2012;22(10):939-943.
+3. Wright KP Jr, et al. Entrainment of the human circadian clock to the natural light-dark cycle. Curr Biol. 2013;23(16):1554-1558.
+4. Oura Ring Light Exposure Documentation.
+5. Apple Watch Daylight Time Feature Documentation.
+6. Garmin Body Battery and Sleep Documentation.">
+        ["current_contact"] = <"ricardo.santos@medsci.org">
+        ["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Circadian Rhythm
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0004] occurrences matches {0..1} matches {    -- Light exposure
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0005] occurrences matches {0..1} matches {    -- Daylight exposure duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT18H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0006] occurrences matches {0..1} matches {    -- Bright light exposure (>1000 lux)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0007] occurrences matches {0..1} matches {    -- Average daytime lux
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::123]}
+                                                        units matches {"lx"}
+                                                        magnitude matches {|0.0..100000.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0008] occurrences matches {0..1} matches {    -- Peak light intensity
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::123]}
+                                                        units matches {"lx"}
+                                                        magnitude matches {|0.0..150000.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0009] occurrences matches {0..1} matches {    -- Morning light exposure (first 2h)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT2H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0010] occurrences matches {0..1} matches {    -- Evening light exposure (last 3h before bed)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT3H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Blue light exposure duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT12H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Screen time before bed
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Time outdoors
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT18H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Sleep timing
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Sleep onset time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Wake time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Midsleep time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Sleep duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Sleep onset variability (7-day SD)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0026] occurrences matches {0..1} matches {    -- Wake time variability (7-day SD)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0027] occurrences matches {0..1} matches {    -- Sleep timing regularity index
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        denominator matches {|100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Social jet lag
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Social jet lag duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|-PT6H..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Weekday midsleep
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Weekend midsleep
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Social jet lag severity
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- None (<30min)
+                                                            at0201,    -- Mild (30-60min)
+                                                            at0202,    -- Moderate (1-2h)
+                                                            at0203,    -- Severe (2-3h)
+                                                            at0204]    -- Very severe (>3h)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {    -- Weekend sleep extension
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT6H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Chronotype assessment
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- MEQ score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|16..86|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Chronotype category
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0210,    -- Definite morning type (70-86)
+                                                            at0211,    -- Moderate morning type (59-69)
+                                                            at0212,    -- Neither type (42-58)
+                                                            at0213,    -- Moderate evening type (31-41)
+                                                            at0214]    -- Definite evening type (16-30)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- rMEQ score (reduced)
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|4..25|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- MCTQ chronotype (MSFsc)
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Preferred wake time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0046] occurrences matches {0..1} matches {    -- Preferred sleep time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0047] occurrences matches {0..1} matches {    -- Peak alertness time
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0215,    -- Early morning (5-8am)
+                                                            at0216,    -- Late morning (8-11am)
+                                                            at0217,    -- Midday (11am-2pm)
+                                                            at0218,    -- Afternoon (2-5pm)
+                                                            at0219,    -- Evening (5-8pm)
+                                                            at0220]    -- Night (8pm-midnight)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Circadian markers
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Temperature minimum time (estimated)
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Activity onset time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Activity offset time
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Activity acrophase
+                                                value matches {
+                                                    DV_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Rest-activity rhythm amplitude
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        denominator matches {|100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0056] occurrences matches {0..1} matches {    -- Interdaily stability
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..1.0|}
+                                                        denominator matches {|1.0|}
+                                                        type matches {1}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0057] occurrences matches {0..1} matches {    -- Intradaily variability
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..2.0|}
+                                                        denominator matches {|1.0|}
+                                                        type matches {1}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Shift work
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Shift type
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0230,    -- Day shift
+                                                            at0231,    -- Evening shift
+                                                            at0232,    -- Night shift
+                                                            at0233,    -- Rotating shifts
+                                                            at0234,    -- Split shift
+                                                            at0235,    -- On-call
+                                                            at0236]    -- No shift work
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Night shifts this week
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..7|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Days since last night shift
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|>=0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- Shift rotation direction
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0237,    -- Forward (clockwise)
+                                                            at0238,    -- Backward (counter-clockwise)
+                                                            at0239,    -- Variable
+                                                            at0240]    -- Not applicable
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {    -- Shift work adaptation score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0070] occurrences matches {0..1} matches {    -- Light therapy
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0071] occurrences matches {0..1} matches {    -- Light therapy used today
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0072] occurrences matches {0..1} matches {    -- Light therapy duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHM/|PT0M..PT2H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0073] occurrences matches {0..1} matches {    -- Light therapy intensity
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::123]}
+                                                        units matches {"lx"}
+                                                        magnitude matches {|0.0..20000.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0074] occurrences matches {0..1} matches {    -- Light therapy timing
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0241,    -- Upon waking
+                                                            at0242,    -- Morning
+                                                            at0243,    -- Afternoon
+                                                            at0244,    -- Evening
+                                                            at0245]    -- Variable
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0075] occurrences matches {0..1} matches {    -- Light therapy streak (days)
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|>=0|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0080] occurrences matches {0..1} matches {    -- Circadian health score
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0081] occurrences matches {0..1} matches {    -- Overall circadian health score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0082] occurrences matches {0..1} matches {    -- Light exposure score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0083] occurrences matches {0..1} matches {    -- Sleep timing score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0084] occurrences matches {0..1} matches {    -- Circadian alignment
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- Well aligned
+                                                            at0251,    -- Slightly misaligned
+                                                            at0252,    -- Moderately misaligned
+                                                            at0253,    -- Severely misaligned
+                                                            at0254]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0085] occurrences matches {0..1} matches {    -- Week-over-week trend
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0255,    -- Improving
+                                                            at0256,    -- Stable
+                                                            at0257,    -- Declining
+                                                            at0258]    -- Insufficient data
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0090] occurrences matches {0..1} matches {    -- Comment
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0091] occurrences matches {0..*} matches {    -- Data quality
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+                                    }
+                                    allow_archetype CLUSTER[at0092] occurrences matches {0..*} matches {    -- Vendor provenance
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0100] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0101] occurrences matches {0..1} matches {    -- Day type
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0260,    -- Workday
+                                                    at0261,    -- Free day
+                                                    at0262,    -- Vacation
+                                                    at0263,    -- Travel day
+                                                    at0264]    -- Sick day
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0102] occurrences matches {0..1} matches {    -- Season
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0265,    -- Spring
+                                                    at0266,    -- Summer
+                                                    at0267,    -- Autumn/Fall
+                                                    at0268]    -- Winter
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0103] occurrences matches {0..1} matches {    -- Latitude
+                                        value matches {
+                                            DV_QUANTITY matches {
+                                                property matches {[openehr::497]}
+                                                units matches {"deg"}
+                                                magnitude matches {|-90.0..90.0|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0104] occurrences matches {0..1} matches {    -- Time zone change
+                                        value matches {
+                                            DV_DURATION matches {
+                                                value matches {PTH/|-12H..PT12H|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0105] occurrences matches {0..1} matches {    -- Alarm used
+                                        value matches {
+                                            DV_BOOLEAN matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0106] occurrences matches {0..*} matches {    -- Additional context
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0110] occurrences matches {0..1} matches {    -- Daily summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {PT24H}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0100]
+                        }
+                    }
+                    INTERVAL_EVENT[at0111] occurrences matches {0..1} matches {    -- Weekly summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1W}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0100]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0120] matches {    -- Tree
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0121] occurrences matches {0..1} matches {    -- Light measurement method
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0270,    -- Wearable light sensor
+                                    at0271,    -- Smartphone ambient sensor
+                                    at0272,    -- Dedicated light meter
+                                    at0273,    -- Self-reported
+                                    at0274]    -- Estimated from location
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0122] occurrences matches {0..1} matches {    -- Chronotype questionnaire used
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0275,    -- MEQ (Horne-Ostberg)
+                                    at0276,    -- rMEQ (Reduced)
+                                    at0277,    -- MCTQ (Munich)
+                                    at0278,    -- MSF (Midsleep Free days)
+                                    at0279,    -- None (actigraphy-derived)
+                                    at0280]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0123] occurrences matches {0..*} matches {    -- Wearable device
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+                    }
+                    allow_archetype CLUSTER[at0124] occurrences matches {0..*} matches {    -- Recording context
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v0/}
+                    }
+                    allow_archetype CLUSTER[at0125] occurrences matches {0..*} matches {    -- Extension
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Circadian Rhythm">
+                    description = <"Circadian rhythm metrics, chronotype assessment, and light exposure data from wearable devices and digital health platforms.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0004"] = <
+                    text = <"Light exposure">
+                    description = <"Daily light exposure patterns and metrics.">
+                >
+                ["at0005"] = <
+                    text = <"Daylight exposure duration">
+                    description = <"Total time exposed to natural daylight.">
+                >
+                ["at0006"] = <
+                    text = <"Bright light exposure (>1000 lux)">
+                    description = <"Duration of exposure to bright light above 1000 lux.">
+                >
+                ["at0007"] = <
+                    text = <"Average daytime lux">
+                    description = <"Average light intensity during daytime hours.">
+                >
+                ["at0008"] = <
+                    text = <"Peak light intensity">
+                    description = <"Maximum light intensity recorded during the day.">
+                >
+                ["at0009"] = <
+                    text = <"Morning light exposure (first 2h)">
+                    description = <"Light exposure in the first 2 hours after waking.">
+                >
+                ["at0010"] = <
+                    text = <"Evening light exposure (last 3h before bed)">
+                    description = <"Light exposure in the 3 hours before sleep onset.">
+                >
+                ["at0011"] = <
+                    text = <"Blue light exposure duration">
+                    description = <"Duration of blue light exposure from screens.">
+                >
+                ["at0012"] = <
+                    text = <"Screen time before bed">
+                    description = <"Duration of screen use in the hour before sleep.">
+                >
+                ["at0013"] = <
+                    text = <"Time outdoors">
+                    description = <"Total time spent outdoors.">
+                >
+                ["at0020"] = <
+                    text = <"Sleep timing">
+                    description = <"Sleep timing patterns and regularity.">
+                >
+                ["at0021"] = <
+                    text = <"Sleep onset time">
+                    description = <"Time when sleep began.">
+                >
+                ["at0022"] = <
+                    text = <"Wake time">
+                    description = <"Time when sleep ended.">
+                >
+                ["at0023"] = <
+                    text = <"Midsleep time">
+                    description = <"Midpoint of sleep episode.">
+                >
+                ["at0024"] = <
+                    text = <"Sleep duration">
+                    description = <"Total sleep duration.">
+                >
+                ["at0025"] = <
+                    text = <"Sleep onset variability (7-day SD)">
+                    description = <"Standard deviation of sleep onset over 7 days.">
+                >
+                ["at0026"] = <
+                    text = <"Wake time variability (7-day SD)">
+                    description = <"Standard deviation of wake time over 7 days.">
+                >
+                ["at0027"] = <
+                    text = <"Sleep timing regularity index">
+                    description = <"Index of sleep schedule consistency (0-100%).">
+                >
+                ["at0030"] = <
+                    text = <"Social jet lag">
+                    description = <"Difference between weekday and weekend sleep timing.">
+                >
+                ["at0031"] = <
+                    text = <"Social jet lag duration">
+                    description = <"Difference in midsleep between work and free days.">
+                >
+                ["at0032"] = <
+                    text = <"Weekday midsleep">
+                    description = <"Average midsleep time on work days.">
+                >
+                ["at0033"] = <
+                    text = <"Weekend midsleep">
+                    description = <"Average midsleep time on free days.">
+                >
+                ["at0034"] = <
+                    text = <"Social jet lag severity">
+                    description = <"Categorical severity of social jet lag.">
+                >
+                ["at0035"] = <
+                    text = <"Weekend sleep extension">
+                    description = <"Additional sleep on weekends compared to weekdays.">
+                >
+                ["at0040"] = <
+                    text = <"Chronotype assessment">
+                    description = <"Morningness-eveningness chronotype evaluation.">
+                >
+                ["at0041"] = <
+                    text = <"MEQ score">
+                    description = <"Morningness-Eveningness Questionnaire score (16-86).">
+                >
+                ["at0042"] = <
+                    text = <"Chronotype category">
+                    description = <"Categorical chronotype based on MEQ score.">
+                >
+                ["at0043"] = <
+                    text = <"rMEQ score (reduced)">
+                    description = <"Reduced MEQ score (4-25).">
+                >
+                ["at0044"] = <
+                    text = <"MCTQ chronotype (MSFsc)">
+                    description = <"Sleep-corrected midsleep on free days from Munich Chronotype Questionnaire.">
+                >
+                ["at0045"] = <
+                    text = <"Preferred wake time">
+                    description = <"Preferred natural wake time without alarm.">
+                >
+                ["at0046"] = <
+                    text = <"Preferred sleep time">
+                    description = <"Preferred natural sleep onset time.">
+                >
+                ["at0047"] = <
+                    text = <"Peak alertness time">
+                    description = <"Time of day with highest alertness.">
+                >
+                ["at0050"] = <
+                    text = <"Circadian markers">
+                    description = <"Objective circadian rhythm markers from sensors.">
+                >
+                ["at0051"] = <
+                    text = <"Temperature minimum time (estimated)">
+                    description = <"Estimated time of core body temperature minimum.">
+                >
+                ["at0052"] = <
+                    text = <"Activity onset time">
+                    description = <"Time when daily activity begins.">
+                >
+                ["at0053"] = <
+                    text = <"Activity offset time">
+                    description = <"Time when daily activity ends.">
+                >
+                ["at0054"] = <
+                    text = <"Activity acrophase">
+                    description = <"Time of peak daily activity.">
+                >
+                ["at0055"] = <
+                    text = <"Rest-activity rhythm amplitude">
+                    description = <"Strength of 24-hour rest-activity rhythm.">
+                >
+                ["at0056"] = <
+                    text = <"Interdaily stability">
+                    description = <"Day-to-day regularity of activity pattern (0-1).">
+                >
+                ["at0057"] = <
+                    text = <"Intradaily variability">
+                    description = <"Fragmentation of rest-activity rhythm (0-2).">
+                >
+                ["at0060"] = <
+                    text = <"Shift work">
+                    description = <"Shift work patterns and adaptation.">
+                >
+                ["at0061"] = <
+                    text = <"Shift type">
+                    description = <"Type of work shift.">
+                >
+                ["at0062"] = <
+                    text = <"Night shifts this week">
+                    description = <"Number of night shifts worked this week.">
+                >
+                ["at0063"] = <
+                    text = <"Days since last night shift">
+                    description = <"Days elapsed since last night shift.">
+                >
+                ["at0064"] = <
+                    text = <"Shift rotation direction">
+                    description = <"Direction of shift rotation.">
+                >
+                ["at0065"] = <
+                    text = <"Shift work adaptation score">
+                    description = <"Score indicating adaptation to shift schedule.">
+                >
+                ["at0070"] = <
+                    text = <"Light therapy">
+                    description = <"Light therapy usage and compliance.">
+                >
+                ["at0071"] = <
+                    text = <"Light therapy used today">
+                    description = <"Whether light therapy was used today.">
+                >
+                ["at0072"] = <
+                    text = <"Light therapy duration">
+                    description = <"Duration of light therapy session.">
+                >
+                ["at0073"] = <
+                    text = <"Light therapy intensity">
+                    description = <"Intensity of light therapy device.">
+                >
+                ["at0074"] = <
+                    text = <"Light therapy timing">
+                    description = <"Time of day light therapy was used.">
+                >
+                ["at0075"] = <
+                    text = <"Light therapy streak (days)">
+                    description = <"Consecutive days of light therapy use.">
+                >
+                ["at0080"] = <
+                    text = <"Circadian health score">
+                    description = <"Composite circadian health assessment.">
+                >
+                ["at0081"] = <
+                    text = <"Overall circadian health score">
+                    description = <"Combined score for circadian health (0-100).">
+                >
+                ["at0082"] = <
+                    text = <"Light exposure score">
+                    description = <"Score for light exposure adequacy (0-100).">
+                >
+                ["at0083"] = <
+                    text = <"Sleep timing score">
+                    description = <"Score for sleep timing regularity (0-100).">
+                >
+                ["at0084"] = <
+                    text = <"Circadian alignment">
+                    description = <"Assessment of circadian rhythm alignment.">
+                >
+                ["at0085"] = <
+                    text = <"Week-over-week trend">
+                    description = <"Trend in circadian health over past week.">
+                >
+                ["at0090"] = <
+                    text = <"Comment">
+                    description = <"Additional narrative about circadian rhythm.">
+                >
+                ["at0091"] = <
+                    text = <"Data quality">
+                    description = <"Quality indicators for circadian data.">
+                >
+                ["at0092"] = <
+                    text = <"Vendor provenance">
+                    description = <"Data source and vendor information.">
+                >
+                ["at0100"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0101"] = <
+                    text = <"Day type">
+                    description = <"Type of day (workday vs free day).">
+                >
+                ["at0102"] = <
+                    text = <"Season">
+                    description = <"Current season affecting daylight.">
+                >
+                ["at0103"] = <
+                    text = <"Latitude">
+                    description = <"Geographic latitude affecting day length.">
+                >
+                ["at0104"] = <
+                    text = <"Time zone change">
+                    description = <"Recent time zone change (travel).">
+                >
+                ["at0105"] = <
+                    text = <"Alarm used">
+                    description = <"Whether an alarm was used to wake.">
+                >
+                ["at0106"] = <
+                    text = <"Additional context">
+                    description = <"Additional contextual information.">
+                >
+                ["at0110"] = <
+                    text = <"Daily summary">
+                    description = <"Aggregated circadian data for 24 hours.">
+                >
+                ["at0111"] = <
+                    text = <"Weekly summary">
+                    description = <"Aggregated circadian data for 7 days.">
+                >
+                ["at0120"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0121"] = <
+                    text = <"Light measurement method">
+                    description = <"Method used to measure light exposure.">
+                >
+                ["at0122"] = <
+                    text = <"Chronotype questionnaire used">
+                    description = <"Questionnaire used for chronotype assessment.">
+                >
+                ["at0123"] = <
+                    text = <"Wearable device">
+                    description = <"Details of wearable device used.">
+                >
+                ["at0124"] = <
+                    text = <"Recording context">
+                    description = <"Context of the recording session.">
+                >
+                ["at0125"] = <
+                    text = <"Extension">
+                    description = <"Additional information for local use.">
+                >
+                ["at0200"] = <
+                    text = <"None (<30min)">
+                    description = <"No social jet lag (less than 30 minutes).">
+                >
+                ["at0201"] = <
+                    text = <"Mild (30-60min)">
+                    description = <"Mild social jet lag (30-60 minutes).">
+                >
+                ["at0202"] = <
+                    text = <"Moderate (1-2h)">
+                    description = <"Moderate social jet lag (1-2 hours).">
+                >
+                ["at0203"] = <
+                    text = <"Severe (2-3h)">
+                    description = <"Severe social jet lag (2-3 hours).">
+                >
+                ["at0204"] = <
+                    text = <"Very severe (>3h)">
+                    description = <"Very severe social jet lag (more than 3 hours).">
+                >
+                ["at0210"] = <
+                    text = <"Definite morning type (70-86)">
+                    description = <"Strong morning preference.">
+                >
+                ["at0211"] = <
+                    text = <"Moderate morning type (59-69)">
+                    description = <"Moderate morning preference.">
+                >
+                ["at0212"] = <
+                    text = <"Neither type (42-58)">
+                    description = <"No strong preference.">
+                >
+                ["at0213"] = <
+                    text = <"Moderate evening type (31-41)">
+                    description = <"Moderate evening preference.">
+                >
+                ["at0214"] = <
+                    text = <"Definite evening type (16-30)">
+                    description = <"Strong evening preference.">
+                >
+                ["at0215"] = <
+                    text = <"Early morning (5-8am)">
+                    description = <"Peak alertness in early morning.">
+                >
+                ["at0216"] = <
+                    text = <"Late morning (8-11am)">
+                    description = <"Peak alertness in late morning.">
+                >
+                ["at0217"] = <
+                    text = <"Midday (11am-2pm)">
+                    description = <"Peak alertness around midday.">
+                >
+                ["at0218"] = <
+                    text = <"Afternoon (2-5pm)">
+                    description = <"Peak alertness in afternoon.">
+                >
+                ["at0219"] = <
+                    text = <"Evening (5-8pm)">
+                    description = <"Peak alertness in evening.">
+                >
+                ["at0220"] = <
+                    text = <"Night (8pm-midnight)">
+                    description = <"Peak alertness at night.">
+                >
+                ["at0230"] = <
+                    text = <"Day shift">
+                    description = <"Regular day shift work.">
+                >
+                ["at0231"] = <
+                    text = <"Evening shift">
+                    description = <"Evening shift work.">
+                >
+                ["at0232"] = <
+                    text = <"Night shift">
+                    description = <"Night shift work.">
+                >
+                ["at0233"] = <
+                    text = <"Rotating shifts">
+                    description = <"Rotating between different shifts.">
+                >
+                ["at0234"] = <
+                    text = <"Split shift">
+                    description = <"Split shift schedule.">
+                >
+                ["at0235"] = <
+                    text = <"On-call">
+                    description = <"On-call work schedule.">
+                >
+                ["at0236"] = <
+                    text = <"No shift work">
+                    description = <"Standard working hours, no shifts.">
+                >
+                ["at0237"] = <
+                    text = <"Forward (clockwise)">
+                    description = <"Shift rotation day to evening to night.">
+                >
+                ["at0238"] = <
+                    text = <"Backward (counter-clockwise)">
+                    description = <"Shift rotation night to evening to day.">
+                >
+                ["at0239"] = <
+                    text = <"Variable">
+                    description = <"No consistent rotation pattern.">
+                >
+                ["at0240"] = <
+                    text = <"Not applicable">
+                    description = <"No shift rotation.">
+                >
+                ["at0241"] = <
+                    text = <"Upon waking">
+                    description = <"Light therapy immediately after waking.">
+                >
+                ["at0242"] = <
+                    text = <"Morning">
+                    description = <"Light therapy in the morning.">
+                >
+                ["at0243"] = <
+                    text = <"Afternoon">
+                    description = <"Light therapy in the afternoon.">
+                >
+                ["at0244"] = <
+                    text = <"Evening">
+                    description = <"Light therapy in the evening.">
+                >
+                ["at0245"] = <
+                    text = <"Variable">
+                    description = <"Light therapy timing varies.">
+                >
+                ["at0250"] = <
+                    text = <"Well aligned">
+                    description = <"Circadian rhythm well aligned with schedule.">
+                >
+                ["at0251"] = <
+                    text = <"Slightly misaligned">
+                    description = <"Minor circadian misalignment.">
+                >
+                ["at0252"] = <
+                    text = <"Moderately misaligned">
+                    description = <"Moderate circadian misalignment.">
+                >
+                ["at0253"] = <
+                    text = <"Severely misaligned">
+                    description = <"Severe circadian misalignment.">
+                >
+                ["at0254"] = <
+                    text = <"Unknown">
+                    description = <"Circadian alignment unknown.">
+                >
+                ["at0255"] = <
+                    text = <"Improving">
+                    description = <"Circadian health improving.">
+                >
+                ["at0256"] = <
+                    text = <"Stable">
+                    description = <"Circadian health stable.">
+                >
+                ["at0257"] = <
+                    text = <"Declining">
+                    description = <"Circadian health declining.">
+                >
+                ["at0258"] = <
+                    text = <"Insufficient data">
+                    description = <"Not enough data to determine trend.">
+                >
+                ["at0260"] = <
+                    text = <"Workday">
+                    description = <"Regular work day.">
+                >
+                ["at0261"] = <
+                    text = <"Free day">
+                    description = <"Day off from work.">
+                >
+                ["at0262"] = <
+                    text = <"Vacation">
+                    description = <"Vacation day.">
+                >
+                ["at0263"] = <
+                    text = <"Travel day">
+                    description = <"Day involving travel.">
+                >
+                ["at0264"] = <
+                    text = <"Sick day">
+                    description = <"Day off due to illness.">
+                >
+                ["at0265"] = <
+                    text = <"Spring">
+                    description = <"Spring season.">
+                >
+                ["at0266"] = <
+                    text = <"Summer">
+                    description = <"Summer season.">
+                >
+                ["at0267"] = <
+                    text = <"Autumn/Fall">
+                    description = <"Autumn/Fall season.">
+                >
+                ["at0268"] = <
+                    text = <"Winter">
+                    description = <"Winter season.">
+                >
+                ["at0270"] = <
+                    text = <"Wearable light sensor">
+                    description = <"Light sensor on wearable device.">
+                >
+                ["at0271"] = <
+                    text = <"Smartphone ambient sensor">
+                    description = <"Ambient light sensor on smartphone.">
+                >
+                ["at0272"] = <
+                    text = <"Dedicated light meter">
+                    description = <"Dedicated light measurement device.">
+                >
+                ["at0273"] = <
+                    text = <"Self-reported">
+                    description = <"Light exposure self-reported by user.">
+                >
+                ["at0274"] = <
+                    text = <"Estimated from location">
+                    description = <"Light estimated from GPS location and time.">
+                >
+                ["at0275"] = <
+                    text = <"MEQ (Horne-Ostberg)">
+                    description = <"Original Morningness-Eveningness Questionnaire.">
+                >
+                ["at0276"] = <
+                    text = <"rMEQ (Reduced)">
+                    description = <"Reduced 5-item version of MEQ.">
+                >
+                ["at0277"] = <
+                    text = <"MCTQ (Munich)">
+                    description = <"Munich Chronotype Questionnaire.">
+                >
+                ["at0278"] = <
+                    text = <"MSF (Midsleep Free days)">
+                    description = <"Chronotype from midsleep on free days.">
+                >
+                ["at0279"] = <
+                    text = <"None (actigraphy-derived)">
+                    description = <"Chronotype derived from actigraphy data.">
+                >
+                ["at0280"] = <
+                    text = <"Other">
+                    description = <"Other chronotype assessment method.">
+                >
+            >
+        >
+    >
