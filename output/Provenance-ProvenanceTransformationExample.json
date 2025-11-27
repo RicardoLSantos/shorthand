@@ -1,0 +1,53 @@
+{
+  "resourceType" : "Provenance",
+  "id" : "ProvenanceTransformationExample",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Provenance ProvenanceTransformationExample</b></p><a name=\"ProvenanceTransformationExample\"> </a><a name=\"hcProvenanceTransformationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-pghd-provenance.html\">Patient-Generated Health Data Provenance</a></p></div><p>Proveniência para <a href=\"Observation-HRVObservationExample.html\">Observation R-R interval.standard deviation (Heart rate variability)</a></p><p>Resumo</p><table class=\"grid\"><tr><td>Gravado</td><td>2025-01-15 08:35:00+0000</td></tr><tr><td>Atividade</td><td><span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle transform}\">Transform/Translate</span></td></tr></table><p><b>Agentes</b></p><table class=\"grid\"><tr><td><b>Tipo</b></td><td><b>que</b></td></tr><tr><td><span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/provenance-participant-type assembler}\">Assembler</span></td><td><a href=\"Device-HealthKitDevice.html\">Apple HealthKit</a></td></tr><tr><td><span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/provenance-participant-type performer}\">Performer</span></td><td><a href=\"Device-AppleWatchDevice.html\">Apple Watch Series 9</a></td></tr></table></div>"
+  },
+  "target" : [{
+    "reference" : "Observation/HRVObservationExample"
+  }],
+  "recorded" : "2025-01-15T08:35:00Z",
+  "activity" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle",
+      "code" : "transform",
+      "display" : "Transform/Translate"
+    }]
+  },
+  "agent" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+        "code" : "assembler"
+      }]
+    },
+    "who" : {
+      "reference" : "Device/HealthKitDevice",
+      "display" : "Apple HealthKit"
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+        "code" : "performer"
+      }]
+    },
+    "who" : {
+      "reference" : "Device/AppleWatchDevice",
+      "display" : "Apple Watch Series 9"
+    }
+  }],
+  "entity" : [{
+    "role" : "source",
+    "what" : {
+      "reference" : "Provenance/ProvenanceDeviceCaptureExample",
+      "display" : "Original device capture provenance"
+    }
+  }]
+}

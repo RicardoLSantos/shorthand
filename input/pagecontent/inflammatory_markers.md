@@ -30,10 +30,10 @@ The base profile for all inflammatory biomarker observations, constraining FHIR 
 
 | Profile | LOINC Code | Description | Units |
 |---------|------------|-------------|-------|
-| [CRPObservation](StructureDefinition-CRPObservation.html) | 1988-5 | C-reactive protein | mg/L |
-| [HsCRPObservation](StructureDefinition-HsCRPObservation.html) | 30522-7 | High-sensitivity CRP | mg/L |
-| [IL6Observation](StructureDefinition-IL6Observation.html) | 26881-3 | Interleukin-6 | pg/mL |
-| [TNFAlphaObservation](StructureDefinition-TNFAlphaObservation.html) | 3074-2 | Tumor necrosis factor alpha | pg/mL |
+| CRPObservation | 1988-5 | C-reactive protein | mg/L |
+| HsCRPObservation | 30522-7 | High-sensitivity CRP | mg/L |
+| IL6Observation | 26881-3 | Interleukin-6 | pg/mL |
+| TNFAlphaObservation | 3074-2 | Tumor necrosis factor alpha | pg/mL |
 
 ### Correlation Profile: HRVInflammationCorrelationObservation
 

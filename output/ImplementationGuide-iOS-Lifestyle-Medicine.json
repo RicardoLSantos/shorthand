@@ -11,7 +11,7 @@
   "title" : "iOS Lifestyle Medicine Implementation Guide",
   "status" : "active",
   "experimental" : false,
-  "date" : "2025-11-27T11:57:11+00:00",
+  "date" : "2025-11-27T15:44:07+00:00",
   "publisher" : "Ricardo Lourenço dos Santos",
   "contact" : [{
     "name" : "Ricardo Lourenço dos Santos",
@@ -835,6 +835,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/HealthKitDevice"
+      },
+      "name" : "Apple HealthKit",
+      "description" : "Health data aggregation and transformation system",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/AppleWatchDevice"
+      },
+      "name" : "Apple Watch Series 9",
+      "description" : "Consumer wearable device - Apple Watch",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -1507,6 +1531,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceTransformationExample"
+      },
+      "name" : "Data Transformation Provenance - HealthKit to FHIR",
+      "description" : "Example of provenance tracking for HRV data transformation from HealthKit to FHIR",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceTransmissionExample"
+      },
+      "name" : "Data Transmission Provenance - App to Server",
+      "description" : "Example of provenance tracking for PGHD transmission from mobile app to healthcare system",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Basic"
       }],
       "reference" : {
@@ -1531,6 +1579,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceDetailedCaptureExample"
+      },
+      "name" : "Detailed Capture Provenance with Metadata",
+      "description" : "Example showing device capture metadata extension for research-grade PGHD",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1539,6 +1599,18 @@
       "name" : "Device Capture Metadata",
       "description" : "Additional metadata about how data was captured by the device",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/ProvenanceDeviceCaptureExample"
+      },
+      "name" : "Device Capture Provenance - Apple Watch HRV",
+      "description" : "Example of provenance tracking for HRV data captured by Apple Watch",
+      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
     },
     {
       "extension" : [{
@@ -2122,6 +2194,18 @@
         "valueString" : "Observation"
       }],
       "reference" : {
+        "reference" : "Observation/HRVObservationExample"
+      },
+      "name" : "HRV Observation - RMSSD",
+      "description" : "Example HRV observation with RMSSD metric captured by Apple Watch",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
         "reference" : "Observation/HRVInflammationCorrelationExample"
       },
       "name" : "HRV-Inflammation Correlation Example",
@@ -2233,8 +2317,8 @@
         "reference" : "Observation/InflammatoryPanelExample"
       },
       "name" : "Inflammatory Panel Example",
-      "description" : "Comprehensive inflammatory marker panel for lifestyle medicine assessment",
-      "exampleCanonical" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/inflammatory-marker-observation"
+      "description" : "Comprehensive inflammatory marker panel for lifestyle medicine assessment. Combines cytokines panel (IL-6, TNF-α) with CRP measurements per RS1 systematic review findings.",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -4734,6 +4818,15 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "conceptmaps.html"
+        }],
+        "nameUrl" : "conceptmaps.html",
+        "title" : "Conceptmaps",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "data-protection-policies.html"
         }],
         "nameUrl" : "data-protection-policies.html",
@@ -4765,6 +4858,15 @@
         }],
         "nameUrl" : "fhirconnect-architecture.html",
         "title" : "Fhirconnect Architecture",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "inflammatory_markers.html"
+        }],
+        "nameUrl" : "inflammatory_markers.html",
+        "title" : "Inflammatory Markers",
         "generation" : "markdown"
       },
       {

@@ -19,7 +19,7 @@
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-11-27T11:57:11+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-11-27T15:44:07+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -1149,6 +1149,42 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Device"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/HealthKitDevice> ;
+         fhir:reference [ fhir:v "Device/HealthKitDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Apple HealthKit" ] ;
+       fhir:description [ fhir:v "Health data aggregation and transformation system" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Device"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/AppleWatchDevice> ;
+         fhir:reference [ fhir:v "Device/AppleWatchDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Apple Watch Series 9" ] ;
+       fhir:description [ fhir:v "Consumer wearable device - Apple Watch" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "CodeSystem"
          ]
        ] ) ;
@@ -2169,6 +2205,44 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Provenance"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Provenance/ProvenanceTransformationExample> ;
+         fhir:reference [ fhir:v "Provenance/ProvenanceTransformationExample" ]
+       ] ;
+       fhir:name [ fhir:v "Data Transformation Provenance - HealthKit to FHIR" ] ;
+       fhir:description [ fhir:v "Example of provenance tracking for HRV data transformation from HealthKit to FHIR" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Provenance"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Provenance/ProvenanceTransmissionExample> ;
+         fhir:reference [ fhir:v "Provenance/ProvenanceTransmissionExample" ]
+       ] ;
+       fhir:name [ fhir:v "Data Transmission Provenance - App to Server" ] ;
+       fhir:description [ fhir:v "Example of provenance tracking for PGHD transmission from mobile app to healthcare system" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Basic"
          ]
        ] ) ;
@@ -2207,6 +2281,25 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Provenance"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Provenance/ProvenanceDetailedCaptureExample> ;
+         fhir:reference [ fhir:v "Provenance/ProvenanceDetailedCaptureExample" ]
+       ] ;
+       fhir:name [ fhir:v "Detailed Capture Provenance with Metadata" ] ;
+       fhir:description [ fhir:v "Example showing device capture metadata extension for research-grade PGHD" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
@@ -2219,6 +2312,25 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Provenance"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Provenance/ProvenanceDeviceCaptureExample> ;
+         fhir:reference [ fhir:v "Provenance/ProvenanceDeviceCaptureExample" ]
+       ] ;
+       fhir:name [ fhir:v "Device Capture Provenance - Apple Watch HRV" ] ;
+       fhir:description [ fhir:v "Example of provenance tracking for HRV data captured by Apple Watch" ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"^^xsd:anyURI ;
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance>
        ]
      ] [
        fhir:extension ( [
@@ -3106,6 +3218,24 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/HRVObservationExample> ;
+         fhir:reference [ fhir:v "Observation/HRVObservationExample" ]
+       ] ;
+       fhir:name [ fhir:v "HRV Observation - RMSSD" ] ;
+       fhir:description [ fhir:v "Example HRV observation with RMSSD metric captured by Apple Watch" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/HRVInflammationCorrelationExample> ;
          fhir:reference [ fhir:v "Observation/HRVInflammationCorrelationExample" ]
        ] ;
@@ -3275,11 +3405,10 @@
          fhir:reference [ fhir:v "Observation/InflammatoryPanelExample" ]
        ] ;
        fhir:name [ fhir:v "Inflammatory Panel Example" ] ;
-       fhir:description [ fhir:v "Comprehensive inflammatory marker panel for lifestyle medicine assessment" ] ;
+       fhir:description [ fhir:v "Comprehensive inflammatory marker panel for lifestyle medicine assessment. Combines cytokines panel (IL-6, TNF-α) with CRP measurements per RS1 systematic review findings." ] ;
        fhir:example [
-         a fhir:canonical ;
-         fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/inflammatory-marker-observation"^^xsd:anyURI ;
-         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/inflammatory-marker-observation>
+         a fhir:boolean ;
+         fhir:v true
        ]
      ] [
        fhir:extension ( [
@@ -7058,6 +7187,20 @@
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [
              a fhir:url ;
+             fhir:v "conceptmaps.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "conceptmaps.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Conceptmaps" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
              fhir:v "data-protection-policies.html"^^xsd:anyURI
            ]
          ] ) ;
@@ -7108,6 +7251,20 @@
            fhir:v "fhirconnect-architecture.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Fhirconnect Architecture" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "inflammatory_markers.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "inflammatory_markers.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Inflammatory Markers" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

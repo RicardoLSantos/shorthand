@@ -1,12 +1,9 @@
 {
   "resourceType" : "Observation",
   "id" : "InflammatoryPanelExample",
-  "meta" : {
-    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/inflammatory-marker-observation"]
-  },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation InflammatoryPanelExample</b></p><a name=\"InflammatoryPanelExample\"> </a><a name=\"hcInflammatoryPanelExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-inflammatory-marker-observation.html\">Inflammatory Marker Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 57804-4}\">Comprehensive Inflammatory Panel</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2025-11-27 08:00:00+0000</p><p><b>value</b>: See component results</p><p><b>note</b>: </p><blockquote><div><p>Baseline inflammatory panel for lifestyle medicine program enrollment. Results will be correlated with wearable HRV data for personalized intervention planning.</p>\n</div></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation InflammatoryPanelExample</b></p><a name=\"InflammatoryPanelExample\"> </a><a name=\"hcInflammatoryPanelExample\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 82335-1}\">Lifestyle Medicine Inflammatory Panel</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Patient Example  Unknown, DoB: 1970-01-01 ( http://example.org/patients#example-patient)</a></p><p><b>effective</b>: 2025-11-27 08:00:00+0000</p><p><b>note</b>: </p><blockquote><div><p>Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation.</p>\n</div></blockquote><p><b>hasMember</b>: </p><ul><li><a href=\"Observation-CRPExample-Normal.html\">CRP measurement</a></li><li><a href=\"Observation-IL6Example-Elevated.html\">IL-6 measurement</a></li><li><a href=\"Observation-TNFAlphaExample-Normal.html\">TNF-α measurement</a></li></ul></div>"
   },
   "status" : "final",
   "category" : [{
@@ -19,17 +16,28 @@
   "code" : {
     "coding" : [{
       "system" : "http://loinc.org",
-      "code" : "57804-4",
-      "display" : "Inflammation markers panel - Serum or Plasma"
+      "code" : "82335-1",
+      "display" : "Cytokines panel - Serum or Plasma"
     }],
-    "text" : "Comprehensive Inflammatory Panel"
+    "text" : "Lifestyle Medicine Inflammatory Panel"
   },
   "subject" : {
     "reference" : "Patient/example"
   },
   "effectiveDateTime" : "2025-11-27T08:00:00Z",
-  "valueString" : "See component results",
   "note" : [{
-    "text" : "Baseline inflammatory panel for lifestyle medicine program enrollment. Results will be correlated with wearable HRV data for personalized intervention planning."
+    "text" : "Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation."
+  }],
+  "hasMember" : [{
+    "reference" : "Observation/CRPExample-Normal",
+    "display" : "CRP measurement"
+  },
+  {
+    "reference" : "Observation/IL6Example-Elevated",
+    "display" : "IL-6 measurement"
+  },
+  {
+    "reference" : "Observation/TNFAlphaExample-Normal",
+    "display" : "TNF-α measurement"
   }]
 }

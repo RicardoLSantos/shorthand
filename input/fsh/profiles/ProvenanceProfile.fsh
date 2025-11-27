@@ -68,10 +68,10 @@ Description: "Activities related to PGHD data capture and transformation"
 * http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE "Create"
 * http://terminology.hl7.org/CodeSystem/v3-DataOperation#UPDATE "Update"
 * http://terminology.hl7.org/CodeSystem/v3-DataOperation#APPEND "Append"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#originate "Originate/Retain"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transform "Transform/Translate"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transmit "Transmit"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#receive "Receive/Retain"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#originate "Originate/Retain Record Lifecycle Event"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transform "Transform/Translate Record Lifecycle Event"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transmit "Transmit Record Lifecycle Event"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#receive "Receive/Retain Record Lifecycle Event"
 
 
 // ====== Extension para Device Metadata ======

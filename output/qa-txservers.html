@@ -12,7 +12,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Terminology Server Report for IOSLifestyleMedicineHEADS2FMUP</h1>
- <p>Generated Thu Nov 27 12:07:07 WET 2025, FHIR version 4.0.1 for iOS-Lifestyle-Medicine#0.1.0 (canonical = <a href="https://2rdoc.pt/ig/ios-lifestyle-medicine">https://2rdoc.pt/ig/ios-lifestyle-medicine</a> (<a href="https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html">history</a>))</p>
+ <p>Generated Thu Nov 27 15:53:57 WET 2025, FHIR version 4.0.1 for iOS-Lifestyle-Medicine#0.1.0 (canonical = <a href="https://2rdoc.pt/ig/ios-lifestyle-medicine">https://2rdoc.pt/ig/ios-lifestyle-medicine</a> (<a href="https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html">history</a>))</p>
 <p>This page provides a report on which terminology servers were used while publishing this IG. Note that terminology caching reduces the server hit count - this page only reports content that wasn't cached</p>
 <h2>Terminology Parameters</h2>
 <ul>
@@ -174,18 +174,46 @@
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Systems handled by multiple servers. Using primary server</td>
+    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://snomed.info/sct</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4</td>
+  </tr>
+  <tr>
+    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
     <td>https://tx.fhir.org/r4</td>
     <td>null</td>
-    <td>[https://developer.apple.com/documentation/healthkit, https://cloud.ouraring.com/v2/usercollection, https://developer.garmin.com/health-api, https://dev.fitbit.com/build/reference/web-api, https://www.polaraccesslink.com/v3]</td>
-    <td>[auth = , candidates=, auth = , candidates=, auth = , candidates=, auth = , candidates=, auth = , candidates=]</td>
+    <td>https://fmup.up.pt/ios-lifestyle-medicine/CodeSystem/hrv-metrics-cs</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>Fallback: primary server</td>
     <td>https://tx.fhir.org/r4</td>
     <td>null</td>
-    <td>[https://developer.apple.com/documentation/healthkit, https://cloud.ouraring.com/v2/usercollection, https://developer.garmin.com/health-api, https://dev.fitbit.com/build/reference/web-api, https://www.polaraccesslink.com/v3]</td>
-    <td>[auth = , candidates=, auth = , candidates=, auth = , candidates=, auth = , candidates=, auth = , candidates=]</td>
+    <td>https://fmup.up.pt/ios-lifestyle-medicine/CodeSystem/hrv-metrics-cs</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4</td>
+  </tr>
+  <tr>
+    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://unitsofmeasure.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4</td>
   </tr>
 </table>
 <p>
@@ -227,7 +255,7 @@
 </table>
 <h2>Primary Server: https://tx.fhir.org/r4</h2>
 <a href="https://tx.fhir.org/r4"></a>
-<p>Use Count: 2. Code Systems used: </p>
+<p>Use Count: 6. Code Systems used: </p>
 <table class="grid">
   <tr>
     <th>
@@ -246,7 +274,7 @@
   <tr>
     <td>http://loinc.org</td>
     <td>0</td>
-    <td>1</td>
+    <td>3</td>
     <td>
       <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a>
     </td>
@@ -262,7 +290,7 @@
   <tr>
     <td>http://snomed.info/sct</td>
     <td>0</td>
-    <td>1</td>
+    <td>2</td>
     <td>
       <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a>
     </td>
@@ -270,7 +298,7 @@
   <tr>
     <td>http://unitsofmeasure.org</td>
     <td>0</td>
-    <td>1</td>
+    <td>2</td>
     <td>
       <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html">Unified Code for Units of Measure (UCUM)</a>
     </td>
@@ -292,31 +320,37 @@
   <tr>
     <td>https://cloud.ouraring.com/v2/usercollection</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>https://dev.fitbit.com/build/reference/web-api</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>https://developer.apple.com/documentation/healthkit</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>https://developer.garmin.com/health-api</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>https://fmup.up.pt/ios-lifestyle-medicine/CodeSystem/hrv-metrics-cs</td>
+    <td>0</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>https://www.polaraccesslink.com/v3</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>

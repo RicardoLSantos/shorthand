@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="ProvenanceDetailedCaptureExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Provenance ProvenanceDetailedCaptureExample</b></p><a name="ProvenanceDetailedCaptureExample"> </a><a name="hcProvenanceDetailedCaptureExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-pghd-provenance.html">Patient-Generated Health Data Provenance</a></p></div><p>Proveniência para <a href="Observation-HRVObservationExample.html">Observation R-R interval.standard deviation (Heart rate variability)</a></p><p>Resumo</p><table class="grid"><tr><td>Gravado</td><td>2025-01-15 08:30:00+0000</td></tr><tr><td>Atividade</td><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle originate}">Originate/Retain</span></td></tr></table><p><b>Agentes</b></p><table class="grid"><tr><td><b>Tipo</b></td><td><b>que</b></td></tr><tr><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/provenance-participant-type performer}">Performer</span></td><td><a href="Device-AppleWatchDevice.html">Device: status = active; manufacturer = Apple Inc.; serialNumber = DNPXYZ123456; modelNumber = A2978; type = Pulse oximeter</a></td></tr><tr><td><span title="Códigos:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}">Author</span></td><td><a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></td></tr></table></div>
+  </text>
+  <target>
+    <reference value="Observation/HRVObservationExample"/>
+  </target>
+  <recorded value="2025-01-15T08:30:00Z"/>
+  <activity>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle"/>
+      <code value="originate"/>
+      <display value="Originate/Retain"/>
+    </coding>
+  </activity>
+  <agent>
+    <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/device-capture-metadata">
+      <extension url="samplingRate">
+        <valueQuantity>
+          <value value="50"/>
+          <unit value="Hz"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="Hz"/>
+        </valueQuantity>
+      </extension>
+      <extension url="sensorType">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-sensor-type-cs"/>
+            <code value="ppg"/>
+            <display value="Photoplethysmography (PPG)"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+      <extension url="captureMethod">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/data-capture-method-cs"/>
+            <code value="automatic"/>
+            <display value="Automatic"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+    </extension>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+        <code value="performer"/>
+      </coding>
+    </type>
+    <who>
+      <reference value="Device/AppleWatchDevice"/>
+    </who>
+  </agent>
+  <agent>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+        <code value="author"/>
+      </coding>
+    </type>
+    <who>
+      <reference value="Patient/PatientExample"/>
+    </who>
+  </agent>
+  <entity>
+    <role value="source"/>
+    <what>
+      <display value="Raw PPG signal - 5 minute recording at 50Hz"/>
+    </what>
+  </entity>
+</Provenance>

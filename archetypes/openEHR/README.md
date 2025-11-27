@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (10 Total)
+## Archetypes Included (15 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (5)
+### OBSERVATION Archetypes (10)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -33,6 +33,11 @@ archetypes/openEHR/
 | `sleep_architecture.v0.adl` | Sleep stages and quality metrics | 360 | CKM Ready |
 | `spo2_wearable.v0.adl` | SpO2, ODI, sleep oximetry | ~700 | CKM Ready |
 | `stress_assessment.v0.adl` | Stress scores, EDA, recovery metrics | ~990 | CKM Ready |
+| `respiratory_rate_wearable.v0.adl` | PPG/accelerometer-derived RR, sleep breathing | ~580 | CKM Ready |
+| `skin_temperature_wearable.v0.adl` | Skin temp, baseline deviation, menstrual context | ~550 | CKM Ready |
+| `blood_glucose_cgm.v0.adl` | CGM data, TIR, glycemic variability, GMI | ~750 | CKM Ready |
+| `body_composition_wearable.v0.adl` | BIA smart scale data, body fat, muscle mass | ~1100 | CKM Ready |
+| `exercise_session.v0.adl` | Workout sessions, training load, TRIMP/TSS | ~1400 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -71,10 +76,11 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 10 archetypes validated with ADL 1.4 structural validator:
+All 15 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
-- **Warnings**: 6 (minor, non-blocking)
-- **Report**: `Thesis_github/knowledge_base/openEHR/validation/BATCH_1A_VALIDATION_REPORT_20251127.md`
+- **Warnings**: Minor (false positives on term_bindings detection)
+- **Phase 1A-1B**: 7 archetypes validated 2025-11-27
+- **Phase 2A**: 3 archetypes validated 2025-11-27
 
 ## Related Resources
 
@@ -86,4 +92,4 @@ All 10 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 10 (5 CLUSTERs + 5 OBSERVATIONs)*
+*Archetypes: 15 (5 CLUSTERs + 10 OBSERVATIONs)*

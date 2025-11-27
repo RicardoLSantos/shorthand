@@ -11,7 +11,7 @@
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2025-11-27T11:57:11+00:00"/>
+  <date value="2025-11-27T15:44:07+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -662,6 +662,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/HealthKitDevice"/>
+      </reference>
+      <name value="Apple HealthKit"/>
+      <description value="Health data aggregation and transformation system"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/AppleWatchDevice"/>
+      </reference>
+      <name value="Apple Watch Series 9"/>
+      <description value="Consumer wearable device - Apple Watch"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -1278,6 +1300,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/ProvenanceTransformationExample"/>
+      </reference>
+      <name value="Data Transformation Provenance - HealthKit to FHIR"/>
+      <description value="Example of provenance tracking for HRV data transformation from HealthKit to FHIR"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/ProvenanceTransmissionExample"/>
+      </reference>
+      <name value="Data Transmission Provenance - App to Server"/>
+      <description value="Example of provenance tracking for PGHD transmission from mobile app to healthcare system"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Basic"/>
       </extension>
       <reference>
@@ -1300,6 +1344,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/ProvenanceDetailedCaptureExample"/>
+      </reference>
+      <name value="Detailed Capture Provenance with Metadata"/>
+      <description value="Example showing device capture metadata extension for research-grade PGHD"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1308,6 +1363,17 @@
       <name value="Device Capture Metadata"/>
       <description value="Additional metadata about how data was captured by the device"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/ProvenanceDeviceCaptureExample"/>
+      </reference>
+      <name value="Device Capture Provenance - Apple Watch HRV"/>
+      <description value="Example of provenance tracking for HRV data captured by Apple Watch"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1842,6 +1908,17 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
+        <reference value="Observation/HRVObservationExample"/>
+      </reference>
+      <name value="HRV Observation - RMSSD"/>
+      <description value="Example HRV observation with RMSSD metric captured by Apple Watch"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
         <reference value="Observation/HRVInflammationCorrelationExample"/>
       </reference>
       <name value="HRV-Inflammation Correlation Example"/>
@@ -1944,8 +2021,8 @@
         <reference value="Observation/InflammatoryPanelExample"/>
       </reference>
       <name value="Inflammatory Panel Example"/>
-      <description value="Comprehensive inflammatory marker panel for lifestyle medicine assessment"/>
-      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/inflammatory-marker-observation"/>
+      <description value="Comprehensive inflammatory marker panel for lifestyle medicine assessment. Combines cytokines panel (IL-6, TNF-α) with CRP measurements per RS1 systematic review findings."/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4235,6 +4312,14 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="conceptmaps.html"/>
+        </extension>
+        <nameUrl value="conceptmaps.html"/>
+        <title value="Conceptmaps"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="data-protection-policies.html"/>
         </extension>
         <nameUrl value="data-protection-policies.html"/>
@@ -4263,6 +4348,14 @@
         </extension>
         <nameUrl value="fhirconnect-architecture.html"/>
         <title value="Fhirconnect Architecture"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="inflammatory_markers.html"/>
+        </extension>
+        <nameUrl value="inflammatory_markers.html"/>
+        <title value="Inflammatory Markers"/>
         <generation value="markdown"/>
       </page>
       <page>

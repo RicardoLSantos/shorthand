@@ -34,7 +34,8 @@ Usage: #definition
 // - ValueSets should NOT contain vendor codes (archived: ValueSetVendorCodes.fsh)
 //
 // See: /input/fsh/archive/README.md for full decision rationale
-* targetCanonical = "http://loinc.org"
+// NOTE: targetCanonical removed - LOINC is a CodeSystem, not a ValueSet
+// Group-level target references are used instead (group[x].target = "http://loinc.org")
 
 // =============================================================================
 // GROUP 1: Apple HealthKit → LOINC

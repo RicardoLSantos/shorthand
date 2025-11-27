@@ -1,0 +1,1856 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.exercise_session.v0
+
+concept
+    [at0000]    -- Exercise Session
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"ricardo.santos@med.up.pt">
+        ["date"] = <"2025-11-27">
+    >
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record detailed information about individual exercise sessions captured by fitness wearables and activity trackers, supporting lifestyle medicine interventions, sports performance tracking, and physical activity monitoring within learning health systems.">
+            use = <"Use to record structured exercise session data from wearable devices including:
+
+Session basics:
+- Activity type (running, cycling, swimming, strength training, etc.)
+- Start time, duration, and end time
+- Distance, elevation gain/loss
+- Calories burned (active and total)
+
+Intensity metrics:
+- Average, maximum, and minimum heart rate
+- Heart rate zones distribution
+- Training effect (aerobic/anaerobic)
+- Perceived exertion (RPE)
+- Power output (cycling, running)
+
+Training load:
+- TRIMP (Training Impulse)
+- TSS (Training Stress Score)
+- Training load balance
+- Recovery time recommendation
+
+Activity-specific metrics:
+- Running: cadence, stride length, ground contact time, vertical oscillation
+- Cycling: power, cadence, normalized power, intensity factor
+- Swimming: stroke count, SWOLF, pool lengths, stroke type
+- Strength: sets, reps, weight, rest periods
+
+Environmental context:
+- Indoor/outdoor
+- Terrain type
+- Weather conditions
+- Altitude
+
+Designed for integration with:
+- Apple Health/HealthKit workouts
+- Fitbit activities
+- Garmin Connect activities
+- Polar Flow sessions
+- Strava activities
+- Other fitness platforms
+
+This archetype is intended for self-tracked exercise data from consumer devices. For clinical exercise testing (stress tests, VO2max assessment), use appropriate clinical archetypes.">
+            misuse = <"Not to be used for:
+- Clinical exercise stress testing (use dedicated clinical archetypes)
+- Laboratory-based cardiopulmonary exercise testing
+- Cardiac rehabilitation protocols requiring medical supervision
+- Recording passive physical activity (use physical_activity_detailed)
+- Aggregated daily activity summaries without session boundaries
+- Sports competition official results (use dedicated competition archetypes)">
+            keywords = <"exercise", "workout", "training", "fitness", "activity", "running", "cycling", "swimming", "strength", "HIIT", "wearable", "training load", "TRIMP", "heart rate zone", "calories", "distance", "pace", "power", "cadence", "lifestyle medicine", "sports">
+            copyright = <"© openEHR Foundation, HEADS#2 PhD Project FMUP">
+        >
+    >
+    lifecycle_state = <"in_development">
+    other_contributors = <"HEADS#2 PhD Project, FMUP", "openEHR Community">
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"openEHR Foundation">
+        ["references"] = <"Banister EW. Modeling elite athletic performance. Physiological Testing of Elite Athletes. 1991;403-424.
+Foster C, et al. A new approach to monitoring exercise training. J Strength Cond Res. 2001;15(1):109-115.
+Coggan A. Training and racing using a power meter. VeloPress. 2019.
+Apple HealthKit Workout Types Documentation.
+Garmin FIT SDK Activity Types.
+Polar Training Load Pro Documentation.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardo.santos@med.up.pt">
+        ["original_namespace"] = <"org.openehr">
+        ["original_publisher"] = <"openEHR Foundation">
+        ["custodian_namespace"] = <"org.openehr">
+        ["MD5-CAM-1.0.1"] = <"generated">
+        ["build_uid"] = <"f4e5d6c7-8b9a-4c3d-2e1f-0a1b2c3d4e5f">
+        ["revision"] = <"0.0.1-alpha">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Exercise Session
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Session
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {1..*; unordered} matches {
+                                    ELEMENT[at0004] matches {    -- Activity type
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0200,    -- Running
+                                                    at0201,    -- Walking
+                                                    at0202,    -- Cycling
+                                                    at0203,    -- Swimming
+                                                    at0204,    -- Strength training
+                                                    at0205,    -- HIIT
+                                                    at0206,    -- Yoga
+                                                    at0207,    -- Pilates
+                                                    at0208,    -- Rowing
+                                                    at0209,    -- Elliptical
+                                                    at0210,    -- Stair climbing
+                                                    at0211,    -- Cross-country skiing
+                                                    at0212,    -- Hiking
+                                                    at0213,    -- Dance
+                                                    at0214,    -- Martial arts
+                                                    at0215,    -- Tennis/Racquet sports
+                                                    at0216,    -- Team sports
+                                                    at0217,    -- Golf
+                                                    at0218,    -- Climbing
+                                                    at0219,    -- Functional training
+                                                    at0220,    -- Stretching
+                                                    at0221,    -- Meditation/Breathwork
+                                                    at0222,    -- Water sports
+                                                    at0223,    -- Winter sports
+                                                    at0224,    -- Other cardio
+                                                    at0225]    -- Other
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0005] occurrences matches {0..1} matches {    -- Activity subtype
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Session timing
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Start time
+                                                value matches {
+                                                    DV_DATE_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- End time
+                                                value matches {
+                                                    DV_DATE_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0013] matches {    -- Duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Active time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Pause time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT4H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Distance and movement
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Distance
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"km">
+                                                                magnitude = <|0.0..1000.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"m">
+                                                                magnitude = <|0.0..1000000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["3"] = <
+                                                                units = <"[mi_i]">
+                                                                magnitude = <|0.0..600.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Elevation gain
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"m">
+                                                                magnitude = <|0.0..20000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[ft_i]">
+                                                                magnitude = <|0.0..65000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Elevation loss
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"m">
+                                                                magnitude = <|0.0..20000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[ft_i]">
+                                                                magnitude = <|0.0..65000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Steps
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..500000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Laps
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..1000|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Speed and pace
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Average speed
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::338]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"km/h">
+                                                                magnitude = <|0.0..150.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"m/s">
+                                                                magnitude = <|0.0..50.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                            ["3"] = <
+                                                                units = <"[mi_i]/h">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Maximum speed
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::338]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"km/h">
+                                                                magnitude = <|0.0..200.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"m/s">
+                                                                magnitude = <|0.0..60.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                            ["3"] = <
+                                                                units = <"[mi_i]/h">
+                                                                magnitude = <|0.0..125.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Average pace
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTM/|PT0M..PT60M|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Best pace
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTM/|PT0M..PT60M|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Heart rate
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Average heart rate
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|0.0..300.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Maximum heart rate
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|0.0..300.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Minimum heart rate
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|0.0..300.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- Average HR percentage of max
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Peak HR percentage of max
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..120.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Heart rate zones
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Zone 1 time (Recovery)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Zone 2 time (Aerobic)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Zone 3 time (Tempo)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Zone 4 time (Threshold)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Zone 5 time (Anaerobic)
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTHMS/|PT0S..PT24H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Energy expenditure
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Active calories
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::121]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kcal">
+                                                                magnitude = <|0.0..20000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"kJ">
+                                                                magnitude = <|0.0..84000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Total calories
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::121]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kcal">
+                                                                magnitude = <|0.0..25000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"kJ">
+                                                                magnitude = <|0.0..105000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Fat burn calories
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::121]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kcal">
+                                                                magnitude = <|0.0..10000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0070] occurrences matches {0..1} matches {    -- Training effect
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0071] occurrences matches {0..1} matches {    -- Aerobic training effect
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        magnitude matches {|0.0..5.0|}
+                                                        precision matches {|1|}
+                                                        units matches {"1"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0072] occurrences matches {0..1} matches {    -- Anaerobic training effect
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        magnitude matches {|0.0..5.0|}
+                                                        precision matches {|1|}
+                                                        units matches {"1"}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0073] occurrences matches {0..1} matches {    -- Training effect description
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0230,    -- No benefit (0-0.9)
+                                                            at0231,    -- Minor benefit (1.0-1.9)
+                                                            at0232,    -- Maintaining (2.0-2.9)
+                                                            at0233,    -- Improving (3.0-3.9)
+                                                            at0234,    -- Highly improving (4.0-4.9)
+                                                            at0235]    -- Overreaching (5.0)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0074] occurrences matches {0..1} matches {    -- EPOC
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::126]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ml/kg">
+                                                                magnitude = <|0.0..200.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0080] occurrences matches {0..1} matches {    -- Training load
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0081] occurrences matches {0..1} matches {    -- TRIMP
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..2000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0082] occurrences matches {0..1} matches {    -- TSS
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..1000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0083] occurrences matches {0..1} matches {    -- hrTSS
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..1000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0084] occurrences matches {0..1} matches {    -- Training load
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..2000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0085] occurrences matches {0..1} matches {    -- Load category
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0240,    -- Recovery
+                                                            at0241,    -- Low
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- High
+                                                            at0244]    -- Very high
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0086] occurrences matches {0..1} matches {    -- Recovery time
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTH/|PT0H..PT168H|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0090] occurrences matches {0..1} matches {    -- Running dynamics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0091] occurrences matches {0..1} matches {    -- Average cadence
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|0.0..300.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0092] occurrences matches {0..1} matches {    -- Maximum cadence
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|0.0..300.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0093] occurrences matches {0..1} matches {    -- Average stride length
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"m">
+                                                                magnitude = <|0.0..3.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"cm">
+                                                                magnitude = <|0.0..300.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0094] occurrences matches {0..1} matches {    -- Ground contact time
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::128]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ms">
+                                                                magnitude = <|0.0..500.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0095] occurrences matches {0..1} matches {    -- Ground contact balance
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|40.0..60.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0096] occurrences matches {0..1} matches {    -- Vertical oscillation
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"cm">
+                                                                magnitude = <|0.0..20.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0097] occurrences matches {0..1} matches {    -- Vertical ratio
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..20.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0100] occurrences matches {0..1} matches {    -- Cycling metrics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0101] occurrences matches {0..1} matches {    -- Average power
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::363]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"W">
+                                                                magnitude = <|0.0..2000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0102] occurrences matches {0..1} matches {    -- Maximum power
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::363]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"W">
+                                                                magnitude = <|0.0..3000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0103] occurrences matches {0..1} matches {    -- Normalized power
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::363]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"W">
+                                                                magnitude = <|0.0..2000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0104] occurrences matches {0..1} matches {    -- Intensity factor
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..2.0|}
+                                                        type matches {1}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0105] occurrences matches {0..1} matches {    -- Average cadence
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|0.0..200.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0106] occurrences matches {0..1} matches {    -- Work
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::121]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kJ">
+                                                                magnitude = <|0.0..20000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0110] occurrences matches {0..1} matches {    -- Swimming metrics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0111] occurrences matches {0..1} matches {    -- Pool length
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"m">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[yd_i]">
+                                                                magnitude = <|0.0..110.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0112] occurrences matches {0..1} matches {    -- Lengths
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..500|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0113] occurrences matches {0..1} matches {    -- Total strokes
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0114] occurrences matches {0..1} matches {    -- Average strokes per length
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0115] occurrences matches {0..1} matches {    -- Average SWOLF
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..200|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0116] occurrences matches {0..1} matches {    -- Stroke type
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- Freestyle
+                                                            at0251,    -- Backstroke
+                                                            at0252,    -- Breaststroke
+                                                            at0253,    -- Butterfly
+                                                            at0254,    -- Mixed
+                                                            at0255]    -- Drill
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0120] occurrences matches {0..1} matches {    -- Strength training
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0121] occurrences matches {0..1} matches {    -- Total sets
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..200|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0122] occurrences matches {0..1} matches {    -- Total reps
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..2000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0123] occurrences matches {0..1} matches {    -- Total volume
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::124]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kg">
+                                                                magnitude = <|0.0..100000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"[lb_av]">
+                                                                magnitude = <|0.0..220000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0124] occurrences matches {0..1} matches {    -- Exercises completed
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..50|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0130] occurrences matches {0..1} matches {    -- Rating of perceived exertion
+                                        value matches {
+                                            DV_COUNT matches {
+                                                magnitude matches {|1..10|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0131] occurrences matches {0..1} matches {    -- Feeling
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0260,    -- Great
+                                                    at0261,    -- Good
+                                                    at0262,    -- Normal
+                                                    at0263,    -- Bad
+                                                    at0264]    -- Terrible
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0132] occurrences matches {0..1} matches {    -- Session notes
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0133] occurrences matches {0..*} matches {    -- Additional details
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0140] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0141] occurrences matches {0..1} matches {    -- Environment
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0270,    -- Indoor
+                                                    at0271,    -- Outdoor
+                                                    at0272]    -- Mixed
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0142] occurrences matches {0..1} matches {    -- Terrain
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0280,    -- Flat
+                                                    at0281,    -- Hilly
+                                                    at0282,    -- Mountainous
+                                                    at0283,    -- Trail
+                                                    at0284,    -- Track
+                                                    at0285,    -- Treadmill
+                                                    at0286,    -- Road
+                                                    at0287]    -- Mixed terrain
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0143] occurrences matches {0..1} matches {    -- Weather conditions
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0144] occurrences matches {0..1} matches {    -- Temperature
+                                        value matches {
+                                            C_DV_QUANTITY <
+                                                property = <[openehr::127]>
+                                                list = <
+                                                    ["1"] = <
+                                                        units = <"Cel">
+                                                        magnitude = <|-50.0..60.0|>
+                                                        precision = <|1|>
+                                                    >
+                                                    ["2"] = <
+                                                        units = <"[degF]">
+                                                        magnitude = <|-60.0..140.0|>
+                                                        precision = <|1|>
+                                                    >
+                                                >
+                                            >
+                                        }
+                                    }
+                                    ELEMENT[at0145] occurrences matches {0..1} matches {    -- Humidity
+                                        value matches {
+                                            DV_PROPORTION matches {
+                                                numerator matches {|0.0..100.0|}
+                                                type matches {2}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0146] occurrences matches {0..1} matches {    -- Altitude
+                                        value matches {
+                                            C_DV_QUANTITY <
+                                                property = <[openehr::122]>
+                                                list = <
+                                                    ["1"] = <
+                                                        units = <"m">
+                                                        magnitude = <|-500.0..9000.0|>
+                                                        precision = <|0|>
+                                                    >
+                                                    ["2"] = <
+                                                        units = <"[ft_i]">
+                                                        magnitude = <|-1500.0..30000.0|>
+                                                        precision = <|0|>
+                                                    >
+                                                >
+                                            >
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0147] occurrences matches {0..*} matches {    -- Physiological context
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.physiological_context(-[a-zA-Z0-9_]+)*\.v1/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0150] matches {    -- Tree
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0151] occurrences matches {0..1} matches {    -- GPS enabled
+                        value matches {
+                            DV_BOOLEAN matches {*}
+                        }
+                    }
+                    ELEMENT[at0152] occurrences matches {0..1} matches {    -- HR monitor type
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0290,    -- Optical (PPG)
+                                    at0291,    -- Chest strap
+                                    at0292,    -- Arm band
+                                    at0293,    -- None
+                                    at0294]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0153] occurrences matches {0..1} matches {    -- Power meter type
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0300,    -- Pedal-based
+                                    at0301,    -- Crank-based
+                                    at0302,    -- Hub-based
+                                    at0303,    -- Smart trainer
+                                    at0304,    -- Estimated
+                                    at0305]    -- None
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0154] occurrences matches {0..1} matches {    -- Auto-pause enabled
+                        value matches {
+                            DV_BOOLEAN matches {*}
+                        }
+                    }
+                    ELEMENT[at0155] occurrences matches {0..1} matches {    -- Auto-lap distance
+                        value matches {
+                            C_DV_QUANTITY <
+                                property = <[openehr::122]>
+                                list = <
+                                    ["1"] = <
+                                        units = <"km">
+                                        magnitude = <|0.0..10.0|>
+                                        precision = <|2|>
+                                    >
+                                    ["2"] = <
+                                        units = <"[mi_i]">
+                                        magnitude = <|0.0..6.0|>
+                                        precision = <|2|>
+                                    >
+                                >
+                            >
+                        }
+                    }
+                    ELEMENT[at0156] occurrences matches {0..1} matches {    -- Data source platform
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0310,    -- Apple Health/HealthKit
+                                    at0311,    -- Fitbit
+                                    at0312,    -- Garmin Connect
+                                    at0313,    -- Polar Flow
+                                    at0314,    -- Strava
+                                    at0315,    -- Samsung Health
+                                    at0316,    -- Whoop
+                                    at0317,    -- Oura
+                                    at0318,    -- Peloton
+                                    at0319,    -- Zwift
+                                    at0320,    -- TrainingPeaks
+                                    at0321,    -- Other
+                                    at0322]    -- Direct device export
+                                }
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0157] occurrences matches {0..*} matches {    -- Device details
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.wearable_device(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0158] occurrences matches {0..*} matches {    -- Data quality
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.data_quality_indicator(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0159] occurrences matches {0..*} matches {    -- Data provenance
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.vendor_data_provenance(-[a-zA-Z0-9_]+)*\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0160] occurrences matches {0..*} matches {    -- Extension
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Exercise Session">
+                    description = <"Detailed information about an individual exercise session captured by fitness wearables and activity trackers.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Session">
+                    description = <"A single exercise session event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0004"] = <
+                    text = <"Activity type">
+                    description = <"The type of exercise or physical activity performed.">
+                >
+                ["at0005"] = <
+                    text = <"Activity subtype">
+                    description = <"More specific description of the activity (e.g., 'Trail running', '10K race', 'Interval workout').">
+                >
+                ["at0010"] = <
+                    text = <"Session timing">
+                    description = <"Timing details for the exercise session.">
+                >
+                ["at0011"] = <
+                    text = <"Start time">
+                    description = <"Date and time when the session started.">
+                >
+                ["at0012"] = <
+                    text = <"End time">
+                    description = <"Date and time when the session ended.">
+                >
+                ["at0013"] = <
+                    text = <"Duration">
+                    description = <"Total duration of the session including pauses.">
+                >
+                ["at0014"] = <
+                    text = <"Active time">
+                    description = <"Time actually spent in activity (excluding pauses).">
+                >
+                ["at0015"] = <
+                    text = <"Pause time">
+                    description = <"Total time spent paused during the session.">
+                >
+                ["at0020"] = <
+                    text = <"Distance and movement">
+                    description = <"Distance covered and movement metrics.">
+                >
+                ["at0021"] = <
+                    text = <"Distance">
+                    description = <"Total distance covered during the session.">
+                >
+                ["at0022"] = <
+                    text = <"Elevation gain">
+                    description = <"Total elevation gained during the session.">
+                >
+                ["at0023"] = <
+                    text = <"Elevation loss">
+                    description = <"Total elevation lost during the session.">
+                >
+                ["at0024"] = <
+                    text = <"Steps">
+                    description = <"Number of steps taken during the session.">
+                >
+                ["at0025"] = <
+                    text = <"Laps">
+                    description = <"Number of laps completed (for track, pool, or defined circuits).">
+                >
+                ["at0030"] = <
+                    text = <"Speed and pace">
+                    description = <"Speed and pace metrics for the session.">
+                >
+                ["at0031"] = <
+                    text = <"Average speed">
+                    description = <"Average speed during the session.">
+                >
+                ["at0032"] = <
+                    text = <"Maximum speed">
+                    description = <"Maximum speed reached during the session.">
+                >
+                ["at0033"] = <
+                    text = <"Average pace">
+                    description = <"Average pace (time per distance unit, e.g., min/km).">
+                >
+                ["at0034"] = <
+                    text = <"Best pace">
+                    description = <"Fastest pace achieved during the session.">
+                >
+                ["at0040"] = <
+                    text = <"Heart rate">
+                    description = <"Heart rate metrics during the session.">
+                >
+                ["at0041"] = <
+                    text = <"Average heart rate">
+                    description = <"Average heart rate during the session.">
+                >
+                ["at0042"] = <
+                    text = <"Maximum heart rate">
+                    description = <"Maximum heart rate reached during the session.">
+                >
+                ["at0043"] = <
+                    text = <"Minimum heart rate">
+                    description = <"Minimum heart rate recorded during the session.">
+                >
+                ["at0044"] = <
+                    text = <"Average HR percentage of max">
+                    description = <"Average heart rate as percentage of maximum heart rate.">
+                >
+                ["at0045"] = <
+                    text = <"Peak HR percentage of max">
+                    description = <"Peak heart rate as percentage of maximum heart rate.">
+                >
+                ["at0050"] = <
+                    text = <"Heart rate zones">
+                    description = <"Time spent in each heart rate training zone.">
+                >
+                ["at0051"] = <
+                    text = <"Zone 1 time (Recovery)">
+                    description = <"Time spent in Zone 1 (typically 50-60% max HR).">
+                >
+                ["at0052"] = <
+                    text = <"Zone 2 time (Aerobic)">
+                    description = <"Time spent in Zone 2 (typically 60-70% max HR).">
+                >
+                ["at0053"] = <
+                    text = <"Zone 3 time (Tempo)">
+                    description = <"Time spent in Zone 3 (typically 70-80% max HR).">
+                >
+                ["at0054"] = <
+                    text = <"Zone 4 time (Threshold)">
+                    description = <"Time spent in Zone 4 (typically 80-90% max HR).">
+                >
+                ["at0055"] = <
+                    text = <"Zone 5 time (Anaerobic)">
+                    description = <"Time spent in Zone 5 (typically 90-100% max HR).">
+                >
+                ["at0060"] = <
+                    text = <"Energy expenditure">
+                    description = <"Calories burned during the session.">
+                >
+                ["at0061"] = <
+                    text = <"Active calories">
+                    description = <"Calories burned due to activity (excluding basal metabolism).">
+                >
+                ["at0062"] = <
+                    text = <"Total calories">
+                    description = <"Total calories burned including basal metabolism.">
+                >
+                ["at0063"] = <
+                    text = <"Fat burn calories">
+                    description = <"Estimated calories burned from fat oxidation.">
+                >
+                ["at0070"] = <
+                    text = <"Training effect">
+                    description = <"Training effect metrics indicating workout impact on fitness.">
+                >
+                ["at0071"] = <
+                    text = <"Aerobic training effect">
+                    description = <"Impact of workout on aerobic fitness (0-5 scale).">
+                >
+                ["at0072"] = <
+                    text = <"Anaerobic training effect">
+                    description = <"Impact of workout on anaerobic capacity (0-5 scale).">
+                >
+                ["at0073"] = <
+                    text = <"Training effect description">
+                    description = <"Categorical description of training effect level.">
+                >
+                ["at0074"] = <
+                    text = <"EPOC">
+                    description = <"Excess Post-Exercise Oxygen Consumption - measure of recovery oxygen debt.">
+                >
+                ["at0080"] = <
+                    text = <"Training load">
+                    description = <"Training load and stress metrics.">
+                >
+                ["at0081"] = <
+                    text = <"TRIMP">
+                    description = <"Training Impulse - time-in-zone based training load metric.">
+                >
+                ["at0082"] = <
+                    text = <"TSS">
+                    description = <"Training Stress Score - power-based training load (cycling).">
+                >
+                ["at0083"] = <
+                    text = <"hrTSS">
+                    description = <"Heart Rate Training Stress Score.">
+                >
+                ["at0084"] = <
+                    text = <"Training load">
+                    description = <"Vendor-specific training load value.">
+                >
+                ["at0085"] = <
+                    text = <"Load category">
+                    description = <"Categorical classification of training load.">
+                >
+                ["at0086"] = <
+                    text = <"Recovery time">
+                    description = <"Recommended recovery time before next hard session.">
+                >
+                ["at0090"] = <
+                    text = <"Running dynamics">
+                    description = <"Advanced running form metrics.">
+                >
+                ["at0091"] = <
+                    text = <"Average cadence">
+                    description = <"Average steps per minute while running.">
+                >
+                ["at0092"] = <
+                    text = <"Maximum cadence">
+                    description = <"Maximum steps per minute achieved.">
+                >
+                ["at0093"] = <
+                    text = <"Average stride length">
+                    description = <"Average length of each stride.">
+                >
+                ["at0094"] = <
+                    text = <"Ground contact time">
+                    description = <"Average time each foot spends on the ground.">
+                >
+                ["at0095"] = <
+                    text = <"Ground contact balance">
+                    description = <"Balance of ground contact time between left and right foot (percentage).">
+                >
+                ["at0096"] = <
+                    text = <"Vertical oscillation">
+                    description = <"Average vertical movement of torso with each step.">
+                >
+                ["at0097"] = <
+                    text = <"Vertical ratio">
+                    description = <"Ratio of vertical oscillation to stride length.">
+                >
+                ["at0100"] = <
+                    text = <"Cycling metrics">
+                    description = <"Cycling-specific performance metrics.">
+                >
+                ["at0101"] = <
+                    text = <"Average power">
+                    description = <"Average power output during the ride.">
+                >
+                ["at0102"] = <
+                    text = <"Maximum power">
+                    description = <"Maximum power output achieved.">
+                >
+                ["at0103"] = <
+                    text = <"Normalized power">
+                    description = <"Normalized power - accounts for variability in effort.">
+                >
+                ["at0104"] = <
+                    text = <"Intensity factor">
+                    description = <"Ratio of normalized power to functional threshold power.">
+                >
+                ["at0105"] = <
+                    text = <"Average cadence">
+                    description = <"Average pedaling cadence (RPM).">
+                >
+                ["at0106"] = <
+                    text = <"Work">
+                    description = <"Total mechanical work done (kilojoules).">
+                >
+                ["at0110"] = <
+                    text = <"Swimming metrics">
+                    description = <"Swimming-specific performance metrics.">
+                >
+                ["at0111"] = <
+                    text = <"Pool length">
+                    description = <"Length of the pool used for the session.">
+                >
+                ["at0112"] = <
+                    text = <"Lengths">
+                    description = <"Number of pool lengths completed.">
+                >
+                ["at0113"] = <
+                    text = <"Total strokes">
+                    description = <"Total number of strokes taken.">
+                >
+                ["at0114"] = <
+                    text = <"Average strokes per length">
+                    description = <"Average number of strokes per pool length.">
+                >
+                ["at0115"] = <
+                    text = <"Average SWOLF">
+                    description = <"SWOLF score (strokes + time per length) - lower is better.">
+                >
+                ["at0116"] = <
+                    text = <"Stroke type">
+                    description = <"Primary swimming stroke used.">
+                >
+                ["at0120"] = <
+                    text = <"Strength training">
+                    description = <"Strength training session metrics.">
+                >
+                ["at0121"] = <
+                    text = <"Total sets">
+                    description = <"Total number of sets completed.">
+                >
+                ["at0122"] = <
+                    text = <"Total reps">
+                    description = <"Total number of repetitions completed.">
+                >
+                ["at0123"] = <
+                    text = <"Total volume">
+                    description = <"Total volume lifted (weight × reps).">
+                >
+                ["at0124"] = <
+                    text = <"Exercises completed">
+                    description = <"Number of different exercises performed.">
+                >
+                ["at0130"] = <
+                    text = <"Rating of perceived exertion">
+                    description = <"Subjective intensity rating (1-10 scale, Borg CR-10).">
+                >
+                ["at0131"] = <
+                    text = <"Feeling">
+                    description = <"Subjective feeling during or after the session.">
+                >
+                ["at0132"] = <
+                    text = <"Session notes">
+                    description = <"Free text notes about the session.">
+                >
+                ["at0133"] = <
+                    text = <"Additional details">
+                    description = <"Additional structured details about the session.">
+                >
+                ["at0140"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0141"] = <
+                    text = <"Environment">
+                    description = <"Whether the session was indoors or outdoors.">
+                >
+                ["at0142"] = <
+                    text = <"Terrain">
+                    description = <"Type of terrain or surface.">
+                >
+                ["at0143"] = <
+                    text = <"Weather conditions">
+                    description = <"Weather conditions during outdoor sessions.">
+                >
+                ["at0144"] = <
+                    text = <"Temperature">
+                    description = <"Ambient temperature during the session.">
+                >
+                ["at0145"] = <
+                    text = <"Humidity">
+                    description = <"Ambient humidity percentage.">
+                >
+                ["at0146"] = <
+                    text = <"Altitude">
+                    description = <"Average altitude during the session.">
+                >
+                ["at0147"] = <
+                    text = <"Physiological context">
+                    description = <"Additional physiological context.">
+                >
+                ["at0150"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0151"] = <
+                    text = <"GPS enabled">
+                    description = <"Whether GPS tracking was enabled.">
+                >
+                ["at0152"] = <
+                    text = <"HR monitor type">
+                    description = <"Type of heart rate monitor used.">
+                >
+                ["at0153"] = <
+                    text = <"Power meter type">
+                    description = <"Type of power meter used (cycling).">
+                >
+                ["at0154"] = <
+                    text = <"Auto-pause enabled">
+                    description = <"Whether automatic pause detection was enabled.">
+                >
+                ["at0155"] = <
+                    text = <"Auto-lap distance">
+                    description = <"Distance interval for automatic lap marking.">
+                >
+                ["at0156"] = <
+                    text = <"Data source platform">
+                    description = <"Platform or app from which data was exported.">
+                >
+                ["at0157"] = <
+                    text = <"Device details">
+                    description = <"Details about the recording device.">
+                >
+                ["at0158"] = <
+                    text = <"Data quality">
+                    description = <"Quality indicators for the session data.">
+                >
+                ["at0159"] = <
+                    text = <"Data provenance">
+                    description = <"Information about data source and processing.">
+                >
+                ["at0160"] = <
+                    text = <"Extension">
+                    description = <"Additional information required to extend the model.">
+                >
+                ["at0200"] = <
+                    text = <"Running">
+                    description = <"Running (outdoor, treadmill, trail).">
+                >
+                ["at0201"] = <
+                    text = <"Walking">
+                    description = <"Walking activities.">
+                >
+                ["at0202"] = <
+                    text = <"Cycling">
+                    description = <"Cycling (road, mountain, indoor).">
+                >
+                ["at0203"] = <
+                    text = <"Swimming">
+                    description = <"Swimming (pool or open water).">
+                >
+                ["at0204"] = <
+                    text = <"Strength training">
+                    description = <"Weight training and resistance exercises.">
+                >
+                ["at0205"] = <
+                    text = <"HIIT">
+                    description = <"High-Intensity Interval Training.">
+                >
+                ["at0206"] = <
+                    text = <"Yoga">
+                    description = <"Yoga practice.">
+                >
+                ["at0207"] = <
+                    text = <"Pilates">
+                    description = <"Pilates exercises.">
+                >
+                ["at0208"] = <
+                    text = <"Rowing">
+                    description = <"Rowing (ergometer or water).">
+                >
+                ["at0209"] = <
+                    text = <"Elliptical">
+                    description = <"Elliptical trainer workout.">
+                >
+                ["at0210"] = <
+                    text = <"Stair climbing">
+                    description = <"Stair climbing or stepper.">
+                >
+                ["at0211"] = <
+                    text = <"Cross-country skiing">
+                    description = <"Cross-country skiing.">
+                >
+                ["at0212"] = <
+                    text = <"Hiking">
+                    description = <"Hiking and trekking.">
+                >
+                ["at0213"] = <
+                    text = <"Dance">
+                    description = <"Dance workout or class.">
+                >
+                ["at0214"] = <
+                    text = <"Martial arts">
+                    description = <"Martial arts training.">
+                >
+                ["at0215"] = <
+                    text = <"Tennis/Racquet sports">
+                    description = <"Tennis, badminton, squash, etc.">
+                >
+                ["at0216"] = <
+                    text = <"Team sports">
+                    description = <"Football, basketball, soccer, etc.">
+                >
+                ["at0217"] = <
+                    text = <"Golf">
+                    description = <"Golf.">
+                >
+                ["at0218"] = <
+                    text = <"Climbing">
+                    description = <"Rock climbing or bouldering.">
+                >
+                ["at0219"] = <
+                    text = <"Functional training">
+                    description = <"CrossFit, circuit training, bootcamp.">
+                >
+                ["at0220"] = <
+                    text = <"Stretching">
+                    description = <"Stretching and flexibility work.">
+                >
+                ["at0221"] = <
+                    text = <"Meditation/Breathwork">
+                    description = <"Meditation or breathing exercises.">
+                >
+                ["at0222"] = <
+                    text = <"Water sports">
+                    description = <"Kayaking, paddleboarding, surfing, etc.">
+                >
+                ["at0223"] = <
+                    text = <"Winter sports">
+                    description = <"Skiing, snowboarding, ice skating.">
+                >
+                ["at0224"] = <
+                    text = <"Other cardio">
+                    description = <"Other cardiovascular exercise.">
+                >
+                ["at0225"] = <
+                    text = <"Other">
+                    description = <"Activity type not otherwise specified.">
+                >
+                ["at0230"] = <
+                    text = <"No benefit (0-0.9)">
+                    description = <"Training effect too low to provide benefit.">
+                >
+                ["at0231"] = <
+                    text = <"Minor benefit (1.0-1.9)">
+                    description = <"Recovery workout level.">
+                >
+                ["at0232"] = <
+                    text = <"Maintaining (2.0-2.9)">
+                    description = <"Maintains current fitness level.">
+                >
+                ["at0233"] = <
+                    text = <"Improving (3.0-3.9)">
+                    description = <"Improves fitness level.">
+                >
+                ["at0234"] = <
+                    text = <"Highly improving (4.0-4.9)">
+                    description = <"Significant fitness improvement.">
+                >
+                ["at0235"] = <
+                    text = <"Overreaching (5.0)">
+                    description = <"Very hard workout, requires extended recovery.">
+                >
+                ["at0240"] = <
+                    text = <"Recovery">
+                    description = <"Recovery-level training load.">
+                >
+                ["at0241"] = <
+                    text = <"Low">
+                    description = <"Low training load.">
+                >
+                ["at0242"] = <
+                    text = <"Moderate">
+                    description = <"Moderate training load.">
+                >
+                ["at0243"] = <
+                    text = <"High">
+                    description = <"High training load.">
+                >
+                ["at0244"] = <
+                    text = <"Very high">
+                    description = <"Very high training load.">
+                >
+                ["at0250"] = <
+                    text = <"Freestyle">
+                    description = <"Front crawl/freestyle stroke.">
+                >
+                ["at0251"] = <
+                    text = <"Backstroke">
+                    description = <"Backstroke.">
+                >
+                ["at0252"] = <
+                    text = <"Breaststroke">
+                    description = <"Breaststroke.">
+                >
+                ["at0253"] = <
+                    text = <"Butterfly">
+                    description = <"Butterfly stroke.">
+                >
+                ["at0254"] = <
+                    text = <"Mixed">
+                    description = <"Multiple stroke types.">
+                >
+                ["at0255"] = <
+                    text = <"Drill">
+                    description = <"Technique drill work.">
+                >
+                ["at0260"] = <
+                    text = <"Great">
+                    description = <"Felt great during/after session.">
+                >
+                ["at0261"] = <
+                    text = <"Good">
+                    description = <"Felt good.">
+                >
+                ["at0262"] = <
+                    text = <"Normal">
+                    description = <"Normal feeling.">
+                >
+                ["at0263"] = <
+                    text = <"Bad">
+                    description = <"Felt bad.">
+                >
+                ["at0264"] = <
+                    text = <"Terrible">
+                    description = <"Felt terrible.">
+                >
+                ["at0270"] = <
+                    text = <"Indoor">
+                    description = <"Session performed indoors.">
+                >
+                ["at0271"] = <
+                    text = <"Outdoor">
+                    description = <"Session performed outdoors.">
+                >
+                ["at0272"] = <
+                    text = <"Mixed">
+                    description = <"Session included both indoor and outdoor portions.">
+                >
+                ["at0280"] = <
+                    text = <"Flat">
+                    description = <"Flat terrain.">
+                >
+                ["at0281"] = <
+                    text = <"Hilly">
+                    description = <"Hilly terrain with moderate elevation changes.">
+                >
+                ["at0282"] = <
+                    text = <"Mountainous">
+                    description = <"Mountainous terrain with significant elevation.">
+                >
+                ["at0283"] = <
+                    text = <"Trail">
+                    description = <"Off-road trail surface.">
+                >
+                ["at0284"] = <
+                    text = <"Track">
+                    description = <"Athletics track.">
+                >
+                ["at0285"] = <
+                    text = <"Treadmill">
+                    description = <"Treadmill.">
+                >
+                ["at0286"] = <
+                    text = <"Road">
+                    description = <"Paved road surface.">
+                >
+                ["at0287"] = <
+                    text = <"Mixed terrain">
+                    description = <"Multiple terrain types.">
+                >
+                ["at0290"] = <
+                    text = <"Optical (PPG)">
+                    description = <"Wrist-based optical heart rate sensor.">
+                >
+                ["at0291"] = <
+                    text = <"Chest strap">
+                    description = <"Chest strap heart rate monitor.">
+                >
+                ["at0292"] = <
+                    text = <"Arm band">
+                    description = <"Optical arm band heart rate monitor.">
+                >
+                ["at0293"] = <
+                    text = <"None">
+                    description = <"No heart rate monitoring.">
+                >
+                ["at0294"] = <
+                    text = <"Unknown">
+                    description = <"Heart rate monitor type unknown.">
+                >
+                ["at0300"] = <
+                    text = <"Pedal-based">
+                    description = <"Power meter in pedals.">
+                >
+                ["at0301"] = <
+                    text = <"Crank-based">
+                    description = <"Power meter in crank arm or spider.">
+                >
+                ["at0302"] = <
+                    text = <"Hub-based">
+                    description = <"Power meter in rear hub.">
+                >
+                ["at0303"] = <
+                    text = <"Smart trainer">
+                    description = <"Power measured by smart trainer.">
+                >
+                ["at0304"] = <
+                    text = <"Estimated">
+                    description = <"Power estimated from other metrics.">
+                >
+                ["at0305"] = <
+                    text = <"None">
+                    description = <"No power measurement.">
+                >
+                ["at0310"] = <
+                    text = <"Apple Health/HealthKit">
+                    description = <"Data from Apple Health/HealthKit.">
+                >
+                ["at0311"] = <
+                    text = <"Fitbit">
+                    description = <"Data from Fitbit.">
+                >
+                ["at0312"] = <
+                    text = <"Garmin Connect">
+                    description = <"Data from Garmin Connect.">
+                >
+                ["at0313"] = <
+                    text = <"Polar Flow">
+                    description = <"Data from Polar Flow.">
+                >
+                ["at0314"] = <
+                    text = <"Strava">
+                    description = <"Data from Strava.">
+                >
+                ["at0315"] = <
+                    text = <"Samsung Health">
+                    description = <"Data from Samsung Health.">
+                >
+                ["at0316"] = <
+                    text = <"Whoop">
+                    description = <"Data from Whoop.">
+                >
+                ["at0317"] = <
+                    text = <"Oura">
+                    description = <"Data from Oura.">
+                >
+                ["at0318"] = <
+                    text = <"Peloton">
+                    description = <"Data from Peloton.">
+                >
+                ["at0319"] = <
+                    text = <"Zwift">
+                    description = <"Data from Zwift.">
+                >
+                ["at0320"] = <
+                    text = <"TrainingPeaks">
+                    description = <"Data from TrainingPeaks.">
+                >
+                ["at0321"] = <
+                    text = <"Other">
+                    description = <"Other data source.">
+                >
+                ["at0322"] = <
+                    text = <"Direct device export">
+                    description = <"Directly exported from device.">
+                >
+            >
+        >
+    >
+
+    term_binding = <
+        ["LOINC"] = <
+            items = <
+                ["at0013"] = <[LOINC::55411-3]>
+                ["at0024"] = <[LOINC::55423-8]>
+                ["at0041"] = <[LOINC::8867-4]>
+                ["at0061"] = <[LOINC::41981-2]>
+            >
+        >
+    >
