@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (45 Total)
+## Archetypes Included (48 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (40)
+### OBSERVATION Archetypes (43)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -68,6 +68,9 @@ archetypes/openEHR/
 | `yoga_session.v0.adl` | Yoga styles, poses, pranayama, mindfulness metrics | ~1250 | CKM Ready |
 | `hiking_activity.v0.adl` | Elevation, terrain, GPS tracking, outdoor wellness | ~1200 | CKM Ready |
 | `screen_time.v0.adl` | Digital wellness, app usage, notifications, sleep impact | ~1100 | CKM Ready |
+| `sleep_intervention.v0.adl` | CPAP/BiPAP therapy, AHI, sleep aids, CBT-I progress | ~1150 | CKM Ready |
+| `hearing_health.v0.adl` | Noise exposure, headphone levels, tinnitus, WHO safe listening | ~1200 | CKM Ready |
+| `posture_assessment.v0.adl` | Sedentary time, standing hours, ergonomics, slouch alerts | ~1100 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -106,7 +109,7 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 45 archetypes validated with ADL 1.4 structural validator:
+All 48 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
 - **Warnings**: Minor (false positives on term_bindings detection)
 - **Phase 1A-1B**: 7 archetypes validated 2025-11-27
@@ -121,6 +124,7 @@ All 45 archetypes validated with ADL 1.4 structural validator:
 - **Phase 8**: 3 archetypes validated 2025-11-27 (advanced fitness)
 - **Phase 9**: 3 archetypes validated 2025-11-27 (sports-specific: swimming, cycling, strength)
 - **Phase 10**: 3 archetypes validated 2025-11-27 (wellness: yoga, hiking, screen time)
+- **Phase 11**: 3 archetypes validated 2025-11-27 (health monitoring: sleep intervention, hearing, posture)
 
 ## Related Resources
 
@@ -132,4 +136,4 @@ All 45 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 45 (5 CLUSTERs + 40 OBSERVATIONs)*
+*Archetypes: 48 (5 CLUSTERs + 43 OBSERVATIONs)*
