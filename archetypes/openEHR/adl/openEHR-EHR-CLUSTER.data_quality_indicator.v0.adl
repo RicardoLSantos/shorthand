@@ -1,0 +1,344 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-CLUSTER.data_quality_indicator.v0
+
+concept
+	[at0000]	-- Data Quality Indicator
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record standardized data quality metrics for wearable device measurements, enabling assessment of data reliability and fitness for clinical or research use.">
+            use = <"Use as a nested CLUSTER within OBSERVATION archetypes (HRV, physical activity, sleep, SpO2, etc.) to document quality metrics for the recorded data. Key use cases:
+
+1. Clinical Decision Support: Filter low-quality data before clinical interpretation
+2. Research Data Cleaning: Identify and exclude artifacts in research datasets
+3. Vendor Comparison: Compare data quality across different wearable platforms
+4. Algorithm Validation: Track quality metrics for ML/AI input data
+
+Quality Metrics Include:
+- Overall quality level (categorical assessment)
+- Signal quality score (0-100 scale)
+- Artifact percentage (motion, noise, dropout)
+- Valid sample coverage
+- Assessment method and algorithm used
+
+Vendor-Specific Quality Indicators:
+- Fitbit: coverage >= 80% for valid HRV
+- Apple: confidence score for sleep staging
+- Oura: HRV quality flags
+- Polar: RR interval quality markers">
+            keywords = <"data quality", "signal quality", "artifact", "noise", "coverage", "reliability", "validity", "wearable", "quality control", "QC", "data cleaning">
+            misuse = <"Not to be used for:
+- Device hardware quality (use CLUSTER.wearable_device)
+- Measurement uncertainty/error bounds (use specific measurement archetypes)
+- Clinical interpretation quality (use clinical assessment archetypes)">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"
+1. Bent B, et al. Investigating sources of inaccuracy in wearable optical heart rate sensors. NPJ Digit Med. 2020;3:18.
+2. Nelson BW, et al. Guidelines for wrist-worn consumer wearable assessment of heart rate in biobehavioral research. NPJ Digit Med. 2020;3:90.
+3. de Zambotti M, et al. Wearable sleep technology in clinical and research settings. Med Sci Sports Exerc. 2019;51(7):1538-1557.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardolourencosantos@gmail.com">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    CLUSTER[at0000] matches {    -- Data quality indicator
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0001] occurrences matches {0..1} matches {    -- Quality level
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at200,    -- High quality
+                            at201,    -- Moderate quality
+                            at202,    -- Low quality
+                            at203]    -- Quality unknown
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {    -- Signal quality score
+                value matches {
+                    DV_COUNT matches {
+                        magnitude matches {|0..100|}
+                    }
+                }
+            }
+            CLUSTER[at0010] occurrences matches {0..1} matches {    -- Artifact metrics
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0011] occurrences matches {0..1} matches {    -- Artifact percentage
+                        value matches {
+                            DV_PROPORTION matches {
+                                numerator matches {|0.0..100.0|}
+                                type matches {2}    -- percent
+                            }
+                        }
+                    }
+                    ELEMENT[at0012] occurrences matches {0..1} matches {    -- Motion artifact count
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0013] occurrences matches {0..1} matches {    -- Signal dropout count
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0014] occurrences matches {0..1} matches {    -- Noise episodes
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0020] occurrences matches {0..1} matches {    -- Sample coverage
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0021] occurrences matches {0..1} matches {    -- Valid sample count
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0022] occurrences matches {0..1} matches {    -- Total sample count
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0023] occurrences matches {0..1} matches {    -- Coverage percentage
+                        value matches {
+                            DV_PROPORTION matches {
+                                numerator matches {|0.0..100.0|}
+                                type matches {2}    -- percent
+                            }
+                        }
+                    }
+                    ELEMENT[at0024] occurrences matches {0..1} matches {    -- Missing data percentage
+                        value matches {
+                            DV_PROPORTION matches {
+                                numerator matches {|0.0..100.0|}
+                                type matches {2}    -- percent
+                            }
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0030] occurrences matches {0..1} matches {    -- HRV-specific quality (optional)
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0031] occurrences matches {0..1} matches {    -- Ectopic beat count
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0032] occurrences matches {0..1} matches {    -- Ectopic beat percentage
+                        value matches {
+                            DV_PROPORTION matches {
+                                numerator matches {|0.0..100.0|}
+                                type matches {2}    -- percent
+                            }
+                        }
+                    }
+                    ELEMENT[at0033] occurrences matches {0..1} matches {    -- RR interval quality
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at210,    -- Good (< 5% ectopic)
+                                    at211,    -- Acceptable (5-10% ectopic)
+                                    at212,    -- Poor (> 10% ectopic)
+                                    at213]    -- Unusable
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0040] occurrences matches {0..1} matches {    -- Assessment method
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at220,    -- Automatic algorithm
+                            at221,    -- Manual review
+                            at222,    -- Vendor-provided
+                            at223,    -- Hybrid (auto + manual)
+                            at224]    -- Machine learning
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Quality algorithm
+                value matches {
+                    DV_TEXT
+                }
+            }
+            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Quality algorithm version
+                value matches {
+                    DV_TEXT
+                }
+            }
+            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Quality assessment timestamp
+                value matches {
+                    DV_DATE_TIME
+                }
+            }
+            ELEMENT[at0050] occurrences matches {0..1} matches {    -- Meets minimum quality threshold
+                value matches {
+                    DV_BOOLEAN
+                }
+            }
+            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Recommended for clinical use
+                value matches {
+                    DV_BOOLEAN
+                }
+            }
+            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Quality notes
+                value matches {
+                    DV_TEXT
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Data quality indicator">
+                    description = <"Standardized data quality metrics for wearable device measurements.">
+                >
+                ["at0001"] = <
+                    text = <"Quality level">
+                    description = <"Overall categorical assessment of data quality.">
+                >
+                ["at0002"] = <
+                    text = <"Signal quality score">
+                    description = <"Numeric quality score from 0 (worst) to 100 (best).">
+                >
+                ["at0010"] = <
+                    text = <"Artifact metrics">
+                    description = <"Metrics related to data artifacts and noise.">
+                >
+                ["at0011"] = <
+                    text = <"Artifact percentage">
+                    description = <"Percentage of data samples affected by artifacts.">
+                >
+                ["at0012"] = <
+                    text = <"Motion artifact count">
+                    description = <"Number of motion-related artifacts detected.">
+                >
+                ["at0013"] = <
+                    text = <"Signal dropout count">
+                    description = <"Number of signal loss episodes.">
+                >
+                ["at0014"] = <
+                    text = <"Noise episodes">
+                    description = <"Number of noise contamination episodes.">
+                >
+                ["at0020"] = <
+                    text = <"Sample coverage">
+                    description = <"Metrics related to data completeness and coverage.">
+                >
+                ["at0021"] = <
+                    text = <"Valid sample count">
+                    description = <"Number of samples passing quality filters.">
+                >
+                ["at0022"] = <
+                    text = <"Total sample count">
+                    description = <"Total number of samples in the recording.">
+                >
+                ["at0023"] = <
+                    text = <"Coverage percentage">
+                    description = <"Percentage of valid samples (valid/total * 100).">
+                >
+                ["at0024"] = <
+                    text = <"Missing data percentage">
+                    description = <"Percentage of expected data that is missing.">
+                >
+                ["at0030"] = <
+                    text = <"HRV-specific quality">
+                    description = <"Quality metrics specific to heart rate variability data.">
+                >
+                ["at0031"] = <
+                    text = <"Ectopic beat count">
+                    description = <"Number of ectopic (abnormal) heartbeats detected.">
+                >
+                ["at0032"] = <
+                    text = <"Ectopic beat percentage">
+                    description = <"Percentage of beats that are ectopic.">
+                >
+                ["at0033"] = <
+                    text = <"RR interval quality">
+                    description = <"Quality assessment of RR interval data based on ectopic rate.">
+                >
+                ["at0040"] = <
+                    text = <"Assessment method">
+                    description = <"Method used to assess data quality.">
+                >
+                ["at0041"] = <
+                    text = <"Quality algorithm">
+                    description = <"Name of the algorithm used for quality assessment.">
+                >
+                ["at0042"] = <
+                    text = <"Quality algorithm version">
+                    description = <"Version of the quality assessment algorithm.">
+                >
+                ["at0043"] = <
+                    text = <"Quality assessment timestamp">
+                    description = <"When the quality assessment was performed.">
+                >
+                ["at0050"] = <
+                    text = <"Meets minimum quality threshold">
+                    description = <"Whether the data meets the minimum quality threshold for use.">
+                >
+                ["at0051"] = <
+                    text = <"Recommended for clinical use">
+                    description = <"Whether the data quality is sufficient for clinical decision support.">
+                >
+                ["at0052"] = <
+                    text = <"Quality notes">
+                    description = <"Additional notes about data quality issues or observations.">
+                >
+                ["at200"] = <text = <"High quality">; description = <"Data meets clinical quality standards (>90% coverage, <5% artifacts).">>
+                ["at201"] = <text = <"Moderate quality">; description = <"Data has minor quality issues (80-90% coverage, 5-15% artifacts).">>
+                ["at202"] = <text = <"Low quality">; description = <"Data has significant quality issues (<80% coverage, >15% artifacts).">>
+                ["at203"] = <text = <"Quality unknown">; description = <"Data quality has not been assessed.">>
+                ["at210"] = <text = <"Good (< 5% ectopic)">; description = <"RR intervals suitable for all HRV analyses.">>
+                ["at211"] = <text = <"Acceptable (5-10% ectopic)">; description = <"RR intervals suitable for time-domain HRV with correction.">>
+                ["at212"] = <text = <"Poor (> 10% ectopic)">; description = <"RR intervals require significant correction before use.">>
+                ["at213"] = <text = <"Unusable">; description = <"RR intervals not suitable for HRV analysis.">>
+                ["at220"] = <text = <"Automatic algorithm">; description = <"Quality assessed by automated algorithm.">>
+                ["at221"] = <text = <"Manual review">; description = <"Quality assessed by human expert review.">>
+                ["at222"] = <text = <"Vendor-provided">; description = <"Quality metrics provided by device vendor.">>
+                ["at223"] = <text = <"Hybrid (auto + manual)">; description = <"Combination of automatic and manual assessment.">>
+                ["at224"] = <text = <"Machine learning">; description = <"Quality assessed by machine learning model.">>
+            >
+        >
+    >

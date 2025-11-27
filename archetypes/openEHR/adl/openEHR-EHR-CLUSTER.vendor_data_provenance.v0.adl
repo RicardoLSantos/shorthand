@@ -1,0 +1,391 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-CLUSTER.vendor_data_provenance.v0
+
+concept
+	[at0000]	-- Vendor Data Provenance
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record the data provenance and transformation history from wearable device vendor systems, enabling traceability and semantic interoperability across different vendor platforms.">
+            use = <"Use as a nested CLUSTER within OBSERVATION archetypes to document:
+
+1. Source Vendor: Original platform where data was captured
+2. Data Export Path: How data moved from vendor to health system
+3. Transformation Applied: Any conversions or calculations performed
+4. API/Version Info: Technical details for reproducibility
+
+Key Use Cases:
+- Multi-vendor data aggregation (Apple + Fitbit + Oura in same EHR)
+- Data lineage for regulatory compliance
+- Debugging data quality issues
+- Research reproducibility
+
+Supported Vendors (11 platforms):
+- Apple (HealthKit)
+- Fitbit (Google)
+- Garmin (Connect)
+- Polar (Flow/AccessLink)
+- Oura
+- Samsung (Health)
+- Whoop
+- Withings
+- Xiaomi (Mi Fit)
+- Amazfit (Zepp)
+- Other
+
+Critical Note: Apple HealthKit HKQuantityTypeIdentifierHeartRateVariabilitySDNN actually returns RMSSD, not SDNN - this archetype documents such vendor-specific interpretations.">
+            keywords = <"vendor", "data provenance", "data lineage", "transformation", "API", "export", "Apple", "Fitbit", "Garmin", "Oura", "interoperability">
+            misuse = <"Not to be used for:
+- Device hardware details (use CLUSTER.wearable_device)
+- Data quality metrics (use CLUSTER.data_quality_indicator)
+- Clinical interpretation of data">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"
+1. Apple HealthKit Documentation: https://developer.apple.com/documentation/healthkit
+2. Fitbit Web API Reference: https://dev.fitbit.com/build/reference/web-api/
+3. Garmin Health API: https://developer.garmin.com/health-api/
+4. Oura Cloud API: https://cloud.ouraring.com/docs/">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardolourencosantos@gmail.com">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    CLUSTER[at0000] matches {    -- Vendor data provenance
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0001] occurrences matches {1} matches {    -- Source vendor
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at200,    -- Apple (HealthKit)
+                            at201,    -- Fitbit (Google)
+                            at202,    -- Garmin (Connect)
+                            at203,    -- Polar (Flow)
+                            at204,    -- Oura
+                            at205,    -- Samsung (Health)
+                            at206,    -- Whoop
+                            at207,    -- Withings
+                            at208,    -- Xiaomi (Mi Fit)
+                            at209,    -- Amazfit (Zepp)
+                            at210]    -- Other
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {    -- Vendor proprietary code
+                value matches {
+                    DV_TEXT
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {    -- Vendor metric name
+                value matches {
+                    DV_TEXT
+                }
+            }
+            ELEMENT[at0010] occurrences matches {0..1} matches {    -- Data export method
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at220,    -- Native API
+                            at221,    -- HealthKit sync
+                            at222,    -- Google Fit sync
+                            at223,    -- Manual export (JSON)
+                            at224,    -- Manual export (CSV)
+                            at225,    -- FHIR export
+                            at226,    -- Bluetooth direct
+                            at227,    -- Third-party aggregator
+                            at228]    -- Research study export
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Export timestamp
+                value matches {
+                    DV_DATE_TIME
+                }
+            }
+            ELEMENT[at0012] occurrences matches {0..1} matches {    -- API version
+                value matches {
+                    DV_TEXT
+                }
+            }
+            ELEMENT[at0013] occurrences matches {0..1} matches {    -- API endpoint
+                value matches {
+                    DV_URI
+                }
+            }
+            CLUSTER[at0020] occurrences matches {0..1} matches {    -- Data transformation
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0021] occurrences matches {0..1} matches {    -- Transformation applied
+                        value matches {
+                            DV_BOOLEAN
+                        }
+                    }
+                    ELEMENT[at0022] occurrences matches {0..1} matches {    -- Transformation type
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at230,    -- Unit conversion
+                                    at231,    -- Aggregation (mean)
+                                    at232,    -- Aggregation (sum)
+                                    at233,    -- Resampling
+                                    at234,    -- Artifact removal
+                                    at235,    -- Interpolation
+                                    at236,    -- Normalization
+                                    at237,    -- Derived calculation
+                                    at238]    -- Multiple transformations
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0023] occurrences matches {0..1} matches {    -- Transformation description
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0024] occurrences matches {0..1} matches {    -- Original unit
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0025] occurrences matches {0..1} matches {    -- Converted unit
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0026] occurrences matches {0..1} matches {    -- Transformation algorithm
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0027] occurrences matches {0..1} matches {    -- Algorithm version
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0030] occurrences matches {0..1} matches {    -- Intermediate systems
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0031] occurrences matches {0..1} matches {    -- Aggregator platform
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at240,    -- Apple Health (aggregator)
+                                    at241,    -- Google Fit (aggregator)
+                                    at242,    -- Samsung Health (aggregator)
+                                    at243,    -- Validic
+                                    at244,    -- Human API
+                                    at245,    -- Particle Health
+                                    at246,    -- Terra API
+                                    at247,    -- Research kit
+                                    at248]    -- Custom integration
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0032] occurrences matches {0..1} matches {    -- Aggregator version
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0033] occurrences matches {0..1} matches {    -- Data passed through FHIR
+                        value matches {
+                            DV_BOOLEAN
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0040] occurrences matches {0..1} matches {    -- Vendor data ID
+                value matches {
+                    DV_IDENTIFIER
+                }
+            }
+            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Original measurement timestamp
+                value matches {
+                    DV_DATE_TIME
+                }
+            }
+            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Vendor timezone
+                value matches {
+                    DV_TEXT
+                }
+            }
+            ELEMENT[at0050] occurrences matches {0..1} matches {    -- Data integrity verified
+                value matches {
+                    DV_BOOLEAN
+                }
+            }
+            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Provenance notes
+                value matches {
+                    DV_TEXT
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Vendor data provenance">
+                    description = <"Data provenance and transformation history from wearable device vendors.">
+                >
+                ["at0001"] = <
+                    text = <"Source vendor">
+                    description = <"The original vendor platform where the data was captured.">
+                >
+                ["at0002"] = <
+                    text = <"Vendor proprietary code">
+                    description = <"Vendor-specific identifier for the data type (e.g., HKQuantityTypeIdentifierHeartRateVariabilitySDNN).">
+                >
+                ["at0003"] = <
+                    text = <"Vendor metric name">
+                    description = <"Human-readable name used by vendor for this metric.">
+                >
+                ["at0010"] = <
+                    text = <"Data export method">
+                    description = <"Method used to export data from the vendor system.">
+                >
+                ["at0011"] = <
+                    text = <"Export timestamp">
+                    description = <"When the data was exported from vendor system.">
+                >
+                ["at0012"] = <
+                    text = <"API version">
+                    description = <"Version of the API used for data export.">
+                >
+                ["at0013"] = <
+                    text = <"API endpoint">
+                    description = <"URI of the API endpoint used.">
+                >
+                ["at0020"] = <
+                    text = <"Data transformation">
+                    description = <"Details of any transformations applied to the data.">
+                >
+                ["at0021"] = <
+                    text = <"Transformation applied">
+                    description = <"Whether any transformation was applied to the data.">
+                >
+                ["at0022"] = <
+                    text = <"Transformation type">
+                    description = <"Type of transformation applied.">
+                >
+                ["at0023"] = <
+                    text = <"Transformation description">
+                    description = <"Detailed description of the transformation.">
+                >
+                ["at0024"] = <
+                    text = <"Original unit">
+                    description = <"Unit of measurement in the source system.">
+                >
+                ["at0025"] = <
+                    text = <"Converted unit">
+                    description = <"Unit of measurement after conversion.">
+                >
+                ["at0026"] = <
+                    text = <"Transformation algorithm">
+                    description = <"Name of the algorithm used for transformation.">
+                >
+                ["at0027"] = <
+                    text = <"Algorithm version">
+                    description = <"Version of the transformation algorithm.">
+                >
+                ["at0030"] = <
+                    text = <"Intermediate systems">
+                    description = <"Systems through which data passed before reaching final destination.">
+                >
+                ["at0031"] = <
+                    text = <"Aggregator platform">
+                    description = <"Data aggregation platform used.">
+                >
+                ["at0032"] = <
+                    text = <"Aggregator version">
+                    description = <"Version of the aggregator platform.">
+                >
+                ["at0033"] = <
+                    text = <"Data passed through FHIR">
+                    description = <"Whether data was transformed to/from FHIR at any point.">
+                >
+                ["at0040"] = <
+                    text = <"Vendor data ID">
+                    description = <"Unique identifier for this data record in vendor system.">
+                >
+                ["at0041"] = <
+                    text = <"Original measurement timestamp">
+                    description = <"Timestamp of measurement as recorded by vendor.">
+                >
+                ["at0042"] = <
+                    text = <"Vendor timezone">
+                    description = <"Timezone used by vendor for timestamps (IANA format).">
+                >
+                ["at0050"] = <
+                    text = <"Data integrity verified">
+                    description = <"Whether data integrity was verified during transfer.">
+                >
+                ["at0051"] = <
+                    text = <"Provenance notes">
+                    description = <"Additional notes about data provenance.">
+                >
+                ["at200"] = <text = <"Apple (HealthKit)">; description = <"Apple HealthKit ecosystem.">>
+                ["at201"] = <text = <"Fitbit (Google)">; description = <"Fitbit/Google Fit ecosystem.">>
+                ["at202"] = <text = <"Garmin (Connect)">; description = <"Garmin Connect ecosystem.">>
+                ["at203"] = <text = <"Polar (Flow)">; description = <"Polar Flow/AccessLink ecosystem.">>
+                ["at204"] = <text = <"Oura">; description = <"Oura Ring ecosystem.">>
+                ["at205"] = <text = <"Samsung (Health)">; description = <"Samsung Health ecosystem.">>
+                ["at206"] = <text = <"Whoop">; description = <"Whoop ecosystem.">>
+                ["at207"] = <text = <"Withings">; description = <"Withings Health Mate ecosystem.">>
+                ["at208"] = <text = <"Xiaomi (Mi Fit)">; description = <"Xiaomi Mi Fit ecosystem.">>
+                ["at209"] = <text = <"Amazfit (Zepp)">; description = <"Amazfit Zepp ecosystem.">>
+                ["at210"] = <text = <"Other">; description = <"Other vendor platform.">>
+                ["at220"] = <text = <"Native API">; description = <"Direct API from vendor.">>
+                ["at221"] = <text = <"HealthKit sync">; description = <"Synced via Apple HealthKit.">>
+                ["at222"] = <text = <"Google Fit sync">; description = <"Synced via Google Fit.">>
+                ["at223"] = <text = <"Manual export (JSON)">; description = <"Manually exported as JSON file.">>
+                ["at224"] = <text = <"Manual export (CSV)">; description = <"Manually exported as CSV file.">>
+                ["at225"] = <text = <"FHIR export">; description = <"Exported as FHIR resources.">>
+                ["at226"] = <text = <"Bluetooth direct">; description = <"Direct Bluetooth connection.">>
+                ["at227"] = <text = <"Third-party aggregator">; description = <"Via third-party data aggregator.">>
+                ["at228"] = <text = <"Research study export">; description = <"Special export for research study.">>
+                ["at230"] = <text = <"Unit conversion">; description = <"Conversion between measurement units.">>
+                ["at231"] = <text = <"Aggregation (mean)">; description = <"Averaging multiple values.">>
+                ["at232"] = <text = <"Aggregation (sum)">; description = <"Summing multiple values.">>
+                ["at233"] = <text = <"Resampling">; description = <"Changing sampling rate.">>
+                ["at234"] = <text = <"Artifact removal">; description = <"Removing artifacts from signal.">>
+                ["at235"] = <text = <"Interpolation">; description = <"Filling missing values.">>
+                ["at236"] = <text = <"Normalization">; description = <"Normalizing to standard scale.">>
+                ["at237"] = <text = <"Derived calculation">; description = <"Calculating derived metric from raw data.">>
+                ["at238"] = <text = <"Multiple transformations">; description = <"Multiple transformation steps applied.">>
+                ["at240"] = <text = <"Apple Health (aggregator)">; description = <"Apple Health as aggregation point.">>
+                ["at241"] = <text = <"Google Fit (aggregator)">; description = <"Google Fit as aggregation point.">>
+                ["at242"] = <text = <"Samsung Health (aggregator)">; description = <"Samsung Health as aggregation point.">>
+                ["at243"] = <text = <"Validic">; description = <"Validic data integration platform.">>
+                ["at244"] = <text = <"Human API">; description = <"Human API aggregation platform.">>
+                ["at245"] = <text = <"Particle Health">; description = <"Particle Health platform.">>
+                ["at246"] = <text = <"Terra API">; description = <"Terra API aggregation platform.">>
+                ["at247"] = <text = <"Research kit">; description = <"Apple ResearchKit or similar.">>
+                ["at248"] = <text = <"Custom integration">; description = <"Custom-built integration.">>
+            >
+        >
+    >

@@ -1,0 +1,427 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-CLUSTER.recording_context.v0
+
+concept
+	[at0000]	-- Recording Context
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record temporal and technical context of wearable health measurements, including recording duration, sampling parameters, and analysis window specifications essential for correct interpretation.">
+            use = <"Use as a nested CLUSTER within OBSERVATION archetypes (HRV, sleep, CGM, activity) to document:
+
+1. Recording Duration: Critical for HRV (values change with duration)
+2. Sampling Rate: Technical specification for signal processing
+3. Analysis Window: Time boundaries of the measurement
+4. Timezone: For multi-timezone data aggregation
+
+Critical Context Dependencies:
+- HRV: 5-minute vs 24-hour recording yields different normative ranges
+- Sleep: Nightly recording window affects staging algorithms
+- CGM: Calibration timing affects glucose accuracy
+- Activity: Epoch length affects step counting
+
+Standards Alignment:
+- ESC/NASPE Task Force 1996: HRV recording standards
+- AASM 2017: Sleep staging epoch (30 seconds)
+- FDA CGM Guidelines: Calibration intervals">
+            keywords = <"recording", "duration", "sampling rate", "analysis window", "epoch", "timezone", "temporal context", "measurement period">
+            misuse = <"Not to be used for:
+- Physiological state during recording (use CLUSTER.physiological_context)
+- Data quality metrics (use CLUSTER.data_quality_indicator)
+- Device specifications (use CLUSTER.wearable_device)">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"
+1. Task Force of ESC and NASPE. Heart rate variability: standards of measurement. Circulation. 1996;93(5):1043-1065.
+2. Shaffer F, Ginsberg JP. An Overview of Heart Rate Variability Metrics and Norms. Front Public Health. 2017;5:258.
+3. Berry RB, et al. AASM Manual for the Scoring of Sleep. American Academy of Sleep Medicine; 2017.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardolourencosantos@gmail.com">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    CLUSTER[at0000] matches {    -- Recording context
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0001] occurrences matches {0..1} matches {    -- Recording duration
+                value matches {
+                    DV_DURATION matches {
+                        value matches {PTHMS/|PT0S..P7D|}
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {    -- Recording type
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [local::
+                            at200,    -- Continuous monitoring
+                            at201,    -- Spot measurement
+                            at202,    -- Triggered recording
+                            at203,    -- Scheduled recording
+                            at204,    -- On-demand measurement
+                            at205]    -- Unknown
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0010] occurrences matches {0..1} matches {    -- Sampling parameters
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0011] occurrences matches {0..1} matches {    -- Sampling rate
+                        value matches {
+                            DV_QUANTITY matches {
+                                property matches {[openehr::382]}    -- frequency
+                                units matches {"Hz"}
+                                magnitude matches {|0.0..1000.0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0012] occurrences matches {0..1} matches {    -- Epoch length
+                        value matches {
+                            DV_DURATION matches {
+                                value matches {PTS/|PT1S..PT1H|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0013] occurrences matches {0..1} matches {    -- Total samples collected
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0014] occurrences matches {0..1} matches {    -- Sampling method
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at210,    -- Continuous
+                                    at211,    -- Periodic
+                                    at212,    -- Event-triggered
+                                    at213,    -- Adaptive
+                                    at214]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0020] occurrences matches {0..1} matches {    -- Analysis window
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0021] occurrences matches {0..1} matches {    -- Window start
+                        value matches {
+                            DV_DATE_TIME
+                        }
+                    }
+                    ELEMENT[at0022] occurrences matches {0..1} matches {    -- Window end
+                        value matches {
+                            DV_DATE_TIME
+                        }
+                    }
+                    ELEMENT[at0023] occurrences matches {0..1} matches {    -- Window duration
+                        value matches {
+                            DV_DURATION matches {
+                                value matches {PTHMS/|PT0S..P7D|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0024] occurrences matches {0..1} matches {    -- Window type
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at220,    -- Full recording
+                                    at221,    -- Selected segment
+                                    at222,    -- Sleep period
+                                    at223,    -- Wake period
+                                    at224,    -- Exercise session
+                                    at225,    -- Recovery period
+                                    at226,    -- Resting window
+                                    at227]    -- Custom window
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0030] occurrences matches {0..1} matches {    -- Temporal reference
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0031] occurrences matches {0..1} matches {    -- Timezone
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0032] occurrences matches {0..1} matches {    -- UTC offset
+                        value matches {
+                            DV_DURATION matches {
+                                value matches {PTH/|PT-12H..PT14H|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0033] occurrences matches {0..1} matches {    -- Daylight saving active
+                        value matches {
+                            DV_BOOLEAN
+                        }
+                    }
+                    ELEMENT[at0034] occurrences matches {0..1} matches {    -- Local time at start
+                        value matches {
+                            DV_TIME
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0040] occurrences matches {0..1} matches {    -- HRV-specific recording
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0041] occurrences matches {0..1} matches {    -- Recording standard
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at230,    -- Short-term (5 min)
+                                    at231,    -- Ultra-short (<5 min)
+                                    at232,    -- Long-term (24h)
+                                    at233,    -- Overnight
+                                    at234,    -- Custom duration
+                                    at235]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0042] occurrences matches {0..1} matches {    -- Meets ESC/NASPE standard
+                        value matches {
+                            DV_BOOLEAN
+                        }
+                    }
+                    ELEMENT[at0043] occurrences matches {0..1} matches {    -- NN interval count
+                        value matches {
+                            DV_COUNT matches {
+                                magnitude matches {|>=0|}
+                            }
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0050] occurrences matches {0..1} matches {    -- Sleep-specific recording
+                items cardinality matches {1..*; unordered} matches {
+                    ELEMENT[at0051] occurrences matches {0..1} matches {    -- Bedtime
+                        value matches {
+                            DV_TIME
+                        }
+                    }
+                    ELEMENT[at0052] occurrences matches {0..1} matches {    -- Wake time
+                        value matches {
+                            DV_TIME
+                        }
+                    }
+                    ELEMENT[at0053] occurrences matches {0..1} matches {    -- Time in bed
+                        value matches {
+                            DV_DURATION matches {
+                                value matches {PTHM/|PT0M..PT24H|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0054] occurrences matches {0..1} matches {    -- Lights off time
+                        value matches {
+                            DV_TIME
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0060] occurrences matches {0..1} matches {    -- Recording interrupted
+                value matches {
+                    DV_BOOLEAN
+                }
+            }
+            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Interruption count
+                value matches {
+                    DV_COUNT matches {
+                        magnitude matches {|>=0|}
+                    }
+                }
+            }
+            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Total interruption duration
+                value matches {
+                    DV_DURATION matches {
+                        value matches {PTHMS/|PT0S..P1D|}
+                    }
+                }
+            }
+            ELEMENT[at0070] occurrences matches {0..1} matches {    -- Recording notes
+                value matches {
+                    DV_TEXT
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Recording context">
+                    description = <"Temporal and technical context of wearable health measurements.">
+                >
+                ["at0001"] = <
+                    text = <"Recording duration">
+                    description = <"Total duration of the recording session.">
+                >
+                ["at0002"] = <
+                    text = <"Recording type">
+                    description = <"Type of recording (continuous, spot, triggered, etc.).">
+                >
+                ["at0010"] = <
+                    text = <"Sampling parameters">
+                    description = <"Technical sampling specifications.">
+                >
+                ["at0011"] = <
+                    text = <"Sampling rate">
+                    description = <"Frequency of data sampling in Hz.">
+                >
+                ["at0012"] = <
+                    text = <"Epoch length">
+                    description = <"Duration of each analysis epoch (e.g., 30s for sleep staging).">
+                >
+                ["at0013"] = <
+                    text = <"Total samples collected">
+                    description = <"Total number of samples in the recording.">
+                >
+                ["at0014"] = <
+                    text = <"Sampling method">
+                    description = <"Method used for data sampling.">
+                >
+                ["at0020"] = <
+                    text = <"Analysis window">
+                    description = <"Time window used for analysis.">
+                >
+                ["at0021"] = <
+                    text = <"Window start">
+                    description = <"Start timestamp of analysis window.">
+                >
+                ["at0022"] = <
+                    text = <"Window end">
+                    description = <"End timestamp of analysis window.">
+                >
+                ["at0023"] = <
+                    text = <"Window duration">
+                    description = <"Duration of the analysis window.">
+                >
+                ["at0024"] = <
+                    text = <"Window type">
+                    description = <"Type of analysis window selected.">
+                >
+                ["at0030"] = <
+                    text = <"Temporal reference">
+                    description = <"Timezone and temporal reference information.">
+                >
+                ["at0031"] = <
+                    text = <"Timezone">
+                    description = <"IANA timezone identifier (e.g., Europe/Lisbon).">
+                >
+                ["at0032"] = <
+                    text = <"UTC offset">
+                    description = <"Offset from UTC in hours.">
+                >
+                ["at0033"] = <
+                    text = <"Daylight saving active">
+                    description = <"Whether daylight saving time was active.">
+                >
+                ["at0034"] = <
+                    text = <"Local time at start">
+                    description = <"Local time when recording started.">
+                >
+                ["at0040"] = <
+                    text = <"HRV-specific recording">
+                    description = <"Recording parameters specific to HRV analysis.">
+                >
+                ["at0041"] = <
+                    text = <"Recording standard">
+                    description = <"Standard duration category for HRV analysis.">
+                >
+                ["at0042"] = <
+                    text = <"Meets ESC/NASPE standard">
+                    description = <"Whether recording meets ESC/NASPE 1996 guidelines.">
+                >
+                ["at0043"] = <
+                    text = <"NN interval count">
+                    description = <"Number of normal-to-normal intervals in recording.">
+                >
+                ["at0050"] = <
+                    text = <"Sleep-specific recording">
+                    description = <"Recording parameters specific to sleep analysis.">
+                >
+                ["at0051"] = <
+                    text = <"Bedtime">
+                    description = <"Time when user went to bed.">
+                >
+                ["at0052"] = <
+                    text = <"Wake time">
+                    description = <"Time when user woke up.">
+                >
+                ["at0053"] = <
+                    text = <"Time in bed">
+                    description = <"Total time spent in bed.">
+                >
+                ["at0054"] = <
+                    text = <"Lights off time">
+                    description = <"Time when lights were turned off.">
+                >
+                ["at0060"] = <
+                    text = <"Recording interrupted">
+                    description = <"Whether the recording was interrupted.">
+                >
+                ["at0061"] = <
+                    text = <"Interruption count">
+                    description = <"Number of interruptions during recording.">
+                >
+                ["at0062"] = <
+                    text = <"Total interruption duration">
+                    description = <"Total duration of all interruptions.">
+                >
+                ["at0070"] = <
+                    text = <"Recording notes">
+                    description = <"Additional notes about the recording.">
+                >
+                ["at200"] = <text = <"Continuous monitoring">; description = <"Continuous data collection over time.">>
+                ["at201"] = <text = <"Spot measurement">; description = <"Single point-in-time measurement.">>
+                ["at202"] = <text = <"Triggered recording">; description = <"Recording triggered by event or condition.">>
+                ["at203"] = <text = <"Scheduled recording">; description = <"Recording at scheduled intervals.">>
+                ["at204"] = <text = <"On-demand measurement">; description = <"User-initiated measurement.">>
+                ["at205"] = <text = <"Unknown">; description = <"Recording type not specified.">>
+                ["at210"] = <text = <"Continuous">; description = <"Continuous sampling without gaps.">>
+                ["at211"] = <text = <"Periodic">; description = <"Sampling at regular intervals.">>
+                ["at212"] = <text = <"Event-triggered">; description = <"Sampling triggered by events.">>
+                ["at213"] = <text = <"Adaptive">; description = <"Sampling rate adapts to conditions.">>
+                ["at214"] = <text = <"Unknown">; description = <"Sampling method not specified.">>
+                ["at220"] = <text = <"Full recording">; description = <"Entire recording used for analysis.">>
+                ["at221"] = <text = <"Selected segment">; description = <"Manually selected segment.">>
+                ["at222"] = <text = <"Sleep period">; description = <"Window covering sleep period only.">>
+                ["at223"] = <text = <"Wake period">; description = <"Window covering wake period only.">>
+                ["at224"] = <text = <"Exercise session">; description = <"Window covering exercise session.">>
+                ["at225"] = <text = <"Recovery period">; description = <"Window covering post-exercise recovery.">>
+                ["at226"] = <text = <"Resting window">; description = <"Window of quiet rest.">>
+                ["at227"] = <text = <"Custom window">; description = <"Custom-defined analysis window.">>
+                ["at230"] = <text = <"Short-term (5 min)">; description = <"Standard 5-minute recording per ESC/NASPE.">>
+                ["at231"] = <text = <"Ultra-short (<5 min)">; description = <"Ultra-short term recording (<5 min).">>
+                ["at232"] = <text = <"Long-term (24h)">; description = <"Standard 24-hour Holter recording.">>
+                ["at233"] = <text = <"Overnight">; description = <"Overnight recording during sleep.">>
+                ["at234"] = <text = <"Custom duration">; description = <"Non-standard custom duration.">>
+                ["at235"] = <text = <"Unknown">; description = <"Recording standard not specified.">>
+            >
+        >
+    >
