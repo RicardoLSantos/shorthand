@@ -1,0 +1,1435 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.vo2max_estimation.v0
+
+concept
+    [at0000]    -- VO2max estimation
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"ricardo.santos@fmup.up.pt">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record estimated maximal oxygen uptake (VO2max) derived from wearable devices, fitness tests, and predictive algorithms used in lifestyle medicine and fitness assessment.">
+            use = <"Use to record:
+- Estimated VO2max from wearable devices (Garmin, Apple Watch, Polar, Fitbit, COROS, Suunto)
+- Submaximal exercise test estimates (Astrand-Rhyming, YMCA, Rockport walk test)
+- Non-exercise prediction equations (Jackson, Matthews, Uth)
+- Cardiorespiratory fitness (CRF) classification
+- Fitness age estimation
+- Longitudinal VO2max tracking for training adaptation
+
+This archetype supports both direct wearable-derived estimates using HR and activity data, and validated submaximal test protocols commonly used in clinical and fitness settings.">
+            misuse = <"Not to be used for:
+- Direct VO2max measurement from laboratory metabolic cart (use specific laboratory archetype)
+- Respiratory gas analysis (use pulmonary function archetypes)
+- General physical activity recording (use physical_activity_detailed archetype)
+- Heart rate recording alone (use pulse/heart rate archetype)">
+            keywords = <"VO2max", "cardiorespiratory fitness", "CRF", "aerobic capacity", "fitness", "wearable", "maximal oxygen uptake", "fitness age", "exercise capacity">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons CC-BY-SA 4.0">
+        ["custodian_organisation"] = <"HEADS#2 Project - FMUP">
+        ["references"] = <"American College of Sports Medicine. ACSM's Guidelines for Exercise Testing and Prescription. 11th ed. 2022.
+
+Ross R, et al. Importance of Assessing Cardiorespiratory Fitness in Clinical Practice. Circulation. 2016;134(24):e653-e699.
+
+Garmin Connect VO2max Estimation. https://www.garmin.com/
+
+Apple Watch Cardio Fitness. https://support.apple.com/
+
+Uth N, et al. Estimation of VO2max from the ratio between HRmax and HRrest. Eur J Appl Physiol. 2004;91(1):111-115.
+
+Polar Fitness Test. https://www.polar.com/">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP <ricardo.santos@fmup.up.pt>">
+        ["original_namespace"] = <"pt.fmup.heads2">
+        ["original_publisher"] = <"HEADS#2 Project">
+        ["build_uid"] = <"f1a2b3c4-d5e6-7890-abcd-ef1234567890">
+        ["MD5-CAM-1.0.1"] = <"pending">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- VO2max estimation
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0004] occurrences matches {0..1} matches {    -- VO2max value
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0005] occurrences matches {0..1} matches {    -- Estimated VO2max
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::126]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ml/kg/min">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"L/min">
+                                                                magnitude = <|0.0..10.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0006] occurrences matches {0..1} matches {    -- Confidence interval lower
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::126]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ml/kg/min">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0007] occurrences matches {0..1} matches {    -- Confidence interval upper
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::126]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ml/kg/min">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0008] occurrences matches {0..1} matches {    -- Estimation accuracy
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Fitness classification
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- CRF category
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- Very poor
+                                                            at0201,    -- Poor
+                                                            at0202,    -- Below average
+                                                            at0203,    -- Average
+                                                            at0204,    -- Above average
+                                                            at0205,    -- Good
+                                                            at0206,    -- Excellent
+                                                            at0207]    -- Superior
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Percentile rank
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Fitness age
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PY}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Age-sex reference population
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Classification standard
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0210,    -- ACSM
+                                                            at0211,    -- Cooper Institute
+                                                            at0212,    -- HUNT Fitness Study
+                                                            at0213,    -- Garmin proprietary
+                                                            at0214,    -- Apple proprietary
+                                                            at0215,    -- Polar proprietary
+                                                            at0216]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Estimation method
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Method type
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0220,    -- Wearable algorithm
+                                                            at0221,    -- Submaximal exercise test
+                                                            at0222,    -- Non-exercise prediction
+                                                            at0223,    -- Maximal exercise test
+                                                            at0224,    -- Field test
+                                                            at0225]    -- Combined method
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Specific protocol
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0230,    -- Garmin FirstBeat
+                                                            at0231,    -- Apple Cardio Fitness
+                                                            at0232,    -- Polar Fitness Test
+                                                            at0233,    -- Fitbit Cardio Score
+                                                            at0234,    -- COROS estimate
+                                                            at0235,    -- Suunto estimate
+                                                            at0236,    -- Astrand-Rhyming cycle
+                                                            at0237,    -- YMCA cycle test
+                                                            at0238,    -- Rockport walk test
+                                                            at0239,    -- Cooper 12-min run
+                                                            at0240,    -- 6-minute walk test
+                                                            at0241,    -- Queens College step test
+                                                            at0242,    -- Uth formula (HRmax/HRrest)
+                                                            at0243,    -- Jackson non-exercise
+                                                            at0244,    -- Matthews non-exercise
+                                                            at0245,    -- Bruce treadmill
+                                                            at0246,    -- Balke treadmill
+                                                            at0247]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Algorithm version
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Validation status
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- Clinically validated
+                                                            at0251,    -- Research validated
+                                                            at0252,    -- Manufacturer validated
+                                                            at0253,    -- Not validated
+                                                            at0254]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Input parameters
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Resting heart rate used
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|20.0..200.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Maximum heart rate used
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|100.0..230.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- HRmax determination
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0260,    -- Measured (maximal test)
+                                                            at0261,    -- Age-predicted (220-age)
+                                                            at0262,    -- Age-predicted (Tanaka)
+                                                            at0263,    -- Field observed
+                                                            at0264,    -- Device learned
+                                                            at0265]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- Body weight used
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::124]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"kg">
+                                                                magnitude = <|20.0..300.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {    -- Activity history days
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|1..365|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0036] occurrences matches {0..1} matches {    -- Running activities analyzed
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..1000|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0037] occurrences matches {0..1} matches {    -- Walking activities analyzed
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..1000|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Exercise test details
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Test duration
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PTMS}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Test modality
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0270,    -- Treadmill
+                                                            at0271,    -- Cycle ergometer
+                                                            at0272,    -- Step test
+                                                            at0273,    -- Walk test
+                                                            at0274,    -- Run test
+                                                            at0275,    -- Rowing ergometer
+                                                            at0276,    -- Arm ergometer
+                                                            at0277]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Workload achieved
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::128]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"W">
+                                                                magnitude = <|0.0..1000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"MET">
+                                                                magnitude = <|1.0..25.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- Distance covered
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::122]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"m">
+                                                                magnitude = <|0.0..10000.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                            ["2"] = <
+                                                                units = <"km">
+                                                                magnitude = <|0.0..50.0|>
+                                                                precision = <|2|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Peak heart rate achieved
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::382]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"/min">
+                                                                magnitude = <|50.0..230.0|>
+                                                                precision = <|0|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0046] occurrences matches {0..1} matches {    -- Percent HRmax achieved
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..110.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0047] occurrences matches {0..1} matches {    -- RPE at termination
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|6..20|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0048] occurrences matches {0..1} matches {    -- Termination reason
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0280,    -- Target achieved
+                                                            at0281,    -- Volitional exhaustion
+                                                            at0282,    -- HR plateau
+                                                            at0283,    -- Time limit
+                                                            at0284,    -- Symptoms
+                                                            at0285,    -- ECG abnormality
+                                                            at0286,    -- Blood pressure response
+                                                            at0287]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Trend analysis
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- VO2max trend
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0290,    -- Significantly improving
+                                                            at0291,    -- Improving
+                                                            at0292,    -- Stable
+                                                            at0293,    -- Declining
+                                                            at0294,    -- Significantly declining
+                                                            at0295]    -- Insufficient data
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Change from baseline
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::126]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ml/kg/min">
+                                                                magnitude = <|-30.0..30.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Percent change
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|-50.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Baseline value
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::126]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"ml/kg/min">
+                                                                magnitude = <|0.0..100.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Baseline date
+                                                value matches {
+                                                    DV_DATE_TIME matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0056] occurrences matches {0..1} matches {    -- Analysis period
+                                                value matches {
+                                                    DV_DURATION matches {
+                                                        value matches {PYMWD}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Health implications
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Cardiovascular risk category
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0300,    -- Low risk
+                                                            at0301,    -- Moderate risk
+                                                            at0302,    -- High risk
+                                                            at0303]    -- Very high risk
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- MET capacity
+                                                value matches {
+                                                    C_DV_QUANTITY <
+                                                        property = <[openehr::128]>
+                                                        list = <
+                                                            ["1"] = <
+                                                                units = <"MET">
+                                                                magnitude = <|1.0..25.0|>
+                                                                precision = <|1|>
+                                                            >
+                                                        >
+                                                    >
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Functional capacity
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- Clinical interpretation
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0070] occurrences matches {0..1} matches {    -- Comment
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0071] occurrences matches {0..*} matches {    -- Wearable device
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0|openEHR-EHR-CLUSTER\.device\.v1/}
+                                    }
+                                    allow_archetype CLUSTER[at0072] occurrences matches {0..*} matches {    -- Data quality
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+                                    }
+                                    allow_archetype CLUSTER[at0073] occurrences matches {0..*} matches {    -- Additional details
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0080] matches {    -- State
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0081] occurrences matches {0..1} matches {    -- Activity state
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0310,    -- Resting
+                                                    at0311,    -- Post-exercise
+                                                    at0312,    -- During activity
+                                                    at0313]    -- Recovery
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0082] occurrences matches {0..1} matches {    -- Test environment
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0320,    -- Clinical laboratory
+                                                    at0321,    -- Gym/fitness center
+                                                    at0322,    -- Outdoor
+                                                    at0323,    -- Home
+                                                    at0324]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0083] occurrences matches {0..1} matches {    -- Altitude
+                                        value matches {
+                                            C_DV_QUANTITY <
+                                                property = <[openehr::122]>
+                                                list = <
+                                                    ["1"] = <
+                                                        units = <"m">
+                                                        magnitude = <|-500.0..9000.0|>
+                                                        precision = <|0|>
+                                                    >
+                                                >
+                                            >
+                                        }
+                                    }
+                                    ELEMENT[at0084] occurrences matches {0..1} matches {    -- Temperature
+                                        value matches {
+                                            C_DV_QUANTITY <
+                                                property = <[openehr::127]>
+                                                list = <
+                                                    ["1"] = <
+                                                        units = <"Cel">
+                                                        magnitude = <|-20.0..50.0|>
+                                                        precision = <|1|>
+                                                    >
+                                                >
+                                            >
+                                        }
+                                    }
+                                    ELEMENT[at0085] occurrences matches {0..1} matches {    -- Humidity
+                                        value matches {
+                                            DV_PROPORTION matches {
+                                                numerator matches {|0.0..100.0|}
+                                                type matches {2}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0086] occurrences matches {0..1} matches {    -- Confounding factors
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0090] occurrences matches {0..*} matches {    -- Weekly average
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::146]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1W}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0080]
+                        }
+                    }
+                    INTERVAL_EVENT[at0091] occurrences matches {0..*} matches {    -- Monthly average
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::146]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1M}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0080]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0100] matches {    -- Protocol
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0101] occurrences matches {0..1} matches {    -- Data source
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0330,    -- Apple HealthKit
+                                    at0331,    -- Google Fit
+                                    at0332,    -- Garmin Connect
+                                    at0333,    -- Polar Flow
+                                    at0334,    -- Fitbit
+                                    at0335,    -- Samsung Health
+                                    at0336,    -- COROS
+                                    at0337,    -- Suunto
+                                    at0338,    -- Wahoo
+                                    at0339,    -- Clinical system
+                                    at0340,    -- Manual entry
+                                    at0341]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0102] occurrences matches {0..1} matches {    -- Last calibration
+                        value matches {
+                            DV_DATE_TIME matches {*}
+                        }
+                    }
+                    ELEMENT[at0103] occurrences matches {0..1} matches {    -- User profile accuracy
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0350,    -- Complete and verified
+                                    at0351,    -- Complete but unverified
+                                    at0352,    -- Incomplete
+                                    at0353]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0104] occurrences matches {0..*} matches {    -- Device details
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0|openEHR-EHR-CLUSTER\.device\.v1/}
+                    }
+                    allow_archetype CLUSTER[at0105] occurrences matches {0..*} matches {    -- Vendor provenance
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+                    }
+                    allow_archetype CLUSTER[at0106] occurrences matches {0..*} matches {    -- Extension
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"VO2max estimation">
+                    description = <"Estimated maximal oxygen uptake derived from wearable devices, fitness tests, or predictive algorithms.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0004"] = <
+                    text = <"VO2max value">
+                    description = <"Estimated maximal oxygen consumption values.">
+                >
+                ["at0005"] = <
+                    text = <"Estimated VO2max">
+                    description = <"The estimated maximal oxygen uptake value.">
+                >
+                ["at0006"] = <
+                    text = <"Confidence interval lower">
+                    description = <"Lower bound of the confidence interval for the estimate.">
+                >
+                ["at0007"] = <
+                    text = <"Confidence interval upper">
+                    description = <"Upper bound of the confidence interval for the estimate.">
+                >
+                ["at0008"] = <
+                    text = <"Estimation accuracy">
+                    description = <"Estimated accuracy of the VO2max prediction as a percentage.">
+                >
+                ["at0010"] = <
+                    text = <"Fitness classification">
+                    description = <"Cardiorespiratory fitness classification based on age and sex norms.">
+                >
+                ["at0011"] = <
+                    text = <"CRF category">
+                    description = <"Cardiorespiratory fitness category based on normative data.">
+                >
+                ["at0012"] = <
+                    text = <"Percentile rank">
+                    description = <"Percentile ranking compared to age-sex matched population.">
+                >
+                ["at0013"] = <
+                    text = <"Fitness age">
+                    description = <"Estimated biological age based on cardiorespiratory fitness.">
+                >
+                ["at0014"] = <
+                    text = <"Age-sex reference population">
+                    description = <"The reference population used for classification.">
+                >
+                ["at0015"] = <
+                    text = <"Classification standard">
+                    description = <"The standard or guideline used for fitness classification.">
+                >
+                ["at0020"] = <
+                    text = <"Estimation method">
+                    description = <"Details about the method used to estimate VO2max.">
+                >
+                ["at0021"] = <
+                    text = <"Method type">
+                    description = <"The general type of estimation method used.">
+                >
+                ["at0022"] = <
+                    text = <"Specific protocol">
+                    description = <"The specific protocol or algorithm used for estimation.">
+                >
+                ["at0023"] = <
+                    text = <"Algorithm version">
+                    description = <"Version of the algorithm or protocol used.">
+                >
+                ["at0024"] = <
+                    text = <"Validation status">
+                    description = <"The validation status of the estimation method.">
+                >
+                ["at0030"] = <
+                    text = <"Input parameters">
+                    description = <"Parameters used as input for the VO2max estimation.">
+                >
+                ["at0031"] = <
+                    text = <"Resting heart rate used">
+                    description = <"The resting heart rate value used in the estimation.">
+                >
+                ["at0032"] = <
+                    text = <"Maximum heart rate used">
+                    description = <"The maximum heart rate value used in the estimation.">
+                >
+                ["at0033"] = <
+                    text = <"HRmax determination">
+                    description = <"How the maximum heart rate was determined.">
+                >
+                ["at0034"] = <
+                    text = <"Body weight used">
+                    description = <"The body weight used for relative VO2max calculation.">
+                >
+                ["at0035"] = <
+                    text = <"Activity history days">
+                    description = <"Number of days of activity history used in the estimate.">
+                >
+                ["at0036"] = <
+                    text = <"Running activities analyzed">
+                    description = <"Number of running activities analyzed for the estimate.">
+                >
+                ["at0037"] = <
+                    text = <"Walking activities analyzed">
+                    description = <"Number of walking activities analyzed for the estimate.">
+                >
+                ["at0040"] = <
+                    text = <"Exercise test details">
+                    description = <"Details of the exercise test if performed.">
+                >
+                ["at0041"] = <
+                    text = <"Test duration">
+                    description = <"Total duration of the exercise test.">
+                >
+                ["at0042"] = <
+                    text = <"Test modality">
+                    description = <"The type of exercise equipment or test used.">
+                >
+                ["at0043"] = <
+                    text = <"Workload achieved">
+                    description = <"The maximum workload achieved during the test.">
+                >
+                ["at0044"] = <
+                    text = <"Distance covered">
+                    description = <"Total distance covered during the test.">
+                >
+                ["at0045"] = <
+                    text = <"Peak heart rate achieved">
+                    description = <"The highest heart rate achieved during the test.">
+                >
+                ["at0046"] = <
+                    text = <"Percent HRmax achieved">
+                    description = <"Percentage of predicted maximum heart rate achieved.">
+                >
+                ["at0047"] = <
+                    text = <"RPE at termination">
+                    description = <"Rating of Perceived Exertion at test termination (Borg 6-20 scale).">
+                >
+                ["at0048"] = <
+                    text = <"Termination reason">
+                    description = <"The reason for test termination.">
+                >
+                ["at0050"] = <
+                    text = <"Trend analysis">
+                    description = <"Analysis of VO2max changes over time.">
+                >
+                ["at0051"] = <
+                    text = <"VO2max trend">
+                    description = <"The direction and significance of VO2max changes.">
+                >
+                ["at0052"] = <
+                    text = <"Change from baseline">
+                    description = <"Absolute change in VO2max from baseline value.">
+                >
+                ["at0053"] = <
+                    text = <"Percent change">
+                    description = <"Percentage change in VO2max from baseline.">
+                >
+                ["at0054"] = <
+                    text = <"Baseline value">
+                    description = <"The baseline VO2max value for comparison.">
+                >
+                ["at0055"] = <
+                    text = <"Baseline date">
+                    description = <"Date when the baseline value was recorded.">
+                >
+                ["at0056"] = <
+                    text = <"Analysis period">
+                    description = <"The time period over which the trend was analyzed.">
+                >
+                ["at0060"] = <
+                    text = <"Health implications">
+                    description = <"Clinical and health implications of the VO2max result.">
+                >
+                ["at0061"] = <
+                    text = <"Cardiovascular risk category">
+                    description = <"Risk category based on cardiorespiratory fitness level.">
+                >
+                ["at0062"] = <
+                    text = <"MET capacity">
+                    description = <"Functional capacity expressed in METs.">
+                >
+                ["at0063"] = <
+                    text = <"Functional capacity">
+                    description = <"Narrative description of functional capacity.">
+                >
+                ["at0064"] = <
+                    text = <"Clinical interpretation">
+                    description = <"Clinical interpretation of the VO2max result.">
+                >
+                ["at0070"] = <
+                    text = <"Comment">
+                    description = <"Additional narrative about the VO2max estimation.">
+                >
+                ["at0071"] = <
+                    text = <"Wearable device">
+                    description = <"Details about the wearable device used for estimation.">
+                >
+                ["at0072"] = <
+                    text = <"Data quality">
+                    description = <"Indicators of data quality for this estimation.">
+                >
+                ["at0073"] = <
+                    text = <"Additional details">
+                    description = <"Additional structured details about the estimation.">
+                >
+                ["at0080"] = <
+                    text = <"State">
+                    description = <"@ internal @">
+                >
+                ["at0081"] = <
+                    text = <"Activity state">
+                    description = <"The activity state of the subject during estimation.">
+                >
+                ["at0082"] = <
+                    text = <"Test environment">
+                    description = <"The environment where the test or estimation occurred.">
+                >
+                ["at0083"] = <
+                    text = <"Altitude">
+                    description = <"Altitude at which the test was performed.">
+                >
+                ["at0084"] = <
+                    text = <"Temperature">
+                    description = <"Ambient temperature during the test.">
+                >
+                ["at0085"] = <
+                    text = <"Humidity">
+                    description = <"Relative humidity during the test.">
+                >
+                ["at0086"] = <
+                    text = <"Confounding factors">
+                    description = <"Any factors that may affect the estimation accuracy.">
+                >
+                ["at0090"] = <
+                    text = <"Weekly average">
+                    description = <"Average VO2max estimation over one week.">
+                >
+                ["at0091"] = <
+                    text = <"Monthly average">
+                    description = <"Average VO2max estimation over one month.">
+                >
+                ["at0100"] = <
+                    text = <"Protocol">
+                    description = <"@ internal @">
+                >
+                ["at0101"] = <
+                    text = <"Data source">
+                    description = <"The source platform or application providing the data.">
+                >
+                ["at0102"] = <
+                    text = <"Last calibration">
+                    description = <"Date and time of last device or algorithm calibration.">
+                >
+                ["at0103"] = <
+                    text = <"User profile accuracy">
+                    description = <"Accuracy and completeness of user profile data.">
+                >
+                ["at0104"] = <
+                    text = <"Device details">
+                    description = <"Details about the device used for estimation.">
+                >
+                ["at0105"] = <
+                    text = <"Vendor provenance">
+                    description = <"Data provenance information from the vendor.">
+                >
+                ["at0106"] = <
+                    text = <"Extension">
+                    description = <"Additional information required to extend the model.">
+                >
+                ["at0200"] = <
+                    text = <"Very poor">
+                    description = <"VO2max in the very poor category for age and sex.">
+                >
+                ["at0201"] = <
+                    text = <"Poor">
+                    description = <"VO2max in the poor category for age and sex.">
+                >
+                ["at0202"] = <
+                    text = <"Below average">
+                    description = <"VO2max below average for age and sex.">
+                >
+                ["at0203"] = <
+                    text = <"Average">
+                    description = <"VO2max average for age and sex.">
+                >
+                ["at0204"] = <
+                    text = <"Above average">
+                    description = <"VO2max above average for age and sex.">
+                >
+                ["at0205"] = <
+                    text = <"Good">
+                    description = <"VO2max in the good category for age and sex.">
+                >
+                ["at0206"] = <
+                    text = <"Excellent">
+                    description = <"VO2max in the excellent category for age and sex.">
+                >
+                ["at0207"] = <
+                    text = <"Superior">
+                    description = <"VO2max in the superior category for age and sex.">
+                >
+                ["at0210"] = <
+                    text = <"ACSM">
+                    description = <"American College of Sports Medicine classification.">
+                >
+                ["at0211"] = <
+                    text = <"Cooper Institute">
+                    description = <"Cooper Institute fitness classification.">
+                >
+                ["at0212"] = <
+                    text = <"HUNT Fitness Study">
+                    description = <"Norwegian HUNT Fitness Study norms.">
+                >
+                ["at0213"] = <
+                    text = <"Garmin proprietary">
+                    description = <"Garmin proprietary classification system.">
+                >
+                ["at0214"] = <
+                    text = <"Apple proprietary">
+                    description = <"Apple proprietary classification system.">
+                >
+                ["at0215"] = <
+                    text = <"Polar proprietary">
+                    description = <"Polar proprietary classification system.">
+                >
+                ["at0216"] = <
+                    text = <"Other">
+                    description = <"Other classification standard.">
+                >
+                ["at0220"] = <
+                    text = <"Wearable algorithm">
+                    description = <"Algorithm-based estimation from wearable device data.">
+                >
+                ["at0221"] = <
+                    text = <"Submaximal exercise test">
+                    description = <"Estimation from a submaximal exercise test.">
+                >
+                ["at0222"] = <
+                    text = <"Non-exercise prediction">
+                    description = <"Estimation using non-exercise prediction equations.">
+                >
+                ["at0223"] = <
+                    text = <"Maximal exercise test">
+                    description = <"Estimation from a maximal exercise test (not direct measurement).">
+                >
+                ["at0224"] = <
+                    text = <"Field test">
+                    description = <"Estimation from a field-based fitness test.">
+                >
+                ["at0225"] = <
+                    text = <"Combined method">
+                    description = <"Estimation using multiple combined methods.">
+                >
+                ["at0230"] = <
+                    text = <"Garmin FirstBeat">
+                    description = <"Garmin FirstBeat analytics algorithm.">
+                >
+                ["at0231"] = <
+                    text = <"Apple Cardio Fitness">
+                    description = <"Apple Watch Cardio Fitness algorithm.">
+                >
+                ["at0232"] = <
+                    text = <"Polar Fitness Test">
+                    description = <"Polar OwnIndex fitness test.">
+                >
+                ["at0233"] = <
+                    text = <"Fitbit Cardio Score">
+                    description = <"Fitbit cardio fitness score algorithm.">
+                >
+                ["at0234"] = <
+                    text = <"COROS estimate">
+                    description = <"COROS proprietary VO2max estimation.">
+                >
+                ["at0235"] = <
+                    text = <"Suunto estimate">
+                    description = <"Suunto proprietary VO2max estimation.">
+                >
+                ["at0236"] = <
+                    text = <"Astrand-Rhyming cycle">
+                    description = <"Astrand-Rhyming submaximal cycle ergometer test.">
+                >
+                ["at0237"] = <
+                    text = <"YMCA cycle test">
+                    description = <"YMCA submaximal cycle ergometer test.">
+                >
+                ["at0238"] = <
+                    text = <"Rockport walk test">
+                    description = <"Rockport 1-mile walk test.">
+                >
+                ["at0239"] = <
+                    text = <"Cooper 12-min run">
+                    description = <"Cooper 12-minute run/walk test.">
+                >
+                ["at0240"] = <
+                    text = <"6-minute walk test">
+                    description = <"Six-minute walk test.">
+                >
+                ["at0241"] = <
+                    text = <"Queens College step test">
+                    description = <"Queens College step test protocol.">
+                >
+                ["at0242"] = <
+                    text = <"Uth formula (HRmax/HRrest)">
+                    description = <"Uth non-exercise equation using heart rate ratio.">
+                >
+                ["at0243"] = <
+                    text = <"Jackson non-exercise">
+                    description = <"Jackson non-exercise prediction equation.">
+                >
+                ["at0244"] = <
+                    text = <"Matthews non-exercise">
+                    description = <"Matthews non-exercise prediction equation.">
+                >
+                ["at0245"] = <
+                    text = <"Bruce treadmill">
+                    description = <"Bruce treadmill protocol.">
+                >
+                ["at0246"] = <
+                    text = <"Balke treadmill">
+                    description = <"Balke-Ware treadmill protocol.">
+                >
+                ["at0247"] = <
+                    text = <"Other">
+                    description = <"Other protocol or algorithm.">
+                >
+                ["at0250"] = <
+                    text = <"Clinically validated">
+                    description = <"Method has been validated in clinical studies.">
+                >
+                ["at0251"] = <
+                    text = <"Research validated">
+                    description = <"Method has been validated in research settings.">
+                >
+                ["at0252"] = <
+                    text = <"Manufacturer validated">
+                    description = <"Method has been validated by the manufacturer.">
+                >
+                ["at0253"] = <
+                    text = <"Not validated">
+                    description = <"Method has not been independently validated.">
+                >
+                ["at0254"] = <
+                    text = <"Unknown">
+                    description = <"Validation status is unknown.">
+                >
+                ["at0260"] = <
+                    text = <"Measured (maximal test)">
+                    description = <"HRmax was directly measured in a maximal test.">
+                >
+                ["at0261"] = <
+                    text = <"Age-predicted (220-age)">
+                    description = <"HRmax predicted using 220-age formula.">
+                >
+                ["at0262"] = <
+                    text = <"Age-predicted (Tanaka)">
+                    description = <"HRmax predicted using Tanaka formula (208-0.7*age).">
+                >
+                ["at0263"] = <
+                    text = <"Field observed">
+                    description = <"HRmax observed during field activities.">
+                >
+                ["at0264"] = <
+                    text = <"Device learned">
+                    description = <"HRmax learned by the wearable device over time.">
+                >
+                ["at0265"] = <
+                    text = <"Unknown">
+                    description = <"Method of HRmax determination is unknown.">
+                >
+                ["at0270"] = <
+                    text = <"Treadmill">
+                    description = <"Test performed on a treadmill.">
+                >
+                ["at0271"] = <
+                    text = <"Cycle ergometer">
+                    description = <"Test performed on a cycle ergometer.">
+                >
+                ["at0272"] = <
+                    text = <"Step test">
+                    description = <"Test performed using a step.">
+                >
+                ["at0273"] = <
+                    text = <"Walk test">
+                    description = <"Test performed as a walk test.">
+                >
+                ["at0274"] = <
+                    text = <"Run test">
+                    description = <"Test performed as a run test.">
+                >
+                ["at0275"] = <
+                    text = <"Rowing ergometer">
+                    description = <"Test performed on a rowing ergometer.">
+                >
+                ["at0276"] = <
+                    text = <"Arm ergometer">
+                    description = <"Test performed on an arm ergometer.">
+                >
+                ["at0277"] = <
+                    text = <"Other">
+                    description = <"Other test modality.">
+                >
+                ["at0280"] = <
+                    text = <"Target achieved">
+                    description = <"Test terminated when target was achieved.">
+                >
+                ["at0281"] = <
+                    text = <"Volitional exhaustion">
+                    description = <"Test terminated due to volitional exhaustion.">
+                >
+                ["at0282"] = <
+                    text = <"HR plateau">
+                    description = <"Test terminated when heart rate plateaued.">
+                >
+                ["at0283"] = <
+                    text = <"Time limit">
+                    description = <"Test terminated due to time limit.">
+                >
+                ["at0284"] = <
+                    text = <"Symptoms">
+                    description = <"Test terminated due to symptoms.">
+                >
+                ["at0285"] = <
+                    text = <"ECG abnormality">
+                    description = <"Test terminated due to ECG abnormality.">
+                >
+                ["at0286"] = <
+                    text = <"Blood pressure response">
+                    description = <"Test terminated due to abnormal blood pressure response.">
+                >
+                ["at0287"] = <
+                    text = <"Other">
+                    description = <"Other termination reason.">
+                >
+                ["at0290"] = <
+                    text = <"Significantly improving">
+                    description = <"VO2max is significantly improving over time.">
+                >
+                ["at0291"] = <
+                    text = <"Improving">
+                    description = <"VO2max is improving over time.">
+                >
+                ["at0292"] = <
+                    text = <"Stable">
+                    description = <"VO2max is stable over time.">
+                >
+                ["at0293"] = <
+                    text = <"Declining">
+                    description = <"VO2max is declining over time.">
+                >
+                ["at0294"] = <
+                    text = <"Significantly declining">
+                    description = <"VO2max is significantly declining over time.">
+                >
+                ["at0295"] = <
+                    text = <"Insufficient data">
+                    description = <"Insufficient data to determine trend.">
+                >
+                ["at0300"] = <
+                    text = <"Low risk">
+                    description = <"Low cardiovascular risk based on CRF.">
+                >
+                ["at0301"] = <
+                    text = <"Moderate risk">
+                    description = <"Moderate cardiovascular risk based on CRF.">
+                >
+                ["at0302"] = <
+                    text = <"High risk">
+                    description = <"High cardiovascular risk based on CRF.">
+                >
+                ["at0303"] = <
+                    text = <"Very high risk">
+                    description = <"Very high cardiovascular risk based on CRF.">
+                >
+                ["at0310"] = <
+                    text = <"Resting">
+                    description = <"Subject was resting during estimation.">
+                >
+                ["at0311"] = <
+                    text = <"Post-exercise">
+                    description = <"Estimation made post-exercise.">
+                >
+                ["at0312"] = <
+                    text = <"During activity">
+                    description = <"Estimation made during physical activity.">
+                >
+                ["at0313"] = <
+                    text = <"Recovery">
+                    description = <"Estimation made during recovery period.">
+                >
+                ["at0320"] = <
+                    text = <"Clinical laboratory">
+                    description = <"Test performed in a clinical laboratory.">
+                >
+                ["at0321"] = <
+                    text = <"Gym/fitness center">
+                    description = <"Test performed in a gym or fitness center.">
+                >
+                ["at0322"] = <
+                    text = <"Outdoor">
+                    description = <"Test performed outdoors.">
+                >
+                ["at0323"] = <
+                    text = <"Home">
+                    description = <"Test performed at home.">
+                >
+                ["at0324"] = <
+                    text = <"Unknown">
+                    description = <"Test environment is unknown.">
+                >
+                ["at0330"] = <
+                    text = <"Apple HealthKit">
+                    description = <"Data sourced from Apple HealthKit.">
+                >
+                ["at0331"] = <
+                    text = <"Google Fit">
+                    description = <"Data sourced from Google Fit.">
+                >
+                ["at0332"] = <
+                    text = <"Garmin Connect">
+                    description = <"Data sourced from Garmin Connect.">
+                >
+                ["at0333"] = <
+                    text = <"Polar Flow">
+                    description = <"Data sourced from Polar Flow.">
+                >
+                ["at0334"] = <
+                    text = <"Fitbit">
+                    description = <"Data sourced from Fitbit.">
+                >
+                ["at0335"] = <
+                    text = <"Samsung Health">
+                    description = <"Data sourced from Samsung Health.">
+                >
+                ["at0336"] = <
+                    text = <"COROS">
+                    description = <"Data sourced from COROS.">
+                >
+                ["at0337"] = <
+                    text = <"Suunto">
+                    description = <"Data sourced from Suunto.">
+                >
+                ["at0338"] = <
+                    text = <"Wahoo">
+                    description = <"Data sourced from Wahoo.">
+                >
+                ["at0339"] = <
+                    text = <"Clinical system">
+                    description = <"Data sourced from clinical information system.">
+                >
+                ["at0340"] = <
+                    text = <"Manual entry">
+                    description = <"Data entered manually.">
+                >
+                ["at0341"] = <
+                    text = <"Other">
+                    description = <"Data sourced from other platform.">
+                >
+                ["at0350"] = <
+                    text = <"Complete and verified">
+                    description = <"User profile is complete and has been verified.">
+                >
+                ["at0351"] = <
+                    text = <"Complete but unverified">
+                    description = <"User profile is complete but not verified.">
+                >
+                ["at0352"] = <
+                    text = <"Incomplete">
+                    description = <"User profile is incomplete.">
+                >
+                ["at0353"] = <
+                    text = <"Unknown">
+                    description = <"User profile accuracy is unknown.">
+                >
+            >
+        >
+    >
