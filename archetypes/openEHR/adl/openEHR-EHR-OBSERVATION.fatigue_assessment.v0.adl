@@ -1,0 +1,1189 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.fatigue_assessment.v0
+
+concept
+    [at0000]    -- Fatigue Assessment
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["email"] = <"ricardo.santos@medsci.org">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record fatigue and energy level assessments from self-tracking apps, wearable devices, and validated fatigue questionnaires for lifestyle medicine and chronic condition management.">
+            use = <"Use to record:
+- Daily energy levels and fatigue severity
+- Validated fatigue scale scores (FSS, FACIT-F, CFQ)
+- Post-exertional malaise indicators
+- Recovery metrics from wearables (Body Battery, Readiness)
+- Sleep-fatigue correlations
+- Activity-fatigue patterns
+- Chronic fatigue syndrome monitoring
+- Cancer-related fatigue tracking
+
+This archetype supports data from wellness apps, wearable recovery metrics, and validated fatigue assessment tools.
+
+Typical use cases include:
+- Chronic fatigue syndrome management
+- Cancer-related fatigue monitoring
+- Post-viral fatigue tracking
+- Fibromyalgia assessment
+- Multiple sclerosis fatigue
+- Lifestyle medicine interventions
+- Recovery optimization">
+            misuse = <"Not to be used for:
+- Clinical diagnosis of chronic fatigue syndrome (requires specialist evaluation)
+- Replacing comprehensive medical fatigue workup
+- Diagnosing underlying medical conditions causing fatigue
+
+Fatigue self-tracking supports clinical management but does not replace medical evaluation.">
+            keywords = <"fatigue", "energy", "tiredness", "exhaustion", "chronic", "recovery", "FSS", "FACIT", "wearable", "lifestyle", "post-exertional">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons CC-BY-SA 4.0">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"1. Krupp LB, et al. The Fatigue Severity Scale: Application to patients with multiple sclerosis and systemic lupus erythematosus. Arch Neurol. 1989;46(10):1121-1123.
+2. Yellen SB, et al. Measuring fatigue and other anemia-related symptoms with the Functional Assessment of Cancer Therapy (FACT) measurement system. J Pain Symptom Manage. 1997;13(2):63-74.
+3. Chalder T, et al. Development of a fatigue scale. J Psychosom Res. 1993;37(2):147-153.
+4. Garmin Body Battery Documentation.
+5. Oura Ring Readiness Score Documentation.
+6. WHOOP Recovery Score Documentation.">
+        ["current_contact"] = <"ricardo.santos@medsci.org">
+        ["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Fatigue Assessment
+        data matches {
+            HISTORY[at0001] matches {    -- History
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0004] occurrences matches {0..1} matches {    -- Energy levels
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0005] occurrences matches {0..1} matches {    -- Current energy level
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0006] occurrences matches {0..1} matches {    -- Energy level category
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0200,    -- Very high energy
+                                                            at0201,    -- High energy
+                                                            at0202,    -- Normal energy
+                                                            at0203,    -- Low energy
+                                                            at0204,    -- Very low energy
+                                                            at0205]    -- Exhausted
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0007] occurrences matches {0..1} matches {    -- Morning energy
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0008] occurrences matches {0..1} matches {    -- Afternoon energy
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0009] occurrences matches {0..1} matches {    -- Evening energy
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0010] occurrences matches {0..1} matches {    -- Peak energy time
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0206,    -- Early morning
+                                                            at0207,    -- Late morning
+                                                            at0208,    -- Afternoon
+                                                            at0209,    -- Evening
+                                                            at0210,    -- No clear peak
+                                                            at0211]    -- Variable
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Fatigue severity
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- FSS score (average)
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::380]}
+                                                        units matches {"1"}
+                                                        magnitude matches {|1.0..7.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- FSS interpretation
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0212,    -- No significant fatigue (<4)
+                                                            at0213,    -- Mild fatigue (4-4.9)
+                                                            at0214,    -- Moderate fatigue (5-5.9)
+                                                            at0215]    -- Severe fatigue (>=6)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- FACIT-Fatigue score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..52|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Chalder Fatigue Scale score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..33|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Fatigue VAS (0-100)
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0026] occurrences matches {0..1} matches {    -- Assessment tool used
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0216,    -- FSS (Fatigue Severity Scale)
+                                                            at0217,    -- FACIT-F (Functional Assessment)
+                                                            at0218,    -- CFQ (Chalder Fatigue Questionnaire)
+                                                            at0219,    -- Brief Fatigue Inventory
+                                                            at0220,    -- MFIS (Modified Fatigue Impact)
+                                                            at0221,    -- Simple VAS
+                                                            at0222,    -- App-specific scale
+                                                            at0223]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Wearable recovery metrics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Body Battery/Energy Reserve
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Readiness score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Recovery score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- HRV-based recovery
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0224,    -- Optimal
+                                                            at0225,    -- Good
+                                                            at0226,    -- Adequate
+                                                            at0227,    -- Low
+                                                            at0228]    -- Poor
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0035] occurrences matches {0..1} matches {    -- Strain vs recovery balance
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0229,    -- Well recovered
+                                                            at0230,    -- Balanced
+                                                            at0231,    -- Slightly strained
+                                                            at0232,    -- Overreaching
+                                                            at0233]    -- Overtrained/exhausted
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0036] occurrences matches {0..1} matches {    -- Wearable source
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0234,    -- Garmin (Body Battery)
+                                                            at0235,    -- Oura (Readiness)
+                                                            at0236,    -- WHOOP (Recovery)
+                                                            at0237,    -- Fitbit (Daily Readiness)
+                                                            at0238,    -- Apple Watch
+                                                            at0239,    -- Polar
+                                                            at0240]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Post-exertional malaise
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- PEM experienced
+                                                value matches {
+                                                    DV_BOOLEAN matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- PEM severity
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0241,    -- Mild
+                                                            at0242,    -- Moderate
+                                                            at0243,    -- Severe
+                                                            at0244]    -- Incapacitating
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- PEM trigger activity
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- Delay before onset
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0245,    -- Immediate
+                                                            at0246,    -- Hours later
+                                                            at0247,    -- Next day
+                                                            at0248,    -- 24-48 hours
+                                                            at0249]    -- 48+ hours
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Recovery time
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0250,    -- Hours
+                                                            at0251,    -- 1-2 days
+                                                            at0252,    -- 3-7 days
+                                                            at0253,    -- 1-2 weeks
+                                                            at0254]    -- Weeks+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Functional impact
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- Work/productivity impact
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- Physical activity impact
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- Social activity impact
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- Daily activities impact
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- Concentration impact
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0056] occurrences matches {0..1} matches {    -- Rest helped
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0255,    -- Fully refreshed
+                                                            at0256,    -- Somewhat helped
+                                                            at0257,    -- Minimally helped
+                                                            at0258]    -- Rest doesn't help
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Contributing factors
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Sleep quality last night
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0259,    -- Excellent
+                                                            at0260,    -- Good
+                                                            at0261,    -- Fair
+                                                            at0262,    -- Poor
+                                                            at0263]    -- Very poor
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Sleep duration
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::128]}
+                                                        units matches {"h"}
+                                                        magnitude matches {|0.0..24.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Stress level
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0064] occurrences matches {0..1} matches {    -- Physical activity yesterday
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0264,    -- None
+                                                            at0265,    -- Light
+                                                            at0266,    -- Moderate
+                                                            at0267,    -- Vigorous
+                                                            at0268]    -- Excessive
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0065] occurrences matches {0..1} matches {    -- Likely cause
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0269,    -- Poor sleep
+                                                            at0270,    -- Physical overexertion
+                                                            at0271,    -- Mental/emotional stress
+                                                            at0272,    -- Illness/infection
+                                                            at0273,    -- Chronic condition
+                                                            at0274,    -- Medication side effect
+                                                            at0275,    -- Diet/nutrition
+                                                            at0276,    -- Unknown
+                                                            at0277]    -- Multiple factors
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0070] occurrences matches {0..1} matches {    -- Comment
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0071] occurrences matches {0..*} matches {    -- Data quality
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+                                    }
+                                    allow_archetype CLUSTER[at0072] occurrences matches {0..*} matches {    -- Vendor provenance
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0100] matches {    -- Tree
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0101] occurrences matches {0..1} matches {    -- Time of day
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0278,    -- Upon waking
+                                                    at0279,    -- Morning
+                                                    at0280,    -- Midday
+                                                    at0281,    -- Afternoon
+                                                    at0282,    -- Evening
+                                                    at0283]    -- Before bed
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0102] occurrences matches {0..1} matches {    -- Current activity
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0284,    -- Resting
+                                                    at0285,    -- Light activity
+                                                    at0286,    -- Working
+                                                    at0287,    -- After exercise
+                                                    at0288]    -- Other
+                                                }
+                                            }
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0103] occurrences matches {0..*} matches {    -- Additional context
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0110] occurrences matches {0..1} matches {    -- Daily summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {PT24H}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0100]
+                        }
+                    }
+                    INTERVAL_EVENT[at0111] occurrences matches {0..1} matches {    -- Weekly summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [openehr::148]
+                                }
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1W}
+                            }
+                        }
+                        data matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+                        }
+                        state matches {
+                            use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0100]
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0120] matches {    -- Tree
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0121] occurrences matches {0..1} matches {    -- Tracking method
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0289,    -- Validated questionnaire
+                                    at0290,    -- Wearable-derived
+                                    at0291,    -- App self-report
+                                    at0292,    -- Combined methods
+                                    at0293]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0122] occurrences matches {0..1} matches {    -- Fatigue tracking app
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    allow_archetype CLUSTER[at0123] occurrences matches {0..*} matches {    -- Wearable device
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+                    }
+                    allow_archetype CLUSTER[at0124] occurrences matches {0..*} matches {    -- Extension
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Fatigue Assessment">
+                    description = <"Fatigue and energy level assessments from self-tracking apps, wearable devices, and validated fatigue questionnaires.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0004"] = <
+                    text = <"Energy levels">
+                    description = <"Subjective energy level ratings throughout the day.">
+                >
+                ["at0005"] = <
+                    text = <"Current energy level">
+                    description = <"Current energy level on 0-10 scale (10=highest energy).">
+                >
+                ["at0006"] = <
+                    text = <"Energy level category">
+                    description = <"Categorical energy level assessment.">
+                >
+                ["at0007"] = <
+                    text = <"Morning energy">
+                    description = <"Energy level in the morning.">
+                >
+                ["at0008"] = <
+                    text = <"Afternoon energy">
+                    description = <"Energy level in the afternoon.">
+                >
+                ["at0009"] = <
+                    text = <"Evening energy">
+                    description = <"Energy level in the evening.">
+                >
+                ["at0010"] = <
+                    text = <"Peak energy time">
+                    description = <"Time of day when energy is typically highest.">
+                >
+                ["at0020"] = <
+                    text = <"Fatigue severity">
+                    description = <"Validated fatigue assessment scores.">
+                >
+                ["at0021"] = <
+                    text = <"FSS score (average)">
+                    description = <"Fatigue Severity Scale average score (1-7).">
+                >
+                ["at0022"] = <
+                    text = <"FSS interpretation">
+                    description = <"Clinical interpretation of FSS score.">
+                >
+                ["at0023"] = <
+                    text = <"FACIT-Fatigue score">
+                    description = <"FACIT-F score (0-52, higher = less fatigue).">
+                >
+                ["at0024"] = <
+                    text = <"Chalder Fatigue Scale score">
+                    description = <"CFQ/CFS score (0-33).">
+                >
+                ["at0025"] = <
+                    text = <"Fatigue VAS (0-100)">
+                    description = <"Visual analog scale for fatigue intensity.">
+                >
+                ["at0026"] = <
+                    text = <"Assessment tool used">
+                    description = <"Validated assessment tool used for fatigue measurement.">
+                >
+                ["at0030"] = <
+                    text = <"Wearable recovery metrics">
+                    description = <"Recovery and readiness metrics from wearable devices.">
+                >
+                ["at0031"] = <
+                    text = <"Body Battery/Energy Reserve">
+                    description = <"Garmin Body Battery or equivalent energy metric (0-100).">
+                >
+                ["at0032"] = <
+                    text = <"Readiness score">
+                    description = <"Readiness score from wearable (0-100).">
+                >
+                ["at0033"] = <
+                    text = <"Recovery score">
+                    description = <"Recovery score from wearable (0-100).">
+                >
+                ["at0034"] = <
+                    text = <"HRV-based recovery">
+                    description = <"Recovery assessment based on HRV analysis.">
+                >
+                ["at0035"] = <
+                    text = <"Strain vs recovery balance">
+                    description = <"Balance between physical strain and recovery.">
+                >
+                ["at0036"] = <
+                    text = <"Wearable source">
+                    description = <"Source of wearable recovery data.">
+                >
+                ["at0040"] = <
+                    text = <"Post-exertional malaise">
+                    description = <"Post-exertional malaise symptoms (key ME/CFS feature).">
+                >
+                ["at0041"] = <
+                    text = <"PEM experienced">
+                    description = <"Whether post-exertional malaise was experienced.">
+                >
+                ["at0042"] = <
+                    text = <"PEM severity">
+                    description = <"Severity of post-exertional malaise.">
+                >
+                ["at0043"] = <
+                    text = <"PEM trigger activity">
+                    description = <"Activity that triggered PEM.">
+                >
+                ["at0044"] = <
+                    text = <"Delay before onset">
+                    description = <"Time between activity and PEM onset.">
+                >
+                ["at0045"] = <
+                    text = <"Recovery time">
+                    description = <"Time needed to recover from PEM episode.">
+                >
+                ["at0050"] = <
+                    text = <"Functional impact">
+                    description = <"Impact of fatigue on daily functioning.">
+                >
+                ["at0051"] = <
+                    text = <"Work/productivity impact">
+                    description = <"Impact on work and productivity (0-10).">
+                >
+                ["at0052"] = <
+                    text = <"Physical activity impact">
+                    description = <"Impact on physical activity (0-10).">
+                >
+                ["at0053"] = <
+                    text = <"Social activity impact">
+                    description = <"Impact on social activities (0-10).">
+                >
+                ["at0054"] = <
+                    text = <"Daily activities impact">
+                    description = <"Impact on daily activities (0-10).">
+                >
+                ["at0055"] = <
+                    text = <"Concentration impact">
+                    description = <"Impact on concentration and thinking (0-10).">
+                >
+                ["at0056"] = <
+                    text = <"Rest helped">
+                    description = <"Whether rest improved fatigue.">
+                >
+                ["at0060"] = <
+                    text = <"Contributing factors">
+                    description = <"Factors potentially contributing to fatigue.">
+                >
+                ["at0061"] = <
+                    text = <"Sleep quality last night">
+                    description = <"Quality of sleep the previous night.">
+                >
+                ["at0062"] = <
+                    text = <"Sleep duration">
+                    description = <"Hours of sleep last night.">
+                >
+                ["at0063"] = <
+                    text = <"Stress level">
+                    description = <"Current stress level (0-10).">
+                >
+                ["at0064"] = <
+                    text = <"Physical activity yesterday">
+                    description = <"Physical activity level yesterday.">
+                >
+                ["at0065"] = <
+                    text = <"Likely cause">
+                    description = <"Likely cause of current fatigue.">
+                >
+                ["at0070"] = <
+                    text = <"Comment">
+                    description = <"Additional narrative about fatigue.">
+                >
+                ["at0071"] = <
+                    text = <"Data quality">
+                    description = <"Quality indicators for fatigue data.">
+                >
+                ["at0072"] = <
+                    text = <"Vendor provenance">
+                    description = <"Data source and vendor information.">
+                >
+                ["at0100"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0101"] = <
+                    text = <"Time of day">
+                    description = <"Time of day when assessment was made.">
+                >
+                ["at0102"] = <
+                    text = <"Current activity">
+                    description = <"Current activity at time of assessment.">
+                >
+                ["at0103"] = <
+                    text = <"Additional context">
+                    description = <"Additional contextual information.">
+                >
+                ["at0110"] = <
+                    text = <"Daily summary">
+                    description = <"Aggregated fatigue data for 24 hours.">
+                >
+                ["at0111"] = <
+                    text = <"Weekly summary">
+                    description = <"Aggregated fatigue data for 7 days.">
+                >
+                ["at0120"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0121"] = <
+                    text = <"Tracking method">
+                    description = <"Method used for fatigue tracking.">
+                >
+                ["at0122"] = <
+                    text = <"Fatigue tracking app">
+                    description = <"Name of app used for fatigue tracking.">
+                >
+                ["at0123"] = <
+                    text = <"Wearable device">
+                    description = <"Details of wearable device.">
+                >
+                ["at0124"] = <
+                    text = <"Extension">
+                    description = <"Additional information for local use.">
+                >
+                ["at0200"] = <
+                    text = <"Very high energy">
+                    description = <"Feeling very energetic.">
+                >
+                ["at0201"] = <
+                    text = <"High energy">
+                    description = <"Feeling energetic.">
+                >
+                ["at0202"] = <
+                    text = <"Normal energy">
+                    description = <"Normal energy levels.">
+                >
+                ["at0203"] = <
+                    text = <"Low energy">
+                    description = <"Feeling tired.">
+                >
+                ["at0204"] = <
+                    text = <"Very low energy">
+                    description = <"Feeling very tired.">
+                >
+                ["at0205"] = <
+                    text = <"Exhausted">
+                    description = <"Feeling completely exhausted.">
+                >
+                ["at0206"] = <
+                    text = <"Early morning">
+                    description = <"Peak energy in early morning.">
+                >
+                ["at0207"] = <
+                    text = <"Late morning">
+                    description = <"Peak energy in late morning.">
+                >
+                ["at0208"] = <
+                    text = <"Afternoon">
+                    description = <"Peak energy in afternoon.">
+                >
+                ["at0209"] = <
+                    text = <"Evening">
+                    description = <"Peak energy in evening.">
+                >
+                ["at0210"] = <
+                    text = <"No clear peak">
+                    description = <"No clear peak energy time.">
+                >
+                ["at0211"] = <
+                    text = <"Variable">
+                    description = <"Peak energy time varies.">
+                >
+                ["at0212"] = <
+                    text = <"No significant fatigue (<4)">
+                    description = <"FSS score below clinical threshold.">
+                >
+                ["at0213"] = <
+                    text = <"Mild fatigue (4-4.9)">
+                    description = <"Mild clinical fatigue.">
+                >
+                ["at0214"] = <
+                    text = <"Moderate fatigue (5-5.9)">
+                    description = <"Moderate clinical fatigue.">
+                >
+                ["at0215"] = <
+                    text = <"Severe fatigue (>=6)">
+                    description = <"Severe clinical fatigue.">
+                >
+                ["at0216"] = <
+                    text = <"FSS (Fatigue Severity Scale)">
+                    description = <"Krupp Fatigue Severity Scale.">
+                >
+                ["at0217"] = <
+                    text = <"FACIT-F (Functional Assessment)">
+                    description = <"FACIT-Fatigue subscale.">
+                >
+                ["at0218"] = <
+                    text = <"CFQ (Chalder Fatigue Questionnaire)">
+                    description = <"Chalder Fatigue Questionnaire.">
+                >
+                ["at0219"] = <
+                    text = <"Brief Fatigue Inventory">
+                    description = <"Brief Fatigue Inventory (BFI).">
+                >
+                ["at0220"] = <
+                    text = <"MFIS (Modified Fatigue Impact)">
+                    description = <"Modified Fatigue Impact Scale.">
+                >
+                ["at0221"] = <
+                    text = <"Simple VAS">
+                    description = <"Simple visual analog scale.">
+                >
+                ["at0222"] = <
+                    text = <"App-specific scale">
+                    description = <"App-specific fatigue scale.">
+                >
+                ["at0223"] = <
+                    text = <"Other">
+                    description = <"Other assessment tool.">
+                >
+                ["at0224"] = <
+                    text = <"Optimal">
+                    description = <"Optimal recovery state.">
+                >
+                ["at0225"] = <
+                    text = <"Good">
+                    description = <"Good recovery state.">
+                >
+                ["at0226"] = <
+                    text = <"Adequate">
+                    description = <"Adequate recovery.">
+                >
+                ["at0227"] = <
+                    text = <"Low">
+                    description = <"Low recovery.">
+                >
+                ["at0228"] = <
+                    text = <"Poor">
+                    description = <"Poor recovery state.">
+                >
+                ["at0229"] = <
+                    text = <"Well recovered">
+                    description = <"Strain well balanced by recovery.">
+                >
+                ["at0230"] = <
+                    text = <"Balanced">
+                    description = <"Strain and recovery balanced.">
+                >
+                ["at0231"] = <
+                    text = <"Slightly strained">
+                    description = <"Slightly more strain than recovery.">
+                >
+                ["at0232"] = <
+                    text = <"Overreaching">
+                    description = <"Significantly more strain than recovery.">
+                >
+                ["at0233"] = <
+                    text = <"Overtrained/exhausted">
+                    description = <"Overtraining or exhaustion state.">
+                >
+                ["at0234"] = <
+                    text = <"Garmin (Body Battery)">
+                    description = <"Garmin Body Battery metric.">
+                >
+                ["at0235"] = <
+                    text = <"Oura (Readiness)">
+                    description = <"Oura Ring Readiness score.">
+                >
+                ["at0236"] = <
+                    text = <"WHOOP (Recovery)">
+                    description = <"WHOOP Recovery percentage.">
+                >
+                ["at0237"] = <
+                    text = <"Fitbit (Daily Readiness)">
+                    description = <"Fitbit Daily Readiness Score.">
+                >
+                ["at0238"] = <
+                    text = <"Apple Watch">
+                    description = <"Apple Watch metrics.">
+                >
+                ["at0239"] = <
+                    text = <"Polar">
+                    description = <"Polar recovery metrics.">
+                >
+                ["at0240"] = <
+                    text = <"Other">
+                    description = <"Other wearable source.">
+                >
+                ["at0241"] = <
+                    text = <"Mild">
+                    description = <"Mild PEM symptoms.">
+                >
+                ["at0242"] = <
+                    text = <"Moderate">
+                    description = <"Moderate PEM symptoms.">
+                >
+                ["at0243"] = <
+                    text = <"Severe">
+                    description = <"Severe PEM symptoms.">
+                >
+                ["at0244"] = <
+                    text = <"Incapacitating">
+                    description = <"Incapacitating PEM.">
+                >
+                ["at0245"] = <
+                    text = <"Immediate">
+                    description = <"PEM onset immediately after activity.">
+                >
+                ["at0246"] = <
+                    text = <"Hours later">
+                    description = <"PEM onset hours after activity.">
+                >
+                ["at0247"] = <
+                    text = <"Next day">
+                    description = <"PEM onset the next day.">
+                >
+                ["at0248"] = <
+                    text = <"24-48 hours">
+                    description = <"PEM onset 24-48 hours later.">
+                >
+                ["at0249"] = <
+                    text = <"48+ hours">
+                    description = <"PEM onset more than 48 hours later.">
+                >
+                ["at0250"] = <
+                    text = <"Hours">
+                    description = <"Recovery within hours.">
+                >
+                ["at0251"] = <
+                    text = <"1-2 days">
+                    description = <"Recovery in 1-2 days.">
+                >
+                ["at0252"] = <
+                    text = <"3-7 days">
+                    description = <"Recovery in 3-7 days.">
+                >
+                ["at0253"] = <
+                    text = <"1-2 weeks">
+                    description = <"Recovery in 1-2 weeks.">
+                >
+                ["at0254"] = <
+                    text = <"Weeks+">
+                    description = <"Recovery takes weeks or longer.">
+                >
+                ["at0255"] = <
+                    text = <"Fully refreshed">
+                    description = <"Rest fully restored energy.">
+                >
+                ["at0256"] = <
+                    text = <"Somewhat helped">
+                    description = <"Rest somewhat helped.">
+                >
+                ["at0257"] = <
+                    text = <"Minimally helped">
+                    description = <"Rest minimally helped.">
+                >
+                ["at0258"] = <
+                    text = <"Rest doesn't help">
+                    description = <"Rest does not relieve fatigue.">
+                >
+                ["at0259"] = <
+                    text = <"Excellent">
+                    description = <"Excellent sleep quality.">
+                >
+                ["at0260"] = <
+                    text = <"Good">
+                    description = <"Good sleep quality.">
+                >
+                ["at0261"] = <
+                    text = <"Fair">
+                    description = <"Fair sleep quality.">
+                >
+                ["at0262"] = <
+                    text = <"Poor">
+                    description = <"Poor sleep quality.">
+                >
+                ["at0263"] = <
+                    text = <"Very poor">
+                    description = <"Very poor sleep quality.">
+                >
+                ["at0264"] = <
+                    text = <"None">
+                    description = <"No physical activity.">
+                >
+                ["at0265"] = <
+                    text = <"Light">
+                    description = <"Light physical activity.">
+                >
+                ["at0266"] = <
+                    text = <"Moderate">
+                    description = <"Moderate physical activity.">
+                >
+                ["at0267"] = <
+                    text = <"Vigorous">
+                    description = <"Vigorous physical activity.">
+                >
+                ["at0268"] = <
+                    text = <"Excessive">
+                    description = <"Excessive physical activity.">
+                >
+                ["at0269"] = <
+                    text = <"Poor sleep">
+                    description = <"Fatigue likely due to poor sleep.">
+                >
+                ["at0270"] = <
+                    text = <"Physical overexertion">
+                    description = <"Fatigue due to physical overexertion.">
+                >
+                ["at0271"] = <
+                    text = <"Mental/emotional stress">
+                    description = <"Fatigue due to stress.">
+                >
+                ["at0272"] = <
+                    text = <"Illness/infection">
+                    description = <"Fatigue due to illness.">
+                >
+                ["at0273"] = <
+                    text = <"Chronic condition">
+                    description = <"Fatigue from chronic condition.">
+                >
+                ["at0274"] = <
+                    text = <"Medication side effect">
+                    description = <"Fatigue as medication side effect.">
+                >
+                ["at0275"] = <
+                    text = <"Diet/nutrition">
+                    description = <"Fatigue related to diet.">
+                >
+                ["at0276"] = <
+                    text = <"Unknown">
+                    description = <"Cause unknown.">
+                >
+                ["at0277"] = <
+                    text = <"Multiple factors">
+                    description = <"Multiple contributing factors.">
+                >
+                ["at0278"] = <
+                    text = <"Upon waking">
+                    description = <"Immediately after waking.">
+                >
+                ["at0279"] = <
+                    text = <"Morning">
+                    description = <"Morning time.">
+                >
+                ["at0280"] = <
+                    text = <"Midday">
+                    description = <"Midday time.">
+                >
+                ["at0281"] = <
+                    text = <"Afternoon">
+                    description = <"Afternoon time.">
+                >
+                ["at0282"] = <
+                    text = <"Evening">
+                    description = <"Evening time.">
+                >
+                ["at0283"] = <
+                    text = <"Before bed">
+                    description = <"Before going to bed.">
+                >
+                ["at0284"] = <
+                    text = <"Resting">
+                    description = <"At rest.">
+                >
+                ["at0285"] = <
+                    text = <"Light activity">
+                    description = <"Light activity.">
+                >
+                ["at0286"] = <
+                    text = <"Working">
+                    description = <"Working.">
+                >
+                ["at0287"] = <
+                    text = <"After exercise">
+                    description = <"After exercise.">
+                >
+                ["at0288"] = <
+                    text = <"Other">
+                    description = <"Other activity.">
+                >
+                ["at0289"] = <
+                    text = <"Validated questionnaire">
+                    description = <"Using validated fatigue questionnaire.">
+                >
+                ["at0290"] = <
+                    text = <"Wearable-derived">
+                    description = <"Derived from wearable data.">
+                >
+                ["at0291"] = <
+                    text = <"App self-report">
+                    description = <"Self-reported via app.">
+                >
+                ["at0292"] = <
+                    text = <"Combined methods">
+                    description = <"Multiple methods combined.">
+                >
+                ["at0293"] = <
+                    text = <"Other">
+                    description = <"Other tracking method.">
+                >
+            >
+        >
+    >

@@ -1,0 +1,1558 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.medication_adherence.v0
+
+concept
+	[at0000]	-- Medication adherence tracking
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"HEADS Lab - Faculty of Medicine University of Porto">
+		["email"] = <"ricardo.lourenco@medfac.up.pt">
+		["date"] = <"2025-11-27">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record medication adherence data from smart pill bottles, medication tracking apps, and validated adherence assessments for lifestyle medicine and chronic disease management.">
+			use = <"Use to record:
+- Medication taking behavior (scheduled doses, taken doses, missed doses, timing deviations)
+- Validated adherence scales (MMAS-8, ARMS, BMQ beliefs)
+- Calculated adherence metrics (PDC, MPR, adherence percentage)
+- Smart pill bottle/dispenser data (Pillsy, Hero, MedMinder, AdhereTech)
+- Mobile app medication logs (Apple Health, MyTherapy, Medisafe, CareZone)
+- Pharmacy refill data and gap days
+- Side effect tracking and burden assessment
+- Reminder effectiveness and intervention tracking
+
+This archetype supports integration with:
+- Smart pill bottles with cap sensors and connectivity
+- Automated medication dispensers
+- Mobile medication tracking applications
+- Electronic health record medication lists
+- Pharmacy dispensing systems
+- Wearable health platforms with medication modules
+
+Intended for use in:
+- Chronic disease management (hypertension, diabetes, heart failure)
+- Clinical trials requiring adherence monitoring
+- Medication therapy management programs
+- Patient engagement and coaching interventions
+- Population health analytics and risk stratification.">
+			misuse = <"Not to be used for recording medication orders or prescriptions - use appropriate INSTRUCTION archetypes.
+Not to be used for recording medication administration in clinical settings - use ACTION.medication archetype.
+Not to be used for detailed pharmacokinetic monitoring.
+Not to be used for recording pharmacy inventory or supply chain data.">
+			copyright = <"HEADS Lab - Faculty of Medicine University of Porto">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International">
+		["custodian_organisation"] = <"openEHR Foundation / HEADS Lab FMUP">
+		["references"] = <"Morisky DE, Ang A, Krousel-Wood M, Ward HJ. Predictive validity of a medication adherence measure in an outpatient setting. J Clin Hypertens (Greenwich). 2008;10(5):348-354.
+Kripalani S, Risser J, Gatti ME, Jacobson TA. Development and evaluation of the Adherence to Refills and Medications Scale (ARMS) among low-literacy patients with chronic disease. Value Health. 2009;12(1):118-123.
+Horne R, Weinman J, Hankins M. The beliefs about medicines questionnaire: The development and evaluation of a new method for assessing the cognitive representation of medication. Psychology and Health. 1999;14(1):1-24.
+Choudhry NK, Shrank WH, Levin RL, et al. Measuring concurrent adherence to multiple related medications. Am J Manag Care. 2009;15(7):457-464.
+Apple Inc. HealthKit Medication Framework. Developer Documentation. 2024.
+Medisafe. Medication Adherence Platform API Documentation. 2024.">
+		["original_namespace"] = <"pt.up.med.heads">
+		["original_publisher"] = <"HEADS Lab - FMUP">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+		["build_uid"] = <"a7f8c3d1-9e5b-4a2c-b6d8-0f1e2a3b4c5d">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Medication adherence tracking
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0004] occurrences matches {0..1} matches {	-- Medication identification
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {	-- Medication name
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Medication code
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {[ac0001]}		-- Medication code constraint
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Strength
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Dosage form
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0200,	-- Tablet
+															at0201,	-- Capsule
+															at0202,	-- Liquid
+															at0203,	-- Injection
+															at0204,	-- Patch
+															at0205,	-- Inhaler
+															at0206,	-- Drops
+															at0207,	-- Cream/Ointment
+															at0208]	-- Other
+														}
+													}
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- Scheduled frequency
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0210,	-- Once daily
+															at0211,	-- Twice daily
+															at0212,	-- Three times daily
+															at0213,	-- Four times daily
+															at0214,	-- Every other day
+															at0215,	-- Weekly
+															at0216,	-- As needed
+															at0217]	-- Other
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- Dose event
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Event type
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0220,	-- Taken as scheduled
+															at0221,	-- Taken early
+															at0222,	-- Taken late
+															at0223,	-- Missed
+															at0224,	-- Skipped intentionally
+															at0225,	-- Double dose
+															at0226,	-- Partial dose
+															at0227]	-- Unknown
+														}
+													}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Scheduled time
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Actual time
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Time deviation
+												value matches {
+													DV_DURATION matches {
+														value matches {PTMS/|PT-24H..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- Detection method
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0230,	-- Smart bottle cap sensor
+															at0231,	-- Automated dispenser
+															at0232,	-- Manual app entry
+															at0233,	-- Barcode scan
+															at0234,	-- Voice assistant
+															at0235,	-- Caregiver report
+															at0236]	-- Inferred from refill
+														}
+													}
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Skip reason
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0240,	-- Forgot
+															at0241,	-- Side effects
+															at0242,	-- Felt better
+															at0243,	-- Felt worse
+															at0244,	-- Cost/affordability
+															at0245,	-- Ran out
+															at0246,	-- Traveling
+															at0247,	-- Conflicting activity
+															at0248,	-- Intentional drug holiday
+															at0249]	-- Other
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- Adherence metrics
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Assessment period
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0250,	-- Daily
+															at0251,	-- Weekly
+															at0252,	-- Monthly
+															at0253,	-- Quarterly
+															at0254]	-- Annual
+														}
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Doses scheduled
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Doses taken
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Doses missed
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0025] occurrences matches {0..1} matches {	-- Adherence percentage
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0026] occurrences matches {0..1} matches {	-- PDC (Proportion of Days Covered)
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {	-- MPR (Medication Possession Ratio)
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..200.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0028] occurrences matches {0..1} matches {	-- Gap days
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0029] occurrences matches {0..1} matches {	-- On-time percentage
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0030] occurrences matches {0..1} matches {	-- Timing window
+												value matches {
+													DV_DURATION matches {
+														value matches {PTMH/|PT0H..PT12H|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0040] occurrences matches {0..1} matches {	-- MMAS-8 assessment
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- Q1 - Sometimes forget
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Yes (0)
+															at0261]	-- No (1)
+														}
+													}
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- Q2 - Past 2 weeks missed
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Yes (0)
+															at0261]	-- No (1)
+														}
+													}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Q3 - Stop when feel worse
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Yes (0)
+															at0261]	-- No (1)
+														}
+													}
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {	-- Q4 - Forget when traveling
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Yes (0)
+															at0261]	-- No (1)
+														}
+													}
+												}
+											}
+											ELEMENT[at0045] occurrences matches {0..1} matches {	-- Q5 - Take yesterday
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Yes (1)
+															at0261]	-- No (0)
+														}
+													}
+												}
+											}
+											ELEMENT[at0046] occurrences matches {0..1} matches {	-- Q6 - Stop when feel better
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Yes (0)
+															at0261]	-- No (1)
+														}
+													}
+												}
+											}
+											ELEMENT[at0047] occurrences matches {0..1} matches {	-- Q7 - Feel hassled
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0260,	-- Yes (0)
+															at0261]	-- No (1)
+														}
+													}
+												}
+											}
+											ELEMENT[at0048] occurrences matches {0..1} matches {	-- Q8 - Difficulty remembering
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0270,	-- Never/Rarely (1)
+															at0271,	-- Once in a while (0.75)
+															at0272,	-- Sometimes (0.5)
+															at0273,	-- Usually (0.25)
+															at0274]	-- All the time (0)
+														}
+													}
+												}
+											}
+											ELEMENT[at0049] occurrences matches {0..1} matches {	-- MMAS-8 total score
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..8.0|}
+														precision matches {2}
+														units matches {"1"}
+													}
+												}
+											}
+											ELEMENT[at0050] occurrences matches {0..1} matches {	-- MMAS-8 adherence level
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0280,	-- High adherence (8)
+															at0281,	-- Medium adherence (6-<8)
+															at0282]	-- Low adherence (<6)
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0060] occurrences matches {0..1} matches {	-- ARMS assessment
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0061] occurrences matches {0..1} matches {	-- ARMS total score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|12..48|}
+													}
+												}
+											}
+											ELEMENT[at0062] occurrences matches {0..1} matches {	-- Taking medications subscale
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|8..32|}
+													}
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {	-- Refilling prescriptions subscale
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|4..16|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0070] occurrences matches {0..1} matches {	-- BMQ beliefs
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0071] occurrences matches {0..1} matches {	-- Necessity score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..25|}
+													}
+												}
+											}
+											ELEMENT[at0072] occurrences matches {0..1} matches {	-- Concerns score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|5..25|}
+													}
+												}
+											}
+											ELEMENT[at0073] occurrences matches {0..1} matches {	-- Necessity-Concerns differential
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|-20..20|}
+													}
+												}
+											}
+											ELEMENT[at0074] occurrences matches {0..1} matches {	-- Overuse score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|4..20|}
+													}
+												}
+											}
+											ELEMENT[at0075] occurrences matches {0..1} matches {	-- Harm score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|4..20|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0080] occurrences matches {0..1} matches {	-- Side effect tracking
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0081] occurrences matches {0..1} matches {	-- Side effect present
+												value matches {
+													DV_BOOLEAN matches {
+														value matches {True, False}
+													}
+												}
+											}
+											ELEMENT[at0082] occurrences matches {0..1} matches {	-- Side effect description
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0083] occurrences matches {0..1} matches {	-- Severity
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0290,	-- Mild
+															at0291,	-- Moderate
+															at0292]	-- Severe
+														}
+													}
+												}
+											}
+											ELEMENT[at0084] occurrences matches {0..1} matches {	-- Impact on adherence
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0295,	-- No impact
+															at0296,	-- Sometimes skip doses
+															at0297,	-- Often skip doses
+															at0298]	-- Stopped medication
+														}
+													}
+												}
+											}
+											ELEMENT[at0085] occurrences matches {0..1} matches {	-- Side effect burden score
+												value matches {
+													DV_QUANTITY matches {
+														property matches {[openehr::380]}
+														magnitude matches {|0.0..10.0|}
+														precision matches {1}
+														units matches {"1"}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0090] occurrences matches {0..1} matches {	-- Refill tracking
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0091] occurrences matches {0..1} matches {	-- Last refill date
+												value matches {
+													DV_DATE matches {*}
+												}
+											}
+											ELEMENT[at0092] occurrences matches {0..1} matches {	-- Next refill due
+												value matches {
+													DV_DATE matches {*}
+												}
+											}
+											ELEMENT[at0093] occurrences matches {0..1} matches {	-- Days supply
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0094] occurrences matches {0..1} matches {	-- Pills remaining
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0095] occurrences matches {0..1} matches {	-- Refill status
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0300,	-- On time
+															at0301,	-- Due soon
+															at0302,	-- Overdue
+															at0303]	-- Refill requested
+														}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0100] occurrences matches {0..1} matches {	-- Reminder effectiveness
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0101] occurrences matches {0..1} matches {	-- Reminder type
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0310,	-- App notification
+															at0311,	-- Smart bottle alert
+															at0312,	-- SMS text
+															at0313,	-- Phone call
+															at0314,	-- Email
+															at0315,	-- Voice assistant
+															at0316,	-- Caregiver reminder
+															at0317]	-- No reminder
+														}
+													}
+												}
+											}
+											ELEMENT[at0102] occurrences matches {0..1} matches {	-- Reminders sent
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0103] occurrences matches {0..1} matches {	-- Doses taken after reminder
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|>=0|}
+													}
+												}
+											}
+											ELEMENT[at0104] occurrences matches {0..1} matches {	-- Reminder response rate
+												value matches {
+													DV_PROPORTION matches {
+														numerator matches {|0.0..100.0|}
+														type matches {2}
+													}
+												}
+											}
+											ELEMENT[at0105] occurrences matches {0..1} matches {	-- Average response time
+												value matches {
+													DV_DURATION matches {
+														value matches {PTMH/|PT0M..PT24H|}
+													}
+												}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0110] occurrences matches {0..*} matches {	-- Data quality indicator
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v0/}
+									}
+									allow_archetype CLUSTER[at0111] occurrences matches {0..*} matches {	-- Vendor data provenance
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v0/}
+									}
+									ELEMENT[at0120] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0130] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0131] occurrences matches {0..1} matches {	-- Medication regimen status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0320,	-- Active
+													at0321,	-- On hold
+													at0322,	-- Discontinued
+													at0323]	-- Completed course
+												}
+											}
+										}
+									}
+									ELEMENT[at0132] occurrences matches {0..1} matches {	-- Hospitalization
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									allow_archetype CLUSTER[at0133] occurrences matches {0..*} matches {	-- Physiological context
+										include
+											archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v0/}
+									}
+								}
+							}
+						}
+					}
+					INTERVAL_EVENT[at0140] occurrences matches {0..*} matches {	-- Daily summary
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[openehr::146]}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {PT24H}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0130]
+						}
+					}
+					INTERVAL_EVENT[at0141] occurrences matches {0..*} matches {	-- Weekly summary
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[openehr::146]}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {P1W}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0130]
+						}
+					}
+					INTERVAL_EVENT[at0142] occurrences matches {0..*} matches {	-- Monthly summary
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[openehr::146]}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {P1M}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0130]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0150] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0151] occurrences matches {0..1} matches {	-- Data source
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0330,	-- Smart pill bottle
+									at0331,	-- Automated dispenser
+									at0332,	-- Mobile app - manual entry
+									at0333,	-- Mobile app - smart integration
+									at0334,	-- Pharmacy refill data
+									at0335,	-- Electronic health record
+									at0336,	-- Questionnaire
+									at0337]	-- Mixed sources
+								}
+							}
+						}
+					}
+					ELEMENT[at0152] occurrences matches {0..1} matches {	-- Device vendor
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0340,	-- Pillsy
+									at0341,	-- Hero
+									at0342,	-- MedMinder
+									at0343,	-- AdhereTech
+									at0344,	-- Medisafe app
+									at0345,	-- MyTherapy app
+									at0346,	-- CareZone app
+									at0347,	-- Apple Health
+									at0348,	-- Manual tracking
+									at0349]	-- Other
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0153] occurrences matches {0..*} matches {	-- Wearable device
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0/}
+					}
+					allow_archetype CLUSTER[at0154] occurrences matches {0..*} matches {	-- Recording context
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v0/}
+					}
+					ELEMENT[at0155] occurrences matches {0..1} matches {	-- Adherence calculation method
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0350,	-- Simple ratio (taken/scheduled)
+									at0351,	-- PDC - days with dose
+									at0352,	-- MPR - supply/period
+									at0353,	-- Continuous measure
+									at0354]	-- Hybrid method
+								}
+							}
+						}
+					}
+					ELEMENT[at0156] occurrences matches {0..1} matches {	-- Timing tolerance window
+						value matches {
+							DV_DURATION matches {
+								value matches {PTMH/|PT0M..PT12H|}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medication adherence tracking">
+					description = <"Recording of medication adherence data including dose events, adherence metrics, validated scales, and smart device monitoring for chronic disease management.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"Event history.">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"Data tree.">
+				>
+				["at0004"] = <
+					text = <"Medication identification">
+					description = <"Details identifying the specific medication being tracked.">
+				>
+				["at0005"] = <
+					text = <"Medication name">
+					description = <"Name of the medication being tracked for adherence.">
+				>
+				["at0006"] = <
+					text = <"Medication code">
+					description = <"Coded identifier for the medication (RxNorm, NDC, ATC).">
+				>
+				["at0007"] = <
+					text = <"Strength">
+					description = <"Strength and unit of the medication dose.">
+				>
+				["at0008"] = <
+					text = <"Dosage form">
+					description = <"Physical form of the medication.">
+				>
+				["at0009"] = <
+					text = <"Scheduled frequency">
+					description = <"How often the medication is scheduled to be taken.">
+				>
+				["at0010"] = <
+					text = <"Dose event">
+					description = <"Details of a single dose-taking event.">
+				>
+				["at0011"] = <
+					text = <"Event type">
+					description = <"Classification of the dose event.">
+				>
+				["at0012"] = <
+					text = <"Scheduled time">
+					description = <"When the dose was scheduled to be taken.">
+				>
+				["at0013"] = <
+					text = <"Actual time">
+					description = <"When the dose was actually taken.">
+				>
+				["at0014"] = <
+					text = <"Time deviation">
+					description = <"Difference between scheduled and actual time.">
+				>
+				["at0015"] = <
+					text = <"Detection method">
+					description = <"How the dose event was recorded.">
+				>
+				["at0016"] = <
+					text = <"Skip reason">
+					description = <"Reason for missing or skipping a dose.">
+				>
+				["at0020"] = <
+					text = <"Adherence metrics">
+					description = <"Calculated adherence measurements over a period.">
+				>
+				["at0021"] = <
+					text = <"Assessment period">
+					description = <"Time period over which adherence is calculated.">
+				>
+				["at0022"] = <
+					text = <"Doses scheduled">
+					description = <"Total number of doses scheduled in the period.">
+				>
+				["at0023"] = <
+					text = <"Doses taken">
+					description = <"Total number of doses taken in the period.">
+				>
+				["at0024"] = <
+					text = <"Doses missed">
+					description = <"Total number of doses missed in the period.">
+				>
+				["at0025"] = <
+					text = <"Adherence percentage">
+					description = <"Percentage of scheduled doses that were taken.">
+				>
+				["at0026"] = <
+					text = <"PDC (Proportion of Days Covered)">
+					description = <"Days with medication available divided by total days in period.">
+				>
+				["at0027"] = <
+					text = <"MPR (Medication Possession Ratio)">
+					description = <"Sum of days supply divided by total days in period. Can exceed 100% with early refills.">
+				>
+				["at0028"] = <
+					text = <"Gap days">
+					description = <"Number of days without medication coverage.">
+				>
+				["at0029"] = <
+					text = <"On-time percentage">
+					description = <"Percentage of doses taken within the timing tolerance window.">
+				>
+				["at0030"] = <
+					text = <"Timing window">
+					description = <"Time window used to define on-time doses.">
+				>
+				["at0040"] = <
+					text = <"MMAS-8 assessment">
+					description = <"8-item Morisky Medication Adherence Scale questionnaire responses and score.">
+				>
+				["at0041"] = <
+					text = <"Q1 - Sometimes forget">
+					description = <"Do you sometimes forget to take your medicine?">
+				>
+				["at0042"] = <
+					text = <"Q2 - Past 2 weeks missed">
+					description = <"Over the past 2 weeks, were there any days when you did not take your medicine?">
+				>
+				["at0043"] = <
+					text = <"Q3 - Stop when feel worse">
+					description = <"Have you ever cut back or stopped taking your medicine without telling your doctor because you felt worse when you took it?">
+				>
+				["at0044"] = <
+					text = <"Q4 - Forget when traveling">
+					description = <"When you travel or leave home, do you sometimes forget to bring along your medicine?">
+				>
+				["at0045"] = <
+					text = <"Q5 - Take yesterday">
+					description = <"Did you take your medicine yesterday?">
+				>
+				["at0046"] = <
+					text = <"Q6 - Stop when feel better">
+					description = <"When you feel like your condition is under control, do you sometimes stop taking your medicine?">
+				>
+				["at0047"] = <
+					text = <"Q7 - Feel hassled">
+					description = <"Taking medicine every day is a real inconvenience for some people. Do you ever feel hassled about sticking to your treatment plan?">
+				>
+				["at0048"] = <
+					text = <"Q8 - Difficulty remembering">
+					description = <"How often do you have difficulty remembering to take all your medicine?">
+				>
+				["at0049"] = <
+					text = <"MMAS-8 total score">
+					description = <"Sum of MMAS-8 item scores. Range 0-8, higher is better adherence.">
+				>
+				["at0050"] = <
+					text = <"MMAS-8 adherence level">
+					description = <"Categorical adherence level based on MMAS-8 score.">
+				>
+				["at0060"] = <
+					text = <"ARMS assessment">
+					description = <"Adherence to Refills and Medications Scale assessment.">
+				>
+				["at0061"] = <
+					text = <"ARMS total score">
+					description = <"Total ARMS score. Range 12-48, lower is better adherence.">
+				>
+				["at0062"] = <
+					text = <"Taking medications subscale">
+					description = <"ARMS subscale for medication-taking behaviors.">
+				>
+				["at0063"] = <
+					text = <"Refilling prescriptions subscale">
+					description = <"ARMS subscale for prescription refill behaviors.">
+				>
+				["at0070"] = <
+					text = <"BMQ beliefs">
+					description = <"Beliefs about Medicines Questionnaire subscales.">
+				>
+				["at0071"] = <
+					text = <"Necessity score">
+					description = <"Perceived necessity of the medication. Range 5-25.">
+				>
+				["at0072"] = <
+					text = <"Concerns score">
+					description = <"Concerns about the medication. Range 5-25.">
+				>
+				["at0073"] = <
+					text = <"Necessity-Concerns differential">
+					description = <"Necessity minus Concerns score. Positive indicates acceptance.">
+				>
+				["at0074"] = <
+					text = <"Overuse score">
+					description = <"General overuse beliefs subscale.">
+				>
+				["at0075"] = <
+					text = <"Harm score">
+					description = <"General harm beliefs subscale.">
+				>
+				["at0080"] = <
+					text = <"Side effect tracking">
+					description = <"Recording of medication side effects and their impact on adherence.">
+				>
+				["at0081"] = <
+					text = <"Side effect present">
+					description = <"Whether any side effects are currently present.">
+				>
+				["at0082"] = <
+					text = <"Side effect description">
+					description = <"Description of the side effect experienced.">
+				>
+				["at0083"] = <
+					text = <"Severity">
+					description = <"Severity of the side effect.">
+				>
+				["at0084"] = <
+					text = <"Impact on adherence">
+					description = <"How the side effect affects medication taking behavior.">
+				>
+				["at0085"] = <
+					text = <"Side effect burden score">
+					description = <"Overall burden of side effects on 0-10 scale.">
+				>
+				["at0090"] = <
+					text = <"Refill tracking">
+					description = <"Prescription refill status and timing.">
+				>
+				["at0091"] = <
+					text = <"Last refill date">
+					description = <"Date of most recent prescription refill.">
+				>
+				["at0092"] = <
+					text = <"Next refill due">
+					description = <"Expected date when refill will be needed.">
+				>
+				["at0093"] = <
+					text = <"Days supply">
+					description = <"Number of days of medication supplied at last refill.">
+				>
+				["at0094"] = <
+					text = <"Pills remaining">
+					description = <"Estimated pills remaining in current supply.">
+				>
+				["at0095"] = <
+					text = <"Refill status">
+					description = <"Current status of prescription refill.">
+				>
+				["at0100"] = <
+					text = <"Reminder effectiveness">
+					description = <"Tracking of medication reminder system performance.">
+				>
+				["at0101"] = <
+					text = <"Reminder type">
+					description = <"Type of reminder system used.">
+				>
+				["at0102"] = <
+					text = <"Reminders sent">
+					description = <"Number of reminders sent in the period.">
+				>
+				["at0103"] = <
+					text = <"Doses taken after reminder">
+					description = <"Number of doses taken following a reminder.">
+				>
+				["at0104"] = <
+					text = <"Reminder response rate">
+					description = <"Percentage of reminders that resulted in dose taken.">
+				>
+				["at0105"] = <
+					text = <"Average response time">
+					description = <"Average time from reminder to dose taken.">
+				>
+				["at0110"] = <
+					text = <"Data quality indicator">
+					description = <"Slot for data quality assessment cluster.">
+				>
+				["at0111"] = <
+					text = <"Vendor data provenance">
+					description = <"Slot for vendor data origin and processing details.">
+				>
+				["at0120"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the adherence record.">
+				>
+				["at0130"] = <
+					text = <"State tree">
+					description = <"State tree.">
+				>
+				["at0131"] = <
+					text = <"Medication regimen status">
+					description = <"Current status of the medication regimen.">
+				>
+				["at0132"] = <
+					text = <"Hospitalization">
+					description = <"Whether patient is currently hospitalized (affects adherence measurement).">
+				>
+				["at0133"] = <
+					text = <"Physiological context">
+					description = <"Slot for physiological context cluster.">
+				>
+				["at0140"] = <
+					text = <"Daily summary">
+					description = <"Aggregated adherence data for a single day.">
+				>
+				["at0141"] = <
+					text = <"Weekly summary">
+					description = <"Aggregated adherence data for a week.">
+				>
+				["at0142"] = <
+					text = <"Monthly summary">
+					description = <"Aggregated adherence data for a month.">
+				>
+				["at0150"] = <
+					text = <"Protocol tree">
+					description = <"Protocol tree.">
+				>
+				["at0151"] = <
+					text = <"Data source">
+					description = <"Primary source of adherence data.">
+				>
+				["at0152"] = <
+					text = <"Device vendor">
+					description = <"Vendor of the adherence tracking device or application.">
+				>
+				["at0153"] = <
+					text = <"Wearable device">
+					description = <"Slot for wearable device details.">
+				>
+				["at0154"] = <
+					text = <"Recording context">
+					description = <"Slot for recording context details.">
+				>
+				["at0155"] = <
+					text = <"Adherence calculation method">
+					description = <"Method used to calculate adherence metrics.">
+				>
+				["at0156"] = <
+					text = <"Timing tolerance window">
+					description = <"Time window for considering a dose as on-time.">
+				>
+				["at0200"] = <
+					text = <"Tablet">
+					description = <"Solid oral tablet form.">
+				>
+				["at0201"] = <
+					text = <"Capsule">
+					description = <"Gelatin capsule form.">
+				>
+				["at0202"] = <
+					text = <"Liquid">
+					description = <"Oral liquid, syrup, or solution.">
+				>
+				["at0203"] = <
+					text = <"Injection">
+					description = <"Injectable medication.">
+				>
+				["at0204"] = <
+					text = <"Patch">
+					description = <"Transdermal patch.">
+				>
+				["at0205"] = <
+					text = <"Inhaler">
+					description = <"Inhaled medication.">
+				>
+				["at0206"] = <
+					text = <"Drops">
+					description = <"Eye, ear, or nasal drops.">
+				>
+				["at0207"] = <
+					text = <"Cream/Ointment">
+					description = <"Topical cream or ointment.">
+				>
+				["at0208"] = <
+					text = <"Other">
+					description = <"Other dosage form.">
+				>
+				["at0210"] = <
+					text = <"Once daily">
+					description = <"Taken once per day.">
+				>
+				["at0211"] = <
+					text = <"Twice daily">
+					description = <"Taken twice per day.">
+				>
+				["at0212"] = <
+					text = <"Three times daily">
+					description = <"Taken three times per day.">
+				>
+				["at0213"] = <
+					text = <"Four times daily">
+					description = <"Taken four times per day.">
+				>
+				["at0214"] = <
+					text = <"Every other day">
+					description = <"Taken every other day.">
+				>
+				["at0215"] = <
+					text = <"Weekly">
+					description = <"Taken once per week.">
+				>
+				["at0216"] = <
+					text = <"As needed">
+					description = <"PRN - taken as needed.">
+				>
+				["at0217"] = <
+					text = <"Other">
+					description = <"Other dosing frequency.">
+				>
+				["at0220"] = <
+					text = <"Taken as scheduled">
+					description = <"Dose taken at the scheduled time.">
+				>
+				["at0221"] = <
+					text = <"Taken early">
+					description = <"Dose taken before the scheduled time.">
+				>
+				["at0222"] = <
+					text = <"Taken late">
+					description = <"Dose taken after the scheduled time.">
+				>
+				["at0223"] = <
+					text = <"Missed">
+					description = <"Dose was not taken.">
+				>
+				["at0224"] = <
+					text = <"Skipped intentionally">
+					description = <"Dose deliberately not taken.">
+				>
+				["at0225"] = <
+					text = <"Double dose">
+					description = <"Two doses taken together.">
+				>
+				["at0226"] = <
+					text = <"Partial dose">
+					description = <"Less than the full dose taken.">
+				>
+				["at0227"] = <
+					text = <"Unknown">
+					description = <"Dose status unknown.">
+				>
+				["at0230"] = <
+					text = <"Smart bottle cap sensor">
+					description = <"Detected by smart pill bottle cap opening.">
+				>
+				["at0231"] = <
+					text = <"Automated dispenser">
+					description = <"Recorded by automated medication dispenser.">
+				>
+				["at0232"] = <
+					text = <"Manual app entry">
+					description = <"User manually logged in mobile app.">
+				>
+				["at0233"] = <
+					text = <"Barcode scan">
+					description = <"Recorded via medication barcode scan.">
+				>
+				["at0234"] = <
+					text = <"Voice assistant">
+					description = <"Recorded via voice assistant confirmation.">
+				>
+				["at0235"] = <
+					text = <"Caregiver report">
+					description = <"Reported by caregiver or family member.">
+				>
+				["at0236"] = <
+					text = <"Inferred from refill">
+					description = <"Adherence estimated from pharmacy refill patterns.">
+				>
+				["at0240"] = <
+					text = <"Forgot">
+					description = <"Simply forgot to take the medication.">
+				>
+				["at0241"] = <
+					text = <"Side effects">
+					description = <"Skipped due to side effects.">
+				>
+				["at0242"] = <
+					text = <"Felt better">
+					description = <"Skipped because felt better/symptoms improved.">
+				>
+				["at0243"] = <
+					text = <"Felt worse">
+					description = <"Skipped because felt worse when taking medication.">
+				>
+				["at0244"] = <
+					text = <"Cost/affordability">
+					description = <"Skipped due to cost or affordability concerns.">
+				>
+				["at0245"] = <
+					text = <"Ran out">
+					description = <"Ran out of medication supply.">
+				>
+				["at0246"] = <
+					text = <"Traveling">
+					description = <"Skipped while traveling.">
+				>
+				["at0247"] = <
+					text = <"Conflicting activity">
+					description = <"Skipped due to conflicting activity or schedule.">
+				>
+				["at0248"] = <
+					text = <"Intentional drug holiday">
+					description = <"Planned break from medication.">
+				>
+				["at0249"] = <
+					text = <"Other">
+					description = <"Other reason for skipping.">
+				>
+				["at0250"] = <
+					text = <"Daily">
+					description = <"Single day period.">
+				>
+				["at0251"] = <
+					text = <"Weekly">
+					description = <"Seven day period.">
+				>
+				["at0252"] = <
+					text = <"Monthly">
+					description = <"One month period.">
+				>
+				["at0253"] = <
+					text = <"Quarterly">
+					description = <"Three month period.">
+				>
+				["at0254"] = <
+					text = <"Annual">
+					description = <"One year period.">
+				>
+				["at0260"] = <
+					text = <"Yes (0)">
+					description = <"Yes response (typically scores 0 for non-adherent behavior).">
+				>
+				["at0261"] = <
+					text = <"No (1)">
+					description = <"No response (typically scores 1 for adherent behavior).">
+				>
+				["at0270"] = <
+					text = <"Never/Rarely (1)">
+					description = <"Never or rarely has difficulty. Scores 1.">
+				>
+				["at0271"] = <
+					text = <"Once in a while (0.75)">
+					description = <"Once in a while has difficulty. Scores 0.75.">
+				>
+				["at0272"] = <
+					text = <"Sometimes (0.5)">
+					description = <"Sometimes has difficulty. Scores 0.5.">
+				>
+				["at0273"] = <
+					text = <"Usually (0.25)">
+					description = <"Usually has difficulty. Scores 0.25.">
+				>
+				["at0274"] = <
+					text = <"All the time (0)">
+					description = <"All the time has difficulty. Scores 0.">
+				>
+				["at0280"] = <
+					text = <"High adherence (8)">
+					description = <"MMAS-8 score equals 8.">
+				>
+				["at0281"] = <
+					text = <"Medium adherence (6-<8)">
+					description = <"MMAS-8 score 6 to less than 8.">
+				>
+				["at0282"] = <
+					text = <"Low adherence (<6)">
+					description = <"MMAS-8 score less than 6.">
+				>
+				["at0290"] = <
+					text = <"Mild">
+					description = <"Mild side effect, minimally bothersome.">
+				>
+				["at0291"] = <
+					text = <"Moderate">
+					description = <"Moderate side effect, somewhat bothersome.">
+				>
+				["at0292"] = <
+					text = <"Severe">
+					description = <"Severe side effect, very bothersome.">
+				>
+				["at0295"] = <
+					text = <"No impact">
+					description = <"Side effects do not affect adherence.">
+				>
+				["at0296"] = <
+					text = <"Sometimes skip doses">
+					description = <"Sometimes skip doses due to side effects.">
+				>
+				["at0297"] = <
+					text = <"Often skip doses">
+					description = <"Often skip doses due to side effects.">
+				>
+				["at0298"] = <
+					text = <"Stopped medication">
+					description = <"Stopped medication due to side effects.">
+				>
+				["at0300"] = <
+					text = <"On time">
+					description = <"Refill obtained on schedule.">
+				>
+				["at0301"] = <
+					text = <"Due soon">
+					description = <"Refill due within 7 days.">
+				>
+				["at0302"] = <
+					text = <"Overdue">
+					description = <"Refill is overdue.">
+				>
+				["at0303"] = <
+					text = <"Refill requested">
+					description = <"Refill has been requested.">
+				>
+				["at0310"] = <
+					text = <"App notification">
+					description = <"Push notification from mobile app.">
+				>
+				["at0311"] = <
+					text = <"Smart bottle alert">
+					description = <"Alert from smart pill bottle.">
+				>
+				["at0312"] = <
+					text = <"SMS text">
+					description = <"Text message reminder.">
+				>
+				["at0313"] = <
+					text = <"Phone call">
+					description = <"Automated or live phone call reminder.">
+				>
+				["at0314"] = <
+					text = <"Email">
+					description = <"Email reminder.">
+				>
+				["at0315"] = <
+					text = <"Voice assistant">
+					description = <"Voice assistant reminder (Alexa, Siri, etc.).">
+				>
+				["at0316"] = <
+					text = <"Caregiver reminder">
+					description = <"Reminder from caregiver or family member.">
+				>
+				["at0317"] = <
+					text = <"No reminder">
+					description = <"No reminder system used.">
+				>
+				["at0320"] = <
+					text = <"Active">
+					description = <"Medication is currently being taken.">
+				>
+				["at0321"] = <
+					text = <"On hold">
+					description = <"Medication temporarily paused.">
+				>
+				["at0322"] = <
+					text = <"Discontinued">
+					description = <"Medication has been stopped.">
+				>
+				["at0323"] = <
+					text = <"Completed course">
+					description = <"Full course of medication completed.">
+				>
+				["at0330"] = <
+					text = <"Smart pill bottle">
+					description = <"Data from smart pill bottle sensors.">
+				>
+				["at0331"] = <
+					text = <"Automated dispenser">
+					description = <"Data from automated medication dispenser.">
+				>
+				["at0332"] = <
+					text = <"Mobile app - manual entry">
+					description = <"User manually entered data in mobile app.">
+				>
+				["at0333"] = <
+					text = <"Mobile app - smart integration">
+					description = <"Mobile app with device integration.">
+				>
+				["at0334"] = <
+					text = <"Pharmacy refill data">
+					description = <"Adherence inferred from pharmacy refill records.">
+				>
+				["at0335"] = <
+					text = <"Electronic health record">
+					description = <"Data from EHR medication administration records.">
+				>
+				["at0336"] = <
+					text = <"Questionnaire">
+					description = <"Self-reported via questionnaire.">
+				>
+				["at0337"] = <
+					text = <"Mixed sources">
+					description = <"Data from multiple sources combined.">
+				>
+				["at0340"] = <
+					text = <"Pillsy">
+					description = <"Pillsy smart pill bottle system.">
+				>
+				["at0341"] = <
+					text = <"Hero">
+					description = <"Hero automated medication dispenser.">
+				>
+				["at0342"] = <
+					text = <"MedMinder">
+					description = <"MedMinder smart pill dispenser.">
+				>
+				["at0343"] = <
+					text = <"AdhereTech">
+					description = <"AdhereTech smart pill bottle.">
+				>
+				["at0344"] = <
+					text = <"Medisafe app">
+					description = <"Medisafe medication management app.">
+				>
+				["at0345"] = <
+					text = <"MyTherapy app">
+					description = <"MyTherapy medication reminder app.">
+				>
+				["at0346"] = <
+					text = <"CareZone app">
+					description = <"CareZone medication management app.">
+				>
+				["at0347"] = <
+					text = <"Apple Health">
+					description = <"Apple HealthKit medication module.">
+				>
+				["at0348"] = <
+					text = <"Manual tracking">
+					description = <"Manual paper or basic digital tracking.">
+				>
+				["at0349"] = <
+					text = <"Other">
+					description = <"Other tracking system or vendor.">
+				>
+				["at0350"] = <
+					text = <"Simple ratio (taken/scheduled)">
+					description = <"Simple percentage of doses taken vs scheduled.">
+				>
+				["at0351"] = <
+					text = <"PDC - days with dose">
+					description = <"Proportion of Days Covered method.">
+				>
+				["at0352"] = <
+					text = <"MPR - supply/period">
+					description = <"Medication Possession Ratio method.">
+				>
+				["at0353"] = <
+					text = <"Continuous measure">
+					description = <"Continuous Multiple-Interval measure.">
+				>
+				["at0354"] = <
+					text = <"Hybrid method">
+					description = <"Combination of multiple calculation methods.">
+				>
+			>
+		>
+	>
+	constraint_definitions = <
+		["en"] = <
+			items = <
+				["ac0001"] = <
+					text = <"Medication code constraint">
+					description = <"Constraint for medication codes (RxNorm, NDC, ATC, SNOMED CT).">
+				>
+			>
+		>
+	>

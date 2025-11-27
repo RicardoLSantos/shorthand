@@ -12,7 +12,7 @@ archetypes/openEHR/
 └── README.md               # This file
 ```
 
-## Archetypes Included (27 Total)
+## Archetypes Included (30 Total)
 
 ### CLUSTER Archetypes (5)
 
@@ -24,7 +24,7 @@ archetypes/openEHR/
 | `recording_context.v0.adl` | Recording duration, sampling, analysis window | ~520 | CKM Ready |
 | `vendor_data_provenance.v0.adl` | Data source, export method, transformations | ~490 | CKM Ready |
 
-### OBSERVATION Archetypes (22)
+### OBSERVATION Archetypes (25)
 
 | Archetype | Description | Lines | Status |
 |-----------|-------------|-------|--------|
@@ -50,6 +50,9 @@ archetypes/openEHR/
 | `circadian_rhythm.v0.adl` | Light exposure, chronotype, MEQ, social jet lag | ~1150 | CKM Ready |
 | `substance_use_tracking.v0.adl` | Alcohol (AUDIT), tobacco (Fagerstrom), caffeine | ~1250 | CKM Ready |
 | `pain_assessment.v0.adl` | NRS/VAS pain, BPI interference, headache tracking | ~1380 | CKM Ready |
+| `fatigue_assessment.v0.adl` | FSS/FACIT-F/CFQ scales, wearable recovery metrics | ~1190 | CKM Ready |
+| `medication_adherence.v0.adl` | MMAS-8/ARMS/BMQ, smart pill bottles, refill tracking | ~1560 | CKM Ready |
+| `symptom_diary.v0.adl` | Patient-reported symptoms, triggers, wearable correlates | ~1780 | CKM Ready |
 
 ## Terminology Bindings
 
@@ -88,7 +91,7 @@ See: `Thesis_github/.claude/skills/code-documentation-locations.md` for sync pro
 
 ## Validation Status
 
-All 27 archetypes validated with ADL 1.4 structural validator:
+All 30 archetypes validated with ADL 1.4 structural validator:
 - **Errors**: 0
 - **Warnings**: Minor (false positives on term_bindings detection)
 - **Phase 1A-1B**: 7 archetypes validated 2025-11-27
@@ -97,6 +100,7 @@ All 27 archetypes validated with ADL 1.4 structural validator:
 - **Phase 3A**: 3 archetypes validated 2025-11-27
 - **Phase 3B**: 3 archetypes validated 2025-11-27
 - **Phase 4**: 3 archetypes validated 2025-11-27
+- **Phase 5**: 3 archetypes validated 2025-11-27
 
 ## Related Resources
 
@@ -108,4 +112,4 @@ All 27 archetypes validated with ADL 1.4 structural validator:
 
 *Part of iOS Lifestyle Medicine FHIR IG - HEADS#2 PhD Project*
 *Last updated: 2025-11-27*
-*Archetypes: 27 (5 CLUSTERs + 22 OBSERVATIONs)*
+*Archetypes: 30 (5 CLUSTERs + 25 OBSERVATIONs)*
