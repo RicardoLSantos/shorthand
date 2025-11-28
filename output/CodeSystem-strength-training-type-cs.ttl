@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-training-type-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "strength-training-type-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem strength-training-type-cs</b></p><a name=\"strength-training-type-cs\"> </a><a name=\"hcstrength-training-type-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">hypertrophy<a name=\"strength-training-type-cs-hypertrophy\"> </a></td><td>Hypertrophy</td><td>Muscle growth focus (moderate load, higher volume)</td></tr><tr><td style=\"white-space:nowrap\">strength<a name=\"strength-training-type-cs-strength\"> </a></td><td>Strength</td><td>Maximal strength focus (high load, lower volume)</td></tr><tr><td style=\"white-space:nowrap\">power<a name=\"strength-training-type-cs-power\"> </a></td><td>Power</td><td>Explosive power focus (moderate load, high velocity)</td></tr><tr><td style=\"white-space:nowrap\">endurance<a name=\"strength-training-type-cs-endurance\"> </a></td><td>Muscular Endurance</td><td>Endurance focus (lower load, high reps)</td></tr><tr><td style=\"white-space:nowrap\">fitness<a name=\"strength-training-type-cs-fitness\"> </a></td><td>General Fitness</td><td>General conditioning</td></tr><tr><td style=\"white-space:nowrap\">rehab<a name=\"strength-training-type-cs-rehab\"> </a></td><td>Rehabilitation</td><td>Injury rehabilitation or prehab</td></tr><tr><td style=\"white-space:nowrap\">functional<a name=\"strength-training-type-cs-functional\"> </a></td><td>Functional Training</td><td>Movement-pattern focused training</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-training-type-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "StrengthTrainingTypeCS"] ; # 
+  fhir:title [ fhir:v "Strength Training Type CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Strength training goal types"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "hypertrophy" ] ;
+     fhir:display [ fhir:v "Hypertrophy" ] ;
+     fhir:definition [ fhir:v "Muscle growth focus (moderate load, higher volume)" ]
+  ] [
+     fhir:code [ fhir:v "strength" ] ;
+     fhir:display [ fhir:v "Strength" ] ;
+     fhir:definition [ fhir:v "Maximal strength focus (high load, lower volume)" ]
+  ] [
+     fhir:code [ fhir:v "power" ] ;
+     fhir:display [ fhir:v "Power" ] ;
+     fhir:definition [ fhir:v "Explosive power focus (moderate load, high velocity)" ]
+  ] [
+     fhir:code [ fhir:v "endurance" ] ;
+     fhir:display [ fhir:v "Muscular Endurance" ] ;
+     fhir:definition [ fhir:v "Endurance focus (lower load, high reps)" ]
+  ] [
+     fhir:code [ fhir:v "fitness" ] ;
+     fhir:display [ fhir:v "General Fitness" ] ;
+     fhir:definition [ fhir:v "General conditioning" ]
+  ] [
+     fhir:code [ fhir:v "rehab" ] ;
+     fhir:display [ fhir:v "Rehabilitation" ] ;
+     fhir:definition [ fhir:v "Injury rehabilitation or prehab" ]
+  ] [
+     fhir:code [ fhir:v "functional" ] ;
+     fhir:display [ fhir:v "Functional Training" ] ;
+     fhir:definition [ fhir:v "Movement-pattern focused training" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

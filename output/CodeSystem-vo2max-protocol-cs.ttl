@@ -1,0 +1,129 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-protocol-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "vo2max-protocol-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem vo2max-protocol-cs</b></p><a name=\"vo2max-protocol-cs\"> </a><a name=\"hcvo2max-protocol-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">garmin-firstbeat<a name=\"vo2max-protocol-cs-garmin-firstbeat\"> </a></td><td>Garmin FirstBeat</td><td>Garmin FirstBeat analytics</td></tr><tr><td style=\"white-space:nowrap\">apple-cardio<a name=\"vo2max-protocol-cs-apple-cardio\"> </a></td><td>Apple Cardio Fitness</td><td>Apple Watch algorithm</td></tr><tr><td style=\"white-space:nowrap\">polar-fitness<a name=\"vo2max-protocol-cs-polar-fitness\"> </a></td><td>Polar Fitness Test</td><td>Polar OwnIndex test</td></tr><tr><td style=\"white-space:nowrap\">fitbit-cardio<a name=\"vo2max-protocol-cs-fitbit-cardio\"> </a></td><td>Fitbit Cardio Score</td><td>Fitbit algorithm</td></tr><tr><td style=\"white-space:nowrap\">coros<a name=\"vo2max-protocol-cs-coros\"> </a></td><td>COROS</td><td>COROS proprietary</td></tr><tr><td style=\"white-space:nowrap\">suunto<a name=\"vo2max-protocol-cs-suunto\"> </a></td><td>Suunto</td><td>Suunto proprietary</td></tr><tr><td style=\"white-space:nowrap\">astrand<a name=\"vo2max-protocol-cs-astrand\"> </a></td><td>Astrand-Rhyming</td><td>Astrand-Rhyming cycle test</td></tr><tr><td style=\"white-space:nowrap\">ymca<a name=\"vo2max-protocol-cs-ymca\"> </a></td><td>YMCA Cycle Test</td><td>YMCA submaximal cycle</td></tr><tr><td style=\"white-space:nowrap\">rockport<a name=\"vo2max-protocol-cs-rockport\"> </a></td><td>Rockport Walk</td><td>Rockport 1-mile walk test</td></tr><tr><td style=\"white-space:nowrap\">cooper<a name=\"vo2max-protocol-cs-cooper\"> </a></td><td>Cooper 12-min</td><td>Cooper 12-minute run</td></tr><tr><td style=\"white-space:nowrap\">6mwt<a name=\"vo2max-protocol-cs-6mwt\"> </a></td><td>6-Minute Walk</td><td>Six-minute walk test</td></tr><tr><td style=\"white-space:nowrap\">uth<a name=\"vo2max-protocol-cs-uth\"> </a></td><td>Uth Formula</td><td>HRmax/HRrest ratio</td></tr><tr><td style=\"white-space:nowrap\">bruce<a name=\"vo2max-protocol-cs-bruce\"> </a></td><td>Bruce Treadmill</td><td>Bruce protocol</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"vo2max-protocol-cs-other\"> </a></td><td>Other</td><td>Other protocol</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-protocol-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "VO2maxProtocolCS"] ; # 
+  fhir:title [ fhir:v "VO2max Protocol CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "14"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "garmin-firstbeat" ] ;
+     fhir:display [ fhir:v "Garmin FirstBeat" ] ;
+     fhir:definition [ fhir:v "Garmin FirstBeat analytics" ]
+  ] [
+     fhir:code [ fhir:v "apple-cardio" ] ;
+     fhir:display [ fhir:v "Apple Cardio Fitness" ] ;
+     fhir:definition [ fhir:v "Apple Watch algorithm" ]
+  ] [
+     fhir:code [ fhir:v "polar-fitness" ] ;
+     fhir:display [ fhir:v "Polar Fitness Test" ] ;
+     fhir:definition [ fhir:v "Polar OwnIndex test" ]
+  ] [
+     fhir:code [ fhir:v "fitbit-cardio" ] ;
+     fhir:display [ fhir:v "Fitbit Cardio Score" ] ;
+     fhir:definition [ fhir:v "Fitbit algorithm" ]
+  ] [
+     fhir:code [ fhir:v "coros" ] ;
+     fhir:display [ fhir:v "COROS" ] ;
+     fhir:definition [ fhir:v "COROS proprietary" ]
+  ] [
+     fhir:code [ fhir:v "suunto" ] ;
+     fhir:display [ fhir:v "Suunto" ] ;
+     fhir:definition [ fhir:v "Suunto proprietary" ]
+  ] [
+     fhir:code [ fhir:v "astrand" ] ;
+     fhir:display [ fhir:v "Astrand-Rhyming" ] ;
+     fhir:definition [ fhir:v "Astrand-Rhyming cycle test" ]
+  ] [
+     fhir:code [ fhir:v "ymca" ] ;
+     fhir:display [ fhir:v "YMCA Cycle Test" ] ;
+     fhir:definition [ fhir:v "YMCA submaximal cycle" ]
+  ] [
+     fhir:code [ fhir:v "rockport" ] ;
+     fhir:display [ fhir:v "Rockport Walk" ] ;
+     fhir:definition [ fhir:v "Rockport 1-mile walk test" ]
+  ] [
+     fhir:code [ fhir:v "cooper" ] ;
+     fhir:display [ fhir:v "Cooper 12-min" ] ;
+     fhir:definition [ fhir:v "Cooper 12-minute run" ]
+  ] [
+     fhir:code [ fhir:v "6mwt" ] ;
+     fhir:display [ fhir:v "6-Minute Walk" ] ;
+     fhir:definition [ fhir:v "Six-minute walk test" ]
+  ] [
+     fhir:code [ fhir:v "uth" ] ;
+     fhir:display [ fhir:v "Uth Formula" ] ;
+     fhir:definition [ fhir:v "HRmax/HRrest ratio" ]
+  ] [
+     fhir:code [ fhir:v "bruce" ] ;
+     fhir:display [ fhir:v "Bruce Treadmill" ] ;
+     fhir:definition [ fhir:v "Bruce protocol" ]
+  ] [
+     fhir:code [ fhir:v "other" ] ;
+     fhir:display [ fhir:v "Other" ] ;
+     fhir:definition [ fhir:v "Other protocol" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

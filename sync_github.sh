@@ -1,1 +1,1 @@
-backups/utilities/sync_github.sh
+/Users/ricardo/shorthand/_archives/fhir_ig_backups/utilities/sync_github.sh

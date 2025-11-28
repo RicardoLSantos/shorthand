@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="cgm-metrics-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: CodeSystem cgm-metrics-cs</b></p><a name="cgm-metrics-cs"> </a><a name="hccgm-metrics-cs"> </a><p>Este  sistema de código  define o seguinte código:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style="white-space:nowrap">trend<a name="cgm-metrics-cs-trend"> </a></td><td>Trend Arrow</td><td>Direction and rate of glucose change</td></tr><tr><td style="white-space:nowrap">roc<a name="cgm-metrics-cs-roc"> </a></td><td>Rate of Change</td><td>Numeric rate of glucose change per minute</td></tr><tr><td style="white-space:nowrap">tir<a name="cgm-metrics-cs-tir"> </a></td><td>Time in Range</td><td>Percentage of time glucose is within target range (70-180 mg/dL)</td></tr><tr><td style="white-space:nowrap">tbr<a name="cgm-metrics-cs-tbr"> </a></td><td>Time Below Range</td><td>Percentage of time glucose is below target (&lt;70 mg/dL)</td></tr><tr><td style="white-space:nowrap">tbr-l2<a name="cgm-metrics-cs-tbr-l2"> </a></td><td>Time Below Range Level 2</td><td>Percentage of time in severe hypoglycemia (&lt;54 mg/dL)</td></tr><tr><td style="white-space:nowrap">tar<a name="cgm-metrics-cs-tar"> </a></td><td>Time Above Range</td><td>Percentage of time glucose is above target (&gt;180 mg/dL)</td></tr><tr><td style="white-space:nowrap">tar-l2<a name="cgm-metrics-cs-tar-l2"> </a></td><td>Time Above Range Level 2</td><td>Percentage of time in severe hyperglycemia (&gt;250 mg/dL)</td></tr><tr><td style="white-space:nowrap">mean<a name="cgm-metrics-cs-mean"> </a></td><td>Mean Glucose</td><td>Average glucose over reporting period</td></tr><tr><td style="white-space:nowrap">sd<a name="cgm-metrics-cs-sd"> </a></td><td>Standard Deviation</td><td>Standard deviation of glucose values</td></tr><tr><td style="white-space:nowrap">cv<a name="cgm-metrics-cs-cv"> </a></td><td>Coefficient of Variation</td><td>CV = SD/Mean x 100, target &lt;36%</td></tr><tr><td style="white-space:nowrap">gmi<a name="cgm-metrics-cs-gmi"> </a></td><td>Glucose Management Indicator</td><td>Estimated HbA1c from CGM glucose</td></tr><tr><td style="white-space:nowrap">hypo-events<a name="cgm-metrics-cs-hypo-events"> </a></td><td>Hypoglycemia Events</td><td>Number of hypoglycemia episodes</td></tr><tr><td style="white-space:nowrap">hyper-events<a name="cgm-metrics-cs-hyper-events"> </a></td><td>Hyperglycemia Events</td><td>Number of hyperglycemia episodes</td></tr><tr><td style="white-space:nowrap">active-time<a name="cgm-metrics-cs-active-time"> </a></td><td>Sensor Active Time</td><td>Percentage of time sensor was recording</td></tr><tr><td style="white-space:nowrap">range-low<a name="cgm-metrics-cs-range-low"> </a></td><td>Target Range Lower</td><td>Lower bound of target glucose range</td></tr><tr><td style="white-space:nowrap">range-high<a name="cgm-metrics-cs-range-high"> </a></td><td>Target Range Upper</td><td>Upper bound of target glucose range</td></tr><tr><td style="white-space:nowrap">system<a name="cgm-metrics-cs-system"> </a></td><td>CGM System</td><td>Specific CGM device or system</td></tr><tr><td style="white-space:nowrap">site<a name="cgm-metrics-cs-site"> </a></td><td>Insertion Site</td><td>Body site where sensor is inserted</td></tr><tr><td style="white-space:nowrap">sensor-days<a name="cgm-metrics-cs-sensor-days"> </a></td><td>Sensor Days</td><td>Days since sensor insertion</td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"/>
+  <version value="0.1.0"/>
+  <name value="CGMMetricsCS"/>
+  <title value="CGM Metrics CodeSystem"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-28"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem for continuous glucose monitoring metrics"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="19"/>
+  <concept>
+    <code value="trend"/>
+    <display value="Trend Arrow"/>
+    <definition value="Direction and rate of glucose change"/>
+  </concept>
+  <concept>
+    <code value="roc"/>
+    <display value="Rate of Change"/>
+    <definition value="Numeric rate of glucose change per minute"/>
+  </concept>
+  <concept>
+    <code value="tir"/>
+    <display value="Time in Range"/>
+    <definition value="Percentage of time glucose is within target range (70-180 mg/dL)"/>
+  </concept>
+  <concept>
+    <code value="tbr"/>
+    <display value="Time Below Range"/>
+    <definition value="Percentage of time glucose is below target (&lt;70 mg/dL)"/>
+  </concept>
+  <concept>
+    <code value="tbr-l2"/>
+    <display value="Time Below Range Level 2"/>
+    <definition value="Percentage of time in severe hypoglycemia (&lt;54 mg/dL)"/>
+  </concept>
+  <concept>
+    <code value="tar"/>
+    <display value="Time Above Range"/>
+    <definition value="Percentage of time glucose is above target (&gt;180 mg/dL)"/>
+  </concept>
+  <concept>
+    <code value="tar-l2"/>
+    <display value="Time Above Range Level 2"/>
+    <definition value="Percentage of time in severe hyperglycemia (&gt;250 mg/dL)"/>
+  </concept>
+  <concept>
+    <code value="mean"/>
+    <display value="Mean Glucose"/>
+    <definition value="Average glucose over reporting period"/>
+  </concept>
+  <concept>
+    <code value="sd"/>
+    <display value="Standard Deviation"/>
+    <definition value="Standard deviation of glucose values"/>
+  </concept>
+  <concept>
+    <code value="cv"/>
+    <display value="Coefficient of Variation"/>
+    <definition value="CV = SD/Mean x 100, target &lt;36%"/>
+  </concept>
+  <concept>
+    <code value="gmi"/>
+    <display value="Glucose Management Indicator"/>
+    <definition value="Estimated HbA1c from CGM glucose"/>
+  </concept>
+  <concept>
+    <code value="hypo-events"/>
+    <display value="Hypoglycemia Events"/>
+    <definition value="Number of hypoglycemia episodes"/>
+  </concept>
+  <concept>
+    <code value="hyper-events"/>
+    <display value="Hyperglycemia Events"/>
+    <definition value="Number of hyperglycemia episodes"/>
+  </concept>
+  <concept>
+    <code value="active-time"/>
+    <display value="Sensor Active Time"/>
+    <definition value="Percentage of time sensor was recording"/>
+  </concept>
+  <concept>
+    <code value="range-low"/>
+    <display value="Target Range Lower"/>
+    <definition value="Lower bound of target glucose range"/>
+  </concept>
+  <concept>
+    <code value="range-high"/>
+    <display value="Target Range Upper"/>
+    <definition value="Upper bound of target glucose range"/>
+  </concept>
+  <concept>
+    <code value="system"/>
+    <display value="CGM System"/>
+    <definition value="Specific CGM device or system"/>
+  </concept>
+  <concept>
+    <code value="site"/>
+    <display value="Insertion Site"/>
+    <definition value="Body site where sensor is inserted"/>
+  </concept>
+  <concept>
+    <code value="sensor-days"/>
+    <display value="Sensor Days"/>
+    <definition value="Days since sensor insertion"/>
+  </concept>
+</CodeSystem>

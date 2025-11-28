@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-category-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "crf-category-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem crf-category-cs</b></p><a name=\"crf-category-cs\"> </a><a name=\"hccrf-category-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">very-poor<a name=\"crf-category-cs-very-poor\"> </a></td><td>Very Poor</td><td>Very poor CRF for age/sex</td></tr><tr><td style=\"white-space:nowrap\">poor<a name=\"crf-category-cs-poor\"> </a></td><td>Poor</td><td>Poor CRF for age/sex</td></tr><tr><td style=\"white-space:nowrap\">below-average<a name=\"crf-category-cs-below-average\"> </a></td><td>Below Average</td><td>Below average CRF</td></tr><tr><td style=\"white-space:nowrap\">average<a name=\"crf-category-cs-average\"> </a></td><td>Average</td><td>Average CRF</td></tr><tr><td style=\"white-space:nowrap\">above-average<a name=\"crf-category-cs-above-average\"> </a></td><td>Above Average</td><td>Above average CRF</td></tr><tr><td style=\"white-space:nowrap\">good<a name=\"crf-category-cs-good\"> </a></td><td>Good</td><td>Good CRF</td></tr><tr><td style=\"white-space:nowrap\">excellent<a name=\"crf-category-cs-excellent\"> </a></td><td>Excellent</td><td>Excellent CRF</td></tr><tr><td style=\"white-space:nowrap\">superior<a name=\"crf-category-cs-superior\"> </a></td><td>Superior</td><td>Superior CRF</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-category-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CRFCategoryCS"] ; # 
+  fhir:title [ fhir:v "CRF Category CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "very-poor" ] ;
+     fhir:display [ fhir:v "Very Poor" ] ;
+     fhir:definition [ fhir:v "Very poor CRF for age/sex" ]
+  ] [
+     fhir:code [ fhir:v "poor" ] ;
+     fhir:display [ fhir:v "Poor" ] ;
+     fhir:definition [ fhir:v "Poor CRF for age/sex" ]
+  ] [
+     fhir:code [ fhir:v "below-average" ] ;
+     fhir:display [ fhir:v "Below Average" ] ;
+     fhir:definition [ fhir:v "Below average CRF" ]
+  ] [
+     fhir:code [ fhir:v "average" ] ;
+     fhir:display [ fhir:v "Average" ] ;
+     fhir:definition [ fhir:v "Average CRF" ]
+  ] [
+     fhir:code [ fhir:v "above-average" ] ;
+     fhir:display [ fhir:v "Above Average" ] ;
+     fhir:definition [ fhir:v "Above average CRF" ]
+  ] [
+     fhir:code [ fhir:v "good" ] ;
+     fhir:display [ fhir:v "Good" ] ;
+     fhir:definition [ fhir:v "Good CRF" ]
+  ] [
+     fhir:code [ fhir:v "excellent" ] ;
+     fhir:display [ fhir:v "Excellent" ] ;
+     fhir:definition [ fhir:v "Excellent CRF" ]
+  ] [
+     fhir:code [ fhir:v "superior" ] ;
+     fhir:display [ fhir:v "Superior" ] ;
+     fhir:definition [ fhir:v "Superior CRF" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

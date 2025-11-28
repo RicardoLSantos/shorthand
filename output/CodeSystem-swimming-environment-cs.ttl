@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-environment-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "swimming-environment-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem swimming-environment-cs</b></p><a name=\"swimming-environment-cs\"> </a><a name=\"hcswimming-environment-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">pool-25<a name=\"swimming-environment-cs-pool-25\"> </a></td><td>Pool (Short Course 25m)</td><td>25 meter pool</td></tr><tr><td style=\"white-space:nowrap\">pool-50<a name=\"swimming-environment-cs-pool-50\"> </a></td><td>Pool (Long Course 50m)</td><td>50 meter Olympic pool</td></tr><tr><td style=\"white-space:nowrap\">pool-other<a name=\"swimming-environment-cs-pool-other\"> </a></td><td>Pool (Other Length)</td><td>Pool of non-standard length</td></tr><tr><td style=\"white-space:nowrap\">ow-lake<a name=\"swimming-environment-cs-ow-lake\"> </a></td><td>Open Water (Lake)</td><td>Lake swimming</td></tr><tr><td style=\"white-space:nowrap\">ow-ocean<a name=\"swimming-environment-cs-ow-ocean\"> </a></td><td>Open Water (Ocean)</td><td>Ocean swimming</td></tr><tr><td style=\"white-space:nowrap\">ow-river<a name=\"swimming-environment-cs-ow-river\"> </a></td><td>Open Water (River)</td><td>River swimming</td></tr><tr><td style=\"white-space:nowrap\">endless<a name=\"swimming-environment-cs-endless\"> </a></td><td>Endless Pool</td><td>Swim-in-place endless pool</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-environment-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "SwimmingEnvironmentCS"] ; # 
+  fhir:title [ fhir:v "Swimming Environment CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Swimming venue types"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "pool-25" ] ;
+     fhir:display [ fhir:v "Pool (Short Course 25m)" ] ;
+     fhir:definition [ fhir:v "25 meter pool" ]
+  ] [
+     fhir:code [ fhir:v "pool-50" ] ;
+     fhir:display [ fhir:v "Pool (Long Course 50m)" ] ;
+     fhir:definition [ fhir:v "50 meter Olympic pool" ]
+  ] [
+     fhir:code [ fhir:v "pool-other" ] ;
+     fhir:display [ fhir:v "Pool (Other Length)" ] ;
+     fhir:definition [ fhir:v "Pool of non-standard length" ]
+  ] [
+     fhir:code [ fhir:v "ow-lake" ] ;
+     fhir:display [ fhir:v "Open Water (Lake)" ] ;
+     fhir:definition [ fhir:v "Lake swimming" ]
+  ] [
+     fhir:code [ fhir:v "ow-ocean" ] ;
+     fhir:display [ fhir:v "Open Water (Ocean)" ] ;
+     fhir:definition [ fhir:v "Ocean swimming" ]
+  ] [
+     fhir:code [ fhir:v "ow-river" ] ;
+     fhir:display [ fhir:v "Open Water (River)" ] ;
+     fhir:definition [ fhir:v "River swimming" ]
+  ] [
+     fhir:code [ fhir:v "endless" ] ;
+     fhir:display [ fhir:v "Endless Pool" ] ;
+     fhir:definition [ fhir:v "Swim-in-place endless pool" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

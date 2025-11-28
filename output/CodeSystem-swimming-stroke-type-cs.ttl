@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "swimming-stroke-type-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem swimming-stroke-type-cs</b></p><a name=\"swimming-stroke-type-cs\"> </a><a name=\"hcswimming-stroke-type-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">freestyle<a name=\"swimming-stroke-type-cs-freestyle\"> </a></td><td>Freestyle</td><td>Front crawl stroke</td></tr><tr><td style=\"white-space:nowrap\">backstroke<a name=\"swimming-stroke-type-cs-backstroke\"> </a></td><td>Backstroke</td><td>Back crawl stroke</td></tr><tr><td style=\"white-space:nowrap\">breaststroke<a name=\"swimming-stroke-type-cs-breaststroke\"> </a></td><td>Breaststroke</td><td>Breaststroke technique</td></tr><tr><td style=\"white-space:nowrap\">butterfly<a name=\"swimming-stroke-type-cs-butterfly\"> </a></td><td>Butterfly</td><td>Butterfly stroke</td></tr><tr><td style=\"white-space:nowrap\">im<a name=\"swimming-stroke-type-cs-im\"> </a></td><td>Individual Medley</td><td>All four strokes in sequence</td></tr><tr><td style=\"white-space:nowrap\">mixed<a name=\"swimming-stroke-type-cs-mixed\"> </a></td><td>Mixed/Drill</td><td>Mixed strokes or drill work</td></tr><tr><td style=\"white-space:nowrap\">unknown<a name=\"swimming-stroke-type-cs-unknown\"> </a></td><td>Unknown</td><td>Stroke type not detected</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "SwimmingStrokeTypeCS"] ; # 
+  fhir:title [ fhir:v "Swimming Stroke Type CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Swimming stroke types"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "freestyle" ] ;
+     fhir:display [ fhir:v "Freestyle" ] ;
+     fhir:definition [ fhir:v "Front crawl stroke" ]
+  ] [
+     fhir:code [ fhir:v "backstroke" ] ;
+     fhir:display [ fhir:v "Backstroke" ] ;
+     fhir:definition [ fhir:v "Back crawl stroke" ]
+  ] [
+     fhir:code [ fhir:v "breaststroke" ] ;
+     fhir:display [ fhir:v "Breaststroke" ] ;
+     fhir:definition [ fhir:v "Breaststroke technique" ]
+  ] [
+     fhir:code [ fhir:v "butterfly" ] ;
+     fhir:display [ fhir:v "Butterfly" ] ;
+     fhir:definition [ fhir:v "Butterfly stroke" ]
+  ] [
+     fhir:code [ fhir:v "im" ] ;
+     fhir:display [ fhir:v "Individual Medley" ] ;
+     fhir:definition [ fhir:v "All four strokes in sequence" ]
+  ] [
+     fhir:code [ fhir:v "mixed" ] ;
+     fhir:display [ fhir:v "Mixed/Drill" ] ;
+     fhir:definition [ fhir:v "Mixed strokes or drill work" ]
+  ] [
+     fhir:code [ fhir:v "unknown" ] ;
+     fhir:display [ fhir:v "Unknown" ] ;
+     fhir:definition [ fhir:v "Stroke type not detected" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

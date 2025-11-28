@@ -1,0 +1,167 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cycling-metrics-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem cycling-metrics-cs</b></p><a name=\"cycling-metrics-cs\"> </a><a name=\"hccycling-metrics-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">instant-power<a name=\"cycling-metrics-cs-instant-power\"> </a></td><td>Instantaneous Power</td><td>Current power output in watts</td></tr><tr><td style=\"white-space:nowrap\">avg-power<a name=\"cycling-metrics-cs-avg-power\"> </a></td><td>Average Power</td><td>Arithmetic mean of power output over the activity</td></tr><tr><td style=\"white-space:nowrap\">np<a name=\"cycling-metrics-cs-np\"> </a></td><td>Normalized Power</td><td>Weighted average power accounting for variability (Coggan formula)</td></tr><tr><td style=\"white-space:nowrap\">max-power<a name=\"cycling-metrics-cs-max-power\"> </a></td><td>Maximum Power</td><td>Peak power achieved during the activity</td></tr><tr><td style=\"white-space:nowrap\">ftp<a name=\"cycling-metrics-cs-ftp\"> </a></td><td>Functional Threshold Power</td><td>Highest power sustainable for approximately one hour</td></tr><tr><td style=\"white-space:nowrap\">power-to-weight<a name=\"cycling-metrics-cs-power-to-weight\"> </a></td><td>Power-to-Weight Ratio</td><td>Power output relative to body mass (W/kg)</td></tr><tr><td style=\"white-space:nowrap\">tss<a name=\"cycling-metrics-cs-tss\"> </a></td><td>Training Stress Score</td><td>Quantifies training load from power data</td></tr><tr><td style=\"white-space:nowrap\">if<a name=\"cycling-metrics-cs-if\"> </a></td><td>Intensity Factor</td><td>Ratio of Normalized Power to FTP</td></tr><tr><td style=\"white-space:nowrap\">ctl<a name=\"cycling-metrics-cs-ctl\"> </a></td><td>Chronic Training Load</td><td>Long-term training load (fitness)</td></tr><tr><td style=\"white-space:nowrap\">atl<a name=\"cycling-metrics-cs-atl\"> </a></td><td>Acute Training Load</td><td>Short-term training load (fatigue)</td></tr><tr><td style=\"white-space:nowrap\">tsb<a name=\"cycling-metrics-cs-tsb\"> </a></td><td>Training Stress Balance</td><td>CTL minus ATL (form)</td></tr><tr><td style=\"white-space:nowrap\">kj<a name=\"cycling-metrics-cs-kj\"> </a></td><td>Kilojoules</td><td>Work performed in kilojoules</td></tr><tr><td style=\"white-space:nowrap\">cadence<a name=\"cycling-metrics-cs-cadence\"> </a></td><td>Cadence</td><td>Current pedaling rate</td></tr><tr><td style=\"white-space:nowrap\">avg-cadence<a name=\"cycling-metrics-cs-avg-cadence\"> </a></td><td>Average Cadence</td><td>Mean cadence over the activity</td></tr><tr><td style=\"white-space:nowrap\">lr-balance<a name=\"cycling-metrics-cs-lr-balance\"> </a></td><td>Left/Right Power Balance</td><td>Power distribution between legs</td></tr><tr><td style=\"white-space:nowrap\">left-te<a name=\"cycling-metrics-cs-left-te\"> </a></td><td>Left Torque Effectiveness</td><td>Percentage of positive torque on left side</td></tr><tr><td style=\"white-space:nowrap\">right-te<a name=\"cycling-metrics-cs-right-te\"> </a></td><td>Right Torque Effectiveness</td><td>Percentage of positive torque on right side</td></tr><tr><td style=\"white-space:nowrap\">left-ps<a name=\"cycling-metrics-cs-left-ps\"> </a></td><td>Left Pedal Smoothness</td><td>Consistency of power application on left pedal stroke</td></tr><tr><td style=\"white-space:nowrap\">right-ps<a name=\"cycling-metrics-cs-right-ps\"> </a></td><td>Right Pedal Smoothness</td><td>Consistency of power application on right pedal stroke</td></tr><tr><td style=\"white-space:nowrap\">avg-speed<a name=\"cycling-metrics-cs-avg-speed\"> </a></td><td>Average Speed</td><td>Mean speed over the activity</td></tr><tr><td style=\"white-space:nowrap\">elevation<a name=\"cycling-metrics-cs-elevation\"> </a></td><td>Elevation Gain</td><td>Total vertical meters climbed</td></tr><tr><td style=\"white-space:nowrap\">zone<a name=\"cycling-metrics-cs-zone\"> </a></td><td>Training Zone</td><td>Coggan power zone (1-7)</td></tr><tr><td style=\"white-space:nowrap\">type<a name=\"cycling-metrics-cs-type\"> </a></td><td>Activity Type</td><td>Type of cycling activity</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CyclingMetricsCS"] ; # 
+  fhir:title [ fhir:v "Cycling Metrics CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-28"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem for cycling dynamics and power metrics from cycling computers and smart trainers."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "23"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "instant-power" ] ;
+     fhir:display [ fhir:v "Instantaneous Power" ] ;
+     fhir:definition [ fhir:v "Current power output in watts" ]
+  ] [
+     fhir:code [ fhir:v "avg-power" ] ;
+     fhir:display [ fhir:v "Average Power" ] ;
+     fhir:definition [ fhir:v "Arithmetic mean of power output over the activity" ]
+  ] [
+     fhir:code [ fhir:v "np" ] ;
+     fhir:display [ fhir:v "Normalized Power" ] ;
+     fhir:definition [ fhir:v "Weighted average power accounting for variability (Coggan formula)" ]
+  ] [
+     fhir:code [ fhir:v "max-power" ] ;
+     fhir:display [ fhir:v "Maximum Power" ] ;
+     fhir:definition [ fhir:v "Peak power achieved during the activity" ]
+  ] [
+     fhir:code [ fhir:v "ftp" ] ;
+     fhir:display [ fhir:v "Functional Threshold Power" ] ;
+     fhir:definition [ fhir:v "Highest power sustainable for approximately one hour" ]
+  ] [
+     fhir:code [ fhir:v "power-to-weight" ] ;
+     fhir:display [ fhir:v "Power-to-Weight Ratio" ] ;
+     fhir:definition [ fhir:v "Power output relative to body mass (W/kg)" ]
+  ] [
+     fhir:code [ fhir:v "tss" ] ;
+     fhir:display [ fhir:v "Training Stress Score" ] ;
+     fhir:definition [ fhir:v "Quantifies training load from power data" ]
+  ] [
+     fhir:code [ fhir:v "if" ] ;
+     fhir:display [ fhir:v "Intensity Factor" ] ;
+     fhir:definition [ fhir:v "Ratio of Normalized Power to FTP" ]
+  ] [
+     fhir:code [ fhir:v "ctl" ] ;
+     fhir:display [ fhir:v "Chronic Training Load" ] ;
+     fhir:definition [ fhir:v "Long-term training load (fitness)" ]
+  ] [
+     fhir:code [ fhir:v "atl" ] ;
+     fhir:display [ fhir:v "Acute Training Load" ] ;
+     fhir:definition [ fhir:v "Short-term training load (fatigue)" ]
+  ] [
+     fhir:code [ fhir:v "tsb" ] ;
+     fhir:display [ fhir:v "Training Stress Balance" ] ;
+     fhir:definition [ fhir:v "CTL minus ATL (form)" ]
+  ] [
+     fhir:code [ fhir:v "kj" ] ;
+     fhir:display [ fhir:v "Kilojoules" ] ;
+     fhir:definition [ fhir:v "Work performed in kilojoules" ]
+  ] [
+     fhir:code [ fhir:v "cadence" ] ;
+     fhir:display [ fhir:v "Cadence" ] ;
+     fhir:definition [ fhir:v "Current pedaling rate" ]
+  ] [
+     fhir:code [ fhir:v "avg-cadence" ] ;
+     fhir:display [ fhir:v "Average Cadence" ] ;
+     fhir:definition [ fhir:v "Mean cadence over the activity" ]
+  ] [
+     fhir:code [ fhir:v "lr-balance" ] ;
+     fhir:display [ fhir:v "Left/Right Power Balance" ] ;
+     fhir:definition [ fhir:v "Power distribution between legs" ]
+  ] [
+     fhir:code [ fhir:v "left-te" ] ;
+     fhir:display [ fhir:v "Left Torque Effectiveness" ] ;
+     fhir:definition [ fhir:v "Percentage of positive torque on left side" ]
+  ] [
+     fhir:code [ fhir:v "right-te" ] ;
+     fhir:display [ fhir:v "Right Torque Effectiveness" ] ;
+     fhir:definition [ fhir:v "Percentage of positive torque on right side" ]
+  ] [
+     fhir:code [ fhir:v "left-ps" ] ;
+     fhir:display [ fhir:v "Left Pedal Smoothness" ] ;
+     fhir:definition [ fhir:v "Consistency of power application on left pedal stroke" ]
+  ] [
+     fhir:code [ fhir:v "right-ps" ] ;
+     fhir:display [ fhir:v "Right Pedal Smoothness" ] ;
+     fhir:definition [ fhir:v "Consistency of power application on right pedal stroke" ]
+  ] [
+     fhir:code [ fhir:v "avg-speed" ] ;
+     fhir:display [ fhir:v "Average Speed" ] ;
+     fhir:definition [ fhir:v "Mean speed over the activity" ]
+  ] [
+     fhir:code [ fhir:v "elevation" ] ;
+     fhir:display [ fhir:v "Elevation Gain" ] ;
+     fhir:definition [ fhir:v "Total vertical meters climbed" ]
+  ] [
+     fhir:code [ fhir:v "zone" ] ;
+     fhir:display [ fhir:v "Training Zone" ] ;
+     fhir:definition [ fhir:v "Coggan power zone (1-7)" ]
+  ] [
+     fhir:code [ fhir:v "type" ] ;
+     fhir:display [ fhir:v "Activity Type" ] ;
+     fhir:definition [ fhir:v "Type of cycling activity" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

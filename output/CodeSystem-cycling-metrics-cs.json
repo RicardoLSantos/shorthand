@@ -1,0 +1,184 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cycling-metrics-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem cycling-metrics-cs</b></p><a name=\"cycling-metrics-cs\"> </a><a name=\"hccycling-metrics-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">instant-power<a name=\"cycling-metrics-cs-instant-power\"> </a></td><td>Instantaneous Power</td><td>Current power output in watts</td></tr><tr><td style=\"white-space:nowrap\">avg-power<a name=\"cycling-metrics-cs-avg-power\"> </a></td><td>Average Power</td><td>Arithmetic mean of power output over the activity</td></tr><tr><td style=\"white-space:nowrap\">np<a name=\"cycling-metrics-cs-np\"> </a></td><td>Normalized Power</td><td>Weighted average power accounting for variability (Coggan formula)</td></tr><tr><td style=\"white-space:nowrap\">max-power<a name=\"cycling-metrics-cs-max-power\"> </a></td><td>Maximum Power</td><td>Peak power achieved during the activity</td></tr><tr><td style=\"white-space:nowrap\">ftp<a name=\"cycling-metrics-cs-ftp\"> </a></td><td>Functional Threshold Power</td><td>Highest power sustainable for approximately one hour</td></tr><tr><td style=\"white-space:nowrap\">power-to-weight<a name=\"cycling-metrics-cs-power-to-weight\"> </a></td><td>Power-to-Weight Ratio</td><td>Power output relative to body mass (W/kg)</td></tr><tr><td style=\"white-space:nowrap\">tss<a name=\"cycling-metrics-cs-tss\"> </a></td><td>Training Stress Score</td><td>Quantifies training load from power data</td></tr><tr><td style=\"white-space:nowrap\">if<a name=\"cycling-metrics-cs-if\"> </a></td><td>Intensity Factor</td><td>Ratio of Normalized Power to FTP</td></tr><tr><td style=\"white-space:nowrap\">ctl<a name=\"cycling-metrics-cs-ctl\"> </a></td><td>Chronic Training Load</td><td>Long-term training load (fitness)</td></tr><tr><td style=\"white-space:nowrap\">atl<a name=\"cycling-metrics-cs-atl\"> </a></td><td>Acute Training Load</td><td>Short-term training load (fatigue)</td></tr><tr><td style=\"white-space:nowrap\">tsb<a name=\"cycling-metrics-cs-tsb\"> </a></td><td>Training Stress Balance</td><td>CTL minus ATL (form)</td></tr><tr><td style=\"white-space:nowrap\">kj<a name=\"cycling-metrics-cs-kj\"> </a></td><td>Kilojoules</td><td>Work performed in kilojoules</td></tr><tr><td style=\"white-space:nowrap\">cadence<a name=\"cycling-metrics-cs-cadence\"> </a></td><td>Cadence</td><td>Current pedaling rate</td></tr><tr><td style=\"white-space:nowrap\">avg-cadence<a name=\"cycling-metrics-cs-avg-cadence\"> </a></td><td>Average Cadence</td><td>Mean cadence over the activity</td></tr><tr><td style=\"white-space:nowrap\">lr-balance<a name=\"cycling-metrics-cs-lr-balance\"> </a></td><td>Left/Right Power Balance</td><td>Power distribution between legs</td></tr><tr><td style=\"white-space:nowrap\">left-te<a name=\"cycling-metrics-cs-left-te\"> </a></td><td>Left Torque Effectiveness</td><td>Percentage of positive torque on left side</td></tr><tr><td style=\"white-space:nowrap\">right-te<a name=\"cycling-metrics-cs-right-te\"> </a></td><td>Right Torque Effectiveness</td><td>Percentage of positive torque on right side</td></tr><tr><td style=\"white-space:nowrap\">left-ps<a name=\"cycling-metrics-cs-left-ps\"> </a></td><td>Left Pedal Smoothness</td><td>Consistency of power application on left pedal stroke</td></tr><tr><td style=\"white-space:nowrap\">right-ps<a name=\"cycling-metrics-cs-right-ps\"> </a></td><td>Right Pedal Smoothness</td><td>Consistency of power application on right pedal stroke</td></tr><tr><td style=\"white-space:nowrap\">avg-speed<a name=\"cycling-metrics-cs-avg-speed\"> </a></td><td>Average Speed</td><td>Mean speed over the activity</td></tr><tr><td style=\"white-space:nowrap\">elevation<a name=\"cycling-metrics-cs-elevation\"> </a></td><td>Elevation Gain</td><td>Total vertical meters climbed</td></tr><tr><td style=\"white-space:nowrap\">zone<a name=\"cycling-metrics-cs-zone\"> </a></td><td>Training Zone</td><td>Coggan power zone (1-7)</td></tr><tr><td style=\"white-space:nowrap\">type<a name=\"cycling-metrics-cs-type\"> </a></td><td>Activity Type</td><td>Type of cycling activity</td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs",
+  "version" : "0.1.0",
+  "name" : "CyclingMetricsCS",
+  "title" : "Cycling Metrics CodeSystem",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-28",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "CodeSystem for cycling dynamics and power metrics from cycling computers and smart trainers.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 23,
+  "concept" : [{
+    "code" : "instant-power",
+    "display" : "Instantaneous Power",
+    "definition" : "Current power output in watts"
+  },
+  {
+    "code" : "avg-power",
+    "display" : "Average Power",
+    "definition" : "Arithmetic mean of power output over the activity"
+  },
+  {
+    "code" : "np",
+    "display" : "Normalized Power",
+    "definition" : "Weighted average power accounting for variability (Coggan formula)"
+  },
+  {
+    "code" : "max-power",
+    "display" : "Maximum Power",
+    "definition" : "Peak power achieved during the activity"
+  },
+  {
+    "code" : "ftp",
+    "display" : "Functional Threshold Power",
+    "definition" : "Highest power sustainable for approximately one hour"
+  },
+  {
+    "code" : "power-to-weight",
+    "display" : "Power-to-Weight Ratio",
+    "definition" : "Power output relative to body mass (W/kg)"
+  },
+  {
+    "code" : "tss",
+    "display" : "Training Stress Score",
+    "definition" : "Quantifies training load from power data"
+  },
+  {
+    "code" : "if",
+    "display" : "Intensity Factor",
+    "definition" : "Ratio of Normalized Power to FTP"
+  },
+  {
+    "code" : "ctl",
+    "display" : "Chronic Training Load",
+    "definition" : "Long-term training load (fitness)"
+  },
+  {
+    "code" : "atl",
+    "display" : "Acute Training Load",
+    "definition" : "Short-term training load (fatigue)"
+  },
+  {
+    "code" : "tsb",
+    "display" : "Training Stress Balance",
+    "definition" : "CTL minus ATL (form)"
+  },
+  {
+    "code" : "kj",
+    "display" : "Kilojoules",
+    "definition" : "Work performed in kilojoules"
+  },
+  {
+    "code" : "cadence",
+    "display" : "Cadence",
+    "definition" : "Current pedaling rate"
+  },
+  {
+    "code" : "avg-cadence",
+    "display" : "Average Cadence",
+    "definition" : "Mean cadence over the activity"
+  },
+  {
+    "code" : "lr-balance",
+    "display" : "Left/Right Power Balance",
+    "definition" : "Power distribution between legs"
+  },
+  {
+    "code" : "left-te",
+    "display" : "Left Torque Effectiveness",
+    "definition" : "Percentage of positive torque on left side"
+  },
+  {
+    "code" : "right-te",
+    "display" : "Right Torque Effectiveness",
+    "definition" : "Percentage of positive torque on right side"
+  },
+  {
+    "code" : "left-ps",
+    "display" : "Left Pedal Smoothness",
+    "definition" : "Consistency of power application on left pedal stroke"
+  },
+  {
+    "code" : "right-ps",
+    "display" : "Right Pedal Smoothness",
+    "definition" : "Consistency of power application on right pedal stroke"
+  },
+  {
+    "code" : "avg-speed",
+    "display" : "Average Speed",
+    "definition" : "Mean speed over the activity"
+  },
+  {
+    "code" : "elevation",
+    "display" : "Elevation Gain",
+    "definition" : "Total vertical meters climbed"
+  },
+  {
+    "code" : "zone",
+    "display" : "Training Zone",
+    "definition" : "Coggan power zone (1-7)"
+  },
+  {
+    "code" : "type",
+    "display" : "Activity Type",
+    "definition" : "Type of cycling activity"
+  }]
+}

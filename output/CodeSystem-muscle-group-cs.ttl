@@ -1,0 +1,130 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/muscle-group-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "muscle-group-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem muscle-group-cs</b></p><a name=\"muscle-group-cs\"> </a><a name=\"hcmuscle-group-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">quadriceps<a name=\"muscle-group-cs-quadriceps\"> </a></td><td>Quadriceps</td><td>Front of thigh</td></tr><tr><td style=\"white-space:nowrap\">hamstrings<a name=\"muscle-group-cs-hamstrings\"> </a></td><td>Hamstrings</td><td>Back of thigh</td></tr><tr><td style=\"white-space:nowrap\">glutes<a name=\"muscle-group-cs-glutes\"> </a></td><td>Glutes</td><td>Gluteal muscles</td></tr><tr><td style=\"white-space:nowrap\">calves<a name=\"muscle-group-cs-calves\"> </a></td><td>Calves</td><td>Lower leg muscles</td></tr><tr><td style=\"white-space:nowrap\">chest<a name=\"muscle-group-cs-chest\"> </a></td><td>Chest</td><td>Pectoralis muscles</td></tr><tr><td style=\"white-space:nowrap\">back<a name=\"muscle-group-cs-back\"> </a></td><td>Back</td><td>Latissimus dorsi and back muscles</td></tr><tr><td style=\"white-space:nowrap\">shoulders<a name=\"muscle-group-cs-shoulders\"> </a></td><td>Shoulders</td><td>Deltoid muscles</td></tr><tr><td style=\"white-space:nowrap\">biceps<a name=\"muscle-group-cs-biceps\"> </a></td><td>Biceps</td><td>Front of upper arm</td></tr><tr><td style=\"white-space:nowrap\">triceps<a name=\"muscle-group-cs-triceps\"> </a></td><td>Triceps</td><td>Back of upper arm</td></tr><tr><td style=\"white-space:nowrap\">core<a name=\"muscle-group-cs-core\"> </a></td><td>Core</td><td>Abdominal and core muscles</td></tr><tr><td style=\"white-space:nowrap\">erector<a name=\"muscle-group-cs-erector\"> </a></td><td>Erector Spinae</td><td>Lower back muscles</td></tr><tr><td style=\"white-space:nowrap\">traps<a name=\"muscle-group-cs-traps\"> </a></td><td>Trapezius</td><td>Upper back/neck muscles</td></tr><tr><td style=\"white-space:nowrap\">forearms<a name=\"muscle-group-cs-forearms\"> </a></td><td>Forearms</td><td>Forearm muscles</td></tr><tr><td style=\"white-space:nowrap\">hip-flexors<a name=\"muscle-group-cs-hip-flexors\"> </a></td><td>Hip Flexors</td><td>Hip flexor muscles</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/muscle-group-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MuscleGroupCS"] ; # 
+  fhir:title [ fhir:v "Muscle Group CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Primary muscle groups"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "14"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "quadriceps" ] ;
+     fhir:display [ fhir:v "Quadriceps" ] ;
+     fhir:definition [ fhir:v "Front of thigh" ]
+  ] [
+     fhir:code [ fhir:v "hamstrings" ] ;
+     fhir:display [ fhir:v "Hamstrings" ] ;
+     fhir:definition [ fhir:v "Back of thigh" ]
+  ] [
+     fhir:code [ fhir:v "glutes" ] ;
+     fhir:display [ fhir:v "Glutes" ] ;
+     fhir:definition [ fhir:v "Gluteal muscles" ]
+  ] [
+     fhir:code [ fhir:v "calves" ] ;
+     fhir:display [ fhir:v "Calves" ] ;
+     fhir:definition [ fhir:v "Lower leg muscles" ]
+  ] [
+     fhir:code [ fhir:v "chest" ] ;
+     fhir:display [ fhir:v "Chest" ] ;
+     fhir:definition [ fhir:v "Pectoralis muscles" ]
+  ] [
+     fhir:code [ fhir:v "back" ] ;
+     fhir:display [ fhir:v "Back" ] ;
+     fhir:definition [ fhir:v "Latissimus dorsi and back muscles" ]
+  ] [
+     fhir:code [ fhir:v "shoulders" ] ;
+     fhir:display [ fhir:v "Shoulders" ] ;
+     fhir:definition [ fhir:v "Deltoid muscles" ]
+  ] [
+     fhir:code [ fhir:v "biceps" ] ;
+     fhir:display [ fhir:v "Biceps" ] ;
+     fhir:definition [ fhir:v "Front of upper arm" ]
+  ] [
+     fhir:code [ fhir:v "triceps" ] ;
+     fhir:display [ fhir:v "Triceps" ] ;
+     fhir:definition [ fhir:v "Back of upper arm" ]
+  ] [
+     fhir:code [ fhir:v "core" ] ;
+     fhir:display [ fhir:v "Core" ] ;
+     fhir:definition [ fhir:v "Abdominal and core muscles" ]
+  ] [
+     fhir:code [ fhir:v "erector" ] ;
+     fhir:display [ fhir:v "Erector Spinae" ] ;
+     fhir:definition [ fhir:v "Lower back muscles" ]
+  ] [
+     fhir:code [ fhir:v "traps" ] ;
+     fhir:display [ fhir:v "Trapezius" ] ;
+     fhir:definition [ fhir:v "Upper back/neck muscles" ]
+  ] [
+     fhir:code [ fhir:v "forearms" ] ;
+     fhir:display [ fhir:v "Forearms" ] ;
+     fhir:definition [ fhir:v "Forearm muscles" ]
+  ] [
+     fhir:code [ fhir:v "hip-flexors" ] ;
+     fhir:display [ fhir:v "Hip Flexors" ] ;
+     fhir:definition [ fhir:v "Hip flexor muscles" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

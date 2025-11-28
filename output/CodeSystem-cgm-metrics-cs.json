@@ -1,0 +1,164 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "cgm-metrics-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem cgm-metrics-cs</b></p><a name=\"cgm-metrics-cs\"> </a><a name=\"hccgm-metrics-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">trend<a name=\"cgm-metrics-cs-trend\"> </a></td><td>Trend Arrow</td><td>Direction and rate of glucose change</td></tr><tr><td style=\"white-space:nowrap\">roc<a name=\"cgm-metrics-cs-roc\"> </a></td><td>Rate of Change</td><td>Numeric rate of glucose change per minute</td></tr><tr><td style=\"white-space:nowrap\">tir<a name=\"cgm-metrics-cs-tir\"> </a></td><td>Time in Range</td><td>Percentage of time glucose is within target range (70-180 mg/dL)</td></tr><tr><td style=\"white-space:nowrap\">tbr<a name=\"cgm-metrics-cs-tbr\"> </a></td><td>Time Below Range</td><td>Percentage of time glucose is below target (&lt;70 mg/dL)</td></tr><tr><td style=\"white-space:nowrap\">tbr-l2<a name=\"cgm-metrics-cs-tbr-l2\"> </a></td><td>Time Below Range Level 2</td><td>Percentage of time in severe hypoglycemia (&lt;54 mg/dL)</td></tr><tr><td style=\"white-space:nowrap\">tar<a name=\"cgm-metrics-cs-tar\"> </a></td><td>Time Above Range</td><td>Percentage of time glucose is above target (&gt;180 mg/dL)</td></tr><tr><td style=\"white-space:nowrap\">tar-l2<a name=\"cgm-metrics-cs-tar-l2\"> </a></td><td>Time Above Range Level 2</td><td>Percentage of time in severe hyperglycemia (&gt;250 mg/dL)</td></tr><tr><td style=\"white-space:nowrap\">mean<a name=\"cgm-metrics-cs-mean\"> </a></td><td>Mean Glucose</td><td>Average glucose over reporting period</td></tr><tr><td style=\"white-space:nowrap\">sd<a name=\"cgm-metrics-cs-sd\"> </a></td><td>Standard Deviation</td><td>Standard deviation of glucose values</td></tr><tr><td style=\"white-space:nowrap\">cv<a name=\"cgm-metrics-cs-cv\"> </a></td><td>Coefficient of Variation</td><td>CV = SD/Mean x 100, target &lt;36%</td></tr><tr><td style=\"white-space:nowrap\">gmi<a name=\"cgm-metrics-cs-gmi\"> </a></td><td>Glucose Management Indicator</td><td>Estimated HbA1c from CGM glucose</td></tr><tr><td style=\"white-space:nowrap\">hypo-events<a name=\"cgm-metrics-cs-hypo-events\"> </a></td><td>Hypoglycemia Events</td><td>Number of hypoglycemia episodes</td></tr><tr><td style=\"white-space:nowrap\">hyper-events<a name=\"cgm-metrics-cs-hyper-events\"> </a></td><td>Hyperglycemia Events</td><td>Number of hyperglycemia episodes</td></tr><tr><td style=\"white-space:nowrap\">active-time<a name=\"cgm-metrics-cs-active-time\"> </a></td><td>Sensor Active Time</td><td>Percentage of time sensor was recording</td></tr><tr><td style=\"white-space:nowrap\">range-low<a name=\"cgm-metrics-cs-range-low\"> </a></td><td>Target Range Lower</td><td>Lower bound of target glucose range</td></tr><tr><td style=\"white-space:nowrap\">range-high<a name=\"cgm-metrics-cs-range-high\"> </a></td><td>Target Range Upper</td><td>Upper bound of target glucose range</td></tr><tr><td style=\"white-space:nowrap\">system<a name=\"cgm-metrics-cs-system\"> </a></td><td>CGM System</td><td>Specific CGM device or system</td></tr><tr><td style=\"white-space:nowrap\">site<a name=\"cgm-metrics-cs-site\"> </a></td><td>Insertion Site</td><td>Body site where sensor is inserted</td></tr><tr><td style=\"white-space:nowrap\">sensor-days<a name=\"cgm-metrics-cs-sensor-days\"> </a></td><td>Sensor Days</td><td>Days since sensor insertion</td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs",
+  "version" : "0.1.0",
+  "name" : "CGMMetricsCS",
+  "title" : "CGM Metrics CodeSystem",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-28",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "CodeSystem for continuous glucose monitoring metrics",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 19,
+  "concept" : [{
+    "code" : "trend",
+    "display" : "Trend Arrow",
+    "definition" : "Direction and rate of glucose change"
+  },
+  {
+    "code" : "roc",
+    "display" : "Rate of Change",
+    "definition" : "Numeric rate of glucose change per minute"
+  },
+  {
+    "code" : "tir",
+    "display" : "Time in Range",
+    "definition" : "Percentage of time glucose is within target range (70-180 mg/dL)"
+  },
+  {
+    "code" : "tbr",
+    "display" : "Time Below Range",
+    "definition" : "Percentage of time glucose is below target (<70 mg/dL)"
+  },
+  {
+    "code" : "tbr-l2",
+    "display" : "Time Below Range Level 2",
+    "definition" : "Percentage of time in severe hypoglycemia (<54 mg/dL)"
+  },
+  {
+    "code" : "tar",
+    "display" : "Time Above Range",
+    "definition" : "Percentage of time glucose is above target (>180 mg/dL)"
+  },
+  {
+    "code" : "tar-l2",
+    "display" : "Time Above Range Level 2",
+    "definition" : "Percentage of time in severe hyperglycemia (>250 mg/dL)"
+  },
+  {
+    "code" : "mean",
+    "display" : "Mean Glucose",
+    "definition" : "Average glucose over reporting period"
+  },
+  {
+    "code" : "sd",
+    "display" : "Standard Deviation",
+    "definition" : "Standard deviation of glucose values"
+  },
+  {
+    "code" : "cv",
+    "display" : "Coefficient of Variation",
+    "definition" : "CV = SD/Mean x 100, target <36%"
+  },
+  {
+    "code" : "gmi",
+    "display" : "Glucose Management Indicator",
+    "definition" : "Estimated HbA1c from CGM glucose"
+  },
+  {
+    "code" : "hypo-events",
+    "display" : "Hypoglycemia Events",
+    "definition" : "Number of hypoglycemia episodes"
+  },
+  {
+    "code" : "hyper-events",
+    "display" : "Hyperglycemia Events",
+    "definition" : "Number of hyperglycemia episodes"
+  },
+  {
+    "code" : "active-time",
+    "display" : "Sensor Active Time",
+    "definition" : "Percentage of time sensor was recording"
+  },
+  {
+    "code" : "range-low",
+    "display" : "Target Range Lower",
+    "definition" : "Lower bound of target glucose range"
+  },
+  {
+    "code" : "range-high",
+    "display" : "Target Range Upper",
+    "definition" : "Upper bound of target glucose range"
+  },
+  {
+    "code" : "system",
+    "display" : "CGM System",
+    "definition" : "Specific CGM device or system"
+  },
+  {
+    "code" : "site",
+    "display" : "Insertion Site",
+    "definition" : "Body site where sensor is inserted"
+  },
+  {
+    "code" : "sensor-days",
+    "display" : "Sensor Days",
+    "definition" : "Days since sensor insertion"
+  }]
+}

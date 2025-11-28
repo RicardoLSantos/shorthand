@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="ConceptMapHRVToOMOP"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapHRVToOMOP</b></p><a name="ConceptMapHRVToOMOP"> </a><a name="hcConceptMapHRVToOMOP"> </a><p>Mapeamento de <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">http://loinc.org</a> para http://athena.ohdsi.org/search-terms/terms</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <code>http://athena.ohdsi.org/search-terms/terms</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>80404-7 (R-R interval.standard deviation (Heart rate variability) [LOINC])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>37547368 (R-R interval.standard deviation (Heart rate variability))</td><td>VERIFIED MAPPING via Athena (2025-11-28):
+- OMOP concept_id: 37547368
+- Domain: Measurement
+- Concept Class: Lab Test
+- Vocabulary: LOINC
+- Valid dates: 2020-08-11 to 2099-12-31
+- Standard concept: Standard
+
+ETL Implementation:
+- MEASUREMENT.measurement_concept_id = 37547368
+- MEASUREMENT.value_as_number = SDNN value
+- MEASUREMENT.unit_concept_id = 8587 (millisecond)
+- MEASUREMENT.measurement_type_concept_id = 44818707 (Patient self-reported)</td></tr><tr><td>hrv-rmssd-local (RMSSD - Root Mean Square of Successive Differences [Custom])</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">CRITICAL GAP: RMSSD has NO OMOP concept (concept_id = 0)
+
+Clinical Importance:
+- Primary parasympathetic marker (HRV Task Force 1996)
+- Main HRV metric from consumer wearables (Apple, Oura, Garmin)
+- Strongly associated with vagal tone and inflammation (RS1 finding)
+- Mathematical relationship: RMSSD = SD1 × √2 (Poincaré plot)
+
+Workaround:
+1. Create local custom concept in OMOP vocabulary with concept_class_id = 'Observable Entity'
+2. Map to general HRV concept 37547368 with qualifier (data loss)
+3. Store in measurement_source_value field (non-standardized)
+
+Recommendation: Submit new concept proposal to OHDSI Vocabulary team</td></tr><tr><td>hrv-pnn50-local (pNN50 - Percentage of NN intervals &gt;50ms [Custom])</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">GAP: pNN50 has no OMOP concept (concept_id = 0)
+
+Clinical notes:
+- High correlation with RMSSD (r &gt; 0.90)
+- Parasympathetic marker
+- Unit: percentage (%)
+- Normal range: typically 20-30% in healthy adults
+
+ETL workaround: Store as measurement_source_value = 'pNN50:{value}%'</td></tr><tr><td>hrv-lf-hf-local (LF/HF Ratio - Low to High Frequency Power Ratio [Custom])</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">GAP: LF/HF ratio has no OMOP concept (concept_id = 0)
+
+Clinical notes:
+- Autonomic balance indicator (sympathovagal)
+- Interpretation is debated in literature
+- Dimensionless ratio
+- Typically 1.5-2.0 in healthy adults at rest
+
+ETL workaround: Store in measurement_source_value with qualifier</td></tr><tr><td>8867-4 (Heart rate [LOINC])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>3027018 (Heart rate)</td><td>Verified standard OMOP concept for heart rate.
+- OMOP concept_id: 3027018
+- Unit_concept_id: 8541 (per minute, {beats}/min)
+- Critical contextual data for HRV interpretation</td></tr><tr><td>40443-4 (Heart rate --resting [LOINC])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider" title="wider">maps to wider concept</a></td><td>3027018 (Heart rate)</td><td>Maps to general heart rate concept.
+Resting context can be captured in:
+- visit_occurrence.visit_concept_id
+- measurement qualifier
+- observation_period context
+
+Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HRmax/HRrest × 15)</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a> to <code>http://athena.ohdsi.org/search-terms/terms</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>86290005 (Respiratory rate [SNOMED])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>3024171 (Respiratory rate)</td><td>Critical for HRV interpretation. RSA (respiratory sinus arrhythmia) affects HF power band.</td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapHRVToOMOP"/>
+  <version value="0.1.0"/>
+  <name value="ConceptMapHRVToOMOP"/>
+  <title value="HRV LOINC to OMOP CDM Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-28"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Maps HRV (Heart Rate Variability) metrics from LOINC codes to OMOP CDM concepts for federated analytics.&#xA;&#xA;Key Findings from RS4 Systematic Review (354 papers analyzed):&#xA;- ZERO documented HRV-OMOP transformations in peer-reviewed literature&#xA;- Only ONE OMOP concept available: 37547368 (SDNN via LOINC 80404-7)&#xA;- CRITICAL GAP: RMSSD, pNN50, LF/HF have NO OMOP concepts (concept_id = 0)&#xA;&#xA;This ConceptMap enables:&#xA;- SpringBatch ETL pipelines (Peng et al. achieved 99% DQD compliance)&#xA;- Incremental loading patterns (Henke et al. achieved 87.5% time reduction)&#xA;- OHDSI network study participation for wearable HRV data&#xA;&#xA;Target OMOP Table: MEASUREMENT&#xA;- measurement_concept_id: mapped OMOP concept&#xA;- value_as_number: HRV metric value&#xA;- unit_concept_id: 8587 (millisecond) for time-domain metrics&#xA;- measurement_type_concept_id: 44818707 (Patient self-reported/device)"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Enable ETL transformation of wearable HRV data from FHIR (LOINC-coded) to OMOP CDM for research analytics in OHDSI federated network."/>
+  <sourceUri value="http://loinc.org"/>
+  <targetUri value="http://athena.ohdsi.org/search-terms/terms"/>
+  <group>
+    <source value="http://loinc.org"/>
+    <target value="http://athena.ohdsi.org/search-terms/terms"/>
+    <element>
+      <code value="80404-7"/>
+      <display value="R-R interval.standard deviation (Heart rate variability) [LOINC]"/>
+      <target>
+        <code value="37547368"/>
+        <display value="R-R interval.standard deviation (Heart rate variability)"/>
+        <equivalence value="equivalent"/>
+        <comment value="VERIFIED MAPPING via Athena (2025-11-28):&#xA;- OMOP concept_id: 37547368&#xA;- Domain: Measurement&#xA;- Concept Class: Lab Test&#xA;- Vocabulary: LOINC&#xA;- Valid dates: 2020-08-11 to 2099-12-31&#xA;- Standard concept: Standard&#xA;&#xA;ETL Implementation:&#xA;- MEASUREMENT.measurement_concept_id = 37547368&#xA;- MEASUREMENT.value_as_number = SDNN value&#xA;- MEASUREMENT.unit_concept_id = 8587 (millisecond)&#xA;- MEASUREMENT.measurement_type_concept_id = 44818707 (Patient self-reported)"/>
+      </target>
+    </element>
+    <element>
+      <code value="hrv-rmssd-local"/>
+      <display value="RMSSD - Root Mean Square of Successive Differences [Custom]"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="CRITICAL GAP: RMSSD has NO OMOP concept (concept_id = 0)&#xA;&#xA;Clinical Importance:&#xA;- Primary parasympathetic marker (HRV Task Force 1996)&#xA;- Main HRV metric from consumer wearables (Apple, Oura, Garmin)&#xA;- Strongly associated with vagal tone and inflammation (RS1 finding)&#xA;- Mathematical relationship: RMSSD = SD1 × √2 (Poincaré plot)&#xA;&#xA;Workaround:&#xA;1. Create local custom concept in OMOP vocabulary with concept_class_id = 'Observable Entity'&#xA;2. Map to general HRV concept 37547368 with qualifier (data loss)&#xA;3. Store in measurement_source_value field (non-standardized)&#xA;&#xA;Recommendation: Submit new concept proposal to OHDSI Vocabulary team"/>
+      </target>
+    </element>
+    <element>
+      <code value="hrv-pnn50-local"/>
+      <display value="pNN50 - Percentage of NN intervals &gt;50ms [Custom]"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="GAP: pNN50 has no OMOP concept (concept_id = 0)&#xA;&#xA;Clinical notes:&#xA;- High correlation with RMSSD (r &gt; 0.90)&#xA;- Parasympathetic marker&#xA;- Unit: percentage (%)&#xA;- Normal range: typically 20-30% in healthy adults&#xA;&#xA;ETL workaround: Store as measurement_source_value = 'pNN50:{value}%'"/>
+      </target>
+    </element>
+    <element>
+      <code value="hrv-lf-hf-local"/>
+      <display value="LF/HF Ratio - Low to High Frequency Power Ratio [Custom]"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="GAP: LF/HF ratio has no OMOP concept (concept_id = 0)&#xA;&#xA;Clinical notes:&#xA;- Autonomic balance indicator (sympathovagal)&#xA;- Interpretation is debated in literature&#xA;- Dimensionless ratio&#xA;- Typically 1.5-2.0 in healthy adults at rest&#xA;&#xA;ETL workaround: Store in measurement_source_value with qualifier"/>
+      </target>
+    </element>
+    <element>
+      <code value="8867-4"/>
+      <display value="Heart rate [LOINC]"/>
+      <target>
+        <code value="3027018"/>
+        <display value="Heart rate"/>
+        <equivalence value="equivalent"/>
+        <comment value="Verified standard OMOP concept for heart rate.&#xA;- OMOP concept_id: 3027018&#xA;- Unit_concept_id: 8541 (per minute, {beats}/min)&#xA;- Critical contextual data for HRV interpretation"/>
+      </target>
+    </element>
+    <element>
+      <code value="40443-4"/>
+      <display value="Heart rate --resting [LOINC]"/>
+      <target>
+        <code value="3027018"/>
+        <display value="Heart rate"/>
+        <equivalence value="wider"/>
+        <comment value="Maps to general heart rate concept.&#xA;Resting context can be captured in:&#xA;- visit_occurrence.visit_concept_id&#xA;- measurement qualifier&#xA;- observation_period context&#xA;&#xA;Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HRmax/HRrest × 15)"/>
+      </target>
+    </element>
+    <unmapped>
+      <mode value="fixed"/>
+      <code value="0"/>
+      <display value="No OMOP concept - requires custom vocabulary extension"/>
+    </unmapped>
+  </group>
+  <group>
+    <source value="http://snomed.info/sct"/>
+    <target value="http://athena.ohdsi.org/search-terms/terms"/>
+    <element>
+      <code value="86290005"/>
+      <display value="Respiratory rate [SNOMED]"/>
+      <target>
+        <code value="3024171"/>
+        <display value="Respiratory rate"/>
+        <equivalence value="equivalent"/>
+        <comment value="Critical for HRV interpretation. RSA (respiratory sinus arrhythmia) affects HF power band."/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

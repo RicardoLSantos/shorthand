@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-insertion-site-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cgm-insertion-site-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem cgm-insertion-site-cs</b></p><a name=\"cgm-insertion-site-cs\"> </a><a name=\"hccgm-insertion-site-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">upper-arm<a name=\"cgm-insertion-site-cs-upper-arm\"> </a></td><td>Upper Arm</td><td>Back of upper arm</td></tr><tr><td style=\"white-space:nowrap\">abdomen<a name=\"cgm-insertion-site-cs-abdomen\"> </a></td><td>Abdomen</td><td>Abdominal area</td></tr><tr><td style=\"white-space:nowrap\">buttock<a name=\"cgm-insertion-site-cs-buttock\"> </a></td><td>Buttock</td><td>Buttock area</td></tr><tr><td style=\"white-space:nowrap\">thigh<a name=\"cgm-insertion-site-cs-thigh\"> </a></td><td>Thigh</td><td>Upper thigh</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"cgm-insertion-site-cs-other\"> </a></td><td>Other</td><td>Other insertion site</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-insertion-site-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CGMInsertionSiteCS"] ; # 
+  fhir:title [ fhir:v "CGM Insertion Site CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Body sites for CGM sensor insertion"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "upper-arm" ] ;
+     fhir:display [ fhir:v "Upper Arm" ] ;
+     fhir:definition [ fhir:v "Back of upper arm" ]
+  ] [
+     fhir:code [ fhir:v "abdomen" ] ;
+     fhir:display [ fhir:v "Abdomen" ] ;
+     fhir:definition [ fhir:v "Abdominal area" ]
+  ] [
+     fhir:code [ fhir:v "buttock" ] ;
+     fhir:display [ fhir:v "Buttock" ] ;
+     fhir:definition [ fhir:v "Buttock area" ]
+  ] [
+     fhir:code [ fhir:v "thigh" ] ;
+     fhir:display [ fhir:v "Thigh" ] ;
+     fhir:definition [ fhir:v "Upper thigh" ]
+  ] [
+     fhir:code [ fhir:v "other" ] ;
+     fhir:display [ fhir:v "Other" ] ;
+     fhir:definition [ fhir:v "Other insertion site" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

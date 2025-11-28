@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-training-zone-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cycling-training-zone-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem cycling-training-zone-cs</b></p><a name=\"cycling-training-zone-cs\"> </a><a name=\"hccycling-training-zone-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">zone1<a name=\"cycling-training-zone-cs-zone1\"> </a></td><td>Zone 1 - Active Recovery</td><td>&lt;55% FTP - Active recovery, very easy</td></tr><tr><td style=\"white-space:nowrap\">zone2<a name=\"cycling-training-zone-cs-zone2\"> </a></td><td>Zone 2 - Endurance</td><td>55-75% FTP - Endurance/base training</td></tr><tr><td style=\"white-space:nowrap\">zone3<a name=\"cycling-training-zone-cs-zone3\"> </a></td><td>Zone 3 - Tempo</td><td>76-90% FTP - Moderate aerobic intensity</td></tr><tr><td style=\"white-space:nowrap\">zone4<a name=\"cycling-training-zone-cs-zone4\"> </a></td><td>Zone 4 - Threshold</td><td>91-105% FTP - Lactate threshold, race pace</td></tr><tr><td style=\"white-space:nowrap\">zone5<a name=\"cycling-training-zone-cs-zone5\"> </a></td><td>Zone 5 - VO2max</td><td>106-120% FTP - VO2max intervals</td></tr><tr><td style=\"white-space:nowrap\">zone6<a name=\"cycling-training-zone-cs-zone6\"> </a></td><td>Zone 6 - Anaerobic</td><td>121-150% FTP - Anaerobic capacity</td></tr><tr><td style=\"white-space:nowrap\">zone7<a name=\"cycling-training-zone-cs-zone7\"> </a></td><td>Zone 7 - Neuromuscular</td><td>&gt;150% FTP - Neuromuscular power, sprints</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-training-zone-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CyclingTrainingZoneCS"] ; # 
+  fhir:title [ fhir:v "Cycling Training Zone CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Coggan power-based training zones"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "7"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "zone1" ] ;
+     fhir:display [ fhir:v "Zone 1 - Active Recovery" ] ;
+     fhir:definition [ fhir:v "<55% FTP - Active recovery, very easy" ]
+  ] [
+     fhir:code [ fhir:v "zone2" ] ;
+     fhir:display [ fhir:v "Zone 2 - Endurance" ] ;
+     fhir:definition [ fhir:v "55-75% FTP - Endurance/base training" ]
+  ] [
+     fhir:code [ fhir:v "zone3" ] ;
+     fhir:display [ fhir:v "Zone 3 - Tempo" ] ;
+     fhir:definition [ fhir:v "76-90% FTP - Moderate aerobic intensity" ]
+  ] [
+     fhir:code [ fhir:v "zone4" ] ;
+     fhir:display [ fhir:v "Zone 4 - Threshold" ] ;
+     fhir:definition [ fhir:v "91-105% FTP - Lactate threshold, race pace" ]
+  ] [
+     fhir:code [ fhir:v "zone5" ] ;
+     fhir:display [ fhir:v "Zone 5 - VO2max" ] ;
+     fhir:definition [ fhir:v "106-120% FTP - VO2max intervals" ]
+  ] [
+     fhir:code [ fhir:v "zone6" ] ;
+     fhir:display [ fhir:v "Zone 6 - Anaerobic" ] ;
+     fhir:definition [ fhir:v "121-150% FTP - Anaerobic capacity" ]
+  ] [
+     fhir:code [ fhir:v "zone7" ] ;
+     fhir:display [ fhir:v "Zone 7 - Neuromuscular" ] ;
+     fhir:definition [ fhir:v ">150% FTP - Neuromuscular power, sprints" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

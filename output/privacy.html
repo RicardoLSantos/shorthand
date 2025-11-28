@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Privacy - iOS Lifestyle Medicine Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"16"}
+    h3,h4,h5,h6{--heading-prefix:"16"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">iOS Lifestyle Medicine Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <span title="">150</span>
+
+
+
+  <span title="">021</span>
+
+
+
+  <span title="">005</span>
+
+
+
+  <img alt="Portugal flag" src="assets/images/prt.svg" height="16" title="Portugal"/>
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+
+  <img alt="Brazil flag" src="assets/images/bra.svg" height="16" title="Brazil"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Policies
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="data-protection-policies.html">Overview</a>
+      </li>
+      <li>
+        <a href="privacy.html">Privacy and Security</a>
+      </li>
+      <li>
+        <a href="practitioner-identifiers.html">Practitioner IDs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="inflammatory_markers.html">Inflammatory Markers</a>
+      </li>
+      <li>
+        <a href="conceptmaps.html">ConceptMaps</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Privacy</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">iOS Lifestyle Medicine Implementation Guide - Compilação de desenvolvimento local (v0.1.0) construída pelas ferramentas de compilação FHIR (HL7&reg; FHIR&reg; Standard). Veja o <a href='https://2rdoc.pt/ig/ios-lifestyle-medicine/history.html'>Diretório de versões publicadas</a></p><!--EndReleaseHeader-->
+  <h2>Privacy</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#privacy-and-security" id="markdown-toc-privacy-and-security">Privacy and Security</a>    <ul>
+      <li><a href="#regulatory-framework" id="markdown-toc-regulatory-framework">Regulatory Framework</a>        <ul>
+          <li><a href="#general-data-protection-regulation-gdpr" id="markdown-toc-general-data-protection-regulation-gdpr">General Data Protection Regulation (GDPR)</a></li>
+          <li><a href="#health-data-considerations" id="markdown-toc-health-data-considerations">Health Data Considerations</a></li>
+        </ul>
+      </li>
+      <li><a href="#fhir-resources-for-privacy" id="markdown-toc-fhir-resources-for-privacy">FHIR Resources for Privacy</a>        <ul>
+          <li><a href="#consent-management" id="markdown-toc-consent-management">Consent Management</a></li>
+          <li><a href="#provenance-and-audit-trail" id="markdown-toc-provenance-and-audit-trail">Provenance and Audit Trail</a></li>
+        </ul>
+      </li>
+      <li><a href="#data-minimization-workflow" id="markdown-toc-data-minimization-workflow">Data Minimization Workflow</a>        <ul>
+          <li><a href="#principle" id="markdown-toc-principle">Principle</a></li>
+          <li><a href="#implementation-steps" id="markdown-toc-implementation-steps">Implementation Steps</a></li>
+          <li><a href="#profile-support-for-minimization" id="markdown-toc-profile-support-for-minimization">Profile Support for Minimization</a></li>
+        </ul>
+      </li>
+      <li><a href="#security-considerations" id="markdown-toc-security-considerations">Security Considerations</a>        <ul>
+          <li><a href="#authentication-and-authorization" id="markdown-toc-authentication-and-authorization">Authentication and Authorization</a></li>
+          <li><a href="#data-in-transit" id="markdown-toc-data-in-transit">Data in Transit</a></li>
+          <li><a href="#data-at-rest" id="markdown-toc-data-at-rest">Data at Rest</a></li>
+        </ul>
+      </li>
+      <li><a href="#cross-border-data-transfers" id="markdown-toc-cross-border-data-transfers">Cross-Border Data Transfers</a>        <ul>
+          <li><a href="#eu-to-non-eu-transfers" id="markdown-toc-eu-to-non-eu-transfers">EU to Non-EU Transfers</a></li>
+          <li><a href="#implementation-support" id="markdown-toc-implementation-support">Implementation Support</a></li>
+        </ul>
+      </li>
+      <li><a href="#patient-rights-implementation" id="markdown-toc-patient-rights-implementation">Patient Rights Implementation</a>        <ul>
+          <li><a href="#right-to-access" id="markdown-toc-right-to-access">Right to Access</a></li>
+          <li><a href="#right-to-rectification" id="markdown-toc-right-to-rectification">Right to Rectification</a></li>
+          <li><a href="#right-to-erasure-right-to-be-forgotten" id="markdown-toc-right-to-erasure-right-to-be-forgotten">Right to Erasure ("Right to be Forgotten")</a></li>
+          <li><a href="#right-to-data-portability" id="markdown-toc-right-to-data-portability">Right to Data Portability</a></li>
+        </ul>
+      </li>
+      <li><a href="#wearable-device-considerations" id="markdown-toc-wearable-device-considerations">Wearable Device Considerations</a>        <ul>
+          <li><a href="#device-security" id="markdown-toc-device-security">Device Security</a></li>
+          <li><a href="#vendor-data-handling" id="markdown-toc-vendor-data-handling">Vendor Data Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="#implementation-checklist" id="markdown-toc-implementation-checklist">Implementation Checklist</a>        <ul>
+          <li><a href="#for-implementers" id="markdown-toc-for-implementers">For Implementers</a></li>
+          <li><a href="#for-deployers" id="markdown-toc-for-deployers">For Deployers</a></li>
+        </ul>
+      </li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="privacy-and-security">Privacy and Security</h1>
+
+<p>This page documents the privacy and security considerations for the iOS Lifestyle Medicine Implementation Guide, addressing GDPR compliance and data protection requirements for Patient-Generated Health Data (PGHD).</p>
+
+<h2 id="regulatory-framework">Regulatory Framework</h2>
+
+<h3 id="general-data-protection-regulation-gdpr">General Data Protection Regulation (GDPR)</h3>
+
+<p>This Implementation Guide is designed with GDPR compliance in mind, particularly for implementations within the European Union. Key principles addressed:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>GDPR Principle</th>
+      <th>Implementation Approach</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Lawfulness, Fairness, Transparency</strong></td>
+      <td>Consent profiles with explicit purpose documentation</td>
+    </tr>
+    <tr>
+      <td><strong>Purpose Limitation</strong></td>
+      <td>Consent scopes limited to specific data categories</td>
+    </tr>
+    <tr>
+      <td><strong>Data Minimization</strong></td>
+      <td>Profile design restricts to clinically necessary elements</td>
+    </tr>
+    <tr>
+      <td><strong>Accuracy</strong></td>
+      <td>Provenance tracking ensures data quality verification</td>
+    </tr>
+    <tr>
+      <td><strong>Storage Limitation</strong></td>
+      <td>Consent expiration dates and retention policies</td>
+    </tr>
+    <tr>
+      <td><strong>Integrity and Confidentiality</strong></td>
+      <td>Security labels and encryption requirements</td>
+    </tr>
+    <tr>
+      <td><strong>Accountability</strong></td>
+      <td>Comprehensive audit trail via Provenance resources</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="health-data-considerations">Health Data Considerations</h3>
+
+<p>Under GDPR Article 9, health data is classified as a <strong>special category of personal data</strong> requiring additional protections:</p>
+
+<ol>
+  <li><strong>Explicit Consent</strong>: Required for processing (implemented via MultiJurisdictionalConsent profile)</li>
+  <li><strong>Legal Basis</strong>: Healthcare provision, research, or public health purposes</li>
+  <li><strong>Data Protection Impact Assessment</strong>: Recommended for wearable data integration</li>
+</ol>
+
+<h2 id="fhir-resources-for-privacy">FHIR Resources for Privacy</h2>
+
+<h3 id="consent-management">Consent Management</h3>
+
+<p>The <a href="StructureDefinition-multi-jurisdictional-consent.html">MultiJurisdictionalConsent</a> profile enables:</p>
+
+<ul>
+  <li><strong>Multi-jurisdiction support</strong>: GDPR (EU), LGPD (Brazil), HIPAA (US)</li>
+  <li><strong>Granular consent scopes</strong>: Per data category and purpose</li>
+  <li><strong>Consent lifecycle</strong>: Creation, amendment, withdrawal tracking</li>
+  <li><strong>Purpose codes</strong>: Research, treatment, secondary use distinctions</li>
+</ul>
+
+<h3 id="provenance-and-audit-trail">Provenance and Audit Trail</h3>
+
+<p>The <a href="StructureDefinition-pghd-provenance.html">PGHDProvenance</a> profile provides:</p>
+
+<ul>
+  <li><strong>Origin tracking</strong>: Device and software that captured data</li>
+  <li><strong>Transformation history</strong>: Data processing and format conversions</li>
+  <li><strong>Agent identification</strong>: Patient, device, system involved</li>
+  <li><strong>Timestamps</strong>: Precise recording of all lifecycle events</li>
+  <li><strong>Integrity verification</strong>: Optional digital signatures</li>
+</ul>
+
+<h2 id="data-minimization-workflow">Data Minimization Workflow</h2>
+
+<h3 id="principle">Principle</h3>
+
+<p>Collect only data necessary for the specified healthcare purpose.</p>
+
+<h3 id="implementation-steps">Implementation Steps</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Purpose Definition
+   └── Define specific clinical/research objectives
+       └── Map required data elements to objectives
+
+2. Data Collection
+   └── Configure wearable data sync to collect only necessary metrics
+       └── HRV for stress/cardiovascular monitoring
+       └── Sleep data for circadian health
+       └── Activity for lifestyle assessment
+
+3. Consent Verification
+   └── Check active consent before data access
+       └── Verify scope covers requested data category
+       └── Confirm purpose matches consent provisions
+
+4. Data Processing
+   └── Apply aggregation where individual datapoints unnecessary
+       └── Daily averages instead of per-second measurements
+       └── Remove identifying device metadata when not required
+
+5. Retention Management
+   └── Delete data when consent expires or is withdrawn
+       └── Archive for legal retention period only
+       └── Pseudonymize for secondary research use
+</code></pre></div></div>
+
+<h3 id="profile-support-for-minimization">Profile Support for Minimization</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Minimization Feature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HRVObservation</td>
+      <td>Supports aggregated metrics (daily RMSSD mean)</td>
+    </tr>
+    <tr>
+      <td>SleepObservation</td>
+      <td>Stage summaries vs. epoch-level data</td>
+    </tr>
+    <tr>
+      <td>PhysicalActivityObservation</td>
+      <td>Session totals vs. second-by-second</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="security-considerations">Security Considerations</h2>
+
+<h3 id="authentication-and-authorization">Authentication and Authorization</h3>
+
+<p>Implementations SHOULD support:</p>
+
+<ul>
+  <li><strong>SMART on FHIR</strong>: For patient-facing applications</li>
+  <li><strong>OAuth 2.0</strong>: For backend service authorization</li>
+  <li><strong>Mutual TLS</strong>: For high-security integrations</li>
+</ul>
+
+<h3 id="data-in-transit">Data in Transit</h3>
+
+<ul>
+  <li><strong>TLS 1.3</strong>: Required for all FHIR API communications</li>
+  <li><strong>Certificate Pinning</strong>: Recommended for mobile applications</li>
+</ul>
+
+<h3 id="data-at-rest">Data at Rest</h3>
+
+<ul>
+  <li><strong>Encryption</strong>: AES-256 recommended for stored PGHD</li>
+  <li><strong>Key Management</strong>: Healthcare-grade key management systems</li>
+</ul>
+
+<h2 id="cross-border-data-transfers">Cross-Border Data Transfers</h2>
+
+<h3 id="eu-to-non-eu-transfers">EU to Non-EU Transfers</h3>
+
+<p>For PGHD originating from EU residents:</p>
+
+<ol>
+  <li><strong>Adequacy Decision</strong>: Check if destination country has EU adequacy</li>
+  <li><strong>Standard Contractual Clauses</strong>: Required for non-adequate countries</li>
+  <li><strong>Supplementary Measures</strong>: Technical measures for enhanced protection</li>
+</ol>
+
+<h3 id="implementation-support">Implementation Support</h3>
+
+<p>The Consent profile supports jurisdiction specification:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fmup.up.pt/ios-lifestyle-medicine/StructureDefinition/consent-jurisdiction"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:iso:std:iso:3166"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Portugal"</span><span class="w">
+      </span><span class="p">}]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="patient-rights-implementation">Patient Rights Implementation</h2>
+
+<h3 id="right-to-access">Right to Access</h3>
+
+<ul>
+  <li>FHIR <code class="language-plaintext highlighter-rouge">$everything</code> operation for patient data export</li>
+  <li>Machine-readable format (JSON/XML) available</li>
+  <li>Human-readable summary generation</li>
+</ul>
+
+<h3 id="right-to-rectification">Right to Rectification</h3>
+
+<ul>
+  <li>Update operations on Observation resources</li>
+  <li>Provenance tracking of corrections</li>
+</ul>
+
+<h3 id="right-to-erasure-right-to-be-forgotten">Right to Erasure ("Right to be Forgotten")</h3>
+
+<ul>
+  <li>Conditional delete operations supported</li>
+  <li>Audit trail maintained for legal compliance</li>
+  <li>Research data anonymization alternative</li>
+</ul>
+
+<h3 id="right-to-data-portability">Right to Data Portability</h3>
+
+<ul>
+  <li>FHIR Bulk Data export support</li>
+  <li>IPS document generation for healthcare continuity</li>
+  <li>Standard formats ensure interoperability</li>
+</ul>
+
+<h2 id="wearable-device-considerations">Wearable Device Considerations</h2>
+
+<h3 id="device-security">Device Security</h3>
+
+<p>Wearable devices present unique privacy challenges:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Challenge</th>
+      <th>Mitigation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Continuous monitoring</strong></td>
+      <td>User-controlled sync schedules</td>
+    </tr>
+    <tr>
+      <td><strong>Location inference</strong></td>
+      <td>GPS data collection opt-in</td>
+    </tr>
+    <tr>
+      <td><strong>Biometric sensitivity</strong></td>
+      <td>Enhanced consent for biometric data</td>
+    </tr>
+    <tr>
+      <td><strong>Third-party apps</strong></td>
+      <td>Data sharing consent verification</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="vendor-data-handling">Vendor Data Handling</h3>
+
+<p>Per the <a href="conceptmaps.html">ConceptMaps</a> documentation, vendor-specific data is normalized to standard terminologies:</p>
+
+<ul>
+  <li>Raw vendor data transformed to LOINC codes</li>
+  <li>Proprietary identifiers replaced with standard concepts</li>
+  <li>Vendor-specific metadata preserved in extensions when clinically relevant</li>
+</ul>
+
+<h2 id="implementation-checklist">Implementation Checklist</h2>
+
+<h3 id="for-implementers">For Implementers</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Implement MultiJurisdictionalConsent profile</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Configure PGHDProvenance for all data capture</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Enable SMART on FHIR authentication</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Apply data minimization in API design</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Document retention policies per jurisdiction</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Provide patient data export capability</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Support consent withdrawal workflow</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Implement audit logging</li>
+</ul>
+
+<h3 id="for-deployers">For Deployers</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Complete Data Protection Impact Assessment</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Appoint Data Protection Officer (if required)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Establish data processing agreements with vendors</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Configure backup and disaster recovery</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Train staff on privacy requirements</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Document cross-border transfer mechanisms</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>Regulation (EU) 2016/679 (General Data Protection Regulation)</li>
+  <li>Article 29 Working Party Guidelines on Consent (WP259)</li>
+  <li>EDPB Guidelines on Health Data Processing</li>
+  <li>ISO 27701:2019 Privacy Information Management</li>
+  <li>HL7 FHIR Security and Privacy Module</li>
+</ol>
+
+<hr />
+
+<p><em>This documentation is part of the iOS Lifestyle Medicine FHIR Implementation Guide, developed at the Faculty of Medicine, University of Porto (FMUP).</em></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 28, 2025 14:37+0000">2025-11-28</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

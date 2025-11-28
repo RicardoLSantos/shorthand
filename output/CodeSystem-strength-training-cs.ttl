@@ -1,0 +1,203 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-training-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "strength-training-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem strength-training-cs</b></p><a name=\"strength-training-cs\"> </a><a name=\"hcstrength-training-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">exercise-name<a name=\"strength-training-cs-exercise-name\"> </a></td><td>Exercise Name</td><td>Name of the exercise performed</td></tr><tr><td style=\"white-space:nowrap\">category<a name=\"strength-training-cs-category\"> </a></td><td>Exercise Category</td><td>Classification of the exercise type</td></tr><tr><td style=\"white-space:nowrap\">muscle<a name=\"strength-training-cs-muscle\"> </a></td><td>Primary Muscle Group</td><td>Main muscle groups targeted</td></tr><tr><td style=\"white-space:nowrap\">equipment<a name=\"strength-training-cs-equipment\"> </a></td><td>Equipment Type</td><td>Type of equipment used</td></tr><tr><td style=\"white-space:nowrap\">set-num<a name=\"strength-training-cs-set-num\"> </a></td><td>Set Number</td><td>Sequential number of the set</td></tr><tr><td style=\"white-space:nowrap\">set-type<a name=\"strength-training-cs-set-type\"> </a></td><td>Set Type</td><td>Classification of the set</td></tr><tr><td style=\"white-space:nowrap\">reps<a name=\"strength-training-cs-reps\"> </a></td><td>Repetitions Performed</td><td>Actual number of repetitions completed</td></tr><tr><td style=\"white-space:nowrap\">target-reps<a name=\"strength-training-cs-target-reps\"> </a></td><td>Target Repetitions</td><td>Planned number of repetitions</td></tr><tr><td style=\"white-space:nowrap\">load<a name=\"strength-training-cs-load\"> </a></td><td>Load</td><td>Weight/resistance used for the set</td></tr><tr><td style=\"white-space:nowrap\">pct-1rm<a name=\"strength-training-cs-pct-1rm\"> </a></td><td>Percentage of 1RM</td><td>Load expressed as percentage of one repetition maximum</td></tr><tr><td style=\"white-space:nowrap\">rir<a name=\"strength-training-cs-rir\"> </a></td><td>Repetitions in Reserve</td><td>Estimated repetitions remaining before failure</td></tr><tr><td style=\"white-space:nowrap\">set-rpe<a name=\"strength-training-cs-set-rpe\"> </a></td><td>Set RPE</td><td>Rating of Perceived Exertion for the set</td></tr><tr><td style=\"white-space:nowrap\">rest<a name=\"strength-training-cs-rest\"> </a></td><td>Rest Period</td><td>Rest time taken after this set</td></tr><tr><td style=\"white-space:nowrap\">tempo<a name=\"strength-training-cs-tempo\"> </a></td><td>Tempo</td><td>Tempo prescription (e.g., 3-1-2-0)</td></tr><tr><td style=\"white-space:nowrap\">mean-vel<a name=\"strength-training-cs-mean-vel\"> </a></td><td>Mean Concentric Velocity</td><td>Average velocity during the concentric phase</td></tr><tr><td style=\"white-space:nowrap\">peak-vel<a name=\"strength-training-cs-peak-vel\"> </a></td><td>Peak Concentric Velocity</td><td>Maximum velocity achieved during concentric phase</td></tr><tr><td style=\"white-space:nowrap\">vel-loss<a name=\"strength-training-cs-vel-loss\"> </a></td><td>Velocity Loss</td><td>Percentage decrease in velocity from first to last rep</td></tr><tr><td style=\"white-space:nowrap\">mean-power<a name=\"strength-training-cs-mean-power\"> </a></td><td>Mean Power Output</td><td>Average power generated during the lift</td></tr><tr><td style=\"white-space:nowrap\">peak-power<a name=\"strength-training-cs-peak-power\"> </a></td><td>Peak Power Output</td><td>Maximum power achieved during the lift</td></tr><tr><td style=\"white-space:nowrap\">rom<a name=\"strength-training-cs-rom\"> </a></td><td>Range of Motion</td><td>Vertical displacement of the bar/implement</td></tr><tr><td style=\"white-space:nowrap\">tut<a name=\"strength-training-cs-tut\"> </a></td><td>Time Under Tension</td><td>Total duration of muscle tension during the set</td></tr><tr><td style=\"white-space:nowrap\">total-sets<a name=\"strength-training-cs-total-sets\"> </a></td><td>Total Sets</td><td>Total number of working sets performed</td></tr><tr><td style=\"white-space:nowrap\">total-reps<a name=\"strength-training-cs-total-reps\"> </a></td><td>Total Repetitions</td><td>Sum of all repetitions across all sets</td></tr><tr><td style=\"white-space:nowrap\">volume-load<a name=\"strength-training-cs-volume-load\"> </a></td><td>Volume Load</td><td>Total volume = sets x reps x load</td></tr><tr><td style=\"white-space:nowrap\">avg-intensity<a name=\"strength-training-cs-avg-intensity\"> </a></td><td>Average Intensity</td><td>Mean percentage of 1RM across all working sets</td></tr><tr><td style=\"white-space:nowrap\">tested-1rm<a name=\"strength-training-cs-tested-1rm\"> </a></td><td>Tested 1RM</td><td>Directly tested one repetition maximum</td></tr><tr><td style=\"white-space:nowrap\">est-1rm<a name=\"strength-training-cs-est-1rm\"> </a></td><td>Estimated 1RM</td><td>One repetition maximum calculated from submaximal performance</td></tr><tr><td style=\"white-space:nowrap\">est-method<a name=\"strength-training-cs-est-method\"> </a></td><td>1RM Estimation Method</td><td>Formula or method used to estimate 1RM</td></tr><tr><td style=\"white-space:nowrap\">session-rpe<a name=\"strength-training-cs-session-rpe\"> </a></td><td>Session RPE</td><td>Overall rating of perceived exertion for the session</td></tr><tr><td style=\"white-space:nowrap\">session-load<a name=\"strength-training-cs-session-load\"> </a></td><td>Session Training Load</td><td>Session RPE x duration (sRPE method)</td></tr><tr><td style=\"white-space:nowrap\">training-type<a name=\"strength-training-cs-training-type\"> </a></td><td>Training Type</td><td>Primary training goal of the session</td></tr><tr><td style=\"white-space:nowrap\">split-type<a name=\"strength-training-cs-split-type\"> </a></td><td>Split Type</td><td>Training split/body part organization</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-training-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "StrengthTrainingCS"] ; # 
+  fhir:title [ fhir:v "Strength Training CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-28"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem for strength training metrics from gym equipment and VBT devices."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "32"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "exercise-name" ] ;
+     fhir:display [ fhir:v "Exercise Name" ] ;
+     fhir:definition [ fhir:v "Name of the exercise performed" ]
+  ] [
+     fhir:code [ fhir:v "category" ] ;
+     fhir:display [ fhir:v "Exercise Category" ] ;
+     fhir:definition [ fhir:v "Classification of the exercise type" ]
+  ] [
+     fhir:code [ fhir:v "muscle" ] ;
+     fhir:display [ fhir:v "Primary Muscle Group" ] ;
+     fhir:definition [ fhir:v "Main muscle groups targeted" ]
+  ] [
+     fhir:code [ fhir:v "equipment" ] ;
+     fhir:display [ fhir:v "Equipment Type" ] ;
+     fhir:definition [ fhir:v "Type of equipment used" ]
+  ] [
+     fhir:code [ fhir:v "set-num" ] ;
+     fhir:display [ fhir:v "Set Number" ] ;
+     fhir:definition [ fhir:v "Sequential number of the set" ]
+  ] [
+     fhir:code [ fhir:v "set-type" ] ;
+     fhir:display [ fhir:v "Set Type" ] ;
+     fhir:definition [ fhir:v "Classification of the set" ]
+  ] [
+     fhir:code [ fhir:v "reps" ] ;
+     fhir:display [ fhir:v "Repetitions Performed" ] ;
+     fhir:definition [ fhir:v "Actual number of repetitions completed" ]
+  ] [
+     fhir:code [ fhir:v "target-reps" ] ;
+     fhir:display [ fhir:v "Target Repetitions" ] ;
+     fhir:definition [ fhir:v "Planned number of repetitions" ]
+  ] [
+     fhir:code [ fhir:v "load" ] ;
+     fhir:display [ fhir:v "Load" ] ;
+     fhir:definition [ fhir:v "Weight/resistance used for the set" ]
+  ] [
+     fhir:code [ fhir:v "pct-1rm" ] ;
+     fhir:display [ fhir:v "Percentage of 1RM" ] ;
+     fhir:definition [ fhir:v "Load expressed as percentage of one repetition maximum" ]
+  ] [
+     fhir:code [ fhir:v "rir" ] ;
+     fhir:display [ fhir:v "Repetitions in Reserve" ] ;
+     fhir:definition [ fhir:v "Estimated repetitions remaining before failure" ]
+  ] [
+     fhir:code [ fhir:v "set-rpe" ] ;
+     fhir:display [ fhir:v "Set RPE" ] ;
+     fhir:definition [ fhir:v "Rating of Perceived Exertion for the set" ]
+  ] [
+     fhir:code [ fhir:v "rest" ] ;
+     fhir:display [ fhir:v "Rest Period" ] ;
+     fhir:definition [ fhir:v "Rest time taken after this set" ]
+  ] [
+     fhir:code [ fhir:v "tempo" ] ;
+     fhir:display [ fhir:v "Tempo" ] ;
+     fhir:definition [ fhir:v "Tempo prescription (e.g., 3-1-2-0)" ]
+  ] [
+     fhir:code [ fhir:v "mean-vel" ] ;
+     fhir:display [ fhir:v "Mean Concentric Velocity" ] ;
+     fhir:definition [ fhir:v "Average velocity during the concentric phase" ]
+  ] [
+     fhir:code [ fhir:v "peak-vel" ] ;
+     fhir:display [ fhir:v "Peak Concentric Velocity" ] ;
+     fhir:definition [ fhir:v "Maximum velocity achieved during concentric phase" ]
+  ] [
+     fhir:code [ fhir:v "vel-loss" ] ;
+     fhir:display [ fhir:v "Velocity Loss" ] ;
+     fhir:definition [ fhir:v "Percentage decrease in velocity from first to last rep" ]
+  ] [
+     fhir:code [ fhir:v "mean-power" ] ;
+     fhir:display [ fhir:v "Mean Power Output" ] ;
+     fhir:definition [ fhir:v "Average power generated during the lift" ]
+  ] [
+     fhir:code [ fhir:v "peak-power" ] ;
+     fhir:display [ fhir:v "Peak Power Output" ] ;
+     fhir:definition [ fhir:v "Maximum power achieved during the lift" ]
+  ] [
+     fhir:code [ fhir:v "rom" ] ;
+     fhir:display [ fhir:v "Range of Motion" ] ;
+     fhir:definition [ fhir:v "Vertical displacement of the bar/implement" ]
+  ] [
+     fhir:code [ fhir:v "tut" ] ;
+     fhir:display [ fhir:v "Time Under Tension" ] ;
+     fhir:definition [ fhir:v "Total duration of muscle tension during the set" ]
+  ] [
+     fhir:code [ fhir:v "total-sets" ] ;
+     fhir:display [ fhir:v "Total Sets" ] ;
+     fhir:definition [ fhir:v "Total number of working sets performed" ]
+  ] [
+     fhir:code [ fhir:v "total-reps" ] ;
+     fhir:display [ fhir:v "Total Repetitions" ] ;
+     fhir:definition [ fhir:v "Sum of all repetitions across all sets" ]
+  ] [
+     fhir:code [ fhir:v "volume-load" ] ;
+     fhir:display [ fhir:v "Volume Load" ] ;
+     fhir:definition [ fhir:v "Total volume = sets x reps x load" ]
+  ] [
+     fhir:code [ fhir:v "avg-intensity" ] ;
+     fhir:display [ fhir:v "Average Intensity" ] ;
+     fhir:definition [ fhir:v "Mean percentage of 1RM across all working sets" ]
+  ] [
+     fhir:code [ fhir:v "tested-1rm" ] ;
+     fhir:display [ fhir:v "Tested 1RM" ] ;
+     fhir:definition [ fhir:v "Directly tested one repetition maximum" ]
+  ] [
+     fhir:code [ fhir:v "est-1rm" ] ;
+     fhir:display [ fhir:v "Estimated 1RM" ] ;
+     fhir:definition [ fhir:v "One repetition maximum calculated from submaximal performance" ]
+  ] [
+     fhir:code [ fhir:v "est-method" ] ;
+     fhir:display [ fhir:v "1RM Estimation Method" ] ;
+     fhir:definition [ fhir:v "Formula or method used to estimate 1RM" ]
+  ] [
+     fhir:code [ fhir:v "session-rpe" ] ;
+     fhir:display [ fhir:v "Session RPE" ] ;
+     fhir:definition [ fhir:v "Overall rating of perceived exertion for the session" ]
+  ] [
+     fhir:code [ fhir:v "session-load" ] ;
+     fhir:display [ fhir:v "Session Training Load" ] ;
+     fhir:definition [ fhir:v "Session RPE x duration (sRPE method)" ]
+  ] [
+     fhir:code [ fhir:v "training-type" ] ;
+     fhir:display [ fhir:v "Training Type" ] ;
+     fhir:definition [ fhir:v "Primary training goal of the session" ]
+  ] [
+     fhir:code [ fhir:v "split-type" ] ;
+     fhir:display [ fhir:v "Split Type" ] ;
+     fhir:definition [ fhir:v "Training split/body part organization" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-activity-type-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cycling-activity-type-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem cycling-activity-type-cs</b></p><a name=\"cycling-activity-type-cs\"> </a><a name=\"hccycling-activity-type-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">road<a name=\"cycling-activity-type-cs-road\"> </a></td><td>Road Cycling</td><td>Road bike riding</td></tr><tr><td style=\"white-space:nowrap\">mtb<a name=\"cycling-activity-type-cs-mtb\"> </a></td><td>Mountain Biking</td><td>Off-road mountain biking</td></tr><tr><td style=\"white-space:nowrap\">gravel<a name=\"cycling-activity-type-cs-gravel\"> </a></td><td>Gravel Riding</td><td>Mixed surface gravel riding</td></tr><tr><td style=\"white-space:nowrap\">tt<a name=\"cycling-activity-type-cs-tt\"> </a></td><td>Time Trial</td><td>Individual time trial</td></tr><tr><td style=\"white-space:nowrap\">indoor<a name=\"cycling-activity-type-cs-indoor\"> </a></td><td>Indoor Training</td><td>Stationary trainer indoors</td></tr><tr><td style=\"white-space:nowrap\">virtual<a name=\"cycling-activity-type-cs-virtual\"> </a></td><td>Virtual Cycling</td><td>Virtual cycling platform (Zwift, TrainerRoad)</td></tr><tr><td style=\"white-space:nowrap\">commute<a name=\"cycling-activity-type-cs-commute\"> </a></td><td>Commuting</td><td>Cycling commute</td></tr><tr><td style=\"white-space:nowrap\">cx<a name=\"cycling-activity-type-cs-cx\"> </a></td><td>Cyclocross</td><td>Cyclocross racing/training</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-activity-type-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "CyclingActivityTypeCS"] ; # 
+  fhir:title [ fhir:v "Cycling Activity Type CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Types of cycling activities"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "road" ] ;
+     fhir:display [ fhir:v "Road Cycling" ] ;
+     fhir:definition [ fhir:v "Road bike riding" ]
+  ] [
+     fhir:code [ fhir:v "mtb" ] ;
+     fhir:display [ fhir:v "Mountain Biking" ] ;
+     fhir:definition [ fhir:v "Off-road mountain biking" ]
+  ] [
+     fhir:code [ fhir:v "gravel" ] ;
+     fhir:display [ fhir:v "Gravel Riding" ] ;
+     fhir:definition [ fhir:v "Mixed surface gravel riding" ]
+  ] [
+     fhir:code [ fhir:v "tt" ] ;
+     fhir:display [ fhir:v "Time Trial" ] ;
+     fhir:definition [ fhir:v "Individual time trial" ]
+  ] [
+     fhir:code [ fhir:v "indoor" ] ;
+     fhir:display [ fhir:v "Indoor Training" ] ;
+     fhir:definition [ fhir:v "Stationary trainer indoors" ]
+  ] [
+     fhir:code [ fhir:v "virtual" ] ;
+     fhir:display [ fhir:v "Virtual Cycling" ] ;
+     fhir:definition [ fhir:v "Virtual cycling platform (Zwift, TrainerRoad)" ]
+  ] [
+     fhir:code [ fhir:v "commute" ] ;
+     fhir:display [ fhir:v "Commuting" ] ;
+     fhir:definition [ fhir:v "Cycling commute" ]
+  ] [
+     fhir:code [ fhir:v "cx" ] ;
+     fhir:display [ fhir:v "Cyclocross" ] ;
+     fhir:definition [ fhir:v "Cyclocross racing/training" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

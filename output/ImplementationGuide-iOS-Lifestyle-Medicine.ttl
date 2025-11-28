@@ -19,7 +19,7 @@
   fhir:title [ fhir:v "iOS Lifestyle Medicine Implementation Guide"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v false] ; # 
-  fhir:date [ fhir:v "2025-11-27T17:03:01+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2025-11-28T14:35:57+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
@@ -878,6 +878,40 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/activity-balance-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/activity-balance-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Activity Balance CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/activity-balance-vs> ;
+         fhir:reference [ fhir:v "ValueSet/activity-balance-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Activity Balance ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Device"
          ]
        ] ) ;
@@ -1383,6 +1417,40 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/baseline-comparison-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/baseline-comparison-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Baseline Comparison CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/baseline-comparison-vs> ;
+         fhir:reference [ fhir:v "ValueSet/baseline-comparison-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Baseline Comparison ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Device"
          ]
        ] ) ;
@@ -1855,6 +1923,186 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-glucose-interpretation-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cgm-glucose-interpretation-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Glucose Interpretation CodeSystem" ] ;
+       fhir:description [ fhir:v "Categorical interpretation of glucose values" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-interpretation-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cgm-glucose-interpretation-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Glucose Interpretation ValueSet" ] ;
+       fhir:description [ fhir:v "Categorical interpretation of glucose values per International Consensus" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-unit-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cgm-glucose-unit-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Glucose Unit ValueSet" ] ;
+       fhir:description [ fhir:v "Units for glucose measurement" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-insertion-site-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cgm-insertion-site-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Insertion Site CodeSystem" ] ;
+       fhir:description [ fhir:v "Body sites for CGM sensor insertion" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-insertion-site-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cgm-insertion-site-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Insertion Site ValueSet" ] ;
+       fhir:description [ fhir:v "Body sites for CGM sensor insertion" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cgm-metrics-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Metrics CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem for continuous glucose monitoring metrics" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-system-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cgm-system-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM System CodeSystem" ] ;
+       fhir:description [ fhir:v "CGM devices and systems" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-system-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cgm-system-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM System ValueSet" ] ;
+       fhir:description [ fhir:v "CGM devices and systems" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-trend-arrow-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cgm-trend-arrow-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Trend Arrow CodeSystem" ] ;
+       fhir:description [ fhir:v "Direction and rate of glucose change" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-trend-arrow-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cgm-trend-arrow-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CGM Trend Arrow ValueSet" ] ;
+       fhir:description [ fhir:v "Direction and rate of glucose change" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Observation"
          ]
        ] ) ;
@@ -1964,6 +2212,92 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cgm-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/cgm-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Continuous Glucose Monitoring (CGM) Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording continuous glucose monitoring data from consumer and medical-grade CGM devices. Supports real-time glucose, trend arrows, Time in Range (TIR), and glycemic variability metrics per International Consensus (Battelino 2019). Aligned with openEHR archetype blood_glucose_cgm.v0." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-category-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/crf-category-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CRF Category CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/crf-category-vs> ;
+         fhir:reference [ fhir:v "ValueSet/crf-category-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CRF Category ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-standard-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/crf-standard-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CRF Standard CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/crf-standard-vs> ;
+         fhir:reference [ fhir:v "ValueSet/crf-standard-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CRF Standard ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Observation"
          ]
        ] ) ;
@@ -2015,6 +2349,148 @@
          a fhir:canonical ;
          fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation"^^xsd:anyURI ;
          fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tobacco-use-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cv-risk-category-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cv-risk-category-cs" ]
+       ] ;
+       fhir:name [ fhir:v "CV Risk Category CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cv-risk-category-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cv-risk-category-vs" ]
+       ] ;
+       fhir:name [ fhir:v "CV Risk Category ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-activity-type-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cycling-activity-type-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Cycling Activity Type CodeSystem" ] ;
+       fhir:description [ fhir:v "Types of cycling activities" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cycling-activity-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cycling-activity-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Cycling Activity Type ValueSet" ] ;
+       fhir:description [ fhir:v "Types of cycling activities" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cycling-dynamics-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/cycling-dynamics-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Cycling Dynamics Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording cycling dynamics and power metrics from wearable devices, cycling computers, and smart trainers. Supports FTP, TSS, power zones, and pedaling dynamics aligned with openEHR archetype cycling_dynamics.v0." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cycling-metrics-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Cycling Metrics CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem for cycling dynamics and power metrics from cycling computers and smart trainers." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-training-zone-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/cycling-training-zone-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Cycling Training Zone CodeSystem" ] ;
+       fhir:description [ fhir:v "Coggan power-based training zones" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cycling-training-zone-vs> ;
+         fhir:reference [ fhir:v "ValueSet/cycling-training-zone-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Cycling Training Zone ValueSet" ] ;
+       fhir:description [ fhir:v "Coggan power-based training zones for cycling (7-zone model)" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [
@@ -2763,6 +3239,42 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exercise-category-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/exercise-category-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Exercise Category CodeSystem" ] ;
+       fhir:description [ fhir:v "Strength exercise categories" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/exercise-category-vs> ;
+         fhir:reference [ fhir:v "ValueSet/exercise-category-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Exercise Category ValueSet" ] ;
+       fhir:description [ fhir:v "Strength exercise categories" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs> ;
          fhir:reference [ fhir:v "CodeSystem/exposure-conditions-cs" ]
        ] ;
@@ -2903,6 +3415,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/fatigue-assessment-fss> ;
+         fhir:reference [ fhir:v "Questionnaire/fatigue-assessment-fss" ]
+       ] ;
+       fhir:name [ fhir:v "Fatigue Assessment Questionnaire (FSS)" ] ;
+       fhir:description [ fhir:v "The Fatigue Severity Scale (FSS) is a self-report scale that measures the severity of fatigue and its effect on activities and lifestyle. It is widely used in clinical research for various conditions including chronic fatigue syndrome, multiple sclerosis, and systemic lupus erythematosus." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Observation"
          ]
        ] ) ;
@@ -2985,6 +3515,42 @@
        ] ;
        fhir:name [ fhir:v "FHIR Resource to openEHR Archetype Mapping" ] ;
        fhir:description [ fhir:v "Maps FHIR R4 resources to custom openEHR archetypes for wearable lifestyle medicine data. Enables data flow from FHIR servers to openEHR CDRs." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/footstrike-type-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/footstrike-type-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Footstrike Type CodeSystem" ] ;
+       fhir:description [ fhir:v "Running footstrike patterns" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/footstrike-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/footstrike-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Footstrike Type ValueSet" ] ;
+       fhir:description [ fhir:v "Running footstrike patterns" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -3214,6 +3780,58 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hrmax-method-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/hrmax-method-cs" ]
+       ] ;
+       fhir:name [ fhir:v "HRmax Method CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/hrmax-method-vs> ;
+         fhir:reference [ fhir:v "ValueSet/hrmax-method-vs" ]
+       ] ;
+       fhir:name [ fhir:v "HRmax Method ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ConceptMap"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapHRVToOMOP> ;
+         fhir:reference [ fhir:v "ConceptMap/ConceptMapHRVToOMOP" ]
+       ] ;
+       fhir:name [ fhir:v "HRV LOINC to OMOP CDM Mapping" ] ;
+       fhir:description [ fhir:v "Maps HRV metrics from LOINC codes to OMOP CDM concept_ids for ETL transformation pipelines. Verified against OHDSI Athena vocabulary. Critical finding from RS4 systematic review: ZERO documented implementations of HRV-OMOP transformation in 354 papers - this ConceptMap addresses that gap." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Observation"
          ]
        ] ) ;
@@ -3409,6 +4027,42 @@
        fhir:example [
          a fhir:boolean ;
          fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/injury-risk-level-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/injury-risk-level-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Injury Risk Level CodeSystem" ] ;
+       fhir:description [ fhir:v "Running injury risk levels" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/injury-risk-level-vs> ;
+         fhir:reference [ fhir:v "ValueSet/injury-risk-level-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Injury Risk Level ValueSet" ] ;
+       fhir:description [ fhir:v "Running injury risk levels based on biomechanics" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [
@@ -4825,6 +5479,42 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/muscle-group-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/muscle-group-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Muscle Group CodeSystem" ] ;
+       fhir:description [ fhir:v "Primary muscle groups" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/muscle-group-vs> ;
+         fhir:reference [ fhir:v "ValueSet/muscle-group-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Muscle Group ValueSet" ] ;
+       fhir:description [ fhir:v "Primary muscle groups for strength training" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Observation"
          ]
        ] ) ;
@@ -5244,6 +5934,24 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/physical-activity-ipaq-short> ;
+         fhir:reference [ fhir:v "Questionnaire/physical-activity-ipaq-short" ]
+       ] ;
+       fhir:name [ fhir:v "Physical Activity Questionnaire (IPAQ-Short)" ] ;
+       fhir:description [ fhir:v "The International Physical Activity Questionnaire (IPAQ) Short Form measures health-related physical activity over the last 7 days. It assesses vigorous and moderate physical activities, walking, and sitting time." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ValueSet"
          ]
        ] ) ;
@@ -5388,6 +6096,108 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/readiness-category-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/readiness-category-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Readiness Category CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/readiness-category-vs> ;
+         fhir:reference [ fhir:v "ValueSet/readiness-category-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Readiness Category ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recommended-activity-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/recommended-activity-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Recommended Activity CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/recommended-activity-vs> ;
+         fhir:reference [ fhir:v "ValueSet/recommended-activity-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Recommended Activity ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-debt-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/recovery-debt-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Recovery Debt CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/recovery-debt-vs> ;
+         fhir:reference [ fhir:v "ValueSet/recovery-debt-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Recovery Debt ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:extension"
          ]
        ] ) ;
@@ -5397,6 +6207,42 @@
        ] ;
        fhir:name [ fhir:v "Recovery Efficiency Extension" ] ;
        fhir:description [ fhir:v "Measure of how efficiently the body recovers from stress or exertion" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/recovery-metrics-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Recovery Metrics CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem for recovery readiness and training load metrics" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-readiness-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/recovery-readiness-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Recovery Readiness Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording composite recovery and readiness scores from wearable devices including Oura Readiness, WHOOP Recovery, Garmin Body Battery, and similar metrics. Supports strain-recovery balance, training readiness, and contributing factors aligned with openEHR archetype recovery_readiness.v0." ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -5658,6 +6504,78 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/running-dynamics-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/running-dynamics-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Running Dynamics Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording running form and biomechanical metrics from wearable devices and running pods. Supports ground contact time, vertical oscillation, cadence, stride length, and running power aligned with openEHR archetype running_dynamics.v0." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/running-metrics-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Running Metrics CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem for running dynamics and biomechanical metrics from wearable devices." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/set-type-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/set-type-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Set Type CodeSystem" ] ;
+       fhir:description [ fhir:v "Strength training set types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/set-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/set-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Set Type ValueSet" ] ;
+       fhir:description [ fhir:v "Strength training set types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ConceptMap"
          ]
        ] ) ;
@@ -5721,6 +6639,24 @@
        ] ;
        fhir:name [ fhir:v "Sleep Quality Extension" ] ;
        fhir:description [ fhir:v "Extension for recording subjective activity quality" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/sleep-quality-psqi> ;
+         fhir:reference [ fhir:v "Questionnaire/sleep-quality-psqi" ]
+       ] ;
+       fhir:name [ fhir:v "Sleep Quality Questionnaire (PSQI-Based)" ] ;
+       fhir:description [ fhir:v "Questionnaire for assessing sleep quality based on the Pittsburgh Sleep Quality Index. Measures subjective sleep quality, sleep latency, sleep duration, habitual sleep efficiency, sleep disturbances, use of sleeping medication, and daytime dysfunction over the past month." ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -6142,6 +7078,132 @@
          a fhir:canonical ;
          fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-operation"^^xsd:anyURI ;
          fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-operation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-equipment-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/strength-equipment-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Strength Equipment CodeSystem" ] ;
+       fhir:description [ fhir:v "Strength training equipment types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/strength-equipment-vs> ;
+         fhir:reference [ fhir:v "ValueSet/strength-equipment-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Strength Equipment ValueSet" ] ;
+       fhir:description [ fhir:v "Strength training equipment types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-training-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/strength-training-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Strength Training CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem for strength training metrics from gym equipment and VBT devices." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/strength-training-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/strength-training-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Strength Training Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording strength training metrics from wearable devices, velocity-based training systems, and gym equipment. Supports sets, reps, load, velocity-based metrics, and training load aligned with openEHR archetype strength_training.v0." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-training-type-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/strength-training-type-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Strength Training Type CodeSystem" ] ;
+       fhir:description [ fhir:v "Strength training goal types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/strength-training-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/strength-training-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Strength Training Type ValueSet" ] ;
+       fhir:description [ fhir:v "Strength training goal types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/stress-assessment-pss10> ;
+         fhir:reference [ fhir:v "Questionnaire/stress-assessment-pss10" ]
+       ] ;
+       fhir:name [ fhir:v "Stress Assessment Questionnaire (PSS-10)" ] ;
+       fhir:description [ fhir:v "The Perceived Stress Scale (PSS-10) is the most widely used psychological instrument for measuring perception of stress. It measures the degree to which situations in life are appraised as stressful during the past month." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
        ]
      ] [
        fhir:extension ( [
@@ -6582,6 +7644,114 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-environment-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/swimming-environment-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Swimming Environment CodeSystem" ] ;
+       fhir:description [ fhir:v "Swimming venue types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/swimming-environment-vs> ;
+         fhir:reference [ fhir:v "ValueSet/swimming-environment-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Swimming Environment ValueSet" ] ;
+       fhir:description [ fhir:v "Swimming venue types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/swimming-metrics-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Swimming Metrics CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem for swimming performance metrics from wearable devices." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/swimming-metrics-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/swimming-metrics-observation" ]
+       ] ;
+       fhir:name [ fhir:v "Swimming Metrics Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording swimming performance metrics from wearable devices. Supports SWOLF score, stroke metrics, lap analysis, and pace aligned with openEHR archetype swimming_metrics.v0." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/swimming-stroke-type-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Swimming Stroke Type CodeSystem" ] ;
+       fhir:description [ fhir:v "Swimming stroke types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/swimming-stroke-type-vs> ;
+         fhir:reference [ fhir:v "ValueSet/swimming-stroke-type-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Swimming Stroke Type ValueSet" ] ;
+       fhir:description [ fhir:v "Swimming stroke types" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -6818,6 +7988,74 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/training-status-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/training-status-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Training Status CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/training-status-vs> ;
+         fhir:reference [ fhir:v "ValueSet/training-status-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Training Status ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/trend-direction-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/trend-direction-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Trend Direction CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/trend-direction-vs> ;
+         fhir:reference [ fhir:v "ValueSet/trend-direction-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Trend Direction ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
@@ -6873,6 +8111,40 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/validation-status-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/validation-status-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Validation Status CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/validation-status-vs> ;
+         fhir:reference [ fhir:v "ValueSet/validation-status-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Validation Status ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "ConceptMap"
          ]
        ] ) ;
@@ -6882,6 +8154,161 @@
        ] ;
        fhir:name [ fhir:v "Vendor Proprietary Codes to LOINC Mapping" ] ;
        fhir:description [ fhir:v "Maps wearable device vendor codes to equivalent LOINC codes for semantic interoperability. Addresses critical gap: none of the 11 major vendors use LOINC codes natively. Enables $translate operations for vendor data normalization." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/vo2max-estimation-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/vo2max-estimation-observation" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Estimation Observation Profile" ] ;
+       fhir:description [ fhir:v "Profile for recording estimated maximal oxygen uptake (VO2max) from wearable devices, fitness tests, and predictive algorithms. Supports cardiorespiratory fitness (CRF) classification, fitness age, and trend analysis aligned with openEHR archetype vo2max_estimation.v0." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-method-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/vo2max-method-cs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Method CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-method-vs> ;
+         fhir:reference [ fhir:v "ValueSet/vo2max-method-vs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Method ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-metrics-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/vo2max-metrics-cs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Metrics CodeSystem" ] ;
+       fhir:description [ fhir:v "CodeSystem for VO2max estimation metrics" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-protocol-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/vo2max-protocol-cs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Protocol CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-protocol-vs> ;
+         fhir:reference [ fhir:v "ValueSet/vo2max-protocol-vs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Protocol ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-trend-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/vo2max-trend-cs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Trend CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-trend-vs> ;
+         fhir:reference [ fhir:v "ValueSet/vo2max-trend-vs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Trend ValueSet" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-unit-vs> ;
+         fhir:reference [ fhir:v "ValueSet/vo2max-unit-vs" ]
+       ] ;
+       fhir:name [ fhir:v "VO2max Unit ValueSet" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -7028,6 +8455,40 @@
        ] ;
        fhir:name [ fhir:v "Wearable Vendor API to openEHR Archetype Mapping" ] ;
        fhir:description [ fhir:v "Maps proprietary wearable vendor API data types (Apple HealthKit, Fitbit, Oura, Garmin, Polar) to openEHR archetypes for standardized clinical data capture." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-vendor-cs> ;
+         fhir:reference [ fhir:v "CodeSystem/wearable-vendor-cs" ]
+       ] ;
+       fhir:name [ fhir:v "Wearable Vendor CodeSystem" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/wearable-vendor-vs> ;
+         fhir:reference [ fhir:v "ValueSet/wearable-vendor-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Wearable Vendor ValueSet" ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -7331,6 +8792,20 @@
            fhir:v "practitioner-identifiers.html"^^xsd:anyURI
          ] ;
          fhir:title [ fhir:v "Practitioner Identifiers" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:url ;
+             fhir:v "privacy.html"^^xsd:anyURI
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:url ;
+           fhir:v "privacy.html"^^xsd:anyURI
+         ] ;
+         fhir:title [ fhir:v "Privacy" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
