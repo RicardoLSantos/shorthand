@@ -444,6 +444,10 @@ definition
                         include
                             archetype_id/value matches {/.*/}
                     }
+                    allow_archetype CLUSTER[at0150] occurrences matches {0..1} matches {    -- Data quality (RS6)
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v.*/}
+                    }
                     CLUSTER[at0120] occurrences matches {0..1} matches {    -- Algorithm metadata (RS6)
                         items cardinality matches {1..*; unordered} matches {
                             ELEMENT[at0121] occurrences matches {0..1} matches {    -- Algorithm name
@@ -663,6 +667,10 @@ terminology
             ["at0039"] = <
                 text = <"24-hour measurement">
                 description = <"HRV metrics over 24-hour period (Holter).">
+            >
+            ["at0150"] = <
+                text = <"Data quality">
+                description = <"Slot for data quality indicator cluster. RS6 requirement: 55% adoption in literature, 30% gap between adoption and importance. Critical for clinical use filtering.">
             >
             ["at0050"] = <
                 text = <"FFT">

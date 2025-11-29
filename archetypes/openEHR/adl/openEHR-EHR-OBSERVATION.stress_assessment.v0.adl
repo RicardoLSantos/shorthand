@@ -624,6 +624,10 @@ definition
                         include
                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v.*/}
                     }
+                    allow_archetype CLUSTER[at0380] occurrences matches {0..1} matches {    -- Data quality (RS6)
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v.*/}
+                    }
                     ELEMENT[at0118] occurrences matches {0..1} matches {    -- Validation status (RS6)
                         value matches {
                             DV_CODED_TEXT matches {
@@ -1019,6 +1023,10 @@ terminology
                 ["at371"] = <text = <"Research validated">; description = <"Algorithm validated in research studies.">>
                 ["at372"] = <text = <"Vendor proprietary">; description = <"Vendor proprietary algorithm, validation unknown.">>
                 ["at373"] = <text = <"Not validated">; description = <"Algorithm not validated against gold standard.">>
+                ["at0380"] = <
+                    text = <"Data quality">
+                    description = <"Slot for data quality indicator cluster. RS6: 55% adoption, critical for filtering unreliable stress assessment data.">
+                >
             >
         >
     >

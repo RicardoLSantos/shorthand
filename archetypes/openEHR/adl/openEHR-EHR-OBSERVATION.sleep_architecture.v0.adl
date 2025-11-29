@@ -302,6 +302,10 @@ definition
                         include
                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v.*/}
                     }
+                    allow_archetype CLUSTER[at0097] occurrences matches {0..1} matches {    -- Data quality (RS6)
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v.*/}
+                    }
                     CLUSTER[at0090] occurrences matches {0..1} matches {    -- Algorithm metadata (RS6)
                         items cardinality matches {1..*; unordered} matches {
                             ELEMENT[at0091] occurrences matches {0..1} matches {    -- Algorithm name
@@ -566,6 +570,10 @@ terminology
             ["at0096"] = <
                 text = <"Cross-device comparison caveat">
                 description = <"RS6 warning: Vendor-defined stage labels and opaque algorithms produce non-comparable stage definitions across devices. Document specific comparison limitations.">
+            >
+            ["at0097"] = <
+                text = <"Data quality">
+                description = <"Slot for data quality indicator cluster. RS6: 55% adoption, critical for filtering unreliable sleep staging data.">
             >
             ["at0100"] = <
                 text = <"Nightly sleep">
