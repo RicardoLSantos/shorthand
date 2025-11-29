@@ -1,6 +1,19 @@
 // ====== Perfil de Provenance para PGHD ======
 // Criado: 2025-11-25
 // MIE 2026 Promise: Section 4.3 Privacy and Security
+//
+// Bibliographic References:
+// - HL7 FHIR Provenance Resource: https://hl7.org/fhir/R4/provenance.html
+// - ISO 21089:2018 Health informatics - Trusted end-to-end information flows
+//   https://www.iso.org/standard/69898.html
+// - W3C PROV-DM: The PROV Data Model (https://www.w3.org/TR/prov-dm/)
+// - Bayoumy2021Wearables: Smart wearable devices in cardiovascular care (Nature Reviews Cardiology)
+//   DOI: 10.1038/s41569-021-00522-7
+//
+// FHIR Terminology References:
+// - http://terminology.hl7.org/CodeSystem/provenance-participant-type
+// - http://terminology.hl7.org/CodeSystem/v3-DataOperation
+// - http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle
 
 Profile: PGHDProvenance
 Parent: Provenance

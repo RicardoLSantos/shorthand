@@ -4,6 +4,28 @@
 // Created: 2025-11-25
 // Purpose: 6th Pillar of Lifestyle Medicine - Avoidance of Risky Substances
 // Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
+//
+// Bibliographic References:
+// - ACLM Lifestyle Medicine: Rippe JM. Am J Lifestyle Med 2022: Great Progress, Enormous Challenges
+//   DOI: 10.1177/15598276211052843 (verified CrossRef 2025-11-29)
+// - US Core Smoking Status: HL7 US Core Implementation Guide v6.1.0
+//   https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html
+// - AUDIT-C Screening: Bush K, et al. The AUDIT alcohol consumption questions (Arch Intern Med 1998)
+//   DOI: 10.1001/archinte.158.16.1789
+// - IPS Tobacco Use: International Patient Summary IG
+//   https://hl7.org/fhir/uv/ips/
+//
+// LOINC Codes (ALL verified at loinc.org on 2025-11-29):
+// - 72166-2: Tobacco smoking status ✓
+// - 8664-5: Cigarettes smoked total (pack per year) - Reported ✓
+// - 74010-0: Date quit tobacco smoking ✓
+// - 64218-1: How many cigarettes do you smoke per day now [PhenX] ✓
+// - 81228-9: Tobacco product ✓
+// - 11331-6: History of Alcohol use ✓
+// - 74013-4: Alcoholic drinks per day ✓
+// - 68518-0: How often do you have a drink containing alcohol ✓
+// - 75626-2: Alcohol Use Disorder Identification Test - Consumption [AUDIT-C] ✓
+// - 80489-8: Caffeine intake 24 hour Estimated ✓
 
 // =============================================================================
 // TOBACCO USE PROFILE
