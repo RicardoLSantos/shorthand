@@ -301,6 +301,7 @@ Title: "CGM Glucose Interpretation CodeSystem"
 Description: "Categorical interpretation of glucose values"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-glucose-interpretation-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #severe-hypo "Severe Hypoglycemia" "<54 mg/dL (<3.0 mmol/L)"
@@ -316,6 +317,7 @@ Title: "CGM Trend Arrow CodeSystem"
 Description: "Direction and rate of glucose change"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-trend-arrow-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #falling-rapidly "Falling Rapidly" ">3 mg/dL/min downward"
@@ -334,6 +336,7 @@ Title: "CGM System CodeSystem"
 Description: "CGM devices and systems"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-system-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 // Medical-grade
@@ -360,6 +363,7 @@ Title: "CGM Insertion Site CodeSystem"
 Description: "Body sites for CGM sensor insertion"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-insertion-site-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #upper-arm "Upper Arm" "Back of upper arm"

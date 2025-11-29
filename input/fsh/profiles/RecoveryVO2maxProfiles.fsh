@@ -333,6 +333,7 @@ Title: "Recovery Metrics CodeSystem"
 Description: "CodeSystem for recovery readiness and training load metrics"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 
@@ -382,6 +383,7 @@ Title: "VO2max Metrics CodeSystem"
 Description: "CodeSystem for VO2max estimation metrics"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-metrics-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 
@@ -550,8 +552,10 @@ Title: "CV Risk Category ValueSet"
 CodeSystem: ReadinessCategoryCS
 Id: readiness-category-cs
 Title: "Readiness Category CodeSystem"
+Description: "Categories for interpreting recovery readiness scores from wearable devices"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/readiness-category-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #optimal "Optimal (85-100)" "Excellent recovery, ready for peak performance"
@@ -563,8 +567,10 @@ Title: "Readiness Category CodeSystem"
 CodeSystem: BaselineComparisonCS
 Id: baseline-comparison-cs
 Title: "Baseline Comparison CodeSystem"
+Description: "Codes for comparing current values to personal baseline"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/baseline-comparison-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #above "Above Baseline" "Currently above personal baseline"
@@ -574,8 +580,10 @@ Title: "Baseline Comparison CodeSystem"
 CodeSystem: TrendDirectionCS
 Id: trend-direction-cs
 Title: "Trend Direction CodeSystem"
+Description: "Codes for trend direction indicators"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/trend-direction-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #improving "Improving" "Readiness is improving"
@@ -585,8 +593,10 @@ Title: "Trend Direction CodeSystem"
 CodeSystem: ActivityBalanceCS
 Id: activity-balance-cs
 Title: "Activity Balance CodeSystem"
+Description: "Codes for activity and recovery balance status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/activity-balance-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #balanced "Well Balanced" "Activity and recovery well balanced"
@@ -597,8 +607,10 @@ Title: "Activity Balance CodeSystem"
 CodeSystem: RecoveryDebtCS
 Id: recovery-debt-cs
 Title: "Recovery Debt CodeSystem"
+Description: "Codes for accumulated recovery debt levels"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-debt-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #none "No Debt" "No accumulated recovery debt"
@@ -609,8 +621,10 @@ Title: "Recovery Debt CodeSystem"
 CodeSystem: TrainingStatusCS
 Id: training-status-cs
 Title: "Training Status CodeSystem"
+Description: "Codes for training status and fitness progression"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/training-status-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #peaking "Peaking" "In peak form, ideal for competition"
@@ -624,8 +638,10 @@ Title: "Training Status CodeSystem"
 CodeSystem: RecommendedActivityCS
 Id: recommended-activity-cs
 Title: "Recommended Activity CodeSystem"
+Description: "Codes for recommended activity intensity based on recovery status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recommended-activity-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #high-intensity "High Intensity" "Ready for high intensity training"
@@ -638,8 +654,10 @@ Title: "Recommended Activity CodeSystem"
 CodeSystem: WearableVendorCS
 Id: wearable-vendor-cs
 Title: "Wearable Vendor CodeSystem"
+Description: "Codes for wearable device manufacturers and vendors"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-vendor-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #oura "Oura" "Oura Ring"
@@ -657,8 +675,10 @@ Title: "Wearable Vendor CodeSystem"
 CodeSystem: CRFCategoryCS
 Id: crf-category-cs
 Title: "CRF Category CodeSystem"
+Description: "Cardiorespiratory fitness classification categories"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-category-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #very-poor "Very Poor" "Very poor CRF for age/sex"
@@ -673,8 +693,10 @@ Title: "CRF Category CodeSystem"
 CodeSystem: CRFStandardCS
 Id: crf-standard-cs
 Title: "CRF Standard CodeSystem"
+Description: "Standards and norms used for CRF classification"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-standard-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #acsm "ACSM" "American College of Sports Medicine"
@@ -688,8 +710,10 @@ Title: "CRF Standard CodeSystem"
 CodeSystem: VO2maxMethodCS
 Id: vo2max-method-cs
 Title: "VO2max Method CodeSystem"
+Description: "Methods for VO2max estimation and measurement"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-method-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #wearable "Wearable Algorithm" "Algorithm-based from wearable data"
@@ -702,8 +726,10 @@ Title: "VO2max Method CodeSystem"
 CodeSystem: VO2maxProtocolCS
 Id: vo2max-protocol-cs
 Title: "VO2max Protocol CodeSystem"
+Description: "Specific protocols and tests for VO2max estimation"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-protocol-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #garmin-firstbeat "Garmin FirstBeat" "Garmin FirstBeat analytics"
@@ -724,8 +750,10 @@ Title: "VO2max Protocol CodeSystem"
 CodeSystem: ValidationStatusCS
 Id: validation-status-cs
 Title: "Validation Status CodeSystem"
+Description: "Codes for scientific validation status of metrics"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/validation-status-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #clinical "Clinically Validated" "Validated in clinical studies"
@@ -737,8 +765,10 @@ Title: "Validation Status CodeSystem"
 CodeSystem: HRmaxMethodCS
 Id: hrmax-method-cs
 Title: "HRmax Method CodeSystem"
+Description: "Methods for determining maximum heart rate"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hrmax-method-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #measured "Measured" "Directly measured in maximal test"
@@ -751,8 +781,10 @@ Title: "HRmax Method CodeSystem"
 CodeSystem: VO2maxTrendCS
 Id: vo2max-trend-cs
 Title: "VO2max Trend CodeSystem"
+Description: "Codes for VO2max trend direction over time"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-trend-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #sig-improving "Significantly Improving" "Significantly improving"
@@ -765,8 +797,10 @@ Title: "VO2max Trend CodeSystem"
 CodeSystem: CVRiskCategoryCS
 Id: cv-risk-category-cs
 Title: "CV Risk Category CodeSystem"
+Description: "Cardiovascular risk categories based on CRF levels"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cv-risk-category-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #low "Low Risk" "Low cardiovascular risk based on CRF"

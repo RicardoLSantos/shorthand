@@ -141,6 +141,7 @@ Title: "Cycling Training Zone CodeSystem"
 Description: "Coggan power-based training zones"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-training-zone-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #zone1 "Zone 1 - Active Recovery" "<55% FTP - Active recovery, very easy"
@@ -158,6 +159,7 @@ Title: "Cycling Activity Type CodeSystem"
 Description: "Types of cycling activities"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-activity-type-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #road "Road Cycling" "Road bike riding"
@@ -176,6 +178,7 @@ Title: "Footstrike Type CodeSystem"
 Description: "Running footstrike patterns"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/footstrike-type-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #forefoot "Forefoot Strike" "Initial contact with forefoot"
@@ -190,6 +193,7 @@ Title: "Injury Risk Level CodeSystem"
 Description: "Running injury risk levels"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/injury-risk-level-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #low "Low Risk" "Low injury risk based on biomechanics"
@@ -204,6 +208,7 @@ Title: "Swimming Stroke Type CodeSystem"
 Description: "Swimming stroke types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #freestyle "Freestyle" "Front crawl stroke"
@@ -221,6 +226,7 @@ Title: "Swimming Environment CodeSystem"
 Description: "Swimming venue types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-environment-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #pool-25 "Pool (Short Course 25m)" "25 meter pool"
@@ -238,6 +244,7 @@ Title: "Exercise Category CodeSystem"
 Description: "Strength exercise categories"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exercise-category-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #compound-lower "Compound - Lower Body" "Multi-joint lower body (squat, deadlift)"
@@ -257,6 +264,7 @@ Title: "Muscle Group CodeSystem"
 Description: "Primary muscle groups"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/muscle-group-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #quadriceps "Quadriceps" "Front of thigh"
@@ -281,6 +289,7 @@ Title: "Strength Equipment CodeSystem"
 Description: "Strength training equipment types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-equipment-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #barbell "Barbell" "Olympic or standard barbell"
@@ -302,6 +311,7 @@ Title: "Set Type CodeSystem"
 Description: "Strength training set types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/set-type-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #warmup "Warm-up" "Warm-up set at reduced intensity"
@@ -321,6 +331,7 @@ Title: "Strength Training Type CodeSystem"
 Description: "Strength training goal types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/strength-training-type-cs"
 * ^status = #active
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 * #hypertrophy "Hypertrophy" "Muscle growth focus (moderate load, higher volume)"
