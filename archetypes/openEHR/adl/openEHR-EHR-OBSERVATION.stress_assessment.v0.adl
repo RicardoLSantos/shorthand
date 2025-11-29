@@ -624,6 +624,24 @@ definition
                         include
                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v.*/}
                     }
+                    ELEMENT[at0118] occurrences matches {0..1} matches {    -- Validation status (RS6)
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at370,    -- Clinically validated
+                                    at371,    -- Research validated
+                                    at372,    -- Vendor proprietary
+                                    at373]    -- Not validated
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0119] occurrences matches {0..1} matches {    -- Cross-device comparison caveat
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
                 }
             }
         }
@@ -989,6 +1007,18 @@ terminology
                 ["at363"] = <text = <"Questionnaire">; description = <"Validated questionnaire completion.">>
                 ["at364"] = <text = <"Hybrid">; description = <"Combination of methods.">>
                 ["at365"] = <text = <"Unknown">; description = <"Assessment method not specified.">>
+                ["at0118"] = <
+                    text = <"Validation status">
+                    description = <"Validation status of the stress algorithm. RS6 requirement: document algorithm validation against clinical gold standards.">
+                >
+                ["at0119"] = <
+                    text = <"Cross-device comparison caveat">
+                    description = <"RS6 warning: Vendor-specific stress algorithms use different inputs (HRV, EDA, activity) and produce non-comparable scores. Document specific comparison limitations.">
+                >
+                ["at370"] = <text = <"Clinically validated">; description = <"Algorithm validated in clinical studies.">>
+                ["at371"] = <text = <"Research validated">; description = <"Algorithm validated in research studies.">>
+                ["at372"] = <text = <"Vendor proprietary">; description = <"Vendor proprietary algorithm, validation unknown.">>
+                ["at373"] = <text = <"Not validated">; description = <"Algorithm not validated against gold standard.">>
             >
         >
     >

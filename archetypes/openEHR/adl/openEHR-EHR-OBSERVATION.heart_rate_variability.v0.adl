@@ -68,7 +68,7 @@ Do NOT compare values across different recording durations without normalization
     other_details = <
         ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
         ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
-        ["references"] = <"1. Task Force of the European Society of Cardiology and North American Society of Pacing and Electrophysiology. Heart rate variability: standards of measurement, physiological interpretation and clinical use. Circulation. 1996;93(5):1043-1065. DOI: 10.1161/01.CIR.93.5.1043. 2. Shaffer F, Ginsberg JP. An Overview of Heart Rate Variability Metrics and Norms. Front Public Health. 2017;5:258. DOI: 10.3389/fpubh.2017.00258. 3. Williams DP, Koenig J, Carnevali L, et al. Heart rate variability and inflammation: A meta-analysis of human studies. Brain Behav Immun. 2019;80:219-226. DOI: 10.1016/j.bbi.2019.03.009. 4. LOINC 80404-7: R-R interval.standard deviation (Heart rate variability). Created 2022-06-17. 5. Laborde S, Mosley E, Thayer JF. Heart Rate Variability and Cardiac Vagal Tone in Psychophysiological Research. Front Psychol. 2017;8:213. DOI: 10.3389/fpsyg.2017.00213.">
+        ["references"] = <"1. Task Force of the European Society of Cardiology and North American Society of Pacing and Electrophysiology. Heart rate variability: standards of measurement, physiological interpretation and clinical use. Circulation. 1996;93(5):1043-1065. DOI: 10.1161/01.CIR.93.5.1043. 2. Shaffer F, Ginsberg JP. An Overview of Heart Rate Variability Metrics and Norms. Front Public Health. 2017;5:258. DOI: 10.3389/fpubh.2017.00258. 3. Williams DP, Koenig J, Carnevali L, et al. Heart rate variability and inflammation: A meta-analysis of human studies. Brain Behav Immun. 2019;80:219-226. DOI: 10.1016/j.bbi.2019.03.009. PMID: 30872091. 4. LOINC 80404-7: R-R interval.standard deviation (Heart rate variability). Created 2022-06-17. 5. Laborde S, Mosley E, Thayer JF. Heart Rate Variability and Cardiac Vagal Tone in Psychophysiological Research. Front Psychol. 2017;8:213. DOI: 10.3389/fpsyg.2017.00213. 6. RS5 Systematic Review: GDL HRV-Inflammation Clinical Framework (n=452 papers, 2015-2025). Three-tier risk stratification thresholds derived from meta-analysis evidence. Santos RL, FMUP PhD Thesis 2025.">
         ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardolourencosantos@gmail.com">
         ["links"] = <"https://linktr.ee/ricardolsantos">
     >
@@ -444,6 +444,58 @@ definition
                         include
                             archetype_id/value matches {/.*/}
                     }
+                    CLUSTER[at0120] occurrences matches {0..1} matches {    -- Algorithm metadata (RS6)
+                        items cardinality matches {1..*; unordered} matches {
+                            ELEMENT[at0121] occurrences matches {0..1} matches {    -- Algorithm name
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0122] occurrences matches {0..1} matches {    -- Algorithm version
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0123] occurrences matches {0..1} matches {    -- Window duration
+                                value matches {
+                                    DV_DURATION matches {*}
+                                }
+                            }
+                            ELEMENT[at0124] occurrences matches {0..1} matches {    -- Epoch size
+                                value matches {
+                                    DV_DURATION matches {*}
+                                }
+                            }
+                            ELEMENT[at0125] occurrences matches {0..1} matches {    -- Preprocessing method
+                                value matches {
+                                    DV_CODED_TEXT matches {
+                                        defining_code matches {
+                                            [local::
+                                            at0130,    -- None
+                                            at0131,    -- Artifact rejection
+                                            at0132,    -- Cubic spline interpolation
+                                            at0133,    -- Detrending
+                                            at0134,    -- Filtering
+                                            at0135]    -- Multiple methods
+                                        }
+                                    }
+                                }
+                            }
+                            ELEMENT[at0126] occurrences matches {0..1} matches {    -- Validation status
+                                value matches {
+                                    DV_CODED_TEXT matches {
+                                        defining_code matches {
+                                            [local::
+                                            at0140,    -- Clinically validated
+                                            at0141,    -- Research validated
+                                            at0142,    -- Vendor proprietary
+                                            at0143]    -- Not validated
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -470,11 +522,11 @@ terminology
             >
             ["at0004"] = <
                 text = <"SDNN">
-                description = <"Standard deviation of all NN intervals. Overall HRV metric. LOINC 80404-7.">
+                description = <"Standard deviation of all NN intervals. Overall HRV metric. LOINC 80404-7. Clinical thresholds (RS5, n=452): LOW risk ≥70ms, MODERATE risk 50-69ms, HIGH risk <50ms. HIGH risk threshold (<50ms) associated with elevated hs-CRP (>3mg/L) indicates cardiovascular/inflammatory risk requiring specialist referral. Reference: Williams 2019 meta-analysis (DOI: 10.1016/j.bbi.2019.03.009).">
             >
             ["at0005"] = <
                 text = <"RMSSD">
-                description = <"Root mean square of successive differences. Primary parasympathetic marker. SD1 x sqrt(2) = RMSSD.">
+                description = <"Root mean square of successive differences. Primary parasympathetic marker. SD1 x sqrt(2) = RMSSD. Clinical thresholds (RS5, n=452): LOW risk ≥40ms, MODERATE risk 25-39ms, HIGH risk <25ms. Primary wearable metric (Apple Watch, Fitbit, Oura). No LOINC code assigned - use custom code with migration path. Reference: Williams 2019 meta-analysis.">
             >
             ["at0006"] = <
                 text = <"pNN50">
@@ -771,6 +823,74 @@ terminology
             ["at0119"] = <
                 text = <"Other">
                 description = <"Other vendor.">
+            >
+            ["at0120"] = <
+                text = <"Algorithm metadata">
+                description = <"Details about the algorithm used to calculate HRV metrics. RS6 requirement: 80% of papers require algorithm transparency.">
+            >
+            ["at0121"] = <
+                text = <"Algorithm name">
+                description = <"Name of the HRV calculation algorithm (e.g., Kubios Standard, Apple HRV Algorithm, Polar Beat Detection).">
+            >
+            ["at0122"] = <
+                text = <"Algorithm version">
+                description = <"Version of the algorithm used (e.g., v3.2.1, firmware 12.3).">
+            >
+            ["at0123"] = <
+                text = <"Window duration">
+                description = <"Total duration of the analysis window. CRITICAL: HRV values depend heavily on duration. Standard: 5 min short-term, 24h long-term.">
+            >
+            ["at0124"] = <
+                text = <"Epoch size">
+                description = <"Size of individual epochs within the window. Common: 30s for sleep, 5min for 24h recordings.">
+            >
+            ["at0125"] = <
+                text = <"Preprocessing method">
+                description = <"Preprocessing applied before HRV calculation.">
+            >
+            ["at0126"] = <
+                text = <"Validation status">
+                description = <"Validation status of the algorithm against gold standard (ECG).">
+            >
+            ["at0130"] = <
+                text = <"None">
+                description = <"No preprocessing applied.">
+            >
+            ["at0131"] = <
+                text = <"Artifact rejection">
+                description = <"Ectopic beats and artifacts removed.">
+            >
+            ["at0132"] = <
+                text = <"Cubic spline interpolation">
+                description = <"Missing beats interpolated with cubic spline.">
+            >
+            ["at0133"] = <
+                text = <"Detrending">
+                description = <"Signal detrended to remove drift.">
+            >
+            ["at0134"] = <
+                text = <"Filtering">
+                description = <"Bandpass or other filtering applied.">
+            >
+            ["at0135"] = <
+                text = <"Multiple methods">
+                description = <"Multiple preprocessing steps applied.">
+            >
+            ["at0140"] = <
+                text = <"Clinically validated">
+                description = <"Algorithm validated in clinical studies with ECG comparison.">
+            >
+            ["at0141"] = <
+                text = <"Research validated">
+                description = <"Algorithm validated in research studies.">
+            >
+            ["at0142"] = <
+                text = <"Vendor proprietary">
+                description = <"Vendor proprietary algorithm, validation unknown. RS6 warning: opaque algorithms limit cross-device comparison.">
+            >
+            ["at0143"] = <
+                text = <"Not validated">
+                description = <"Algorithm not validated against gold standard.">
             >
         >
     >

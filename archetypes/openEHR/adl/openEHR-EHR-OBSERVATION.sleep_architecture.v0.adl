@@ -302,6 +302,43 @@ definition
                         include
                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v.*/}
                     }
+                    CLUSTER[at0090] occurrences matches {0..1} matches {    -- Algorithm metadata (RS6)
+                        items cardinality matches {1..*; unordered} matches {
+                            ELEMENT[at0091] occurrences matches {0..1} matches {    -- Algorithm name
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0092] occurrences matches {0..1} matches {    -- Algorithm version
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0093] occurrences matches {0..1} matches {    -- Epoch duration
+                                value matches {
+                                    DV_DURATION matches {*}
+                                }
+                            }
+                            ELEMENT[at0094] occurrences matches {0..1} matches {    -- Training dataset
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0095] occurrences matches {0..1} matches {    -- PSG validation accuracy
+                                value matches {
+                                    DV_PROPORTION matches {
+                                        numerator matches {|0.0..100.0|}
+                                        type matches {2}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0096] occurrences matches {0..1} matches {    -- Cross-device comparison caveat
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -501,6 +538,34 @@ terminology
             ["at0084"] = <
                 text = <"Unknown">
                 description = <"Algorithm not specified.">
+            >
+            ["at0090"] = <
+                text = <"Algorithm metadata">
+                description = <"Details about the sleep staging algorithm. RS6 requirement: vendor-defined stage labels and opaque algorithms produce non-comparable definitions across devices.">
+            >
+            ["at0091"] = <
+                text = <"Algorithm name">
+                description = <"Name of the sleep staging algorithm (e.g., Fitbit Sleep Stages Algorithm v3.2, Oura Sleep Staging v2.0).">
+            >
+            ["at0092"] = <
+                text = <"Algorithm version">
+                description = <"Version of the sleep algorithm.">
+            >
+            ["at0093"] = <
+                text = <"Epoch duration">
+                description = <"Duration of individual epochs. AASM standard: 30 seconds. Some wearables use longer epochs.">
+            >
+            ["at0094"] = <
+                text = <"Training dataset">
+                description = <"Description of the dataset used to train the algorithm (e.g., 'PSG from 5000 healthy adults').">
+            >
+            ["at0095"] = <
+                text = <"PSG validation accuracy">
+                description = <"Agreement percentage with polysomnography gold standard. RS6: critical for cross-device comparison.">
+            >
+            ["at0096"] = <
+                text = <"Cross-device comparison caveat">
+                description = <"RS6 warning: Vendor-defined stage labels and opaque algorithms produce non-comparable stage definitions across devices. Document specific comparison limitations.">
             >
             ["at0100"] = <
                 text = <"Nightly sleep">
