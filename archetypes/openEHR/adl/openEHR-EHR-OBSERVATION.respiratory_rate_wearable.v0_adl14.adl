@@ -1,0 +1,656 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.respiratory_rate_wearable.v0
+
+concept
+	[at0000]	-- Respiratory Rate Wearable
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record respiratory rate measurements derived from consumer wearable devices using indirect methods such as PPG-based algorithms, accelerometer-based chest movement detection, or HRV-derived respiratory sinus arrhythmia analysis.">
+            use = <"Use to record respiratory rate data from wearable devices including:
+
+1. Resting Respiratory Rate: Measured during periods of low activity
+2. Sleep Respiratory Rate: Overnight average and trends
+3. Activity Respiratory Rate: During and post-exercise
+4. Continuous Monitoring: Time-series respiratory data
+
+Measurement Methods:
+- PPG-derived: Respiratory modulation of pulse waveform
+- Accelerometer-based: Chest/torso movement detection
+- HRV-derived: Respiratory sinus arrhythmia (RSA) analysis
+- Bioimpedance: Thoracic impedance changes (some devices)
+
+Key Clinical Applications:
+- Sleep apnea screening (elevated or irregular nocturnal RR)
+- COPD/asthma monitoring
+- COVID-19 respiratory deterioration detection
+- Fitness and recovery assessment
+- Anxiety/stress indication (elevated RR)
+
+Vendor Data Integration:
+- Apple Watch: Respiratory rate during sleep (watchOS 8+)
+- Fitbit: Breathing rate (Premium feature)
+- Garmin: Respiration rate (select models)
+- Oura Ring: Respiratory rate during sleep
+- Withings: Sleep Analyzer breathing disturbances
+- Whoop: Respiratory rate
+
+Normal Ranges:
+- Adults at rest: 12-20 breaths/min
+- During sleep: 10-16 breaths/min
+- During exercise: Up to 40-60 breaths/min
+
+Important Notes:
+- Wearable-derived RR is indirect estimation, not direct measurement
+- Accuracy varies significantly by device and algorithm
+- Motion artifact affects accuracy during activity
+- Best accuracy achieved during sleep or rest
+- Not for clinical diagnosis without confirmation">
+            keywords = <"respiratory rate", "breathing rate", "respiration", "breaths per minute", "RR", "sleep apnea", "COPD", "wearable", "PPG", "accelerometer", "RSA", "respiratory sinus arrhythmia">
+            misuse = <"Not to be used for:
+- Direct respiratory rate measurement (use OBSERVATION.respiration.v2)
+- Mechanical ventilation monitoring
+- Capnography/end-tidal CO2 measurement
+- Clinical diagnosis of respiratory conditions without confirmation
+- Critically ill patient monitoring">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"
+1. LOINC 9279-1: Respiratory rate
+2. Charlton PH, et al. Breathing Rate Estimation From the Electrocardiogram and Photoplethysmogram: A Review. IEEE Rev Biomed Eng. 2018;11:2-20.
+3. Natarajan A, et al. Assessment of physiological signs associated with COVID-19 measured using wearable devices. NPJ Digit Med. 2020;3:156.
+4. Massaroni C, et al. Contact-Based Methods for Measuring Respiratory Rate. Sensors. 2019;19(4):908.">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardolourencosantos@gmail.com">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Respiratory Rate Wearable
+        data matches {
+            HISTORY[at0001] matches {
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0004] occurrences matches {0..1} matches {    -- Respiratory rate
+                                        value matches {
+                                            DV_QUANTITY matches {
+                                                property matches {[openehr::382]}
+                                                units matches {"/min"}
+                                                magnitude matches {|0.0..100.0|}
+                                                precision matches {|1|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0005] occurrences matches {0..1} matches {    -- Rate interpretation
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at200,    -- Bradypnea (<12/min)
+                                                    at201,    -- Normal (12-20/min)
+                                                    at202,    -- Tachypnea (>20/min)
+                                                    at203,    -- Severely elevated (>30/min)
+                                                    at204]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Continuous monitoring summary
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Mean respiratory rate
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|0.0..100.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Minimum respiratory rate
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|0.0..100.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Maximum respiratory rate
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|0.0..100.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Standard deviation
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|0.0..30.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {    -- Coefficient of variation
+                                                value matches {
+                                                    DV_PROPORTION matches {
+                                                        numerator matches {|0.0..100.0|}
+                                                        type matches {2}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Sleep respiratory metrics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Sleep average respiratory rate
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|0.0..60.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Breathing disturbance index
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/h"}
+                                                        magnitude matches {|0.0..100.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- Breathing disturbance interpretation
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at210,    -- Normal (<5/h)
+                                                            at211,    -- Mild (5-15/h)
+                                                            at212,    -- Moderate (15-30/h)
+                                                            at213,    -- Severe (>30/h)
+                                                            at214]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Breathing irregularity events
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|>=0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Time with irregular breathing
+                                                value matches {
+                                                    DV_DURATION matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Trend analysis
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- 7-day trend
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at220,    -- Decreasing
+                                                            at221,    -- Stable
+                                                            at222,    -- Increasing
+                                                            at223]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Baseline deviation
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|-20.0..20.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- Personal baseline
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::382]}
+                                                        units matches {"/min"}
+                                                        magnitude matches {|0.0..30.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0040] occurrences matches {0..1} matches {    -- Clinical interpretation
+                                        value matches {
+                                            DV_TEXT
+                                        }
+                                    }
+                                    ELEMENT[at0041] occurrences matches {0..1} matches {    -- Comment
+                                        value matches {
+                                            DV_TEXT
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0050] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v.*/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0060] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0061] occurrences matches {0..1} matches {    -- Activity state
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at230,    -- Resting
+                                                    at231,    -- Sleep
+                                                    at232,    -- Light activity
+                                                    at233,    -- Moderate activity
+                                                    at234,    -- Vigorous activity
+                                                    at235,    -- Post-exercise recovery
+                                                    at236]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0062] occurrences matches {0..1} matches {    -- Body position
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at240,    -- Sitting
+                                                    at241,    -- Standing
+                                                    at242,    -- Lying supine
+                                                    at243,    -- Lying prone
+                                                    at244,    -- Lying lateral
+                                                    at245]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0063] occurrences matches {0..1} matches {    -- Breathing pattern
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at250,    -- Normal/regular
+                                                    at251,    -- Irregular
+                                                    at252,    -- Deep breathing
+                                                    at253,    -- Shallow breathing
+                                                    at254,    -- Controlled/paced
+                                                    at255]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0064] occurrences matches {0..1} matches {    -- Supplemental oxygen
+                                        value matches {
+                                            DV_BOOLEAN
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0065] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0070] occurrences matches {0..1} matches {    -- Overnight recording
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {[openehr::146]}
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {PT8H}
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0071] occurrences matches {0..1} matches {    -- Daily summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {[openehr::146]}
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1D}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0080] matches {
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0081] occurrences matches {0..1} matches {    -- Measurement method
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at260,    -- PPG-derived
+                                    at261,    -- Accelerometer-based
+                                    at262,    -- HRV-derived (RSA)
+                                    at263,    -- Bioimpedance
+                                    at264,    -- Multi-sensor fusion
+                                    at265]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0082] occurrences matches {0..1} matches {    -- Sensor location
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at270,    -- Wrist
+                                    at271,    -- Finger
+                                    at272,    -- Chest strap
+                                    at273,    -- Under mattress
+                                    at274,    -- Bedside radar
+                                    at275]    -- Other
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0083] occurrences matches {0..1} matches {    -- Algorithm version
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0084] occurrences matches {0..1} matches {    -- Sampling frequency
+                        value matches {
+                            DV_QUANTITY matches {
+                                property matches {[openehr::382]}
+                                units matches {"Hz"}
+                                magnitude matches {|0.0..1000.0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0085] occurrences matches {0..1} matches {    -- Averaging window
+                        value matches {
+                            DV_DURATION matches {*}
+                        }
+                    }
+                    allow_archetype CLUSTER[at0090] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v.*/}
+                    }
+                    allow_archetype CLUSTER[at0091] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v.*/}
+                    }
+                    allow_archetype CLUSTER[at0092] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v.*/}
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Respiratory Rate Wearable">
+                    description = <"Respiratory rate derived from consumer wearable devices using indirect measurement methods.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0004"] = <
+                    text = <"Respiratory rate">
+                    description = <"Number of breaths per minute.">
+                >
+                ["at0005"] = <
+                    text = <"Rate interpretation">
+                    description = <"Categorical interpretation of respiratory rate.">
+                >
+                ["at0010"] = <
+                    text = <"Continuous monitoring summary">
+                    description = <"Summary statistics from continuous respiratory monitoring.">
+                >
+                ["at0011"] = <
+                    text = <"Mean respiratory rate">
+                    description = <"Average respiratory rate during monitoring period.">
+                >
+                ["at0012"] = <
+                    text = <"Minimum respiratory rate">
+                    description = <"Lowest respiratory rate during monitoring period.">
+                >
+                ["at0013"] = <
+                    text = <"Maximum respiratory rate">
+                    description = <"Highest respiratory rate during monitoring period.">
+                >
+                ["at0014"] = <
+                    text = <"Standard deviation">
+                    description = <"Variability of respiratory rate during monitoring.">
+                >
+                ["at0015"] = <
+                    text = <"Coefficient of variation">
+                    description = <"Relative variability of respiratory rate (SD/mean).">
+                >
+                ["at0020"] = <
+                    text = <"Sleep respiratory metrics">
+                    description = <"Respiratory metrics specific to sleep monitoring.">
+                >
+                ["at0021"] = <
+                    text = <"Sleep average respiratory rate">
+                    description = <"Average respiratory rate during sleep.">
+                >
+                ["at0022"] = <
+                    text = <"Breathing disturbance index">
+                    description = <"Number of breathing disturbances per hour of sleep.">
+                >
+                ["at0023"] = <
+                    text = <"Breathing disturbance interpretation">
+                    description = <"Severity interpretation of breathing disturbance index.">
+                >
+                ["at0024"] = <
+                    text = <"Breathing irregularity events">
+                    description = <"Count of detected breathing irregularity events.">
+                >
+                ["at0025"] = <
+                    text = <"Time with irregular breathing">
+                    description = <"Total duration of irregular breathing detected.">
+                >
+                ["at0030"] = <
+                    text = <"Trend analysis">
+                    description = <"Respiratory rate trend over time.">
+                >
+                ["at0031"] = <
+                    text = <"7-day trend">
+                    description = <"Direction of respiratory rate change over past week.">
+                >
+                ["at0032"] = <
+                    text = <"Baseline deviation">
+                    description = <"Difference from personal baseline respiratory rate.">
+                >
+                ["at0033"] = <
+                    text = <"Personal baseline">
+                    description = <"Individual's typical resting respiratory rate.">
+                >
+                ["at0040"] = <
+                    text = <"Clinical interpretation">
+                    description = <"Clinical interpretation of respiratory data.">
+                >
+                ["at0041"] = <
+                    text = <"Comment">
+                    description = <"Additional comments about the measurement.">
+                >
+                ["at0050"] = <
+                    text = <"Data quality">
+                    description = <"Slot for data quality indicator cluster.">
+                >
+                ["at0060"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0061"] = <
+                    text = <"Activity state">
+                    description = <"Physical activity level during measurement.">
+                >
+                ["at0062"] = <
+                    text = <"Body position">
+                    description = <"Body position during measurement.">
+                >
+                ["at0063"] = <
+                    text = <"Breathing pattern">
+                    description = <"Observed or reported breathing pattern.">
+                >
+                ["at0064"] = <
+                    text = <"Supplemental oxygen">
+                    description = <"Whether supplemental oxygen was being used.">
+                >
+                ["at0065"] = <
+                    text = <"Physiological context">
+                    description = <"Slot for physiological context cluster.">
+                >
+                ["at0070"] = <
+                    text = <"Overnight recording">
+                    description = <"Respiratory data aggregated over overnight sleep period.">
+                >
+                ["at0071"] = <
+                    text = <"Daily summary">
+                    description = <"Respiratory data aggregated over 24-hour period.">
+                >
+                ["at0080"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0081"] = <
+                    text = <"Measurement method">
+                    description = <"Method used to derive respiratory rate.">
+                >
+                ["at0082"] = <
+                    text = <"Sensor location">
+                    description = <"Location of sensor used for measurement.">
+                >
+                ["at0083"] = <
+                    text = <"Algorithm version">
+                    description = <"Version of the respiratory rate algorithm.">
+                >
+                ["at0084"] = <
+                    text = <"Sampling frequency">
+                    description = <"Frequency of raw data sampling.">
+                >
+                ["at0085"] = <
+                    text = <"Averaging window">
+                    description = <"Time window used for rate averaging.">
+                >
+                ["at0090"] = <
+                    text = <"Wearable device">
+                    description = <"Slot for wearable device details.">
+                >
+                ["at0091"] = <
+                    text = <"Vendor provenance">
+                    description = <"Slot for vendor data provenance.">
+                >
+                ["at0092"] = <
+                    text = <"Recording context">
+                    description = <"Slot for recording context details.">
+                >
+                ["at200"] = <text = <"Bradypnea (<12/min)">; description = <"Respiratory rate below 12 breaths per minute.">>
+                ["at201"] = <text = <"Normal (12-20/min)">; description = <"Respiratory rate 12-20 breaths per minute.">>
+                ["at202"] = <text = <"Tachypnea (>20/min)">; description = <"Respiratory rate above 20 breaths per minute.">>
+                ["at203"] = <text = <"Severely elevated (>30/min)">; description = <"Respiratory rate above 30 breaths per minute.">>
+                ["at204"] = <text = <"Unknown">; description = <"Rate interpretation not determined.">>
+                ["at210"] = <text = <"Normal (<5/h)">; description = <"Less than 5 breathing disturbances per hour.">>
+                ["at211"] = <text = <"Mild (5-15/h)">; description = <"5-15 breathing disturbances per hour.">>
+                ["at212"] = <text = <"Moderate (15-30/h)">; description = <"15-30 breathing disturbances per hour.">>
+                ["at213"] = <text = <"Severe (>30/h)">; description = <"More than 30 breathing disturbances per hour.">>
+                ["at214"] = <text = <"Unknown">; description = <"Breathing disturbance severity not determined.">>
+                ["at220"] = <text = <"Decreasing">; description = <"Respiratory rate trending downward.">>
+                ["at221"] = <text = <"Stable">; description = <"Respiratory rate stable.">>
+                ["at222"] = <text = <"Increasing">; description = <"Respiratory rate trending upward.">>
+                ["at223"] = <text = <"Unknown">; description = <"Trend not determined.">>
+                ["at230"] = <text = <"Resting">; description = <"At rest, minimal activity.">>
+                ["at231"] = <text = <"Sleep">; description = <"During sleep.">>
+                ["at232"] = <text = <"Light activity">; description = <"Light physical activity.">>
+                ["at233"] = <text = <"Moderate activity">; description = <"Moderate physical activity.">>
+                ["at234"] = <text = <"Vigorous activity">; description = <"Vigorous physical activity.">>
+                ["at235"] = <text = <"Post-exercise recovery">; description = <"Recovery period after exercise.">>
+                ["at236"] = <text = <"Unknown">; description = <"Activity state not recorded.">>
+                ["at240"] = <text = <"Sitting">; description = <"Seated position.">>
+                ["at241"] = <text = <"Standing">; description = <"Standing upright.">>
+                ["at242"] = <text = <"Lying supine">; description = <"Lying on back.">>
+                ["at243"] = <text = <"Lying prone">; description = <"Lying face down.">>
+                ["at244"] = <text = <"Lying lateral">; description = <"Lying on side.">>
+                ["at245"] = <text = <"Unknown">; description = <"Body position not recorded.">>
+                ["at250"] = <text = <"Normal/regular">; description = <"Normal, regular breathing pattern.">>
+                ["at251"] = <text = <"Irregular">; description = <"Irregular breathing pattern.">>
+                ["at252"] = <text = <"Deep breathing">; description = <"Deep, slow breathing.">>
+                ["at253"] = <text = <"Shallow breathing">; description = <"Shallow, rapid breathing.">>
+                ["at254"] = <text = <"Controlled/paced">; description = <"Controlled or paced breathing (e.g., meditation).">>
+                ["at255"] = <text = <"Unknown">; description = <"Breathing pattern not recorded.">>
+                ["at260"] = <text = <"PPG-derived">; description = <"Derived from photoplethysmography signal modulation.">>
+                ["at261"] = <text = <"Accelerometer-based">; description = <"Derived from accelerometer chest movement detection.">>
+                ["at262"] = <text = <"HRV-derived (RSA)">; description = <"Derived from respiratory sinus arrhythmia in HRV.">>
+                ["at263"] = <text = <"Bioimpedance">; description = <"Derived from thoracic bioimpedance changes.">>
+                ["at264"] = <text = <"Multi-sensor fusion">; description = <"Derived from multiple sensor fusion.">>
+                ["at265"] = <text = <"Unknown">; description = <"Measurement method not specified.">>
+                ["at270"] = <text = <"Wrist">; description = <"Wrist-worn device.">>
+                ["at271"] = <text = <"Finger">; description = <"Finger-worn device.">>
+                ["at272"] = <text = <"Chest strap">; description = <"Chest-worn strap.">>
+                ["at273"] = <text = <"Under mattress">; description = <"Under-mattress sensor.">>
+                ["at274"] = <text = <"Bedside radar">; description = <"Contactless bedside radar.">>
+                ["at275"] = <text = <"Other">; description = <"Other sensor location.">>
+            >
+        >
+    >
+    term_bindings = <
+        ["LOINC"] = <
+            items = <
+                ["at0004"] = <[LOINC::9279-1]>    -- Respiratory rate
+            >
+        >
+    >

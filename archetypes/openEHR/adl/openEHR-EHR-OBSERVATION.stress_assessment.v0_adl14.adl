@@ -1,0 +1,1014 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.stress_assessment.v0
+
+concept
+	[at0000]	-- Stress Assessment
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["name"] = <"Ricardo Lourenco dos Santos">
+        ["organisation"] = <"Faculty of Medicine, University of Porto (FMUP)">
+        ["email"] = <"ricardolourencosantos@gmail.com">
+        ["date"] = <"2025-11-27">
+    >
+    lifecycle_state = <"in_development">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record stress assessment data from wearable devices, including physiological stress markers (HRV-derived), electrodermal activity, validated questionnaire scores, and recovery metrics for lifestyle medicine applications.">
+            use = <"Use to record comprehensive stress assessment from wearable devices including:
+
+1. Subjective Stress: Self-reported stress levels (1-10 scale, emoji-based)
+2. Physiological Stress: HRV-derived stress indices (sympathetic/parasympathetic balance)
+3. Electrodermal Activity: Skin conductance response (EDA/GSR) metrics
+4. Validated Questionnaires: PSS-10, GAD-7, PHQ-4 scores
+5. Recovery Metrics: Garmin Body Battery, Oura Readiness, Whoop Recovery
+
+Key Clinical Applications (Pillar 4 - Stress Management):
+- Chronic stress monitoring for burnout prevention
+- Anxiety and depression screening via wearable biomarkers
+- Stress-recovery balance assessment
+- Mind-body intervention efficacy tracking (meditation, breathing)
+- Work-related stress monitoring (occupational health)
+
+Vendor Data Integration:
+- Garmin: Stress Score (0-100), Body Battery (5-100), HRV Status
+- Apple Watch: Breathe reminders, Mindfulness minutes
+- Fitbit: Stress Management Score, EDA Scan (Sense)
+- Oura: Readiness Score, HRV Balance
+- Whoop: Recovery Score (0-100%), Strain
+- Samsung: Stress (0-100)
+
+Scientific Basis:
+- HRV-based stress: Low HF/high LF indicates sympathetic dominance
+- EDA: Skin conductance increases with stress (sympathetic activation)
+- PSS-10: Validated perceived stress scale (Cohen 1983)
+- Allostatic load: Cumulative physiological stress burden
+
+Important Notes:
+- Wearable stress scores are proprietary algorithms (not standardized)
+- Cross-vendor comparisons require normalization
+- Single metrics insufficient - use multimodal assessment
+- Context essential for interpretation (sleep, activity, caffeine)">
+            keywords = <"stress", "anxiety", "mental health", "HRV", "EDA", "GSR", "skin conductance", "cortisol", "allostatic load", "burnout", "recovery", "Body Battery", "Readiness", "PSS", "GAD-7", "wearable", "lifestyle medicine">
+            misuse = <"Not to be used for:
+- Clinical diagnosis of anxiety disorders (requires clinical assessment)
+- Psychiatric evaluation (use specific psychiatric archetypes)
+- Acute stress response monitoring in emergency settings
+- Cortisol laboratory measurements (use lab result archetypes)">
+            copyright = <"CC BY-SA 4.0">
+        >
+    >
+    other_details = <
+        ["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+        ["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+        ["references"] = <"
+1. Cohen S, Kamarck T, Mermelstein R. A global measure of perceived stress. J Health Soc Behav. 1983;24(4):385-396.
+2. Spitzer RL, et al. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166(10):1092-1097.
+3. Kim HG, et al. Stress and Heart Rate Variability: A Meta-Analysis and Review. Psychiatry Investig. 2018;15(3):235-245.
+4. Posada-Quintero HF, Chon KH. Innovations in Electrodermal Activity Data Collection and Signal Processing. Sensors. 2020;20(2):479.
+5. Garmin Body Battery: https://www.garmin.com/en-US/garmin-technology/health-science/body-battery/">
+        ["current_contact"] = <"Ricardo Lourenco dos Santos, FMUP, ricardolourencosantos@gmail.com">
+        ["links"] = <"https://linktr.ee/ricardolsantos">
+    >
+
+definition
+    OBSERVATION[at0000] matches {    -- Stress Assessment
+        data matches {
+            HISTORY[at0001] matches {
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    CLUSTER[at0010] occurrences matches {0..1} matches {    -- Subjective stress
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0011] occurrences matches {0..1} matches {    -- Perceived stress level
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..10|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0012] occurrences matches {0..1} matches {    -- Stress category
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at200,    -- No stress
+                                                            at201,    -- Low stress
+                                                            at202,    -- Moderate stress
+                                                            at203,    -- High stress
+                                                            at204,    -- Severe stress
+                                                            at205]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {    -- Mood emoji
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at210,    -- Very happy
+                                                            at211,    -- Happy
+                                                            at212,    -- Neutral
+                                                            at213,    -- Stressed
+                                                            at214,    -- Very stressed
+                                                            at215]    -- Anxious
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {    -- Stress description
+                                                value matches {
+                                                    DV_TEXT
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0020] occurrences matches {0..1} matches {    -- Physiological stress markers
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0021] occurrences matches {0..1} matches {    -- Vendor stress score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0022] occurrences matches {0..1} matches {    -- Stress score interpretation
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at220,    -- Rest (0-25)
+                                                            at221,    -- Low (26-50)
+                                                            at222,    -- Medium (51-75)
+                                                            at223,    -- High (76-100)
+                                                            at224]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0023] occurrences matches {0..1} matches {    -- HRV stress index
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::380]}
+                                                        magnitude matches {|0.0..500.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0024] occurrences matches {0..1} matches {    -- Sympathetic index
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::380]}
+                                                        magnitude matches {|0.0..100.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {0..1} matches {    -- Parasympathetic index
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::380]}
+                                                        magnitude matches {|0.0..100.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0026] occurrences matches {0..1} matches {    -- Autonomic balance
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at230,    -- Parasympathetic dominant
+                                                            at231,    -- Balanced
+                                                            at232,    -- Sympathetic dominant
+                                                            at233]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0027] occurrences matches {0..1} matches {    -- LF/HF ratio
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::380]}
+                                                        magnitude matches {|0.0..50.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0030] occurrences matches {0..1} matches {    -- Electrodermal activity (EDA)
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0031] occurrences matches {0..1} matches {    -- Skin conductance level (SCL)
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::502]}
+                                                        units matches {"uS"}
+                                                        magnitude matches {|0.0..100.0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0032] occurrences matches {0..1} matches {    -- Skin conductance response count
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|>=0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0033] occurrences matches {0..1} matches {    -- EDA stress response
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at240,    -- Calm (low SCL, few SCRs)
+                                                            at241,    -- Mildly activated
+                                                            at242,    -- Moderately activated
+                                                            at243,    -- Highly activated
+                                                            at244]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0034] occurrences matches {0..1} matches {    -- EDA scan duration
+                                                value matches {
+                                                    DV_DURATION matches {*}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0040] occurrences matches {0..1} matches {    -- Recovery metrics
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0041] occurrences matches {0..1} matches {    -- Recovery score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0042] occurrences matches {0..1} matches {    -- Recovery interpretation
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at250,    -- Optimal recovery (>67%)
+                                                            at251,    -- Moderate recovery (34-67%)
+                                                            at252,    -- Poor recovery (<34%)
+                                                            at253]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0043] occurrences matches {0..1} matches {    -- Body Battery (Garmin)
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|5..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0044] occurrences matches {0..1} matches {    -- Readiness score (Oura)
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..100|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0045] occurrences matches {0..1} matches {    -- Strain score
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::380]}
+                                                        magnitude matches {|0.0..21.0|}
+                                                        precision matches {|1|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0046] occurrences matches {0..1} matches {    -- Recovery-to-strain ratio
+                                                value matches {
+                                                    DV_QUANTITY matches {
+                                                        property matches {[openehr::380]}
+                                                        magnitude matches {|0.0..10.0|}
+                                                        precision matches {|2|}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0050] occurrences matches {0..1} matches {    -- Validated questionnaire scores
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0051] occurrences matches {0..1} matches {    -- PSS-10 score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..40|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0052] occurrences matches {0..1} matches {    -- PSS-10 interpretation
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at260,    -- Low stress (0-13)
+                                                            at261,    -- Moderate stress (14-26)
+                                                            at262,    -- High stress (27-40)
+                                                            at263]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0053] occurrences matches {0..1} matches {    -- GAD-7 score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..21|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0054] occurrences matches {0..1} matches {    -- GAD-7 interpretation
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at270,    -- Minimal anxiety (0-4)
+                                                            at271,    -- Mild anxiety (5-9)
+                                                            at272,    -- Moderate anxiety (10-14)
+                                                            at273,    -- Severe anxiety (15-21)
+                                                            at274]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0055] occurrences matches {0..1} matches {    -- PHQ-4 score
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|0..12|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0056] occurrences matches {0..1} matches {    -- Questionnaire date
+                                                value matches {
+                                                    DV_DATE_TIME
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0060] occurrences matches {0..1} matches {    -- Stress context
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0061] occurrences matches {0..1} matches {    -- Primary stressor
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at280,    -- Work/professional
+                                                            at281,    -- Financial
+                                                            at282,    -- Relationships
+                                                            at283,    -- Health
+                                                            at284,    -- Family
+                                                            at285,    -- Academic
+                                                            at286,    -- Environmental
+                                                            at287,    -- Multiple
+                                                            at288,    -- Unknown
+                                                            at289]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0062] occurrences matches {0..1} matches {    -- Stressor description
+                                                value matches {
+                                                    DV_TEXT
+                                                }
+                                            }
+                                            ELEMENT[at0063] occurrences matches {0..1} matches {    -- Stress duration
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at290,    -- Acute (< 1 day)
+                                                            at291,    -- Short-term (days to weeks)
+                                                            at292,    -- Chronic (> 1 month)
+                                                            at293]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    CLUSTER[at0070] occurrences matches {0..1} matches {    -- Coping and interventions
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0071] occurrences matches {0..*} matches {    -- Coping activity
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at300,    -- Meditation
+                                                            at301,    -- Deep breathing
+                                                            at302,    -- Physical exercise
+                                                            at303,    -- Social support
+                                                            at304,    -- Sleep/rest
+                                                            at305,    -- Nature exposure
+                                                            at306,    -- Music/art
+                                                            at307,    -- Therapy/counseling
+                                                            at308,    -- Medication
+                                                            at309]    -- Other
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0072] occurrences matches {0..1} matches {    -- Mindfulness minutes
+                                                value matches {
+                                                    DV_DURATION matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0073] occurrences matches {0..1} matches {    -- Breathing exercises completed
+                                                value matches {
+                                                    DV_COUNT matches {
+                                                        magnitude matches {|>=0|}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0074] occurrences matches {0..1} matches {    -- Intervention effectiveness
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at310,    -- Very effective
+                                                            at311,    -- Moderately effective
+                                                            at312,    -- Slightly effective
+                                                            at313,    -- Not effective
+                                                            at314]    -- Unknown
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0080] occurrences matches {0..1} matches {    -- Overall stress assessment
+                                        value matches {
+                                            DV_TEXT
+                                        }
+                                    }
+                                    ELEMENT[at0081] occurrences matches {0..1} matches {    -- Comment
+                                        value matches {
+                                            DV_TEXT
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0082] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v.*/}
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[at0090] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0091] occurrences matches {0..1} matches {    -- Sleep quality last night
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at320,    -- Good
+                                                    at321,    -- Fair
+                                                    at322,    -- Poor
+                                                    at323]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0092] occurrences matches {0..1} matches {    -- Caffeine consumed today
+                                        value matches {
+                                            DV_BOOLEAN
+                                        }
+                                    }
+                                    ELEMENT[at0093] occurrences matches {0..1} matches {    -- Alcohol consumed today
+                                        value matches {
+                                            DV_BOOLEAN
+                                        }
+                                    }
+                                    ELEMENT[at0094] occurrences matches {0..1} matches {    -- Physical activity today
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at330,    -- None
+                                                    at331,    -- Light
+                                                    at332,    -- Moderate
+                                                    at333,    -- Vigorous
+                                                    at334]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0095] occurrences matches {0..1} matches {    -- Current menstrual phase
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at340,    -- Menstrual
+                                                    at341,    -- Follicular
+                                                    at342,    -- Ovulation
+                                                    at343,    -- Luteal
+                                                    at344,    -- Not applicable
+                                                    at345]    -- Unknown
+                                                }
+                                            }
+                                        }
+                                    }
+                                    allow_archetype CLUSTER[at0096] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.physiological_context\.v.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0100] occurrences matches {0..1} matches {    -- Daily summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {[openehr::146]}
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P1D}
+                            }
+                        }
+                    }
+                    INTERVAL_EVENT[at0101] occurrences matches {0..1} matches {    -- Weekly summary
+                        math_function matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {[openehr::146]}
+                            }
+                        }
+                        width matches {
+                            DV_DURATION matches {
+                                value matches {P7D}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0110] matches {
+                items cardinality matches {0..*; unordered} matches {
+                    ELEMENT[at0111] occurrences matches {0..1} matches {    -- Stress algorithm
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at350,    -- Garmin Stress Score
+                                    at351,    -- Fitbit Stress Management
+                                    at352,    -- Samsung Stress
+                                    at353,    -- Oura HRV Balance
+                                    at354,    -- Whoop Recovery
+                                    at355,    -- Custom algorithm
+                                    at356]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0112] occurrences matches {0..1} matches {    -- Algorithm version
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                    ELEMENT[at0113] occurrences matches {0..1} matches {    -- Assessment method
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at360,    -- Automatic (continuous)
+                                    at361,    -- On-demand scan
+                                    at362,    -- User-initiated
+                                    at363,    -- Questionnaire
+                                    at364,    -- Hybrid
+                                    at365]    -- Unknown
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0114] occurrences matches {0..1} matches {    -- Measurement duration
+                        value matches {
+                            DV_DURATION matches {*}
+                        }
+                    }
+                    allow_archetype CLUSTER[at0115] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v.*/}
+                    }
+                    allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.vendor_data_provenance\.v.*/}
+                    }
+                    allow_archetype CLUSTER[at0117] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.recording_context\.v.*/}
+                    }
+                    allow_archetype CLUSTER[at0380] occurrences matches {0..1} matches {
+                        include
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.data_quality_indicator\.v.*/}
+                    }
+                    ELEMENT[at0118] occurrences matches {0..1} matches {    -- Validation status (RS6)
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at370,    -- Clinically validated
+                                    at371,    -- Research validated
+                                    at372,    -- Vendor proprietary
+                                    at373]    -- Not validated
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0119] occurrences matches {0..1} matches {    -- Cross-device comparison caveat
+                        value matches {
+                            DV_TEXT
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Stress Assessment">
+                    description = <"Comprehensive stress assessment from wearable devices including physiological markers, questionnaire scores, and recovery metrics.">
+                >
+                ["at0001"] = <
+                    text = <"History">
+                    description = <"@ internal @">
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Default, unspecified point in time or interval event.">
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0010"] = <
+                    text = <"Subjective stress">
+                    description = <"Self-reported stress assessment.">
+                >
+                ["at0011"] = <
+                    text = <"Perceived stress level">
+                    description = <"Self-reported stress on 0-10 scale (0=no stress, 10=extreme stress).">
+                >
+                ["at0012"] = <
+                    text = <"Stress category">
+                    description = <"Categorical interpretation of stress level.">
+                >
+                ["at0013"] = <
+                    text = <"Mood emoji">
+                    description = <"Emoji-based mood indicator (common in wearable apps).">
+                >
+                ["at0014"] = <
+                    text = <"Stress description">
+                    description = <"Free-text description of stress experience.">
+                >
+                ["at0020"] = <
+                    text = <"Physiological stress markers">
+                    description = <"HRV-derived and other physiological stress indicators.">
+                >
+                ["at0021"] = <
+                    text = <"Vendor stress score">
+                    description = <"Proprietary stress score from wearable device (0-100).">
+                >
+                ["at0022"] = <
+                    text = <"Stress score interpretation">
+                    description = <"Categorical interpretation of vendor stress score.">
+                >
+                ["at0023"] = <
+                    text = <"HRV stress index">
+                    description = <"HRV-derived stress index (varies by algorithm).">
+                >
+                ["at0024"] = <
+                    text = <"Sympathetic index">
+                    description = <"Index of sympathetic nervous system activity.">
+                >
+                ["at0025"] = <
+                    text = <"Parasympathetic index">
+                    description = <"Index of parasympathetic nervous system activity.">
+                >
+                ["at0026"] = <
+                    text = <"Autonomic balance">
+                    description = <"Overall autonomic nervous system balance assessment.">
+                >
+                ["at0027"] = <
+                    text = <"LF/HF ratio">
+                    description = <"Low frequency to high frequency HRV ratio (sympathovagal balance indicator).">
+                >
+                ["at0030"] = <
+                    text = <"Electrodermal activity (EDA)">
+                    description = <"Skin conductance/galvanic skin response measurements.">
+                >
+                ["at0031"] = <
+                    text = <"Skin conductance level (SCL)">
+                    description = <"Tonic level of skin conductance in microsiemens.">
+                >
+                ["at0032"] = <
+                    text = <"Skin conductance response count">
+                    description = <"Number of phasic skin conductance responses.">
+                >
+                ["at0033"] = <
+                    text = <"EDA stress response">
+                    description = <"Interpretation of electrodermal activity pattern.">
+                >
+                ["at0034"] = <
+                    text = <"EDA scan duration">
+                    description = <"Duration of EDA measurement session.">
+                >
+                ["at0040"] = <
+                    text = <"Recovery metrics">
+                    description = <"Recovery and readiness scores from wearable devices.">
+                >
+                ["at0041"] = <
+                    text = <"Recovery score">
+                    description = <"Generic recovery score (0-100%).">
+                >
+                ["at0042"] = <
+                    text = <"Recovery interpretation">
+                    description = <"Categorical interpretation of recovery status.">
+                >
+                ["at0043"] = <
+                    text = <"Body Battery (Garmin)">
+                    description = <"Garmin Body Battery energy level (5-100).">
+                >
+                ["at0044"] = <
+                    text = <"Readiness score (Oura)">
+                    description = <"Oura Ring Readiness Score (0-100).">
+                >
+                ["at0045"] = <
+                    text = <"Strain score">
+                    description = <"Cardiovascular strain score (e.g., Whoop 0-21).">
+                >
+                ["at0046"] = <
+                    text = <"Recovery-to-strain ratio">
+                    description = <"Ratio of recovery to accumulated strain.">
+                >
+                ["at0050"] = <
+                    text = <"Validated questionnaire scores">
+                    description = <"Scores from validated psychological questionnaires.">
+                >
+                ["at0051"] = <
+                    text = <"PSS-10 score">
+                    description = <"Perceived Stress Scale 10-item score (0-40).">
+                >
+                ["at0052"] = <
+                    text = <"PSS-10 interpretation">
+                    description = <"Interpretation of PSS-10 score.">
+                >
+                ["at0053"] = <
+                    text = <"GAD-7 score">
+                    description = <"Generalized Anxiety Disorder 7-item scale score (0-21).">
+                >
+                ["at0054"] = <
+                    text = <"GAD-7 interpretation">
+                    description = <"Severity interpretation of GAD-7 score.">
+                >
+                ["at0055"] = <
+                    text = <"PHQ-4 score">
+                    description = <"Patient Health Questionnaire 4-item score (0-12).">
+                >
+                ["at0056"] = <
+                    text = <"Questionnaire date">
+                    description = <"Date when questionnaire was completed.">
+                >
+                ["at0060"] = <
+                    text = <"Stress context">
+                    description = <"Contextual information about stressors.">
+                >
+                ["at0061"] = <
+                    text = <"Primary stressor">
+                    description = <"Main source of current stress.">
+                >
+                ["at0062"] = <
+                    text = <"Stressor description">
+                    description = <"Free-text description of stressor.">
+                >
+                ["at0063"] = <
+                    text = <"Stress duration">
+                    description = <"Duration of current stress episode.">
+                >
+                ["at0070"] = <
+                    text = <"Coping and interventions">
+                    description = <"Stress management activities and interventions.">
+                >
+                ["at0071"] = <
+                    text = <"Coping activity">
+                    description = <"Stress management technique used.">
+                >
+                ["at0072"] = <
+                    text = <"Mindfulness minutes">
+                    description = <"Duration of mindfulness/meditation practice.">
+                >
+                ["at0073"] = <
+                    text = <"Breathing exercises completed">
+                    description = <"Number of guided breathing sessions completed.">
+                >
+                ["at0074"] = <
+                    text = <"Intervention effectiveness">
+                    description = <"Perceived effectiveness of coping intervention.">
+                >
+                ["at0080"] = <
+                    text = <"Overall stress assessment">
+                    description = <"Summary assessment of stress status.">
+                >
+                ["at0081"] = <
+                    text = <"Comment">
+                    description = <"Additional comments about stress assessment.">
+                >
+                ["at0082"] = <
+                    text = <"Data quality">
+                    description = <"Slot for data quality indicator cluster.">
+                >
+                ["at0090"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0091"] = <
+                    text = <"Sleep quality last night">
+                    description = <"Quality of sleep prior to stress assessment.">
+                >
+                ["at0092"] = <
+                    text = <"Caffeine consumed today">
+                    description = <"Whether caffeine was consumed on assessment day.">
+                >
+                ["at0093"] = <
+                    text = <"Alcohol consumed today">
+                    description = <"Whether alcohol was consumed on assessment day.">
+                >
+                ["at0094"] = <
+                    text = <"Physical activity today">
+                    description = <"Physical activity level on assessment day.">
+                >
+                ["at0095"] = <
+                    text = <"Current menstrual phase">
+                    description = <"Menstrual cycle phase (affects HRV/stress).">
+                >
+                ["at0096"] = <
+                    text = <"Physiological context">
+                    description = <"Slot for physiological context cluster.">
+                >
+                ["at0100"] = <
+                    text = <"Daily summary">
+                    description = <"Stress data aggregated over 24-hour period.">
+                >
+                ["at0101"] = <
+                    text = <"Weekly summary">
+                    description = <"Stress data aggregated over 7-day period.">
+                >
+                ["at0110"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+                >
+                ["at0111"] = <
+                    text = <"Stress algorithm">
+                    description = <"Vendor algorithm used for stress calculation.">
+                >
+                ["at0112"] = <
+                    text = <"Algorithm version">
+                    description = <"Version of the stress algorithm.">
+                >
+                ["at0113"] = <
+                    text = <"Assessment method">
+                    description = <"Method used for stress assessment.">
+                >
+                ["at0114"] = <
+                    text = <"Measurement duration">
+                    description = <"Duration of stress measurement.">
+                >
+                ["at0115"] = <
+                    text = <"Wearable device">
+                    description = <"Slot for wearable device details.">
+                >
+                ["at0116"] = <
+                    text = <"Vendor provenance">
+                    description = <"Slot for vendor data provenance.">
+                >
+                ["at0117"] = <
+                    text = <"Recording context">
+                    description = <"Slot for recording context details.">
+                >
+                ["at0118"] = <
+                    text = <"Validation status">
+                    description = <"Validation status of the stress algorithm. RS6 requirement: document algorithm validation against clinical gold standards.">
+                >
+                ["at0119"] = <
+                    text = <"Cross-device comparison caveat">
+                    description = <"RS6 warning: Vendor-specific stress algorithms use different inputs (HRV, EDA, activity) and produce non-comparable scores. Document specific comparison limitations.">
+                >
+                ["at0380"] = <
+                    text = <"Data quality">
+                    description = <"Slot for data quality indicator cluster. RS6: 55% adoption, critical for filtering unreliable stress assessment data.">
+                >
+                ["at200"] = <text = <"No stress">; description = <"Stress level 0-1.">>
+                ["at201"] = <text = <"Low stress">; description = <"Stress level 2-4.">>
+                ["at202"] = <text = <"Moderate stress">; description = <"Stress level 5-6.">>
+                ["at203"] = <text = <"High stress">; description = <"Stress level 7-8.">>
+                ["at204"] = <text = <"Severe stress">; description = <"Stress level 9-10.">>
+                ["at205"] = <text = <"Unknown">; description = <"Stress level not assessed.">>
+                ["at210"] = <text = <"Very happy">; description = <"Very positive mood state.">>
+                ["at211"] = <text = <"Happy">; description = <"Positive mood state.">>
+                ["at212"] = <text = <"Neutral">; description = <"Neutral mood state.">>
+                ["at213"] = <text = <"Stressed">; description = <"Stressed mood state.">>
+                ["at214"] = <text = <"Very stressed">; description = <"Very stressed mood state.">>
+                ["at215"] = <text = <"Anxious">; description = <"Anxious mood state.">>
+                ["at220"] = <text = <"Rest (0-25)">; description = <"Resting/relaxed state.">>
+                ["at221"] = <text = <"Low (26-50)">; description = <"Low stress state.">>
+                ["at222"] = <text = <"Medium (51-75)">; description = <"Medium stress state.">>
+                ["at223"] = <text = <"High (76-100)">; description = <"High stress state.">>
+                ["at224"] = <text = <"Unknown">; description = <"Stress score interpretation unknown.">>
+                ["at230"] = <text = <"Parasympathetic dominant">; description = <"Rest and digest mode, HF > LF.">>
+                ["at231"] = <text = <"Balanced">; description = <"Balanced autonomic state.">>
+                ["at232"] = <text = <"Sympathetic dominant">; description = <"Fight or flight mode, LF > HF.">>
+                ["at233"] = <text = <"Unknown">; description = <"Autonomic balance not determined.">>
+                ["at240"] = <text = <"Calm (low SCL, few SCRs)">; description = <"Low electrodermal activity indicating calm state.">>
+                ["at241"] = <text = <"Mildly activated">; description = <"Mild electrodermal activation.">>
+                ["at242"] = <text = <"Moderately activated">; description = <"Moderate electrodermal activation.">>
+                ["at243"] = <text = <"Highly activated">; description = <"High electrodermal activation indicating stress.">>
+                ["at244"] = <text = <"Unknown">; description = <"EDA response not categorized.">>
+                ["at250"] = <text = <"Optimal recovery (>67%)">; description = <"Well recovered, ready for strain.">>
+                ["at251"] = <text = <"Moderate recovery (34-67%)">; description = <"Partially recovered.">>
+                ["at252"] = <text = <"Poor recovery (<34%)">; description = <"Poorly recovered, rest recommended.">>
+                ["at253"] = <text = <"Unknown">; description = <"Recovery status not determined.">>
+                ["at260"] = <text = <"Low stress (0-13)">; description = <"PSS-10 indicates low perceived stress.">>
+                ["at261"] = <text = <"Moderate stress (14-26)">; description = <"PSS-10 indicates moderate perceived stress.">>
+                ["at262"] = <text = <"High stress (27-40)">; description = <"PSS-10 indicates high perceived stress.">>
+                ["at263"] = <text = <"Unknown">; description = <"PSS-10 interpretation not available.">>
+                ["at270"] = <text = <"Minimal anxiety (0-4)">; description = <"GAD-7 minimal anxiety.">>
+                ["at271"] = <text = <"Mild anxiety (5-9)">; description = <"GAD-7 mild anxiety.">>
+                ["at272"] = <text = <"Moderate anxiety (10-14)">; description = <"GAD-7 moderate anxiety.">>
+                ["at273"] = <text = <"Severe anxiety (15-21)">; description = <"GAD-7 severe anxiety.">>
+                ["at274"] = <text = <"Unknown">; description = <"GAD-7 interpretation not available.">>
+                ["at280"] = <text = <"Work/professional">; description = <"Work or professional-related stress.">>
+                ["at281"] = <text = <"Financial">; description = <"Financial stress.">>
+                ["at282"] = <text = <"Relationships">; description = <"Relationship-related stress.">>
+                ["at283"] = <text = <"Health">; description = <"Health-related stress.">>
+                ["at284"] = <text = <"Family">; description = <"Family-related stress.">>
+                ["at285"] = <text = <"Academic">; description = <"Academic/educational stress.">>
+                ["at286"] = <text = <"Environmental">; description = <"Environmental stress (noise, pollution, etc.).">>
+                ["at287"] = <text = <"Multiple">; description = <"Multiple sources of stress.">>
+                ["at288"] = <text = <"Unknown">; description = <"Stressor not identified.">>
+                ["at289"] = <text = <"Other">; description = <"Other type of stressor.">>
+                ["at290"] = <text = <"Acute (< 1 day)">; description = <"Acute, short-term stress.">>
+                ["at291"] = <text = <"Short-term (days to weeks)">; description = <"Short-term stress lasting days to weeks.">>
+                ["at292"] = <text = <"Chronic (> 1 month)">; description = <"Chronic stress lasting over a month.">>
+                ["at293"] = <text = <"Unknown">; description = <"Stress duration not known.">>
+                ["at300"] = <text = <"Meditation">; description = <"Meditation practice.">>
+                ["at301"] = <text = <"Deep breathing">; description = <"Deep breathing exercises.">>
+                ["at302"] = <text = <"Physical exercise">; description = <"Physical exercise for stress relief.">>
+                ["at303"] = <text = <"Social support">; description = <"Seeking social support.">>
+                ["at304"] = <text = <"Sleep/rest">; description = <"Rest or sleep.">>
+                ["at305"] = <text = <"Nature exposure">; description = <"Time in nature.">>
+                ["at306"] = <text = <"Music/art">; description = <"Music or art therapy.">>
+                ["at307"] = <text = <"Therapy/counseling">; description = <"Professional therapy or counseling.">>
+                ["at308"] = <text = <"Medication">; description = <"Medication for stress/anxiety.">>
+                ["at309"] = <text = <"Other">; description = <"Other coping activity.">>
+                ["at310"] = <text = <"Very effective">; description = <"Intervention was very effective.">>
+                ["at311"] = <text = <"Moderately effective">; description = <"Intervention was moderately effective.">>
+                ["at312"] = <text = <"Slightly effective">; description = <"Intervention was slightly effective.">>
+                ["at313"] = <text = <"Not effective">; description = <"Intervention was not effective.">>
+                ["at314"] = <text = <"Unknown">; description = <"Effectiveness not assessed.">>
+                ["at320"] = <text = <"Good">; description = <"Good sleep quality.">>
+                ["at321"] = <text = <"Fair">; description = <"Fair sleep quality.">>
+                ["at322"] = <text = <"Poor">; description = <"Poor sleep quality.">>
+                ["at323"] = <text = <"Unknown">; description = <"Sleep quality not recorded.">>
+                ["at330"] = <text = <"None">; description = <"No physical activity.">>
+                ["at331"] = <text = <"Light">; description = <"Light physical activity.">>
+                ["at332"] = <text = <"Moderate">; description = <"Moderate physical activity.">>
+                ["at333"] = <text = <"Vigorous">; description = <"Vigorous physical activity.">>
+                ["at334"] = <text = <"Unknown">; description = <"Activity level not recorded.">>
+                ["at340"] = <text = <"Menstrual">; description = <"Menstrual phase.">>
+                ["at341"] = <text = <"Follicular">; description = <"Follicular phase.">>
+                ["at342"] = <text = <"Ovulation">; description = <"Ovulation phase.">>
+                ["at343"] = <text = <"Luteal">; description = <"Luteal phase.">>
+                ["at344"] = <text = <"Not applicable">; description = <"Not applicable (male, post-menopausal, etc.).">>
+                ["at345"] = <text = <"Unknown">; description = <"Menstrual phase not known.">>
+                ["at350"] = <text = <"Garmin Stress Score">; description = <"Garmin proprietary stress algorithm.">>
+                ["at351"] = <text = <"Fitbit Stress Management">; description = <"Fitbit stress management score algorithm.">>
+                ["at352"] = <text = <"Samsung Stress">; description = <"Samsung Health stress algorithm.">>
+                ["at353"] = <text = <"Oura HRV Balance">; description = <"Oura Ring HRV balance algorithm.">>
+                ["at354"] = <text = <"Whoop Recovery">; description = <"Whoop recovery score algorithm.">>
+                ["at355"] = <text = <"Custom algorithm">; description = <"Custom or research algorithm.">>
+                ["at356"] = <text = <"Unknown">; description = <"Algorithm not specified.">>
+                ["at360"] = <text = <"Automatic (continuous)">; description = <"Continuous background monitoring.">>
+                ["at361"] = <text = <"On-demand scan">; description = <"User-initiated scan (e.g., Fitbit EDA).">>
+                ["at362"] = <text = <"User-initiated">; description = <"User-initiated momentary assessment.">>
+                ["at363"] = <text = <"Questionnaire">; description = <"Validated questionnaire completion.">>
+                ["at364"] = <text = <"Hybrid">; description = <"Combination of methods.">>
+                ["at365"] = <text = <"Unknown">; description = <"Assessment method not specified.">>
+                ["at370"] = <text = <"Clinically validated">; description = <"Algorithm validated in clinical studies.">>
+                ["at371"] = <text = <"Research validated">; description = <"Algorithm validated in research studies.">>
+                ["at372"] = <text = <"Vendor proprietary">; description = <"Vendor proprietary algorithm, validation unknown.">>
+                ["at373"] = <text = <"Not validated">; description = <"Algorithm not validated against gold standard.">>
+            >
+        >
+    >
