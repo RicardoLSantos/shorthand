@@ -98,11 +98,11 @@ Description: "Profile for QT interval measurements from consumer ECG-capable wea
 * component[correctionFormula].code.coding.display = "QT Correction Formula Used"
 * component[correctionFormula].valueCodeableConcept from QTCorrectionFormulaVS (required)
 * component[correctionFormula] ^short = "Formula used for QT correction (Bazett, Fridericia, Framingham)"
-* component[heartRateAtMeasurement].code = $LOINC#76282-3 "Heart rate by ECG"
+* component[heartRateAtMeasurement].code = $LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
 * component[heartRateAtMeasurement].valueQuantity.system = $UCUM
 * component[heartRateAtMeasurement].valueQuantity.code = #/min
 * component[heartRateAtMeasurement] ^short = "Heart rate during QT measurement"
-* component[rrInterval].code = $LOINC#8637-2 "R-R interval by EKG"
+* component[rrInterval].code = $LOINC#8637-1 "R-R interval by EKG"
 * component[rrInterval].valueQuantity.system = $UCUM
 * component[rrInterval].valueQuantity.code = #ms
 * component[rrInterval] ^short = "RR interval for rate correction calculation"
@@ -115,7 +115,7 @@ Parent: ConsumerECGObservation
 Id: qrs-duration-observation
 Title: "QRS Duration Observation Profile"
 Description: "Profile for QRS complex duration from consumer ECG-capable wearables"
-* code = $LOINC#8633-8 "QRS duration"
+* code = $LOINC#44973-6 "QRS duration {Electrocardiograph lead}"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #ms
@@ -126,7 +126,7 @@ Parent: ConsumerECGObservation
 Id: pr-interval-observation
 Title: "PR Interval Observation Profile"
 Description: "Profile for PR interval measurements from consumer ECG-capable wearables"
-* code = $LOINC#8625-6 "PR interval"
+* code = $LOINC#8625-6 "P-R Interval"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #ms
@@ -137,7 +137,7 @@ Parent: ConsumerECGObservation
 Id: heart-rate-ecg-observation
 Title: "Heart Rate by ECG Observation Profile"
 Description: "Profile for heart rate derived from ECG signal (more accurate than PPG during motion)"
-* code = $LOINC#76282-3 "Heart rate by ECG"
+* code = $LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #/min
@@ -148,8 +148,7 @@ Id: qt-interpretation-vs
 Title: "QT Interpretation ValueSet"
 Description: "Interpretation codes for QT interval findings"
 * ^experimental = false
-* $SCT#78976005 "Prolonged QT interval"
-* $SCT#251161004 "QT interval prolongation"
+// Note: SNOMED 78976005 and 251161004 removed - not found in SNOMED CT International 2025-02
 * $SCT#17338001 "Prolonged QT interval syndrome"
 * http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 * http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"

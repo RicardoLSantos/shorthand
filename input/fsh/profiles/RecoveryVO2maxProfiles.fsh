@@ -80,10 +80,10 @@ Description: "Profile for recording composite recovery and readiness scores from
 * component[trendDirection].valueCodeableConcept from TrendDirectionVS (required)
 
 // Vendor-specific scores
-* component[ouraReadiness].code = RecoveryMetricsCS#oura "Oura Readiness Score"
+* component[ouraReadiness].code = RecoveryMetricsCS#oura "Oura Readiness"
 * component[ouraReadiness].value[x] only integer
 
-* component[whoopRecovery].code = RecoveryMetricsCS#whoop "WHOOP Recovery Score"
+* component[whoopRecovery].code = RecoveryMetricsCS#whoop "WHOOP Recovery"
 * component[whoopRecovery].value[x] only Quantity
 * component[whoopRecovery].valueQuantity.system = $UCUM
 * component[whoopRecovery].valueQuantity.code = #%
@@ -91,7 +91,7 @@ Description: "Profile for recording composite recovery and readiness scores from
 * component[garminBodyBattery].code = RecoveryMetricsCS#garmin-bb "Garmin Body Battery"
 * component[garminBodyBattery].value[x] only integer
 
-* component[fitbitReadiness].code = RecoveryMetricsCS#fitbit "Fitbit Daily Readiness"
+* component[fitbitReadiness].code = RecoveryMetricsCS#fitbit "Fitbit Readiness"
 * component[fitbitReadiness].value[x] only integer
 
 // Contributing factors
@@ -121,7 +121,7 @@ Description: "Profile for recording composite recovery and readiness scores from
 * component[previousDayStrain].valueQuantity.code = #{score}
 * component[previousDayStrain] ^short = "WHOOP scale 0-21"
 
-* component[cumulativeStrain7d].code = RecoveryMetricsCS#strain-7d "Cumulative Strain (7 day)"
+* component[cumulativeStrain7d].code = RecoveryMetricsCS#strain-7d "Cumulative Strain 7d"
 * component[cumulativeStrain7d].value[x] only Quantity
 * component[cumulativeStrain7d].valueQuantity.system = $UCUM
 * component[cumulativeStrain7d].valueQuantity.code = #{score}
@@ -139,18 +139,18 @@ Description: "Profile for recording composite recovery and readiness scores from
 * component[recommendedActivity].value[x] only CodeableConcept
 * component[recommendedActivity].valueCodeableConcept from RecommendedActivityVS (required)
 
-* component[optimalStrainToday].code = RecoveryMetricsCS#optimal-strain "Optimal Strain Today"
+* component[optimalStrainToday].code = RecoveryMetricsCS#optimal-strain "Optimal Strain"
 * component[optimalStrainToday].value[x] only Quantity
 * component[optimalStrainToday].valueQuantity.system = $UCUM
 * component[optimalStrainToday].valueQuantity.code = #{score}
 
 // Historical comparison
-* component[avg7dayReadiness].code = RecoveryMetricsCS#avg-7d "7-Day Average Readiness"
+* component[avg7dayReadiness].code = RecoveryMetricsCS#avg-7d "7-Day Average"
 * component[avg7dayReadiness].value[x] only Quantity
 * component[avg7dayReadiness].valueQuantity.system = $UCUM
 * component[avg7dayReadiness].valueQuantity.code = #{score}
 
-* component[avg30dayReadiness].code = RecoveryMetricsCS#avg-30d "30-Day Average Readiness"
+* component[avg30dayReadiness].code = RecoveryMetricsCS#avg-30d "30-Day Average"
 * component[avg30dayReadiness].value[x] only Quantity
 * component[avg30dayReadiness].valueQuantity.system = $UCUM
 * component[avg30dayReadiness].valueQuantity.code = #{score}
@@ -180,7 +180,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * category 1..1 MS
 * category = $ObsCat#exam "Exam"
 * code 1..1 MS
-* code = $LOINC#60842-2 "Oxygen consumption/body weight [Volume Rate Content] --during maximum exercise"
+* code = $LOINC#60842-2 "Oxygen consumption (VO2)"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effectiveDateTime 1..1 MS
@@ -224,17 +224,17 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
     dataSource 0..1
 
 // Confidence interval
-* component[confidenceLower].code = VO2maxMetricsCS#ci-lower "Confidence Interval Lower"
+* component[confidenceLower].code = VO2maxMetricsCS#ci-lower "CI Lower"
 * component[confidenceLower].value[x] only Quantity
 * component[confidenceLower].valueQuantity.system = $UCUM
 * component[confidenceLower].valueQuantity.code = #mL/kg/min
 
-* component[confidenceUpper].code = VO2maxMetricsCS#ci-upper "Confidence Interval Upper"
+* component[confidenceUpper].code = VO2maxMetricsCS#ci-upper "CI Upper"
 * component[confidenceUpper].value[x] only Quantity
 * component[confidenceUpper].valueQuantity.system = $UCUM
 * component[confidenceUpper].valueQuantity.code = #mL/kg/min
 
-* component[estimationAccuracy].code = VO2maxMetricsCS#accuracy "Estimation Accuracy"
+* component[estimationAccuracy].code = VO2maxMetricsCS#accuracy "Accuracy"
 * component[estimationAccuracy].value[x] only Quantity
 * component[estimationAccuracy].valueQuantity.system = $UCUM
 * component[estimationAccuracy].valueQuantity.code = #%
@@ -244,7 +244,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * component[crfCategory].value[x] only CodeableConcept
 * component[crfCategory].valueCodeableConcept from CRFCategoryVS (required)
 
-* component[percentileRank].code = VO2maxMetricsCS#percentile "Percentile Rank"
+* component[percentileRank].code = VO2maxMetricsCS#percentile "Percentile"
 * component[percentileRank].value[x] only Quantity
 * component[percentileRank].valueQuantity.system = $UCUM
 * component[percentileRank].valueQuantity.code = #%
@@ -255,7 +255,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * component[fitnessAge].valueQuantity.code = #a
 * component[fitnessAge] ^short = "Biological age based on CRF"
 
-* component[classificationStandard].code = VO2maxMetricsCS#standard "Classification Standard"
+* component[classificationStandard].code = VO2maxMetricsCS#standard "Standard"
 * component[classificationStandard].value[x] only CodeableConcept
 * component[classificationStandard].valueCodeableConcept from CRFStandardVS (required)
 
@@ -264,26 +264,26 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * component[methodType].value[x] only CodeableConcept
 * component[methodType].valueCodeableConcept from VO2maxMethodVS (required)
 
-* component[specificProtocol].code = VO2maxMetricsCS#protocol "Specific Protocol"
+* component[specificProtocol].code = VO2maxMetricsCS#protocol "Protocol"
 * component[specificProtocol].value[x] only CodeableConcept
 * component[specificProtocol].valueCodeableConcept from VO2maxProtocolVS (required)
 
-* component[validationStatus].code = VO2maxMetricsCS#validation "Validation Status"
+* component[validationStatus].code = VO2maxMetricsCS#validation "Validation"
 * component[validationStatus].value[x] only CodeableConcept
 * component[validationStatus].valueCodeableConcept from ValidationStatusVS (required)
 
 // Input parameters
-* component[restingHRUsed].code = VO2maxMetricsCS#rhr-used "Resting HR Used"
+* component[restingHRUsed].code = VO2maxMetricsCS#rhr-used "RHR Used"
 * component[restingHRUsed].value[x] only Quantity
 * component[restingHRUsed].valueQuantity.system = $UCUM
 * component[restingHRUsed].valueQuantity.code = #{beats}/min
 
-* component[maxHRUsed].code = VO2maxMetricsCS#hrmax-used "Max HR Used"
+* component[maxHRUsed].code = VO2maxMetricsCS#hrmax-used "HRmax Used"
 * component[maxHRUsed].value[x] only Quantity
 * component[maxHRUsed].valueQuantity.system = $UCUM
 * component[maxHRUsed].valueQuantity.code = #{beats}/min
 
-* component[hrMaxDetermination].code = VO2maxMetricsCS#hrmax-method "HRmax Determination Method"
+* component[hrMaxDetermination].code = VO2maxMetricsCS#hrmax-method "HRmax Method"
 * component[hrMaxDetermination].value[x] only CodeableConcept
 * component[hrMaxDetermination].valueCodeableConcept from HRmaxMethodVS (required)
 
@@ -292,7 +292,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * component[vo2maxTrend].value[x] only CodeableConcept
 * component[vo2maxTrend].valueCodeableConcept from VO2maxTrendVS (required)
 
-* component[changeFromBaseline].code = VO2maxMetricsCS#change "Change from Baseline"
+* component[changeFromBaseline].code = VO2maxMetricsCS#change "Change"
 * component[changeFromBaseline].value[x] only Quantity
 * component[changeFromBaseline].valueQuantity.system = $UCUM
 * component[changeFromBaseline].valueQuantity.code = #mL/kg/min
@@ -302,17 +302,17 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * component[percentChange].valueQuantity.system = $UCUM
 * component[percentChange].valueQuantity.code = #%
 
-* component[baselineValue].code = VO2maxMetricsCS#baseline "Baseline Value"
+* component[baselineValue].code = VO2maxMetricsCS#baseline "Baseline"
 * component[baselineValue].value[x] only Quantity
 * component[baselineValue].valueQuantity.system = $UCUM
 * component[baselineValue].valueQuantity.code = #mL/kg/min
 
 // Health implications
-* component[cvRiskCategory].code = VO2maxMetricsCS#cv-risk "Cardiovascular Risk Category"
+* component[cvRiskCategory].code = VO2maxMetricsCS#cv-risk "CV Risk"
 * component[cvRiskCategory].value[x] only CodeableConcept
 * component[cvRiskCategory].valueCodeableConcept from CVRiskCategoryVS (required)
 
-* component[metCapacity].code = VO2maxMetricsCS#mets "MET Capacity"
+* component[metCapacity].code = VO2maxMetricsCS#mets "METs"
 * component[metCapacity].value[x] only Quantity
 * component[metCapacity].valueQuantity.system = $UCUM
 * component[metCapacity].valueQuantity.code = #MET

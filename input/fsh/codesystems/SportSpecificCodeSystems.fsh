@@ -82,6 +82,7 @@ Description: "CodeSystem for running dynamics and biomechanical metrics from wea
 * #vr "Vertical Ratio" "Vertical oscillation relative to stride length"
 
 // Cadence and stride
+* #cadence "Running Cadence" "Steps per minute during running"
 * #stride "Stride Length" "Distance covered in two steps"
 * #step-length "Step Length" "Distance covered in one step"
 * #step-variability "Step Rate Variability" "Variability in step timing"

@@ -22,7 +22,7 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"
 * code 1..1 MS
-* code = $SNOMED#52087000 "Cycling (observable entity)"
+* code = $LOINC#73985-4 "Exercise activity"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effective[x] only dateTime
@@ -93,7 +93,7 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
 * component[intensityFactor].valueQuantity.code = #1
 
 // Cadence
-* component[cadence].code = $LOINC#103211-4 "Pedaling rate"
+* component[cadence].code = CyclingMetricsCS#cadence "Cadence"
 * component[cadence].value[x] only Quantity
 * component[cadence].valueQuantity.system = $UCUM
 * component[cadence].valueQuantity.code = #{rpm}
@@ -110,7 +110,7 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
 * component[leftRightBalance].valueQuantity.code = #%
 
 // Energy and session metrics
-* component[kilojoules].code = CyclingMetricsCS#kj "Work in Kilojoules"
+* component[kilojoules].code = CyclingMetricsCS#kj "Kilojoules"
 * component[kilojoules].value[x] only Quantity
 * component[kilojoules].valueQuantity.system = $UCUM
 * component[kilojoules].valueQuantity.code = #kJ
@@ -158,7 +158,7 @@ Description: "Profile for recording running form and biomechanical metrics from 
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"
 * code 1..1 MS
-* code = $SNOMED#52226006 "Running (observable entity)"
+* code = $LOINC#73985-4 "Exercise activity"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effective[x] only dateTime
@@ -216,7 +216,7 @@ Description: "Profile for recording running form and biomechanical metrics from 
 * component[verticalRatio].valueQuantity.code = #%
 
 // Cadence and stride
-* component[cadence].code = $LOINC#103204-9 "Running cadence"
+* component[cadence].code = RunningMetricsCS#cadence "Running Cadence"
 * component[cadence].value[x] only Quantity
 * component[cadence].valueQuantity.system = $UCUM
 * component[cadence].valueQuantity.code = #{spm}
@@ -311,7 +311,7 @@ Description: "Profile for recording swimming performance metrics from wearable d
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"
 * code 1..1 MS
-* code = $SNOMED#20461001 "Swimming (observable entity)"
+* code = $SNOMED#20461001 "Swimming (qualifier value)"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effective[x] only dateTime
@@ -401,12 +401,12 @@ Description: "Profile for recording swimming performance metrics from wearable d
 * component[bestSwolf].value[x] only integer
 
 // Pace metrics
-* component[avgPace].code = SwimmingMetricsCS#avg-pace "Average Pace (per 100m)"
+* component[avgPace].code = SwimmingMetricsCS#avg-pace "Average Pace"
 * component[avgPace].value[x] only Quantity
 * component[avgPace].valueQuantity.system = $UCUM
 * component[avgPace].valueQuantity.code = #s/100m
 
-* component[bestPace].code = SwimmingMetricsCS#best-pace "Best Pace (per 100m)"
+* component[bestPace].code = SwimmingMetricsCS#best-pace "Best Pace"
 * component[bestPace].value[x] only Quantity
 * component[bestPace].valueQuantity.system = $UCUM
 * component[bestPace].valueQuantity.code = #s/100m
@@ -468,7 +468,7 @@ Description: "Profile for recording strength training metrics from wearable devi
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"
 * code 1..1 MS
-* code = $SNOMED#266940006 "Strength training (procedure)"
+* code = $LOINC#73985-4 "Exercise activity"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effective[x] only dateTime
@@ -574,7 +574,7 @@ Description: "Profile for recording strength training metrics from wearable devi
 * component[peakVelocity].valueQuantity.system = $UCUM
 * component[peakVelocity].valueQuantity.code = #m/s
 
-* component[velocityLoss].code = StrengthTrainingCS#vel-loss "Velocity Loss in Set"
+* component[velocityLoss].code = StrengthTrainingCS#vel-loss "Velocity Loss"
 * component[velocityLoss].value[x] only Quantity
 * component[velocityLoss].valueQuantity.system = $UCUM
 * component[velocityLoss].valueQuantity.code = #%
@@ -631,7 +631,7 @@ Description: "Profile for recording strength training metrics from wearable devi
 * component[sessionRPE].code = StrengthTrainingCS#session-rpe "Session RPE"
 * component[sessionRPE].value[x] only integer
 
-* component[sessionTrainingLoad].code = StrengthTrainingCS#session-load "Session Training Load (sRPE)"
+* component[sessionTrainingLoad].code = StrengthTrainingCS#session-load "Session Training Load"
 * component[sessionTrainingLoad].value[x] only integer
 
 * component[trainingType].code = StrengthTrainingCS#training-type "Training Type"

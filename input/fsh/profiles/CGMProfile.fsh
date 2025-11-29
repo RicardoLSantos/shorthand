@@ -96,7 +96,7 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[timeBelowRange].valueQuantity.code = #%
 * component[timeBelowRange] ^short = "Target: <4% (<70 mg/dL)"
 
-* component[timeBelowRangeL2].code = CGMMetricsCS#tbr-l2 "Time Below Range - Level 2"
+* component[timeBelowRangeL2].code = CGMMetricsCS#tbr-l2 "Time Below Range Level 2"
 * component[timeBelowRangeL2].value[x] only Quantity
 * component[timeBelowRangeL2].valueQuantity.system = $UCUM
 * component[timeBelowRangeL2].valueQuantity.code = #%
@@ -108,7 +108,7 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[timeAboveRange].valueQuantity.code = #%
 * component[timeAboveRange] ^short = "Target: <25% (>180 mg/dL)"
 
-* component[timeAboveRangeL2].code = CGMMetricsCS#tar-l2 "Time Above Range - Level 2"
+* component[timeAboveRangeL2].code = CGMMetricsCS#tar-l2 "Time Above Range Level 2"
 * component[timeAboveRangeL2].value[x] only Quantity
 * component[timeAboveRangeL2].valueQuantity.system = $UCUM
 * component[timeAboveRangeL2].valueQuantity.code = #%
@@ -123,7 +123,7 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[meanGlucose].valueQuantity.system = $UCUM
 * component[meanGlucose].valueQuantity.code = #mg/dL
 
-* component[glucoseSD].code = CGMMetricsCS#sd "Glucose Standard Deviation"
+* component[glucoseSD].code = CGMMetricsCS#sd "Standard Deviation"
 * component[glucoseSD].value[x] only Quantity
 * component[glucoseSD].valueQuantity.system = $UCUM
 * component[glucoseSD].valueQuantity.code = #mg/dL
@@ -162,13 +162,13 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[sensorActiveTime].valueQuantity.code = #%
 * component[sensorActiveTime] ^short = "Target: >70% for reliable metrics"
 
-* component[targetRangeLower].code = CGMMetricsCS#range-low "Target Range Lower Bound"
+* component[targetRangeLower].code = CGMMetricsCS#range-low "Target Range Lower"
 * component[targetRangeLower].value[x] only Quantity
 * component[targetRangeLower].valueQuantity.system = $UCUM
 * component[targetRangeLower].valueQuantity.code = #mg/dL
 * component[targetRangeLower] ^short = "Default: 70 mg/dL"
 
-* component[targetRangeUpper].code = CGMMetricsCS#range-high "Target Range Upper Bound"
+* component[targetRangeUpper].code = CGMMetricsCS#range-high "Target Range Upper"
 * component[targetRangeUpper].value[x] only Quantity
 * component[targetRangeUpper].valueQuantity.system = $UCUM
 * component[targetRangeUpper].valueQuantity.code = #mg/dL
@@ -182,11 +182,11 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[cgmSystem].value[x] only CodeableConcept
 * component[cgmSystem].valueCodeableConcept from CGMSystemVS (required)
 
-* component[sensorInsertionSite].code = CGMMetricsCS#site "Sensor Insertion Site"
+* component[sensorInsertionSite].code = CGMMetricsCS#site "Insertion Site"
 * component[sensorInsertionSite].value[x] only CodeableConcept
 * component[sensorInsertionSite].valueCodeableConcept from CGMInsertionSiteVS (required)
 
-* component[daysSinceSensorInsertion].code = CGMMetricsCS#sensor-days "Days Since Sensor Insertion"
+* component[daysSinceSensorInsertion].code = CGMMetricsCS#sensor-days "Sensor Days"
 * component[daysSinceSensorInsertion].value[x] only integer
 
 
@@ -214,9 +214,11 @@ Description: "CodeSystem for continuous glucose monitoring metrics"
 // Time in Range
 * #tir "Time in Range" "Percentage of time glucose is within target range (70-180 mg/dL)"
 * #tbr "Time Below Range" "Percentage of time glucose is below target (<70 mg/dL)"
-* #tbr-l2 "Time Below Range Level 2" "Percentage of time in severe hypoglycemia (<54 mg/dL)"
+* #tbr-l1 "Time Below Range Level 1" "Percentage of time in Level 1 hypoglycemia (54-69 mg/dL)"
+* #tbr-l2 "Time Below Range Level 2" "Percentage of time in Level 2 hypoglycemia (<54 mg/dL)"
 * #tar "Time Above Range" "Percentage of time glucose is above target (>180 mg/dL)"
-* #tar-l2 "Time Above Range Level 2" "Percentage of time in severe hyperglycemia (>250 mg/dL)"
+* #tar-l1 "Time Above Range Level 1" "Percentage of time in Level 1 hyperglycemia (181-250 mg/dL)"
+* #tar-l2 "Time Above Range Level 2" "Percentage of time in Level 2 hyperglycemia (>250 mg/dL)"
 
 // Variability
 * #mean "Mean Glucose" "Average glucose over reporting period"

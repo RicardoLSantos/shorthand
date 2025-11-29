@@ -89,6 +89,35 @@ Description: "SNOMED CT codes for clinical sleep stages"
 * $SCT#26329005 "Stage 3-4 sleep" // N3 deep (slow-wave)
 * $SCT#248218005 "Rapid eye movement sleep" // REM
 
+// Vendor Sleep Stages ValueSets (for ConceptMap sourceCanonical)
+ValueSet: FitbitSleepStagesVS
+Id: fitbit-sleep-stages-vs
+Title: "Fitbit Sleep Stages ValueSet"
+Description: "ValueSet containing Fitbit proprietary sleep stage codes"
+* ^experimental = false
+* include codes from system FitbitSleepStagesCS
+
+ValueSet: GarminSleepStagesVS
+Id: garmin-sleep-stages-vs
+Title: "Garmin Sleep Stages ValueSet"
+Description: "ValueSet containing Garmin proprietary sleep stage codes"
+* ^experimental = false
+* include codes from system GarminSleepStagesCS
+
+ValueSet: OuraSleepStagesVS
+Id: oura-sleep-stages-vs
+Title: "Oura Sleep Stages ValueSet"
+Description: "ValueSet containing Oura Ring proprietary sleep stage codes"
+* ^experimental = false
+* include codes from system OuraSleepStagesCS
+
+ValueSet: AppleSleepStagesVS
+Id: apple-sleep-stages-vs
+Title: "Apple Sleep Stages ValueSet"
+Description: "ValueSet containing Apple HealthKit sleep stage codes"
+* ^experimental = false
+* include codes from system AppleSleepStagesCS
+
 // ConceptMap: Fitbit → SNOMED CT
 Instance: ConceptMapFitbitSleepToSNOMED
 InstanceOf: ConceptMap
@@ -102,8 +131,8 @@ Usage: #definition
 * experimental = false
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fitbit-sleep-stages-cs"
-* targetCanonical = "http://snomed.info/sct"
+* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fitbit-sleep-stages-vs"
+* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fitbit-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
 * group[0].element[0].code = #wake
@@ -141,8 +170,8 @@ Usage: #definition
 * experimental = false
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/garmin-sleep-stages-cs"
-* targetCanonical = "http://snomed.info/sct"
+* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/garmin-sleep-stages-vs"
+* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/garmin-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
 * group[0].element[0].code = #awake
@@ -183,8 +212,8 @@ Usage: #definition
 * experimental = false
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/oura-sleep-stages-cs"
-* targetCanonical = "http://snomed.info/sct"
+* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/oura-sleep-stages-vs"
+* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/oura-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
 * group[0].element[0].code = #awake
@@ -221,8 +250,8 @@ Usage: #definition
 * experimental = false
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/apple-sleep-stages-cs"
-* targetCanonical = "http://snomed.info/sct"
+* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/apple-sleep-stages-vs"
+* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/apple-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
 * group[0].element[0].code = #awake
@@ -271,8 +300,8 @@ Usage: #definition
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * description = "Cross-vendor sleep stage mapping enabling semantic interoperability across Apple, Fitbit, Garmin, and Oura sleep tracking data. Critical for multi-device LHS implementations."
-* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fitbit-sleep-stages-cs"
-* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/apple-sleep-stages-cs"
+* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fitbit-sleep-stages-vs"
+* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/apple-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fitbit-sleep-stages-cs"
 * group[0].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/apple-sleep-stages-cs"
 * group[0].element[0].code = #wake
