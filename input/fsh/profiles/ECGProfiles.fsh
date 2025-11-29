@@ -1,0 +1,190 @@
+// ECGProfiles.fsh
+// Created: 2025-11-29
+// Purpose: FHIR profiles for ECG-derived observations from consumer wearable devices
+// Based on: Chapter 2 ECG Wearables section, RS6 SciSpace analysis
+
+Alias: $SCT = http://snomed.info/sct
+Alias: $LOINC = http://loinc.org
+Alias: $UCUM = http://unitsofmeasure.org
+Alias: $vitalsigns = http://hl7.org/fhir/StructureDefinition/vitalsigns
+
+// QT Correction Formula CodeSystem
+CodeSystem: QTCorrectionFormulaCS
+Id: qt-correction-formula-cs
+Title: "QT Correction Formula CodeSystem"
+Description: "Codes for QT interval correction formulas used to adjust for heart rate dependency"
+* ^experimental = false
+* ^caseSensitive = true
+* ^content = #complete
+* #bazett "Bazett Formula" "QTc = QT / sqrt(RR). Most widely used; overcorrects at extreme heart rates"
+* #fridericia "Fridericia Formula" "QTc = QT / RR^(1/3). Better accuracy during tachycardia"
+* #framingham "Framingham Formula" "QTc = QT + 0.154 × (1 - RR). Linear correction approach"
+* #hodges "Hodges Formula" "QTc = QT + 1.75 × (HR - 60). Rate-based linear correction"
+* #rautaharju "Rautaharju Formula" "Regression-based correction; accounts for sex differences"
+* #unknown "Unknown/Not Specified" "Correction method not documented by device"
+
+// QT Correction Formula ValueSet
+ValueSet: QTCorrectionFormulaVS
+Id: qt-correction-formula-vs
+Title: "QT Correction Formula ValueSet"
+Description: "ValueSet for QT interval correction formulas"
+* ^experimental = false
+* include codes from system QTCorrectionFormulaCS
+
+// ECG-Derived Vital Signs Base Profile
+Profile: ConsumerECGObservation
+Parent: $vitalsigns
+Id: consumer-ecg-observation
+Title: "Consumer ECG Observation Profile"
+Description: "Base profile for ECG-derived observations from consumer wearable devices (Apple Watch, Withings, Samsung, AliveCor)"
+* ^abstract = true
+* status MS
+* category 1..* MS
+* subject 1..1 MS
+* effectiveDateTime 1..1 MS
+* code 1..1 MS
+* value[x] 0..1 MS
+* device 0..1 MS
+* note 0..* MS
+* extension contains
+    ClinicalUseWarning named clinicalWarning 1..1 MS and
+    DataQualityIndicator named dataQuality 0..1 MS
+
+// QT Interval Observation Profile
+Profile: QTIntervalObservation
+Parent: ConsumerECGObservation
+Id: qt-interval-observation
+Title: "QT Interval Observation Profile"
+Description: "Profile for QT interval measurements from consumer ECG-capable wearable devices. LOINC codes: 8634-8 (Q-T interval), 8636-3 (Q-T corrected). Consumer devices are NOT FDA-cleared for QT measurement. References: Giudicessi2021 (Circulation), Zaballos2023 (Sci Rep)."
+* code = $LOINC#8634-8 "Q-T interval"
+* valueQuantity only Quantity
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #ms
+* valueQuantity ^short = "Uncorrected QT interval in milliseconds"
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains
+    qtCorrected 1..1 MS and
+    correctionFormula 0..1 MS and
+    heartRateAtMeasurement 0..1 MS and
+    rrInterval 0..1 MS
+* component[qtCorrected].code = $LOINC#8636-3 "Q-T interval corrected"
+* component[qtCorrected].valueQuantity only Quantity
+* component[qtCorrected].valueQuantity.system = $UCUM
+* component[qtCorrected].valueQuantity.code = #ms
+* component[qtCorrected] ^short = "Heart rate-corrected QT interval"
+* component[correctionFormula].code.coding.system = "http://fhir.lifestyle-medicine.org/CodeSystem/ecg-components"
+* component[correctionFormula].code.coding.code = #qt-correction-formula
+* component[correctionFormula].code.coding.display = "QT Correction Formula Used"
+* component[correctionFormula].valueCodeableConcept from QTCorrectionFormulaVS (required)
+* component[correctionFormula] ^short = "Formula used for QT correction (Bazett, Fridericia, Framingham)"
+* component[heartRateAtMeasurement].code = $LOINC#76282-3 "Heart rate by ECG"
+* component[heartRateAtMeasurement].valueQuantity.system = $UCUM
+* component[heartRateAtMeasurement].valueQuantity.code = #/min
+* component[heartRateAtMeasurement] ^short = "Heart rate during QT measurement"
+* component[rrInterval].code = $LOINC#8637-2 "R-R interval by EKG"
+* component[rrInterval].valueQuantity.system = $UCUM
+* component[rrInterval].valueQuantity.code = #ms
+* component[rrInterval] ^short = "RR interval for rate correction calculation"
+* interpretation 0..1 MS
+* interpretation from QTInterpretationVS (extensible)
+
+// QRS Duration Observation Profile
+Profile: QRSDurationObservation
+Parent: ConsumerECGObservation
+Id: qrs-duration-observation
+Title: "QRS Duration Observation Profile"
+Description: "Profile for QRS complex duration from consumer ECG-capable wearables"
+* code = $LOINC#8633-8 "QRS duration"
+* valueQuantity only Quantity
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #ms
+
+// PR Interval Observation Profile
+Profile: PRIntervalObservation
+Parent: ConsumerECGObservation
+Id: pr-interval-observation
+Title: "PR Interval Observation Profile"
+Description: "Profile for PR interval measurements from consumer ECG-capable wearables"
+* code = $LOINC#8625-6 "PR interval"
+* valueQuantity only Quantity
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #ms
+
+// Heart Rate by ECG Observation Profile
+Profile: HeartRateByECGObservation
+Parent: ConsumerECGObservation
+Id: heart-rate-ecg-observation
+Title: "Heart Rate by ECG Observation Profile"
+Description: "Profile for heart rate derived from ECG signal (more accurate than PPG during motion)"
+* code = $LOINC#76282-3 "Heart rate by ECG"
+* valueQuantity only Quantity
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #/min
+
+// QT Interpretation ValueSet
+ValueSet: QTInterpretationVS
+Id: qt-interpretation-vs
+Title: "QT Interpretation ValueSet"
+Description: "Interpretation codes for QT interval findings"
+* ^experimental = false
+* $SCT#78976005 "Prolonged QT interval"
+* $SCT#251161004 "QT interval prolongation"
+* $SCT#17338001 "Prolonged QT interval syndrome"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#HH "Critical High"
+
+// Clinical Alert Extension for QT Prolongation
+Extension: QTClinicalAlert
+Id: qt-clinical-alert
+Title: "QT Clinical Alert Extension"
+Description: "Extension for clinical alerts triggered by QT prolongation thresholds"
+* ^experimental = false
+* ^context[0].type = #element
+* ^context[0].expression = "Observation"
+* extension contains
+    alertType 1..1 MS and
+    threshold 1..1 MS and
+    recommendedAction 0..1 MS
+* extension[alertType].value[x] only CodeableConcept
+* extension[alertType].valueCodeableConcept from QTAlertTypeVS (required)
+* extension[threshold].value[x] only Quantity
+* extension[threshold].valueQuantity.system = $UCUM
+* extension[threshold].valueQuantity.code = #ms
+* extension[recommendedAction].value[x] only string
+
+// QT Alert Type CodeSystem
+CodeSystem: QTAlertTypeCS
+Id: qt-alert-type-cs
+Title: "QT Alert Type CodeSystem"
+Description: "Types of clinical alerts for QT interval monitoring"
+* ^experimental = false
+* ^caseSensitive = true
+* ^content = #complete
+* #qtc-borderline "QTc Borderline Prolongation" "QTc 440-500ms (men) or 460-500ms (women); warrants monitoring"
+* #qtc-prolongation-severe "QTc Severe Prolongation" "QTc >= 500ms; high risk of Torsades de Pointes"
+* #qtc-increase-significant "Significant QTc Increase" "QTc increased >60ms from baseline"
+* #torsades-warning "Torsades de Pointes Warning" "Pattern suggestive of Torsades de Pointes risk"
+
+// QT Alert Type ValueSet
+ValueSet: QTAlertTypeVS
+Id: qt-alert-type-vs
+Title: "QT Alert Type ValueSet"
+Description: "ValueSet for QT clinical alert types"
+* ^experimental = false
+* include codes from system QTAlertTypeCS
+
+// ECG Components CodeSystem (for component coding)
+CodeSystem: ECGComponentsCS
+Id: ecg-components-cs
+Title: "ECG Components CodeSystem"
+Description: "Supplementary codes for ECG observation components"
+* ^experimental = false
+* ^caseSensitive = true
+* ^content = #complete
+* #qt-correction-formula "QT Correction Formula" "Formula used to calculate corrected QT interval"
+* #ecg-lead-configuration "ECG Lead Configuration" "Configuration of ECG leads used"
+* #signal-quality-score "Signal Quality Score" "Algorithm-derived ECG signal quality"
+* #recording-duration "Recording Duration" "Duration of ECG recording in seconds"
