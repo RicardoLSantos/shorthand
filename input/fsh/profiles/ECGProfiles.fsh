@@ -2,6 +2,25 @@
 // Created: 2025-11-29
 // Purpose: FHIR profiles for ECG-derived observations from consumer wearable devices
 // Based on: Chapter 2 ECG Wearables section, RS6 SciSpace analysis
+//
+// Bibliographic References:
+// - Rautaharju2009AHAECG: AHA/ACCF/HRS Recommendations for ECG Standardization Part IV (Circulation 119:e241-e250)
+//   DOI: 10.1161/circulationaha.108.191096
+// - Giudicessi2021KardiaMobileQT: AI-Enabled Smartphone ECG for QT Prolongation (Circulation 143:1274-1286)
+//   DOI: 10.1161/CIRCULATIONAHA.120.050569
+// - Perez2019AppleHeartStudy: Large-scale assessment of a smartwatch (NEJM 381:1909-1917)
+//   DOI: 10.1056/NEJMoa1901183
+// - Schwartz2012LQTS: Long QT Syndrome Genotype-Phenotype Correlations (Eur Heart J 33:1134-1140)
+//   DOI: 10.1093/eurheartj/ehr479
+// - Roden2004DrugInducedQT: Drug-Induced Prolongation of the QT Interval (NEJM 350:1013-1022)
+//   DOI: 10.1056/NEJMra032426
+//
+// LOINC Codes (loinc.org, verified 2025-11-29):
+// - 8634-8: Q-T interval
+// - 8636-3: Q-T interval corrected
+// - 76635-2: Q-T interval corrected by Bazett formula
+// - 76634-5: Q-T interval corrected by Fridericia formula
+// - 8637-1: R-R interval by EKG
 
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org

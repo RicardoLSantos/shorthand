@@ -2,6 +2,27 @@
 // Created: 2025-11-29
 // Purpose: Map vendor-specific sleep stage codes to SNOMED CT for cross-vendor interoperability
 // Based on: RS6 SciSpace Gap 5 (Cross-Vendor Interoperability, 10% coverage, 90 severity)
+//
+// Bibliographic References:
+// - Irwin2016Sleep: Sleep Disturbance, Sleep Duration, and Inflammation (Brain Behav Immun 58:1-16)
+//   DOI: 10.1016/j.bbi.2016.05.001
+// - Prather2015Sleep: Sleep duration, sleep quality, and biomarkers of inflammation (Sleep 38:1009-1017)
+//   DOI: 10.5665/sleep.5124
+// - deZambotti2019SleepWearables: The Sleep of the Ring (Sleep 42:zsz098)
+//   DOI: 10.1093/sleep/zsz098
+//
+// SNOMED CT Sleep Stage Codes (browser.ihtsdotools.org, verified 2025-11-29):
+// - 258158006: Awake
+// - 248220008: Non-rapid eye movement sleep
+// - 67233009: Stage 2 sleep
+// - 26329005: Stage 3-4 sleep (slow-wave/deep)
+// - 248218005: Rapid eye movement sleep
+//
+// Vendor API Documentation (Gray Literature):
+// - Fitbit Web API: https://dev.fitbit.com/build/reference/web-api/sleep/
+// - Garmin Connect API: https://developer.garmin.com/connect-api/
+// - Oura Cloud API: https://cloud.ouraring.com/docs/
+// - Apple HealthKit: https://developer.apple.com/documentation/healthkit/hkcategoryvaluesleepanalysis
 
 // Vendor Sleep Stage CodeSystems
 

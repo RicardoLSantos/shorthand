@@ -2,6 +2,19 @@
 // Created: 2025-11-29
 // Purpose: Extension for clinical use warnings on consumer wearable-derived observations
 // Based on: RS6 SciSpace systematic review (214 papers, 2015-2025)
+//
+// Bibliographic References:
+// - Bayoumy2021Wearables: Smart wearable devices in cardiovascular care (Nature Reviews Cardiology)
+//   DOI: 10.1038/s41569-021-00522-7
+// - Perez2019AppleHeartStudy: Large-scale assessment of a smartwatch (NEJM 381:1909-1917)
+//   DOI: 10.1056/NEJMoa1901183
+// - FDA2018AppleWatch: DEN180044 De Novo Classification, ECG App
+//   https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN180044.pdf
+// - Giudicessi2021KardiaMobileQT: AI-Enabled Smartphone ECG for QT Prolongation (Circulation 143:1274-1286)
+//   DOI: 10.1161/CIRCULATIONAHA.120.050569
+//
+// SNOMED CT References (browser.ihtsdotools.org, verified 2025-11-29):
+// - Device provenance concepts per SNOMED International Editorial Guide
 
 Extension: ClinicalUseWarning
 Id: clinical-use-warning
