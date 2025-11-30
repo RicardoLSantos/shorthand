@@ -141,8 +141,8 @@ Unit_concept_id: 8550 (minute)
 * group[1].unmapped.display = "No OMOP concept - sleep stages not in OMOP vocabulary"
 
 // Deep Sleep (SWS)
-* group[1].element[0].code = #deep-sleep
-* group[1].element[0].display = "Deep Sleep Duration (SWS)"
+* group[1].element[0].code = #sleep-deep
+* group[1].element[0].display = "Deep sleep duration"
 * group[1].element[0].target[0].code = #0
 * group[1].element[0].target[0].display = "No OMOP concept available"
 * group[1].element[0].target[0].equivalence = #unmatched
@@ -167,8 +167,8 @@ Dreaming occurs primarily in REM.
 """
 
 // Light Sleep
-* group[1].element[2].code = #light-sleep
-* group[1].element[2].display = "Light Sleep Duration"
+* group[1].element[2].code = #sleep-light
+* group[1].element[2].display = "Light sleep duration"
 * group[1].element[2].target[0].code = #0
 * group[1].element[2].target[0].display = "No OMOP concept available"
 * group[1].element[2].target[0].equivalence = #unmatched

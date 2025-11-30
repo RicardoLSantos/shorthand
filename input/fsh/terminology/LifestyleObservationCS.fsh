@@ -12,7 +12,7 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 62
+* ^count = 65
 
 // Sleep Measurements (5 codes)
 * #sleep-panel "Sleep measurement panel"
@@ -36,6 +36,15 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 
 * #sleep-light "Light sleep duration"
   "Duration of light sleep stage as measured by consumer sleep tracking device"
+
+* #rem-sleep "REM sleep duration"
+  "Duration of REM (Rapid Eye Movement) sleep stage as measured by consumer sleep tracking device"
+
+* #sleep-score "Sleep score"
+  "Vendor-specific composite sleep score (0-100) combining duration, efficiency, stages, and HRV during sleep"
+
+* #waso "Wake after sleep onset"
+  "Total time awake after initial sleep onset (WASO). Normal: <30 minutes. Elevated WASO indicates sleep maintenance insomnia"
 
 * #sleep-awakenings "Number of sleep awakenings"
   "Count of awakenings or sleep interruptions during a sleep period"

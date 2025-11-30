@@ -86,3 +86,19 @@ Description: "CodeSystem for physical activity types from Apple HealthKit HKWork
   "Elliptical trainer exercise. Maps to HKWorkoutActivityType.elliptical."
 * #stairs "Stairs"
   "Stair climbing. Maps to HKWorkoutActivityType.stairs and HKWorkoutActivityType.stairStepper."
+
+// Aggregate activity metrics (from wearables)
+* #active-minutes "Active Minutes"
+  "Minutes of activity in heart rate zones (moderate to vigorous). Apple: Exercise Ring minutes, Fitbit: Active Zone Minutes, Garmin: Intensity Minutes."
+
+* #met-minutes "MET-Minutes"
+  "Metabolic Equivalent of Task × Duration. Standard measure for physical activity dose. 1 MET = 1 kcal/kg/hour (resting). Target: 500-1000 MET-min/week per guidelines."
+
+* #sedentary-time "Sedentary Time"
+  "Time spent in sedentary activities (<1.5 METs). Target: Reduce prolonged sitting, break every 30-60 min. Independent risk factor for mortality."
+
+* #floors-climbed "Floors Climbed"
+  "Number of floors/flights of stairs climbed. Indicates vertical displacement activity. Typically measured via barometric altimeter."
+
+* #stand-hours "Stand Hours"
+  "Hours with at least 1 minute standing. Apple Watch specific metric. Target: 12 stand hours/day. Proxy for sedentary behavior interruption."
