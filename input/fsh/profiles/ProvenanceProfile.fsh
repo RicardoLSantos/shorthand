@@ -77,14 +77,16 @@ ValueSet: PGHDProvenanceActivityVS
 Id: pghd-provenance-activity-vs
 Title: "PGHD Provenance Activity ValueSet"
 Description: "Activities related to PGHD data capture and transformation"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/pghd-provenance-activity-vs"
+* ^status = #active
 * ^experimental = false
-* http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE "Create"
-* http://terminology.hl7.org/CodeSystem/v3-DataOperation#UPDATE "Update"
-* http://terminology.hl7.org/CodeSystem/v3-DataOperation#APPEND "Append"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#originate "Originate/Retain Record Lifecycle Event"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transform "Transform/Translate Record Lifecycle Event"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transmit "Transmit Record Lifecycle Event"
-* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#receive "Receive/Retain Record Lifecycle Event"
+* http://terminology.hl7.org/CodeSystem/v3-DataOperation|5.0.0#CREATE "Create"
+* http://terminology.hl7.org/CodeSystem/v3-DataOperation|5.0.0#UPDATE "Update"
+* http://terminology.hl7.org/CodeSystem/v3-DataOperation|5.0.0#APPEND "Append"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#originate "Originate/Retain Record Lifecycle Event"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#transform "Transform/Translate Record Lifecycle Event"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#transmit "Transmit Record Lifecycle Event"
+* http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#receive "Receive/Retain Record Lifecycle Event"
 
 
 // ====== Extension para Device Metadata ======

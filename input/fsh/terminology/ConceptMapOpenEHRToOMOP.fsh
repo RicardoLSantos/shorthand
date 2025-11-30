@@ -43,10 +43,9 @@ Architecture:
 """
 * purpose = "Enable transformation of wearable health data from openEHR CDRs to OMOP CDM for participation in OHDSI federated research networks."
 
-// Source: openEHR archetype namespace (conceptual)
-// Target: OMOP CDM concept namespace
-* sourceUri = "https://ckm.openehr.org/ckm"
-* targetUri = "http://athena.ohdsi.org/search-terms/terms"
+// Note: sourceUri/targetUri omitted - each group defines its own source/target
+// Source: openEHR archetype identifiers (e.g., openEHR-EHR-OBSERVATION.xxx.v0)
+// Target: OMOP CDM table names (e.g., MEASUREMENT, OBSERVATION, DEVICE_EXPOSURE)
 
 // ============================================================================
 // GROUP 1: HRV Archetype → OMOP MEASUREMENT

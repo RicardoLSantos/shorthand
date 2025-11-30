@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="clinical-use-warning-type-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: CodeSystem clinical-use-warning-type-cs</b></p><a name="clinical-use-warning-type-cs"> </a><a name="hcclinical-use-warning-type-cs"> </a><p>Este  sistema de código  define o seguinte código:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style="white-space:nowrap">consumer-grade-sensor<a name="clinical-use-warning-type-cs-consumer-grade-sensor"> </a></td><td>Consumer-Grade Sensor</td><td>Data derived from consumer-grade sensor (not FDA-cleared for diagnostic use)</td></tr><tr><td style="white-space:nowrap">algorithm-not-validated<a name="clinical-use-warning-type-cs-algorithm-not-validated"> </a></td><td>Algorithm Not Validated</td><td>Proprietary algorithm used without published clinical validation</td></tr><tr><td style="white-space:nowrap">vendor-proprietary<a name="clinical-use-warning-type-cs-vendor-proprietary"> </a></td><td>Vendor Proprietary Calculation</td><td>Metric calculated using undisclosed vendor-specific algorithm</td></tr><tr><td style="white-space:nowrap">insufficient-data-quality<a name="clinical-use-warning-type-cs-insufficient-data-quality"> </a></td><td>Insufficient Data Quality</td><td>Data quality below threshold for clinical decision-making</td></tr><tr><td style="white-space:nowrap">single-lead-ecg<a name="clinical-use-warning-type-cs-single-lead-ecg"> </a></td><td>Single-Lead ECG Limitation</td><td>ECG data from single-lead device; cannot replace 12-lead clinical ECG</td></tr><tr><td style="white-space:nowrap">not-fda-cleared-indication<a name="clinical-use-warning-type-cs-not-fda-cleared-indication"> </a></td><td>Not FDA-Cleared Indication</td><td>Device not cleared for this specific measurement indication</td></tr><tr><td style="white-space:nowrap">requires-clinical-correlation<a name="clinical-use-warning-type-cs-requires-clinical-correlation"> </a></td><td>Requires Clinical Correlation</td><td>Value should be correlated with clinical assessment before action</td></tr><tr><td style="white-space:nowrap">research-use-only<a name="clinical-use-warning-type-cs-research-use-only"> </a></td><td>Research Use Only</td><td>Data suitable for research purposes only; not for clinical decisions</td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs"/>
+  <version value="0.1.0"/>
+  <name value="ClinicalUseWarningTypeCS"/>
+  <title value="Clinical Use Warning Type CodeSystem"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-30T13:08:37+00:00"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Codes for types of clinical use warnings on consumer wearable observations. Addresses vendor algorithm opacity (95% severity) identified in RS6."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="8"/>
+  <concept>
+    <code value="consumer-grade-sensor"/>
+    <display value="Consumer-Grade Sensor"/>
+    <definition value="Data derived from consumer-grade sensor (not FDA-cleared for diagnostic use)"/>
+  </concept>
+  <concept>
+    <code value="algorithm-not-validated"/>
+    <display value="Algorithm Not Validated"/>
+    <definition value="Proprietary algorithm used without published clinical validation"/>
+  </concept>
+  <concept>
+    <code value="vendor-proprietary"/>
+    <display value="Vendor Proprietary Calculation"/>
+    <definition value="Metric calculated using undisclosed vendor-specific algorithm"/>
+  </concept>
+  <concept>
+    <code value="insufficient-data-quality"/>
+    <display value="Insufficient Data Quality"/>
+    <definition value="Data quality below threshold for clinical decision-making"/>
+  </concept>
+  <concept>
+    <code value="single-lead-ecg"/>
+    <display value="Single-Lead ECG Limitation"/>
+    <definition value="ECG data from single-lead device; cannot replace 12-lead clinical ECG"/>
+  </concept>
+  <concept>
+    <code value="not-fda-cleared-indication"/>
+    <display value="Not FDA-Cleared Indication"/>
+    <definition value="Device not cleared for this specific measurement indication"/>
+  </concept>
+  <concept>
+    <code value="requires-clinical-correlation"/>
+    <display value="Requires Clinical Correlation"/>
+    <definition value="Value should be correlated with clinical assessment before action"/>
+  </concept>
+  <concept>
+    <code value="research-use-only"/>
+    <display value="Research Use Only"/>
+    <definition value="Data suitable for research purposes only; not for clinical decisions"/>
+  </concept>
+</CodeSystem>

@@ -17,7 +17,7 @@ Title: "Noise Exposure Measurement Example"
 * component[level]
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-avg "Environmental noise average level"
   * valueQuantity = 85 'dB'
-  * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
+  * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
 
 * component[duration]
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-duration "Environmental noise exposure duration"
@@ -56,7 +56,7 @@ Title: "UV Exposure Measurement Example"
 * component[index]
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-index "UV index"
   * valueQuantity = 8 '1' "index"
-  * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
+  * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
 
 * component[duration]
   * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-duration "UV exposure duration"

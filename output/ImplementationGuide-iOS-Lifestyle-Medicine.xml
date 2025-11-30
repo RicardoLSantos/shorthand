@@ -11,7 +11,7 @@
   <title value="iOS Lifestyle Medicine Implementation Guide"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2025-11-28T14:35:57+00:00"/>
+  <date value="2025-11-30T13:08:37+00:00"/>
   <publisher value="Ricardo Lourenço dos Santos"/>
   <contact>
     <name value="Ricardo Lourenço dos Santos"/>
@@ -106,6 +106,62 @@
       </extension>
       <extension url="value">
         <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://developer.apple.com/documentation/healthkit"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://dev.fitbit.com/build/reference/web-api"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://developer.garmin.com/gc-developer-program"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://athena.ohdsi.org/search-terms/terms"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://ckm.openehr.org/ckm/archetypes"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://cloud.ouraring.com/v2/docs"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.polar.com/accesslink-api"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -313,6 +369,62 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://developer.apple.com/documentation/healthkit"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://dev.fitbit.com/build/reference/web-api"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://developer.garmin.com/gc-developer-program"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://athena.ohdsi.org/search-terms/terms"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://ckm.openehr.org/ckm/archetypes"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://cloud.ouraring.com/v2/docs"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.polar.com/accesslink-api"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueCode value="autoload-resources"/>
       </extension>
       <extension url="value">
@@ -503,6 +615,7 @@
         <reference value="CodeSystem/activity-balance-cs"/>
       </reference>
       <name value="Activity Balance CodeSystem"/>
+      <description value="Codes for activity and recovery balance status"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -513,6 +626,7 @@
         <reference value="ValueSet/activity-balance-vs"/>
       </reference>
       <name value="Activity Balance ValueSet"/>
+      <description value="Categories for activity and recovery balance status"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -605,6 +719,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/AlcoholUseExample"/>
+      </reference>
+      <name value="Alcohol Consumption Assessment Example"/>
+      <description value="Example of alcohol consumption tracking as part of lifestyle medicine assessment"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/alcohol-use-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -693,6 +818,50 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/apple-sleep-stages-cs"/>
+      </reference>
+      <name value="Apple HealthKit Sleep Stages CodeSystem"/>
+      <description value="Apple HealthKit HKCategoryValueSleepAnalysis sleep stage classifications"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapAppleSleepToSNOMED"/>
+      </reference>
+      <name value="Apple HealthKit Sleep Stages to SNOMED CT Mapping"/>
+      <description value="Maps Apple HealthKit HKCategoryValueSleepAnalysis codes to SNOMED CT. Note: Apple uses 'Core Sleep' terminology for light NREM."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/apple-healthkit-stub"/>
+      </reference>
+      <name value="Apple HealthKit Types (External Reference)"/>
+      <description value="Stub CodeSystem representing Apple HealthKit quantity and category types. This CodeSystem serves as a formal reference for mapping wearable data from Apple devices."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/apple-sleep-stages-vs"/>
+      </reference>
+      <name value="Apple Sleep Stages ValueSet"/>
+      <description value="ValueSet containing Apple HealthKit sleep stage codes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Device"/>
       </extension>
       <reference>
@@ -701,6 +870,28 @@
       <name value="Apple Watch Series 9"/>
       <description value="Consumer wearable device - Apple Watch"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/assignment-status-cs"/>
+      </reference>
+      <name value="Assignment Status CodeSystem"/>
+      <description value="Status values for terminology code assignment tracking"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/assignment-status-vs"/>
+      </reference>
+      <name value="Assignment Status ValueSet"/>
+      <description value="Valid values for the assignment-status concept property"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -831,6 +1022,7 @@
         <reference value="CodeSystem/baseline-comparison-cs"/>
       </reference>
       <name value="Baseline Comparison CodeSystem"/>
+      <description value="Codes for comparing current values to personal baseline"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -841,6 +1033,7 @@
         <reference value="ValueSet/baseline-comparison-vs"/>
       </reference>
       <name value="Baseline Comparison ValueSet"/>
+      <description value="Methods for comparing current values to established baselines"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1153,6 +1346,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CGMObservationExample"/>
+      </reference>
+      <name value="CGM Glucose Reading Example"/>
+      <description value="Example of continuous glucose monitoring data from a consumer CGM device (Dexcom G7)"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cgm-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -1193,6 +1397,17 @@
       </reference>
       <name value="CGM Metrics CodeSystem"/>
       <description value="CodeSystem for continuous glucose monitoring metrics"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapCGMToOMOP"/>
+      </reference>
+      <name value="CGM Metrics to OMOP CDM Mapping"/>
+      <description value="Maps Continuous Glucose Monitoring metrics from LOINC codes and custom codes to OMOP CDM concept_ids for ETL transformation pipelines. Supports consumer CGM (Dexcom Stelo, Libre) and clinical CGM data."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1285,6 +1500,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/clinical-use-warning"/>
+      </reference>
+      <name value="Clinical Use Warning Extension"/>
+      <description value="Provides explicit warnings about the appropriate clinical use of consumer wearable-derived observations. Addresses Gap 3 (Algorithm Transparency, 5% coverage, 95 severity) from RS6 gap analysis."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/clinical-use-warning-type-cs"/>
+      </reference>
+      <name value="Clinical Use Warning Type CodeSystem"/>
+      <description value="Codes for types of clinical use warnings on consumer wearable observations. Addresses vendor algorithm opacity (95% severity) identified in RS6."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/clinical-use-warning-type-vs"/>
+      </reference>
+      <name value="Clinical Use Warning Type ValueSet"/>
+      <description value="ValueSet for clinical use warning codes on consumer wearable observations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -1307,6 +1555,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/concept-property-definitions-cs"/>
+      </reference>
+      <name value="Concept Property Definitions CodeSystem"/>
+      <description value="Formal definitions for custom concept properties used in this Implementation Guide. These properties extend standard FHIR concept properties to support terminology mapping and lifecycle tracking for wearable health data concepts."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource:abstract"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/consumer-ecg-observation"/>
+      </reference>
+      <name value="Consumer ECG Observation Profile"/>
+      <description value="Base profile for ECG-derived observations from consumer wearable devices (Apple Watch, Withings, Samsung, AliveCor)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1324,6 +1594,7 @@
         <reference value="CodeSystem/crf-category-cs"/>
       </reference>
       <name value="CRF Category CodeSystem"/>
+      <description value="Cardiorespiratory fitness classification categories"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1334,6 +1605,7 @@
         <reference value="ValueSet/crf-category-vs"/>
       </reference>
       <name value="CRF Category ValueSet"/>
+      <description value="Cardiorespiratory fitness categories based on VO2max percentiles"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1344,6 +1616,7 @@
         <reference value="CodeSystem/crf-standard-cs"/>
       </reference>
       <name value="CRF Standard CodeSystem"/>
+      <description value="Standards and norms used for CRF classification"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1354,6 +1627,18 @@
         <reference value="ValueSet/crf-standard-vs"/>
       </reference>
       <name value="CRF Standard ValueSet"/>
+      <description value="Reference standards for cardiorespiratory fitness classification"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapCrossVendorSleepStages"/>
+      </reference>
+      <name value="Cross-Vendor Sleep Stage Equivalence"/>
+      <description value="Establishes equivalence relationships between different vendor sleep stage terminologies to enable cross-platform data aggregation. Addresses RS6 Gap 5: Fitbit 'light' ≈ Garmin 'light' ≈ Apple 'Core' ≈ Oura 'light'"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1397,6 +1682,7 @@
         <reference value="CodeSystem/cv-risk-category-cs"/>
       </reference>
       <name value="CV Risk Category CodeSystem"/>
+      <description value="Cardiovascular risk categories based on CRF levels"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1407,6 +1693,7 @@
         <reference value="ValueSet/cv-risk-category-vs"/>
       </reference>
       <name value="CV Risk Category ValueSet"/>
+      <description value="Cardiovascular risk categories based on fitness assessment"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1430,6 +1717,17 @@
       <name value="Cycling Activity Type ValueSet"/>
       <description value="Types of cycling activities"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/CyclingDynamicsExample"/>
+      </reference>
+      <name value="Cycling Dynamics Assessment Example"/>
+      <description value="Example of cycling power and dynamics from Wahoo power meter"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cycling-dynamics-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1587,6 +1885,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/data-quality-confidence-cs"/>
+      </reference>
+      <name value="Data Quality Confidence CodeSystem"/>
+      <description value="Codes indicating confidence level in consumer wearable data quality. Addresses Gap 2 (Data Quality Metadata, 30% coverage, 85 severity)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/data-quality-confidence-vs"/>
+      </reference>
+      <name value="Data Quality Confidence ValueSet"/>
+      <description value="ValueSet for data quality confidence levels in consumer wearable data"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/data-quality-indicator"/>
+      </reference>
+      <name value="Data Quality Indicator Extension"/>
+      <description value="Indicates the quality/confidence level of consumer wearable-derived data. Addresses RS6 Gap 2 (Data Quality Metadata)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Provenance"/>
       </extension>
       <reference>
@@ -1664,6 +1995,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/DexcomG7Device"/>
+      </reference>
+      <name value="Dexcom G7 CGM Device"/>
+      <description value="Example of a Dexcom G7 continuous glucose monitoring device"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1704,6 +2046,17 @@
       </reference>
       <name value="Duration Units Value Set"/>
       <description value="Time units for symptom duration"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ecg-components-cs"/>
+      </reference>
+      <name value="ECG Components CodeSystem"/>
+      <description value="Supplementary codes for ECG observation components"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2096,6 +2449,50 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/fitbit-sleep-stages-cs"/>
+      </reference>
+      <name value="Fitbit Sleep Stages CodeSystem"/>
+      <description value="Fitbit proprietary sleep stage classifications from Fitbit Web API"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapFitbitSleepToSNOMED"/>
+      </reference>
+      <name value="Fitbit Sleep Stages to SNOMED CT Mapping"/>
+      <description value="Maps Fitbit sleep stage codes to SNOMED CT for clinical interoperability. Addresses RS6 Gap 5: Cross-Vendor Interoperability."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/fitbit-sleep-stages-vs"/>
+      </reference>
+      <name value="Fitbit Sleep Stages ValueSet"/>
+      <description value="ValueSet containing Fitbit proprietary sleep stage codes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/fitbit-api-stub"/>
+      </reference>
+      <name value="Fitbit Web API Types (External Reference)"/>
+      <description value="Stub CodeSystem representing Fitbit Web API data types. This CodeSystem serves as a formal reference for mapping wearable data from Fitbit devices."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/footstrike-type-cs"/>
       </reference>
       <name value="Footstrike Type CodeSystem"/>
@@ -2112,6 +2509,83 @@
       <name value="Footstrike Type ValueSet"/>
       <description value="Running footstrike patterns"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/garmin-connect-stub"/>
+      </reference>
+      <name value="Garmin Connect API Types (External Reference)"/>
+      <description value="Stub CodeSystem representing Garmin Connect and Health API data types."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/GarminWatchDevice"/>
+      </reference>
+      <name value="Garmin Forerunner 965"/>
+      <description value="Example of Garmin multisport watch"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/garmin-sleep-stages-cs"/>
+      </reference>
+      <name value="Garmin Sleep Stages CodeSystem"/>
+      <description value="Garmin proprietary sleep stage classifications from Garmin Connect API"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapGarminSleepToSNOMED"/>
+      </reference>
+      <name value="Garmin Sleep Stages to SNOMED CT Mapping"/>
+      <description value="Maps Garmin sleep stage codes to SNOMED CT for clinical interoperability"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/garmin-sleep-stages-vs"/>
+      </reference>
+      <name value="Garmin Sleep Stages ValueSet"/>
+      <description value="ValueSet containing Garmin proprietary sleep stage codes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/heart-rate-ecg-observation"/>
+      </reference>
+      <name value="Heart Rate by ECG Observation Profile"/>
+      <description value="Profile for heart rate derived from ECG signal (more accurate than PPG during motion)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/HeartRateECGExample"/>
+      </reference>
+      <name value="Heart Rate from ECG Example"/>
+      <description value="Example of heart rate derived from ECG R-R intervals"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/heart-rate-ecg-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2236,6 +2710,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/InflammatoryMarkerExample"/>
+      </reference>
+      <name value="High-Sensitivity CRP Example"/>
+      <description value="Example of hs-CRP inflammatory marker measurement"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/inflammatory-marker-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -2253,6 +2738,7 @@
         <reference value="CodeSystem/hrmax-method-cs"/>
       </reference>
       <name value="HRmax Method CodeSystem"/>
+      <description value="Methods for determining maximum heart rate"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2263,6 +2749,7 @@
         <reference value="ValueSet/hrmax-method-vs"/>
       </reference>
       <name value="HRmax Method ValueSet"/>
+      <description value="Methods for determining maximum heart rate"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3411,6 +3898,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ObservationWithClinicalWarningExample"/>
+      </reference>
+      <name value="Observation with Clinical Use Warning"/>
+      <description value="Example showing how ClinicalUseWarning extension is used"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ObservationWithDataQualityExample"/>
+      </reference>
+      <name value="Observation with Data Quality Indicator"/>
+      <description value="Example showing how DataQualityIndicator extension is used on an observation"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/omop-concepts-stub"/>
+      </reference>
+      <name value="OHDSI OMOP CDM Concepts (External Reference)"/>
+      <description value="Stub CodeSystem representing OHDSI OMOP Common Data Model concepts from Athena. This CodeSystem serves as a formal reference target for ConceptMaps mapping to OMOP. Actual concept codes are maintained at https://athena.ohdsi.org/"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ConceptMap"/>
       </extension>
       <reference>
@@ -3429,6 +3949,17 @@
       </reference>
       <name value="openEHR Archetype to OMOP CDM Mapping"/>
       <description value="Maps openEHR archetype elements for wearable lifestyle medicine data to OMOP Common Data Model for federated research analytics via OHDSI network."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/openehr-archetypes-stub"/>
+      </reference>
+      <name value="openEHR Clinical Knowledge Manager Archetypes (External Reference)"/>
+      <description value="Stub CodeSystem representing openEHR archetypes from the Clinical Knowledge Manager (CKM). This CodeSystem serves as a formal reference target for ConceptMaps mapping between FHIR and openEHR. Actual archetypes are maintained at https://ckm.openehr.org/"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3452,6 +3983,61 @@
       <name value="osa-practitioner-kyle-anydoc"/>
       <description value="Example practitioner for OSA-related care scenarios"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/oura-api-stub"/>
+      </reference>
+      <name value="Oura Ring API Types (External Reference)"/>
+      <description value="Stub CodeSystem representing Oura Ring API data types."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/OuraRingDevice"/>
+      </reference>
+      <name value="Oura Ring Gen 3"/>
+      <description value="Example of Oura Ring sleep and readiness tracker"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/oura-sleep-stages-cs"/>
+      </reference>
+      <name value="Oura Ring Sleep Stages CodeSystem"/>
+      <description value="Oura Ring proprietary sleep stage classifications from Oura Cloud API"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapOuraSleepToSNOMED"/>
+      </reference>
+      <name value="Oura Ring Sleep Stages to SNOMED CT Mapping"/>
+      <description value="Maps Oura Ring sleep stage codes to SNOMED CT for clinical interoperability"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/oura-sleep-stages-vs"/>
+      </reference>
+      <name value="Oura Sleep Stages ValueSet"/>
+      <description value="ValueSet containing Oura Ring proprietary sleep stage codes"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3565,6 +4151,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapActivityToOMOP"/>
+      </reference>
+      <name value="Physical Activity to OMOP CDM Mapping"/>
+      <description value="Maps physical activity metrics from LOINC codes and wearable-derived metrics to OMOP CDM concept_ids for ETL transformation pipelines. Supports consumer fitness trackers and clinical activity monitors."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -3583,6 +4180,39 @@
       </reference>
       <name value="Physiological Stress Index Extension"/>
       <description value="Index representing overall physiological stress based on multiple parameters"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/polar-api-stub"/>
+      </reference>
+      <name value="Polar AccessLink API Types (External Reference)"/>
+      <description value="Stub CodeSystem representing Polar AccessLink API data types."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/PRIntervalExample"/>
+      </reference>
+      <name value="PR Interval Measurement Example"/>
+      <description value="Example of PR interval measurement from consumer ECG device"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pr-interval-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pr-interval-observation"/>
+      </reference>
+      <name value="PR Interval Observation Profile"/>
+      <description value="Profile for PR interval measurements from consumer ECG-capable wearables"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3653,12 +4283,134 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/QRSDurationExample"/>
+      </reference>
+      <name value="QRS Duration Measurement Example"/>
+      <description value="Example of QRS duration measurement from consumer ECG device"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/qrs-duration-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/qrs-duration-observation"/>
+      </reference>
+      <name value="QRS Duration Observation Profile"/>
+      <description value="Profile for QRS complex duration from consumer ECG-capable wearables"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/qt-alert-type-cs"/>
+      </reference>
+      <name value="QT Alert Type CodeSystem"/>
+      <description value="Types of clinical alerts for QT interval monitoring"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/qt-alert-type-vs"/>
+      </reference>
+      <name value="QT Alert Type ValueSet"/>
+      <description value="ValueSet for QT clinical alert types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/qt-clinical-alert"/>
+      </reference>
+      <name value="QT Clinical Alert Extension"/>
+      <description value="Extension for clinical alerts triggered by QT prolongation thresholds"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/qt-correction-formula-cs"/>
+      </reference>
+      <name value="QT Correction Formula CodeSystem"/>
+      <description value="Codes for QT interval correction formulas used to adjust for heart rate dependency"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/qt-correction-formula-vs"/>
+      </reference>
+      <name value="QT Correction Formula ValueSet"/>
+      <description value="ValueSet for QT interval correction formulas"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/qt-interpretation-vs"/>
+      </reference>
+      <name value="QT Interpretation ValueSet"/>
+      <description value="Interpretation codes for QT interval findings"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/QTIntervalExample"/>
+      </reference>
+      <name value="QT Interval Measurement Example"/>
+      <description value="Example of QT interval measurement from Apple Watch Series 9 ECG feature"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/qt-interval-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/qt-interval-observation"/>
+      </reference>
+      <name value="QT Interval Observation Profile"/>
+      <description value="Profile for QT interval measurements from consumer ECG-capable wearable devices. LOINC codes: 8634-8 (Q-T interval), 8636-3 (Q-T corrected). Consumer devices are NOT FDA-cleared for QT measurement. References: Giudicessi2021 (Circulation), Zaballos2023 (Sci Rep)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/QTWithClinicalAlertExample"/>
+      </reference>
+      <name value="QT Interval with Prolongation Alert"/>
+      <description value="Example showing QT prolongation clinical alert extension"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/qt-interval-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
         <reference value="CodeSystem/readiness-category-cs"/>
       </reference>
       <name value="Readiness Category CodeSystem"/>
+      <description value="Categories for interpreting recovery readiness scores from wearable devices"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3669,6 +4421,7 @@
         <reference value="ValueSet/readiness-category-vs"/>
       </reference>
       <name value="Readiness Category ValueSet"/>
+      <description value="Categories for interpreting recovery readiness scores from wearable devices"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3679,6 +4432,7 @@
         <reference value="CodeSystem/recommended-activity-cs"/>
       </reference>
       <name value="Recommended Activity CodeSystem"/>
+      <description value="Codes for recommended activity intensity based on recovery status"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3689,6 +4443,7 @@
         <reference value="ValueSet/recommended-activity-vs"/>
       </reference>
       <name value="Recommended Activity ValueSet"/>
+      <description value="Recommended activity types based on recovery status"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3699,6 +4454,7 @@
         <reference value="CodeSystem/recovery-debt-cs"/>
       </reference>
       <name value="Recovery Debt CodeSystem"/>
+      <description value="Codes for accumulated recovery debt levels"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3709,6 +4465,7 @@
         <reference value="ValueSet/recovery-debt-vs"/>
       </reference>
       <name value="Recovery Debt ValueSet"/>
+      <description value="Levels of accumulated recovery debt from training or stress"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3732,6 +4489,17 @@
       <name value="Recovery Metrics CodeSystem"/>
       <description value="CodeSystem for recovery readiness and training load metrics"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/RecoveryReadinessExample"/>
+      </reference>
+      <name value="Recovery Readiness Assessment Example"/>
+      <description value="Example of daily recovery readiness score from Oura Ring"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-readiness-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3779,6 +4547,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/RegulatoryAuthorityNamingSystem"/>
+      </reference>
+      <name value="Regulatory Authority OID Naming System"/>
+      <description value="NamingSystem defining OIDs for healthcare regulatory authorities used in Consent.policy.authority"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -3808,6 +4587,17 @@
       </reference>
       <name value="Regulatory Framework Value Set"/>
       <description value="Regulatory frameworks for healthcare data protection"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/RegulatoryPolicyNamingSystem"/>
+      </reference>
+      <name value="Regulatory Policy URI Naming System"/>
+      <description value="NamingSystem defining URN patterns for healthcare regulatory policy references used in Consent resources"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3900,6 +4690,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/RunningDynamicsExample"/>
+      </reference>
+      <name value="Running Dynamics Assessment Example"/>
+      <description value="Example of running dynamics metrics from Garmin watch with running pod"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/running-dynamics-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -3951,6 +4752,17 @@
       </reference>
       <name value="Sleep Measurements to LOINC Mapping"/>
       <description value="Maps custom sleep measurement codes to LOINC codes where available, with migration path for future LOINC assignments. Enables interoperability between consumer sleep tracking devices (Apple HealthKit, Fitbit, Oura, etc.) and clinical systems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ConceptMapSleepToOMOP"/>
+      </reference>
+      <name value="Sleep Metrics to OMOP CDM Mapping"/>
+      <description value="Maps sleep metrics from LOINC codes and wearable-derived metrics to OMOP CDM concept_ids for ETL transformation pipelines. Supports consumer sleep trackers (Oura, WHOOP, Apple Watch, Fitbit)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4029,6 +4841,17 @@
       <name value="Smart Scale Device"/>
       <description value="Smart scale device example"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/snomed-sleep-stages-vs"/>
+      </reference>
+      <name value="SNOMED CT Sleep Stages ValueSet"/>
+      <description value="SNOMED CT codes for clinical sleep stages"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4293,6 +5116,17 @@
       <name value="Strength Training Observation Profile"/>
       <description value="Profile for recording strength training metrics from wearable devices, velocity-based training systems, and gym equipment. Supports sets, reps, load, velocity-based metrics, and training load aligned with openEHR archetype strength_training.v0."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/StrengthTrainingExample"/>
+      </reference>
+      <name value="Strength Training Session Example"/>
+      <description value="Example of strength training session tracking"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/strength-training-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4615,6 +5449,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/SwimmingMetricsExample"/>
+      </reference>
+      <name value="Swimming Metrics Assessment Example"/>
+      <description value="Example of swimming metrics from Apple Watch pool swim workout"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/swimming-metrics-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -4808,6 +5653,7 @@
         <reference value="CodeSystem/training-status-cs"/>
       </reference>
       <name value="Training Status CodeSystem"/>
+      <description value="Codes for training status and fitness progression"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4818,6 +5664,7 @@
         <reference value="ValueSet/training-status-vs"/>
       </reference>
       <name value="Training Status ValueSet"/>
+      <description value="Current training status categories based on fitness trends"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4828,6 +5675,7 @@
         <reference value="CodeSystem/trend-direction-cs"/>
       </reference>
       <name value="Trend Direction CodeSystem"/>
+      <description value="Codes for trend direction indicators"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4838,6 +5686,7 @@
         <reference value="ValueSet/trend-direction-vs"/>
       </reference>
       <name value="Trend Direction ValueSet"/>
+      <description value="Directions of trends in health metrics over time"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4881,6 +5730,7 @@
         <reference value="CodeSystem/validation-status-cs"/>
       </reference>
       <name value="Validation Status CodeSystem"/>
+      <description value="Codes for scientific validation status of metrics"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4891,6 +5741,7 @@
         <reference value="ValueSet/validation-status-vs"/>
       </reference>
       <name value="Validation Status ValueSet"/>
+      <description value="Validation status of health measurements"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4903,6 +5754,17 @@
       <name value="Vendor Proprietary Codes to LOINC Mapping"/>
       <description value="Maps wearable device vendor codes to equivalent LOINC codes for semantic interoperability. Addresses critical gap: none of the 11 major vendors use LOINC codes natively. Enables $translate operations for vendor data normalization."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/VO2maxEstimationExample"/>
+      </reference>
+      <name value="VO2max Estimation Example"/>
+      <description value="Example of VO2max estimation from Apple Watch during outdoor run"/>
+      <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/vo2max-estimation-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4923,6 +5785,7 @@
         <reference value="CodeSystem/vo2max-method-cs"/>
       </reference>
       <name value="VO2max Method CodeSystem"/>
+      <description value="Methods for VO2max estimation and measurement"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4933,6 +5796,7 @@
         <reference value="ValueSet/vo2max-method-vs"/>
       </reference>
       <name value="VO2max Method ValueSet"/>
+      <description value="Methods for estimating or measuring VO2max"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4954,6 +5818,7 @@
         <reference value="CodeSystem/vo2max-protocol-cs"/>
       </reference>
       <name value="VO2max Protocol CodeSystem"/>
+      <description value="Specific protocols and tests for VO2max estimation"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4964,6 +5829,7 @@
         <reference value="ValueSet/vo2max-protocol-vs"/>
       </reference>
       <name value="VO2max Protocol ValueSet"/>
+      <description value="Exercise protocols used for VO2max testing"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4974,6 +5840,7 @@
         <reference value="CodeSystem/vo2max-trend-cs"/>
       </reference>
       <name value="VO2max Trend CodeSystem"/>
+      <description value="Codes for VO2max trend direction over time"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4984,6 +5851,7 @@
         <reference value="ValueSet/vo2max-trend-vs"/>
       </reference>
       <name value="VO2max Trend ValueSet"/>
+      <description value="Trends in VO2max values over time"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4994,7 +5862,19 @@
         <reference value="ValueSet/vo2max-unit-vs"/>
       </reference>
       <name value="VO2max Unit ValueSet"/>
+      <description value="Units of measurement for VO2max values"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/WahooPowerMeter"/>
+      </reference>
+      <name value="Wahoo KICKR Power Meter"/>
+      <description value="Example of cycling power meter"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -5056,6 +5936,28 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/wearable-device-type-cs"/>
+      </reference>
+      <name value="Wearable Device Type CodeSystem"/>
+      <description value="Codes for types of consumer wearable devices. Supports device provenance capture (RS6 Gap 4)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/wearable-device-type-vs"/>
+      </reference>
+      <name value="Wearable Device Type ValueSet"/>
+      <description value="ValueSet for types of consumer wearable devices"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/wearable-sensor-type-cs"/>
       </reference>
       <name value="Wearable Sensor Type CodeSystem"/>
@@ -5092,6 +5994,7 @@
         <reference value="CodeSystem/wearable-vendor-cs"/>
       </reference>
       <name value="Wearable Vendor CodeSystem"/>
+      <description value="Codes for wearable device manufacturers and vendors"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5102,6 +6005,7 @@
         <reference value="ValueSet/wearable-vendor-vs"/>
       </reference>
       <name value="Wearable Vendor ValueSet"/>
+      <description value="Supported wearable device vendors for data integration"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5147,6 +6051,17 @@
       <name value="Weight Measurement with Conditions Example"/>
       <description value="Weight with conditions observation example"/>
       <exampleCanonical value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/weight-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/WithingsScaleDevice"/>
+      </reference>
+      <name value="Withings Body+ Scale"/>
+      <description value="Example of Withings connected scale with blood pressure capability"/>
+      <exampleBoolean value="true"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

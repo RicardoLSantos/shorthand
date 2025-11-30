@@ -1,0 +1,125 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapGarminSleepToSNOMED> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ConceptMapGarminSleepToSNOMED"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapGarminSleepToSNOMED</b></p><a name=\"ConceptMapGarminSleepToSNOMED\"> </a><a name=\"hcConceptMapGarminSleepToSNOMED\"> </a><p>Mapeamento de <a href=\"ValueSet-garmin-sleep-stages-vs.html\">Garmin Sleep Stages ValueSet</a> para <a href=\"ValueSet-snomed-sleep-stages-vs.html\">SNOMED CT Sleep Stages ValueSet</a></p><br/><p><b>Grupo 1 </b>Mapeamento de <a href=\"CodeSystem-garmin-sleep-stages-cs.html\">Garmin Sleep Stages CodeSystem</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>awake</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>258158006 (Awake)</td><td/></tr><tr><td>light</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider\" title=\"wider\">maps to wider concept</a></td><td>67233009 (Stage 2 sleep)</td><td/></tr><tr><td>deep</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>26329005 (Stage 3-4 sleep)</td><td/></tr><tr><td>rem</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>248218005 (Rapid eye movement sleep)</td><td/></tr><tr><td>unmeasurable</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">No SNOMED CT equivalent for unmeasurable/indeterminate sleep state</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapGarminSleepToSNOMED"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ConceptMapGarminSleepToSNOMED"] ; # 
+  fhir:title [ fhir:v "Garmin Sleep Stages to SNOMED CT Mapping"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-29"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Maps Garmin sleep stage codes to SNOMED CT for clinical interoperability"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/garmin-sleep-stages-vs"^^xsd:anyURI ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/garmin-sleep-stages-vs>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"^^xsd:anyURI ;
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/garmin-sleep-stages-cs"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "awake" ] ;
+       fhir:display [ fhir:v "Awake" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "258158006" ] ;
+         fhir:display [ fhir:v "Awake" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "light" ] ;
+       fhir:display [ fhir:v "Light" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "67233009" ] ;
+         fhir:display [ fhir:v "Stage 2 sleep" ] ;
+         fhir:equivalence [ fhir:v "wider" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "deep" ] ;
+       fhir:display [ fhir:v "Deep" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "26329005" ] ;
+         fhir:display [ fhir:v "Stage 3-4 sleep" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "rem" ] ;
+       fhir:display [ fhir:v "REM" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "248218005" ] ;
+         fhir:display [ fhir:v "Rapid eye movement sleep" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "unmeasurable" ] ;
+       fhir:display [ fhir:v "Unmeasurable" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "No SNOMED CT equivalent for unmeasurable/indeterminate sleep state" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

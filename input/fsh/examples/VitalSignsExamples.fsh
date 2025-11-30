@@ -65,7 +65,7 @@ Title: "Oxygen Saturation Measurement Example"
 * valueQuantity.unit = "percent"
 * device = Reference(DevicePulseOximeter)
 * performer = Reference(PractitionerExample)
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
 
 Instance: DevicePulseOximeter
 InstanceOf: Device

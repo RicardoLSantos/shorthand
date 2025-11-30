@@ -1,0 +1,171 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "ConceptMapActivityToOMOP",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapActivityToOMOP</b></p><a name=\"ConceptMapActivityToOMOP\"> </a><a name=\"hcConceptMapActivityToOMOP\"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <a href=\"CodeSystem-omop-concepts-stub.html\">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>55423-8 (Number of steps in 24 hour Measured)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>40771089 (Number of steps)</td><td>VERIFIED OMOP mapping for daily steps.\n- OMOP concept_id: 40771089\n- Domain: Measurement\n- Unit_concept_id: 9529 (count) or unitless\n- Guidelines: 7,000-10,000 steps/day for health benefits</td></tr><tr><td>55411-3 (Exercise duration)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider\" title=\"wider\">maps to wider concept</a></td><td>4272025 (Duration of procedure)</td><td>Maps to general duration concept.\n- OMOP concept_id: 4272025\n- Unit_concept_id: 8550 (minute)\n- Target: 150-300 min/week moderate or 75-150 min/week vigorous\nContext should indicate exercise vs general activity.</td></tr><tr><td>82290-8 (Frequency of moderate to vigorous aerobic physical activity)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider\" title=\"wider\">maps to wider concept</a></td><td>4090484 (Physical activity)</td><td>Maps to general physical activity concept.\n- OMOP concept_id: 4090484\n- Domain: Observation\n- Use observation_source_value for intensity context</td></tr><tr><td>41981-2 (Calories burned)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">GAP: Active calories has no OMOP concept.\nRepresents energy expenditure from activity.\nUnit_concept_id: 8692 (kilocalorie) or 8674 (kilojoule)\nCritical for weight management research.</td></tr><tr><td>55430-3 (Walking distance)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">GAP: Distance traveled has no OMOP concept.\nUnit_concept_id: 8582 (meter) or 9314 (kilometer) or 9282 (mile)\nContext-dependent (walking, running, cycling).</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/physical-activity-cs</code> to <a href=\"CodeSystem-omop-concepts-stub.html\">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>active-minutes</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Vendor-specific active minutes (zone-based).\nApple: Exercise Ring minutes\nFitbit: Active Zone Minutes\nGarmin: Intensity Minutes\nNot standardized but clinically relevant.</td></tr><tr><td>met-minutes</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Metabolic Equivalent of Task × Duration.\nStandard measure for physical activity dose.\n1 MET = 1 kcal/kg/hour (resting)\nTarget: 500-1000 MET-min/week per guidelines.</td></tr><tr><td>sedentary-time</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Time spent in sedentary activities (&lt;1.5 METs).\nTarget: Reduce prolonged sitting, break every 30-60 min.\nIndependent risk factor for mortality.</td></tr><tr><td>floors-climbed</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Number of floors/flights of stairs climbed.\nIndicates vertical displacement activity.\nTypically measured via barometric altimeter.</td></tr><tr><td>stand-hours</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Apple Watch specific: Hours with at least 1 min standing.\nTarget: 12 stand hours/day.\nProxy for sedentary behavior interruption.</td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapActivityToOMOP",
+  "version" : "0.1.0",
+  "name" : "ConceptMapActivityToOMOP",
+  "title" : "Physical Activity to OMOP CDM Mapping",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-28",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "Maps physical activity metrics from wearables to OMOP CDM concepts for federated analytics.\n\nPhysical Activity Guidelines (WHO 2020, ACSM):\n- 150-300 min/week moderate-intensity OR 75-150 min/week vigorous\n- Muscle-strengthening activities 2+ days/week\n- Sedentary time should be minimized\n- Any amount of activity is better than none\n\nKey Metrics:\n- Steps: 7,000-10,000 steps/day associated with health benefits\n- Active calories: Energy expenditure from activity\n- Exercise minutes: Zone-based activity time\n- MET-minutes: Metabolic equivalent of task\n\nSupported Devices:\n- Apple Watch, iPhone (Apple HealthKit)\n- Fitbit (all models)\n- Garmin (Connect IQ)\n- Samsung Galaxy Watch\n- Google Pixel Watch",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "purpose" : "Enable ETL transformation of physical activity data from FHIR to OMOP CDM for population health studies, exercise intervention research, and lifestyle medicine analytics.",
+  "group" : [{
+    "source" : "http://loinc.org",
+    "target" : "http://athena.ohdsi.org/search-terms/terms",
+    "element" : [{
+      "code" : "55423-8",
+      "display" : "Number of steps in 24 hour Measured",
+      "target" : [{
+        "code" : "40771089",
+        "display" : "Number of steps",
+        "equivalence" : "equivalent",
+        "comment" : "VERIFIED OMOP mapping for daily steps.\n- OMOP concept_id: 40771089\n- Domain: Measurement\n- Unit_concept_id: 9529 (count) or unitless\n- Guidelines: 7,000-10,000 steps/day for health benefits"
+      }]
+    },
+    {
+      "code" : "55411-3",
+      "display" : "Exercise duration",
+      "target" : [{
+        "code" : "4272025",
+        "display" : "Duration of procedure",
+        "equivalence" : "wider",
+        "comment" : "Maps to general duration concept.\n- OMOP concept_id: 4272025\n- Unit_concept_id: 8550 (minute)\n- Target: 150-300 min/week moderate or 75-150 min/week vigorous\nContext should indicate exercise vs general activity."
+      }]
+    },
+    {
+      "code" : "82290-8",
+      "display" : "Frequency of moderate to vigorous aerobic physical activity",
+      "target" : [{
+        "code" : "4090484",
+        "display" : "Physical activity",
+        "equivalence" : "wider",
+        "comment" : "Maps to general physical activity concept.\n- OMOP concept_id: 4090484\n- Domain: Observation\n- Use observation_source_value for intensity context"
+      }]
+    },
+    {
+      "code" : "41981-2",
+      "display" : "Calories burned",
+      "target" : [{
+        "equivalence" : "unmatched",
+        "comment" : "GAP: Active calories has no OMOP concept.\nRepresents energy expenditure from activity.\nUnit_concept_id: 8692 (kilocalorie) or 8674 (kilojoule)\nCritical for weight management research."
+      }]
+    },
+    {
+      "code" : "55430-3",
+      "display" : "Walking distance",
+      "target" : [{
+        "equivalence" : "unmatched",
+        "comment" : "GAP: Distance traveled has no OMOP concept.\nUnit_concept_id: 8582 (meter) or 9314 (kilometer) or 9282 (mile)\nContext-dependent (walking, running, cycling)."
+      }]
+    }],
+    "unmapped" : {
+      "mode" : "fixed",
+      "code" : "0",
+      "display" : "No OMOP concept - requires custom vocabulary extension"
+    }
+  },
+  {
+    "source" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/physical-activity-cs",
+    "target" : "http://athena.ohdsi.org/search-terms/terms",
+    "element" : [{
+      "code" : "active-minutes",
+      "display" : "Active Minutes",
+      "target" : [{
+        "equivalence" : "unmatched",
+        "comment" : "Vendor-specific active minutes (zone-based).\nApple: Exercise Ring minutes\nFitbit: Active Zone Minutes\nGarmin: Intensity Minutes\nNot standardized but clinically relevant."
+      }]
+    },
+    {
+      "code" : "met-minutes",
+      "display" : "MET-Minutes",
+      "target" : [{
+        "equivalence" : "unmatched",
+        "comment" : "Metabolic Equivalent of Task × Duration.\nStandard measure for physical activity dose.\n1 MET = 1 kcal/kg/hour (resting)\nTarget: 500-1000 MET-min/week per guidelines."
+      }]
+    },
+    {
+      "code" : "sedentary-time",
+      "display" : "Sedentary Time",
+      "target" : [{
+        "equivalence" : "unmatched",
+        "comment" : "Time spent in sedentary activities (<1.5 METs).\nTarget: Reduce prolonged sitting, break every 30-60 min.\nIndependent risk factor for mortality."
+      }]
+    },
+    {
+      "code" : "floors-climbed",
+      "display" : "Floors Climbed",
+      "target" : [{
+        "equivalence" : "unmatched",
+        "comment" : "Number of floors/flights of stairs climbed.\nIndicates vertical displacement activity.\nTypically measured via barometric altimeter."
+      }]
+    },
+    {
+      "code" : "stand-hours",
+      "display" : "Stand Hours",
+      "target" : [{
+        "equivalence" : "unmatched",
+        "comment" : "Apple Watch specific: Hours with at least 1 min standing.\nTarget: 12 stand hours/day.\nProxy for sedentary behavior interruption."
+      }]
+    }],
+    "unmapped" : {
+      "mode" : "fixed",
+      "code" : "0",
+      "display" : "No OMOP concept - wearable metrics not in standard vocabulary"
+    }
+  }]
+}

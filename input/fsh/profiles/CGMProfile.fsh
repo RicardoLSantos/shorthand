@@ -251,6 +251,7 @@ Title: "CGM Glucose Unit ValueSet"
 Description: "Units for glucose measurement"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-unit-vs"
 * ^status = #active
+* ^experimental = false
 * include $UCUM#mg/dL "milligrams per deciliter"
 * include $UCUM#mmol/L "millimoles per liter"
 
@@ -261,6 +262,7 @@ Title: "CGM Glucose Interpretation ValueSet"
 Description: "Categorical interpretation of glucose values per International Consensus"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-interpretation-vs"
 * ^status = #active
+* ^experimental = false
 * include codes from system CGMGlucoseInterpretationCS
 
 
@@ -270,6 +272,7 @@ Title: "CGM Trend Arrow ValueSet"
 Description: "Direction and rate of glucose change"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-trend-arrow-vs"
 * ^status = #active
+* ^experimental = false
 * include codes from system CGMTrendArrowCS
 
 
@@ -279,6 +282,7 @@ Title: "CGM System ValueSet"
 Description: "CGM devices and systems"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-system-vs"
 * ^status = #active
+* ^experimental = false
 * include codes from system CGMSystemCS
 
 
@@ -288,6 +292,7 @@ Title: "CGM Insertion Site ValueSet"
 Description: "Body sites for CGM sensor insertion"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-insertion-site-vs"
 * ^status = #active
+* ^experimental = false
 * include codes from system CGMInsertionSiteCS
 
 

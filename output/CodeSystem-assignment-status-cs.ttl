@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assignment-status-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "assignment-status-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem assignment-status-cs</b></p><a name=\"assignment-status-cs\"> </a><a name=\"hcassignment-status-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">mapped<a name=\"assignment-status-cs-mapped\"> </a></td><td>Mapped</td><td>This concept has been mapped to an equivalent code in a standard terminology (LOINC, SNOMED CT, etc.)</td></tr><tr><td style=\"white-space:nowrap\">pending-loinc<a name=\"assignment-status-cs-pending-loinc\"> </a></td><td>Pending LOINC Assignment</td><td>This concept is awaiting assignment of a LOINC code. A submission may be in progress or planned.</td></tr><tr><td style=\"white-space:nowrap\">pending-snomed<a name=\"assignment-status-cs-pending-snomed\"> </a></td><td>Pending SNOMED CT Assignment</td><td>This concept is awaiting assignment of a SNOMED CT concept identifier.</td></tr><tr><td style=\"white-space:nowrap\">local-only<a name=\"assignment-status-cs-local-only\"> </a></td><td>Local Only</td><td>This concept is intentionally local and no standard terminology equivalent is expected or needed.</td></tr><tr><td style=\"white-space:nowrap\">deprecated<a name=\"assignment-status-cs-deprecated\"> </a></td><td>Deprecated</td><td>This concept has been deprecated. A replacement concept may be available in the standard terminology.</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assignment-status-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "AssignmentStatusCS"] ; # 
+  fhir:title [ fhir:v "Assignment Status CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-30T13:08:37+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Status values for terminology code assignment tracking"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "5"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "mapped" ] ;
+     fhir:display [ fhir:v "Mapped" ] ;
+     fhir:definition [ fhir:v "This concept has been mapped to an equivalent code in a standard terminology (LOINC, SNOMED CT, etc.)" ]
+  ] [
+     fhir:code [ fhir:v "pending-loinc" ] ;
+     fhir:display [ fhir:v "Pending LOINC Assignment" ] ;
+     fhir:definition [ fhir:v "This concept is awaiting assignment of a LOINC code. A submission may be in progress or planned." ]
+  ] [
+     fhir:code [ fhir:v "pending-snomed" ] ;
+     fhir:display [ fhir:v "Pending SNOMED CT Assignment" ] ;
+     fhir:definition [ fhir:v "This concept is awaiting assignment of a SNOMED CT concept identifier." ]
+  ] [
+     fhir:code [ fhir:v "local-only" ] ;
+     fhir:display [ fhir:v "Local Only" ] ;
+     fhir:definition [ fhir:v "This concept is intentionally local and no standard terminology equivalent is expected or needed." ]
+  ] [
+     fhir:code [ fhir:v "deprecated" ] ;
+     fhir:display [ fhir:v "Deprecated" ] ;
+     fhir:definition [ fhir:v "This concept has been deprecated. A replacement concept may be available in the standard terminology." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,127 @@
+{
+  "resourceType" : "Observation",
+  "id" : "SwimmingMetricsExample",
+  "meta" : {
+    "profile" : ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/swimming-metrics-observation"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation SwimmingMetricsExample</b></p><a name=\"SwimmingMetricsExample\"> </a><a name=\"hcSwimmingMetricsExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-swimming-metrics-observation.html\">Swimming Metrics Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category activity}\">Activity</span></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 20461001}\">Swimming (qualifier value)</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 06:00:00+0000</p><p><b>note</b>: </p><blockquote><div><p>Pool swim: 80 lengths (25m pool). Good SWOLF score indicates efficient stroke.</p>\n</div></blockquote><p><b>device</b>: <a href=\"Device-AppleWatchDevice.html\">Device: status = active; manufacturer = Apple Inc.; serialNumber = DNPXYZ123456; modelNumber = A2978; type = </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs distance}\">Total Distance</span></p><p><b>value</b>: 2000 meters<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom = 'm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs laps}\">Total Laps</span></p><p><b>value</b>: 80</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs pool-length}\">Pool Length</span></p><p><b>value</b>: 25 meters<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom = 'm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs avg-swolf}\">Average SWOLF</span></p><p><b>value</b>: 42</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs strokes-per-lap}\">Strokes Per Lap</span></p><p><b>value</b>: 18</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs avg-pace}\">Average Pace</span></p><p><b>value</b>: 120 seconds<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigos = 's')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs stroke-type}\">Primary Stroke Type</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs freestyle}\">Freestyle</span></p></blockquote></div>"
+  },
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "activity",
+      "display" : "Activity"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "20461001",
+      "display" : "Swimming (qualifier value)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2025-11-30T06:00:00Z",
+  "note" : [{
+    "text" : "Pool swim: 80 lengths (25m pool). Good SWOLF score indicates efficient stroke."
+  }],
+  "device" : {
+    "reference" : "Device/AppleWatchDevice"
+  },
+  "component" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs",
+        "code" : "distance",
+        "display" : "Total Distance"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 2000,
+      "unit" : "meters",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "m"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs",
+        "code" : "laps",
+        "display" : "Total Laps"
+      }]
+    },
+    "valueInteger" : 80
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs",
+        "code" : "pool-length",
+        "display" : "Pool Length"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 25,
+      "unit" : "meters",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "m"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs",
+        "code" : "avg-swolf",
+        "display" : "Average SWOLF"
+      }]
+    },
+    "valueInteger" : 42
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs",
+        "code" : "strokes-per-lap",
+        "display" : "Strokes Per Lap"
+      }]
+    },
+    "valueInteger" : 18
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs",
+        "code" : "avg-pace",
+        "display" : "Average Pace"
+      }]
+    },
+    "valueQuantity" : {
+      "value" : 120,
+      "unit" : "seconds",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "s"
+    }
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs",
+        "code" : "stroke-type",
+        "display" : "Primary Stroke Type"
+      }]
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs",
+        "code" : "freestyle",
+        "display" : "Freestyle"
+      }]
+    }
+  }]
+}

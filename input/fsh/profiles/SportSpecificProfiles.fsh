@@ -404,12 +404,14 @@ Description: "Profile for recording swimming performance metrics from wearable d
 * component[avgPace].code = SwimmingMetricsCS#avg-pace "Average Pace"
 * component[avgPace].value[x] only Quantity
 * component[avgPace].valueQuantity.system = $UCUM
-* component[avgPace].valueQuantity.code = #s/100m
+* component[avgPace].valueQuantity.code = #s
+* component[avgPace] ^short = "Average pace in seconds (interpreted as seconds per 100 meters)"
 
 * component[bestPace].code = SwimmingMetricsCS#best-pace "Best Pace"
 * component[bestPace].value[x] only Quantity
 * component[bestPace].valueQuantity.system = $UCUM
-* component[bestPace].valueQuantity.code = #s/100m
+* component[bestPace].valueQuantity.code = #s
+* component[bestPace] ^short = "Best pace in seconds (interpreted as seconds per 100 meters)"
 
 * component[avgSpeed].code = SwimmingMetricsCS#speed "Average Speed"
 * component[avgSpeed].value[x] only Quantity

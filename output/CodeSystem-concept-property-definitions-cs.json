@@ -1,0 +1,89 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "concept-property-definitions-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem concept-property-definitions-cs</b></p><a name=\"concept-property-definitions-cs\"> </a><a name=\"hcconcept-property-definitions-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">loinc-equivalent<a name=\"concept-property-definitions-cs-loinc-equivalent\"> </a></td><td>LOINC Equivalent Code</td><td>Reference to an equivalent LOINC code for this concept. Used to map custom codes to LOINC when available, supporting semantic interoperability with systems that use LOINC as primary terminology.</td></tr><tr><td style=\"white-space:nowrap\">assignment-status<a name=\"concept-property-definitions-cs-assignment-status\"> </a></td><td>Terminology Assignment Status</td><td>Status of the terminology code assignment process. Values include: 'mapped' (has equivalent in standard terminology), 'pending-loinc' (awaiting LOINC code assignment), 'pending-snomed' (awaiting SNOMED CT assignment), 'local-only' (intentionally local, no standard equivalent expected).</td></tr><tr><td style=\"white-space:nowrap\">snomed-equivalent<a name=\"concept-property-definitions-cs-snomed-equivalent\"> </a></td><td>SNOMED CT Equivalent Code</td><td>Reference to an equivalent SNOMED CT concept for this code. Used to map custom codes to SNOMED CT when available.</td></tr><tr><td style=\"white-space:nowrap\">openehr-path<a name=\"concept-property-definitions-cs-openehr-path\"> </a></td><td>openEHR Archetype Path</td><td>Path to the equivalent element in an openEHR archetype. Supports mapping between FHIR and openEHR representations of the same clinical concept.</td></tr></table></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/concept-property-definitions-cs",
+  "version" : "0.1.0",
+  "name" : "ConceptPropertyDefinitionsCS",
+  "title" : "Concept Property Definitions CodeSystem",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-30",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "Formal definitions for custom concept properties used in this Implementation Guide. These properties extend standard FHIR concept properties to support terminology mapping and lifecycle tracking for wearable health data concepts.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "loinc-equivalent",
+    "display" : "LOINC Equivalent Code",
+    "definition" : "Reference to an equivalent LOINC code for this concept. Used to map custom codes to LOINC when available, supporting semantic interoperability with systems that use LOINC as primary terminology."
+  },
+  {
+    "code" : "assignment-status",
+    "display" : "Terminology Assignment Status",
+    "definition" : "Status of the terminology code assignment process. Values include: 'mapped' (has equivalent in standard terminology), 'pending-loinc' (awaiting LOINC code assignment), 'pending-snomed' (awaiting SNOMED CT assignment), 'local-only' (intentionally local, no standard equivalent expected)."
+  },
+  {
+    "code" : "snomed-equivalent",
+    "display" : "SNOMED CT Equivalent Code",
+    "definition" : "Reference to an equivalent SNOMED CT concept for this code. Used to map custom codes to SNOMED CT when available."
+  },
+  {
+    "code" : "openehr-path",
+    "display" : "openEHR Archetype Path",
+    "definition" : "Path to the equivalent element in an openEHR archetype. Supports mapping between FHIR and openEHR representations of the same clinical concept."
+  }]
+}

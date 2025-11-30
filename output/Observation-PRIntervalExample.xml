@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="PRIntervalExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pr-interval-observation"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation PRIntervalExample</b></p><a name="PRIntervalExample"> </a><a name="hcPRIntervalExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-pr-interval-observation.html">PR Interval Observation Profile</a></p></div><blockquote><p><b>Clinical Use Warning Extension</b></p><ul><li>warningCode: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs consumer-grade-sensor}">Consumer-Grade Sensor</span></li><li>severity: warning</li></ul></blockquote><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 8625-6}">P-R Interval</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 08:30:00+0000</p><p><b>value</b>: 160 milliseconds<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigoms = 'ms')</span></p><p><b>interpretation</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation N}">Normal</span></p><p><b>note</b>: </p><blockquote><div><p>PR interval within normal range (120-200ms).</p>
+</div></blockquote><p><b>device</b>: <a href="Device-AppleWatchDevice.html">Device: status = active; manufacturer = Apple Inc.; serialNumber = DNPXYZ123456; modelNumber = A2978; type = </a></p></div>
+  </text>
+  <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/clinical-use-warning">
+    <extension url="warningCode">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs"/>
+          <code value="consumer-grade-sensor"/>
+          <display value="Consumer-Grade Sensor"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="severity">
+      <valueCode value="warning"/>
+    </extension>
+  </extension>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+      <display value="Vital Signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8625-6"/>
+      <display value="P-R Interval"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2025-11-30T08:30:00Z"/>
+  <valueQuantity>
+    <value value="160"/>
+    <unit value="milliseconds"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="ms"/>
+  </valueQuantity>
+  <interpretation>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+      <version value="3.0.0"/>
+      <code value="N"/>
+      <display value="Normal"/>
+    </coding>
+  </interpretation>
+  <note>
+    <text value="PR interval within normal range (120-200ms)."/>
+  </note>
+  <device>
+    <reference value="Device/AppleWatchDevice"/>
+  </device>
+</Observation>

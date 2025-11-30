@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="ObservationWithClinicalWarningExample"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation ObservationWithClinicalWarningExample</b></p><a name="ObservationWithClinicalWarningExample"> </a><a name="hcObservationWithClinicalWarningExample"> </a><blockquote><p><b>Clinical Use Warning Extension</b></p><ul><li>warningCode: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs consumer-grade-sensor}">Consumer-Grade Sensor</span></li><li>severity: warning</li></ul></blockquote><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}">Vital Signs</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 8462-4}">Diastolic blood pressure</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 09:00:00+0000</p><p><b>value</b>: 78 millimeters of mercury<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomm[Hg] = 'mm[Hg]')</span></p><p><b>note</b>: </p><blockquote><div><p>Blood pressure from consumer device. Confirm with validated clinical device for diagnosis.</p>
+</div></blockquote><p><b>device</b>: <a href="Device-WithingsScaleDevice.html">Device: manufacturer = Withings; modelNumber = Body+</a></p></div>
+  </text>
+  <extension url="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/clinical-use-warning">
+    <extension url="warningCode">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs"/>
+          <code value="consumer-grade-sensor"/>
+          <display value="Consumer-Grade Sensor"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="severity">
+      <valueCode value="warning"/>
+    </extension>
+  </extension>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+      <display value="Vital Signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8462-4"/>
+      <display value="Diastolic blood pressure"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2025-11-30T09:00:00Z"/>
+  <valueQuantity>
+    <value value="78"/>
+    <unit value="millimeters of mercury"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="mm[Hg]"/>
+  </valueQuantity>
+  <note>
+    <text value="Blood pressure from consumer device. Confirm with validated clinical device for diagnosis."/>
+  </note>
+  <device>
+    <reference value="Device/WithingsScaleDevice"/>
+  </device>
+</Observation>

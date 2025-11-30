@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="CyclingDynamicsExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cycling-dynamics-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation CyclingDynamicsExample</b></p><a name="CyclingDynamicsExample"> </a><a name="hcCyclingDynamicsExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-cycling-dynamics-observation.html">Cycling Dynamics Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category activity}">Activity</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 73985-4}">Exercise activity</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 08:30:00+0000</p><p><b>note</b>: </p><blockquote><div><p>60-minute endurance ride. Steady power output with good pedaling efficiency.</p>
+</div></blockquote><p><b>device</b>: <a href="Device-WahooPowerMeter.html">Device: manufacturer = Wahoo Fitness; modelNumber = POWRLINK ZERO</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs avg-power}">Average Power</span></p><p><b>value</b>: 185 watts<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigoW = 'W')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs np}">Normalized Power</span></p><p><b>value</b>: 198 watts<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigoW = 'W')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs cadence}">Cadence</span></p><p><b>value</b>: 88 revolutions per minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código{rpm} = '{rpm}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs tss}">Training Stress Score</span></p><p><b>value</b>: 75 {score}<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código{score} = '{score}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 55411-3}">Exercise duration</span></p><p><b>value</b>: 60 minutes<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomin = 'min')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="activity"/>
+      <display value="Activity"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="73985-4"/>
+      <display value="Exercise activity"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2025-11-30T08:30:00Z"/>
+  <note>
+    <text value="60-minute endurance ride. Steady power output with good pedaling efficiency."/>
+  </note>
+  <device>
+    <reference value="Device/WahooPowerMeter"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs"/>
+        <code value="avg-power"/>
+        <display value="Average Power"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="185"/>
+      <unit value="watts"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="W"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs"/>
+        <code value="np"/>
+        <display value="Normalized Power"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="198"/>
+      <unit value="watts"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="W"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs"/>
+        <code value="cadence"/>
+        <display value="Cadence"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="88"/>
+      <unit value="revolutions per minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="{rpm}"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-metrics-cs"/>
+        <code value="tss"/>
+        <display value="Training Stress Score"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="75"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="{score}"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="55411-3"/>
+        <display value="Exercise duration"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="60"/>
+      <unit value="minutes"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/>
+    </valueQuantity>
+  </component>
+</Observation>

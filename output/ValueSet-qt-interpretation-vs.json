@@ -1,0 +1,91 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "qt-interpretation-vs",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ValueSet qt-interpretation-vs</b></p><a name=\"qt-interpretation-vs\"> </a><a name=\"hcqt-interpretation-vs\"> </a><p>Este conjunto de valores inclui códigos baseados nas seguintes regras:</p><ul><li>Incluir estes códigos, tal como definidos em <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td></tr><tr><td><a href=\"http://snomed.info/id/17338001\">17338001</a></td><td>Prolonged QT interval syndrome</td></tr></table></li><li>Incluir estes códigos, tal como definidos em <a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ObservationInterpretation.html\"><code>http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation</code></a> versão <code>3.0.0</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ObservationInterpretation.html#v3-ObservationInterpretation-N\">N</a></td><td>Normal</td><td>The result or observation value is within the reference range or expected norm (as defined for the respective test procedure).<br/><br/>\\[Note: Applies to numeric or non-numeric results.\\]</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ObservationInterpretation.html#v3-ObservationInterpretation-H\">H</a></td><td>High</td><td>The result for a quantitative observation is above the upper limit of the reference range (as defined for the respective test procedure).<br/><br/>Synonym: Above high normal</td></tr><tr><td><a href=\"http://terminology.hl7.org/7.0.0/CodeSystem-v3-ObservationInterpretation.html#v3-ObservationInterpretation-HH\">HH</a></td><td>Critical High</td><td>The result for a quantitative observation is above a reference level at which immediate action should be considered for patient safety (as defined for the respective test procedure).<br/><br/>Synonym: Above upper panic limits.</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/qt-interpretation-vs",
+  "version" : "0.1.0",
+  "name" : "QTInterpretationVS",
+  "title" : "QT Interpretation ValueSet",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-11-30T13:08:37+00:00",
+  "publisher" : "Ricardo Lourenço dos Santos",
+  "contact" : [{
+    "name" : "Ricardo Lourenço dos Santos",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://linktr.ee/ricardolsantos"
+    }]
+  }],
+  "description" : "Interpretation codes for QT interval findings",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "150",
+      "display" : "Europe"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "021",
+      "display" : "Northern America a/"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "005",
+      "display" : "South America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "PT",
+      "display" : "Portugal"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BR",
+      "display" : "Brazil"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "17338001",
+        "display" : "Prolonged QT interval syndrome"
+      }]
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+      "version" : "3.0.0",
+      "concept" : [{
+        "code" : "N",
+        "display" : "Normal"
+      },
+      {
+        "code" : "H",
+        "display" : "High"
+      },
+      {
+        "code" : "HH",
+        "display" : "Critical High"
+      }]
+    }]
+  }
+}

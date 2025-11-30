@@ -1,0 +1,56 @@
+{
+  "resourceType" : "Observation",
+  "id" : "ObservationWithClinicalWarningExample",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation ObservationWithClinicalWarningExample</b></p><a name=\"ObservationWithClinicalWarningExample\"> </a><a name=\"hcObservationWithClinicalWarningExample\"> </a><blockquote><p><b>Clinical Use Warning Extension</b></p><ul><li>warningCode: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs consumer-grade-sensor}\">Consumer-Grade Sensor</span></li><li>severity: warning</li></ul></blockquote><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 8462-4}\">Diastolic blood pressure</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 09:00:00+0000</p><p><b>value</b>: 78 millimeters of mercury<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigomm[Hg] = 'mm[Hg]')</span></p><p><b>note</b>: </p><blockquote><div><p>Blood pressure from consumer device. Confirm with validated clinical device for diagnosis.</p>\n</div></blockquote><p><b>device</b>: <a href=\"Device-WithingsScaleDevice.html\">Device: manufacturer = Withings; modelNumber = Body+</a></p></div>"
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "warningCode",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs",
+          "code" : "consumer-grade-sensor",
+          "display" : "Consumer-Grade Sensor"
+        }]
+      }
+    },
+    {
+      "url" : "severity",
+      "valueCode" : "warning"
+    }],
+    "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/clinical-use-warning"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "vital-signs",
+      "display" : "Vital Signs"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "8462-4",
+      "display" : "Diastolic blood pressure"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/PatientExample"
+  },
+  "effectiveDateTime" : "2025-11-30T09:00:00Z",
+  "valueQuantity" : {
+    "value" : 78,
+    "unit" : "millimeters of mercury",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "mm[Hg]"
+  },
+  "note" : [{
+    "text" : "Blood pressure from consumer device. Confirm with validated clinical device for diagnosis."
+  }],
+  "device" : {
+    "reference" : "Device/WithingsScaleDevice"
+  }
+}

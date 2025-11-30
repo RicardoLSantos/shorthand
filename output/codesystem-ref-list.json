@@ -1,6 +1,32 @@
 {
   "codeSystems" : [
     {
+      "url" : "http://athena.ohdsi.org/search-terms/terms",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "OMOPConceptsCS",
+      "title" : "OHDSI OMOP CDM Concepts (External Reference)",
+      "description" : "Stub CodeSystem representing OHDSI OMOP Common Data Model concepts from Athena. This CodeSystem serves as a formal reference target for ConceptMaps mapping to OMOP. Actual concept codes are maintained at https://athena.ohdsi.org/",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapActivityToOMOP.html" : "Physical Activity to OMOP CDM Mapping",
+      "ConceptMap-ConceptMapCGMToOMOP.html" : "CGM Metrics to OMOP CDM Mapping",
+      "ConceptMap-ConceptMapSleepToOMOP.html" : "Sleep Metrics to OMOP CDM Mapping",
+      "ConceptMap-ConceptMapHRVToOMOP.html" : "HRV LOINC to OMOP CDM Mapping"
+    },
+    {
+      "url" : "http://hl7.org/fhir/issue-severity",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "IssueSeverity",
+      "title" : "IssueSeverity",
+      "description" : "How the issue affects the success of the action.",
+      "oids" : ["2.16.840.1.113883.4.642.4.409"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/R4/valueset-issue-severity.html" : "IssueSeverity"
+    },
+    {
       "url" : "http://loinc.org",
       "version" : "3.1.0",
       "status" : "active",
@@ -10,16 +36,19 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
+      "ValueSet-heart-rate-variability-vs.html" : "Heart Rate Variability ValueSet",
+      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping",
+      "ValueSet-loinc-observations-vs.html" : "LOINC Observation Codes for Lifestyle Medicine",
+      "ConceptMap-ConceptMapSleepToOMOP.html" : "Sleep Metrics to OMOP CDM Mapping",
       "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
-      "ConceptMap-ConceptMapHRVToOMOP.html" : "HRV LOINC to OMOP CDM Mapping",
       "ConceptMap-ConceptMapSleepToLOINC.html" : "Sleep Measurements to LOINC Mapping",
       "ConceptMap-ConceptMapBodyMetricsToLOINC.html" : "Body Metrics to LOINC Mapping",
-      "ValueSet-loinc-observations-vs.html" : "LOINC Observation Codes for Lifestyle Medicine",
-      "ValueSet-inflammatory-marker-vs.html" : "Inflammatory Marker ValueSet",
-      "ValueSet-heart-rate-variability-vs.html" : "Heart Rate Variability ValueSet",
+      "ConceptMap-ConceptMapActivityToOMOP.html" : "Physical Activity to OMOP CDM Mapping",
       "ConceptMap-ConceptMapVendorToLOINC.html" : "Vendor Proprietary Codes to LOINC Mapping",
+      "ConceptMap-ConceptMapCGMToOMOP.html" : "CGM Metrics to OMOP CDM Mapping",
       "ConceptMap-ConceptMapHRVToLOINC.html" : "Heart Rate Variability to LOINC Mapping",
-      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping"
+      "ValueSet-inflammatory-marker-vs.html" : "Inflammatory Marker ValueSet",
+      "ConceptMap-ConceptMapHRVToOMOP.html" : "HRV LOINC to OMOP CDM Mapping"
     },
     {
       "url" : "http://snomed.info/sct",
@@ -31,32 +60,38 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ValueSet-time-of-day-vs.html" : "Time of Day Value Set",
-      "ConceptMap-ConceptMapMindfulnessToSNOMED.html" : "Mindfulness Observations to SNOMED CT Mapping",
-      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
-      "ValueSet-hrv-inflammation-trend-vs.html" : "HRV-Inflammation Trend ValueSet",
-      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
-      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
-      "ValueSet-tobacco-product-type-vs.html" : "Tobacco Product Type ValueSet",
-      "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
+      "ValueSet-snomed-sleep-stages-vs.html" : "SNOMED CT Sleep Stages ValueSet",
+      "ValueSet-tobacco-use-status-vs.html" : "Tobacco Use Status ValueSet",
       "ValueSet-physical-activity-type-vs.html" : "Physical Activity Types Value Set",
+      "ConceptMap-ConceptMapPhysicalActivityToSNOMED.html" : "iOS Physical Activity to SNOMED CT Mapping",
+      "ValueSet-activity-quality-vs.html" : "Sleep Quality Value Set",
+      "ConceptMap-ConceptMapGarminSleepToSNOMED.html" : "Garmin Sleep Stages to SNOMED CT Mapping",
+      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
+      "ValueSet-recreational-substance-use-status-vs.html" : "Recreational Substance Use Status ValueSet",
+      "ConceptMap-ConceptMapOuraSleepToSNOMED.html" : "Oura Ring Sleep Stages to SNOMED CT Mapping",
+      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
+      "ValueSet-qt-interpretation-vs.html" : "QT Interpretation ValueSet",
+      "ConceptMap-ConceptMapAppleSleepToSNOMED.html" : "Apple HealthKit Sleep Stages to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapMobilityToSNOMED.html" : "Mobility Assessments to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapHRVToOMOP.html" : "HRV LOINC to OMOP CDM Mapping",
+      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
+      "ConceptMap-ConceptMapMindfulnessToSNOMED.html" : "Mindfulness Observations to SNOMED CT Mapping",
+      "ValueSet-measurement-context-vs.html" : "Measurement Context Value Set",
+      "ValueSet-recreational-substance-type-vs.html" : "Recreational Substance Type ValueSet",
       "ValueSet-mindfulness-qualifier-vs.html" : "Mindfulness Practice Qualifiers Value Set",
       "ConceptMap-ConceptMapNutritionToSNOMED.html" : "Nutrition Measurements to SNOMED CT Mapping",
-      "ValueSet-recreational-substance-use-status-vs.html" : "Recreational Substance Use Status ValueSet",
-      "ValueSet-measurement-device-type-vs.html" : "Measurement Device Type Value Set",
-      "ValueSet-symptom-progression-vs.html" : "Symptom Progression Value Set",
-      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set",
+      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
+      "ValueSet-hrv-inflammation-trend-vs.html" : "HRV-Inflammation Trend ValueSet",
+      "ValueSet-mindfulness-outcome-vs.html" : "Mindfulness Outcomes Value Set",
+      "ValueSet-time-of-day-vs.html" : "Time of Day Value Set",
       "ConceptMap-MindfulnessDiagnosticMap.html" : "Mindfulness Diagnostic Mappings",
       "ValueSet-activity-quality-extended-vs.html" : "Sleep Quality Value Set",
-      "ValueSet-social-history-goal-vs.html" : "Reproductive Health Goals Value Set",
-      "ValueSet-body-locations-vs.html" : "Body Locations Value Set",
-      "ValueSet-recreational-substance-type-vs.html" : "Recreational Substance Type ValueSet",
-      "ConceptMap-ConceptMapMobilityToSNOMED.html" : "Mobility Assessments to SNOMED CT Mapping",
       "ValueSet-alcohol-use-status-vs.html" : "Alcohol Use Status ValueSet",
-      "ValueSet-tobacco-use-status-vs.html" : "Tobacco Use Status ValueSet",
-      "ConceptMap-ConceptMapHRVToOMOP.html" : "HRV LOINC to OMOP CDM Mapping",
+      "ConceptMap-ConceptMapFitbitSleepToSNOMED.html" : "Fitbit Sleep Stages to SNOMED CT Mapping",
+      "ValueSet-measurement-conditions-vs.html" : "Measurement Conditions Value Set",
       "ConceptMap-ConceptMapEnvironmentalToSNOMED.html" : "Environmental Exposures to SNOMED CT Mapping",
-      "ConceptMap-ConceptMapPhysicalActivityToSNOMED.html" : "iOS Physical Activity to SNOMED CT Mapping"
+      "ValueSet-tobacco-product-type-vs.html" : "Tobacco Product Type ValueSet",
+      "ValueSet-measurement-context-vital-signs.html" : "Measurement Context Value Set"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle",
@@ -94,6 +129,18 @@
       "ValueSet-pghd-provenance-activity-vs.html" : "PGHD Provenance Activity ValueSet"
     },
     {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "ObservationInterpretation",
+      "title" : "ObservationInterpretation",
+      "description" : "One or more codes providing a rough qualitative interpretation of the observation, such as \"normal\" / \"abnormal\", \"low\" / \"high\", \"better\" / \"worse\", \"resistant\" / \"susceptible\", \"expected\" / \"not expected\". The value set is intended to be for ANY use where coded representation of an interpretation is needed.",
+      "oids" : ["2.16.840.1.113883.5.83"],
+      "uses" : {
+      },
+      "ValueSet-qt-interpretation-vs.html" : "QT Interpretation ValueSet"
+    },
+    {
       "url" : "http://unitsofmeasure.org",
       "version" : "3.0.1",
       "status" : "active",
@@ -103,9 +150,9 @@
       "oids" : ["2.16.840.1.113883.6.8"],
       "uses" : {
       },
+      "ValueSet-duration-units-vs.html" : "Duration Units Value Set",
       "ValueSet-cgm-glucose-unit-vs.html" : "CGM Glucose Unit ValueSet",
-      "ValueSet-vo2max-unit-vs.html" : "VO2max Unit ValueSet",
-      "ValueSet-duration-units-vs.html" : "Duration Units Value Set"
+      "ValueSet-vo2max-unit-vs.html" : "VO2max Unit ValueSet"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/activity-balance-cs",
@@ -113,7 +160,7 @@
       "status" : "active",
       "name" : "ActivityBalanceCS",
       "title" : "Activity Balance CodeSystem",
-      "description" : "",
+      "description" : "Codes for activity and recovery balance status",
       "uses" : {
       },
       "ValueSet-activity-balance-vs.html" : "Activity Balance ValueSet"
@@ -150,6 +197,30 @@
       "uses" : {
       },
       "ValueSet-alcohol-drinking-frequency-vs.html" : "Alcohol Drinking Frequency ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/apple-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AppleSleepStagesCS",
+      "title" : "Apple HealthKit Sleep Stages CodeSystem",
+      "description" : "Apple HealthKit HKCategoryValueSleepAnalysis sleep stage classifications",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapCrossVendorSleepStages.html" : "Cross-Vendor Sleep Stage Equivalence",
+      "ConceptMap-ConceptMapAppleSleepToSNOMED.html" : "Apple HealthKit Sleep Stages to SNOMED CT Mapping",
+      "ValueSet-apple-sleep-stages-vs.html" : "Apple Sleep Stages ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assignment-status-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AssignmentStatusCS",
+      "title" : "Assignment Status CodeSystem",
+      "description" : "Status values for terminology code assignment tracking",
+      "uses" : {
+      },
+      "ValueSet-assignment-status-vs.html" : "Assignment Status ValueSet"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes",
@@ -201,7 +272,7 @@
       "status" : "active",
       "name" : "BaselineComparisonCS",
       "title" : "Baseline Comparison CodeSystem",
-      "description" : "",
+      "description" : "Codes for comparing current values to personal baseline",
       "uses" : {
       },
       "ValueSet-baseline-comparison-vs.html" : "Baseline Comparison ValueSet"
@@ -284,6 +355,17 @@
       "ValueSet-cgm-insertion-site-vs.html" : "CGM Insertion Site ValueSet"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "CGMMetricsCS",
+      "title" : "CGM Metrics CodeSystem",
+      "description" : "CodeSystem for continuous glucose monitoring metrics",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapCGMToOMOP.html" : "CGM Metrics to OMOP CDM Mapping"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-system-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -317,12 +399,23 @@
       "ValueSet-circadian-phase-vs.html" : "Circadian Phase Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ClinicalUseWarningTypeCS",
+      "title" : "Clinical Use Warning Type CodeSystem",
+      "description" : "Codes for types of clinical use warnings on consumer wearable observations. Addresses vendor algorithm opacity (95% severity) identified in RS6.",
+      "uses" : {
+      },
+      "ValueSet-clinical-use-warning-type-vs.html" : "Clinical Use Warning Type ValueSet"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-category-cs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "CRFCategoryCS",
       "title" : "CRF Category CodeSystem",
-      "description" : "",
+      "description" : "Cardiorespiratory fitness classification categories",
       "uses" : {
       },
       "ValueSet-crf-category-vs.html" : "CRF Category ValueSet"
@@ -333,7 +426,7 @@
       "status" : "active",
       "name" : "CRFStandardCS",
       "title" : "CRF Standard CodeSystem",
-      "description" : "",
+      "description" : "Standards and norms used for CRF classification",
       "uses" : {
       },
       "ValueSet-crf-standard-vs.html" : "CRF Standard ValueSet"
@@ -344,7 +437,7 @@
       "status" : "active",
       "name" : "CVRiskCategoryCS",
       "title" : "CV Risk Category CodeSystem",
-      "description" : "",
+      "description" : "Cardiovascular risk categories based on CRF levels",
       "uses" : {
       },
       "ValueSet-cv-risk-category-vs.html" : "CV Risk Category ValueSet"
@@ -381,6 +474,17 @@
       "uses" : {
       },
       "ValueSet-data-capture-method-vs.html" : "Data Capture Method ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/data-quality-confidence-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "DataQualityConfidenceCS",
+      "title" : "Data Quality Confidence CodeSystem",
+      "description" : "Codes indicating confidence level in consumer wearable data quality. Addresses Gap 2 (Data Quality Metadata, 30% coverage, 85 severity).",
+      "uses" : {
+      },
+      "ValueSet-data-quality-confidence-vs.html" : "Data Quality Confidence ValueSet"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/drinking-context-cs",
@@ -472,6 +576,19 @@
       "ValueSet-fertility-status-vs.html" : "Fertility Status Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fitbit-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FitbitSleepStagesCS",
+      "title" : "Fitbit Sleep Stages CodeSystem",
+      "description" : "Fitbit proprietary sleep stage classifications from Fitbit Web API",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapCrossVendorSleepStages.html" : "Cross-Vendor Sleep Stage Equivalence",
+      "ConceptMap-ConceptMapFitbitSleepToSNOMED.html" : "Fitbit Sleep Stages to SNOMED CT Mapping",
+      "ValueSet-fitbit-sleep-stages-vs.html" : "Fitbit Sleep Stages ValueSet"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/footstrike-type-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -481,6 +598,18 @@
       "uses" : {
       },
       "ValueSet-footstrike-type-vs.html" : "Footstrike Type ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/garmin-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "GarminSleepStagesCS",
+      "title" : "Garmin Sleep Stages CodeSystem",
+      "description" : "Garmin proprietary sleep stage classifications from Garmin Connect API",
+      "uses" : {
+      },
+      "ValueSet-garmin-sleep-stages-vs.html" : "Garmin Sleep Stages ValueSet",
+      "ConceptMap-ConceptMapGarminSleepToSNOMED.html" : "Garmin Sleep Stages to SNOMED CT Mapping"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs",
@@ -500,7 +629,7 @@
       "status" : "active",
       "name" : "HRmaxMethodCS",
       "title" : "HRmax Method CodeSystem",
-      "description" : "",
+      "description" : "Methods for determining maximum heart rate",
       "uses" : {
       },
       "ValueSet-hrmax-method-vs.html" : "HRmax Method ValueSet"
@@ -547,14 +676,14 @@
       "description" : "Local codes for lifestyle medicine observations not covered by standard terminologies like LOINC. These codes are used for consumer health device data and wellness measurements where standardized codes do not exist.",
       "uses" : {
       },
-      "ConceptMap-ConceptMapNutritionToSNOMED.html" : "Nutrition Measurements to SNOMED CT Mapping",
       "ConceptMap-ConceptMapMindfulnessToSNOMED.html" : "Mindfulness Observations to SNOMED CT Mapping",
-      "ConceptMap-ConceptMapSleepToLOINC.html" : "Sleep Measurements to LOINC Mapping",
-      "ConceptMap-ConceptMapBodyMetricsToLOINC.html" : "Body Metrics to LOINC Mapping",
       "ConceptMap-ConceptMapEnvironmentalToSNOMED.html" : "Environmental Exposures to SNOMED CT Mapping",
+      "ConceptMap-ConceptMapNutritionToSNOMED.html" : "Nutrition Measurements to SNOMED CT Mapping",
       "ValueSet-lifestyle-observation-vs.html" : "Lifestyle Medicine Observation Value Set",
+      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping",
       "ConceptMap-ConceptMapMobilityToSNOMED.html" : "Mobility Assessments to SNOMED CT Mapping",
-      "ConceptMap-ConceptMapReproductiveToLOINC.html" : "Reproductive Health to LOINC Mapping"
+      "ConceptMap-ConceptMapSleepToLOINC.html" : "Sleep Measurements to LOINC Mapping",
+      "ConceptMap-ConceptMapBodyMetricsToLOINC.html" : "Body Metrics to LOINC Mapping"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs",
@@ -599,8 +728,8 @@
       "description" : "Types of mindfulness practices and techniques",
       "uses" : {
       },
-      "ValueSet-mindfulness-type-vs.html" : "Mindfulness Practice Types Value Set",
-      "ValueSet-mindfulness-type.html" : "Mindfulness Type Value Set"
+      "ValueSet-mindfulness-type.html" : "Mindfulness Type Value Set",
+      "ValueSet-mindfulness-type-vs.html" : "Mindfulness Practice Types Value Set"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs",
@@ -658,6 +787,18 @@
       "ValueSet-nutrition-data-source-vs.html" : "Nutrition Data Source Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/oura-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "OuraSleepStagesCS",
+      "title" : "Oura Ring Sleep Stages CodeSystem",
+      "description" : "Oura Ring proprietary sleep stage classifications from Oura Cloud API",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapOuraSleepToSNOMED.html" : "Oura Ring Sleep Stages to SNOMED CT Mapping",
+      "ValueSet-oura-sleep-stages-vs.html" : "Oura Sleep Stages ValueSet"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -680,12 +821,34 @@
       "ValueSet-practitioner-identifier-vs.html" : "Practitioner Identifier Value Set"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/qt-alert-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "QTAlertTypeCS",
+      "title" : "QT Alert Type CodeSystem",
+      "description" : "Types of clinical alerts for QT interval monitoring",
+      "uses" : {
+      },
+      "ValueSet-qt-alert-type-vs.html" : "QT Alert Type ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/qt-correction-formula-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "QTCorrectionFormulaCS",
+      "title" : "QT Correction Formula CodeSystem",
+      "description" : "Codes for QT interval correction formulas used to adjust for heart rate dependency",
+      "uses" : {
+      },
+      "ValueSet-qt-correction-formula-vs.html" : "QT Correction Formula ValueSet"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/readiness-category-cs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "ReadinessCategoryCS",
       "title" : "Readiness Category CodeSystem",
-      "description" : "",
+      "description" : "Categories for interpreting recovery readiness scores from wearable devices",
       "uses" : {
       },
       "ValueSet-readiness-category-vs.html" : "Readiness Category ValueSet"
@@ -696,7 +859,7 @@
       "status" : "active",
       "name" : "RecommendedActivityCS",
       "title" : "Recommended Activity CodeSystem",
-      "description" : "",
+      "description" : "Codes for recommended activity intensity based on recovery status",
       "uses" : {
       },
       "ValueSet-recommended-activity-vs.html" : "Recommended Activity ValueSet"
@@ -707,7 +870,7 @@
       "status" : "active",
       "name" : "RecoveryDebtCS",
       "title" : "Recovery Debt CodeSystem",
-      "description" : "",
+      "description" : "Codes for accumulated recovery debt levels",
       "uses" : {
       },
       "ValueSet-recovery-debt-vs.html" : "Recovery Debt ValueSet"
@@ -982,7 +1145,7 @@
       "status" : "active",
       "name" : "TrainingStatusCS",
       "title" : "Training Status CodeSystem",
-      "description" : "",
+      "description" : "Codes for training status and fitness progression",
       "uses" : {
       },
       "ValueSet-training-status-vs.html" : "Training Status ValueSet"
@@ -993,7 +1156,7 @@
       "status" : "active",
       "name" : "TrendDirectionCS",
       "title" : "Trend Direction CodeSystem",
-      "description" : "",
+      "description" : "Codes for trend direction indicators",
       "uses" : {
       },
       "ValueSet-trend-direction-vs.html" : "Trend Direction ValueSet"
@@ -1004,7 +1167,7 @@
       "status" : "active",
       "name" : "ValidationStatusCS",
       "title" : "Validation Status CodeSystem",
-      "description" : "",
+      "description" : "Codes for scientific validation status of metrics",
       "uses" : {
       },
       "ValueSet-validation-status-vs.html" : "Validation Status ValueSet"
@@ -1015,7 +1178,7 @@
       "status" : "active",
       "name" : "VO2maxMethodCS",
       "title" : "VO2max Method CodeSystem",
-      "description" : "",
+      "description" : "Methods for VO2max estimation and measurement",
       "uses" : {
       },
       "ValueSet-vo2max-method-vs.html" : "VO2max Method ValueSet"
@@ -1026,7 +1189,7 @@
       "status" : "active",
       "name" : "VO2maxProtocolCS",
       "title" : "VO2max Protocol CodeSystem",
-      "description" : "",
+      "description" : "Specific protocols and tests for VO2max estimation",
       "uses" : {
       },
       "ValueSet-vo2max-protocol-vs.html" : "VO2max Protocol ValueSet"
@@ -1037,10 +1200,21 @@
       "status" : "active",
       "name" : "VO2maxTrendCS",
       "title" : "VO2max Trend CodeSystem",
-      "description" : "",
+      "description" : "Codes for VO2max trend direction over time",
       "uses" : {
       },
       "ValueSet-vo2max-trend-vs.html" : "VO2max Trend ValueSet"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-device-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "WearableDeviceTypeCS",
+      "title" : "Wearable Device Type CodeSystem",
+      "description" : "Codes for types of consumer wearable devices. Supports device provenance capture (RS6 Gap 4).",
+      "uses" : {
+      },
+      "ValueSet-wearable-device-type-vs.html" : "Wearable Device Type ValueSet"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-sensor-type-cs",
@@ -1059,10 +1233,32 @@
       "status" : "active",
       "name" : "WearableVendorCS",
       "title" : "Wearable Vendor CodeSystem",
-      "description" : "",
+      "description" : "Codes for wearable device manufacturers and vendors",
       "uses" : {
       },
       "ValueSet-wearable-vendor-vs.html" : "Wearable Vendor ValueSet"
+    },
+    {
+      "url" : "https://dev.fitbit.com/build/reference/web-api",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FitbitAPICS",
+      "title" : "Fitbit Web API Types (External Reference)",
+      "description" : "Stub CodeSystem representing Fitbit Web API data types. This CodeSystem serves as a formal reference for mapping wearable data from Fitbit devices.",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapVendorToLOINC.html" : "Vendor Proprietary Codes to LOINC Mapping"
+    },
+    {
+      "url" : "https://developer.apple.com/documentation/healthkit",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AppleHealthKitCS",
+      "title" : "Apple HealthKit Types (External Reference)",
+      "description" : "Stub CodeSystem representing Apple HealthKit quantity and category types. This CodeSystem serves as a formal reference for mapping wearable data from Apple devices.",
+      "uses" : {
+      },
+      "ConceptMap-ConceptMapVendorToLOINC.html" : "Vendor Proprietary Codes to LOINC Mapping"
     },
     {
       "url" : "urn:iso:std:iso:3166",

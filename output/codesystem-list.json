@@ -1,6 +1,14 @@
 {
   "codeSystems" : [
     {
+      "url" : "http://athena.ohdsi.org/search-terms/terms",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "OMOPConceptsCS",
+      "title" : "OHDSI OMOP CDM Concepts (External Reference)",
+      "description" : "Stub CodeSystem representing OHDSI OMOP Common Data Model concepts from Athena. This CodeSystem serves as a formal reference target for ConceptMaps mapping to OMOP. Actual concept codes are maintained at https://athena.ohdsi.org/"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/MindfulnessSettingCS",
       "version" : "0.1.0",
       "status" : "active",
@@ -14,7 +22,7 @@
       "status" : "active",
       "name" : "ActivityBalanceCS",
       "title" : "Activity Balance CodeSystem",
-      "description" : ""
+      "description" : "Codes for activity and recovery balance status"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs",
@@ -39,6 +47,22 @@
       "name" : "AlcoholDrinkingFrequencyCS",
       "title" : "Alcohol Drinking Frequency CodeSystem",
       "description" : "AUDIT-C style frequency categories"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/apple-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AppleSleepStagesCS",
+      "title" : "Apple HealthKit Sleep Stages CodeSystem",
+      "description" : "Apple HealthKit HKCategoryValueSleepAnalysis sleep stage classifications"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assignment-status-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AssignmentStatusCS",
+      "title" : "Assignment Status CodeSystem",
+      "description" : "Status values for terminology code assignment tracking"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes",
@@ -78,7 +102,7 @@
       "status" : "active",
       "name" : "BaselineComparisonCS",
       "title" : "Baseline Comparison CodeSystem",
-      "description" : ""
+      "description" : "Codes for comparing current values to personal baseline"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/caffeine-intake-level-cs",
@@ -169,12 +193,28 @@
       "description" : "Code system for circadian rhythm phases"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ClinicalUseWarningTypeCS",
+      "title" : "Clinical Use Warning Type CodeSystem",
+      "description" : "Codes for types of clinical use warnings on consumer wearable observations. Addresses vendor algorithm opacity (95% severity) identified in RS6."
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/concept-property-definitions-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ConceptPropertyDefinitionsCS",
+      "title" : "Concept Property Definitions CodeSystem",
+      "description" : "Formal definitions for custom concept properties used in this Implementation Guide. These properties extend standard FHIR concept properties to support terminology mapping and lifecycle tracking for wearable health data concepts."
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-category-cs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "CRFCategoryCS",
       "title" : "CRF Category CodeSystem",
-      "description" : ""
+      "description" : "Cardiorespiratory fitness classification categories"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/crf-standard-cs",
@@ -182,7 +222,7 @@
       "status" : "active",
       "name" : "CRFStandardCS",
       "title" : "CRF Standard CodeSystem",
-      "description" : ""
+      "description" : "Standards and norms used for CRF classification"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cv-risk-category-cs",
@@ -190,7 +230,7 @@
       "status" : "active",
       "name" : "CVRiskCategoryCS",
       "title" : "CV Risk Category CodeSystem",
-      "description" : ""
+      "description" : "Cardiovascular risk categories based on CRF levels"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cycling-activity-type-cs",
@@ -225,12 +265,28 @@
       "description" : "Methods for capturing patient-generated health data"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/data-quality-confidence-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "DataQualityConfidenceCS",
+      "title" : "Data Quality Confidence CodeSystem",
+      "description" : "Codes indicating confidence level in consumer wearable data quality. Addresses Gap 2 (Data Quality Metadata, 30% coverage, 85 severity)."
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/drinking-context-cs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "DrinkingContextCS",
       "title" : "Drinking Context CodeSystem",
       "description" : "Settings and contexts for alcohol consumption"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ecg-components-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "ECGComponentsCS",
+      "title" : "ECG Components CodeSystem",
+      "description" : "Supplementary codes for ECG observation components"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environment-type-cs",
@@ -289,12 +345,28 @@
       "description" : "Code system for fertility status indicators"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fitbit-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FitbitSleepStagesCS",
+      "title" : "Fitbit Sleep Stages CodeSystem",
+      "description" : "Fitbit proprietary sleep stage classifications from Fitbit Web API"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/footstrike-type-cs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "FootstrikeTypeCS",
       "title" : "Footstrike Type CodeSystem",
       "description" : "Running footstrike patterns"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/garmin-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "GarminSleepStagesCS",
+      "title" : "Garmin Sleep Stages CodeSystem",
+      "description" : "Garmin proprietary sleep stage classifications from Garmin Connect API"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs",
@@ -310,7 +382,7 @@
       "status" : "active",
       "name" : "HRmaxMethodCS",
       "title" : "HRmax Method CodeSystem",
-      "description" : ""
+      "description" : "Methods for determining maximum heart rate"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs",
@@ -465,6 +537,14 @@
       "description" : "Code system for nutrition data sources"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/oura-sleep-stages-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "OuraSleepStagesCS",
+      "title" : "Oura Ring Sleep Stages CodeSystem",
+      "description" : "Oura Ring proprietary sleep stage classifications from Oura Cloud API"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ovulation-test-cs",
       "version" : "0.1.0",
       "status" : "active",
@@ -481,12 +561,28 @@
       "description" : "Sistema de códigos para identificação de practitioners"
     },
     {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/qt-alert-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "QTAlertTypeCS",
+      "title" : "QT Alert Type CodeSystem",
+      "description" : "Types of clinical alerts for QT interval monitoring"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/qt-correction-formula-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "QTCorrectionFormulaCS",
+      "title" : "QT Correction Formula CodeSystem",
+      "description" : "Codes for QT interval correction formulas used to adjust for heart rate dependency"
+    },
+    {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/readiness-category-cs",
       "version" : "0.1.0",
       "status" : "active",
       "name" : "ReadinessCategoryCS",
       "title" : "Readiness Category CodeSystem",
-      "description" : ""
+      "description" : "Categories for interpreting recovery readiness scores from wearable devices"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recommended-activity-cs",
@@ -494,7 +590,7 @@
       "status" : "active",
       "name" : "RecommendedActivityCS",
       "title" : "Recommended Activity CodeSystem",
-      "description" : ""
+      "description" : "Codes for recommended activity intensity based on recovery status"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-debt-cs",
@@ -502,7 +598,7 @@
       "status" : "active",
       "name" : "RecoveryDebtCS",
       "title" : "Recovery Debt CodeSystem",
-      "description" : ""
+      "description" : "Codes for accumulated recovery debt levels"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs",
@@ -742,7 +838,7 @@
       "status" : "active",
       "name" : "TrainingStatusCS",
       "title" : "Training Status CodeSystem",
-      "description" : ""
+      "description" : "Codes for training status and fitness progression"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/trend-direction-cs",
@@ -750,7 +846,7 @@
       "status" : "active",
       "name" : "TrendDirectionCS",
       "title" : "Trend Direction CodeSystem",
-      "description" : ""
+      "description" : "Codes for trend direction indicators"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/validation-status-cs",
@@ -758,7 +854,7 @@
       "status" : "active",
       "name" : "ValidationStatusCS",
       "title" : "Validation Status CodeSystem",
-      "description" : ""
+      "description" : "Codes for scientific validation status of metrics"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-method-cs",
@@ -766,7 +862,7 @@
       "status" : "active",
       "name" : "VO2maxMethodCS",
       "title" : "VO2max Method CodeSystem",
-      "description" : ""
+      "description" : "Methods for VO2max estimation and measurement"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-metrics-cs",
@@ -782,7 +878,7 @@
       "status" : "active",
       "name" : "VO2maxProtocolCS",
       "title" : "VO2max Protocol CodeSystem",
-      "description" : ""
+      "description" : "Specific protocols and tests for VO2max estimation"
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/vo2max-trend-cs",
@@ -790,7 +886,15 @@
       "status" : "active",
       "name" : "VO2maxTrendCS",
       "title" : "VO2max Trend CodeSystem",
-      "description" : ""
+      "description" : "Codes for VO2max trend direction over time"
+    },
+    {
+      "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-device-type-cs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "WearableDeviceTypeCS",
+      "title" : "Wearable Device Type CodeSystem",
+      "description" : "Codes for types of consumer wearable devices. Supports device provenance capture (RS6 Gap 4)."
     },
     {
       "url" : "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/wearable-sensor-type-cs",
@@ -806,7 +910,55 @@
       "status" : "active",
       "name" : "WearableVendorCS",
       "title" : "Wearable Vendor CodeSystem",
-      "description" : ""
+      "description" : "Codes for wearable device manufacturers and vendors"
+    },
+    {
+      "url" : "https://ckm.openehr.org/ckm/archetypes",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "OpenEHRArchetypesCS",
+      "title" : "openEHR Clinical Knowledge Manager Archetypes (External Reference)",
+      "description" : "Stub CodeSystem representing openEHR archetypes from the Clinical Knowledge Manager (CKM). This CodeSystem serves as a formal reference target for ConceptMaps mapping between FHIR and openEHR. Actual archetypes are maintained at https://ckm.openehr.org/"
+    },
+    {
+      "url" : "https://cloud.ouraring.com/v2/docs",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "OuraAPICS",
+      "title" : "Oura Ring API Types (External Reference)",
+      "description" : "Stub CodeSystem representing Oura Ring API data types."
+    },
+    {
+      "url" : "https://dev.fitbit.com/build/reference/web-api",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "FitbitAPICS",
+      "title" : "Fitbit Web API Types (External Reference)",
+      "description" : "Stub CodeSystem representing Fitbit Web API data types. This CodeSystem serves as a formal reference for mapping wearable data from Fitbit devices."
+    },
+    {
+      "url" : "https://developer.apple.com/documentation/healthkit",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "AppleHealthKitCS",
+      "title" : "Apple HealthKit Types (External Reference)",
+      "description" : "Stub CodeSystem representing Apple HealthKit quantity and category types. This CodeSystem serves as a formal reference for mapping wearable data from Apple devices."
+    },
+    {
+      "url" : "https://developer.garmin.com/gc-developer-program",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "GarminConnectCS",
+      "title" : "Garmin Connect API Types (External Reference)",
+      "description" : "Stub CodeSystem representing Garmin Connect and Health API data types."
+    },
+    {
+      "url" : "https://www.polar.com/accesslink-api",
+      "version" : "0.1.0",
+      "status" : "active",
+      "name" : "PolarAPICS",
+      "title" : "Polar AccessLink API Types (External Reference)",
+      "description" : "Stub CodeSystem representing Polar AccessLink API data types."
     }
   ]
 }

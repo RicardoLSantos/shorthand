@@ -29,7 +29,7 @@ Description: "Example HRV observation with RMSSD metric captured by Apple Watch"
 * component[=].valueQuantity.unit = "ms"
 * component[=].valueQuantity.system = "http://unitsofmeasure.org"
 * component[=].valueQuantity.code = #ms
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
 * note.text = "HRV measurement captured during morning rest period"
 
 
@@ -44,7 +44,7 @@ Description: "Example of provenance tracking for HRV data captured by Apple Watc
 
 * target = Reference(HRVObservationExample)
 * recorded = "2025-01-15T08:30:00Z"
-* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#originate "Originate/Retain Record Lifecycle Event"
+* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#originate "Originate/Retain Record Lifecycle Event"
 
 // Device agent - Apple Watch that captured the data
 * agent[device].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#performer
@@ -75,7 +75,7 @@ Description: "Example of provenance tracking for HRV data transformation from He
 
 * target = Reference(HRVObservationExample)
 * recorded = "2025-01-15T08:35:00Z"
-* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transform "Transform/Translate Record Lifecycle Event"
+* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#transform "Transform/Translate Record Lifecycle Event"
 
 // Assembler agent - HealthKit that transformed the data
 * agent[assembler].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler
@@ -104,7 +104,7 @@ Description: "Example of provenance tracking for PGHD transmission from mobile a
 
 * target = Reference(HRVObservationExample)
 * recorded = "2025-01-15T09:00:00Z"
-* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#transmit "Transmit Record Lifecycle Event"
+* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#transmit "Transmit Record Lifecycle Event"
 
 // Assembler agent - Mobile app that transmitted
 * agent[assembler].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler
@@ -170,7 +170,7 @@ Description: "Example showing device capture metadata extension for research-gra
 
 * target = Reference(HRVObservationExample)
 * recorded = "2025-01-15T08:30:00Z"
-* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle#originate "Originate/Retain Record Lifecycle Event"
+* activity = http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle|1.0.0#originate "Originate/Retain Record Lifecycle Event"
 
 // Device agent with metadata extension
 * agent[device].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#performer

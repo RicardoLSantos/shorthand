@@ -1,0 +1,154 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/SwimmingMetricsExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SwimmingMetricsExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/swimming-metrics-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/swimming-metrics-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation SwimmingMetricsExample</b></p><a name=\"SwimmingMetricsExample\"> </a><a name=\"hcSwimmingMetricsExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-swimming-metrics-observation.html\">Swimming Metrics Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category activity}\">Activity</span></p><p><b>code</b>: <span title=\"Códigos:{http://snomed.info/sct 20461001}\">Swimming (qualifier value)</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 06:00:00+0000</p><p><b>note</b>: </p><blockquote><div><p>Pool swim: 80 lengths (25m pool). Good SWOLF score indicates efficient stroke.</p>\n</div></blockquote><p><b>device</b>: <a href=\"Device-AppleWatchDevice.html\">Device: status = active; manufacturer = Apple Inc.; serialNumber = DNPXYZ123456; modelNumber = A2978; type = </a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs distance}\">Total Distance</span></p><p><b>value</b>: 2000 meters<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom = 'm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs laps}\">Total Laps</span></p><p><b>value</b>: 80</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs pool-length}\">Pool Length</span></p><p><b>value</b>: 25 meters<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigom = 'm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs avg-swolf}\">Average SWOLF</span></p><p><b>value</b>: 42</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs strokes-per-lap}\">Strokes Per Lap</span></p><p><b>value</b>: 18</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs avg-pace}\">Average Pace</span></p><p><b>value</b>: 120 seconds<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigos = 's')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs stroke-type}\">Primary Stroke Type</span></p><p><b>value</b>: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs freestyle}\">Freestyle</span></p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "activity" ] ;
+       fhir:display [ fhir:v "Activity" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:20461001 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "20461001" ] ;
+       fhir:display [ fhir:v "Swimming (qualifier value)" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2025-11-30T06:00:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Pool swim: 80 lengths (25m pool). Good SWOLF score indicates efficient stroke." ]
+  ] ) ; # 
+  fhir:device [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/AppleWatchDevice> ;
+     fhir:reference [ fhir:v "Device/AppleWatchDevice" ]
+  ] ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "distance" ] ;
+         fhir:display [ fhir:v "Total Distance" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "2000"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "meters" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "m" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "laps" ] ;
+         fhir:display [ fhir:v "Total Laps" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 80
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "pool-length" ] ;
+         fhir:display [ fhir:v "Pool Length" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "25"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "meters" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "m" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "avg-swolf" ] ;
+         fhir:display [ fhir:v "Average SWOLF" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 42
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "strokes-per-lap" ] ;
+         fhir:display [ fhir:v "Strokes Per Lap" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 18
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "avg-pace" ] ;
+         fhir:display [ fhir:v "Average Pace" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "120"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "seconds" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "s" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-metrics-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "stroke-type" ] ;
+         fhir:display [ fhir:v "Primary Stroke Type" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/swimming-stroke-type-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "freestyle" ] ;
+         fhir:display [ fhir:v "Freestyle" ]
+       ] )
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

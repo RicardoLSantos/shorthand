@@ -93,9 +93,7 @@ Description: "Profile for QT interval measurements from consumer ECG-capable wea
 * component[qtCorrected].valueQuantity.system = $UCUM
 * component[qtCorrected].valueQuantity.code = #ms
 * component[qtCorrected] ^short = "Heart rate-corrected QT interval"
-* component[correctionFormula].code.coding.system = "http://fhir.lifestyle-medicine.org/CodeSystem/ecg-components"
-* component[correctionFormula].code.coding.code = #qt-correction-formula
-* component[correctionFormula].code.coding.display = "QT Correction Formula Used"
+* component[correctionFormula].code = ECGComponentsCS#qt-correction-formula "QT Correction Formula"
 * component[correctionFormula].valueCodeableConcept from QTCorrectionFormulaVS (required)
 * component[correctionFormula] ^short = "Formula used for QT correction (Bazett, Fridericia, Framingham)"
 * component[heartRateAtMeasurement].code = $LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
@@ -150,9 +148,9 @@ Description: "Interpretation codes for QT interval findings"
 * ^experimental = false
 // Note: SNOMED 78976005 and 251161004 removed - not found in SNOMED CT International 2025-02
 * $SCT#17338001 "Prolonged QT interval syndrome"
-* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
-* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
-* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#HH "Critical High"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#HH "Critical High"
 
 // Clinical Alert Extension for QT Prolongation
 Extension: QTClinicalAlert

@@ -1,0 +1,163 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapSleepToOMOP> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ConceptMapSleepToOMOP"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: ConceptMap ConceptMapSleepToOMOP</b></p><a name=\"ConceptMapSleepToOMOP\"> </a><a name=\"hcConceptMapSleepToOMOP\"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <a href=\"CodeSystem-omop-concepts-stub.html\">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>93832-4 (Sleep duration)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>40771110 (Sleep duration)</td><td>VERIFIED OMOP mapping for sleep duration.\n- OMOP concept_id: 40771110\n- Domain: Measurement\n- Unit_concept_id: 8505 (hour) or 8550 (minute)\n- Recommended: 7-9 hours for adults (AASM guidelines)</td></tr><tr><td>28323-4 (Sleep quality)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Sleep quality assessment. No direct OMOP concept.\nCan be represented via:\n- PSQI score (Pittsburgh Sleep Quality Index)\n- Vendor-specific sleep scores (Oura, WHOOP)\nStore in measurement_source_value with context.</td></tr><tr><td>93831-6 (Sleep efficiency)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">GAP: Sleep efficiency has no OMOP concept.\nFormula: (Total Sleep Time / Time in Bed) × 100\nNormal: &gt;85%\nUnit: percentage (%)\nCritical metric for insomnia assessment.</td></tr><tr><td>93829-0 (Sleep onset latency)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">GAP: Sleep onset latency has no OMOP concept.\nTime from lights out to sleep onset.\nNormal: &lt;30 minutes\nProlonged latency indicates insomnia.\nUnit_concept_id: 8550 (minute)</td></tr><tr><td>93830-8 (Number of awakenings during sleep)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Number of wake episodes during sleep period. Normal: &lt;5 brief awakenings.</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/sleep-metrics-cs</code> to <a href=\"CodeSystem-omop-concepts-stub.html\">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class=\"grid\"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>deep-sleep (Deep Sleep Duration (SWS))</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Slow Wave Sleep (N3) duration.\nNormal: 15-25% of total sleep (1-2 hours)\nCritical for physical restoration, memory consolidation.\nMost important sleep stage for recovery.</td></tr><tr><td>rem-sleep (REM Sleep Duration)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Rapid Eye Movement sleep duration.\nNormal: 20-25% of total sleep (1.5-2 hours)\nCritical for cognitive function, emotional regulation.\nDreaming occurs primarily in REM.</td></tr><tr><td>light-sleep (Light Sleep Duration)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Light sleep (N1 + N2) duration.\nNormal: 50-60% of total sleep\nTransition and lighter restorative sleep.</td></tr><tr><td>sleep-score (Sleep Score (Vendor Composite))</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Vendor-specific composite sleep score (0-100).\nCombines duration, efficiency, stages, HRV during sleep.\nExamples: Oura Sleep Score, WHOOP Sleep Performance, Fitbit Sleep Score.\nNon-standardized but clinically used.</td></tr><tr><td>waso (Wake After Sleep Onset)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td><td style=\"background-color: #efefef\">Total time awake after initial sleep onset.\nNormal: &lt;30 minutes\nElevated WASO indicates sleep maintenance insomnia.\nUnit_concept_id: 8550 (minute)</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapSleepToOMOP"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ConceptMapSleepToOMOP"] ; # 
+  fhir:title [ fhir:v "Sleep Metrics to OMOP CDM Mapping"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-28"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Maps sleep metrics from wearables to OMOP CDM concepts for federated analytics.\n\nSleep as Lifestyle Medicine Pillar:\n- Sleep duration: 7-9 hours recommended for adults (AASM)\n- Sleep efficiency: >85% considered normal\n- Sleep stages: Light, Deep (SWS), REM proportions\n- Sleep quality: Validated via PSQI, ISI questionnaires\n\nTarget OMOP Table: MEASUREMENT\n- measurement_concept_id: mapped OMOP concept\n- value_as_number: sleep metric value\n- unit_concept_id: varies by metric\n- measurement_type_concept_id: 44818707 (Patient self-reported/device)\n\nSupported Sleep Trackers:\n- Oura Ring (Gen 3)\n- WHOOP 4.0\n- Apple Watch (watchOS sleep tracking)\n- Fitbit (Sleep Score)\n- Garmin (Advanced Sleep Monitoring)\n- Polar (Sleep Plus Stages)"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "Enable ETL transformation of sleep wearable data from FHIR to OMOP CDM for sleep research, circadian rhythm studies, and lifestyle medicine interventions."] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://athena.ohdsi.org/search-terms/terms"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "93832-4" ] ;
+       fhir:display [ fhir:v "Sleep duration" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "40771110" ] ;
+         fhir:display [ fhir:v "Sleep duration" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "VERIFIED OMOP mapping for sleep duration.\n- OMOP concept_id: 40771110\n- Domain: Measurement\n- Unit_concept_id: 8505 (hour) or 8550 (minute)\n- Recommended: 7-9 hours for adults (AASM guidelines)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "28323-4" ] ;
+       fhir:display [ fhir:v "Sleep quality" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Sleep quality assessment. No direct OMOP concept.\nCan be represented via:\n- PSQI score (Pittsburgh Sleep Quality Index)\n- Vendor-specific sleep scores (Oura, WHOOP)\nStore in measurement_source_value with context." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "93831-6" ] ;
+       fhir:display [ fhir:v "Sleep efficiency" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "GAP: Sleep efficiency has no OMOP concept.\nFormula: (Total Sleep Time / Time in Bed) × 100\nNormal: >85%\nUnit: percentage (%)\nCritical metric for insomnia assessment." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "93829-0" ] ;
+       fhir:display [ fhir:v "Sleep onset latency" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "GAP: Sleep onset latency has no OMOP concept.\nTime from lights out to sleep onset.\nNormal: <30 minutes\nProlonged latency indicates insomnia.\nUnit_concept_id: 8550 (minute)" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "93830-8" ] ;
+       fhir:display [ fhir:v "Number of awakenings during sleep" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Number of wake episodes during sleep period. Normal: <5 brief awakenings." ]
+       ] )
+     ] ) ;
+     fhir:unmapped [
+       fhir:mode [ fhir:v "fixed" ] ;
+       fhir:code [ fhir:v "0" ] ;
+       fhir:display [ fhir:v "No OMOP concept - requires custom vocabulary extension" ]
+     ]
+  ] [
+     fhir:source [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/sleep-metrics-cs"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://athena.ohdsi.org/search-terms/terms"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "deep-sleep" ] ;
+       fhir:display [ fhir:v "Deep Sleep Duration (SWS)" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Slow Wave Sleep (N3) duration.\nNormal: 15-25% of total sleep (1-2 hours)\nCritical for physical restoration, memory consolidation.\nMost important sleep stage for recovery." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "rem-sleep" ] ;
+       fhir:display [ fhir:v "REM Sleep Duration" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Rapid Eye Movement sleep duration.\nNormal: 20-25% of total sleep (1.5-2 hours)\nCritical for cognitive function, emotional regulation.\nDreaming occurs primarily in REM." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "light-sleep" ] ;
+       fhir:display [ fhir:v "Light Sleep Duration" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Light sleep (N1 + N2) duration.\nNormal: 50-60% of total sleep\nTransition and lighter restorative sleep." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "sleep-score" ] ;
+       fhir:display [ fhir:v "Sleep Score (Vendor Composite)" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Vendor-specific composite sleep score (0-100).\nCombines duration, efficiency, stages, HRV during sleep.\nExamples: Oura Sleep Score, WHOOP Sleep Performance, Fitbit Sleep Score.\nNon-standardized but clinically used." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "waso" ] ;
+       fhir:display [ fhir:v "Wake After Sleep Onset" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "Total time awake after initial sleep onset.\nNormal: <30 minutes\nElevated WASO indicates sleep maintenance insomnia.\nUnit_concept_id: 8550 (minute)" ]
+       ] )
+     ] ) ;
+     fhir:unmapped [
+       fhir:mode [ fhir:v "fixed" ] ;
+       fhir:code [ fhir:v "0" ] ;
+       fhir:display [ fhir:v "No OMOP concept - sleep stages not in OMOP vocabulary" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

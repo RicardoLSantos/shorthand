@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/Observation/QRSDurationExample> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "QRSDurationExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/qrs-duration-observation"^^xsd:anyURI ;
+       fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/qrs-duration-observation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: Observation QRSDurationExample</b></p><a name=\"QRSDurationExample\"> </a><a name=\"hcQRSDurationExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Perfil: <a href=\"StructureDefinition-qrs-duration-observation.html\">QRS Duration Observation Profile</a></p></div><blockquote><p><b>Clinical Use Warning Extension</b></p><ul><li>warningCode: <span title=\"Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs consumer-grade-sensor}\">Consumer-Grade Sensor</span></li><li>severity: warning</li></ul></blockquote><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Códigos:{http://loinc.org 44973-6}\">QRS duration {Electrocardiograph lead}</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 08:30:00+0000</p><p><b>value</b>: 92 milliseconds<span style=\"background: LightGoldenRodYellow\"> (Detalhes: UCUM códigoms = 'ms')</span></p><p><b>interpretation</b>: <span title=\"Códigos:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation N}\">Normal</span></p><p><b>note</b>: </p><blockquote><div><p>QRS duration normal (&lt;100ms). Single-lead consumer ECG measurement.</p>\n</div></blockquote><p><b>device</b>: <a href=\"Device-AppleWatchDevice.html\">Device: status = active; manufacturer = Apple Inc.; serialNumber = DNPXYZ123456; modelNumber = A2978; type = </a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "warningCode"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/clinical-use-warning-type-cs"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "consumer-grade-sensor" ] ;
+           fhir:display [ fhir:v "Consumer-Grade Sensor" ]
+         ] )
+       ]
+     ] [
+       fhir:url [ fhir:v "severity"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "warning"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/clinical-use-warning"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ] ;
+       fhir:display [ fhir:v "Vital Signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:44973-6 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "44973-6" ] ;
+       fhir:display [ fhir:v "QRS duration {Electrocardiograph lead}" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/PatientExample> ;
+     fhir:reference [ fhir:v "Patient/PatientExample" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2025-11-30T08:30:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "92"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "milliseconds" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "ms" ]
+  ] ; # 
+  fhir:interpretation ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "3.0.0" ] ;
+       fhir:code [ fhir:v "N" ] ;
+       fhir:display [ fhir:v "Normal" ]
+     ] )
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "QRS duration normal (<100ms). Single-lead consumer ECG measurement." ]
+  ] ) ; # 
+  fhir:device [
+     fhir:link <https://2rdoc.pt/ig/ios-lifestyle-medicine/Device/AppleWatchDevice> ;
+     fhir:reference [ fhir:v "Device/AppleWatchDevice" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

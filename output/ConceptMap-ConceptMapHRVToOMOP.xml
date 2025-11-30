@@ -3,7 +3,7 @@
 <ConceptMap xmlns="http://hl7.org/fhir">
   <id value="ConceptMapHRVToOMOP"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapHRVToOMOP</b></p><a name="ConceptMapHRVToOMOP"> </a><a name="hcConceptMapHRVToOMOP"> </a><p>Mapeamento de <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">http://loinc.org</a> para http://athena.ohdsi.org/search-terms/terms</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <code>http://athena.ohdsi.org/search-terms/terms</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>80404-7 (R-R interval.standard deviation (Heart rate variability) [LOINC])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>37547368 (R-R interval.standard deviation (Heart rate variability))</td><td>VERIFIED MAPPING via Athena (2025-11-28):
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapHRVToOMOP</b></p><a name="ConceptMapHRVToOMOP"> </a><a name="hcConceptMapHRVToOMOP"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <a href="CodeSystem-omop-concepts-stub.html">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>80404-7 (R-R interval.standard deviation (Heart rate variability) [LOINC])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>37547368 (R-R interval.standard deviation (Heart rate variability))</td><td>VERIFIED MAPPING via Athena (2025-11-28):
 - OMOP concept_id: 37547368
 - Domain: Measurement
 - Concept Class: Lab Test
@@ -53,7 +53,7 @@ Resting context can be captured in:
 - measurement qualifier
 - observation_period context
 
-Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HRmax/HRrest × 15)</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a> to <code>http://athena.ohdsi.org/search-terms/terms</code></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>86290005 (Respiratory rate [SNOMED])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>3024171 (Respiratory rate)</td><td>Critical for HRV interpretation. RSA (respiratory sinus arrhythmia) affects HF power band.</td></tr></table></div>
+Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HRmax/HRrest × 15)</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a> to <a href="CodeSystem-omop-concepts-stub.html">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>86290005 (Respiratory rate [SNOMED])</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>3024171 (Respiratory rate)</td><td>Critical for HRV interpretation. RSA (respiratory sinus arrhythmia) affects HF power band.</td></tr></table></div>
   </text>
   <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapHRVToOMOP"/>
   <version value="0.1.0"/>
@@ -114,8 +114,6 @@ Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HR
     </coding>
   </jurisdiction>
   <purpose value="Enable ETL transformation of wearable HRV data from FHIR (LOINC-coded) to OMOP CDM for research analytics in OHDSI federated network."/>
-  <sourceUri value="http://loinc.org"/>
-  <targetUri value="http://athena.ohdsi.org/search-terms/terms"/>
   <group>
     <source value="http://loinc.org"/>
     <target value="http://athena.ohdsi.org/search-terms/terms"/>

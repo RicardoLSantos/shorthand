@@ -16,14 +16,15 @@ Description: "Custom codes for HRV metrics with LOINC mappings where available. 
 * ^contact.name = "Ricardo L. Santos"
 
 // Define properties used in concepts
+// Property URIs reference formal definitions in ConceptPropertyDefinitionsCS
 * ^property[0].code = #loinc-equivalent
-* ^property[=].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/loinc-equivalent"
+* ^property[=].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/concept-property-definitions-cs#loinc-equivalent"
 * ^property[=].description = "Equivalent LOINC code if available"
-* ^property[=].type = #code
+* ^property[=].type = #string
 
-* ^property[+].code = #status
-* ^property[=].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/assignment-status"
-* ^property[=].description = "Status of LOINC code assignment"
+* ^property[+].code = #assignment-status
+* ^property[=].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/concept-property-definitions-cs#assignment-status"
+* ^property[=].description = "Status of terminology code assignment"
 * ^property[=].type = #string
 
 // SDNN - HAS LOINC CODE
@@ -31,41 +32,41 @@ Description: "Custom codes for HRV metrics with LOINC mappings where available. 
   * ^designation[0].language = #en
   * ^designation[0].value = "Maps to LOINC 80404-7"
   * ^property[0].code = #loinc-equivalent
-  * ^property[0].valueCode = #80404-7
+  * ^property[0].valueString = "80404-7"
 
 // RMSSD - NO LOINC CODE YET
 * #hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)"
   * ^designation[0].language = #en
   * ^designation[0].value = "Awaiting LOINC code assignment"
-  * ^property[0].code = #status
+  * ^property[0].code = #assignment-status
   * ^property[0].valueString = "pending-loinc"
 
 // pNN50 - NO LOINC CODE YET
 * #hrv-pnn50 "HRV pNN50 (Percentage of NN intervals >50ms difference)"
   * ^designation[0].language = #en
   * ^designation[0].value = "Awaiting LOINC code assignment"
-  * ^property[0].code = #status
+  * ^property[0].code = #assignment-status
   * ^property[0].valueString = "pending-loinc"
 
 // LF/HF Ratio - NO LOINC CODE YET
 * #hrv-lf-hf-ratio "HRV LF/HF Ratio (Low Frequency to High Frequency ratio)"
   * ^designation[0].language = #en
   * ^designation[0].value = "Awaiting LOINC code assignment"
-  * ^property[0].code = #status
+  * ^property[0].code = #assignment-status
   * ^property[0].valueString = "pending-loinc"
 
 // LF Power - NO LOINC CODE YET
 * #hrv-lf-power "HRV LF Power (Low Frequency power 0.04-0.15 Hz)"
   * ^designation[0].language = #en
   * ^designation[0].value = "Awaiting LOINC code assignment"
-  * ^property[0].code = #status
+  * ^property[0].code = #assignment-status
   * ^property[0].valueString = "pending-loinc"
 
 // HF Power - NO LOINC CODE YET
 * #hrv-hf-power "HRV HF Power (High Frequency power 0.15-0.4 Hz)"
   * ^designation[0].language = #en
   * ^designation[0].value = "Awaiting LOINC code assignment"
-  * ^property[0].code = #status
+  * ^property[0].code = #assignment-status
   * ^property[0].valueString = "pending-loinc"
 
 // ValueSet using both LOINC and custom codes

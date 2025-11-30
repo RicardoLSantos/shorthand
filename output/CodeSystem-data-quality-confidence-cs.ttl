@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/data-quality-confidence-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "data-quality-confidence-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Narrativa gerada: CodeSystem data-quality-confidence-cs</b></p><a name=\"data-quality-confidence-cs\"> </a><a name=\"hcdata-quality-confidence-cs\"> </a><p>Este  sistema de código  define o seguinte código:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Código</b></td><td><b>Ecrã</b></td><td><b>Definição</b></td></tr><tr><td style=\"white-space:nowrap\">high<a name=\"data-quality-confidence-cs-high\"> </a></td><td>High Confidence</td><td>Data quality 80-100%; suitable for clinical correlation</td></tr><tr><td style=\"white-space:nowrap\">medium<a name=\"data-quality-confidence-cs-medium\"> </a></td><td>Medium Confidence</td><td>Data quality 60-79%; use with caution, recommend verification</td></tr><tr><td style=\"white-space:nowrap\">low<a name=\"data-quality-confidence-cs-low\"> </a></td><td>Low Confidence</td><td>Data quality 40-59%; significant uncertainty, clinical use not recommended</td></tr><tr><td style=\"white-space:nowrap\">unreliable<a name=\"data-quality-confidence-cs-unreliable\"> </a></td><td>Unreliable</td><td>Data quality 0-39%; do not use for clinical purposes</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/data-quality-confidence-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "DataQualityConfidenceCS"] ; # 
+  fhir:title [ fhir:v "Data Quality Confidence CodeSystem"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-11-30T13:08:37+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Ricardo Lourenço dos Santos"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Ricardo Lourenço dos Santos" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://linktr.ee/ricardolsantos" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Codes indicating confidence level in consumer wearable data quality. Addresses Gap 2 (Data Quality Metadata, 30% coverage, 85 severity)."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "150" ] ;
+       fhir:display [ fhir:v "Europe" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "021" ] ;
+       fhir:display [ fhir:v "Northern America a/" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "005" ] ;
+       fhir:display [ fhir:v "South America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "PT" ] ;
+       fhir:display [ fhir:v "Portugal" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BR" ] ;
+       fhir:display [ fhir:v "Brazil" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "high" ] ;
+     fhir:display [ fhir:v "High Confidence" ] ;
+     fhir:definition [ fhir:v "Data quality 80-100%; suitable for clinical correlation" ]
+  ] [
+     fhir:code [ fhir:v "medium" ] ;
+     fhir:display [ fhir:v "Medium Confidence" ] ;
+     fhir:definition [ fhir:v "Data quality 60-79%; use with caution, recommend verification" ]
+  ] [
+     fhir:code [ fhir:v "low" ] ;
+     fhir:display [ fhir:v "Low Confidence" ] ;
+     fhir:definition [ fhir:v "Data quality 40-59%; significant uncertainty, clinical use not recommended" ]
+  ] [
+     fhir:code [ fhir:v "unreliable" ] ;
+     fhir:display [ fhir:v "Unreliable" ] ;
+     fhir:definition [ fhir:v "Data quality 0-39%; do not use for clinical purposes" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

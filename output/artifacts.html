@@ -194,22 +194,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#4">Structures: Questionnaires</a>
       </li>
       <li>
-         <a href="#5">Structures: Resource Profiles</a>
+         <a href="#5">Structures: Abstract Profiles</a>
       </li>
       <li>
-         <a href="#6">Structures: Extension Definitions</a>
+         <a href="#6">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#7">Terminology: Value Sets</a>
+         <a href="#7">Structures: Extension Definitions</a>
       </li>
       <li>
-         <a href="#8">Terminology: Code Systems</a>
+         <a href="#8">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#9">Terminology: Concept Maps</a>
+         <a href="#9">Terminology: Code Systems</a>
       </li>
       <li>
-         <a href="#10">Example: Example Instances</a>
+         <a href="#10">Terminology: Naming Systems</a>
+      </li>
+      <li>
+         <a href="#11">Terminology: Concept Maps</a>
+      </li>
+      <li>
+         <a href="#12">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -340,6 +346,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </tbody>
    </table>
    <a name="5"> </a>
+   <h3>Structures: Abstract Profiles </h3>
+    <p>These are profiles on resources or data types that describe patterns used by other profiles, but cannot be instantiated directly.  I.e. instances can conform to profiles <em>based</em> on these abstract profiles but do not declare conformance to the abstract profiles themselves.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-consumer-ecg-observation.html"
+                  title="StructureDefinition/consumer-ecg-observation">Consumer ECG Observation Profile</a>
+            </td>
+            <td>
+<p>Base profile for ECG-derived observations from consumer wearable devices (Apple Watch, Withings, Samsung, AliveCor)</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="6"> </a>
    <h3>Structures: Resource Profiles </h3>
     <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -518,6 +541,15 @@ autonomic-immune axis in lifestyle medicine interventions.</p>
             </td>
             <td>
 <p>Profile for heart rate measurements from iOS Health App</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-heart-rate-ecg-observation.html"
+                  title="StructureDefinition/heart-rate-ecg-observation">Heart Rate by ECG Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for heart rate derived from ECG signal (more accurate than PPG during motion)</p>
 </td>
          </tr>
          <tr>
@@ -737,6 +769,15 @@ Vagal nerve stimulation reduces IL-6 (cholinergic anti-inflammatory pathway).</p
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-pr-interval-observation.html"
+                  title="StructureDefinition/pr-interval-observation">PR Interval Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for PR interval measurements from consumer ECG-capable wearables</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-pghd-provenance.html"
                   title="StructureDefinition/pghd-provenance">Patient-Generated Health Data Provenance</a>
             </td>
@@ -751,6 +792,24 @@ Vagal nerve stimulation reduces IL-6 (cholinergic anti-inflammatory pathway).</p
             </td>
             <td>
 <p>Profile for recording physical activity data from iOS Health App</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-qrs-duration-observation.html"
+                  title="StructureDefinition/qrs-duration-observation">QRS Duration Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for QRS complex duration from consumer ECG-capable wearables</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-qt-interval-observation.html"
+                  title="StructureDefinition/qt-interval-observation">QT Interval Observation Profile</a>
+            </td>
+            <td>
+<p>Profile for QT interval measurements from consumer ECG-capable wearable devices. LOINC codes: 8634-8 (Q-T interval), 8636-3 (Q-T corrected). Consumer devices are NOT FDA-cleared for QT measurement. References: Giudicessi2021 (Circulation), Zaballos2023 (Sci Rep).</p>
 </td>
          </tr>
          <tr>
@@ -955,7 +1014,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
          </tr>
       </tbody>
    </table>
-   <a name="6"> </a>
+   <a name="7"> </a>
    <h3>Structures: Extension Definitions </h3>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -1044,11 +1103,29 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-clinical-use-warning.html"
+                  title="StructureDefinition/clinical-use-warning">Clinical Use Warning Extension</a>
+            </td>
+            <td>
+<p>Provides explicit warnings about the appropriate clinical use of consumer wearable-derived observations. Addresses Gap 3 (Algorithm Transparency, 5% coverage, 95 severity) from RS6 gap analysis.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-data-localization.html"
                   title="StructureDefinition/data-localization">Data Localization Requirements</a>
             </td>
             <td>
 <p>Specifies data localization requirements per jurisdiction</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-data-quality-indicator.html"
+                  title="StructureDefinition/data-quality-indicator">Data Quality Indicator Extension</a>
+            </td>
+            <td>
+<p>Indicates the quality/confidence level of consumer wearable-derived data. Addresses RS6 Gap 2 (Data Quality Metadata).</p>
 </td>
          </tr>
          <tr>
@@ -1269,6 +1346,15 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-qt-clinical-alert.html"
+                  title="StructureDefinition/qt-clinical-alert">QT Clinical Alert Extension</a>
+            </td>
+            <td>
+<p>Extension for clinical alerts triggered by QT prolongation thresholds</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-recovery-efficiency.html"
                   title="StructureDefinition/recovery-efficiency">Recovery Efficiency Extension</a>
             </td>
@@ -1359,7 +1445,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
          </tr>
       </tbody>
    </table>
-   <a name="7"> </a>
+   <a name="8"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -1371,7 +1457,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
                   title="ValueSet/activity-balance-vs">Activity Balance ValueSet</a>
             </td>
             <td>
-
+<p>Categories for activity and recovery balance status</p>
 </td>
          </tr>
          <tr>
@@ -1408,6 +1494,24 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
             </td>
             <td>
 <p>Status categories for alcohol consumption</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-apple-sleep-stages-vs.html"
+                  title="ValueSet/apple-sleep-stages-vs">Apple Sleep Stages ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet containing Apple HealthKit sleep stage codes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-assignment-status-vs.html"
+                  title="ValueSet/assignment-status-vs">Assignment Status ValueSet</a>
+            </td>
+            <td>
+<p>Valid values for the assignment-status concept property</p>
 </td>
          </tr>
          <tr>
@@ -1449,7 +1553,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
                   title="ValueSet/baseline-comparison-vs">Baseline Comparison ValueSet</a>
             </td>
             <td>
-
+<p>Methods for comparing current values to established baselines</p>
 </td>
          </tr>
          <tr>
@@ -1510,7 +1614,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
                <a href="ValueSet-crf-category-vs.html" title="ValueSet/crf-category-vs">CRF Category ValueSet</a>
             </td>
             <td>
-
+<p>Cardiorespiratory fitness categories based on VO2max percentiles</p>
 </td>
          </tr>
          <tr>
@@ -1518,7 +1622,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
                <a href="ValueSet-crf-standard-vs.html" title="ValueSet/crf-standard-vs">CRF Standard ValueSet</a>
             </td>
             <td>
-
+<p>Reference standards for cardiorespiratory fitness classification</p>
 </td>
          </tr>
          <tr>
@@ -1527,7 +1631,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
                   title="ValueSet/cv-risk-category-vs">CV Risk Category ValueSet</a>
             </td>
             <td>
-
+<p>Cardiovascular risk categories based on fitness assessment</p>
 </td>
          </tr>
          <tr>
@@ -1586,6 +1690,15 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-clinical-use-warning-type-vs.html"
+                  title="ValueSet/clinical-use-warning-type-vs">Clinical Use Warning Type ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet for clinical use warning codes on consumer wearable observations</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-cycling-activity-type-vs.html"
                   title="ValueSet/cycling-activity-type-vs">Cycling Activity Type ValueSet</a>
             </td>
@@ -1609,6 +1722,15 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
             </td>
             <td>
 <p>Methods by which PGHD data was captured</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-data-quality-confidence-vs.html"
+                  title="ValueSet/data-quality-confidence-vs">Data Quality Confidence ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet for data quality confidence levels in consumer wearable data</p>
 </td>
          </tr>
          <tr>
@@ -1693,11 +1815,29 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-fitbit-sleep-stages-vs.html"
+                  title="ValueSet/fitbit-sleep-stages-vs">Fitbit Sleep Stages ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet containing Fitbit proprietary sleep stage codes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-footstrike-type-vs.html"
                   title="ValueSet/footstrike-type-vs">Footstrike Type ValueSet</a>
             </td>
             <td>
 <p>Running footstrike patterns</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-garmin-sleep-stages-vs.html"
+                  title="ValueSet/garmin-sleep-stages-vs">Garmin Sleep Stages ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet containing Garmin proprietary sleep stage codes</p>
 </td>
          </tr>
          <tr>
@@ -1722,7 +1862,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                <a href="ValueSet-hrmax-method-vs.html" title="ValueSet/hrmax-method-vs">HRmax Method ValueSet</a>
             </td>
             <td>
-
+<p>Methods for determining maximum heart rate</p>
 </td>
          </tr>
          <tr>
@@ -1904,6 +2044,15 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-oura-sleep-stages-vs.html"
+                  title="ValueSet/oura-sleep-stages-vs">Oura Sleep Stages ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet containing Oura Ring proprietary sleep stage codes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ovulation-test-vs.html"
                   title="ValueSet/ovulation-test-vs">Ovulation Test Value Set</a>
             </td>
@@ -1949,11 +2098,37 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-qt-alert-type-vs.html" title="ValueSet/qt-alert-type-vs">QT Alert Type ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet for QT clinical alert types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-qt-correction-formula-vs.html"
+                  title="ValueSet/qt-correction-formula-vs">QT Correction Formula ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet for QT interval correction formulas</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-qt-interpretation-vs.html"
+                  title="ValueSet/qt-interpretation-vs">QT Interpretation ValueSet</a>
+            </td>
+            <td>
+<p>Interpretation codes for QT interval findings</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-readiness-category-vs.html"
                   title="ValueSet/readiness-category-vs">Readiness Category ValueSet</a>
             </td>
             <td>
-
+<p>Categories for interpreting recovery readiness scores from wearable devices</p>
 </td>
          </tr>
          <tr>
@@ -1962,7 +2137,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="ValueSet/recommended-activity-vs">Recommended Activity ValueSet</a>
             </td>
             <td>
-
+<p>Recommended activity types based on recovery status</p>
 </td>
          </tr>
          <tr>
@@ -1970,7 +2145,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                <a href="ValueSet-recovery-debt-vs.html" title="ValueSet/recovery-debt-vs">Recovery Debt ValueSet</a>
             </td>
             <td>
-
+<p>Levels of accumulated recovery debt from training or stress</p>
 </td>
          </tr>
          <tr>
@@ -2024,6 +2199,15 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
             </td>
             <td>
 <p>Value set for general risk levels</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-snomed-sleep-stages-vs.html"
+                  title="ValueSet/snomed-sleep-stages-vs">SNOMED CT Sleep Stages ValueSet</a>
+            </td>
+            <td>
+<p>SNOMED CT codes for clinical sleep stages</p>
 </td>
          </tr>
          <tr>
@@ -2271,7 +2455,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="ValueSet/training-status-vs">Training Status ValueSet</a>
             </td>
             <td>
-
+<p>Current training status categories based on fitness trends</p>
 </td>
          </tr>
          <tr>
@@ -2280,7 +2464,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="ValueSet/trend-direction-vs">Trend Direction ValueSet</a>
             </td>
             <td>
-
+<p>Directions of trends in health metrics over time</p>
 </td>
          </tr>
          <tr>
@@ -2288,7 +2472,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                <a href="ValueSet-vo2max-method-vs.html" title="ValueSet/vo2max-method-vs">VO2max Method ValueSet</a>
             </td>
             <td>
-
+<p>Methods for estimating or measuring VO2max</p>
 </td>
          </tr>
          <tr>
@@ -2297,7 +2481,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="ValueSet/vo2max-protocol-vs">VO2max Protocol ValueSet</a>
             </td>
             <td>
-
+<p>Exercise protocols used for VO2max testing</p>
 </td>
          </tr>
          <tr>
@@ -2305,7 +2489,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                <a href="ValueSet-vo2max-trend-vs.html" title="ValueSet/vo2max-trend-vs">VO2max Trend ValueSet</a>
             </td>
             <td>
-
+<p>Trends in VO2max values over time</p>
 </td>
          </tr>
          <tr>
@@ -2313,7 +2497,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                <a href="ValueSet-vo2max-unit-vs.html" title="ValueSet/vo2max-unit-vs">VO2max Unit ValueSet</a>
             </td>
             <td>
-
+<p>Units of measurement for VO2max values</p>
 </td>
          </tr>
          <tr>
@@ -2322,7 +2506,16 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="ValueSet/validation-status-vs">Validation Status ValueSet</a>
             </td>
             <td>
-
+<p>Validation status of health measurements</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-wearable-device-type-vs.html"
+                  title="ValueSet/wearable-device-type-vs">Wearable Device Type ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet for types of consumer wearable devices</p>
 </td>
          </tr>
          <tr>
@@ -2340,7 +2533,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="ValueSet/wearable-vendor-vs">Wearable Vendor ValueSet</a>
             </td>
             <td>
-
+<p>Supported wearable device vendors for data integration</p>
 </td>
          </tr>
          <tr>
@@ -2354,7 +2547,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
       </tbody>
    </table>
-   <a name="8"> </a>
+   <a name="9"> </a>
    <h3>Terminology: Code Systems </h3>
     <p>These define new code systems used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -2366,7 +2559,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/activity-balance-cs">Activity Balance CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for activity and recovery balance status</p>
 </td>
          </tr>
          <tr>
@@ -2394,6 +2587,33 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
             </td>
             <td>
 <p>AUDIT-C style frequency categories</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-apple-sleep-stages-cs.html"
+                  title="CodeSystem/apple-sleep-stages-cs">Apple HealthKit Sleep Stages CodeSystem</a>
+            </td>
+            <td>
+<p>Apple HealthKit HKCategoryValueSleepAnalysis sleep stage classifications</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-apple-healthkit-stub.html"
+                  title="CodeSystem/apple-healthkit-stub">Apple HealthKit Types (External Reference)</a>
+            </td>
+            <td>
+<p>Stub CodeSystem representing Apple HealthKit quantity and category types. This CodeSystem serves as a formal reference for mapping wearable data from Apple devices.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-assignment-status-cs.html"
+                  title="CodeSystem/assignment-status-cs">Assignment Status CodeSystem</a>
+            </td>
+            <td>
+<p>Status values for terminology code assignment tracking</p>
 </td>
          </tr>
          <tr>
@@ -2435,7 +2655,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/baseline-comparison-cs">Baseline Comparison CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for comparing current values to personal baseline</p>
 </td>
          </tr>
          <tr>
@@ -2487,7 +2707,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/crf-category-cs">CRF Category CodeSystem</a>
             </td>
             <td>
-
+<p>Cardiorespiratory fitness classification categories</p>
 </td>
          </tr>
          <tr>
@@ -2496,7 +2716,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/crf-standard-cs">CRF Standard CodeSystem</a>
             </td>
             <td>
-
+<p>Standards and norms used for CRF classification</p>
 </td>
          </tr>
          <tr>
@@ -2505,7 +2725,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/cv-risk-category-cs">CV Risk Category CodeSystem</a>
             </td>
             <td>
-
+<p>Cardiovascular risk categories based on CRF levels</p>
 </td>
          </tr>
          <tr>
@@ -2564,6 +2784,24 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-clinical-use-warning-type-cs.html"
+                  title="CodeSystem/clinical-use-warning-type-cs">Clinical Use Warning Type CodeSystem</a>
+            </td>
+            <td>
+<p>Codes for types of clinical use warnings on consumer wearable observations. Addresses vendor algorithm opacity (95% severity) identified in RS6.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-concept-property-definitions-cs.html"
+                  title="CodeSystem/concept-property-definitions-cs">Concept Property Definitions CodeSystem</a>
+            </td>
+            <td>
+<p>Formal definitions for custom concept properties used in this Implementation Guide. These properties extend standard FHIR concept properties to support terminology mapping and lifecycle tracking for wearable health data concepts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-cycling-activity-type-cs.html"
                   title="CodeSystem/cycling-activity-type-cs">Cycling Activity Type CodeSystem</a>
             </td>
@@ -2600,11 +2838,29 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-data-quality-confidence-cs.html"
+                  title="CodeSystem/data-quality-confidence-cs">Data Quality Confidence CodeSystem</a>
+            </td>
+            <td>
+<p>Codes indicating confidence level in consumer wearable data quality. Addresses Gap 2 (Data Quality Metadata, 30% coverage, 85 severity).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-drinking-context-cs.html"
                   title="CodeSystem/drinking-context-cs">Drinking Context CodeSystem</a>
             </td>
             <td>
 <p>Settings and contexts for alcohol consumption</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ecg-components-cs.html"
+                  title="CodeSystem/ecg-components-cs">ECG Components CodeSystem</a>
+            </td>
+            <td>
+<p>Supplementary codes for ECG observation components</p>
 </td>
          </tr>
          <tr>
@@ -2663,6 +2919,24 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-fitbit-sleep-stages-cs.html"
+                  title="CodeSystem/fitbit-sleep-stages-cs">Fitbit Sleep Stages CodeSystem</a>
+            </td>
+            <td>
+<p>Fitbit proprietary sleep stage classifications from Fitbit Web API</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-fitbit-api-stub.html"
+                  title="CodeSystem/fitbit-api-stub">Fitbit Web API Types (External Reference)</a>
+            </td>
+            <td>
+<p>Stub CodeSystem representing Fitbit Web API data types. This CodeSystem serves as a formal reference for mapping wearable data from Fitbit devices.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-footstrike-type-cs.html"
                   title="CodeSystem/footstrike-type-cs">Footstrike Type CodeSystem</a>
             </td>
@@ -2672,11 +2946,29 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-garmin-connect-stub.html"
+                  title="CodeSystem/garmin-connect-stub">Garmin Connect API Types (External Reference)</a>
+            </td>
+            <td>
+<p>Stub CodeSystem representing Garmin Connect and Health API data types.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-garmin-sleep-stages-cs.html"
+                  title="CodeSystem/garmin-sleep-stages-cs">Garmin Sleep Stages CodeSystem</a>
+            </td>
+            <td>
+<p>Garmin proprietary sleep stage classifications from Garmin Connect API</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-hrmax-method-cs.html"
                   title="CodeSystem/hrmax-method-cs">HRmax Method CodeSystem</a>
             </td>
             <td>
-
+<p>Methods for determining maximum heart rate</p>
 </td>
          </tr>
          <tr>
@@ -2851,11 +3143,45 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-omop-concepts-stub.html"
+                  title="CodeSystem/omop-concepts-stub">OHDSI OMOP CDM Concepts (External Reference)</a>
+            </td>
+            <td>
+<p>Stub CodeSystem representing OHDSI OMOP Common Data Model concepts from Athena. This CodeSystem serves as a formal reference target for ConceptMaps mapping to OMOP. Actual concept codes are maintained at https://athena.ohdsi.org/</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-oura-api-stub.html" title="CodeSystem/oura-api-stub">Oura Ring API Types (External Reference)</a>
+            </td>
+            <td>
+<p>Stub CodeSystem representing Oura Ring API data types.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-oura-sleep-stages-cs.html"
+                  title="CodeSystem/oura-sleep-stages-cs">Oura Ring Sleep Stages CodeSystem</a>
+            </td>
+            <td>
+<p>Oura Ring proprietary sleep stage classifications from Oura Cloud API</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ovulation-test-cs.html"
                   title="CodeSystem/ovulation-test-cs">Ovulation Test Code System</a>
             </td>
             <td>
 <p>Code system for ovulation test results</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-polar-api-stub.html" title="CodeSystem/polar-api-stub">Polar AccessLink API Types (External Reference)</a>
+            </td>
+            <td>
+<p>Stub CodeSystem representing Polar AccessLink API data types.</p>
 </td>
          </tr>
          <tr>
@@ -2878,11 +3204,29 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-qt-alert-type-cs.html"
+                  title="CodeSystem/qt-alert-type-cs">QT Alert Type CodeSystem</a>
+            </td>
+            <td>
+<p>Types of clinical alerts for QT interval monitoring</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-qt-correction-formula-cs.html"
+                  title="CodeSystem/qt-correction-formula-cs">QT Correction Formula CodeSystem</a>
+            </td>
+            <td>
+<p>Codes for QT interval correction formulas used to adjust for heart rate dependency</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-readiness-category-cs.html"
                   title="CodeSystem/readiness-category-cs">Readiness Category CodeSystem</a>
             </td>
             <td>
-
+<p>Categories for interpreting recovery readiness scores from wearable devices</p>
 </td>
          </tr>
          <tr>
@@ -2891,7 +3235,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/recommended-activity-cs">Recommended Activity CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for recommended activity intensity based on recovery status</p>
 </td>
          </tr>
          <tr>
@@ -2900,7 +3244,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/recovery-debt-cs">Recovery Debt CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for accumulated recovery debt levels</p>
 </td>
          </tr>
          <tr>
@@ -3168,7 +3512,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/training-status-cs">Training Status CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for training status and fitness progression</p>
 </td>
          </tr>
          <tr>
@@ -3177,7 +3521,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/trend-direction-cs">Trend Direction CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for trend direction indicators</p>
 </td>
          </tr>
          <tr>
@@ -3186,7 +3530,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/vo2max-method-cs">VO2max Method CodeSystem</a>
             </td>
             <td>
-
+<p>Methods for VO2max estimation and measurement</p>
 </td>
          </tr>
          <tr>
@@ -3204,7 +3548,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/vo2max-protocol-cs">VO2max Protocol CodeSystem</a>
             </td>
             <td>
-
+<p>Specific protocols and tests for VO2max estimation</p>
 </td>
          </tr>
          <tr>
@@ -3213,7 +3557,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/vo2max-trend-cs">VO2max Trend CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for VO2max trend direction over time</p>
 </td>
          </tr>
          <tr>
@@ -3222,7 +3566,16 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/validation-status-cs">Validation Status CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for scientific validation status of metrics</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-wearable-device-type-cs.html"
+                  title="CodeSystem/wearable-device-type-cs">Wearable Device Type CodeSystem</a>
+            </td>
+            <td>
+<p>Codes for types of consumer wearable devices. Supports device provenance capture (RS6 Gap 4).</p>
 </td>
          </tr>
          <tr>
@@ -3240,7 +3593,7 @@ Uses SNOMED-CT codes from mCODE (minimal Common Oncology Data Elements) IG.</p>
                   title="CodeSystem/wearable-vendor-cs">Wearable Vendor CodeSystem</a>
             </td>
             <td>
-
+<p>Codes for wearable device manufacturers and vendors</p>
 </td>
          </tr>
          <tr>
@@ -3279,9 +3632,44 @@ and migration pathway when standard terminology becomes available.</p>
 <p>CodeSystem for physical activity types from Apple HealthKit HKWorkoutActivityType. Enables interoperability between iOS Health App data and standard terminologies (SNOMED CT, LOINC).</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-openehr-archetypes-stub.html"
+                  title="CodeSystem/openehr-archetypes-stub">openEHR Clinical Knowledge Manager Archetypes (External Reference)</a>
+            </td>
+            <td>
+<p>Stub CodeSystem representing openEHR archetypes from the Clinical Knowledge Manager (CKM). This CodeSystem serves as a formal reference target for ConceptMaps mapping between FHIR and openEHR. Actual archetypes are maintained at https://ckm.openehr.org/</p>
+</td>
+         </tr>
       </tbody>
    </table>
-   <a name="9"> </a>
+   <a name="10"> </a>
+   <h3>Terminology: Naming Systems </h3>
+    <p>These define identifier and/or code system identities used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-RegulatoryAuthorityNamingSystem.html"
+                  title="NamingSystem/RegulatoryAuthorityNamingSystem">Regulatory Authority OID Naming System</a>
+            </td>
+            <td>
+<p>NamingSystem defining OIDs for healthcare regulatory authorities used in Consent.policy.authority</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-RegulatoryPolicyNamingSystem.html"
+                  title="NamingSystem/RegulatoryPolicyNamingSystem">Regulatory Policy URI Naming System</a>
+            </td>
+            <td>
+<p>NamingSystem defining URN patterns for healthcare regulatory policy references used in Consent resources</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="11"> </a>
    <h3>Terminology: Concept Maps </h3>
     <p>These define transformations to convert between codes by systems conforming with this implementation guide.</p>
 <table class="grid">
@@ -3289,11 +3677,38 @@ and migration pathway when standard terminology becomes available.</p>
       <tbody>
          <tr>
             <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapAppleSleepToSNOMED.html"
+                  title="ConceptMap/ConceptMapAppleSleepToSNOMED">Apple HealthKit Sleep Stages to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps Apple HealthKit HKCategoryValueSleepAnalysis codes to SNOMED CT. Note: Apple uses 'Core Sleep' terminology for light NREM.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ConceptMap-ConceptMapBodyMetricsToLOINC.html"
                   title="ConceptMap/ConceptMapBodyMetricsToLOINC">Body Metrics to LOINC Mapping</a>
             </td>
             <td>
 <p>Maps custom body composition measurement codes to LOINC codes where available. Enables interoperability between consumer body composition scales (Withings, Fitbit Aria, etc.) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapCGMToOMOP.html"
+                  title="ConceptMap/ConceptMapCGMToOMOP">CGM Metrics to OMOP CDM Mapping</a>
+            </td>
+            <td>
+<p>Maps Continuous Glucose Monitoring metrics from LOINC codes and custom codes to OMOP CDM concept_ids for ETL transformation pipelines. Supports consumer CGM (Dexcom Stelo, Libre) and clinical CGM data.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapCrossVendorSleepStages.html"
+                  title="ConceptMap/ConceptMapCrossVendorSleepStages">Cross-Vendor Sleep Stage Equivalence</a>
+            </td>
+            <td>
+<p>Establishes equivalence relationships between different vendor sleep stage terminologies to enable cross-platform data aggregation. Addresses RS6 Gap 5: Fitbit 'light' ≈ Garmin 'light' ≈ Apple 'Core' ≈ Oura 'light'</p>
 </td>
          </tr>
          <tr>
@@ -3312,6 +3727,24 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Maps FHIR R4 resources to custom openEHR archetypes for wearable lifestyle medicine data. Enables data flow from FHIR servers to openEHR CDRs.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapFitbitSleepToSNOMED.html"
+                  title="ConceptMap/ConceptMapFitbitSleepToSNOMED">Fitbit Sleep Stages to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps Fitbit sleep stage codes to SNOMED CT for clinical interoperability. Addresses RS6 Gap 5: Cross-Vendor Interoperability.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapGarminSleepToSNOMED.html"
+                  title="ConceptMap/ConceptMapGarminSleepToSNOMED">Garmin Sleep Stages to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps Garmin sleep stage codes to SNOMED CT for clinical interoperability</p>
 </td>
          </tr>
          <tr>
@@ -3370,6 +3803,24 @@ and migration pathway when standard terminology becomes available.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapOuraSleepToSNOMED.html"
+                  title="ConceptMap/ConceptMapOuraSleepToSNOMED">Oura Ring Sleep Stages to SNOMED CT Mapping</a>
+            </td>
+            <td>
+<p>Maps Oura Ring sleep stage codes to SNOMED CT for clinical interoperability</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapActivityToOMOP.html"
+                  title="ConceptMap/ConceptMapActivityToOMOP">Physical Activity to OMOP CDM Mapping</a>
+            </td>
+            <td>
+<p>Maps physical activity metrics from LOINC codes and wearable-derived metrics to OMOP CDM concept_ids for ETL transformation pipelines. Supports consumer fitness trackers and clinical activity monitors.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ConceptMap-ConceptMapReproductiveToLOINC.html"
                   title="ConceptMap/ConceptMapReproductiveToLOINC">Reproductive Health to LOINC Mapping</a>
             </td>
@@ -3384,6 +3835,15 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Maps custom sleep measurement codes to LOINC codes where available, with migration path for future LOINC assignments. Enables interoperability between consumer sleep tracking devices (Apple HealthKit, Fitbit, Oura, etc.) and clinical systems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ConceptMapSleepToOMOP.html"
+                  title="ConceptMap/ConceptMapSleepToOMOP">Sleep Metrics to OMOP CDM Mapping</a>
+            </td>
+            <td>
+<p>Maps sleep metrics from LOINC codes and wearable-derived metrics to OMOP CDM concept_ids for ETL transformation pipelines. Supports consumer sleep trackers (Oura, WHOOP, Apple Watch, Fitbit).</p>
 </td>
          </tr>
          <tr>
@@ -3433,7 +3893,7 @@ and migration pathway when standard terminology becomes available.</p>
          </tr>
       </tbody>
    </table>
-   <a name="10"> </a>
+   <a name="12"> </a>
    <h3>Example: Example Instances </h3>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 <table class="grid">
@@ -3455,6 +3915,15 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Advanced vital signs observation with multiple components</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-AlcoholUseExample.html"
+                  title="Observation/AlcoholUseExample">Alcohol Consumption Assessment Example</a>
+            </td>
+            <td>
+<p>Example of alcohol consumption tracking as part of lifestyle medicine assessment</p>
 </td>
          </tr>
          <tr>
@@ -3528,6 +3997,15 @@ and migration pathway when standard terminology becomes available.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-CGMObservationExample.html"
+                  title="Observation/CGMObservationExample">CGM Glucose Reading Example</a>
+            </td>
+            <td>
+<p>Example of continuous glucose monitoring data from a consumer CGM device (Dexcom G7)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-CRPExample-Elevated.html"
                   title="Observation/CRPExample-Elevated">CRP Example - Elevated Value</a>
             </td>
@@ -3578,6 +4056,15 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Example of a current smoker with motivation assessment</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-CyclingDynamicsExample.html"
+                  title="Observation/CyclingDynamicsExample">Cycling Dynamics Assessment Example</a>
+            </td>
+            <td>
+<p>Example of cycling power and dynamics from Wahoo power meter</p>
 </td>
          </tr>
          <tr>
@@ -3676,6 +4163,14 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Example of provenance tracking for HRV data captured by Apple Watch</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Device-DexcomG7Device.html" title="Device/DexcomG7Device">Dexcom G7 CGM Device</a>
+            </td>
+            <td>
+<p>Example of a Dexcom G7 continuous glucose monitoring device</p>
 </td>
          </tr>
          <tr>
@@ -3797,6 +4292,14 @@ and migration pathway when standard terminology becomes available.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Device-GarminWatchDevice.html" title="Device/GarminWatchDevice">Garmin Forerunner 965</a>
+            </td>
+            <td>
+<p>Example of Garmin multisport watch</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-HRVObservationExample.html"
                   title="Observation/HRVObservationExample">HRV Observation - RMSSD</a>
             </td>
@@ -3833,6 +4336,15 @@ and migration pathway when standard terminology becomes available.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-HeartRateECGExample.html"
+                  title="Observation/HeartRateECGExample">Heart Rate from ECG Example</a>
+            </td>
+            <td>
+<p>Example of heart rate derived from ECG R-R intervals</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-HeightExample.html" title="Observation/HeightExample">Height Measurement Example</a>
             </td>
             <td>
@@ -3855,6 +4367,15 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Example of high-risk alcohol consumption with binge episodes</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-InflammatoryMarkerExample.html"
+                  title="Observation/InflammatoryMarkerExample">High-Sensitivity CRP Example</a>
+            </td>
+            <td>
+<p>Example of hs-CRP inflammatory marker measurement</p>
 </td>
          </tr>
          <tr>
@@ -3994,10 +4515,36 @@ and migration pathway when standard terminology becomes available.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-ObservationWithClinicalWarningExample.html"
+                  title="Observation/ObservationWithClinicalWarningExample">Observation with Clinical Use Warning</a>
+            </td>
+            <td>
+<p>Example showing how ClinicalUseWarning extension is used</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-ObservationWithDataQualityExample.html"
+                  title="Observation/ObservationWithDataQualityExample">Observation with Data Quality Indicator</a>
+            </td>
+            <td>
+<p>Example showing how DataQualityIndicator extension is used on an observation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Organization-Org2RDoc.html" title="Organization/Org2RDoc">Org2RDoc</a>
             </td>
             <td>
 <p>2RDoc organization instance for consent and data governance examples</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Device-OuraRingDevice.html" title="Device/OuraRingDevice">Oura Ring Gen 3</a>
+            </td>
+            <td>
+<p>Example of Oura Ring sleep and readiness tracker</p>
 </td>
          </tr>
          <tr>
@@ -4007,6 +4554,15 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Oxygen saturation observation example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-PRIntervalExample.html"
+                  title="Observation/PRIntervalExample">PR Interval Measurement Example</a>
+            </td>
+            <td>
+<p>Example of PR interval measurement from consumer ECG device</p>
 </td>
          </tr>
          <tr>
@@ -4042,6 +4598,51 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Pulse oximeter device example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-QRSDurationExample.html"
+                  title="Observation/QRSDurationExample">QRS Duration Measurement Example</a>
+            </td>
+            <td>
+<p>Example of QRS duration measurement from consumer ECG device</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-QTIntervalExample.html"
+                  title="Observation/QTIntervalExample">QT Interval Measurement Example</a>
+            </td>
+            <td>
+<p>Example of QT interval measurement from Apple Watch Series 9 ECG feature</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-QTWithClinicalAlertExample.html"
+                  title="Observation/QTWithClinicalAlertExample">QT Interval with Prolongation Alert</a>
+            </td>
+            <td>
+<p>Example showing QT prolongation clinical alert extension</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-RecoveryReadinessExample.html"
+                  title="Observation/RecoveryReadinessExample">Recovery Readiness Assessment Example</a>
+            </td>
+            <td>
+<p>Example of daily recovery readiness score from Oura Ring</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-RunningDynamicsExample.html"
+                  title="Observation/RunningDynamicsExample">Running Dynamics Assessment Example</a>
+            </td>
+            <td>
+<p>Example of running dynamics metrics from Garmin watch with running pod</p>
 </td>
          </tr>
          <tr>
@@ -4098,6 +4699,15 @@ and migration pathway when standard terminology becomes available.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-StrengthTrainingExample.html"
+                  title="Observation/StrengthTrainingExample">Strength Training Session Example</a>
+            </td>
+            <td>
+<p>Example of strength training session tracking</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-StressLevelExample.html"
                   title="Observation/StressLevelExample">Stress Level Measurement Example</a>
             </td>
@@ -4112,6 +4722,15 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Comprehensive summary of patient's substance use patterns for lifestyle medicine assessment</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-SwimmingMetricsExample.html"
+                  title="Observation/SwimmingMetricsExample">Swimming Metrics Assessment Example</a>
+            </td>
+            <td>
+<p>Example of swimming metrics from Apple Watch pool swim workout</p>
 </td>
          </tr>
          <tr>
@@ -4139,6 +4758,23 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>UV exposure observation example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-VO2maxEstimationExample.html"
+                  title="Observation/VO2maxEstimationExample">VO2max Estimation Example</a>
+            </td>
+            <td>
+<p>Example of VO2max estimation from Apple Watch during outdoor run</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Device-WahooPowerMeter.html" title="Device/WahooPowerMeter">Wahoo KICKR Power Meter</a>
+            </td>
+            <td>
+<p>Example of cycling power meter</p>
 </td>
          </tr>
          <tr>
@@ -4183,6 +4819,15 @@ and migration pathway when standard terminology becomes available.</p>
             </td>
             <td>
 <p>Weight with conditions observation example</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Device-WithingsScaleDevice.html"
+                  title="Device/WithingsScaleDevice">Withings Body+ Scale</a>
+            </td>
+            <td>
+<p>Example of Withings connected scale with blood pressure capability</p>
 </td>
          </tr>
          <tr>
@@ -4239,7 +4884,7 @@ and migration pathway when standard terminology becomes available.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 28, 2025 14:37+0000">2025-11-28</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://linktr.ee/ricardolsantos">Ricardo Lourenço dos Santos</a>.  Package iOS-Lifestyle-Medicine#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Nov 30, 2025 13:10+0000">2025-11-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

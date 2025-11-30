@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="ConceptMapSleepToOMOP"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: ConceptMap ConceptMapSleepToOMOP</b></p><a name="ConceptMapSleepToOMOP"> </a><a name="hcConceptMapSleepToOMOP"> </a><p>Mapeamento de (não especificado) para (não especificado)</p><br/><p><b>Grupo 1 </b>Mapeamento de <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <a href="CodeSystem-omop-concepts-stub.html">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>93832-4 (Sleep duration)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>40771110 (Sleep duration)</td><td>VERIFIED OMOP mapping for sleep duration.
+- OMOP concept_id: 40771110
+- Domain: Measurement
+- Unit_concept_id: 8505 (hour) or 8550 (minute)
+- Recommended: 7-9 hours for adults (AASM guidelines)</td></tr><tr><td>28323-4 (Sleep quality)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Sleep quality assessment. No direct OMOP concept.
+Can be represented via:
+- PSQI score (Pittsburgh Sleep Quality Index)
+- Vendor-specific sleep scores (Oura, WHOOP)
+Store in measurement_source_value with context.</td></tr><tr><td>93831-6 (Sleep efficiency)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">GAP: Sleep efficiency has no OMOP concept.
+Formula: (Total Sleep Time / Time in Bed) × 100
+Normal: &gt;85%
+Unit: percentage (%)
+Critical metric for insomnia assessment.</td></tr><tr><td>93829-0 (Sleep onset latency)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">GAP: Sleep onset latency has no OMOP concept.
+Time from lights out to sleep onset.
+Normal: &lt;30 minutes
+Prolonged latency indicates insomnia.
+Unit_concept_id: 8550 (minute)</td></tr><tr><td>93830-8 (Number of awakenings during sleep)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Number of wake episodes during sleep period. Normal: &lt;5 brief awakenings.</td></tr></table><hr/><p><b>Grupo 2 </b>Mapeamento de <code>https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/sleep-metrics-cs</code> to <a href="CodeSystem-omop-concepts-stub.html">OHDSI OMOP CDM Concepts (External Reference)</a></p><table class="grid"><tr><td><b>Código fonte</b></td><td><b>Relacionamento</b></td><td><b>Código de destino</b></td><td><b>Comentário</b></td></tr><tr><td>deep-sleep (Deep Sleep Duration (SWS))</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Slow Wave Sleep (N3) duration.
+Normal: 15-25% of total sleep (1-2 hours)
+Critical for physical restoration, memory consolidation.
+Most important sleep stage for recovery.</td></tr><tr><td>rem-sleep (REM Sleep Duration)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Rapid Eye Movement sleep duration.
+Normal: 20-25% of total sleep (1.5-2 hours)
+Critical for cognitive function, emotional regulation.
+Dreaming occurs primarily in REM.</td></tr><tr><td>light-sleep (Light Sleep Duration)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Light sleep (N1 + N2) duration.
+Normal: 50-60% of total sleep
+Transition and lighter restorative sleep.</td></tr><tr><td>sleep-score (Sleep Score (Vendor Composite))</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Vendor-specific composite sleep score (0-100).
+Combines duration, efficiency, stages, HRV during sleep.
+Examples: Oura Sleep Score, WHOOP Sleep Performance, Fitbit Sleep Score.
+Non-standardized but clinically used.</td></tr><tr><td>waso (Wake After Sleep Onset)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td><td style="background-color: #efefef">Total time awake after initial sleep onset.
+Normal: &lt;30 minutes
+Elevated WASO indicates sleep maintenance insomnia.
+Unit_concept_id: 8550 (minute)</td></tr></table></div>
+  </text>
+  <url value="https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapSleepToOMOP"/>
+  <version value="0.1.0"/>
+  <name value="ConceptMapSleepToOMOP"/>
+  <title value="Sleep Metrics to OMOP CDM Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-11-28"/>
+  <publisher value="Ricardo Lourenço dos Santos"/>
+  <contact>
+    <name value="Ricardo Lourenço dos Santos"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://linktr.ee/ricardolsantos"/>
+    </telecom>
+  </contact>
+  <description value="Maps sleep metrics from wearables to OMOP CDM concepts for federated analytics.&#xA;&#xA;Sleep as Lifestyle Medicine Pillar:&#xA;- Sleep duration: 7-9 hours recommended for adults (AASM)&#xA;- Sleep efficiency: &gt;85% considered normal&#xA;- Sleep stages: Light, Deep (SWS), REM proportions&#xA;- Sleep quality: Validated via PSQI, ISI questionnaires&#xA;&#xA;Target OMOP Table: MEASUREMENT&#xA;- measurement_concept_id: mapped OMOP concept&#xA;- value_as_number: sleep metric value&#xA;- unit_concept_id: varies by metric&#xA;- measurement_type_concept_id: 44818707 (Patient self-reported/device)&#xA;&#xA;Supported Sleep Trackers:&#xA;- Oura Ring (Gen 3)&#xA;- WHOOP 4.0&#xA;- Apple Watch (watchOS sleep tracking)&#xA;- Fitbit (Sleep Score)&#xA;- Garmin (Advanced Sleep Monitoring)&#xA;- Polar (Sleep Plus Stages)"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="150"/>
+      <display value="Europe"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="021"/>
+      <display value="Northern America a/"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="005"/>
+      <display value="South America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="PT"/>
+      <display value="Portugal"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BR"/>
+      <display value="Brazil"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Enable ETL transformation of sleep wearable data from FHIR to OMOP CDM for sleep research, circadian rhythm studies, and lifestyle medicine interventions."/>
+  <group>
+    <source value="http://loinc.org"/>
+    <target value="http://athena.ohdsi.org/search-terms/terms"/>
+    <element>
+      <code value="93832-4"/>
+      <display value="Sleep duration"/>
+      <target>
+        <code value="40771110"/>
+        <display value="Sleep duration"/>
+        <equivalence value="equivalent"/>
+        <comment value="VERIFIED OMOP mapping for sleep duration.&#xA;- OMOP concept_id: 40771110&#xA;- Domain: Measurement&#xA;- Unit_concept_id: 8505 (hour) or 8550 (minute)&#xA;- Recommended: 7-9 hours for adults (AASM guidelines)"/>
+      </target>
+    </element>
+    <element>
+      <code value="28323-4"/>
+      <display value="Sleep quality"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Sleep quality assessment. No direct OMOP concept.&#xA;Can be represented via:&#xA;- PSQI score (Pittsburgh Sleep Quality Index)&#xA;- Vendor-specific sleep scores (Oura, WHOOP)&#xA;Store in measurement_source_value with context."/>
+      </target>
+    </element>
+    <element>
+      <code value="93831-6"/>
+      <display value="Sleep efficiency"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="GAP: Sleep efficiency has no OMOP concept.&#xA;Formula: (Total Sleep Time / Time in Bed) × 100&#xA;Normal: &gt;85%&#xA;Unit: percentage (%)&#xA;Critical metric for insomnia assessment."/>
+      </target>
+    </element>
+    <element>
+      <code value="93829-0"/>
+      <display value="Sleep onset latency"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="GAP: Sleep onset latency has no OMOP concept.&#xA;Time from lights out to sleep onset.&#xA;Normal: &lt;30 minutes&#xA;Prolonged latency indicates insomnia.&#xA;Unit_concept_id: 8550 (minute)"/>
+      </target>
+    </element>
+    <element>
+      <code value="93830-8"/>
+      <display value="Number of awakenings during sleep"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Number of wake episodes during sleep period. Normal: &lt;5 brief awakenings."/>
+      </target>
+    </element>
+    <unmapped>
+      <mode value="fixed"/>
+      <code value="0"/>
+      <display value="No OMOP concept - requires custom vocabulary extension"/>
+    </unmapped>
+  </group>
+  <group>
+    <source value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/sleep-metrics-cs"/>
+    <target value="http://athena.ohdsi.org/search-terms/terms"/>
+    <element>
+      <code value="deep-sleep"/>
+      <display value="Deep Sleep Duration (SWS)"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Slow Wave Sleep (N3) duration.&#xA;Normal: 15-25% of total sleep (1-2 hours)&#xA;Critical for physical restoration, memory consolidation.&#xA;Most important sleep stage for recovery."/>
+      </target>
+    </element>
+    <element>
+      <code value="rem-sleep"/>
+      <display value="REM Sleep Duration"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Rapid Eye Movement sleep duration.&#xA;Normal: 20-25% of total sleep (1.5-2 hours)&#xA;Critical for cognitive function, emotional regulation.&#xA;Dreaming occurs primarily in REM."/>
+      </target>
+    </element>
+    <element>
+      <code value="light-sleep"/>
+      <display value="Light Sleep Duration"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Light sleep (N1 + N2) duration.&#xA;Normal: 50-60% of total sleep&#xA;Transition and lighter restorative sleep."/>
+      </target>
+    </element>
+    <element>
+      <code value="sleep-score"/>
+      <display value="Sleep Score (Vendor Composite)"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Vendor-specific composite sleep score (0-100).&#xA;Combines duration, efficiency, stages, HRV during sleep.&#xA;Examples: Oura Sleep Score, WHOOP Sleep Performance, Fitbit Sleep Score.&#xA;Non-standardized but clinically used."/>
+      </target>
+    </element>
+    <element>
+      <code value="waso"/>
+      <display value="Wake After Sleep Onset"/>
+      <target>
+        <equivalence value="unmatched"/>
+        <comment value="Total time awake after initial sleep onset.&#xA;Normal: &lt;30 minutes&#xA;Elevated WASO indicates sleep maintenance insomnia.&#xA;Unit_concept_id: 8550 (minute)"/>
+      </target>
+    </element>
+    <unmapped>
+      <mode value="fixed"/>
+      <code value="0"/>
+      <display value="No OMOP concept - sleep stages not in OMOP vocabulary"/>
+    </unmapped>
+  </group>
+</ConceptMap>

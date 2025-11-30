@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="RunningDynamicsExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/running-dynamics-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation RunningDynamicsExample</b></p><a name="RunningDynamicsExample"> </a><a name="hcRunningDynamicsExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-running-dynamics-observation.html">Running Dynamics Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category activity}">Activity</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 73985-4}">Exercise activity</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 07:00:00+0000</p><p><b>note</b>: </p><blockquote><div><p>Good running form with efficient cadence. GCT indicates proper foot strike pattern.</p>
+</div></blockquote><p><b>device</b>: <a href="Device-GarminWatchDevice.html">Device: manufacturer = Garmin Ltd.; modelNumber = Forerunner 965</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs cadence}">Running Cadence</span></p><p><b>value</b>: 175 steps per minute<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código{spm} = '{spm}')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs gct}">Ground Contact Time</span></p><p><b>value</b>: 245 milliseconds<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigoms = 'ms')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs vo}">Vertical Oscillation</span></p><p><b>value</b>: 8.2 centimeters<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigocm = 'cm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs stride}">Stride Length</span></p><p><b>value</b>: 1.15 meters<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigom = 'm')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs pace}">Pace</span></p><p><b>value</b>: 5.5 minutes per kilometer<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomin/km = 'min/km')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 55430-3}">Walking distance unspecified time Pedometer</span></p><p><b>value</b>: 10 kilometers<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigokm = 'km')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="activity"/>
+      <display value="Activity"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="73985-4"/>
+      <display value="Exercise activity"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2025-11-30T07:00:00Z"/>
+  <note>
+    <text value="Good running form with efficient cadence. GCT indicates proper foot strike pattern."/>
+  </note>
+  <device>
+    <reference value="Device/GarminWatchDevice"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs"/>
+        <code value="cadence"/>
+        <display value="Running Cadence"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="175"/>
+      <unit value="steps per minute"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="{spm}"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs"/>
+        <code value="gct"/>
+        <display value="Ground Contact Time"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="245"/>
+      <unit value="milliseconds"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="ms"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs"/>
+        <code value="vo"/>
+        <display value="Vertical Oscillation"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="8.2"/>
+      <unit value="centimeters"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="cm"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs"/>
+        <code value="stride"/>
+        <display value="Stride Length"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="1.15"/>
+      <unit value="meters"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="m"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/running-metrics-cs"/>
+        <code value="pace"/>
+        <display value="Pace"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="5.5"/>
+      <unit value="minutes per kilometer"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min/km"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="55430-3"/>
+        <display value="Walking distance unspecified time Pedometer"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="10"/>
+      <unit value="kilometers"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="km"/>
+    </valueQuantity>
+  </component>
+</Observation>

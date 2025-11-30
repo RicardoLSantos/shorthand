@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="CGMObservationExample"/>
+  <meta>
+    <profile value="https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cgm-observation"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Narrativa gerada: Observation CGMObservationExample</b></p><a name="CGMObservationExample"> </a><a name="hcCGMObservationExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Perfil: <a href="StructureDefinition-cgm-observation.html">Continuous Glucose Monitoring (CGM) Observation Profile</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title="Códigos:{http://terminology.hl7.org/CodeSystem/observation-category exam}">Exam</span></p><p><b>code</b>: <span title="Códigos:{http://loinc.org 41653-7}">Glucose [Mass/volume] in Capillary blood by Glucometer</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">John Doe  Male, DoB: 1970-01-01 ( urn:oid:2.16.858.1.1.1#12345)</a></p><p><b>effective</b>: 2025-11-30 14:30:00+0000</p><p><b>value</b>: 118 milligrams per deciliter<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomg/dL = 'mg/dL')</span></p><p><b>interpretation</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-glucose-interpretation-cs in-range}">In Range</span></p><p><b>note</b>: </p><blockquote><div><p>14-day CGM summary. TIR target &gt;70% achieved. CV &lt;36% indicates stable glucose patterns.</p>
+</div></blockquote><p><b>device</b>: <a href="Device-DexcomG7Device.html">Device: manufacturer = Dexcom, Inc.; modelNumber = G7; type = Physiologic monitoring system (physical object)</a></p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs trend}">Trend Arrow</span></p><p><b>value</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-trend-arrow-cs stable}">Stable</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs tir}">Time in Range</span></p><p><b>value</b>: 78 percent<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs mean}">Mean Glucose</span></p><p><b>value</b>: 125 milligrams per deciliter<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM códigomg/dL = 'mg/dL')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs cv}">Coefficient of Variation</span></p><p><b>value</b>: 28 percent<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Códigos:{https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs gmi}">Glucose Management Indicator</span></p><p><b>value</b>: 6.4 percent<span style="background: LightGoldenRodYellow"> (Detalhes: UCUM código% = '%')</span></p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="exam"/>
+      <display value="Exam"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="41653-7"/>
+      <display value="Glucose [Mass/volume] in Capillary blood by Glucometer"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/PatientExample"/>
+  </subject>
+  <effectiveDateTime value="2025-11-30T14:30:00Z"/>
+  <valueQuantity>
+    <value value="118"/>
+    <unit value="milligrams per deciliter"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="mg/dL"/>
+  </valueQuantity>
+  <interpretation>
+    <coding>
+      <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-glucose-interpretation-cs"/>
+      <code value="in-range"/>
+      <display value="In Range"/>
+    </coding>
+  </interpretation>
+  <note>
+    <text value="14-day CGM summary. TIR target &gt;70% achieved. CV &lt;36% indicates stable glucose patterns."/>
+  </note>
+  <device>
+    <reference value="Device/DexcomG7Device"/>
+  </device>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"/>
+        <code value="trend"/>
+        <display value="Trend Arrow"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-trend-arrow-cs"/>
+        <code value="stable"/>
+        <display value="Stable"/>
+      </coding>
+    </valueCodeableConcept>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"/>
+        <code value="tir"/>
+        <display value="Time in Range"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="78"/>
+      <unit value="percent"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"/>
+        <code value="mean"/>
+        <display value="Mean Glucose"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="125"/>
+      <unit value="milligrams per deciliter"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mg/dL"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"/>
+        <code value="cv"/>
+        <display value="Coefficient of Variation"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="28"/>
+      <unit value="percent"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"/>
+        <code value="gmi"/>
+        <display value="Glucose Management Indicator"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="6.4"/>
+      <unit value="percent"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </component>
+</Observation>
