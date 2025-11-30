@@ -23,7 +23,7 @@ Description: "Example HRV observation with RMSSD metric captured by Apple Watch"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #ms
 * device = Reference(AppleWatchDevice)
-* component[0].code = https://fmup.up.pt/ios-lifestyle-medicine/CodeSystem/hrv-metrics-cs#rmssd "RMSSD"
+* component[0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs#hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)"
 * component[=].code.text = "Root Mean Square of Successive Differences"
 * component[=].valueQuantity.value = 38.2
 * component[=].valueQuantity.unit = "ms"

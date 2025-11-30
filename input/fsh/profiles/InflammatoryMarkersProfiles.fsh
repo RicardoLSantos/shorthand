@@ -83,6 +83,7 @@ Higher vagal tone associated with lower CRP levels.
 """
 
 * code = $LOINC#1988-5 "C reactive protein [Mass/volume] in Serum or Plasma"
+* valueQuantity MS
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mg/L
 * valueQuantity.unit = "mg/L"
@@ -116,6 +117,7 @@ Strong inverse correlation with HRV in lifestyle medicine assessment.
 """
 
 * code = $LOINC#30522-7 "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method"
+* valueQuantity MS
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mg/L
 * valueQuantity.unit = "mg/L"
@@ -167,6 +169,7 @@ Vagal nerve stimulation reduces IL-6 (cholinergic anti-inflammatory pathway).
 """
 
 * code = $LOINC#26881-3 "Interleukin 6 [Mass/volume] in Serum or Plasma"
+* valueQuantity MS
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #pg/mL
 * valueQuantity.unit = "pg/mL"
@@ -197,6 +200,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.
 """
 
 * code = $LOINC#3074-2 "Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma"
+* valueQuantity MS
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #pg/mL
 * valueQuantity.unit = "pg/mL"

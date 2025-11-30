@@ -22,8 +22,9 @@ Usage: #example
 * category[laboratory].coding.code = #laboratory
 * category[laboratory].coding.display = "Laboratory"
 * code = $LOINC#1988-5 "C reactive protein [Mass/volume] in Serum or Plasma"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T08:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity.value = 1.2
 * valueQuantity.unit = "mg/L"
 * valueQuantity.system = $UCUM
@@ -48,8 +49,9 @@ Usage: #example
 * category[laboratory].coding.code = #laboratory
 * category[laboratory].coding.display = "Laboratory"
 * code = $LOINC#1988-5 "C reactive protein [Mass/volume] in Serum or Plasma"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T08:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity.value = 8.5
 * valueQuantity.unit = "mg/L"
 * valueQuantity.system = $UCUM
@@ -74,8 +76,9 @@ Usage: #example
 * category[laboratory].coding.code = #laboratory
 * category[laboratory].coding.display = "Laboratory"
 * code = $LOINC#30522-7 "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T09:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity.value = 2.1
 * valueQuantity.unit = "mg/L"
 * valueQuantity.system = $UCUM
@@ -100,8 +103,9 @@ Usage: #example
 * category[laboratory].coding.code = #laboratory
 * category[laboratory].coding.display = "Laboratory"
 * code = $LOINC#26881-3 "Interleukin 6 [Mass/volume] in Serum or Plasma"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T09:15:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity.value = 12.5
 * valueQuantity.unit = "pg/mL"
 * valueQuantity.system = $UCUM
@@ -124,8 +128,9 @@ Usage: #example
 * category[laboratory].coding.code = #laboratory
 * category[laboratory].coding.display = "Laboratory"
 * code = $LOINC#3074-2 "Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T09:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity.value = 5.2
 * valueQuantity.unit = "pg/mL"
 * valueQuantity.system = $UCUM
@@ -150,8 +155,9 @@ Usage: #example
 * code.text = "HRV-Inflammation Correlation Assessment"
 * code.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * code.coding.code = #hrv-inflammation-correlation
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 
 * hasMember[0] = Reference(CRPExample-Elevated)
 * hasMember[0].display = "CRP: 8.5 mg/L (elevated)"
@@ -191,8 +197,9 @@ Usage: #example
 * category.coding.display = "Laboratory"
 * code.coding[0] = $LOINC#82335-1 "Cytokines panel - Serum or Plasma"
 * code.text = "Lifestyle Medicine Inflammatory Panel"
-* subject = Reference(Patient/example)
+* subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T08:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 
 // Panel groups individual marker observations via hasMember
 // CRP is NOT part of cytokines panel (it's an acute phase protein, not a cytokine)

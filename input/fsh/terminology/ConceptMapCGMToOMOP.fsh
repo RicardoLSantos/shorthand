@@ -110,7 +110,7 @@ GAP: No OMOP concept exists for GMI.
 
 // TIR - Time in Range (70-180 mg/dL)
 * group[1].element[0].code = #tir
-* group[1].element[0].display = "Time in Range (70-180 mg/dL)"
+* group[1].element[0].display = "Time in Range"
 * group[1].element[0].target[0].code = #0
 * group[1].element[0].target[0].display = "No OMOP concept available"
 * group[1].element[0].target[0].equivalence = #unmatched
@@ -124,7 +124,7 @@ Workaround: Store in measurement_source_value = 'TIR:{value}%'
 
 // TBR-L1 - Time Below Range Level 1 (54-69 mg/dL)
 * group[1].element[1].code = #tbr-l1
-* group[1].element[1].display = "Time Below Range Level 1 (54-69 mg/dL)"
+* group[1].element[1].display = "Time Below Range Level 1"
 * group[1].element[1].target[0].code = #0
 * group[1].element[1].target[0].display = "No OMOP concept available"
 * group[1].element[1].target[0].equivalence = #unmatched
@@ -132,7 +132,7 @@ Workaround: Store in measurement_source_value = 'TIR:{value}%'
 
 // TBR-L2 - Time Below Range Level 2 (<54 mg/dL)
 * group[1].element[2].code = #tbr-l2
-* group[1].element[2].display = "Time Below Range Level 2 (<54 mg/dL)"
+* group[1].element[2].display = "Time Below Range Level 2"
 * group[1].element[2].target[0].code = #0
 * group[1].element[2].target[0].display = "No OMOP concept available"
 * group[1].element[2].target[0].equivalence = #unmatched
@@ -140,7 +140,7 @@ Workaround: Store in measurement_source_value = 'TIR:{value}%'
 
 // TAR-L1 - Time Above Range Level 1 (181-250 mg/dL)
 * group[1].element[3].code = #tar-l1
-* group[1].element[3].display = "Time Above Range Level 1 (181-250 mg/dL)"
+* group[1].element[3].display = "Time Above Range Level 1"
 * group[1].element[3].target[0].code = #0
 * group[1].element[3].target[0].display = "No OMOP concept available"
 * group[1].element[3].target[0].equivalence = #unmatched
@@ -148,7 +148,7 @@ Workaround: Store in measurement_source_value = 'TIR:{value}%'
 
 // TAR-L2 - Time Above Range Level 2 (>250 mg/dL)
 * group[1].element[4].code = #tar-l2
-* group[1].element[4].display = "Time Above Range Level 2 (>250 mg/dL)"
+* group[1].element[4].display = "Time Above Range Level 2"
 * group[1].element[4].target[0].code = #0
 * group[1].element[4].target[0].display = "No OMOP concept available"
 * group[1].element[4].target[0].equivalence = #unmatched
@@ -156,7 +156,7 @@ Workaround: Store in measurement_source_value = 'TIR:{value}%'
 
 // CV - Coefficient of Variation
 * group[1].element[5].code = #cv
-* group[1].element[5].display = "Coefficient of Variation (%)"
+* group[1].element[5].display = "Coefficient of Variation"
 * group[1].element[5].target[0].code = #0
 * group[1].element[5].target[0].display = "No OMOP concept available"
 * group[1].element[5].target[0].equivalence = #unmatched

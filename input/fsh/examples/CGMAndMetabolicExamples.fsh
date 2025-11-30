@@ -25,6 +25,7 @@ Description: "Example of continuous glucose monitoring data from a consumer CGM 
 * code = $LOINC#41653-7 "Glucose [Mass/volume] in Capillary blood by Glucometer"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T14:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/DexcomG7Device)
 
 // Main glucose reading
@@ -70,7 +71,7 @@ Description: "Example of a Dexcom G7 continuous glucose monitoring device"
 * deviceName[0].type = #user-friendly-name
 * manufacturer = "Dexcom, Inc."
 * modelNumber = "G7"
-* type = $SCT#5159002 "Physiologic monitoring system (physical object)"
+* type = $SCT#5159002 "Physiologic monitoring system"
 
 
 // ============================================================================

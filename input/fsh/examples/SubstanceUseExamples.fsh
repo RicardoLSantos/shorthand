@@ -21,6 +21,7 @@ Description: "Example of a former smoker with documented pack-years and quit dat
 * code = $LOINC#72166-2 "Tobacco smoking status"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#8517006 "Ex-smoker (finding)"
 * component[packYears].code = $LOINC#8664-5 "Cigarettes smoked total (pack per year) - Reported"
 * component[packYears].valueQuantity = 15 '{pack-years}' "pack-years"
@@ -39,6 +40,7 @@ Description: "Example of a current smoker with motivation assessment"
 * code = $LOINC#72166-2 "Tobacco smoking status"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#449868002 "Smokes tobacco daily (finding)"
 * component[cigarettesPerDay].code = $LOINC#64218-1 "How many cigarettes do you smoke per day now [PhenX]"
 * component[cigarettesPerDay].valueQuantity = 20 '/d' "per day"
@@ -58,6 +60,7 @@ Description: "Example of a patient who has never smoked tobacco"
 * code = $LOINC#72166-2 "Tobacco smoking status"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#266919005 "Never smoked tobacco (finding)"
 
 // =============================================================================
@@ -74,6 +77,7 @@ Description: "Example of moderate alcohol consumption with AUDIT-C score"
 * code = $LOINC#11331-6 "History of Alcohol use"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#43783005 "Moderate drinker (finding)"
 * component[drinksPerWeek].code = $LOINC#68519-8 "How many standard drinks containing alcohol do you have on a typical day"
 * component[drinksPerWeek].valueQuantity = 7 '/wk' "per week"
@@ -95,6 +99,7 @@ Description: "Example of a patient who does not consume alcohol"
 * code = $LOINC#11331-6 "History of Alcohol use"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#105542008 "Non-drinker of alcohol (finding)"
 * component[drinkingFrequency].code = $LOINC#68518-0 "How often do you have a drink containing alcohol"
 * component[drinkingFrequency].valueCodeableConcept = AlcoholDrinkingFrequencyCS#never "Never"
@@ -111,6 +116,7 @@ Description: "Example of high-risk alcohol consumption with binge episodes"
 * code = $LOINC#11331-6 "History of Alcohol use"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#228279004 "Heavy drinker (finding)"
 * component[drinksPerWeek].code = $LOINC#68519-8 "How many standard drinks containing alcohol do you have on a typical day"
 * component[drinksPerWeek].valueQuantity = 21 '/wk' "per week"
@@ -137,6 +143,7 @@ Description: "Example of moderate daily caffeine intake from multiple sources"
 * code = $LOINC#80489-8 "Caffeine intake 24 hour Estimated"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity = 300 'mg' "mg"
 * component[caffeineSource][0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#caffeine-source "Caffeine source"
 * component[caffeineSource][0].valueCodeableConcept = CaffeineSourceCS#coffee "Coffee"
@@ -155,6 +162,7 @@ Description: "Example of excessive caffeine intake requiring intervention"
 * code = $LOINC#80489-8 "Caffeine intake 24 hour Estimated"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity = 600 'mg' "mg"
 * component[caffeineSource][0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#caffeine-source "Caffeine source"
 * component[caffeineSource][0].valueCodeableConcept = CaffeineSourceCS#energy-drink "Energy drink"
@@ -175,6 +183,7 @@ Description: "Comprehensive summary of patient's substance use patterns for life
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#substance-use-summary "Substance use summary"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * component[tobaccoStatus].code = $LOINC#72166-2 "Tobacco smoking status"
 * component[tobaccoStatus].valueCodeableConcept = $SCT#8517006 "Ex-smoker (finding)"
 * component[alcoholStatus].code = $LOINC#11331-6 "History of Alcohol use"

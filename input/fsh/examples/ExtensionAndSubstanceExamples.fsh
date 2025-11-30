@@ -25,6 +25,7 @@ Description: "Example of alcohol consumption tracking as part of lifestyle medic
 // category and code are fixed by profile (social-history, LOINC#11331-6)
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 
 // Alcohol use status (profile uses CodeableConcept from SNOMED CT)
 * valueCodeableConcept = $SCT#43783005 "Moderate drinker (finding)"
@@ -52,6 +53,7 @@ Description: "Example showing how DataQualityIndicator extension is used on an o
 * code = $LOINC#8867-4 "Heart rate"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T08:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 * valueQuantity = 72 '/min' "per minute"
@@ -81,6 +83,7 @@ Description: "Example showing how ClinicalUseWarning extension is used"
 * code = $LOINC#8462-4 "Diastolic blood pressure"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T09:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/WithingsScaleDevice)
 
 * valueQuantity = 78 'mm[Hg]' "millimeters of mercury"
@@ -110,6 +113,7 @@ Description: "Example showing QT prolongation clinical alert extension"
 * code = $LOINC#8634-8 "Q-T interval"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T14:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 * valueQuantity = 420 'ms' "milliseconds"

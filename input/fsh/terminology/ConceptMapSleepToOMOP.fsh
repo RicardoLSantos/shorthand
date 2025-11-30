@@ -134,7 +134,7 @@ Unit_concept_id: 8550 (minute)
 // ============================================================================
 // GROUP 2: Custom Sleep Stage Metrics → OMOP
 // ============================================================================
-* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/sleep-metrics-cs"
+* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[1].target = "http://athena.ohdsi.org/search-terms/terms"
 * group[1].unmapped.mode = #fixed
 * group[1].unmapped.code = #0

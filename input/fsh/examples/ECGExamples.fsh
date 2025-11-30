@@ -69,6 +69,7 @@ Description: "Example of QRS duration measurement from consumer ECG device"
 * code = $LOINC#44973-6 "QRS duration {Electrocardiograph lead}"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T08:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 * valueQuantity = 92 'ms' "milliseconds"
@@ -96,6 +97,7 @@ Description: "Example of PR interval measurement from consumer ECG device"
 // code is fixed by profile: LOINC#8625-6 "P-R Interval"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T08:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 * valueQuantity = 160 'ms' "milliseconds"
@@ -123,6 +125,7 @@ Description: "Example of heart rate derived from ECG R-R intervals"
 // code is fixed by profile: LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T08:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 * valueQuantity = 68 '/min' "per minute"

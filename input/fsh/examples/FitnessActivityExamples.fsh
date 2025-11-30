@@ -27,6 +27,7 @@ Description: "Example of daily recovery readiness score from Oura Ring"
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs#readiness "Recovery Readiness Assessment"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T06:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/OuraRingDevice)
 
 // Main readiness score (0-100)
@@ -79,6 +80,7 @@ Description: "Example of VO2max estimation from Apple Watch during outdoor run"
 // category and code are fixed by profile (exam, LOINC#60842-2)
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T07:45:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 // Main VO2max value
@@ -116,6 +118,7 @@ Description: "Example of running dynamics metrics from Garmin watch with running
 // category and code are fixed by profile (activity, LOINC#73985-4)
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T07:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/GarminWatchDevice)
 
 // Cadence - uses {spm} per profile
@@ -153,6 +156,7 @@ Description: "Example of cycling power and dynamics from Wahoo power meter"
 // category and code are fixed by profile (activity, LOINC#73985-4)
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T08:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/WahooPowerMeter)
 
 // Average power
@@ -189,6 +193,7 @@ Description: "Example of swimming metrics from Apple Watch pool swim workout"
 // category and code are fixed by profile (activity, SNOMED#20461001 Swimming)
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T06:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 // Total distance
@@ -229,6 +234,7 @@ Description: "Example of strength training session tracking"
 // category and code are fixed by profile (activity, LOINC#73985-4)
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T17:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/AppleWatchDevice)
 
 // Volume load (total weight lifted) - uses StrengthTrainingCS from profile
