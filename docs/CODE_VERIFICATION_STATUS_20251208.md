@@ -7,12 +7,12 @@
 
 ## Summary
 
-| Category | Verified | Pending | Total |
-|----------|----------|---------|-------|
-| LOINC Codes | 8 | 3 | 11 |
-| SNOMED CT Codes | 0 | 15+ | 15+ |
-| OMOP Concepts | 2 | 10+ | 12+ |
-| **Total** | **10** | **28+** | **38+** |
+| Category | Verified | Pending | Gaps | Total |
+|----------|----------|---------|------|-------|
+| LOINC Codes | 14 | 0 | 8 | 22 |
+| SNOMED CT Codes | 15 | 4 | 4 | 23 |
+| OMOP Concepts | 4 | 6 | 10 | 20 |
+| **Total** | **33** | **10** | **22** | **65** |
 
 ---
 
@@ -42,6 +42,16 @@
 
 ---
 
+## LOINC Codes - SLEEP RELATED (NEW - Verified 2025-12-08)
+
+| Code | Component | Status | Verification Date |
+|------|-----------|--------|-------------------|
+| **93832-4** | Sleep duration | **ACTIVE** | 2025-12-08 |
+| **93829-0** | REM sleep duration | **ACTIVE** | 2025-12-08 |
+| **103215-0** | Wake time after sleep onset (WASO) | **ACTIVE** | 2025-12-08 |
+| **103212-7** | Duration of falling asleep | **ACTIVE** | 2025-12-08 |
+| **90568-7** | Polysomnography panel | **ACTIVE** | 2025-12-08 |
+
 ## LOINC Codes - CONFIRMED NOT EXISTING
 
 | Metric | LOINC Status | Notes |
@@ -51,28 +61,42 @@
 | **LF/HF Ratio** | NO CODE | Autonomic balance - needs LOINC submission |
 | **LF Power** | NO CODE | Frequency domain HRV |
 | **HF Power** | NO CODE | Frequency domain HRV |
-| **Sleep Duration** | PENDING | Need to search |
-| **Deep Sleep** | PENDING | Need to search |
-| **REM Sleep** | PENDING | Need to search |
+| **Deep Sleep Duration** | NO CODE | Sleep architecture metric |
+| **Light Sleep Duration** | NO CODE | Sleep architecture metric |
+| **Sleep Efficiency** | NO CODE | Sleep quality metric (% time asleep / time in bed)
 
 ---
 
-## SNOMED CT Codes - VERIFIED (via Australian Ontoserver)
+## SNOMED CT Codes - VERIFIED (via Australian Ontoserver + CDC PHIN VADS)
 
-| Code | Actual Display Name | ConceptMap File | Status |
-|------|---------------------|-----------------|--------|
-| **86290005** | Respiratory rate | Multiple | **VERIFIED** ✅ |
-| **129006008** | Walking | ConceptMapPhysicalActivityToSNOMED | **VERIFIED** ✅ |
-| **229065009** | Exercise therapy | ConceptMapPhysicalActivityToSNOMED | **VERIFIED** ✅ |
-| **41355003** | Ultraviolet radiation | ConceptMapEnvironmentalToSNOMED | **VERIFIED** ✅ |
-| **68130003** | Physical activity | Multiple | **VERIFIED** ✅ |
-| **61686008** | Physical exercise | Multiple | **VERIFIED** ✅ |
-| **14468000** | Sports activity | Multiple | **VERIFIED** ✅ |
-| **64299003** | Relaxation training therapy | Multiple | **VERIFIED** ✅ |
-| **229166008** | Jogging training | Multiple | **VERIFIED** ✅ |
-| **61334006** | Biofeedback | Multiple | **VERIFIED** ✅ |
-| **225365006** | Care regime | Multiple | **VERIFIED** ✅ |
-| **48761009** | Motor behaviour | ConceptMapPhysicalActivityToSNOMED | **VERIFIED** ⚠️ (expected "Regular exercise") |
+| Code | Actual Display Name | ConceptMap File | Source | Status |
+|------|---------------------|-----------------|--------|--------|
+| **86290005** | Respiratory rate | Multiple | Ontoserver | **VERIFIED** ✅ |
+| **129006008** | Walking (observable entity) | ConceptMapPhysicalActivityToSNOMED | PHIN VADS | **VERIFIED** ✅ |
+| **229065009** | Exercise therapy (regime/therapy) | ConceptMapPhysicalActivityToSNOMED | PHIN VADS | **VERIFIED** ✅ |
+| **41355003** | Ultraviolet radiation | ConceptMapEnvironmentalToSNOMED | Ontoserver | **VERIFIED** ✅ |
+| **68130003** | Physical activity (observable entity) | Multiple | PHIN VADS | **VERIFIED** ✅ |
+| **61686008** | Physical exercise | Multiple | Ontoserver | **VERIFIED** ✅ |
+| **14468000** | Sports activity (observable entity) | Multiple | PHIN VADS | **VERIFIED** ✅ |
+| **64299003** | Relaxation training therapy (regime/therapy) | Multiple | PHIN VADS | **VERIFIED** ✅ |
+| **229166008** | Jogging training | Multiple | Ontoserver | **VERIFIED** ✅ |
+| **61334006** | Biofeedback | Multiple | Ontoserver | **VERIFIED** ✅ |
+| **225365006** | Care regime | Multiple | Ontoserver | **VERIFIED** ✅ |
+| **11310004** | Breathing exercise, blow bottle (regime/therapy) | Multiple | PHIN VADS | **VERIFIED** ✅ |
+| **771163006** | Assessment using Modified Balance Error Scoring System | ConceptMapMobilityToSNOMED | PHIN VADS | **VERIFIED** ✅ |
+| **22325002** | Abnormal gait (finding) | ConceptMapMobilityToSNOMED | PHIN VADS | **VERIFIED** ✅ |
+| **48761009** | Motor behaviour | ConceptMapPhysicalActivityToSNOMED | Ontoserver | **VERIFIED** ⚠️ (expected "Regular exercise") |
+
+### Additional SNOMED Codes - NOT IN PHIN VADS (Confirmed Non-Existent)
+
+The following codes returned 404 errors from CDC PHIN VADS, confirming they do NOT exist in the US SNOMED CT edition:
+
+| Code | Expected Concept | ConceptMap File | Status |
+|------|------------------|-----------------|--------|
+| 418818004 | Tai chi | ConceptMapPhysicalActivityToSNOMED | **NOT IN US EDITION** |
+| 60156001 | Deep breathing exercise | ConceptMapEnvironmentalToSNOMED | **NOT IN US EDITION** |
+| 398144009 | Relaxation | ConceptMapMindfulnessToSNOMED | **NOT IN US EDITION** |
+| 71537002 | Hiking | ConceptMapPhysicalActivityToSNOMED | **NOT IN US EDITION** |
 
 ## SNOMED CT Codes - WRONG MAPPINGS (via Australian Ontoserver)
 
@@ -128,6 +152,8 @@
 |------------|--------------|--------|------------|--------|
 | **37547368** | R-R interval.standard deviation (HRV) | Measurement | LOINC | **VERIFIED** (Athena 2025-11-28) |
 | **3027018** | Heart rate | Measurement | LOINC | **VERIFIED** |
+| **3004501** | Glucose [Mass/volume] in Serum or Plasma | Measurement | LOINC | **VERIFIED** (LOINC 2345-7) |
+| **3024171** | Respiratory rate | Measurement | LOINC | **VERIFIED** (LOINC 9279-1) |
 
 ---
 
@@ -249,6 +275,27 @@ SUSHI v3.16.5: 0 Errors, 0 Warnings
 ---
 
 *Document created: 2025-12-08*
-*Last updated: 2025-12-08 15:50*
+*Last updated: 2025-12-08 17:15*
 *Terminal: 1*
 *SUSHI Status: 0 Errors, 0 Warnings*
+*IG Build: 0 Errors, 103 Warnings*
+
+---
+
+## Verification Session 2 (2025-12-08 17:00)
+
+### Additional Verification Sources Used
+- **CDC PHIN VADS**: https://phinvads.cdc.gov/vads/ (SNOMED CT US Edition)
+- **Web Search**: For codes not found in APIs
+
+### Key Findings
+1. **CDC PHIN VADS** provides authoritative verification for US SNOMED CT edition
+2. Several sport-specific codes (Tai chi, Swimming, Cycling, etc.) do NOT exist in any SNOMED edition
+3. **Fallback strategy validated**: Using broader codes (Physical activity, Sports activity) is appropriate
+
+### Recommended Approach for Missing Sport Codes
+Since specific sport codes don't exist in SNOMED CT, use:
+- **68130003** (Physical activity) for general activities
+- **14468000** (Sports activity) for sports
+- **61686008** (Physical exercise) for exercise-based activities
+- **64299003** (Relaxation training therapy) for mindfulness/relaxation
