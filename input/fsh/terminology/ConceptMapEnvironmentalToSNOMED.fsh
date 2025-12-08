@@ -29,30 +29,40 @@ Usage: #definition
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://snomed.info/sct"
 
-// ENVIRONMENTAL NOISE - NEEDS VERIFICATION ⚠️
+// ============================================================================
+// ENVIRONMENTAL NOISE - CODE NOT FOUND ❌
+// CORRECTED 2025-12-08: 60156001 does NOT exist in SNOMED CT (verified via Ontoserver AU)
+// ============================================================================
 * group[0].element[0].code = #noise-avg
 * group[0].element[0].display = "Environmental noise average level"
-* group[0].element[0].target[0].code = #60156001
-* group[0].element[0].target[0].display = "Noise (physical force)"
-* group[0].element[0].target[0].equivalence = #narrower
-* group[0].element[0].target[0].comment = "Environmental noise average maps to broader SNOMED 'Noise' concept. Source is specific to average noise level over time (dB measurement), target is general noise concept. Code 60156001 should be verified."
+* group[0].element[0].target[0].equivalence = #unmatched
+* group[0].element[0].target[0].comment = "GAP: SNOMED CT code 60156001 does NOT exist (verified 2025-12-08 via Ontoserver AU). No standard code for environmental noise measurement. Consumer wearables (Apple Watch, Garmin) track dB levels but no clinical terminology exists."
 
-// UV INDEX - NEEDS VERIFICATION ⚠️
+// ============================================================================
+// UV INDEX - VERIFIED ✅
+// 41355003 = "Ultraviolet radiation" (verified 2025-12-08 via Ontoserver AU)
+// ============================================================================
 * group[0].element[1].code = #uv-index
 * group[0].element[1].display = "UV index"
 * group[0].element[1].target[0].code = #41355003
-* group[0].element[1].target[0].display = "Ultraviolet radiation (physical force)"
+* group[0].element[1].target[0].display = "Ultraviolet radiation"
 * group[0].element[1].target[0].equivalence = #narrower
-* group[0].element[1].target[0].comment = "UV index measurement maps to broader SNOMED 'Ultraviolet radiation' concept. Source is specific UV index scale (0-11+), target is general UV radiation. Code 41355003 should be verified."
+* group[0].element[1].target[0].comment = "VERIFIED 2025-12-08 via Ontoserver AU: 41355003 = Ultraviolet radiation. UV index scale (0-11+) maps to broader UV radiation concept."
 
-// UV EXPOSURE DURATION - NO EXACT MATCH ⚠️
+// ============================================================================
+// UV EXPOSURE DURATION - GAP DOCUMENTED ❌
+// No SNOMED CT code exists (verified 2025-12-08)
+// ============================================================================
 * group[0].element[2].code = #uv-duration
 * group[0].element[2].display = "UV exposure duration"
 * group[0].element[2].target[0].equivalence = #unmatched
-* group[0].element[2].target[0].comment = "No specific SNOMED CT code for UV exposure duration as of November 2025. SNOMED has UV radiation concept but not time-based exposure measurement."
+* group[0].element[2].target[0].comment = "GAP: No SNOMED CT code for UV exposure duration (verified 2025-12-08). SNOMED has UV radiation concept (41355003) but not time-based exposure measurement."
 
-// NOISE EXPOSURE DURATION - NO EXACT MATCH ⚠️
+// ============================================================================
+// NOISE EXPOSURE DURATION - GAP DOCUMENTED ❌
+// No SNOMED CT code exists (verified 2025-12-08)
+// ============================================================================
 * group[0].element[3].code = #noise-duration
 * group[0].element[3].display = "Environmental noise exposure duration"
 * group[0].element[3].target[0].equivalence = #unmatched
-* group[0].element[3].target[0].comment = "No specific SNOMED CT code for noise exposure duration as of November 2025. Occupational health codes may exist but consumer environmental monitoring is not well represented."
+* group[0].element[3].target[0].comment = "GAP: No SNOMED CT code for noise exposure duration (verified 2025-12-08). Occupational health codes may exist but consumer environmental monitoring is not represented in SNOMED CT."

@@ -78,16 +78,22 @@ Description: "Apple HealthKit HKCategoryValueSleepAnalysis sleep stage classific
 * #asleepREM "REM Sleep" "REM sleep phase"
 
 // SNOMED CT Sleep Stage Reference ValueSet
+// CORRECTED 2025-12-08: Original codes were WRONG (verified via Australian Ontoserver)
+// - 258158006 = "Sleep" (NOT "Awake")
+// - 248218005 = "Awake" (NOT "REM sleep")
+// - 67233009 = "Middle insomnia" (NOT "Stage 2 sleep")
+// - 26329005 = "Poor concentration" (NOT "Stage 3-4 sleep")
+// - 248220008 = "Asleep" (NOT "NREM sleep")
+// CONCLUSION: SNOMED CT does NOT have specific codes for sleep stages (N1, N2, N3, REM)
+// Only generic concepts exist: Sleep (258158006), Asleep (248220008), Awake (248218005)
 ValueSet: SNOMEDSleepStagesVS
 Id: snomed-sleep-stages-vs
 Title: "SNOMED CT Sleep Stages ValueSet"
-Description: "SNOMED CT codes for clinical sleep stages"
+Description: "SNOMED CT codes for clinical sleep states. NOTE: SNOMED CT lacks specific sleep stage codes (N1/N2/N3/REM). Only generic sleep/awake states available."
 * ^experimental = false
-* $SCT#258158006 "Awake" // Awake
-* $SCT#248220008 "Non-rapid eye movement sleep" // NREM generic
-* $SCT#67233009 "Stage 2 sleep" // N2 light
-* $SCT#26329005 "Stage 3-4 sleep" // N3 deep (slow-wave)
-* $SCT#248218005 "Rapid eye movement sleep" // REM
+* $SCT#248218005 "Awake" // VERIFIED 2025-12-08: Awake
+* $SCT#248220008 "Asleep" // VERIFIED 2025-12-08: Asleep (generic)
+* $SCT#258158006 "Sleep" // VERIFIED 2025-12-08: Sleep (generic)
 
 // Vendor Sleep Stages ValueSets (for ConceptMap sourceCanonical)
 ValueSet: FitbitSleepStagesVS
@@ -135,27 +141,31 @@ Usage: #definition
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fitbit-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
+// CORRECTED 2025-12-08: Use verified SNOMED codes only
 * group[0].element[0].code = #wake
 * group[0].element[0].display = "Wake"
-* group[0].element[0].target[0].code = #258158006
+* group[0].element[0].target[0].code = #248218005
 * group[0].element[0].target[0].display = "Awake"
 * group[0].element[0].target[0].equivalence = #equivalent
+* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via Ontoserver: 248218005 = Awake"
 * group[0].element[1].code = #light
 * group[0].element[1].display = "Light Sleep"
-* group[0].element[1].target[0].code = #67233009
-* group[0].element[1].target[0].display = "Stage 2 sleep"
+* group[0].element[1].target[0].code = #248220008
+* group[0].element[1].target[0].display = "Asleep"
 * group[0].element[1].target[0].equivalence = #wider
-* group[0].element[1].target[0].comment = "Fitbit 'light' combines N1+N2; SNOMED Stage 2 is more specific"
+* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no Stage N1/N2 code. Using generic 'Asleep' (248220008). Fitbit 'light' = N1+N2."
 * group[0].element[2].code = #deep
 * group[0].element[2].display = "Deep Sleep"
-* group[0].element[2].target[0].code = #26329005
-* group[0].element[2].target[0].display = "Stage 3-4 sleep"
-* group[0].element[2].target[0].equivalence = #equivalent
+* group[0].element[2].target[0].code = #248220008
+* group[0].element[2].target[0].display = "Asleep"
+* group[0].element[2].target[0].equivalence = #wider
+* group[0].element[2].target[0].comment = "GAP: SNOMED CT has no Stage N3/SWS code. Using generic 'Asleep' (248220008). Deep = slow-wave sleep."
 * group[0].element[3].code = #rem
 * group[0].element[3].display = "REM Sleep"
-* group[0].element[3].target[0].code = #248218005
-* group[0].element[3].target[0].display = "Rapid eye movement sleep"
-* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].code = #248220008
+* group[0].element[3].target[0].display = "Asleep"
+* group[0].element[3].target[0].equivalence = #wider
+* group[0].element[3].target[0].comment = "GAP: SNOMED CT has no REM sleep code. Using generic 'Asleep' (248220008). REM = Rapid Eye Movement sleep."
 
 // ConceptMap: Garmin → SNOMED CT
 Instance: ConceptMapGarminSleepToSNOMED
@@ -174,26 +184,31 @@ Usage: #definition
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/garmin-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
+// CORRECTED 2025-12-08: Use verified SNOMED codes only
 * group[0].element[0].code = #awake
 * group[0].element[0].display = "Awake"
-* group[0].element[0].target[0].code = #258158006
+* group[0].element[0].target[0].code = #248218005
 * group[0].element[0].target[0].display = "Awake"
 * group[0].element[0].target[0].equivalence = #equivalent
+* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via Ontoserver: 248218005 = Awake"
 * group[0].element[1].code = #light
 * group[0].element[1].display = "Light"
-* group[0].element[1].target[0].code = #67233009
-* group[0].element[1].target[0].display = "Stage 2 sleep"
+* group[0].element[1].target[0].code = #248220008
+* group[0].element[1].target[0].display = "Asleep"
 * group[0].element[1].target[0].equivalence = #wider
+* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no Stage N1/N2 code. Using generic 'Asleep' (248220008)."
 * group[0].element[2].code = #deep
 * group[0].element[2].display = "Deep"
-* group[0].element[2].target[0].code = #26329005
-* group[0].element[2].target[0].display = "Stage 3-4 sleep"
-* group[0].element[2].target[0].equivalence = #equivalent
+* group[0].element[2].target[0].code = #248220008
+* group[0].element[2].target[0].display = "Asleep"
+* group[0].element[2].target[0].equivalence = #wider
+* group[0].element[2].target[0].comment = "GAP: SNOMED CT has no Stage N3/SWS code. Using generic 'Asleep' (248220008)."
 * group[0].element[3].code = #rem
 * group[0].element[3].display = "REM"
-* group[0].element[3].target[0].code = #248218005
-* group[0].element[3].target[0].display = "Rapid eye movement sleep"
-* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].code = #248220008
+* group[0].element[3].target[0].display = "Asleep"
+* group[0].element[3].target[0].equivalence = #wider
+* group[0].element[3].target[0].comment = "GAP: SNOMED CT has no REM sleep code. Using generic 'Asleep' (248220008)."
 * group[0].element[4].code = #unmeasurable
 * group[0].element[4].display = "Unmeasurable"
 * group[0].element[4].target[0].equivalence = #unmatched
@@ -216,26 +231,31 @@ Usage: #definition
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/oura-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
+// CORRECTED 2025-12-08: Use verified SNOMED codes only
 * group[0].element[0].code = #awake
 * group[0].element[0].display = "Awake"
-* group[0].element[0].target[0].code = #258158006
+* group[0].element[0].target[0].code = #248218005
 * group[0].element[0].target[0].display = "Awake"
 * group[0].element[0].target[0].equivalence = #equivalent
+* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 248218005 = Awake"
 * group[0].element[1].code = #light
 * group[0].element[1].display = "Light Sleep"
-* group[0].element[1].target[0].code = #67233009
-* group[0].element[1].target[0].display = "Stage 2 sleep"
+* group[0].element[1].target[0].code = #248220008
+* group[0].element[1].target[0].display = "Asleep"
 * group[0].element[1].target[0].equivalence = #wider
+* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no N1/N2 code. Using generic 'Asleep' (248220008)."
 * group[0].element[2].code = #deep
 * group[0].element[2].display = "Deep Sleep"
-* group[0].element[2].target[0].code = #26329005
-* group[0].element[2].target[0].display = "Stage 3-4 sleep"
-* group[0].element[2].target[0].equivalence = #equivalent
+* group[0].element[2].target[0].code = #248220008
+* group[0].element[2].target[0].display = "Asleep"
+* group[0].element[2].target[0].equivalence = #wider
+* group[0].element[2].target[0].comment = "GAP: SNOMED CT has no N3/SWS code. Using generic 'Asleep' (248220008)."
 * group[0].element[3].code = #rem
 * group[0].element[3].display = "REM"
-* group[0].element[3].target[0].code = #248218005
-* group[0].element[3].target[0].display = "Rapid eye movement sleep"
-* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].code = #248220008
+* group[0].element[3].target[0].display = "Asleep"
+* group[0].element[3].target[0].equivalence = #wider
+* group[0].element[3].target[0].comment = "GAP: SNOMED CT has no REM code. Using generic 'Asleep' (248220008)."
 
 // ConceptMap: Apple → SNOMED CT
 Instance: ConceptMapAppleSleepToSNOMED
@@ -254,37 +274,41 @@ Usage: #definition
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/apple-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
+// CORRECTED 2025-12-08: Use verified SNOMED codes only
 * group[0].element[0].code = #awake
 * group[0].element[0].display = "Awake"
-* group[0].element[0].target[0].code = #258158006
+* group[0].element[0].target[0].code = #248218005
 * group[0].element[0].target[0].display = "Awake"
 * group[0].element[0].target[0].equivalence = #equivalent
+* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 248218005 = Awake"
 * group[0].element[1].code = #asleepCore
 * group[0].element[1].display = "Core Sleep"
-* group[0].element[1].target[0].code = #67233009
-* group[0].element[1].target[0].display = "Stage 2 sleep"
+* group[0].element[1].target[0].code = #248220008
+* group[0].element[1].target[0].display = "Asleep"
 * group[0].element[1].target[0].equivalence = #wider
-* group[0].element[1].target[0].comment = "Apple 'Core Sleep' = N1+N2 light NREM; maps to SNOMED Stage 2 as closest match"
+* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no N1/N2 code. Using generic 'Asleep' (248220008). Apple 'Core Sleep' = N1+N2."
 * group[0].element[2].code = #asleepDeep
 * group[0].element[2].display = "Deep Sleep"
-* group[0].element[2].target[0].code = #26329005
-* group[0].element[2].target[0].display = "Stage 3-4 sleep"
-* group[0].element[2].target[0].equivalence = #equivalent
+* group[0].element[2].target[0].code = #248220008
+* group[0].element[2].target[0].display = "Asleep"
+* group[0].element[2].target[0].equivalence = #wider
+* group[0].element[2].target[0].comment = "GAP: SNOMED CT has no N3/SWS code. Using generic 'Asleep' (248220008)."
 * group[0].element[3].code = #asleepREM
 * group[0].element[3].display = "REM Sleep"
-* group[0].element[3].target[0].code = #248218005
-* group[0].element[3].target[0].display = "Rapid eye movement sleep"
-* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].code = #248220008
+* group[0].element[3].target[0].display = "Asleep"
+* group[0].element[3].target[0].equivalence = #wider
+* group[0].element[3].target[0].comment = "GAP: SNOMED CT has no REM code. Using generic 'Asleep' (248220008)."
 * group[0].element[4].code = #inBed
 * group[0].element[4].display = "In Bed"
 * group[0].element[4].target[0].equivalence = #unmatched
-* group[0].element[4].target[0].comment = "No SNOMED CT code for 'in bed' state; this is a behavioral observation, not a sleep stage"
+* group[0].element[4].target[0].comment = "No SNOMED CT code for 'in bed' state; behavioral observation, not a sleep stage"
 * group[0].element[5].code = #asleepUnspecified
 * group[0].element[5].display = "Asleep (Unspecified)"
 * group[0].element[5].target[0].code = #248220008
-* group[0].element[5].target[0].display = "Non-rapid eye movement sleep"
-* group[0].element[5].target[0].equivalence = #wider
-* group[0].element[5].target[0].comment = "Generic asleep maps to broader NREM category when stage undetermined"
+* group[0].element[5].target[0].display = "Asleep"
+* group[0].element[5].target[0].equivalence = #equivalent
+* group[0].element[5].target[0].comment = "VERIFIED 2025-12-08: 248220008 = Asleep (generic)"
 
 // Cross-Vendor Sleep Stage Equivalence ConceptMap
 Instance: ConceptMapCrossVendorSleepStages

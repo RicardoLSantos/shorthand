@@ -30,48 +30,45 @@ Usage: #definition
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://snomed.info/sct"
 
-// WATER INTAKE - NEEDS VERIFICATION ⚠️
+// ============================================================================
+// CORRECTED 2025-12-08: All nutrition SNOMED codes verified as NOT FOUND
+// via tx.fhir.org and Australian Ontoserver. Codes 226364002, 226355004,
+// 226357007, 226358002, 226359005 DO NOT EXIST in SNOMED CT.
+// Marking all as #unmatched with documented gaps.
+// ============================================================================
+
+// WATER INTAKE - CODE NOT FOUND ❌
 * group[0].element[0].code = #water-intake
 * group[0].element[0].display = "Water intake volume"
-* group[0].element[0].target[0].code = #226364002
-* group[0].element[0].target[0].display = "Fluid intake (observable entity)"
-* group[0].element[0].target[0].equivalence = #narrower
-* group[0].element[0].target[0].comment = "Water intake maps to broader SNOMED concept 'Fluid intake'. Target includes all fluids (water, juice, etc.), source is specific to water only. Code 226364002 should be verified via SNOMED CT Browser."
+* group[0].element[0].target[0].equivalence = #unmatched
+* group[0].element[0].target[0].comment = "GAP: SNOMED CT code 226364002 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for fluid/water intake."
 
-// CALORIC INTAKE - NEEDS VERIFICATION ⚠️
+// CALORIC INTAKE - CODE NOT FOUND ❌
 * group[0].element[1].code = #caloric-intake
 * group[0].element[1].display = "Total caloric intake"
-* group[0].element[1].target[0].code = #226355004
-* group[0].element[1].target[0].display = "Dietary energy intake (observable entity)"
-* group[0].element[1].target[0].equivalence = #equivalent
-* group[0].element[1].target[0].comment = "Caloric intake maps to SNOMED 'Dietary energy intake'. Code 226355004 should be verified via SNOMED CT Browser before clinical use."
+* group[0].element[1].target[0].equivalence = #unmatched
+* group[0].element[1].target[0].comment = "GAP: SNOMED CT code 226355004 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary energy intake."
 
-// MACRONUTRIENTS PANEL - NO EXACT MATCH ⚠️
+// MACRONUTRIENTS PANEL - NO EXACT MATCH
 * group[0].element[2].code = #macronutrients-panel
 * group[0].element[2].display = "Macronutrients intake panel"
 * group[0].element[2].target[0].equivalence = #unmatched
-* group[0].element[2].target[0].comment = "No exact SNOMED CT code for macronutrients panel as of November 2025. SNOMED has individual codes for protein, carbohydrate, and fat intake but not a panel concept. Individual component mappings below."
+* group[0].element[2].target[0].comment = "GAP: No SNOMED CT code for macronutrients panel. Individual nutrient codes also do not exist."
 
-// PROTEIN INTAKE - NEEDS VERIFICATION ⚠️
+// PROTEIN INTAKE - CODE NOT FOUND ❌
 * group[0].element[3].code = #protein-intake
 * group[0].element[3].display = "Protein intake"
-* group[0].element[3].target[0].code = #226357007
-* group[0].element[3].target[0].display = "Dietary protein intake (observable entity)"
-* group[0].element[3].target[0].equivalence = #equivalent
-* group[0].element[3].target[0].comment = "Protein intake maps to SNOMED 'Dietary protein intake'. Code 226357007 should be verified via SNOMED CT Browser."
+* group[0].element[3].target[0].equivalence = #unmatched
+* group[0].element[3].target[0].comment = "GAP: SNOMED CT code 226357007 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary protein intake."
 
-// FAT INTAKE - NEEDS VERIFICATION ⚠️
+// FAT INTAKE - CODE NOT FOUND ❌
 * group[0].element[4].code = #fat-intake
 * group[0].element[4].display = "Fat intake"
-* group[0].element[4].target[0].code = #226358002
-* group[0].element[4].target[0].display = "Dietary fat intake (observable entity)"
-* group[0].element[4].target[0].equivalence = #equivalent
-* group[0].element[4].target[0].comment = "Fat intake maps to SNOMED 'Dietary fat intake'. Code 226358002 should be verified via SNOMED CT Browser."
+* group[0].element[4].target[0].equivalence = #unmatched
+* group[0].element[4].target[0].comment = "GAP: SNOMED CT code 226358002 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary fat intake."
 
-// CARBOHYDRATE INTAKE - NEEDS VERIFICATION ⚠️
+// CARBOHYDRATE INTAKE - CODE NOT FOUND ❌
 * group[0].element[5].code = #carbohydrate-intake
 * group[0].element[5].display = "Carbohydrate intake"
-* group[0].element[5].target[0].code = #226359005
-* group[0].element[5].target[0].display = "Dietary carbohydrate intake (observable entity)"
-* group[0].element[5].target[0].equivalence = #equivalent
-* group[0].element[5].target[0].comment = "Carbohydrate intake maps to SNOMED 'Dietary carbohydrate intake'. Code 226359005 should be verified via SNOMED CT Browser."
+* group[0].element[5].target[0].equivalence = #unmatched
+* group[0].element[5].target[0].comment = "GAP: SNOMED CT code 226359005 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary carbohydrate intake."

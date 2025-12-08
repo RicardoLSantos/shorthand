@@ -299,3 +299,87 @@ Since specific sport codes don't exist in SNOMED CT, use:
 - **14468000** (Sports activity) for sports
 - **61686008** (Physical exercise) for exercise-based activities
 - **64299003** (Relaxation training therapy) for mindfulness/relaxation
+
+---
+
+## Verification Session 3 (2025-12-08 18:00) - COMPLETE SNOMED AUDIT
+
+### Critical Discovery: Additional Wrong SNOMED Codes
+
+**Full SNOMED audit revealed 10+ additional issues** not caught in earlier sessions.
+
+#### ConceptMapVendorSleepToSNOMED - 5 WRONG Codes
+| Code | Expected | Actual (via Ontoserver) | Status |
+|------|----------|-------------------------|--------|
+| 258158006 | Awake | Sleep | **WRONG** |
+| 248218005 | REM sleep | Awake | **WRONG** |
+| 26329005 | Stage 3-4 sleep | Poor concentration | **WRONG** |
+| 67233009 | Stage 2 sleep | Middle insomnia | **WRONG** |
+| 248220008 | NREM sleep | Asleep | **WRONG** |
+
+**Root Cause**: SNOMED CT does NOT have specific sleep stage codes (N1, N2, N3, REM).
+
+**Resolution**: All vendor sleep mappings (Fitbit, Garmin, Oura, Apple) updated to use:
+- **248218005** (Awake) - VERIFIED ✅
+- **248220008** (Asleep) - VERIFIED ✅ (generic, for all sleep stages)
+
+#### ConceptMapNutritionToSNOMED - 5 MISSING Codes
+| Code | Expected | Status |
+|------|----------|--------|
+| 226364002 | Water intake | NOT FOUND ❌ |
+| 226355004 | Caloric intake | NOT FOUND ❌ |
+| 226357007 | Protein intake | NOT FOUND ❌ |
+| 226358002 | Fat intake | NOT FOUND ❌ |
+| 226359005 | Carbohydrate intake | NOT FOUND ❌ |
+
+**Resolution**: All 6 nutrition codes marked as `#unmatched` with documented GAPs.
+
+#### ConceptMapEnvironmentalToSNOMED - 1 MISSING Code
+| Code | Expected | Actual | Status |
+|------|----------|--------|--------|
+| 60156001 | Noise | NOT FOUND | ❌ |
+| 41355003 | UV radiation | Ultraviolet radiation | VERIFIED ✅ |
+
+**Resolution**: Noise code marked as `#unmatched`, UV code verified and kept.
+
+### Verification Sources Used (Session 3)
+- **Australian Ontoserver API**: Primary source (https://r4.ontoserver.csiro.au/fhir/)
+- **tx.fhir.org**: Secondary verification (HL7 international)
+- **NHS UK browser**: Attempted but blocked
+
+### Files Modified (Session 3)
+1. **ConceptMapVendorSleepToSNOMED.fsh** - Complete overhaul (ValueSet + 4 ConceptMaps)
+2. **ConceptMapNutritionToSNOMED.fsh** - All codes → #unmatched
+3. **ConceptMapEnvironmentalToSNOMED.fsh** - Noise → #unmatched, UV verified
+
+### SUSHI Validation After Session 3
+```
+SUSHI v3.16.5: 0 Errors, 0 Warnings
+```
+
+---
+
+## Updated Summary (After Session 3)
+
+| Category | Verified | Wrong→Fixed | Gaps (#unmatched) | Total |
+|----------|----------|-------------|-------------------|-------|
+| LOINC | 14 | 1 | 8 | 23 |
+| SNOMED CT | 10 | 10 | 15 | 35 |
+| OMOP | 4 | 0 | 10 | 14 |
+| **Total** | **28** | **11** | **33** | **72** |
+
+### Key Lesson: SNOMED CT Terminology Gaps
+
+**SNOMED CT lacks clinical codes for:**
+1. Sleep stages (N1, N2, N3, REM) - only generic "Asleep/Awake/Sleep"
+2. Nutrition intake measurements (water, calories, macros)
+3. Environmental noise measurement
+4. Sport-specific activities (swimming, cycling, basketball, etc.)
+
+**Strategy**: Use broader parent concepts with `equivalence = #wider` or `#unmatched` where appropriate.
+
+---
+
+*Last updated: 2025-12-08 18:15*
+*Terminal: 1*
+*SUSHI Status: 0 Errors, 0 Warnings*
