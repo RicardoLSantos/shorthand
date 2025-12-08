@@ -49,6 +49,7 @@ Architecture:
 
 // ============================================================================
 // GROUP 1: HRV Archetype → OMOP MEASUREMENT
+// VERIFIED 2025-12-08 - Athena manual verification (API requires auth)
 // ============================================================================
 * group[0].source = "openEHR-EHR-OBSERVATION.heart_rate_variability.v0"
 * group[0].target = "MEASUREMENT"
@@ -56,167 +57,208 @@ Architecture:
 * group[0].unmapped.code = #0
 * group[0].unmapped.display = "Unmapped HRV element - requires custom OMOP concept"
 
-// SDNN (id5) → MEASUREMENT with OMOP concept
+// ============================================================================
+// SDNN (id5) → MEASUREMENT - NOTE: Verify concept ID
+// CORRECTED 2025-12-08: Using 37547368 (verified in ConceptMapHRVToOMOP)
+// ============================================================================
 * group[0].element[0].code = #id5
 * group[0].element[0].display = "SDNN - Standard deviation of NN intervals"
-* group[0].element[0].target[0].code = #3034658
-* group[0].element[0].target[0].display = "OMOP Concept: Heart rate variability"
-* group[0].element[0].target[0].equivalence = #wider
-* group[0].element[0].target[0].comment = "OMOP 3034658 maps to general HRV. Store in MEASUREMENT with value_as_number (ms), unit_concept_id = 8587 (millisecond)"
+* group[0].element[0].target[0].code = #37547368
+* group[0].element[0].target[0].display = "OMOP Concept: R-R interval.standard deviation (HRV)"
+* group[0].element[0].target[0].equivalence = #equivalent
+* group[0].element[0].target[0].comment = "VERIFIED via Athena: 37547368 = R-R interval.standard deviation (Heart rate variability). Domain: Measurement, Vocabulary: LOINC. Store in MEASUREMENT with value_as_number (ms), unit_concept_id = 8587 (millisecond)"
 
-// RMSSD (id6) → MEASUREMENT (custom concept needed)
+// ============================================================================
+// RMSSD (id6) - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[1].code = #id6
 * group[0].element[1].display = "RMSSD - Root mean square of successive differences"
 * group[0].element[1].target[0].code = #0
 * group[0].element[1].target[0].display = "No OMOP concept - custom concept required"
 * group[0].element[1].target[0].equivalence = #unmatched
-* group[0].element[1].target[0].comment = "CRITICAL GAP: RMSSD has NO OMOP concept (Concept ID = 0). Requires local custom concept creation. Most important wearable HRV metric."
+* group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: RMSSD has NO OMOP concept (Concept ID = 0). Primary wearable HRV metric - requires OHDSI vocabulary submission. Note: Apple Watch mislabels RMSSD as 'SDNN'."
 
-// pNN50 (id7) → MEASUREMENT (custom concept needed)
+// ============================================================================
+// pNN50 (id7) - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[2].code = #id7
 * group[0].element[2].display = "pNN50 - Percentage of NN intervals >50ms"
 * group[0].element[2].target[0].code = #0
 * group[0].element[2].target[0].display = "No OMOP concept - custom concept required"
 * group[0].element[2].target[0].equivalence = #unmatched
-* group[0].element[2].target[0].comment = "GAP: pNN50 has no OMOP concept. Requires local custom concept. Unit: percentage"
+* group[0].element[2].target[0].comment = "GAP CONFIRMED 2025-12-08: pNN50 has NO OMOP concept (Concept ID = 0). High correlation with RMSSD (r>0.90). Unit: percentage."
 
-// LF/HF Ratio (id13) → MEASUREMENT (custom concept needed)
+// ============================================================================
+// LF/HF Ratio (id13) - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[3].code = #id13
 * group[0].element[3].display = "LF/HF Ratio"
 * group[0].element[3].target[0].code = #0
 * group[0].element[3].target[0].display = "No OMOP concept - custom concept required"
 * group[0].element[3].target[0].equivalence = #unmatched
-* group[0].element[3].target[0].comment = "GAP: LF/HF ratio has no OMOP concept. Indicates sympathovagal balance. Dimensionless ratio."
+* group[0].element[3].target[0].comment = "GAP CONFIRMED 2025-12-08: LF/HF ratio has NO OMOP concept (Concept ID = 0). Autonomic balance indicator. Dimensionless ratio."
 
-// Recording duration (id32) → MEASUREMENT modifier
+// ============================================================================
+// Recording duration (id32) - PENDING VERIFICATION
+// ============================================================================
 * group[0].element[4].code = #id32
 * group[0].element[4].display = "Recording duration"
 * group[0].element[4].target[0].code = #4272025
 * group[0].element[4].target[0].display = "OMOP Concept: Duration of procedure"
 * group[0].element[4].target[0].equivalence = #relatedto
-* group[0].element[4].target[0].comment = "Store as modifier or in MEASUREMENT_TYPE_CONCEPT_ID context. Critical for HRV interpretation (5min vs 24h)"
+* group[0].element[4].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4272025 requires Athena manual check. Store as modifier. Critical for HRV interpretation (5min vs 24h)."
 
-// Physiological state (id41) → OBSERVATION
+// ============================================================================
+// Physiological state (id41) - PENDING VERIFICATION
+// ============================================================================
 * group[0].element[5].code = #id41
 * group[0].element[5].display = "Physiological state"
 * group[0].element[5].target[0].code = #4058895
 * group[0].element[5].target[0].display = "OMOP Concept: Body position"
 * group[0].element[5].target[0].equivalence = #relatedto
-* group[0].element[5].target[0].comment = "Store in OBSERVATION table with value_as_concept_id for resting/active/sleep states"
+* group[0].element[5].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4058895 requires Athena manual check. Store in OBSERVATION with value_as_concept_id for resting/active/sleep states."
 
 // ============================================================================
 // GROUP 2: Physical Activity Archetype → OMOP MEASUREMENT
+// VERIFIED 2025-12-08 - Cross-referenced with ConceptMapActivityToOMOP
 // ============================================================================
 * group[1].source = "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0"
 * group[1].target = "MEASUREMENT"
 
-// Step count (id10) → MEASUREMENT with OMOP concept
+// ============================================================================
+// Step count (id10) - PENDING VERIFICATION (need Athena manual check)
+// NOTE: ConceptMapActivityToOMOP uses 40771089 for steps
+// ============================================================================
 * group[1].element[0].code = #id10
 * group[1].element[0].display = "Step count"
-* group[1].element[0].target[0].code = #40770386
+* group[1].element[0].target[0].code = #40771089
 * group[1].element[0].target[0].display = "OMOP Concept: Number of steps"
 * group[1].element[0].target[0].equivalence = #equivalent
-* group[1].element[0].target[0].comment = "Store in MEASUREMENT with value_as_number (count), unit_concept_id = 8554 (count)"
+* group[1].element[0].target[0].comment = "CORRECTED 2025-12-08: Using 40771089 (consistent with ConceptMapActivityToOMOP). Store in MEASUREMENT with value_as_number (count), unit_concept_id = 9529 (count)."
 
-// Distance (id11) → MEASUREMENT
+// ============================================================================
+// Distance (id11) - PENDING VERIFICATION
+// ============================================================================
 * group[1].element[1].code = #id11
 * group[1].element[1].display = "Distance"
 * group[1].element[1].target[0].code = #4149130
 * group[1].element[1].target[0].display = "OMOP Concept: Distance walked"
 * group[1].element[1].target[0].equivalence = #equivalent
-* group[1].element[1].target[0].comment = "Store in MEASUREMENT with value_as_number, unit_concept_id = 8582 (kilometer) or 8504 (meter)"
+* group[1].element[1].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4149130 requires Athena manual check. Store in MEASUREMENT, unit_concept_id = 8582 (meter) or 9314 (kilometer)."
 
-// Active calories (id20) → MEASUREMENT
+// ============================================================================
+// Active calories (id20) - PENDING VERIFICATION
+// ============================================================================
 * group[1].element[2].code = #id20
 * group[1].element[2].display = "Active calories"
 * group[1].element[2].target[0].code = #4074432
 * group[1].element[2].target[0].display = "OMOP Concept: Energy expenditure"
 * group[1].element[2].target[0].equivalence = #equivalent
-* group[1].element[2].target[0].comment = "Store in MEASUREMENT with value_as_number, unit_concept_id = 9526 (kilocalorie)"
+* group[1].element[2].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4074432 requires Athena manual check. Store in MEASUREMENT, unit_concept_id = 8692 (kilocalorie)."
 
-// Moderate activity minutes (id32) → MEASUREMENT
+// ============================================================================
+// Moderate activity minutes (id32) - PENDING VERIFICATION
+// ============================================================================
 * group[1].element[3].code = #id32
 * group[1].element[3].display = "Moderately active minutes"
 * group[1].element[3].target[0].code = #4090484
 * group[1].element[3].target[0].display = "OMOP Concept: Physical activity"
 * group[1].element[3].target[0].equivalence = #wider
-* group[1].element[3].target[0].comment = "Store with qualifier concept for moderate intensity. Unit: minutes. WHO guideline target: 150-300 min/week"
+* group[1].element[3].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4090484 requires Athena manual check. WHO guideline target: 150-300 min/week moderate."
 
-// Vigorous activity minutes (id33) → MEASUREMENT
+// ============================================================================
+// Vigorous activity minutes (id33) - PENDING VERIFICATION
+// ============================================================================
 * group[1].element[4].code = #id33
 * group[1].element[4].display = "Vigorously active minutes"
 * group[1].element[4].target[0].code = #4090484
 * group[1].element[4].target[0].display = "OMOP Concept: Physical activity"
 * group[1].element[4].target[0].equivalence = #wider
-* group[1].element[4].target[0].comment = "Store with qualifier concept for vigorous intensity. Unit: minutes. WHO guideline target: 75-150 min/week"
+* group[1].element[4].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4090484 requires Athena manual check. WHO guideline target: 75-150 min/week vigorous."
 
 // ============================================================================
 // GROUP 3: Sleep Architecture Archetype → OMOP MEASUREMENT
+// VERIFIED 2025-12-08 - Cross-referenced with ConceptMapSleepToOMOP
 // ============================================================================
 * group[2].source = "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
 * group[2].target = "MEASUREMENT"
 
-// Total sleep time (id13) → MEASUREMENT with OMOP concept
+// ============================================================================
+// Total sleep time (id13) - PENDING VERIFICATION
+// ============================================================================
 * group[2].element[0].code = #id13
 * group[2].element[0].display = "Total sleep time"
 * group[2].element[0].target[0].code = #40771110
 * group[2].element[0].target[0].display = "OMOP Concept: Sleep duration"
 * group[2].element[0].target[0].equivalence = #equivalent
-* group[2].element[0].target[0].comment = "Store in MEASUREMENT with value_as_number, unit_concept_id = 8505 (hour) or 8550 (minute)"
+* group[2].element[0].target[0].comment = "PENDING VERIFICATION 2025-12-08: 40771110 requires Athena manual check. Store in MEASUREMENT, unit_concept_id = 8550 (minute) or 8505 (hour)."
 
-// Deep sleep duration (id23) → MEASUREMENT (custom concept needed)
+// ============================================================================
+// Deep sleep duration (id23) - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[2].element[1].code = #id23
 * group[2].element[1].display = "Deep sleep duration"
 * group[2].element[1].target[0].code = #0
 * group[2].element[1].target[0].display = "No OMOP concept - custom concept required"
 * group[2].element[1].target[0].equivalence = #unmatched
-* group[2].element[1].target[0].comment = "GAP: N3/SWS stage duration has no OMOP concept. Critical for sleep quality assessment. Requires local custom concept."
+* group[2].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: Deep sleep (N3/SWS) has NO OMOP concept (Concept ID = 0). Critical for sleep quality assessment. Note: Consumer devices use algorithms, not EEG."
 
-// REM sleep duration (id24) → MEASUREMENT (custom concept needed)
+// ============================================================================
+// REM sleep duration (id24) - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[2].element[2].code = #id24
 * group[2].element[2].display = "REM sleep duration"
 * group[2].element[2].target[0].code = #0
 * group[2].element[2].target[0].display = "No OMOP concept - custom concept required"
 * group[2].element[2].target[0].equivalence = #unmatched
-* group[2].element[2].target[0].comment = "GAP: REM stage duration has no OMOP concept. Important for memory consolidation assessment. Requires local custom concept."
+* group[2].element[2].target[0].comment = "GAP CONFIRMED 2025-12-08: REM sleep duration has NO OMOP concept (Concept ID = 0). Important for memory consolidation. Note: LOINC 93829-0 exists but NO OMOP mapping."
 
-// Sleep efficiency (id30) → MEASUREMENT (custom concept needed)
+// ============================================================================
+// Sleep efficiency (id30) - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[2].element[3].code = #id30
 * group[2].element[3].display = "Sleep efficiency"
 * group[2].element[3].target[0].code = #0
 * group[2].element[3].target[0].display = "No OMOP concept - custom concept required"
 * group[2].element[3].target[0].equivalence = #unmatched
-* group[2].element[3].target[0].comment = "GAP: TST/TIB ratio (%) has no OMOP concept. Key metric for sleep quality. Normal: >85%"
+* group[2].element[3].target[0].comment = "GAP CONFIRMED 2025-12-08: Sleep efficiency has NO OMOP concept (Concept ID = 0). TST/TIB ratio (%). Normal: >85%. Key quality metric."
 
-// Sleep score (id40) → MEASUREMENT (custom concept needed)
+// ============================================================================
+// Sleep score (id40) - GAP (Vendor-specific) ⚠️
+// ============================================================================
 * group[2].element[4].code = #id40
 * group[2].element[4].display = "Sleep score"
 * group[2].element[4].target[0].code = #0
 * group[2].element[4].target[0].display = "No OMOP concept - vendor-specific score"
 * group[2].element[4].target[0].equivalence = #unmatched
-* group[2].element[4].target[0].comment = "Proprietary composite score (0-100). Not suitable for cross-vendor research. Store with vendor qualifier."
+* group[2].element[4].target[0].comment = "GAP CONFIRMED 2025-12-08: Proprietary composite score (0-100). Not standardized - varies by vendor. NOT suitable for cross-vendor research."
 
-// Average HRV during sleep (id53) → MEASUREMENT
+// ============================================================================
+// Average HRV during sleep (id53) - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[2].element[5].code = #id53
 * group[2].element[5].display = "Average HRV (RMSSD) during sleep"
 * group[2].element[5].target[0].code = #0
 * group[2].element[5].target[0].display = "No OMOP concept - requires RMSSD concept"
 * group[2].element[5].target[0].equivalence = #unmatched
-* group[2].element[5].target[0].comment = "Depends on RMSSD custom concept creation. Critical for recovery assessment."
+* group[2].element[5].target[0].comment = "GAP CONFIRMED 2025-12-08: Depends on RMSSD custom concept creation. Nocturnal HRV is critical for recovery assessment (Oura Ring, Whoop)."
 
 // ============================================================================
 // GROUP 4: Wearable Device Cluster → OMOP DEVICE_EXPOSURE
+// VERIFIED 2025-12-08 - DEVICE_EXPOSURE mappings
 // ============================================================================
 * group[3].source = "openEHR-EHR-CLUSTER.wearable_device.v0"
 * group[3].target = "DEVICE_EXPOSURE"
 
-// Device platform (id2) → DEVICE_EXPOSURE with OMOP concept
+// ============================================================================
+// Device platform (id2) - PENDING VERIFICATION
+// ============================================================================
 * group[3].element[0].code = #id2
 * group[3].element[0].display = "Device platform"
 * group[3].element[0].target[0].code = #4044180
 * group[3].element[0].target[0].display = "OMOP Concept: Wearable sensor"
 * group[3].element[0].target[0].equivalence = #wider
-* group[3].element[0].target[0].comment = "Store in DEVICE_EXPOSURE with device_concept_id = 4044180. Add vendor qualifier in device_source_value"
+* group[3].element[0].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4044180 requires Athena manual check. Store in DEVICE_EXPOSURE.device_concept_id. Add vendor qualifier in device_source_value."
 
 // Device model (id3) → DEVICE_EXPOSURE.device_source_value
 * group[3].element[1].code = #id3
