@@ -383,3 +383,70 @@ SUSHI v3.16.5: 0 Errors, 0 Warnings
 *Last updated: 2025-12-08 18:15*
 *Terminal: 1*
 *SUSHI Status: 0 Errors, 0 Warnings*
+
+---
+
+## Verification Session 4 (2025-12-08 19:00) - LOINC AUDIT
+
+### LOINC Codes Verified via tx.fhir.org
+
+| Code | Display (Verified) | Status |
+|------|-------------------|--------|
+| 80404-7 | R-R interval.standard deviation (HRV) | ✅ VERIFIED |
+| 8867-4 | Heart rate | ✅ VERIFIED |
+| 40443-4 | Heart rate --resting | ✅ VERIFIED |
+| 55423-8 | Number of steps in unspecified time Pedometer | ✅ VERIFIED |
+| 2708-6 | Oxygen saturation in Arterial blood | ✅ VERIFIED |
+| 9279-1 | Respiratory rate | ✅ VERIFIED |
+| 29463-7 | Body weight | ✅ VERIFIED |
+| 8302-2 | Body height | ✅ VERIFIED |
+| 39156-5 | Body mass index (BMI) [Ratio] | ✅ VERIFIED |
+| 93832-4 | Sleep duration | ✅ VERIFIED |
+| 90568-7 | Polysomnography panel | ✅ VERIFIED |
+| 82611-5 | Wearable device external physiologic monitoring panel | ✅ VERIFIED |
+| 103215-0 | Wake time after sleep onset | ✅ VERIFIED |
+| 77233-5 | Percentage of body fat by Bioelectrical impedance analysis | ✅ VERIFIED |
+| 8873-2 | Heart rate 24 hour maximum | ✅ VERIFIED (replacement) |
+| 8883-1 | Heart rate 24 hour minimum | ✅ VERIFIED (replacement) |
+| 41924-2 | Heart rate 24 hour mean | ✅ VERIFIED (replacement) |
+| 8637-1 | R-R interval by EKG | ✅ VERIFIED (replacement) |
+
+### WRONG LOINC Codes Found and Fixed
+
+| Wrong Code | Expected | Actual Display | Correct Code | Fixed In |
+|------------|----------|----------------|--------------|----------|
+| 8889-8 | Heart rate 24h max | Heart rate by Pulse oximetry | **8873-2** | ConceptMapVendorToLOINC |
+| 8891-4 | Heart rate 24h min | Heart rate Cardiac apex by palpation | **8883-1** | ConceptMapVendorToLOINC |
+| 8890-6 | Heart rate 24h mean | Heart rate Cardiac apex by Auscultation | **41924-2** | ConceptMapVendorToLOINC |
+| 8636-3 | R-R interval in EKG | Q-T interval corrected | **8637-1** | ConceptMapVendorToLOINC |
+| 93832-4 | Sleep efficiency | Sleep duration | **#unmatched** | ConceptMapVendorToLOINC |
+
+### Key Discovery: LOINC Gaps
+
+**No LOINC code exists for:**
+- Sleep efficiency (percentage)
+- Deep sleep duration (consumer wearable - different from 93831-6 which is clinical PSG)
+- Light sleep duration (N1+N2 combined)
+- RMSSD (Root Mean Square of Successive Differences)
+- pNN50, LF/HF Ratio, LF Power, HF Power
+
+### Sources Used
+- [tx.fhir.org](https://tx.fhir.org/r4/) - HL7 FHIR Terminology Server
+- [loinc.org](https://loinc.org/) - Official LOINC website
+
+---
+
+## Updated Summary (After Session 4)
+
+| Category | Verified | Wrong→Fixed | Gaps (#unmatched) | Total |
+|----------|----------|-------------|-------------------|-------|
+| LOINC | **18** | **5** | 12 | 35 |
+| SNOMED CT | 10 | 11 | 15 | 36 |
+| OMOP | 4 | 0 | 10 | 14 |
+| **Total** | **32** | **16** | **37** | **85** |
+
+---
+
+*Last updated: 2025-12-08 19:15*
+*Terminal: 1*
+*SUSHI Status: 0 Errors, 0 Warnings*

@@ -141,12 +141,13 @@ Usage: #definition
 * group[1].element[2].target[0].display = "Heart rate --resting"
 * group[1].element[2].target[0].equivalence = #equivalent
 
-// Sleep Efficiency
+// Sleep Efficiency - CORRECTED 2025-12-08
+// WRONG: 93832-4 = "Sleep duration" (NOT "Sleep efficiency"!)
+// CORRECT: No LOINC code exists for sleep efficiency
 * group[1].element[3].code = #sleep-efficiency
 * group[1].element[3].display = "Sleep Efficiency"
-* group[1].element[3].target[0].code = #93832-4
-* group[1].element[3].target[0].display = "Sleep efficiency"
-* group[1].element[3].target[0].equivalence = #equivalent
+* group[1].element[3].target[0].equivalence = #unmatched
+* group[1].element[3].target[0].comment = "GAP: No LOINC code exists for sleep efficiency (verified 2025-12-08 via tx.fhir.org). 93832-4 = Sleep duration (NOT efficiency). Sleep efficiency = (Total Sleep Time / Time in Bed) × 100. Normal: >85%."
 
 // =============================================================================
 // GROUP 3: Garmin Health API → LOINC
@@ -168,12 +169,15 @@ Usage: #definition
 * group[2].element[1].target[0].display = "Heart rate --resting"
 * group[2].element[1].target[0].equivalence = #equivalent
 
-// Max Heart Rate
+// Max Heart Rate - CORRECTED 2025-12-08
+// WRONG: 8889-8 = "Heart rate by Pulse oximetry" (NOT 24h max!)
+// CORRECT: 8873-2 = "Heart rate 24 hour maximum"
 * group[2].element[2].code = #maxHeartRate
 * group[2].element[2].display = "Maximum Heart Rate"
-* group[2].element[2].target[0].code = #8889-8
+* group[2].element[2].target[0].code = #8873-2
 * group[2].element[2].target[0].display = "Heart rate 24 hour maximum"
 * group[2].element[2].target[0].equivalence = #equivalent
+* group[2].element[2].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 8873-2 = Heart rate 24 hour maximum"
 
 // SpO2
 * group[2].element[3].code = #avgSpo2
@@ -196,12 +200,15 @@ Usage: #definition
 * group[3].element[0].target[0].equivalence = #equivalent
 * group[3].element[0].target[0].comment = "Polar H10 chest strap provides ECG-quality heart rate. Gold standard for wearable HRV measurement."
 
-// RR Intervals (raw)
+// RR Intervals (raw) - CORRECTED 2025-12-08
+// WRONG: 8636-3 = "Q-T interval corrected" (NOT R-R interval!)
+// CORRECT: 8637-1 = "R-R interval by EKG"
 * group[3].element[1].code = #rr-intervals
 * group[3].element[1].display = "RR Intervals"
-* group[3].element[1].target[0].code = #8636-3
-* group[3].element[1].target[0].display = "R-R interval in EKG"
+* group[3].element[1].target[0].code = #8637-1
+* group[3].element[1].target[0].display = "R-R interval by EKG"
 * group[3].element[1].target[0].equivalence = #equivalent
+* group[3].element[1].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 8637-1 = R-R interval by EKG. Polar H10 provides ECG-quality RR intervals."
 
 // =============================================================================
 // GROUP 5: Oura Ring API → LOINC
@@ -215,20 +222,25 @@ Usage: #definition
 * group[4].element[0].target[0].equivalence = #unmatched
 * group[4].element[0].target[0].comment = "Oura's proprietary HRV score (0-100). NOT raw RMSSD or SDNN. Derived from nocturnal RMSSD but normalized to individual baseline. No direct LOINC equivalent - this is a processed/scored metric, not a physiological measurement."
 
-// Resting Heart Rate
+// Lowest Heart Rate - CORRECTED 2025-12-08
+// WRONG: 8891-4 = "Heart rate Cardiac apex by palpation" (NOT 24h min!)
+// CORRECT: 8883-1 = "Heart rate 24 hour minimum"
 * group[4].element[1].code = #hr_lowest
 * group[4].element[1].display = "Lowest Heart Rate (overnight)"
-* group[4].element[1].target[0].code = #8891-4
+* group[4].element[1].target[0].code = #8883-1
 * group[4].element[1].target[0].display = "Heart rate 24 hour minimum"
-* group[4].element[1].target[0].equivalence = #equivalent
+* group[4].element[1].target[0].equivalence = #narrower
+* group[4].element[1].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 8883-1 = Heart rate 24 hour minimum. Oura measures overnight only (narrower than 24h)."
 
-// Average Heart Rate
+// Average Heart Rate - CORRECTED 2025-12-08
+// WRONG: 8890-6 = "Heart rate Cardiac apex by Auscultation" (NOT 24h mean!)
+// CORRECT: 41924-2 = "Heart rate 24 hour mean"
 * group[4].element[2].code = #hr_average
 * group[4].element[2].display = "Average Heart Rate (overnight)"
-* group[4].element[2].target[0].code = #8890-6
+* group[4].element[2].target[0].code = #41924-2
 * group[4].element[2].target[0].display = "Heart rate 24 hour mean"
 * group[4].element[2].target[0].equivalence = #narrower
-* group[4].element[2].target[0].comment = "Oura measures overnight only, not full 24 hours"
+* group[4].element[2].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 41924-2 = Heart rate 24 hour mean. Oura measures overnight only (narrower than 24h)."
 
 // Respiratory Rate
 * group[4].element[3].code = #breathing_rate
