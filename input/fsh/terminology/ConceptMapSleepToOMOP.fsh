@@ -106,15 +106,18 @@ Critical metric for insomnia assessment.
 """
 
 // ============================================================================
-// Sleep Onset Latency
+// Sleep Onset Latency - CORRECTED 2025-12-08
+// WRONG CODE FOUND: 93829-0 = "REM sleep duration" NOT "Sleep onset latency"
+// Correct code: 103212-7 = "Duration of falling asleep" (Sleep Onset Latency)
 // ============================================================================
-* group[0].element[3].code = #93829-0
-* group[0].element[3].display = "Sleep onset latency"
+* group[0].element[3].code = #103212-7
+* group[0].element[3].display = "Duration of falling asleep"
 * group[0].element[3].target[0].code = #0
 * group[0].element[3].target[0].display = "No OMOP concept available"
 * group[0].element[3].target[0].equivalence = #unmatched
 * group[0].element[3].target[0].comment = """
 GAP: Sleep onset latency has no OMOP concept.
+LOINC 103212-7 = Duration of falling asleep (verified 2025-12-08)
 Time from lights out to sleep onset.
 Normal: <30 minutes
 Prolonged latency indicates insomnia.
@@ -122,14 +125,49 @@ Unit_concept_id: 8550 (minute)
 """
 
 // ============================================================================
-// Number of Awakenings
+// REM Sleep Duration - NEW 2025-12-08
+// LOINC 93829-0 = REM sleep duration (verified via loinc.org)
 // ============================================================================
-* group[0].element[4].code = #93830-8
-* group[0].element[4].display = "Number of awakenings during sleep"
+* group[0].element[4].code = #93829-0
+* group[0].element[4].display = "REM sleep duration"
 * group[0].element[4].target[0].code = #0
 * group[0].element[4].target[0].display = "No OMOP concept available"
 * group[0].element[4].target[0].equivalence = #unmatched
-* group[0].element[4].target[0].comment = "Number of wake episodes during sleep period. Normal: <5 brief awakenings."
+* group[0].element[4].target[0].comment = """
+GAP: REM sleep duration has no direct OMOP concept.
+LOINC 93829-0 = REM sleep duration (verified 2025-12-08)
+Normal: 20-25% of total sleep (1.5-2 hours)
+Critical for cognitive function, emotional regulation.
+Unit_concept_id: 8550 (minute)
+"""
+
+// ============================================================================
+// Number of Awakenings
+// ============================================================================
+* group[0].element[5].code = #93830-8
+* group[0].element[5].display = "Number of awakenings during sleep"
+* group[0].element[5].target[0].code = #0
+* group[0].element[5].target[0].display = "No OMOP concept available"
+* group[0].element[5].target[0].equivalence = #unmatched
+* group[0].element[5].target[0].comment = "Number of wake episodes during sleep period. Normal: <5 brief awakenings."
+
+// ============================================================================
+// Wake Time After Sleep Onset (WASO) - NEW 2025-12-08
+// LOINC 103215-0 = Wake time after sleep onset (verified via loinc.org)
+// ============================================================================
+* group[0].element[6].code = #103215-0
+* group[0].element[6].display = "Wake time after sleep onset"
+* group[0].element[6].target[0].code = #0
+* group[0].element[6].target[0].display = "No OMOP concept available"
+* group[0].element[6].target[0].equivalence = #unmatched
+* group[0].element[6].target[0].comment = """
+GAP: WASO has no OMOP concept.
+LOINC 103215-0 = Wake time after sleep onset (verified 2025-12-08)
+Total time awake after initial sleep onset.
+Normal: <30 minutes
+Elevated WASO indicates sleep maintenance insomnia.
+Unit_concept_id: 8550 (minute)
+"""
 
 // ============================================================================
 // GROUP 2: Custom Sleep Stage Metrics → OMOP
