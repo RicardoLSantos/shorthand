@@ -35,40 +35,52 @@ Usage: #definition
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs"
 * group[0].target = "http://loinc.org"
 
-// SDNN - HAS LOINC CODE ✅
+// ============================================================================
+// SDNN - HAS LOINC CODE ✅ VERIFIED 2025-12-08
+// ============================================================================
 * group[0].element[0].code = #hrv-sdnn
 * group[0].element[0].display = "HRV SDNN (Standard Deviation of NN intervals)"
 * group[0].element[0].target[0].code = #80404-7
 * group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
 * group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "Confirmed LOINC code for SDNN, created in LOINC v2.72 (June 2022). Time-domain HRV measure representing total variability."
+* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 80404-7 = R-R interval.standard deviation (Heart rate variability). Created LOINC v2.72 (June 2022). Time-domain HRV measure representing total variability."
 
-// RMSSD - NO LOINC CODE YET ⚠️
+// ============================================================================
+// RMSSD - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[1].code = #hrv-rmssd
 * group[0].element[1].display = "HRV RMSSD (Root Mean Square of Successive Differences)"
 * group[0].element[1].target[0].equivalence = #unmatched
-* group[0].element[1].target[0].comment = "No LOINC code available as of November 2024. RMSSD is the primary parasympathetic marker recommended by HRV Task Force 1996. Submission recommended to LOINC committee. NOTE: Apple HealthKit mislabels this as 'SDNN' (HKQuantityTypeIdentifierHeartRateVariabilitySDNN) - implementers should be aware of this vendor-specific naming error."
+* group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code exists for RMSSD. Primary parasympathetic marker (HRV Task Force 1996). NOTE: Apple HealthKit mislabels this as 'SDNN' (HKQuantityTypeIdentifierHeartRateVariabilitySDNN). Submission to LOINC committee recommended."
 
-// pNN50 - NO LOINC CODE YET ⚠️
+// ============================================================================
+// pNN50 - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[2].code = #hrv-pnn50
 * group[0].element[2].display = "HRV pNN50 (Percentage of NN intervals >50ms difference)"
 * group[0].element[2].target[0].equivalence = #unmatched
-* group[0].element[2].target[0].comment = "No LOINC code available as of November 2024. High correlation with RMSSD (r>0.90), parasympathetic marker. Percentage of successive NN intervals differing by more than 50ms."
+* group[0].element[2].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code exists for pNN50. High correlation with RMSSD (r>0.90), parasympathetic marker. Percentage of successive NN intervals differing by more than 50ms."
 
-// LF/HF Ratio - NO LOINC CODE YET ⚠️
+// ============================================================================
+// LF/HF Ratio - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[3].code = #hrv-lf-hf-ratio
 * group[0].element[3].display = "HRV LF/HF Ratio (Low Frequency to High Frequency ratio)"
 * group[0].element[3].target[0].equivalence = #unmatched
-* group[0].element[3].target[0].comment = "No LOINC code available as of November 2024. Autonomic balance indicator, though clinical interpretation is debated. Ratio of LF power (0.04-0.15 Hz) to HF power (0.15-0.4 Hz)."
+* group[0].element[3].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code exists for LF/HF ratio. Autonomic balance indicator (clinical interpretation debated). Ratio of LF (0.04-0.15 Hz) to HF (0.15-0.4 Hz) power."
 
-// LF Power - NO LOINC CODE YET ⚠️
+// ============================================================================
+// LF Power - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[4].code = #hrv-lf-power
 * group[0].element[4].display = "HRV LF Power (Low Frequency power 0.04-0.15 Hz)"
 * group[0].element[4].target[0].equivalence = #unmatched
-* group[0].element[4].target[0].comment = "No LOINC code available as of November 2024. Low frequency spectral power (0.04-0.15 Hz). Reflects both sympathetic and parasympathetic modulation, with some baroreflex contribution."
+* group[0].element[4].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code exists for LF Power. Low frequency spectral power (0.04-0.15 Hz). Reflects sympathetic and parasympathetic modulation with baroreflex contribution."
 
-// HF Power - NO LOINC CODE YET ⚠️
+// ============================================================================
+// HF Power - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[5].code = #hrv-hf-power
 * group[0].element[5].display = "HRV HF Power (High Frequency power 0.15-0.4 Hz)"
 * group[0].element[5].target[0].equivalence = #unmatched
-* group[0].element[5].target[0].comment = "No LOINC code available as of November 2024. High frequency spectral power (0.15-0.4 Hz). Reflects parasympathetic (vagal) modulation, synchronized with respiratory rhythm."
+* group[0].element[5].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code exists for HF Power. High frequency spectral power (0.15-0.4 Hz). Reflects parasympathetic (vagal) modulation, synchronized with respiratory rhythm."

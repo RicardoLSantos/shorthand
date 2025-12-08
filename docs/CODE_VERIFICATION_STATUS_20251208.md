@@ -447,6 +447,60 @@ SUSHI v3.16.5: 0 Errors, 0 Warnings
 
 ---
 
-*Last updated: 2025-12-08 19:15*
+## Verification Session 5 (2025-12-08 20:00) - LOINC ConceptMaps Completion
+
+### ConceptMaps Updated with Verification Comments
+
+1. **ConceptMapHRVToLOINC.fsh** - ✅ Complete
+   - SDNN (80404-7): VERIFIED
+   - RMSSD, pNN50, LF/HF, LF Power, HF Power: GAP CONFIRMED
+
+2. **ConceptMapSleepToLOINC.fsh** - ✅ Complete
+   - Sleep panel (90568-7): VERIFIED
+   - Wearable device panel (82611-5): VERIFIED
+   - Time in bed: GAP CONFIRMED
+   - Deep sleep (consumer wearable): GAP CONFIRMED
+   - Light sleep (N1+N2): GAP CONFIRMED
+   - Sleep awakenings → 103215-0 (WASO): VERIFIED (related concept)
+
+3. **ConceptMapBodyMetricsToLOINC.fsh** - ✅ Complete
+   - Body fat BIA (77233-5): VERIFIED
+   - Related codes: 73965-6 (muscle mass), 73708-0 (fat mass)
+
+4. **ConceptMapReproductiveToLOINC.fsh** - ✅ Complete
+   - Ovulation status: GAP CONFIRMED (no LOINC for consumer fertility tracking)
+
+5. **ConceptMapVendorToLOINC.fsh** - ✅ Complete (Session 4)
+   - 5 wrong codes fixed
+   - All codes verified via tx.fhir.org
+
+### SUSHI Validation
+```
+SUSHI v3.16.5: 0 Errors, 0 Warnings
+```
+
+### Summary
+All 6 LOINC ConceptMaps now have:
+- VERIFIED comments with dates for existing codes
+- GAP CONFIRMED comments for missing codes
+- #unmatched equivalence properly used for gaps
+
+---
+
+## Final Summary (After Session 5)
+
+| Category | Verified | Wrong→Fixed | Gaps (#unmatched) | Files Complete |
+|----------|----------|-------------|-------------------|----------------|
+| LOINC | **18** | **5** | 12 | 6/6 (100%) |
+| SNOMED CT | 10 | 11 | 15 | 6/6 (100%) |
+| OMOP | 4 | 0 | 10 | 4/5 (80%) |
+| **Total** | **32** | **16** | **37** | **16/17 (94%)** |
+
+### Remaining Work
+- ConceptMapOpenEHRToOMOP.fsh - OMOP concepts pending verification
+
+---
+
+*Last updated: 2025-12-08 20:15*
 *Terminal: 1*
 *SUSHI Status: 0 Errors, 0 Warnings*

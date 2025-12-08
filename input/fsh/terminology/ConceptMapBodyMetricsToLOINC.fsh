@@ -30,12 +30,14 @@ Usage: #definition
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://loinc.org"
 
-// BODY COMPOSITION - Individual codes (no BIA panel in LOINC)
+// ============================================================================
+// BODY COMPOSITION PANEL - VERIFIED 2025-12-08 ✅
 // Note: LOINC has no dedicated BIA body composition panel code.
 // Using individual measurement codes instead.
+// ============================================================================
 * group[0].element[0].code = #body-composition-panel
 * group[0].element[0].display = "Body composition measurement panel"
 * group[0].element[0].target[0].code = #77233-5
 * group[0].element[0].target[0].display = "Percentage of body fat by Bioelectrical impedance analysis"
 * group[0].element[0].target[0].equivalence = #relatedto
-* group[0].element[0].target[0].comment = "LOINC has no dedicated BIA panel code. Map to individual BIA measurement codes: 77233-5 (body fat %), 73965-6 (muscle mass %), 73708-0 (fat mass). This maps to the primary BIA metric."
+* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 77233-5 = Percentage of body fat by Bioelectrical impedance analysis. LOINC has no dedicated BIA panel code. Related individual codes: 73965-6 (Body muscle mass/Body weight Measured), 73708-0 (Body fat [Mass] Calculated)."

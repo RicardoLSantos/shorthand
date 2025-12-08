@@ -29,8 +29,10 @@ Usage: #definition
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://loinc.org"
 
-// OVULATION STATUS - NO EXACT LOINC CODE ⚠️
+// ============================================================================
+// OVULATION STATUS - GAP CONFIRMED 2025-12-08 ❌
+// ============================================================================
 * group[0].element[0].code = #ovulation-status
 * group[0].element[0].display = "Ovulation status"
 * group[0].element[0].target[0].equivalence = #unmatched
-* group[0].element[0].target[0].comment = "No direct LOINC code for consumer fertility device ovulation status as of November 2025. LOINC has laboratory ovulation predictor tests (e.g., LH surge tests) but not consumer device algorithmic ovulation predictions. Consumer apps use basal body temperature + symptom tracking algorithms. Terminology gap between laboratory ovulation testing and consumer fertility tracking."
+* group[0].element[0].target[0].comment = "GAP CONFIRMED 2025-12-08 via tx.fhir.org: No direct LOINC code for consumer fertility device ovulation status. LOINC has laboratory ovulation predictor tests (e.g., LH surge tests) but not consumer device algorithmic ovulation predictions. Consumer apps (Apple Health, Clue, Flo) use basal body temperature + symptom tracking algorithms. Semantic gap between laboratory ovulation testing and consumer fertility tracking."
