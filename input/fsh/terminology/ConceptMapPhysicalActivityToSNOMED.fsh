@@ -43,69 +43,80 @@ Usage: #definition
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = "Direct mapping from HKWorkoutActivityType.walking to SNOMED CT. Includes both indoor and outdoor walking activities."
 
-// RUNNING - HAS SNOMED CODE ✅
+// RUNNING - CORRECTED 2025-12-08 ⚠️
+// Note: 229065009 = "Exercise therapy" NOT "Running"
+// Using verified 229166008 (Jogging training) as closer match
 * group[0].element[1].code = #running
 * group[0].element[1].display = "Running"
-* group[0].element[1].target[0].code = #229065009
-* group[0].element[1].target[0].display = "Running (observable entity)"
-* group[0].element[1].target[0].equivalence = #equivalent
-* group[0].element[1].target[0].comment = "Direct mapping from HKWorkoutActivityType.running to SNOMED CT. Includes both indoor and outdoor running activities."
+* group[0].element[1].target[0].code = #229166008
+* group[0].element[1].target[0].display = "Jogging training (regime/therapy)"
+* group[0].element[1].target[0].equivalence = #wider
+* group[0].element[1].target[0].comment = "CORRECTED 2025-12-08: Running maps to 'Jogging training' (229166008). Code VERIFIED via Australian Ontoserver. Note: Original code 229065009 is 'Exercise therapy' (broader concept)."
 
-// CYCLING - HAS SNOMED CODE ✅
+// CYCLING - CORRECTED 2025-12-08 ⚠️
+// WRONG CODE: 266940006 = "Lives in squat" NOT "Cycling"
+// Using broader 68130003 (Physical activity) until correct cycling code verified
 * group[0].element[2].code = #cycling
 * group[0].element[2].display = "Cycling"
-* group[0].element[2].target[0].code = #266940006
-* group[0].element[2].target[0].display = "Cycling (regime/therapy)"
-* group[0].element[2].target[0].equivalence = #equivalent
-* group[0].element[2].target[0].comment = "Direct mapping from HKWorkoutActivityType.cycling to SNOMED CT. Includes outdoor cycling and stationary cycling."
+* group[0].element[2].target[0].code = #68130003
+* group[0].element[2].target[0].display = "Physical activity (observable entity)"
+* group[0].element[2].target[0].equivalence = #wider
+* group[0].element[2].target[0].comment = "CORRECTED 2025-12-08: Original code 266940006 was WRONG - it means 'Lives in squat' NOT 'Cycling'. Using 68130003 (Physical activity) VERIFIED via Ontoserver. Specific cycling code requires manual verification via browser.ihtsdotools.org."
 
-// SWIMMING - HAS SNOMED CODE ✅
+// SWIMMING - CORRECTED 2025-12-08 ⚠️
+// WRONG CODE: 266938001 = "Hospital patient" NOT "Swimming"
+// Using broader 68130003 (Physical activity) until correct swimming code verified
 * group[0].element[3].code = #swimming
 * group[0].element[3].display = "Swimming"
-* group[0].element[3].target[0].code = #266938001
-* group[0].element[3].target[0].display = "Swimming (regime/therapy)"
-* group[0].element[3].target[0].equivalence = #equivalent
-* group[0].element[3].target[0].comment = "Direct mapping from HKWorkoutActivityType.swimming to SNOMED CT. Includes pool and open water swimming."
+* group[0].element[3].target[0].code = #68130003
+* group[0].element[3].target[0].display = "Physical activity (observable entity)"
+* group[0].element[3].target[0].equivalence = #wider
+* group[0].element[3].target[0].comment = "CORRECTED 2025-12-08: Original code 266938001 was WRONG - it means 'Hospital patient' NOT 'Swimming'. Using 68130003 (Physical activity) VERIFIED via Ontoserver. Specific swimming code requires manual verification via browser.ihtsdotools.org."
 
-// HIKING - SNOMED CODE NEEDS VERIFICATION ⚠️
+// HIKING - CORRECTED 2025-12-08 ⚠️
+// Code 71537002 NOT FOUND in Australian Ontoserver
 * group[0].element[4].code = #hiking
 * group[0].element[4].display = "Hiking"
-* group[0].element[4].target[0].code = #71537002
-* group[0].element[4].target[0].display = "Hiking (physical activity)"
-* group[0].element[4].target[0].equivalence = #equivalent
-* group[0].element[4].target[0].comment = "Mapping from HKWorkoutActivityType.hiking to SNOMED CT code 71537002. Note: SNOMED code should be verified via official SNOMED CT Browser before clinical use."
+* group[0].element[4].target[0].code = #68130003
+* group[0].element[4].target[0].display = "Physical activity (observable entity)"
+* group[0].element[4].target[0].equivalence = #wider
+* group[0].element[4].target[0].comment = "CORRECTED 2025-12-08: Original code 71537002 NOT FOUND in Australian Ontoserver. Using 68130003 (Physical activity) VERIFIED via Ontoserver. Specific hiking code requires manual verification via browser.ihtsdotools.org."
 
-// YOGA - BROADER MAPPING ⚠️
+// YOGA - CORRECTED 2025-12-08 ⚠️
+// 48761009 = "Motor behaviour" NOT "Regular exercise"
 * group[0].element[5].code = #yoga
 * group[0].element[5].display = "Yoga"
-* group[0].element[5].target[0].code = #48761009
-* group[0].element[5].target[0].display = "Regular exercise (regime/therapy)"
+* group[0].element[5].target[0].code = #61686008
+* group[0].element[5].target[0].display = "Physical exercise (regime/therapy)"
 * group[0].element[5].target[0].equivalence = #wider
-* group[0].element[5].target[0].comment = "HKWorkoutActivityType.yoga maps to broader SNOMED concept 'Regular exercise'. Specific SNOMED code for yoga may exist but requires verification. Equivalence marked as 'wider' because target concept is less specific than source."
+* group[0].element[5].target[0].comment = "CORRECTED 2025-12-08: Yoga maps to 'Physical exercise' (61686008) VERIFIED via Ontoserver. Note: Original 48761009 is 'Motor behaviour' not 'Regular exercise'. Specific yoga code requires manual verification."
 
-// DANCING - NEEDS SPECIFIC SNOMED CODE ⚠️
+// DANCING - CORRECTED 2025-12-08 ⚠️
+// 48761009 = "Motor behaviour" NOT "Regular exercise"
 * group[0].element[6].code = #dancing
 * group[0].element[6].display = "Dancing"
-* group[0].element[6].target[0].code = #48761009
-* group[0].element[6].target[0].display = "Regular exercise (regime/therapy)"
+* group[0].element[6].target[0].code = #61686008
+* group[0].element[6].target[0].display = "Physical exercise (regime/therapy)"
 * group[0].element[6].target[0].equivalence = #wider
-* group[0].element[6].target[0].comment = "HKWorkoutActivityType.dance/socialDance maps to broader SNOMED concept 'Regular exercise'. Specific SNOMED code for dancing may exist (search: 'dancing' in SNOMED CT Browser)."
+* group[0].element[6].target[0].comment = "CORRECTED 2025-12-08: Dancing maps to 'Physical exercise' (61686008) VERIFIED via Ontoserver. Note: Original 48761009 is 'Motor behaviour'. Specific dancing code requires manual verification."
 
-// STRENGTH TRAINING - NEEDS SPECIFIC SNOMED CODE ⚠️
+// STRENGTH TRAINING - CORRECTED 2025-12-08 ⚠️
+// Code 229070001 NOT FOUND in Australian Ontoserver
 * group[0].element[7].code = #strength-training
 * group[0].element[7].display = "Strength Training"
-* group[0].element[7].target[0].code = #229070001
-* group[0].element[7].target[0].display = "Exercise training (regime/therapy)"
-* group[0].element[7].target[0].equivalence = #narrower
-* group[0].element[7].target[0].comment = "HKWorkoutActivityType.traditionalStrengthTraining maps to broader SNOMED concept 'Exercise training'. Target is less specific than source (which specifies strength/resistance training)."
+* group[0].element[7].target[0].code = #229065009
+* group[0].element[7].target[0].display = "Exercise therapy (regime/therapy)"
+* group[0].element[7].target[0].equivalence = #wider
+* group[0].element[7].target[0].comment = "CORRECTED 2025-12-08: Strength training maps to 'Exercise therapy' (229065009) VERIFIED via Ontoserver. Note: Original code 229070001 NOT FOUND. More specific strength training code requires manual verification."
 
-// TENNIS - NEEDS VERIFICATION ⚠️
+// TENNIS - CORRECTED 2025-12-08 ⚠️
+// Code 85098004 NOT FOUND in Australian Ontoserver
 * group[0].element[8].code = #tennis
 * group[0].element[8].display = "Tennis"
-* group[0].element[8].target[0].code = #85098004
-* group[0].element[8].target[0].display = "Tennis (physical activity)"
-* group[0].element[8].target[0].equivalence = #equivalent
-* group[0].element[8].target[0].comment = "Mapping from HKWorkoutActivityType.tennis to SNOMED CT code 85098004. Note: SNOMED code should be verified via official SNOMED CT Browser."
+* group[0].element[8].target[0].code = #14468000
+* group[0].element[8].target[0].display = "Sports activity (regime/therapy)"
+* group[0].element[8].target[0].equivalence = #wider
+* group[0].element[8].target[0].comment = "CORRECTED 2025-12-08: Original code 85098004 NOT FOUND in Australian Ontoserver. Using 14468000 (Sports activity) VERIFIED via Ontoserver. Specific tennis code requires manual verification."
 
 // BADMINTON - NEEDS VERIFICATION ⚠️
 * group[0].element[9].code = #badminton
@@ -125,21 +136,23 @@ Usage: #definition
 * group[0].element[11].target[0].equivalence = #unmatched
 * group[0].element[11].target[0].comment = "No verified SNOMED CT code available for table tennis as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Racket sports'."
 
-// SOCCER - NEEDS VERIFICATION ⚠️
+// SOCCER - CORRECTED 2025-12-08 ⚠️
+// Code 81598007 NOT FOUND in Australian Ontoserver
 * group[0].element[12].code = #soccer
 * group[0].element[12].display = "Soccer"
-* group[0].element[12].target[0].code = #81598007
-* group[0].element[12].target[0].display = "Football (physical activity)"
-* group[0].element[12].target[0].equivalence = #equivalent
-* group[0].element[12].target[0].comment = "Mapping from HKWorkoutActivityType.soccer to SNOMED CT code 81598007 (Football). Note: SNOMED code should be verified. Regional terminology note: 'Football' in SNOMED may refer to soccer/association football."
+* group[0].element[12].target[0].code = #14468000
+* group[0].element[12].target[0].display = "Sports activity (regime/therapy)"
+* group[0].element[12].target[0].equivalence = #wider
+* group[0].element[12].target[0].comment = "CORRECTED 2025-12-08: Original code 81598007 NOT FOUND in Australian Ontoserver. Using 14468000 (Sports activity) VERIFIED via Ontoserver. Specific soccer/football code requires manual verification."
 
-// BASKETBALL - NEEDS VERIFICATION ⚠️
+// BASKETBALL - CORRECTED 2025-12-08 ⚠️
+// WRONG CODE: 25999001 = "Atrophy of corpus cavernosum" NOT "Basketball"
 * group[0].element[13].code = #basketball
 * group[0].element[13].display = "Basketball"
-* group[0].element[13].target[0].code = #25999001
-* group[0].element[13].target[0].display = "Basketball (physical activity)"
-* group[0].element[13].target[0].equivalence = #equivalent
-* group[0].element[13].target[0].comment = "Mapping from HKWorkoutActivityType.basketball to SNOMED CT code 25999001. Note: SNOMED code should be verified via official SNOMED CT Browser."
+* group[0].element[13].target[0].code = #14468000
+* group[0].element[13].target[0].display = "Sports activity (regime/therapy)"
+* group[0].element[13].target[0].equivalence = #wider
+* group[0].element[13].target[0].comment = "CORRECTED 2025-12-08: Original code 25999001 was COMPLETELY WRONG - it means 'Atrophy of corpus cavernosum' NOT 'Basketball'. Using 14468000 (Sports activity) VERIFIED via Ontoserver. Specific basketball code requires manual verification."
 
 // VOLLEYBALL - NEEDS VERIFICATION ⚠️
 * group[0].element[14].code = #volleyball
@@ -147,13 +160,14 @@ Usage: #definition
 * group[0].element[14].target[0].equivalence = #unmatched
 * group[0].element[14].target[0].comment = "No verified SNOMED CT code available for volleyball as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Team sports'."
 
-// TAI CHI - NEEDS VERIFICATION ⚠️
+// TAI CHI - CORRECTED 2025-12-08 ⚠️
+// Code 418818004 NOT FOUND in Australian Ontoserver
 * group[0].element[15].code = #tai-chi
 * group[0].element[15].display = "Tai Chi"
-* group[0].element[15].target[0].code = #418818004
-* group[0].element[15].target[0].display = "Tai chi (regime/therapy)"
-* group[0].element[15].target[0].equivalence = #equivalent
-* group[0].element[15].target[0].comment = "Mapping from HKWorkoutActivityType.taiChi to SNOMED CT code 418818004. Note: SNOMED code should be verified."
+* group[0].element[15].target[0].code = #61686008
+* group[0].element[15].target[0].display = "Physical exercise (regime/therapy)"
+* group[0].element[15].target[0].equivalence = #wider
+* group[0].element[15].target[0].comment = "CORRECTED 2025-12-08: Original code 418818004 NOT FOUND in Australian Ontoserver. Using 61686008 (Physical exercise) VERIFIED via Ontoserver. Specific Tai Chi code requires manual verification via browser.ihtsdotools.org."
 
 // PILATES - NEEDS VERIFICATION ⚠️
 * group[0].element[16].code = #pilates
@@ -161,29 +175,32 @@ Usage: #definition
 * group[0].element[16].target[0].equivalence = #unmatched
 * group[0].element[16].target[0].comment = "No verified SNOMED CT code available for Pilates as of 2025-11-22. May map to broader concept 'Exercise training' or 'Mind-body therapy'."
 
-// ROWING - NEEDS VERIFICATION ⚠️
+// ROWING - CORRECTED 2025-12-08 ⚠️
+// Code 10335005 NOT FOUND in Australian Ontoserver
 * group[0].element[17].code = #rowing
 * group[0].element[17].display = "Rowing"
-* group[0].element[17].target[0].code = #10335005
-* group[0].element[17].target[0].display = "Rowing (physical activity)"
-* group[0].element[17].target[0].equivalence = #equivalent
-* group[0].element[17].target[0].comment = "Mapping from HKWorkoutActivityType.rowing to SNOMED CT code 10335005. Note: SNOMED code should be verified."
+* group[0].element[17].target[0].code = #68130003
+* group[0].element[17].target[0].display = "Physical activity (observable entity)"
+* group[0].element[17].target[0].equivalence = #wider
+* group[0].element[17].target[0].comment = "CORRECTED 2025-12-08: Original code 10335005 NOT FOUND in Australian Ontoserver. Using 68130003 (Physical activity) VERIFIED via Ontoserver. Specific rowing code requires manual verification."
 
-// PADDLE SPORTS - BROADER MAPPING ⚠️
+// PADDLE SPORTS - CORRECTED 2025-12-08 ⚠️
+// 48761009 = "Motor behaviour" NOT "Regular exercise"
 * group[0].element[18].code = #paddle-sports
 * group[0].element[18].display = "Paddle Sports"
-* group[0].element[18].target[0].code = #48761009
-* group[0].element[18].target[0].display = "Regular exercise (regime/therapy)"
+* group[0].element[18].target[0].code = #68130003
+* group[0].element[18].target[0].display = "Physical activity (observable entity)"
 * group[0].element[18].target[0].equivalence = #wider
-* group[0].element[18].target[0].comment = "HKWorkoutActivityType.paddleSports (kayaking, canoeing) maps to broader SNOMED concept 'Regular exercise'. Specific codes for paddle sports may exist."
+* group[0].element[18].target[0].comment = "CORRECTED 2025-12-08: Original code 48761009 is 'Motor behaviour' not 'Regular exercise'. Using 68130003 (Physical activity) VERIFIED via Ontoserver."
 
-// SKIING - NEEDS VERIFICATION ⚠️
+// SKIING - CORRECTED 2025-12-08 ⚠️
+// Code 71537001 NOT FOUND (note: different from hiking code 71537002)
 * group[0].element[19].code = #skiing
 * group[0].element[19].display = "Skiing"
-* group[0].element[19].target[0].code = #71537001
-* group[0].element[19].target[0].display = "Skiing (physical activity)"
-* group[0].element[19].target[0].equivalence = #equivalent
-* group[0].element[19].target[0].comment = "Mapping from HKWorkoutActivityType.downhillSkiing/crossCountrySkiing to SNOMED CT code 71537001. Note: SNOMED code should be verified. May need separate codes for downhill vs cross-country."
+* group[0].element[19].target[0].code = #68130003
+* group[0].element[19].target[0].display = "Physical activity (observable entity)"
+* group[0].element[19].target[0].equivalence = #wider
+* group[0].element[19].target[0].comment = "CORRECTED 2025-12-08: Original code 71537001 NOT FOUND in Australian Ontoserver. Using 68130003 (Physical activity) VERIFIED via Ontoserver. Specific skiing code requires manual verification."
 
 // SNOWBOARDING - NEEDS VERIFICATION ⚠️
 * group[0].element[20].code = #snowboarding
@@ -191,34 +208,38 @@ Usage: #definition
 * group[0].element[20].target[0].equivalence = #unmatched
 * group[0].element[20].target[0].comment = "No verified SNOMED CT code available for snowboarding as of 2025-11-22. Recommend searching SNOMED CT Browser or mapping to broader concept 'Winter sports'."
 
-// CLIMBING - NEEDS VERIFICATION ⚠️
+// CLIMBING - CORRECTED 2025-12-08 ⚠️
+// Code 15128009 NOT FOUND in Australian Ontoserver
 * group[0].element[21].code = #climbing
 * group[0].element[21].display = "Climbing"
-* group[0].element[21].target[0].code = #15128009
-* group[0].element[21].target[0].display = "Climbing (physical activity)"
-* group[0].element[21].target[0].equivalence = #equivalent
-* group[0].element[21].target[0].comment = "Mapping from HKWorkoutActivityType.climbing to SNOMED CT code 15128009. Note: SNOMED code should be verified."
+* group[0].element[21].target[0].code = #68130003
+* group[0].element[21].target[0].display = "Physical activity (observable entity)"
+* group[0].element[21].target[0].equivalence = #wider
+* group[0].element[21].target[0].comment = "CORRECTED 2025-12-08: Original code 15128009 NOT FOUND in Australian Ontoserver. Using 68130003 (Physical activity) VERIFIED via Ontoserver. Specific climbing code requires manual verification."
 
-// GOLF - NEEDS VERIFICATION ⚠️
+// GOLF - CORRECTED 2025-12-08 ⚠️
+// Code 49774004 NOT FOUND in Australian Ontoserver
 * group[0].element[22].code = #golf
 * group[0].element[22].display = "Golf"
-* group[0].element[22].target[0].code = #49774004
-* group[0].element[22].target[0].display = "Golf (physical activity)"
-* group[0].element[22].target[0].equivalence = #equivalent
-* group[0].element[22].target[0].comment = "Mapping from HKWorkoutActivityType.golf to SNOMED CT code 49774004. Note: SNOMED code should be verified."
+* group[0].element[22].target[0].code = #14468000
+* group[0].element[22].target[0].display = "Sports activity (regime/therapy)"
+* group[0].element[22].target[0].equivalence = #wider
+* group[0].element[22].target[0].comment = "CORRECTED 2025-12-08: Original code 49774004 NOT FOUND in Australian Ontoserver. Using 14468000 (Sports activity) VERIFIED via Ontoserver. Specific golf code requires manual verification."
 
-// ELLIPTICAL - BROADER MAPPING ⚠️
+// ELLIPTICAL - CORRECTED 2025-12-08 ⚠️
+// Code 229070001 NOT FOUND in Australian Ontoserver
 * group[0].element[23].code = #elliptical
 * group[0].element[23].display = "Elliptical"
-* group[0].element[23].target[0].code = #229070001
-* group[0].element[23].target[0].display = "Exercise training (regime/therapy)"
-* group[0].element[23].target[0].equivalence = #narrower
-* group[0].element[23].target[0].comment = "HKWorkoutActivityType.elliptical maps to broader SNOMED concept 'Exercise training'. Specific SNOMED code for elliptical trainer may not exist."
+* group[0].element[23].target[0].code = #229065009
+* group[0].element[23].target[0].display = "Exercise therapy (regime/therapy)"
+* group[0].element[23].target[0].equivalence = #wider
+* group[0].element[23].target[0].comment = "CORRECTED 2025-12-08: Original code 229070001 NOT FOUND in Australian Ontoserver. Using 229065009 (Exercise therapy) VERIFIED via Ontoserver."
 
-// STAIRS - BROADER MAPPING ⚠️
+// STAIRS - CORRECTED 2025-12-08 ⚠️
+// Code 15128009 NOT FOUND in Australian Ontoserver
 * group[0].element[24].code = #stairs
 * group[0].element[24].display = "Stairs"
-* group[0].element[24].target[0].code = #15128009
-* group[0].element[24].target[0].display = "Climbing (physical activity)"
-* group[0].element[24].target[0].equivalence = #narrower
-* group[0].element[24].target[0].comment = "HKWorkoutActivityType.stairs/stairStepper maps to SNOMED concept 'Climbing'. Target is broader than source (stairs is a specific type of climbing activity)."
+* group[0].element[24].target[0].code = #68130003
+* group[0].element[24].target[0].display = "Physical activity (observable entity)"
+* group[0].element[24].target[0].equivalence = #wider
+* group[0].element[24].target[0].comment = "CORRECTED 2025-12-08: Original code 15128009 NOT FOUND in Australian Ontoserver. Using 68130003 (Physical activity) VERIFIED via Ontoserver."

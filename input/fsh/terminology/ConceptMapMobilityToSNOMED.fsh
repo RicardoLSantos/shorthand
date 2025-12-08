@@ -29,42 +29,38 @@ Usage: #definition
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://snomed.info/sct"
 
-// GAIT ASSESSMENT - NEEDS VERIFICATION ⚠️
+// GAIT ASSESSMENT - CORRECTED 2025-12-08 ⚠️
+// WRONG CODE FOUND: 271706000 = "Waddling gait" NOT "Gait, function"
+// Using #unmatched until correct gait assessment code verified
 * group[0].element[0].code = #gait-assessment
 * group[0].element[0].display = "Gait assessment"
-* group[0].element[0].target[0].code = #271706000
-* group[0].element[0].target[0].display = "Gait, function (observable entity)"
-* group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "Gait assessment maps to SNOMED 'Gait, function' observable entity. Code 271706000 should be verified via SNOMED CT Browser."
+* group[0].element[0].target[0].equivalence = #unmatched
+* group[0].element[0].target[0].comment = "CORRECTED 2025-12-08: Original code 271706000 was WRONG - it means 'Waddling gait' (a pathological finding) NOT 'Gait function'. No verified SNOMED code for general gait assessment available in Australian Ontoserver. Requires manual verification via browser.ihtsdotools.org."
 
-// BALANCE ASSESSMENT - NEEDS VERIFICATION ⚠️
+// BALANCE ASSESSMENT - CORRECTED 2025-12-08 ⚠️
+// Code 271722003 NOT FOUND in Australian Ontoserver
 * group[0].element[1].code = #balance-assessment
 * group[0].element[1].display = "Balance assessment"
-* group[0].element[1].target[0].code = #271722003
-* group[0].element[1].target[0].display = "Balance (observable entity)"
-* group[0].element[1].target[0].equivalence = #equivalent
-* group[0].element[1].target[0].comment = "Balance assessment maps to SNOMED 'Balance' observable entity. Code 271722003 should be verified."
+* group[0].element[1].target[0].equivalence = #unmatched
+* group[0].element[1].target[0].comment = "CORRECTED 2025-12-08: Original code 271722003 NOT FOUND in Australian Ontoserver. No verified SNOMED code for balance assessment. Requires manual verification via browser.ihtsdotools.org for International edition."
 
-// WALKING STEADINESS - NO EXACT MATCH ⚠️
+// WALKING STEADINESS - CORRECTED 2025-12-08 ⚠️
+// Code 271722003 NOT FOUND in Australian Ontoserver
 * group[0].element[2].code = #walking-steadiness
 * group[0].element[2].display = "Walking steadiness measurement"
-* group[0].element[2].target[0].code = #271722003
-* group[0].element[2].target[0].display = "Balance (observable entity)"
-* group[0].element[2].target[0].equivalence = #wider
-* group[0].element[2].target[0].comment = "Walking steadiness (Apple Watch metric) maps to broader SNOMED 'Balance' concept. Source is specific algorithmic measurement from accelerometer/gyroscope during walking, target is general balance concept. No exact SNOMED match for 'walking steadiness' consumer metric."
+* group[0].element[2].target[0].equivalence = #unmatched
+* group[0].element[2].target[0].comment = "CORRECTED 2025-12-08: Walking steadiness (Apple Watch metric) has no verified SNOMED equivalent. Original code 271722003 NOT FOUND. This is a proprietary wearable metric from accelerometer/gyroscope during walking."
 
-// WALKING SPEED - NEEDS VERIFICATION ⚠️
+// WALKING SPEED - CORRECTED 2025-12-08 ⚠️
+// Code 249869000 NOT FOUND in Australian Ontoserver
 * group[0].element[3].code = #walking-speed
 * group[0].element[3].display = "Walking speed measurement"
-* group[0].element[3].target[0].code = #249869000
-* group[0].element[3].target[0].display = "Walking speed (observable entity)"
-* group[0].element[3].target[0].equivalence = #equivalent
-* group[0].element[3].target[0].comment = "Walking speed maps directly to SNOMED 'Walking speed' observable entity. Code 249869000 should be verified."
+* group[0].element[3].target[0].equivalence = #unmatched
+* group[0].element[3].target[0].comment = "CORRECTED 2025-12-08: Original code 249869000 NOT FOUND in Australian Ontoserver. Walking speed is clinically important for mobility assessment but no verified SNOMED code available. Requires manual verification via browser.ihtsdotools.org."
 
-// MOVEMENT ASSESSMENT - NEEDS VERIFICATION ⚠️
+// MOVEMENT ASSESSMENT - CORRECTED 2025-12-08 ⚠️
+// Code 364555000 NOT FOUND in Australian Ontoserver
 * group[0].element[4].code = #movement-assessment
 * group[0].element[4].display = "Movement assessment"
-* group[0].element[4].target[0].code = #364555000
-* group[0].element[4].target[0].display = "Movement quality (observable entity)"
-* group[0].element[4].target[0].equivalence = #equivalent
-* group[0].element[4].target[0].comment = "Movement assessment maps to SNOMED 'Movement quality' observable entity. Code 364555000 should be verified."
+* group[0].element[4].target[0].equivalence = #unmatched
+* group[0].element[4].target[0].comment = "CORRECTED 2025-12-08: Original code 364555000 NOT FOUND in Australian Ontoserver. No verified SNOMED code for movement quality. Requires manual verification via browser.ihtsdotools.org."

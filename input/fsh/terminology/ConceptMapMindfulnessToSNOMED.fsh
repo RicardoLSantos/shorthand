@@ -29,21 +29,24 @@ Usage: #definition
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
 * group[0].target = "http://snomed.info/sct"
 
-// MINDFULNESS SESSION - NEEDS VERIFICATION ⚠️
+// MINDFULNESS SESSION - CORRECTED 2025-12-08 ⚠️
+// WRONG CODE FOUND: 228432001 = "Drug tolerance" NOT "Meditation"
+// Using 64299003 (Relaxation training therapy) as verified alternative
 * group[0].element[0].code = #mindfulness-session
 * group[0].element[0].display = "Mindfulness practice session"
-* group[0].element[0].target[0].code = #228432001
-* group[0].element[0].target[0].display = "Meditation (regime/therapy)"
+* group[0].element[0].target[0].code = #64299003
+* group[0].element[0].target[0].display = "Relaxation training therapy (regime/therapy)"
 * group[0].element[0].target[0].equivalence = #wider
-* group[0].element[0].target[0].comment = "Mindfulness session maps to broader SNOMED 'Meditation' concept. Mindfulness is a specific type of meditation practice. Code 228432001 should be verified via SNOMED CT Browser."
+* group[0].element[0].target[0].comment = "Mindfulness session maps to SNOMED 'Relaxation training therapy'. Code 64299003 VERIFIED via Australian Ontoserver 2025-12-08. Note: Original code 228432001 was WRONG - it means 'Drug tolerance' not 'Meditation'."
 
-// RELAXATION RESPONSE - NEEDS VERIFICATION ⚠️
+// RELAXATION RESPONSE - CORRECTED 2025-12-08 ⚠️
+// Code 398144009 NOT FOUND in Australian Ontoserver - using 64299003 instead
 * group[0].element[1].code = #relaxation-response
 * group[0].element[1].display = "Relaxation response observation"
-* group[0].element[1].target[0].code = #398144009
-* group[0].element[1].target[0].display = "Relaxation (observable entity)"
+* group[0].element[1].target[0].code = #64299003
+* group[0].element[1].target[0].display = "Relaxation training therapy (regime/therapy)"
 * group[0].element[1].target[0].equivalence = #relatedto
-* group[0].element[1].target[0].comment = "Relaxation response observation relates to SNOMED 'Relaxation' concept but measures subjective experience vs objective state. Code 398144009 should be verified."
+* group[0].element[1].target[0].comment = "Relaxation response observation relates to SNOMED 'Relaxation training therapy'. Code 64299003 VERIFIED via Australian Ontoserver 2025-12-08. Note: Original code 398144009 was NOT FOUND in SNOMED."
 
 // MINDFULNESS TYPE - NO EXACT MATCH ⚠️
 * group[0].element[2].code = #mindfulness-type
