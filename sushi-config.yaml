@@ -26,10 +26,14 @@ jurisdiction:
   - urn:iso:std:iso:3166#US "United States of America"
   - urn:iso:std:iso:3166#BR "Brazil" 
 
-# Dependencies for compliance
+# Dependencies for compliance and interoperability
 dependencies:
+  # Core dependencies
   ihe.iti.pcf: 1.1.0
   hl7.fhir.uv.ips: 2.0.0
+  # Related HL7 IGs for wearable/lifestyle data (added 2025-12-09)
+  hl7.fhir.us.physical-activity: 1.0.0  # Physical Activity IG - steps, calories, EVS
+  hl7.fhir.uv.phd: 1.0.0                # Personal Health Device IG - device metadata
 
 # Menu navigation - ÚNICA OCORRÊNCIA
 menu:

@@ -117,6 +117,36 @@ This IG implements the **FHIRconnect triple-layer architecture** for optimal int
 
 For detailed architecture documentation, see [FHIRconnect Architecture](fhirconnect-architecture.html).
 
+## Related Implementation Guides
+
+This IG aligns with and extends several HL7 FHIR Implementation Guides:
+
+### Dependencies (Formal)
+
+| IG | Version | Purpose |
+|----|---------|---------|
+| [HL7 Physical Activity IG](http://hl7.org/fhir/us/physical-activity) | 1.0.0 | Steps, calories, Exercise Vital Sign (EVS) profiles |
+| [Personal Health Device IG](http://hl7.org/fhir/uv/phd) | 1.0.0 | Device metadata, IEEE 11073 mapping patterns |
+| [International Patient Summary](http://hl7.org/fhir/uv/ips) | 2.0.0 | Cross-border patient summary interoperability |
+| [IHE Privacy Consent on FHIR](https://profiles.ihe.net/ITI/PCF) | 1.1.0 | Consent management patterns |
+
+### Related Standards (Informative)
+
+| IG | Relevance |
+|----|-----------|
+| [CIMI Vital Signs](http://hl7.org/fhir/us/vitals) | Basic vital signs profiles (HR, BP, SpO2) |
+| [CGM IG](http://hl7.org/fhir/uv/cgm) | Continuous monitoring patterns for glucose |
+| [Personal Health Record Format](https://build.fhir.org/ig/HL7/personal-health-record-format-ig/) | Patient-owned data model |
+
+### Novel Contributions
+
+This IG addresses gaps NOT covered by existing HL7 standards:
+
+- **Heart Rate Variability (HRV)**: Comprehensive profiles for SDNN, RMSSD, pNN50, LF/HF ratio - no existing HL7 IG covers these metrics
+- **Sleep Architecture**: Detailed sleep stage profiles (N1/N2/N3/REM, cycles, transitions)
+- **Consumer Wearable Integration**: Unified model for Apple HealthKit, Fitbit, Oura, Garmin, Polar
+- **Lifestyle Medicine Context**: Integration of all six pillars in single implementation guide
+
 ## Implementation Notes
 - Integration with HealthKit API
 - Privacy and security considerations
