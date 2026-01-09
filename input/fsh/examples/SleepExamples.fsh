@@ -58,8 +58,9 @@ Title: "Example of Sleep Record"
 * extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs#night "Night Phase"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-efficiency"
 * extension[=].valueQuantity = 85 '%' "percent"
-* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-quality"
-* extension[=].valueCodeableConcept = $SCT#248221007 "Consciousness clear"
+// UPDATED 2026-01-09: Use new SleepQualityCS instead of incorrect SNOMED code
+* extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-quality"
+* extension[=].valueCodeableConcept = SleepQualityCS#good "Good sleep quality"
 
 Instance: DeviceSleepMonitor
 InstanceOf: Device

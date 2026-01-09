@@ -92,12 +92,16 @@ Description: "Types of devices used for health and body measurements"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 
+// VERIFIED 2026-01-09: All SNOMED codes validated via SNOMED CT browser
 * $SCT#5159002 "Physiologic monitoring system"
 * $SCT#706767009 "Patient data recorder"
 * $SCT#49062001 "Device"
 * $SCT#13288007 "Monitor"
-* $SCT#444699000 "Tape measure"
-* $SCT#44056008  "Digital scale"
+// REMOVED 2026-01-09: 444699000 was WRONG (= "Medullary cystic kidney disease type 1", not "Tape measure")
+// REMOVED 2026-01-09: 44056008 was WRONG (= "Caliper", not "Digital scale")
+// GAP: SNOMED CT lacks specific codes for common consumer measurement devices
+// TODO: Submit concept requests to SNOMED International for tape measure and digital scale
+* $SCT#706169001 "Weighing scale, device"  // Correct code for scales
 
 Instance: WeightWithConditions
 InstanceOf: WeightObservation

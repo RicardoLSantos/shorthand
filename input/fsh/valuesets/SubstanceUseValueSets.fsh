@@ -53,6 +53,9 @@ Description: "Status categories for alcohol consumption"
 * $SCT#43783005 "Moderate drinker (finding)"
 * $SCT#228279004 "Heavy drinker (finding)"
 * $SCT#228281002 "Problem drinker (finding)"
+// NOTE 2026-01-09: 160573003 is marked INACTIVE in SNOMED CT. Kept for clinical completeness.
+// "Unknown" status is critical for data capture when patient alcohol use is not documented.
+// No active replacement concept found in SNOMED CT as of Jan 2026.
 * $SCT#160573003 "Alcohol intake unknown"
 
 ValueSet: AlcoholDrinkingFrequencyVS
