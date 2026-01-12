@@ -138,26 +138,26 @@ Title: "Micronutrients - Adequate Intake"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = $LOINC#LP31388-5 "Micronutrients"
+* code = $LOINC#81941-7 "Micronutrient intake panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
 
-* component[vitaminD].code = $LOINC#35211-2 "Vitamin D intake Dietary"
+* component[vitaminD].code = $LOINC#81929-2 "Vitamin D intake 24 hour Estimated"
 * component[vitaminD].valueQuantity = 800 '[IU]' "international unit"
 
-* component[vitaminC].code = $LOINC#35209-6 "Vitamin C intake Dietary"
+* component[vitaminC].code = $LOINC#81074-7 "Vitamin C intake 24 hour Estimated"
 * component[vitaminC].valueQuantity = 95 'mg' "milligram"
 
-* component[calcium].code = $LOINC#35199-9 "Calcium intake Dietary"
+* component[calcium].code = $LOINC#81137-2 "Calcium intake 24 hour Estimated"
 * component[calcium].valueQuantity = 1100 'mg' "milligram"
 
-* component[iron].code = $LOINC#35205-4 "Iron intake Dietary"
+* component[iron].code = $LOINC#81082-0 "Iron intake 24 hour Estimated"
 * component[iron].valueQuantity = 12 'mg' "milligram"
 
-* component[magnesium].code = $LOINC#35195-7 "Magnesium intake Dietary"
+* component[magnesium].code = $LOINC#81005-1 "Magnesium intake 24 hour Estimated"
 * component[magnesium].valueQuantity = 380 'mg' "milligram"
 
-* component[sodium].code = $LOINC#9064-7 "Sodium intake 24 hour"
+* component[sodium].code = $LOINC#81011-9 "Sodium intake 24 hour Estimated"
 * component[sodium].valueQuantity = 2100 'mg' "milligram"
 
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
@@ -171,20 +171,20 @@ Title: "Micronutrients - Deficient Intake"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = $LOINC#LP31388-5 "Micronutrients"
+* code = $LOINC#81941-7 "Micronutrient intake panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
 
-* component[vitaminD].code = $LOINC#35211-2 "Vitamin D intake Dietary"
+* component[vitaminD].code = $LOINC#81929-2 "Vitamin D intake 24 hour Estimated"
 * component[vitaminD].valueQuantity = 200 '[IU]' "international unit"
 
-* component[vitaminB12].code = $LOINC#35202-1 "Vitamin B12 intake Dietary"
+* component[vitaminB12].code = $LOINC#81062-2 "Vitamin B12 intake 24 hour Estimated"
 * component[vitaminB12].valueQuantity = 1.2 'ug' "microgram"
 
-* component[calcium].code = $LOINC#35199-9 "Calcium intake Dietary"
+* component[calcium].code = $LOINC#81137-2 "Calcium intake 24 hour Estimated"
 * component[calcium].valueQuantity = 450 'mg' "milligram"
 
-* component[iron].code = $LOINC#35205-4 "Iron intake Dietary"
+* component[iron].code = $LOINC#81082-0 "Iron intake 24 hour Estimated"
 * component[iron].valueQuantity = 6 'mg' "milligram"
 
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"

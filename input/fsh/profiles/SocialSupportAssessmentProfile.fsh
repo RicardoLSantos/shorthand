@@ -37,7 +37,7 @@ Profile for social support assessment using validated instruments.
 **Clinical Relevance**: Strong social support associated with 50% reduced mortality risk
 (Holt-Lunstad et al., 2010, PLoS Medicine). Low support linked to depression, CVD, poor recovery.
 
-**LOINC**: 67234-7 |Social support level|
+**LOINC**: 91642-9 |Medical Outcomes Study Social Support Survey panel [MOS Social Support Survey]|
 """
 
 * ^version = "0.1.0"
@@ -49,7 +49,7 @@ Profile for social support assessment using validated instruments.
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = $LOINC#67234-7 "Social support level"
+* code = $LOINC#91642-9 "Medical Outcomes Study Social Support Survey panel [MOS Social Support Survey]"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effectiveDateTime 1..1 MS

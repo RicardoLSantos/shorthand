@@ -45,7 +45,7 @@ Title: "Loneliness Assessment - High Score"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = $LOINC#67233-9 "How often do you feel lonely"
+* code = $LOINC#62933-7 "PhenX - social isolation protocol 181001"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T10:30:00Z"
 * valueCodeableConcept = LonelinessFrequencyCS#often "Often"
@@ -67,7 +67,7 @@ Title: "Loneliness Assessment - Low Score"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = $LOINC#67233-9 "How often do you feel lonely"
+* code = $LOINC#62933-7 "PhenX - social isolation protocol 181001"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T10:30:00Z"
 * valueCodeableConcept = LonelinessFrequencyCS#hardly-ever "Hardly ever"
@@ -90,7 +90,7 @@ Title: "Social Support Assessment - High MSPSS"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = $LOINC#67234-7 "Social support level"
+* code = $LOINC#91642-9 "Medical Outcomes Study Social Support Survey panel [MOS Social Support Survey]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T11:00:00Z"
 * valueCodeableConcept = SocialSupportLevelCS#high "High Support"
@@ -114,7 +114,7 @@ Title: "Social Support Assessment - Low MSPSS"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = $LOINC#67234-7 "Social support level"
+* code = $LOINC#91642-9 "Medical Outcomes Study Social Support Survey panel [MOS Social Support Survey]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T11:00:00Z"
 * valueCodeableConcept = SocialSupportLevelCS#low "Low Support"
@@ -139,7 +139,7 @@ Title: "Family Structure - Living Alone"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = $LOINC#63512-8 "Are you currently living with someone"
+* code = $LOINC#63512-8 "How many people are living or staying at this address [#]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T09:00:00Z"
 * valueCodeableConcept = LivingSituationCS#alone "Living Alone"
@@ -164,7 +164,7 @@ Title: "Family Structure - Multigenerational"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = $LOINC#63512-8 "Are you currently living with someone"
+* code = $LOINC#63512-8 "How many people are living or staying at this address [#]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T09:00:00Z"
 * valueCodeableConcept = LivingSituationCS#multigenerational "Multigenerational"

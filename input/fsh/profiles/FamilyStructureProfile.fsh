@@ -40,7 +40,7 @@ or insufficient relationships (OR = 1.50, 95% CI: 1.42-1.59).
 - Supports holistic lifestyle medicine interventions
 - Enables population health management
 
-**LOINC**: 63512-8 |Are you currently living with someone|
+**LOINC**: 63512-8 |How many people are living or staying at this address [#]|
 
 References:
 - Holt-Lunstad J et al. (2010). PLoS Medicine 7(7):e1000316
@@ -57,7 +57,7 @@ References:
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = $LOINC#63512-8 "Are you currently living with someone"
+* code = $LOINC#63512-8 "How many people are living or staying at this address [#]"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effectiveDateTime 1..1 MS
@@ -221,7 +221,8 @@ Description: "Marital or partnership status"
 * $SCT#33553000 "Widowed"
 * $SCT#20295000 "Divorced"
 * $SCT#13184001 "Separated"
-* $SCT#442751008 "Civil partnership"
+// Note: 442751008 "Civil partnership" is UK SNOMED extension, not in International Edition
+// For UK implementations, add: * $SCT#442751008 "Civil partnership"
 * $SCT#14012001 "Cohabiting"
 
 ValueSet: CaregiverRoleVS

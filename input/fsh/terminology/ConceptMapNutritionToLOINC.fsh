@@ -111,43 +111,43 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #vitamin-d-intake
 * group[=].element[=].display = "Vitamin D intake"
-* group[=].element[=].target[+].code = #35211-2
-* group[=].element[=].target[=].display = "Vitamin D intake Dietary"
+* group[=].element[=].target[+].code = #81929-2
+* group[=].element[=].target[=].display = "Vitamin D intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM (2011): 600-800 IU/day"
 
 * group[=].element[+].code = #vitamin-c-intake
 * group[=].element[=].display = "Vitamin C intake"
-* group[=].element[=].target[+].code = #35209-6
-* group[=].element[=].target[=].display = "Vitamin C intake Dietary"
+* group[=].element[=].target[+].code = #81074-7
+* group[=].element[=].target[=].display = "Vitamin C intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 75mg women, 90mg men"
 
 * group[=].element[+].code = #vitamin-a-intake
 * group[=].element[=].display = "Vitamin A intake"
-* group[=].element[=].target[+].code = #35198-1
-* group[=].element[=].target[=].display = "Vitamin A intake Dietary"
+* group[=].element[=].target[+].code = #81072-1
+* group[=].element[=].target[=].display = "Vitamin A intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 700mcg RAE women, 900mcg RAE men"
 
 * group[=].element[+].code = #vitamin-e-intake
 * group[=].element[=].display = "Vitamin E intake"
-* group[=].element[=].target[+].code = #35212-0
-* group[=].element[=].target[=].display = "Vitamin E intake Dietary"
+* group[=].element[=].target[+].code = #81076-2
+* group[=].element[=].target[=].display = "Vitamin E intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 15mg/day"
 
 * group[=].element[+].code = #vitamin-b12-intake
 * group[=].element[=].display = "Vitamin B12 intake"
-* group[=].element[=].target[+].code = #35202-1
-* group[=].element[=].target[=].display = "Vitamin B12 intake Dietary"
+* group[=].element[=].target[+].code = #81062-2
+* group[=].element[=].target[=].display = "Vitamin B12 intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 2.4mcg/day"
 
 * group[=].element[+].code = #folate-intake
 * group[=].element[=].display = "Folate intake"
-* group[=].element[=].target[+].code = #35204-7
-* group[=].element[=].target[=].display = "Folate intake Dietary"
+* group[=].element[=].target[+].code = #81066-3
+* group[=].element[=].target[=].display = "Vitamin B9 (Folate) intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 400mcg DFE/day"
 
@@ -158,43 +158,43 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #calcium-intake
 * group[=].element[=].display = "Calcium intake"
-* group[=].element[=].target[+].code = #35199-9
-* group[=].element[=].target[=].display = "Calcium intake Dietary"
+* group[=].element[=].target[+].code = #81137-2
+* group[=].element[=].target[=].display = "Calcium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM (2011): 1000-1200mg/day"
 
 * group[=].element[+].code = #iron-intake
 * group[=].element[=].display = "Iron intake"
-* group[=].element[=].target[+].code = #35205-4
-* group[=].element[=].target[=].display = "Iron intake Dietary"
+* group[=].element[=].target[+].code = #81082-0
+* group[=].element[=].target[=].display = "Iron intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 8mg men, 18mg premenopausal women"
 
 * group[=].element[+].code = #sodium-intake
 * group[=].element[=].display = "Sodium intake"
-* group[=].element[=].target[+].code = #9064-7
-* group[=].element[=].target[=].display = "Sodium intake 24 hour"
+* group[=].element[=].target[+].code = #81011-9
+* group[=].element[=].target[=].display = "Sodium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "DGA 2020: <2300mg/day"
 
 * group[=].element[+].code = #potassium-intake
 * group[=].element[=].display = "Potassium intake"
-* group[=].element[=].target[+].code = #35206-2
-* group[=].element[=].target[=].display = "Potassium intake Dietary"
+* group[=].element[=].target[+].code = #81010-1
+* group[=].element[=].target[=].display = "Potassium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "AI: 2600mg women, 3400mg men"
 
 * group[=].element[+].code = #magnesium-intake
 * group[=].element[=].display = "Magnesium intake"
-* group[=].element[=].target[+].code = #35195-7
-* group[=].element[=].target[=].display = "Magnesium intake Dietary"
+* group[=].element[=].target[+].code = #81005-1
+* group[=].element[=].target[=].display = "Magnesium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 310-320mg women, 400-420mg men"
 
 * group[=].element[+].code = #zinc-intake
 * group[=].element[=].display = "Zinc intake"
-* group[=].element[=].target[+].code = #35213-8
-* group[=].element[=].target[=].display = "Zinc intake Dietary"
+* group[=].element[=].target[+].code = #81089-5
+* group[=].element[=].target[=].display = "Zinc intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 8mg women, 11mg men"
 

@@ -47,7 +47,7 @@ loneliness associated with 26% increased mortality risk (OR=1.26, 95% CI: 1.04-1
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = $LOINC#67233-9 "How often do you feel lonely"
+* code = $LOINC#62933-7 "PhenX - social isolation protocol 181001"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effectiveDateTime 1..1 MS
@@ -72,7 +72,7 @@ loneliness associated with 26% increased mortality risk (OR=1.26, 95% CI: 1.04-1
 
 * component[uclaTotal]
   * ^short = "UCLA Loneliness Scale total score"
-  * code = $LOINC#71956-6 "UCLA Loneliness Scale score"
+  * code = $LOINC#66857-4 "How often do you feel alone [UCLA Loneliness v3]"
   * value[x] only integer
   * valueInteger ^short = "Total score: 20-80 (full) or 3-9 (short)"
 
@@ -95,8 +95,8 @@ loneliness associated with 26% increased mortality risk (OR=1.26, 95% CI: 1.04-1
   * valueCodeableConcept from LonelinessItemResponseVS (required)
 
 * component[frequencyLonely]
-  * ^short = "How often do you feel lonely?"
-  * code = $LOINC#67233-9 "How often do you feel lonely"
+  * ^short = "How often do you feel isolated from others?"
+  * code = $LOINC#66867-3 "How often do you feel isolated from others"
   * value[x] only CodeableConcept
   * valueCodeableConcept from LonelinessFrequencyVS (required)
 

@@ -144,7 +144,7 @@ References:
 * ^date = "2026-01-12"
 * ^publisher = "FMUP HEADS2"
 
-* code = $LOINC#LP31388-5 "Micronutrients"
+* code = $LOINC#81941-7 "Micronutrient intake panel"
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -166,7 +166,7 @@ References:
 // Vitamins
 * component[vitaminD]
   * ^short = "Vitamin D intake (IoM 2011: 600-800 IU/day)"
-  * code = $LOINC#35211-2 "Vitamin D intake Dietary"
+  * code = $LOINC#81929-2 "Vitamin D intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #[IU]
@@ -174,7 +174,7 @@ References:
 
 * component[vitaminC]
   * ^short = "Vitamin C intake (RDA: 75-90 mg/day)"
-  * code = $LOINC#35209-6 "Vitamin C intake Dietary"
+  * code = $LOINC#81074-7 "Vitamin C intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg
@@ -182,7 +182,7 @@ References:
 
 * component[vitaminA]
   * ^short = "Vitamin A intake (RDA: 700-900 mcg RAE/day)"
-  * code = $LOINC#35198-1 "Vitamin A intake Dietary"
+  * code = $LOINC#81072-1 "Vitamin A intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #ug
@@ -190,7 +190,7 @@ References:
 
 * component[vitaminE]
   * ^short = "Vitamin E intake (RDA: 15 mg/day)"
-  * code = $LOINC#35212-0 "Vitamin E intake Dietary"
+  * code = $LOINC#81076-2 "Vitamin E intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg
@@ -198,7 +198,7 @@ References:
 
 * component[vitaminB12]
   * ^short = "Vitamin B12 intake (RDA: 2.4 mcg/day)"
-  * code = $LOINC#35202-1 "Vitamin B12 intake Dietary"
+  * code = $LOINC#81062-2 "Vitamin B12 intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #ug
@@ -206,7 +206,7 @@ References:
 
 * component[folate]
   * ^short = "Folate intake (RDA: 400 mcg DFE/day)"
-  * code = $LOINC#35204-7 "Folate intake Dietary"
+  * code = $LOINC#81066-3 "Vitamin B9 (Folate) intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #ug
@@ -215,7 +215,7 @@ References:
 // Minerals
 * component[calcium]
   * ^short = "Calcium intake (IoM 2011: 1000-1200 mg/day)"
-  * code = $LOINC#35199-9 "Calcium intake Dietary"
+  * code = $LOINC#81137-2 "Calcium intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg
@@ -223,7 +223,7 @@ References:
 
 * component[iron]
   * ^short = "Iron intake (RDA: 8-18 mg/day)"
-  * code = $LOINC#35205-4 "Iron intake Dietary"
+  * code = $LOINC#81082-0 "Iron intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg
@@ -231,7 +231,7 @@ References:
 
 * component[magnesium]
   * ^short = "Magnesium intake (RDA: 310-420 mg/day)"
-  * code = $LOINC#35195-7 "Magnesium intake Dietary"
+  * code = $LOINC#81005-1 "Magnesium intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg
@@ -239,7 +239,7 @@ References:
 
 * component[zinc]
   * ^short = "Zinc intake (RDA: 8-11 mg/day)"
-  * code = $LOINC#35213-8 "Zinc intake Dietary"
+  * code = $LOINC#81089-5 "Zinc intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg
@@ -247,7 +247,7 @@ References:
 
 * component[potassium]
   * ^short = "Potassium intake (AI: 2600-3400 mg/day)"
-  * code = $LOINC#35206-2 "Potassium intake Dietary"
+  * code = $LOINC#81010-1 "Potassium intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg
@@ -255,7 +255,7 @@ References:
 
 * component[sodium]
   * ^short = "Sodium intake (DGA 2020: <2300 mg/day)"
-  * code = $LOINC#9064-7 "Sodium intake 24 hour"
+  * code = $LOINC#81011-9 "Sodium intake 24 hour Estimated"
   * value[x] only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #mg

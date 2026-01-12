@@ -42,47 +42,47 @@ Usage: #definition
 // =============================================================================
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/loneliness-component-cs"
 * group[=].target = "http://loinc.org"
-* group[=].element[+].code = #loneliness-frequency
-* group[=].element[=].display = "Loneliness frequency"
-* group[=].element[=].target[+].code = #67233-9
-* group[=].element[=].target[=].display = "How often do you feel lonely"
+* group[=].element[+].code = #companionship-lack
+* group[=].element[=].display = "Loneliness - lack of companionship"
+* group[=].element[=].target[+].code = #66855-8
+* group[=].element[=].target[=].display = "How often do you feel that you lack companionship"
 * group[=].element[=].target[=].equivalence = #equivalent
-* group[=].element[=].target[=].comment = "Direct LOINC match for loneliness frequency assessment"
+* group[=].element[=].target[=].comment = "UCLA Loneliness Scale v3 item"
 
-* group[=].element[+].code = #ucla-total-score
-* group[=].element[=].display = "UCLA Loneliness Scale total score"
-* group[=].element[=].target[+].code = #71956-6
-* group[=].element[=].target[=].display = "UCLA Loneliness Scale score"
+* group[=].element[+].code = #left-out
+* group[=].element[=].display = "Feeling left out"
+* group[=].element[=].target[+].code = #66857-4
+* group[=].element[=].target[=].display = "How often do you feel alone"
 * group[=].element[=].target[=].equivalence = #equivalent
-* group[=].element[=].target[=].comment = "Russell DW (1996). J Personality Assessment 66(1):20-40"
+* group[=].element[=].target[=].comment = "UCLA Loneliness Scale v3 item"
 
-* group[=].element[+].code = #isolation-feeling
-* group[=].element[=].display = "Feeling of isolation"
-* group[=].element[=].target[+].code = #71143-1
-* group[=].element[=].target[=].display = "I feel isolated from others"
+* group[=].element[+].code = #isolation
+* group[=].element[=].display = "Feeling isolated"
+* group[=].element[=].target[+].code = #66867-3
+* group[=].element[=].target[=].display = "How often do you feel isolated from others"
 * group[=].element[=].target[=].equivalence = #equivalent
-* group[=].element[=].target[=].comment = "PROMIS item for social isolation"
+* group[=].element[=].target[=].comment = "UCLA Loneliness Scale v3 item"
 
 // =============================================================================
 // Group 2: Social Support Assessment Mappings
 // =============================================================================
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-component-cs"
 * group[=].target = "http://loinc.org"
-* group[=].element[+].code = #social-support-level
-* group[=].element[=].display = "Social support level"
-* group[=].element[=].target[+].code = #67234-7
-* group[=].element[=].target[=].display = "Social support level"
+* group[=].element[+].code = #total-score
+* group[=].element[=].display = "Social support total score"
+* group[=].element[=].target[+].code = #91642-9
+* group[=].element[=].target[=].display = "Medical Outcomes Study Social Support Survey panel"
 * group[=].element[=].target[=].equivalence = #equivalent
 
-* group[=].element[+].code = #mspss-total
-* group[=].element[=].display = "MSPSS total score"
-* group[=].element[=].target[+].code = #71956-6
-* group[=].element[=].target[=].display = "Perceived social support score"
-* group[=].element[=].target[=].equivalence = #relatedto
-* group[=].element[=].target[=].comment = "Zimet GD et al. (1988). J Personality Assessment 52(1):30-41"
-
 * group[=].element[+].code = #emotional-support
-* group[=].element[=].display = "Emotional support"
+* group[=].element[=].display = "Emotional support score"
+* group[=].element[=].target[+].code = #91663-5
+* group[=].element[=].target[=].display = "Social support index [MOS Social Support Survey]"
+* group[=].element[=].target[=].equivalence = #relatedto
+* group[=].element[=].target[=].comment = "MOS-SSS overall social support index"
+
+* group[=].element[+].code = #affective-support
+* group[=].element[=].display = "Affective support"
 * group[=].element[=].target[+].code = #89399-9
 * group[=].element[=].target[=].display = "Emotional support available"
 * group[=].element[=].target[=].equivalence = #equivalent
@@ -92,55 +92,42 @@ Usage: #definition
 // =============================================================================
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/family-structure-cs"
 * group[=].target = "http://loinc.org"
-* group[=].element[+].code = #living-situation
-* group[=].element[=].display = "Living situation"
-* group[=].element[=].target[+].code = #63512-8
-* group[=].element[=].target[=].display = "Are you currently living with someone"
-* group[=].element[=].target[=].equivalence = #equivalent
-
-* group[=].element[+].code = #marital-status
-* group[=].element[=].display = "Marital status"
-* group[=].element[=].target[+].code = #45404-1
-* group[=].element[=].target[=].display = "Marital status"
-* group[=].element[=].target[=].equivalence = #equivalent
-
 * group[=].element[+].code = #household-size
-* group[=].element[=].display = "Household size"
+* group[=].element[=].display = "Living situation - household size"
+* group[=].element[=].target[+].code = #63512-8
+* group[=].element[=].target[=].display = "How many people are living or staying at this address [#]"
+* group[=].element[=].target[=].equivalence = #equivalent
+
+// Note: marital-status is handled in component with LOINC 45404-1
+// Code not in family-structure-cs - use LOINC directly in profiles
+
+* group[=].element[+].code = #dependent-count
+* group[=].element[=].display = "Number of dependents"
 * group[=].element[=].target[+].code = #63503-7
 * group[=].element[=].target[=].display = "Number of family members in household"
 * group[=].element[=].target[=].equivalence = #equivalent
 
 // =============================================================================
 // Group 4: Social Connection Panel
+// Note: LOINC panel codes used directly in profiles:
+// - 76506-5 "Social connection and isolation panel"
+// - 93038-8 "PRAPARE Social isolation"
+// These are LOINC-native concepts, not custom CodeSystem codes
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-interaction-type-cs"
-* group[=].target = "http://loinc.org"
-* group[=].element[+].code = #social-connection-panel
-* group[=].element[=].display = "Social connection assessment"
-* group[=].element[=].target[+].code = #76506-5
-* group[=].element[=].target[=].display = "Social connection and isolation panel"
-* group[=].element[=].target[=].equivalence = #equivalent
-
-* group[=].element[+].code = #social-isolation-screening
-* group[=].element[=].display = "Social isolation screening"
-* group[=].element[=].target[+].code = #93038-8
-* group[=].element[=].target[=].display = "Protocol for Responding to and Assessing Patients Assets Risks and Experiences - Social isolation"
-* group[=].element[=].target[=].equivalence = #relatedto
-* group[=].element[=].target[=].comment = "PRAPARE social isolation screening item"
 
 // =============================================================================
 // Group 5: GAP Documentation - Concepts without direct LOINC mapping
 // =============================================================================
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-component-cs"
 * group[=].target = "http://loinc.org"
-* group[=].element[+].code = #family-support-subscale
+* group[=].element[+].code = #family-support
 * group[=].element[=].display = "MSPSS Family subscale"
 * group[=].element[=].target[+].code = #LA137-2
 * group[=].element[=].target[=].display = "Family member"
 * group[=].element[=].target[=].equivalence = #inexact
 * group[=].element[=].target[=].comment = "GAP: No specific LOINC for MSPSS subscales; use custom code with reference"
 
-* group[=].element[+].code = #friend-support-subscale
+* group[=].element[+].code = #friend-support
 * group[=].element[=].display = "MSPSS Friends subscale"
 * group[=].element[=].target[+].code = #LA137-2
 * group[=].element[=].target[=].display = "Friend"
