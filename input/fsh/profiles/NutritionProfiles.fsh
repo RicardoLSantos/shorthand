@@ -1,3 +1,16 @@
+// =============================================================================
+// Nutrition Profiles - F2.11 Enhancement
+// =============================================================================
+// Updated: 2026-01-12
+// Added: MicronutrientsObservation profile with vitamin/mineral tracking
+//
+// References:
+// - IoM (2005). Dietary Reference Intakes for Energy, Carbohydrate, etc. NAP.
+// - IoM (2011). Dietary Reference Intakes for Calcium and Vitamin D. NAP.
+// - USDA (2020). Dietary Guidelines for Americans 2020-2025
+// - Mifflin MD et al. (1990). Am J Clin Nutr 51(2):241-247
+// =============================================================================
+
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
@@ -86,3 +99,169 @@ Description: "Profile for macronutrient intake measurements"
 * component[fats].valueQuantity.system = $UCUM
 * component[fats].valueQuantity.code = #g
 * component[fats].valueQuantity.unit = "gram"
+
+// =============================================================================
+// F2.11.3: Micronutrients Observation Profile
+// =============================================================================
+// References:
+// - IoM (2011). DRI for Calcium and Vitamin D. NAP. DOI:10.17226/13050
+// - IoM (2001). DRI for Vitamin A, K, Arsenic... NAP.
+// - Bailey RL et al. (2015). Ann Nutr Metab 66(Suppl 2):22-33. DOI:10.1159/000371618
+// =============================================================================
+
+Profile: MicronutrientsObservation
+Parent: NutritionIntakeObservation
+Id: micronutrients-observation
+Title: "Micronutrients Observation Profile"
+Description: """
+Profile for micronutrient (vitamin and mineral) intake measurements.
+
+**Vitamins tracked**:
+- Vitamin D: 600-800 IU/day (IoM 2011)
+- Vitamin C: 75-90 mg/day
+- Vitamin A: 700-900 mcg RAE/day
+- Vitamin E: 15 mg/day
+- Vitamin B12: 2.4 mcg/day
+- Folate: 400 mcg DFE/day
+
+**Minerals tracked**:
+- Calcium: 1000-1200 mg/day (IoM 2011)
+- Iron: 8-18 mg/day
+- Magnesium: 310-420 mg/day
+- Zinc: 8-11 mg/day
+- Potassium: 2600-3400 mg/day
+
+**LOINC Codes**: Each component mapped to verified LOINC codes.
+
+References:
+- IoM (2011). DRI for Calcium and Vitamin D. DOI:10.17226/13050
+- IoM (2001). DRI for Vitamins and Minerals
+- Bailey RL et al. (2015). Ann Nutr Metab 66(Suppl 2):22-33
+"""
+
+* ^version = "0.1.0"
+* ^status = #active
+* ^date = "2026-01-12"
+* ^publisher = "FMUP HEADS2"
+
+* code = $LOINC#LP31388-5 "Micronutrients"
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+
+* component contains
+    vitaminD 0..1 MS and
+    vitaminC 0..1 MS and
+    vitaminA 0..1 MS and
+    vitaminE 0..1 MS and
+    vitaminB12 0..1 MS and
+    folate 0..1 MS and
+    calcium 0..1 MS and
+    iron 0..1 MS and
+    magnesium 0..1 MS and
+    zinc 0..1 MS and
+    potassium 0..1 MS and
+    sodium 0..1 MS
+
+// Vitamins
+* component[vitaminD]
+  * ^short = "Vitamin D intake (IoM 2011: 600-800 IU/day)"
+  * code = $LOINC#35211-2 "Vitamin D intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #[IU]
+  * valueQuantity.unit = "international unit"
+
+* component[vitaminC]
+  * ^short = "Vitamin C intake (RDA: 75-90 mg/day)"
+  * code = $LOINC#35209-6 "Vitamin C intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* component[vitaminA]
+  * ^short = "Vitamin A intake (RDA: 700-900 mcg RAE/day)"
+  * code = $LOINC#35198-1 "Vitamin A intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #ug
+  * valueQuantity.unit = "microgram"
+
+* component[vitaminE]
+  * ^short = "Vitamin E intake (RDA: 15 mg/day)"
+  * code = $LOINC#35212-0 "Vitamin E intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* component[vitaminB12]
+  * ^short = "Vitamin B12 intake (RDA: 2.4 mcg/day)"
+  * code = $LOINC#35202-1 "Vitamin B12 intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #ug
+  * valueQuantity.unit = "microgram"
+
+* component[folate]
+  * ^short = "Folate intake (RDA: 400 mcg DFE/day)"
+  * code = $LOINC#35204-7 "Folate intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #ug
+  * valueQuantity.unit = "microgram"
+
+// Minerals
+* component[calcium]
+  * ^short = "Calcium intake (IoM 2011: 1000-1200 mg/day)"
+  * code = $LOINC#35199-9 "Calcium intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* component[iron]
+  * ^short = "Iron intake (RDA: 8-18 mg/day)"
+  * code = $LOINC#35205-4 "Iron intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* component[magnesium]
+  * ^short = "Magnesium intake (RDA: 310-420 mg/day)"
+  * code = $LOINC#35195-7 "Magnesium intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* component[zinc]
+  * ^short = "Zinc intake (RDA: 8-11 mg/day)"
+  * code = $LOINC#35213-8 "Zinc intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* component[potassium]
+  * ^short = "Potassium intake (AI: 2600-3400 mg/day)"
+  * code = $LOINC#35206-2 "Potassium intake Dietary"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* component[sodium]
+  * ^short = "Sodium intake (DGA 2020: <2300 mg/day)"
+  * code = $LOINC#9064-7 "Sodium intake 24 hour"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #mg
+  * valueQuantity.unit = "milligram"
+
+* interpretation 0..1 MS
+* interpretation ^short = "Adequacy assessment (adequate, deficient, excessive)"
+* note 0..* MS
+* note ^short = "Notes on dietary sources or supplementation"

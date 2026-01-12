@@ -53,10 +53,10 @@ Description: "Status categories for alcohol consumption"
 * $SCT#43783005 "Moderate drinker (finding)"
 * $SCT#228279004 "Heavy drinker (finding)"
 * $SCT#228281002 "Problem drinker (finding)"
-// NOTE 2026-01-09: 160573003 is marked INACTIVE in SNOMED CT. Kept for clinical completeness.
+// FIX 2026-01-12: Replaced inactive 160573003 with active 261665006 "Unknown (qualifier value)"
 // "Unknown" status is critical for data capture when patient alcohol use is not documented.
-// No active replacement concept found in SNOMED CT as of Jan 2026.
-* $SCT#160573003 "Alcohol intake unknown"
+// 261665006 is the standard SNOMED qualifier for unknown values.
+* $SCT#261665006 "Unknown (qualifier value)"
 
 ValueSet: AlcoholDrinkingFrequencyVS
 Id: alcohol-drinking-frequency-vs
@@ -165,7 +165,8 @@ Description: "Status categories for recreational substance use"
 * $SCT#44870007 "Substance misuse (finding)"
 * $SCT#707848009 "Never used recreational drugs (finding)"
 * $SCT#228368007 "Former drug user (finding)"
-* $SCT#228369004 "Current drug user (finding)"
+// FIX 2026-01-12: Replaced 228369004 (inactive) with 424848002 (active equivalent)
+* $SCT#424848002 "Recreational drug user (finding)"
 
 ValueSet: RecreationalSubstanceTypeVS
 Id: recreational-substance-type-vs

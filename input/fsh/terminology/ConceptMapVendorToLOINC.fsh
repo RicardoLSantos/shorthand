@@ -43,13 +43,13 @@ Usage: #definition
 * group[0].source = "https://developer.apple.com/documentation/healthkit"
 * group[0].target = "http://loinc.org"
 
-// HRV - CRITICAL VENDOR ERROR DOCUMENTED
+// HRV - Apple correctly reports SDNN (CORRECTED 2026-01-07)
 * group[0].element[0].code = #HKQuantityTypeIdentifierHeartRateVariabilitySDNN
 * group[0].element[0].display = "Heart Rate Variability SDNN"
 * group[0].element[0].target[0].code = #80404-7
 * group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
 * group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "CRITICAL VENDOR ERROR: Apple mislabels this metric. Despite the identifier name containing 'SDNN', Apple Watch actually measures and returns RMSSD (Root Mean Square of Successive Differences), NOT SDNN. This is a well-documented naming error in Apple's HealthKit API. Implementers must map to LOINC 80404-7 but understand the actual metric is RMSSD. See: Hernando et al. 2018, Sensors 18(8):2619."
+* group[0].element[0].target[0].comment = "VERIFIED 2026-01-07: Apple Watch correctly reports SDNN via HKQuantityTypeIdentifierHeartRateVariabilitySDNN. Note: RMSSD would be clinically preferable for short-term parasympathetic assessment (Shaffer 2017), but Apple chose to expose SDNN. Third-party apps can compute RMSSD from raw RR intervals. See: Hernando et al. 2018, Sensors 18(8):2619; Marco Altini analysis."
 
 // Heart Rate
 * group[0].element[1].code = #HKQuantityTypeIdentifierHeartRate
@@ -125,7 +125,7 @@ Usage: #definition
 * group[1].element[0].code = #activities-heart-hrv-dailyRmssd
 * group[1].element[0].display = "Daily RMSSD"
 * group[1].element[0].target[0].equivalence = #unmatched
-* group[1].element[0].target[0].comment = "Fitbit correctly labels RMSSD (unlike Apple). However, NO LOINC code exists for RMSSD as of November 2024. Maps conceptually to parasympathetic activity. Fitbit API: GET /1/user/-/hrv/date/{date}.json"
+* group[1].element[0].target[0].comment = "GAP CONFIRMED: NO LOINC code exists for RMSSD (verified 2026-01-07). RMSSD is the primary parasympathetic HRV marker used by most wearables (Fitbit, Garmin, Oura). Apple chose SDNN instead. Maps conceptually to vagal activity. Fitbit API: GET /1/user/-/hrv/date/{date}.json"
 
 // Daily Steps
 * group[1].element[1].code = #activities-steps

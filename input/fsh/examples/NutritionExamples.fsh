@@ -1,3 +1,18 @@
+// =============================================================================
+// Nutrition Examples - F2.11.5 Expansion
+// =============================================================================
+// Updated: 2026-01-12
+// Added: Micronutrients examples with DRI references
+//
+// References:
+// - IoM (2011). DRI for Calcium and Vitamin D. NAP. DOI:10.17226/13050
+// - USDA (2020). Dietary Guidelines for Americans 2020-2025
+// =============================================================================
+
+Alias: $LOINC = http://loinc.org
+Alias: $UCUM = http://unitsofmeasure.org
+Alias: $SCT = http://snomed.info/sct
+
 Instance: NutritionQuestionnaireResponseExample
 InstanceOf: QuestionnaireResponse
 Usage: #example
@@ -110,3 +125,104 @@ Title: "Nutrition Intake Observation Example"
 * note.text = "Lunch meal - Mediterranean diet"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-data-source"
 * extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-data-source-cs#manual "Manual Entry"
+
+// -----------------------------------------------------------------------------
+// F2.11.5: Micronutrients Examples
+// -----------------------------------------------------------------------------
+
+Instance: MicronutrientsAdequateExample
+InstanceOf: MicronutrientsObservation
+Usage: #example
+Description: "Micronutrients observation - adequate intake meeting DRIs"
+Title: "Micronutrients - Adequate Intake"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* code = $LOINC#LP31388-5 "Micronutrients"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T20:00:00Z"
+
+* component[vitaminD].code = $LOINC#35211-2 "Vitamin D intake Dietary"
+* component[vitaminD].valueQuantity = 800 '[IU]' "international unit"
+
+* component[vitaminC].code = $LOINC#35209-6 "Vitamin C intake Dietary"
+* component[vitaminC].valueQuantity = 95 'mg' "milligram"
+
+* component[calcium].code = $LOINC#35199-9 "Calcium intake Dietary"
+* component[calcium].valueQuantity = 1100 'mg' "milligram"
+
+* component[iron].code = $LOINC#35205-4 "Iron intake Dietary"
+* component[iron].valueQuantity = 12 'mg' "milligram"
+
+* component[magnesium].code = $LOINC#35195-7 "Magnesium intake Dietary"
+* component[magnesium].valueQuantity = 380 'mg' "milligram"
+
+* component[sodium].code = $LOINC#9064-7 "Sodium intake 24 hour"
+* component[sodium].valueQuantity = 2100 'mg' "milligram"
+
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* note.text = "Adequate micronutrient intake from varied diet; no supplementation required"
+
+Instance: MicronutrientsDeficientExample
+InstanceOf: MicronutrientsObservation
+Usage: #example
+Description: "Micronutrients observation - deficient intake below DRIs"
+Title: "Micronutrients - Deficient Intake"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* code = $LOINC#LP31388-5 "Micronutrients"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T20:00:00Z"
+
+* component[vitaminD].code = $LOINC#35211-2 "Vitamin D intake Dietary"
+* component[vitaminD].valueQuantity = 200 '[IU]' "international unit"
+
+* component[vitaminB12].code = $LOINC#35202-1 "Vitamin B12 intake Dietary"
+* component[vitaminB12].valueQuantity = 1.2 'ug' "microgram"
+
+* component[calcium].code = $LOINC#35199-9 "Calcium intake Dietary"
+* component[calcium].valueQuantity = 450 'mg' "milligram"
+
+* component[iron].code = $LOINC#35205-4 "Iron intake Dietary"
+* component[iron].valueQuantity = 6 'mg' "milligram"
+
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
+* note.text = "Multiple micronutrient deficiencies; consider supplementation and dietary counseling"
+
+Instance: MacronutrientsCompleteExample
+InstanceOf: MacronutrientsObservation
+Usage: #example
+Description: "Complete macronutrients with all three components"
+Title: "Macronutrients - Complete Daily Assessment"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#macronutrients-panel "Macronutrients intake panel"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T20:00:00Z"
+
+* component[carbohydrates].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#carbohydrate-intake "Carbohydrate intake"
+* component[carbohydrates].valueQuantity = 275 'g' "gram"
+
+* component[proteins].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#protein-intake "Protein intake"
+* component[proteins].valueQuantity = 85 'g' "gram"
+
+* component[fats].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#fat-intake "Fat intake"
+* component[fats].valueQuantity = 70 'g' "gram"
+
+* note.text = "Distribution: ~52% carbs, ~16% protein, ~32% fat - within DGA 2020 recommendations"
+
+Instance: HydrationExample
+InstanceOf: WaterIntakeObservation
+Usage: #example
+Description: "Hydration tracking with EFSA reference"
+Title: "Water Intake - Adequate Hydration"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T20:00:00Z"
+* valueQuantity = 2400 'mL' "milliliter"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* note.text = "Adequate hydration per EFSA 2010 guidelines (2.5L/day for adult males)"

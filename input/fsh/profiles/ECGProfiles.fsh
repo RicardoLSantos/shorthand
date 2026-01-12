@@ -147,7 +147,8 @@ Title: "QT Interpretation ValueSet"
 Description: "Interpretation codes for QT interval findings"
 * ^experimental = false
 // Note: SNOMED 78976005 and 251161004 removed - not found in SNOMED CT International 2025-02
-* $SCT#17338001 "Prolonged QT interval syndrome"
+// FIX 2026-01-12: Replaced 17338001 (inactive) with 9651007 (active equivalent)
+* $SCT#9651007 "Long QT syndrome (disorder)"
 * http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
 * http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
 * http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#HH "Critical High"

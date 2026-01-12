@@ -51,7 +51,7 @@ Usage: #definition
 * group[0].element[1].code = #hrv-rmssd
 * group[0].element[1].display = "HRV RMSSD (Root Mean Square of Successive Differences)"
 * group[0].element[1].target[0].equivalence = #unmatched
-* group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code exists for RMSSD. Primary parasympathetic marker (HRV Task Force 1996). NOTE: Apple HealthKit mislabels this as 'SDNN' (HKQuantityTypeIdentifierHeartRateVariabilitySDNN). Submission to LOINC committee recommended."
+* group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code exists for RMSSD. Primary parasympathetic marker (HRV Task Force 1996). NOTE: Apple exposes SDNN instead of RMSSD; most other wearables (Fitbit, Garmin, Oura) report RMSSD. Submission to LOINC committee recommended."
 
 // ============================================================================
 // pNN50 - GAP CONFIRMED 2025-12-08 ❌

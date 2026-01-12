@@ -1,8 +1,20 @@
+// =============================================================================
+// Social Interaction Examples - F2.12.5 Expansion
+// =============================================================================
+// Added: 2026-01-12
+// References: Plan PLAN_FHIR_IG_PILLARS_BALANCE_20260112.md
+// =============================================================================
+
+Alias: $LOINC = http://loinc.org
+
+// -----------------------------------------------------------------------------
+// Example 1: Basic Social Interaction (Original)
+// -----------------------------------------------------------------------------
 Instance: SocialInteractionExample
 InstanceOf: SocialInteractionProfile
 Usage: #example
-Description: "Social interaction observation example"
-Title: "Social Interaction Example"
+Description: "Social interaction observation example - family meal gathering"
+Title: "Social Interaction Example - Family Meal"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
@@ -20,3 +32,218 @@ Title: "Social Interaction Example"
 * extension[context].valueCodeableConcept = SocialContextCS#home
 * extension[support].valueCodeableConcept = SocialSupportCS#strong
 * extension[activity].valueCodeableConcept = SocialActivityCS#meal
+
+// -----------------------------------------------------------------------------
+// Example 2: Loneliness Assessment - High Loneliness (UCLA 3-item)
+// Reference: Hughes ME et al. (2004). Research on Aging 26(6):655-672
+// -----------------------------------------------------------------------------
+Instance: LonelinessAssessmentHighExample
+InstanceOf: LonelinessAssessmentProfile
+Usage: #example
+Description: "Loneliness assessment example - elderly patient with high loneliness score"
+Title: "Loneliness Assessment - High Score"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = $LOINC#67233-9 "How often do you feel lonely"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T10:30:00Z"
+* valueCodeableConcept = LonelinessFrequencyCS#often "Often"
+* method = LonelinessAssessmentMethodCS#ucla-3 "UCLA Loneliness Scale (3-item)"
+
+* component[uclaTotal].valueInteger = 8
+* component[companionshipLack].valueCodeableConcept = LonelinessFrequencyCS#often
+* component[leftOutFeeling].valueCodeableConcept = LonelinessFrequencyCS#often
+* component[isolationFeeling].valueCodeableConcept = LonelinessFrequencyCS#some-of-time
+
+// -----------------------------------------------------------------------------
+// Example 3: Loneliness Assessment - Low Loneliness
+// -----------------------------------------------------------------------------
+Instance: LonelinessAssessmentLowExample
+InstanceOf: LonelinessAssessmentProfile
+Usage: #example
+Description: "Loneliness assessment example - well-connected individual"
+Title: "Loneliness Assessment - Low Score"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = $LOINC#67233-9 "How often do you feel lonely"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T10:30:00Z"
+* valueCodeableConcept = LonelinessFrequencyCS#hardly-ever "Hardly ever"
+* method = LonelinessAssessmentMethodCS#ucla-3 "UCLA Loneliness Scale (3-item)"
+
+* component[uclaTotal].valueInteger = 3
+* component[companionshipLack].valueCodeableConcept = LonelinessFrequencyCS#hardly-ever
+* component[leftOutFeeling].valueCodeableConcept = LonelinessFrequencyCS#hardly-ever
+* component[isolationFeeling].valueCodeableConcept = LonelinessFrequencyCS#hardly-ever
+
+// -----------------------------------------------------------------------------
+// Example 4: Social Support Assessment - MSPSS High Support
+// Reference: Zimet GD et al. (1988). J Personality Assessment 52(1):30-41
+// -----------------------------------------------------------------------------
+Instance: SocialSupportHighExample
+InstanceOf: SocialSupportAssessmentProfile
+Usage: #example
+Description: "Social support assessment - high MSPSS scores across all subscales"
+Title: "Social Support Assessment - High MSPSS"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = $LOINC#67234-7 "Social support level"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T11:00:00Z"
+* valueCodeableConcept = SocialSupportLevelCS#high "High Support"
+* method = SocialSupportAssessmentMethodCS#mspss "MSPSS"
+
+* component[totalScore].valueQuantity = 72 '{score}' "score"
+* component[familySupport].valueQuantity = 24 '{score}' "score"
+* component[friendSupport].valueQuantity = 22 '{score}' "score"
+* component[significantOtherSupport].valueQuantity = 26 '{score}' "score"
+
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
+
+// -----------------------------------------------------------------------------
+// Example 5: Social Support Assessment - Low Support
+// -----------------------------------------------------------------------------
+Instance: SocialSupportLowExample
+InstanceOf: SocialSupportAssessmentProfile
+Usage: #example
+Description: "Social support assessment - low MSPSS scores indicating social vulnerability"
+Title: "Social Support Assessment - Low MSPSS"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = $LOINC#67234-7 "Social support level"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T11:00:00Z"
+* valueCodeableConcept = SocialSupportLevelCS#low "Low Support"
+* method = SocialSupportAssessmentMethodCS#mspss "MSPSS"
+
+* component[totalScore].valueQuantity = 28 '{score}' "score"
+* component[familySupport].valueQuantity = 8 '{score}' "score"
+* component[friendSupport].valueQuantity = 12 '{score}' "score"
+* component[significantOtherSupport].valueQuantity = 8 '{score}' "score"
+
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
+
+// -----------------------------------------------------------------------------
+// Example 6: Family Structure - Living Alone Elderly
+// Reference: Holt-Lunstad J et al. (2010). PLoS Medicine 7(7):e1000316
+// -----------------------------------------------------------------------------
+Instance: FamilyStructureLivingAloneExample
+InstanceOf: FamilyStructureProfile
+Usage: #example
+Description: "Family structure - widowed elderly patient living alone"
+Title: "Family Structure - Living Alone"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = $LOINC#63512-8 "Are you currently living with someone"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T09:00:00Z"
+* valueCodeableConcept = LivingSituationCS#alone "Living Alone"
+
+* component[householdSize].valueInteger = 1
+* component[maritalStatus].valueCodeableConcept = $SCT#33553000 "Widowed"
+* component[dependentCount].valueInteger = 0
+* component[caregiverRole].valueCodeableConcept = CaregiverRoleCS#not-applicable
+* component[familyRelationshipQuality].valueCodeableConcept = RelationshipQualityCS#generally-positive
+* component[householdType].valueCodeableConcept = HouseholdTypeCS#single-person
+
+* note.text = "Patient widowed 18 months ago. Adult children live in different city but maintain regular contact."
+
+// -----------------------------------------------------------------------------
+// Example 7: Family Structure - Multigenerational Household
+// -----------------------------------------------------------------------------
+Instance: FamilyStructureMultigenerationalExample
+InstanceOf: FamilyStructureProfile
+Usage: #example
+Description: "Family structure - multigenerational household with caregiving"
+Title: "Family Structure - Multigenerational"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = $LOINC#63512-8 "Are you currently living with someone"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-10T09:00:00Z"
+* valueCodeableConcept = LivingSituationCS#multigenerational "Multigenerational"
+
+* component[householdSize].valueInteger = 5
+* component[maritalStatus].valueCodeableConcept = $SCT#87915002 "Married"
+* component[dependentCount].valueInteger = 2
+* component[caregiverRole].valueCodeableConcept = CaregiverRoleCS#primary-caregiver
+* component[familyRelationshipQuality].valueCodeableConcept = RelationshipQualityCS#very-supportive
+* component[householdType].valueCodeableConcept = HouseholdTypeCS#multigenerational
+
+// -----------------------------------------------------------------------------
+// Example 8: Social Isolation Risk - High Risk
+// Reference: Leigh-Hunt N et al. (2017). Public Health 152:157-171
+// -----------------------------------------------------------------------------
+Instance: SocialIsolationRiskHighExample
+InstanceOf: SocialIsolationRiskProfile
+Usage: #example
+Description: "Social isolation risk assessment - high risk elderly patient"
+Title: "Social Isolation Risk - High Risk"
+
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* occurrenceDateTime = "2026-01-10T14:00:00Z"
+* method = IsolationRiskMethodCS#clinical-risk "Clinical Risk Assessment"
+
+* prediction[0].outcome = IsolationRiskOutcomeCS#chronic-isolation "Chronic Social Isolation"
+* prediction[0].probabilityDecimal = 0.75
+* prediction[0].qualitativeRisk = IsolationRiskLevelCS#high "High Risk"
+* prediction[0].whenPeriod.start = "2026-01-10"
+* prediction[0].whenPeriod.end = "2026-07-10"
+
+* prediction[1].outcome = IsolationRiskOutcomeCS#depression-onset "Depression Onset"
+* prediction[1].probabilityDecimal = 0.45
+* prediction[1].qualitativeRisk = IsolationRiskLevelCS#moderate "Moderate Risk"
+
+* mitigation = "Referral to community befriending service, social prescribing, weekly welfare check"
+* note.text = "Multiple risk factors: recent bereavement, living alone, mobility limitations, recent retirement"
+
+// -----------------------------------------------------------------------------
+// Example 9: Social Isolation Risk - Low Risk
+// -----------------------------------------------------------------------------
+Instance: SocialIsolationRiskLowExample
+InstanceOf: SocialIsolationRiskProfile
+Usage: #example
+Description: "Social isolation risk assessment - low risk with strong protective factors"
+Title: "Social Isolation Risk - Low Risk"
+
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* occurrenceDateTime = "2026-01-10T14:00:00Z"
+* method = IsolationRiskMethodCS#lubben-6 "LSNS-6"
+
+* prediction[0].outcome = IsolationRiskOutcomeCS#chronic-isolation "Chronic Social Isolation"
+* prediction[0].probabilityDecimal = 0.10
+* prediction[0].qualitativeRisk = IsolationRiskLevelCS#low "Low Risk"
+
+* note.text = "Strong social network, active in community groups, regular family contact"
+
+// -----------------------------------------------------------------------------
+// Example 10: Video Call Social Interaction
+// -----------------------------------------------------------------------------
+Instance: SocialInteractionVideoExample
+InstanceOf: SocialInteractionProfile
+Usage: #example
+Description: "Social interaction via video call with distant family"
+Title: "Social Interaction - Video Call"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = $LOINC#76506-5 "Social connection and isolation panel"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-08T19:00:00Z"
+* valueCodeableConcept = SocialInteractionTypeCS#family
+
+* component[duration].valueQuantity = 45 'min' "minutes"
+* component[quality].valueCodeableConcept = SocialInteractionQualityCS#meaningful
+* component[medium].valueCodeableConcept = SocialInteractionMediumCS#video
+* component[participants].valueInteger = 6
+
+* extension[context].valueCodeableConcept = SocialContextCS#home
+* extension[support].valueCodeableConcept = SocialSupportCS#adequate

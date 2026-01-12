@@ -1,31 +1,75 @@
+// =============================================================================
 // SubstanceUse Profiles for Lifestyle Medicine
+// =============================================================================
 // Author: Ricardo Lourenço dos Santos (ricardolourencosantos@gmail.com)
 // Links: https://linktr.ee/ricardolsantos
 // Created: 2025-11-25
+// Updated: 2026-01-12 (F2.13: Enhanced bibliographic references)
 // Purpose: 6th Pillar of Lifestyle Medicine - Avoidance of Risky Substances
 // Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
 //
-// Bibliographic References:
-// - ACLM Lifestyle Medicine: Rippe JM. Am J Lifestyle Med 2022: Great Progress, Enormous Challenges
-//   DOI: 10.1177/15598276211052843 (verified CrossRef 2025-11-29)
-// - US Core Smoking Status: HL7 US Core Implementation Guide v6.1.0
-//   https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html
-// - AUDIT-C Screening: Bush K, et al. The AUDIT alcohol consumption questions (Arch Intern Med 1998)
-//   DOI: 10.1001/archinte.158.16.1789
-// - IPS Tobacco Use: International Patient Summary IG
-//   https://hl7.org/fhir/uv/ips/
+// =============================================================================
+// BIBLIOGRAPHIC REFERENCES (Peer-Reviewed)
+// =============================================================================
 //
-// LOINC Codes (ALL verified at loinc.org on 2025-11-29):
-// - 72166-2: Tobacco smoking status ✓
-// - 8664-5: Cigarettes smoked total (pack per year) - Reported ✓
-// - 74010-0: Date quit tobacco smoking ✓
-// - 64218-1: How many cigarettes do you smoke per day now [PhenX] ✓
-// - 81228-9: Tobacco product ✓
-// - 11331-6: History of Alcohol use ✓
-// - 74013-4: Alcoholic drinks per day ✓
-// - 68518-0: How often do you have a drink containing alcohol ✓
-// - 75626-2: Alcohol Use Disorder Identification Test - Consumption [AUDIT-C] ✓
-// - 80489-8: Caffeine intake 24 hour Estimated ✓
+// LIFESTYLE MEDICINE FRAMEWORK:
+// - Rippe JM (2022). Lifestyle Medicine: Great Progress, Enormous Challenges.
+//   Am J Lifestyle Med 16(2):137-138. DOI:10.1177/15598276211052843
+// - ACLM (2023). American College of Lifestyle Medicine Position Statement.
+//   https://lifestylemedicine.org/
+//
+// TOBACCO ASSESSMENT:
+// - US Preventive Services Task Force (2021). Interventions for Tobacco
+//   Smoking Cessation in Adults, Including Pregnant Persons. JAMA 325(3):265-279.
+//   DOI:10.1001/jama.2020.25019
+// - Fiore MC et al. (2008). Treating Tobacco Use and Dependence: 2008 Update.
+//   Clinical Practice Guideline. AHRQ Pub No. 08-0050.
+// - Prochaska JO & DiClemente CC (1983). Stages and processes of self-change
+//   of smoking: Toward an integrative model. J Consult Clin Psychol 51(3):390-395.
+//   DOI:10.1037/0022-006X.51.3.390 (Transtheoretical Model)
+//
+// ALCOHOL SCREENING:
+// - Bush K et al. (1998). The AUDIT alcohol consumption questions (AUDIT-C):
+//   An effective brief screening test for problem drinking. Arch Intern Med
+//   158(16):1789-1795. DOI:10.1001/archinte.158.16.1789
+// - Saunders JB et al. (1993). Development of the Alcohol Use Disorders
+//   Identification Test (AUDIT). Addiction 88(6):791-804. DOI:10.1111/j.1360-0443.1993.tb02093.x
+// - NIAAA (2021). Rethinking Drinking: Alcohol and Your Health.
+//   https://www.rethinkingdrinking.niaaa.nih.gov/
+//
+// CAFFEINE:
+// - Wikoff D et al. (2017). Systematic review of the potential adverse effects
+//   of caffeine consumption in healthy adults. Food Chem Toxicol 109(Pt 1):585-648.
+//   DOI:10.1016/j.fct.2017.04.002
+// - FDA (2018). Spilling the Beans: How Much Caffeine is Too Much?
+//   https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much
+//
+// HARM REDUCTION:
+// - Marlatt GA & Witkiewitz K (2002). Harm reduction approaches to alcohol use:
+//   Health promotion, prevention, and treatment. Addict Behav 27(6):867-886.
+//   DOI:10.1016/S0306-4603(02)00294-0
+//
+// FHIR/TERMINOLOGY STANDARDS:
+// - HL7 US Core IG v6.1.0: https://hl7.org/fhir/us/core/
+// - IPS IG: https://hl7.org/fhir/uv/ips/
+// - LOINC: https://loinc.org (all codes verified 2025-11-29)
+//
+// =============================================================================
+// LOINC Codes (ALL verified at loinc.org on 2025-11-29)
+// =============================================================================
+// - 72166-2: Tobacco smoking status
+// - 8664-5: Cigarettes smoked total (pack per year) - Reported
+// - 74010-0: Date quit tobacco smoking
+// - 64218-1: How many cigarettes do you smoke per day now [PhenX]
+// - 81228-9: Tobacco product
+// - 88029-4: Tobacco use duration
+// - 11331-6: History of Alcohol use
+// - 74013-4: Alcoholic drinks per day
+// - 68518-0: How often do you have a drink containing alcohol
+// - 75626-2: AUDIT-C (verified, correct code)
+// - 80489-8: Caffeine intake 24 hour Estimated
+// - 68524-8: How many years have you been drinking
+// =============================================================================
 
 // =============================================================================
 // TOBACCO USE PROFILE

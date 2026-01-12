@@ -76,7 +76,7 @@ Architecture:
 * group[0].element[1].target[0].code = #0
 * group[0].element[1].target[0].display = "No OMOP concept - custom concept required"
 * group[0].element[1].target[0].equivalence = #unmatched
-* group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: RMSSD has NO OMOP concept (Concept ID = 0). Primary wearable HRV metric - requires OHDSI vocabulary submission. Note: Apple Watch mislabels RMSSD as 'SDNN'."
+* group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: RMSSD has NO OMOP concept (Concept ID = 0). Primary wearable HRV metric used by Fitbit/Garmin/Oura - requires OHDSI vocabulary submission. Note: Apple exposes SDNN instead of RMSSD."
 
 // ============================================================================
 // pNN50 (id7) - GAP CONFIRMED 2025-12-08 ❌
