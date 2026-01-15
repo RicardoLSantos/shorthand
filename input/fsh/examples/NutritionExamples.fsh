@@ -12,6 +12,7 @@
 Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $SCT = http://snomed.info/sct
+Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0
 
 Instance: NutritionQuestionnaireResponseExample
 InstanceOf: QuestionnaireResponse
@@ -160,7 +161,7 @@ Title: "Micronutrients - Adequate Intake"
 * component[sodium].code = $LOINC#81011-9 "Sodium intake 24 hour Estimated"
 * component[sodium].valueQuantity = 2100 'mg' "milligram"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* interpretation = $ObsInt#N "Normal"
 * note.text = "Adequate micronutrient intake from varied diet; no supplementation required"
 
 Instance: MicronutrientsDeficientExample
@@ -187,7 +188,7 @@ Title: "Micronutrients - Deficient Intake"
 * component[iron].code = $LOINC#81082-0 "Iron intake 24 hour Estimated"
 * component[iron].valueQuantity = 6 'mg' "milligram"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
+* interpretation = $ObsInt#L "Low"
 * note.text = "Multiple micronutrient deficiencies; consider supplementation and dietary counseling"
 
 Instance: MacronutrientsCompleteExample
@@ -224,5 +225,5 @@ Title: "Water Intake - Adequate Hydration"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
 * valueQuantity = 2400 'mL' "milliliter"
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* interpretation = $ObsInt#N "Normal"
 * note.text = "Adequate hydration per EFSA 2010 guidelines (2.5L/day for adult males)"

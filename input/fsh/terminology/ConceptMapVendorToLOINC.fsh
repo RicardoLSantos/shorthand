@@ -115,6 +115,227 @@ Usage: #definition
 * group[0].element[9].target[0].display = "Body mass index (BMI) [Ratio]"
 * group[0].element[9].target[0].equivalence = #equivalent
 
+// -----------------------------------------------------------------------------
+// NEW MAPPINGS FROM GRAY LITERATURE EXTRACTION (2026-01-12)
+// Source: APPLE_HEALTH_COMPLETE_DATA_TYPES_20260112.md
+// -----------------------------------------------------------------------------
+
+// Blood Glucose
+* group[0].element[10].code = #HKQuantityTypeIdentifierBloodGlucose
+* group[0].element[10].display = "Blood Glucose"
+* group[0].element[10].target[0].code = #2339-0
+* group[0].element[10].target[0].display = "Glucose [Mass/volume] in Blood"
+* group[0].element[10].target[0].equivalence = #equivalent
+
+// Blood Pressure Systolic
+* group[0].element[11].code = #HKQuantityTypeIdentifierBloodPressureSystolic
+* group[0].element[11].display = "Systolic Blood Pressure"
+* group[0].element[11].target[0].code = #8480-6
+* group[0].element[11].target[0].display = "Systolic blood pressure"
+* group[0].element[11].target[0].equivalence = #equivalent
+
+// Blood Pressure Diastolic
+* group[0].element[12].code = #HKQuantityTypeIdentifierBloodPressureDiastolic
+* group[0].element[12].display = "Diastolic Blood Pressure"
+* group[0].element[12].target[0].code = #8462-4
+* group[0].element[12].target[0].display = "Diastolic blood pressure"
+* group[0].element[12].target[0].equivalence = #equivalent
+
+// Body Temperature
+* group[0].element[13].code = #HKQuantityTypeIdentifierBodyTemperature
+* group[0].element[13].display = "Body Temperature"
+* group[0].element[13].target[0].code = #8310-5
+* group[0].element[13].target[0].display = "Body temperature"
+* group[0].element[13].target[0].equivalence = #equivalent
+
+// Basal Body Temperature
+* group[0].element[14].code = #HKQuantityTypeIdentifierBasalBodyTemperature
+* group[0].element[14].display = "Basal Body Temperature"
+* group[0].element[14].target[0].code = #8331-1
+* group[0].element[14].target[0].display = "Oral temperature"
+* group[0].element[14].target[0].equivalence = #narrower
+* group[0].element[14].target[0].comment = "BBT is typically oral; LOINC 8331-1 is closest match. iOS 9.0+"
+
+// Waist Circumference
+* group[0].element[15].code = #HKQuantityTypeIdentifierWaistCircumference
+* group[0].element[15].display = "Waist Circumference"
+* group[0].element[15].target[0].code = #8280-0
+* group[0].element[15].target[0].display = "Waist Circumference at umbilicus by Tape measure"
+* group[0].element[15].target[0].equivalence = #equivalent
+* group[0].element[15].target[0].comment = "iOS 11.0+"
+
+// Body Fat Percentage
+* group[0].element[16].code = #HKQuantityTypeIdentifierBodyFatPercentage
+* group[0].element[16].display = "Body Fat Percentage"
+* group[0].element[16].target[0].code = #41982-0
+* group[0].element[16].target[0].display = "Percentage of body fat Measured"
+* group[0].element[16].target[0].equivalence = #equivalent
+
+// Lean Body Mass
+* group[0].element[17].code = #HKQuantityTypeIdentifierLeanBodyMass
+* group[0].element[17].display = "Lean Body Mass"
+* group[0].element[17].target[0].equivalence = #unmatched
+* group[0].element[17].target[0].comment = "GAP: No LOINC code for lean body mass. Clinical relevance for body composition assessment."
+
+// Forced Vital Capacity
+* group[0].element[18].code = #HKQuantityTypeIdentifierForcedVitalCapacity
+* group[0].element[18].display = "Forced Vital Capacity"
+* group[0].element[18].target[0].code = #19868-9
+* group[0].element[18].target[0].display = "Forced vital capacity [Volume] Respiratory system"
+* group[0].element[18].target[0].equivalence = #equivalent
+
+// Forced Expiratory Volume 1 second
+* group[0].element[19].code = #HKQuantityTypeIdentifierForcedExpiratoryVolume1
+* group[0].element[19].display = "Forced Expiratory Volume (1 sec)"
+* group[0].element[19].target[0].code = #20150-9
+* group[0].element[19].target[0].display = "FEV1"
+* group[0].element[19].target[0].equivalence = #equivalent
+
+// Peak Expiratory Flow Rate
+* group[0].element[20].code = #HKQuantityTypeIdentifierPeakExpiratoryFlowRate
+* group[0].element[20].display = "Peak Expiratory Flow Rate"
+* group[0].element[20].target[0].code = #19935-6
+* group[0].element[20].target[0].display = "Maximum expiratory gas flow Respiratory system airway"
+* group[0].element[20].target[0].equivalence = #equivalent
+
+// VO2 Max
+* group[0].element[21].code = #HKQuantityTypeIdentifierVO2Max
+* group[0].element[21].display = "VO2 Max"
+* group[0].element[21].target[0].equivalence = #unmatched
+* group[0].element[21].target[0].comment = "GAP: No LOINC code for VO2max estimate from wearables. iOS 11.0+. Clinical relevance for cardiorespiratory fitness assessment."
+
+// Walking Heart Rate Average
+* group[0].element[22].code = #HKQuantityTypeIdentifierWalkingHeartRateAverage
+* group[0].element[22].display = "Walking Heart Rate Average"
+* group[0].element[22].target[0].equivalence = #unmatched
+* group[0].element[22].target[0].comment = "GAP: No LOINC code for walking heart rate average. iOS 11.0+. Useful for fitness assessment."
+
+// Heart Rate Recovery One Minute (iOS 16+)
+* group[0].element[23].code = #HKQuantityTypeIdentifierHeartRateRecoveryOneMinute
+* group[0].element[23].display = "Heart Rate Recovery (1 min)"
+* group[0].element[23].target[0].equivalence = #unmatched
+* group[0].element[23].target[0].comment = "GAP: No LOINC code for heart rate recovery. iOS 16.0+. Clinical marker for autonomic function and cardiovascular fitness."
+
+// Active Energy Burned
+* group[0].element[24].code = #HKQuantityTypeIdentifierActiveEnergyBurned
+* group[0].element[24].display = "Active Energy Burned"
+* group[0].element[24].target[0].equivalence = #unmatched
+* group[0].element[24].target[0].comment = "GAP: No LOINC code for active energy expenditure from wearables. Critical for weight management and exercise prescription."
+
+// Basal Energy Burned
+* group[0].element[25].code = #HKQuantityTypeIdentifierBasalEnergyBurned
+* group[0].element[25].display = "Basal Energy Burned"
+* group[0].element[25].target[0].equivalence = #unmatched
+* group[0].element[25].target[0].comment = "GAP: No LOINC code for basal metabolic rate from wearables. Resting energy expenditure estimate."
+
+// Flights Climbed
+* group[0].element[26].code = #HKQuantityTypeIdentifierFlightsClimbed
+* group[0].element[26].display = "Flights Climbed"
+* group[0].element[26].target[0].equivalence = #unmatched
+* group[0].element[26].target[0].comment = "GAP: No LOINC code. Activity intensity indicator. 1 flight ≈ 10 feet elevation gain."
+
+// Apple Exercise Time
+* group[0].element[27].code = #HKQuantityTypeIdentifierAppleExerciseTime
+* group[0].element[27].display = "Apple Exercise Time"
+* group[0].element[27].target[0].equivalence = #unmatched
+* group[0].element[27].target[0].comment = "GAP: No LOINC code for exercise duration from wearables. iOS 9.3+. Minutes of activity at brisk walk intensity or higher."
+
+// -----------------------------------------------------------------------------
+// MOBILITY METRICS (iOS 14+) - DOCUMENTED GAPS
+// -----------------------------------------------------------------------------
+
+// Walking Speed
+* group[0].element[28].code = #HKQuantityTypeIdentifierWalkingSpeed
+* group[0].element[28].display = "Walking Speed"
+* group[0].element[28].target[0].equivalence = #unmatched
+* group[0].element[28].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Critical mobility metric for fall risk and functional assessment. Unit: m/s"
+
+// Walking Step Length
+* group[0].element[29].code = #HKQuantityTypeIdentifierWalkingStepLength
+* group[0].element[29].display = "Walking Step Length"
+* group[0].element[29].target[0].equivalence = #unmatched
+* group[0].element[29].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Gait analysis metric. Unit: meters"
+
+// Walking Asymmetry Percentage
+* group[0].element[30].code = #HKQuantityTypeIdentifierWalkingAsymmetryPercentage
+* group[0].element[30].display = "Walking Asymmetry Percentage"
+* group[0].element[30].target[0].equivalence = #unmatched
+* group[0].element[30].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Balance and coordination assessment. Normal <10%"
+
+// Walking Double Support Percentage
+* group[0].element[31].code = #HKQuantityTypeIdentifierWalkingDoubleSupportPercentage
+* group[0].element[31].display = "Walking Double Support Percentage"
+* group[0].element[31].target[0].equivalence = #unmatched
+* group[0].element[31].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Time with both feet on ground. Higher values may indicate instability."
+
+// Stair Ascent Speed
+* group[0].element[32].code = #HKQuantityTypeIdentifierStairAscentSpeed
+* group[0].element[32].display = "Stair Ascent Speed"
+* group[0].element[32].target[0].equivalence = #unmatched
+* group[0].element[32].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Functional capacity indicator. Unit: m/s"
+
+// Stair Descent Speed
+* group[0].element[33].code = #HKQuantityTypeIdentifierStairDescentSpeed
+* group[0].element[33].display = "Stair Descent Speed"
+* group[0].element[33].target[0].equivalence = #unmatched
+* group[0].element[33].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Fall risk indicator. Unit: m/s"
+
+// Six Minute Walk Test Distance
+* group[0].element[34].code = #HKQuantityTypeIdentifierSixMinuteWalkTestDistance
+* group[0].element[34].display = "Six Minute Walk Test Distance"
+* group[0].element[34].target[0].equivalence = #unmatched
+* group[0].element[34].target[0].comment = "GAP: No LOINC code for wearable-estimated 6MWT. iOS 14.0+. Standard cardiopulmonary functional test. Unit: meters"
+
+// Apple Walking Steadiness
+* group[0].element[35].code = #HKQuantityTypeIdentifierAppleWalkingSteadiness
+* group[0].element[35].display = "Apple Walking Steadiness"
+* group[0].element[35].target[0].equivalence = #unmatched
+* group[0].element[35].target[0].comment = "GAP: No LOINC code. iOS 15.0+. FDA-recognized fall risk prediction metric. Score 0-1 (percentage)."
+
+// -----------------------------------------------------------------------------
+// HEARING METRICS (iOS 13+)
+// -----------------------------------------------------------------------------
+
+// Environmental Audio Exposure
+* group[0].element[36].code = #HKQuantityTypeIdentifierEnvironmentalAudioExposure
+* group[0].element[36].display = "Environmental Audio Exposure"
+* group[0].element[36].target[0].equivalence = #unmatched
+* group[0].element[36].target[0].comment = "GAP: No LOINC code. iOS 13.0+. Ambient sound level in dBASPL. Occupational health relevance."
+
+// Headphone Audio Exposure
+* group[0].element[37].code = #HKQuantityTypeIdentifierHeadphoneAudioExposure
+* group[0].element[37].display = "Headphone Audio Exposure"
+* group[0].element[37].target[0].equivalence = #unmatched
+* group[0].element[37].target[0].comment = "GAP: No LOINC code. iOS 13.0+. Headphone volume in dBASPL. Hearing protection relevance."
+
+// -----------------------------------------------------------------------------
+// CYCLING METRICS (iOS 17+)
+// -----------------------------------------------------------------------------
+
+// Cycling Speed
+* group[0].element[38].code = #HKQuantityTypeIdentifierCyclingSpeed
+* group[0].element[38].display = "Cycling Speed"
+* group[0].element[38].target[0].equivalence = #unmatched
+* group[0].element[38].target[0].comment = "GAP: No LOINC code. iOS 17.0+. Unit: m/s"
+
+// Cycling Power
+* group[0].element[39].code = #HKQuantityTypeIdentifierCyclingPower
+* group[0].element[39].display = "Cycling Power"
+* group[0].element[39].target[0].equivalence = #unmatched
+* group[0].element[39].target[0].comment = "GAP: No LOINC code. iOS 17.0+. Unit: watts"
+
+// Cycling Cadence
+* group[0].element[40].code = #HKQuantityTypeIdentifierCyclingCadence
+* group[0].element[40].display = "Cycling Cadence"
+* group[0].element[40].target[0].equivalence = #unmatched
+* group[0].element[40].target[0].comment = "GAP: No LOINC code. iOS 17.0+. Unit: rpm (revolutions per minute)"
+
+// Cycling Functional Threshold Power
+* group[0].element[41].code = #HKQuantityTypeIdentifierCyclingFunctionalThresholdPower
+* group[0].element[41].display = "Cycling FTP"
+* group[0].element[41].target[0].equivalence = #unmatched
+* group[0].element[41].target[0].comment = "GAP: No LOINC code. iOS 17.0+. Functional Threshold Power in watts. Key cycling fitness metric."
+
 // =============================================================================
 // GROUP 2: Fitbit API → LOINC
 // =============================================================================

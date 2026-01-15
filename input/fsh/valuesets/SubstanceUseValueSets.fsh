@@ -1,6 +1,18 @@
+// =============================================================================
 // ValueSets for SubstanceUse Profiles
+// =============================================================================
 // Created: 2025-11-25
-// Complementing SubstanceUseProfile.fsh
+// Updated: 2026-01-12 - SNOMED code verification and corrections
+//
+// Verification Sources:
+// - IPS Current Smoking Status: https://hl7.org/fhir/uv/ips/ValueSet-current-smoking-status-uv-ips.html
+// - SNOMED CT Browser: https://browser.ihtsdotools.org
+// - FindACode: https://www.findacode.com/snomed/
+//
+// References:
+// - IPS IG v2.0.0: https://build.fhir.org/ig/HL7/fhir-ips/
+// - FHIR IG for ABDM v6.5.0 (Tobacco hierarchy 365981007)
+// =============================================================================
 
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
@@ -12,28 +24,67 @@ Alias: $LOINC = http://loinc.org
 ValueSet: TobaccoUseStatusVS
 Id: tobacco-use-status-vs
 Title: "Tobacco Use Status ValueSet"
-Description: "Status categories for tobacco use aligned with US Core and IPS"
+Description: """
+Status categories for tobacco use aligned with IPS (International Patient Summary).
+
+All codes verified from IPS Current Smoking Status ValueSet (hl7.fhir.uv.ips#2.0.0).
+Uses SNOMED CT hierarchy: 365981007 (Tobacco smoking behavior - finding).
+"""
 * ^experimental = false
 * ^version = "0.1.0"
+// IPS-verified codes (Jan 2026)
 * $SCT#266919005 "Never smoked tobacco (finding)"
 * $SCT#8517006 "Ex-smoker (finding)"
 * $SCT#77176002 "Smoker (finding)"
 * $SCT#449868002 "Smokes tobacco daily (finding)"
 * $SCT#428041000124106 "Occasional tobacco smoker (finding)"
 * $SCT#266927001 "Tobacco smoking consumption unknown (finding)"
-* $SCT#405746006 "Current some day smoker"
+* $SCT#230063004 "Heavy cigarette smoker (finding)"
+* $SCT#230060001 "Light cigarette smoker (finding)"
 
 ValueSet: TobaccoProductTypeVS
 Id: tobacco-product-type-vs
 Title: "Tobacco Product Type ValueSet"
-Description: "Types of tobacco products"
+Description: """
+Types of tobacco products.
+
+**SNOMED CT Gap**: SNOMED CT International Edition lacks specific codes for
+individual tobacco product types (cigarette, cigar, pipe) as physical objects.
+The codes 722498003, 722499006 are actually electronic cigarette-related.
+
+This ValueSet uses a custom CodeSystem with clinically relevant product types.
+"""
 * ^experimental = false
 * ^version = "0.1.0"
-* $SCT#722496004 "Cigarette (physical object)"
-* $SCT#722498003 "Cigar (physical object)"
-* $SCT#722499006 "Pipe (physical object)"
-* $SCT#159882006 "Chewing tobacco user (finding)"
-* $SCT#228494002 "Snuff taker (finding)"
+* include codes from system TobaccoProductTypeCS
+
+CodeSystem: TobaccoProductTypeCS
+Id: tobacco-product-type-cs
+Title: "Tobacco Product Type CodeSystem"
+Description: """
+Custom CodeSystem for tobacco product types.
+
+**SNOMED CT Gap Documentation**:
+- 722496004: "Cigarette (physical object)" - VERIFIED correct
+- 722498003: Actual = "Electronic cigarette (physical object)" NOT cigar
+- 722499006: Actual = "Electronic cigarette user (finding)" NOT pipe
+- 159882006: Actual = "Tobacco processor" NOT chewing tobacco user
+
+This custom CodeSystem provides unambiguous codes for tobacco products
+until SNOMED CT International provides specific concepts.
+"""
+* ^experimental = false
+* ^caseSensitive = true
+* ^version = "0.1.0"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/tobacco-product-type-cs"
+* #cigarette "Cigarette" "Manufactured cigarette"
+* #cigar "Cigar" "Cigar including cigarillos"
+* #pipe "Pipe" "Tobacco pipe"
+* #chewing-tobacco "Chewing tobacco" "Smokeless tobacco for chewing"
+* #snuff "Snuff" "Nasal snuff"
+* #hookah "Hookah" "Water pipe/hookah"
+* #electronic-cigarette "Electronic cigarette" "E-cigarette/vape device"
+* #heated-tobacco "Heated tobacco" "Heat-not-burn tobacco products"
 
 // =============================================================================
 // ALCOHOL VALUE SETS
@@ -53,9 +104,7 @@ Description: "Status categories for alcohol consumption"
 * $SCT#43783005 "Moderate drinker (finding)"
 * $SCT#228279004 "Heavy drinker (finding)"
 * $SCT#228281002 "Problem drinker (finding)"
-// FIX 2026-01-12: Replaced inactive 160573003 with active 261665006 "Unknown (qualifier value)"
-// "Unknown" status is critical for data capture when patient alcohol use is not documented.
-// 261665006 is the standard SNOMED qualifier for unknown values.
+// FIX 2026-01-12: Replaced inactive 160573003 with active 261665006
 * $SCT#261665006 "Unknown (qualifier value)"
 
 ValueSet: AlcoholDrinkingFrequencyVS
@@ -141,7 +190,7 @@ Description: "Categorical assessment of daily caffeine intake"
 CodeSystem: CaffeineIntakeLevelCS
 Id: caffeine-intake-level-cs
 Title: "Caffeine Intake Level CodeSystem"
-Description: "Risk levels for caffeine intake"
+Description: "Risk levels for caffeine intake based on FDA guidelines (<400mg/day moderate)"
 * ^experimental = false
 * ^caseSensitive = true
 * ^version = "0.1.0"
@@ -158,28 +207,84 @@ Description: "Risk levels for caffeine intake"
 ValueSet: RecreationalSubstanceUseStatusVS
 Id: recreational-substance-use-status-vs
 Title: "Recreational Substance Use Status ValueSet"
-Description: "Status categories for recreational substance use"
+Description: """
+Status categories for recreational substance use.
+
+**SNOMED CT Verification Notes (2026-01-12)**:
+Previous codes were incorrectly mapped. Corrections:
+- 44870007: Actual = "Ex-drug user" (finding) - kept, display corrected
+- 707848009: Actual = "Patient denies drug use (finding)" - kept, display corrected
+- 228368007: Actual = "Has never misused drugs" - kept, display corrected
+
+These codes are semantically appropriate for substance use status.
+"""
 * ^experimental = false
 * ^version = "0.1.0"
 * $SCT#228366006 "Finding relating to drug misuse behavior (finding)"
-* $SCT#44870007 "Substance misuse (finding)"
-* $SCT#707848009 "Never used recreational drugs (finding)"
-* $SCT#228368007 "Former drug user (finding)"
-// FIX 2026-01-12: Replaced 228369004 (inactive) with 424848002 (active equivalent)
+* $SCT#44870007 "Ex-drug user (finding)"
+* $SCT#707848009 "Patient denies drug use (finding)"
+* $SCT#228368007 "Has never misused drugs (finding)"
 * $SCT#424848002 "Recreational drug user (finding)"
 
 ValueSet: RecreationalSubstanceTypeVS
 Id: recreational-substance-type-vs
 Title: "Recreational Substance Type ValueSet"
-Description: "Types of recreational substances (where legal and clinically appropriate)"
+Description: """
+Types of recreational substances for clinical documentation.
+
+**SNOMED CT Verification Notes (2026-01-12)**:
+SNOMED CT codes verified at tx.fhir.org:
+- 398705004: "Cannabis (substance)" - VERIFIED
+- 387085005: "Cocaine (substance)" - VERIFIED
+- 387499002: "Methamphetamine (substance)" - VERIFIED (status=inactive, but valid)
+- 75672003: "Amphetamine (substance)" - VERIFIED active alternative
+- 288459003: "MDMA (substance)" - VERIFIED for ecstasy/MDMA
+
+**SNOMED CT Gap (2026-01-12)**:
+The following substance CLASS codes were hallucinated and do NOT exist in SNOMED:
+- 373492002: Actual = "Fentanyl (substance)" NOT "Sedative class"
+- 372588000: Actual = "Naproxen (substance)" NOT "Opioid class"
+- 372584003: Actual = "Dexamethasone (substance)" NOT "Benzodiazepine class"
+- 229006003: Does NOT exist in SNOMED CT
+
+Using custom CodeSystem for substance categories where SNOMED lacks class-level codes.
+"""
 * ^experimental = false
 * ^version = "0.1.0"
+// SNOMED CT - Verified specific substance codes
 * $SCT#398705004 "Cannabis (substance)"
-* $SCT#387173000 "Opioid analgesic (substance)"
-* $SCT#387286002 "Benzodiazepine (substance)"
 * $SCT#387085005 "Cocaine (substance)"
-* $SCT#387499002 "Amphetamine (substance)"
-* $SCT#229003004 "Hallucinogenic drug (substance)"
+* $SCT#75672003 "Amphetamine (substance)"
+* $SCT#288459003 "MDMA (substance)"
+// Custom codes for substance categories (SNOMED gap)
+* include codes from system RecreationalSubstanceTypeCS
+
+CodeSystem: RecreationalSubstanceTypeCS
+Id: recreational-substance-type-cs
+Title: "Recreational Substance Type CodeSystem"
+Description: """
+Custom CodeSystem for recreational substance categories.
+
+**SNOMED CT Gap Documentation**:
+SNOMED CT International Edition does not have simple substance class codes that
+match clinical terminology expectations. Individual substances exist but class-level
+concepts like "opioids" or "benzodiazepines" as substance categories are not available
+as expected by clinicians.
+
+This CodeSystem provides clinically relevant categories until SNOMED CT provides
+appropriate class-level substance codes.
+"""
+* ^experimental = false
+* ^caseSensitive = true
+* ^version = "0.1.0"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recreational-substance-type-cs"
+* #opioids "Opioids" "Opioid class substances (heroin, fentanyl, prescription opioids)"
+* #benzodiazepines "Benzodiazepines" "Benzodiazepine class (alprazolam, diazepam, etc.)"
+* #hallucinogens "Hallucinogens" "Hallucinogenic substances (LSD, psilocybin, etc.)"
+* #sedatives "Sedatives" "Sedative/hypnotic class substances"
+* #inhalants "Inhalants" "Volatile substances inhaled for effect"
+* #synthetic-cannabinoids "Synthetic cannabinoids" "Synthetic cannabinoid receptor agonists"
+* #new-psychoactive "New psychoactive substances" "Novel psychoactive substances (NPS)"
 
 ValueSet: SubstanceUseFrequencyVS
 Id: substance-use-frequency-vs

@@ -15,6 +15,7 @@
 Alias: $LOINC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
+Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0
 
 Profile: SocialSupportAssessmentProfile
 Parent: Observation
@@ -196,7 +197,7 @@ Id: social-support-interpretation-vs
 Title: "Social Support Interpretation Value Set"
 Description: "Clinical interpretation of social support scores"
 * ^experimental = false
-* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
-* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
-* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
-* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#LL "Critical Low"
+* $ObsInt#H "High"
+* $ObsInt#N "Normal"
+* $ObsInt#L "Low"
+* $ObsInt#LL "Critical Low"

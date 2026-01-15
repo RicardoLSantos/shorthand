@@ -6,6 +6,7 @@
 // =============================================================================
 
 Alias: $LOINC = http://loinc.org
+Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0
 
 // -----------------------------------------------------------------------------
 // Example 1: Basic Social Interaction (Original)
@@ -101,7 +102,7 @@ Title: "Social Support Assessment - High MSPSS"
 * component[friendSupport].valueQuantity = 22 '{score}' "score"
 * component[significantOtherSupport].valueQuantity = 26 '{score}' "score"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
+* interpretation = $ObsInt#H "High"
 
 // -----------------------------------------------------------------------------
 // Example 5: Social Support Assessment - Low Support
@@ -125,7 +126,7 @@ Title: "Social Support Assessment - Low MSPSS"
 * component[friendSupport].valueQuantity = 12 '{score}' "score"
 * component[significantOtherSupport].valueQuantity = 8 '{score}' "score"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
+* interpretation = $ObsInt#L "Low"
 
 // -----------------------------------------------------------------------------
 // Example 6: Family Structure - Living Alone Elderly

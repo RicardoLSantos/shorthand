@@ -36,11 +36,17 @@ Description: "Qualifiers for mindfulness practice characteristics"
 ValueSet: MindfulnessQualifierVS
 Id: mindfulness-qualifier-vs
 Title: "Mindfulness Practice Qualifiers Value Set"
-Description: "Value set for mindfulness practice qualifiers"
+Description: """
+Value set for mindfulness practice qualifiers.
+
+**SNOMED CT Verification Notes (2026-01-12)**:
+Previous codes were INCORRECT:
+- 410534003: Actual = "Not indicated (qualifier value)" NOT "During exercise"
+- 225386006: Actual = "Evaluating patient status for discharge" NOT "Exercise therapy"
+
+These codes were removed. The custom MindfulnessQualifierCS provides
+appropriate qualifiers for mindfulness practice settings.
+"""
 
 * ^experimental = false
 * include codes from system MindfulnessQualifierCS
-* include $SCT#410534003 "During exercise"
-* include $SCT#225386006 "Exercise therapy"
-
-* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)"

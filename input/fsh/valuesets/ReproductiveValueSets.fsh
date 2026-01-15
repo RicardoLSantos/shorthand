@@ -17,13 +17,17 @@ Description: "Goals related to social-history health tracking and planning"
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^date = "2024-03-19"
 
-* $LOINC#8665-2 "Date last menstrual period"
-* $LOINC#49033-4 "Menstrual cycle duration"
-* $LOINC#55284-4 "Blood pressure"
+// LOINC codes verified at loinc.org (2026-01-12)
+* $LOINC#8665-2 "Last menstrual period start date"
+* $LOINC#49033-4 "Menstrual History - Reported"
+// Removed: 55284-4 "Blood pressure" - status DISCOURAGED, not relevant to reproductive goals
 * $LOINC#8310-5 "Body temperature"
 * $LOINC#8302-2 "Body height"
 * $LOINC#29463-7 "Body weight"
-* $SCT#289530006 "Reproductive health finding"
+// SNOMED code verified (2026-01-12)
+// Note: 289530006 actual = "Bleeding from vagina" - using broader concept instead
+* $SCT#118185001 "Finding related to pregnancy (finding)"
+* $SCT#364320009 "Menstrual cycle observable (observable entity)"
 
 ValueSet: ReproductiveActivityVS
 Id: social-history-activity-vs

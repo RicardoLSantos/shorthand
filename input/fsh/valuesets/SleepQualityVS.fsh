@@ -18,13 +18,26 @@ Description: "Qualitative assessments of sleep quality for lifestyle medicine. U
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 
-// Core quality levels
+// Core quality levels (custom codes - SNOMED gap documented)
 * SleepQualityCS#excellent "Excellent sleep quality"
 * SleepQualityCS#good "Good sleep quality"
 * SleepQualityCS#fair "Fair sleep quality"
 * SleepQualityCS#poor "Poor sleep quality"
 
-// Optional: Include SNOMED pattern codes where they exist
-* $SCT#301346001 "Good sleep pattern"
-* $SCT#301345002 "Poor sleep pattern"
+// -----------------------------------------------------------------------------
+// SNOMED CT Gap Documentation (2026-01-12)
+// -----------------------------------------------------------------------------
+// Previous codes were INCORRECT:
+// - 301346001: Actual = "Finding of appearance of lip" NOT "Good sleep pattern"
+// - 301345002: Actual = "Poor sleep" (close but different semantic)
+//
+// SNOMED CT International Edition does NOT have specific codes for subjective
+// sleep quality levels (excellent/good/fair/poor). The custom SleepQualityCS
+// provides these codes with explicit gap documentation.
+//
+// Related SNOMED concepts that DO exist:
+// - 248254009 "Quality of sleep" (observable entity)
+// - 248220008 "Difficulty sleeping" (finding)
+// - 193462001 "Insomnia" (disorder)
+// -----------------------------------------------------------------------------
 
