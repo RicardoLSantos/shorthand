@@ -32,10 +32,13 @@ Usage: #definition
 
 * status = #active
 * experimental = false
-* date = "2026-01-12"
+* date = "2026-01-15"
 * publisher = "FMUP HEADS2"
+* name = "ConceptMapSocialToLOINC"
+// FHIR R4 Compliance (IG Publisher 2025-12-31): target must be ValueSet
+// sourceUri can remain as CodeSystem reference (no expansion required)
 * sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-connection-cs"
-* targetUri = "http://loinc.org"
+* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
 
 // =============================================================================
 // Group 1: Loneliness Assessment Mappings
@@ -83,8 +86,8 @@ Usage: #definition
 
 * group[=].element[+].code = #affective-support
 * group[=].element[=].display = "Affective support"
-* group[=].element[=].target[+].code = #89399-9
-* group[=].element[=].target[=].display = "Emotional support available"
+* group[=].element[=].target[+].code = #91645-2
+* group[=].element[=].target[=].display = "Affectionate support [MOS Social Support Survey]"
 * group[=].element[=].target[=].equivalence = #equivalent
 
 // =============================================================================

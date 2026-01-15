@@ -66,6 +66,52 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * http://loinc.org#93832-4 "Sleep efficiency"
 
 // ============================================================================
+// NUTRITION AND DIETARY INTAKE
+// ============================================================================
+* http://loinc.org#9052-2 "Caloric intake total"
+* http://loinc.org#9059-7 "Protein intake 24 hour"
+* http://loinc.org#9057-1 "Carbohydrate intake 24 hour"
+* http://loinc.org#9060-5 "Fat intake 24 hour"
+* http://loinc.org#9055-5 "Fiber intake 24 hour"
+* http://loinc.org#9061-3 "Saturated fat intake 24 hour"
+* http://loinc.org#9053-0 "Fluid intake 24 hour"
+* http://loinc.org#9056-3 "Caffeine intake 24 hour"
+* http://loinc.org#75282-4 "Diet"
+* http://loinc.org#65968-0 "Eating habits"
+
+// ============================================================================
+// VITAMINS (24 hour Estimated)
+// ============================================================================
+* http://loinc.org#81929-2 "Vitamin D intake 24 hour Estimated"
+* http://loinc.org#81074-7 "Vitamin C intake 24 hour Estimated"
+* http://loinc.org#81072-1 "Vitamin A intake 24 hour Estimated"
+* http://loinc.org#81076-2 "Vitamin E intake 24 hour Estimated"
+* http://loinc.org#81062-2 "Vitamin B12 intake 24 hour Estimated"
+* http://loinc.org#81066-3 "Vitamin B9 (Folate) intake 24 hour Estimated"
+
+// ============================================================================
+// MINERALS (24 hour Estimated)
+// ============================================================================
+* http://loinc.org#81137-2 "Calcium intake 24 hour Estimated"
+* http://loinc.org#81082-0 "Iron intake 24 hour Estimated"
+* http://loinc.org#81011-9 "Sodium intake 24 hour Estimated"
+* http://loinc.org#81010-1 "Potassium intake 24 hour Estimated"
+* http://loinc.org#81005-1 "Magnesium intake 24 hour Estimated"
+* http://loinc.org#81089-5 "Zinc intake 24 hour Estimated"
+
+// ============================================================================
+// SOCIAL CONNECTION AND LONELINESS (UCLA Scale, MOS-SSS)
+// ============================================================================
+* http://loinc.org#66855-8 "How often do you feel that you lack companionship"
+* http://loinc.org#66857-4 "How often do you feel alone"
+* http://loinc.org#66867-3 "How often do you feel isolated from others"
+* http://loinc.org#91642-9 "Medical Outcomes Study Social Support Survey panel"
+* http://loinc.org#91663-5 "Social support index [MOS Social Support Survey]"
+* http://loinc.org#91645-2 "Affectionate support [MOS Social Support Survey]"
+* http://loinc.org#63512-8 "How many people are living or staying at this address [#]"
+* http://loinc.org#63503-7 "Number of family members in household"
+
+// ============================================================================
 // PANELS (for reference)
 // ============================================================================
 * http://loinc.org#82611-5 "Wearable device external physiologic monitoring panel"

@@ -33,10 +33,13 @@ Usage: #definition
 
 * status = #active
 * experimental = false
-* date = "2026-01-12"
+* date = "2026-01-15"
 * publisher = "FMUP HEADS2"
+* name = "ConceptMapNutritionToLOINC"
+// FHIR R4 Compliance (IG Publisher 2025-12-31): target must be ValueSet
+// sourceUri can remain as CodeSystem reference (no expansion required)
 * sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
-* targetUri = "http://loinc.org"
+* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
 
 // =============================================================================
 // Group 1: Macronutrient Intake Mappings
