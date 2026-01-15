@@ -218,7 +218,7 @@ Transition and lighter restorative sleep.
 
 // Sleep Score (Vendor)
 * group[1].element[3].code = #sleep-score
-* group[1].element[3].display = "Sleep Score (Vendor Composite)"
+* group[1].element[3].display = "Sleep score"
 * group[1].element[3].target[0].code = #0
 * group[1].element[3].target[0].display = "No OMOP concept available"
 * group[1].element[3].target[0].equivalence = #unmatched

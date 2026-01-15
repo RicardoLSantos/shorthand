@@ -51,6 +51,7 @@ reflecting the cholinergic anti-inflammatory pathway (Tracey 2002).
 * effectiveDateTime 1..1 MS
 * value[x] 1..1 MS
 * valueQuantity only Quantity
+* valueQuantity MS
 * specimen 0..1 MS
 * method 0..1 MS
 * device 0..1 MS

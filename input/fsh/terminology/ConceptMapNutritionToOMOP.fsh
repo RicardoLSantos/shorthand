@@ -33,6 +33,7 @@ Usage: #definition
 * experimental = false
 * date = "2026-01-12"
 * publisher = "FMUP HEADS2"
+* name = "ConceptMapNutritionToOMOP"
 * sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
 * targetUri = "https://athena.ohdsi.org/search-terms/concepts"
 

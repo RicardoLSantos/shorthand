@@ -46,7 +46,7 @@ Usage: #definition
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/loneliness-component-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #companionship-lack
-* group[=].element[=].display = "Loneliness - lack of companionship"
+* group[=].element[=].display = "Lack of companionship"
 * group[=].element[=].target[+].code = #66855-8
 * group[=].element[=].target[=].display = "How often do you feel that you lack companionship"
 * group[=].element[=].target[=].equivalence = #equivalent
@@ -72,13 +72,13 @@ Usage: #definition
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-component-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #total-score
-* group[=].element[=].display = "Social support total score"
+* group[=].element[=].display = "Total support score"
 * group[=].element[=].target[+].code = #91642-9
 * group[=].element[=].target[=].display = "Medical Outcomes Study Social Support Survey panel"
 * group[=].element[=].target[=].equivalence = #equivalent
 
 * group[=].element[+].code = #emotional-support
-* group[=].element[=].display = "Emotional support score"
+* group[=].element[=].display = "Emotional support"
 * group[=].element[=].target[+].code = #91663-5
 * group[=].element[=].target[=].display = "Social support index [MOS Social Support Survey]"
 * group[=].element[=].target[=].equivalence = #relatedto
@@ -96,7 +96,7 @@ Usage: #definition
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/family-structure-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #household-size
-* group[=].element[=].display = "Living situation - household size"
+* group[=].element[=].display = "Household size"
 * group[=].element[=].target[+].code = #63512-8
 * group[=].element[=].target[=].display = "How many people are living or staying at this address [#]"
 * group[=].element[=].target[=].equivalence = #equivalent
@@ -124,21 +124,21 @@ Usage: #definition
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-component-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #family-support
-* group[=].element[=].display = "MSPSS Family subscale"
+* group[=].element[=].display = "Family support subscale"
 * group[=].element[=].target[+].code = #LA137-2
 * group[=].element[=].target[=].display = "Family member"
 * group[=].element[=].target[=].equivalence = #inexact
 * group[=].element[=].target[=].comment = "GAP: No specific LOINC for MSPSS subscales; use custom code with reference"
 
 * group[=].element[+].code = #friend-support
-* group[=].element[=].display = "MSPSS Friends subscale"
+* group[=].element[=].display = "Friends support subscale"
 * group[=].element[=].target[+].code = #LA137-2
 * group[=].element[=].target[=].display = "Friend"
 * group[=].element[=].target[=].equivalence = #inexact
 * group[=].element[=].target[=].comment = "GAP: No specific LOINC for MSPSS subscales; use custom code with reference"
 
 * group[=].element[+].code = #significant-other-support
-* group[=].element[=].display = "MSPSS Significant Other subscale"
+* group[=].element[=].display = "Significant other support subscale"
 * group[=].element[=].target[+].code = #LA137-2
 * group[=].element[=].target[=].display = "Significant other"
 * group[=].element[=].target[=].equivalence = #inexact

@@ -223,7 +223,7 @@ These codes are semantically appropriate for substance use status.
 * $SCT#228366006 "Finding relating to drug misuse behavior (finding)"
 * $SCT#44870007 "Ex-drug user (finding)"
 * $SCT#707848009 "Patient denies drug use (finding)"
-* $SCT#228368007 "Has never misused drugs (finding)"
+* $SCT#228368007 "Has never misused drugs"
 * $SCT#424848002 "Recreational drug user (finding)"
 
 ValueSet: RecreationalSubstanceTypeVS
