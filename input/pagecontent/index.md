@@ -153,3 +153,19 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 - Data validation requirements
 - Interoperability guidelines
 - Best practices for implementation
+
+## Dependencies
+
+{% include dependency-table.xhtml %}
+
+## Cross Version Analysis
+
+{% include cross-version-analysis.xhtml %}
+
+## Global Profiles
+
+{% include globals-table.xhtml %}
+
+## IP Statements
+
+{% include ip-statements.xhtml %}

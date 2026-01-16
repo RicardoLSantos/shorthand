@@ -49,6 +49,7 @@ Title: "Loneliness Assessment - High Score"
 * code = $LOINC#62933-7 "PhenX - social isolation protocol 181001"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T10:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = LonelinessFrequencyCS#often "Often"
 * method = LonelinessAssessmentMethodCS#ucla-3 "UCLA Loneliness Scale (3-item)"
 
@@ -71,6 +72,7 @@ Title: "Loneliness Assessment - Low Score"
 * code = $LOINC#62933-7 "PhenX - social isolation protocol 181001"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T10:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = LonelinessFrequencyCS#hardly-ever "Hardly ever"
 * method = LonelinessAssessmentMethodCS#ucla-3 "UCLA Loneliness Scale (3-item)"
 
@@ -94,6 +96,7 @@ Title: "Social Support Assessment - High MSPSS"
 * code = $LOINC#91642-9 "Medical Outcomes Study Social Support Survey panel [MOS Social Support Survey]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T11:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = SocialSupportLevelCS#high "High Support"
 * method = SocialSupportAssessmentMethodCS#mspss "MSPSS"
 
@@ -118,6 +121,7 @@ Title: "Social Support Assessment - Low MSPSS"
 * code = $LOINC#91642-9 "Medical Outcomes Study Social Support Survey panel [MOS Social Support Survey]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T11:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = SocialSupportLevelCS#low "Low Support"
 * method = SocialSupportAssessmentMethodCS#mspss "MSPSS"
 
@@ -143,6 +147,7 @@ Title: "Family Structure - Living Alone"
 * code = $LOINC#63512-8 "How many people are living or staying at this address [#]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T09:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = LivingSituationCS#alone "Living Alone"
 
 * component[householdSize].valueInteger = 1
@@ -168,6 +173,7 @@ Title: "Family Structure - Multigenerational"
 * code = $LOINC#63512-8 "How many people are living or staying at this address [#]"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T09:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = LivingSituationCS#multigenerational "Multigenerational"
 
 * component[householdSize].valueInteger = 5
@@ -239,6 +245,7 @@ Title: "Social Interaction - Video Call"
 * code = $LOINC#76506-5 "Social connection and isolation panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-08T19:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = SocialInteractionTypeCS#family
 
 * component[duration].valueQuantity = 45 'min' "minutes"

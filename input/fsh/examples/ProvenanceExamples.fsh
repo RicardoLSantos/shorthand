@@ -18,6 +18,7 @@ Description: "Example HRV observation with RMSSD metric captured by Apple Watch"
 * code.text = "Heart Rate Variability - SDNN"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2025-01-15T08:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity.value = 42.5
 * valueQuantity.unit = "ms"
 * valueQuantity.system = "http://unitsofmeasure.org"

@@ -142,6 +142,7 @@ Title: "Micronutrients - Adequate Intake"
 * code = $LOINC#81941-7 "Micronutrient intake panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 
 * component[vitaminD].code = $LOINC#81929-2 "Vitamin D intake 24 hour Estimated"
 * component[vitaminD].valueQuantity = 800 '[IU]' "international unit"
@@ -175,6 +176,7 @@ Title: "Micronutrients - Deficient Intake"
 * code = $LOINC#81941-7 "Micronutrient intake panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 
 * component[vitaminD].code = $LOINC#81929-2 "Vitamin D intake 24 hour Estimated"
 * component[vitaminD].valueQuantity = 200 '[IU]' "international unit"
@@ -202,6 +204,7 @@ Title: "Macronutrients - Complete Daily Assessment"
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#macronutrients-panel "Macronutrients intake panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 
 * component[carbohydrates].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#carbohydrate-intake "Carbohydrate intake"
 * component[carbohydrates].valueQuantity = 275 'g' "gram"
@@ -224,6 +227,7 @@ Title: "Water Intake - Adequate Hydration"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
 * valueQuantity = 2400 'mL' "milliliter"
 * interpretation = $ObsInt#N "Normal"
 * note.text = "Adequate hydration per EFSA 2010 guidelines (2.5L/day for adult males)"
