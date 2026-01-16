@@ -100,10 +100,10 @@ Title: "Social Support Assessment - High MSPSS"
 * valueCodeableConcept = SocialSupportLevelCS#high "High Support"
 * method = SocialSupportAssessmentMethodCS#mspss "MSPSS"
 
-* component[totalScore].valueQuantity = 72 '{score}' "score"
-* component[familySupport].valueQuantity = 24 '{score}' "score"
-* component[friendSupport].valueQuantity = 22 '{score}' "score"
-* component[significantOtherSupport].valueQuantity = 26 '{score}' "score"
+* component[totalScore].valueQuantity = 72 '{score}' "{score}"
+* component[familySupport].valueQuantity = 24 '{score}' "{score}"
+* component[friendSupport].valueQuantity = 22 '{score}' "{score}"
+* component[significantOtherSupport].valueQuantity = 26 '{score}' "{score}"
 
 * interpretation = $ObsInt#H "High"
 
@@ -125,10 +125,10 @@ Title: "Social Support Assessment - Low MSPSS"
 * valueCodeableConcept = SocialSupportLevelCS#low "Low Support"
 * method = SocialSupportAssessmentMethodCS#mspss "MSPSS"
 
-* component[totalScore].valueQuantity = 28 '{score}' "score"
-* component[familySupport].valueQuantity = 8 '{score}' "score"
-* component[friendSupport].valueQuantity = 12 '{score}' "score"
-* component[significantOtherSupport].valueQuantity = 8 '{score}' "score"
+* component[totalScore].valueQuantity = 28 '{score}' "{score}"
+* component[familySupport].valueQuantity = 8 '{score}' "{score}"
+* component[friendSupport].valueQuantity = 12 '{score}' "{score}"
+* component[significantOtherSupport].valueQuantity = 8 '{score}' "{score}"
 
 * interpretation = $ObsInt#L "Low"
 

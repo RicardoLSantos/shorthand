@@ -34,7 +34,7 @@ Description: "Example of daily recovery readiness score from Oura Ring"
 * valueQuantity.value = 82
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #{score}
-* valueQuantity.unit = "score"
+* valueQuantity.unit = "{score}"
 
 * interpretation = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/readiness-category-cs#good "Good (70-84)"
 
@@ -50,11 +50,13 @@ Description: "Example of daily recovery readiness score from Oura Ring"
 * component[sleepContribution].valueQuantity.value = 85
 * component[sleepContribution].valueQuantity.system = "http://unitsofmeasure.org"
 * component[sleepContribution].valueQuantity.code = #{score}
+* component[sleepContribution].valueQuantity.unit = "{score}"
 
 // HRV contribution - uses {score} per profile
 * component[hrvContribution].valueQuantity.value = 78
 * component[hrvContribution].valueQuantity.system = "http://unitsofmeasure.org"
 * component[hrvContribution].valueQuantity.code = #{score}
+* component[hrvContribution].valueQuantity.unit = "{score}"
 
 // Activity balance - uses CodeableConcept
 * component[activityBalance].valueCodeableConcept = ActivityBalanceCS#balanced "Well Balanced"
@@ -122,7 +124,7 @@ Description: "Example of running dynamics metrics from Garmin watch with running
 * device = Reference(Device/GarminWatchDevice)
 
 // Cadence - uses {spm} per profile
-* component[cadence].valueQuantity = 175 '{spm}' "steps per minute"
+* component[cadence].valueQuantity = 175 '{spm}' "{spm} steps per minute"
 
 // Ground contact time
 * component[groundContactTime].valueQuantity = 245 'ms' "milliseconds"
@@ -166,12 +168,13 @@ Description: "Example of cycling power and dynamics from Wahoo power meter"
 * component[normalizedPower].valueQuantity = 198 'W' "watts"
 
 // Cadence
-* component[cadence].valueQuantity = 88 '{rpm}' "revolutions per minute"
+* component[cadence].valueQuantity = 88 '{rpm}' "{rpm} revolutions per minute"
 
 // TSS (Training Stress Score)
 * component[tss].valueQuantity.value = 75
 * component[tss].valueQuantity.system = $UCUM
 * component[tss].valueQuantity.code = #{score}
+* component[tss].valueQuantity.unit = "{score}"
 
 // Duration
 * component[duration].valueQuantity = 60 'min' "minutes"

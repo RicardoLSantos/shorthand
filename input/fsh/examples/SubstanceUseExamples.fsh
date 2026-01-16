@@ -24,7 +24,7 @@ Description: "Example of a former smoker with documented pack-years and quit dat
 * performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#8517006 "Ex-smoker (finding)"
 * component[packYears].code = $LOINC#8664-5 "Cigarettes smoked total (pack per year) - Reported"
-* component[packYears].valueQuantity = 15 '{pack-years}' "pack-years"
+* component[packYears].valueQuantity = 15 '{pack-years}' "{pack-years}"
 * component[quitDate].code = $LOINC#74010-0 "Date quit tobacco smoking"
 * component[quitDate].valueDateTime = "2020-03-15"
 * component[cigarettesPerDay].code = $LOINC#64218-1 "How many cigarettes do you smoke per day now [PhenX]"
