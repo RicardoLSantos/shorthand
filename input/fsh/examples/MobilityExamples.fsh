@@ -3,6 +3,7 @@
 // Reference: Apple HealthKit HKQuantityTypeIdentifier mobility metrics
 
 Alias: $SCT = http://snomed.info/sct
+Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $LIFESTYLEOBS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs
 
@@ -58,7 +59,7 @@ Title: "Six-Minute Walk Test Example"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/apple-watch-example)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
-* code = $LIFESTYLEOBS#six-minute-walk-distance "Six-minute walk test distance"
+* code = $LOINC#64098-7 "Six minute walk test distance"
 * valueQuantity = 485 'm' "meters"
 * note.text = "Patient completed 6MWT with normal functional capacity (400-700m reference range)"
 
