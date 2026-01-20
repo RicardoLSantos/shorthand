@@ -125,3 +125,75 @@ Title: "Lifestyle Vital Signs Example"
 * valueQuantity.system = $UCUM
 * device = Reference(Device/iphone-example)
 * note.text = "Morning vital signs check via Health app"
+
+
+// Body Temperature Examples - Added 2026-01-20
+Instance: BodyTemperatureExample
+InstanceOf: BodyTemperatureObservation
+Usage: #example
+Description: "Body temperature measurement from wearable device"
+Title: "Body Temperature Normal Example"
+* status = #final
+* code = $LOINC#8310-5 "Body temperature"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-20T07:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/apple-watch-example)
+* valueQuantity = 36.6 'Cel' "degree Celsius"
+* valueQuantity.system = $UCUM
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* note.text = "Morning body temperature within normal range (36.1-37.2°C)"
+
+
+Instance: BodyTemperatureFeverExample
+InstanceOf: BodyTemperatureObservation
+Usage: #example
+Description: "Elevated body temperature indicating fever"
+Title: "Body Temperature Fever Example"
+* status = #final
+* code = $LOINC#8310-5 "Body temperature"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-20T14:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/apple-watch-example)
+* valueQuantity = 38.5 'Cel' "degree Celsius"
+* valueQuantity.system = $UCUM
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
+* note.text = "Elevated temperature >38°C (100.4°F) indicates fever. Consider clinical evaluation."
+
+
+// Respiratory Rate Examples - Added 2026-01-20
+Instance: RespiratoryRateExample
+InstanceOf: RespiratoryRateObservation
+Usage: #example
+Description: "Respiratory rate measurement from wearable device"
+Title: "Respiratory Rate Normal Example"
+* status = #final
+* code = $LOINC#9279-1 "Respiratory rate"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-20T08:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/apple-watch-example)
+* valueQuantity = 14 '/min' "breaths per minute"
+* valueQuantity.system = $UCUM
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* note.text = "Resting respiratory rate within normal adult range (12-20/min)"
+
+
+Instance: RespiratoryRateSleepExample
+InstanceOf: RespiratoryRateObservation
+Usage: #example
+Description: "Respiratory rate during sleep from wearable device"
+Title: "Respiratory Rate Sleep Example"
+* status = #final
+* code = $LOINC#9279-1 "Respiratory rate"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-20T03:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/apple-watch-example)
+* valueQuantity = 12 '/min' "breaths per minute"
+* valueQuantity.system = $UCUM
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* component[sleepRespiratoryRate].code = $LOINC#9279-1 "Respiratory rate"
+* component[sleepRespiratoryRate].valueQuantity = 12 '/min' "breaths per minute"
+* note.text = "Average respiratory rate during deep sleep. Lower than awake rate (10-16/min normal during sleep)."
