@@ -138,7 +138,7 @@ Title: "Body Temperature Normal Example"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-20T07:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* device = Reference(Device/apple-watch-example)
+* device = Reference(Device/AppleWatchDevice)
 * valueQuantity = 36.6 'Cel' "degree Celsius"
 * valueQuantity.system = $UCUM
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
@@ -155,7 +155,7 @@ Title: "Body Temperature Fever Example"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-20T14:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* device = Reference(Device/apple-watch-example)
+* device = Reference(Device/AppleWatchDevice)
 * valueQuantity = 38.5 'Cel' "degree Celsius"
 * valueQuantity.system = $UCUM
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
@@ -173,7 +173,7 @@ Title: "Respiratory Rate Normal Example"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-20T08:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* device = Reference(Device/apple-watch-example)
+* device = Reference(Device/AppleWatchDevice)
 * valueQuantity = 14 '/min' "breaths per minute"
 * valueQuantity.system = $UCUM
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
@@ -190,10 +190,10 @@ Title: "Respiratory Rate Sleep Example"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-20T03:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* device = Reference(Device/apple-watch-example)
+* device = Reference(Device/AppleWatchDevice)
 * valueQuantity = 12 '/min' "breaths per minute"
 * valueQuantity.system = $UCUM
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
-* component[sleepRespiratoryRate].code = $LOINC#9279-1 "Respiratory rate"
-* component[sleepRespiratoryRate].valueQuantity = 12 '/min' "breaths per minute"
+// Note: Component removed to comply with FHIR obs-7 constraint (code cannot be same as Observation.code when value is present)
+// The sleep context is indicated by effectiveDateTime (03:00 AM) and the note
 * note.text = "Average respiratory rate during deep sleep. Lower than awake rate (10-16/min normal during sleep)."

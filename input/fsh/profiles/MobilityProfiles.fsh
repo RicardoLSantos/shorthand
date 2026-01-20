@@ -93,7 +93,7 @@ Description: "Profile for mobility data from iOS Health App including iOS 14+ ga
 * component[stairDescentSpeed] ^definition = "Speed of descending stairs. HKQuantityTypeIdentifier.stairDescentSpeed (iOS 14+). Relevant for fall risk assessment"
 
 // Six-Minute Walk Test Distance (iOS 14+) - LOINC 64098-7 available!
-* component[sixMinuteWalkDistance].code = $LOINC#64098-7 "Six minute walk test distance"
+* component[sixMinuteWalkDistance].code = $LOINC#64098-7 "Six minute walk test"
 * component[sixMinuteWalkDistance].valueQuantity 1..1
 * component[sixMinuteWalkDistance].valueQuantity.system = $UCUM
 * component[sixMinuteWalkDistance].valueQuantity.code = #m
@@ -146,7 +146,7 @@ Description: "Value set for iOS 14+ mobility metrics from Apple HealthKit"
 * $LIFESTYLEOBS#walking-double-support "Walking double support percentage"
 * $LIFESTYLEOBS#stair-ascent-speed "Stair ascent speed"
 * $LIFESTYLEOBS#stair-descent-speed "Stair descent speed"
-* $LOINC#64098-7 "Six minute walk test distance"
+* $LOINC#64098-7 "Six minute walk test"
 * $LIFESTYLEOBS#walking-steadiness "Walking steadiness measurement"
 * $LIFESTYLEOBS#gait-assessment "Gait assessment"
 * $LIFESTYLEOBS#balance-assessment "Balance assessment"

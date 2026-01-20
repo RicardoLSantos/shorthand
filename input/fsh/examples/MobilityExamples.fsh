@@ -57,9 +57,9 @@ Title: "Six-Minute Walk Test Example"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-20T10:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* device = Reference(Device/apple-watch-example)
+* device = Reference(Device/AppleWatchDevice)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
-* code = $LOINC#64098-7 "Six minute walk test distance"
+* code = $LOINC#64098-7 "Six minute walk test"
 * valueQuantity = 485 'm' "meters"
 * note.text = "Patient completed 6MWT with normal functional capacity (400-700m reference range)"
 
