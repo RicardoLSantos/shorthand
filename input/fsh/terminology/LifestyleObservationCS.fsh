@@ -12,7 +12,7 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 65
+* ^count = 73
 
 // Sleep Measurements (5 codes)
 * #sleep-panel "Sleep measurement panel"
@@ -30,6 +30,14 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
 
 * #noise-background "Background environmental noise level"
   "Baseline or background environmental noise level measured in quiet conditions"
+
+// Audio Exposure Metrics (iOS 13+/14+) - Added 2026-01-20
+// A-weighted Sound Pressure Level (dBASPL) as per Apple HealthKit
+* #environmental-audio-exposure "Environmental audio exposure level"
+  "Environmental sound exposure level in A-weighted decibels (dBASPL). Maps to Apple HealthKit HKQuantityTypeIdentifier.environmentalAudioExposure (iOS 13+). WHO recommends <70 dB average over 24h to prevent hearing damage"
+
+* #headphone-audio-exposure "Headphone audio exposure level"
+  "Headphone audio exposure level in A-weighted decibels (dBASPL). Maps to Apple HealthKit HKQuantityTypeIdentifier.headphoneAudioExposure (iOS 14+). WHO recommends <80 dB for max 40 hours/week"
 
 * #sleep-deep "Deep sleep duration"
   "Duration of deep (slow-wave) sleep stage as measured by consumer sleep tracking device"
@@ -191,7 +199,27 @@ Description: "Local codes for lifestyle medicine observations not covered by sta
   "Measurement of total distance walked"
 
 * #walking-steadiness "Walking steadiness measurement"
-  "Measurement of walking balance and steadiness"
+  "Measurement of walking balance and steadiness. Maps to Apple HealthKit HKQuantityTypeIdentifier.appleWalkingSteadiness (iOS 15+)"
+
+// iOS 14+ Gait Metrics - Added 2026-01-20
+// These metrics are from Apple HealthKit iOS 14+ mobility data
+* #walking-step-length "Walking step length"
+  "Average step length during walking. Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingStepLength (iOS 14+). Unit: meters"
+
+* #walking-asymmetry "Walking asymmetry percentage"
+  "Percentage difference in step time between left and right legs. Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingAsymmetryPercentage (iOS 14+). Normal: <10%. Values >15% may indicate gait pathology"
+
+* #walking-double-support "Walking double support percentage"
+  "Percentage of gait cycle with both feet on ground. Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingDoubleSupportPercentage (iOS 14+). Increases with age and fall risk"
+
+* #stair-ascent-speed "Stair ascent speed"
+  "Speed of ascending stairs. Maps to Apple HealthKit HKQuantityTypeIdentifier.stairAscentSpeed (iOS 14+). Unit: meters per second. Indicator of lower limb strength and cardiopulmonary function"
+
+* #stair-descent-speed "Stair descent speed"
+  "Speed of descending stairs. Maps to Apple HealthKit HKQuantityTypeIdentifier.stairDescentSpeed (iOS 14+). Unit: meters per second. Relevant for fall risk assessment"
+
+* #six-minute-walk-distance "Six-minute walk test distance"
+  "Distance walked in six minutes. Maps to Apple HealthKit HKQuantityTypeIdentifier.sixMinuteWalkTestDistance (iOS 14+). Unit: meters. Clinical measure of functional exercise capacity"
 
 // Advanced Vital Signs (2 codes)
 * #heart-rate-exercise "Heart rate during exercise"
