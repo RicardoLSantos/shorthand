@@ -125,7 +125,7 @@ Description: "Profile for body temperature measurements from iOS Health App. Map
 * component[measurementSite].code = $SCT#386725007 "Body temperature"
 * component[measurementSite].valueCodeableConcept only CodeableConcept
 * component[measurementSite] ^short = "Measurement site (oral, axillary, tympanic, etc.)"
-* component[measurementSite] ^comment = "Recommended values from BodyTemperatureSiteVS: oral (21082005), tympanic (255611001), forehead (415945006), axillary (422005001), rectal (307047009)"
+* component[measurementSite] ^comment = "Recommended values from BodyTemperatureSiteVS: oral cavity (74262004), ear (117590005), forehead (52795006), axillary (91470000), rectum (34402009)"
 
 
 // Respiratory Rate Profile (LOINC 9279-1) - Added 2026-01-20
@@ -166,8 +166,10 @@ Description: "Sites where body temperature can be measured"
 * ^status = #active
 * ^experimental = false
 
-* $SCT#21082005 "Oral temperature measurement"
-* $SCT#255611001 "Tympanic temperature"
-* $SCT#415945006 "Forehead skin temperature"
-* $SCT#422005001 "Axillary temperature measurement"
-* $SCT#307047009 "Rectal temperature measurement"
+// Body structure codes for temperature measurement sites
+// Note: Using anatomical body structure codes (valid in SNOMED CT International 2025+)
+* $SCT#74262004 "Oral cavity structure"
+* $SCT#117590005 "Ear structure"
+* $SCT#52795006 "Forehead structure"
+* $SCT#91470000 "Axillary region structure"
+* $SCT#34402009 "Rectum structure"

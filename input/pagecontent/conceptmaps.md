@@ -202,6 +202,58 @@ The ~79 warnings from cross-standard ConceptMaps are accepted and documented bec
 - Alternative approaches would compromise interoperability
 - The thesis architecture requires multi-standard support
 
+## SNOMED CT Global Patient Set (GPS) Compatibility
+
+The [SNOMED International Global Patient Set (GPS)](https://www.snomed.org/gps) provides a CC-BY-4.0 licensed subset of approximately 26,000 SNOMED CT codes for use without affiliate licensing. GPS is specifically designed for International Patient Summary (IPS) implementations and enables free terminology use for cross-border patient summaries.
+
+### GPS Compatibility Analysis
+
+| Domain | IG Metrics | GPS Compatible | Notes |
+|--------|------------|----------------|-------|
+| Substance Use | 7 | 7 (100%) | Tobacco/alcohol status codes |
+| Physical Activity | 25 | 2 (~8%) | Walking, running only |
+| Sleep | 5 | 0 (0%) | No sleep stage codes in GPS |
+| Nutrition | 6 | 0 (0%) | No nutrition tracking codes |
+| Mindfulness | 3 | 0 (0%) | No mindfulness codes |
+| Mobility | 5 | 0 (0%) | No mobility assessment codes |
+| HRV | 6 | 0 (0%) | HRV codes not in GPS subset |
+| **TOTAL** | **57** | **9 (~16%)** | |
+
+### GPS-Compatible SNOMED CT Codes
+
+The following SNOMED CT codes used in this IG are included in the GPS subset:
+
+**Tobacco Use Status (IPS-aligned)**:
+- 266919005 "Never smoked tobacco"
+- 8517006 "Ex-smoker"
+- 77176002 "Smoker"
+- 449868002 "Smokes tobacco daily"
+- 428041000124106 "Occasional tobacco smoker"
+
+**Physical Activity**:
+- 129006008 "Walking"
+- 129011009 "Running"
+
+### Implications for Implementers
+
+**Organizations using GPS-only (without full SNOMED CT license)** can exchange:
+- Tobacco and alcohol status data
+- Basic physical activity (walking/running)
+
+**Advanced lifestyle metrics require either**:
+- Full SNOMED CT licensing through national affiliate programs
+- Custom CodeSystems defined in this IG (for metrics without SNOMED CT representation)
+
+### ValueSet Reference
+
+See [GPSCompatibleSNOMEDVS](ValueSet-gps-compatible-snomed-vs.html) for the complete GPS-compatible SNOMED CT codes used in this IG.
+
+### GPS Resources
+
+- SNOMED International GPS: [https://www.snomed.org/gps](https://www.snomed.org/gps)
+- HL7 THO GPS ValueSet: [http://terminology.hl7.org/ValueSet/snomed-intl-gps](http://terminology.hl7.org/ValueSet/snomed-intl-gps)
+- IPS IG (uses GPS via HL7 THO): [https://hl7.org/fhir/uv/ips/](https://hl7.org/fhir/uv/ips/)
+
 ## References
 
 1. HL7 FHIR R4 ConceptMap Resource: [https://hl7.org/fhir/R4/conceptmap.html](https://hl7.org/fhir/R4/conceptmap.html)
@@ -210,8 +262,10 @@ The ~79 warnings from cross-standard ConceptMaps are accepted and documented bec
 4. OMOP CDM: [https://ohdsi.github.io/CommonDataModel/](https://ohdsi.github.io/CommonDataModel/)
 5. SNOMED on FHIR: [https://confluence.ihtsdotools.org/display/FHIR](https://confluence.ihtsdotools.org/display/FHIR)
 6. mCODE Implementation Guide: [https://build.fhir.org/ig/HL7/fhir-mCODE-ig/](https://build.fhir.org/ig/HL7/fhir-mCODE-ig/)
+7. SNOMED International GPS: [https://www.snomed.org/gps](https://www.snomed.org/gps)
 
 ---
 
 *Documentation created: 2025-11-27*
-*Reference: Thesis Chapter 5 - Semantic Interoperability Architecture*
+*GPS section added: 2026-01-19*
+*Reference: Thesis Chapter 2 - SNOMED CT Global Patient Set; Chapter 5 - Semantic Interoperability Architecture*
