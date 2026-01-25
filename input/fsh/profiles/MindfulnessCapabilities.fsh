@@ -69,3 +69,87 @@ Description: "Capabilities supported by the mindfulness module implementation"
       * name = "authored"
       * type = #date
       * documentation = "Search by response date"
+
+  // Agent Decision Support Resources (MedAgentBench integration)
+  * resource[3]
+    * type = #Task
+    * documentation = "Supports LLM agent-generated tasks for clinical workflow"
+    * profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/agent-task"
+    * interaction[0]
+      * code = #read
+    * interaction[1]
+      * code = #create
+    * interaction[2]
+      * code = #update
+    * interaction[3]
+      * code = #search-type
+    * searchParam[0]
+      * name = "patient"
+      * type = #reference
+      * documentation = "Search by patient"
+    * searchParam[1]
+      * name = "status"
+      * type = #token
+      * documentation = "Search by task status"
+    * searchParam[2]
+      * name = "code"
+      * type = #token
+      * documentation = "Search by task type"
+    * searchParam[3]
+      * name = "authored-on"
+      * type = #date
+      * documentation = "Search by creation date"
+    * searchParam[4]
+      * name = "owner"
+      * type = #reference
+      * documentation = "Search by assigned clinician"
+
+  * resource[4]
+    * type = #ServiceRequest
+    * documentation = "Supports LLM agent-generated clinical recommendations"
+    * profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/agent-service-request"
+    * interaction[0]
+      * code = #read
+    * interaction[1]
+      * code = #create
+    * interaction[2]
+      * code = #update
+    * interaction[3]
+      * code = #search-type
+    * searchParam[0]
+      * name = "patient"
+      * type = #reference
+      * documentation = "Search by patient"
+    * searchParam[1]
+      * name = "status"
+      * type = #token
+      * documentation = "Search by request status"
+    * searchParam[2]
+      * name = "category"
+      * type = #token
+      * documentation = "Search by service category"
+    * searchParam[3]
+      * name = "authored"
+      * type = #date
+      * documentation = "Search by creation date"
+
+  * resource[5]
+    * type = #PlanDefinition
+    * documentation = "Supports LLM agent decision logic definitions"
+    * profile = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/agent-plan-definition"
+    * interaction[0]
+      * code = #read
+    * interaction[1]
+      * code = #search-type
+    * searchParam[0]
+      * name = "name"
+      * type = #string
+      * documentation = "Search by plan name"
+    * searchParam[1]
+      * name = "status"
+      * type = #token
+      * documentation = "Search by status"
+    * searchParam[2]
+      * name = "topic"
+      * type = #token
+      * documentation = "Search by decision topic"
