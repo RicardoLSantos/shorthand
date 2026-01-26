@@ -281,7 +281,7 @@ Usage: #example
 Title: "Agent HRV Risk Assessment Plan Definition"
 Description: "Example plan definition for agent-based HRV risk assessment"
 
-* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition/agent-hrv-risk-assessment"
+* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition/AgentHRVRiskAssessmentPlan"
 * version = "1.0.0"
 * name = "AgentHRVRiskAssessment"
 * title = "Agent HRV Risk Assessment Decision Logic"
