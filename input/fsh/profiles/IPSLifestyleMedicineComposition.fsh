@@ -43,15 +43,11 @@ Sections include:
 * title = "Patient Summary - Lifestyle Medicine"
 
 // =============================================================================
-// SECTION SLICING
+// SECTION SLICING - Additional slices for lifestyle medicine
+// Note: Inherits slicing discriminator from IPS base (value:code)
 // =============================================================================
 
-* section ^slicing.discriminator[0].type = #pattern
-* section ^slicing.discriminator[0].path = "code"
-* section ^slicing.rules = #open
-* section ^slicing.ordered = false
-
-// Define lifestyle medicine specific sections
+// Define lifestyle medicine specific sections (extends IPS sections)
 * section contains
     sectionLifestyleMedicine 0..1 MS and
     sectionWearableData 0..1 MS and
