@@ -64,9 +64,11 @@ Section containing lifestyle medicine observations including physical activity,
 stress management, social connections, and substance avoidance patterns.
 Maps to ACLM 6 pillars: nutrition, exercise, sleep, stress, relationships, substances.
 """
-// Using 75310-3 to avoid conflict with IPS sectionSocialHistory (29762-2)
-// Note: 89025-5 was tried but doesn't exist in LOINC v2.81 (tx.fhir.org)
-* section[sectionLifestyleMedicine].code = $LOINC#75310-3 "Health concerns Document"
+// Using 91986-0 "Integrative medicine Consult note" for Lifestyle Medicine section
+// Rationale: Lifestyle medicine includes both TREATMENT and prevention of chronic diseases
+// Integrative medicine is the closest LOINC category (holistic, patient-centered, lifestyle-based)
+// Note: 75310-3 "Health concerns" was about patient worries, not interventions
+* section[sectionLifestyleMedicine].code = $LOINC#91986-0 "Integrative medicine Consult note"
 * section[sectionLifestyleMedicine].title = "Lifestyle Medicine"
 * section[sectionLifestyleMedicine].text 1..1 MS
 * section[sectionLifestyleMedicine].entry 0..* MS
@@ -208,7 +210,7 @@ Includes standard IPS section codes plus lifestyle medicine extensions.
 * $LOINC#18776-5 "Plan of care note"
 
 // Lifestyle medicine extension sections
-* $LOINC#75310-3 "Health concerns Document"
+* $LOINC#91986-0 "Integrative medicine Consult note"
 * $LOINC#73985-4 "Exercise activity"
 * $LOINC#93832-4 "Sleep duration"
 * $LOINC#61150-9 "Subjective Narrative"
@@ -252,7 +254,7 @@ Description: "Example of an IPS Composition extended for lifestyle medicine"
 
 // Lifestyle Medicine section
 * section[sectionLifestyleMedicine].title = "Lifestyle Medicine"
-* section[sectionLifestyleMedicine].code = $LOINC#75310-3 "Health concerns Document"
+* section[sectionLifestyleMedicine].code = $LOINC#91986-0 "Integrative medicine Consult note"
 * section[sectionLifestyleMedicine].text.status = #generated
 * section[sectionLifestyleMedicine].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient engages in moderate physical activity (150 min/week). Non-smoker. Occasional alcohol use. Mediterranean diet adherence: good.</p></div>"
 
