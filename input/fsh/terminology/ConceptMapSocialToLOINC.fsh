@@ -32,13 +32,14 @@ Usage: #definition
 
 * status = #active
 * experimental = false
-* date = "2026-01-15"
+* date = "2026-01-16"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapSocialToLOINC"
-// FHIR R4 Compliance (IG Publisher 2025-12-31): target must be ValueSet
-// sourceUri can remain as CodeSystem reference (no expansion required)
-* sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-connection-cs"
-* targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
+// ARCHITECTURE NOTE (2026-01-16): sourceUri/targetCanonical REMOVED
+// Pattern: Following majority of IG ConceptMaps that omit source/target at instance level
+// Reason: sourceUri→CodeSystem gives "must be ValueSet" error; sourceCanonical→ValueSet
+//         gives tx.fhir.org expansion error for local CodeSystems
+// Solution: Rely on group.source and group.target to define code systems (valid FHIR R4)
 
 // =============================================================================
 // Group 1: Loneliness Assessment Mappings

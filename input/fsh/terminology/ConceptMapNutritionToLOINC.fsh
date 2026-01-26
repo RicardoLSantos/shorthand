@@ -36,9 +36,9 @@ Usage: #definition
 * date = "2026-01-15"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapNutritionToLOINC"
-// FHIR R4 Compliance (IG Publisher 2025-12-31): target must be ValueSet
-// sourceUri can remain as CodeSystem reference (no expansion required)
-* sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+// ConceptMap.source MUST be a ValueSet per FHIR R4 (IG Publisher 2.0.28+)
+// The ValueSet uses explicit code enumeration to avoid tx.fhir.org expansion issues
+* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/nutrition-complete-mapping-source-vs"
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
 
 // =============================================================================

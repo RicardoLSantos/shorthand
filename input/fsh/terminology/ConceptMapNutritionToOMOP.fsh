@@ -34,7 +34,9 @@ Usage: #definition
 * date = "2026-01-12"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapNutritionToOMOP"
-* sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+// ConceptMap.source MUST be a ValueSet per FHIR R4 (IG Publisher 2.0.28+)
+// The ValueSet uses explicit code enumeration to avoid tx.fhir.org expansion issues
+* sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/nutrition-complete-mapping-source-vs"
 * targetUri = "https://athena.ohdsi.org/search-terms/concepts"
 
 // =============================================================================
