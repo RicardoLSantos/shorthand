@@ -64,7 +64,8 @@ Section containing lifestyle medicine observations including physical activity,
 stress management, social connections, and substance avoidance patterns.
 Maps to ACLM 6 pillars: nutrition, exercise, sleep, stress, relationships, substances.
 """
-* section[sectionLifestyleMedicine].code = $LOINC#29762-2 "Social history Narrative"
+// Using 89025-5 to avoid conflict with IPS sectionSocialHistory (29762-2)
+* section[sectionLifestyleMedicine].code = $LOINC#89025-5 "Health status assessment panel"
 * section[sectionLifestyleMedicine].title = "Lifestyle Medicine"
 * section[sectionLifestyleMedicine].text 1..1 MS
 * section[sectionLifestyleMedicine].entry 0..* MS
@@ -107,7 +108,7 @@ Section containing sleep-related observations and assessments.
 Includes sleep duration, sleep stages, sleep quality scores, and circadian data.
 Supports ICD-11 sleep disorder classification (7A00-7A4Z).
 """
-* section[sectionSleepHealth].code = $LOINC#93832-4 "Sleep panel"
+* section[sectionSleepHealth].code = $LOINC#93832-4 "Sleep duration"
 * section[sectionSleepHealth].title = "Sleep Health"
 * section[sectionSleepHealth].text 1..1 MS
 * section[sectionSleepHealth].entry 0..* MS
@@ -126,7 +127,7 @@ Section containing nutrition-related observations and assessments.
 Includes dietary intake, hydration, BMI trends, and nutritional risk scores.
 Supports ICD-11 nutrition codes (5B70-5B82, QD60-QD6Z).
 """
-* section[sectionNutritionStatus].code = $LOINC#61150-9 "Diet and nutrition Narrative"
+* section[sectionNutritionStatus].code = $LOINC#61150-9 "Subjective Narrative"
 * section[sectionNutritionStatus].title = "Nutrition Status"
 * section[sectionNutritionStatus].text 1..1 MS
 * section[sectionNutritionStatus].entry 0..* MS
@@ -201,14 +202,15 @@ Includes standard IPS section codes plus lifestyle medicine extensions.
 * $LOINC#8716-3 "Vital signs"
 * $LOINC#11348-0 "History of Past illness Narrative"
 * $LOINC#10162-6 "History of pregnancies Narrative"
-* $LOINC#29762-2 "Social history Narrative"
+* $LOINC#29762-2 "Social history note"
 * $LOINC#47420-5 "Functional status assessment note"
 * $LOINC#18776-5 "Plan of care note"
 
 // Lifestyle medicine extension sections
+* $LOINC#89025-5 "Health status assessment panel"
 * $LOINC#73985-4 "Exercise activity"
-* $LOINC#93832-4 "Sleep panel"
-* $LOINC#61150-9 "Diet and nutrition Narrative"
+* $LOINC#93832-4 "Sleep duration"
+* $LOINC#61150-9 "Subjective Narrative"
 
 // =============================================================================
 // EXAMPLE INSTANCE
@@ -249,7 +251,7 @@ Description: "Example of an IPS Composition extended for lifestyle medicine"
 
 // Lifestyle Medicine section
 * section[sectionLifestyleMedicine].title = "Lifestyle Medicine"
-* section[sectionLifestyleMedicine].code = $LOINC#29762-2 "Social history Narrative"
+* section[sectionLifestyleMedicine].code = $LOINC#89025-5 "Health status assessment panel"
 * section[sectionLifestyleMedicine].text.status = #generated
 * section[sectionLifestyleMedicine].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient engages in moderate physical activity (150 min/week). Non-smoker. Occasional alcohol use. Mediterranean diet adherence: good.</p></div>"
 
@@ -261,13 +263,58 @@ Description: "Example of an IPS Composition extended for lifestyle medicine"
 
 // Sleep Health section
 * section[sectionSleepHealth].title = "Sleep Health"
-* section[sectionSleepHealth].code = $LOINC#93832-4 "Sleep panel"
+* section[sectionSleepHealth].code = $LOINC#93832-4 "Sleep duration"
 * section[sectionSleepHealth].text.status = #generated
 * section[sectionSleepHealth].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Average sleep duration: 7.2 hours. Sleep efficiency: 88%. No sleep apnea detected.</p></div>"
 
 // Nutrition Status section
 * section[sectionNutritionStatus].title = "Nutrition Status"
-* section[sectionNutritionStatus].code = $LOINC#61150-9 "Diet and nutrition Narrative"
+* section[sectionNutritionStatus].code = $LOINC#61150-9 "Subjective Narrative"
 * section[sectionNutritionStatus].text.status = #generated
 * section[sectionNutritionStatus].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>BMI: 28.5 kg/m2 (overweight). Adequate hydration. Following Mediterranean diet with good adherence.</p></div>"
+
+// =============================================================================
+// SUPPORTING EXAMPLE INSTANCES
+// =============================================================================
+
+Instance: example-patient
+InstanceOf: Patient
+Usage: #example
+Title: "Example Patient for IPS Lifestyle Medicine"
+Description: "Minimal Patient instance for IPS Lifestyle Medicine example"
+
+* identifier.system = "urn:oid:2.16.840.1.113883.2.4.6.3"
+* identifier.value = "574687583"
+* active = true
+* name.family = "Silva"
+* name.given = "Maria"
+* gender = #female
+* birthDate = "1975-03-15"
+
+Instance: example-practitioner
+InstanceOf: Practitioner
+Usage: #example
+Title: "Example Practitioner for IPS Lifestyle Medicine"
+Description: "Minimal Practitioner instance for IPS Lifestyle Medicine example"
+
+* identifier.system = "urn:oid:2.16.840.1.113883.2.4.6.1"
+* identifier.value = "12345678"
+* active = true
+* name.family = "Santos"
+* name.given = "Ricardo"
+* name.prefix = "Dr."
+
+Instance: example-obesity
+InstanceOf: Condition
+Usage: #example
+Title: "Example Obesity Condition"
+Description: "Obesity condition for IPS Lifestyle Medicine example"
+
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
+* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
+* code = $SCT#414916001 "Obesity"
+* code.text = "Obesity (ICD-11: 5B82)"
+* subject = Reference(Patient/example-patient)
+* onsetDateTime = "2020-01-01"
 

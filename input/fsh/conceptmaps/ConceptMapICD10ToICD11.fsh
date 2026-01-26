@@ -3,13 +3,13 @@
 // Purpose: Translation between ICD-10-CM and ICD-11 lifestyle medicine codes
 // Reference: WHO ICD-11 MMS 2024-01, ICD-10-CM 2024
 
-Instance: ConceptMapICD10ToICD11Lifestyle
+Instance: icd10-to-icd11-lifestyle
 InstanceOf: ConceptMap
 Usage: #definition
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/icd10-to-icd11-lifestyle"
 * version = "0.1.0"
-* name = "ConceptMapICD10ToICD11Lifestyle"
+* name = "ICD10ToICD11LifestyleConceptMap"
 * title = "ICD-10-CM to ICD-11 Lifestyle Medicine ConceptMap"
 * status = #active
 * experimental = false
@@ -24,8 +24,8 @@ Note: ICD-11 provides more specific lifestyle categorization compared to ICD-10-
 Some ICD-10-CM codes map to multiple ICD-11 concepts (narrow-to-broad).
 """
 
-* sourceUri = "http://hl7.org/fhir/sid/icd-10-cm"
-* targetUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs"
+// Note: Using group-level source/target instead of top-level sourceUri/targetUri
+// to avoid FHIR validator strictness about CodeSystem vs ValueSet references
 
 // =============================================================================
 // HEALTH BEHAVIOURS MAPPINGS
