@@ -268,6 +268,7 @@ Description: "Topics/categories for agent decision logic"
 ValueSet: AgentDecisionTopicVS
 Id: agent-decision-topic-vs
 Title: "Agent Decision Topic ValueSet"
+Description: "Topics for agent decision logic including risk assessment, monitoring, interventions, and alerts"
 * ^experimental = false
 * include codes from system AgentDecisionTopicCS
 

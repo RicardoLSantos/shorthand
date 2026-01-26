@@ -172,6 +172,7 @@ Description: "Types of tasks that LLM agents can create"
 ValueSet: AgentTaskTypeVS
 Id: agent-task-type-vs
 Title: "Agent Task Type ValueSet"
+Description: "Types of tasks that LLM agents can create including clinical reviews, orders, documentation, and lifestyle interventions"
 * ^experimental = false
 * include codes from system AgentTaskTypeCS
 
@@ -193,6 +194,7 @@ Description: "Business status values specific to agent workflow"
 ValueSet: AgentTaskBusinessStatusVS
 Id: agent-task-business-status-vs
 Title: "Agent Task Business Status ValueSet"
+Description: "Business status values specific to agent workflow including review states and approval outcomes"
 * ^experimental = false
 * include codes from system AgentTaskBusinessStatusCS
 
@@ -215,6 +217,7 @@ Description: "Reasons for agent task status changes"
 ValueSet: AgentTaskStatusReasonVS
 Id: agent-task-status-reason-vs
 Title: "Agent Task Status Reason ValueSet"
+Description: "Reasons for agent task status changes including clinician decisions and system events"
 * ^experimental = false
 * include codes from system AgentTaskStatusReasonCS
 
@@ -238,5 +241,6 @@ Description: "Clinical reasons for agent-generated tasks"
 ValueSet: AgentReasonCodeVS
 Id: agent-reason-code-vs
 Title: "Agent Reason Code ValueSet"
+Description: "Clinical reasons for agent-generated tasks including abnormal values, trends, and care opportunities"
 * ^experimental = false
 * include codes from system AgentReasonCodeCS

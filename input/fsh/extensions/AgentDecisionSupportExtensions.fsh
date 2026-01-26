@@ -164,6 +164,7 @@ Description: "Codes for agent assessment of available data completeness"
 ValueSet: AgentDataCompletenessVS
 Id: agent-data-completeness-vs
 Title: "Agent Data Completeness ValueSet"
+Description: "Data completeness assessment values for agent analysis ranging from complete to insufficient"
 * ^experimental = false
 * include codes from system AgentDataCompletenessCS
 
@@ -216,5 +217,6 @@ Description: "Status codes for agent-recommended actions"
 ValueSet: AgentActionStatusVS
 Id: agent-action-status-vs
 Title: "Agent Action Status ValueSet"
+Description: "Status codes for agent-recommended actions including pending, accepted, rejected, and completed"
 * ^experimental = false
 * include codes from system AgentActionStatusCS

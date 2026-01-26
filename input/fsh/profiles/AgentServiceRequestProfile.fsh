@@ -171,6 +171,7 @@ Description: "Categories of services that agents can recommend"
 ValueSet: AgentServiceCategoryVS
 Id: agent-service-category-vs
 Title: "Agent Service Category ValueSet"
+Description: "Categories of services that agents can recommend including diagnostics, consultations, and interventions"
 * ^experimental = false
 * include codes from system AgentServiceCategoryCS
 
@@ -212,5 +213,6 @@ Description: "Specific services that agents can recommend"
 ValueSet: AgentServiceCodeVS
 Id: agent-service-code-vs
 Title: "Agent Service Code ValueSet"
+Description: "Specific services that agents can recommend including laboratory tests, cardiac services, and lifestyle interventions"
 * ^experimental = false
 * include codes from system AgentServiceCodeCS
