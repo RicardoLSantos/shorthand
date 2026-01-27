@@ -142,3 +142,27 @@ Title: "Mobility Risk Assessment Example"
 * prediction[fallRisk].probabilityDecimal = 0.12
 * prediction[fallRisk].qualitativeRisk = http://terminology.hl7.org/CodeSystem/risk-probability#low "Low likelihood"
 * note.text = "Low fall risk based on iOS 14+ gait metrics: Walking steadiness OK (72%), asymmetry normal (7.5%), adequate stair speeds"
+
+
+// Example 6: Observation with Mobility Alert Level Extension
+Instance: MobilityAlertLevelExample
+InstanceOf: MobilityMeasurement
+Usage: #example
+Description: "Walking steadiness observation with mobility-alert-level extension showing significant decline"
+Title: "Mobility Alert Level Extension Example"
+
+* status = #final
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-27T07:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/iphone-example)
+* category = http://terminology.hl7.org/CodeSystem/observation-category#activity
+* code = $LIFESTYLEOBS#walking-steadiness "Walking steadiness measurement"
+* valueQuantity = 35 '%' "percent"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
+
+// Mobility Alert Level extension - Red alert for significant change
+* extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-alert-level"
+* extension[0].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#red "Alert - Significant change"
+
+* note.text = "Walking steadiness in Very Low range (<40%). RED alert triggered. Immediate fall risk assessment recommended. Previous reading was 52% (2 weeks ago)."

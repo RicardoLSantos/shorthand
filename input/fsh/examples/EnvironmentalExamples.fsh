@@ -103,3 +103,63 @@ Title: "Environmental Monitoring Device"
 * modelNumber = "iPhone 15 Pro"
 * type = $LIFESTYLEOBS#environmental-sensor "Environmental sensor device"
 * status = #active
+
+
+// ============================================================================
+// Environmental Audio Exposure Example (iOS 13+)
+// ============================================================================
+
+Instance: EnvironmentalAudioExposureExample
+InstanceOf: EnvironmentalAudioExposureObservation
+Usage: #example
+Title: "Environmental Audio Exposure Measurement"
+Description: "Example of environmental audio exposure from iPhone microphone (iOS 13+ HKQuantityTypeIdentifier.environmentalAudioExposure)"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-27T12:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/iphone-example)
+
+* valueQuantity = 78 'dB'
+* valueQuantity.unit = "dB(A)"
+
+* component[duration].code = $LIFESTYLEOBS#noise-duration "Environmental noise exposure duration"
+* component[duration].valueQuantity = 45 'min'
+
+* component[peakLevel].code = $LIFESTYLEOBS#noise-peak "Peak environmental sound level"
+* component[peakLevel].valueQuantity = 92 'dB'
+
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#urban "Urban"
+* note.text = "Environmental audio exposure during lunch break in urban restaurant. WHO recommends <70 dB average over 24h."
+
+
+// ============================================================================
+// Headphone Audio Exposure Example (iOS 14+)
+// ============================================================================
+
+Instance: HeadphoneAudioExposureExample
+InstanceOf: HeadphoneAudioExposureObservation
+Usage: #example
+Title: "Headphone Audio Exposure Measurement"
+Description: "Example of headphone audio exposure from AirPods (iOS 14+ HKQuantityTypeIdentifier.headphoneAudioExposure)"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-27T16:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/iphone-example)
+
+* valueQuantity = 72 'dB'
+* valueQuantity.unit = "dB(A)"
+
+* component[duration].code = $LIFESTYLEOBS#noise-duration "Environmental noise exposure duration"
+* component[duration].valueQuantity = 90 'min'
+
+* component[sevenDayAverage].code = $LIFESTYLEOBS#noise-avg "Environmental noise average level"
+* component[sevenDayAverage].valueQuantity = 68 'dB'
+
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#indoor "Indoor"
+* note.text = "Headphone audio exposure during work. 7-day average 68 dB is within WHO safe limits (<80 dB for 40h/week). Apple notifies at 80 dB sustained."

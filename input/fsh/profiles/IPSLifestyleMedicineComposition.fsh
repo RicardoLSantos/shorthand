@@ -321,3 +321,34 @@ Description: "Obesity condition for IPS Lifestyle Medicine example"
 * subject = Reference(Patient/example-patient)
 * onsetDateTime = "2020-01-01"
 
+
+// =============================================================================
+// IPS LIFESTYLE MEDICINE BUNDLE EXAMPLE
+// =============================================================================
+
+Instance: ExampleIPSLifestyleMedicineBundle
+InstanceOf: IPSLifestyleMedicineBundle
+Usage: #example
+Title: "Example IPS Lifestyle Medicine Bundle"
+Description: "Complete IPS Lifestyle Medicine document bundle containing the Composition, Patient, Practitioner, and Condition resources"
+
+* type = #document
+* timestamp = "2026-01-27T10:00:00Z"
+* identifier.system = "urn:oid:2.16.840.1.113883.2.4.6.3"
+* identifier.value = "ips-lm-bundle-001"
+
+// Entry 0: Composition (must be first)
+* entry[composition].fullUrl = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Composition/ExampleIPSLifestyleMedicineComposition"
+* entry[composition].resource = ExampleIPSLifestyleMedicineComposition
+
+// Entry 1: Patient
+* entry[patient].fullUrl = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Patient/example-patient"
+* entry[patient].resource = example-patient
+
+// Entry 2+: Supporting resources
+* entry[2].fullUrl = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Practitioner/example-practitioner"
+* entry[2].resource = example-practitioner
+
+* entry[3].fullUrl = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Condition/example-obesity"
+* entry[3].resource = example-obesity
+

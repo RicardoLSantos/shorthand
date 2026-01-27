@@ -29,6 +29,10 @@ Description: "Captures LLM agent recommendation metadata including confidence sc
 * ^context[1].expression = "DiagnosticReport"
 * ^context[2].type = #element
 * ^context[2].expression = "RiskAssessment"
+* ^context[3].type = #element
+* ^context[3].expression = "Task"
+* ^context[4].type = #element
+* ^context[4].expression = "ServiceRequest"
 * extension contains
     confidence 1..1 MS and
     interpretation 1..1 MS and
@@ -133,6 +137,10 @@ Description: "Indicates the quality and completeness of evidence available to th
 * ^experimental = false
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
+* ^context[1].type = #element
+* ^context[1].expression = "Task"
+* ^context[2].type = #element
+* ^context[2].expression = "ServiceRequest"
 * extension contains
     dataCompleteness 1..1 MS and
     temporalCoverage 0..1 and

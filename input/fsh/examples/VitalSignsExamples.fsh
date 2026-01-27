@@ -197,3 +197,32 @@ Title: "Respiratory Rate Sleep Example"
 // Note: Component removed to comply with FHIR obs-7 constraint (code cannot be same as Observation.code when value is present)
 // The sleep context is indicated by effectiveDateTime (03:00 AM) and the note
 * note.text = "Average respiratory rate during deep sleep. Lower than awake rate (10-16/min normal during sleep)."
+
+
+// =============================================================================
+// Advanced Vital Signs with Homeostasis Index Extension
+// =============================================================================
+
+Instance: AdvancedVitalsWithHomeostasisExample
+InstanceOf: AdvancedVitalSigns
+Usage: #example
+Title: "Advanced Vital Signs with Homeostasis Index"
+Description: "Example of advanced vital signs observation using the homeostasis-index extension to capture physiological balance"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
+* code = $LOINC#8867-4 "Heart rate"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-27T06:30:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* device = Reference(Device/AppleWatchDevice)
+* valueQuantity = 58 '/min' "per minute"
+* valueQuantity.system = $UCUM
+
+// Homeostasis Index extension - normalized physiological balance (0-1)
+* extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/homeostasis-index"
+* extension[0].valueQuantity = 0.82 '1'
+* extension[0].valueQuantity.unit = "index"
+
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* note.text = "Resting heart rate 58 bpm with high homeostasis index (0.82). Indicates good physiological balance and autonomic regulation."

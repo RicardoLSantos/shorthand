@@ -195,3 +195,47 @@ Description: "Comprehensive summary of patient's substance use patterns for life
 * hasMember[tobaccoUse] = Reference(TobaccoUseExSmokerExample)
 * hasMember[alcoholUse] = Reference(AlcoholUseModerateExample)
 * hasMember[caffeineIntake] = Reference(CaffeineIntakeModerateExample)
+
+
+// =============================================================================
+// RECREATIONAL SUBSTANCE USE EXAMPLE
+// =============================================================================
+
+Instance: RecreationalSubstanceUseExample
+InstanceOf: RecreationalSubstanceUseProfile
+Usage: #example
+Title: "Recreational Substance Use Screening"
+Description: "Example of recreational substance use screening as part of lifestyle medicine assessment, with cessation-support extension"
+
+* status = #final
+* category = $ObsCat#social-history "Social History"
+* code = $LOINC#68524-8 "How many times in the past year have you used an illegal drug or used a prescription medication for non-medical reasons"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-01-27T10:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+
+// Status: former user
+* valueCodeableConcept = $SCT#44870007 "Ex-drug user (finding)"
+
+// Substance type: cannabis
+* component[substanceType].code = $LOINC#74204-9 "Drug use [NTDS]"
+* component[substanceType].valueCodeableConcept = $SCT#398705004 "Cannabis (substance)"
+
+// Frequency: rarely
+* component[useFrequency].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#substance-frequency "Frequency of substance use"
+* component[useFrequency].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/substance-use-frequency-cs#never "Never"
+
+// Last use date
+* component[lastUseDate].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#last-use-date "Date of last substance use"
+* component[lastUseDate].valueDateTime = "2024-06-15T00:00:00Z"
+
+// Cessation Support extension (not a named slice in RecreationalSubstanceUseProfile)
+* extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cessation-support"
+* extension[0].extension[0].url = "method"
+* extension[0].extension[0].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cessation-support-method-cs#counseling "Counseling"
+* extension[0].extension[1].url = "status"
+* extension[0].extension[1].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cessation-support-status-cs#completed "Completed"
+* extension[0].extension[2].url = "startDate"
+* extension[0].extension[2].valueDate = "2024-01-10"
+
+* note.text = "Former cannabis user. Ceased use in June 2024 with counseling support. No current substance use concerns."
