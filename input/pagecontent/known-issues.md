@@ -2,7 +2,7 @@
 
 This page documents known issues that affect the iOS Lifestyle Medicine Implementation Guide build validation but do not impact functionality.
 
-**Build Summary (2026-01-27):** 28 errors, 148 warnings, 8 broken links
+**Build Summary (2026-01-29):** 28 errors, ~146 warnings (after quick fixes)
 
 ---
 
@@ -152,15 +152,15 @@ Source CodeSystem does not have all content (content = not-present)
 
 | Sub-category | Count | Description | Fixable |
 |-------------|-------|-------------|---------|
-| Bundle fullUrl mismatches | 5 | Reference resolution in Bundle example | Fixed (pending rebuild) |
+| Bundle fullUrl mismatches | 5 | Reference resolution in Bundle example | Fixed (2026-01-27) |
 | OID/URN identifiers | 4 | Example identifier systems (urn:oid) | Expected |
 | Consent policy URLs | 3 | Legislative URLs (GDPR, HIPAA, LGPD) | Expected |
 | CQL language | 2 | CQL expressions not validated by IG Publisher | Expected |
-| Display name mismatch | 1 | diet-quality-score display text | Fixed |
-| pin-canonicals | 1 | plan-definition-type version ambiguity | Low priority |
+| Display name mismatch | 1 | diet-quality-score display text | **Fixed (2026-01-29)** |
+| pin-canonicals | 1 | plan-definition-type version ambiguity | **Fixed (2026-01-29)** |
 | ICD-10 content | 1 | ICD-10-CM not fully populated | Expected |
 | VendorToOpenEHR URIs | 8 | Vendor + CKM source/target URIs | OCL mitigable |
-| task-output-type CodeSystem | 1 | Non-standard CodeSystem URL | Fixed |
+| task-output-type CodeSystem | 1 | Non-standard CodeSystem URL | Fixed (2026-01-27) |
 
 ---
 
@@ -219,6 +219,6 @@ These issues do not prevent the IG from being used in production. All FHIR profi
 
 ---
 
-*Last updated: 2026-01-27*
+*Last updated: 2026-01-29*
 *Build: IG Publisher 2.0.28, SUSHI 3.16.5*
 *iOS Lifestyle Medicine IG v0.1.0*

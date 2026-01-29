@@ -231,9 +231,9 @@ Id: agent-plan-definition-type-vs
 Title: "Agent Plan Definition Type ValueSet"
 Description: "Types of plan definitions for agent decision logic"
 * ^experimental = false
-* http://terminology.hl7.org/CodeSystem/plan-definition-type#clinical-protocol "Clinical Protocol"
-* http://terminology.hl7.org/CodeSystem/plan-definition-type#eca-rule "ECA Rule"
-* http://terminology.hl7.org/CodeSystem/plan-definition-type#workflow-definition "Workflow Definition"
+* http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#clinical-protocol "Clinical Protocol"
+* http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#eca-rule "ECA Rule"
+* http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#workflow-definition "Workflow Definition"
 
 // ============================================================================
 // CodeSystems
@@ -286,7 +286,7 @@ Description: "Example plan definition for agent-based HRV risk assessment"
 * version = "1.0.0"
 * name = "AgentHRVRiskAssessment"
 * title = "Agent HRV Risk Assessment Decision Logic"
-* type = http://terminology.hl7.org/CodeSystem/plan-definition-type#eca-rule
+* type = http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#eca-rule
 * status = #draft
 * experimental = true
 * date = "2026-01-25"

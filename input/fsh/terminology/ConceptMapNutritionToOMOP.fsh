@@ -149,7 +149,7 @@ Usage: #definition
 * group[=].element[=].target[=].comment = "GAP: Meal patterns not in standard OMOP vocabularies; use local concept"
 
 * group[=].element[+].code = #diet-quality-score
-* group[=].element[=].display = "Diet quality score (HEI)"
+* group[=].element[=].display = "Diet quality score"
 * group[=].element[=].target[+].code = #0
 * group[=].element[=].target[=].display = "No OMOP mapping"
 * group[=].element[=].target[=].equivalence = #unmatched
