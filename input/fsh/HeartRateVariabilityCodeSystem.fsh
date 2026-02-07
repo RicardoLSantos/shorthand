@@ -4,8 +4,11 @@
 // Purpose: Define custom codes for HRV metrics not in LOINC, map existing ones
 //
 // OCL SELF-HOSTED MIRRORING:
-// This CodeSystem is mirrored in OCL Self-Hosted (http://fmup.pt/fhir/CodeSystem/hrv-codesystem)
-// within the fmup-heads organization. The OCL version includes:
+// This CodeSystem is mirrored in OCL Self-Hosted with canonical URL:
+//   https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs
+// NOTE: The canonical URL is a FHIR identifier for global uniqueness, NOT a resolvable HTTP endpoint.
+//       The actual FHIR API endpoint is http://localhost:8000/fhir/CodeSystem/ when OCL Docker is running.
+// Organization: fmup-heads. The OCL version includes:
 //   - Same 5 metric concepts (RMSSD, pNN50, LF-HF-Ratio, LF-Power, HF-Power)
 //   - Additional 5 vendor codes (Apple-HRV, Fitbit-HRV, Garmin-HRV-Status, Polar-RMSSD, Oura-HRV)
 // OCL provides FHIR R4B Terminology Services ($lookup, $validate-code, $expand)
