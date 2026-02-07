@@ -1,0 +1,85 @@
+<hr/><a name="l1"> </a>
+<p>#1</p>
+<pre>
+GET http://localhost:8000/fhir/metadata HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+User-Agent: fhir/publisher
+</pre>
+<pre>
+200
+allow:GET, HEAD, OPTIONS
+connection:close
+content-type:application/fhir+json
+cross-origin-opener-policy:same-origin
+date:Sat, 07 Feb 2026 15:15:25 GMT
+referrer-policy:same-origin
+server:gunicorn
+vary:Accept, Cookie, origin, Accept-Encoding
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-ocl-api-version:2.3.201-88911830
+x-ocl-request-method:GET
+x-ocl-request-url:/fhir/metadata
+x-ocl-request-user:AnonymousUser
+x-ocl-response-time:0.014525175094604492
+
+{&quot;resourceType&quot;:&quot;CapabilityStatement&quot;,&quot;id&quot;:&quot;openconceptlab-terminology-server&quot;,&quot;text&quot;:{&quot;status&quot;:&quot;extensions&quot;,&quot;div&quot;:&quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n&lt;h2&gt;OpenConceptLab Capability Statement&lt;/h2&gt;\n&lt;/div&gt;\n&quot;},&quot;url&quot;:&quot;http://hl7.org/fhir/CapabilityStatement/terminology-server&quot;,&quot;version&quot;:&quot;0.1&quot;,&quot;name&quot;:&quot;OCLTerminologyCapabilityStatement&quot;,&quot;title&quot;:&quot;OpenConceptLab FHIR Terminology Server — Capability Statement&quot;,&quot;status&quot;:&quot;draft&quot;,&quot;experimental&quot;:true,&quot;date&quot;:&quot;2024-05-15&quot;,&quot;description&quot;:&quot;This is a draft capability statement for a OCL FHIR Terminology Server.&quot;,&quot;kind&quot;:&quot;instance&quot;,&quot;implementation&quot;:{&quot;description&quot;:&quot;The OCL FHIR Terminology Server&quot;},&quot;fhirVersion&quot;:&quot;4.0.0&quot;,&quot;format&quot;:[&quot;json&quot;,&quot;xml&quot;],&quot;rest&quot;:[{&quot;mode&quot;:&quot;server&quot;,&quot;resource&quot;:[{&quot;type&quot;:&quot;CodeSystem&quot;,&quot;profile&quot;:&quot;http://hl7.org/fhir/StructureDefinition/CodeSystem&quot;,&quot;interaction&quot;:[{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;code&quot;:&quot;read&quot;},{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;code&quot;:&quot;search-type&quot;}],&quot;searchParam&quot;:[{&quot;name&quot;:&quot;url&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/CodeSystem-url&quot;,&quot;type&quot;:&quot;uri&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/CodeSystem-version&quot;,&quot;type&quot;:&quot;token&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/CodeSystem-name&quot;,&quot;type&quot;:&quot;string&quot;},{&quot;name&quot;:&quot;title&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/CodeSystem-title&quot;,&quot;type&quot;:&quot;string&quot;},{&quot;name&quot;:&quot;status&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/CodeSystem-status&quot;,&quot;type&quot;:&quot;token&quot;}],&quot;operation&quot;:[{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;name&quot;:&quot;expand&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup&quot;},{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;name&quot;:&quot;expand&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code&quot;}]},{&quot;type&quot;:&quot;ValueSet&quot;,&quot;profile&quot;:&quot;http://hl7.org/fhir/StructureDefinition/ValueSet&quot;,&quot;interaction&quot;:[{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;code&quot;:&quot;read&quot;},{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;code&quot;:&quot;search-type&quot;}],&quot;searchParam&quot;:[{&quot;name&quot;:&quot;url&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ValueSet-url&quot;,&quot;type&quot;:&quot;uri&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ValueSet-version&quot;,&quot;type&quot;:&quot;token&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ValueSet-name&quot;,&quot;type&quot;:&quot;string&quot;},{&quot;name&quot;:&quot;title&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ValueSet-title&quot;,&quot;type&quot;:&quot;string&quot;},{&quot;name&quot;:&quot;status&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ValueSet-status&quot;,&quot;type&quot;:&quot;token&quot;}],&quot;operation&quot;:[{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;name&quot;:&quot;expand&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/OperationDefinition/ValueSet-expand&quot;},{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;name&quot;:&quot;expand&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code&quot;}]},{&quot;type&quot;:&quot;ConceptMap&quot;,&quot;profile&quot;:&quot;http://hl7.org/fhir/StructureDefinition/ConceptMap&quot;,&quot;interaction&quot;:[{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;code&quot;:&quot;read&quot;},{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;code&quot;:&quot;search-type&quot;}],&quot;searchParam&quot;:[{&quot;name&quot;:&quot;url&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ConceptMap-url&quot;,&quot;type&quot;:&quot;uri&quot;},{&quot;name&quot;:&quot;version&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ConceptMap-version&quot;,&quot;type&quot;:&quot;token&quot;},{&quot;name&quot;:&quot;name&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ConceptMap-name&quot;,&quot;type&quot;:&quot;string&quot;},{&quot;name&quot;:&quot;title&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ConceptMap-title&quot;,&quot;type&quot;:&quot;string&quot;},{&quot;name&quot;:&quot;status&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/SearchParameter/ConceptMap-status&quot;,&quot;type&quot;:&quot;token&quot;}],&quot;operation&quot;:[{&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation&quot;,&quot;valueCode&quot;:&quot;SHALL&quot;}],&quot;name&quot;:&quot;expand&quot;,&quot;definition&quot;:&quot;http://hl7.org/fhir/OperationDefinition/ConceptMap-translate&quot;}]}]}]}
+</pre>
+<hr/><a name="l2"> </a>
+<p>#2</p>
+<pre>
+GET http://localhost:8000/fhir/metadata?mode=terminology HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+User-Agent: fhir/publisher
+</pre>
+<pre>
+200
+allow:GET, HEAD, OPTIONS
+connection:close
+content-type:application/fhir+json
+cross-origin-opener-policy:same-origin
+date:Sat, 07 Feb 2026 15:15:25 GMT
+referrer-policy:same-origin
+server:gunicorn
+vary:Accept, Cookie, origin, Accept-Encoding
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-ocl-api-version:2.3.201-88911830
+x-ocl-request-method:GET
+x-ocl-request-url:/fhir/metadata?mode=terminology
+x-ocl-request-user:AnonymousUser
+x-ocl-response-time:0.00254058837890625
+
+{&quot;resourceType&quot;:&quot;TerminologyCapabilities&quot;,&quot;id&quot;:&quot;openconceptlab-terminology-capabilities&quot;,&quot;text&quot;:{&quot;status&quot;:&quot;generated&quot;,&quot;div&quot;:&quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n\t\t\t\n&lt;p&gt;The OCL Server supports the following resources: CodeSystem, ValueSet, ConceptMap.&lt;/p&gt;\n\t\t\t\n&lt;/div&gt;&quot;},&quot;url&quot;:&quot;urn:uuid:0a651364-aee5-4b4e-8259-39e8a1cff71a&quot;,&quot;version&quot;:&quot;0.1&quot;,&quot;name&quot;:&quot;OCLTerminologyCapabilities&quot;,&quot;title&quot;:&quot;OpenConceptLab FHIR Terminology Capabilities&quot;,&quot;status&quot;:&quot;draft&quot;,&quot;experimental&quot;:true,&quot;date&quot;:&quot;2024-05-15&quot;,&quot;publisher&quot;:&quot;OpenConceptLab&quot;,&quot;contact&quot;:[{&quot;name&quot;:&quot;System Administrator&quot;,&quot;telecom&quot;:[{&quot;system&quot;:&quot;email&quot;,&quot;value&quot;:&quot;admin@openconceptlab.org&quot;}]}],&quot;description&quot;:&quot;This is the FHIR terminology capability statement for the OCL FHIR.&quot;,&quot;kind&quot;:&quot;instance&quot;,&quot;software&quot;:{&quot;name&quot;:&quot;oclfhir&quot;,&quot;version&quot;:&quot;2.3.201-88911830&quot;},&quot;implementation&quot;:{&quot;description&quot;:&quot;OCL FHIR Terminology Server&quot;,&quot;url&quot;:&quot;http://localhost:8000/fhir&quot;},&quot;codeSearch&quot;:&quot;all&quot;}
+</pre>
+<hr/><a name="l3"> </a>
+<p>#3</p>
+<pre>
+POST http://localhost:8000/fhir/CodeSystem/$validate-code? HTTP/1.0
+Accept: application/fhir+json; fhirVersion=4.0
+Content-Type: application/fhir+json; fhirVersion=4.0;charset=UTF-8
+User-Agent: fhir/publisher
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"openEHR-EHR-OBSERVATION.heart_rate_variability.v0","code":"id5"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"a9071cd2-ec78-4c0c-8781-59fde1afb20f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"diagnostics","valueBoolean":true}]}
+</pre>
+<pre>
+415
+allow:GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+connection:close
+content-length:104
+content-type:application/fhir+json
+cross-origin-opener-policy:same-origin
+date:Sat, 07 Feb 2026 15:16:21 GMT
+referrer-policy:same-origin
+server:gunicorn
+vary:Accept, Cookie, origin
+x-content-type-options:nosniff
+x-frame-options:DENY
+x-ocl-api-version:2.3.201-88911830
+x-ocl-request-method:POST
+x-ocl-request-url:/fhir/CodeSystem/$validate-code
+x-ocl-request-user:AnonymousUser
+x-ocl-response-time:0.022132158279418945
+
+{&quot;detail&quot;:&quot;Unsupported media type \&quot;application/fhir+json; fhirVersion=4.0;charset=UTF-8\&quot; in request.&quot;}
+</pre>
