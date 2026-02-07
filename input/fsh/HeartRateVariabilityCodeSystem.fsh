@@ -1,6 +1,15 @@
 // Heart Rate Variability CodeSystem with LOINC mapping
 // Created: 2024-11-20
+// Updated: 2026-02-07 - Added OCL Self-Hosted mirroring documentation
 // Purpose: Define custom codes for HRV metrics not in LOINC, map existing ones
+//
+// OCL SELF-HOSTED MIRRORING:
+// This CodeSystem is mirrored in OCL Self-Hosted (http://fmup.pt/fhir/CodeSystem/hrv-codesystem)
+// within the fmup-heads organization. The OCL version includes:
+//   - Same 5 metric concepts (RMSSD, pNN50, LF-HF-Ratio, LF-Power, HF-Power)
+//   - Additional 5 vendor codes (Apple-HRV, Fitbit-HRV, Garmin-HRV-Status, Polar-RMSSD, Oura-HRV)
+// OCL provides FHIR R4B Terminology Services ($lookup, $validate-code, $expand)
+// enabling runtime terminology validation independent of tx.fhir.org
 
 CodeSystem: HeartRateVariabilityCS
 Id: heart-rate-variability-cs
