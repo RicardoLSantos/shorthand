@@ -219,7 +219,38 @@ These issues do not prevent the IG from being used in production. All FHIR profi
 
 ---
 
-*Last updated: 2026-01-30*
-*Build: IG Publisher 2.0.28, SUSHI 3.16.5*
+## Upstream Contribution Strategy
+
+### Version Testing (2026-02-07)
+
+| Version | Errors | Warnings | Result |
+|---------|--------|----------|--------|
+| IG Publisher 2.0.28 + SUSHI 3.16.5 | 28 | 153 | Baseline |
+| IG Publisher 2.1.0 + SUSHI 3.17.0 | 28 | **145** | -8 warnings |
+
+**Conclusion**: Updating tools reduces warnings but does not fix IPS upstream errors.
+
+### GitHub Issues Prepared
+
+1. **HL7/fhir-ips**: Build errors when deriving from Composition-uv-ips
+   - `note|5.3.0-ballot-tc1` extension not published
+   - `pkp-2` constraint broken links
+
+2. **HL7/fhir-ig-publisher**: Constraint links render as `?pkp-2?` pointing to unknown.html
+
+### Resolution Timeline
+
+| Date | Action |
+|------|--------|
+| 2026-02-07 | Issues prepared, version testing complete |
+| 2026-02-08 | Submit issues to GitHub |
+| 2026-02-15 | Follow-up if no response |
+| 2026-02-28 | PhD defense (use workaround if not resolved) |
+
+---
+
+*Last updated: 2026-02-07*
+*Build: IG Publisher 2.1.0, SUSHI 3.17.0*
 *iOS Lifestyle Medicine IG v0.1.0*
 *OCL Integration: Prepared in sushi-config.yaml (pending account setup)*
+*Upstream Issues: Prepared for submission to HL7/fhir-ips and HL7/fhir-ig-publisher*
