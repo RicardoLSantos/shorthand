@@ -21,12 +21,12 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 // HEART RATE (BASIC)
 // ============================================================================
 * http://loinc.org#8867-4 "Heart rate"
-* http://loinc.org#8893-0 "Heart rate by Pulse oximetry"
+* http://loinc.org#8889-8 "Heart rate by Pulse oximetry"  // CORRECTED 2026-02-11 (was 8893-0)
 * http://loinc.org#40443-4 "Heart rate --resting"
 * http://loinc.org#40442-6 "Heart rate --post exercise"
-* http://loinc.org#8889-8 "Heart rate 24 hour maximum"
-* http://loinc.org#8890-6 "Heart rate 24 hour mean"
-* http://loinc.org#8891-4 "Heart rate 24 hour minimum"
+* http://loinc.org#8873-2 "Heart rate 24 hour maximum"    // CORRECTED 2026-02-11 (was 8889-8)
+* http://loinc.org#41924-2 "Heart rate 24 hour mean"      // CORRECTED 2026-02-11 (was 8890-6)
+* http://loinc.org#8883-1 "Heart rate 24 hour minimum"    // CORRECTED 2026-02-11 (was 8891-4)
 
 // ============================================================================
 // ECG/RHYTHM
