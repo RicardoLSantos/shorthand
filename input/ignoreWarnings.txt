@@ -1,5 +1,58 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
-# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+# =============================================================================
+# IPS UPSTREAM ISSUES (Pitfall #31)
+# IPS STU2 references note|5.3.0-ballot-tc1 which was never published.
+# =============================================================================
+
+# Profile resolution (PT locale - "Não foi possível encontrar uma definição")
+Não foi possível encontrar uma definição para o URL canónico 'http://hl7.org/fhir/StructureDefinition/note|5.3.0-ballot-tc1'
+Unable to find Extension 'http://hl7.org/fhir/StructureDefinition/note|5.3.0-ballot-tc1'
+Não foi possível resolver o perfil http://hl7.org/fhir/StructureDefinition/note|5.3.0-ballot-tc1
+
+# Profile type checking
+The type of profile http://hl7.org/fhir/StructureDefinition/note|5.3.0-ballot-tc1 cannot be checked as the profile is not known
+
+# Hyperlink errors (pkp-2)
+The link 'unknown.html' for "?pkp-2?" cannot be resolved
+Hyperlink 'unknown.html' at 'div/table/tr/td/a' for '?pkp-2?' does not resolve
+
+# Reference resolution
+reference http://hl7.org/fhir/StructureDefinition/note|5.3.0-ballot-tc1 could not be resolved
+
+# =============================================================================
+# EXAMPLE INSTANCE OID WARNINGS (Pitfall #48, VRF-TECH-010)
+# OIDs intentionally used to avoid 4 ERRORS (resource not found).
+# DO NOT modify - suppress warnings instead.
+# =============================================================================
+
+Não foi possível encontrar uma definição para o valor URL 'urn:oid:2.16.840.1.113883.2.4.6.1'
+Não foi possível encontrar uma definição para o valor URL 'urn:oid:2.16.840.1.113883.2.4.6.3'
+Não foi possível encontrar uma definição para o valor URL 'urn:oid:2.16.840.1.113883.3.4.5.4'
+
+# =============================================================================
+# CROSS-PARADIGM CONCEPTMAP WARNINGS
+# openEHR and OMOP are not FHIR CodeSystems - these are documentation maps.
+# =============================================================================
+
+# openEHR archetype targets (PT: "Não foi possível encontrar uma definição para o valor URL")
+Não foi possível encontrar uma definição para o valor URL 'openEHR-EHR-OBSERVATION.heart_rate_variability.v0'
+Não foi possível encontrar uma definição para o valor URL 'openEHR-EHR-OBSERVATION.physical_activity_detailed.v0'
+Não foi possível encontrar uma definição para o valor URL 'openEHR-EHR-OBSERVATION.sleep_architecture.v0'
+Não foi possível encontrar uma definição para o valor URL 'openEHR-EHR-CLUSTER.wearable_device.v0'
+
+# OMOP Athena targets
+O sistema de códigos de destino http://athena.ohdsi.org/search-terms/terms não tem todo o conteúdo
+Não foi possível encontrar uma definição para o valor URL 'https://athena.ohdsi.org/search-terms/concepts'
+Não foi possível encontrar uma definição para o valor URL 'MEASUREMENT'
+Não foi possível encontrar uma definição para o valor URL 'DEVICE_EXPOSURE'
+
+# ConceptMap source/target scope not specified (informational)
+não está totalmente definido e preenchido e não é especificado
+não é especificado o sourceScope
+não é especificado nenhum targetScope
+
+# =============================================================================
+# Last updated: 2026-02-18 T3 (snazzy-honking-hanrahan)
+# Note: Messages are in Portuguese due to system locale
+# =============================================================================

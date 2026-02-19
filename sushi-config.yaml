@@ -1,0 +1,106 @@
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: iOS-Lifestyle-Medicine
+canonical: https://2rdoc.pt/ig/ios-lifestyle-medicine
+name: IOSLifestyleMedicineHEADS2FMUP
+title: "iOS Lifestyle Medicine Implementation Guide"
+status: active
+version: 0.2.0
+experimental: false
+fhirVersion: 4.0.1
+copyrightYear: 2024+
+releaseLabel: ci-build
+publisher:
+  name: Ricardo Lourenço dos Santos
+  url: https://linktr.ee/ricardolsantos
+  email: ricardolourencosantos@gmail.com
+
+# Multi-jurisdictional compliance
+jurisdiction:
+  - http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
+  - http://unstats.un.org/unsd/methods/m49/m49.htm#021 "Northern America a/"
+  - http://unstats.un.org/unsd/methods/m49/m49.htm#005 "South America"
+  - urn:iso:std:iso:3166#PT "Portugal"
+  - urn:iso:std:iso:3166#US "United States of America"
+  - urn:iso:std:iso:3166#BR "Brazil" 
+
+# Dependencies for compliance and interoperability
+dependencies:
+  # Core dependencies
+  ihe.iti.pcf: 1.1.0
+  hl7.fhir.uv.ips: 2.0.0
+  # Related HL7 IGs for wearable/lifestyle data (added 2025-12-09)
+  # Physical Activity IG - steps, calories, EVS
+  hl7.fhir.us.physical-activity: 1.0.0
+  # Personal Health Device IG - device metadata (updated 2026-01-16)
+  hl7.fhir.uv.phd: 1.1.0
+
+# Menu navigation - ÚNICA OCORRÊNCIA
+menu:
+  Home: index.html
+  Policies:
+    Overview: data-protection-policies.html
+    Privacy and Security: privacy.html
+    Practitioner IDs: practitioner-identifiers.html
+  Terminology:
+    Inflammatory Markers: inflammatory_markers.html
+    ConceptMaps: conceptmaps.html
+    ICD-11 Integration: icd11-integration.html
+    Verification Protocol: terminology-verification.html
+  Artifacts: artifacts.html
+  Bibliography: bibliography.html
+
+instanceOptions:
+  manualSliceOrdering: true
+
+# External CodeSystem URLs - stub CodeSystems for external terminology references
+parameters:
+  # Pin canonical versions to resolve "multiple matching versions" warnings
+  # Valid values: pin-none (default), pin-all (recommended), pin-multiples
+  # Reference: https://build.fhir.org/ig/FHIR/ig-guidance/pinning.html
+  pin-canonicals: pin-all
+
+  # ══════════════════════════════════════════════════════════════════════════════
+  # OCL (Open Concept Lab) Integration - 2026-01-30
+  # ══════════════════════════════════════════════════════════════════════════════
+  # OCL provides free (MPL-2.0) terminology services for custom CodeSystems.
+  # This reduces IG build warnings from 148 to ~102 (-31%) by hosting:
+  # - openEHR archetype identifiers (24 warnings eliminated)
+  # - OHDSI/OMOP Concept ID subset (12 warnings eliminated)
+  # - Vendor API stub CodeSystems (10 warnings eliminated)
+  #
+  # SETUP REQUIRED:
+  # 1. Create account at https://openconceptlab.org
+  # 2. Create organization: fmup-heads
+  # 3. Create Sources (see OCL_IMPLEMENTATION_PLAN_20260130.md)
+  # 4. Uncomment the 'tx' parameter below
+  #
+  # tx:
+  #   - https://fhir.openconceptlab.org/orgs/fmup-heads/
+  #   - https://tx.fhir.org
+  # ══════════════════════════════════════════════════════════════════════════════
+
+  special-url:
+    # ── Vendor APIs (existing) ──
+    - https://developer.apple.com/documentation/healthkit
+    - https://dev.fitbit.com/build/reference/web-api
+    - https://developer.garmin.com/gc-developer-program
+    - https://cloud.ouraring.com/v2/docs
+    - https://www.polar.com/accesslink-api
+
+    # ── External Terminology Systems (existing) ──
+    - http://athena.ohdsi.org/search-terms/terms
+    - https://ckm.openehr.org/ckm/archetypes
+
+    # ── OCL Sources (prepared for future integration) ──
+    # Uncomment after creating Sources in OCL:
+    # - https://fhir.openconceptlab.org/orgs/fmup-heads/sources/openehr-archetypes/
+    # - https://fhir.openconceptlab.org/orgs/fmup-heads/sources/ohdsi-omop/
+    # - https://fhir.openconceptlab.org/orgs/fmup-heads/sources/vendor-healthkit/
+    # - https://fhir.openconceptlab.org/orgs/fmup-heads/sources/vendor-fitbit/
+    # - https://fhir.openconceptlab.org/orgs/fmup-heads/sources/vendor-garmin/
+    # - https://fhir.openconceptlab.org/orgs/fmup-heads/sources/vendor-polar/
+    # - https://fhir.openconceptlab.org/orgs/fmup-heads/sources/vendor-oura/

@@ -2,7 +2,13 @@
 
 This page documents known issues that affect the iOS Lifestyle Medicine Implementation Guide build validation but do not impact functionality.
 
-**Build Summary (2026-01-29):** 28 errors, ~146 warnings (after quick fixes)
+**Build Summary (2026-02-11):** 28 errors, 145 warnings
+
+**Tooling Versions:**
+- SUSHI: v3.17.0
+- IG Publisher: v2.1.0
+- FHIR R4: v4.0.1
+- IPS Dependency: hl7.fhir.uv.ips#2.0.0
 
 ---
 
