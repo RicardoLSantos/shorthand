@@ -4,7 +4,7 @@
 [![IG Publisher](https://img.shields.io/badge/IG%20Publisher-1.6.x-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey)](LICENSE)
 
-**Version**: 0.1.0
+**Version**: 0.2.0
 **Status**: STU1 Draft
 **Publisher**: FMUP (Faculty of Medicine, University of Porto)
 **Canonical**: `https://2rdoc.pt/ig/ios-lifestyle-medicine`
@@ -41,7 +41,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.1.0<br/>74 Profiles | 154 CS | 166 VS"]
+        FHIRIG["FHIR IG v0.2.0<br/>74 Profiles | 154 CS | 166 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -232,7 +232,7 @@ After build, the IG is available at:
 |----------|------|
 | **IG Index** | [output/index.html](output/index.html) |
 | **QA Report** | [output/qa.html](output/qa.html) |
-| **Full Package** | [GitHub Release v0.1.0](https://github.com/RicardoLSantos/shorthand/releases/download/v0.1.0/full-ig.zip) (91 MB) |
+| **Full Package** | [GitHub Release v0.2.0](https://github.com/RicardoLSantos/shorthand/releases/download/v0.2.0/full-ig.zip) (91 MB) |
 
 ---
 

@@ -1,15 +1,26 @@
-// ICD-11 Lifestyle Medicine CodeSystem
+// ICD-11 Lifestyle Medicine CodeSystem (Fragment)
 // Created: 2026-01-26
+// Updated: 2026-02-19 - Changed content to #fragment per VRF-TECH-027
 // Purpose: ICD-11 codes for lifestyle medicine and health behaviours
 // Reference: WHO ICD-11 MMS 2024-01 (https://icd.who.int)
-// Note: ICD-11 integration addresses 0% gap identified in thesis FHIR IG
+// Official URL: http://id.who.int/icd/11
+//
+// DESIGN DECISION (VRF-TECH-027):
+// This CodeSystem republishes a FRAGMENT of ICD-11 codes because:
+// 1. ICD-11 is not yet available on tx.fhir.org for FHIR validation
+// 2. Ensures IG builds without external terminology server dependency
+// 3. All codes are exact copies from WHO ICD-11 MMS 2024-01
+// Future work: Convert to ValueSet referencing http://id.who.int/icd/11 when available
 
 CodeSystem: ICD11LifestyleCodeSystem
 Id: icd-11-lifestyle-cs
-Title: "ICD-11 Lifestyle Medicine Codes"
+Title: "ICD-11 Lifestyle Medicine Codes (Fragment)"
 Description: """
-ICD-11 codes relevant to lifestyle medicine and health behaviours from WHO's
-International Classification of Diseases, 11th Revision (ICD-11 MMS 2024-01).
+FRAGMENT of ICD-11 codes relevant to lifestyle medicine and health behaviours
+from WHO's International Classification of Diseases, 11th Revision (ICD-11 MMS 2024-01).
+
+NOTE: This is a republished subset (34 codes) for IG validation purposes.
+The authoritative source is WHO ICD-11 at http://id.who.int/icd/11.
 
 This CodeSystem includes codes from:
 - Chapter 24: Factors influencing health status or contact with health services
@@ -21,17 +32,17 @@ in alignment with WHO's global health classification system.
 """
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs"
-* ^version = "0.1.0"
+* ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-01-26"
+* ^date = "2026-02-19"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Ricardo L. Santos"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@2rdoc.pt"
 * ^caseSensitive = true
-* ^content = #complete
-* ^copyright = "ICD-11 is copyright © World Health Organization (WHO). Used under CC BY-NC-ND 3.0 IGO license."
+* ^content = #fragment
+* ^copyright = "ICD-11 is copyright © World Health Organization (WHO). Used under CC BY-NC-ND 3.0 IGO license. This is a republished fragment for IG validation purposes."
 
 // =============================================================================
 // CHAPTER 24: FACTORS INFLUENCING HEALTH STATUS

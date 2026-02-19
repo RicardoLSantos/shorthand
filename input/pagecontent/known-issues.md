@@ -257,6 +257,6 @@ These issues do not prevent the IG from being used in production. All FHIR profi
 
 *Last updated: 2026-02-07*
 *Build: IG Publisher 2.1.0, SUSHI 3.17.0*
-*iOS Lifestyle Medicine IG v0.1.0*
+*iOS Lifestyle Medicine IG v0.2.0*
 *OCL Integration: Prepared in sushi-config.yaml (pending account setup)*
 *Upstream Issues: Prepared for submission to HL7/fhir-ips and HL7/fhir-ig-publisher*

@@ -16,7 +16,7 @@ nutrition, sleep disorders, and physical activity codes from WHO ICD-11 MMS.
 """
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-lifestyle-medicine-vs"
-* ^version = "0.1.0"
+* ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
 * ^date = "2026-01-26"
@@ -37,7 +37,7 @@ hazardous substance use and lifestyle-related health factors.
 """
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-health-behaviours-vs"
-* ^version = "0.1.0"
+* ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
 * ^date = "2026-01-26"
@@ -64,7 +64,7 @@ including undernutrition, overweight, and obesity.
 """
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-nutrition-vs"
-* ^version = "0.1.0"
+* ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
 * ^date = "2026-01-26"
@@ -95,7 +95,7 @@ including insomnia, hypersomnolence, and circadian rhythm disorders.
 """
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-sleep-disorders-vs"
-* ^version = "0.1.0"
+* ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
 * ^date = "2026-01-26"
@@ -121,7 +121,7 @@ These codes can be used as additional context for health observations.
 """
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-physical-activity-vs"
-* ^version = "0.1.0"
+* ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
 * ^date = "2026-01-26"
