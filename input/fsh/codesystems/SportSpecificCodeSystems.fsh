@@ -160,6 +160,8 @@ Description: "CodeSystem for swimming performance metrics from wearable devices.
 * #environment "Swimming Environment" "Type of swimming venue"
 
 // Heart rate
+// NOTE: LOINC 101692-2 now used as primary code in SwimmingWorkoutObservation (verified 2026-02-24)
+// This custom code retained for backward compatibility and ConceptMap references
 * #max-hr "Maximum Heart Rate" "Maximum heart rate reached during session"
 
 // Training effect

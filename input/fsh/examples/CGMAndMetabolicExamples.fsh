@@ -38,11 +38,13 @@ Description: "Example of continuous glucose monitoring data from a consumer CGM 
 * component[trendArrow].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#trend "Trend Arrow"
 * component[trendArrow].valueCodeableConcept = CGMTrendArrowCS#stable "Stable"
 
-// Time in Range (daily summary)
-* component[timeInRange].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#tir "Time in Range"
+// Time in Range (daily summary) - LOINC 97510-2 (verified 2026-02-24)
+* component[timeInRange].code = http://loinc.org#97510-2 "Glucose measurements in range out of Total glucose measurements during reporting period"
 * component[timeInRange].valueQuantity = 78 '%' "percent"
 
 // Mean glucose
+// NOTE: 97507-8 ("Average glucose in Interstitial fluid") available but kept as custom
+// because CGM "mean glucose" may include non-interstitial derived values in some implementations
 * component[meanGlucose].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#mean "Mean Glucose"
 * component[meanGlucose].valueQuantity = 125 'mg/dL' "milligrams per deciliter"
 
@@ -50,8 +52,8 @@ Description: "Example of continuous glucose monitoring data from a consumer CGM 
 * component[coefficientOfVariation].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#cv "Coefficient of Variation"
 * component[coefficientOfVariation].valueQuantity = 28 '%' "percent"
 
-// GMI (Glucose Management Indicator)
-* component[gmi].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#gmi "Glucose Management Indicator"
+// GMI (Glucose Management Indicator) - LOINC 97506-0 (verified 2026-02-24)
+* component[gmi].code = http://loinc.org#97506-0 "Glucose management indicator"
 * component[gmi].valueQuantity = 6.4 '%' "percent"
 
 * note.text = "14-day CGM summary. TIR target >70% achieved. CV <36% indicates stable glucose patterns."

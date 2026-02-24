@@ -398,7 +398,7 @@ Usage: #definition
 * group[2].element[2].target[0].code = #8873-2
 * group[2].element[2].target[0].display = "Heart rate 24 hour maximum"
 * group[2].element[2].target[0].equivalence = #equivalent
-* group[2].element[2].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 8873-2 = Heart rate 24 hour maximum"
+* group[2].element[2].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 8873-2 = Heart rate 24 hour maximum. Note: LOINC 101692-2 = generic 'Maximum heart rate' (Athena 3966129, verified 2026-02-24) used as primary in SwimmingWorkoutObservation profile."
 
 // SpO2
 * group[2].element[3].code = #avgSpo2

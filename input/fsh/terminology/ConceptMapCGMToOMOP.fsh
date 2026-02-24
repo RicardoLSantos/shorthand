@@ -76,8 +76,10 @@ VERIFIED OMOP mapping for blood glucose.
 
 // ============================================================================
 // GMI (Glucose Management Indicator) - LOINC available
+// CORRECTED 2026-02-24: 97507-8 was "Average glucose in Interstitial fluid", NOT GMI
+// CORRECT: 97506-0 = "Glucose management indicator" (Athena concept_id 1617515)
 // ============================================================================
-* group[0].element[1].code = #97507-8
+* group[0].element[1].code = #97506-0
 * group[0].element[1].display = "Glucose management indicator"
 * group[0].element[1].target[0].code = #0
 * group[0].element[1].target[0].display = "No OMOP concept - requires custom"

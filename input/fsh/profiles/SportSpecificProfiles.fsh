@@ -434,7 +434,9 @@ Description: "Profile for recording swimming performance metrics from wearable d
 * component[avgHeartRate].valueQuantity.system = $UCUM
 * component[avgHeartRate].valueQuantity.code = #{beats}/min
 
-* component[maxHeartRate].code = SwimmingMetricsCS#max-hr "Maximum Heart Rate"
+// LOINC 101692-2 verified via Athena 2026-02-24 (concept_id 3966129)
+// Replaces custom SwimmingMetricsCS#max-hr — audit confirmed direct LOINC mapping exists
+* component[maxHeartRate].code = $LOINC#101692-2 "Maximum heart rate"
 * component[maxHeartRate].value[x] only Quantity
 * component[maxHeartRate].valueQuantity.system = $UCUM
 * component[maxHeartRate].valueQuantity.code = #{beats}/min

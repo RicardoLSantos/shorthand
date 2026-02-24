@@ -84,7 +84,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // TIME IN RANGE METRICS (International Consensus 2019)
 // ============================================================================
 
-* component[timeInRange].code = CGMMetricsCS#tir "Time in Range"
+// LOINC 97510-2 verified via Athena 2026-02-24 (concept_id: see CGM family 9750x)
+// Replaces custom CGMMetricsCS#tir — LOINC covers "Glucose measurements in range"
+* component[timeInRange].code = $LOINC#97510-2 "Glucose measurements in range out of Total glucose measurements during reporting period"
 * component[timeInRange].value[x] only Quantity
 * component[timeInRange].valueQuantity.system = $UCUM
 * component[timeInRange].valueQuantity.code = #%
@@ -123,7 +125,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[meanGlucose].valueQuantity.system = $UCUM
 * component[meanGlucose].valueQuantity.code = #mg/dL
 
-* component[glucoseSD].code = CGMMetricsCS#sd "Standard Deviation"
+// LOINC 97505-2 verified via Athena 2026-02-24 (concept_id: CGM family 9750x)
+// Replaces custom CGMMetricsCS#sd — LOINC covers "Glucose standard deviation Calculated"
+* component[glucoseSD].code = $LOINC#97505-2 "Glucose standard deviation Calculated"
 * component[glucoseSD].value[x] only Quantity
 * component[glucoseSD].valueQuantity.system = $UCUM
 * component[glucoseSD].valueQuantity.code = #mg/dL
@@ -134,7 +138,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[coefficientOfVariation].valueQuantity.code = #%
 * component[coefficientOfVariation] ^short = "Target: <36% indicates stable glycemia"
 
-* component[gmi].code = CGMMetricsCS#gmi "Glucose Management Indicator"
+// LOINC 97506-0 verified via Athena 2026-02-24 (concept_id 1617515)
+// Replaces custom CGMMetricsCS#gmi — audit confirmed direct LOINC mapping exists
+* component[gmi].code = $LOINC#97506-0 "Glucose management indicator"
 * component[gmi].value[x] only Quantity
 * component[gmi].valueQuantity.system = $UCUM
 * component[gmi].valueQuantity.code = #%
@@ -156,7 +162,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // SENSOR AND DATA QUALITY
 // ============================================================================
 
-* component[sensorActiveTime].code = CGMMetricsCS#active-time "Sensor Active Time"
+// LOINC 97504-5 verified via Athena 2026-02-24 (concept_id: CGM family 9750x)
+// Replaces custom CGMMetricsCS#active-time — LOINC covers "Percent sensor usage"
+* component[sensorActiveTime].code = $LOINC#97504-5 "Percent sensor usage"
 * component[sensorActiveTime].value[x] only Quantity
 * component[sensorActiveTime].valueQuantity.system = $UCUM
 * component[sensorActiveTime].valueQuantity.code = #%
@@ -212,6 +220,7 @@ Description: "CodeSystem for continuous glucose monitoring metrics"
 * #roc "Rate of Change" "Numeric rate of glucose change per minute"
 
 // Time in Range
+// NOTE: LOINC 97510-2 now used as primary code in CGMProfile (verified 2026-02-24)
 * #tir "Time in Range" "Percentage of time glucose is within target range (70-180 mg/dL)"
 * #tbr "Time Below Range" "Percentage of time glucose is below target (<70 mg/dL)"
 * #tbr-l1 "Time Below Range Level 1" "Percentage of time in Level 1 hypoglycemia (54-69 mg/dL)"
@@ -222,8 +231,11 @@ Description: "CodeSystem for continuous glucose monitoring metrics"
 
 // Variability
 * #mean "Mean Glucose" "Average glucose over reporting period"
+// NOTE: LOINC 97505-2 now used as primary code in CGMProfile (verified 2026-02-24)
 * #sd "Standard Deviation" "Standard deviation of glucose values"
 * #cv "Coefficient of Variation" "CV = SD/Mean x 100, target <36%"
+// NOTE: LOINC 97506-0 now used as primary code in CGMProfile (verified 2026-02-24)
+// This custom code retained for backward compatibility and ConceptMap references
 * #gmi "Glucose Management Indicator" "Estimated HbA1c from CGM glucose"
 
 // Events
@@ -231,6 +243,7 @@ Description: "CodeSystem for continuous glucose monitoring metrics"
 * #hyper-events "Hyperglycemia Events" "Number of hyperglycemia episodes"
 
 // Data quality
+// NOTE: LOINC 97504-5 now used as primary code in CGMProfile (verified 2026-02-24)
 * #active-time "Sensor Active Time" "Percentage of time sensor was recording"
 * #range-low "Target Range Lower" "Lower bound of target glucose range"
 * #range-high "Target Range Upper" "Upper bound of target glucose range"
