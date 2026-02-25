@@ -23,3 +23,29 @@ Title: "Stress Level Measurement Example"
 * extension[=].valueQuantity = 0.72 '1' "score"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/physiological-stress-index"
 * extension[=].valueQuantity = 6.5 '1' "score"
+
+// =============================================================================
+// Semantic Anchoring Example - Stress Trigger with LOINC LA Answer Code
+// =============================================================================
+// LA7545-2 "Stress" is a LOINC Answer code (discrete option for trigger
+// questions). Demonstrates LA dual-coding for qualitative observations.
+// =============================================================================
+
+Instance: StressTriggerDualCodingExample
+InstanceOf: Observation
+Usage: #example
+Title: "Stress Trigger - Semantic Anchoring (LA Dual-Coding)"
+Description: "Stress trigger observation with semantic anchoring via LOINC LA Answer code"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-02-25T18:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-triggers-cs#financial "Financial"
+* code.coding[1] = $LOINC#LA17981-4 "Financial"
+* code.text = "Stress trigger: financial"
+
+* valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/stress-impact-cs#moderate "Moderate impact"
+* note.text = "Self-reported financial stress trigger. LOINC LA17981-4 is an Answer code (discrete option for 'what triggers stress?') — not an observation code. Dual-coding anchors this custom concept to the LOINC Answer ecosystem."

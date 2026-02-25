@@ -231,3 +231,63 @@ Title: "Water Intake - Adequate Hydration"
 * valueQuantity = 2400 'mL' "milliliter"
 * interpretation = $ObsInt#N "Normal"
 * note.text = "Adequate hydration per EFSA 2010 guidelines (2.5L/day for adult males)"
+
+// =============================================================================
+// Semantic Anchoring Example - Dual-Coding with LOINC LP Part Code
+// =============================================================================
+// Demonstrates LP dual-coding pattern: custom code (primary) + LOINC Part code
+// (semantic anchor) in the same CodeableConcept. LP73201-3 "Protein intake" is
+// a LOINC Part (Component axis) — it identifies the concept but is NOT an
+// observation code (lacks Property, Time, System, Scale, Method axes).
+// Including it enables: (1) hierarchical grouping via LOINC Part hierarchy,
+// (2) machine-readable gap documentation, (3) migration path when Regenstrief
+// assigns a full observation code.
+// Reference: Forrey et al. 1996 (DOI: 10.1093/clinchem/42.1.81)
+// =============================================================================
+
+Instance: ProteinIntakeDualCodingExample
+InstanceOf: Observation
+Usage: #example
+Description: "Protein intake with semantic anchoring via LOINC LP Part code dual-coding"
+Title: "Protein Intake - Semantic Anchoring (LP Dual-Coding)"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-02-25T19:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+
+// Dual-coding: custom code (primary) + LOINC LP Part code (semantic anchor)
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/NutritionCS#protein-intake "Protein intake"
+* code.coding[1] = $LOINC#LP73201-3 "Protein intake"
+* code.text = "Protein intake"
+
+* valueQuantity = 85 'g' "gram"
+* note.text = "Daily protein intake from wearable nutrition tracking. LOINC LP73201-3 is a Part code (Component axis) providing semantic anchoring — no LOINC observation code exists for wearable-tracked protein intake."
+
+// =============================================================================
+// Semantic Anchoring Example - Vitamin D Intake with LOINC LP Part Code
+// =============================================================================
+// LP207604-2 "Vitamin D intake" is a LOINC Part code. LOINC has observation
+// codes for serum Vitamin D levels (e.g., 1989-3) but NOT for dietary intake
+// from food tracking apps.
+// =============================================================================
+
+Instance: VitaminDIntakeDualCodingExample
+InstanceOf: Observation
+Usage: #example
+Description: "Vitamin D dietary intake with semantic anchoring via LOINC LP Part code"
+Title: "Vitamin D Intake - Semantic Anchoring (LP Dual-Coding)"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#survey
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-02-25T20:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/micronutrient-cs#vitamin-d-intake "Vitamin D intake"
+* code.coding[1] = $LOINC#LP207604-2 "Vitamin D intake"
+* code.text = "Vitamin D dietary intake"
+
+* valueQuantity = 600 '[IU]' "international unit"
+* note.text = "Daily Vitamin D intake from food tracking. LOINC LP207604-2 is a Part code — LOINC has codes for serum 25-OH-D levels (e.g., 1989-3) but not for dietary intake from consumer apps. IoM recommends 600 IU/day (DOI: 10.17226/13050)."

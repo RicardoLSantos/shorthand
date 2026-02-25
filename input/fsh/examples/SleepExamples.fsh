@@ -72,3 +72,29 @@ Title: "Sleep Monitoring Device"
 * manufacturer = "HealthTech Devices"
 * modelNumber = "SQM-2024"
 * type = $LIFESTYLEOBS#sleep-monitoring-device "Sleep monitoring device"
+
+// =============================================================================
+// Semantic Anchoring Example - Sleep Score with LOINC LP Part Code
+// =============================================================================
+// LP422589-4 "Sleep score" is a LOINC Part (Component axis). No LOINC
+// observation code exists for composite sleep quality scores from wearables.
+// =============================================================================
+
+Instance: SleepScoreDualCodingExample
+InstanceOf: Observation
+Usage: #example
+Description: "Sleep score with semantic anchoring via LOINC LP Part code dual-coding"
+Title: "Sleep Score - Semantic Anchoring (LP Dual-Coding)"
+
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#activity
+* subject = Reference(PatientExample)
+* effectiveDateTime = "2026-02-25T07:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-score "Sleep score"
+* code.coding[1] = $LOINC#LP422589-4 "Sleep score"
+* code.text = "Sleep score"
+
+* valueQuantity = 82 '{score}' "score"
+* note.text = "Wearable-derived composite sleep score. LOINC LP422589-4 is a Part code (Component axis) — no LOINC observation code exists for wearable sleep scores."

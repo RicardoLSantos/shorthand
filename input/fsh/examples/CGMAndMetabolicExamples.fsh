@@ -102,3 +102,30 @@ Description: "Example of hs-CRP inflammatory marker measurement"
 * referenceRange.text = "Low cardiovascular risk: <1.0 mg/L; Average risk: 1.0-3.0 mg/L; High risk: >3.0 mg/L"
 
 * note.text = "hs-CRP in average cardiovascular risk range. Consider lifestyle interventions to reduce inflammation."
+
+// =============================================================================
+// Semantic Anchoring Example - CGM CV with LOINC LP Part Code
+// =============================================================================
+// LP431369-0 "Coefficient of variation" is a LOINC Part (Component axis).
+// While LOINC 76644-4 covers RR-interval CV%, no observation code exists for
+// glucose CV% from continuous glucose monitoring.
+// =============================================================================
+
+Instance: CGMCoefficientOfVariationDualCodingExample
+InstanceOf: Observation
+Usage: #example
+Title: "CGM Coefficient of Variation - Semantic Anchoring (LP Dual-Coding)"
+Description: "CGM glucose coefficient of variation with semantic anchoring via LOINC LP Part code"
+
+* status = #final
+* category = $ObsCat#exam "Exam"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2026-02-25T08:00:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#cv "Coefficient of Variation"
+* code.coding[1] = $LOINC#LP431369-0 "Coefficient of variation"
+* code.text = "Glucose coefficient of variation"
+
+* valueQuantity = 28 '%' "percent"
+* note.text = "14-day glucose CV. Target <36% per Battelino 2019 consensus. LOINC LP431369-0 is a Part code — no observation code exists for glucose-specific CV from CGM devices."
