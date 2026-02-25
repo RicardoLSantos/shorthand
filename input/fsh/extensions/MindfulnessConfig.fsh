@@ -37,7 +37,7 @@ Title: "Mindfulness Configuration"
 Description: "Configuration settings for mindfulness sessions"
 
 * code 1..1 MS
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-config-type#settings "Mindfulness Settings"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-config-settings "Mindfulness Settings"
 
 * extension contains
     MindfulnessSessionDuration named sessionDuration 1..1 MS and
@@ -50,7 +50,7 @@ InstanceOf: MindfulnessConfiguration
 Title: "Default Mindfulness Configuration"
 Description: "Default configuration settings for mindfulness sessions"
 
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-config-type#settings "Mindfulness Settings"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-config-settings "Mindfulness Settings"
 * extension[sessionDuration].valueInteger = 15
 * extension[reminderTime].valueTime = "08:00:00"
 * extension[preferredGuide].valueString = "Jane Smith"

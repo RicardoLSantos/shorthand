@@ -28,7 +28,7 @@ Usage: #definition
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
 
 // Group 1: LifestyleObservationCS → LOINC
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[0].target = "http://loinc.org"
 
 // ============================================================================

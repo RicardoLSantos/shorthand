@@ -32,11 +32,11 @@ Description: "Example of continuous glucose monitoring data from a consumer CGM 
 * valueQuantity = 118 'mg/dL' "milligrams per deciliter"
 
 // Interpretation
-* interpretation = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-glucose-interpretation-cs#in-range "In Range"
+* interpretation = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#in-range "In Range"
 
 // Trend arrow
-* component[trendArrow].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#trend "Trend Arrow"
-* component[trendArrow].valueCodeableConcept = CGMTrendArrowCS#stable "Stable"
+* component[trendArrow].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#cgm-trend "Trend Arrow"
+* component[trendArrow].valueCodeableConcept = LifestyleMedicineTemporaryCS#cgm-trend-stable "Stable"
 
 // Time in Range (daily summary) - LOINC 97510-2 (verified 2026-02-24)
 * component[timeInRange].code = http://loinc.org#97510-2 "Glucose measurements in range out of Total glucose measurements during reporting period"
@@ -45,11 +45,11 @@ Description: "Example of continuous glucose monitoring data from a consumer CGM 
 // Mean glucose
 // NOTE: 97507-8 ("Average glucose in Interstitial fluid") available but kept as custom
 // because CGM "mean glucose" may include non-interstitial derived values in some implementations
-* component[meanGlucose].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#mean "Mean Glucose"
+* component[meanGlucose].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mean "Mean Glucose"
 * component[meanGlucose].valueQuantity = 125 'mg/dL' "milligrams per deciliter"
 
 // Coefficient of variation
-* component[coefficientOfVariation].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#cv "Coefficient of Variation"
+* component[coefficientOfVariation].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#cv "Coefficient of Variation"
 * component[coefficientOfVariation].valueQuantity = 28 '%' "percent"
 
 // GMI (Glucose Management Indicator) - LOINC 97506-0 (verified 2026-02-24)
@@ -123,7 +123,7 @@ Description: "CGM glucose coefficient of variation with semantic anchoring via L
 * effectiveDateTime = "2026-02-25T08:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 
-* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs#cv "Coefficient of Variation"
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#cv "Coefficient of Variation"
 * code.coding[1] = $LOINC#LP431369-0 "Coefficient of variation"
 * code.text = "Glucose coefficient of variation"
 

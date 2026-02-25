@@ -50,19 +50,6 @@ Description: "Garmin proprietary sleep stage classifications from Garmin Connect
 * #deep "Deep" "Deep sleep (N3/slow-wave)"
 * #rem "REM" "REM sleep"
 * #unmeasurable "Unmeasurable" "Sleep stage could not be determined"
-
-CodeSystem: OuraSleepStagesCS
-Id: oura-sleep-stages-cs
-Title: "Oura Ring Sleep Stages CodeSystem"
-Description: "Oura Ring proprietary sleep stage classifications from Oura Cloud API"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #awake "Awake" "Awake time during sleep period"
-* #light "Light Sleep" "Light NREM sleep (stages 1-2)"
-* #deep "Deep Sleep" "Deep NREM sleep (stage 3)"
-* #rem "REM" "REM sleep phase"
-
 CodeSystem: AppleSleepStagesCS
 Id: apple-sleep-stages-cs
 Title: "Apple HealthKit Sleep Stages CodeSystem"
@@ -115,7 +102,7 @@ Id: oura-sleep-stages-vs
 Title: "Oura Sleep Stages ValueSet"
 Description: "ValueSet containing Oura Ring proprietary sleep stage codes"
 * ^experimental = false
-* include codes from system OuraSleepStagesCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: AppleSleepStagesVS
 Id: apple-sleep-stages-vs
@@ -229,7 +216,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/oura-sleep-stages-vs"
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/oura-sleep-stages-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[0].target = "http://snomed.info/sct"
 // CORRECTED 2025-12-08: Use verified SNOMED codes only
 * group[0].element[0].code = #awake

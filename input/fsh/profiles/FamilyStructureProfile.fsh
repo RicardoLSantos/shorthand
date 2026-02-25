@@ -78,7 +78,7 @@ References:
 
 * component[householdSize]
   * ^short = "Number of people in household"
-  * code = FamilyStructureCS#household-size "Household size"
+  * code = LifestyleMedicineTemporaryCS#household-size "Household size"
   * value[x] only integer
   * valueInteger ^short = "Total number of household members including patient"
 
@@ -90,108 +90,29 @@ References:
 
 * component[dependentCount]
   * ^short = "Number of dependents (children, elderly relatives)"
-  * code = FamilyStructureCS#dependent-count "Number of dependents"
+  * code = LifestyleMedicineTemporaryCS#dependent-count "Number of dependents"
   * value[x] only integer
 
 * component[caregiverRole]
   * ^short = "Patient's role as caregiver or care recipient"
-  * code = FamilyStructureCS#caregiver-role "Caregiver role"
+  * code = LifestyleMedicineTemporaryCS#caregiver-role "Caregiver role"
   * value[x] only CodeableConcept
   * valueCodeableConcept from CaregiverRoleVS (required)
 
 * component[familyRelationshipQuality]
   * ^short = "Quality of family relationships"
-  * code = FamilyStructureCS#relationship-quality "Family relationship quality"
+  * code = LifestyleMedicineTemporaryCS#relationship-quality "Family relationship quality"
   * value[x] only CodeableConcept
   * valueCodeableConcept from RelationshipQualityVS (required)
 
 * component[householdType]
   * ^short = "Type of household composition"
-  * code = FamilyStructureCS#household-type "Household type"
+  * code = LifestyleMedicineTemporaryCS#household-type "Household type"
   * value[x] only CodeableConcept
   * valueCodeableConcept from HouseholdTypeVS (required)
 
 * note 0..* MS
 * note ^short = "Additional notes on family dynamics or circumstances"
-
-// =============================================================================
-// Code Systems
-// =============================================================================
-
-CodeSystem: FamilyStructureCS
-Id: family-structure-cs
-Title: "Family Structure Code System"
-Description: "Codes for family structure assessment components"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #household-size "Household size" "Total number of people living in household"
-* #dependent-count "Number of dependents" "Number of dependent children or adults"
-* #caregiver-role "Caregiver role" "Patient's caregiving responsibilities"
-* #relationship-quality "Family relationship quality" "Quality of family relationships"
-* #household-type "Household type" "Composition type of household"
-
-CodeSystem: LivingSituationCS
-Id: living-situation-cs
-Title: "Living Situation Code System"
-Description: "Living situation categories"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #alone "Living Alone" "Single-person household"
-* #with-spouse "With Spouse/Partner" "Living with spouse or domestic partner"
-* #with-family "With Family" "Living with family members (parents, children, siblings)"
-* #multigenerational "Multigenerational" "Three or more generations in household"
-* #with-roommates "With Roommates" "Non-family cohabitants"
-* #assisted-living "Assisted Living" "Assisted living facility"
-* #nursing-home "Nursing Home" "Skilled nursing facility"
-* #homeless "Homeless" "No fixed address"
-* #temporary "Temporary Housing" "Transitional or temporary living situation"
-
-CodeSystem: HouseholdTypeCS
-Id: household-type-cs
-Title: "Household Type Code System"
-Description: "Types of household composition"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #single-person "Single Person" "One adult, no children"
-* #couple-no-children "Couple Without Children" "Two adults, no children"
-* #nuclear-family "Nuclear Family" "Two parents with children"
-* #single-parent "Single Parent" "One parent with children"
-* #extended-family "Extended Family" "Nuclear family plus other relatives"
-* #blended-family "Blended Family" "Step-parents or step-children"
-* #multigenerational "Multigenerational" "Three or more generations"
-* #shared-housing "Shared Housing" "Unrelated adults sharing residence"
-* #group-home "Group Home" "Supervised group living facility"
-
-CodeSystem: CaregiverRoleCS
-Id: caregiver-role-cs
-Title: "Caregiver Role Code System"
-Description: "Caregiving role categories"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #not-applicable "Not Applicable" "No caregiving role"
-* #primary-caregiver "Primary Caregiver" "Main caregiver for dependent"
-* #secondary-caregiver "Secondary Caregiver" "Shares caregiving responsibilities"
-* #care-recipient "Care Recipient" "Receives care from others"
-* #mutual-care "Mutual Care" "Both gives and receives care"
-* #paid-caregiver "Paid Caregiver" "Professional caregiver"
-
-CodeSystem: RelationshipQualityCS
-Id: relationship-quality-cs
-Title: "Relationship Quality Code System"
-Description: "Quality of family relationships"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #very-supportive "Very Supportive" "Strong, supportive family relationships"
-* #generally-positive "Generally Positive" "Mostly positive relationships with occasional conflict"
-* #mixed "Mixed" "Some positive and some strained relationships"
-* #strained "Strained" "Predominantly difficult relationships"
-* #estranged "Estranged" "No contact with family"
-* #not-applicable "Not Applicable" "No family relationships to assess"
 
 // =============================================================================
 // Value Sets
@@ -202,14 +123,14 @@ Id: living-situation-vs
 Title: "Living Situation Value Set"
 Description: "Living situation categories"
 * ^experimental = false
-* codes from system LivingSituationCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: HouseholdTypeVS
 Id: household-type-vs
 Title: "Household Type Value Set"
 Description: "Types of household composition"
 * ^experimental = false
-* codes from system HouseholdTypeCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: MaritalStatusVS
 Id: marital-status-vs
@@ -230,11 +151,11 @@ Id: caregiver-role-vs
 Title: "Caregiver Role Value Set"
 Description: "Caregiving role categories"
 * ^experimental = false
-* codes from system CaregiverRoleCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: RelationshipQualityVS
 Id: relationship-quality-vs
 Title: "Relationship Quality Value Set"
 Description: "Quality of family relationships"
 * ^experimental = false
-* codes from system RelationshipQualityCS
+* codes from system LifestyleMedicineTemporaryCS

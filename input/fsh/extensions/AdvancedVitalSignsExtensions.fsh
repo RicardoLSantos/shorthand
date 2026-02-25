@@ -133,23 +133,7 @@ Title: "Circadian Phase Value Set"
 Description: "Value set for circadian rhythm phases"
 
 * ^experimental = false
-* codes from system CircadianPhaseCS
-
-CodeSystem: CircadianPhaseCS
-Id: circadian-phase-cs
-Title: "Circadian Phase Code System"
-Description: "Code system for circadian rhythm phases"
-
-* ^experimental = false
-* ^caseSensitive = true
-
-* #early-morning "Early Morning Phase" "Period shortly after awakening"
-* #mid-morning "Mid Morning Phase" "Mid-morning period"
-* #afternoon "Afternoon Phase" "Afternoon period"
-* #evening "Evening Phase" "Evening period"
-* #night "Night Phase" "Nighttime period"
-* #deep-night "Deep Night Phase" "Deep night period"
-
+* codes from system LifestyleMedicineTemporaryCS
 Extension: MeasurementQuality
 Id: measurement-quality
 Title: "Measurement Quality Extension"
@@ -179,18 +163,4 @@ Title: "Measurement Quality Value Set"
 Description: "Value set for measurement quality indicators"
 
 * ^experimental = false
-* codes from system MeasurementQualityCS
-
-CodeSystem: MeasurementQualityCS
-Id: measurement-quality-cs
-Title: "Measurement Quality Code System"
-Description: "Code system for measurement quality indicators"
-
-* ^experimental = false
-* ^caseSensitive = true
-
-* #excellent "Excellent Quality" "High quality measurement with minimal noise"
-* #good "Good Quality" "Good quality measurement with acceptable noise"
-* #fair "Fair Quality" "Fair quality measurement with some interference"
-* #poor "Poor Quality" "Poor quality measurement with significant interference"
-* #unreliable "Unreliable" "Unreliable measurement requiring verification"
+* codes from system LifestyleMedicineTemporaryCS

@@ -7,7 +7,7 @@ Description: "Profile for fertility signs and symptoms"
 * status MS
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#ovulation-status "Ovulation status"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#ovulation-status "Ovulation status"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 

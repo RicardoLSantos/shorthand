@@ -44,7 +44,7 @@ Usage: #definition
 // =============================================================================
 // Group 1: Loneliness Assessment Mappings
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/loneliness-component-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #companionship-lack
 * group[=].element[=].display = "Lack of companionship"
@@ -70,7 +70,7 @@ Usage: #definition
 // =============================================================================
 // Group 2: Social Support Assessment Mappings
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-component-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #total-score
 * group[=].element[=].display = "Total support score"
@@ -94,7 +94,7 @@ Usage: #definition
 // =============================================================================
 // Group 3: Family Structure and Living Situation Mappings
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/family-structure-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #household-size
 * group[=].element[=].display = "Household size"
@@ -122,7 +122,7 @@ Usage: #definition
 // =============================================================================
 // Group 5: GAP Documentation - Concepts without direct LOINC mapping
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/social-support-component-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #family-support
 * group[=].element[=].display = "Family support subscale"

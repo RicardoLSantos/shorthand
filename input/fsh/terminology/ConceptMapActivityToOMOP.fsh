@@ -135,7 +135,7 @@ Context-dependent (walking, running, cycling).
 // ============================================================================
 // GROUP 2: Custom Activity Metrics → OMOP
 // ============================================================================
-* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ios-physical-activity-cs"
+* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[1].target = "http://athena.ohdsi.org/search-terms/terms"
 * group[1].unmapped.mode = #fixed
 * group[1].unmapped.code = #0

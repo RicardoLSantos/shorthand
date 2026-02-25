@@ -106,23 +106,23 @@ References:
     impact 0..1 MS
 
 * component[physiologicalStress]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-physiological "Physiological stress indicator"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#stress-physiological "Physiological stress indicator"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #1
 
 * component[psychologicalStress]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-psychological "Psychological stress score"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#stress-psychological "Psychological stress score"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #1
 
 * component[chronicity]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-chronicity "Stress chronicity assessment"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#stress-chronicity "Stress chronicity assessment"
   * valueCodeableConcept from StressChronicityVS (required)
 
 * component[impact]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#stress-impact "Stress impact assessment"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#stress-impact "Stress impact assessment"
   * valueCodeableConcept from StressImpactVS (required)
 
 * extension contains

@@ -29,7 +29,7 @@ Usage: #example
 * valueQuantity.unit = "mg/L"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mg/L
-* interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs"
+* interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * interpretation.coding.code = #low-risk
 * interpretation.coding.display = "Low cardiovascular risk"
 * note.text = "Normal CRP level consistent with low systemic inflammation. Patient has good HRV metrics (RMSSD 45ms)."
@@ -56,7 +56,7 @@ Usage: #example
 * valueQuantity.unit = "mg/L"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mg/L
-* interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs"
+* interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * interpretation.coding.code = #high-risk
 * interpretation.coding.display = "High cardiovascular risk"
 * note.text = "Elevated CRP suggests systemic inflammation. Correlates with reduced HRV (RMSSD 22ms). Consider lifestyle intervention."
@@ -83,7 +83,7 @@ Usage: #example
 * valueQuantity.unit = "mg/L"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mg/L
-* interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/hscrp-risk-cs"
+* interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * interpretation.coding.code = #average-risk
 * interpretation.coding.display = "Average cardiovascular risk"
 * note.text = "Average cardiovascular risk based on hs-CRP. Combined with HRV assessment for comprehensive autonomic-inflammatory profiling."
@@ -153,7 +153,7 @@ Usage: #example
 * category.coding.code = #exam
 * category.coding.display = "Exam"
 * code.text = "HRV-Inflammation Correlation Assessment"
-* code.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
+* code.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * code.coding.code = #hrv-inflammation-correlation
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-27T10:00:00Z"

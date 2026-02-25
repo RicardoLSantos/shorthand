@@ -62,19 +62,19 @@ Architecture:
 
 // RMSSD component → id6
 * group[0].element[1].code = #"Observation.component:rmssd"
-* group[0].element[1].display = "RMSSD component with HeartRateVariabilityCS#hrv-rmssd"
+* group[0].element[1].display = "RMSSD component with LifestyleMedicineTemporaryCS#hrv-rmssd"
 * group[0].element[1].target[0].code = #id6
 * group[0].element[1].target[0].display = "RMSSD - Root mean square of successive differences"
 * group[0].element[1].target[0].equivalence = #equivalent
-* group[0].element[1].target[0].comment = "Map from component with HeartRateVariabilityCS#hrv-rmssd. No LOINC code. Unit: ms"
+* group[0].element[1].target[0].comment = "Map from component with LifestyleMedicineTemporaryCS#hrv-rmssd. No LOINC code. Unit: ms"
 
 // pNN50 component → id7
 * group[0].element[2].code = #"Observation.component:pnn50"
-* group[0].element[2].display = "pNN50 component with HeartRateVariabilityCS#hrv-pnn50"
+* group[0].element[2].display = "pNN50 component with LifestyleMedicineTemporaryCS#hrv-pnn50"
 * group[0].element[2].target[0].code = #id7
 * group[0].element[2].target[0].display = "pNN50 - Percentage of NN intervals >50ms"
 * group[0].element[2].target[0].equivalence = #equivalent
-* group[0].element[2].target[0].comment = "Map from component with HeartRateVariabilityCS#hrv-pnn50. Unit: %"
+* group[0].element[2].target[0].comment = "Map from component with LifestyleMedicineTemporaryCS#hrv-pnn50. Unit: %"
 
 // LF/HF Ratio component → id13
 * group[0].element[3].code = #"Observation.component:lf-hf-ratio"
@@ -82,7 +82,7 @@ Architecture:
 * group[0].element[3].target[0].code = #id13
 * group[0].element[3].target[0].display = "LF/HF Ratio"
 * group[0].element[3].target[0].equivalence = #equivalent
-* group[0].element[3].target[0].comment = "Map from component with HeartRateVariabilityCS#hrv-lf-hf-ratio. Dimensionless ratio"
+* group[0].element[3].target[0].comment = "Map from component with LifestyleMedicineTemporaryCS#hrv-lf-hf-ratio. Dimensionless ratio"
 
 // effectivePeriod → id32
 * group[0].element[4].code = #Observation.effectivePeriod
@@ -206,7 +206,7 @@ Architecture:
 * group[2].element[5].target[0].code = #id53
 * group[2].element[5].target[0].display = "Average HRV (RMSSD) during sleep"
 * group[2].element[5].target[0].equivalence = #equivalent
-* group[2].element[5].target[0].comment = "Use HeartRateVariabilityCS#hrv-rmssd with context. Unit: ms"
+* group[2].element[5].target[0].comment = "Use LifestyleMedicineTemporaryCS#hrv-rmssd with context. Unit: ms"
 
 // ============================================================================
 // GROUP 4: FHIR Device → openEHR Wearable Device Cluster

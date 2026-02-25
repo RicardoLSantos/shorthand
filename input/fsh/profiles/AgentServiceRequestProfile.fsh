@@ -135,84 +135,15 @@ Description: "Intent values for agent-generated service requests"
 * http://hl7.org/fhir/request-intent#plan "Plan"
 * http://hl7.org/fhir/request-intent#directive "Directive"
 * http://hl7.org/fhir/request-intent#order "Order"
-
-// ============================================================================
-// CodeSystems
-// ============================================================================
-
-CodeSystem: AgentServiceCategoryCS
-Id: agent-service-category-cs
-Title: "Agent Service Category CodeSystem"
-Description: "Categories of services that agents can recommend"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-// Diagnostic categories
-* #laboratory "Laboratory" "Laboratory testing services"
-* #imaging "Imaging" "Imaging and radiology services"
-* #cardiac-testing "Cardiac Testing" "Cardiac diagnostic testing"
-* #pulmonary-testing "Pulmonary Testing" "Pulmonary function testing"
-// Consultation categories
-* #specialist-referral "Specialist Referral" "Referral to specialist"
-* #mental-health "Mental Health" "Mental health services"
-* #nutrition-consult "Nutrition Consultation" "Dietary/nutrition consultation"
-* #exercise-physiology "Exercise Physiology" "Exercise physiology consultation"
-// Intervention categories
-* #lifestyle-intervention "Lifestyle Intervention" "Lifestyle modification intervention"
-* #medication-management "Medication Management" "Medication review/management"
-* #device-prescription "Device Prescription" "Medical device prescription"
-// Monitoring categories
-* #remote-monitoring "Remote Monitoring" "Remote patient monitoring setup"
-* #wearable-monitoring "Wearable Monitoring" "Consumer wearable monitoring"
-// Education categories
-* #patient-education "Patient Education" "Patient education services"
-* #self-management "Self-Management Support" "Self-management support program"
-
 ValueSet: AgentServiceCategoryVS
 Id: agent-service-category-vs
 Title: "Agent Service Category ValueSet"
 Description: "Categories of services that agents can recommend including diagnostics, consultations, and interventions"
 * ^experimental = false
-* include codes from system AgentServiceCategoryCS
-
-CodeSystem: AgentServiceCodeCS
-Id: agent-service-code-cs
-Title: "Agent Service Code CodeSystem"
-Description: "Specific services that agents can recommend"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-// Laboratory services
-* #cbc "Complete Blood Count" "Recommend CBC panel"
-* #cmp "Comprehensive Metabolic Panel" "Recommend CMP"
-* #lipid-panel "Lipid Panel" "Recommend lipid panel"
-* #hba1c "HbA1c" "Recommend glycated hemoglobin"
-* #tsh "Thyroid Function" "Recommend thyroid function testing"
-* #crp "C-Reactive Protein" "Recommend inflammatory marker"
-* #vitamin-d "Vitamin D Level" "Recommend vitamin D testing"
-* #iron-studies "Iron Studies" "Recommend iron studies"
-// Cardiac services
-* #ecg-12lead "12-Lead ECG" "Recommend standard 12-lead ECG"
-* #holter-monitor "Holter Monitor" "Recommend 24-48h Holter monitoring"
-* #echo "Echocardiogram" "Recommend echocardiography"
-* #stress-test "Stress Test" "Recommend exercise stress testing"
-// Lifestyle interventions
-* #exercise-prescription "Exercise Prescription" "Recommend structured exercise program"
-* #dietary-modification "Dietary Modification" "Recommend dietary changes"
-* #sleep-hygiene "Sleep Hygiene Intervention" "Recommend sleep hygiene program"
-* #stress-management "Stress Management Program" "Recommend stress management"
-* #smoking-cessation "Smoking Cessation" "Recommend smoking cessation support"
-* #alcohol-reduction "Alcohol Reduction" "Recommend alcohol reduction program"
-// Referrals
-* #cardiology-referral "Cardiology Referral" "Refer to cardiology"
-* #endocrinology-referral "Endocrinology Referral" "Refer to endocrinology"
-* #psychology-referral "Psychology Referral" "Refer to psychology/psychiatry"
-* #dietitian-referral "Dietitian Referral" "Refer to registered dietitian"
-* #physiotherapy-referral "Physiotherapy Referral" "Refer to physiotherapy"
-
+* include codes from system LifestyleMedicineTemporaryCS
 ValueSet: AgentServiceCodeVS
 Id: agent-service-code-vs
 Title: "Agent Service Code ValueSet"
 Description: "Specific services that agents can recommend including laboratory tests, cardiac services, and lifestyle interventions"
 * ^experimental = false
-* include codes from system AgentServiceCodeCS
+* include codes from system LifestyleMedicineTemporaryCS

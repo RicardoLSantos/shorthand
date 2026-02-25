@@ -56,61 +56,61 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
     activityType 0..1
 
 // Power metrics
-* component[instantaneousPower].code = CyclingMetricsCS#instant-power "Instantaneous Power"
+* component[instantaneousPower].code = LifestyleMedicineTemporaryCS#instant-power "Instantaneous Power"
 * component[instantaneousPower].value[x] only Quantity
 * component[instantaneousPower].valueQuantity.system = $UCUM
 * component[instantaneousPower].valueQuantity.code = #W
 
-* component[averagePower].code = CyclingMetricsCS#avg-power "Average Power"
+* component[averagePower].code = LifestyleMedicineTemporaryCS#avg-power "Average Power"
 * component[averagePower].value[x] only Quantity
 * component[averagePower].valueQuantity.system = $UCUM
 * component[averagePower].valueQuantity.code = #W
 
-* component[normalizedPower].code = CyclingMetricsCS#np "Normalized Power"
+* component[normalizedPower].code = LifestyleMedicineTemporaryCS#np "Normalized Power"
 * component[normalizedPower].value[x] only Quantity
 * component[normalizedPower].valueQuantity.system = $UCUM
 * component[normalizedPower].valueQuantity.code = #W
 
-* component[maxPower].code = CyclingMetricsCS#max-power "Maximum Power"
+* component[maxPower].code = LifestyleMedicineTemporaryCS#max-power "Maximum Power"
 * component[maxPower].value[x] only Quantity
 * component[maxPower].valueQuantity.system = $UCUM
 * component[maxPower].valueQuantity.code = #W
 
 // FTP and training load
-* component[ftp].code = CyclingMetricsCS#ftp "Functional Threshold Power"
+* component[ftp].code = LifestyleMedicineTemporaryCS#ftp "Functional Threshold Power"
 * component[ftp].value[x] only Quantity
 * component[ftp].valueQuantity.system = $UCUM
 * component[ftp].valueQuantity.code = #W
 
-* component[tss].code = CyclingMetricsCS#tss "Training Stress Score"
+* component[tss].code = LifestyleMedicineTemporaryCS#tss "Training Stress Score"
 * component[tss].value[x] only Quantity
 * component[tss].valueQuantity.system = $UCUM
 * component[tss].valueQuantity.code = #{score}
 
-* component[intensityFactor].code = CyclingMetricsCS#if "Intensity Factor"
+* component[intensityFactor].code = LifestyleMedicineTemporaryCS#if "Intensity Factor"
 * component[intensityFactor].value[x] only Quantity
 * component[intensityFactor].valueQuantity.system = $UCUM
 * component[intensityFactor].valueQuantity.code = #1
 
 // Cadence
-* component[cadence].code = CyclingMetricsCS#cadence "Cadence"
+* component[cadence].code = LifestyleMedicineTemporaryCS#cycling-cadence "Cadence"
 * component[cadence].value[x] only Quantity
 * component[cadence].valueQuantity.system = $UCUM
 * component[cadence].valueQuantity.code = #{rpm}
 
-* component[avgCadence].code = CyclingMetricsCS#avg-cadence "Average Cadence"
+* component[avgCadence].code = LifestyleMedicineTemporaryCS#avg-cadence "Average Cadence"
 * component[avgCadence].value[x] only Quantity
 * component[avgCadence].valueQuantity.system = $UCUM
 * component[avgCadence].valueQuantity.code = #{rpm}
 
 // Balance
-* component[leftRightBalance].code = CyclingMetricsCS#lr-balance "Left/Right Power Balance"
+* component[leftRightBalance].code = LifestyleMedicineTemporaryCS#lr-balance "Left/Right Power Balance"
 * component[leftRightBalance].value[x] only Quantity
 * component[leftRightBalance].valueQuantity.system = $UCUM
 * component[leftRightBalance].valueQuantity.code = #%
 
 // Energy and session metrics
-* component[kilojoules].code = CyclingMetricsCS#kj "Kilojoules"
+* component[kilojoules].code = LifestyleMedicineTemporaryCS#kj "Kilojoules"
 * component[kilojoules].value[x] only Quantity
 * component[kilojoules].valueQuantity.system = $UCUM
 * component[kilojoules].valueQuantity.code = #kJ
@@ -125,21 +125,21 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
 * component[distance].valueQuantity.system = $UCUM
 * component[distance].valueQuantity.code = #km
 
-* component[avgSpeed].code = CyclingMetricsCS#avg-speed "Average Speed"
+* component[avgSpeed].code = LifestyleMedicineTemporaryCS#avg-speed "Average Speed"
 * component[avgSpeed].value[x] only Quantity
 * component[avgSpeed].valueQuantity.system = $UCUM
 * component[avgSpeed].valueQuantity.code = #km/h
 
-* component[elevationGain].code = CyclingMetricsCS#elevation "Elevation Gain"
+* component[elevationGain].code = LifestyleMedicineTemporaryCS#cycling-elevation "Elevation Gain"
 * component[elevationGain].value[x] only Quantity
 * component[elevationGain].valueQuantity.system = $UCUM
 * component[elevationGain].valueQuantity.code = #m
 
-* component[trainingZone].code = CyclingMetricsCS#zone "Training Zone"
+* component[trainingZone].code = LifestyleMedicineTemporaryCS#zone "Training Zone"
 * component[trainingZone].value[x] only CodeableConcept
 * component[trainingZone].valueCodeableConcept from CyclingTrainingZoneVS (required)
 
-* component[activityType].code = CyclingMetricsCS#type "Activity Type"
+* component[activityType].code = LifestyleMedicineTemporaryCS#type "Activity Type"
 * component[activityType].value[x] only CodeableConcept
 * component[activityType].valueCodeableConcept from CyclingActivityTypeVS (required)
 
@@ -194,76 +194,76 @@ Description: "Profile for recording running form and biomechanical metrics from 
     injuryRisk 0..1
 
 // Ground contact metrics
-* component[groundContactTime].code = RunningMetricsCS#gct "Ground Contact Time"
+* component[groundContactTime].code = LifestyleMedicineTemporaryCS#gct "Ground Contact Time"
 * component[groundContactTime].value[x] only Quantity
 * component[groundContactTime].valueQuantity.system = $UCUM
 * component[groundContactTime].valueQuantity.code = #ms
 
-* component[groundContactBalance].code = RunningMetricsCS#gcb "Ground Contact Balance"
+* component[groundContactBalance].code = LifestyleMedicineTemporaryCS#gcb "Ground Contact Balance"
 * component[groundContactBalance].value[x] only Quantity
 * component[groundContactBalance].valueQuantity.system = $UCUM
 * component[groundContactBalance].valueQuantity.code = #%
 
 // Vertical motion
-* component[verticalOscillation].code = RunningMetricsCS#vo "Vertical Oscillation"
+* component[verticalOscillation].code = LifestyleMedicineTemporaryCS#vo "Vertical Oscillation"
 * component[verticalOscillation].value[x] only Quantity
 * component[verticalOscillation].valueQuantity.system = $UCUM
 * component[verticalOscillation].valueQuantity.code = #cm
 
-* component[verticalRatio].code = RunningMetricsCS#vr "Vertical Ratio"
+* component[verticalRatio].code = LifestyleMedicineTemporaryCS#vr "Vertical Ratio"
 * component[verticalRatio].value[x] only Quantity
 * component[verticalRatio].valueQuantity.system = $UCUM
 * component[verticalRatio].valueQuantity.code = #%
 
 // Cadence and stride
-* component[cadence].code = RunningMetricsCS#cadence "Running Cadence"
+* component[cadence].code = LifestyleMedicineTemporaryCS#running-cadence "Running Cadence"
 * component[cadence].value[x] only Quantity
 * component[cadence].valueQuantity.system = $UCUM
 * component[cadence].valueQuantity.code = #{spm}
 
-* component[strideLength].code = RunningMetricsCS#stride "Stride Length"
+* component[strideLength].code = LifestyleMedicineTemporaryCS#stride "Stride Length"
 * component[strideLength].value[x] only Quantity
 * component[strideLength].valueQuantity.system = $UCUM
 * component[strideLength].valueQuantity.code = #m
 
 // Running power (Stryd, Garmin, etc.)
-* component[runningPower].code = RunningMetricsCS#power "Running Power"
+* component[runningPower].code = LifestyleMedicineTemporaryCS#running-power "Running Power"
 * component[runningPower].value[x] only Quantity
 * component[runningPower].valueQuantity.system = $UCUM
 * component[runningPower].valueQuantity.code = #W
 
-* component[formPower].code = RunningMetricsCS#form-power "Form Power"
+* component[formPower].code = LifestyleMedicineTemporaryCS#form-power "Form Power"
 * component[formPower].value[x] only Quantity
 * component[formPower].valueQuantity.system = $UCUM
 * component[formPower].valueQuantity.code = #W
 
-* component[formPowerRatio].code = RunningMetricsCS#fpr "Form Power Ratio"
+* component[formPowerRatio].code = LifestyleMedicineTemporaryCS#fpr "Form Power Ratio"
 * component[formPowerRatio].value[x] only Quantity
 * component[formPowerRatio].valueQuantity.system = $UCUM
 * component[formPowerRatio].valueQuantity.code = #%
 
 // Leg stiffness and impact
-* component[legStiffness].code = RunningMetricsCS#stiffness "Leg Stiffness"
+* component[legStiffness].code = LifestyleMedicineTemporaryCS#stiffness "Leg Stiffness"
 * component[legStiffness].value[x] only Quantity
 * component[legStiffness].valueQuantity.system = $UCUM
 * component[legStiffness].valueQuantity.code = #kN/m
 
-* component[impactGs].code = RunningMetricsCS#impact "Impact G-forces"
+* component[impactGs].code = LifestyleMedicineTemporaryCS#impact "Impact G-forces"
 * component[impactGs].value[x] only Quantity
 * component[impactGs].valueQuantity.system = $UCUM
 * component[impactGs].valueQuantity.code = #g
 
-* component[footstrikeType].code = RunningMetricsCS#footstrike "Footstrike Type"
+* component[footstrikeType].code = LifestyleMedicineTemporaryCS#footstrike "Footstrike Type"
 * component[footstrikeType].value[x] only CodeableConcept
 * component[footstrikeType].valueCodeableConcept from FootstrikeTypeVS (required)
 
 // Session metrics
-* component[pace].code = RunningMetricsCS#pace "Pace"
+* component[pace].code = LifestyleMedicineTemporaryCS#pace "Pace"
 * component[pace].value[x] only Quantity
 * component[pace].valueQuantity.system = $UCUM
 * component[pace].valueQuantity.code = #min/km
 
-* component[avgSpeed].code = RunningMetricsCS#speed "Average Speed"
+* component[avgSpeed].code = LifestyleMedicineTemporaryCS#running-speed "Average Speed"
 * component[avgSpeed].value[x] only Quantity
 * component[avgSpeed].valueQuantity.system = $UCUM
 * component[avgSpeed].valueQuantity.code = #km/h
@@ -278,21 +278,21 @@ Description: "Profile for recording running form and biomechanical metrics from 
 * component[duration].valueQuantity.system = $UCUM
 * component[duration].valueQuantity.code = #min
 
-* component[elevationGain].code = RunningMetricsCS#elevation "Elevation Gain"
+* component[elevationGain].code = LifestyleMedicineTemporaryCS#running-elevation "Elevation Gain"
 * component[elevationGain].value[x] only Quantity
 * component[elevationGain].valueQuantity.system = $UCUM
 * component[elevationGain].valueQuantity.code = #m
 
 // Scores
-* component[symmetryScore].code = RunningMetricsCS#symmetry "Symmetry Score"
+* component[symmetryScore].code = LifestyleMedicineTemporaryCS#symmetry "Symmetry Score"
 * component[symmetryScore].value[x] only Quantity
 * component[symmetryScore].valueQuantity.system = $UCUM
 * component[symmetryScore].valueQuantity.code = #%
 
-* component[formScore].code = RunningMetricsCS#form-score "Form Score"
+* component[formScore].code = LifestyleMedicineTemporaryCS#form-score "Form Score"
 * component[formScore].value[x] only integer
 
-* component[injuryRisk].code = RunningMetricsCS#injury-risk "Injury Risk"
+* component[injuryRisk].code = LifestyleMedicineTemporaryCS#injury-risk "Injury Risk"
 * component[injuryRisk].value[x] only CodeableConcept
 * component[injuryRisk].valueCodeableConcept from InjuryRiskLevelVS (required)
 
@@ -349,7 +349,7 @@ Description: "Profile for recording swimming performance metrics from wearable d
     caloriesBurned 0..1
 
 // Session summary
-* component[totalDistance].code = SwimmingMetricsCS#distance "Total Distance"
+* component[totalDistance].code = LifestyleMedicineTemporaryCS#distance "Total Distance"
 * component[totalDistance].value[x] only Quantity
 * component[totalDistance].valueQuantity.system = $UCUM
 * component[totalDistance].valueQuantity.code = #m
@@ -359,72 +359,72 @@ Description: "Profile for recording swimming performance metrics from wearable d
 * component[totalDuration].valueQuantity.system = $UCUM
 * component[totalDuration].valueQuantity.code = #min
 
-* component[totalLaps].code = SwimmingMetricsCS#laps "Total Laps"
+* component[totalLaps].code = LifestyleMedicineTemporaryCS#laps "Total Laps"
 * component[totalLaps].value[x] only integer
 
-* component[totalStrokes].code = SwimmingMetricsCS#strokes "Total Strokes"
+* component[totalStrokes].code = LifestyleMedicineTemporaryCS#strokes "Total Strokes"
 * component[totalStrokes].value[x] only integer
 
-* component[activeSwimTime].code = SwimmingMetricsCS#active-time "Active Swim Time"
+* component[activeSwimTime].code = LifestyleMedicineTemporaryCS#swimming-active-time "Active Swim Time"
 * component[activeSwimTime].value[x] only Quantity
 * component[activeSwimTime].valueQuantity.system = $UCUM
 * component[activeSwimTime].valueQuantity.code = #min
 
-* component[restTime].code = SwimmingMetricsCS#rest-time "Rest Time"
+* component[restTime].code = LifestyleMedicineTemporaryCS#rest-time "Rest Time"
 * component[restTime].value[x] only Quantity
 * component[restTime].valueQuantity.system = $UCUM
 * component[restTime].valueQuantity.code = #min
 
 // Stroke metrics
-* component[primaryStrokeType].code = SwimmingMetricsCS#stroke-type "Primary Stroke Type"
+* component[primaryStrokeType].code = LifestyleMedicineTemporaryCS#stroke-type "Primary Stroke Type"
 * component[primaryStrokeType].value[x] only CodeableConcept
 * component[primaryStrokeType].valueCodeableConcept from SwimmingStrokeTypeVS (required)
 
-* component[strokesPerLap].code = SwimmingMetricsCS#strokes-per-lap "Strokes Per Lap"
+* component[strokesPerLap].code = LifestyleMedicineTemporaryCS#strokes-per-lap "Strokes Per Lap"
 * component[strokesPerLap].value[x] only integer
 
-* component[strokeRate].code = SwimmingMetricsCS#stroke-rate "Stroke Rate"
+* component[strokeRate].code = LifestyleMedicineTemporaryCS#stroke-rate "Stroke Rate"
 * component[strokeRate].value[x] only Quantity
 * component[strokeRate].valueQuantity.system = $UCUM
 * component[strokeRate].valueQuantity.code = #{spm}
 
-* component[distancePerStroke].code = SwimmingMetricsCS#dps "Distance Per Stroke"
+* component[distancePerStroke].code = LifestyleMedicineTemporaryCS#dps "Distance Per Stroke"
 * component[distancePerStroke].value[x] only Quantity
 * component[distancePerStroke].valueQuantity.system = $UCUM
 * component[distancePerStroke].valueQuantity.code = #m
 
 // SWOLF (Swimming Golf Score = time + strokes)
-* component[avgSwolf].code = SwimmingMetricsCS#avg-swolf "Average SWOLF"
+* component[avgSwolf].code = LifestyleMedicineTemporaryCS#avg-swolf "Average SWOLF"
 * component[avgSwolf].value[x] only integer
 
-* component[bestSwolf].code = SwimmingMetricsCS#best-swolf "Best SWOLF"
+* component[bestSwolf].code = LifestyleMedicineTemporaryCS#best-swolf "Best SWOLF"
 * component[bestSwolf].value[x] only integer
 
 // Pace metrics
-* component[avgPace].code = SwimmingMetricsCS#avg-pace "Average Pace"
+* component[avgPace].code = LifestyleMedicineTemporaryCS#avg-pace "Average Pace"
 * component[avgPace].value[x] only Quantity
 * component[avgPace].valueQuantity.system = $UCUM
 * component[avgPace].valueQuantity.code = #s
 * component[avgPace] ^short = "Average pace in seconds (interpreted as seconds per 100 meters)"
 
-* component[bestPace].code = SwimmingMetricsCS#best-pace "Best Pace"
+* component[bestPace].code = LifestyleMedicineTemporaryCS#best-pace "Best Pace"
 * component[bestPace].value[x] only Quantity
 * component[bestPace].valueQuantity.system = $UCUM
 * component[bestPace].valueQuantity.code = #s
 * component[bestPace] ^short = "Best pace in seconds (interpreted as seconds per 100 meters)"
 
-* component[avgSpeed].code = SwimmingMetricsCS#speed "Average Speed"
+* component[avgSpeed].code = LifestyleMedicineTemporaryCS#swimming-speed "Average Speed"
 * component[avgSpeed].value[x] only Quantity
 * component[avgSpeed].valueQuantity.system = $UCUM
 * component[avgSpeed].valueQuantity.code = #m/s
 
 // Environment
-* component[poolLength].code = SwimmingMetricsCS#pool-length "Pool Length"
+* component[poolLength].code = LifestyleMedicineTemporaryCS#pool-length "Pool Length"
 * component[poolLength].value[x] only Quantity
 * component[poolLength].valueQuantity.system = $UCUM
 * component[poolLength].valueQuantity.code = #m
 
-* component[swimmingEnvironment].code = SwimmingMetricsCS#environment "Swimming Environment"
+* component[swimmingEnvironment].code = LifestyleMedicineTemporaryCS#swimming-environment "Swimming Environment"
 * component[swimmingEnvironment].value[x] only CodeableConcept
 * component[swimmingEnvironment].valueCodeableConcept from SwimmingEnvironmentVS (required)
 
@@ -435,19 +435,19 @@ Description: "Profile for recording swimming performance metrics from wearable d
 * component[avgHeartRate].valueQuantity.code = #{beats}/min
 
 // LOINC 101692-2 verified via Athena 2026-02-24 (concept_id 3966129)
-// Replaces custom SwimmingMetricsCS#max-hr — audit confirmed direct LOINC mapping exists
+// Replaces custom LifestyleMedicineTemporaryCS#max-hr — audit confirmed direct LOINC mapping exists
 * component[maxHeartRate].code = $LOINC#101692-2 "Maximum heart rate"
 * component[maxHeartRate].value[x] only Quantity
 * component[maxHeartRate].valueQuantity.system = $UCUM
 * component[maxHeartRate].valueQuantity.code = #{beats}/min
 
 // Training effect
-* component[aerobicTE].code = SwimmingMetricsCS#aerobic-te "Aerobic Training Effect"
+* component[aerobicTE].code = LifestyleMedicineTemporaryCS#aerobic-te "Aerobic Training Effect"
 * component[aerobicTE].value[x] only Quantity
 * component[aerobicTE].valueQuantity.system = $UCUM
 * component[aerobicTE].valueQuantity.code = #1
 
-* component[anaerobicTE].code = SwimmingMetricsCS#anaerobic-te "Anaerobic Training Effect"
+* component[anaerobicTE].code = LifestyleMedicineTemporaryCS#anaerobic-te "Anaerobic Training Effect"
 * component[anaerobicTE].value[x] only Quantity
 * component[anaerobicTE].valueQuantity.system = $UCUM
 * component[anaerobicTE].valueQuantity.code = #1
@@ -517,111 +517,111 @@ Description: "Profile for recording strength training metrics from wearable devi
     trainingType 0..1
 
 // Exercise identification
-* component[exerciseName].code = StrengthTrainingCS#exercise-name "Exercise Name"
+* component[exerciseName].code = LifestyleMedicineTemporaryCS#exercise-name "Exercise Name"
 * component[exerciseName].value[x] only string
 
-* component[exerciseCategory].code = StrengthTrainingCS#category "Exercise Category"
+* component[exerciseCategory].code = LifestyleMedicineTemporaryCS#strength-category "Exercise Category"
 * component[exerciseCategory].value[x] only CodeableConcept
 * component[exerciseCategory].valueCodeableConcept from ExerciseCategoryVS (required)
 
-* component[muscleGroup].code = StrengthTrainingCS#muscle "Primary Muscle Group"
+* component[muscleGroup].code = LifestyleMedicineTemporaryCS#muscle "Primary Muscle Group"
 * component[muscleGroup].value[x] only CodeableConcept
 * component[muscleGroup].valueCodeableConcept from MuscleGroupVS (required)
 
-* component[equipmentType].code = StrengthTrainingCS#equipment "Equipment Type"
+* component[equipmentType].code = LifestyleMedicineTemporaryCS#equipment "Equipment Type"
 * component[equipmentType].value[x] only CodeableConcept
 * component[equipmentType].valueCodeableConcept from StrengthEquipmentVS (required)
 
 // Set details
-* component[setNumber].code = StrengthTrainingCS#set-num "Set Number"
+* component[setNumber].code = LifestyleMedicineTemporaryCS#set-num "Set Number"
 * component[setNumber].value[x] only integer
 
-* component[setType].code = StrengthTrainingCS#set-type "Set Type"
+* component[setType].code = LifestyleMedicineTemporaryCS#set-type "Set Type"
 * component[setType].value[x] only CodeableConcept
 * component[setType].valueCodeableConcept from SetTypeVS (required)
 
-* component[repsPerformed].code = StrengthTrainingCS#reps "Repetitions Performed"
+* component[repsPerformed].code = LifestyleMedicineTemporaryCS#reps "Repetitions Performed"
 * component[repsPerformed].value[x] only integer
 
-* component[targetReps].code = StrengthTrainingCS#target-reps "Target Repetitions"
+* component[targetReps].code = LifestyleMedicineTemporaryCS#target-reps "Target Repetitions"
 * component[targetReps].value[x] only integer
 
-* component[load].code = StrengthTrainingCS#load "Load"
+* component[load].code = LifestyleMedicineTemporaryCS#load "Load"
 * component[load].value[x] only Quantity
 * component[load].valueQuantity.system = $UCUM
 * component[load].valueQuantity.code = #kg
 
-* component[percentOf1RM].code = StrengthTrainingCS#pct-1rm "Percentage of 1RM"
+* component[percentOf1RM].code = LifestyleMedicineTemporaryCS#pct-1rm "Percentage of 1RM"
 * component[percentOf1RM].value[x] only Quantity
 * component[percentOf1RM].valueQuantity.system = $UCUM
 * component[percentOf1RM].valueQuantity.code = #%
 
-* component[repsInReserve].code = StrengthTrainingCS#rir "Repetitions in Reserve"
+* component[repsInReserve].code = LifestyleMedicineTemporaryCS#rir "Repetitions in Reserve"
 * component[repsInReserve].value[x] only integer
 
-* component[setRPE].code = StrengthTrainingCS#set-rpe "Set RPE"
+* component[setRPE].code = LifestyleMedicineTemporaryCS#set-rpe "Set RPE"
 * component[setRPE].value[x] only integer
 
-* component[restPeriod].code = StrengthTrainingCS#rest "Rest Period"
+* component[restPeriod].code = LifestyleMedicineTemporaryCS#strength-rest "Rest Period"
 * component[restPeriod].value[x] only Quantity
 * component[restPeriod].valueQuantity.system = $UCUM
 * component[restPeriod].valueQuantity.code = #s
 
 // Velocity-based training (VBT)
-* component[meanVelocity].code = StrengthTrainingCS#mean-vel "Mean Concentric Velocity"
+* component[meanVelocity].code = LifestyleMedicineTemporaryCS#mean-vel "Mean Concentric Velocity"
 * component[meanVelocity].value[x] only Quantity
 * component[meanVelocity].valueQuantity.system = $UCUM
 * component[meanVelocity].valueQuantity.code = #m/s
 
-* component[peakVelocity].code = StrengthTrainingCS#peak-vel "Peak Concentric Velocity"
+* component[peakVelocity].code = LifestyleMedicineTemporaryCS#peak-vel "Peak Concentric Velocity"
 * component[peakVelocity].value[x] only Quantity
 * component[peakVelocity].valueQuantity.system = $UCUM
 * component[peakVelocity].valueQuantity.code = #m/s
 
-* component[velocityLoss].code = StrengthTrainingCS#vel-loss "Velocity Loss"
+* component[velocityLoss].code = LifestyleMedicineTemporaryCS#vel-loss "Velocity Loss"
 * component[velocityLoss].value[x] only Quantity
 * component[velocityLoss].valueQuantity.system = $UCUM
 * component[velocityLoss].valueQuantity.code = #%
 
-* component[meanPower].code = StrengthTrainingCS#mean-power "Mean Power Output"
+* component[meanPower].code = LifestyleMedicineTemporaryCS#mean-power "Mean Power Output"
 * component[meanPower].value[x] only Quantity
 * component[meanPower].valueQuantity.system = $UCUM
 * component[meanPower].valueQuantity.code = #W
 
-* component[peakPower].code = StrengthTrainingCS#peak-power "Peak Power Output"
+* component[peakPower].code = LifestyleMedicineTemporaryCS#peak-power "Peak Power Output"
 * component[peakPower].value[x] only Quantity
 * component[peakPower].valueQuantity.system = $UCUM
 * component[peakPower].valueQuantity.code = #W
 
-* component[rangeOfMotion].code = StrengthTrainingCS#rom "Range of Motion"
+* component[rangeOfMotion].code = LifestyleMedicineTemporaryCS#rom "Range of Motion"
 * component[rangeOfMotion].value[x] only Quantity
 * component[rangeOfMotion].valueQuantity.system = $UCUM
 * component[rangeOfMotion].valueQuantity.code = #cm
 
-* component[timeUnderTension].code = StrengthTrainingCS#tut "Time Under Tension"
+* component[timeUnderTension].code = LifestyleMedicineTemporaryCS#tut "Time Under Tension"
 * component[timeUnderTension].value[x] only Quantity
 * component[timeUnderTension].valueQuantity.system = $UCUM
 * component[timeUnderTension].valueQuantity.code = #s
 
 // Session volume
-* component[totalSets].code = StrengthTrainingCS#total-sets "Total Sets"
+* component[totalSets].code = LifestyleMedicineTemporaryCS#total-sets "Total Sets"
 * component[totalSets].value[x] only integer
 
-* component[totalReps].code = StrengthTrainingCS#total-reps "Total Repetitions"
+* component[totalReps].code = LifestyleMedicineTemporaryCS#total-reps "Total Repetitions"
 * component[totalReps].value[x] only integer
 
-* component[volumeLoad].code = StrengthTrainingCS#volume-load "Volume Load"
+* component[volumeLoad].code = LifestyleMedicineTemporaryCS#volume-load "Volume Load"
 * component[volumeLoad].value[x] only Quantity
 * component[volumeLoad].valueQuantity.system = $UCUM
 * component[volumeLoad].valueQuantity.code = #kg
 
 // 1RM
-* component[tested1RM].code = StrengthTrainingCS#tested-1rm "Tested 1RM"
+* component[tested1RM].code = LifestyleMedicineTemporaryCS#tested-1rm "Tested 1RM"
 * component[tested1RM].value[x] only Quantity
 * component[tested1RM].valueQuantity.system = $UCUM
 * component[tested1RM].valueQuantity.code = #kg
 
-* component[estimated1RM].code = StrengthTrainingCS#est-1rm "Estimated 1RM"
+* component[estimated1RM].code = LifestyleMedicineTemporaryCS#est-1rm "Estimated 1RM"
 * component[estimated1RM].value[x] only Quantity
 * component[estimated1RM].valueQuantity.system = $UCUM
 * component[estimated1RM].valueQuantity.code = #kg
@@ -632,12 +632,12 @@ Description: "Profile for recording strength training metrics from wearable devi
 * component[sessionDuration].valueQuantity.system = $UCUM
 * component[sessionDuration].valueQuantity.code = #min
 
-* component[sessionRPE].code = StrengthTrainingCS#session-rpe "Session RPE"
+* component[sessionRPE].code = LifestyleMedicineTemporaryCS#session-rpe "Session RPE"
 * component[sessionRPE].value[x] only integer
 
-* component[sessionTrainingLoad].code = StrengthTrainingCS#session-load "Session Training Load"
+* component[sessionTrainingLoad].code = LifestyleMedicineTemporaryCS#session-load "Session Training Load"
 * component[sessionTrainingLoad].value[x] only integer
 
-* component[trainingType].code = StrengthTrainingCS#training-type "Training Type"
+* component[trainingType].code = LifestyleMedicineTemporaryCS#training-type "Training Type"
 * component[trainingType].value[x] only CodeableConcept
 * component[trainingType].valueCodeableConcept from StrengthTrainingTypeVS (required)

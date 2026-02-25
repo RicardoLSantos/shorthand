@@ -5,7 +5,7 @@
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
-Alias: $LIFESTYLEOBS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs
+Alias: $LIFESTYLEOBS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 // Example 1: Comprehensive Mobility Profile with iOS 14+ metrics
 Instance: MobilityProfileExample
@@ -163,6 +163,6 @@ Title: "Mobility Alert Level Extension Example"
 
 // Mobility Alert Level extension - Red alert for significant change
 * extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-alert-level"
-* extension[0].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-alert-level-cs#red "Alert - Significant change"
+* extension[0].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#red "Alert - Significant change"
 
 * note.text = "Walking steadiness in Very Low range (<40%). RED alert triggered. Immediate fall risk assessment recommended. Previous reading was 52% (2 weeks ago)."

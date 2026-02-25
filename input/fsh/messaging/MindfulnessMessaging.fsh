@@ -1,4 +1,4 @@
-Alias: $MsgEvents = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-message-events
+Alias: $MsgEvents = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 Alias: $MsgTypes = http://terminology.hl7.org/CodeSystem/message-type
 
 Profile: MindfulnessMessageDefinition
@@ -23,7 +23,7 @@ Description: "Message definition for starting a mindfulness session"
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/start-session"
 * date = "2024-03-19"
 * status = #active
-* eventCoding = $MsgEvents#session-start "Session Start"
+* eventCoding = $MsgEvents#mindfulness-msg-session-start "Session Start"
 * category = #notification
 * focus.code = #Observation
 * focus.min = 1
@@ -38,7 +38,7 @@ Description: "Message definition for ending a mindfulness session"
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/end-session"
 * date = "2024-03-19"
 * status = #active
-* eventCoding = $MsgEvents#session-end "Session End"
+* eventCoding = $MsgEvents#mindfulness-msg-session-end "Session End"
 * category = #notification
 * focus.code = #Observation
 * focus.min = 1

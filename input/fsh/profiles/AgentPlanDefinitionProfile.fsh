@@ -234,43 +234,12 @@ Description: "Types of plan definitions for agent decision logic"
 * http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#clinical-protocol "Clinical Protocol"
 * http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#eca-rule "ECA Rule"
 * http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#workflow-definition "Workflow Definition"
-
-// ============================================================================
-// CodeSystems
-// ============================================================================
-
-CodeSystem: AgentDecisionTopicCS
-Id: agent-decision-topic-cs
-Title: "Agent Decision Topic CodeSystem"
-Description: "Topics/categories for agent decision logic"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-// Risk assessment topics
-* #cardiovascular-risk "Cardiovascular Risk" "Cardiovascular risk assessment logic"
-* #metabolic-risk "Metabolic Risk" "Metabolic/diabetes risk assessment"
-* #mental-health-risk "Mental Health Risk" "Mental health risk assessment"
-* #fall-risk "Fall Risk" "Fall risk assessment"
-// Monitoring topics
-* #vital-signs-monitoring "Vital Signs Monitoring" "Vital signs monitoring logic"
-* #activity-monitoring "Activity Monitoring" "Physical activity monitoring"
-* #sleep-monitoring "Sleep Monitoring" "Sleep pattern monitoring"
-* #hrv-monitoring "HRV Monitoring" "Heart rate variability monitoring"
-// Intervention topics
-* #lifestyle-intervention "Lifestyle Intervention" "Lifestyle modification recommendations"
-* #medication-optimization "Medication Optimization" "Medication optimization logic"
-* #preventive-care "Preventive Care" "Preventive care recommendations"
-// Alert topics
-* #abnormal-value-alert "Abnormal Value Alert" "Alerting on abnormal values"
-* #trend-alert "Trend Alert" "Alerting on concerning trends"
-* #threshold-alert "Threshold Alert" "Threshold-based alerting"
-
 ValueSet: AgentDecisionTopicVS
 Id: agent-decision-topic-vs
 Title: "Agent Decision Topic ValueSet"
 Description: "Topics for agent decision logic including risk assessment, monitoring, interventions, and alerts"
 * ^experimental = false
-* include codes from system AgentDecisionTopicCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 // ============================================================================
 // Example Instance
@@ -293,8 +262,8 @@ Description: "Example plan definition for agent-based HRV risk assessment"
 * publisher = "FMUP HEADS2 Project"
 * description = "Decision logic for LLM agent assessment of HRV data for cardiovascular risk stratification. Uses RMSSD thresholds from Shaffer & Ginsberg 2017."
 
-* topic[0] = AgentDecisionTopicCS#hrv-monitoring "HRV Monitoring"
-* topic[1] = AgentDecisionTopicCS#cardiovascular-risk "Cardiovascular Risk"
+* topic[0] = LifestyleMedicineTemporaryCS#hrv-monitoring "HRV Monitoring"
+* topic[1] = LifestyleMedicineTemporaryCS#cardiovascular-risk "Cardiovascular Risk"
 
 * action[0]
   * title = "Evaluate HRV RMSSD Value"

@@ -58,7 +58,7 @@ Title: "Walking Activity - Semantic Anchoring (LA Dual-Coding)"
 * effectiveDateTime = "2026-02-25T17:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 
-* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ios-physical-activity-cs#walking "Walking"
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#physical-activity-walking "Walking"
 * code.coding[1] = $LOINC#LA11834-1 "Walking"
 * code.coding[2] = $SCT#129006008 "Walking (observable entity)"
 * code.text = "Walking"

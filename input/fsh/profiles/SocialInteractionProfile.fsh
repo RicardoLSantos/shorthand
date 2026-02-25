@@ -30,21 +30,21 @@ Description: "Profile for recording social interaction data from iOS Health App"
     participants 0..1 MS
 
 * component[duration]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-duration "Social interaction duration"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#social-duration "Social interaction duration"
   * valueQuantity only Quantity
   * valueQuantity.system = $UCUM
   * valueQuantity.code = #min
 
 * component[quality]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-quality "Social interaction quality score"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#social-quality "Social interaction quality score"
   * valueCodeableConcept from SocialInteractionQualityVS (required)
 
 * component[medium]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-medium "Social interaction medium"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#social-medium "Social interaction medium"
   * valueCodeableConcept from SocialInteractionMediumVS (required)
 
 * component[participants]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#social-count "Number of social interactions"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#social-count "Number of social interactions"
   * valueInteger only integer
 
 * extension contains

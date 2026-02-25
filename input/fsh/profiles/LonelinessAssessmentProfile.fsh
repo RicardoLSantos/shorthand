@@ -78,19 +78,19 @@ loneliness associated with 26% increased mortality risk (OR=1.26, 95% CI: 1.04-1
 
 * component[companionshipLack]
   * ^short = "How often do you feel that you lack companionship?"
-  * code = LonelinessComponentCS#companionship-lack "Lack of companionship"
+  * code = LifestyleMedicineTemporaryCS#companionship-lack "Lack of companionship"
   * value[x] only CodeableConcept
   * valueCodeableConcept from LonelinessItemResponseVS (required)
 
 * component[leftOutFeeling]
   * ^short = "How often do you feel left out?"
-  * code = LonelinessComponentCS#left-out "Feeling left out"
+  * code = LifestyleMedicineTemporaryCS#left-out "Feeling left out"
   * value[x] only CodeableConcept
   * valueCodeableConcept from LonelinessItemResponseVS (required)
 
 * component[isolationFeeling]
   * ^short = "How often do you feel isolated from others?"
-  * code = LonelinessComponentCS#isolation "Feeling isolated"
+  * code = LifestyleMedicineTemporaryCS#isolation "Feeling isolated"
   * value[x] only CodeableConcept
   * valueCodeableConcept from LonelinessItemResponseVS (required)
 
@@ -105,47 +105,6 @@ loneliness associated with 26% increased mortality risk (OR=1.26, 95% CI: 1.04-1
 * derivedFrom ^short = "Reference to completed UCLA questionnaire response"
 
 // =============================================================================
-// Code Systems
-// =============================================================================
-
-CodeSystem: LonelinessComponentCS
-Id: loneliness-component-cs
-Title: "Loneliness Assessment Component Code System"
-Description: "Components for UCLA Loneliness Scale items"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #companionship-lack "Lack of companionship" "How often do you feel that you lack companionship? (UCLA item)"
-* #left-out "Feeling left out" "How often do you feel left out? (UCLA item)"
-* #isolation "Feeling isolated" "How often do you feel isolated from others? (UCLA item)"
-* #no-one-to-talk "No one to talk to" "How often do you feel that there is no one you can turn to? (UCLA item)"
-* #not-close-to-anyone "Not close to anyone" "How often do you feel that you are no longer close to anyone? (UCLA item)"
-
-CodeSystem: LonelinessFrequencyCS
-Id: loneliness-frequency-cs
-Title: "Loneliness Frequency Code System"
-Description: "Frequency responses for loneliness assessment items (UCLA scale)"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #hardly-ever "Hardly ever" "Rarely or never (score: 1)"
-* #some-of-time "Some of the time" "Occasionally (score: 2)"
-* #often "Often" "Frequently (score: 3)"
-
-CodeSystem: LonelinessAssessmentMethodCS
-Id: loneliness-assessment-method-cs
-Title: "Loneliness Assessment Method Code System"
-Description: "Methods and instruments for loneliness assessment"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #ucla-20 "UCLA Loneliness Scale (20-item)" "Full UCLA Loneliness Scale Version 3 (Russell, 1996)"
-* #ucla-3 "UCLA Loneliness Scale (3-item)" "Short form UCLA scale (Hughes et al., 2004)"
-* #de-jong "De Jong Gierveld Scale" "De Jong Gierveld Loneliness Scale (11-item)"
-* #de-jong-6 "De Jong Gierveld Scale (6-item)" "Short form De Jong Gierveld scale"
-* #clinical-interview "Clinical Interview" "Clinical assessment of loneliness"
-
-// =============================================================================
 // Value Sets
 // =============================================================================
 
@@ -154,18 +113,18 @@ Id: loneliness-frequency-vs
 Title: "Loneliness Frequency Value Set"
 Description: "Frequency responses for loneliness assessment"
 * ^experimental = false
-* codes from system LonelinessFrequencyCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: LonelinessItemResponseVS
 Id: loneliness-item-response-vs
 Title: "Loneliness Item Response Value Set"
 Description: "Response options for individual UCLA loneliness items"
 * ^experimental = false
-* codes from system LonelinessFrequencyCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: LonelinessAssessmentMethodVS
 Id: loneliness-assessment-method-vs
 Title: "Loneliness Assessment Method Value Set"
 Description: "Validated instruments for loneliness assessment"
 * ^experimental = false
-* codes from system LonelinessAssessmentMethodCS
+* codes from system LifestyleMedicineTemporaryCS

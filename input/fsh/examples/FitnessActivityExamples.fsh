@@ -24,7 +24,7 @@ Description: "Example of daily recovery readiness score from Oura Ring"
 
 * status = #final
 * category = $ObsCat#exam "Exam"
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs#readiness "Recovery Readiness Assessment"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#readiness "Recovery Readiness Assessment"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T06:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
@@ -36,15 +36,15 @@ Description: "Example of daily recovery readiness score from Oura Ring"
 * valueQuantity.code = #{score}
 * valueQuantity.unit = "{score}"
 
-* interpretation = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/readiness-category-cs#good "Good (70-84)"
+* interpretation = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#readiness-good "Good (70-84)"
 
 // Readiness category
-* component[readinessCategory].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs#category "Readiness Category"
-* component[readinessCategory].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/readiness-category-cs#good "Good (70-84)"
+* component[readinessCategory].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#recovery-category "Readiness Category"
+* component[readinessCategory].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#readiness-good "Good (70-84)"
 
 // Trend
-* component[trendDirection].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs#trend "Trend Direction"
-* component[trendDirection].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/trend-direction-cs#stable "Stable"
+* component[trendDirection].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#recovery-trend "Trend Direction"
+* component[trendDirection].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#trend-stable "Stable"
 
 // Sleep contribution - uses {score} per profile
 * component[sleepContribution].valueQuantity.value = 85
@@ -59,11 +59,11 @@ Description: "Example of daily recovery readiness score from Oura Ring"
 * component[hrvContribution].valueQuantity.unit = "{score}"
 
 // Activity balance - uses CodeableConcept
-* component[activityBalance].valueCodeableConcept = ActivityBalanceCS#balanced "Well Balanced"
+* component[activityBalance].valueCodeableConcept = LifestyleMedicineTemporaryCS#balanced "Well Balanced"
 
 // Recommended activity
-* component[recommendedActivity].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recovery-metrics-cs#rec-activity "Recommended Activity"
-* component[recommendedActivity].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/recommended-activity-cs#moderate "Moderate Training"
+* component[recommendedActivity].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#rec-activity "Recommended Activity"
+* component[recommendedActivity].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#recommended-moderate "Moderate Training"
 
 * note.text = "Good recovery. Ready for moderate training. Sleep quality was optimal."
 
@@ -88,20 +88,20 @@ Description: "Example of VO2max estimation from Apple Watch during outdoor run"
 // Main VO2max value
 * valueQuantity = 42.5 'mL/kg/min' "milliliters per kilogram per minute"
 
-// CRF Category - code is fixed by profile (VO2maxMetricsCS#crf)
-* component[crfCategory].valueCodeableConcept = CRFCategoryCS#good "Good"
+// CRF Category - code is fixed by profile (LifestyleMedicineTemporaryCS#crf)
+* component[crfCategory].valueCodeableConcept = LifestyleMedicineTemporaryCS#crf-category-good "Good"
 
-// Estimation method - code is fixed by profile (VO2maxMetricsCS#method)
-* component[methodType].valueCodeableConcept = VO2maxMethodCS#submaximal "Submaximal Test"
+// Estimation method - code is fixed by profile (LifestyleMedicineTemporaryCS#method)
+* component[methodType].valueCodeableConcept = LifestyleMedicineTemporaryCS#submaximal "Submaximal Test"
 
-// Validation status - code is fixed by profile (VO2maxMetricsCS#validation)
-* component[validationStatus].valueCodeableConcept = ValidationStatusCS#clinical "Clinically Validated"
+// Validation status - code is fixed by profile (LifestyleMedicineTemporaryCS#validation)
+* component[validationStatus].valueCodeableConcept = LifestyleMedicineTemporaryCS#validation-clinical "Clinically Validated"
 
-// Trend - code is fixed by profile (VO2maxMetricsCS#trend)
-* component[vo2maxTrend].valueCodeableConcept = VO2maxTrendCS#improving "Improving"
+// Trend - code is fixed by profile (LifestyleMedicineTemporaryCS#vo2max-trend)
+* component[vo2maxTrend].valueCodeableConcept = LifestyleMedicineTemporaryCS#vo2max-trend-improving "Improving"
 
-// Cardiovascular risk - code is fixed by profile (VO2maxMetricsCS#cv-risk)
-* component[cvRiskCategory].valueCodeableConcept = CVRiskCategoryCS#low "Low Risk"
+// Cardiovascular risk - code is fixed by profile (LifestyleMedicineTemporaryCS#cv-risk)
+* component[cvRiskCategory].valueCodeableConcept = LifestyleMedicineTemporaryCS#cv-risk-low "Low Risk"
 
 * note.text = "VO2max estimated during 30-min outdoor run at moderate intensity. Above average for age/sex."
 
@@ -218,7 +218,7 @@ Description: "Example of swimming metrics from Apple Watch pool swim workout"
 * component[avgPace].valueQuantity = 120 's' "seconds"
 
 // Primary stroke type
-* component[primaryStrokeType].valueCodeableConcept = SwimmingStrokeTypeCS#freestyle "Freestyle"
+* component[primaryStrokeType].valueCodeableConcept = LifestyleMedicineTemporaryCS#freestyle "Freestyle"
 
 * note.text = "Pool swim: 80 lengths (25m pool). Good SWOLF score indicates efficient stroke."
 

@@ -1,6 +1,6 @@
 // Aliases for CodeSystems
-Alias: $AuditLevels = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-levels
-Alias: $AuditFormats = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/audit-formats
+Alias: $AuditLevels = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
+Alias: $AuditFormats = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 Extension: AuditLevelExtension
 Id: audit-level
@@ -35,7 +35,7 @@ Title: "Mindfulness Audit"
 Description: "Audit record for mindfulness sessions"
 
 * code 1..1 MS
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-audit-type#session "Session Audit"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-audit-session "Session Audit"
 * created 1..1 MS
 
 * extension contains
@@ -48,8 +48,8 @@ InstanceOf: MindfulnessAudit
 Title: "Example Mindfulness Audit"
 Description: "Example of a mindfulness session audit record"
 
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-audit-type#session "Session Audit"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-audit-session "Session Audit"
 * created = "2024-03-15"
-* extension[auditLevel].valueCode = $AuditLevels#high
+* extension[auditLevel].valueCode = $AuditLevels#audit-levels-high
 * extension[auditRetention].valueDuration = 90 'days'
 * extension[auditFormat].valueCode = $AuditFormats#structured

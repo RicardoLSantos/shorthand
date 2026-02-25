@@ -53,7 +53,7 @@ Description: "Body composition observation example"
 Title: "Body Composition Measurement Example" 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#body-composition-panel "Body composition measurement panel"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#body-composition-panel "Body composition measurement panel"
 * subject = Reference(PatientExample)
 * performer = Reference(PractitionerExample)
 * effectiveDateTime = "2024-03-19T08:00:00Z"

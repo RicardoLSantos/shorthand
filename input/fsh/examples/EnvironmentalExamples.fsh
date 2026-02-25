@@ -15,25 +15,25 @@ Title: "Noise Exposure Measurement Example"
 * method = http://snomed.info/sct#258104002 "Measured"
 
 * component[level]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-avg "Environmental noise average level"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-avg "Environmental noise average level"
   * valueQuantity = 85 'dB'
   * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
 
 * component[duration]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-duration "Environmental noise exposure duration"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-duration "Environmental noise exposure duration"
   * valueQuantity = 120 'min'
 
 * component[peakLevel]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-peak "Peak environmental sound level"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-peak "Peak environmental sound level"
   * valueQuantity = 95 'dB'
 
 * component[backgroundNoise]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-background "Background environmental noise level"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-background "Background environmental noise level"
   * valueQuantity = 45 'dB'
 
-* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#urban "Urban"
-* extension[exposure-location].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-location-cs#transit "In transit"
-* extension[exposure-conditions].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs#normal "Normal conditions"
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#environment-urban "Urban"
+* extension[exposure-location].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#transit "In transit"
+* extension[exposure-conditions].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#exposure-conditions-normal "Normal conditions"
 
 * note.text = "Measurement taken during urban commute"
 
@@ -54,25 +54,25 @@ Title: "UV Exposure Measurement Example"
 * method = http://snomed.info/sct#258104002 "Measured"
 
 * component[index]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-index "UV index"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#uv-index "UV index"
   * valueQuantity = 8 '1' "index"
   * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
 
 * component[duration]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-duration "UV exposure duration"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#uv-duration "UV exposure duration"
   * valueQuantity = 45 'min'
 
 * component[timeOfDay]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#exposure-time "Time of environmental exposure"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#exposure-time "Time of environmental exposure"
   * valueDateTime = "2024-03-19T12:00:00Z"
 
 * component[intensity]
-  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-intensity "UV intensity"
+  * code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#uv-intensity "UV intensity"
   * valueQuantity = 0.3 'W/m2'
 
-* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#outdoor "Outdoor"
-* extension[exposure-location].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-location-cs#recreational "Recreational area"
-* extension[exposure-conditions].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/exposure-conditions-cs#normal "Normal conditions"
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#environment-outdoor "Outdoor"
+* extension[exposure-location].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#exposure-location-recreational "Recreational area"
+* extension[exposure-conditions].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#exposure-conditions-normal "Normal conditions"
 
 * note.text = "Measurement taken during outdoor activity"
 
@@ -88,7 +88,7 @@ Title: "Environmental Observation Example"
 * device = Reference(Device/EnvironmentalDeviceExample)
 * code = $LOINC#60832-3 "Room temperature"
 * valueQuantity = 22 'Cel' "degrees Celsius"
-* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#indoor "Indoor"
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#environment-indoor "Indoor"
 * note.text = "Environmental context observation"
 
 Instance: EnvironmentalDeviceExample
@@ -131,7 +131,7 @@ Description: "Example of environmental audio exposure from iPhone microphone (iO
 * component[peakLevel].code = $LIFESTYLEOBS#noise-peak "Peak environmental sound level"
 * component[peakLevel].valueQuantity = 92 'dB'
 
-* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#urban "Urban"
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#environment-urban "Urban"
 * note.text = "Environmental audio exposure during lunch break in urban restaurant. WHO recommends <70 dB average over 24h."
 
 
@@ -161,5 +161,5 @@ Description: "Example of headphone audio exposure from AirPods (iOS 14+ HKQuanti
 * component[sevenDayAverage].code = $LIFESTYLEOBS#noise-avg "Environmental noise average level"
 * component[sevenDayAverage].valueQuantity = 68 'dB'
 
-* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context#indoor "Indoor"
+* extension[environmental-context].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#environment-indoor "Indoor"
 * note.text = "Headphone audio exposure during work. 7-day average 68 dB is within WHO safe limits (<80 dB for 40h/week). Apple notifies at 80 dB sustained."

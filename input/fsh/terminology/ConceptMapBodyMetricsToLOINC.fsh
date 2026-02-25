@@ -27,7 +27,7 @@ Usage: #definition
 // Removed sourceCanonical/targetCanonical - source validation via group.source CodeSystem.
 // See design-decisions.md for rationale.
 
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[0].target = "http://loinc.org"
 
 // ============================================================================

@@ -16,4 +16,4 @@ Description: "Valid contexts for environmental measurements"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environmental-context-vs"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/environmental-context
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs

@@ -26,29 +26,12 @@ Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $vitalsigns = http://hl7.org/fhir/StructureDefinition/vitalsigns
-
-// QT Correction Formula CodeSystem
-CodeSystem: QTCorrectionFormulaCS
-Id: qt-correction-formula-cs
-Title: "QT Correction Formula CodeSystem"
-Description: "Codes for QT interval correction formulas used to adjust for heart rate dependency"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #bazett "Bazett Formula" "QTc = QT / sqrt(RR). Most widely used; overcorrects at extreme heart rates"
-* #fridericia "Fridericia Formula" "QTc = QT / RR^(1/3). Better accuracy during tachycardia"
-* #framingham "Framingham Formula" "QTc = QT + 0.154 × (1 - RR). Linear correction approach"
-* #hodges "Hodges Formula" "QTc = QT + 1.75 × (HR - 60). Rate-based linear correction"
-* #rautaharju "Rautaharju Formula" "Regression-based correction; accounts for sex differences"
-* #unknown "Unknown/Not Specified" "Correction method not documented by device"
-
-// QT Correction Formula ValueSet
 ValueSet: QTCorrectionFormulaVS
 Id: qt-correction-formula-vs
 Title: "QT Correction Formula ValueSet"
 Description: "ValueSet for QT interval correction formulas"
 * ^experimental = false
-* include codes from system QTCorrectionFormulaCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 // ECG-Derived Vital Signs Base Profile
 Profile: ConsumerECGObservation
@@ -93,7 +76,7 @@ Description: "Profile for QT interval measurements from consumer ECG-capable wea
 * component[qtCorrected].valueQuantity.system = $UCUM
 * component[qtCorrected].valueQuantity.code = #ms
 * component[qtCorrected] ^short = "Heart rate-corrected QT interval"
-* component[correctionFormula].code = ECGComponentsCS#qt-correction-formula "QT Correction Formula"
+* component[correctionFormula].code = LifestyleMedicineTemporaryCS#qt-correction-formula "QT Correction Formula"
 * component[correctionFormula].valueCodeableConcept from QTCorrectionFormulaVS (required)
 * component[correctionFormula] ^short = "Formula used for QT correction (Bazett, Fridericia, Framingham)"
 * component[heartRateAtMeasurement].code = $LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
@@ -171,37 +154,9 @@ Description: "Extension for clinical alerts triggered by QT prolongation thresho
 * extension[threshold].valueQuantity.system = $UCUM
 * extension[threshold].valueQuantity.code = #ms
 * extension[recommendedAction].value[x] only string
-
-// QT Alert Type CodeSystem
-CodeSystem: QTAlertTypeCS
-Id: qt-alert-type-cs
-Title: "QT Alert Type CodeSystem"
-Description: "Types of clinical alerts for QT interval monitoring"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #qtc-borderline "QTc Borderline Prolongation" "QTc 440-500ms (men) or 460-500ms (women); warrants monitoring"
-* #qtc-prolongation-severe "QTc Severe Prolongation" "QTc >= 500ms; high risk of Torsades de Pointes"
-* #qtc-increase-significant "Significant QTc Increase" "QTc increased >60ms from baseline"
-* #torsades-warning "Torsades de Pointes Warning" "Pattern suggestive of Torsades de Pointes risk"
-
-// QT Alert Type ValueSet
 ValueSet: QTAlertTypeVS
 Id: qt-alert-type-vs
 Title: "QT Alert Type ValueSet"
 Description: "ValueSet for QT clinical alert types"
 * ^experimental = false
-* include codes from system QTAlertTypeCS
-
-// ECG Components CodeSystem (for component coding)
-CodeSystem: ECGComponentsCS
-Id: ecg-components-cs
-Title: "ECG Components CodeSystem"
-Description: "Supplementary codes for ECG observation components"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #qt-correction-formula "QT Correction Formula" "Formula used to calculate corrected QT interval"
-* #ecg-lead-configuration "ECG Lead Configuration" "Configuration of ECG leads used"
-* #signal-quality-score "Signal Quality Score" "Algorithm-derived ECG signal quality"
-* #recording-duration "Recording Duration" "Duration of ECG recording in seconds"
+* include codes from system LifestyleMedicineTemporaryCS

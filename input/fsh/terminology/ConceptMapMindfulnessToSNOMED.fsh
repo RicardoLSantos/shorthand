@@ -26,7 +26,7 @@ Usage: #definition
 // ARCHITECTURE NOTE (2025-11-25): Removed sourceCanonical/targetCanonical
 // See design-decisions.md for rationale. Source validation via group.source CodeSystem.
 
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[0].target = "http://snomed.info/sct"
 
 // MINDFULNESS SESSION - CORRECTED 2025-12-08 ⚠️

@@ -35,7 +35,7 @@ Description: "Example of QT interval measurement from Apple Watch Series 9 ECG f
 * component[qtCorrected].valueQuantity = 410 'ms' "milliseconds"
 
 // Correction formula used (code is fixed by profile)
-* component[correctionFormula].valueCodeableConcept = QTCorrectionFormulaCS#bazett "Bazett Formula"
+* component[correctionFormula].valueCodeableConcept = LifestyleMedicineTemporaryCS#bazett "Bazett Formula"
 
 // Heart rate at measurement
 * component[heartRateAtMeasurement].code = $LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
@@ -48,7 +48,7 @@ Description: "Example of QT interval measurement from Apple Watch Series 9 ECG f
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
 
 // Clinical warning extension (complex extension with sub-extensions)
-* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = ClinicalUseWarningTypeCS#consumer-grade-sensor "Consumer-Grade Sensor"
+* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning
 
 * note.text = "QT interval within normal range. Measured during morning rest. Apple Watch ECG is not FDA-cleared for QT measurement."
@@ -76,7 +76,7 @@ Description: "Example of QRS duration measurement from consumer ECG device"
 
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
 
-* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = ClinicalUseWarningTypeCS#consumer-grade-sensor "Consumer-Grade Sensor"
+* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning
 
 * note.text = "QRS duration normal (<100ms). Single-lead consumer ECG measurement."
@@ -104,7 +104,7 @@ Description: "Example of PR interval measurement from consumer ECG device"
 
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
 
-* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = ClinicalUseWarningTypeCS#consumer-grade-sensor "Consumer-Grade Sensor"
+* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning
 
 * note.text = "PR interval within normal range (120-200ms)."
@@ -132,7 +132,7 @@ Description: "Example of heart rate derived from ECG R-R intervals"
 
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
 
-* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = ClinicalUseWarningTypeCS#consumer-grade-sensor "Consumer-Grade Sensor"
+* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning
 
 * note.text = "Resting heart rate from 30-second ECG recording."

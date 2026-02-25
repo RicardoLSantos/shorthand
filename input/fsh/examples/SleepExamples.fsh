@@ -7,13 +7,13 @@ Title: "Example of Sleep Record"
 * status = #final
 * performer = Reference(Practitioner/PractitionerExample)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-panel "Sleep measurement panel"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-panel "Sleep measurement panel"
 * subject = Reference(PatientExample)
 * effectivePeriod.start = "2024-03-19T22:00:00Z"
 * effectivePeriod.end = "2024-03-20T06:30:00Z"
 * device = Reference(DeviceSleepMonitor)
  
-* component[timeInBed].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-time-bed "Time in bed"
+* component[timeInBed].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-time-bed "Time in bed"
 * component[timeInBed].valueQuantity = 510 'min' "minute"
 * component[timeInBed].valueQuantity.system = $UCUM
 * component[timeInBed].valueQuantity.unit = "minute"
@@ -23,7 +23,7 @@ Title: "Example of Sleep Record"
 * component[totalSleepTime].valueQuantity.system = $UCUM
 * component[totalSleepTime].valueQuantity.unit = "minute"
  
-* component[deepSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-deep "Deep sleep duration"
+* component[deepSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-deep "Deep sleep duration"
 * component[deepSleep].valueQuantity = 95 'min' "minute"
 * component[deepSleep].valueQuantity.system = $UCUM
 * component[deepSleep].valueQuantity.unit = "minute"
@@ -33,7 +33,7 @@ Title: "Example of Sleep Record"
 * component[remSleep].valueQuantity.system = $UCUM
 * component[remSleep].valueQuantity.unit = "minute"
  
-* component[lightSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-light "Light sleep duration"
+* component[lightSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-light "Light sleep duration"
 * component[lightSleep].valueQuantity = 259 'min' "minute"
 * component[lightSleep].valueQuantity.system = $UCUM
 * component[lightSleep].valueQuantity.unit = "minute"
@@ -48,19 +48,19 @@ Title: "Example of Sleep Record"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
  
-* component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-awakenings "Number of sleep awakenings"
+* component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-awakenings "Number of sleep awakenings"
 * component[interruptions].valueQuantity = 3 '1' "count"
 * component[interruptions].valueQuantity.system = $UCUM
 * component[interruptions].valueQuantity.unit = "count"
 
 // Extensions
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/circadian-phase"
-* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/circadian-phase-cs#night "Night Phase"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#night "Night Phase"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-efficiency"
 * extension[=].valueQuantity = 85 '%' "percent"
 // UPDATED 2026-01-09: Use new SleepQualityCS instead of incorrect SNOMED code
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-quality"
-* extension[=].valueCodeableConcept = SleepQualityCS#good "Good sleep quality"
+* extension[=].valueCodeableConcept = LifestyleMedicineTemporaryCS#sleep-quality-good "Good sleep quality"
 
 Instance: DeviceSleepMonitor
 InstanceOf: Device
@@ -92,7 +92,7 @@ Title: "Sleep Score - Semantic Anchoring (LP Dual-Coding)"
 * effectiveDateTime = "2026-02-25T07:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 
-* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-score "Sleep score"
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-score "Sleep score"
 * code.coding[1] = $LOINC#LP422589-4 "Sleep score"
 * code.text = "Sleep score"
 

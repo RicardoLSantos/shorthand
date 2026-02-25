@@ -6,7 +6,7 @@
 Alias: $IPS = http://hl7.org/fhir/uv/ips/StructureDefinition
 Alias: $LOINC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
-Alias: $LifestyleCS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs
+Alias: $LifestyleCS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 // =============================================================================
 // COMPOSITION PROFILE

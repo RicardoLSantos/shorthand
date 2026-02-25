@@ -59,72 +59,18 @@ Description: "Captures LLM agent recommendation metadata including confidence sc
 * extension[timestamp].value[x] only dateTime
 * extension[timestamp] ^short = "Recommendation timestamp"
 * extension[timestamp] ^definition = "When the agent generated this recommendation"
-
-// ============================================================================
-// Agent Interpretation CodeSystem
-// ============================================================================
-
-CodeSystem: AgentInterpretationCS
-Id: agent-interpretation-cs
-Title: "Agent Interpretation CodeSystem"
-Description: "Codes for LLM agent clinical interpretations and recommended actions. Aligned with MedAgentBench evaluation framework and TRIPOD-LLM quality dimensions."
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-// Risk stratification codes
-* #high-risk "High Risk" "Agent identifies high clinical risk requiring immediate attention"
-* #moderate-risk "Moderate Risk" "Agent identifies moderate risk requiring monitoring"
-* #low-risk "Low Risk" "Agent identifies low risk with routine follow-up"
-* #minimal-risk "Minimal Risk" "Agent identifies minimal/no clinical concern"
-// Action recommendation codes
-* #escalate-clinician "Escalate to Clinician" "Agent recommends immediate clinician review"
-* #schedule-followup "Schedule Follow-up" "Agent recommends scheduling follow-up assessment"
-* #continue-monitoring "Continue Monitoring" "Agent recommends continued monitoring without intervention"
-* #lifestyle-intervention "Lifestyle Intervention" "Agent recommends lifestyle modification intervention"
-* #medication-review "Medication Review" "Agent recommends medication review"
-// Confidence/uncertainty codes
-* #uncertain "Uncertain" "Agent indicates uncertainty requiring human judgment"
-* #insufficient-data "Insufficient Data" "Agent identifies insufficient data for recommendation"
-* #conflicting-evidence "Conflicting Evidence" "Agent identifies conflicting evidence in available data"
-// Workflow codes
-* #alert-generated "Alert Generated" "Agent has generated a clinical alert"
-* #documentation-needed "Documentation Needed" "Agent recommends additional documentation"
-* #patient-education "Patient Education" "Agent recommends patient education materials"
-
-// ============================================================================
-// Agent Interpretation ValueSet
-// ============================================================================
-
 ValueSet: AgentInterpretationVS
 Id: agent-interpretation-vs
 Title: "Agent Interpretation ValueSet"
 Description: "ValueSet for LLM agent clinical interpretations"
 * ^experimental = false
-* include codes from system AgentInterpretationCS
-
-// ============================================================================
-// Agent Confidence Level CodeSystem (Categorical)
-// ============================================================================
-
-CodeSystem: AgentConfidenceLevelCS
-Id: agent-confidence-level-cs
-Title: "Agent Confidence Level CodeSystem"
-Description: "Categorical confidence levels for agent recommendations. Maps numeric confidence (0-1) to clinical workflow categories."
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #very-high "Very High Confidence" "Confidence >= 0.9: Agent highly confident, minimal human oversight needed"
-* #high "High Confidence" "Confidence 0.75-0.89: Agent confident, routine review recommended"
-* #moderate "Moderate Confidence" "Confidence 0.5-0.74: Moderate confidence, clinician review required"
-* #low "Low Confidence" "Confidence 0.25-0.49: Low confidence, clinician decision required"
-* #very-low "Very Low Confidence" "Confidence < 0.25: Very low confidence, treat as informational only"
-
+* include codes from system LifestyleMedicineTemporaryCS
 ValueSet: AgentConfidenceLevelVS
 Id: agent-confidence-level-vs
 Title: "Agent Confidence Level ValueSet"
 Description: "ValueSet for categorical agent confidence levels"
 * ^experimental = false
-* include codes from system AgentConfidenceLevelCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 // ============================================================================
 // Agent Evidence Quality Extension
@@ -155,26 +101,12 @@ Description: "Indicates the quality and completeness of evidence available to th
 * extension[dataGaps] ^short = "Identified data gaps"
 * extension[dataQualityScore].value[x] only decimal
 * extension[dataQualityScore] ^short = "Overall data quality score (0-1)"
-
-CodeSystem: AgentDataCompletenessCS
-Id: agent-data-completeness-cs
-Title: "Agent Data Completeness CodeSystem"
-Description: "Codes for agent assessment of available data completeness"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #complete "Complete" "All expected data elements available"
-* #mostly-complete "Mostly Complete" "Most data elements available (>75%)"
-* #partial "Partial" "Some data elements available (25-75%)"
-* #sparse "Sparse" "Limited data elements available (<25%)"
-* #insufficient "Insufficient" "Insufficient data for reliable analysis"
-
 ValueSet: AgentDataCompletenessVS
 Id: agent-data-completeness-vs
 Title: "Agent Data Completeness ValueSet"
 Description: "Data completeness assessment values for agent analysis ranging from complete to insufficient"
 * ^experimental = false
-* include codes from system AgentDataCompletenessCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 // ============================================================================
 // Agent Action Tracking Extension
@@ -207,24 +139,9 @@ Description: "Tracks the status of agent-recommended actions in clinical workflo
 * extension[reviewedAt] ^short = "When the recommendation was reviewed"
 * extension[outcomeNote].value[x] only string
 * extension[outcomeNote] ^short = "Outcome or decision note"
-
-CodeSystem: AgentActionStatusCS
-Id: agent-action-status-cs
-Title: "Agent Action Status CodeSystem"
-Description: "Status codes for agent-recommended actions"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #pending "Pending" "Recommendation pending review"
-* #accepted "Accepted" "Recommendation accepted by clinician"
-* #rejected "Rejected" "Recommendation rejected by clinician"
-* #modified "Modified" "Recommendation modified by clinician"
-* #completed "Completed" "Recommended action completed"
-* #expired "Expired" "Recommendation expired without action"
-
 ValueSet: AgentActionStatusVS
 Id: agent-action-status-vs
 Title: "Agent Action Status ValueSet"
 Description: "Status codes for agent-recommended actions including pending, accepted, rejected, and completed"
 * ^experimental = false
-* include codes from system AgentActionStatusCS
+* include codes from system LifestyleMedicineTemporaryCS

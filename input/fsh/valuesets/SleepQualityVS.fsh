@@ -19,10 +19,10 @@ Description: "Qualitative assessments of sleep quality for lifestyle medicine. U
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 
 // Core quality levels (custom codes - SNOMED gap documented)
-* SleepQualityCS#excellent "Excellent sleep quality"
-* SleepQualityCS#good "Good sleep quality"
-* SleepQualityCS#fair "Fair sleep quality"
-* SleepQualityCS#poor "Poor sleep quality"
+* LifestyleMedicineTemporaryCS#sleep-quality-excellent "Excellent sleep quality"
+* LifestyleMedicineTemporaryCS#sleep-quality-good "Good sleep quality"
+* LifestyleMedicineTemporaryCS#sleep-quality-fair "Fair sleep quality"
+* LifestyleMedicineTemporaryCS#sleep-quality-poor "Poor sleep quality"
 
 // -----------------------------------------------------------------------------
 // SNOMED CT Gap Documentation (2026-01-12)

@@ -44,7 +44,7 @@ Usage: #definition
 // =============================================================================
 // Group 1: Macronutrient Intake Mappings
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #caloric-intake
 * group[=].element[=].display = "Caloric intake"
@@ -91,7 +91,7 @@ Usage: #definition
 // =============================================================================
 // Group 2: Hydration and Fluid Intake
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #fluid-intake
 * group[=].element[=].display = "Fluid intake"
@@ -110,7 +110,7 @@ Usage: #definition
 // =============================================================================
 // Group 3: Micronutrient Intake - Vitamins
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/micronutrient-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #vitamin-d-intake
 * group[=].element[=].display = "Vitamin D intake"
@@ -157,7 +157,7 @@ Usage: #definition
 // =============================================================================
 // Group 4: Micronutrient Intake - Minerals
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/micronutrient-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #calcium-intake
 * group[=].element[=].display = "Calcium intake"
@@ -204,7 +204,7 @@ Usage: #definition
 // =============================================================================
 // Group 5: Dietary Pattern Assessment
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #diet-quality-score
 * group[=].element[=].display = "Diet quality score"

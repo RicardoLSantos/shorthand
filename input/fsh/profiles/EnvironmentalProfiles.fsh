@@ -5,7 +5,7 @@
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
-Alias: $LIFESTYLEOBS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs
+Alias: $LIFESTYLEOBS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 Profile: EnvironmentalObservation
 Parent: Observation
@@ -46,22 +46,22 @@ Description: "Profile for noise exposure measurements from iOS Health App"
     peakLevel 0..1 MS and
     backgroundNoise 0..1 MS
 
-* component[level].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-avg "Environmental noise average level"
+* component[level].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-avg "Environmental noise average level"
 * component[level].valueQuantity.system = $UCUM
 * component[level].valueQuantity.code = #dB
 * component[level].valueQuantity ^short = "Noise level in decibels"
 
-* component[duration].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-duration "Environmental noise exposure duration"
+* component[duration].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-duration "Environmental noise exposure duration"
 * component[duration].valueQuantity.system = $UCUM
 * component[duration].valueQuantity.code = #min
 * component[duration].valueQuantity ^short = "Duration of exposure"
 
-* component[peakLevel].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-peak "Peak environmental sound level"
+* component[peakLevel].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-peak "Peak environmental sound level"
 * component[peakLevel].valueQuantity.system = $UCUM
 * component[peakLevel].valueQuantity.code = #dB
 * component[peakLevel].valueQuantity ^short = "Peak noise level"
 
-* component[backgroundNoise].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#noise-background "Background environmental noise level"
+* component[backgroundNoise].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#noise-background "Background environmental noise level"
 * component[backgroundNoise].valueQuantity.system = $UCUM
 * component[backgroundNoise].valueQuantity.code = #dB
 * component[backgroundNoise].valueQuantity ^short = "Background noise level"
@@ -85,21 +85,21 @@ Description: "Profile for UV exposure measurements from iOS Health App"
     timeOfDay 0..1 MS and
     intensity 0..1 MS
 
-* component[index].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-index "UV index"
+* component[index].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#uv-index "UV index"
 * component[index].valueQuantity.system = $UCUM
 * component[index].valueQuantity.code = #1
 * component[index].valueQuantity ^short = "UV index value"
 
-* component[duration].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-duration "UV exposure duration"
+* component[duration].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#uv-duration "UV exposure duration"
 * component[duration].valueQuantity.system = $UCUM
 * component[duration].valueQuantity.code = #min
 * component[duration].valueQuantity ^short = "Duration of UV exposure"
 
-* component[timeOfDay].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#exposure-time "Time of environmental exposure"
+* component[timeOfDay].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#exposure-time "Time of environmental exposure"
 * component[timeOfDay].valueDateTime 1..1
 * component[timeOfDay].valueDateTime ^short = "Time of UV exposure"
 
-* component[intensity].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#uv-intensity "UV intensity"
+* component[intensity].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#uv-intensity "UV intensity"
 * component[intensity].valueQuantity.system = $UCUM
 * component[intensity].valueQuantity.code = #W/m2
 * component[intensity].valueQuantity ^short = "UV radiation intensity"

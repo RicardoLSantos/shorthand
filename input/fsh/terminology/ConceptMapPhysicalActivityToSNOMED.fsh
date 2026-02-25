@@ -32,7 +32,7 @@ Usage: #definition
 // as SNOMED CT is an external terminology validated by tx.fhir.org
 
 // Group 1: iOS Physical Activity CodeSystem → SNOMED CT
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/ios-physical-activity-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[0].target = "http://snomed.info/sct"
 
 // WALKING - HAS SNOMED CODE ✅

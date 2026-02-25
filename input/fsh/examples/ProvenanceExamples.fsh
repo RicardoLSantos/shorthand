@@ -24,7 +24,7 @@ Description: "Example HRV observation with RMSSD metric captured by Apple Watch"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #ms
 * device = Reference(AppleWatchDevice)
-* component[0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs#hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)"
+* component[0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)"
 * component[=].code.text = "Root Mean Square of Successive Differences"
 * component[=].valueQuantity.value = 38.2
 * component[=].valueQuantity.unit = "ms"
@@ -143,7 +143,7 @@ Description: "Consumer wearable device - Apple Watch"
 * type.text = "Consumer wearable smartwatch with PPG sensor"
 * version.value = "watchOS 10.2"
 * property[0].type.text = "Sensor Type"
-* property[=].valueCode = WearableSensorTypeCS#ppg "Photoplethysmography (PPG)"
+* property[=].valueCode = LifestyleMedicineTemporaryCS#ppg "Photoplethysmography (PPG)"
 
 
 Instance: HealthKitDevice
@@ -180,8 +180,8 @@ Description: "Example showing device capture metadata extension for research-gra
 * agent[device].extension[DeviceCaptureMetadata].extension[samplingRate].valueQuantity.unit = "Hz"
 * agent[device].extension[DeviceCaptureMetadata].extension[samplingRate].valueQuantity.system = "http://unitsofmeasure.org"
 * agent[device].extension[DeviceCaptureMetadata].extension[samplingRate].valueQuantity.code = #Hz
-* agent[device].extension[DeviceCaptureMetadata].extension[sensorType].valueCodeableConcept = WearableSensorTypeCS#ppg "Photoplethysmography (PPG)"
-* agent[device].extension[DeviceCaptureMetadata].extension[captureMethod].valueCodeableConcept = DataCaptureMethodCS#automatic "Automatic"
+* agent[device].extension[DeviceCaptureMetadata].extension[sensorType].valueCodeableConcept = LifestyleMedicineTemporaryCS#ppg "Photoplethysmography (PPG)"
+* agent[device].extension[DeviceCaptureMetadata].extension[captureMethod].valueCodeableConcept = LifestyleMedicineTemporaryCS#automatic "Automatic"
 
 // Author agent
 * agent[author].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author

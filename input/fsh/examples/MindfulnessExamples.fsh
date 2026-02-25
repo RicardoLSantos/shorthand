@@ -17,13 +17,13 @@ Title: "Example of Mindfulness Session Observation"
 * component[stressLevel].valueInteger = 4
 
 * component[moodState].code = $SCT#106131003 "Mood finding"
-* component[moodState].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mood#calm "Calm"
+* component[moodState].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#calm "Calm"
 
 // Code inherited from profile
 * component[relaxationResponse].valueString = "Deep breathing exercises helped reduce tension"
 
 // Code inherited from profile
-* component[mindfulnessType].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-type-cs#meditation "Meditation"
+* component[mindfulnessType].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-type-meditation "Meditation"
 
 // New example for MindfulnessQuestionnaire
 Instance: MindfulnessQuestionnaireExample
@@ -65,7 +65,7 @@ Usage: #example
 Description: "Example of a Basic resource containing mindfulness import mapping configuration"
 Title: "Mindfulness Import Mapping Configuration Example"
 
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-config-type#settings "Mindfulness Settings"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-config-settings "Mindfulness Settings"
 * subject = Reference(Patient/PatientExample)
 * created = "2024-03-19"
 * author = Reference(Practitioner/PractitionerExample)

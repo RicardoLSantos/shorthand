@@ -32,7 +32,7 @@ Usage: #definition
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/loinc-observations-vs"
 
 // Group 1: Custom HRV CodeSystem → LOINC CodeSystem
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/heart-rate-variability-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[0].target = "http://loinc.org"
 
 // ============================================================================

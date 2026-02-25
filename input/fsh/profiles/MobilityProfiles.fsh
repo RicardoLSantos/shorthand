@@ -5,7 +5,7 @@
 Alias: $SCT = http://snomed.info/sct
 Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
-Alias: $LIFESTYLEOBS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs
+Alias: $LIFESTYLEOBS = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 Profile: MobilityProfile
 Parent: Observation

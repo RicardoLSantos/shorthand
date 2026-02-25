@@ -85,7 +85,7 @@ References:
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code 1..1 MS
 * code from LifestyleObservationVS (required)
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-panel "Sleep measurement panel"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-panel "Sleep measurement panel"
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effectiveDateTime 0..1 MS
@@ -106,7 +106,7 @@ References:
     heartRateVariability 0..1 MS and
     interruptions 0..1 MS
  
-* component[timeInBed].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-time-bed "Time in bed"
+* component[timeInBed].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-time-bed "Time in bed"
 * component[timeInBed].valueQuantity only Quantity
 * component[timeInBed].valueQuantity.system = $UCUM
 * component[timeInBed].valueQuantity.code = #min
@@ -116,7 +116,7 @@ References:
 * component[totalSleepTime].valueQuantity.system = $UCUM
 * component[totalSleepTime].valueQuantity.code = #min
  
-* component[deepSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-deep "Deep sleep duration"
+* component[deepSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-deep "Deep sleep duration"
 * component[deepSleep].valueQuantity only Quantity
 * component[deepSleep].valueQuantity.system = $UCUM
 * component[deepSleep].valueQuantity.code = #min
@@ -126,7 +126,7 @@ References:
 * component[remSleep].valueQuantity.system = $UCUM
 * component[remSleep].valueQuantity.code = #min
  
-* component[lightSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-light "Light sleep duration"
+* component[lightSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-light "Light sleep duration"
 * component[lightSleep].valueQuantity only Quantity
 * component[lightSleep].valueQuantity.system = $UCUM
 * component[lightSleep].valueQuantity.code = #min
@@ -141,7 +141,7 @@ References:
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.code = #ms
  
-* component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#sleep-awakenings "Number of sleep awakenings"
+* component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-awakenings "Number of sleep awakenings"
 * component[interruptions].valueQuantity only Quantity
 * component[interruptions].valueQuantity.system = $UCUM
 * component[interruptions].valueQuantity.code = #1

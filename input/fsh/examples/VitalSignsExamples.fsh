@@ -107,9 +107,9 @@ Title: "Advanced Vital Signs Example"
 
 // Extensions
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-quality"
-* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/measurement-quality-cs#excellent "Excellent Quality"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#measurement-quality-excellent "Excellent Quality"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/advanced-vital-signs-context"
-* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/advanced-vital-signs-context-cs#resting "Resting state"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#resting "Resting state"
 
 Instance: LifestyleVitalSignsExample
 InstanceOf: LifestyleVitalSigns

@@ -70,7 +70,7 @@ Description: "Profile for body composition measurements including fat, lean mass
 * ^version = "0.1.0"
 * ^status = #draft
 
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#body-composition-panel "Body composition measurement panel"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#body-composition-panel "Body composition measurement panel"
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open

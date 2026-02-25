@@ -15,7 +15,7 @@ Description: "Value set for fall risk assessment outcomes"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/fall-risk-outcomes
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 ValueSet: RiskLevelValueSet
 Id: risk-level
@@ -34,7 +34,7 @@ Description: "Value set for general risk levels"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/risk-level
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 ValueSet: MobilityDeclineOutcomesValueSet
 Id: mobility-decline-outcomes
@@ -53,7 +53,7 @@ Description: "Value set for mobility decline assessment outcomes"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mobility-decline-outcomes
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
 
 ValueSet: AssistanceLevelOutcomesValueSet
 Id: assistance-level-outcomes
@@ -72,4 +72,4 @@ Description: "Value set for assistance level assessment outcomes"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assistance-level-outcomes
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs

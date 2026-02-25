@@ -101,74 +101,6 @@ References:
 * note ^short = "Additional clinical notes on social context"
 
 // =============================================================================
-// Code Systems
-// =============================================================================
-
-CodeSystem: IsolationRiskLevelCS
-Id: isolation-risk-level-cs
-Title: "Social Isolation Risk Level Code System"
-Description: "Risk levels for social isolation assessment"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #negligible "Negligible Risk" "Minimal risk factors; strong social network"
-* #low "Low Risk" "Few risk factors; adequate social connections"
-* #moderate "Moderate Risk" "Multiple risk factors; some protective factors present"
-* #high "High Risk" "Significant risk factors; limited protective factors"
-* #critical "Critical Risk" "Severe risk; immediate intervention required"
-
-CodeSystem: IsolationRiskOutcomeCS
-Id: isolation-risk-outcome-cs
-Title: "Social Isolation Risk Outcome Code System"
-Description: "Potential outcomes related to social isolation"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #chronic-isolation "Chronic Social Isolation" "Persistent lack of social contact"
-* #severe-loneliness "Severe Loneliness" "Persistent subjective loneliness despite social contact"
-* #depression-onset "Depression Onset" "Development of major depressive disorder"
-* #cognitive-decline "Cognitive Decline" "Accelerated cognitive deterioration"
-* #cardiovascular-event "Cardiovascular Event" "MI, stroke, or other CV event"
-* #mortality "All-cause Mortality" "Death from any cause"
-* #functional-decline "Functional Decline" "Loss of independent living capacity"
-* #institutionalization "Institutionalization" "Admission to care facility"
-
-CodeSystem: IsolationRiskMethodCS
-Id: isolation-risk-method-cs
-Title: "Social Isolation Risk Method Code System"
-Description: "Methods for assessing social isolation risk"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #lubben-6 "LSNS-6" "Lubben Social Network Scale 6-item (Lubben et al., 2006)"
-* #lubben-18 "LSNS-18" "Lubben Social Network Scale 18-item"
-* #berkman-sni "Berkman-SNI" "Berkman-Syme Social Network Index"
-* #clinical-risk "Clinical Risk Assessment" "Comprehensive clinical assessment of social risk factors"
-* #algorithmic "Algorithmic Risk Score" "Computed risk score from multiple data sources"
-* #community-screening "Community Screening" "Population-level screening tool"
-
-CodeSystem: IsolationRiskFactorCS
-Id: isolation-risk-factor-cs
-Title: "Social Isolation Risk Factor Code System"
-Description: "Risk factors contributing to social isolation"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #living-alone "Living Alone" "Single-person household"
-* #recent-bereavement "Recent Bereavement" "Death of spouse/partner within 2 years"
-* #geographic-isolation "Geographic Isolation" "Rural or remote location, limited transport"
-* #mobility-impairment "Mobility Impairment" "Physical limitations affecting social participation"
-* #sensory-impairment "Sensory Impairment" "Hearing or vision loss affecting communication"
-* #cognitive-impairment "Cognitive Impairment" "Dementia or significant cognitive decline"
-* #recent-retirement "Recent Retirement" "Retirement within past year"
-* #recent-relocation "Recent Relocation" "Moved residence within past year"
-* #chronic-illness "Chronic Illness" "Condition limiting social activities"
-* #mental-health "Mental Health Condition" "Depression, anxiety, or other mental disorder"
-* #language-barrier "Language Barrier" "Communication difficulties due to language"
-* #financial-constraint "Financial Constraint" "Limited resources for social activities"
-* #caregiving-burden "Caregiving Burden" "Primary caregiver responsibilities limiting social time"
-
-// =============================================================================
 // Value Sets
 // =============================================================================
 
@@ -177,25 +109,25 @@ Id: isolation-risk-level-vs
 Title: "Social Isolation Risk Level Value Set"
 Description: "Risk levels for social isolation"
 * ^experimental = false
-* codes from system IsolationRiskLevelCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: IsolationRiskOutcomeVS
 Id: isolation-risk-outcome-vs
 Title: "Social Isolation Risk Outcome Value Set"
 Description: "Potential outcomes from social isolation"
 * ^experimental = false
-* codes from system IsolationRiskOutcomeCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: IsolationRiskMethodVS
 Id: isolation-risk-method-vs
 Title: "Social Isolation Risk Method Value Set"
 Description: "Methods for assessing social isolation risk"
 * ^experimental = false
-* codes from system IsolationRiskMethodCS
+* codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: IsolationRiskFactorVS
 Id: isolation-risk-factor-vs
 Title: "Social Isolation Risk Factor Value Set"
 Description: "Risk factors for social isolation"
 * ^experimental = false
-* codes from system IsolationRiskFactorCS
+* codes from system LifestyleMedicineTemporaryCS

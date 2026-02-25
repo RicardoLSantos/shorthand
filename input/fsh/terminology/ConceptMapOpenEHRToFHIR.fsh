@@ -66,7 +66,7 @@ Architecture:
 * group[0].element[1].target[0].code = #Observation.component
 * group[0].element[1].target[0].display = "Observation.component[rmssd].valueQuantity"
 * group[0].element[1].target[0].equivalence = #equivalent
-* group[0].element[1].target[0].comment = "Map to component with HeartRateVariabilityCS#hrv-rmssd. No LOINC code available. Unit: ms"
+* group[0].element[1].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-rmssd. No LOINC code available. Unit: ms"
 
 // pNN50 (id7) → Observation.component
 * group[0].element[2].code = #id7
@@ -74,7 +74,7 @@ Architecture:
 * group[0].element[2].target[0].code = #Observation.component
 * group[0].element[2].target[0].display = "Observation.component[pnn50].valueQuantity"
 * group[0].element[2].target[0].equivalence = #equivalent
-* group[0].element[2].target[0].comment = "Map to component with HeartRateVariabilityCS#hrv-pnn50. Unit: %"
+* group[0].element[2].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-pnn50. Unit: %"
 
 // LF/HF Ratio (id13) → Observation.component
 * group[0].element[3].code = #id13
@@ -82,7 +82,7 @@ Architecture:
 * group[0].element[3].target[0].code = #Observation.component
 * group[0].element[3].target[0].display = "Observation.component[lf-hf-ratio].valueQuantity"
 * group[0].element[3].target[0].equivalence = #equivalent
-* group[0].element[3].target[0].comment = "Map to component with HeartRateVariabilityCS#hrv-lf-hf-ratio. Dimensionless ratio"
+* group[0].element[3].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-lf-hf-ratio. Dimensionless ratio"
 
 // Recording duration (id32) → Observation.component or effectivePeriod
 * group[0].element[4].code = #id32
@@ -206,7 +206,7 @@ Architecture:
 * group[2].element[5].target[0].code = #Observation.component
 * group[2].element[5].target[0].display = "Observation.component[sleep-hrv].valueQuantity"
 * group[2].element[5].target[0].equivalence = #equivalent
-* group[2].element[5].target[0].comment = "Use HeartRateVariabilityCS#hrv-rmssd with context. Unit: ms"
+* group[2].element[5].target[0].comment = "Use LifestyleMedicineTemporaryCS#hrv-rmssd with context. Unit: ms"
 
 // ============================================================================
 // GROUP 4: Wearable Device Cluster → FHIR Device

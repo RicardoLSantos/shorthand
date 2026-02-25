@@ -61,7 +61,7 @@ Description: "Example showing how DataQualityIndicator extension is used on an o
 // Data quality indicator extension (complex extension with sub-extensions)
 * extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-quality-indicator"
 * extension[0].extension[0].url = "confidenceLevel"
-* extension[0].extension[0].valueCodeableConcept = DataQualityConfidenceCS#high "High Confidence"
+* extension[0].extension[0].valueCodeableConcept = LifestyleMedicineTemporaryCS#data-quality-high "High Confidence"
 * extension[0].extension[1].url = "confidenceScore"
 * extension[0].extension[1].valueDecimal = 95
 
@@ -91,7 +91,7 @@ Description: "Example showing how ClinicalUseWarning extension is used"
 // Clinical use warning extension (complex extension with sub-extensions)
 * extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/clinical-use-warning"
 * extension[0].extension[0].url = "warningCode"
-* extension[0].extension[0].valueCodeableConcept = ClinicalUseWarningTypeCS#consumer-grade-sensor "Consumer-Grade Sensor"
+* extension[0].extension[0].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[0].extension[1].url = "severity"
 * extension[0].extension[1].valueCode = #warning
 
@@ -123,7 +123,7 @@ Description: "Example showing QT prolongation clinical alert extension"
 * component[qtCorrected].valueQuantity = 485 'ms' "milliseconds"
 
 // Correction formula (code is fixed by profile)
-* component[correctionFormula].valueCodeableConcept = QTCorrectionFormulaCS#bazett "Bazett Formula"
+* component[correctionFormula].valueCodeableConcept = LifestyleMedicineTemporaryCS#bazett "Bazett Formula"
 
 // Heart rate at measurement
 * component[heartRateAtMeasurement].code = $LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
@@ -136,13 +136,13 @@ Description: "Example showing QT prolongation clinical alert extension"
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
 
 // Clinical warning - consumer device (uses named slices from ConsumerECGObservation profile)
-* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = ClinicalUseWarningTypeCS#consumer-grade-sensor "Consumer-Grade Sensor"
+* extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning
 
 // QT Clinical Alert extension (added dynamically, use index-based syntax)
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/qt-clinical-alert"
 * extension[=].extension[0].url = "alertType"
-* extension[=].extension[=].valueCodeableConcept = QTAlertTypeCS#qtc-borderline "QTc Borderline Prolongation"
+* extension[=].extension[=].valueCodeableConcept = LifestyleMedicineTemporaryCS#qtc-borderline "QTc Borderline Prolongation"
 * extension[=].extension[+].url = "threshold"
 * extension[=].extension[=].valueQuantity = 480 'ms' "milliseconds"
 * extension[=].extension[+].url = "recommendedAction"

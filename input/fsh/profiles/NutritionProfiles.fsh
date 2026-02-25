@@ -43,7 +43,7 @@ Description: "Profile for water intake measurements"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = $LIFESTYLEOBS#water-intake "Water intake volume"
+* code = $LIFESTYLEOBS#lifestyle-water-intake "Water intake volume"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mL
@@ -59,7 +59,7 @@ Description: "Profile for caloric intake measurements"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#caloric-intake "Total caloric intake"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-caloric-intake "Total caloric intake"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #kcal
@@ -75,7 +75,7 @@ Description: "Profile for macronutrient intake measurements"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#macronutrients-panel "Macronutrients intake panel"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#macronutrients-panel "Macronutrients intake panel"
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -85,17 +85,17 @@ Description: "Profile for macronutrient intake measurements"
     proteins 0..1 MS and
     fats 0..1 MS
 
-* component[carbohydrates].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#carbohydrate-intake "Carbohydrate intake"
+* component[carbohydrates].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-carbohydrate-intake "Carbohydrate intake"
 * component[carbohydrates].valueQuantity.system = $UCUM
 * component[carbohydrates].valueQuantity.code = #g
 * component[carbohydrates].valueQuantity.unit = "gram"
 
-* component[proteins].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#protein-intake "Protein intake" 
+* component[proteins].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-protein-intake "Protein intake"
 * component[proteins].valueQuantity.system = $UCUM
 * component[proteins].valueQuantity.code = #g
 * component[proteins].valueQuantity.unit = "gram"
 
-* component[fats].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#fat-intake "Fat intake"
+* component[fats].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-fat-intake "Fat intake"
 * component[fats].valueQuantity.system = $UCUM
 * component[fats].valueQuantity.code = #g
 * component[fats].valueQuantity.unit = "gram"

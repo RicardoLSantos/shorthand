@@ -71,11 +71,11 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // TREND AND RATE OF CHANGE
 // ============================================================================
 
-* component[trendArrow].code = CGMMetricsCS#trend "Trend Arrow"
+* component[trendArrow].code = LifestyleMedicineTemporaryCS#cgm-trend "Trend Arrow"
 * component[trendArrow].value[x] only CodeableConcept
 * component[trendArrow].valueCodeableConcept from CGMTrendArrowVS (required)
 
-* component[rateOfChange].code = CGMMetricsCS#roc "Rate of Change"
+* component[rateOfChange].code = LifestyleMedicineTemporaryCS#roc "Rate of Change"
 * component[rateOfChange].value[x] only Quantity
 * component[rateOfChange].valueQuantity.system = $UCUM
 * component[rateOfChange].valueQuantity.code = #mg/dL/min
@@ -85,32 +85,32 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // ============================================================================
 
 // LOINC 97510-2 verified via Athena 2026-02-24 (concept_id: see CGM family 9750x)
-// Replaces custom CGMMetricsCS#tir — LOINC covers "Glucose measurements in range"
+// Replaces custom LifestyleMedicineTemporaryCS#tir — LOINC covers "Glucose measurements in range"
 * component[timeInRange].code = $LOINC#97510-2 "Glucose measurements in range out of Total glucose measurements during reporting period"
 * component[timeInRange].value[x] only Quantity
 * component[timeInRange].valueQuantity.system = $UCUM
 * component[timeInRange].valueQuantity.code = #%
 * component[timeInRange] ^short = "Target: >70% for most adults with diabetes"
 
-* component[timeBelowRange].code = CGMMetricsCS#tbr "Time Below Range"
+* component[timeBelowRange].code = LifestyleMedicineTemporaryCS#tbr "Time Below Range"
 * component[timeBelowRange].value[x] only Quantity
 * component[timeBelowRange].valueQuantity.system = $UCUM
 * component[timeBelowRange].valueQuantity.code = #%
 * component[timeBelowRange] ^short = "Target: <4% (<70 mg/dL)"
 
-* component[timeBelowRangeL2].code = CGMMetricsCS#tbr-l2 "Time Below Range Level 2"
+* component[timeBelowRangeL2].code = LifestyleMedicineTemporaryCS#tbr-l2 "Time Below Range Level 2"
 * component[timeBelowRangeL2].value[x] only Quantity
 * component[timeBelowRangeL2].valueQuantity.system = $UCUM
 * component[timeBelowRangeL2].valueQuantity.code = #%
 * component[timeBelowRangeL2] ^short = "Target: <1% (<54 mg/dL severe hypo)"
 
-* component[timeAboveRange].code = CGMMetricsCS#tar "Time Above Range"
+* component[timeAboveRange].code = LifestyleMedicineTemporaryCS#tar "Time Above Range"
 * component[timeAboveRange].value[x] only Quantity
 * component[timeAboveRange].valueQuantity.system = $UCUM
 * component[timeAboveRange].valueQuantity.code = #%
 * component[timeAboveRange] ^short = "Target: <25% (>180 mg/dL)"
 
-* component[timeAboveRangeL2].code = CGMMetricsCS#tar-l2 "Time Above Range Level 2"
+* component[timeAboveRangeL2].code = LifestyleMedicineTemporaryCS#tar-l2 "Time Above Range Level 2"
 * component[timeAboveRangeL2].value[x] only Quantity
 * component[timeAboveRangeL2].valueQuantity.system = $UCUM
 * component[timeAboveRangeL2].valueQuantity.code = #%
@@ -120,26 +120,26 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // GLYCEMIC VARIABILITY
 // ============================================================================
 
-* component[meanGlucose].code = CGMMetricsCS#mean "Mean Glucose"
+* component[meanGlucose].code = LifestyleMedicineTemporaryCS#mean "Mean Glucose"
 * component[meanGlucose].value[x] only Quantity
 * component[meanGlucose].valueQuantity.system = $UCUM
 * component[meanGlucose].valueQuantity.code = #mg/dL
 
 // LOINC 97505-2 verified via Athena 2026-02-24 (concept_id: CGM family 9750x)
-// Replaces custom CGMMetricsCS#sd — LOINC covers "Glucose standard deviation Calculated"
+// Replaces custom LifestyleMedicineTemporaryCS#sd — LOINC covers "Glucose standard deviation Calculated"
 * component[glucoseSD].code = $LOINC#97505-2 "Glucose standard deviation Calculated"
 * component[glucoseSD].value[x] only Quantity
 * component[glucoseSD].valueQuantity.system = $UCUM
 * component[glucoseSD].valueQuantity.code = #mg/dL
 
-* component[coefficientOfVariation].code = CGMMetricsCS#cv "Coefficient of Variation"
+* component[coefficientOfVariation].code = LifestyleMedicineTemporaryCS#cv "Coefficient of Variation"
 * component[coefficientOfVariation].value[x] only Quantity
 * component[coefficientOfVariation].valueQuantity.system = $UCUM
 * component[coefficientOfVariation].valueQuantity.code = #%
 * component[coefficientOfVariation] ^short = "Target: <36% indicates stable glycemia"
 
 // LOINC 97506-0 verified via Athena 2026-02-24 (concept_id 1617515)
-// Replaces custom CGMMetricsCS#gmi — audit confirmed direct LOINC mapping exists
+// Replaces custom LifestyleMedicineTemporaryCS#gmi — audit confirmed direct LOINC mapping exists
 * component[gmi].code = $LOINC#97506-0 "Glucose management indicator"
 * component[gmi].value[x] only Quantity
 * component[gmi].valueQuantity.system = $UCUM
@@ -150,11 +150,11 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // GLYCEMIC EVENTS
 // ============================================================================
 
-* component[hypoEvents].code = CGMMetricsCS#hypo-events "Hypoglycemia Events"
+* component[hypoEvents].code = LifestyleMedicineTemporaryCS#hypo-events "Hypoglycemia Events"
 * component[hypoEvents].value[x] only integer
 * component[hypoEvents] ^short = "Number of hypoglycemia episodes"
 
-* component[hyperEvents].code = CGMMetricsCS#hyper-events "Hyperglycemia Events"
+* component[hyperEvents].code = LifestyleMedicineTemporaryCS#hyper-events "Hyperglycemia Events"
 * component[hyperEvents].value[x] only integer
 * component[hyperEvents] ^short = "Number of hyperglycemia episodes"
 
@@ -163,20 +163,20 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // ============================================================================
 
 // LOINC 97504-5 verified via Athena 2026-02-24 (concept_id: CGM family 9750x)
-// Replaces custom CGMMetricsCS#active-time — LOINC covers "Percent sensor usage"
+// Replaces custom LifestyleMedicineTemporaryCS#cgm-active-time — LOINC covers "Percent sensor usage"
 * component[sensorActiveTime].code = $LOINC#97504-5 "Percent sensor usage"
 * component[sensorActiveTime].value[x] only Quantity
 * component[sensorActiveTime].valueQuantity.system = $UCUM
 * component[sensorActiveTime].valueQuantity.code = #%
 * component[sensorActiveTime] ^short = "Target: >70% for reliable metrics"
 
-* component[targetRangeLower].code = CGMMetricsCS#range-low "Target Range Lower"
+* component[targetRangeLower].code = LifestyleMedicineTemporaryCS#range-low "Target Range Lower"
 * component[targetRangeLower].value[x] only Quantity
 * component[targetRangeLower].valueQuantity.system = $UCUM
 * component[targetRangeLower].valueQuantity.code = #mg/dL
 * component[targetRangeLower] ^short = "Default: 70 mg/dL"
 
-* component[targetRangeUpper].code = CGMMetricsCS#range-high "Target Range Upper"
+* component[targetRangeUpper].code = LifestyleMedicineTemporaryCS#range-high "Target Range Upper"
 * component[targetRangeUpper].value[x] only Quantity
 * component[targetRangeUpper].valueQuantity.system = $UCUM
 * component[targetRangeUpper].valueQuantity.code = #mg/dL
@@ -186,78 +186,16 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // DEVICE INFORMATION
 // ============================================================================
 
-* component[cgmSystem].code = CGMMetricsCS#system "CGM System"
+* component[cgmSystem].code = LifestyleMedicineTemporaryCS#system "CGM System"
 * component[cgmSystem].value[x] only CodeableConcept
 * component[cgmSystem].valueCodeableConcept from CGMSystemVS (required)
 
-* component[sensorInsertionSite].code = CGMMetricsCS#site "Insertion Site"
+* component[sensorInsertionSite].code = LifestyleMedicineTemporaryCS#site "Insertion Site"
 * component[sensorInsertionSite].value[x] only CodeableConcept
 * component[sensorInsertionSite].valueCodeableConcept from CGMInsertionSiteVS (required)
 
-* component[daysSinceSensorInsertion].code = CGMMetricsCS#sensor-days "Sensor Days"
+* component[daysSinceSensorInsertion].code = LifestyleMedicineTemporaryCS#sensor-days "Sensor Days"
 * component[daysSinceSensorInsertion].value[x] only integer
-
-
-// ============================================================================
-// CGM METRICS CODE SYSTEM
-// ============================================================================
-
-CodeSystem: CGMMetricsCS
-Id: cgm-metrics-cs
-Title: "CGM Metrics CodeSystem"
-Description: "CodeSystem for continuous glucose monitoring metrics"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"
-* ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
-* ^date = "2025-11-28"
-* ^publisher = "Ricardo Lourenco dos Santos, FMUP"
-* ^caseSensitive = true
-* ^content = #complete
-
-// Trend and rate
-* #trend "Trend Arrow" "Direction and rate of glucose change"
-* #roc "Rate of Change" "Numeric rate of glucose change per minute"
-
-// Time in Range
-// NOTE: LOINC 97510-2 now used as primary code in CGMProfile (verified 2026-02-24)
-* #tir "Time in Range" "Percentage of time glucose is within target range (70-180 mg/dL)"
-* #tbr "Time Below Range" "Percentage of time glucose is below target (<70 mg/dL)"
-* #tbr-l1 "Time Below Range Level 1" "Percentage of time in Level 1 hypoglycemia (54-69 mg/dL)"
-* #tbr-l2 "Time Below Range Level 2" "Percentage of time in Level 2 hypoglycemia (<54 mg/dL)"
-* #tar "Time Above Range" "Percentage of time glucose is above target (>180 mg/dL)"
-* #tar-l1 "Time Above Range Level 1" "Percentage of time in Level 1 hyperglycemia (181-250 mg/dL)"
-* #tar-l2 "Time Above Range Level 2" "Percentage of time in Level 2 hyperglycemia (>250 mg/dL)"
-
-// Variability
-* #mean "Mean Glucose" "Average glucose over reporting period"
-// NOTE: LOINC 97505-2 now used as primary code in CGMProfile (verified 2026-02-24)
-* #sd "Standard Deviation" "Standard deviation of glucose values"
-* #cv "Coefficient of Variation" "CV = SD/Mean x 100, target <36%"
-// NOTE: LOINC 97506-0 now used as primary code in CGMProfile (verified 2026-02-24)
-// This custom code retained for backward compatibility and ConceptMap references
-* #gmi "Glucose Management Indicator" "Estimated HbA1c from CGM glucose"
-
-// Events
-* #hypo-events "Hypoglycemia Events" "Number of hypoglycemia episodes"
-* #hyper-events "Hyperglycemia Events" "Number of hyperglycemia episodes"
-
-// Data quality
-// NOTE: LOINC 97504-5 now used as primary code in CGMProfile (verified 2026-02-24)
-* #active-time "Sensor Active Time" "Percentage of time sensor was recording"
-* #range-low "Target Range Lower" "Lower bound of target glucose range"
-* #range-high "Target Range Upper" "Upper bound of target glucose range"
-
-// Device
-* #system "CGM System" "Specific CGM device or system"
-* #site "Insertion Site" "Body site where sensor is inserted"
-* #sensor-days "Sensor Days" "Days since sensor insertion"
-
-
-// ============================================================================
-// CGM VALUE SETS
-// ============================================================================
-
 ValueSet: CGMGlucoseUnitVS
 Id: cgm-glucose-unit-vs
 Title: "CGM Glucose Unit ValueSet"
@@ -276,7 +214,7 @@ Description: "Categorical interpretation of glucose values per International Con
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-interpretation-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system CGMGlucoseInterpretationCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 
 ValueSet: CGMTrendArrowVS
@@ -286,7 +224,7 @@ Description: "Direction and rate of glucose change"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-trend-arrow-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system CGMTrendArrowCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 
 ValueSet: CGMSystemVS
@@ -296,7 +234,7 @@ Description: "CGM devices and systems"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-system-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system CGMSystemCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 
 ValueSet: CGMInsertionSiteVS
@@ -306,86 +244,4 @@ Description: "Body sites for CGM sensor insertion"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-insertion-site-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system CGMInsertionSiteCS
-
-
-// ============================================================================
-// SUPPORTING CODE SYSTEMS
-// ============================================================================
-
-CodeSystem: CGMGlucoseInterpretationCS
-Id: cgm-glucose-interpretation-cs
-Title: "CGM Glucose Interpretation CodeSystem"
-Description: "Categorical interpretation of glucose values"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-glucose-interpretation-cs"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #severe-hypo "Severe Hypoglycemia" "<54 mg/dL (<3.0 mmol/L)"
-* #hypo "Hypoglycemia" "54-69 mg/dL (3.0-3.8 mmol/L)"
-* #in-range "In Range" "70-180 mg/dL (3.9-10.0 mmol/L)"
-* #hyper "Hyperglycemia" "181-250 mg/dL (10.1-13.9 mmol/L)"
-* #severe-hyper "Severe Hyperglycemia" ">250 mg/dL (>13.9 mmol/L)"
-
-
-CodeSystem: CGMTrendArrowCS
-Id: cgm-trend-arrow-cs
-Title: "CGM Trend Arrow CodeSystem"
-Description: "Direction and rate of glucose change"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-trend-arrow-cs"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #falling-rapidly "Falling Rapidly" ">3 mg/dL/min downward"
-* #falling "Falling" "2-3 mg/dL/min downward"
-* #falling-slowly "Falling Slowly" "1-2 mg/dL/min downward"
-* #stable "Stable" "<1 mg/dL/min change"
-* #rising-slowly "Rising Slowly" "1-2 mg/dL/min upward"
-* #rising "Rising" "2-3 mg/dL/min upward"
-* #rising-rapidly "Rising Rapidly" ">3 mg/dL/min upward"
-* #unknown "Unknown" "Trend direction not determined"
-
-
-CodeSystem: CGMSystemCS
-Id: cgm-system-cs
-Title: "CGM System CodeSystem"
-Description: "CGM devices and systems"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-system-cs"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-// Medical-grade
-* #dexcom-g6 "Dexcom G6" "Dexcom G6 CGM system"
-* #dexcom-g7 "Dexcom G7" "Dexcom G7 CGM system"
-* #dexcom-one "Dexcom ONE" "Dexcom ONE CGM system"
-* #libre-2 "FreeStyle Libre 2" "Abbott FreeStyle Libre 2"
-* #libre-3 "FreeStyle Libre 3" "Abbott FreeStyle Libre 3"
-* #guardian-4 "Medtronic Guardian 4" "Medtronic Guardian 4 CGM"
-* #eversense "Eversense" "Senseonics Eversense implantable CGM"
-// Consumer/Wellness
-* #levels "Levels" "Levels consumer CGM program"
-* #nutrisense "Nutrisense" "Nutrisense consumer CGM"
-* #supersapiens "Supersapiens" "Supersapiens athletic CGM"
-* #veri "Veri" "Veri consumer CGM"
-* #stelo "Stelo" "Dexcom Stelo consumer CGM"
-* #lingo "Lingo" "Abbott Lingo consumer CGM"
-* #other "Other" "Other CGM system"
-
-
-CodeSystem: CGMInsertionSiteCS
-Id: cgm-insertion-site-cs
-Title: "CGM Insertion Site CodeSystem"
-Description: "Body sites for CGM sensor insertion"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-insertion-site-cs"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #upper-arm "Upper Arm" "Back of upper arm"
-* #abdomen "Abdomen" "Abdominal area"
-* #buttock "Buttock" "Buttock area"
-* #thigh "Thigh" "Upper thigh"
-* #other "Other" "Other insertion site"
+* include codes from system LifestyleMedicineTemporaryCS

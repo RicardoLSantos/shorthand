@@ -20,4 +20,4 @@ Description: "Extended value set for subjective sleep quality assessment. Uses c
 * ^name = "SleepQualityExtendedVS"
 * ^experimental = false
 * ^status = #active
-* include codes from system SleepQualityCS
+* include codes from system LifestyleMedicineTemporaryCS

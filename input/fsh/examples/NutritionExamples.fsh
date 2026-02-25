@@ -125,7 +125,7 @@ Title: "Nutrition Intake Observation Example"
 * method = $SCT#229059009 "Report"
 * note.text = "Lunch meal - Mediterranean diet"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-data-source"
-* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-data-source-cs#manual "Manual Entry"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#manual "Manual Entry"
 
 // -----------------------------------------------------------------------------
 // F2.11.5: Micronutrients Examples
@@ -201,18 +201,18 @@ Title: "Macronutrients - Complete Daily Assessment"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#survey
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#macronutrients-panel "Macronutrients intake panel"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#macronutrients-panel "Macronutrients intake panel"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T20:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 
-* component[carbohydrates].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#carbohydrate-intake "Carbohydrate intake"
+* component[carbohydrates].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-carbohydrate-intake "Carbohydrate intake"
 * component[carbohydrates].valueQuantity = 275 'g' "gram"
 
-* component[proteins].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#protein-intake "Protein intake"
+* component[proteins].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-protein-intake "Protein intake"
 * component[proteins].valueQuantity = 85 'g' "gram"
 
-* component[fats].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#fat-intake "Fat intake"
+* component[fats].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-fat-intake "Fat intake"
 * component[fats].valueQuantity = 70 'g' "gram"
 
 * note.text = "Distribution: ~52% carbs, ~16% protein, ~32% fat - within DGA 2020 recommendations"
@@ -258,7 +258,7 @@ Title: "Protein Intake - Semantic Anchoring (LP Dual-Coding)"
 * performer = Reference(Practitioner/PractitionerExample)
 
 // Dual-coding: custom code (primary) + LOINC LP Part code (semantic anchor)
-* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/NutritionCS#protein-intake "Protein intake"
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#nutrition-protein-intake "Protein intake"
 * code.coding[1] = $LOINC#LP73201-3 "Protein intake"
 * code.text = "Protein intake"
 
@@ -285,7 +285,7 @@ Title: "Vitamin D Intake - Semantic Anchoring (LP Dual-Coding)"
 * effectiveDateTime = "2026-02-25T20:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 
-* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/micronutrient-cs#vitamin-d-intake "Vitamin D intake"
+* code.coding[0] = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#vitamin-d-intake "Vitamin D intake"
 * code.coding[1] = $LOINC#LP207604-2 "Vitamin D intake"
 * code.text = "Vitamin D dietary intake"
 

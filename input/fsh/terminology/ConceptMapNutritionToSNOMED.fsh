@@ -27,7 +27,7 @@ Usage: #definition
 // See design-decisions.md for rationale. Source validation via group.source CodeSystem.
 
 // Group 1: LifestyleObservationCS → SNOMED CT
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[0].target = "http://snomed.info/sct"
 
 // ============================================================================

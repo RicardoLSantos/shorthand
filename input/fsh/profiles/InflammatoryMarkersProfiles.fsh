@@ -240,7 +240,7 @@ autonomic-immune axis in lifestyle medicine interventions.
 * status MS
 * category 1..* MS
 * code.text = "HRV-Inflammation Correlation Assessment"
-* code.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs"
+* code.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * code.coding.code = #hrv-inflammation-correlation
 
 * subject 1..1 MS
@@ -269,7 +269,7 @@ Title: "hs-CRP Interpretation ValueSet"
 Description: "Cardiovascular risk interpretation for hs-CRP results (AHA/CDC guidelines)"
 * ^status = #active
 * ^experimental = false
-* include codes from system HsCRPRiskCS
+* include codes from system LifestyleMedicineTemporaryCS
 
 ValueSet: HRVInflammationTrendVS
 Id: hrv-inflammation-trend-vs
@@ -302,40 +302,3 @@ Description: "LOINC codes for inflammatory biomarkers used in lifestyle medicine
 * $LOINC#3074-2 "Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma"
 * $LOINC#4537-7 "Erythrocyte sedimentation rate"
 * $LOINC#33762-6 "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma"
-
-// =============================================================================
-// CodeSystems for Inflammatory Markers
-// =============================================================================
-
-CodeSystem: HsCRPRiskCS
-Id: hscrp-risk-cs
-Title: "hs-CRP Cardiovascular Risk CodeSystem"
-Description: """
-Cardiovascular risk classification based on high-sensitivity C-Reactive Protein levels.
-
-Based on AHA/CDC Scientific Statement on Markers of Inflammation and Cardiovascular Disease:
-- Pearson TA, et al. Circulation. 2003;107(3):499-511. doi:10.1161/01.CIR.0000052939.59093.45
-- Ridker PM, et al. Circulation. 2003;107(3):363-369. doi:10.1161/01.CIR.0000053730.47739.3C
-
-Risk stratification thresholds:
-- Low risk: hs-CRP < 1.0 mg/L
-- Average risk: hs-CRP 1.0-3.0 mg/L
-- High risk: hs-CRP > 3.0 mg/L
-
-Note: No SNOMED-CT codes exist for this specific clinical classification as of 2025.
-This CodeSystem follows thesis semantic hierarchy Level 3: local codes with documented source
-and migration pathway when standard terminology becomes available.
-
-Future migration: Monitor SNOMED-CT International Edition for cardiovascular risk finding codes.
-"""
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^purpose = "Enable structured capture of cardiovascular risk stratification based on hs-CRP levels per AHA/CDC guidelines"
-* #low-risk "Low cardiovascular risk" "hs-CRP < 1.0 mg/L - Low risk of future cardiovascular events"
-* #average-risk "Average cardiovascular risk" "hs-CRP 1.0-3.0 mg/L - Intermediate risk requiring lifestyle assessment"
-* #high-risk "High cardiovascular risk" "hs-CRP > 3.0 mg/L - High risk warranting intensive intervention"
-
-// Note: HRVInflammationTrendCS removed - replaced by SNOMED-CT codes in HRVInflammationTrendVS
-// SNOMED codes: 268910001 (improved), 359746009 (stable), 271299001 (worsened)
-// Source: mCODE IG v4.0.0 - https://build.fhir.org/ig/HL7/fhir-mCODE-ig/

@@ -224,7 +224,7 @@ Clinical Context:
   * valueQuantity.code = #/mo
 
 * component[alcoholType]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#alcohol-type "Type of alcoholic beverage"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#alcohol-type "Type of alcoholic beverage"
   * value[x] only CodeableConcept
   * valueCodeableConcept from AlcoholBeverageTypeVS (extensible)
 
@@ -280,12 +280,12 @@ Guidelines:
     lastIntakeTime 0..1 MS
 
 * component[caffeineSource]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#caffeine-source "Caffeine source"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#caffeine-source "Caffeine source"
   * value[x] only CodeableConcept
   * valueCodeableConcept from CaffeineSourceVS (extensible)
 
 * component[lastIntakeTime]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#last-caffeine-time "Time of last caffeine intake"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#last-caffeine-time "Time of last caffeine intake"
   * value[x] only dateTime
 
 // =============================================================================
@@ -334,12 +334,12 @@ clinically appropriate. Privacy and confidentiality considerations are paramount
   * valueCodeableConcept from RecreationalSubstanceTypeVS (extensible)
 
 * component[useFrequency]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#substance-frequency "Frequency of substance use"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-frequency "Frequency of substance use"
   * value[x] only CodeableConcept
   * valueCodeableConcept from SubstanceUseFrequencyVS (required)
 
 * component[lastUseDate]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#last-use-date "Date of last substance use"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#last-use-date "Date of last substance use"
   * value[x] only dateTime
 
 // =============================================================================
@@ -366,7 +366,7 @@ with their current status and risk assessment.
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code 1..1 MS
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#substance-use-summary "Substance use summary"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-use-summary "Substance use summary"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 
@@ -396,7 +396,7 @@ with their current status and risk assessment.
   * valueCodeableConcept from CaffeineIntakeLevelVS (required)
 
 * component[overallRiskLevel]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-observation-cs#substance-risk-level "Overall substance use risk level"
+  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-risk-level "Overall substance use risk level"
   * value[x] only CodeableConcept
   * valueCodeableConcept from SubstanceUseRiskLevelVS (required)
 

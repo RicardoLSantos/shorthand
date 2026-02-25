@@ -104,7 +104,7 @@ GAP: No OMOP concept exists for GMI.
 // ============================================================================
 // GROUP 2: Custom CGM Metrics → OMOP (Time in Range metrics)
 // ============================================================================
-* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cgm-metrics-cs"
+* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[1].target = "http://athena.ohdsi.org/search-terms/terms"
 * group[1].unmapped.mode = #fixed
 * group[1].unmapped.code = #0

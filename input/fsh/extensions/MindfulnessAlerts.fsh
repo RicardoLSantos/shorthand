@@ -25,7 +25,7 @@ Title: "Mindfulness Alert"
 Description: "Alert configuration for mindfulness sessions"
 
 * code 1..1 MS
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-alert-type#reminder "Mindfulness Reminder"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-alert-reminder "Mindfulness Reminder"
 
 * extension contains
     alert-timing named alertTiming 0..1 MS and
@@ -36,7 +36,7 @@ InstanceOf: MindfulnessAlert
 Title: "Daily Mindfulness Alert" 
 Description: "Example of a daily mindfulness alert configuration"
 
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/mindfulness-alert-type#reminder "Mindfulness Reminder"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-alert-reminder "Mindfulness Reminder"
 * extension[alertTiming].valueTiming.repeat
   * frequency = 1
   * period = 1

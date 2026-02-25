@@ -120,40 +120,10 @@ Id: wearable-sensor-type-vs
 Title: "Wearable Sensor Type ValueSet"
 Description: "Types of sensors in consumer wearable devices"
 * ^experimental = false
-* include codes from system WearableSensorTypeCS
-
-CodeSystem: WearableSensorTypeCS
-Id: wearable-sensor-type-cs
-Title: "Wearable Sensor Type CodeSystem"
-Description: "Sensor types found in consumer wearable devices"
-* ^experimental = false
-* ^caseSensitive = true
-* #ppg "Photoplethysmography (PPG)" "Optical heart rate sensor"
-* #ecg "Electrocardiogram (ECG)" "Electrical heart activity sensor"
-* #accelerometer "Accelerometer" "Motion and activity sensor"
-* #gyroscope "Gyroscope" "Orientation sensor"
-* #barometer "Barometer" "Altitude/pressure sensor"
-* #spo2 "Pulse Oximeter" "Blood oxygen saturation sensor"
-* #temperature "Temperature" "Skin/body temperature sensor"
-* #bioimpedance "Bioimpedance" "Body composition sensor"
-* #gps "GPS" "Location sensor"
-
-
+* include codes from system LifestyleMedicineTemporaryCS
 ValueSet: DataCaptureMethodVS
 Id: data-capture-method-vs
 Title: "Data Capture Method ValueSet"
 Description: "Methods by which PGHD data was captured"
 * ^experimental = false
-* include codes from system DataCaptureMethodCS
-
-CodeSystem: DataCaptureMethodCS
-Id: data-capture-method-cs
-Title: "Data Capture Method CodeSystem"
-Description: "Methods for capturing patient-generated health data"
-* ^experimental = false
-* ^caseSensitive = true
-* #automatic "Automatic" "Data captured automatically by device"
-* #manual-entry "Manual Entry" "Data manually entered by user"
-* #derived "Derived" "Data calculated/derived from other measurements"
-* #synchronized "Synchronized" "Data synchronized from another system"
-* #imported "Imported" "Data imported from external source"
+* include codes from system LifestyleMedicineTemporaryCS

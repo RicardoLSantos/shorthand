@@ -53,31 +53,4 @@ Description: "Valid values for the assignment-status concept property"
 * ^version = "1.0.0"
 * ^status = #active
 * ^experimental = false
-* include codes from system AssignmentStatusCS
-
-
-CodeSystem: AssignmentStatusCS
-Id: assignment-status-cs
-Title: "Assignment Status CodeSystem"
-Description: "Status values for terminology code assignment tracking"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/assignment-status-cs"
-* ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-
-* #mapped "Mapped"
-    "This concept has been mapped to an equivalent code in a standard terminology (LOINC, SNOMED CT, etc.)"
-
-* #pending-loinc "Pending LOINC Assignment"
-    "This concept is awaiting assignment of a LOINC code. A submission may be in progress or planned."
-
-* #pending-snomed "Pending SNOMED CT Assignment"
-    "This concept is awaiting assignment of a SNOMED CT concept identifier."
-
-* #local-only "Local Only"
-    "This concept is intentionally local and no standard terminology equivalent is expected or needed."
-
-* #deprecated "Deprecated"
-    "This concept has been deprecated. A replacement concept may be available in the standard terminology."
+* include codes from system LifestyleMedicineTemporaryCS

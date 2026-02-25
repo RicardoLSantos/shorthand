@@ -24,22 +24,22 @@ Description: "Example of an AI agent task for reviewing an abnormal HRV trend, d
 
 * status = #completed
 * intent = #proposal
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-task-type-cs#review-trend "Review Trend"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#review-trend "Review Trend"
 * for = Reference(Patient/PatientExample)
 * authoredOn = "2026-01-27T08:00:00Z"
 * lastModified = "2026-01-27T09:15:00Z"
 * description = "Automated review triggered by 3-day declining HRV trend (SDNN dropped from 45ms to 28ms)"
 * priority = #urgent
 
-* businessStatus = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-task-business-status-cs#approved "Approved"
-* statusReason = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-task-status-reason-cs#clinician-approved "Clinician Approved"
+* businessStatus = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#approved "Approved"
+* statusReason = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#clinician-approved "Clinician Approved"
 
 * requester = Reference(Device/AppleWatchDevice)
 * owner = Reference(Practitioner/PractitionerExample)
 
 * focus = Reference(Observation/HeartRateExample)
 
-* reasonCode = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-reason-code-cs#concerning-trend "Concerning Trend"
+* reasonCode = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#concerning-trend "Concerning Trend"
 
 * output[0].type.text = "Result"
 * output[0].valueString = "HRV declining trend confirmed: 45ms → 35ms → 28ms over 72h. Recommend stress management assessment."
@@ -48,20 +48,20 @@ Description: "Example of an AI agent task for reviewing an abnormal HRV trend, d
 
 // Agent Recommendation extension
 * extension[agentRecommendation].extension[confidence].valueDecimal = 0.87
-* extension[agentRecommendation].extension[interpretation].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-interpretation-cs#schedule-followup "Schedule Follow-up"
+* extension[agentRecommendation].extension[interpretation].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#agent-interpretation-schedule-followup "Schedule Follow-up"
 * extension[agentRecommendation].extension[reasoning].valueMarkdown = "SDNN decline of 38% over 72 hours exceeds the 25% threshold. Pattern analysis suggests acute stress response rather than chronic deconditioning. Recommend lifestyle assessment focusing on sleep and stress management."
 * extension[agentRecommendation].extension[agentModel].valueString = "BioMistral-7B-v0.2"
 * extension[agentRecommendation].extension[timestamp].valueDateTime = "2026-01-27T08:05:00Z"
 
 // Agent Evidence Quality extension
-* extension[evidenceQuality].extension[dataCompleteness].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-data-completeness-cs#mostly-complete "Mostly Complete"
+* extension[evidenceQuality].extension[dataCompleteness].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mostly-complete "Mostly Complete"
 * extension[evidenceQuality].extension[temporalCoverage].valuePeriod.start = "2026-01-24T00:00:00Z"
 * extension[evidenceQuality].extension[temporalCoverage].valuePeriod.end = "2026-01-27T08:00:00Z"
 * extension[evidenceQuality].extension[dataGaps][0].valueString = "Missing 4-hour window on Jan 25 (device not worn during swimming)"
 * extension[evidenceQuality].extension[dataQualityScore].valueDecimal = 0.82
 
 // Agent Action Status extension
-* extension[actionStatus].extension[actionCode].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-interpretation-cs#schedule-followup "Schedule Follow-up"
+* extension[actionStatus].extension[actionCode].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#agent-interpretation-schedule-followup "Schedule Follow-up"
 * extension[actionStatus].extension[actionStatus].valueCode = #completed
 * extension[actionStatus].extension[reviewedBy].valueReference = Reference(Practitioner/PractitionerExample)
 * extension[actionStatus].extension[reviewedAt].valueDateTime = "2026-01-27T09:10:00Z"
@@ -81,8 +81,8 @@ Description: "Example of an AI agent proposing a lab order based on wearable glu
 
 * status = #active
 * intent = #proposal
-* category = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-service-category-cs#laboratory "Laboratory"
-* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-service-code-cs#hba1c "HbA1c"
+* category = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#laboratory "Laboratory"
+* code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#hba1c "HbA1c"
 * subject = Reference(Patient/PatientExample)
 * authoredOn = "2026-01-27T07:30:00Z"
 * priority = #routine
@@ -90,7 +90,7 @@ Description: "Example of an AI agent proposing a lab order based on wearable glu
 * requester = Reference(Device/AppleWatchDevice)
 * performer = Reference(Practitioner/PractitionerExample)
 
-* reasonCode = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-reason-code-cs#concerning-trend "Concerning Trend"
+* reasonCode = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#concerning-trend "Concerning Trend"
 * reasonReference = Reference(Observation/HeartRateExample)
 
 * patientInstruction = "Fasting for 8 hours recommended before blood draw. Schedule at your convenience within the next 2 weeks."
@@ -99,13 +99,13 @@ Description: "Example of an AI agent proposing a lab order based on wearable glu
 
 // Agent Recommendation extension
 * extension[agentRecommendation].extension[confidence].valueDecimal = 0.91
-* extension[agentRecommendation].extension[interpretation].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-interpretation-cs#escalate-clinician "Escalate to Clinician"
+* extension[agentRecommendation].extension[interpretation].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#escalate-clinician "Escalate to Clinician"
 * extension[agentRecommendation].extension[reasoning].valueMarkdown = "CGM time-above-range increased from 12% to 22% over 30 days. Last HbA1c was 6.2% (3 months ago). Per ADA Standards of Care, recheck warranted when glucose patterns change significantly."
 * extension[agentRecommendation].extension[agentModel].valueString = "GPT-4-Med"
 * extension[agentRecommendation].extension[timestamp].valueDateTime = "2026-01-27T07:35:00Z"
 
 // Agent Evidence Quality extension
-* extension[evidenceQuality].extension[dataCompleteness].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-data-completeness-cs#complete "Complete"
+* extension[evidenceQuality].extension[dataCompleteness].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#agent-completeness-complete "Complete"
 * extension[evidenceQuality].extension[temporalCoverage].valuePeriod.start = "2025-12-28T00:00:00Z"
 * extension[evidenceQuality].extension[temporalCoverage].valuePeriod.end = "2026-01-27T07:30:00Z"
 * extension[evidenceQuality].extension[dataQualityScore].valueDecimal = 0.95

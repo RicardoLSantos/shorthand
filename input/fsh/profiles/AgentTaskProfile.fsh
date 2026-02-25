@@ -136,111 +136,27 @@ Description: "Intent values for agent tasks"
 * http://hl7.org/fhir/request-intent#proposal "Proposal"
 * http://hl7.org/fhir/request-intent#plan "Plan"
 * http://hl7.org/fhir/request-intent#order "Order"
-
-// ============================================================================
-// CodeSystems
-// ============================================================================
-
-CodeSystem: AgentTaskTypeCS
-Id: agent-task-type-cs
-Title: "Agent Task Type CodeSystem"
-Description: "Types of tasks that LLM agents can create"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-// Clinical review tasks
-* #review-observation "Review Observation" "Agent requests clinician review of an observation"
-* #review-trend "Review Trend" "Agent requests clinician review of a data trend"
-* #review-alert "Review Alert" "Agent requests clinician review of an alert condition"
-// Order-related tasks
-* #order-lab "Order Laboratory Test" "Agent recommends laboratory testing"
-* #order-imaging "Order Imaging" "Agent recommends imaging study"
-* #order-referral "Order Referral" "Agent recommends specialist referral"
-// Documentation tasks
-* #document-assessment "Document Assessment" "Agent requests clinical documentation"
-* #document-care-plan "Update Care Plan" "Agent recommends care plan update"
-// Patient communication tasks
-* #schedule-followup "Schedule Follow-up" "Agent recommends scheduling patient follow-up"
-* #patient-education "Patient Education" "Agent recommends patient education intervention"
-* #patient-contact "Patient Contact" "Agent recommends contacting patient"
-// Lifestyle intervention tasks
-* #lifestyle-exercise "Exercise Intervention" "Agent recommends exercise modification"
-* #lifestyle-nutrition "Nutrition Intervention" "Agent recommends dietary modification"
-* #lifestyle-sleep "Sleep Intervention" "Agent recommends sleep hygiene intervention"
-* #lifestyle-stress "Stress Management" "Agent recommends stress management intervention"
-
 ValueSet: AgentTaskTypeVS
 Id: agent-task-type-vs
 Title: "Agent Task Type ValueSet"
 Description: "Types of tasks that LLM agents can create including clinical reviews, orders, documentation, and lifestyle interventions"
 * ^experimental = false
-* include codes from system AgentTaskTypeCS
-
-CodeSystem: AgentTaskBusinessStatusCS
-Id: agent-task-business-status-cs
-Title: "Agent Task Business Status CodeSystem"
-Description: "Business status values specific to agent workflow"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #awaiting-review "Awaiting Review" "Task pending clinician review"
-* #under-review "Under Review" "Clinician actively reviewing"
-* #approved "Approved" "Clinician approved agent recommendation"
-* #modified-approved "Modified and Approved" "Clinician modified and approved"
-* #declined "Declined" "Clinician declined recommendation"
-* #deferred "Deferred" "Review deferred to later"
-* #escalated "Escalated" "Escalated to senior clinician"
-
+* include codes from system LifestyleMedicineTemporaryCS
 ValueSet: AgentTaskBusinessStatusVS
 Id: agent-task-business-status-vs
 Title: "Agent Task Business Status ValueSet"
 Description: "Business status values specific to agent workflow including review states and approval outcomes"
 * ^experimental = false
-* include codes from system AgentTaskBusinessStatusCS
-
-CodeSystem: AgentTaskStatusReasonCS
-Id: agent-task-status-reason-cs
-Title: "Agent Task Status Reason CodeSystem"
-Description: "Reasons for agent task status changes"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #clinician-approved "Clinician Approved" "Clinician reviewed and approved"
-* #clinician-rejected "Clinician Rejected" "Clinician reviewed and rejected"
-* #insufficient-evidence "Insufficient Evidence" "Rejected due to insufficient evidence"
-* #clinical-override "Clinical Override" "Clinician exercised clinical judgment override"
-* #patient-declined "Patient Declined" "Patient declined recommended intervention"
-* #resources-unavailable "Resources Unavailable" "Required resources not available"
-* #superseded "Superseded" "Replaced by newer recommendation"
-* #completed-automatically "Completed Automatically" "Task auto-completed by system"
-
+* include codes from system LifestyleMedicineTemporaryCS
 ValueSet: AgentTaskStatusReasonVS
 Id: agent-task-status-reason-vs
 Title: "Agent Task Status Reason ValueSet"
 Description: "Reasons for agent task status changes including clinician decisions and system events"
 * ^experimental = false
-* include codes from system AgentTaskStatusReasonCS
-
-CodeSystem: AgentReasonCodeCS
-Id: agent-reason-code-cs
-Title: "Agent Reason Code CodeSystem"
-Description: "Clinical reasons for agent-generated tasks"
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* #abnormal-value "Abnormal Value" "Observation value outside normal range"
-* #concerning-trend "Concerning Trend" "Concerning trend in longitudinal data"
-* #risk-threshold "Risk Threshold Exceeded" "Risk score exceeded threshold"
-* #missing-data "Missing Data" "Required data missing for assessment"
-* #routine-followup "Routine Follow-up" "Scheduled routine follow-up"
-* #preventive-care "Preventive Care" "Preventive care recommendation"
-* #lifestyle-opportunity "Lifestyle Opportunity" "Opportunity for lifestyle improvement"
-* #medication-interaction "Medication Interaction" "Potential medication interaction"
-* #compliance-concern "Compliance Concern" "Treatment compliance concern"
-
+* include codes from system LifestyleMedicineTemporaryCS
 ValueSet: AgentReasonCodeVS
 Id: agent-reason-code-vs
 Title: "Agent Reason Code ValueSet"
 Description: "Clinical reasons for agent-generated tasks including abnormal values, trends, and care opportunities"
 * ^experimental = false
-* include codes from system AgentReasonCodeCS
+* include codes from system LifestyleMedicineTemporaryCS

@@ -42,7 +42,7 @@ Usage: #definition
 // =============================================================================
 // Group 1: Macronutrient Measurements (OMOP Measurement domain)
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "https://athena.ohdsi.org/search-terms/concepts"
 * group[=].element[+].code = #caloric-intake
 * group[=].element[=].display = "Caloric intake"
@@ -89,7 +89,7 @@ Usage: #definition
 // =============================================================================
 // Group 2: Fluid Intake
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "https://athena.ohdsi.org/search-terms/concepts"
 * group[=].element[+].code = #fluid-intake
 * group[=].element[=].display = "Fluid intake"
@@ -101,7 +101,7 @@ Usage: #definition
 // =============================================================================
 // Group 3: Vitamin Intake
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/micronutrient-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "https://athena.ohdsi.org/search-terms/concepts"
 * group[=].element[+].code = #vitamin-d-intake
 * group[=].element[=].display = "Vitamin D intake"
@@ -120,7 +120,7 @@ Usage: #definition
 // =============================================================================
 // Group 4: Mineral Intake
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/micronutrient-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "https://athena.ohdsi.org/search-terms/concepts"
 * group[=].element[+].code = #calcium-intake
 * group[=].element[=].display = "Calcium intake"
@@ -139,7 +139,7 @@ Usage: #definition
 // =============================================================================
 // Group 5: GAP Documentation - Concepts requiring custom OMOP codes
 // =============================================================================
-* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/nutrition-cs"
+* group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "https://athena.ohdsi.org/search-terms/concepts"
 * group[=].element[+].code = #meal-frequency
 * group[=].element[=].display = "Meal frequency"
