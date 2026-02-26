@@ -110,8 +110,20 @@ sequenceDiagram
 | **CodeSystems** | 29 | Consolidated: 1 LifestyleMedicineTemporaryCS (1,119 codes) + 14 separate |
 | **ValueSets** | 173 | LOINC, SNOMED CT, custom bindings |
 | **ConceptMaps** | 28 | Cross-terminology mappings |
+| **Examples** | 189 | Validation instances |
+| **Total** | **537** | All artifacts |
 | **FSH Files** | 171 | Total source files |
 | **FSH Lines** | 21,491 | Total lines of FSH code |
+
+### Build Validation (2026-02-26)
+
+| Metric | Value | Notes |
+|--------|:-----:|-------|
+| Errors | 28 | All inherited from IPS upstream |
+| Warnings | 75 | 97.3% non-actionable |
+| Broken Links | 0 | |
+| HTML Pages | 6,663 | |
+| Links Checked | 2,646,758 | |
 
 ---
 
@@ -320,4 +332,4 @@ This work is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/
 
 ---
 
-*Last updated: 2026-02-16*
+*Last updated: 2026-02-26*
