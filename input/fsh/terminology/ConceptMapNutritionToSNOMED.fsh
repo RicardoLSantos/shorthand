@@ -39,13 +39,13 @@ Usage: #definition
 
 // WATER INTAKE - CODE NOT FOUND ❌
 * group[0].element[0].code = #nutrition-water-intake
-* group[0].element[0].display = "Water intake volume"
+* group[0].element[0].display = "Water intake"
 * group[0].element[0].target[0].equivalence = #unmatched
 * group[0].element[0].target[0].comment = "GAP: SNOMED CT code 226364002 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for fluid/water intake."
 
 // CALORIC INTAKE - CODE NOT FOUND ❌
 * group[0].element[1].code = #nutrition-caloric-intake
-* group[0].element[1].display = "Total caloric intake"
+* group[0].element[1].display = "Caloric intake"
 * group[0].element[1].target[0].equivalence = #unmatched
 * group[0].element[1].target[0].comment = "GAP: SNOMED CT code 226355004 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary energy intake."
 

@@ -53,6 +53,94 @@ não é especificado o sourceScope
 não é especificado nenhum targetScope
 
 # =============================================================================
-# Last updated: 2026-02-18 T3 (snazzy-honking-hanrahan)
+# UCUM ANNOTATION WARNINGS (16 warnings)
+# Human-readable UCUM annotations ({score}, {rpm}, {spm}, {pack-years})
+# are clinically necessary for lifestyle medicine metrics. The IG Publisher
+# warns that these may be misleading, but they follow UCUM best practices
+# for unitless or complex unit quantities.
+# =============================================================================
+
+Os códigos UCUM que contêm anotações legíveis por humanos como {score} podem ser enganadores
+Os códigos UCUM que contêm anotações legíveis por humanos como {rpm} podem ser enganadores
+Os códigos UCUM que contêm anotações legíveis por humanos como {spm} podem ser enganadores
+Os códigos UCUM que contêm anotações legíveis por humanos como {pack-years} podem ser enganadores
+
+# =============================================================================
+# VENDOR API CODESYSTEM WARNINGS (12 warnings)
+# Consumer wearable vendor APIs use reverse-DNS identifiers (com.apple.health)
+# and REST endpoints as CodeSystem URIs. These are NOT FHIR terminology servers.
+# =============================================================================
+
+# Vendor reverse-DNS identifiers
+Não foi possível encontrar uma definição para o valor URL 'com.apple.health'
+Não foi possível encontrar uma definição para o valor URL 'com.fitbit.hrv'
+Não foi possível encontrar uma definição para o valor URL 'com.ouraring'
+Não foi possível encontrar uma definição para o valor URL 'com.garmin.connect'
+Não foi possível encontrar uma definição para o valor URL 'com.polar'
+
+# Vendor API endpoint URLs
+Não foi possível encontrar uma definição para o valor URL 'https://developer.garmin.com/health-api'
+Não foi possível encontrar uma definição para o valor URL 'https://www.polaraccesslink.com/v3'
+Não foi possível encontrar uma definição para o valor URL 'https://cloud.ouraring.com/v2/usercollection'
+
+# Vendor stub not-present content
+O sistema de código-fonte https://developer.apple.com/documentation/healthkit não tem todo o conteúdo
+O sistema de código-fonte https://dev.fitbit.com/build/reference/web-api não tem todo o conteúdo
+
+# =============================================================================
+# LEGAL/REGULATORY URL WARNINGS (3 warnings)
+# Real-world legal framework URLs are NOT FHIR endpoints.
+# =============================================================================
+
+Não foi possível encontrar uma definição para o valor URL 'https://eur-lex.europa.eu/eli/reg/2016/679'
+Não foi possível encontrar uma definição para o valor URL 'https://www.hhs.gov/hipaa/index.html'
+Não foi possível encontrar uma definição para o valor URL 'http://www.planalto.gov.br/ccivil_03/_ato'
+
+# =============================================================================
+# CQL EXPRESSION LANGUAGE WARNINGS (2 warnings)
+# text/cql-identifier is a valid CQL expression language identifier
+# that the IG Publisher does not support for validation.
+# =============================================================================
+
+A linguagem de expressão text/cql-identifier não é suportada
+
+# =============================================================================
+# ICD-10-CM / ICD-11 EXTERNAL SYSTEM WARNINGS
+# ICD code systems referenced in ConceptMaps are not on tx.fhir.org.
+# =============================================================================
+
+O sistema de código-fonte http://hl7.org/fhir/sid/icd-10-cm não tem todo o conteúdo
+O sistema de códigos de destino https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle
+
+# =============================================================================
+# FHIR STRUCTURE DEFINITION CONCEPTMAP WARNINGS
+# ConceptMaps mapping FHIR resources to openEHR use StructureDefinition URIs
+# as CodeSystem sources, which the IG Publisher does not fully validate.
+# =============================================================================
+
+O Sistema de Código Fonte http://hl7.org/fhir/StructureDefinition/Observation não está totalmente de
+O sistema de código-alvo http://hl7.org/fhir/StructureDefinition/Observation não está totalmente def
+O Sistema de Código Fonte http://hl7.org/fhir/StructureDefinition/Device não está totalmente definid
+O sistema de código-alvo http://hl7.org/fhir/StructureDefinition/Device não está totalmente definido
+
+# =============================================================================
+# EXAMPLE INSTANCE SLOVENIAN OID WARNING (1 warning)
+# Patient example uses Slovenian national OID.
+# =============================================================================
+
+Não foi possível encontrar uma definição para o valor URL 'urn:oid:2.16.858.1.1.1'
+
+# =============================================================================
+# CONCEPTMAP SOURCE URI WARNINGS
+# ConceptMap using sourceUri to custom canonical (VRF-TECH-005)
+# =============================================================================
+
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs'
+Não foi possível encontrar uma definição para o valor URL 'https://ckm.openehr.org/ckm'
+
+# =============================================================================
+# Last updated: 2026-02-26 T2 (clever-mapping-abelson)
+# Covers: 28 errors (IPS) + 73 warnings (all non-actionable)
+# 2 display name warnings fixed in ConceptMapNutritionToSNOMED.fsh
 # Note: Messages are in Portuguese due to system locale
 # =============================================================================

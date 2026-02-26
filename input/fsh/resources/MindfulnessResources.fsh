@@ -12,26 +12,19 @@ Description: "Value set of practice environment types"
 * ^experimental = false
 * include codes from system MindfulnessSettingCS
 
-Instance: MindfulnessSettingCS
-InstanceOf: CodeSystem
-Usage: #definition
-* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/MindfulnessSettingCS"
-* version = "1.0.0"
-* name = "MindfulnessSettingCS"
-* title = "Mindfulness Setting CodeSystem"
-* description = "CodeSystem defining different settings where mindfulness practice can occur"
-* status = #active
-* experimental = false
-* caseSensitive = true
-* content = #complete
-* count = 5
-* concept[+].code = #home
-* concept[=].display = "Home Practice"
-* concept[+].code = #clinic
-* concept[=].display = "Clinical Setting"
-* concept[+].code = #group
-* concept[=].display = "Group Setting"
-* concept[+].code = #retreat
-* concept[=].display = "Retreat Setting"
-* concept[+].code = #workplace
-* concept[=].display = "Workplace Setting"
+CodeSystem: MindfulnessSettingCS
+Id: MindfulnessSettingCS
+Title: "Mindfulness Setting CodeSystem"
+Description: "CodeSystem defining different settings where mindfulness practice can occur"
+* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/MindfulnessSettingCS"
+* ^version = "1.0.0"
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+* ^content = #complete
+* ^count = 5
+* #home "Home Practice"
+* #clinic "Clinical Setting"
+* #group "Group Setting"
+* #retreat "Retreat Setting"
+* #workplace "Workplace Setting"
