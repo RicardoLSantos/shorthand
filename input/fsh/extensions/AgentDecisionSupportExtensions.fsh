@@ -64,13 +64,24 @@ Id: agent-interpretation-vs
 Title: "Agent Interpretation ValueSet"
 Description: "ValueSet for LLM agent clinical interpretations"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#agent-interpretation-high-risk "High Risk"
+* LifestyleMedicineTemporaryCS#agent-interpretation-moderate-risk "Moderate Risk"
+* LifestyleMedicineTemporaryCS#agent-interpretation-low-risk "Low Risk"
+* LifestyleMedicineTemporaryCS#minimal-risk "Minimal Risk"
+* LifestyleMedicineTemporaryCS#escalate-clinician "Escalate to Clinician"
+* LifestyleMedicineTemporaryCS#agent-interpretation-schedule-followup "Schedule Follow-up"
+* LifestyleMedicineTemporaryCS#continue-monitoring "Continue Monitoring"
+* LifestyleMedicineTemporaryCS#agent-interpretation-lifestyle-intervention "Lifestyle Intervention"
 ValueSet: AgentConfidenceLevelVS
 Id: agent-confidence-level-vs
 Title: "Agent Confidence Level ValueSet"
 Description: "ValueSet for categorical agent confidence levels"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#agent-confidence-very-high "Very High Confidence"
+* LifestyleMedicineTemporaryCS#agent-confidence-high "High Confidence"
+* LifestyleMedicineTemporaryCS#agent-confidence-moderate "Moderate Confidence"
+* LifestyleMedicineTemporaryCS#agent-confidence-low "Low Confidence"
+* LifestyleMedicineTemporaryCS#agent-confidence-very-low "Very Low Confidence"
 
 // ============================================================================
 // Agent Evidence Quality Extension
@@ -106,7 +117,11 @@ Id: agent-data-completeness-vs
 Title: "Agent Data Completeness ValueSet"
 Description: "Data completeness assessment values for agent analysis ranging from complete to insufficient"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#agent-completeness-complete "Complete"
+* LifestyleMedicineTemporaryCS#mostly-complete "Mostly Complete"
+* LifestyleMedicineTemporaryCS#partial "Partial"
+* LifestyleMedicineTemporaryCS#sparse "Sparse"
+* LifestyleMedicineTemporaryCS#agent-completeness-insufficient "Insufficient"
 
 // ============================================================================
 // Agent Action Tracking Extension
@@ -144,4 +159,9 @@ Id: agent-action-status-vs
 Title: "Agent Action Status ValueSet"
 Description: "Status codes for agent-recommended actions including pending, accepted, rejected, and completed"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#pending "Pending"
+* LifestyleMedicineTemporaryCS#accepted "Accepted"
+* LifestyleMedicineTemporaryCS#rejected "Rejected"
+* LifestyleMedicineTemporaryCS#modified "Modified"
+* LifestyleMedicineTemporaryCS#agent-action-status-completed "Completed"
+* LifestyleMedicineTemporaryCS#expired "Expired"

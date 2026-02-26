@@ -10,12 +10,12 @@ Id: environment-type-vs
 Title: "Practice Environment Types Value Set"
 Description: "Value set of practice environment types"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* include codes from system MindfulnessSettingCS
 
 Instance: MindfulnessSettingCS
 InstanceOf: CodeSystem
 Usage: #definition
-* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
+* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/MindfulnessSettingCS"
 * version = "1.0.0"
 * name = "MindfulnessSettingCS"
 * title = "Mindfulness Setting CodeSystem"

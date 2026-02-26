@@ -62,7 +62,7 @@ Description: "Example of an AI agent task for reviewing an abnormal HRV trend, d
 
 // Agent Action Status extension
 * extension[actionStatus].extension[actionCode].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#agent-interpretation-schedule-followup "Schedule Follow-up"
-* extension[actionStatus].extension[actionStatus].valueCode = #completed
+* extension[actionStatus].extension[actionStatus].valueCode = #agent-action-status-completed
 * extension[actionStatus].extension[reviewedBy].valueReference = Reference(Practitioner/PractitionerExample)
 * extension[actionStatus].extension[reviewedAt].valueDateTime = "2026-01-27T09:10:00Z"
 * extension[actionStatus].extension[outcomeNote].valueString = "Follow-up scheduled for stress management assessment. Patient notified via app."

@@ -44,28 +44,28 @@ Usage: #definition
 // =============================================================================
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "https://athena.ohdsi.org/search-terms/concepts"
-* group[=].element[+].code = #caloric-intake
+* group[=].element[+].code = #nutrition-caloric-intake
 * group[=].element[=].display = "Caloric intake"
 * group[=].element[=].target[+].code = #3004249
 * group[=].element[=].target[=].display = "Caloric intake total"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "LOINC 9052-2 mapped to OMOP; domain=Measurement"
 
-* group[=].element[+].code = #protein-intake
+* group[=].element[+].code = #nutrition-protein-intake
 * group[=].element[=].display = "Protein intake"
 * group[=].element[=].target[+].code = #3011253
 * group[=].element[=].target[=].display = "Protein intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "LOINC 9059-7 mapped to OMOP"
 
-* group[=].element[+].code = #carbohydrate-intake
+* group[=].element[+].code = #nutrition-carbohydrate-intake
 * group[=].element[=].display = "Carbohydrate intake"
 * group[=].element[=].target[+].code = #3008587
 * group[=].element[=].target[=].display = "Carbohydrate intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "LOINC 9057-1 mapped to OMOP"
 
-* group[=].element[+].code = #fat-intake
+* group[=].element[+].code = #nutrition-fat-intake
 * group[=].element[=].display = "Fat intake"
 * group[=].element[=].target[+].code = #3015779
 * group[=].element[=].target[=].display = "Fat intake 24 hour"
@@ -79,7 +79,7 @@ Usage: #definition
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "LOINC 9055-5 mapped to OMOP"
 
-* group[=].element[+].code = #sodium-intake
+* group[=].element[+].code = #nutrition-sodium-intake
 * group[=].element[=].display = "Sodium intake"
 * group[=].element[=].target[+].code = #3022192
 * group[=].element[=].target[=].display = "Sodium intake 24 hour"

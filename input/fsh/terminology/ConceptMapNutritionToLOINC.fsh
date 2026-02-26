@@ -46,28 +46,28 @@ Usage: #definition
 // =============================================================================
 * group[+].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[=].target = "http://loinc.org"
-* group[=].element[+].code = #caloric-intake
+* group[=].element[+].code = #nutrition-caloric-intake
 * group[=].element[=].display = "Caloric intake"
 * group[=].element[=].target[+].code = #9052-2
 * group[=].element[=].target[=].display = "Caloric intake total"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "Total daily energy intake in kcal"
 
-* group[=].element[+].code = #protein-intake
+* group[=].element[+].code = #nutrition-protein-intake
 * group[=].element[=].display = "Protein intake"
 * group[=].element[=].target[+].code = #9059-7
 * group[=].element[=].target[=].display = "Protein intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM DRI: 0.8g/kg/day (adults)"
 
-* group[=].element[+].code = #carbohydrate-intake
+* group[=].element[+].code = #nutrition-carbohydrate-intake
 * group[=].element[=].display = "Carbohydrate intake"
 * group[=].element[=].target[+].code = #9057-1
 * group[=].element[=].target[=].display = "Carbohydrate intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM DRI: 45-65% of total calories"
 
-* group[=].element[+].code = #fat-intake
+* group[=].element[+].code = #nutrition-fat-intake
 * group[=].element[=].display = "Fat intake"
 * group[=].element[=].target[+].code = #9060-5
 * group[=].element[=].target[=].display = "Fat intake 24 hour"
@@ -100,7 +100,7 @@ Usage: #definition
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "EFSA (2010): 2.0L/day women, 2.5L/day men"
 
-* group[=].element[+].code = #water-intake
+* group[=].element[+].code = #nutrition-water-intake
 * group[=].element[=].display = "Water intake"
 * group[=].element[=].target[+].code = #9053-0
 * group[=].element[=].target[=].display = "Fluid intake 24 hour"
@@ -173,7 +173,7 @@ Usage: #definition
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 8mg men, 18mg premenopausal women"
 
-* group[=].element[+].code = #sodium-intake
+* group[=].element[+].code = #nutrition-sodium-intake
 * group[=].element[=].display = "Sodium intake"
 * group[=].element[=].target[+].code = #81011-9
 * group[=].element[=].target[=].display = "Sodium intake 24 hour Estimated"

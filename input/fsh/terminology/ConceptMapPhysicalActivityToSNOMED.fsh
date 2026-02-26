@@ -36,7 +36,7 @@ Usage: #definition
 * group[0].target = "http://snomed.info/sct"
 
 // WALKING - HAS SNOMED CODE ✅
-* group[0].element[0].code = #walking
+* group[0].element[0].code = #physical-activity-walking
 * group[0].element[0].display = "Walking"
 * group[0].element[0].target[0].code = #129006008
 * group[0].element[0].target[0].display = "Walking (observable entity)"

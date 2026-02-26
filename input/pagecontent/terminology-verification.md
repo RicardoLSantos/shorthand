@@ -174,7 +174,7 @@ The following metrics have **no standard codes** despite extensive verification:
 | Deep Sleep Duration | ❌ | ❌ | ❌ | Custom code required |
 | Sleep Efficiency | ❌ | ❌ | ❌ | Custom code required |
 
-These gaps are documented in the [HeartRateVariabilityCodeSystem](CodeSystem-heart-rate-variability-cs.html) with `assignment-status = "pending-loinc"`.
+These gaps are documented in the [LifestyleMedicineTemporaryCS](CodeSystem-lifestyle-medicine-temporary-cs.html) with `assignment-status = "pending-loinc"`.
 
 ## Reporting Errors
 

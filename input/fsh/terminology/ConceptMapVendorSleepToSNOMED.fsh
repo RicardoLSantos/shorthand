@@ -225,12 +225,12 @@ Usage: #definition
 * group[0].element[0].target[0].display = "Awake"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 248218005 = Awake"
-* group[0].element[1].code = #light
+* group[0].element[1].code = #oura-sleep-stages-light
 * group[0].element[1].display = "Light Sleep"
 * group[0].element[1].target[0].code = #248220008
 * group[0].element[1].target[0].display = "Asleep"
 * group[0].element[1].target[0].equivalence = #wider
-* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no N1/N2 code. Using generic 'Asleep' (248220008)."
+* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no N1/N2 code. Using generic 'Asleep' (248220008). Code renamed from #light during consolidation."
 * group[0].element[2].code = #deep
 * group[0].element[2].display = "Deep Sleep"
 * group[0].element[2].target[0].code = #248220008

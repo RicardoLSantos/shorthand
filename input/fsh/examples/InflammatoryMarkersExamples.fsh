@@ -30,7 +30,7 @@ Usage: #example
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mg/L
 * interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
-* interpretation.coding.code = #low-risk
+* interpretation.coding.code = #crp-risk-low-risk
 * interpretation.coding.display = "Low cardiovascular risk"
 * note.text = "Normal CRP level consistent with low systemic inflammation. Patient has good HRV metrics (RMSSD 45ms)."
 
@@ -57,7 +57,7 @@ Usage: #example
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #mg/L
 * interpretation.coding.system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
-* interpretation.coding.code = #high-risk
+* interpretation.coding.code = #crp-risk-high-risk
 * interpretation.coding.display = "High cardiovascular risk"
 * note.text = "Elevated CRP suggests systemic inflammation. Correlates with reduced HRV (RMSSD 22ms). Consider lifestyle intervention."
 

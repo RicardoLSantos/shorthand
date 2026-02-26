@@ -38,13 +38,13 @@ Usage: #definition
 // ============================================================================
 
 // WATER INTAKE - CODE NOT FOUND ❌
-* group[0].element[0].code = #water-intake
+* group[0].element[0].code = #nutrition-water-intake
 * group[0].element[0].display = "Water intake volume"
 * group[0].element[0].target[0].equivalence = #unmatched
 * group[0].element[0].target[0].comment = "GAP: SNOMED CT code 226364002 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for fluid/water intake."
 
 // CALORIC INTAKE - CODE NOT FOUND ❌
-* group[0].element[1].code = #caloric-intake
+* group[0].element[1].code = #nutrition-caloric-intake
 * group[0].element[1].display = "Total caloric intake"
 * group[0].element[1].target[0].equivalence = #unmatched
 * group[0].element[1].target[0].comment = "GAP: SNOMED CT code 226355004 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary energy intake."
@@ -56,19 +56,19 @@ Usage: #definition
 * group[0].element[2].target[0].comment = "GAP: No SNOMED CT code for macronutrients panel. Individual nutrient codes also do not exist."
 
 // PROTEIN INTAKE - CODE NOT FOUND ❌
-* group[0].element[3].code = #protein-intake
+* group[0].element[3].code = #nutrition-protein-intake
 * group[0].element[3].display = "Protein intake"
 * group[0].element[3].target[0].equivalence = #unmatched
 * group[0].element[3].target[0].comment = "GAP: SNOMED CT code 226357007 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary protein intake."
 
 // FAT INTAKE - CODE NOT FOUND ❌
-* group[0].element[4].code = #fat-intake
+* group[0].element[4].code = #nutrition-fat-intake
 * group[0].element[4].display = "Fat intake"
 * group[0].element[4].target[0].equivalence = #unmatched
 * group[0].element[4].target[0].comment = "GAP: SNOMED CT code 226358002 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary fat intake."
 
 // CARBOHYDRATE INTAKE - CODE NOT FOUND ❌
-* group[0].element[5].code = #carbohydrate-intake
+* group[0].element[5].code = #nutrition-carbohydrate-intake
 * group[0].element[5].display = "Carbohydrate intake"
 * group[0].element[5].target[0].equivalence = #unmatched
 * group[0].element[5].target[0].comment = "GAP: SNOMED CT code 226359005 does NOT exist (verified 2025-12-08 via tx.fhir.org). No standard code for dietary carbohydrate intake."
