@@ -18,7 +18,7 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 ### Key Features
 
 - **74 FHIR Profiles** for wearable observations and lifestyle metrics
-- **29 CodeSystems** (consolidated from 148 following HL7 Physical Activity IG "Temporary Codes" pattern)
+- **30 CodeSystems** (consolidated from 148 following HL7 Physical Activity IG "Temporary Codes" pattern)
 - **173 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
 - **28 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
 - **CQL/GDL2** clinical decision support rules
@@ -41,7 +41,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.2.0<br/>74 Profiles | 29 CS | 173 VS"]
+        FHIRIG["FHIR IG v0.2.0<br/>74 Profiles | 30 CS | 173 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -111,7 +111,7 @@ sequenceDiagram
 | **ValueSets** | 173 | LOINC, SNOMED CT, custom bindings |
 | **ConceptMaps** | 28 | Cross-terminology mappings |
 | **Examples** | 189 | Validation instances |
-| **Total** | **537** | All artifacts |
+| **Total** | **538** | All artifacts |
 | **FSH Files** | 171 | Total source files |
 | **FSH Lines** | 21,491 | Total lines of FSH code |
 

@@ -50,6 +50,19 @@ Description: "Garmin proprietary sleep stage classifications from Garmin Connect
 * #deep "Deep" "Deep sleep (N3/slow-wave)"
 * #rem "REM" "REM sleep"
 * #unmeasurable "Unmeasurable" "Sleep stage could not be determined"
+
+CodeSystem: OuraSleepStagesCS
+Id: oura-sleep-stages-cs
+Title: "Oura Ring Sleep Stages CodeSystem"
+Description: "Oura Ring proprietary sleep stage classifications from Oura Cloud API v2. Reference: https://cloud.ouraring.com/docs/"
+* ^experimental = false
+* ^caseSensitive = true
+* ^content = #complete
+* #awake "Awake" "Awake periods during sleep session"
+* #light "Light Sleep" "Light NREM sleep (N1+N2)"
+* #deep "Deep Sleep" "Deep NREM sleep (N3/slow-wave)"
+* #rem "REM Sleep" "REM sleep phase"
+
 CodeSystem: AppleSleepStagesCS
 Id: apple-sleep-stages-cs
 Title: "Apple HealthKit Sleep Stages CodeSystem"
@@ -102,7 +115,7 @@ Id: oura-sleep-stages-vs
 Title: "Oura Sleep Stages ValueSet"
 Description: "ValueSet containing Oura Ring proprietary sleep stage codes"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* include codes from system OuraSleepStagesCS
 
 ValueSet: AppleSleepStagesVS
 Id: apple-sleep-stages-vs
@@ -216,21 +229,22 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/oura-sleep-stages-vs"
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
+* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/oura-sleep-stages-cs"
 * group[0].target = "http://snomed.info/sct"
 // CORRECTED 2025-12-08: Use verified SNOMED codes only
+// UPDATED 2026-02-26: Source changed from LifestyleMedicineTemporaryCS to OuraSleepStagesCS (vendor alignment)
 * group[0].element[0].code = #awake
 * group[0].element[0].display = "Awake"
 * group[0].element[0].target[0].code = #248218005
 * group[0].element[0].target[0].display = "Awake"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 248218005 = Awake"
-* group[0].element[1].code = #oura-sleep-stages-light
+* group[0].element[1].code = #light
 * group[0].element[1].display = "Light Sleep"
 * group[0].element[1].target[0].code = #248220008
 * group[0].element[1].target[0].display = "Asleep"
 * group[0].element[1].target[0].equivalence = #wider
-* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no N1/N2 code. Using generic 'Asleep' (248220008). Code renamed from #light during consolidation."
+* group[0].element[1].target[0].comment = "GAP: SNOMED CT has no N1/N2 code. Using generic 'Asleep' (248220008)."
 * group[0].element[2].code = #deep
 * group[0].element[2].display = "Deep Sleep"
 * group[0].element[2].target[0].code = #248220008

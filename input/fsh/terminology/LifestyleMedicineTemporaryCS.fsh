@@ -19,7 +19,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 1119
+* ^count = 1115
 
 // Traceability: codes renamed due to collisions are documented via inline comments.
 // Full mapping available in scripts/consolidation_mapping.json
@@ -938,12 +938,9 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
   // Renamed from NutritionDataSourceCS#device (collision resolution)
 * #questionnaire "Questionnaire Response" "Data collected through questionnaires"
 
-// --- Domain: oura-sleep-stages (from OuraSleepStagesCS) ---
-* #awake "Awake" "Awake time during sleep period"
-* #oura-sleep-stages-light "Light Sleep" "Light NREM sleep (stages 1-2)"
-  // Renamed from OuraSleepStagesCS#light (collision resolution)
-* #deep "Deep Sleep" "Deep NREM sleep (stage 3)"
-* #rem "REM" "REM sleep phase"
+// --- Domain: oura-sleep-stages ---
+// REMOVED 2026-02-26: Oura sleep codes moved to dedicated OuraSleepStagesCS
+// (aligns with Apple/Fitbit/Garmin vendor CodeSystem pattern)
 
 // --- Domain: ovulation-test (from OvulationTestCodeSystem) ---
 * #negative "Negative"
