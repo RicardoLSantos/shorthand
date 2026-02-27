@@ -50,7 +50,7 @@ Progression patterns for symptoms.
 * $SCT#230993007 "Worsening (qualifier value)"
 * $SCT#255314001 "Progressive (qualifier value)"
 // Note: No specific SNOMED code for "Fluctuating" - use custom code if needed
-* LifestyleMedicineTemporaryCS#fluctuating "Fluctuating"
+* AppLogicCS#fluctuating "Fluctuating"
 ValueSet: TimeOfDayVS
 Id: time-of-day-vs
 Title: "Time of Day Value Set"
@@ -65,4 +65,4 @@ Times of day for symptom occurrence.
 * $SCT#2546009 "Night time (qualifier value)"
 * $SCT#73775008 "Morning (qualifier value)"
 // Add evening as custom code since SNOMED 2546009 is "Night time" not "Evening"
-* LifestyleMedicineTemporaryCS#time-of-day-evening "Evening"
+* AppLogicCS#time-of-day-evening "Evening"

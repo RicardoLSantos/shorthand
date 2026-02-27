@@ -125,7 +125,7 @@ Title: "Nutrition Intake Observation Example"
 * method = $SCT#229059009 "Report"
 * note.text = "Lunch meal - Mediterranean diet"
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-data-source"
-* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#manual "Manual Entry"
+* extension[=].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs#manual "Manual Entry"
 
 // -----------------------------------------------------------------------------
 // F2.11.5: Micronutrients Examples

@@ -95,13 +95,13 @@ Description: "Example of VO2max estimation from Apple Watch during outdoor run"
 * component[methodType].valueCodeableConcept = LifestyleMedicineTemporaryCS#submaximal "Submaximal Test"
 
 // Validation status - code is fixed by profile (LifestyleMedicineTemporaryCS#validation)
-* component[validationStatus].valueCodeableConcept = LifestyleMedicineTemporaryCS#validation-clinical "Clinically Validated"
+* component[validationStatus].valueCodeableConcept = AppLogicCS#validation-clinical "Clinically Validated"
 
 // Trend - code is fixed by profile (LifestyleMedicineTemporaryCS#vo2max-trend)
 * component[vo2maxTrend].valueCodeableConcept = LifestyleMedicineTemporaryCS#vo2max-trend-improving "Improving"
 
 // Cardiovascular risk - code is fixed by profile (LifestyleMedicineTemporaryCS#cv-risk)
-* component[cvRiskCategory].valueCodeableConcept = LifestyleMedicineTemporaryCS#cv-risk-low "Low Risk"
+* component[cvRiskCategory].valueCodeableConcept = AppLogicCS#cv-risk-low "Low Risk"
 
 * note.text = "VO2max estimated during 30-min outdoor run at moderate intensity. Above average for age/sex."
 

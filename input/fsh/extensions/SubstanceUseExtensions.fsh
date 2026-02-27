@@ -18,10 +18,15 @@ Context: Observation
 ValueSet: SubstanceUseMotivationVS
 Id: substance-use-motivation-vs
 Title: "Substance Use Motivation ValueSet"
-Description: "Stages of change / motivation levels based on Transtheoretical Model"
+Description: "Stages of change (Prochaska Transtheoretical Model) using standard SNOMED CT qualifier values. Replaces custom codes per Cat B remediation (2026-02-27)."
 * ^experimental = false
-* ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* ^version = "0.2.0"
+* http://snomed.info/sct#134414000 "Precontemplation stage"
+* http://snomed.info/sct#134413006 "Contemplation stage"
+* http://snomed.info/sct#134412001 "Preparation stage"
+* http://snomed.info/sct#134411008 "Action stage"
+* http://snomed.info/sct#134410009 "Maintenance stage"
+* http://snomed.info/sct#134409004 "Relapse stage"
 Extension: SubstanceUseTrigger
 Id: substance-use-trigger
 Title: "Substance Use Trigger"
@@ -67,10 +72,16 @@ Description: "Methods of support for substance use cessation"
 ValueSet: CessationSupportStatusVS
 Id: cessation-support-status-vs
 Title: "Cessation Support Status ValueSet"
-Description: "Status of cessation support engagement"
+Description: "Status of cessation support engagement. Cat B Tier 2 remediation (2026-02-27): replaced bulk include with enumerated clinical cessation status codes."
 * ^experimental = false
-* ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* ^version = "0.2.0"
+// All codes are cessation-specific clinical states (not generic task-status)
+* LifestyleMedicineTemporaryCS#considering "Considering"
+* LifestyleMedicineTemporaryCS#scheduled "Scheduled"
+* LifestyleMedicineTemporaryCS#cessation-status-active "Active"
+* LifestyleMedicineTemporaryCS#cessation-status-completed "Completed"
+* LifestyleMedicineTemporaryCS#discontinued "Discontinued"
+* LifestyleMedicineTemporaryCS#not-interested "Not interested"
 Extension: DrinkingContext
 Id: drinking-context
 Title: "Drinking Context"

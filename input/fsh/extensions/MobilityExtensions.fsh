@@ -25,12 +25,10 @@ Description: "Extension for mobility measurements alert levels to indicate the s
 ValueSet: MobilityAlertLevelVS
 Id: mobility-alert-level-vs
 Title: "Mobility Alert Level Value Set"
-Description: "Value set for mobility measurement alert levels used to categorize the severity of mobility changes or concerns"
+Description: "Alert levels for mobility measurements using standard HL7 Observation Interpretation codes. Replaces custom traffic-light codes per Cat B remediation (2026-02-27)."
 * ^experimental = false
 * ^status = #active
-* ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^version = "0.2.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -39,4 +37,6 @@ Description: "Value set for mobility measurement alert levels used to categorize
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^purpose = "To provide standardized alert levels for mobility measurements"
-* codes from system LifestyleMedicineTemporaryCS
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#A "Abnormal"
+* http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#AA "Critical abnormal"

@@ -262,8 +262,8 @@ Description: "Example plan definition for agent-based HRV risk assessment"
 * publisher = "FMUP HEADS2 Project"
 * description = "Decision logic for LLM agent assessment of HRV data for cardiovascular risk stratification. Uses RMSSD thresholds from Shaffer & Ginsberg 2017."
 
-* topic[0] = LifestyleMedicineTemporaryCS#hrv-monitoring "HRV Monitoring"
-* topic[1] = LifestyleMedicineTemporaryCS#cardiovascular-risk "Cardiovascular Risk"
+* topic[0] = AgentDecisionSupportCS#hrv-monitoring "HRV Monitoring"
+* topic[1] = AgentDecisionSupportCS#cardiovascular-risk "Cardiovascular Risk"
 
 * action[0]
   * title = "Evaluate HRV RMSSD Value"

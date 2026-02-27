@@ -17,7 +17,7 @@ Title: "Complete Mindfulness Session Example"
 * component[stressLevel].valueInteger = 3
 
 * component[moodState].code = $SCT#106131003 "Mood finding"
-* component[moodState].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#calm "Calm"
+* component[moodState].valueCodeableConcept = http://snomed.info/sct#102894008 "Feeling calm"
 
 // Code inherited from profile
 * component[relaxationResponse].valueString = "Deep breathing exercises with progressive relaxation"
@@ -26,7 +26,7 @@ Title: "Complete Mindfulness Session Example"
 * component[mindfulnessType].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-type-meditation "Meditation"
 
 * extension[mindfulness-context].extension[location].valueString = "Home meditation room"
-* extension[mindfulness-context].extension[environment].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#quiet "Quiet Space"
+* extension[mindfulness-context].extension[environment].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs#quiet "Quiet Space"
 * extension[mindfulness-context].extension[guidance].valueBoolean = true
 
 Instance: CompleteMindfulnessResponse
@@ -53,7 +53,7 @@ Title: "Complete Mindfulness Session Response"
   * linkId = "mood_assessment"
   * item[0]
     * linkId = "current_mood"
-    * answer.valueCoding = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mood-elevated "Elevated"
+    * answer.valueCoding = http://snomed.info/sct#247778001 "Elevated mood"
   * item[1]
     * linkId = "mood_intensity"
     * answer.valueInteger = 3

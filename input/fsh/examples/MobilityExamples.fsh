@@ -163,6 +163,6 @@ Title: "Mobility Alert Level Extension Example"
 
 // Mobility Alert Level extension - Red alert for significant change
 * extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-alert-level"
-* extension[0].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#red "Alert - Significant change"
+* extension[0].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#AA "Critical abnormal"
 
 * note.text = "Walking steadiness in Very Low range (<40%). RED alert triggered. Immediate fall risk assessment recommended. Previous reading was 52% (2 weeks ago)."

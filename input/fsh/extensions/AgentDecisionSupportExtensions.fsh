@@ -64,24 +64,24 @@ Id: agent-interpretation-vs
 Title: "Agent Interpretation ValueSet"
 Description: "ValueSet for LLM agent clinical interpretations"
 * ^experimental = false
-* LifestyleMedicineTemporaryCS#agent-interpretation-high-risk "High Risk"
-* LifestyleMedicineTemporaryCS#agent-interpretation-moderate-risk "Moderate Risk"
-* LifestyleMedicineTemporaryCS#agent-interpretation-low-risk "Low Risk"
-* LifestyleMedicineTemporaryCS#minimal-risk "Minimal Risk"
-* LifestyleMedicineTemporaryCS#escalate-clinician "Escalate to Clinician"
-* LifestyleMedicineTemporaryCS#agent-interpretation-schedule-followup "Schedule Follow-up"
-* LifestyleMedicineTemporaryCS#continue-monitoring "Continue Monitoring"
-* LifestyleMedicineTemporaryCS#agent-interpretation-lifestyle-intervention "Lifestyle Intervention"
+* AgentDecisionSupportCS#agent-interpretation-high-risk "High Risk"
+* AgentDecisionSupportCS#agent-interpretation-moderate-risk "Moderate Risk"
+* AgentDecisionSupportCS#agent-interpretation-low-risk "Low Risk"
+* AgentDecisionSupportCS#minimal-risk "Minimal Risk"
+* AgentDecisionSupportCS#escalate-clinician "Escalate to Clinician"
+* AgentDecisionSupportCS#agent-interpretation-schedule-followup "Schedule Follow-up"
+* AgentDecisionSupportCS#continue-monitoring "Continue Monitoring"
+* AgentDecisionSupportCS#agent-interpretation-lifestyle-intervention "Lifestyle Intervention"
 ValueSet: AgentConfidenceLevelVS
 Id: agent-confidence-level-vs
 Title: "Agent Confidence Level ValueSet"
 Description: "ValueSet for categorical agent confidence levels"
 * ^experimental = false
-* LifestyleMedicineTemporaryCS#agent-confidence-very-high "Very High Confidence"
-* LifestyleMedicineTemporaryCS#agent-confidence-high "High Confidence"
-* LifestyleMedicineTemporaryCS#agent-confidence-moderate "Moderate Confidence"
-* LifestyleMedicineTemporaryCS#agent-confidence-low "Low Confidence"
-* LifestyleMedicineTemporaryCS#agent-confidence-very-low "Very Low Confidence"
+* AgentDecisionSupportCS#agent-confidence-very-high "Very High Confidence"
+* AgentDecisionSupportCS#agent-confidence-high "High Confidence"
+* AgentDecisionSupportCS#agent-confidence-moderate "Moderate Confidence"
+* AgentDecisionSupportCS#agent-confidence-low "Low Confidence"
+* AgentDecisionSupportCS#agent-confidence-very-low "Very Low Confidence"
 
 // ============================================================================
 // Agent Evidence Quality Extension
@@ -117,11 +117,11 @@ Id: agent-data-completeness-vs
 Title: "Agent Data Completeness ValueSet"
 Description: "Data completeness assessment values for agent analysis ranging from complete to insufficient"
 * ^experimental = false
-* LifestyleMedicineTemporaryCS#agent-completeness-complete "Complete"
-* LifestyleMedicineTemporaryCS#mostly-complete "Mostly Complete"
-* LifestyleMedicineTemporaryCS#partial "Partial"
-* LifestyleMedicineTemporaryCS#sparse "Sparse"
-* LifestyleMedicineTemporaryCS#agent-completeness-insufficient "Insufficient"
+* AgentDecisionSupportCS#agent-completeness-complete "Complete"
+* AgentDecisionSupportCS#mostly-complete "Mostly Complete"
+* AgentDecisionSupportCS#partial "Partial"
+* AgentDecisionSupportCS#sparse "Sparse"
+* AgentDecisionSupportCS#agent-completeness-insufficient "Insufficient"
 
 // ============================================================================
 // Agent Action Tracking Extension
@@ -159,9 +159,9 @@ Id: agent-action-status-vs
 Title: "Agent Action Status ValueSet"
 Description: "Status codes for agent-recommended actions including pending, accepted, rejected, and completed"
 * ^experimental = false
-* LifestyleMedicineTemporaryCS#pending "Pending"
-* LifestyleMedicineTemporaryCS#accepted "Accepted"
-* LifestyleMedicineTemporaryCS#rejected "Rejected"
-* LifestyleMedicineTemporaryCS#modified "Modified"
-* LifestyleMedicineTemporaryCS#agent-action-status-completed "Completed"
-* LifestyleMedicineTemporaryCS#expired "Expired"
+* AgentDecisionSupportCS#pending "Pending"
+* AgentDecisionSupportCS#accepted "Accepted"
+* AgentDecisionSupportCS#rejected "Rejected"
+* AgentDecisionSupportCS#modified "Modified"
+* AgentDecisionSupportCS#agent-action-status-completed "Completed"
+* AgentDecisionSupportCS#expired "Expired"

@@ -46,7 +46,7 @@ Description: "Example of a current smoker with motivation assessment"
 * component[cigarettesPerDay].valueQuantity = 20 '/d' "per day"
 * component[tobaccoType].code = $LOINC#81228-9 "Tobacco product"
 * component[tobaccoType].valueCodeableConcept = $SCT#722496004 "Cigarette"
-* extension[motivation].valueCodeableConcept = LifestyleMedicineTemporaryCS#contemplation "Contemplation"
+* extension[motivation].valueCodeableConcept = http://snomed.info/sct#134413006 "Contemplation stage"
 * extension[trigger][0].valueCodeableConcept = LifestyleMedicineTemporaryCS#substance-trigger-stress "Stress"
 * extension[trigger][1].valueCodeableConcept = LifestyleMedicineTemporaryCS#morning "Morning routine"
 
@@ -82,7 +82,7 @@ Description: "Example of moderate alcohol consumption with AUDIT-C score"
 * component[drinksPerWeek].code = $LOINC#68519-8 "How many standard drinks containing alcohol do you have on a typical day"
 * component[drinksPerWeek].valueQuantity = 7 '/wk' "per week"
 * component[drinkingFrequency].code = $LOINC#68518-0 "How often do you have a drink containing alcohol"
-* component[drinkingFrequency].valueCodeableConcept = LifestyleMedicineTemporaryCS#2-3-per-week "2-3 times per week"
+* component[drinkingFrequency].valueCodeableConcept = http://loinc.org#LA18928-4 "2-3 times a week"
 * component[auditCScore].code = $LOINC#75626-2 "Total score [AUDIT-C]"
 * component[auditCScore].valueInteger = 4
 * component[alcoholType].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#alcohol-type "Type of alcoholic beverage"
@@ -102,7 +102,7 @@ Description: "Example of a patient who does not consume alcohol"
 * performer = Reference(Practitioner/PractitionerExample)
 * valueCodeableConcept = $SCT#105542008 "Non-drinker of alcohol (finding)"
 * component[drinkingFrequency].code = $LOINC#68518-0 "How often do you have a drink containing alcohol"
-* component[drinkingFrequency].valueCodeableConcept = LifestyleMedicineTemporaryCS#alcohol-freq-never "Never"
+* component[drinkingFrequency].valueCodeableConcept = http://loinc.org#LA6270-8 "Never"
 * component[auditCScore].code = $LOINC#75626-2 "Total score [AUDIT-C]"
 * component[auditCScore].valueInteger = 0
 
@@ -121,12 +121,12 @@ Description: "Example of high-risk alcohol consumption with binge episodes"
 * component[drinksPerWeek].code = $LOINC#68519-8 "How many standard drinks containing alcohol do you have on a typical day"
 * component[drinksPerWeek].valueQuantity = 21 '/wk' "per week"
 * component[drinkingFrequency].code = $LOINC#68518-0 "How often do you have a drink containing alcohol"
-* component[drinkingFrequency].valueCodeableConcept = LifestyleMedicineTemporaryCS#alcohol-freq-daily "Daily"
+* component[drinkingFrequency].valueCodeableConcept = http://loinc.org#LA14435-4 "Daily"
 * component[bingeEpisodes].code = $LOINC#68520-6 "How often do you have 6 or more drinks on 1 occasion"
 * component[bingeEpisodes].valueQuantity = 4 '/mo' "per month"
 * component[auditCScore].code = $LOINC#75626-2 "Total score [AUDIT-C]"
 * component[auditCScore].valueInteger = 9
-* extension[motivation].valueCodeableConcept = LifestyleMedicineTemporaryCS#precontemplation "Precontemplation"
+* extension[motivation].valueCodeableConcept = http://snomed.info/sct#134414000 "Precontemplation stage"
 * extension[trigger][0].valueCodeableConcept = LifestyleMedicineTemporaryCS#substance-trigger-stress "Stress"
 
 // =============================================================================
@@ -189,9 +189,9 @@ Description: "Comprehensive summary of patient's substance use patterns for life
 * component[alcoholStatus].code = $LOINC#11331-6 "History of Alcohol use"
 * component[alcoholStatus].valueCodeableConcept = $SCT#43783005 "Moderate drinker (finding)"
 * component[caffeineStatus].code = $LOINC#80489-8 "Caffeine intake 24 hour Estimated"
-* component[caffeineStatus].valueCodeableConcept = LifestyleMedicineTemporaryCS#caffeine-level-moderate "Moderate"
+* component[caffeineStatus].valueCodeableConcept = AppLogicCS#caffeine-level-moderate "Moderate"
 * component[overallRiskLevel].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-risk-level "Overall substance use risk level"
-* component[overallRiskLevel].valueCodeableConcept = LifestyleMedicineTemporaryCS#substance-risk-low "Low risk"
+* component[overallRiskLevel].valueCodeableConcept = AppLogicCS#substance-risk-low "Low risk"
 * hasMember[tobaccoUse] = Reference(TobaccoUseExSmokerExample)
 * hasMember[alcoholUse] = Reference(AlcoholUseModerateExample)
 * hasMember[caffeineIntake] = Reference(CaffeineIntakeModerateExample)

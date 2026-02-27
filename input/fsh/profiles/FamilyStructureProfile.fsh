@@ -121,9 +121,20 @@ References:
 ValueSet: LivingSituationVS
 Id: living-situation-vs
 Title: "Living Situation Value Set"
-Description: "Living situation categories"
+Description: "Living situation categories using SNOMED CT where available. Cat B Tier 2 remediation (2026-02-27)."
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* ^version = "0.2.0"
+// SNOMED CT - Verified via local SNOMED database (2026-02-27)
+* $SCT#105529008 "Lives alone"
+* $SCT#447051007 "Lives with spouse"
+* $SCT#224133007 "Lives with family"
+* $SCT#160734000 "Lives in nursing home"
+* $SCT#160700001 "Homeless single person"
+// Custom codes - SNOMED gap (no standard equivalent)
+* LifestyleMedicineTemporaryCS#living-multigenerational "Multigenerational"
+* LifestyleMedicineTemporaryCS#with-roommates "With Roommates"
+* LifestyleMedicineTemporaryCS#assisted-living "Assisted Living"
+* LifestyleMedicineTemporaryCS#temporary "Temporary Housing"
 
 ValueSet: HouseholdTypeVS
 Id: household-type-vs

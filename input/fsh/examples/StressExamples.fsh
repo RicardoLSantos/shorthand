@@ -15,7 +15,7 @@ Title: "Stress Level Measurement Example"
 * component[physiologicalStress].valueQuantity = 6 '1' "score"
 * component[psychologicalStress].valueQuantity = 8 '1' "score"
 * component[chronicity].valueCodeableConcept = LifestyleMedicineTemporaryCS#subacute
-* component[impact].valueCodeableConcept = LifestyleMedicineTemporaryCS#stress-impact-moderate
+* component[impact].valueCodeableConcept = AppLogicCS#stress-impact-moderate
 
 * extension[triggers].valueCodeableConcept = LifestyleMedicineTemporaryCS#stress-triggers-work
 * extension[coping].valueCodeableConcept = LifestyleMedicineTemporaryCS#stress-coping-meditation
@@ -47,5 +47,5 @@ Description: "Stress trigger observation with semantic anchoring via LOINC LA An
 * code.coding[1] = $LOINC#LA17981-4 "Financial"
 * code.text = "Stress trigger: financial"
 
-* valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#stress-impact-moderate "Moderate impact"
+* valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs#stress-impact-moderate "Moderate impact"
 * note.text = "Self-reported financial stress trigger. LOINC LA17981-4 is an Answer code (discrete option for 'what triggers stress?') — not an observation code. Dual-coding anchors this custom concept to the LOINC Answer ecosystem."

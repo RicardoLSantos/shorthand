@@ -17,7 +17,7 @@ Title: "Example of Mindfulness Session Observation"
 * component[stressLevel].valueInteger = 4
 
 * component[moodState].code = $SCT#106131003 "Mood finding"
-* component[moodState].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#calm "Calm"
+* component[moodState].valueCodeableConcept = http://snomed.info/sct#102894008 "Feeling calm"
 
 // Code inherited from profile
 * component[relaxationResponse].valueString = "Deep breathing exercises helped reduce tension"

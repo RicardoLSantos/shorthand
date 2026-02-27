@@ -181,7 +181,7 @@ Description: "Example showing device capture metadata extension for research-gra
 * agent[device].extension[DeviceCaptureMetadata].extension[samplingRate].valueQuantity.system = "http://unitsofmeasure.org"
 * agent[device].extension[DeviceCaptureMetadata].extension[samplingRate].valueQuantity.code = #Hz
 * agent[device].extension[DeviceCaptureMetadata].extension[sensorType].valueCodeableConcept = LifestyleMedicineTemporaryCS#ppg "Photoplethysmography (PPG)"
-* agent[device].extension[DeviceCaptureMetadata].extension[captureMethod].valueCodeableConcept = LifestyleMedicineTemporaryCS#automatic "Automatic"
+* agent[device].extension[DeviceCaptureMetadata].extension[captureMethod].valueCodeableConcept = AppLogicCS#automatic "Automatic"
 
 // Author agent
 * agent[author].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author

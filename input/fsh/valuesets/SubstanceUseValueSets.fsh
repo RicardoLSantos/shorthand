@@ -46,17 +46,22 @@ ValueSet: TobaccoProductTypeVS
 Id: tobacco-product-type-vs
 Title: "Tobacco Product Type ValueSet"
 Description: """
-Types of tobacco products.
-
-**SNOMED CT Gap**: SNOMED CT International Edition lacks specific codes for
-individual tobacco product types (cigarette, cigar, pipe) as physical objects.
-The codes 722498003, 722499006 are actually electronic cigarette-related.
-
-This ValueSet uses a custom CodeSystem with clinically relevant product types.
+Types of tobacco products using SNOMED CT substance codes where available,
+with custom codes for products lacking standard equivalents.
+Cat B Tier 2 remediation (2026-02-27): replaced bulk include with enumerated codes.
 """
 * ^experimental = false
-* ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* ^version = "0.2.0"
+// SNOMED CT - Verified via local SNOMED database (2026-02-27)
+* $SCT#66562002 "Cigarette smoking tobacco"
+* $SCT#26663004 "Cigar smoking tobacco"
+* $SCT#84498003 "Pipe smoking tobacco"
+* $SCT#722495000 "Hookah pipe"
+* $SCT#722498003 "Electronic cigarette"
+// Custom codes - SNOMED gap (no standard equivalent)
+* LifestyleMedicineTemporaryCS#chewing-tobacco "Chewing tobacco"
+* LifestyleMedicineTemporaryCS#snuff "Snuff"
+* LifestyleMedicineTemporaryCS#heated-tobacco "Heated tobacco"
 ValueSet: AlcoholUseStatusVS
 Id: alcohol-use-status-vs
 Title: "Alcohol Use Status ValueSet"
@@ -77,17 +82,29 @@ Description: "Status categories for alcohol consumption"
 ValueSet: AlcoholDrinkingFrequencyVS
 Id: alcohol-drinking-frequency-vs
 Title: "Alcohol Drinking Frequency ValueSet"
-Description: "AUDIT-style frequency categories for alcohol consumption"
+Description: "AUDIT-C frequency categories for alcohol consumption using standard LOINC Answer codes. Replaces custom codes per Cat B remediation (2026-02-27)."
 * ^experimental = false
-* ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* ^version = "0.2.0"
+* http://loinc.org#LA6270-8 "Never"
+* http://loinc.org#LA18926-8 "Monthly or less"
+* http://loinc.org#LA18927-6 "2-4 times a month"
+* http://loinc.org#LA18928-4 "2-3 times a week"
+* http://loinc.org#LA18929-2 "4 or more times a week"
+* http://loinc.org#LA14435-4 "Daily"
 ValueSet: AlcoholBeverageTypeVS
 Id: alcohol-beverage-type-vs
 Title: "Alcohol Beverage Type ValueSet"
-Description: "Types of alcoholic beverages"
+Description: "Types of alcoholic beverages using SNOMED CT substance codes where available. Cat B Tier 2 remediation (2026-02-27)."
 * ^experimental = false
-* ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* ^version = "0.2.0"
+// SNOMED CT - Verified via local SNOMED database (2026-02-27)
+* $SCT#53410008 "Beer"
+* $SCT#35748005 "Wine"
+* $SCT#226025006 "Hard cider"
+* $SCT#228982004 "Fortified wine"
+// Custom codes - SNOMED gap (no standard equivalent for mixed/distilled categories)
+* LifestyleMedicineTemporaryCS#spirits "Spirits"
+* LifestyleMedicineTemporaryCS#cocktails "Cocktails"
 ValueSet: CaffeineSourceVS
 Id: caffeine-source-vs
 Title: "Caffeine Source ValueSet"
@@ -154,8 +171,14 @@ Using custom CodeSystem for substance categories where SNOMED lacks class-level 
 * $SCT#387085005 "Cocaine (substance)"
 * $SCT#75672003 "Amphetamine (substance)"
 * $SCT#288459003 "MDMA (substance)"
-// Custom codes for substance categories (SNOMED gap)
-* include codes from system LifestyleMedicineTemporaryCS
+// Custom codes for substance CLASS categories (SNOMED gap - no class-level codes)
+* LifestyleMedicineTemporaryCS#opioids "Opioids"
+* LifestyleMedicineTemporaryCS#benzodiazepines "Benzodiazepines"
+* LifestyleMedicineTemporaryCS#hallucinogens "Hallucinogens"
+* LifestyleMedicineTemporaryCS#sedatives "Sedatives"
+* LifestyleMedicineTemporaryCS#inhalants "Inhalants"
+* LifestyleMedicineTemporaryCS#synthetic-cannabinoids "Synthetic cannabinoids"
+* LifestyleMedicineTemporaryCS#new-psychoactive "New psychoactive substances"
 ValueSet: SubstanceUseFrequencyVS
 Id: substance-use-frequency-vs
 Title: "Substance Use Frequency ValueSet"

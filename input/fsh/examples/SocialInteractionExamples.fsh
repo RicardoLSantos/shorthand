@@ -26,12 +26,12 @@ Title: "Social Interaction Example - Family Meal"
 * valueCodeableConcept = LifestyleMedicineTemporaryCS#family
 
 * component[duration].valueQuantity = 120 'min' "minutes"
-* component[quality].valueCodeableConcept = LifestyleMedicineTemporaryCS#social-interaction-quality-meaningful
+* component[quality].valueCodeableConcept = AppLogicCS#social-interaction-quality-meaningful
 * component[medium].valueCodeableConcept = LifestyleMedicineTemporaryCS#inPerson
 * component[participants].valueInteger = 4
 
 * extension[context].valueCodeableConcept = LifestyleMedicineTemporaryCS#social-context-home
-* extension[support].valueCodeableConcept = LifestyleMedicineTemporaryCS#strong
+* extension[support].valueCodeableConcept = AppLogicCS#strong
 * extension[activity].valueCodeableConcept = LifestyleMedicineTemporaryCS#meal
 
 // -----------------------------------------------------------------------------
@@ -97,7 +97,7 @@ Title: "Social Support Assessment - High MSPSS"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T11:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* valueCodeableConcept = LifestyleMedicineTemporaryCS#social-support-level-high "High Support"
+* valueCodeableConcept = AppLogicCS#social-support-level-high "High Support"
 * method = LifestyleMedicineTemporaryCS#mspss "MSPSS"
 
 * component[totalScore].valueQuantity = 72 '{score}' "{score}"
@@ -122,7 +122,7 @@ Title: "Social Support Assessment - Low MSPSS"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T11:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* valueCodeableConcept = LifestyleMedicineTemporaryCS#social-support-level-low "Low Support"
+* valueCodeableConcept = AppLogicCS#social-support-level-low "Low Support"
 * method = LifestyleMedicineTemporaryCS#mspss "MSPSS"
 
 * component[totalScore].valueQuantity = 28 '{score}' "{score}"
@@ -200,13 +200,13 @@ Title: "Social Isolation Risk - High Risk"
 
 * prediction[0].outcome = LifestyleMedicineTemporaryCS#chronic-isolation "Chronic Social Isolation"
 * prediction[0].probabilityDecimal = 0.75
-* prediction[0].qualitativeRisk = LifestyleMedicineTemporaryCS#isolation-level-high "High Risk"
+* prediction[0].qualitativeRisk = AppLogicCS#isolation-level-high "High Risk"
 * prediction[0].whenPeriod.start = "2026-01-10"
 * prediction[0].whenPeriod.end = "2026-07-10"
 
 * prediction[1].outcome = LifestyleMedicineTemporaryCS#depression-onset "Depression Onset"
 * prediction[1].probabilityDecimal = 0.45
-* prediction[1].qualitativeRisk = LifestyleMedicineTemporaryCS#isolation-level-moderate "Moderate Risk"
+* prediction[1].qualitativeRisk = AppLogicCS#isolation-level-moderate "Moderate Risk"
 
 * mitigation = "Referral to community befriending service, social prescribing, weekly welfare check"
 * note.text = "Multiple risk factors: recent bereavement, living alone, mobility limitations, recent retirement"
@@ -227,7 +227,7 @@ Title: "Social Isolation Risk - Low Risk"
 
 * prediction[0].outcome = LifestyleMedicineTemporaryCS#chronic-isolation "Chronic Social Isolation"
 * prediction[0].probabilityDecimal = 0.10
-* prediction[0].qualitativeRisk = LifestyleMedicineTemporaryCS#isolation-level-low "Low Risk"
+* prediction[0].qualitativeRisk = AppLogicCS#isolation-level-low "Low Risk"
 
 * note.text = "Strong social network, active in community groups, regular family contact"
 
@@ -249,9 +249,9 @@ Title: "Social Interaction - Video Call"
 * valueCodeableConcept = LifestyleMedicineTemporaryCS#family
 
 * component[duration].valueQuantity = 45 'min' "minutes"
-* component[quality].valueCodeableConcept = LifestyleMedicineTemporaryCS#social-interaction-quality-meaningful
+* component[quality].valueCodeableConcept = AppLogicCS#social-interaction-quality-meaningful
 * component[medium].valueCodeableConcept = LifestyleMedicineTemporaryCS#video
 * component[participants].valueInteger = 6
 
 * extension[context].valueCodeableConcept = LifestyleMedicineTemporaryCS#social-context-home
-* extension[support].valueCodeableConcept = LifestyleMedicineTemporaryCS#adequate
+* extension[support].valueCodeableConcept = AppLogicCS#adequate
