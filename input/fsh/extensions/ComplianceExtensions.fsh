@@ -39,16 +39,11 @@ Id: regulatory-framework-vs
 Title: "Regulatory Framework Value Set"
 Description: "Regulatory frameworks for healthcare data protection"
 * ^experimental = false
-* include codes from system RegulatoryFrameworkCS
+* AppLogicCS#gdpr "GDPR - General Data Protection Regulation"
+* AppLogicCS#hipaa "HIPAA - Health Insurance Portability and Accountability Act"
+* AppLogicCS#lgpd "LGPD - Lei Geral de Proteção de Dados"
+* AppLogicCS#pipeda "PIPEDA - Personal Information Protection and Electronic Documents Act"
+* AppLogicCS#ehds "EHDS - European Health Data Space"
 
-CodeSystem: RegulatoryFrameworkCS
-Id: regulatory-framework-cs
-Title: "Regulatory Framework Code System"
-Description: "Codes for healthcare regulatory frameworks"
-* ^experimental = false
-* ^caseSensitive = true
-* #gdpr "GDPR - General Data Protection Regulation" "European Union data protection regulation"
-* #hipaa "HIPAA - Health Insurance Portability and Accountability Act" "United States healthcare privacy law"
-* #lgpd "LGPD - Lei Geral de Proteção de Dados" "Brazilian general data protection law"
-* #pipeda "PIPEDA - Personal Information Protection and Electronic Documents Act" "Canadian privacy law"
-* #ehds "EHDS - European Health Data Space" "European health data framework"
+// RegulatoryFrameworkCS — MERGED into AppLogicCS Category E (Phase 4, 2026-02-27)
+// 5 codes (gdpr, hipaa, lgpd, pipeda, ehds) now in AppLogicCS

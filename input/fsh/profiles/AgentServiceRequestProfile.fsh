@@ -140,10 +140,27 @@ Id: agent-service-category-vs
 Title: "Agent Service Category ValueSet"
 Description: "Categories of services that agents can recommend including diagnostics, consultations, and interventions"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AgentDecisionSupportCS#order-lab "Order Laboratory Test"
+* AgentDecisionSupportCS#order-imaging "Order Imaging"
+* AgentDecisionSupportCS#order-referral "Order Referral"
+* AgentDecisionSupportCS#lifestyle-exercise "Exercise Intervention"
+* AgentDecisionSupportCS#lifestyle-nutrition "Nutrition Intervention"
+* AgentDecisionSupportCS#lifestyle-sleep "Sleep Intervention"
+* AgentDecisionSupportCS#lifestyle-stress "Stress Management"
 ValueSet: AgentServiceCodeVS
 Id: agent-service-code-vs
 Title: "Agent Service Code ValueSet"
 Description: "Specific services that agents can recommend including laboratory tests, cardiac services, and lifestyle interventions"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AgentDecisionSupportCS#review-observation "Review Observation"
+* AgentDecisionSupportCS#review-trend "Review Trend"
+* AgentDecisionSupportCS#review-alert "Review Alert"
+* AgentDecisionSupportCS#order-lab "Order Laboratory Test"
+* AgentDecisionSupportCS#order-imaging "Order Imaging"
+* AgentDecisionSupportCS#order-referral "Order Referral"
+* AgentDecisionSupportCS#document-assessment "Document Assessment"
+* AgentDecisionSupportCS#document-care-plan "Update Care Plan"
+* AgentDecisionSupportCS#lifestyle-exercise "Exercise Intervention"
+* AgentDecisionSupportCS#lifestyle-nutrition "Nutrition Intervention"
+* AgentDecisionSupportCS#lifestyle-sleep "Sleep Intervention"
+* AgentDecisionSupportCS#lifestyle-stress "Stress Management"

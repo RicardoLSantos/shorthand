@@ -120,10 +120,22 @@ Id: wearable-sensor-type-vs
 Title: "Wearable Sensor Type ValueSet"
 Description: "Types of sensors in consumer wearable devices"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#ppg "Photoplethysmography (PPG)"
+* LifestyleMedicineTemporaryCS#ecg "Electrocardiogram (ECG)"
+* LifestyleMedicineTemporaryCS#accelerometer "Accelerometer"
+* LifestyleMedicineTemporaryCS#gyroscope "Gyroscope"
+* LifestyleMedicineTemporaryCS#barometer "Barometer"
+* LifestyleMedicineTemporaryCS#spo2 "Pulse Oximeter"
+* LifestyleMedicineTemporaryCS#temperature "Temperature"
+* LifestyleMedicineTemporaryCS#bioimpedance "Bioimpedance"
+* LifestyleMedicineTemporaryCS#gps "GPS"
 ValueSet: DataCaptureMethodVS
 Id: data-capture-method-vs
 Title: "Data Capture Method ValueSet"
 Description: "Methods by which PGHD data was captured"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#automatic "Automatic"
+* AppLogicCS#manual-entry "Manual Entry"
+* AppLogicCS#derived "Derived"
+* AppLogicCS#synchronized "Synchronized"
+* AppLogicCS#imported "Imported"

@@ -336,7 +336,7 @@ clinically appropriate. Privacy and confidentiality considerations are paramount
 * component[useFrequency]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-frequency "Frequency of substance use"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from SubstanceUseFrequencyVS (required)
+  * valueCodeableConcept from SubstanceUseFrequencyVS (extensible)
 
 * component[lastUseDate]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#last-use-date "Date of last substance use"
@@ -393,12 +393,12 @@ with their current status and risk assessment.
 * component[caffeineStatus]
   * code = $LOINC#80489-8 "Caffeine intake 24 hour Estimated"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from CaffeineIntakeLevelVS (required)
+  * valueCodeableConcept from CaffeineIntakeLevelVS (extensible)
 
 * component[overallRiskLevel]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-risk-level "Overall substance use risk level"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from SubstanceUseRiskLevelVS (required)
+  * valueCodeableConcept from RiskLevelSNOMEDVS (required)
 
 * hasMember ^slicing.discriminator.type = #profile
 * hasMember ^slicing.discriminator.path = "resolve()"

@@ -9,7 +9,7 @@ Description: "Level of detail for audit records"
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only code
-* valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-levels (required)
+* valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-levels (extensible)
 
 Extension: AuditRetentionExtension
 Id: audit-retention
@@ -26,7 +26,7 @@ Description: "Format for audit records"
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only code
-* valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-formats (required)
+* valueCode from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-formats (extensible)
 
 Profile: MindfulnessAudit
 Parent: Basic

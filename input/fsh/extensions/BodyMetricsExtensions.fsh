@@ -22,7 +22,7 @@ Description: "Records the conditions under which body measurements were taken"
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from MeasurementConditionsVS (required)
+* valueCodeableConcept from MeasurementConditionsVS (extensible)
 
 Extension: MeasurementDevice
 Id: measurement-device-type
@@ -46,7 +46,7 @@ Description: "Specifies the type of device used for body measurements"
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from MeasurementDeviceTypeVS (required)
+* valueCodeableConcept from MeasurementDeviceTypeVS (extensible)
 
 ValueSet: MeasurementConditionsVS
 Id: measurement-conditions-vs

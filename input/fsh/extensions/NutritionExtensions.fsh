@@ -22,7 +22,7 @@ Description: "Indicates the source of nutrition data"
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from NutritionDataSourceVS (required)
+* valueCodeableConcept from NutritionDataSourceVS (extensible)
 
 ValueSet: NutritionDataSourceVS
 Id: nutrition-data-source-vs
@@ -45,4 +45,7 @@ Description: "Value set for nutrition data sources"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* codes from system AppLogicCS
+* AppLogicCS#manual "Manual Entry"
+* AppLogicCS#nutrition-source-app "App Integration"
+* AppLogicCS#nutrition-source-device "Connected Device"
+* AppLogicCS#questionnaire "Questionnaire Response"

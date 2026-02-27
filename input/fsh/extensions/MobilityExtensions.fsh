@@ -18,7 +18,7 @@ Description: "Extension for mobility measurements alert levels to indicate the s
 * . ^short = "Mobility alert level indicator"
 * . ^definition = "Indicates the severity level of mobility changes or concerns based on device measurements"
 * value[x] only CodeableConcept
-* valueCodeableConcept from MobilityAlertLevelVS (required)
+* valueCodeableConcept from MobilityAlertLevelVS (extensible)
 * valueCodeableConcept ^short = "Alert level code"
 * valueCodeableConcept ^definition = "The specific alert level code indicating the severity of mobility changes"
 

@@ -1,6 +1,7 @@
 // Sport-Specific ValueSets for iOS Lifestyle Medicine IG
 // Supporting cycling, running, swimming, and strength training profiles
 // Created: 2025-11-28
+// Updated: 2026-02-27 — Replaced bulk includes with enumerated codes
 // Author: Ricardo Lourenco dos Santos, FMUP
 
 Alias: $SNOMED = http://snomed.info/sct
@@ -16,7 +17,13 @@ Description: "Coggan power-based training zones for cycling (7-zone model)"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cycling-training-zone-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#zone1 "Zone 1 - Active Recovery"
+* AppLogicCS#zone2 "Zone 2 - Endurance"
+* AppLogicCS#zone3 "Zone 3 - Tempo"
+* AppLogicCS#zone4 "Zone 4 - Threshold"
+* AppLogicCS#zone5 "Zone 5 - VO2max"
+* AppLogicCS#zone6 "Zone 6 - Anaerobic"
+* AppLogicCS#zone7 "Zone 7 - Neuromuscular"
 
 
 ValueSet: CyclingActivityTypeVS
@@ -26,7 +33,14 @@ Description: "Types of cycling activities"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cycling-activity-type-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#road "Road Cycling"
+* AppLogicCS#mtb "Mountain Biking"
+* AppLogicCS#gravel "Gravel Riding"
+* AppLogicCS#tt "Time Trial"
+* AppLogicCS#cx "Cyclocross"
+* AppLogicCS#commute "Commuting"
+* AppLogicCS#cycling-type-indoor "Indoor Training"
+* AppLogicCS#virtual "Virtual Cycling"
 
 
 // ============================================================================
@@ -40,7 +54,10 @@ Description: "Running footstrike patterns"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/footstrike-type-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#forefoot "Forefoot Strike"
+* AppLogicCS#midfoot "Midfoot Strike"
+* AppLogicCS#heel "Heel Strike"
+* AppLogicCS#variable "Variable Strike"
 
 
 ValueSet: InjuryRiskLevelVS
@@ -50,7 +67,10 @@ Description: "Running injury risk levels based on biomechanics"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/injury-risk-level-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#injury-risk-low "Low Risk"
+* AppLogicCS#injury-risk-moderate "Moderate Risk"
+* AppLogicCS#injury-risk-elevated "Elevated Risk"
+* AppLogicCS#injury-risk-high "High Risk"
 
 
 // ============================================================================
@@ -64,7 +84,13 @@ Description: "Swimming stroke types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/swimming-stroke-type-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#freestyle "Freestyle"
+* LifestyleMedicineTemporaryCS#backstroke "Backstroke"
+* LifestyleMedicineTemporaryCS#breaststroke "Breaststroke"
+* LifestyleMedicineTemporaryCS#butterfly "Butterfly"
+* LifestyleMedicineTemporaryCS#im "Individual Medley"
+* LifestyleMedicineTemporaryCS#swimming-stroke-mixed "Mixed/Drill"
+* LifestyleMedicineTemporaryCS#swimming-stroke-unknown "Unknown"
 
 
 ValueSet: SwimmingEnvironmentVS
@@ -74,7 +100,13 @@ Description: "Swimming venue types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/swimming-environment-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#pool-25 "Pool (Short Course 25m)"
+* AppLogicCS#pool-50 "Pool (Long Course 50m)"
+* AppLogicCS#pool-other "Pool (Other Length)"
+* AppLogicCS#endless "Endless Pool"
+* AppLogicCS#ow-lake "Open Water (Lake)"
+* AppLogicCS#ow-ocean "Open Water (Ocean)"
+* AppLogicCS#ow-river "Open Water (River)"
 
 
 // ============================================================================
@@ -88,7 +120,15 @@ Description: "Strength exercise categories"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/exercise-category-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#compound-full "Compound - Full Body"
+* AppLogicCS#compound-lower "Compound - Lower Body"
+* AppLogicCS#compound-pull "Compound - Upper Body Pull"
+* AppLogicCS#compound-push "Compound - Upper Body Push"
+* AppLogicCS#exercise-core "Core/Abdominal"
+* AppLogicCS#isolation-lower "Isolation - Lower Body"
+* AppLogicCS#isolation-upper "Isolation - Upper Body"
+* AppLogicCS#olympic "Olympic Lift"
+* AppLogicCS#plyometric "Plyometric"
 
 
 ValueSet: MuscleGroupVS
@@ -98,7 +138,20 @@ Description: "Primary muscle groups for strength training"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/muscle-group-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#quadriceps "Quadriceps"
+* AppLogicCS#hamstrings "Hamstrings"
+* AppLogicCS#glutes "Glutes"
+* AppLogicCS#calves "Calves"
+* AppLogicCS#chest "Chest"
+* AppLogicCS#back "Back"
+* AppLogicCS#shoulders "Shoulders"
+* AppLogicCS#biceps "Biceps"
+* AppLogicCS#triceps "Triceps"
+* AppLogicCS#forearms "Forearms"
+* AppLogicCS#traps "Trapezius"
+* AppLogicCS#erector "Erector Spinae"
+* AppLogicCS#hip-flexors "Hip Flexors"
+* AppLogicCS#muscle-group-core "Core"
 
 
 ValueSet: StrengthEquipmentVS
@@ -108,7 +161,17 @@ Description: "Strength training equipment types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/strength-equipment-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#barbell "Barbell"
+* AppLogicCS#dumbbell "Dumbbell"
+* AppLogicCS#kettlebell "Kettlebell"
+* AppLogicCS#bands "Resistance Bands"
+* AppLogicCS#cable "Cable Machine"
+* AppLogicCS#bodyweight "Bodyweight"
+* AppLogicCS#plate-loaded "Plate-Loaded Machine"
+* AppLogicCS#selectorized "Selectorized Machine"
+* AppLogicCS#smart-gym "Smart Gym"
+* AppLogicCS#smith "Smith Machine"
+* AppLogicCS#suspension "TRX/Suspension"
 
 
 ValueSet: SetTypeVS
@@ -118,7 +181,15 @@ Description: "Strength training set types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/set-type-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#working "Working Set"
+* AppLogicCS#warmup "Warm-up"
+* AppLogicCS#top "Top Set"
+* AppLogicCS#backoff "Back-off Set"
+* AppLogicCS#drop "Drop Set"
+* AppLogicCS#rest-pause "Rest-Pause"
+* AppLogicCS#cluster "Cluster Set"
+* AppLogicCS#failure "Failure Set"
+* AppLogicCS#amrap "AMRAP"
 
 
 ValueSet: StrengthTrainingTypeVS
@@ -128,4 +199,10 @@ Description: "Strength training goal types"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/strength-training-type-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#hypertrophy "Hypertrophy"
+* LifestyleMedicineTemporaryCS#strength "Strength"
+* LifestyleMedicineTemporaryCS#strength-type-power "Power"
+* LifestyleMedicineTemporaryCS#endurance "Muscular Endurance"
+* LifestyleMedicineTemporaryCS#fitness "General Fitness"
+* LifestyleMedicineTemporaryCS#rehab "Rehabilitation"
+* LifestyleMedicineTemporaryCS#functional "Functional Training"

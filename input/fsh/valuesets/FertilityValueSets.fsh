@@ -6,8 +6,6 @@ Description: "Value set for cervical mucus observations"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cervical-mucus-vs"
 * ^status = #active
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -15,7 +13,11 @@ Description: "Value set for cervical mucus observations"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
+* LifestyleMedicineTemporaryCS#dry "Dry"
+* LifestyleMedicineTemporaryCS#sticky "Sticky"
+* LifestyleMedicineTemporaryCS#creamy "Creamy"
+* LifestyleMedicineTemporaryCS#watery "Watery"
+* LifestyleMedicineTemporaryCS#eggWhite "Egg White"
 ValueSet: OvulationTestValueSet
 Id: ovulation-test-vs
 Title: "Ovulation Test Value Set"
@@ -24,8 +26,6 @@ Description: "Value set for ovulation test results"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ovulation-test-vs"
 * ^status = #active
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -33,7 +33,9 @@ Description: "Value set for ovulation test results"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
+* LifestyleMedicineTemporaryCS#negative "Negative"
+* LifestyleMedicineTemporaryCS#positive "Positive"
+* LifestyleMedicineTemporaryCS#invalid "Invalid Test"
 ValueSet: FertilityStatusValueSet
 Id: fertility-status-vs
 Title: "Fertility Status Value Set"
@@ -42,8 +44,6 @@ Description: "Value set for fertility status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fertility-status-vs"
 * ^status = #active
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -51,4 +51,6 @@ Description: "Value set for fertility status"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
+* LifestyleMedicineTemporaryCS#fertile "Fertile"
+* LifestyleMedicineTemporaryCS#notFertile "Not Fertile"
+* LifestyleMedicineTemporaryCS#fertility-status-uncertain "Uncertain"

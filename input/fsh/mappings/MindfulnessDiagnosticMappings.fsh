@@ -52,7 +52,7 @@ RuleSet: MindfulnessDiagnosticRules
 * value[x] MS
 * method MS
 
-* method from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-diagnostic-method-vs (required)
+* method from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-diagnostic-method-vs (extensible)
 * code from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-diagnostic-code-vs (required)
 
 * extension contains 

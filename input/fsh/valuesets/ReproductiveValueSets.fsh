@@ -48,4 +48,11 @@ Description: "Activities related to social-history health monitoring"
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^date = "2024-03-19"
 
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#cycle-tracking "Cycle Tracking"
+* LifestyleMedicineTemporaryCS#temp-monitoring "Temperature Monitoring"
+* LifestyleMedicineTemporaryCS#symptom-tracking "Symptom Tracking"
+* LifestyleMedicineTemporaryCS#vitals-monitoring "Vitals Monitoring"
+* LifestyleMedicineTemporaryCS#fertility-signs "Fertility Signs"
+* LifestyleMedicineTemporaryCS#mood-tracking "Mood Tracking"
+* LifestyleMedicineTemporaryCS#medication-log "Medication Log"
+* LifestyleMedicineTemporaryCS#exercise-tracking "Exercise Tracking"

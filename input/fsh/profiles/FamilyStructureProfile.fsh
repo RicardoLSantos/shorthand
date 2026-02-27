@@ -62,7 +62,7 @@ References:
 * subject only Reference(Patient)
 * effectiveDateTime 1..1 MS
 * value[x] only CodeableConcept
-* valueCodeableConcept from LivingSituationVS (required)
+* valueCodeableConcept from LivingSituationVS (extensible)
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -86,7 +86,7 @@ References:
   * ^short = "Marital or partnership status"
   * code = $LOINC#45404-1 "Marital status"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from MaritalStatusVS (required)
+  * valueCodeableConcept from MaritalStatusVS (extensible)
 
 * component[dependentCount]
   * ^short = "Number of dependents (children, elderly relatives)"
@@ -97,19 +97,19 @@ References:
   * ^short = "Patient's role as caregiver or care recipient"
   * code = LifestyleMedicineTemporaryCS#caregiver-role "Caregiver role"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from CaregiverRoleVS (required)
+  * valueCodeableConcept from CaregiverRoleVS (extensible)
 
 * component[familyRelationshipQuality]
   * ^short = "Quality of family relationships"
   * code = LifestyleMedicineTemporaryCS#relationship-quality "Family relationship quality"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from RelationshipQualityVS (required)
+  * valueCodeableConcept from RelationshipQualityVS (extensible)
 
 * component[householdType]
   * ^short = "Type of household composition"
   * code = LifestyleMedicineTemporaryCS#household-type "Household type"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from HouseholdTypeVS (required)
+  * valueCodeableConcept from HouseholdTypeVS (extensible)
 
 * note 0..* MS
 * note ^short = "Additional notes on family dynamics or circumstances"
@@ -141,7 +141,15 @@ Id: household-type-vs
 Title: "Household Type Value Set"
 Description: "Types of household composition"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#single-person "Single Person"
+* LifestyleMedicineTemporaryCS#couple-no-children "Couple Without Children"
+* LifestyleMedicineTemporaryCS#nuclear-family "Nuclear Family"
+* LifestyleMedicineTemporaryCS#single-parent "Single Parent"
+* LifestyleMedicineTemporaryCS#extended-family "Extended Family"
+* LifestyleMedicineTemporaryCS#blended-family "Blended Family"
+* LifestyleMedicineTemporaryCS#household-multigenerational "Multigenerational"
+* LifestyleMedicineTemporaryCS#shared-housing "Shared Housing"
+* LifestyleMedicineTemporaryCS#group-home "Group Home"
 
 ValueSet: MaritalStatusVS
 Id: marital-status-vs
@@ -162,11 +170,21 @@ Id: caregiver-role-vs
 Title: "Caregiver Role Value Set"
 Description: "Caregiving role categories"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#caregiver-not-applicable "Not Applicable"
+* LifestyleMedicineTemporaryCS#primary-caregiver "Primary Caregiver"
+* LifestyleMedicineTemporaryCS#secondary-caregiver "Secondary Caregiver"
+* LifestyleMedicineTemporaryCS#care-recipient "Care Recipient"
+* LifestyleMedicineTemporaryCS#mutual-care "Mutual Care"
+* LifestyleMedicineTemporaryCS#paid-caregiver "Paid Caregiver"
 
 ValueSet: RelationshipQualityVS
 Id: relationship-quality-vs
 Title: "Relationship Quality Value Set"
 Description: "Quality of family relationships"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#very-supportive "Very Supportive"
+* LifestyleMedicineTemporaryCS#generally-positive "Generally Positive"
+* LifestyleMedicineTemporaryCS#relationship-mixed "Mixed"
+* LifestyleMedicineTemporaryCS#strained "Strained"
+* LifestyleMedicineTemporaryCS#estranged "Estranged"
+* LifestyleMedicineTemporaryCS#relationship-not-applicable "Not Applicable"

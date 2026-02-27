@@ -37,7 +37,7 @@ Description: "Profile for recording composite recovery and readiness scores from
 * valueQuantity 0..1 MS
 
 * interpretation 0..1
-* interpretation from ReadinessCategoryVS (required)
+* interpretation from ReadinessCategoryVS (extensible)
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -69,15 +69,15 @@ Description: "Profile for recording composite recovery and readiness scores from
 // Overall readiness
 * component[readinessCategory].code = LifestyleMedicineTemporaryCS#recovery-category "Readiness Category"
 * component[readinessCategory].value[x] only CodeableConcept
-* component[readinessCategory].valueCodeableConcept from ReadinessCategoryVS (required)
+* component[readinessCategory].valueCodeableConcept from ReadinessCategoryVS (extensible)
 
 * component[comparedToBaseline].code = LifestyleMedicineTemporaryCS#vs-baseline "Compared to Baseline"
 * component[comparedToBaseline].value[x] only CodeableConcept
-* component[comparedToBaseline].valueCodeableConcept from BaselineComparisonVS (required)
+* component[comparedToBaseline].valueCodeableConcept from BaselineComparisonVS (extensible)
 
 * component[trendDirection].code = LifestyleMedicineTemporaryCS#recovery-trend "Trend Direction"
 * component[trendDirection].value[x] only CodeableConcept
-* component[trendDirection].valueCodeableConcept from TrendDirectionVS (required)
+* component[trendDirection].valueCodeableConcept from TrendDirectionSNOMEDVS (required)
 
 // Vendor-specific scores
 * component[ouraReadiness].code = LifestyleMedicineTemporaryCS#recovery-oura "Oura Readiness"
@@ -112,7 +112,7 @@ Description: "Profile for recording composite recovery and readiness scores from
 
 * component[activityBalance].code = LifestyleMedicineTemporaryCS#activity-bal "Activity Balance"
 * component[activityBalance].value[x] only CodeableConcept
-* component[activityBalance].valueCodeableConcept from ActivityBalanceVS (required)
+* component[activityBalance].valueCodeableConcept from ActivityBalanceVS (extensible)
 
 // Strain-recovery balance
 * component[previousDayStrain].code = LifestyleMedicineTemporaryCS#prev-strain "Previous Day Strain"
@@ -128,16 +128,16 @@ Description: "Profile for recording composite recovery and readiness scores from
 
 * component[recoveryDebt].code = LifestyleMedicineTemporaryCS#debt "Recovery Debt"
 * component[recoveryDebt].value[x] only CodeableConcept
-* component[recoveryDebt].valueCodeableConcept from RecoveryDebtVS (required)
+* component[recoveryDebt].valueCodeableConcept from RecoveryDebtVS (extensible)
 
 // Training readiness
 * component[trainingStatus].code = LifestyleMedicineTemporaryCS#training-status "Training Status"
 * component[trainingStatus].value[x] only CodeableConcept
-* component[trainingStatus].valueCodeableConcept from TrainingStatusVS (required)
+* component[trainingStatus].valueCodeableConcept from TrainingStatusVS (extensible)
 
 * component[recommendedActivity].code = LifestyleMedicineTemporaryCS#rec-activity "Recommended Activity"
 * component[recommendedActivity].value[x] only CodeableConcept
-* component[recommendedActivity].valueCodeableConcept from RecommendedActivityVS (required)
+* component[recommendedActivity].valueCodeableConcept from RecommendedActivityVS (extensible)
 
 * component[optimalStrainToday].code = LifestyleMedicineTemporaryCS#optimal-strain "Optimal Strain"
 * component[optimalStrainToday].value[x] only Quantity
@@ -163,7 +163,7 @@ Description: "Profile for recording composite recovery and readiness scores from
 // Protocol
 * component[primaryVendor].code = LifestyleMedicineTemporaryCS#vendor "Primary Vendor"
 * component[primaryVendor].value[x] only CodeableConcept
-* component[primaryVendor].valueCodeableConcept from WearableVendorVS (required)
+* component[primaryVendor].valueCodeableConcept from WearableVendorVS (extensible)
 
 
 // ============================================================================
@@ -195,7 +195,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * valueQuantity 0..1 MS
 
 * interpretation 0..1
-* interpretation from CRFCategoryVS (required)
+* interpretation from CRFCategoryVS (extensible)
 
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -242,7 +242,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 // Fitness classification
 * component[crfCategory].code = LifestyleMedicineTemporaryCS#crf "CRF Category"
 * component[crfCategory].value[x] only CodeableConcept
-* component[crfCategory].valueCodeableConcept from CRFCategoryVS (required)
+* component[crfCategory].valueCodeableConcept from CRFCategoryVS (extensible)
 
 * component[percentileRank].code = LifestyleMedicineTemporaryCS#percentile "Percentile"
 * component[percentileRank].value[x] only Quantity
@@ -257,20 +257,20 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 
 * component[classificationStandard].code = LifestyleMedicineTemporaryCS#standard "Standard"
 * component[classificationStandard].value[x] only CodeableConcept
-* component[classificationStandard].valueCodeableConcept from CRFStandardVS (required)
+* component[classificationStandard].valueCodeableConcept from CRFStandardVS (extensible)
 
 // Estimation method
 * component[methodType].code = LifestyleMedicineTemporaryCS#method "Method Type"
 * component[methodType].value[x] only CodeableConcept
-* component[methodType].valueCodeableConcept from VO2maxMethodVS (required)
+* component[methodType].valueCodeableConcept from VO2maxMethodVS (extensible)
 
 * component[specificProtocol].code = LifestyleMedicineTemporaryCS#protocol "Protocol"
 * component[specificProtocol].value[x] only CodeableConcept
-* component[specificProtocol].valueCodeableConcept from VO2maxProtocolVS (required)
+* component[specificProtocol].valueCodeableConcept from VO2maxProtocolVS (extensible)
 
 * component[validationStatus].code = LifestyleMedicineTemporaryCS#validation "Validation"
 * component[validationStatus].value[x] only CodeableConcept
-* component[validationStatus].valueCodeableConcept from ValidationStatusVS (required)
+* component[validationStatus].valueCodeableConcept from ValidationStatusVS (extensible)
 
 // Input parameters
 * component[restingHRUsed].code = LifestyleMedicineTemporaryCS#rhr-used "RHR Used"
@@ -285,12 +285,12 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 
 * component[hrMaxDetermination].code = LifestyleMedicineTemporaryCS#hrmax-method "HRmax Method"
 * component[hrMaxDetermination].value[x] only CodeableConcept
-* component[hrMaxDetermination].valueCodeableConcept from HRmaxMethodVS (required)
+* component[hrMaxDetermination].valueCodeableConcept from HRmaxMethodVS (extensible)
 
 // Trend analysis
 * component[vo2maxTrend].code = LifestyleMedicineTemporaryCS#vo2max-trend "VO2max Trend"
 * component[vo2maxTrend].value[x] only CodeableConcept
-* component[vo2maxTrend].valueCodeableConcept from VO2maxTrendVS (required)
+* component[vo2maxTrend].valueCodeableConcept from TrendDirectionSNOMEDVS (required)
 
 * component[changeFromBaseline].code = LifestyleMedicineTemporaryCS#vo2max-change "Change"
 * component[changeFromBaseline].value[x] only Quantity
@@ -310,7 +310,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 // Health implications
 * component[cvRiskCategory].code = LifestyleMedicineTemporaryCS#cv-risk "CV Risk"
 * component[cvRiskCategory].value[x] only CodeableConcept
-* component[cvRiskCategory].valueCodeableConcept from CVRiskCategoryVS (required)
+* component[cvRiskCategory].valueCodeableConcept from CVRiskCategoryVS (extensible)
 
 * component[metCapacity].code = LifestyleMedicineTemporaryCS#mets "METs"
 * component[metCapacity].value[x] only Quantity
@@ -320,7 +320,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 // Data source
 * component[dataSource].code = LifestyleMedicineTemporaryCS#source "Data Source"
 * component[dataSource].value[x] only CodeableConcept
-* component[dataSource].valueCodeableConcept from WearableVendorVS (required)
+* component[dataSource].valueCodeableConcept from WearableVendorVS (extensible)
 
 
 // ============================================================================
@@ -334,7 +334,11 @@ Description: "Categories for interpreting recovery readiness scores from wearabl
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/readiness-category-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#optimal "Optimal (85-100)"
+* LifestyleMedicineTemporaryCS#readiness-good "Good (70-84)"
+* LifestyleMedicineTemporaryCS#readiness-fair "Fair (50-69)"
+* LifestyleMedicineTemporaryCS#readiness-low "Low (30-49)"
+* LifestyleMedicineTemporaryCS#pay-attention "Pay Attention (<30)"
 
 ValueSet: BaselineComparisonVS
 Id: baseline-comparison-vs
@@ -343,7 +347,9 @@ Description: "Methods for comparing current values to established baselines"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/baseline-comparison-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#above "Above Baseline"
+* AppLogicCS#at "At Baseline"
+* AppLogicCS#below "Below Baseline"
 
 ValueSet: TrendDirectionVS
 Id: trend-direction-vs
@@ -352,7 +358,9 @@ Description: "Directions of trends in health metrics over time"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/trend-direction-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#trend-improving "Improving"
+* LifestyleMedicineTemporaryCS#trend-stable "Stable"
+* LifestyleMedicineTemporaryCS#trend-declining "Declining"
 
 ValueSet: ActivityBalanceVS
 Id: activity-balance-vs
@@ -361,7 +369,10 @@ Description: "Categories for activity and recovery balance status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/activity-balance-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#balanced "Well Balanced"
+* LifestyleMedicineTemporaryCS#slight-over "Slightly Overtrained"
+* LifestyleMedicineTemporaryCS#undertrained "Undertrained"
+* LifestyleMedicineTemporaryCS#overtrained "Significantly Overtrained"
 
 ValueSet: RecoveryDebtVS
 Id: recovery-debt-vs
@@ -370,7 +381,10 @@ Description: "Levels of accumulated recovery debt from training or stress"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/recovery-debt-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#recovery-debt-none "No Debt"
+* LifestyleMedicineTemporaryCS#recovery-debt-mild "Mild Debt"
+* LifestyleMedicineTemporaryCS#recovery-debt-moderate "Moderate Debt"
+* LifestyleMedicineTemporaryCS#significant "Significant Debt"
 
 ValueSet: TrainingStatusVS
 Id: training-status-vs
@@ -379,7 +393,13 @@ Description: "Current training status categories based on fitness trends"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/training-status-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#productive "Productive"
+* AppLogicCS#maintaining "Maintaining"
+* AppLogicCS#detraining "Detraining"
+* AppLogicCS#overreaching "Overreaching"
+* AppLogicCS#peaking "Peaking"
+* AppLogicCS#training-status-recovery "Recovery"
+* AppLogicCS#unproductive "Unproductive"
 
 ValueSet: RecommendedActivityVS
 Id: recommended-activity-vs
@@ -388,7 +408,12 @@ Description: "Recommended activity types based on recovery status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/recommended-activity-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#high-intensity "High Intensity"
+* LifestyleMedicineTemporaryCS#recommended-moderate "Moderate Training"
+* LifestyleMedicineTemporaryCS#recommended-light "Light Activity"
+* LifestyleMedicineTemporaryCS#active-recovery "Active Recovery"
+* LifestyleMedicineTemporaryCS#recommended-rest "Rest Day"
+* LifestyleMedicineTemporaryCS#recovery-focus "Recovery Focus"
 
 ValueSet: WearableVendorVS
 Id: wearable-vendor-vs
@@ -397,7 +422,17 @@ Description: "Supported wearable device vendors for data integration"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/wearable-vendor-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#wearable-vendor-oura "Oura"
+* LifestyleMedicineTemporaryCS#wearable-vendor-whoop "WHOOP"
+* LifestyleMedicineTemporaryCS#wearable-vendor-garmin "Garmin"
+* LifestyleMedicineTemporaryCS#wearable-vendor-polar "Polar"
+* LifestyleMedicineTemporaryCS#wearable-vendor-fitbit "Fitbit"
+* LifestyleMedicineTemporaryCS#wearable-vendor-apple "Apple"
+* LifestyleMedicineTemporaryCS#samsung "Samsung"
+* LifestyleMedicineTemporaryCS#withings "Withings"
+* LifestyleMedicineTemporaryCS#wearable-vendor-coros "COROS"
+* LifestyleMedicineTemporaryCS#wearable-vendor-suunto "Suunto"
+* LifestyleMedicineTemporaryCS#wearable-vendor-other "Other"
 
 ValueSet: VO2maxUnitVS
 Id: vo2max-unit-vs
@@ -416,7 +451,14 @@ Description: "Cardiorespiratory fitness categories based on VO2max percentiles"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/crf-category-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#very-poor "Very Poor"
+* LifestyleMedicineTemporaryCS#crf-category-poor "Poor"
+* LifestyleMedicineTemporaryCS#below-average "Below Average"
+* LifestyleMedicineTemporaryCS#average "Average"
+* LifestyleMedicineTemporaryCS#above-average "Above Average"
+* LifestyleMedicineTemporaryCS#crf-category-good "Good"
+* LifestyleMedicineTemporaryCS#crf-category-excellent "Excellent"
+* LifestyleMedicineTemporaryCS#superior "Superior"
 
 ValueSet: CRFStandardVS
 Id: crf-standard-vs
@@ -425,7 +467,13 @@ Description: "Reference standards for cardiorespiratory fitness classification"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/crf-standard-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#acsm "ACSM"
+* LifestyleMedicineTemporaryCS#crf-standard-cooper "Cooper Institute"
+* LifestyleMedicineTemporaryCS#hunt "HUNT Fitness Study"
+* LifestyleMedicineTemporaryCS#crf-standard-garmin "Garmin Proprietary"
+* LifestyleMedicineTemporaryCS#crf-standard-apple "Apple Proprietary"
+* LifestyleMedicineTemporaryCS#crf-standard-polar "Polar Proprietary"
+* LifestyleMedicineTemporaryCS#crf-standard-other "Other"
 
 ValueSet: VO2maxMethodVS
 Id: vo2max-method-vs
@@ -434,7 +482,12 @@ Description: "Methods for estimating or measuring VO2max"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-method-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#wearable "Wearable Algorithm"
+* LifestyleMedicineTemporaryCS#submaximal "Submaximal Test"
+* LifestyleMedicineTemporaryCS#non-exercise "Non-Exercise Prediction"
+* LifestyleMedicineTemporaryCS#maximal "Maximal Test"
+* LifestyleMedicineTemporaryCS#vo2max-method-field "Field Test"
+* LifestyleMedicineTemporaryCS#combined "Combined Method"
 
 ValueSet: VO2maxProtocolVS
 Id: vo2max-protocol-vs
@@ -443,7 +496,20 @@ Description: "Exercise protocols used for VO2max testing"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-protocol-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#garmin-firstbeat "Garmin FirstBeat"
+* LifestyleMedicineTemporaryCS#apple-cardio "Apple Cardio Fitness"
+* LifestyleMedicineTemporaryCS#polar-fitness "Polar Fitness Test"
+* LifestyleMedicineTemporaryCS#fitbit-cardio "Fitbit Cardio Score"
+* LifestyleMedicineTemporaryCS#vo2max-protocol-coros "COROS"
+* LifestyleMedicineTemporaryCS#vo2max-protocol-suunto "Suunto"
+* LifestyleMedicineTemporaryCS#astrand "Astrand-Rhyming"
+* LifestyleMedicineTemporaryCS#ymca "YMCA Cycle Test"
+* LifestyleMedicineTemporaryCS#rockport "Rockport Walk"
+* LifestyleMedicineTemporaryCS#vo2max-protocol-cooper "Cooper 12-min"
+* LifestyleMedicineTemporaryCS#6mwt "6-Minute Walk"
+* LifestyleMedicineTemporaryCS#uth "Uth Formula"
+* LifestyleMedicineTemporaryCS#bruce "Bruce Treadmill"
+* LifestyleMedicineTemporaryCS#vo2max-protocol-other "Other"
 
 ValueSet: ValidationStatusVS
 Id: validation-status-vs
@@ -452,7 +518,11 @@ Description: "Validation status of health measurements"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/validation-status-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system AppLogicCS
+* AppLogicCS#validation-clinical "Clinically Validated"
+* AppLogicCS#research "Research Validated"
+* AppLogicCS#manufacturer "Manufacturer Validated"
+* AppLogicCS#not-validated "Not Validated"
+* AppLogicCS#validation-unknown "Unknown"
 
 ValueSet: HRmaxMethodVS
 Id: hrmax-method-vs
@@ -461,7 +531,12 @@ Description: "Methods for determining maximum heart rate"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/hrmax-method-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#measured "Measured"
+* LifestyleMedicineTemporaryCS#age-220 "220-Age Formula"
+* LifestyleMedicineTemporaryCS#tanaka "Tanaka Formula"
+* LifestyleMedicineTemporaryCS#hrmax-method-field "Field Observed"
+* LifestyleMedicineTemporaryCS#hrmax-method-device "Device Learned"
+* LifestyleMedicineTemporaryCS#hrmax-method-unknown "Unknown"
 
 ValueSet: VO2maxTrendVS
 Id: vo2max-trend-vs
@@ -470,7 +545,12 @@ Description: "Trends in VO2max values over time"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-trend-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#sig-improving "Significantly Improving"
+* LifestyleMedicineTemporaryCS#vo2max-trend-improving "Improving"
+* LifestyleMedicineTemporaryCS#vo2max-trend-stable "Stable"
+* LifestyleMedicineTemporaryCS#vo2max-trend-declining "Declining"
+* LifestyleMedicineTemporaryCS#sig-declining "Significantly Declining"
+* LifestyleMedicineTemporaryCS#vo2max-trend-insufficient "Insufficient Data"
 
 ValueSet: CVRiskCategoryVS
 Id: cv-risk-category-vs
@@ -479,4 +559,7 @@ Description: "Cardiovascular risk categories based on fitness assessment"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cv-risk-category-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system AppLogicCS
+* AppLogicCS#cv-risk-low "Low Risk"
+* AppLogicCS#cv-risk-moderate "Moderate Risk"
+* AppLogicCS#cv-risk-high "High Risk"
+* AppLogicCS#cv-risk-very-high "Very High Risk"

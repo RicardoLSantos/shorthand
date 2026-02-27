@@ -3,28 +3,22 @@ Id: mindfulness-type-vs
 Title: "Mindfulness Practice Types Value Set"
 Description: "Value set of mindfulness practice types"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#mindfulness-type-meditation "Meditation"
+* LifestyleMedicineTemporaryCS#breathing "Breathing Exercise"
+* LifestyleMedicineTemporaryCS#bodyScan "Body Scan"
+* LifestyleMedicineTemporaryCS#mindfulness-type-walking "Mindful Walking"
+* LifestyleMedicineTemporaryCS#movement "Mindful Movement"
 
 ValueSet: EnvironmentTypeVS
 Id: environment-type-vs
 Title: "Practice Environment Types Value Set"
 Description: "Value set of practice environment types"
 * ^experimental = false
-* include codes from system MindfulnessSettingCS
+* LifestyleMedicineTemporaryCS#mindfulness-setting-home "Home Practice"
+* LifestyleMedicineTemporaryCS#mindfulness-setting-clinic "Clinical Setting"
+* LifestyleMedicineTemporaryCS#mindfulness-setting-group "Group Setting"
+* LifestyleMedicineTemporaryCS#mindfulness-setting-retreat "Retreat Setting"
+* LifestyleMedicineTemporaryCS#mindfulness-setting-workplace "Workplace Setting"
 
-CodeSystem: MindfulnessSettingCS
-Id: MindfulnessSettingCS
-Title: "Mindfulness Setting CodeSystem"
-Description: "CodeSystem defining different settings where mindfulness practice can occur"
-* ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/MindfulnessSettingCS"
-* ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
-* ^caseSensitive = true
-* ^content = #complete
-* ^count = 5
-* #home "Home Practice"
-* #clinic "Clinical Setting"
-* #group "Group Setting"
-* #retreat "Retreat Setting"
-* #workplace "Workplace Setting"
+// MindfulnessSettingCS — MERGED into LifestyleMedicineTemporaryCS (Phase 4, 2026-02-27)
+// 5 codes (home, clinic, group, retreat, workplace) now as mindfulness-setting-* in TemporaryCS

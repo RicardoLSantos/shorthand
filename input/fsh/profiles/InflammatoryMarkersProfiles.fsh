@@ -269,7 +269,9 @@ Title: "hs-CRP Interpretation ValueSet"
 Description: "Cardiovascular risk interpretation for hs-CRP results (AHA/CDC guidelines)"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#crp-risk-low-risk "Low cardiovascular risk"
+* LifestyleMedicineTemporaryCS#average-risk "Average cardiovascular risk"
+* LifestyleMedicineTemporaryCS#crp-risk-high-risk "High cardiovascular risk"
 
 ValueSet: HRVInflammationTrendVS
 Id: hrv-inflammation-trend-vs

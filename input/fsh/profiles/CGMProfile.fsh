@@ -214,7 +214,11 @@ Description: "Categorical interpretation of glucose values per International Con
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-interpretation-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#severe-hypo "Severe Hypoglycemia"
+* LifestyleMedicineTemporaryCS#hypo "Hypoglycemia"
+* LifestyleMedicineTemporaryCS#in-range "In Range"
+* LifestyleMedicineTemporaryCS#hyper "Hyperglycemia"
+* LifestyleMedicineTemporaryCS#severe-hyper "Severe Hyperglycemia"
 
 
 ValueSet: CGMTrendArrowVS
@@ -224,7 +228,14 @@ Description: "Direction and rate of glucose change"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-trend-arrow-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#falling-rapidly "Falling Rapidly"
+* LifestyleMedicineTemporaryCS#falling "Falling"
+* LifestyleMedicineTemporaryCS#falling-slowly "Falling Slowly"
+* LifestyleMedicineTemporaryCS#cgm-trend-stable "Stable"
+* LifestyleMedicineTemporaryCS#rising-slowly "Rising Slowly"
+* LifestyleMedicineTemporaryCS#rising "Rising"
+* LifestyleMedicineTemporaryCS#rising-rapidly "Rising Rapidly"
+* LifestyleMedicineTemporaryCS#cgm-trend-unknown "Unknown"
 
 
 ValueSet: CGMSystemVS
@@ -234,7 +245,20 @@ Description: "CGM devices and systems"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-system-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#dexcom-g6 "Dexcom G6"
+* AppLogicCS#dexcom-g7 "Dexcom G7"
+* AppLogicCS#dexcom-one "Dexcom ONE"
+* AppLogicCS#libre-2 "FreeStyle Libre 2"
+* AppLogicCS#libre-3 "FreeStyle Libre 3"
+* AppLogicCS#guardian-4 "Medtronic Guardian 4"
+* AppLogicCS#eversense "Eversense"
+* AppLogicCS#stelo "Stelo"
+* AppLogicCS#lingo "Lingo"
+* AppLogicCS#levels "Levels"
+* AppLogicCS#nutrisense "Nutrisense"
+* AppLogicCS#supersapiens "Supersapiens"
+* AppLogicCS#veri "Veri"
+* AppLogicCS#cgm-system-other "Other"
 
 
 ValueSet: CGMInsertionSiteVS
@@ -244,4 +268,8 @@ Description: "Body sites for CGM sensor insertion"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-insertion-site-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#upper-arm "Upper Arm"
+* LifestyleMedicineTemporaryCS#abdomen "Abdomen"
+* LifestyleMedicineTemporaryCS#buttock "Buttock"
+* LifestyleMedicineTemporaryCS#thigh "Thigh"
+* LifestyleMedicineTemporaryCS#cgm-site-other "Other"

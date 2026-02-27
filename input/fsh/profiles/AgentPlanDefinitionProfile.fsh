@@ -239,7 +239,20 @@ Id: agent-decision-topic-vs
 Title: "Agent Decision Topic ValueSet"
 Description: "Topics for agent decision logic including risk assessment, monitoring, interventions, and alerts"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AgentDecisionSupportCS#cardiovascular-risk "Cardiovascular Risk"
+* AgentDecisionSupportCS#metabolic-risk "Metabolic Risk"
+* AgentDecisionSupportCS#mental-health-risk "Mental Health Risk"
+* AgentDecisionSupportCS#fall-risk "Fall Risk"
+* AgentDecisionSupportCS#vital-signs-monitoring "Vital Signs Monitoring"
+* AgentDecisionSupportCS#activity-monitoring "Activity Monitoring"
+* AgentDecisionSupportCS#sleep-monitoring "Sleep Monitoring"
+* AgentDecisionSupportCS#hrv-monitoring "HRV Monitoring"
+* AgentDecisionSupportCS#agent-topic-lifestyle-intervention "Lifestyle Intervention"
+* AgentDecisionSupportCS#medication-optimization "Medication Optimization"
+* AgentDecisionSupportCS#agent-topic-preventive-care "Preventive Care"
+* AgentDecisionSupportCS#abnormal-value-alert "Abnormal Value Alert"
+* AgentDecisionSupportCS#trend-alert "Trend Alert"
+* AgentDecisionSupportCS#threshold-alert "Threshold Alert"
 
 // ============================================================================
 // Example Instance

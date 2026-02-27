@@ -111,14 +111,25 @@ Title: "Caffeine Source ValueSet"
 Description: "Common sources of dietary caffeine"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#coffee "Coffee"
+* LifestyleMedicineTemporaryCS#espresso "Espresso"
+* LifestyleMedicineTemporaryCS#tea "Tea"
+* LifestyleMedicineTemporaryCS#energy-drink "Energy drink"
+* LifestyleMedicineTemporaryCS#soft-drink "Soft drink"
+* LifestyleMedicineTemporaryCS#chocolate "Chocolate"
+* LifestyleMedicineTemporaryCS#supplement "Supplement"
+* LifestyleMedicineTemporaryCS#pre-workout "Pre-workout"
 ValueSet: CaffeineIntakeLevelVS
 Id: caffeine-intake-level-vs
 Title: "Caffeine Intake Level ValueSet"
 Description: "Categorical assessment of daily caffeine intake"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system AppLogicCS
+* AppLogicCS#caffeine-level-none "None"
+* AppLogicCS#caffeine-level-low "Low"
+* AppLogicCS#caffeine-level-moderate "Moderate"
+* AppLogicCS#caffeine-level-high "High"
+* AppLogicCS#excessive "Excessive"
 ValueSet: RecreationalSubstanceUseStatusVS
 Id: recreational-substance-use-status-vs
 Title: "Recreational Substance Use Status ValueSet"
@@ -185,11 +196,21 @@ Title: "Substance Use Frequency ValueSet"
 Description: "Frequency categories for substance use"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#substance-freq-never "Never"
+* LifestyleMedicineTemporaryCS#tried-once "Tried once"
+* LifestyleMedicineTemporaryCS#rarely "Rarely"
+* LifestyleMedicineTemporaryCS#monthly "Monthly"
+* LifestyleMedicineTemporaryCS#weekly "Weekly"
+* LifestyleMedicineTemporaryCS#several-times-weekly "Several times weekly"
+* LifestyleMedicineTemporaryCS#substance-freq-daily "Daily"
 ValueSet: SubstanceUseRiskLevelVS
 Id: substance-use-risk-level-vs
 Title: "Substance Use Risk Level ValueSet"
 Description: "Overall risk assessment for substance use patterns"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system AppLogicCS
+* AppLogicCS#substance-risk-minimal "Minimal risk"
+* AppLogicCS#substance-risk-low "Low risk"
+* AppLogicCS#substance-risk-moderate "Moderate risk"
+* AppLogicCS#substance-risk-high "High risk"
+* AppLogicCS#substance-risk-severe "Severe risk"

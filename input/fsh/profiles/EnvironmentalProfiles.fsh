@@ -198,4 +198,4 @@ Description: "Additional context about environmental measurements"
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environmental-context-vs (required)
+* valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environmental-context-vs (extensible)

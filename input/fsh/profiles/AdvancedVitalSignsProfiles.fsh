@@ -106,7 +106,7 @@ Description: "Additional context about advanced vital sign measurements"
 * ^context[0].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from AdvancedVitalSignsContextVS (required)
+* valueCodeableConcept from AdvancedVitalSignsContextVS (extensible)
 
 ValueSet: AdvancedVitalSignsContextVS
 Id: advanced-vital-signs-context-vs
@@ -114,4 +114,8 @@ Title: "Advanced Vital Signs Context Value Set"
 Description: "Context codes for advanced vital sign measurements"
 
 * ^experimental = false
-* codes from system AppLogicCS
+* AppLogicCS#resting "Resting state"
+* AppLogicCS#vitals-context-active "Active state"
+* AppLogicCS#vitals-context-recovery "Recovery state"
+* AppLogicCS#activity "Sleep state"
+* AppLogicCS#vitals-context-stress "Stress state"

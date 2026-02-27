@@ -6,7 +6,7 @@ Description: "Extension for recording identified stress triggers"
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
-* valueCodeableConcept from StressTriggersVS (required)
+* valueCodeableConcept from StressTriggersVS (extensible)
 
 Extension: StressCoping
 Id: stress-coping
@@ -16,18 +16,30 @@ Description: "Extension for recording stress coping mechanisms"
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
-* valueCodeableConcept from StressCopingVS (required)
+* valueCodeableConcept from StressCopingVS (extensible)
 
 ValueSet: StressTriggersVS
 Id: stress-triggers-vs
 Title: "Stress Triggers Value Set"
 Description: "Value set for common stress triggers"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#stress-triggers-work "Work-related"
+* LifestyleMedicineTemporaryCS#financial "Financial"
+* LifestyleMedicineTemporaryCS#relationships "Relationships"
+* LifestyleMedicineTemporaryCS#health "Health"
+* LifestyleMedicineTemporaryCS#stress-triggers-environment "Environmental"
+* LifestyleMedicineTemporaryCS#time "Time Management"
+* LifestyleMedicineTemporaryCS#stress-triggers-change "Life Changes"
 
 ValueSet: StressCopingVS
 Id: stress-coping-vs
 Title: "Stress Coping Value Set"
 Description: "Value set for stress coping mechanisms"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#stress-coping-exercise "Physical Exercise"
+* LifestyleMedicineTemporaryCS#stress-coping-meditation "Meditation"
+* LifestyleMedicineTemporaryCS#stress-coping-social "Social Support"
+* LifestyleMedicineTemporaryCS#stress-coping-professional "Professional Help"
+* LifestyleMedicineTemporaryCS#relaxation "Relaxation"
+* LifestyleMedicineTemporaryCS#creative "Creative Activities"
+* LifestyleMedicineTemporaryCS#nature "Nature"

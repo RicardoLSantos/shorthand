@@ -6,7 +6,7 @@ Description: "Additional context about the vital sign measurement"
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
-* valueCodeableConcept from MeasurementContextVS (required)
+* valueCodeableConcept from MeasurementContextVS (extensible)
 
 ValueSet: MeasurementContextVitalSigns
 Id: measurement-context-vital-signs

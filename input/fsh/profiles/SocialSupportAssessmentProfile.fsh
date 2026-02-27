@@ -135,14 +135,22 @@ Id: social-support-level-vs
 Title: "Social Support Level Value Set"
 Description: "Levels of perceived social support"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#social-support-level-high "High Support"
+* AppLogicCS#social-support-level-moderate "Moderate Support"
+* AppLogicCS#social-support-level-low "Low Support"
+* AppLogicCS#social-support-level-very-low "Very Low Support"
 
 ValueSet: SocialSupportAssessmentMethodVS
 Id: social-support-assessment-method-vs
 Title: "Social Support Assessment Method Value Set"
 Description: "Validated instruments for social support assessment"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#mspss "MSPSS"
+* LifestyleMedicineTemporaryCS#duke-unc "Duke-UNC FSSQ"
+* LifestyleMedicineTemporaryCS#mos-sss "MOS-SSS"
+* LifestyleMedicineTemporaryCS#ssq6 "SSQ6"
+* LifestyleMedicineTemporaryCS#isel "ISEL"
+* LifestyleMedicineTemporaryCS#social-support-assessment-method-clinical "Clinical Assessment"
 
 ValueSet: SocialSupportInterpretationVS
 Id: social-support-interpretation-vs

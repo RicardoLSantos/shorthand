@@ -19,7 +19,7 @@ Description: "Extension for recording location of environmental exposure measure
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from ExposureLocationVS (required)
+* valueCodeableConcept from ExposureLocationVS (extensible)
 * valueCodeableConcept ^short = "Location type of exposure"
 * valueCodeableConcept ^definition = "Categorizes the type of location where environmental exposure occurred"
 
@@ -44,7 +44,7 @@ Description: "Additional conditions during environmental exposure measurement"
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from ExposureConditionsVS (required)
+* valueCodeableConcept from ExposureConditionsVS (extensible)
 * valueCodeableConcept ^short = "Conditions during exposure"
 
 ValueSet: ExposureLocationVS
@@ -65,7 +65,13 @@ Description: "Value set for environmental exposure locations"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^experimental = false
-* codes from system AppLogicCS
+* AppLogicCS#exposure-location-indoor "Indoor environment"
+* AppLogicCS#exposure-location-outdoor "Outdoor environment"
+* AppLogicCS#exposure-location-workplace "Workplace"
+* AppLogicCS#transit "In transit"
+* AppLogicCS#exposure-location-recreational "Recreational area"
+* AppLogicCS#exposure-location-urban "Urban area"
+* AppLogicCS#exposure-location-rural "Rural area"
 
 ValueSet: ExposureConditionsVS
 Id: exposure-conditions-vs
@@ -85,4 +91,7 @@ Description: "Value set for environmental exposure conditions"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^experimental = false
-* codes from system AppLogicCS
+* AppLogicCS#exposure-conditions-normal "Normal conditions"
+* AppLogicCS#exposure-conditions-extreme "Extreme conditions"
+* AppLogicCS#controlled "Controlled environment"
+* AppLogicCS#app-logic-variable "Variable conditions"

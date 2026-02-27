@@ -113,18 +113,26 @@ Id: loneliness-frequency-vs
 Title: "Loneliness Frequency Value Set"
 Description: "Frequency responses for loneliness assessment"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#hardly-ever "Hardly ever"
+* LifestyleMedicineTemporaryCS#some-of-time "Some of the time"
+* LifestyleMedicineTemporaryCS#often "Often"
 
 ValueSet: LonelinessItemResponseVS
 Id: loneliness-item-response-vs
 Title: "Loneliness Item Response Value Set"
 Description: "Response options for individual UCLA loneliness items"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#hardly-ever "Hardly ever"
+* LifestyleMedicineTemporaryCS#some-of-time "Some of the time"
+* LifestyleMedicineTemporaryCS#often "Often"
 
 ValueSet: LonelinessAssessmentMethodVS
 Id: loneliness-assessment-method-vs
 Title: "Loneliness Assessment Method Value Set"
 Description: "Validated instruments for loneliness assessment"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#ucla-20 "UCLA Loneliness Scale (20-item)"
+* LifestyleMedicineTemporaryCS#ucla-3 "UCLA Loneliness Scale (3-item)"
+* LifestyleMedicineTemporaryCS#de-jong "De Jong Gierveld Scale"
+* LifestyleMedicineTemporaryCS#de-jong-6 "De Jong Gierveld Scale (6-item)"
+* LifestyleMedicineTemporaryCS#clinical-interview "Clinical Interview"

@@ -81,7 +81,7 @@ References:
 * prediction.probabilityDecimal ^short = "Probability 0.0-1.0"
 
 * prediction.qualitativeRisk 0..1 MS
-* prediction.qualitativeRisk from IsolationRiskLevelVS (required)
+* prediction.qualitativeRisk from RiskLevelSNOMEDVS (required)
 * prediction.qualitativeRisk ^short = "Low/Moderate/High/Critical risk level"
 
 * prediction.relativeRisk 0..1 MS
@@ -104,30 +104,34 @@ References:
 // Value Sets
 // =============================================================================
 
-ValueSet: IsolationRiskLevelVS
-Id: isolation-risk-level-vs
-Title: "Social Isolation Risk Level Value Set"
-Description: "Risk levels for social isolation"
-* ^experimental = false
-* codes from system AppLogicCS
+// IsolationRiskLevelVS replaced by RiskLevelSNOMEDVS (Phase 2 — SharedQualifier adoption)
 
 ValueSet: IsolationRiskOutcomeVS
 Id: isolation-risk-outcome-vs
 Title: "Social Isolation Risk Outcome Value Set"
 Description: "Potential outcomes from social isolation"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#chronic-isolation "Chronic Social Isolation"
+* LifestyleMedicineTemporaryCS#severe-loneliness "Severe Loneliness"
+* LifestyleMedicineTemporaryCS#functional-decline "Functional Decline"
+* LifestyleMedicineTemporaryCS#cognitive-decline "Cognitive Decline"
 
 ValueSet: IsolationRiskMethodVS
 Id: isolation-risk-method-vs
 Title: "Social Isolation Risk Method Value Set"
 Description: "Methods for assessing social isolation risk"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#loneliness-assessment "Loneliness assessment"
+* LifestyleMedicineTemporaryCS#social-support-assessment "Social support assessment"
+* LifestyleMedicineTemporaryCS#family-structure-assessment "Family structure assessment"
+* LifestyleMedicineTemporaryCS#social-isolation-risk "Social isolation risk"
 
 ValueSet: IsolationRiskFactorVS
 Id: isolation-risk-factor-vs
 Title: "Social Isolation Risk Factor Value Set"
 Description: "Risk factors for social isolation"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#living-alone "Living Alone"
+* LifestyleMedicineTemporaryCS#geographic-isolation "Geographic Isolation"
+* LifestyleMedicineTemporaryCS#mobility-impairment "Mobility Impairment"
+* LifestyleMedicineTemporaryCS#caregiving-burden "Caregiving Burden"

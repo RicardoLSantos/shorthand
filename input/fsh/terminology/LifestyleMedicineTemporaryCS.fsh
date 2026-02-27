@@ -24,7 +24,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 750
+* ^count = 718
 
 // Traceability: codes renamed due to collisions are documented via inline comments.
 // Full mapping available in scripts/consolidation_mapping.json
@@ -76,12 +76,8 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 // --- Domain: alcohol-type (from AlcoholBeverageTypeCS) — PARTIALLY SUPERSEDED (2026-02-27) ---
 // SUPERSEDED by SNOMED: beer→53410008, wine→35748005, cider→226025006, fortified-wine→228982004
 // KEPT (custom gap): spirits, cocktails — still referenced by AlcoholBeverageTypeVS
-* #beer "Beer" "Beer and malt beverages"
-* #wine "Wine" "Wine including red, white, and sparkling"
 * #spirits "Spirits" "Distilled spirits (whiskey, vodka, gin, etc.)"
 * #cocktails "Cocktails" "Mixed drinks and cocktails"
-* #cider "Cider" "Alcoholic cider"
-* #fortified-wine "Fortified wine" "Port, sherry, vermouth"
 
 // --- Domain: assignment — RELOCATED to AppLogicCS (Cat C: app metadata) (2026-02-27) ---
 // --- 5 codes: mapped, pending-loinc, pending-snomed, local-only, deprecated ---
@@ -286,10 +282,6 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
   // Renamed from CyclingMetricsCS#cadence (collision resolution)
 * #avg-cadence "Average Cadence" "Mean cadence over the activity"
 * #lr-balance "Left/Right Power Balance" "Power distribution between legs"
-* #left-te "Left Torque Effectiveness" "Percentage of positive torque on left side"
-* #right-te "Right Torque Effectiveness" "Percentage of positive torque on right side"
-* #left-ps "Left Pedal Smoothness" "Consistency of power application on left pedal stroke"
-* #right-ps "Right Pedal Smoothness" "Consistency of power application on right pedal stroke"
 * #avg-speed "Average Speed" "Mean speed over the activity"
 * #cycling-elevation "Elevation Gain" "Total vertical meters climbed"
   // Renamed from CyclingMetricsCS#elevation (collision resolution)
@@ -320,9 +312,6 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 
 // --- Domain: ecg (from ECGComponentsCS) ---
 * #qt-correction-formula "QT Correction Formula" "Formula used to calculate corrected QT interval"
-* #ecg-lead-configuration "ECG Lead Configuration" "Configuration of ECG leads used"
-* #signal-quality-score "Signal Quality Score" "Algorithm-derived ECG signal quality"
-* #recording-duration "Recording Duration" "Duration of ECG recording in seconds"
 
 // --- Domain: environment — RELOCATED to AppLogicCS (Cat C: app metadata) (2026-02-27) ---
 // --- 8 codes: environment-indoor/outdoor/urban/rural/workplace/home, healthcare-facility, environment-recreational ---
@@ -404,18 +393,9 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 
 // --- Domain: isolation-factor (from IsolationRiskFactorCS) ---
 * #living-alone "Living Alone" "Single-person household"
-* #recent-bereavement "Recent Bereavement" "Death of spouse/partner within 2 years"
 * #geographic-isolation "Geographic Isolation" "Rural or remote location, limited transport"
 * #mobility-impairment "Mobility Impairment" "Physical limitations affecting social participation"
-* #sensory-impairment "Sensory Impairment" "Hearing or vision loss affecting communication"
-* #cognitive-impairment "Cognitive Impairment" "Dementia or significant cognitive decline"
-* #recent-retirement "Recent Retirement" "Retirement within past year"
 * #recent-relocation "Recent Relocation" "Moved residence within past year"
-* #chronic-illness "Chronic Illness" "Condition limiting social activities"
-* #isolation-factor-mental-health "Mental Health Condition" "Depression, anxiety, or other mental disorder"
-  // Renamed from IsolationRiskFactorCS#mental-health (collision resolution)
-* #language-barrier "Language Barrier" "Communication difficulties due to language"
-* #financial-constraint "Financial Constraint" "Limited resources for social activities"
 * #caregiving-burden "Caregiving Burden" "Primary caregiver responsibilities limiting social time"
 
 // --- Domain: isolation-level — RELOCATED to AppLogicCS (Cat D: ordinal scale) (2026-02-27) ---
@@ -426,18 +406,13 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #lubben-18 "LSNS-18" "Lubben Social Network Scale 18-item"
 * #berkman-sni "Berkman-SNI" "Berkman-Syme Social Network Index"
 * #clinical-risk "Clinical Risk Assessment" "Comprehensive clinical assessment of social risk factors"
-* #algorithmic "Algorithmic Risk Score" "Computed risk score from multiple data sources"
-* #community-screening "Community Screening" "Population-level screening tool"
 
 // --- Domain: isolation-outcome (from IsolationRiskOutcomeCS) ---
 * #chronic-isolation "Chronic Social Isolation" "Persistent lack of social contact"
 * #severe-loneliness "Severe Loneliness" "Persistent subjective loneliness despite social contact"
 * #depression-onset "Depression Onset" "Development of major depressive disorder"
 * #cognitive-decline "Cognitive Decline" "Accelerated cognitive deterioration"
-* #cardiovascular-event "Cardiovascular Event" "MI, stroke, or other CV event"
-* #mortality "All-cause Mortality" "Death from any cause"
 * #functional-decline "Functional Decline" "Loss of independent living capacity"
-* #institutionalization "Institutionalization" "Admission to care facility"
 
 // --- Domain: lifestyle (from LifestyleObservationCS) ---
 * #sleep-panel "Sleep measurement panel" "Panel for comprehensive sleep measurements including duration, stages, and quality metrics"
@@ -522,15 +497,10 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 // --- Domain: living (from LivingSituationCS) — PARTIALLY SUPERSEDED (2026-02-27) ---
 // SUPERSEDED by SNOMED: alone→105529008, with-spouse→447051007, with-family→224133007, nursing-home→160734000, homeless→160700001
 // KEPT (custom gap): living-multigenerational, with-roommates, assisted-living, temporary — still referenced by LivingSituationVS
-* #alone "Living Alone" "Single-person household"
-* #with-spouse "With Spouse/Partner" "Living with spouse or domestic partner"
-* #with-family "With Family" "Living with family members (parents, children, siblings)"
 * #living-multigenerational "Multigenerational" "Three or more generations in household"
   // Renamed from LivingSituationCS#multigenerational (collision resolution)
 * #with-roommates "With Roommates" "Non-family cohabitants"
 * #assisted-living "Assisted Living" "Assisted living facility"
-* #nursing-home "Nursing Home" "Skilled nursing facility"
-* #homeless "Homeless" "No fixed address"
 * #temporary "Temporary Housing" "Transitional or temporary living situation"
 
 // --- Domain: loneliness (from LonelinessComponentCS) ---
@@ -593,6 +563,13 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
   // Renamed from MindfulnessTypeCS#walking (collision resolution)
 * #movement "Mindful Movement" "Conscious movement practice"
 
+// --- Domain: mindfulness-setting (merged from MindfulnessSettingCS, Phase 4, 2026-02-27) ---
+* #mindfulness-setting-home "Home Practice" "Mindfulness practice at home"
+* #mindfulness-setting-clinic "Clinical Setting" "Mindfulness practice in a clinical setting"
+* #mindfulness-setting-group "Group Setting" "Mindfulness practice in a group setting"
+* #mindfulness-setting-retreat "Retreat Setting" "Mindfulness practice at a retreat"
+* #mindfulness-setting-workplace "Workplace Setting" "Mindfulness practice in the workplace"
+
 // --- Domain: mobility-alert — SUPERSEDED by standard terminology (2026-02-27) ---
 // --- SUPERSEDED by HL7 ObservationInterpretation (N, A, AA) ---
 // --- 3 codes: ValueSet updated to use standard codes ---
@@ -638,10 +615,6 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 // --- Domain: nutrition-source — RELOCATED to AppLogicCS (Cat C: app metadata) (2026-02-27) ---
 // --- 4 codes: manual, nutrition-source-app, nutrition-source-device, questionnaire ---
 
-// --- Domain: oura-sleep-stages ---
-// REMOVED 2026-02-26: Oura sleep codes moved to dedicated OuraSleepStagesCS
-// (aligns with Apple/Fitbit/Garmin vendor CodeSystem pattern)
-
 // --- Domain: ovulation-test (from OvulationTestCodeSystem) ---
 * #negative "Negative"
 * #positive "Positive"
@@ -676,7 +649,6 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #stairs "Stairs" "Stair climbing. Maps to HKWorkoutActivityType.stairs and HKWorkoutActivityType.stairStepper."
 * #active-minutes "Active Minutes" "Minutes of activity in heart rate zones (moderate to vigorous). Apple: Exercise Ring minutes, Fitbit: Active Zone Minutes, Garmin: Intensity Minutes."
 * #met-minutes "MET-Minutes" "Metabolic Equivalent of Task × Duration. Standard measure for physical activity dose. 1 MET = 1 kcal/kg/hour (resting). Target: 500-1000 MET-min/week per guidelines."
-* #sedentary-time "Sedentary Time" "Time spent in sedentary activities (<1.5 METs). Target: Reduce prolonged sitting, break every 30-60 min. Independent risk factor for mortality."
 * #floors-climbed "Floors Climbed" "Number of floors/flights of stairs climbed. Indicates vertical displacement activity. Typically measured via barometric altimeter."
 * #stand-hours "Stand Hours" "Hours with at least 1 minute standing. Apple Watch specific metric. Target: 12 stand hours/day. Proxy for sedentary behavior interruption."
 
@@ -1116,13 +1088,8 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 // --- Domain: tobacco-type (from TobaccoProductTypeCS) — PARTIALLY SUPERSEDED (2026-02-27) ---
 // SUPERSEDED by SNOMED: cigarette→66562002, cigar→26663004, pipe→84498003, hookah→722495000, e-cig→722498003
 // KEPT (custom gap): chewing-tobacco, snuff, heated-tobacco — still referenced by TobaccoProductTypeVS
-* #cigarette "Cigarette" "Manufactured cigarette"
-* #cigar "Cigar" "Cigar including cigarillos"
-* #pipe "Pipe" "Tobacco pipe"
 * #chewing-tobacco "Chewing tobacco" "Smokeless tobacco for chewing"
 * #snuff "Snuff" "Nasal snuff"
-* #hookah "Hookah" "Water pipe/hookah"
-* #electronic-cigarette "Electronic cigarette" "E-cigarette/vape device"
 * #heated-tobacco "Heated tobacco" "Heat-not-burn tobacco products"
 
 // --- Domain: training-status — RELOCATED to AppLogicCS (2026-02-27) ---
@@ -1270,8 +1237,6 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #mindfulness-config-settings "Mindfulness Settings" "Configuration type for mindfulness settings"
 
 // From mindfulness-message-events CodeSystem
-* #mindfulness-msg-session-start "Session Start" "Message event for starting a mindfulness session"
-* #mindfulness-msg-session-end "Session End" "Message event for ending a mindfulness session"
 
 // From mindfulness-schedule-type CodeSystem
 * #mindfulness-schedule-recurring "Recurring Schedule" "Schedule type for recurring mindfulness sessions"

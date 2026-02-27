@@ -42,7 +42,17 @@ Title: "Substance Use Trigger ValueSet"
 Description: "Common triggers for substance use"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#substance-trigger-stress "Stress"
+* LifestyleMedicineTemporaryCS#substance-trigger-social "Social situations"
+* LifestyleMedicineTemporaryCS#emotional "Emotional distress"
+* LifestyleMedicineTemporaryCS#boredom "Boredom"
+* LifestyleMedicineTemporaryCS#habit "Habit/routine"
+* LifestyleMedicineTemporaryCS#substance-trigger-celebration "Celebration"
+* LifestyleMedicineTemporaryCS#cravings "Physical cravings"
+* LifestyleMedicineTemporaryCS#meals "With meals"
+* LifestyleMedicineTemporaryCS#morning "Morning routine"
+* LifestyleMedicineTemporaryCS#sleep "Sleep issues"
+* LifestyleMedicineTemporaryCS#pain "Pain"
 Extension: CessationSupport
 Id: cessation-support
 Title: "Cessation Support"
@@ -68,7 +78,20 @@ Title: "Cessation Support Method ValueSet"
 Description: "Methods of support for substance use cessation"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#nrt-patch "NRT - Patch"
+* LifestyleMedicineTemporaryCS#nrt-gum "NRT - Gum"
+* LifestyleMedicineTemporaryCS#nrt-lozenge "NRT - Lozenge"
+* LifestyleMedicineTemporaryCS#nrt-inhaler "NRT - Inhaler"
+* LifestyleMedicineTemporaryCS#varenicline "Varenicline"
+* LifestyleMedicineTemporaryCS#bupropion "Bupropion"
+* LifestyleMedicineTemporaryCS#counseling "Counseling"
+* LifestyleMedicineTemporaryCS#quitline "Quitline"
+* LifestyleMedicineTemporaryCS#cessation-method-app "Mobile app"
+* LifestyleMedicineTemporaryCS#support-group "Support group"
+* LifestyleMedicineTemporaryCS#acupuncture "Acupuncture"
+* LifestyleMedicineTemporaryCS#hypnotherapy "Hypnotherapy"
+* LifestyleMedicineTemporaryCS#cold-turkey "Cold turkey"
+* LifestyleMedicineTemporaryCS#gradual-reduction "Gradual reduction"
 ValueSet: CessationSupportStatusVS
 Id: cessation-support-status-vs
 Title: "Cessation Support Status ValueSet"
@@ -97,4 +120,11 @@ Title: "Drinking Context ValueSet"
 Description: "Contexts where alcohol consumption typically occurs"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#home-alone "Home alone"
+* LifestyleMedicineTemporaryCS#home-social "Home with others"
+* LifestyleMedicineTemporaryCS#restaurant "Restaurant/dining"
+* LifestyleMedicineTemporaryCS#bar-club "Bar or club"
+* LifestyleMedicineTemporaryCS#party "Party/celebration"
+* LifestyleMedicineTemporaryCS#work-event "Work event"
+* LifestyleMedicineTemporaryCS#drinking-context-outdoor "Outdoor activity"
+* LifestyleMedicineTemporaryCS#sporting-event "Sporting event"

@@ -137,11 +137,11 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
 
 * component[trainingZone].code = LifestyleMedicineTemporaryCS#zone "Training Zone"
 * component[trainingZone].value[x] only CodeableConcept
-* component[trainingZone].valueCodeableConcept from CyclingTrainingZoneVS (required)
+* component[trainingZone].valueCodeableConcept from CyclingTrainingZoneVS (extensible)
 
 * component[activityType].code = LifestyleMedicineTemporaryCS#type "Activity Type"
 * component[activityType].value[x] only CodeableConcept
-* component[activityType].valueCodeableConcept from CyclingActivityTypeVS (required)
+* component[activityType].valueCodeableConcept from CyclingActivityTypeVS (extensible)
 
 
 // ============================================================================
@@ -255,7 +255,7 @@ Description: "Profile for recording running form and biomechanical metrics from 
 
 * component[footstrikeType].code = LifestyleMedicineTemporaryCS#footstrike "Footstrike Type"
 * component[footstrikeType].value[x] only CodeableConcept
-* component[footstrikeType].valueCodeableConcept from FootstrikeTypeVS (required)
+* component[footstrikeType].valueCodeableConcept from FootstrikeTypeVS (extensible)
 
 // Session metrics
 * component[pace].code = LifestyleMedicineTemporaryCS#pace "Pace"
@@ -294,7 +294,7 @@ Description: "Profile for recording running form and biomechanical metrics from 
 
 * component[injuryRisk].code = LifestyleMedicineTemporaryCS#injury-risk "Injury Risk"
 * component[injuryRisk].value[x] only CodeableConcept
-* component[injuryRisk].valueCodeableConcept from InjuryRiskLevelVS (required)
+* component[injuryRisk].valueCodeableConcept from RiskLevelSNOMEDVS (required)
 
 
 // ============================================================================
@@ -378,7 +378,7 @@ Description: "Profile for recording swimming performance metrics from wearable d
 // Stroke metrics
 * component[primaryStrokeType].code = LifestyleMedicineTemporaryCS#stroke-type "Primary Stroke Type"
 * component[primaryStrokeType].value[x] only CodeableConcept
-* component[primaryStrokeType].valueCodeableConcept from SwimmingStrokeTypeVS (required)
+* component[primaryStrokeType].valueCodeableConcept from SwimmingStrokeTypeVS (extensible)
 
 * component[strokesPerLap].code = LifestyleMedicineTemporaryCS#strokes-per-lap "Strokes Per Lap"
 * component[strokesPerLap].value[x] only integer
@@ -426,7 +426,7 @@ Description: "Profile for recording swimming performance metrics from wearable d
 
 * component[swimmingEnvironment].code = LifestyleMedicineTemporaryCS#swimming-environment "Swimming Environment"
 * component[swimmingEnvironment].value[x] only CodeableConcept
-* component[swimmingEnvironment].valueCodeableConcept from SwimmingEnvironmentVS (required)
+* component[swimmingEnvironment].valueCodeableConcept from SwimmingEnvironmentVS (extensible)
 
 // Heart rate
 * component[avgHeartRate].code = $LOINC#8867-4 "Heart rate"
@@ -522,15 +522,15 @@ Description: "Profile for recording strength training metrics from wearable devi
 
 * component[exerciseCategory].code = LifestyleMedicineTemporaryCS#strength-category "Exercise Category"
 * component[exerciseCategory].value[x] only CodeableConcept
-* component[exerciseCategory].valueCodeableConcept from ExerciseCategoryVS (required)
+* component[exerciseCategory].valueCodeableConcept from ExerciseCategoryVS (extensible)
 
 * component[muscleGroup].code = LifestyleMedicineTemporaryCS#muscle "Primary Muscle Group"
 * component[muscleGroup].value[x] only CodeableConcept
-* component[muscleGroup].valueCodeableConcept from MuscleGroupVS (required)
+* component[muscleGroup].valueCodeableConcept from MuscleGroupVS (extensible)
 
 * component[equipmentType].code = LifestyleMedicineTemporaryCS#equipment "Equipment Type"
 * component[equipmentType].value[x] only CodeableConcept
-* component[equipmentType].valueCodeableConcept from StrengthEquipmentVS (required)
+* component[equipmentType].valueCodeableConcept from StrengthEquipmentVS (extensible)
 
 // Set details
 * component[setNumber].code = LifestyleMedicineTemporaryCS#set-num "Set Number"
@@ -538,7 +538,7 @@ Description: "Profile for recording strength training metrics from wearable devi
 
 * component[setType].code = LifestyleMedicineTemporaryCS#set-type "Set Type"
 * component[setType].value[x] only CodeableConcept
-* component[setType].valueCodeableConcept from SetTypeVS (required)
+* component[setType].valueCodeableConcept from SetTypeVS (extensible)
 
 * component[repsPerformed].code = LifestyleMedicineTemporaryCS#reps "Repetitions Performed"
 * component[repsPerformed].value[x] only integer
@@ -640,4 +640,4 @@ Description: "Profile for recording strength training metrics from wearable devi
 
 * component[trainingType].code = LifestyleMedicineTemporaryCS#training-type "Training Type"
 * component[trainingType].value[x] only CodeableConcept
-* component[trainingType].valueCodeableConcept from StrengthTrainingTypeVS (required)
+* component[trainingType].valueCodeableConcept from StrengthTrainingTypeVS (extensible)

@@ -119,11 +119,11 @@ References:
 
 * component[chronicity]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#stress-chronicity "Stress chronicity assessment"
-  * valueCodeableConcept from StressChronicityVS (required)
+  * valueCodeableConcept from StressChronicityVS (extensible)
 
 * component[impact]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#stress-impact "Stress impact assessment"
-  * valueCodeableConcept from StressImpactVS (required)
+  * valueCodeableConcept from StressImpactVS (extensible)
 
 * extension contains
     MeasurementContext named context 0..1 MS and

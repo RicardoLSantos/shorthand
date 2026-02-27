@@ -33,7 +33,7 @@ Description: "Provides explicit warnings about the appropriate clinical use of c
 * extension[warningText] ^short = "Human-readable warning text"
 * extension[warningText] ^definition = "Free text description of the clinical use limitation or warning"
 * extension[warningCode].value[x] only CodeableConcept
-* extension[warningCode].valueCodeableConcept from ClinicalUseWarningTypeVS (required)
+* extension[warningCode].valueCodeableConcept from ClinicalUseWarningTypeVS (extensible)
 * extension[warningCode] ^short = "Coded warning type"
 * extension[warningCode] ^definition = "Standardized code indicating the type of clinical use warning"
 * extension[severity].value[x] only code
@@ -45,13 +45,23 @@ Id: clinical-use-warning-type-vs
 Title: "Clinical Use Warning Type ValueSet"
 Description: "ValueSet for clinical use warning codes on consumer wearable observations"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
+* LifestyleMedicineTemporaryCS#algorithm-not-validated "Algorithm Not Validated"
+* LifestyleMedicineTemporaryCS#vendor-proprietary "Vendor Proprietary Calculation"
+* LifestyleMedicineTemporaryCS#insufficient-data-quality "Insufficient Data Quality"
+* LifestyleMedicineTemporaryCS#single-lead-ecg "Single-Lead ECG Limitation"
+* LifestyleMedicineTemporaryCS#not-fda-cleared-indication "Not FDA-Cleared Indication"
+* LifestyleMedicineTemporaryCS#requires-clinical-correlation "Requires Clinical Correlation"
+* LifestyleMedicineTemporaryCS#research-use-only "Research Use Only"
 ValueSet: DataQualityConfidenceVS
 Id: data-quality-confidence-vs
 Title: "Data Quality Confidence ValueSet"
 Description: "ValueSet for data quality confidence levels in consumer wearable data"
 * ^experimental = false
-* include codes from system AppLogicCS
+* AppLogicCS#data-quality-high "High Confidence"
+* AppLogicCS#data-quality-medium "Medium Confidence"
+* AppLogicCS#data-quality-low "Low Confidence"
+* AppLogicCS#data-quality-unreliable "Unreliable"
 
 // Data Quality Extension
 Extension: DataQualityIndicator
@@ -66,7 +76,7 @@ Description: "Indicates the quality/confidence level of consumer wearable-derive
     confidenceScore 0..1 and
     qualityNote 0..1
 * extension[confidenceLevel].value[x] only CodeableConcept
-* extension[confidenceLevel].valueCodeableConcept from DataQualityConfidenceVS (required)
+* extension[confidenceLevel].valueCodeableConcept from ConfidenceLevelSNOMEDVS (required)
 * extension[confidenceScore].value[x] only decimal
 * extension[confidenceScore] ^short = "Numeric confidence score (0-100)"
 * extension[qualityNote].value[x] only string
@@ -76,4 +86,13 @@ Id: wearable-device-type-vs
 Title: "Wearable Device Type ValueSet"
 Description: "ValueSet for types of consumer wearable devices"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AppLogicCS#smartwatch "Smartwatch"
+* AppLogicCS#fitness-tracker "Fitness Tracker"
+* AppLogicCS#chest-strap "Chest Strap"
+* AppLogicCS#smart-ring "Smart Ring"
+* AppLogicCS#smart-patch "Smart Patch"
+* AppLogicCS#smart-clothing "Smart Clothing"
+* AppLogicCS#cgm-device "CGM Device"
+* AppLogicCS#ecg-accessory "ECG Accessory"
+* AppLogicCS#pulse-oximeter "Pulse Oximeter"
+* AppLogicCS#mobile-app-sensor "Mobile App Sensor"

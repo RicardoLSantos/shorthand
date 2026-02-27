@@ -4,7 +4,11 @@ Title: "Mindfulness Outcomes Value Set"
 Description: "Value set for mindfulness practice outcomes"
 
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#increasedAwareness "Increased Awareness"
+* LifestyleMedicineTemporaryCS#improvedFocus "Improved Focus"
+* LifestyleMedicineTemporaryCS#stressReduction "Stress Reduction"
+* LifestyleMedicineTemporaryCS#emotionalBalance "Emotional Balance"
+* LifestyleMedicineTemporaryCS#improvedSleep "Improved Sleep"
 * include $SCT#365949003 "Finding of level of stress"
 * include $SCT#106131003 "Mood finding"
 ValueSet: MindfulnessQualifierVS
@@ -23,4 +27,7 @@ appropriate qualifiers for mindfulness practice settings.
 """
 
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#guided "Guided Practice"
+* LifestyleMedicineTemporaryCS#selfDirected "Self-Directed"
+* LifestyleMedicineTemporaryCS#mindfulness-qualifier-group "Group Practice"
+* LifestyleMedicineTemporaryCS#individual "Individual Practice"

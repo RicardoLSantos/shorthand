@@ -31,7 +31,12 @@ Id: qt-correction-formula-vs
 Title: "QT Correction Formula ValueSet"
 Description: "ValueSet for QT interval correction formulas"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#bazett "Bazett Formula"
+* LifestyleMedicineTemporaryCS#fridericia "Fridericia Formula"
+* LifestyleMedicineTemporaryCS#framingham "Framingham Formula"
+* LifestyleMedicineTemporaryCS#hodges "Hodges Formula"
+* LifestyleMedicineTemporaryCS#rautaharju "Rautaharju Formula"
+* LifestyleMedicineTemporaryCS#qt-formula-unknown "Unknown/Not Specified"
 
 // ECG-Derived Vital Signs Base Profile
 Profile: ConsumerECGObservation
@@ -149,7 +154,7 @@ Description: "Extension for clinical alerts triggered by QT prolongation thresho
     threshold 1..1 MS and
     recommendedAction 0..1 MS
 * extension[alertType].value[x] only CodeableConcept
-* extension[alertType].valueCodeableConcept from QTAlertTypeVS (required)
+* extension[alertType].valueCodeableConcept from QTAlertTypeVS (extensible)
 * extension[threshold].value[x] only Quantity
 * extension[threshold].valueQuantity.system = $UCUM
 * extension[threshold].valueQuantity.code = #ms
@@ -159,4 +164,7 @@ Id: qt-alert-type-vs
 Title: "QT Alert Type ValueSet"
 Description: "ValueSet for QT clinical alert types"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#qtc-borderline "QTc Borderline Prolongation"
+* LifestyleMedicineTemporaryCS#qtc-prolongation-severe "QTc Severe Prolongation"
+* LifestyleMedicineTemporaryCS#qtc-increase-significant "Significant QTc Increase"
+* LifestyleMedicineTemporaryCS#torsades-warning "Torsades de Pointes Warning"

@@ -1,9 +1,94 @@
 ValueSet: LifestyleObservationVS
 Id: lifestyle-observation-vs
 Title: "Lifestyle Medicine Observation Value Set"
-Description: "Value set containing all local lifestyle medicine observation codes"
+Description: "Value set containing all local lifestyle medicine observation codes for sleep, noise, social interaction, stress, UV, HRV, cardiovascular, balance/mobility, nutrition, mindfulness, walking/gait, cardiac, and substance use domains."
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"
 * ^version = "0.1.0"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+// Sleep
+* LifestyleMedicineTemporaryCS#sleep-panel "Sleep measurement panel"
+* LifestyleMedicineTemporaryCS#sleep-deep "Deep sleep duration"
+* LifestyleMedicineTemporaryCS#sleep-light "Light sleep duration"
+* LifestyleMedicineTemporaryCS#rem-sleep "REM sleep duration"
+* LifestyleMedicineTemporaryCS#sleep-score "Sleep score"
+* LifestyleMedicineTemporaryCS#waso "Wake after sleep onset"
+* LifestyleMedicineTemporaryCS#sleep-awakenings "Number of sleep awakenings"
+* LifestyleMedicineTemporaryCS#sleep-time-bed "Time in bed"
+* LifestyleMedicineTemporaryCS#sleep-monitoring-device "Sleep monitoring device"
+// Noise / Audio
+* LifestyleMedicineTemporaryCS#noise-avg "Environmental noise average level"
+* LifestyleMedicineTemporaryCS#noise-duration "Environmental noise exposure duration"
+* LifestyleMedicineTemporaryCS#noise-peak "Peak environmental sound level"
+* LifestyleMedicineTemporaryCS#noise-background "Background environmental noise level"
+* LifestyleMedicineTemporaryCS#environmental-audio-exposure "Environmental audio exposure level"
+* LifestyleMedicineTemporaryCS#headphone-audio-exposure "Headphone audio exposure level"
+// Social
+* LifestyleMedicineTemporaryCS#social-duration "Social interaction duration"
+* LifestyleMedicineTemporaryCS#social-quality "Social interaction quality score"
+* LifestyleMedicineTemporaryCS#social-medium "Social interaction medium"
+* LifestyleMedicineTemporaryCS#social-count "Number of social interactions"
+// Stress
+* LifestyleMedicineTemporaryCS#stress-physiological "Physiological stress indicator"
+* LifestyleMedicineTemporaryCS#stress-psychological "Psychological stress score"
+* LifestyleMedicineTemporaryCS#stress-chronicity "Stress chronicity assessment"
+* LifestyleMedicineTemporaryCS#stress-impact "Stress impact assessment"
+// UV / Environment
+* LifestyleMedicineTemporaryCS#uv-index "UV index"
+* LifestyleMedicineTemporaryCS#uv-duration "UV exposure duration"
+* LifestyleMedicineTemporaryCS#uv-intensity "UV intensity"
+* LifestyleMedicineTemporaryCS#exposure-time "Time of environmental exposure"
+* LifestyleMedicineTemporaryCS#environmental-sensor "Environmental sensor device"
+// HRV / Cardiovascular
+* LifestyleMedicineTemporaryCS#hrv-frequency "Heart rate variability frequency band"
+* LifestyleMedicineTemporaryCS#hrv-entropy "Heart rate variability entropy"
+* LifestyleMedicineTemporaryCS#pulse-wave "Pulse wave analysis"
+* LifestyleMedicineTemporaryCS#respiratory-variability "Respiratory rate variability"
+* LifestyleMedicineTemporaryCS#oxygenation-index "Oxygenation index"
+* LifestyleMedicineTemporaryCS#physiological-stress "Physiological stress index"
+* LifestyleMedicineTemporaryCS#temperature-gradient "Temperature gradient"
+* LifestyleMedicineTemporaryCS#autonomic-balance "Autonomic balance index"
+* LifestyleMedicineTemporaryCS#recovery-rate "Recovery rate index"
+* LifestyleMedicineTemporaryCS#allostatic-load "Allostatic load index"
+* LifestyleMedicineTemporaryCS#heart-rate-exercise "Heart rate during exercise"
+* LifestyleMedicineTemporaryCS#heart-rate-variability "Heart rate variability"
+* LifestyleMedicineTemporaryCS#hrv-inflammation-correlation "HRV-Inflammation correlation assessment"
+// Balance / Mobility
+* LifestyleMedicineTemporaryCS#balance-score "Balance assessment score"
+* LifestyleMedicineTemporaryCS#balance-assessment "Balance assessment"
+* LifestyleMedicineTemporaryCS#balance-status "Balance status"
+* LifestyleMedicineTemporaryCS#gait-assessment "Gait assessment"
+* LifestyleMedicineTemporaryCS#movement-assessment "Movement assessment"
+// Walking / Gait (Apple HealthKit)
+* LifestyleMedicineTemporaryCS#walking-speed "Walking speed measurement"
+* LifestyleMedicineTemporaryCS#walking-distance "Walking distance measurement"
+* LifestyleMedicineTemporaryCS#walking-steadiness "Walking steadiness measurement"
+* LifestyleMedicineTemporaryCS#walking-step-length "Walking step length"
+* LifestyleMedicineTemporaryCS#walking-asymmetry "Walking asymmetry percentage"
+* LifestyleMedicineTemporaryCS#walking-double-support "Walking double support percentage"
+* LifestyleMedicineTemporaryCS#stair-ascent-speed "Stair ascent speed"
+* LifestyleMedicineTemporaryCS#stair-descent-speed "Stair descent speed"
+* LifestyleMedicineTemporaryCS#six-minute-walk-distance "Six-minute walk test distance"
+// Nutrition
+* LifestyleMedicineTemporaryCS#lifestyle-caloric-intake "Total caloric intake"
+* LifestyleMedicineTemporaryCS#macronutrients-panel "Macronutrients intake panel"
+* LifestyleMedicineTemporaryCS#lifestyle-protein-intake "Protein intake"
+* LifestyleMedicineTemporaryCS#lifestyle-fat-intake "Fat intake"
+* LifestyleMedicineTemporaryCS#lifestyle-carbohydrate-intake "Carbohydrate intake"
+* LifestyleMedicineTemporaryCS#lifestyle-water-intake "Water intake volume"
+// Body composition
+* LifestyleMedicineTemporaryCS#body-composition-panel "Body composition measurement panel"
+// Mindfulness
+* LifestyleMedicineTemporaryCS#mindfulness-session "Mindfulness practice session"
+* LifestyleMedicineTemporaryCS#relaxation-response "Relaxation response observation"
+* LifestyleMedicineTemporaryCS#mindfulness-type "Type of mindfulness practice"
+// Reproductive
+* LifestyleMedicineTemporaryCS#ovulation-status "Ovulation status"
+// Substance use
+* LifestyleMedicineTemporaryCS#alcohol-type "Type of alcoholic beverage"
+* LifestyleMedicineTemporaryCS#caffeine-source "Caffeine source"
+* LifestyleMedicineTemporaryCS#last-caffeine-time "Time of last caffeine intake"
+* LifestyleMedicineTemporaryCS#substance-frequency "Frequency of substance use"
+* LifestyleMedicineTemporaryCS#last-use-date "Date of last substance use"
+* LifestyleMedicineTemporaryCS#substance-use-summary "Substance use summary"
+* LifestyleMedicineTemporaryCS#substance-risk-level "Overall substance use risk level"

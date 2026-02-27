@@ -41,12 +41,12 @@ Description: "Base profile for social-history health observations"
 * component[frequency]
   * code = $LOINC#92656-8
   * value[x] only CodeableConcept
-  * valueCodeableConcept from SymptomFrequencyVS (required)
+  * valueCodeableConcept from SymptomFrequencyVS (extensible)
 
 * component[pattern]
   * code = $LOINC#64699-2
   * value[x] only CodeableConcept
-  * valueCodeableConcept from SymptomProgressionVS (required)
+  * valueCodeableConcept from SymptomProgressionVS (extensible)
 
 Invariant: rep-1
 Description: "Severity must be between 0 and 10"

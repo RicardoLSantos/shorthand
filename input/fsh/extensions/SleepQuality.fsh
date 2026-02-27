@@ -11,7 +11,7 @@ Description: "Extension for recording subjective sleep quality assessment. Uses 
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
-* valueCodeableConcept from SleepQualityExtendedVS (required)
+* valueCodeableConcept from SleepQualityExtendedVS (extensible)
 
 ValueSet: SleepQualityExtendedVS
 Id: sleep-quality-extended-vs
@@ -20,4 +20,13 @@ Description: "Extended value set for subjective sleep quality assessment. Uses c
 * ^name = "SleepQualityExtendedVS"
 * ^experimental = false
 * ^status = #active
-* include codes from system LifestyleMedicineTemporaryCS
+// Quality grades — SNOMED CT (per SharedQualifierValueSets, Phase 2 adoption)
+* http://snomed.info/sct#425405005 "Excellent (qualifier value)"
+* http://snomed.info/sct#20572008 "Good (qualifier value)"
+* http://snomed.info/sct#260347006 "Fair (qualifier value)"
+* http://snomed.info/sct#255351007 "Poor (qualifier value)"
+// Sleep-specific qualifiers — no standard equivalent
+* LifestyleMedicineTemporaryCS#restful "Restful sleep"
+* LifestyleMedicineTemporaryCS#restless "Restless sleep"
+* LifestyleMedicineTemporaryCS#interrupted "Interrupted sleep"
+* LifestyleMedicineTemporaryCS#uninterrupted "Uninterrupted sleep"

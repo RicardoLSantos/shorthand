@@ -120,7 +120,7 @@ References:
 * component[moodState]
   * code = $SCT#106131003 "Mood finding"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood (required)
+  * valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood (extensible)
 
 * component[relaxationResponse]
   * code = $LIFESTYLEOBS#relaxation-response "Relaxation response observation"
@@ -129,4 +129,4 @@ References:
 * component[mindfulnessType]
   * code = $LIFESTYLEOBS#mindfulness-type "Type of mindfulness practice"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-type (required)
+  * valueCodeableConcept from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-type (extensible)

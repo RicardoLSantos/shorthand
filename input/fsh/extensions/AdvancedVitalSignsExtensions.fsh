@@ -125,7 +125,7 @@ Description: "Indicator of position in circadian rhythm cycle"
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from CircadianPhaseVS (required)
+* valueCodeableConcept from CircadianPhaseVS (extensible)
 
 ValueSet: CircadianPhaseVS
 Id: circadian-phase-vs
@@ -133,7 +133,12 @@ Title: "Circadian Phase Value Set"
 Description: "Value set for circadian rhythm phases"
 
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#early-morning "Early Morning Phase"
+* LifestyleMedicineTemporaryCS#mid-morning "Mid Morning Phase"
+* LifestyleMedicineTemporaryCS#circadian-afternoon "Afternoon Phase"
+* LifestyleMedicineTemporaryCS#circadian-evening "Evening Phase"
+* LifestyleMedicineTemporaryCS#night "Night Phase"
+* LifestyleMedicineTemporaryCS#deep-night "Deep Night Phase"
 Extension: MeasurementQuality
 Id: measurement-quality
 Title: "Measurement Quality Extension"
@@ -155,7 +160,7 @@ Description: "Indicator of the quality and reliability of the measurement"
 * ^context[=].expression = "Observation"
 
 * value[x] only CodeableConcept
-* valueCodeableConcept from MeasurementQualityVS (required)
+* valueCodeableConcept from MeasurementQualityVS (extensible)
 
 ValueSet: MeasurementQualityVS
 Id: measurement-quality-vs
@@ -163,4 +168,8 @@ Title: "Measurement Quality Value Set"
 Description: "Value set for measurement quality indicators"
 
 * ^experimental = false
-* codes from system AppLogicCS
+* AppLogicCS#measurement-quality-excellent "Excellent Quality"
+* AppLogicCS#measurement-quality-good "Good Quality"
+* AppLogicCS#measurement-quality-fair "Fair Quality"
+* AppLogicCS#measurement-quality-poor "Poor Quality"
+* AppLogicCS#measurement-quality-unreliable "Unreliable"

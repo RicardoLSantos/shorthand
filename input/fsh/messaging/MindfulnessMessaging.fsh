@@ -1,4 +1,4 @@
-Alias: $MsgEvents = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
+Alias: $MsgEvents = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs
 Alias: $MsgTypes = http://terminology.hl7.org/CodeSystem/message-type
 
 Profile: MindfulnessMessageDefinition

@@ -141,22 +141,57 @@ Id: agent-task-type-vs
 Title: "Agent Task Type ValueSet"
 Description: "Types of tasks that LLM agents can create including clinical reviews, orders, documentation, and lifestyle interventions"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AgentDecisionSupportCS#review-observation "Review Observation"
+* AgentDecisionSupportCS#review-trend "Review Trend"
+* AgentDecisionSupportCS#review-alert "Review Alert"
+* AgentDecisionSupportCS#order-lab "Order Laboratory Test"
+* AgentDecisionSupportCS#order-imaging "Order Imaging"
+* AgentDecisionSupportCS#order-referral "Order Referral"
+* AgentDecisionSupportCS#document-assessment "Document Assessment"
+* AgentDecisionSupportCS#document-care-plan "Update Care Plan"
+* AgentDecisionSupportCS#agent-task-type-schedule-followup "Schedule Follow-up"
+* AgentDecisionSupportCS#agent-task-type-patient-education "Patient Education"
+* AgentDecisionSupportCS#patient-contact "Patient Contact"
+* AgentDecisionSupportCS#lifestyle-exercise "Exercise Intervention"
+* AgentDecisionSupportCS#lifestyle-nutrition "Nutrition Intervention"
+* AgentDecisionSupportCS#lifestyle-sleep "Sleep Intervention"
+* AgentDecisionSupportCS#lifestyle-stress "Stress Management"
 ValueSet: AgentTaskBusinessStatusVS
 Id: agent-task-business-status-vs
 Title: "Agent Task Business Status ValueSet"
 Description: "Business status values specific to agent workflow including review states and approval outcomes"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AgentDecisionSupportCS#awaiting-review "Awaiting Review"
+* AgentDecisionSupportCS#under-review "Under Review"
+* AgentDecisionSupportCS#approved "Approved"
+* AgentDecisionSupportCS#modified-approved "Modified and Approved"
+* AgentDecisionSupportCS#declined "Declined"
+* AgentDecisionSupportCS#deferred "Deferred"
+* AgentDecisionSupportCS#escalated "Escalated"
 ValueSet: AgentTaskStatusReasonVS
 Id: agent-task-status-reason-vs
 Title: "Agent Task Status Reason ValueSet"
 Description: "Reasons for agent task status changes including clinician decisions and system events"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AgentDecisionSupportCS#clinician-approved "Clinician Approved"
+* AgentDecisionSupportCS#clinician-rejected "Clinician Rejected"
+* AgentDecisionSupportCS#insufficient-evidence "Insufficient Evidence"
+* AgentDecisionSupportCS#clinical-override "Clinical Override"
+* AgentDecisionSupportCS#patient-declined "Patient Declined"
+* AgentDecisionSupportCS#resources-unavailable "Resources Unavailable"
+* AgentDecisionSupportCS#superseded "Superseded"
+* AgentDecisionSupportCS#completed-automatically "Completed Automatically"
 ValueSet: AgentReasonCodeVS
 Id: agent-reason-code-vs
 Title: "Agent Reason Code ValueSet"
 Description: "Clinical reasons for agent-generated tasks including abnormal values, trends, and care opportunities"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* AgentDecisionSupportCS#abnormal-value "Abnormal Value"
+* AgentDecisionSupportCS#concerning-trend "Concerning Trend"
+* AgentDecisionSupportCS#risk-threshold "Risk Threshold Exceeded"
+* AgentDecisionSupportCS#missing-data "Missing Data"
+* AgentDecisionSupportCS#routine-followup "Routine Follow-up"
+* AgentDecisionSupportCS#agent-reason-preventive-care "Preventive Care"
+* AgentDecisionSupportCS#lifestyle-opportunity "Lifestyle Opportunity"
+* AgentDecisionSupportCS#medication-interaction "Medication Interaction"
+* AgentDecisionSupportCS#compliance-concern "Compliance Concern"

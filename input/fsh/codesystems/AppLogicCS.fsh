@@ -498,3 +498,34 @@ Body Structure codes for muscle groups). ConceptMaps link these to standards.
 * #moderate-assist "Moderate Assistance" "Patient requires moderate assistance (physical support for 25-50% of effort)"
 * #maximal-assist "Maximal Assistance" "Patient requires maximal assistance (physical support for >50% of effort)"
 * #dependent "Dependent" "Patient is fully dependent on others for the activity"
+
+// ============================================================================
+// CATEGORY E: INFRASTRUCTURE METADATA (merged Phase 4, 2026-02-27)
+// ============================================================================
+
+// --- Concept Property Definitions (4 codes) ---
+// Merged from ConceptPropertyDefinitionsCS — formal URIs for CodeSystem.property
+* #loinc-equivalent "LOINC Equivalent Code" "Reference to an equivalent LOINC code for this concept"
+* #assignment-status "Terminology Assignment Status" "Status of the terminology code assignment process"
+* #snomed-equivalent "SNOMED CT Equivalent Code" "Reference to an equivalent SNOMED CT concept for this code"
+* #openehr-path "openEHR Archetype Path" "Path to the equivalent element in an openEHR archetype"
+
+// --- Regulatory Frameworks (5 codes) ---
+// Merged from RegulatoryFrameworkCS — healthcare data protection frameworks
+* #gdpr "GDPR - General Data Protection Regulation" "European Union data protection regulation"
+* #hipaa "HIPAA - Health Insurance Portability and Accountability Act" "United States healthcare privacy law"
+* #lgpd "LGPD - Lei Geral de Proteção de Dados" "Brazilian general data protection law"
+* #pipeda "PIPEDA - Personal Information Protection and Electronic Documents Act" "Canadian privacy law"
+* #ehds "EHDS - European Health Data Space" "European health data framework"
+
+// --- Practitioner Identifiers (4 codes) ---
+// Merged from PractitionerIdentifierCS — practitioner ID system types
+* #npi "National Provider Identifier" "US National Provider Identifier"
+* #crm "Conselho Regional de Medicina" "Brazilian Medical Council Registration"
+* #ssin "Social Security Identification Number" "Belgian SSIN"
+* #rpps "Répertoire Partagé des Professionnels de Santé" "French Healthcare Professional Registry"
+
+// --- App Messaging Events (2 codes) ---
+// Relocated from TemporaryCS Phase 5 — app-level messaging, not clinical terminology
+* #mindfulness-msg-session-start "Mindfulness Session Start" "Event code for starting a mindfulness session"
+* #mindfulness-msg-session-end "Mindfulness Session End" "Event code for ending a mindfulness session"

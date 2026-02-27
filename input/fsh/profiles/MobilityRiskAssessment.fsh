@@ -32,15 +32,15 @@ Description: "Profile for assessing mobility-related risks"
 
 * prediction[fallRisk].outcome from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes
 * prediction[fallRisk].probabilityDecimal 0..1 MS
-* prediction[fallRisk].qualitativeRisk from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level
+* prediction[fallRisk].qualitativeRisk from RiskLevelSNOMEDVS
 
 * prediction[mobilityDecline].outcome from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes
 * prediction[mobilityDecline].probabilityDecimal 0..1 MS
-* prediction[mobilityDecline].qualitativeRisk from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level
+* prediction[mobilityDecline].qualitativeRisk from RiskLevelSNOMEDVS
 
-* prediction[assistanceNeeded].outcome from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes
+* prediction[assistanceNeeded].outcome from AssistanceLevelSNOMEDVS
 * prediction[assistanceNeeded].probabilityDecimal 0..1 MS
-* prediction[assistanceNeeded].qualitativeRisk from https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level
+* prediction[assistanceNeeded].qualitativeRisk from RiskLevelSNOMEDVS
 
 * basis only Reference(MobilityProfile or Observation or QuestionnaireResponse)
 * basis MS

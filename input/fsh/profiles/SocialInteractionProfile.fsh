@@ -17,7 +17,7 @@ Description: "Profile for recording social interaction data from iOS Health App"
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * value[x] only CodeableConcept
-* valueCodeableConcept from SocialInteractionTypeVS (required)
+* valueCodeableConcept from SocialInteractionTypeVS (extensible)
 
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
@@ -37,11 +37,11 @@ Description: "Profile for recording social interaction data from iOS Health App"
 
 * component[quality]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#social-quality "Social interaction quality score"
-  * valueCodeableConcept from SocialInteractionQualityVS (required)
+  * valueCodeableConcept from SocialInteractionQualityVS (extensible)
 
 * component[medium]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#social-medium "Social interaction medium"
-  * valueCodeableConcept from SocialInteractionMediumVS (required)
+  * valueCodeableConcept from SocialInteractionMediumVS (extensible)
 
 * component[participants]
   * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#social-count "Number of social interactions"

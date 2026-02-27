@@ -5,7 +5,6 @@ Description: "Value set for walking steadiness balance status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/balance-status"
 * ^status = #active
 * ^version = "0.1.0"
-* ^status = #active
 * ^experimental = false
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
@@ -14,4 +13,9 @@ Description: "Value set for walking steadiness balance status"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
+* LifestyleMedicineTemporaryCS#balance-status-normal "Normal"
+* LifestyleMedicineTemporaryCS#veryStable "Very Stable"
+* LifestyleMedicineTemporaryCS#balance-status-stable "Stable"
+* LifestyleMedicineTemporaryCS#slightlyUnstable "Slightly Unstable"
+* LifestyleMedicineTemporaryCS#unstable "Unstable"
+* LifestyleMedicineTemporaryCS#veryUnstable "Very Unstable"

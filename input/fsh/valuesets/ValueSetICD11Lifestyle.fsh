@@ -22,7 +22,14 @@ nutrition, sleep disorders, and physical activity codes from WHO ICD-11 MMS.
 * ^date = "2026-01-26"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs
+// Include all sub-ValueSets rather than bulk include
+* include codes from valueset ICD11HealthBehavioursValueSet
+* include codes from valueset ICD11NutritionValueSet
+* include codes from valueset ICD11SleepDisordersValueSet
+* include codes from valueset ICD11PhysicalActivityValueSet
+// Additional codes not in sub-ValueSets
+* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD8Y "Other specified problems associated with employment or unemployment"
+* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD8Z "Problems associated with employment or unemployment, unspecified"
 
 // =============================================================================
 // HEALTH BEHAVIOURS VALUESET

@@ -27,13 +27,22 @@ Id: symptom-frequency-vs
 Title: "Symptom Frequency Value Set"
 Description: "Frequency patterns for symptoms"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#rare "Rare"
+* LifestyleMedicineTemporaryCS#occasional "Occasional"
+* LifestyleMedicineTemporaryCS#frequent "Frequent"
+* LifestyleMedicineTemporaryCS#symptom-freq-daily "Daily"
+* LifestyleMedicineTemporaryCS#constant "Constant"
+
 ValueSet: SymptomImpactVS
 Id: symptom-impact-vs
 Title: "Symptom Impact Value Set"
 Description: "Impact levels for symptoms"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* LifestyleMedicineTemporaryCS#symptom-impact-none "No impact"
+* LifestyleMedicineTemporaryCS#symptom-impact-mild "Mild impact"
+* LifestyleMedicineTemporaryCS#symptom-impact-moderate "Moderate impact"
+* LifestyleMedicineTemporaryCS#symptom-impact-severe "Severe impact"
+* LifestyleMedicineTemporaryCS#symptom-impact-complete "Complete impact"
 
 ValueSet: SymptomProgressionVS
 Id: symptom-progression-vs
