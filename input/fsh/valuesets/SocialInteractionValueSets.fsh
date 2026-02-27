@@ -10,7 +10,7 @@ Id: social-interaction-quality-vs
 Title: "Social Interaction Quality Value Set"
 Description: "Quality measures for social interactions"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS
 
 ValueSet: SocialInteractionMediumVS
 Id: social-interaction-medium-vs

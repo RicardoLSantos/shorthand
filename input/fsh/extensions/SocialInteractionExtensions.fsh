@@ -40,7 +40,7 @@ Id: social-support-vs
 Title: "Social Support Value Set"
 Description: "Value set for levels of social support"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS
 
 ValueSet: SocialActivityVS
 Id: social-activity-vs

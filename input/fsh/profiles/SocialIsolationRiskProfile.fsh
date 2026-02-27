@@ -109,7 +109,7 @@ Id: isolation-risk-level-vs
 Title: "Social Isolation Risk Level Value Set"
 Description: "Risk levels for social isolation"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS
 
 ValueSet: IsolationRiskOutcomeVS
 Id: isolation-risk-outcome-vs

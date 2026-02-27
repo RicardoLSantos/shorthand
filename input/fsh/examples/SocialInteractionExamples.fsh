@@ -148,7 +148,7 @@ Title: "Family Structure - Living Alone"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-10T09:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* valueCodeableConcept = LifestyleMedicineTemporaryCS#alone "Living Alone"
+* valueCodeableConcept = $SCT#105529008 "Lives alone"
 
 * component[householdSize].valueInteger = 1
 * component[maritalStatus].valueCodeableConcept = $SCT#33553000 "Widowed"

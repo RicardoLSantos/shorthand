@@ -12,4 +12,4 @@ Title: "Stress Impact Value Set"
 Description: "Value set for describing stress impact levels"
 * ^experimental = false
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/stress-impact-vs"
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS

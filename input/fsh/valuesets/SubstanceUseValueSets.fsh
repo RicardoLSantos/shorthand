@@ -118,7 +118,7 @@ Title: "Caffeine Intake Level ValueSet"
 Description: "Categorical assessment of daily caffeine intake"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* include codes from system AppLogicCS
 ValueSet: RecreationalSubstanceUseStatusVS
 Id: recreational-substance-use-status-vs
 Title: "Recreational Substance Use Status ValueSet"
@@ -192,4 +192,4 @@ Title: "Substance Use Risk Level ValueSet"
 Description: "Overall risk assessment for substance use patterns"
 * ^experimental = false
 * ^version = "0.1.0"
-* include codes from system LifestyleMedicineTemporaryCS
+* include codes from system AppLogicCS

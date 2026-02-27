@@ -65,7 +65,7 @@ Description: "Value set for environmental exposure locations"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS
 
 ValueSet: ExposureConditionsVS
 Id: exposure-conditions-vs
@@ -85,4 +85,4 @@ Description: "Value set for environmental exposure conditions"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS

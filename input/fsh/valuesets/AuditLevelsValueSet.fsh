@@ -16,4 +16,4 @@ Description: "Value set for audit level types"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 * ^date = "2024-12-27"
-* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs
+* include codes from system https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs

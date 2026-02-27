@@ -114,4 +114,4 @@ Title: "Advanced Vital Signs Context Value Set"
 Description: "Context codes for advanced vital sign measurements"
 
 * ^experimental = false
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS

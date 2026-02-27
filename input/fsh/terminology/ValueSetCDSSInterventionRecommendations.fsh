@@ -52,7 +52,7 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 
 // Adverse nutritional pattern detected → modify diet
 // Replaces: LifestyleMedicineTemporaryCS#dietary-modification
-* http://snomed.info/sct#1098021000000108 "Diet modification"
+* http://snomed.info/sct#386373004 "Nutrition therapy"
 
 // Nutritional deficiencies detected → nutrition counselling
 // Replaces: LifestyleMedicineTemporaryCS#nutrition-consult
@@ -80,7 +80,7 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 
 // Active tobacco use → cessation therapy
 // Replaces: LifestyleMedicineTemporaryCS#smoking-cessation
-* http://snomed.info/sct#285371000000106 "Smoking cessation therapy"
+* http://snomed.info/sct#710081004 "Smoking cessation therapy"
 
 // Elevated AUDIT-C score → alcohol reduction
 // Replaces: LifestyleMedicineTemporaryCS#alcohol-reduction
@@ -92,7 +92,7 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 
 // Drug interactions detected → medication review
 // Replaces: LifestyleMedicineTemporaryCS#medication-review
-* http://snomed.info/sct#1099461000000101 "Medication review"
+* http://snomed.info/sct#428911000124108 "Comprehensive medication therapy review"
 
 // Complex therapeutic management
 // Replaces: LifestyleMedicineTemporaryCS#medication-management
@@ -100,7 +100,7 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 
 // Pharmacological optimisation
 // Replaces: LifestyleMedicineTemporaryCS#medication-optimization
-* http://snomed.info/sct#789741000000106 "Medication optimisation"
+* http://snomed.info/sct#395067002 "Optimization of drug dosage"
 
 // ============================================================================
 // SELF-MANAGEMENT SUPPORT

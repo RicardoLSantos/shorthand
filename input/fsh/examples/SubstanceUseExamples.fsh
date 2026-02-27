@@ -86,7 +86,7 @@ Description: "Example of moderate alcohol consumption with AUDIT-C score"
 * component[auditCScore].code = $LOINC#75626-2 "Total score [AUDIT-C]"
 * component[auditCScore].valueInteger = 4
 * component[alcoholType].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#alcohol-type "Type of alcoholic beverage"
-* component[alcoholType].valueCodeableConcept = LifestyleMedicineTemporaryCS#wine "Wine"
+* component[alcoholType].valueCodeableConcept = $SCT#35748005 "Wine"
 * extension[drinkingContext].valueCodeableConcept = LifestyleMedicineTemporaryCS#restaurant "Restaurant/dining"
 
 Instance: AlcoholUseNonDrinkerExample

@@ -452,7 +452,7 @@ Description: "Validation status of health measurements"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/validation-status-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* include codes from system AppLogicCS
 
 ValueSet: HRmaxMethodVS
 Id: hrmax-method-vs
@@ -479,4 +479,4 @@ Description: "Cardiovascular risk categories based on fitness assessment"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cv-risk-category-vs"
 * ^status = #active
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* include codes from system AppLogicCS

@@ -51,7 +51,7 @@ Id: data-quality-confidence-vs
 Title: "Data Quality Confidence ValueSet"
 Description: "ValueSet for data quality confidence levels in consumer wearable data"
 * ^experimental = false
-* include codes from system LifestyleMedicineTemporaryCS
+* include codes from system AppLogicCS
 
 // Data Quality Extension
 Extension: DataQualityIndicator

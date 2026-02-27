@@ -45,4 +45,4 @@ Description: "Value set for nutrition data sources"
 * ^date = "2024-12-14"
 * ^publisher = "Ricardo Lourenço dos Santos"
 
-* codes from system LifestyleMedicineTemporaryCS
+* codes from system AppLogicCS
