@@ -172,24 +172,24 @@ Target: 500-1000 MET-min/week per guidelines.
 // ConceptMap element removed: source code no longer exists in TemporaryCS
 
 // Floors Climbed
-* group[1].element[3].code = #floors-climbed
-* group[1].element[3].display = "Floors Climbed"
-* group[1].element[3].target[0].code = #0
-* group[1].element[3].target[0].display = "No OMOP concept available"
-* group[1].element[3].target[0].equivalence = #unmatched
-* group[1].element[3].target[0].comment = """
+* group[1].element[2].code = #floors-climbed
+* group[1].element[2].display = "Floors Climbed"
+* group[1].element[2].target[0].code = #0
+* group[1].element[2].target[0].display = "No OMOP concept available"
+* group[1].element[2].target[0].equivalence = #unmatched
+* group[1].element[2].target[0].comment = """
 Number of floors/flights of stairs climbed.
 Indicates vertical displacement activity.
 Typically measured via barometric altimeter.
 """
 
 // Stand Hours
-* group[1].element[4].code = #stand-hours
-* group[1].element[4].display = "Stand Hours"
-* group[1].element[4].target[0].code = #0
-* group[1].element[4].target[0].display = "No OMOP concept available"
-* group[1].element[4].target[0].equivalence = #unmatched
-* group[1].element[4].target[0].comment = """
+* group[1].element[3].code = #stand-hours
+* group[1].element[3].display = "Stand Hours"
+* group[1].element[3].target[0].code = #0
+* group[1].element[3].target[0].display = "No OMOP concept available"
+* group[1].element[3].target[0].equivalence = #unmatched
+* group[1].element[3].target[0].comment = """
 Apple Watch specific: Hours with at least 1 min standing.
 Target: 12 stand hours/day.
 Proxy for sedentary behavior interruption.
