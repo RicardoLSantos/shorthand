@@ -168,17 +168,8 @@ Standard measure for physical activity dose.
 Target: 500-1000 MET-min/week per guidelines.
 """
 
-// Sedentary Time
-* group[1].element[2].code = #sedentary-time
-* group[1].element[2].display = "Sedentary Time"
-* group[1].element[2].target[0].code = #0
-* group[1].element[2].target[0].display = "No OMOP concept available"
-* group[1].element[2].target[0].equivalence = #unmatched
-* group[1].element[2].target[0].comment = """
-Time spent in sedentary activities (<1.5 METs).
-Target: Reduce prolonged sitting, break every 30-60 min.
-Independent risk factor for mortality.
-"""
+// Sedentary Time — removed from TemporaryCS (Phase 5), substituted by LOINC 87705-0
+// ConceptMap element removed: source code no longer exists in TemporaryCS
 
 // Floors Climbed
 * group[1].element[3].code = #floors-climbed

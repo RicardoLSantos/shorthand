@@ -61,7 +61,7 @@ Description: "Example showing how DataQualityIndicator extension is used on an o
 // Data quality indicator extension (complex extension with sub-extensions)
 * extension[0].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/data-quality-indicator"
 * extension[0].extension[0].url = "confidenceLevel"
-* extension[0].extension[0].valueCodeableConcept = AppLogicCS#data-quality-high "High Confidence"
+* extension[0].extension[0].valueCodeableConcept = http://snomed.info/sct#75540009 "High (qualifier value)"
 * extension[0].extension[1].url = "confidenceScore"
 * extension[0].extension[1].valueDecimal = 95
 

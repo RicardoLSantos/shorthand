@@ -44,7 +44,7 @@ Description: "Example of daily recovery readiness score from Oura Ring"
 
 // Trend
 * component[trendDirection].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#recovery-trend "Trend Direction"
-* component[trendDirection].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#trend-stable "Stable"
+* component[trendDirection].valueCodeableConcept = http://snomed.info/sct#58158008 "Stable (qualifier value)"
 
 // Sleep contribution - uses {score} per profile
 * component[sleepContribution].valueQuantity.value = 85
@@ -98,7 +98,7 @@ Description: "Example of VO2max estimation from Apple Watch during outdoor run"
 * component[validationStatus].valueCodeableConcept = AppLogicCS#validation-clinical "Clinically Validated"
 
 // Trend - code is fixed by profile (LifestyleMedicineTemporaryCS#vo2max-trend)
-* component[vo2maxTrend].valueCodeableConcept = LifestyleMedicineTemporaryCS#vo2max-trend-improving "Improving"
+* component[vo2maxTrend].valueCodeableConcept = http://snomed.info/sct#385633008 "Improving (qualifier value)"
 
 // Cardiovascular risk - code is fixed by profile (LifestyleMedicineTemporaryCS#cv-risk)
 * component[cvRiskCategory].valueCodeableConcept = AppLogicCS#cv-risk-low "Low Risk"

@@ -191,7 +191,7 @@ Description: "Comprehensive summary of patient's substance use patterns for life
 * component[caffeineStatus].code = $LOINC#80489-8 "Caffeine intake 24 hour Estimated"
 * component[caffeineStatus].valueCodeableConcept = AppLogicCS#caffeine-level-moderate "Moderate"
 * component[overallRiskLevel].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-risk-level "Overall substance use risk level"
-* component[overallRiskLevel].valueCodeableConcept = AppLogicCS#substance-risk-low "Low risk"
+* component[overallRiskLevel].valueCodeableConcept = http://snomed.info/sct#723505004 "Low risk (qualifier value)"
 * hasMember[tobaccoUse] = Reference(TobaccoUseExSmokerExample)
 * hasMember[alcoholUse] = Reference(AlcoholUseModerateExample)
 * hasMember[caffeineIntake] = Reference(CaffeineIntakeModerateExample)

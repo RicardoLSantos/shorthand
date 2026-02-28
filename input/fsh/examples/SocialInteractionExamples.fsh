@@ -200,13 +200,13 @@ Title: "Social Isolation Risk - High Risk"
 
 * prediction[0].outcome = LifestyleMedicineTemporaryCS#chronic-isolation "Chronic Social Isolation"
 * prediction[0].probabilityDecimal = 0.75
-* prediction[0].qualitativeRisk = AppLogicCS#isolation-level-high "High Risk"
+* prediction[0].qualitativeRisk = http://snomed.info/sct#723509005 "High risk (qualifier value)"
 * prediction[0].whenPeriod.start = "2026-01-10"
 * prediction[0].whenPeriod.end = "2026-07-10"
 
 * prediction[1].outcome = LifestyleMedicineTemporaryCS#depression-onset "Depression Onset"
 * prediction[1].probabilityDecimal = 0.45
-* prediction[1].qualitativeRisk = AppLogicCS#isolation-level-moderate "Moderate Risk"
+* prediction[1].qualitativeRisk = http://snomed.info/sct#25594002 "Moderate risk of (qualifier value)"
 
 * mitigation = "Referral to community befriending service, social prescribing, weekly welfare check"
 * note.text = "Multiple risk factors: recent bereavement, living alone, mobility limitations, recent retirement"
@@ -227,7 +227,7 @@ Title: "Social Isolation Risk - Low Risk"
 
 * prediction[0].outcome = LifestyleMedicineTemporaryCS#chronic-isolation "Chronic Social Isolation"
 * prediction[0].probabilityDecimal = 0.10
-* prediction[0].qualitativeRisk = AppLogicCS#isolation-level-low "Low Risk"
+* prediction[0].qualitativeRisk = http://snomed.info/sct#723505004 "Low risk (qualifier value)"
 
 * note.text = "Strong social network, active in community groups, regular family contact"
 
