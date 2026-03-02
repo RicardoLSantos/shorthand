@@ -1,7 +1,8 @@
 // Operational ConceptMap: Sleep Custom Codes → LOINC
 // Created: 2025-11-22
+// Updated: 2026-03-02 — Phase 6b: 4 GAP→EQUIVALENT corrections (103213-5, 93831-6, 93830-8, 103211-9)
 // Purpose: Enable $translate operations for sleep measurement terminology interoperability
-// Status: Addresses terminology gap for consumer sleep tracking data
+// Status: 4 of 5 mappings now have LOINC equivalents (only sleep-panel remains as narrower match)
 
 Instance: ConceptMapSleepToLOINC
 InstanceOf: ConceptMap
@@ -48,37 +49,45 @@ Usage: #definition
 * group[0].element[0].target[1].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 82611-5 = Wearable device external physiologic monitoring panel. Alternative broader mapping."
 
 // ============================================================================
-// TIME IN BED - GAP CONFIRMED 2025-12-08 ❌
+// TIME IN BED - LOINC FOUND 2026-03-02 ✅ (103213-5, published 2023-08)
+// Previously marked as GAP (2025-12-08) — code was published Aug 2023
 // ============================================================================
 * group[0].element[1].code = #sleep-time-bed
 * group[0].element[1].display = "Time in bed"
-* group[0].element[1].target[0].equivalence = #unmatched
-* group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC code for 'Time in bed'. Distinct from 'Sleep duration' (93832-4) - includes awake time before/after sleep. Common in Apple HealthKit, Fitbit, Oura."
+* group[0].element[1].target[0].code = #103213-5
+* group[0].element[1].target[0].display = "Duration in bed"
+* group[0].element[1].target[0].equivalence = #equivalent
+* group[0].element[1].target[0].comment = "CORRECTED 2026-03-02: LOINC 103213-5 'Duration in bed' published 2023-08-15. Profile now uses LOINC directly."
 
 // ============================================================================
-// DEEP SLEEP - GAP CONFIRMED 2025-12-08 ❌
-// Note: 93831-6 = "Deep sleep duration" exists but is for clinical PSG (EEG-based)
-// Consumer wearables use accelerometer + HR algorithms, not EEG
+// DEEP SLEEP - LOINC 93831-6 ✅ (published 2019-12)
+// Note: LOINC 93831-6 does not specify measurement method (PSG vs wearable).
+// Method can be specified via Observation.method or Device.type.
 // ============================================================================
 * group[0].element[2].code = #sleep-deep
 * group[0].element[2].display = "Deep sleep duration"
-* group[0].element[2].target[0].equivalence = #unmatched
-* group[0].element[2].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC for consumer wearable deep sleep. Note: 93831-6 exists but is clinical PSG (EEG-based N3). Consumer devices use accelerometer + HR algorithms, not EEG - semantic gap."
+* group[0].element[2].target[0].code = #93831-6
+* group[0].element[2].target[0].display = "Deep sleep duration"
+* group[0].element[2].target[0].equivalence = #equivalent
+* group[0].element[2].target[0].comment = "CORRECTED 2026-03-02: LOINC 93831-6 describes the concept 'Deep sleep duration' without specifying method. Consumer vs PSG distinction captured in Observation.method. Profile now uses LOINC directly."
 
 // ============================================================================
-// LIGHT SLEEP - GAP CONFIRMED 2025-12-08 ❌
+// LIGHT SLEEP - LOINC 93830-8 ✅ (published 2019-12)
 // ============================================================================
 * group[0].element[3].code = #sleep-light
 * group[0].element[3].display = "Light sleep duration"
-* group[0].element[3].target[0].equivalence = #unmatched
-* group[0].element[3].target[0].comment = "GAP CONFIRMED 2025-12-08: No LOINC for consumer light sleep (N1+N2 combined). Clinical PSG separates N1/N2. Semantic gap between consumer simplification and EEG-based staging."
+* group[0].element[3].target[0].code = #93830-8
+* group[0].element[3].target[0].display = "Light sleep duration"
+* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].comment = "CORRECTED 2026-03-02: LOINC 93830-8 'Light sleep duration' published 2019-12-13. Consumer wearable N1+N2 combined maps to this code. Profile now uses LOINC directly."
 
 // ============================================================================
-// SLEEP AWAKENINGS - RELATED CODE VERIFIED 2025-12-08 ✅
+// SLEEP AWAKENINGS - LOINC 103211-9 ✅ (published 2023-08)
+// Previously mapped to 103215-0 (WASO - duration) which is RELATED but different
 // ============================================================================
 * group[0].element[4].code = #sleep-awakenings
 * group[0].element[4].display = "Number of sleep awakenings"
-* group[0].element[4].target[0].code = #103215-0
-* group[0].element[4].target[0].display = "Wake time after sleep onset"
-* group[0].element[4].target[0].equivalence = #relatedto
-* group[0].element[4].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 103215-0 = Wake time after sleep onset. Related but distinct: source = COUNT of awakenings, target = DURATION of wakefulness. No exact LOINC for awakening count."
+* group[0].element[4].target[0].code = #103211-9
+* group[0].element[4].target[0].display = "Number of awakenings"
+* group[0].element[4].target[0].equivalence = #equivalent
+* group[0].element[4].target[0].comment = "CORRECTED 2026-03-02: LOINC 103211-9 'Number of awakenings' published 2023-08-15. Exact match for awakening count. Previous mapping to 103215-0 (WASO duration) was related but semantically different."

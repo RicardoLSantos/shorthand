@@ -1,7 +1,10 @@
 // ICD-11 Lifestyle Medicine ValueSets
 // Created: 2026-01-26
+// Updated: 2026-03-02 — Phase 6a: Reference WHO official ICD-11 URL instead of local CS
 // Purpose: ValueSets for ICD-11 lifestyle medicine codes
 // Reference: WHO ICD-11 MMS 2024-01
+// System URL: http://id.who.int/icd/release/11/mms (WHO official FHIR CodeSystem URL)
+// Note: ICD-11 is not yet on tx.fhir.org — validation warnings suppressed in ignoreWarnings.txt
 
 // =============================================================================
 // PRIMARY VALUESET: ALL LIFESTYLE CODES
@@ -28,8 +31,8 @@ nutrition, sleep disorders, and physical activity codes from WHO ICD-11 MMS.
 * include codes from valueset ICD11SleepDisordersValueSet
 * include codes from valueset ICD11PhysicalActivityValueSet
 // Additional codes not in sub-ValueSets
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD8Y "Other specified problems associated with employment or unemployment"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD8Z "Problems associated with employment or unemployment, unspecified"
+* http://id.who.int/icd/release/11/mms#QD8Y "Other specified problems associated with employment or unemployment"
+* http://id.who.int/icd/release/11/mms#QD8Z "Problems associated with employment or unemployment, unspecified"
 
 // =============================================================================
 // HEALTH BEHAVIOURS VALUESET
@@ -50,13 +53,13 @@ hazardous substance use and lifestyle-related health factors.
 * ^date = "2026-01-26"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QE10 "Hazardous alcohol use"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QE11 "Hazardous drug use"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QE12 "Hazardous nicotine use"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QE1Y "Other specified problems associated with health behaviours"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QE1Z "Problems associated with health behaviours, unspecified"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD80 "Problems associated with lifestyle"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD85 "Burnout"
+* http://id.who.int/icd/release/11/mms#QE10 "Hazardous alcohol use"
+* http://id.who.int/icd/release/11/mms#QE11 "Hazardous drug use"
+* http://id.who.int/icd/release/11/mms#QE12 "Hazardous nicotine use"
+* http://id.who.int/icd/release/11/mms#QE1Y "Other specified problems associated with health behaviours"
+* http://id.who.int/icd/release/11/mms#QE1Z "Problems associated with health behaviours, unspecified"
+* http://id.who.int/icd/release/11/mms#QD80 "Problems associated with lifestyle"
+* http://id.who.int/icd/release/11/mms#QD85 "Burnout"
 
 // =============================================================================
 // NUTRITION VALUESET
@@ -77,17 +80,17 @@ including undernutrition, overweight, and obesity.
 * ^date = "2026-01-26"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD60 "Problems associated with insufficient drinking-water supply"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD61 "Problems associated with dietary inadequacy"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD62 "Problems associated with food supply"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD6Y "Other specified problems associated with drinking water or nutrition"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#QD6Z "Problems associated with drinking water or nutrition, unspecified"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#5B70 "Undernutrition in infants, children or adolescents"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#5B71 "Underweight in adults"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#5B72 "Undernutrition in adults"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#5B80 "Overweight or obesity"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#5B81 "Overweight"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#5B82 "Obesity"
+* http://id.who.int/icd/release/11/mms#QD60 "Problems associated with insufficient drinking-water supply"
+* http://id.who.int/icd/release/11/mms#QD61 "Problems associated with dietary inadequacy"
+* http://id.who.int/icd/release/11/mms#QD62 "Problems associated with food supply"
+* http://id.who.int/icd/release/11/mms#QD6Y "Other specified problems associated with drinking water or nutrition"
+* http://id.who.int/icd/release/11/mms#QD6Z "Problems associated with drinking water or nutrition, unspecified"
+* http://id.who.int/icd/release/11/mms#5B70 "Undernutrition in infants, children or adolescents"
+* http://id.who.int/icd/release/11/mms#5B71 "Underweight in adults"
+* http://id.who.int/icd/release/11/mms#5B72 "Undernutrition in adults"
+* http://id.who.int/icd/release/11/mms#5B80 "Overweight or obesity"
+* http://id.who.int/icd/release/11/mms#5B81 "Overweight"
+* http://id.who.int/icd/release/11/mms#5B82 "Obesity"
 
 // =============================================================================
 // SLEEP DISORDERS VALUESET
@@ -108,12 +111,12 @@ including insomnia, hypersomnolence, and circadian rhythm disorders.
 * ^date = "2026-01-26"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#7A00 "Insomnia disorders"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#7A01 "Hypersomnolence disorders"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#7A20 "Sleep-related breathing disorders"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#7A40 "Circadian rhythm sleep-wake disorders"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#7A4Y "Other specified sleep-wake disorders"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#7A4Z "Sleep-wake disorders, unspecified"
+* http://id.who.int/icd/release/11/mms#7A00 "Insomnia disorders"
+* http://id.who.int/icd/release/11/mms#7A01 "Hypersomnolence disorders"
+* http://id.who.int/icd/release/11/mms#7A20 "Sleep-related breathing disorders"
+* http://id.who.int/icd/release/11/mms#7A40 "Circadian rhythm sleep-wake disorders"
+* http://id.who.int/icd/release/11/mms#7A4Y "Other specified sleep-wake disorders"
+* http://id.who.int/icd/release/11/mms#7A4Z "Sleep-wake disorders, unspecified"
 
 // =============================================================================
 // PHYSICAL ACTIVITY VALUESET
@@ -134,11 +137,11 @@ These codes can be used as additional context for health observations.
 * ^date = "2026-01-26"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5A1 "Walking as physical activity"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5A2 "Running or jogging"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5A3 "Cycling"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5A4 "Swimming"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5A5 "Sports activities"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5A6 "Exercise or fitness activities"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5AY "Other specified physical activities"
-* https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs#XE5AZ "Physical activity, unspecified"
+* http://id.who.int/icd/release/11/mms#XE5A1 "Walking as physical activity"
+* http://id.who.int/icd/release/11/mms#XE5A2 "Running or jogging"
+* http://id.who.int/icd/release/11/mms#XE5A3 "Cycling"
+* http://id.who.int/icd/release/11/mms#XE5A4 "Swimming"
+* http://id.who.int/icd/release/11/mms#XE5A5 "Sports activities"
+* http://id.who.int/icd/release/11/mms#XE5A6 "Exercise or fitness activities"
+* http://id.who.int/icd/release/11/mms#XE5AY "Other specified physical activities"
+* http://id.who.int/icd/release/11/mms#XE5AZ "Physical activity, unspecified"

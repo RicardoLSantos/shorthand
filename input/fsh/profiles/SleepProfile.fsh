@@ -43,7 +43,11 @@
 // LOINC Codes:
 // - 93832-4: Sleep duration
 // - 93829-0: REM sleep duration
-// - 93831-6: Sleep efficiency
+// - 93831-6: Deep sleep duration
+// - 93830-8: Light sleep duration
+// - 103213-5: Duration in bed
+// - 103211-9: Number of awakenings
+// - 103215-0: Wake time after sleep onset (WASO)
 // - 9279-1: Respiratory rate (during sleep)
 // - 80404-7: SDNN (HRV during sleep)
 // =============================================================================
@@ -106,7 +110,7 @@ References:
     heartRateVariability 0..1 MS and
     interruptions 0..1 MS
  
-* component[timeInBed].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-time-bed "Time in bed"
+* component[timeInBed].code = $LOINC#103213-5 "Duration in bed"
 * component[timeInBed].valueQuantity only Quantity
 * component[timeInBed].valueQuantity.system = $UCUM
 * component[timeInBed].valueQuantity.code = #min
@@ -116,7 +120,7 @@ References:
 * component[totalSleepTime].valueQuantity.system = $UCUM
 * component[totalSleepTime].valueQuantity.code = #min
  
-* component[deepSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-deep "Deep sleep duration"
+* component[deepSleep].code = $LOINC#93831-6 "Deep sleep duration"
 * component[deepSleep].valueQuantity only Quantity
 * component[deepSleep].valueQuantity.system = $UCUM
 * component[deepSleep].valueQuantity.code = #min
@@ -126,7 +130,7 @@ References:
 * component[remSleep].valueQuantity.system = $UCUM
 * component[remSleep].valueQuantity.code = #min
  
-* component[lightSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-light "Light sleep duration"
+* component[lightSleep].code = $LOINC#93830-8 "Light sleep duration"
 * component[lightSleep].valueQuantity only Quantity
 * component[lightSleep].valueQuantity.system = $UCUM
 * component[lightSleep].valueQuantity.code = #min
@@ -141,7 +145,7 @@ References:
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.code = #ms
  
-* component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-awakenings "Number of sleep awakenings"
+* component[interruptions].code = $LOINC#103211-9 "Number of awakenings"
 * component[interruptions].valueQuantity only Quantity
 * component[interruptions].valueQuantity.system = $UCUM
 * component[interruptions].valueQuantity.code = #1

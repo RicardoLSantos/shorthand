@@ -107,10 +107,14 @@ A linguagem de expressão text/cql-identifier não é suportada
 # =============================================================================
 # ICD-10-CM / ICD-11 EXTERNAL SYSTEM WARNINGS
 # ICD code systems referenced in ConceptMaps are not on tx.fhir.org.
+# Phase 6a (2026-03-02): ICD-11 now references WHO official URL directly
+# (http://id.who.int/icd/release/11/mms) — local CS removed.
 # =============================================================================
 
 O sistema de código-fonte http://hl7.org/fhir/sid/icd-10-cm não tem todo o conteúdo
-O sistema de códigos de destino https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle
+O sistema de códigos de destino http://id.who.int/icd/release/11/mms
+A definition for CodeSystem 'http://id.who.int/icd/release/11/mms' could not be found
+Não foi possível encontrar uma definição para o valor URL 'http://id.who.int/icd/release/11/mms'
 
 # =============================================================================
 # FHIR STRUCTURE DEFINITION CONCEPTMAP WARNINGS
@@ -139,8 +143,8 @@ Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/
 Não foi possível encontrar uma definição para o valor URL 'https://ckm.openehr.org/ckm'
 
 # =============================================================================
-# Last updated: 2026-02-26 T2 (clever-mapping-abelson)
-# Covers: 28 errors (IPS) + 73 warnings (all non-actionable)
-# 2 display name warnings fixed in ConceptMapNutritionToSNOMED.fsh
+# Last updated: 2026-03-02 T2 (clever-mapping-abelson)
+# Covers: 28 errors (IPS) + ~75 warnings (all non-actionable)
+# Phase 6a: Removed ICD11LifestyleCodeSystem, use WHO official URL
 # Note: Messages are in Portuguese due to system locale
 # =============================================================================

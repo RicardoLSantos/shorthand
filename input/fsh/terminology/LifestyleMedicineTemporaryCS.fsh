@@ -24,7 +24,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 718
+* ^count = 712
 
 // Traceability: codes renamed due to collisions are documented via inline comments.
 // Full mapping available in scripts/consolidation_mapping.json
@@ -422,12 +422,18 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #noise-background "Background environmental noise level" "Baseline or background environmental noise level measured in quiet conditions"
 * #environmental-audio-exposure "Environmental audio exposure level" "Environmental sound exposure level in A-weighted decibels (dBASPL). Maps to Apple HealthKit HKQuantityTypeIdentifier.environmentalAudioExposure (iOS 13+). WHO recommends <70 dB average over 24h to prevent hearing damage"
 * #headphone-audio-exposure "Headphone audio exposure level" "Headphone audio exposure level in A-weighted decibels (dBASPL). Maps to Apple HealthKit HKQuantityTypeIdentifier.headphoneAudioExposure (iOS 14+). WHO recommends <80 dB for max 40 hours/week"
+// SUPERSEDED by LOINC 93831-6 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #sleep-deep "Deep sleep duration" "Duration of deep (slow-wave) sleep stage as measured by consumer sleep tracking device"
+// SUPERSEDED by LOINC 93830-8 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #sleep-light "Light sleep duration" "Duration of light sleep stage as measured by consumer sleep tracking device"
+// SUPERSEDED by LOINC 93829-0 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #rem-sleep "REM sleep duration" "Duration of REM (Rapid Eye Movement) sleep stage as measured by consumer sleep tracking device"
 * #sleep-score "Sleep score" "Vendor-specific composite sleep score (0-100) combining duration, efficiency, stages, and HRV during sleep"
+// SUPERSEDED by LOINC 103215-0 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #waso "Wake after sleep onset" "Total time awake after initial sleep onset (WASO). Normal: <30 minutes. Elevated WASO indicates sleep maintenance insomnia"
+// SUPERSEDED by LOINC 103211-9 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #sleep-awakenings "Number of sleep awakenings" "Count of awakenings or sleep interruptions during a sleep period"
+// SUPERSEDED by LOINC 103213-5 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #sleep-time-bed "Time in bed" "Total time spent in bed, including time awake before and after sleep"
 * #social-duration "Social interaction duration" "Total duration of social interactions or time spent in social activities"
 * #social-quality "Social interaction quality score" "Subjective quality rating of social interactions"

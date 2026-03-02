@@ -13,7 +13,7 @@ Title: "Example of Sleep Record"
 * effectivePeriod.end = "2024-03-20T06:30:00Z"
 * device = Reference(DeviceSleepMonitor)
  
-* component[timeInBed].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-time-bed "Time in bed"
+* component[timeInBed].code = $LOINC#103213-5 "Duration in bed"
 * component[timeInBed].valueQuantity = 510 'min' "minute"
 * component[timeInBed].valueQuantity.system = $UCUM
 * component[timeInBed].valueQuantity.unit = "minute"
@@ -23,7 +23,7 @@ Title: "Example of Sleep Record"
 * component[totalSleepTime].valueQuantity.system = $UCUM
 * component[totalSleepTime].valueQuantity.unit = "minute"
  
-* component[deepSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-deep "Deep sleep duration"
+* component[deepSleep].code = $LOINC#93831-6 "Deep sleep duration"
 * component[deepSleep].valueQuantity = 95 'min' "minute"
 * component[deepSleep].valueQuantity.system = $UCUM
 * component[deepSleep].valueQuantity.unit = "minute"
@@ -33,7 +33,7 @@ Title: "Example of Sleep Record"
 * component[remSleep].valueQuantity.system = $UCUM
 * component[remSleep].valueQuantity.unit = "minute"
  
-* component[lightSleep].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-light "Light sleep duration"
+* component[lightSleep].code = $LOINC#93830-8 "Light sleep duration"
 * component[lightSleep].valueQuantity = 259 'min' "minute"
 * component[lightSleep].valueQuantity.system = $UCUM
 * component[lightSleep].valueQuantity.unit = "minute"
@@ -48,7 +48,7 @@ Title: "Example of Sleep Record"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
  
-* component[interruptions].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#sleep-awakenings "Number of sleep awakenings"
+* component[interruptions].code = $LOINC#103211-9 "Number of awakenings"
 * component[interruptions].valueQuantity = 3 '1' "count"
 * component[interruptions].valueQuantity.system = $UCUM
 * component[interruptions].valueQuantity.unit = "count"
