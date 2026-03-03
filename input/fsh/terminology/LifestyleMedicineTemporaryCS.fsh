@@ -24,7 +24,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 712
+* ^count = 718
 
 // Traceability: codes renamed due to collisions are documented via inline comments.
 // Full mapping available in scripts/consolidation_mapping.json
