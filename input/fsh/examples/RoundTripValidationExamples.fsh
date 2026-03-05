@@ -20,7 +20,7 @@ Description: "Apple Watch device for HRV round-trip validation"
 * modelNumber = "Apple Watch Series 9"
 * version.value = "watchOS 10.2"
 * status = #active
-* type = $SCT#469801002 "Patient monitoring device"
+* type = $SCT#706689003 "Application programme software"
 
 Instance: DeviceFitbitSense
 InstanceOf: Device
@@ -33,7 +33,7 @@ Description: "Fitbit Sense 2 device for sleep round-trip validation"
 * modelNumber = "Fitbit Sense 2"
 * version.value = "Fitbit OS 5.3"
 * status = #active
-* type = $SCT#469801002 "Patient monitoring device"
+* type = $SCT#706689003 "Application programme software"
 
 Instance: DeviceGarminVenu
 InstanceOf: Device
@@ -46,7 +46,7 @@ Description: "Garmin Venu 3 device for activity round-trip validation"
 * modelNumber = "Garmin Venu 3"
 * version.value = "Software 9.18"
 * status = #active
-* type = $SCT#469801002 "Patient monitoring device"
+* type = $SCT#706689003 "Application programme software"
 
 Instance: DeviceOuraRing
 InstanceOf: Device
@@ -59,7 +59,7 @@ Description: "Oura Ring Gen 3 device for body metrics round-trip validation"
 * modelNumber = "Oura Ring Gen 3"
 * version.value = "Firmware 2.8"
 * status = #active
-* type = $SCT#469801002 "Patient monitoring device"
+* type = $SCT#706689003 "Application programme software"
 
 Instance: DeviceWithingsBPM
 InstanceOf: Device
@@ -91,16 +91,16 @@ Description: "Demonstrates Apple HealthKit HRV data transformation to FHIR. Vend
 * type = #collection
 * timestamp = "2026-03-05T08:30:00Z"
 
-* entry[0].fullUrl = "urn:uuid:patient-roundtrip-01"
+* entry[0].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * entry[0].resource = PatientRoundTrip
 
-* entry[1].fullUrl = "urn:uuid:device-apple-watch-rt"
+* entry[1].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440002"
 * entry[1].resource = DeviceAppleWatch
 
-* entry[2].fullUrl = "urn:uuid:obs-apple-hrv-rt"
+* entry[2].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440003"
 * entry[2].resource = ObsAppleHRV
 
-* entry[3].fullUrl = "urn:uuid:obs-apple-hr-rt"
+* entry[3].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440004"
 * entry[3].resource = ObsAppleHeartRate
 
 Instance: PatientRoundTrip
@@ -118,9 +118,9 @@ Title: "Apple HRV → LOINC 80404-7"
 Description: "Apple Watch SDNN measurement mapped from HKQuantityTypeIdentifierHeartRateVariabilitySDNN to LOINC 80404-7 via ConceptMapVendorToLOINC"
 * status = #final
 * code = $LOINC#8867-4 "Heart rate"
-* subject.reference = "urn:uuid:patient-roundtrip-01"
+* subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * effectiveDateTime = "2026-03-04T23:15:00Z"
-* device.reference = "urn:uuid:device-apple-watch-rt"
+* device.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440002"
 * valueQuantity = 62 '/min' "per minute"
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "per minute"
@@ -137,9 +137,9 @@ Title: "Apple Heart Rate → LOINC 8867-4"
 Description: "Apple Watch heart rate mapped from HKQuantityTypeIdentifierHeartRate to LOINC 8867-4"
 * status = #final
 * code = $LOINC#8867-4 "Heart rate"
-* subject.reference = "urn:uuid:patient-roundtrip-01"
+* subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * effectiveDateTime = "2026-03-04T23:15:00Z"
-* device.reference = "urn:uuid:device-apple-watch-rt"
+* device.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440002"
 * valueQuantity = 62 '/min' "per minute"
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "per minute"
@@ -162,13 +162,13 @@ Description: "Demonstrates Fitbit sleep data transformation to FHIR. Fitbit slee
 * type = #collection
 * timestamp = "2026-03-05T08:30:00Z"
 
-* entry[0].fullUrl = "urn:uuid:patient-roundtrip-01"
+* entry[0].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * entry[0].resource = PatientRoundTrip
 
-* entry[1].fullUrl = "urn:uuid:device-fitbit-sense-rt"
+* entry[1].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440005"
 * entry[1].resource = DeviceFitbitSense
 
-* entry[2].fullUrl = "urn:uuid:obs-fitbit-sleep-rt"
+* entry[2].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440006"
 * entry[2].resource = ObsFitbitSleep
 
 Instance: ObsFitbitSleep
@@ -179,10 +179,10 @@ Description: "Fitbit sleep data mapped to LOINC codes. Demonstrates multi-compon
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $LIFESTYLEOBS#sleep-panel "Sleep measurement panel"
-* subject.reference = "urn:uuid:patient-roundtrip-01"
+* subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * effectivePeriod.start = "2026-03-04T23:00:00Z"
 * effectivePeriod.end = "2026-03-05T06:45:00Z"
-* device.reference = "urn:uuid:device-fitbit-sense-rt"
+* device.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440005"
 * component[totalSleepTime].code = $LOINC#93832-4 "Sleep duration"
 * component[totalSleepTime].valueQuantity = 435 'min' "minute"
 * component[totalSleepTime].valueQuantity.system = $UCUM
@@ -227,16 +227,16 @@ Description: "Demonstrates Garmin Health API activity data transformation to FHI
 * type = #collection
 * timestamp = "2026-03-05T08:30:00Z"
 
-* entry[0].fullUrl = "urn:uuid:patient-roundtrip-01"
+* entry[0].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * entry[0].resource = PatientRoundTrip
 
-* entry[1].fullUrl = "urn:uuid:device-garmin-venu-rt"
+* entry[1].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440007"
 * entry[1].resource = DeviceGarminVenu
 
-* entry[2].fullUrl = "urn:uuid:obs-garmin-activity-rt"
+* entry[2].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440008"
 * entry[2].resource = ObsGarminActivity
 
-* entry[3].fullUrl = "urn:uuid:obs-garmin-hr-rt"
+* entry[3].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440009"
 * entry[3].resource = ObsGarminHeartRate
 
 Instance: ObsGarminActivity
@@ -247,9 +247,9 @@ Description: "Garmin daily activity data mapped to LOINC codes for steps, distan
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $SCT#129006008 "Walking"
-* subject.reference = "urn:uuid:patient-roundtrip-01"
+* subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * effectiveDateTime = "2026-03-04T00:00:00Z"
-* device.reference = "urn:uuid:device-garmin-venu-rt"
+* device.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440007"
 * component[steps].code = $LOINC#55423-8 "Number of steps in unspecified time Pedometer"
 * component[steps].valueQuantity = 11234 '1' "count"
 * component[steps].valueQuantity.system = $UCUM
@@ -275,9 +275,9 @@ Title: "Garmin Heart Rate → LOINC 8867-4"
 Description: "Garmin resting heart rate with max heart rate component"
 * status = #final
 * code = $LOINC#8867-4 "Heart rate"
-* subject.reference = "urn:uuid:patient-roundtrip-01"
+* subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * effectiveDateTime = "2026-03-04T08:00:00Z"
-* device.reference = "urn:uuid:device-garmin-venu-rt"
+* device.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440007"
 * valueQuantity = 58 '/min' "per minute"
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "per minute"
@@ -301,13 +301,13 @@ Description: "Demonstrates Oura Ring overnight data transformation to FHIR. Vend
 * type = #collection
 * timestamp = "2026-03-05T08:30:00Z"
 
-* entry[0].fullUrl = "urn:uuid:patient-roundtrip-01"
+* entry[0].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * entry[0].resource = PatientRoundTrip
 
-* entry[1].fullUrl = "urn:uuid:device-oura-ring-rt"
+* entry[1].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440010"
 * entry[1].resource = DeviceOuraRing
 
-* entry[2].fullUrl = "urn:uuid:obs-oura-sleep-rt"
+* entry[2].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440011"
 * entry[2].resource = ObsOuraSleep
 
 Instance: ObsOuraSleep
@@ -318,10 +318,10 @@ Description: "Oura Ring overnight sleep data mapped to LOINC. Demonstrates narro
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $LIFESTYLEOBS#sleep-panel "Sleep measurement panel"
-* subject.reference = "urn:uuid:patient-roundtrip-01"
+* subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * effectivePeriod.start = "2026-03-04T22:30:00Z"
 * effectivePeriod.end = "2026-03-05T06:15:00Z"
-* device.reference = "urn:uuid:device-oura-ring-rt"
+* device.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440010"
 * component[totalSleepTime].code = $LOINC#93832-4 "Sleep duration"
 * component[totalSleepTime].valueQuantity = 445 'min' "minute"
 * component[totalSleepTime].valueQuantity.system = $UCUM
@@ -365,13 +365,13 @@ Description: "Demonstrates Withings BPM Connect blood pressure transformation to
 * type = #collection
 * timestamp = "2026-03-05T08:30:00Z"
 
-* entry[0].fullUrl = "urn:uuid:patient-roundtrip-01"
+* entry[0].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * entry[0].resource = PatientRoundTrip
 
-* entry[1].fullUrl = "urn:uuid:device-withings-bpm-rt"
+* entry[1].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440012"
 * entry[1].resource = DeviceWithingsBPM
 
-* entry[2].fullUrl = "urn:uuid:obs-withings-bp-rt"
+* entry[2].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440013"
 * entry[2].resource = ObsWithingsBP
 
 Instance: ObsWithingsBP
@@ -381,9 +381,9 @@ Title: "Withings BP → LOINC BP Panel"
 Description: "Withings BPM Connect blood pressure mapped to standard LOINC BP panel codes"
 * status = #final
 * code = $LOINC#85354-9 "Blood pressure panel with all children optional"
-* subject.reference = "urn:uuid:patient-roundtrip-01"
+* subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
 * effectiveDateTime = "2026-03-05T07:30:00Z"
-* device.reference = "urn:uuid:device-withings-bpm-rt"
+* device.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440012"
 * component[systolic].code = $LOINC#8480-6 "Systolic blood pressure"
 * component[systolic].valueQuantity = 118 'mm[Hg]' "millimeter of mercury"
 * component[systolic].valueQuantity.system = $UCUM
