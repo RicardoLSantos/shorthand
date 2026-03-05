@@ -44,6 +44,8 @@ Description: "Regulatory frameworks for healthcare data protection"
 * AppLogicCS#lgpd "LGPD - Lei Geral de Proteção de Dados"
 * AppLogicCS#pipeda "PIPEDA - Personal Information Protection and Electronic Documents Act"
 * AppLogicCS#ehds "EHDS - European Health Data Space"
+* AppLogicCS#cfm-2454 "CFM Resolution 2.454/2026"
+* AppLogicCS#eu-ai-act "EU AI Act (Regulation 2024/1689)"
 
 // RegulatoryFrameworkCS — MERGED into AppLogicCS Category E (Phase 4, 2026-02-27)
-// 5 codes (gdpr, hipaa, lgpd, pipeda, ehds) now in AppLogicCS
+// 5+2 codes (gdpr, hipaa, lgpd, pipeda, ehds, cfm-2454, eu-ai-act) now in AppLogicCS

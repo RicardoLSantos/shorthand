@@ -66,6 +66,18 @@ Description: "NamingSystem defining URN patterns for healthcare regulatory polic
 * uniqueId[=].preferred = false
 * uniqueId[=].comment = "European Health Data Space Regulation"
 
+// CFM Resolution 2.454/2026 URN
+* uniqueId[+].type = #uri
+* uniqueId[=].value = "urn:br:cfm:2454:2026"
+* uniqueId[=].preferred = false
+* uniqueId[=].comment = "Brazilian Federal Council of Medicine Resolution 2.454/2026 on AI in Healthcare"
+
+// EU AI Act URN
+* uniqueId[+].type = #uri
+* uniqueId[=].value = "urn:eu:ai-act:2024:1689"
+* uniqueId[=].preferred = false
+* uniqueId[=].comment = "European Union Artificial Intelligence Act - Regulation 2024/1689"
+
 
 // ============================================================================
 // Regulatory Authority NamingSystem

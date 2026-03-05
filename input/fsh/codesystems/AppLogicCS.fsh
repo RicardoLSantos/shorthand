@@ -529,3 +529,8 @@ Body Structure codes for muscle groups). ConceptMaps link these to standards.
 // Relocated from TemporaryCS Phase 5 — app-level messaging, not clinical terminology
 * #mindfulness-msg-session-start "Mindfulness Session Start" "Event code for starting a mindfulness session"
 * #mindfulness-msg-session-end "Mindfulness Session End" "Event code for ending a mindfulness session"
+
+// --- Regulatory Frameworks — AI-specific (2 codes) ---
+// Added 2026-03-05 for CFM 2.454/2026 + EU AI Act compliance
+* #cfm-2454 "CFM Resolution 2.454/2026" "Brazilian Federal Council of Medicine resolution on AI in healthcare"
+* #eu-ai-act "EU AI Act (Regulation 2024/1689)" "European Union Artificial Intelligence Act"

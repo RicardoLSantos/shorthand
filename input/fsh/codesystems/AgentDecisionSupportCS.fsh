@@ -204,3 +204,52 @@ FHIR equivalents are noted in comments where they exist
 * #abnormal-value-alert "Abnormal Value Alert" "Alerting on abnormal values"
 * #trend-alert "Trend Alert" "Alerting on concerning trends"
 * #threshold-alert "Threshold Alert" "Threshold-based alerting"
+
+// ============================================================================
+// AI RISK CLASSIFICATION (4 codes) — CFM 2.454/2026 + EU AI Act 2024/1689
+// FHIR coverage: No standard — regulatory AI risk tiering
+// ============================================================================
+* #ai-risk-baixo "Baixo Risco (Low Risk)" "AI system poses low risk to patient safety — minimal regulatory requirements"
+  // EU AI Act Art. 6: Not in Annex III = low risk
+  // CFM 2.454 Art. 3: Sistemas de apoio sem autonomia decisória
+* #ai-risk-medio "Medio Risco (Medium Risk)" "AI system poses medium risk — standard transparency and logging required"
+  // EU AI Act: Annex III applications with limited risk
+  // CFM 2.454 Art. 4: Sistemas com sugestões clínicas
+* #ai-risk-alto "Alto Risco (High Risk)" "AI system poses high risk to patient safety — full compliance required"
+  // EU AI Act Art. 6 + Annex III: Health/safety AI systems
+  // CFM 2.454 Art. 5: Sistemas com impacto em decisão clínica
+* #ai-risk-inaceitavel "Risco Inaceitavel (Unacceptable Risk)" "AI system poses unacceptable risk — prohibited or requires special authorization"
+  // EU AI Act Art. 5: Prohibited practices
+  // CFM 2.454: Not explicitly addressed (autonomous AI in Brazil = alto risco)
+
+// ============================================================================
+// AI MODEL IDENTIFIERS (6 codes) — SLM models for edge inference
+// FHIR coverage: No standard — device/software identification
+// ============================================================================
+* #model-qwen35-4b "Qwen 3.5 4B" "Alibaba Qwen 3.5 4-billion parameter model"
+* #model-biomistral-7b "BioMistral 7B" "BioMistral 7-billion parameter biomedical model"
+* #model-llama3-8b "LLaMA 3 8B" "Meta LLaMA 3 8-billion parameter model"
+* #model-phi3-mini "Phi-3 Mini 3.8B" "Microsoft Phi-3 Mini 3.8-billion parameter model"
+* #model-gemma2-2b "Gemma 2 2B" "Google Gemma 2 2-billion parameter model"
+* #model-custom-slm "Custom Fine-tuned SLM" "Custom fine-tuned small language model for domain-specific tasks"
+
+// ============================================================================
+// PHYSICIAN OVERRIDE REASONS (5 codes) — CFM 2.454 Art. 7
+// FHIR coverage: No standard — clinical governance of AI override
+// ============================================================================
+* #override-clinical-judgment "Clinical Judgment Override" "Physician overrides AI based on clinical judgment and experience"
+  // CFM 2.454 Art. 7: Autonomia médica prevalece sobre recomendação de IA
+* #override-patient-context "Patient Context Override" "Physician overrides AI due to patient-specific context not captured in data"
+* #override-comorbidity "Comorbidity Override" "Physician overrides AI due to comorbidities affecting recommendation applicability"
+* #override-patient-preference "Patient Preference Override" "Physician overrides AI based on patient preference or shared decision-making"
+* #override-ai-error "AI Error Override" "Physician identifies error in AI reasoning or output"
+
+// ============================================================================
+// REGULATORY EVENT TYPES (5 codes) — AI audit trail events
+// FHIR coverage: Maps to AuditEvent.subtype (custom)
+// ============================================================================
+* #ai-inference-executed "AI Inference Executed" "An AI model inference was executed on clinical data"
+* #ai-recommendation-generated "AI Recommendation Generated" "The AI system generated a clinical recommendation"
+* #ai-recommendation-reviewed "AI Recommendation Reviewed" "A clinician reviewed an AI-generated recommendation"
+* #ai-override-recorded "AI Override Recorded" "A clinician override of an AI recommendation was recorded"
+* #ai-consent-verified "AI Consent Verified" "Patient consent for AI-assisted care was verified"
