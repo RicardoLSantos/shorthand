@@ -21,23 +21,23 @@ Description: "Demonstrates physician override of AI recommendation per CFM 2.454
 * timestamp = "2026-03-05T14:00:00Z"
 
 // --- Entry 1: Patient ---
-* entry[0].fullUrl = "urn:uuid:patient-ov-01"
+* entry[0].fullUrl = "urn:uuid:11223344-5566-4778-899a-bbccddeeff00"
 * entry[0].resource = PatientOverrideWF
 
 // --- Entry 2: Original AI ClinicalImpression ---
-* entry[1].fullUrl = "urn:uuid:ci-ov-original"
+* entry[1].fullUrl = "urn:uuid:22334455-6677-4889-9aab-bccddeeff011"
 * entry[1].resource = ClinicalImpressionOriginalWF
 
 // --- Entry 3: Original AI CarePlan (rejected) ---
-* entry[2].fullUrl = "urn:uuid:cp-ov-rejected"
+* entry[2].fullUrl = "urn:uuid:33445566-7788-4990-aabb-ccddeeff0122"
 * entry[2].resource = CarePlanRejectedWF
 
 // --- Entry 4: Modified CarePlan (physician approved) ---
-* entry[3].fullUrl = "urn:uuid:cp-ov-modified"
+* entry[3].fullUrl = "urn:uuid:44556677-8899-4aa1-bbcc-ddeeff012233"
 * entry[3].resource = CarePlanModifiedWF
 
 // --- Entry 5: Override AuditEvent ---
-* entry[4].fullUrl = "urn:uuid:audit-ov-01"
+* entry[4].fullUrl = "urn:uuid:55667788-99aa-4bb2-ccdd-eeff01223344"
 * entry[4].resource = AuditEventOverrideWF
 
 // ============================================================================
@@ -59,13 +59,13 @@ InstanceOf: ClinicalImpressionAIAssessment
 Usage: #inline
 * status = #completed
 * description = "AI assessment: sedentary lifestyle with metabolic risk indicators"
-* subject = Reference(urn:uuid:patient-ov-01)
+* subject = Reference(urn:uuid:11223344-5566-4778-899a-bbccddeeff00)
 * date = "2026-03-05T14:00:05Z"
 * assessor = Reference(Practitioner/PractitionerExample)
 * investigation[0].code.text = "Activity and Metabolic Inputs"
 * investigation[0].item[0] = Reference(Observation/HeartRateExample)
 * summary = "Low daily step count (avg 2,100/day), elevated fasting glucose (112 mg/dL), BMI 31.2. AI recommends structured exercise programme with high-intensity intervals."
-* finding[0].itemCodeableConcept = $SCT#40979000 "Sedentary behaviour"
+* finding[0].itemCodeableConcept = $SCT#40979000 "Lack of exercise"
 * finding[0].basis = "Average 2,100 steps/day over 14 days (target: 7,500)"
 * prognosisCodeableConcept = $AgentCS#agent-interpretation-moderate-risk "Moderate Risk"
 * protocol[0] = "urn:cql:library:MET-002:v1.0"
@@ -85,7 +85,7 @@ Usage: #inline
 * title = "AI Proposed: HIIT Exercise Programme (REJECTED)"
 * description = "High-intensity interval training programme - REJECTED by physician due to comorbidity"
 * category = $AgentCS#lifestyle-exercise "Exercise Intervention"
-* subject = Reference(urn:uuid:patient-ov-01)
+* subject = Reference(urn:uuid:11223344-5566-4778-899a-bbccddeeff00)
 * period.start = "2026-03-05"
 * period.end = "2026-05-28"
 * author = Reference(Device/AppleWatchDevice)
@@ -103,12 +103,12 @@ Usage: #inline
 * title = "Modified: Low-Impact Exercise Programme"
 * description = "Physician-modified plan replacing HIIT with low-impact alternatives appropriate for post-arthroscopy recovery"
 * category = $AgentCS#lifestyle-exercise "Exercise Intervention"
-* subject = Reference(urn:uuid:patient-ov-01)
+* subject = Reference(urn:uuid:11223344-5566-4778-899a-bbccddeeff00)
 * period.start = "2026-03-05"
 * period.end = "2026-05-28"
 * author = Reference(Practitioner/PractitionerExample)
-* replaces = Reference(urn:uuid:cp-ov-rejected)
-* supportingInfo = Reference(urn:uuid:ci-ov-original)
+* replaces = Reference(urn:uuid:33445566-7788-4990-aabb-ccddeeff0122)
+* supportingInfo = Reference(urn:uuid:22334455-6677-4889-9aab-bccddeeff011)
 * activity[0].detail.kind = #ServiceRequest
 * activity[0].detail.code.text = "Swimming 3x/week (30 min)"
 * activity[0].detail.status = #scheduled
@@ -140,9 +140,9 @@ Usage: #inline
 * agent[reviewer].who = Reference(Practitioner/PractitionerExample)
 * agent[reviewer].requestor = true
 * source.observer = Reference(Device/AppleWatchDevice)
-* entity[0].what = Reference(urn:uuid:cp-ov-rejected)
+* entity[0].what = Reference(urn:uuid:33445566-7788-4990-aabb-ccddeeff0122)
 * entity[0].description = "Original AI CarePlan (rejected)"
-* entity[1].what = Reference(urn:uuid:cp-ov-modified)
+* entity[1].what = Reference(urn:uuid:44556677-8899-4aa1-bbcc-ddeeff012233)
 * entity[1].description = "Modified CarePlan (physician approved)"
 * extension[inferenceMetadata].extension[modelId].valueCodeableConcept = $AgentCS#model-biomistral-7b "BioMistral 7B"
 * extension[inferenceMetadata].extension[riskClassification].valueCodeableConcept = $AgentCS#ai-risk-alto "Alto Risco (High Risk)"

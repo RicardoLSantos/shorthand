@@ -19,7 +19,6 @@ Both frameworks use tiered risk classification but with different
 nomenclature and regulatory implications.
 """
 
-* url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ai-risk-levels"
 * version = "1.0.0"
 * name = "ConceptMapAIRiskLevels"
 * status = #active
@@ -27,10 +26,6 @@ nomenclature and regulatory implications.
 * date = "2026-03-05"
 * publisher = "iOS Lifestyle Medicine HEADS FHIR IG"
 * description = "Bidirectional mapping between CFM 2.454/2026 and EU AI Act risk classification levels"
-
-// Source and target are the same CodeSystem (different code groups represent each framework)
-* sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-decision-support-cs"
-* targetUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-decision-support-cs"
 
 // Group: Internal risk levels mapped to regulatory interpretation
 * group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/agent-decision-support-cs"

@@ -33,6 +33,8 @@ Description: "Captures LLM agent recommendation metadata including confidence sc
 * ^context[3].expression = "Task"
 * ^context[4].type = #element
 * ^context[4].expression = "ServiceRequest"
+* ^context[5].type = #element
+* ^context[5].expression = "ClinicalImpression"
 * extension contains
     confidence 1..1 MS and
     interpretation 1..1 MS and

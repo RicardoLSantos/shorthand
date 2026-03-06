@@ -73,7 +73,10 @@ Description: "Example of an AI-generated clinical impression from HRV analysis s
 
 * summary = "72-hour SDNN decline (45ms to 28ms, -38%) concurrent with CRP elevation (2.1 to 4.8 mg/L). Pattern consistent with acute stress-inflammatory response. Moderate cardiovascular risk per CQL rule CVR-003. Recommend: stress management programme + follow-up HRV in 7 days."
 
-* finding[0].itemCodeableConcept = $SCT#251880007 "Decreased heart rate variability"
+* finding[0].itemCodeableConcept.text = "Decreased heart rate variability"
+* finding[0].itemCodeableConcept.coding[0].system = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
+* finding[0].itemCodeableConcept.coding[0].code = #hrv-inflammation-correlation
+* finding[0].itemCodeableConcept.coding[0].display = "HRV-Inflammation correlation assessment"
 * finding[0].basis = "SDNN 28ms below normal threshold (40ms) with 38% 72h decline"
 
 * finding[1].itemCodeableConcept = $LOINC#71426-1 "C reactive protein [Mass/volume] in Blood by High sensitivity method"
