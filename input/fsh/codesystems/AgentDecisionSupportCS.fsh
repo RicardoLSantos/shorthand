@@ -253,3 +253,11 @@ FHIR equivalents are noted in comments where they exist
 * #ai-recommendation-reviewed "AI Recommendation Reviewed" "A clinician reviewed an AI-generated recommendation"
 * #ai-override-recorded "AI Override Recorded" "A clinician override of an AI recommendation was recorded"
 * #ai-consent-verified "AI Consent Verified" "Patient consent for AI-assisted care was verified"
+
+// ============================================================================
+// AI CONSENT CATEGORIES (3 codes) — LGPD Art. 8 + Art. 11 + Art. 20
+// FHIR coverage: Consent.category extension for AI-specific consent granularity
+// ============================================================================
+* #ai-consent-general "AI General Consent" "Consent for AI processing of non-sensitive personal data (LGPD Art. 7-I)"
+* #ai-consent-health "AI Health Data Consent" "Explicit consent for AI processing of sensitive health data (LGPD Art. 11-I)"
+* #ai-consent-automated-decision "AI Automated Decision Consent" "Consent for automated decision-making with right to review (LGPD Art. 20)"

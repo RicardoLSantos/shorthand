@@ -534,3 +534,23 @@ Body Structure codes for muscle groups). ConceptMaps link these to standards.
 // Added 2026-03-05 for CFM 2.454/2026 + EU AI Act compliance
 * #cfm-2454 "CFM Resolution 2.454/2026" "Brazilian Federal Council of Medicine resolution on AI in healthcare"
 * #eu-ai-act "EU AI Act (Regulation 2024/1689)" "European Union Artificial Intelligence Act"
+
+// --- LGPD Data Processing Purposes (7 codes) ---
+// Added 2026-03-15 for LGPD Phase 1 (Lei 13.709/2018, Art. 7 + Art. 11)
+* #lgpd-consent "Consent-Based Processing" "Data processing based on explicit data subject consent (LGPD Art. 7-I, Art. 8)"
+* #lgpd-legal-obligation "Legal Obligation" "Processing necessary for compliance with a legal or regulatory obligation (LGPD Art. 7-II)"
+* #lgpd-research "Research Processing" "Processing for scientific research, with anonymization when possible (LGPD Art. 7-IV, Art. 11-II-c)"
+* #lgpd-health-protection "Health Protection" "Processing for protection of health, by healthcare professional or sanitary authority (LGPD Art. 7-VIII, Art. 11-II-f)"
+* #lgpd-vital-interest "Vital Interest" "Processing necessary to protect life or physical safety of the data subject (LGPD Art. 7-VII)"
+* #lgpd-legitimate-interest "Legitimate Interest" "Processing based on legitimate interest of the controller (LGPD Art. 7-IX, Art. 10)"
+* #lgpd-public-interest "Public Interest" "Processing by public administration for public policy execution (LGPD Art. 7-III)"
+
+// --- Data Anonymization Status (4 codes) — SHARED: LGPD/GDPR/HIPAA ---
+// Added 2026-03-15 for cross-jurisdictional privacy compliance
+// LGPD Art. 5-III (anonimização), Art. 12 (anonymized = not personal data)
+// GDPR Art. 4(5) (pseudonymisation), Recital 26 (anonymisation)
+// HIPAA §164.514 (de-identification: Safe Harbor + Expert Determination)
+* #data-identified "Identified" "Data contains direct identifiers linking to the data subject"
+* #data-pseudonymized "Pseudonymized" "Direct identifiers replaced with pseudonyms; re-identification possible with key"
+* #data-anonymized "Anonymized" "Data irreversibly stripped of identifiers; no reasonable re-identification possible"
+* #data-de-identified "De-identified" "Data meets HIPAA de-identification standard (Safe Harbor or Expert Determination)"
