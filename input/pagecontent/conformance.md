@@ -65,7 +65,7 @@ The IG organizes 78 profiles across 11 lifestyle medicine domains. The table bel
 | 10 | **Advanced Metrics** | 18 | 12–30 | LOINC (80404-7, 97506-0) + Custom | Required + Extensible |
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
 
-**Total**: 78 Profiles, 51 Extensions, 14 CodeSystems (1,061 custom codes), 179 ValueSets, 29 ConceptMaps.
+**Total**: 78 Profiles, 52 Extensions, 14 CodeSystems (1,075 custom codes), 182 ValueSets, 29 ConceptMaps.
 
 ## Terminology Requirements
 

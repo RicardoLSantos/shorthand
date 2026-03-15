@@ -86,7 +86,7 @@ Consumer wearable data SHOULD include a Device resource identifying the source:
 
 ### Step 4: Use ConceptMaps for Terminology Translation
 
-This IG provides 28 ConceptMaps for translating between vendor-specific codes and standard terminologies. Use the FHIR `$translate` operation:
+This IG provides 29 ConceptMaps for translating between vendor-specific codes and standard terminologies. Use the FHIR `$translate` operation:
 
 ```
 GET [base]/ConceptMap/$translate?system=https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs&code=sleep-deep&target=http://loinc.org

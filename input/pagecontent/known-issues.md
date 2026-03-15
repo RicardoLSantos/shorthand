@@ -2,19 +2,19 @@
 
 This page documents known issues that affect the iOS Lifestyle Medicine Implementation Guide build validation but do not impact functionality.
 
-**Build Summary (2026-02-11):** 28 errors, 145 warnings
+**Build Summary (2026-03-15):** 23 errors, 141 warnings
 
 **Tooling Versions:**
-- SUSHI: v3.17.0
-- IG Publisher: v2.1.0
+- SUSHI: v3.18.1
+- IG Publisher: v2.1.2
 - FHIR R4: v4.0.1
 - IPS Dependency: hl7.fhir.uv.ips#2.0.0
 
 ---
 
-## Errors (28 total — all upstream IPS 2.0.0)
+## Errors (23 total — all upstream IPS 2.0.0)
 
-All 28 errors originate from the IPS 2.0.0 dependency (`hl7.fhir.uv.ips#2.0.0-ballot`). None are caused by this IG's profiles, extensions, or examples.
+All 23 errors originate from the IPS 2.0.0 dependency (`hl7.fhir.uv.ips#2.0.0`). None are caused by this IG's profiles, extensions, or examples.
 
 ### 1. Extension Reference Error (19 occurrences)
 
@@ -210,16 +210,15 @@ The ETL pipeline provides **runtime verification** (not build-time elimination) 
 
 | Issue Category | Errors | Warnings | Total | Status |
 |---------------|--------|----------|-------|--------|
-| IPS 2.0.0 upstream (note, pkp-2) | 28 | 42 | 70 | Awaiting HL7 update |
+| IPS 2.0.0 upstream (note, pkp-2) | 23 | 42 | 65 | Awaiting HL7 update |
 | ConceptMap external systems | 0 | 46 | 46 | **OCL mitigable (31%)** |
-| UCUM annotations | 0 | 14 | 14 | Expected (valid UCUM) |
+| UCUM annotations | 0 | 16 | 16 | Expected (valid UCUM) |
+| LGPD new artifacts (no examples) | 0 | 13 | 13 | Expected (Phase 1) |
 | Other expected warnings | 0 | 7 | 7 | Expected behavior |
-| Fixable locally | 0 | 8 | 8 | **Fixed (2026-01-27)** |
 | CQL validation | 0 | 2 | 2 | IG Publisher limitation |
-| Pin-canonicals | 0 | 1 | 1 | Low priority |
-| **Total** | **28** | **148** | **176** | |
+| **Total** | **23** | **141** | **164** | |
 
-**Projected after OCL integration:** 28 errors, ~102 warnings (~31% reduction)
+**Projected after OCL integration:** 23 errors, ~95 warnings (~33% reduction)
 
 These issues do not prevent the IG from being used in production. All FHIR profiles, extensions, and examples validate correctly against their defined constraints.
 

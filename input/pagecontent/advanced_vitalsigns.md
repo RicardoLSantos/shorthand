@@ -83,12 +83,13 @@ This module defines how advanced vital signs data collected from the iOS Health 
 | Oxygen Saturation | SpO2Observation.component[saturation] | 59408-5 | Oxygen saturation in blood |
 
 ### Advanced Measurements
-| iOS Health App | FHIR Path | LOINC Code | Description |
-|----------------|-----------|------------|-------------|
-| HRV Analysis | HRVObservation.component[spectral] | 80405-4 | Heart rate variability metrics |
-| Recovery Rate | RecoveryObservation.component[rate] | 80406-2 | Cardiac recovery rate |
-| Stress Index | StressObservation.component[index] | 80407-0 | Physiological stress index |
-| Temperature Variation | TempObservation.component[variation] | 80408-8 | Temperature pattern |
+| iOS Health App | FHIR Path | Code | Source | Description |
+|----------------|-----------|------|--------|-------------|
+| HRV (SDNN) | HRVObservation.component[sdnn] | 80404-7 | LOINC | R-R interval standard deviation |
+| HRV (RMSSD) | HRVObservation.component[rmssd] | rmssd | Custom | Root mean square successive differences (no LOINC) |
+| Recovery Rate | RecoveryObservation.component[rate] | recovery-rate | Custom | Cardiac recovery rate (no LOINC) |
+| Stress Index | StressObservation.component[index] | stress-physiological | Custom | Physiological stress index (no LOINC) |
+| Temperature Variation | TempObservation.component[variation] | temp-variation | Custom | Temperature circadian pattern (no LOINC) |
 
 ## Implementation Requirements
 
