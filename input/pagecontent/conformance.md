@@ -1,6 +1,6 @@
 # Conformance Requirements
 
-This page defines the conformance expectations for systems implementing this Implementation Guide (IG). It complements the [Must Support](must-support.html) definitions and the [CapabilityStatement](CapabilityStatement-IOSLifestyleMedicineCapabilityStatement.html) for server requirements.
+This page defines the conformance expectations for systems implementing this Implementation Guide (IG). It complements the [Must Support](must-support.html) definitions and the [CapabilityStatement](CapabilityStatement-LifestyleMedicineCapabilityStatement.html) for server requirements.
 
 ## Conformance Levels
 
@@ -199,7 +199,7 @@ GET [base]/ConceptMap/$translate?system=https://2rdoc.pt/ig/ios-lifestyle-medici
 
 ## Server Conformance
 
-The [CapabilityStatement](CapabilityStatement-IOSLifestyleMedicineCapabilityStatement.html) defines server requirements including:
+The [CapabilityStatement](CapabilityStatement-LifestyleMedicineCapabilityStatement.html) defines server requirements including:
 
 - **12 resource types** supported (Observation, Patient, Device, Practitioner, Composition, Bundle, Consent, Provenance, CarePlan, AuditEvent, ClinicalImpression, Questionnaire)
 - **32 Observation `supportedProfiles`** across all domains
