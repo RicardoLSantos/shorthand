@@ -554,3 +554,17 @@ Body Structure codes for muscle groups). ConceptMaps link these to standards.
 * #data-pseudonymized "Pseudonymized" "Direct identifiers replaced with pseudonyms; re-identification possible with key"
 * #data-anonymized "Anonymized" "Data irreversibly stripped of identifiers; no reasonable re-identification possible"
 * #data-de-identified "De-identified" "Data meets HIPAA de-identification standard (Safe Harbor or Expert Determination)"
+
+// --- LGPD Phase 2: DPO Roles + Data Subject Rights (11 codes) ---
+// Added 2026-03-15 for LGPD Art. 37-38 (DPO) + Art. 18 (data subject rights) + Art. 20
+* #lgpd-dpo "Data Protection Officer (Encarregado)" "LGPD Art. 37 — designated DPO responsible for data protection compliance"
+* #lgpd-dpo-deputy "Deputy Data Protection Officer" "Deputy or substitute for the designated DPO"
+* #lgpd-right-confirmation "Right to Confirmation (Art. 18-I)" "Right to confirm existence of personal data processing"
+* #lgpd-right-access "Right to Access (Art. 18-II)" "Right to access personal data held by controller"
+* #lgpd-right-correction "Right to Correction (Art. 18-III)" "Right to correct incomplete, inaccurate, or outdated data"
+* #lgpd-right-anonymization "Right to Anonymization/Deletion (Art. 18-IV)" "Right to anonymize, block, or delete unnecessary or excessive data"
+* #lgpd-right-portability "Right to Portability (Art. 18-V)" "Right to data portability to another service provider"
+* #lgpd-right-sharing-info "Right to Sharing Information (Art. 18-VI)" "Right to information about entities with which data was shared"
+* #lgpd-right-consent-info "Right to Consent Information (Art. 18-VII)" "Right to information about consent denial consequences"
+* #lgpd-right-revocation "Right to Consent Revocation (Art. 18-VIII)" "Right to revoke previously granted consent"
+* #lgpd-right-automated-review "Right to Automated Decision Review (Art. 20)" "Right to request review of decisions made solely by automated processing"
