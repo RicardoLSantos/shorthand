@@ -16,12 +16,14 @@ on:
     paths:
       - 'input/**'
       - 'sushi-config.yaml'
+      - 'ig.ini'
       - '_genonce.sh'
   pull_request:
     branches: [main]
     paths:
       - 'input/**'
       - 'sushi-config.yaml'
+      - 'ig.ini'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
@@ -72,7 +74,7 @@ jobs:
 
       - name: Run IG Publisher
         run: |
-          java -Xmx4g -jar input-cache/publisher.jar -ig .
+          java -Xmx4g -jar input-cache/publisher.jar -ig ig.ini
         timeout-minutes: 30
 
       - name: Check QA Results
