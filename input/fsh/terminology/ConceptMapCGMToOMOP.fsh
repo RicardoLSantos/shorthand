@@ -102,7 +102,66 @@ GAP: No OMOP concept exists for GMI.
 * group[0].element[2].target[0].comment = "Mean glucose over CGM recording period. Use measurement_source_value for context."
 
 // ============================================================================
-// GROUP 2: Custom CGM Metrics → OMOP (Time in Range metrics)
+// LOINC CGM Codes (Phase 3 additions, 2026-03-10 — from CGM IG v1.0.0)
+// ============================================================================
+* group[0].element[3].code = #104641-6
+* group[0].element[3].display = "Time below range, low in Reporting Period Interstitial fluid by calculation"
+* group[0].element[3].target[0].code = #0
+* group[0].element[3].target[0].display = "No OMOP concept available"
+* group[0].element[3].target[0].equivalence = #unmatched
+* group[0].element[3].target[0].comment = "LOINC Phase 3. Target: <4% (<70 mg/dL). Replaces custom #tbr."
+
+* group[0].element[4].code = #104642-4
+* group[0].element[4].display = "Time below range, very low in Reporting Period Interstitial fluid by calculation"
+* group[0].element[4].target[0].code = #0
+* group[0].element[4].target[0].display = "No OMOP concept available"
+* group[0].element[4].target[0].equivalence = #unmatched
+* group[0].element[4].target[0].comment = "LOINC Phase 3. Target: <1% (<54 mg/dL). Replaces custom #tbr-l2."
+
+* group[0].element[5].code = #104640-8
+* group[0].element[5].display = "Time above range, high in Reporting Period Interstitial fluid by calculation"
+* group[0].element[5].target[0].code = #0
+* group[0].element[5].target[0].display = "No OMOP concept available"
+* group[0].element[5].target[0].equivalence = #unmatched
+* group[0].element[5].target[0].comment = "LOINC Phase 3. Target: <25% (>180 mg/dL). Replaces custom #tar."
+
+* group[0].element[6].code = #104639-0
+* group[0].element[6].display = "Time above range, very high in Reporting Period Interstitial fluid by calculation"
+* group[0].element[6].target[0].code = #0
+* group[0].element[6].target[0].display = "No OMOP concept available"
+* group[0].element[6].target[0].equivalence = #unmatched
+* group[0].element[6].target[0].comment = "LOINC Phase 3. Target: <5% (>250 mg/dL). Replaces custom #tar-l2."
+
+* group[0].element[7].code = #104638-2
+* group[0].element[7].display = "Glucose standard deviation/Glucose mean in Reporting Period Interstitial fluid by calculation"
+* group[0].element[7].target[0].code = #0
+* group[0].element[7].target[0].display = "No OMOP concept available"
+* group[0].element[7].target[0].equivalence = #unmatched
+* group[0].element[7].target[0].comment = "LOINC Phase 3. CV target: <36%. Replaces custom #cv."
+
+* group[0].element[8].code = #97507-8
+* group[0].element[8].display = "Average glucose [Mass/volume] in Interstitial fluid during Reporting Period"
+* group[0].element[8].target[0].code = #0
+* group[0].element[8].target[0].display = "No OMOP concept for mean glucose"
+* group[0].element[8].target[0].equivalence = #unmatched
+* group[0].element[8].target[0].comment = "LOINC Phase 3. Mean glucose over CGM period. Replaces custom #mean."
+
+* group[0].element[9].code = #104637-4
+* group[0].element[9].display = "Percentage of time continuous glucose monitor device worn Reporting Period Calculated"
+* group[0].element[9].target[0].code = #0
+* group[0].element[9].target[0].display = "No OMOP concept available"
+* group[0].element[9].target[0].equivalence = #unmatched
+* group[0].element[9].target[0].comment = "LOINC Phase 3. Sensor active time %. Replaces custom #cgm-active-time (improved from 97504-5)."
+
+* group[0].element[10].code = #104636-6
+* group[0].element[10].display = "Days continuous glucose monitor device worn [#] Reporting Period Estimated"
+* group[0].element[10].target[0].code = #0
+* group[0].element[10].target[0].display = "No OMOP concept available"
+* group[0].element[10].target[0].equivalence = #unmatched
+* group[0].element[10].target[0].comment = "LOINC Phase 3. Days since sensor insertion. Replaces custom #sensor-days."
+
+// ============================================================================
+// GROUP 2: Custom CGM Metrics → OMOP (remaining Time in Range metrics without LOINC)
 // ============================================================================
 * group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * group[1].target = "http://athena.ohdsi.org/search-terms/terms"
@@ -110,7 +169,7 @@ GAP: No OMOP concept exists for GMI.
 * group[1].unmapped.code = #0
 * group[1].unmapped.display = "No OMOP concept - International Consensus 2019 metrics not yet in OMOP"
 
-// TIR - Time in Range (70-180 mg/dL)
+// TIR - Time in Range (70-180 mg/dL) — still custom, no LOINC
 * group[1].element[0].code = #tir
 * group[1].element[0].display = "Time in Range"
 * group[1].element[0].target[0].code = #0
@@ -124,57 +183,34 @@ CRITICAL GAP: TIR (Time in Range) has NO OMOP concept.
 Workaround: Store in measurement_source_value = 'TIR:{value}%'
 """
 
-// TBR-L1 - Time Below Range Level 1 (54-69 mg/dL)
+// TBR-L1 - Time Below Range Level 1 (54-69 mg/dL) — still custom, no LOINC for L1 specifically
 * group[1].element[1].code = #tbr-l1
 * group[1].element[1].display = "Time Below Range Level 1"
 * group[1].element[1].target[0].code = #0
 * group[1].element[1].target[0].display = "No OMOP concept available"
 * group[1].element[1].target[0].equivalence = #unmatched
-* group[1].element[1].target[0].comment = "Target: <4% per International Consensus. Hypoglycemia Level 1."
+* group[1].element[1].target[0].comment = "Target: <4% per International Consensus. Hypoglycemia Level 1. Note: LOINC 104641-6 covers total TBR, not L1 specifically."
 
-// TBR-L2 - Time Below Range Level 2 (<54 mg/dL)
-* group[1].element[2].code = #tbr-l2
-* group[1].element[2].display = "Time Below Range Level 2"
+// Note: #tbr-l2 moved to Group 1 as LOINC 104642-4 (Phase 3, 2026-03-10)
+
+// TAR-L1 - Time Above Range Level 1 (181-250 mg/dL) — still custom, no LOINC for L1 specifically
+* group[1].element[2].code = #tar-l1
+* group[1].element[2].display = "Time Above Range Level 1"
 * group[1].element[2].target[0].code = #0
 * group[1].element[2].target[0].display = "No OMOP concept available"
 * group[1].element[2].target[0].equivalence = #unmatched
-* group[1].element[2].target[0].comment = "Target: <1% per International Consensus. Clinically significant hypoglycemia."
+* group[1].element[2].target[0].comment = "Target: <25% per International Consensus. Hyperglycemia Level 1. Note: LOINC 104640-8 covers total TAR, not L1 specifically."
 
-// TAR-L1 - Time Above Range Level 1 (181-250 mg/dL)
-* group[1].element[3].code = #tar-l1
-* group[1].element[3].display = "Time Above Range Level 1"
+// Note: #tar-l2 moved to Group 1 as LOINC 104639-0 (Phase 3, 2026-03-10)
+// Note: #cv moved to Group 1 as LOINC 104638-2 (Phase 3, 2026-03-10)
+
+// Standard Deviation — still custom, LOINC 97505-2 exists but profile still uses custom #sd
+* group[1].element[3].code = #sd
+* group[1].element[3].display = "Standard Deviation"
 * group[1].element[3].target[0].code = #0
-* group[1].element[3].target[0].display = "No OMOP concept available"
+* group[1].element[3].target[0].display = "No OMOP concept for glucose SD"
 * group[1].element[3].target[0].equivalence = #unmatched
-* group[1].element[3].target[0].comment = "Target: <25% per International Consensus. Hyperglycemia Level 1."
-
-// TAR-L2 - Time Above Range Level 2 (>250 mg/dL)
-* group[1].element[4].code = #tar-l2
-* group[1].element[4].display = "Time Above Range Level 2"
-* group[1].element[4].target[0].code = #0
-* group[1].element[4].target[0].display = "No OMOP concept available"
-* group[1].element[4].target[0].equivalence = #unmatched
-* group[1].element[4].target[0].comment = "Target: <5% per International Consensus. Clinically significant hyperglycemia."
-
-// CV - Coefficient of Variation
-* group[1].element[5].code = #cv
-* group[1].element[5].display = "Coefficient of Variation"
-* group[1].element[5].target[0].code = #0
-* group[1].element[5].target[0].display = "No OMOP concept available"
-* group[1].element[5].target[0].equivalence = #unmatched
-* group[1].element[5].target[0].comment = """
-CV = (SD / Mean) × 100
-Target: <36% indicates stable glycemia (Monnier et al.)
-Critical for glycemic variability assessment.
-"""
-
-// Standard Deviation
-* group[1].element[6].code = #sd
-* group[1].element[6].display = "Standard Deviation"
-* group[1].element[6].target[0].code = #0
-* group[1].element[6].target[0].display = "No OMOP concept for glucose SD"
-* group[1].element[6].target[0].equivalence = #unmatched
-* group[1].element[6].target[0].comment = "Glucose standard deviation. Unit: mg/dL or mmol/L."
+* group[1].element[3].target[0].comment = "Glucose standard deviation. Unit: mg/dL or mmol/L."
 
 // ============================================================================
 // OMOP UNIT CONCEPTS REFERENCE for CGM

@@ -139,7 +139,9 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
 * component[trainingZone].value[x] only CodeableConcept
 * component[trainingZone].valueCodeableConcept from CyclingTrainingZoneVS (extensible)
 
-* component[activityType].code = LifestyleMedicineTemporaryCS#type "Activity Type"
+// LOINC 73985-4 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: PA-IG v1.0.1)
+// Replaces custom LifestyleMedicineTemporaryCS#type — LOINC covers "Exercise activity"
+* component[activityType].code = $LOINC#73985-4 "Exercise activity"
 * component[activityType].value[x] only CodeableConcept
 * component[activityType].valueCodeableConcept from CyclingActivityTypeVS (extensible)
 

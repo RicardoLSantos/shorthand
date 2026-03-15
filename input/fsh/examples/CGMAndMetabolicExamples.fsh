@@ -42,14 +42,12 @@ Description: "Example of continuous glucose monitoring data from a consumer CGM 
 * component[timeInRange].code = http://loinc.org#97510-2 "Glucose measurements in range out of Total glucose measurements during reporting period"
 * component[timeInRange].valueQuantity = 78 '%' "percent"
 
-// Mean glucose
-// NOTE: 97507-8 ("Average glucose in Interstitial fluid") available but kept as custom
-// because CGM "mean glucose" may include non-interstitial derived values in some implementations
-* component[meanGlucose].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mean "Mean Glucose"
+// Mean glucose - LOINC 97507-8 (Phase 3 IG cross-reference 2026-03-10: CGM IG v1.0.0 uses this)
+* component[meanGlucose].code = http://loinc.org#97507-8 "Average glucose [Mass/volume] in Interstitial fluid during Reporting Period"
 * component[meanGlucose].valueQuantity = 125 'mg/dL' "milligrams per deciliter"
 
-// Coefficient of variation
-* component[coefficientOfVariation].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#cv "Coefficient of Variation"
+// Coefficient of variation - LOINC 104638-2 (Phase 3 IG cross-reference 2026-03-10: CGM IG v1.0.0)
+* component[coefficientOfVariation].code = http://loinc.org#104638-2 "Glucose standard deviation/Glucose mean in Reporting Period Interstitial fluid by calculation"
 * component[coefficientOfVariation].valueQuantity = 28 '%' "percent"
 
 // GMI (Glucose Management Indicator) - LOINC 97506-0 (verified 2026-02-24)

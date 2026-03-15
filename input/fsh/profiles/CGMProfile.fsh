@@ -92,25 +92,33 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[timeInRange].valueQuantity.code = #%
 * component[timeInRange] ^short = "Target: >70% for most adults with diabetes"
 
-* component[timeBelowRange].code = LifestyleMedicineTemporaryCS#tbr "Time Below Range"
+// LOINC 104641-6 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: CGM IG v1.0.0)
+// Replaces custom LifestyleMedicineTemporaryCS#tbr — LOINC covers "Time below range, low"
+* component[timeBelowRange].code = $LOINC#104641-6 "Time below range, low in Reporting Period Interstitial fluid by calculation"
 * component[timeBelowRange].value[x] only Quantity
 * component[timeBelowRange].valueQuantity.system = $UCUM
 * component[timeBelowRange].valueQuantity.code = #%
 * component[timeBelowRange] ^short = "Target: <4% (<70 mg/dL)"
 
-* component[timeBelowRangeL2].code = LifestyleMedicineTemporaryCS#tbr-l2 "Time Below Range Level 2"
+// LOINC 104642-4 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: CGM IG v1.0.0)
+// Replaces custom LifestyleMedicineTemporaryCS#tbr-l2 — LOINC covers "Time below range, very low"
+* component[timeBelowRangeL2].code = $LOINC#104642-4 "Time below range, very low in Reporting Period Interstitial fluid by calculation"
 * component[timeBelowRangeL2].value[x] only Quantity
 * component[timeBelowRangeL2].valueQuantity.system = $UCUM
 * component[timeBelowRangeL2].valueQuantity.code = #%
 * component[timeBelowRangeL2] ^short = "Target: <1% (<54 mg/dL severe hypo)"
 
-* component[timeAboveRange].code = LifestyleMedicineTemporaryCS#tar "Time Above Range"
+// LOINC 104640-8 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: CGM IG v1.0.0)
+// Replaces custom LifestyleMedicineTemporaryCS#tar — LOINC covers "Time above range, high"
+* component[timeAboveRange].code = $LOINC#104640-8 "Time above range, high in Reporting Period Interstitial fluid by calculation"
 * component[timeAboveRange].value[x] only Quantity
 * component[timeAboveRange].valueQuantity.system = $UCUM
 * component[timeAboveRange].valueQuantity.code = #%
 * component[timeAboveRange] ^short = "Target: <25% (>180 mg/dL)"
 
-* component[timeAboveRangeL2].code = LifestyleMedicineTemporaryCS#tar-l2 "Time Above Range Level 2"
+// LOINC 104639-0 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: CGM IG v1.0.0)
+// Replaces custom LifestyleMedicineTemporaryCS#tar-l2 — LOINC covers "Time above range, very high"
+* component[timeAboveRangeL2].code = $LOINC#104639-0 "Time above range, very high in Reporting Period Interstitial fluid by calculation"
 * component[timeAboveRangeL2].value[x] only Quantity
 * component[timeAboveRangeL2].valueQuantity.system = $UCUM
 * component[timeAboveRangeL2].valueQuantity.code = #%
@@ -120,7 +128,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // GLYCEMIC VARIABILITY
 // ============================================================================
 
-* component[meanGlucose].code = LifestyleMedicineTemporaryCS#mean "Mean Glucose"
+// LOINC 97507-8 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: CGM IG v1.0.0)
+// Replaces custom LifestyleMedicineTemporaryCS#mean — LOINC covers "Average glucose in IF"
+* component[meanGlucose].code = $LOINC#97507-8 "Average glucose [Mass/volume] in Interstitial fluid during Reporting Period"
 * component[meanGlucose].value[x] only Quantity
 * component[meanGlucose].valueQuantity.system = $UCUM
 * component[meanGlucose].valueQuantity.code = #mg/dL
@@ -132,7 +142,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[glucoseSD].valueQuantity.system = $UCUM
 * component[glucoseSD].valueQuantity.code = #mg/dL
 
-* component[coefficientOfVariation].code = LifestyleMedicineTemporaryCS#cv "Coefficient of Variation"
+// LOINC 104638-2 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: CGM IG v1.0.0)
+// Replaces custom LifestyleMedicineTemporaryCS#cv — LOINC covers "Glucose SD/Glucose mean (CV)"
+* component[coefficientOfVariation].code = $LOINC#104638-2 "Glucose standard deviation/Glucose mean in Reporting Period Interstitial fluid by calculation"
 * component[coefficientOfVariation].value[x] only Quantity
 * component[coefficientOfVariation].valueQuantity.system = $UCUM
 * component[coefficientOfVariation].valueQuantity.code = #%
@@ -162,9 +174,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 // SENSOR AND DATA QUALITY
 // ============================================================================
 
-// LOINC 97504-5 verified via Athena 2026-02-24 (concept_id: CGM family 9750x)
-// Replaces custom LifestyleMedicineTemporaryCS#cgm-active-time — LOINC covers "Percent sensor usage"
-* component[sensorActiveTime].code = $LOINC#97504-5 "Percent sensor usage"
+// LOINC 104637-4 verified via Athena 2026-03-10 (Phase 3: CGM IG v1.0.0 uses this, not 97504-5)
+// Replaces 97504-5 — CGM IG prefers 104637-4 for "Percentage of time CGM device worn"
+* component[sensorActiveTime].code = $LOINC#104637-4 "Percentage of time continuous glucose monitor device worn Reporting Period Calculated"
 * component[sensorActiveTime].value[x] only Quantity
 * component[sensorActiveTime].valueQuantity.system = $UCUM
 * component[sensorActiveTime].valueQuantity.code = #%
@@ -194,7 +206,9 @@ Description: "Profile for recording continuous glucose monitoring data from cons
 * component[sensorInsertionSite].value[x] only CodeableConcept
 * component[sensorInsertionSite].valueCodeableConcept from CGMInsertionSiteVS (required)
 
-* component[daysSinceSensorInsertion].code = LifestyleMedicineTemporaryCS#sensor-days "Sensor Days"
+// LOINC 104636-6 verified via Athena 2026-03-10 (Phase 3 IG cross-reference: CGM IG v1.0.0)
+// Replaces custom LifestyleMedicineTemporaryCS#sensor-days — LOINC covers "Days CGM device worn"
+* component[daysSinceSensorInsertion].code = $LOINC#104636-6 "Days continuous glucose monitor device worn [#] Reporting Period Estimated"
 * component[daysSinceSensorInsertion].value[x] only integer
 ValueSet: CGMGlucoseUnitVS
 Id: cgm-glucose-unit-vs

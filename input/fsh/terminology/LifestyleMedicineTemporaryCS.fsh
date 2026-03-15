@@ -166,24 +166,32 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
   // Renamed from CGMMetricsCS#trend (collision resolution)
 * #roc "Rate of Change" "Numeric rate of glucose change per minute"
 * #tir "Time in Range" "Percentage of time glucose is within target range (70-180 mg/dL)"
+// SUPERSEDED by LOINC 104641-6 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #tbr "Time Below Range" "Percentage of time glucose is below target (<70 mg/dL)"
 * #tbr-l1 "Time Below Range Level 1" "Percentage of time in Level 1 hypoglycemia (54-69 mg/dL)"
+// SUPERSEDED by LOINC 104642-4 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #tbr-l2 "Time Below Range Level 2" "Percentage of time in Level 2 hypoglycemia (<54 mg/dL)"
+// SUPERSEDED by LOINC 104640-8 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #tar "Time Above Range" "Percentage of time glucose is above target (>180 mg/dL)"
 * #tar-l1 "Time Above Range Level 1" "Percentage of time in Level 1 hyperglycemia (181-250 mg/dL)"
+// SUPERSEDED by LOINC 104639-0 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #tar-l2 "Time Above Range Level 2" "Percentage of time in Level 2 hyperglycemia (>250 mg/dL)"
+// SUPERSEDED by LOINC 97507-8 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #mean "Mean Glucose" "Average glucose over reporting period"
 * #sd "Standard Deviation" "Standard deviation of glucose values"
+// SUPERSEDED by LOINC 104638-2 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #cv "Coefficient of Variation" "CV = SD/Mean x 100, target <36%"
 * #gmi "Glucose Management Indicator" "Estimated HbA1c from CGM glucose"
 * #hypo-events "Hypoglycemia Events" "Number of hypoglycemia episodes"
 * #hyper-events "Hyperglycemia Events" "Number of hyperglycemia episodes"
+// SUPERSEDED by LOINC 104637-4 (Phase 3, 2026-03-10; improved from 97504-5) — profile now uses LOINC directly
 * #cgm-active-time "Sensor Active Time" "Percentage of time sensor was recording"
   // Renamed from CGMMetricsCS#active-time (collision resolution)
 * #range-low "Target Range Lower" "Lower bound of target glucose range"
 * #range-high "Target Range Upper" "Upper bound of target glucose range"
 * #system "CGM System" "Specific CGM device or system"
 * #site "Insertion Site" "Body site where sensor is inserted"
+// SUPERSEDED by LOINC 104636-6 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #sensor-days "Sensor Days" "Days since sensor insertion"
 
 // --- Domain: cgm-glucose (from CGMGlucoseInterpretationCS) ---
@@ -286,6 +294,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #cycling-elevation "Elevation Gain" "Total vertical meters climbed"
   // Renamed from CyclingMetricsCS#elevation (collision resolution)
 * #zone "Training Zone" "Coggan power zone (1-7)"
+// SUPERSEDED by LOINC 73985-4 (Phase 3, 2026-03-10) — profile now uses LOINC directly
 * #type "Activity Type" "Type of cycling activity"
 
 // --- Domain: cycling-type — RELOCATED to AppLogicCS (2026-02-27) ---
