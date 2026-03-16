@@ -168,3 +168,28 @@ Cross-jurisdictional: GDPR Art. 33-34, HIPAA §164.408.
 * AppLogicCS#security-incident-breach "Data Breach"
 * AppLogicCS#security-incident-unauthorized-access "Unauthorized Access"
 * AppLogicCS#security-incident-data-loss "Data Loss"
+
+ValueSet: DataAnonymizationMethodVS
+Id: data-anonymization-method-vs
+Title: "Data Anonymization Method"
+Description: """
+Anonymization and de-identification techniques applicable to health data.
+
+LGPD Art. 12 defines anonymized data as that which cannot reasonably be used to
+identify a natural person, considering available means at the time of processing.
+LGPD Art. 16-II requires anonymization of data upon termination of processing.
+
+These methods range from statistical (k-anonymity, differential privacy) to
+field-level (generalization, suppression) to regulatory-defined (HIPAA Safe Harbor).
+
+Cross-jurisdictional applicability:
+- GDPR Recital 26: Anonymisation renders re-identification unreasonably likely
+- HIPAA §164.514: Safe Harbor (18 identifiers) or Expert Determination
+"""
+* ^experimental = false
+* ^status = #active
+* AppLogicCS#method-k-anonymity "k-Anonymity"
+* AppLogicCS#method-differential-privacy "Differential Privacy"
+* AppLogicCS#method-generalization "Generalization"
+* AppLogicCS#method-suppression "Suppression"
+* AppLogicCS#method-safe-harbor "Safe Harbor Method"

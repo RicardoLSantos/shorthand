@@ -582,3 +582,11 @@ Body Structure codes for muscle groups). ConceptMaps link these to standards.
 * #security-incident-breach "Data Breach" "Unauthorized disclosure of personal data (LGPD Art. 48)"
 * #security-incident-unauthorized-access "Unauthorized Access" "Unauthorized access to personal data systems (LGPD Art. 46)"
 * #security-incident-data-loss "Data Loss" "Accidental loss or destruction of personal data"
+
+// --- LGPD Phase 3 (cont.): Anonymization Methods (5 codes) ---
+// LGPD Art. 12 (anonymization), GDPR Recital 26, HIPAA §164.514
+* #method-k-anonymity "k-Anonymity" "Data generalized so each record is indistinguishable from at least k-1 others"
+* #method-differential-privacy "Differential Privacy" "Statistical noise added to prevent identification of individual records"
+* #method-generalization "Generalization" "Specific values replaced with broader categories (e.g., age 34 → 30-39)"
+* #method-suppression "Suppression" "Identifying fields removed or masked entirely from the dataset"
+* #method-safe-harbor "Safe Harbor Method" "HIPAA Safe Harbor: removal of 18 identifier categories per §164.514(b)"
