@@ -568,3 +568,17 @@ Body Structure codes for muscle groups). ConceptMaps link these to standards.
 * #lgpd-right-consent-info "Right to Consent Information (Art. 18-VII)" "Right to information about consent denial consequences"
 * #lgpd-right-revocation "Right to Consent Revocation (Art. 18-VIII)" "Right to revoke previously granted consent"
 * #lgpd-right-automated-review "Right to Automated Decision Review (Art. 20)" "Right to request review of decisions made solely by automated processing"
+
+// --- LGPD Phase 3: Data Governance + Incident Notification (11 codes) ---
+// Added 2026-03-16 for LGPD Art. 6 (necessity/non-discrimination) + Art. 48 (incidents)
+* #data-minimization-minimum-necessary "Minimum Necessary" "Only data strictly necessary for the stated purpose is collected (LGPD Art. 6-III)"
+* #data-minimization-research-essential "Research Essential" "Data required for approved research protocol, anonymized when possible (LGPD Art. 7-IV)"
+* #data-minimization-treatment-required "Treatment Required" "Data necessary for healthcare delivery to the data subject (LGPD Art. 7-VIII)"
+* #data-minimization-legal-mandated "Legally Mandated" "Data collection required by law or regulation (LGPD Art. 7-II)"
+* #bias-none "No Bias Detected" "AI/ML analysis shows no detectable bias in output"
+* #bias-demographic "Demographic Bias" "Potential bias detected related to age, sex, ethnicity, or socioeconomic factors"
+* #bias-data "Data Bias" "Potential bias detected from unrepresentative or skewed training/input data"
+* #bias-algorithmic "Algorithmic Bias" "Potential bias detected in the algorithm design or model architecture"
+* #security-incident-breach "Data Breach" "Unauthorized disclosure of personal data (LGPD Art. 48)"
+* #security-incident-unauthorized-access "Unauthorized Access" "Unauthorized access to personal data systems (LGPD Art. 46)"
+* #security-incident-data-loss "Data Loss" "Accidental loss or destruction of personal data"

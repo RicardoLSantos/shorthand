@@ -10,7 +10,7 @@ This IG supports incremental adoption through three conformance levels:
 |:-----:|-------|:-----------------:|:---------------:|
 | **1 — Starter** | Single domain (e.g., Vital Signs or Sleep) | 1–7 profiles | Low |
 | **2 — Multi-Domain** | 3+ domains with cross-domain data | 10–25 profiles | Medium |
-| **3 — Full** | All 11 domains, ConceptMaps, AI/CDSS | 78 profiles | High |
+| **3 — Full** | All 11 domains, ConceptMaps, AI/CDSS, Regulatory | 82 profiles | High |
 
 Implementers **SHOULD** start at Level 1 and progressively adopt additional domains.
 
@@ -42,14 +42,14 @@ A system claiming Level 3 conformance:
 - **SHALL** support all 11 domain profiles
 - **SHALL** implement all 29 ConceptMaps for terminology translation
 - **SHALL** support Bundle creation for complete patient summaries
-- **SHALL** comply with data protection profiles (GDPR, HIPAA as applicable)
+- **SHALL** comply with data protection profiles (LGPD, GDPR, HIPAA as applicable)
 - **SHALL** integrate AI/CDSS profiles with audit trail (AuditEvent)
 - **SHALL** support all 7 custom SearchParameters
 - **SHALL** validate full round-trip data flow (Device → FHIR → EHR → IPS)
 
 ## Domain-Profile Matrix
 
-The IG organizes 78 profiles across 11 lifestyle medicine domains. The table below shows profile counts, MustSupport (MS) element ranges, and primary terminology per domain.
+The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulatory compliance. The table below shows profile counts, MustSupport (MS) element ranges, and primary terminology per domain.
 
 | # | Domain | Profiles | MS Range | Primary Terminology | Binding Strength |
 |:-:|--------|:--------:|:--------:|---------------------|:----------------:|
@@ -64,8 +64,9 @@ The IG organizes 78 profiles across 11 lifestyle medicine domains. The table bel
 | 9 | **Substance Use** | 5 | 55 | SNOMED (tobacco, alcohol) + Custom | Required + Extensible |
 | 10 | **Advanced Metrics** | 18 | 12–30 | LOINC (80404-7, 97506-0) + Custom | Required + Extensible |
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
+| — | **Regulatory (LGPD/GDPR)** | 4 | 7–23 | Custom (AppLogicCS) | Required |
 
-**Total**: 78 Profiles, 52 Extensions, 14 CodeSystems (1,075 custom codes), 182 ValueSets, 29 ConceptMaps.
+**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,097 custom codes), 188 ValueSets, 29 ConceptMaps.
 
 ## Terminology Requirements
 
@@ -75,7 +76,8 @@ The IG organizes 78 profiles across 11 lifestyle medicine domains. The table bel
 |-------------|:--------------:|:--------------------:|------|
 | **LOINC** | 22 (28%) | ~14% of domain | Vital signs, sleep, activity, CGM, HRV |
 | **SNOMED CT** | 18 (23%) | ~4% of domain | Risk levels, clinical interpretation, procedures |
-| **Custom (TemporaryCS)** | 22 (28%) | ~82% of domain | 718 codes for unmapped lifestyle metrics |
+| **Custom (TemporaryCS)** | 22 (27%) | ~82% of domain | 718 codes for unmapped lifestyle metrics |
+| **Custom (AppLogicCS)** | 12 (15%) | App logic | 261 codes for equipment, governance, regulatory |
 | **UCUM** | 19 (24%) | Units only | All quantity values |
 
 ### Standard Codes (LOINC)
