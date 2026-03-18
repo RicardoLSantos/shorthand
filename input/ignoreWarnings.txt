@@ -117,15 +117,13 @@ A definition for CodeSystem 'http://id.who.int/icd/release/11/mms' could not be 
 Não foi possível encontrar uma definição para o valor URL 'http://id.who.int/icd/release/11/mms'
 
 # =============================================================================
-# FHIR STRUCTURE DEFINITION CONCEPTMAP WARNINGS
-# ConceptMaps mapping FHIR resources to openEHR use StructureDefinition URIs
-# as CodeSystem sources, which the IG Publisher does not fully validate.
+# STRUCTURAL-MAPPING CONCEPTMAP WARNINGS (T1 S9, 2026-03-18)
+# ConceptMaps FHIR↔openEHR use IG-scoped structural-mapping/ namespace
+# for element-path-to-archetype-node mappings. These are not CodeSystems.
 # =============================================================================
 
-O Sistema de Código Fonte http://hl7.org/fhir/StructureDefinition/Observation não está totalmente de
-O sistema de código-alvo http://hl7.org/fhir/StructureDefinition/Observation não está totalmente def
-O Sistema de Código Fonte http://hl7.org/fhir/StructureDefinition/Device não está totalmente definid
-O sistema de código-alvo http://hl7.org/fhir/StructureDefinition/Device não está totalmente definido
+structural-mapping/fhir-observation
+structural-mapping/fhir-device
 
 # =============================================================================
 # EXAMPLE INSTANCE SLOVENIAN OID WARNING (1 warning)
@@ -150,24 +148,42 @@ Não foi possível encontrar uma definição para o valor URL 'https://ckm.opene
 Não foi possível encontrar uma definição para o valor URL 'http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm'
 
 # =============================================================================
-# CONCEPTMAP FHIR↔OPENEHR STRUCTURAL ERRORS (T1 S9, 2026-03-18)
-# ConceptMapFHIRToOpenEHR and ConceptMapOpenEHRToFHIR map FHIR element paths
-# (e.g., Observation.component:sdnn) to openEHR archetype nodes (e.g., id5).
-# These are structural mappings, not terminology translations. The IG Publisher
-# validates source/target codes against CodeSystems, but StructureDefinition
-# URLs are not CodeSystems. These 23 errors are architectural by design.
+# OBSERVATION PERFORMER BEST PRACTICE (9 warnings)
+# Consumer wearable observations have Device as source, not a Practitioner.
+# "performer" is a best-practice recommendation, not a conformance requirement.
 # =============================================================================
 
-is not valid in the code system http://hl7.org/fhir/StructureDefinition/Observation
-is not valid in the code system http://hl7.org/fhir/StructureDefinition/Device
+Best Practice Recommendation: In general, all observations should have a performer
+
+# =============================================================================
+# LGPD REGULATORY AUTHORITY URLs (Phase 2+3)
+# ANPD and CFM portal URLs used in regulatory profiles.
+# =============================================================================
+
+Não foi possível encontrar uma definição para o valor URL 'https://www.anpd.gov.br'
+Não foi possível encontrar uma definição para o valor URL 'https://portal.cfm.org.br'
+
+# =============================================================================
+# INACTIVE SNOMED CODE (1 warning)
+# 247778001 used intentionally in examples — status may have changed.
+# =============================================================================
+
+The concept '247778001' has a status of inactive
+
+# =============================================================================
+# EXTENSION TYPE REVIEW (1 warning)
+# DPO reference extension intentionally uses Reference(PractitionerRole).
+# =============================================================================
+
+Review the extension type for data-protection-officer-reference
 
 # =============================================================================
 # Last updated: 2026-03-18 T1 S9 (greedy-twirling-lake)
-# Covers: 23 IPS errors + 23 ConceptMap structural errors + ~75 suppressed warnings
+# Covers: 23 IPS errors (baseline) + ~95 suppressed warnings
 # Phase 6a: Removed ICD11LifestyleCodeSystem, use WHO official URL
-# LGPD Phase 2+3: 4 example instances added — remaining LGPD warnings are
-#   "no examples" for ValueSets/Extensions (expected)
+# LGPD Phase 2+3: 4 example instances, ANPD/CFM URL suppressions
 # T1 S9: DataAnonymizationStatus context expanded (Task + Communication)
-# T1 S9: ConceptMap FHIR↔openEHR structural errors suppressed (23 errors)
+# T1 S9: ConceptMap structural-mapping/ namespace (eliminated 21 errors)
+# T1 S9: Performer best practice + regulatory URLs suppressed (~28 warnings)
 # Note: Messages are in Portuguese due to system locale
 # =============================================================================
