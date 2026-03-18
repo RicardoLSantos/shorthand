@@ -223,10 +223,10 @@ sushi .
 ```bash
 ./_genonce.sh
 # Check output/qa.html for results
-# Expected: 23 errors (all IPS upstream), ~222 warnings (141 base + ~80 LGPD Phase 2+3)
+# Expected: 44 errors (23 IPS upstream + 21 ConceptMap structural), ~233 warnings
 ```
 
-The 23 errors are inherited from IPS STU2 upstream (reference to unpublished `note|5.3.0-ballot-tc1` extension). These are documented in `ignoreWarnings.txt` and do not affect IG functionality.
+The 44 errors comprise: 23 inherited from IPS STU2 upstream (`note|5.3.0-ballot-tc1` extension) and 21 from FHIR↔openEHR ConceptMap structural validation (element path mappings). Neither category affects IG functionality. See [Known Issues](known-issues.html) for details.
 
 ### FHIR Validator
 
