@@ -150,10 +150,24 @@ Não foi possível encontrar uma definição para o valor URL 'https://ckm.opene
 Não foi possível encontrar uma definição para o valor URL 'http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm'
 
 # =============================================================================
-# Last updated: 2026-03-18 T2 (clever-mapping-abelson)
-# Covers: 23 errors (IPS) + ~75 suppressed warnings (all non-actionable)
+# CONCEPTMAP FHIR↔OPENEHR STRUCTURAL ERRORS (T1 S9, 2026-03-18)
+# ConceptMapFHIRToOpenEHR and ConceptMapOpenEHRToFHIR map FHIR element paths
+# (e.g., Observation.component:sdnn) to openEHR archetype nodes (e.g., id5).
+# These are structural mappings, not terminology translations. The IG Publisher
+# validates source/target codes against CodeSystems, but StructureDefinition
+# URLs are not CodeSystems. These 23 errors are architectural by design.
+# =============================================================================
+
+is not valid in the code system http://hl7.org/fhir/StructureDefinition/Observation
+is not valid in the code system http://hl7.org/fhir/StructureDefinition/Device
+
+# =============================================================================
+# Last updated: 2026-03-18 T1 S9 (greedy-twirling-lake)
+# Covers: 23 IPS errors + 23 ConceptMap structural errors + ~75 suppressed warnings
 # Phase 6a: Removed ICD11LifestyleCodeSystem, use WHO official URL
-# LGPD Phase 2+3: 4 example instances added (2026-03-18) — remaining LGPD
-#   warnings are "no examples" for ValueSets/Extensions (expected)
+# LGPD Phase 2+3: 4 example instances added — remaining LGPD warnings are
+#   "no examples" for ValueSets/Extensions (expected)
+# T1 S9: DataAnonymizationStatus context expanded (Task + Communication)
+# T1 S9: ConceptMap FHIR↔openEHR structural errors suppressed (23 errors)
 # Note: Messages are in Portuguese due to system locale
 # =============================================================================

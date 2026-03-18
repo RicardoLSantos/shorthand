@@ -113,5 +113,9 @@ or at individual resource level for granular tracking.
 * ^context[1].expression = "Bundle"
 * ^context[2].type = #element
 * ^context[2].expression = "Observation"
+* ^context[3].type = #element
+* ^context[3].expression = "Task"
+* ^context[4].type = #element
+* ^context[4].expression = "Communication"
 * value[x] only CodeableConcept
 * valueCodeableConcept from DataAnonymizationStatusVS (required)
