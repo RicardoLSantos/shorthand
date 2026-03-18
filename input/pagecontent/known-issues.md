@@ -2,7 +2,7 @@
 
 This page documents known issues that affect the iOS Lifestyle Medicine Implementation Guide build validation but do not impact functionality.
 
-**Build Summary (2026-03-15):** 23 errors, 141 warnings
+**Build Summary (2026-03-18):** 23 errors, ~222 warnings (141 base + ~80 LGPD Phase 2+3 "no examples" warnings)
 
 **Tooling Versions:**
 - SUSHI: v3.18.1
@@ -64,7 +64,7 @@ The base element has a pattern type 'CodeableConcept', so this element must have
 
 ---
 
-## Warnings (148 total — by category)
+## Warnings (~222 total — by category)
 
 ### Category 1: IPS Upstream `note|5.3.0-ballot-tc1` (42 warnings)
 
@@ -154,7 +154,15 @@ Source CodeSystem does not have all content (content = not-present)
 
 ---
 
-### Category 6: Other Warnings (46 warnings)
+### Category 6: LGPD Regulatory Artifacts (Phase 1–3) (~80 warnings)
+
+LGPD implementation (10 GAPs, completed 2026-03-16) introduced 4 new profiles, 5 ValueSets, 2 extensions, and ~35 codes. Many of these generate "no examples" warnings. As of 2026-03-18, examples exist for the 4 Phase 2+3 profiles (OrganizationDataController, PractitionerRoleDPO, TaskDataSubjectRequest, CommunicationSecurityIncident), which should reduce warnings when CI rebuilds.
+
+**Impact:** Expected. New regulatory profiles require examples for full validation; remaining warnings are for ValueSets and extensions without dedicated example resources.
+
+---
+
+### Category 7: Other Warnings (46 warnings)
 
 | Sub-category | Count | Description | Fixable |
 |-------------|-------|-------------|---------|
@@ -213,12 +221,12 @@ The ETL pipeline provides **runtime verification** (not build-time elimination) 
 | IPS 2.0.0 upstream (note, pkp-2) | 23 | 42 | 65 | Awaiting HL7 update |
 | ConceptMap external systems | 0 | 46 | 46 | **OCL mitigable (31%)** |
 | UCUM annotations | 0 | 16 | 16 | Expected (valid UCUM) |
-| LGPD new artifacts (no examples) | 0 | 13 | 13 | Expected (Phase 1) |
+| LGPD new artifacts (no examples) | 0 | ~80 | ~80 | Expected (Phase 1–3: 10 GAPs, 4 profiles, 5 VS, 2 ext) |
 | Other expected warnings | 0 | 7 | 7 | Expected behavior |
 | CQL validation | 0 | 2 | 2 | IG Publisher limitation |
-| **Total** | **23** | **141** | **164** | |
+| **Total** | **23** | **~222** | **~245** | |
 
-**Projected after OCL integration:** 23 errors, ~95 warnings (~33% reduction)
+**Projected after OCL integration:** 23 errors, ~176 warnings (~21% reduction from ~222)
 
 These issues do not prevent the IG from being used in production. All FHIR profiles, extensions, and examples validate correctly against their defined constraints.
 
@@ -254,8 +262,8 @@ These issues do not prevent the IG from being used in production. All FHIR profi
 
 ---
 
-*Last updated: 2026-02-07*
-*Build: IG Publisher 2.1.0, SUSHI 3.17.0*
+*Last updated: 2026-03-18*
+*Build: IG Publisher 2.1.2, SUSHI 3.18.1*
 *iOS Lifestyle Medicine IG v0.2.0*
 *OCL Integration: Prepared in sushi-config.yaml (pending account setup)*
 *Upstream Issues: Prepared for submission to HL7/fhir-ips and HL7/fhir-ig-publisher*

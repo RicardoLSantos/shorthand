@@ -66,7 +66,7 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
 | — | **Regulatory (LGPD/GDPR)** | 4 | 7–23 | Custom (AppLogicCS) | Required |
 
-**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,097 custom codes), 188 ValueSets, 29 ConceptMaps.
+**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,102 custom codes), 189 ValueSets, 29 ConceptMaps.
 
 ## Terminology Requirements
 
@@ -77,7 +77,7 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | **LOINC** | 22 (28%) | ~14% of domain | Vital signs, sleep, activity, CGM, HRV |
 | **SNOMED CT** | 18 (23%) | ~4% of domain | Risk levels, clinical interpretation, procedures |
 | **Custom (TemporaryCS)** | 22 (27%) | ~82% of domain | 718 codes for unmapped lifestyle metrics |
-| **Custom (AppLogicCS)** | 12 (15%) | App logic | 261 codes for equipment, governance, regulatory |
+| **Custom (AppLogicCS)** | 12 (15%) | App logic | 277 codes for equipment, governance, regulatory |
 | **UCUM** | 19 (24%) | Units only | All quantity values |
 
 ### Standard Codes (LOINC)
@@ -223,7 +223,7 @@ sushi .
 ```bash
 ./_genonce.sh
 # Check output/qa.html for results
-# Expected: 23 errors (all IPS upstream), ~128 warnings (suppressed non-actionable)
+# Expected: 23 errors (all IPS upstream), ~222 warnings (141 base + ~80 LGPD Phase 2+3)
 ```
 
 The 23 errors are inherited from IPS STU2 upstream (reference to unpublished `note|5.3.0-ballot-tc1` extension). These are documented in `ignoreWarnings.txt` and do not affect IG functionality.
