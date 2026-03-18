@@ -47,7 +47,7 @@ Architecture:
 // GROUP 1: HRV Archetype → FHIR Observation
 // ============================================================================
 * group[0].source = "openEHR-EHR-OBSERVATION.heart_rate_variability.v0"
-* group[0].target = "http://hl7.org/fhir/StructureDefinition/Observation"
+* group[0].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-observation"
 * group[0].unmapped.mode = #fixed
 * group[0].unmapped.code = #other
 * group[0].unmapped.display = "Unmapped HRV element"
@@ -112,7 +112,7 @@ Architecture:
 // GROUP 2: Physical Activity Archetype → FHIR Observation
 // ============================================================================
 * group[1].source = "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0"
-* group[1].target = "http://hl7.org/fhir/StructureDefinition/Observation"
+* group[1].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-observation"
 
 // Step count (id10) → Observation.valueQuantity
 * group[1].element[0].code = #id10
@@ -158,7 +158,7 @@ Architecture:
 // GROUP 3: Sleep Architecture Archetype → FHIR Observation
 // ============================================================================
 * group[2].source = "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
-* group[2].target = "http://hl7.org/fhir/StructureDefinition/Observation"
+* group[2].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-observation"
 
 // Total sleep time (id13) → Observation.valueQuantity
 * group[2].element[0].code = #id13
@@ -212,7 +212,7 @@ Architecture:
 // GROUP 4: Wearable Device Cluster → FHIR Device
 // ============================================================================
 * group[3].source = "openEHR-EHR-CLUSTER.wearable_device.v0"
-* group[3].target = "http://hl7.org/fhir/StructureDefinition/Device"
+* group[3].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-device"
 
 // Device platform (id2) → Device.manufacturer
 * group[3].element[0].code = #id2
