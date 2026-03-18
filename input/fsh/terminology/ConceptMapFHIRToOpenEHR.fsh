@@ -46,7 +46,9 @@ Architecture:
 // ============================================================================
 // GROUP 1: FHIR Observation (HRV) → openEHR HRV Archetype
 // ============================================================================
-* group[0].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-observation"
+// group.source/target omitted — these are structural element-path mappings,
+// not terminology translations. FHIR element paths and openEHR node IDs
+// are not CodeSystem codes.
 * group[0].target = "openEHR-EHR-OBSERVATION.heart_rate_variability.v0"
 * group[0].unmapped.mode = #fixed
 * group[0].unmapped.code = #other
@@ -111,7 +113,7 @@ Architecture:
 // ============================================================================
 // GROUP 2: FHIR Observation (Activity) → openEHR Physical Activity Archetype
 // ============================================================================
-* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-observation"
+// group[1].source omitted (structural mapping, not terminology)
 * group[1].target = "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0"
 
 // Step count → id10
@@ -157,7 +159,7 @@ Architecture:
 // ============================================================================
 // GROUP 3: FHIR Observation (Sleep) → openEHR Sleep Architecture Archetype
 // ============================================================================
-* group[2].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-observation"
+// group[2].source omitted (structural mapping, not terminology)
 * group[2].target = "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
 
 // Total sleep time → id13
@@ -211,7 +213,7 @@ Architecture:
 // ============================================================================
 // GROUP 4: FHIR Device → openEHR Wearable Device Cluster
 // ============================================================================
-* group[3].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/structural-mapping/fhir-device"
+// group[3].source omitted (structural mapping, not terminology)
 * group[3].target = "openEHR-EHR-CLUSTER.wearable_device.v0"
 
 // Device.manufacturer → id2

@@ -252,7 +252,7 @@ Usage: #definition
 * group[0].element[2].target[0].equivalence = #wider
 * group[0].element[2].target[0].comment = "GAP: SNOMED CT has no N3/SWS code. Using generic 'Asleep' (248220008)."
 * group[0].element[3].code = #rem
-* group[0].element[3].display = "REM"
+* group[0].element[3].display = "REM Sleep"
 * group[0].element[3].target[0].code = #248220008
 * group[0].element[3].target[0].display = "Asleep"
 * group[0].element[3].target[0].equivalence = #wider
