@@ -66,7 +66,7 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
 | — | **Regulatory (LGPD/GDPR)** | 4 | 7–23 | Custom (AppLogicCS) | Required |
 
-**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,121 custom codes), 189 ValueSets, 29 ConceptMaps.
+**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,102 custom codes), 189 ValueSets, 29 ConceptMaps.
 
 ## Terminology Requirements
 
@@ -76,8 +76,8 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 |-------------|:--------------:|:--------------------:|------|
 | **LOINC** | 22 (28%) | ~14% of domain | Vital signs, sleep, activity, CGM, HRV |
 | **SNOMED CT** | 18 (23%) | ~4% of domain | Risk levels, clinical interpretation, procedures |
-| **Custom (TemporaryCS)** | 22 (27%) | ~82% of domain | 725 codes for unmapped lifestyle metrics |
-| **Custom (AppLogicCS)** | 12 (15%) | App logic | 283 codes for equipment, governance, regulatory |
+| **Custom (TemporaryCS)** | 22 (27%) | ~82% of domain | 718 codes for unmapped lifestyle metrics |
+| **Custom (AppLogicCS)** | 12 (15%) | App logic | 277 codes for equipment, governance, regulatory |
 | **UCUM** | 19 (24%) | Units only | All quantity values |
 
 ### Standard Codes (LOINC)
@@ -223,10 +223,10 @@ sushi .
 ```bash
 ./_genonce.sh
 # Check output/qa.html for results
-# Expected: 44 errors (23 IPS upstream + 21 ConceptMap structural), ~233 warnings
+# Expected: 23 errors (all IPS upstream), 206 warnings (30 suppressed)
 ```
 
-The 44 errors comprise: 23 inherited from IPS STU2 upstream (`note|5.3.0-ballot-tc1` extension) and 21 from FHIR↔openEHR ConceptMap structural validation (element path mappings). Neither category affects IG functionality. See [Known Issues](known-issues.html) for details.
+The 23 errors are inherited from IPS STU2 upstream (reference to unpublished `note|5.3.0-ballot-tc1` extension). These do not affect IG functionality. See [Known Issues](known-issues.html) for details.
 
 ### FHIR Validator
 

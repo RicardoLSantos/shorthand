@@ -31,9 +31,9 @@ Target OMOP Tables:
 - OBSERVATION: Categorical lifestyle data
 
 Key OMOP Concepts Used:
-- 3034658: Heart rate variability
-- 40771110: Sleep duration
-- 4090484: Physical activity
+- 21491502: R-R interval.standard deviation (LOINC 80404-7)
+- 1002368: Sleep duration (LOINC 93832-4)
+- 3964780/3965425: Duration of moderate/vigorous activity (LOINC 101689-8/101690-6)
 - Custom concepts required for RMSSD, pNN50 (OHDSI Concept ID = 0)
 
 Architecture:
@@ -49,7 +49,7 @@ Architecture:
 
 // ============================================================================
 // GROUP 1: HRV Archetype → OMOP MEASUREMENT
-// VERIFIED 2025-12-08 - Athena manual verification (API requires auth)
+// AUDITED 2026-03-19 (VRF-TERM-017): 37547368→21491502, 4272025→3004182, 4058895→4287468
 // ============================================================================
 * group[0].source = "openEHR-EHR-OBSERVATION.heart_rate_variability.v0"
 * group[0].target = "MEASUREMENT"
@@ -63,10 +63,10 @@ Architecture:
 // ============================================================================
 * group[0].element[0].code = #id5
 * group[0].element[0].display = "SDNN - Standard deviation of NN intervals"
-* group[0].element[0].target[0].code = #37547368
-* group[0].element[0].target[0].display = "OMOP Concept: R-R interval.standard deviation (HRV)"
+* group[0].element[0].target[0].code = #21491502
+* group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
 * group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "VERIFIED via Athena: 37547368 = R-R interval.standard deviation (Heart rate variability). Domain: Measurement, Vocabulary: LOINC. Store in MEASUREMENT with value_as_number (ms), unit_concept_id = 8587 (millisecond)"
+* group[0].element[0].target[0].comment = "VERIFIED via Athena CONCEPT.csv 2026-03-19: concept_id=21491502, LOINC 80404-7, Domain=Measurement, Standard. Store in MEASUREMENT with value_as_number (ms). Previous 37547368 NOT in local Athena/Vocab2."
 
 // ============================================================================
 // RMSSD (id6) - GAP CONFIRMED 2025-12-08 ❌
@@ -99,99 +99,99 @@ Architecture:
 * group[0].element[3].target[0].comment = "GAP CONFIRMED 2025-12-08: LF/HF ratio has NO OMOP concept (Concept ID = 0). Autonomic balance indicator. Dimensionless ratio."
 
 // ============================================================================
-// Recording duration (id32) - PENDING VERIFICATION
+// Recording duration (id32) - VERIFIED 2026-03-19 (was 4272025 HALLUCINATED)
 // ============================================================================
 * group[0].element[4].code = #id32
 * group[0].element[4].display = "Recording duration"
-* group[0].element[4].target[0].code = #4272025
-* group[0].element[4].target[0].display = "OMOP Concept: Duration of procedure"
+* group[0].element[4].target[0].code = #3004182
+* group[0].element[4].target[0].display = "Recording duration by EKG"
 * group[0].element[4].target[0].equivalence = #relatedto
-* group[0].element[4].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4272025 requires Athena manual check. Store as modifier. Critical for HRV interpretation (5min vs 24h)."
+* group[0].element[4].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=3004182, LOINC 8618-1, Domain=Measurement. Previous 4272025='Herpesvirus disease of turbot' (HALLUCINATED). Critical for HRV interpretation (5min vs 24h)."
 
 // ============================================================================
-// Physiological state (id41) - PENDING VERIFICATION
+// Physiological state (id41) - VERIFIED 2026-03-19 (was 4058895 HALLUCINATED)
 // ============================================================================
 * group[0].element[5].code = #id41
 * group[0].element[5].display = "Physiological state"
-* group[0].element[5].target[0].code = #4058895
-* group[0].element[5].target[0].display = "OMOP Concept: Body position"
+* group[0].element[5].target[0].code = #4287468
+* group[0].element[5].target[0].display = "Body position"
 * group[0].element[5].target[0].equivalence = #relatedto
-* group[0].element[5].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4058895 requires Athena manual check. Store in OBSERVATION with value_as_concept_id for resting/active/sleep states."
+* group[0].element[5].target[0].comment = "VERIFIED via Vocab2 2026-03-19: concept_id=4287468, SNOMED 397155001, Domain=Observation, Standard. Previous 4058895='Plain X-ray lumbar/sacral' (HALLUCINATED). Store in OBSERVATION with value_as_concept_id."
 
 // ============================================================================
 // GROUP 2: Physical Activity Archetype → OMOP MEASUREMENT
-// VERIFIED 2025-12-08 - Cross-referenced with ConceptMapActivityToOMOP
+// AUDITED 2026-03-19 (VRF-TERM-017): 40771089→40758552, 4149130→40758559, 4074432→21490772, 4090484→3964780/3965425
 // ============================================================================
 * group[1].source = "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0"
 * group[1].target = "MEASUREMENT"
 
 // ============================================================================
-// Step count (id10) - PENDING VERIFICATION (need Athena manual check)
-// NOTE: ConceptMapActivityToOMOP uses 40771089 for steps
+// Step count (id10) - VERIFIED 2026-03-19 (was 40771089 HALLUCINATED)
+// NOTE: ConceptMapActivityToOMOP also needs audit for 40771089
 // ============================================================================
 * group[1].element[0].code = #id10
 * group[1].element[0].display = "Step count"
-* group[1].element[0].target[0].code = #40771089
-* group[1].element[0].target[0].display = "OMOP Concept: Number of steps"
+* group[1].element[0].target[0].code = #40758552
+* group[1].element[0].target[0].display = "Number of steps in unspecified time Pedometer"
 * group[1].element[0].target[0].equivalence = #equivalent
-* group[1].element[0].target[0].comment = "CORRECTED 2025-12-08: Using 40771089 (consistent with ConceptMapActivityToOMOP). Store in MEASUREMENT with value_as_number (count), unit_concept_id = 9529 (count)."
+* group[1].element[0].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=40758552, LOINC 55423-8, Domain=Observation, Standard. Previous 40771089='What language do you feel comfortable speaking' (HALLUCINATED). Store in MEASUREMENT, unit_concept_id=9529 (count)."
 
 // ============================================================================
-// Distance (id11) - PENDING VERIFICATION
+// Distance (id11) - VERIFIED 2026-03-19 (was 4149130 HALLUCINATED)
 // ============================================================================
 * group[1].element[1].code = #id11
 * group[1].element[1].display = "Distance"
-* group[1].element[1].target[0].code = #4149130
-* group[1].element[1].target[0].display = "OMOP Concept: Distance walked"
+* group[1].element[1].target[0].code = #40758559
+* group[1].element[1].target[0].display = "Walking distance unspecified time Pedometer"
 * group[1].element[1].target[0].equivalence = #equivalent
-* group[1].element[1].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4149130 requires Athena manual check. Store in MEASUREMENT, unit_concept_id = 8582 (meter) or 9314 (kilometer)."
+* group[1].element[1].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=40758559, LOINC 55430-3, Domain=Measurement, Standard. Previous 4149130='Gastroenterology service' (HALLUCINATED). Unit: meter (8582) or kilometer (9314)."
 
 // ============================================================================
-// Active calories (id20) - PENDING VERIFICATION
+// Active calories (id20) - VERIFIED 2026-03-19 (was 4074432 HALLUCINATED)
 // ============================================================================
 * group[1].element[2].code = #id20
 * group[1].element[2].display = "Active calories"
-* group[1].element[2].target[0].code = #4074432
-* group[1].element[2].target[0].display = "OMOP Concept: Energy expenditure"
+* group[1].element[2].target[0].code = #21490772
+* group[1].element[2].target[0].display = "Energy expended Reporting Period by Indirect calorimetry"
 * group[1].element[2].target[0].equivalence = #equivalent
-* group[1].element[2].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4074432 requires Athena manual check. Store in MEASUREMENT, unit_concept_id = 8692 (kilocalorie)."
+* group[1].element[2].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=21490772, LOINC 75990-2, Domain=Measurement. Previous 4074432='Open freeing adhesions fallopian tube' (HALLUCINATED). Unit: kilocalorie (8692)."
 
 // ============================================================================
-// Moderate activity minutes (id32) - PENDING VERIFICATION
+// Moderate activity minutes (id32) - VERIFIED 2026-03-19 (was 4090484 HALLUCINATED+DUPLICATE)
 // ============================================================================
 * group[1].element[3].code = #id32
 * group[1].element[3].display = "Moderately active minutes"
-* group[1].element[3].target[0].code = #4090484
-* group[1].element[3].target[0].display = "OMOP Concept: Physical activity"
-* group[1].element[3].target[0].equivalence = #wider
-* group[1].element[3].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4090484 requires Athena manual check. WHO guideline target: 150-300 min/week moderate."
+* group[1].element[3].target[0].code = #3964780
+* group[1].element[3].target[0].display = "Duration of moderate activity"
+* group[1].element[3].target[0].equivalence = #equivalent
+* group[1].element[3].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=3964780, LOINC 101689-8, Domain=Measurement, Standard. Previous 4090484='Laplace transform damping factor' (HALLUCINATED, also duplicated with vigorous). WHO target: 150-300 min/week."
 
 // ============================================================================
-// Vigorous activity minutes (id33) - PENDING VERIFICATION
+// Vigorous activity minutes (id33) - VERIFIED 2026-03-19 (was 4090484 HALLUCINATED+DUPLICATE)
 // ============================================================================
 * group[1].element[4].code = #id33
 * group[1].element[4].display = "Vigorously active minutes"
-* group[1].element[4].target[0].code = #4090484
-* group[1].element[4].target[0].display = "OMOP Concept: Physical activity"
-* group[1].element[4].target[0].equivalence = #wider
-* group[1].element[4].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4090484 requires Athena manual check. WHO guideline target: 75-150 min/week vigorous."
+* group[1].element[4].target[0].code = #3965425
+* group[1].element[4].target[0].display = "Duration of vigorous activity"
+* group[1].element[4].target[0].equivalence = #equivalent
+* group[1].element[4].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=3965425, LOINC 101690-6, Domain=Measurement, Standard. Previous 4090484 was same hallucinated ID as moderate (DUPLICATE resolved). WHO target: 75-150 min/week."
 
 // ============================================================================
 // GROUP 3: Sleep Architecture Archetype → OMOP MEASUREMENT
-// VERIFIED 2025-12-08 - Cross-referenced with ConceptMapSleepToOMOP
+// AUDITED 2026-03-19 (VRF-TERM-017): 40771110→1002368
 // ============================================================================
 * group[2].source = "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
 * group[2].target = "MEASUREMENT"
 
 // ============================================================================
-// Total sleep time (id13) - PENDING VERIFICATION
+// Total sleep time (id13) - VERIFIED 2026-03-19 (was 40771110 HALLUCINATED)
 // ============================================================================
 * group[2].element[0].code = #id13
 * group[2].element[0].display = "Total sleep time"
-* group[2].element[0].target[0].code = #40771110
-* group[2].element[0].target[0].display = "OMOP Concept: Sleep duration"
+* group[2].element[0].target[0].code = #1002368
+* group[2].element[0].target[0].display = "Sleep duration"
 * group[2].element[0].target[0].equivalence = #equivalent
-* group[2].element[0].target[0].comment = "PENDING VERIFICATION 2025-12-08: 40771110 requires Athena manual check. Store in MEASUREMENT, unit_concept_id = 8550 (minute) or 8505 (hour)."
+* group[2].element[0].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=1002368, LOINC 93832-4, Domain=Observation, Standard. Previous 40771110='Have you used drugs other than medical' (HALLUCINATED). Unit: minute (8550) or hour (8505)."
 
 // ============================================================================
 // Deep sleep duration (id23) - GAP CONFIRMED 2025-12-08 ❌
@@ -245,25 +245,25 @@ Architecture:
 
 // ============================================================================
 // GROUP 4: Wearable Device Cluster → OMOP DEVICE_EXPOSURE
-// VERIFIED 2025-12-08 - DEVICE_EXPOSURE mappings
+// AUDITED 2026-03-19 (VRF-TERM-017): 4044180→0(GAP), 44818707→44818706
 // ============================================================================
 * group[3].source = "openEHR-EHR-CLUSTER.wearable_device.v0"
 * group[3].target = "DEVICE_EXPOSURE"
 
 // ============================================================================
-// Device platform (id2) - PENDING VERIFICATION
+// Device platform (id2) - GAP CONFIRMED 2026-03-19 (was 4044180 HALLUCINATED)
 // ============================================================================
 * group[3].element[0].code = #id2
 * group[3].element[0].display = "Device platform"
-* group[3].element[0].target[0].code = #4044180
-* group[3].element[0].target[0].display = "OMOP Concept: Wearable sensor"
-* group[3].element[0].target[0].equivalence = #wider
-* group[3].element[0].target[0].comment = "PENDING VERIFICATION 2025-12-08: 4044180 requires Athena manual check. Store in DEVICE_EXPOSURE.device_concept_id. Add vendor qualifier in device_source_value."
+* group[3].element[0].target[0].code = #0
+* group[3].element[0].target[0].display = "No standard wearable sensor concept"
+* group[3].element[0].target[0].equivalence = #unmatched
+* group[3].element[0].target[0].comment = "GAP CONFIRMED via Athena+Vocab2 2026-03-19: No standard 'wearable sensor' concept in OMOP. Previous 4044180='Administrative disposition - action' (HALLUCINATED). Store vendor name in device_source_value. Requires OHDSI vocabulary submission."
 
 // Device model (id3) → DEVICE_EXPOSURE.device_source_value
 * group[3].element[1].code = #id3
 * group[3].element[1].display = "Device model"
-* group[3].element[1].target[0].code = #4044180
+* group[3].element[1].target[0].code = #0
 * group[3].element[1].target[0].display = "Store in device_source_value"
 * group[3].element[1].target[0].equivalence = #relatedto
 * group[3].element[1].target[0].comment = "Store specific model name in device_source_value field (e.g., 'Apple Watch Series 9')"
@@ -271,10 +271,10 @@ Architecture:
 // Device category (id4) → DEVICE_EXPOSURE.device_type_concept_id
 * group[3].element[2].code = #id4
 * group[3].element[2].display = "Device category"
-* group[3].element[2].target[0].code = #44818707
-* group[3].element[2].target[0].display = "OMOP Concept: Patient self-reported"
-* group[3].element[2].target[0].equivalence = #relatedto
-* group[3].element[2].target[0].comment = "Use device_type_concept_id = 44818707 for wearable-generated data provenance"
+* group[3].element[2].target[0].code = #44818706
+* group[3].element[2].target[0].display = "Patient reported device"
+* group[3].element[2].target[0].equivalence = #equivalent
+* group[3].element[2].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=44818706='Patient reported device' (Device Type). Previous 44818707='EHR Detail' (WRONG — wearable data is patient-reported, not EHR). Use as device_type_concept_id."
 
 // Serial number (id23) → DEVICE_EXPOSURE.unique_device_id
 * group[3].element[3].code = #id23
