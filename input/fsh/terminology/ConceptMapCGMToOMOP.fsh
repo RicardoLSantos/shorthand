@@ -36,7 +36,7 @@ Target OMOP Table: MEASUREMENT
 - measurement_concept_id: mapped OMOP concept
 - value_as_number: CGM metric value
 - unit_concept_id: 8840 (mg/dL) or 8753 (mmol/L)
-- measurement_type_concept_id: 44818707 (Patient self-reported/device)
+- measurement_type_concept_id: 44818706 (Patient reported device)
 
 Supported CGM Systems:
 - Dexcom G6/G7, Stelo (consumer)
@@ -70,7 +70,7 @@ Supported CGM Systems:
 VERIFIED OMOP mapping for blood glucose.
 - OMOP concept_id: 3004501
 - Domain: Measurement
-- Use for CGM readings with measurement_type_concept_id = 44818707
+- Use for CGM readings with measurement_type_concept_id = 44818706 (Patient reported device)
 - Unit_concept_id: 8840 (mg/dL) or 8753 (mmol/L)
 """
 
@@ -225,5 +225,5 @@ Workaround: Store in measurement_source_value = 'TIR:{value}%'
 // Conversion: mmol/L × 18.02 = mg/dL
 //
 // For MEASUREMENT.measurement_type_concept_id:
-// - 44818707: Patient self-reported (for CGM wearable data)
+// - 44818706: Patient reported device (for CGM wearable data) — NOT 44818707 which is "EHR Detail"
 // - 32817: EHR (if imported from clinical system)

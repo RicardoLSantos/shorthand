@@ -24,7 +24,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 718
+* ^count = 719
 
 // Traceability: codes renamed due to collisions are documented via inline comments.
 // Full mapping available in scripts/consolidation_mapping.json
@@ -437,6 +437,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #sleep-light "Light sleep duration" "Duration of light sleep stage as measured by consumer sleep tracking device"
 // SUPERSEDED by LOINC 93829-0 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #rem-sleep "REM sleep duration" "Duration of REM (Rapid Eye Movement) sleep stage as measured by consumer sleep tracking device"
+* #sleep-efficiency "Sleep efficiency" "Ratio of total sleep time to time in bed, expressed as percentage. Normal: >85%. No LOINC code exists (verified Athena 2026-03-20). Critical for insomnia assessment"
 * #sleep-score "Sleep score" "Vendor-specific composite sleep score (0-100) combining duration, efficiency, stages, and HRV during sleep"
 // SUPERSEDED by LOINC 103215-0 (Phase 6b, 2026-03-02) — profile now uses LOINC directly
 * #waso "Wake after sleep onset" "Total time awake after initial sleep onset (WASO). Normal: <30 minutes. Elevated WASO indicates sleep maintenance insomnia"

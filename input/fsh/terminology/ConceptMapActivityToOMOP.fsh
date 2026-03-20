@@ -109,17 +109,21 @@ VERIFIED via Athena CONCEPT.csv LOINC 82290-8 → concept_id 21493653 (2026-03-2
 """
 
 // ============================================================================
-// Calories Burned / Energy Expenditure
+// Calories Burned - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Previous #0 was FALSE GAP — OMOP concept EXISTS
 // ============================================================================
 * group[0].element[3].code = #41981-2
 * group[0].element[3].display = "Calories burned"
-* group[0].element[3].target[0].code = #0
-* group[0].element[3].target[0].display = "No direct OMOP concept"
-* group[0].element[3].target[0].equivalence = #unmatched
+* group[0].element[3].target[0].code = #3028782
+* group[0].element[3].target[0].display = "Calories burned"
+* group[0].element[3].target[0].equivalence = #equivalent
 * group[0].element[3].target[0].comment = """
-GAP: Active calories has no OMOP concept.
-Represents energy expenditure from activity.
-Unit_concept_id: 8692 (kilocalorie) or 8674 (kilojoule)
+VERIFIED via Athena CONCEPT.csv LOINC 41981-2 → concept_id 3028782 (2026-03-20)
+- OMOP concept_id: 3028782
+- Domain: Measurement
+- Vocabulary: LOINC
+- Unit_concept_id: 8692 (kilocalorie) or 8674 (kilojoule)
+Previously marked as GAP (#0) — false negative, concept exists in Athena.
 Critical for weight management research.
 """
 
@@ -218,5 +222,5 @@ Proxy for sedentary behavior interruption.
 // - 9282: mile (mi) - for distance
 //
 // For MEASUREMENT.measurement_type_concept_id:
-// - 44818707: Patient self-reported (for wearable data)
+// - 44818706: Patient reported device (for wearable data) — NOT 44818707 which is "EHR Detail"
 // - 32817: EHR (if from clinical assessment)

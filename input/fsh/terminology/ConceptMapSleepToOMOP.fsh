@@ -34,7 +34,7 @@ Target OMOP Table: MEASUREMENT
 - measurement_concept_id: mapped OMOP concept
 - value_as_number: sleep metric value
 - unit_concept_id: varies by metric
-- measurement_type_concept_id: 44818707 (Patient self-reported/device)
+- measurement_type_concept_id: 44818706 (Patient reported device)
 
 Supported Sleep Trackers:
 - Oura Ring (Gen 3)
@@ -76,35 +76,43 @@ VERIFIED via Athena CONCEPT.csv LOINC 93832-4 → concept_id 1002368 (2026-03-20
 """
 
 // ============================================================================
-// Sleep Quality - LOINC available
+// Sleep Quality - CORRECTED 2026-03-20 (VRF-TERM-017 Phase 2)
+// Previous 28323-4 was WRONG CODE (actually = "Physical Activity Behavior [OMAHA]")
+// Correct code: 95607-8 = "Sleep quality - 1-5 numeric rating [Score] 24 hour"
 // ============================================================================
-* group[0].element[1].code = #28323-4
-* group[0].element[1].display = "Sleep quality"
-* group[0].element[1].target[0].code = #0
-* group[0].element[1].target[0].display = "No direct OMOP concept"
-* group[0].element[1].target[0].equivalence = #unmatched
+* group[0].element[1].code = #95607-8
+* group[0].element[1].display = "Sleep quality - 1-5 numeric rating [Score] 24 hour"
+* group[0].element[1].target[0].code = #36032397
+* group[0].element[1].target[0].display = "Sleep quality - 1-5 numeric rating [Score] 24 hour"
+* group[0].element[1].target[0].equivalence = #equivalent
 * group[0].element[1].target[0].comment = """
-Sleep quality assessment. No direct OMOP concept.
-Can be represented via:
-- PSQI score (Pittsburgh Sleep Quality Index)
-- Vendor-specific sleep scores (Oura, WHOOP)
-Store in measurement_source_value with context.
+VERIFIED via Athena CONCEPT.csv LOINC 95607-8 → concept_id 36032397 (2026-03-20)
+- OMOP concept_id: 36032397
+- Domain: Measurement
+- Vocabulary: LOINC
+Previously used 28323-4 which is "Physical Activity Behavior [OMAHA]" — LLM hallucination.
+Can complement with vendor-specific sleep scores (Oura, WHOOP) via measurement_source_value.
 """
 
 // ============================================================================
-// Sleep Efficiency
+// Deep Sleep Duration - CORRECTED 2026-03-20 (VRF-TERM-017 Phase 2)
+// Previous display "Sleep efficiency" was WRONG — 93831-6 is "Deep sleep duration"
+// Sleep efficiency has NO LOINC code in Athena (genuine GAP, moved to Group 2 custom)
 // ============================================================================
 * group[0].element[2].code = #93831-6
-* group[0].element[2].display = "Sleep efficiency"
-* group[0].element[2].target[0].code = #0
-* group[0].element[2].target[0].display = "No OMOP concept available"
-* group[0].element[2].target[0].equivalence = #unmatched
+* group[0].element[2].display = "Deep sleep duration"
+* group[0].element[2].target[0].code = #1001932
+* group[0].element[2].target[0].display = "Deep sleep duration"
+* group[0].element[2].target[0].equivalence = #equivalent
 * group[0].element[2].target[0].comment = """
-GAP: Sleep efficiency has no OMOP concept.
-Formula: (Total Sleep Time / Time in Bed) × 100
-Normal: >85%
-Unit: percentage (%)
-Critical metric for insomnia assessment.
+VERIFIED via Athena CONCEPT.csv LOINC 93831-6 → concept_id 1001932 (2026-03-20)
+- OMOP concept_id: 1001932
+- Domain: Observation
+- Vocabulary: LOINC
+Previously mislabeled as "Sleep efficiency" — LLM hallucination of display name.
+Profiles and examples already use 93831-6 correctly as "Deep sleep duration".
+Normal: 15-25% of total sleep (1-2 hours, N3/SWS stage).
+Unit_concept_id: 8550 (minute)
 """
 
 // ============================================================================
@@ -147,14 +155,25 @@ Previously marked as GAP (#0) — false negative, concept exists in Athena.
 """
 
 // ============================================================================
-// Number of Awakenings
+// Light Sleep Duration - CORRECTED 2026-03-20 (VRF-TERM-017 Phase 2)
+// Previous display "Number of awakenings" was WRONG — 93830-8 is "Light sleep duration"
+// Actual "Number of awakenings" is LOINC 103211-9 (see element[7] below)
 // ============================================================================
 * group[0].element[5].code = #93830-8
-* group[0].element[5].display = "Number of awakenings during sleep"
-* group[0].element[5].target[0].code = #0
-* group[0].element[5].target[0].display = "No OMOP concept available"
-* group[0].element[5].target[0].equivalence = #unmatched
-* group[0].element[5].target[0].comment = "Number of wake episodes during sleep period. Normal: <5 brief awakenings."
+* group[0].element[5].display = "Light sleep duration"
+* group[0].element[5].target[0].code = #1001771
+* group[0].element[5].target[0].display = "Light sleep duration"
+* group[0].element[5].target[0].equivalence = #equivalent
+* group[0].element[5].target[0].comment = """
+VERIFIED via Athena CONCEPT.csv LOINC 93830-8 → concept_id 1001771 (2026-03-20)
+- OMOP concept_id: 1001771
+- Domain: Observation
+- Vocabulary: LOINC
+Previously mislabeled as "Number of awakenings" — LLM hallucination of display name.
+Profiles and examples already use 93830-8 correctly as "Light sleep duration".
+Normal: 50-60% of total sleep (N1 + N2 stages).
+Unit_concept_id: 8550 (minute)
+"""
 
 // ============================================================================
 // Wake Time After Sleep Onset (WASO) - NEW 2025-12-08
@@ -174,6 +193,25 @@ Previously marked as GAP (#0) — false negative, concept exists in Athena.
 - Normal: <30 minutes
 - Elevated WASO indicates sleep maintenance insomnia.
 - Unit_concept_id: 8550 (minute)
+"""
+
+// ============================================================================
+// Number of Awakenings - NEW 2026-03-20 (VRF-TERM-017 Phase 2)
+// Previously element[5] used 93830-8 with wrong display "Number of awakenings"
+// Correct LOINC: 103211-9 = "Number of awakenings"
+// ============================================================================
+* group[0].element[7].code = #103211-9
+* group[0].element[7].display = "Number of awakenings"
+* group[0].element[7].target[0].code = #3964653
+* group[0].element[7].target[0].display = "Number of awakenings"
+* group[0].element[7].target[0].equivalence = #equivalent
+* group[0].element[7].target[0].comment = """
+VERIFIED via Athena CONCEPT.csv LOINC 103211-9 → concept_id 3964653 (2026-03-20)
+- OMOP concept_id: 3964653
+- Domain: Observation
+- Vocabulary: LOINC
+- Normal: <5 brief awakenings per night
+- Unit_concept_id: 9529 (count)
 """
 
 // ============================================================================
@@ -236,13 +274,29 @@ Examples: Oura Sleep Score, WHOOP Sleep Performance, Fitbit Sleep Score.
 Non-standardized but clinically used.
 """
 
-// WASO (Wake After Sleep Onset)
-* group[1].element[4].code = #waso
-* group[1].element[4].display = "Wake After Sleep Onset"
+// Sleep Efficiency — NEW 2026-03-20 (genuine GAP, no LOINC code exists)
+// Previously mislabeled under LOINC 93831-6 which is actually "Deep sleep duration"
+* group[1].element[4].code = #sleep-efficiency
+* group[1].element[4].display = "Sleep Efficiency"
 * group[1].element[4].target[0].code = #0
 * group[1].element[4].target[0].display = "No OMOP concept available"
 * group[1].element[4].target[0].equivalence = #unmatched
 * group[1].element[4].target[0].comment = """
+GENUINE GAP: Sleep efficiency has no LOINC code AND no OMOP concept.
+Verified: No "sleep efficiency" LOINC code in Athena (2026-03-20).
+Formula: (Total Sleep Time / Time in Bed) × 100
+Normal: >85%
+Unit: percentage (%)
+Critical metric for insomnia assessment.
+"""
+
+// WASO (Wake After Sleep Onset)
+* group[1].element[5].code = #waso
+* group[1].element[5].display = "Wake After Sleep Onset"
+* group[1].element[5].target[0].code = #0
+* group[1].element[5].target[0].display = "No OMOP concept available"
+* group[1].element[5].target[0].equivalence = #unmatched
+* group[1].element[5].target[0].comment = """
 Total time awake after initial sleep onset.
 Normal: <30 minutes
 Elevated WASO indicates sleep maintenance insomnia.
@@ -259,5 +313,5 @@ Unit_concept_id: 8550 (minute)
 // - 9529: count - for awakenings
 //
 // For MEASUREMENT.measurement_type_concept_id:
-// - 44818707: Patient self-reported (for wearable data)
+// - 44818706: Patient reported device (for wearable data) — NOT 44818707 which is "EHR Detail"
 // - 32817: EHR (if from polysomnography)

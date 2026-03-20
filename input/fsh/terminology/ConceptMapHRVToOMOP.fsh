@@ -40,7 +40,7 @@ Target OMOP Table: MEASUREMENT
 - measurement_concept_id: mapped OMOP concept
 - value_as_number: HRV metric value
 - unit_concept_id: 8587 (millisecond) for time-domain metrics
-- measurement_type_concept_id: 44818707 (Patient self-reported/device)
+- measurement_type_concept_id: 44818706 (Patient reported device)
 """
 * purpose = "Enable ETL transformation of wearable HRV data from FHIR (LOINC-coded) to OMOP CDM for research analytics in OHDSI federated network."
 
@@ -77,7 +77,7 @@ ETL Implementation:
 - MEASUREMENT.measurement_concept_id = 21491502
 - MEASUREMENT.value_as_number = SDNN value
 - MEASUREMENT.unit_concept_id = 8587 (millisecond)
-- MEASUREMENT.measurement_type_concept_id = 44818707 (Patient self-reported)
+- MEASUREMENT.measurement_type_concept_id = 44818706 (Patient reported device)
 """
 
 // ============================================================================
@@ -201,5 +201,5 @@ Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HR
 // - 8653: second (s) - for recording duration
 //
 // For MEASUREMENT.measurement_type_concept_id:
-// - 44818707: Patient self-reported (for wearable data)
+// - 44818706: Patient reported device (for wearable data) — NOT 44818707 which is "EHR Detail"
 // - 32817: EHR (if imported from clinical system)
