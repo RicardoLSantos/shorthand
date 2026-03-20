@@ -57,50 +57,55 @@ Supported Devices:
 * group[0].unmapped.display = "No OMOP concept - requires custom vocabulary extension"
 
 // ============================================================================
-// Steps - VERIFIED OMOP MAPPING
+// Steps - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Previous 40771089 was HALLUCINATED (actually = "What language do you feel most comfortable speaking" SAMHSA)
 // ============================================================================
 * group[0].element[0].code = #55423-8
-* group[0].element[0].display = "Number of steps in 24 hour Measured"
-* group[0].element[0].target[0].code = #40771089
-* group[0].element[0].target[0].display = "Number of steps"
+* group[0].element[0].display = "Number of steps in unspecified time Pedometer"
+* group[0].element[0].target[0].code = #40758552
+* group[0].element[0].target[0].display = "Number of steps in unspecified time Pedometer"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = """
-VERIFIED OMOP mapping for daily steps.
-- OMOP concept_id: 40771089
+VERIFIED via Athena CONCEPT.csv LOINC 55423-8 → concept_id 40758552 (2026-03-20)
+- OMOP concept_id: 40758552
 - Domain: Measurement
+- Vocabulary: LOINC
 - Unit_concept_id: 9529 (count) or unitless
 - Guidelines: 7,000-10,000 steps/day for health benefits
 """
 
 // ============================================================================
-// Exercise Duration
+// Exercise Duration - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Previous 4272025 was HALLUCINATED (not found in Athena)
 // ============================================================================
 * group[0].element[1].code = #55411-3
 * group[0].element[1].display = "Exercise duration"
-* group[0].element[1].target[0].code = #4272025
-* group[0].element[1].target[0].display = "Duration of procedure"
-* group[0].element[1].target[0].equivalence = #wider
+* group[0].element[1].target[0].code = #40758540
+* group[0].element[1].target[0].display = "Exercise duration"
+* group[0].element[1].target[0].equivalence = #equivalent
 * group[0].element[1].target[0].comment = """
-Maps to general duration concept.
-- OMOP concept_id: 4272025
+VERIFIED via Athena CONCEPT.csv LOINC 55411-3 → concept_id 40758540 (2026-03-20)
+- OMOP concept_id: 40758540
+- Domain: Measurement
+- Vocabulary: LOINC
 - Unit_concept_id: 8550 (minute)
 - Target: 150-300 min/week moderate or 75-150 min/week vigorous
-Context should indicate exercise vs general activity.
 """
 
 // ============================================================================
-// Exercise Intensity
+// Exercise Intensity - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Previous 4090484 was HALLUCINATED (not found in Athena)
 // ============================================================================
 * group[0].element[2].code = #82290-8
 * group[0].element[2].display = "Frequency of moderate to vigorous aerobic physical activity"
-* group[0].element[2].target[0].code = #4090484
-* group[0].element[2].target[0].display = "Physical activity"
-* group[0].element[2].target[0].equivalence = #wider
+* group[0].element[2].target[0].code = #21493653
+* group[0].element[2].target[0].display = "Frequency of moderate to vigorous aerobic physical activity"
+* group[0].element[2].target[0].equivalence = #equivalent
 * group[0].element[2].target[0].comment = """
-Maps to general physical activity concept.
-- OMOP concept_id: 4090484
-- Domain: Observation
-- Use observation_source_value for intensity context
+VERIFIED via Athena CONCEPT.csv LOINC 82290-8 → concept_id 21493653 (2026-03-20)
+- OMOP concept_id: 21493653
+- Domain: Measurement
+- Vocabulary: LOINC
 """
 
 // ============================================================================
@@ -119,17 +124,21 @@ Critical for weight management research.
 """
 
 // ============================================================================
-// Distance Traveled
+// Distance Traveled - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Previous #0 was FALSE GAP — OMOP concept EXISTS
 // ============================================================================
 * group[0].element[4].code = #55430-3
-* group[0].element[4].display = "Walking distance"
-* group[0].element[4].target[0].code = #0
-* group[0].element[4].target[0].display = "No OMOP concept available"
-* group[0].element[4].target[0].equivalence = #unmatched
+* group[0].element[4].display = "Walking distance unspecified time Pedometer"
+* group[0].element[4].target[0].code = #40758559
+* group[0].element[4].target[0].display = "Walking distance unspecified time Pedometer"
+* group[0].element[4].target[0].equivalence = #equivalent
 * group[0].element[4].target[0].comment = """
-GAP: Distance traveled has no OMOP concept.
-Unit_concept_id: 8582 (meter) or 9314 (kilometer) or 9282 (mile)
-Context-dependent (walking, running, cycling).
+VERIFIED via Athena CONCEPT.csv LOINC 55430-3 → concept_id 40758559 (2026-03-20)
+- OMOP concept_id: 40758559
+- Domain: Measurement
+- Vocabulary: LOINC
+- Unit_concept_id: 8582 (meter) or 9314 (kilometer) or 9282 (mile)
+Previously marked as GAP (#0) — false negative, concept exists in Athena.
 """
 
 // ============================================================================

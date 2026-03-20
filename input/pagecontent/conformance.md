@@ -66,7 +66,7 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
 | — | **Regulatory (LGPD/GDPR)** | 4 | 7–23 | Custom (AppLogicCS) | Required |
 
-**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,102 custom codes), 189 ValueSets, 29 ConceptMaps.
+**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,121 custom codes), 189 ValueSets, 29 ConceptMaps.
 
 ## Terminology Requirements
 
@@ -76,8 +76,9 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 |-------------|:--------------:|:--------------------:|------|
 | **LOINC** | 22 (28%) | ~14% of domain | Vital signs, sleep, activity, CGM, HRV |
 | **SNOMED CT** | 18 (23%) | ~4% of domain | Risk levels, clinical interpretation, procedures |
-| **Custom (TemporaryCS)** | 22 (27%) | ~82% of domain | 718 codes for unmapped lifestyle metrics |
-| **Custom (AppLogicCS)** | 12 (15%) | App logic | 277 codes for equipment, governance, regulatory |
+| **Custom (TemporaryCS)** | 22 (27%) | ~82% of domain | 725 codes for unmapped lifestyle metrics |
+| **Custom (AppLogicCS)** | 12 (15%) | App logic | 283 codes for equipment, governance, regulatory |
+| **Custom (AgentCS)** | 3 (4%) | AI/CDSS | 113 codes for AI agent risk, model, override, events |
 | **UCUM** | 19 (24%) | Units only | All quantity values |
 
 ### Standard Codes (LOINC)

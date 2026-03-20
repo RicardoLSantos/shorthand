@@ -58,17 +58,19 @@ Supported Sleep Trackers:
 * group[0].unmapped.display = "No OMOP concept - requires custom vocabulary extension"
 
 // ============================================================================
-// Sleep Duration - VERIFIED OMOP MAPPING
+// Sleep Duration - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Previous 40771110 was HALLUCINATED (actually = "have you used drugs other than medical reasons" SAMHSA)
 // ============================================================================
 * group[0].element[0].code = #93832-4
 * group[0].element[0].display = "Sleep duration"
-* group[0].element[0].target[0].code = #40771110
+* group[0].element[0].target[0].code = #1002368
 * group[0].element[0].target[0].display = "Sleep duration"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = """
-VERIFIED OMOP mapping for sleep duration.
-- OMOP concept_id: 40771110
+VERIFIED via Athena CONCEPT.csv LOINC 93832-4 → concept_id 1002368 (2026-03-20)
+- OMOP concept_id: 1002368
 - Domain: Measurement
+- Vocabulary: LOINC
 - Unit_concept_id: 8505 (hour) or 8550 (minute)
 - Recommended: 7-9 hours for adults (AASM guidelines)
 """
@@ -112,16 +114,17 @@ Critical metric for insomnia assessment.
 // ============================================================================
 * group[0].element[3].code = #103212-7
 * group[0].element[3].display = "Duration of falling asleep"
-* group[0].element[3].target[0].code = #0
-* group[0].element[3].target[0].display = "No OMOP concept available"
-* group[0].element[3].target[0].equivalence = #unmatched
+* group[0].element[3].target[0].code = #3965451
+* group[0].element[3].target[0].display = "Duration of falling asleep"
+* group[0].element[3].target[0].equivalence = #equivalent
 * group[0].element[3].target[0].comment = """
-GAP: Sleep onset latency has no OMOP concept.
-LOINC 103212-7 = Duration of falling asleep (verified 2025-12-08)
-Time from lights out to sleep onset.
-Normal: <30 minutes
-Prolonged latency indicates insomnia.
-Unit_concept_id: 8550 (minute)
+VERIFIED via Athena CONCEPT.csv LOINC 103212-7 → concept_id 3965451 (2026-03-20)
+Previously marked as GAP (#0) — false negative, concept exists in Athena.
+- OMOP concept_id: 3965451
+- Domain: Measurement
+- Vocabulary: LOINC
+- Normal: <30 minutes. Prolonged latency indicates insomnia.
+- Unit_concept_id: 8550 (minute)
 """
 
 // ============================================================================
@@ -130,15 +133,17 @@ Unit_concept_id: 8550 (minute)
 // ============================================================================
 * group[0].element[4].code = #93829-0
 * group[0].element[4].display = "REM sleep duration"
-* group[0].element[4].target[0].code = #0
-* group[0].element[4].target[0].display = "No OMOP concept available"
-* group[0].element[4].target[0].equivalence = #unmatched
+* group[0].element[4].target[0].code = #1001480
+* group[0].element[4].target[0].display = "REM sleep duration"
+* group[0].element[4].target[0].equivalence = #equivalent
 * group[0].element[4].target[0].comment = """
-GAP: REM sleep duration has no direct OMOP concept.
-LOINC 93829-0 = REM sleep duration (verified 2025-12-08)
-Normal: 20-25% of total sleep (1.5-2 hours)
-Critical for cognitive function, emotional regulation.
-Unit_concept_id: 8550 (minute)
+VERIFIED via Athena CONCEPT.csv LOINC 93829-0 → concept_id 1001480 (2026-03-20)
+Previously marked as GAP (#0) — false negative, concept exists in Athena.
+- OMOP concept_id: 1001480
+- Domain: Measurement
+- Vocabulary: LOINC
+- Normal: 20-25% of total sleep (1.5-2 hours)
+- Unit_concept_id: 8550 (minute)
 """
 
 // ============================================================================
@@ -157,16 +162,18 @@ Unit_concept_id: 8550 (minute)
 // ============================================================================
 * group[0].element[6].code = #103215-0
 * group[0].element[6].display = "Wake time after sleep onset"
-* group[0].element[6].target[0].code = #0
-* group[0].element[6].target[0].display = "No OMOP concept available"
-* group[0].element[6].target[0].equivalence = #unmatched
+* group[0].element[6].target[0].code = #3966240
+* group[0].element[6].target[0].display = "Wake time after sleep onset"
+* group[0].element[6].target[0].equivalence = #equivalent
 * group[0].element[6].target[0].comment = """
-GAP: WASO has no OMOP concept.
-LOINC 103215-0 = Wake time after sleep onset (verified 2025-12-08)
-Total time awake after initial sleep onset.
-Normal: <30 minutes
-Elevated WASO indicates sleep maintenance insomnia.
-Unit_concept_id: 8550 (minute)
+VERIFIED via Athena CONCEPT.csv LOINC 103215-0 → concept_id 3966240 (2026-03-20)
+Previously marked as GAP (#0) — false negative, concept exists in Athena.
+- OMOP concept_id: 3966240
+- Domain: Measurement
+- Vocabulary: LOINC
+- Normal: <30 minutes
+- Elevated WASO indicates sleep maintenance insomnia.
+- Unit_concept_id: 8550 (minute)
 """
 
 // ============================================================================

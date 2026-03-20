@@ -3,7 +3,8 @@
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Purpose: Enable HRV data transformation from FHIR (LOINC-coded) to OMOP CDM
 // Context: PhD Thesis - RS4 FHIR-OMOP ETL systematic review finding
-// Verified: SDNN OMOP concept_id 37547368 via Athena (https://athena.ohdsi.org/search-terms/terms/37547368)
+// CORRECTED 2026-03-20: Previous 37547368 was HALLUCINATED (not found in Athena CONCEPT.csv)
+// Correct OMOP concept_id: 21491502 (verified via Athena LOINC 80404-7 lookup)
 
 Instance: ConceptMapHRVToOMOP
 InstanceOf: ConceptMap
@@ -27,7 +28,7 @@ Maps HRV (Heart Rate Variability) metrics from LOINC codes to OMOP CDM concepts 
 
 Key Findings from RS4 Systematic Review (354 papers analyzed):
 - ZERO documented HRV-OMOP transformations in peer-reviewed literature
-- Only ONE OMOP concept available: 37547368 (SDNN via LOINC 80404-7)
+- Only ONE OMOP concept available: 21491502 (SDNN via LOINC 80404-7)
 - CRITICAL GAP: RMSSD, pNN50, LF/HF have NO OMOP concepts (concept_id = 0)
 
 This ConceptMap enables:
@@ -56,25 +57,24 @@ Target OMOP Table: MEASUREMENT
 * group[0].unmapped.display = "No OMOP concept - requires custom vocabulary extension"
 
 // ============================================================================
-// SDNN - VERIFIED OMOP MAPPING ✅
-// Verified: https://athena.ohdsi.org/search-terms/terms/37547368
+// SDNN - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Previous 37547368 was HALLUCINATED (not found in Athena CONCEPT.csv)
 // ============================================================================
 * group[0].element[0].code = #80404-7
-* group[0].element[0].display = "R-R interval.standard deviation (Heart rate variability) [LOINC]"
-* group[0].element[0].target[0].code = #37547368
+* group[0].element[0].display = "R-R interval.standard deviation (Heart rate variability)"
+* group[0].element[0].target[0].code = #21491502
 * group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = """
-VERIFIED MAPPING via Athena (2025-11-28):
-- OMOP concept_id: 37547368
+VERIFIED via Athena CONCEPT.csv LOINC 80404-7 → concept_id 21491502 (2026-03-20)
+- OMOP concept_id: 21491502
 - Domain: Measurement
-- Concept Class: Lab Test
+- Concept Class: Clinical Observation
 - Vocabulary: LOINC
-- Valid dates: 2020-08-11 to 2099-12-31
-- Standard concept: Standard
+- Standard concept: S
 
 ETL Implementation:
-- MEASUREMENT.measurement_concept_id = 37547368
+- MEASUREMENT.measurement_concept_id = 21491502
 - MEASUREMENT.value_as_number = SDNN value
 - MEASUREMENT.unit_concept_id = 8587 (millisecond)
 - MEASUREMENT.measurement_type_concept_id = 44818707 (Patient self-reported)
@@ -99,7 +99,7 @@ Clinical Importance:
 
 Workaround:
 1. Create local custom concept in OMOP vocabulary with concept_class_id = 'Observable Entity'
-2. Map to general HRV concept 37547368 with qualifier (data loss)
+2. Map to general HRV concept 21491502 with qualifier (data loss)
 3. Store in measurement_source_value field (non-standardized)
 
 Recommendation: Submit new concept proposal to OHDSI Vocabulary team
@@ -164,17 +164,16 @@ Verified standard OMOP concept for heart rate.
 // Resting Heart Rate - OMOP MAPPING
 // ============================================================================
 * group[0].element[5].code = #40443-4
-* group[0].element[5].display = "Heart rate --resting [LOINC]"
-* group[0].element[5].target[0].code = #3027018
-* group[0].element[5].target[0].display = "Heart rate"
-* group[0].element[5].target[0].equivalence = #wider
+* group[0].element[5].display = "Heart rate --resting"
+* group[0].element[5].target[0].code = #3040891
+* group[0].element[5].target[0].display = "Heart rate --resting"
+* group[0].element[5].target[0].equivalence = #equivalent
 * group[0].element[5].target[0].comment = """
-Maps to general heart rate concept.
-Resting context can be captured in:
-- visit_occurrence.visit_concept_id
-- measurement qualifier
-- observation_period context
-
+VERIFIED via Athena CONCEPT.csv LOINC 40443-4 → concept_id 3040891 (2026-03-20)
+Previously mapped to broader 3027018 (Heart rate) — exact concept exists.
+- OMOP concept_id: 3040891
+- Domain: Measurement
+- Vocabulary: LOINC
 Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HRmax/HRrest × 15)
 """
 
