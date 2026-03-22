@@ -105,16 +105,19 @@ Não foi possível encontrar uma definição para o valor URL 'http://www.planal
 A linguagem de expressão text/cql-identifier não é suportada
 
 # =============================================================================
-# ICD-10-CM / ICD-11 EXTERNAL SYSTEM WARNINGS
-# ICD code systems referenced in ConceptMaps are not on tx.fhir.org.
-# Phase 6a (2026-03-02): ICD-11 now references WHO official URL directly
-# (http://id.who.int/icd/release/11/mms) — local CS removed.
+# ICD-10-CM EXTERNAL SYSTEM WARNING
+# ICD-10-CM is on tx.fhir.org but with incomplete content.
 # =============================================================================
 
 O sistema de código-fonte http://hl7.org/fhir/sid/icd-10-cm não tem todo o conteúdo
-O sistema de códigos de destino http://id.who.int/icd/release/11/mms
-A definition for CodeSystem 'http://id.who.int/icd/release/11/mms' could not be found
-Não foi possível encontrar uma definição para o valor URL 'http://id.who.int/icd/release/11/mms'
+
+# =============================================================================
+# ICD-11 NOTE (2026-03-22)
+# ICD-11 fragment CodeSystem restored (ICD11LifestyleMedicineFragment).
+# Previous Phase 6a removal caused 59 errors when IG Publisher upgraded
+# from v2.1.2 to v2.2.1 (stricter validation of unknown CodeSystems).
+# Fragment declares 34 codes with url=http://id.who.int/icd/release/11/mms
+# =============================================================================
 
 # =============================================================================
 # CONCEPTMAP FHIR↔OPENEHR (T1 S9, 2026-03-18)
