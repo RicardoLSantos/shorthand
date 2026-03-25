@@ -77,10 +77,16 @@ jobs:
         run: gem install jekyll
 
       - name: Download IG Publisher
+        env:
+          # Pin version to avoid breaking changes from new releases.
+          # Bump manually after testing locally with genonce.
+          # v2.2.1 validated with ICD-11 fragment (379ff1e5f, 2026-03-22).
+          IG_PUBLISHER_VERSION: '2.2.1'
         run: |
           mkdir -p input-cache
-          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+          curl -L "https://github.com/HL7/fhir-ig-publisher/releases/download/${IG_PUBLISHER_VERSION}/publisher.jar" \
             -o input-cache/publisher.jar
+          echo "IG Publisher version: ${IG_PUBLISHER_VERSION}"
 
       - name: Run IG Publisher
         run: |

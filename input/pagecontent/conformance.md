@@ -66,7 +66,7 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
 | — | **Regulatory (LGPD/GDPR)** | 4 | 7–23 | Custom (AppLogicCS) | Required |
 
-**Total**: 82 Profiles, 56 Extensions, 14 CodeSystems (1,103 custom codes), 189 ValueSets, 29 ConceptMaps.
+**Total**: 82 Profiles, 56 Extensions, 15 CodeSystems (1,103 custom codes + 34 ICD-11 fragment codes), 189 ValueSets, 29 ConceptMaps.
 
 ## Terminology Requirements
 
