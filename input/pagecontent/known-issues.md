@@ -231,7 +231,9 @@ The ETL pipeline provides **runtime verification** (not build-time elimination) 
 
 **ConceptMap FHIR↔openEHR (resolved 2026-03-18):** Previously 21 structural errors from element-path-as-code validation. Fixed by removing `group.source` declarations (FHIR element paths are not CodeSystem codes). ConceptMaps retain `group.target` for openEHR archetype IDs.
 
-**Projected after OCL integration:** 23 errors (IPS only), ~160 warnings (~22% reduction from ~206)
+**ICD-11 CodeSystem (resolved 2026-03-25):** ICD-11 is not available on tx.fhir.org. A fragment CodeSystem with `^url = http://id.who.int/icd/release/11/mms` and `content = #fragment` caused 57 validation errors because the IG Publisher could not associate the WHO URL with the SUSHI-generated canonical URL. The `ignoreWarnings.txt` file cannot suppress errors (only warnings), per [HL7 issue #470](https://github.com/HL7/fhir-ig-publisher/issues/470). Resolution: republish 34 ICD-11 codes under the IG namespace (`ICD11LifestyleMedicineCS`, `content = #complete`). This adds a 15th CodeSystem that will be removed when tx.fhir.org adds ICD-11 support.
+
+**Projected after OCL integration:** 23 errors (IPS only), ~160 warnings (~22% reduction from ~200)
 
 These issues do not prevent the IG from being used in production. All FHIR profiles, extensions, and examples validate correctly against their defined constraints.
 
