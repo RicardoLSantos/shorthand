@@ -1,10 +1,13 @@
 // ICD-11 Lifestyle Medicine ValueSets
 // Created: 2026-01-26
-// Updated: 2026-03-02 — Phase 6a: Reference WHO official ICD-11 URL instead of local CS
+// Updated: 2026-03-02 — Phase 6a: Reference WHO official ICD-11 URL
+// Updated: 2026-03-25T18:01:14 — T1 S13 Option B: Reference IG-namespace CS
+//   Reason: WHO URL not on tx.fhir.org → IG Publisher cannot validate codes.
+//   Future: Migrate to http://id.who.int/icd/release/11/mms when available on tx.fhir.org.
 // Purpose: ValueSets for ICD-11 lifestyle medicine codes
 // Reference: WHO ICD-11 MMS 2024-01
-// System URL: http://id.who.int/icd/release/11/mms (WHO official FHIR CodeSystem URL)
-// Note: ICD-11 is not yet on tx.fhir.org — validation warnings suppressed in ignoreWarnings.txt
+
+Alias: $ICD11 = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs
 
 // =============================================================================
 // PRIMARY VALUESET: ALL LIFESTYLE CODES
@@ -22,7 +25,7 @@ nutrition, sleep disorders, and physical activity codes from WHO ICD-11 MMS.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-01-26"
+* ^date = "2026-03-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 // Include all sub-ValueSets rather than bulk include
@@ -31,8 +34,8 @@ nutrition, sleep disorders, and physical activity codes from WHO ICD-11 MMS.
 * include codes from valueset ICD11SleepDisordersValueSet
 * include codes from valueset ICD11PhysicalActivityValueSet
 // Additional codes not in sub-ValueSets
-* http://id.who.int/icd/release/11/mms#QD8Y "Other specified problems associated with employment or unemployment"
-* http://id.who.int/icd/release/11/mms#QD8Z "Problems associated with employment or unemployment, unspecified"
+* $ICD11#QD8Y "Other specified problems associated with employment or unemployment"
+* $ICD11#QD8Z "Problems associated with employment or unemployment, unspecified"
 
 // =============================================================================
 // HEALTH BEHAVIOURS VALUESET
@@ -50,16 +53,16 @@ hazardous substance use and lifestyle-related health factors.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-01-26"
+* ^date = "2026-03-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* http://id.who.int/icd/release/11/mms#QE10 "Hazardous alcohol use"
-* http://id.who.int/icd/release/11/mms#QE11 "Hazardous drug use"
-* http://id.who.int/icd/release/11/mms#QE12 "Hazardous nicotine use"
-* http://id.who.int/icd/release/11/mms#QE1Y "Other specified problems associated with health behaviours"
-* http://id.who.int/icd/release/11/mms#QE1Z "Problems associated with health behaviours, unspecified"
-* http://id.who.int/icd/release/11/mms#QD80 "Problems associated with lifestyle"
-* http://id.who.int/icd/release/11/mms#QD85 "Burnout"
+* $ICD11#QE10 "Hazardous alcohol use"
+* $ICD11#QE11 "Hazardous drug use"
+* $ICD11#QE12 "Hazardous nicotine use"
+* $ICD11#QE1Y "Other specified problems associated with health behaviours"
+* $ICD11#QE1Z "Problems associated with health behaviours, unspecified"
+* $ICD11#QD80 "Problems associated with lifestyle"
+* $ICD11#QD85 "Burnout"
 
 // =============================================================================
 // NUTRITION VALUESET
@@ -77,20 +80,20 @@ including undernutrition, overweight, and obesity.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-01-26"
+* ^date = "2026-03-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* http://id.who.int/icd/release/11/mms#QD60 "Problems associated with insufficient drinking-water supply"
-* http://id.who.int/icd/release/11/mms#QD61 "Problems associated with dietary inadequacy"
-* http://id.who.int/icd/release/11/mms#QD62 "Problems associated with food supply"
-* http://id.who.int/icd/release/11/mms#QD6Y "Other specified problems associated with drinking water or nutrition"
-* http://id.who.int/icd/release/11/mms#QD6Z "Problems associated with drinking water or nutrition, unspecified"
-* http://id.who.int/icd/release/11/mms#5B70 "Undernutrition in infants, children or adolescents"
-* http://id.who.int/icd/release/11/mms#5B71 "Underweight in adults"
-* http://id.who.int/icd/release/11/mms#5B72 "Undernutrition in adults"
-* http://id.who.int/icd/release/11/mms#5B80 "Overweight or obesity"
-* http://id.who.int/icd/release/11/mms#5B81 "Overweight"
-* http://id.who.int/icd/release/11/mms#5B82 "Obesity"
+* $ICD11#QD60 "Problems associated with insufficient drinking-water supply"
+* $ICD11#QD61 "Problems associated with dietary inadequacy"
+* $ICD11#QD62 "Problems associated with food supply"
+* $ICD11#QD6Y "Other specified problems associated with drinking water or nutrition"
+* $ICD11#QD6Z "Problems associated with drinking water or nutrition, unspecified"
+* $ICD11#5B70 "Undernutrition in infants, children or adolescents"
+* $ICD11#5B71 "Underweight in adults"
+* $ICD11#5B72 "Undernutrition in adults"
+* $ICD11#5B80 "Overweight or obesity"
+* $ICD11#5B81 "Overweight"
+* $ICD11#5B82 "Obesity"
 
 // =============================================================================
 // SLEEP DISORDERS VALUESET
@@ -108,15 +111,15 @@ including insomnia, hypersomnolence, and circadian rhythm disorders.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-01-26"
+* ^date = "2026-03-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* http://id.who.int/icd/release/11/mms#7A00 "Insomnia disorders"
-* http://id.who.int/icd/release/11/mms#7A01 "Hypersomnolence disorders"
-* http://id.who.int/icd/release/11/mms#7A20 "Sleep-related breathing disorders"
-* http://id.who.int/icd/release/11/mms#7A40 "Circadian rhythm sleep-wake disorders"
-* http://id.who.int/icd/release/11/mms#7A4Y "Other specified sleep-wake disorders"
-* http://id.who.int/icd/release/11/mms#7A4Z "Sleep-wake disorders, unspecified"
+* $ICD11#7A00 "Insomnia disorders"
+* $ICD11#7A01 "Hypersomnolence disorders"
+* $ICD11#7A20 "Sleep-related breathing disorders"
+* $ICD11#7A40 "Circadian rhythm sleep-wake disorders"
+* $ICD11#7A4Y "Other specified sleep-wake disorders"
+* $ICD11#7A4Z "Sleep-wake disorders, unspecified"
 
 // =============================================================================
 // PHYSICAL ACTIVITY VALUESET
@@ -134,14 +137,14 @@ These codes can be used as additional context for health observations.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-01-26"
+* ^date = "2026-03-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
-* http://id.who.int/icd/release/11/mms#XE5A1 "Walking as physical activity"
-* http://id.who.int/icd/release/11/mms#XE5A2 "Running or jogging"
-* http://id.who.int/icd/release/11/mms#XE5A3 "Cycling"
-* http://id.who.int/icd/release/11/mms#XE5A4 "Swimming"
-* http://id.who.int/icd/release/11/mms#XE5A5 "Sports activities"
-* http://id.who.int/icd/release/11/mms#XE5A6 "Exercise or fitness activities"
-* http://id.who.int/icd/release/11/mms#XE5AY "Other specified physical activities"
-* http://id.who.int/icd/release/11/mms#XE5AZ "Physical activity, unspecified"
+* $ICD11#XE5A1 "Walking as physical activity"
+* $ICD11#XE5A2 "Running or jogging"
+* $ICD11#XE5A3 "Cycling"
+* $ICD11#XE5A4 "Swimming"
+* $ICD11#XE5A5 "Sports activities"
+* $ICD11#XE5A6 "Exercise or fitness activities"
+* $ICD11#XE5AY "Other specified physical activities"
+* $ICD11#XE5AZ "Physical activity, unspecified"

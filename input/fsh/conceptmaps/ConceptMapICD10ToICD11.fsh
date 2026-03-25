@@ -1,6 +1,7 @@
 // ConceptMap: ICD-10-CM to ICD-11 Lifestyle Medicine Codes
 // Created: 2026-01-26
 // Updated: 2026-03-02 — Phase 6a: Reference WHO official ICD-11 URL
+// Updated: 2026-03-25 — T1 S13 Option B: Target references IG-namespace CS
 // Purpose: Translation between ICD-10-CM and ICD-11 lifestyle medicine codes
 // Reference: WHO ICD-11 MMS 2024-01, ICD-10-CM 2024
 
@@ -33,7 +34,7 @@ Some ICD-10-CM codes map to multiple ICD-11 concepts (narrow-to-broad).
 // =============================================================================
 
 * group[+].source = "http://hl7.org/fhir/sid/icd-10-cm"
-* group[=].target = "http://id.who.int/icd/release/11/mms"
+* group[=].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs"
 
 // Tobacco/Nicotine Use
 * group[=].element[+].code = #Z72.0

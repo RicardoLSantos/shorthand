@@ -106,12 +106,12 @@ This IG implements the **FHIRconnect triple-layer architecture** for optimal int
 
 ### Context-Mappings Layer
 - Terminology bindings (45% reusable across domains)
-- 10 operational ConceptMaps covering 120+ metrics
+- 29 ConceptMaps covering 120+ metrics (10 domain + 19 cross-paradigm)
 - Dual-coding strategy for 86% terminology gap
 
 ### Key Achievements
 - **65.8% overall mapping reuse** (exceeds HiGHmed's 65% benchmark)
-- **10 ConceptMaps** operationalize all consumer health domains
+- **29 ConceptMaps** operationalize consumer health domains plus cross-paradigm interoperability
 - **7+ vendor support** through unified architecture
 - **Migration path** for evolving terminology standards
 

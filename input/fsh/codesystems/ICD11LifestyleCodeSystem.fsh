@@ -1,37 +1,49 @@
-// ICD-11 Lifestyle Medicine CodeSystem (Fragment/Supplement)
+// ICD-11 Lifestyle Medicine CodeSystem
 // Created: 2026-01-26
-// Removed Phase 6a (2026-03-02): Referenced WHO URL directly in ValueSets
-// Restored 2026-03-22 T1 S12: IG Publisher v2.2.1 now validates ICD-11 codes as errors
-//   (not warnings). Stub fragment required to declare codes exist in WHO system.
-// Updated 2026-03-25 T2 S9: Added WHO-sourced descriptions to all 34 codes.
+// History:
+//   Phase 6a (2026-03-02): Removed — referenced WHO URL directly in ValueSets
+//   2026-03-22 T1 S12: Restored as #fragment with WHO URL
+//   2026-03-25 T2 S9: Added WHO-sourced descriptions to all 34 codes
+//   2026-03-25 T1 S13: Option B — IG namespace + #complete (resolves 57 CI errors)
+//     Reason: WHO URL fragment fails validation because IG Publisher cannot
+//     associate ^url (WHO) with SUSHI canonical (IG). tx.fhir.org does not know
+//     ICD-11. ignoreWarnings.txt cannot suppress errors (HL7 issue #470).
+//     WHO DDCC IG has 1,622 errors for the same reason.
 //
 // DESIGN DECISION:
-// This CodeSystem is a #fragment supplement for WHO ICD-11 MMS because:
-// 1. ICD-11 is not available on tx.fhir.org for FHIR validation
-// 2. IG Publisher v2.2.1+ treats unknown CodeSystem codes as errors
-// 3. All codes are exact copies from WHO ICD-11 MMS 2024-01
-// 4. URL matches the WHO official system URL used in ValueSets
-// Future: Remove when tx.fhir.org adds ICD-11 support
+// This CodeSystem republishes 34 ICD-11 MMS codes under the IG namespace because:
+// 1. ICD-11 is NOT available on tx.fhir.org (as of March 2026)
+// 2. Fragment CS with WHO URL (^url ≠ SUSHI canonical) is not used for validation
+// 3. ignoreWarnings.txt cannot suppress errors, only warnings (HL7 #470)
+// 4. All 34 codes are exact copies from WHO ICD-11 MMS 2024-01
+// Future: When tx.fhir.org adds ICD-11, migrate ValueSets to
+//   http://id.who.int/icd/release/11/mms and remove this CodeSystem.
 
-CodeSystem: ICD11LifestyleMedicineFragment
-Id: icd-11-lifestyle-fragment
-Title: "ICD-11 Lifestyle Medicine Codes (Fragment)"
+CodeSystem: ICD11LifestyleMedicineCS
+Id: icd-11-lifestyle-cs
+Title: "ICD-11 Lifestyle Medicine Codes"
 Description: """
-FRAGMENT of ICD-11 codes relevant to lifestyle medicine from WHO ICD-11 MMS 2024-01.
-This supplement declares 34 codes used in the IG's ValueSets so the IG Publisher can
-validate them. The authoritative source is WHO ICD-11 at https://icd.who.int.
+Republished subset of 34 ICD-11 codes relevant to lifestyle medicine,
+sourced from WHO ICD-11 MMS 2024-01.
+
+This CodeSystem exists under the IG namespace because ICD-11 is not yet available
+on tx.fhir.org for FHIR validation. The authoritative source remains WHO ICD-11
+at https://icd.who.int (official URL: http://id.who.int/icd/release/11/mms).
+
+When tx.fhir.org adds ICD-11 support, ValueSets should migrate to the WHO URL.
 """
 
-* ^url = "http://id.who.int/icd/release/11/mms"
-* ^version = "2024-01"
+* ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
 * ^date = "2026-03-25"
-* ^publisher = "World Health Organization (WHO)"
-* ^contact.name = "WHO"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
+* ^contact.name = "Ricardo L. Santos"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@2rdoc.pt"
 * ^caseSensitive = true
-* ^content = #fragment
-* ^copyright = "ICD-11 © World Health Organization (WHO). CC BY-NC-ND 3.0 IGO. Republished fragment for IG validation."
+* ^content = #complete
+* ^copyright = "Codes sourced from ICD-11 © World Health Organization (WHO), CC BY-NC-ND 3.0 IGO. Republished under IG namespace for FHIR validation."
 
 // =============================================================================
 // CHAPTER 24: Problems associated with health behaviours (QE10-QE2Z)

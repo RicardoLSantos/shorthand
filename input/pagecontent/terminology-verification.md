@@ -55,11 +55,11 @@ LOINC 80404-7:
 Each ConceptMap includes verification comments:
 
 ```fsh
-// VERIFIED: LOINC 80404-7 → OMOP 37547368
-// Source: Athena v5.0, verified 2025-12-08
+// VERIFIED: LOINC 80404-7 → OMOP 21491502
+// Source: Athena CONCEPT.csv, verified 2026-03-19 (VRF-TERM-017)
 // Status: Standard concept, active
 * group.element[0].code = #80404-7
-* group.element[0].target[0].code = #37547368
+* group.element[0].target[0].code = #21491502
 * group.element[0].target[0].equivalence = #equivalent
 ```
 
@@ -85,10 +85,10 @@ ConceptMaps in this IG use standardized markers:
 ### Example from ConceptMapHRVToOMOP
 
 ```fsh
-// VERIFIED: SDNN OMOP concept_id 37547368 via Athena 2025-12-08
+// VERIFIED: SDNN OMOP concept_id 21491502 via Athena 2026-03-19 (VRF-TERM-017)
 * group.element[0].code = #80404-7
 * group.element[0].display = "R-R interval.standard deviation"
-* group.element[0].target[0].code = #37547368
+* group.element[0].target[0].code = #21491502
 * group.element[0].target[0].equivalence = #equivalent
 
 // GAP: RMSSD has NO OMOP concept (concept_id = 0)
@@ -140,11 +140,14 @@ This IG was developed alongside a Retrieval-Augmented Generation (RAG) system fo
 
 | Component | Purpose | Concepts Indexed |
 |-----------|---------|------------------|
-| **ChromaDB** | Vector database | 827,000+ |
-| **Athena Collection** | LOINC + SNOMED codes | 277,764 LOINC |
+| **ChromaDB** | Vector database (8 collections) | ~2,500,000 |
+| **LOINC Full** | Dedicated LOINC collection | 103,511 codes |
+| **ICD-10-CM** | Diagnosis codes | 47,361 codes |
+| **SNOMED** | Clinical findings | 349,000 codes |
+| **Synonym** | Cross-terminology synonyms | 1,800,000 entries |
 | **THO Collection** | HL7 Terminology | 20,051 codes |
 
-**Key finding**: LLMs without RAG fabricated codes; with RAG grounding, the same queries returned verified codes from indexed sources.
+**Key finding**: LLMs without RAG fabricated codes; with RAG grounding, the same queries returned verified codes from indexed sources. Benchmark: 42.9% accuracy (no RAG) → 92.9% (ChromaDB RAG) → 100% (+ abbreviation dictionary) on 14-case test.
 
 ### Related Work in RAG for Terminology
 
@@ -199,6 +202,8 @@ If you discover a verification error in this IG:
 
 ---
 
-*Last updated: 2026-01-24*
-*Verification protocol version: 1.0*
-*Total verified codes in IG: 130+*
+*Last updated: 2026-03-25*
+*Verification protocol version: 2.0 (Database-First, post OMOP audit VRF-TERM-017)*
+*Total verified codes in IG: 1,103 custom + 34 ICD-11 fragment*
+*LOINC substitutions: 19 (verified against Athena CONCEPT.csv)*
+*OMOP audit: 28 corrections across 6 ConceptMaps (Mar 2026)*

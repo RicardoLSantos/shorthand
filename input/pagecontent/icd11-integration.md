@@ -32,15 +32,19 @@ This Implementation Guide currently maps lifestyle medicine metrics to:
 - **OMOP CDM** (research analytics) - 22 ConceptMaps
 - **openEHR** (dual-model architecture) - Bidirectional mappings
 
-### ICD-11 Gap
+### ICD-11 Status
 
-**Current ICD-11 Coverage: 0 ConceptMaps**
+**Current ICD-11 Coverage:**
+- **1 ConceptMap** (ICD-10-CM → ICD-11 lifestyle codes)
+- **1 CodeSystem fragment** (34 WHO ICD-11 MMS codes, `#fragment` for local validation)
+- **5 ValueSets** (Health Behaviours, Nutrition, Sleep, Physical Activity, combined)
 
-ICD-11 integration is planned as future work (see Roadmap below). The primary reason is that:
+ICD-11 deeper integration is planned as future work (see Roadmap below). Current limitations:
 
-1. **ICD-11 is NOT in OHDSI Athena** - No standard OMOP concept_ids exist
-2. **Lifestyle medicine codes are condition-adjacent** - We capture biomarkers (HRV, sleep stages) rather than diagnoses
-3. **Mapping complexity** - 60%+ of ICD-11 mappings require postcoordination rules
+1. **ICD-11 is NOT on tx.fhir.org** — Requires local fragment CodeSystem with `special-url` for IG Publisher validation
+2. **ICD-11 is NOT in OHDSI Athena** — No standard OMOP concept_ids exist
+3. **Lifestyle medicine codes are condition-adjacent** — We capture biomarkers (HRV, sleep stages) rather than diagnoses
+4. **Mapping complexity** — 60%+ of ICD-11 mappings require postcoordination rules
 
 ## WHO ICD-11 FHIR API
 

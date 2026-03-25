@@ -2,13 +2,15 @@
 
 This page documents known issues that affect the iOS Lifestyle Medicine Implementation Guide build validation but do not impact functionality.
 
-**Build Summary (2026-03-19):** 23 errors (all IPS upstream), 206 warnings (30 suppressed)
+**Build Summary (2026-03-25):** 23 errors (all IPS upstream), ~201 warnings (30 suppressed)
 
 **Tooling Versions:**
 - SUSHI: v3.18.1
-- IG Publisher: v2.1.2
+- IG Publisher: v2.2.3+ (CI uses `latest`)
 - FHIR R4: v4.0.1
 - IPS Dependency: hl7.fhir.uv.ips#2.0.0
+
+**Note on IG Publisher v2.2.x (March 2026):** Starting with v2.2.1, the IG Publisher treats codes from unknown CodeSystems as errors (previously warnings in v2.1.2). ICD-11 codes required adding `http://id.who.int/icd/release/11/mms` to `special-url` in sushi-config.yaml and providing a local `#fragment` CodeSystem for validation.
 
 ---
 
@@ -265,8 +267,8 @@ These issues do not prevent the IG from being used in production. All FHIR profi
 
 ---
 
-*Last updated: 2026-03-19*
-*Build: IG Publisher 2.1.2, SUSHI 3.18.1*
+*Last updated: 2026-03-25*
+*Build: IG Publisher v2.2.3+ (latest), SUSHI 3.18.1*
 *iOS Lifestyle Medicine IG v0.2.0*
-*OCL Integration: Prepared in sushi-config.yaml (pending account setup)*
+*ICD-11 Fragment: Restored with special-url for local validation (2026-03-25)*
 *Upstream Issues: Prepared for submission to HL7/fhir-ips and HL7/fhir-ig-publisher*
