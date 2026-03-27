@@ -38,7 +38,7 @@ Each profile uses standard LOINC codes where available, with custom codes from `
 {
   "resourceType": "Observation",
   "meta": {
-    "profile": ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/activity-observation"]
+    "profile": ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-observation"]
   },
   "status": "final",
   "category": [{
@@ -91,6 +91,48 @@ This IG provides 29 ConceptMaps for translating between vendor-specific codes an
 ```
 GET [base]/ConceptMap/$translate?system=https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs&code=sleep-deep&target=http://loinc.org
 ```
+
+### Step 5: Discover Server Capabilities
+
+This IG includes a [CapabilityStatement](CapabilityStatement-LifestyleMedicineCapabilityStatement.html) declaring 12 resource types and 32 Observation `supportedProfile` entries. Use it to discover what a conformant server supports:
+
+```
+GET [base]/metadata
+```
+
+The CapabilityStatement also declares 7 custom SearchParameters (domain, vendor, value-range, AI-model, AI-confidence, careplan-category, consent-jurisdiction) for filtering lifestyle medicine observations.
+
+### Example: Apple Watch HRV Observation
+
+Heart Rate Variability (HRV) demonstrates the IG's dual-coding strategy — LOINC where available (SDNN), custom codes where not (RMSSD):
+
+```json
+{
+  "resourceType": "Observation",
+  "meta": {
+    "profile": ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hrv-observation"]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {"system": "http://loinc.org", "code": "80404-7", "display": "R-R interval.standard deviation (SDNN)"},
+      {"system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs", "code": "hrv-sdnn", "display": "SDNN"}
+    ]
+  },
+  "subject": {"reference": "Patient/example"},
+  "effectiveDateTime": "2026-03-27T07:00:00Z",
+  "valueQuantity": {"value": 42.5, "unit": "ms", "system": "http://unitsofmeasure.org", "code": "ms"},
+  "device": {"reference": "Device/apple-watch-series9"},
+  "component": [
+    {
+      "code": {"coding": [{"system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs", "code": "hrv-rmssd", "display": "RMSSD"}]},
+      "valueQuantity": {"value": 38.2, "unit": "ms", "system": "http://unitsofmeasure.org", "code": "ms"}
+    }
+  ]
+}
+```
+
+> **Note**: RMSSD has no LOINC code (verified against LOINC FHIR API, VRF-TERM-010). The `hrv-rmssd` code from `LifestyleMedicineTemporaryCS` includes a migration trigger for when LOINC assigns a code.
 
 ## Architecture Overview
 
