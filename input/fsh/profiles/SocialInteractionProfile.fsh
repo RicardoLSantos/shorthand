@@ -7,7 +7,7 @@ Description: "Profile for recording social interaction data from iOS Health App"
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2024-01-03"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS

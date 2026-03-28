@@ -22,8 +22,8 @@ Title: "Nutrition Intake Observation Profile"
 Description: "Profile for nutrition intake data from iOS Health App and user input"
 
 * ^version = "0.1.0"
-* ^status = #draft
-* ^publisher = "Ricardo Lourenço dos Santos"
+* ^status = #active
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS
@@ -40,8 +40,8 @@ Title: "Water Intake Observation Profile"
 Description: "Profile for water intake measurements"
 
 * ^version = "0.1.0"
-* ^status = #draft
-* ^publisher = "Ricardo Lourenço dos Santos"
+* ^status = #active
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * code = $LIFESTYLEOBS#lifestyle-water-intake "Water intake volume"
 * valueQuantity only Quantity
@@ -56,8 +56,8 @@ Title: "Calorie Intake Observation Profile"
 Description: "Profile for caloric intake measurements"
 
 * ^version = "0.1.0"
-* ^status = #draft
-* ^publisher = "Ricardo Lourenço dos Santos"
+* ^status = #active
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-caloric-intake "Total caloric intake"
 * valueQuantity only Quantity
@@ -72,8 +72,8 @@ Title: "Macronutrients Observation Profile"
 Description: "Profile for macronutrient intake measurements"
 
 * ^version = "0.1.0"
-* ^status = #draft
-* ^publisher = "Ricardo Lourenço dos Santos"
+* ^status = #active
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#macronutrients-panel "Macronutrients intake panel"
 * component ^slicing.discriminator.type = #value
@@ -142,7 +142,7 @@ References:
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2026-01-12"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * code = $LOINC#81941-7 "Micronutrient intake panel"
 * component ^slicing.discriminator.type = #pattern

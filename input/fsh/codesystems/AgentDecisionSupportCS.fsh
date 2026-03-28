@@ -261,3 +261,30 @@ FHIR equivalents are noted in comments where they exist
 * #ai-consent-general "AI General Consent" "Consent for AI processing of non-sensitive personal data (LGPD Art. 7-I)"
 * #ai-consent-health "AI Health Data Consent" "Explicit consent for AI processing of sensitive health data (LGPD Art. 11-I)"
 * #ai-consent-automated-decision "AI Automated Decision Consent" "Consent for automated decision-making with right to review (LGPD Art. 20)"
+
+// ============================================================================
+// CFM 2.454/2026 — DEFINITIONS (Art. 2) + PATIENT RIGHTS (Art. 9) (5 codes)
+// Reference: CFM Resolution 2.454/2026, effective August 2026
+// ============================================================================
+* #ia-medica "IA Médica" "Artificial intelligence system used in medical practice (CFM 2.454 Art. 2)"
+* #sistema-apoio-decisao "Sistema de Apoio à Decisão" "Clinical decision support system (CFM 2.454 Art. 2)"
+* #patient-second-opinion-requested "Patient Requested Second Opinion" "Patient exercised right to second opinion regarding AI recommendation (CFM 2.454 Art. 9)"
+* #patient-refused-ai "Patient Refused AI" "Patient exercised right to refuse AI-assisted analysis (CFM 2.454 Art. 9)"
+* #ai-disclosure-completed "AI Disclosure Completed" "Patient was notified of AI use per transparency requirements (CFM 2.454 Art. 4)"
+
+// ============================================================================
+// CFM 2.454/2026 — AI AUTONOMY LEVELS (Art. 3) (4 codes)
+// Reference: CFM Resolution 2.454/2026 risk classification criteria
+// ============================================================================
+* #autonomy-fully-autonomous "Fully Autonomous" "AI system operates without physician input (CFM 2.454 Art. 3 — risco inaceitável)"
+* #autonomy-semi-autonomous "Semi-Autonomous" "AI system operates with periodic physician oversight (CFM 2.454 Art. 3 — alto risco)"
+* #autonomy-assistive "Assistive" "AI system provides recommendations requiring physician approval (CFM 2.454 Art. 3 — médio risco)"
+* #autonomy-informational "Informational" "AI system provides information only, no clinical recommendations (CFM 2.454 Art. 3 — baixo risco)"
+
+// ============================================================================
+// CFM 2.454/2026 — DATA RETENTION (Art. 6) (3 codes)
+// Reference: CFM Resolution 2.454/2026 traceability requirements
+// ============================================================================
+* #retention-automatic "Automatic Deletion" "Audit records automatically deleted after retention period (CFM 2.454 Art. 6)"
+* #retention-manual-review "Manual Review Before Deletion" "Audit records require manual review before deletion (CFM 2.454 Art. 6)"
+* #retention-permanent "Permanent Retention" "Audit records retained permanently (CFM 2.454 Art. 6)"

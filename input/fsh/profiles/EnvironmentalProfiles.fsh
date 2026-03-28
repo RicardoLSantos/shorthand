@@ -14,8 +14,8 @@ Title: "Environmental Observation Profile"
 Description: "Base profile for environmental measurements from iOS Health App"
 
 * ^version = "0.1.0"
-* ^status = #draft
-* ^publisher = "HL7 International"
+* ^status = #active
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Environmental Health Working Group"
 
 * status MS

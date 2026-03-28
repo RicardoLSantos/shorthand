@@ -36,7 +36,7 @@ Sections include:
 * ^status = #active
 * ^experimental = false
 * ^date = "2026-01-26"
-* ^publisher = "Ricardo Lourenco dos Santos, FMUP"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 // Composition metadata
 * type = $LOINC#60591-5 "Patient summary Document"

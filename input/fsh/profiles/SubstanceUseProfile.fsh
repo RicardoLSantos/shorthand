@@ -92,7 +92,7 @@ Aligned with:
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2025-11-25"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS
@@ -176,7 +176,7 @@ Clinical Context:
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2025-11-25"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS
@@ -257,7 +257,7 @@ Guidelines:
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2025-11-25"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS
@@ -307,7 +307,7 @@ clinically appropriate. Privacy and confidentiality considerations are paramount
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2025-11-25"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS
@@ -360,7 +360,7 @@ with their current status and risk assessment.
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2025-11-25"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS

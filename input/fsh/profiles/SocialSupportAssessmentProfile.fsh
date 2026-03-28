@@ -44,7 +44,7 @@ Profile for social support assessment using validated instruments.
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2026-01-12"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..1 MS

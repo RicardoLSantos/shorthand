@@ -34,7 +34,7 @@ reflecting the cholinergic anti-inflammatory pathway (Tracey 2002).
 * ^status = #active
 * ^experimental = false
 * ^date = "2025-11-27"
-* ^publisher = "iOS Lifestyle Medicine HEADS FHIR IG"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * category 1..* MS

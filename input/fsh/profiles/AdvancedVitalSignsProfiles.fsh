@@ -9,8 +9,8 @@ Title: "Advanced Vital Signs Profile"
 Description: "Profile for advanced vital signs data from iOS Health App"
 
 * ^version = "0.1.0"
-* ^status = #draft
-* ^publisher = "HL7 International"
+* ^status = #active
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Advanced Vital Signs Working Group"
 
 * status MS

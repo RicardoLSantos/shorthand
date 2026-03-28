@@ -52,7 +52,7 @@ References:
 * ^version = "0.1.0"
 * ^status = #active
 * ^date = "2026-01-12"
-* ^publisher = "FMUP HEADS2"
+* ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
 * subject 1..1 MS
