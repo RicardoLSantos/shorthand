@@ -206,6 +206,34 @@ This page provides a comprehensive list of references supporting the iOS Lifesty
 
 9. **ISO 21089:2018.** Health informatics — Trusted end-to-end information flows. Available at: [https://www.iso.org/standard/69898.html](https://www.iso.org/standard/69898.html)
 
+### AI/CDSS Regulatory and Ethics
+
+10. European Parliament and Council. **Regulation (EU) 2024/1689 — Artificial Intelligence Act.** Official Journal of the European Union. August 2024. Available at: [https://eur-lex.europa.eu/eli/reg/2024/1689/oj](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
+
+11. Conselho Federal de Medicina (CFM). **Resolução CFM nº 2.454/2024 — Inteligência Artificial na Prática Médica.** Diário Oficial da União. 2024.
+
+12. World Health Organization. **Ethics and Governance of Artificial Intelligence for Health.** WHO Guidance. June 2021. Available at: [https://www.who.int/publications/i/item/9789240029200](https://www.who.int/publications/i/item/9789240029200)
+
+13. World Health Organization. **Regulatory Considerations on Artificial Intelligence for Health.** WHO. 2023. Available at: [https://www.who.int/publications/i/item/9789240078871](https://www.who.int/publications/i/item/9789240078871)
+
+### LGPD and Data Protection
+
+14. Brasil. **Lei nº 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD).** Available at: [https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)
+
+15. European Parliament and Council. **Regulation (EU) 2016/679 — General Data Protection Regulation (GDPR).** Official Journal of the European Union. April 2016. Available at: [https://eur-lex.europa.eu/eli/reg/2016/679/oj](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+
+16. U.S. Department of Health and Human Services. **Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule — 45 CFR §164.514.** De-identification of Protected Health Information. Available at: [https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html)
+
+17. Autoridade Nacional de Proteção de Dados (ANPD). **Guia Orientativo sobre Tratamento de Dados Pessoais para Fins Acadêmicos e para a Realização de Estudos e Pesquisas.** 2023. Available at: [https://www.gov.br/anpd/pt-br](https://www.gov.br/anpd/pt-br)
+
+### OMOP and Observational Research
+
+18. Observational Health Data Sciences and Informatics (OHDSI). **The Book of OHDSI.** 2019. Available at: [https://ohdsi.github.io/TheBookOfOhdsi/](https://ohdsi.github.io/TheBookOfOhdsi/)
+
+19. Hripcsak G, Duke JD, Shah NH, et al. **Observational Health Data Sciences and Informatics (OHDSI): Opportunities for Observational Researchers.** Stud Health Technol Inform. 2015;216:574-578. [DOI:10.3233/978-1-61499-564-7-574](https://doi.org/10.3233/978-1-61499-564-7-574)
+
+20. Athena OHDSI Vocabulary Repository. Available at: [https://athena.ohdsi.org/](https://athena.ohdsi.org/)
+
 ---
 
 ## Vendor Documentation
