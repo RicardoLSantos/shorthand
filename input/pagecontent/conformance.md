@@ -66,7 +66,7 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
 | — | **Regulatory (LGPD/GDPR)** | 4 | 7–23 | Custom (AppLogicCS) | Required |
 
-**Total**: 82 Profiles, 56 Extensions, 15 CodeSystems (1,103 custom codes + 34 ICD-11 codes), 189 ValueSets, 29 ConceptMaps.
+**Total**: 85 Profiles, 58 Extensions, 15 CodeSystems (1,115 custom codes + 34 ICD-11 codes), 193 ValueSets, 29 ConceptMaps.
 
 > **Note on ICD-11 CodeSystem (15th CS):** This CodeSystem republishes 34 WHO ICD-11 MMS codes under the IG namespace because ICD-11 is not yet available on tx.fhir.org for FHIR validation (as of March 2026). When tx.fhir.org adds ICD-11 support, ValueSets will migrate to the WHO official URL (`http://id.who.int/icd/release/11/mms`) and this CodeSystem will be removed, returning to 14 CodeSystems.
 
