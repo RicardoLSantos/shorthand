@@ -1,0 +1,43 @@
+{
+  "title": "RS11 Benchmark Results Summary",
+  "paper": "LLMs and RAG for Medical Vocabulary Validation: A Systematic Review and Empirical Benchmark",
+  "doi": "pending (IJMEDI-D-26-01592)",
+  "model": "Qwen3.5-4B (4-bit quantized, Apple M1 8GB)",
+  "hardware": "Apple M1 MacBook Air, 8GB RAM, macOS Darwin 25.3.0",
+  "chromadb_collections": {
+    "loinc_full": 103511,
+    "snomed_terminology": 349211,
+    "icd10cm": 47361,
+    "synonym_terminology": 1862419,
+    "tho_terminology": 20096,
+    "ios_ig_terminology": 1181,
+    "ucum_terminology": 931,
+    "athena_terminology": 10956,
+    "total_embeddings": 2395666
+  },
+  "configs": [
+    {"id": "A", "name": "Baseline (no RAG)", "cases": 14, "accuracy": 42.9, "correct": 6},
+    {"id": "B", "name": "ChromaDB RAG", "cases": 14, "accuracy": 78.6, "correct": 11},
+    {"id": "C", "name": "RAG + Chain-of-Verification", "cases": 14, "accuracy": 85.7, "correct": 12},
+    {"id": "D", "name": "RAG + CoV + Vocabulary Routing", "cases": 14, "accuracy": 85.7, "correct": 12},
+    {"id": "E", "name": "RAG + CoV + Routing + Domain Filter", "cases": 14, "accuracy": 85.7, "correct": 12},
+    {"id": "F", "name": "RAG + Ensemble Agreement", "cases": 14, "accuracy": 85.7, "correct": 12},
+    {"id": "G", "name": "RAG + LOINC Axis Anchoring", "cases": 14, "accuracy": 85.7, "correct": 12},
+    {"id": "H", "name": "RAG + Metadata Enrichment", "cases": 14, "accuracy": 85.7, "correct": 12},
+    {"id": "I", "name": "RAG + 55-entry dictionary", "cases": 14, "accuracy": 92.9, "correct": 13},
+    {"id": "J", "name": "RAG + 80-entry dictionary (BEST 14-case)", "cases": 14, "accuracy": 100.0, "correct": 14},
+    {"id": "K", "name": "Config J on 42 cases", "cases": 42, "accuracy": 69.0, "correct": 29},
+    {"id": "L", "name": "Config K + cross-encoder reranking", "cases": 42, "accuracy": 61.9, "correct": 26, "note": "cross-encoder HURT performance"},
+    {"id": "M", "name": "Config K + 94-entry dictionary (BEST 42-case)", "cases": 42, "accuracy": 71.4, "correct": 30}
+  ],
+  "key_findings": [
+    "Baseline LLM (no RAG): 42.9% accuracy — confirms LLMs cannot reliably look up exact terminology codes",
+    "ChromaDB RAG: 78.6% (+35.7pp) — vector retrieval dramatically improves code lookup",
+    "Abbreviation dictionary: 92.9-100% on focused 14-case set — domain knowledge bridges the last gap",
+    "Extended 42-case set: 71.4% (Config M) — reveals limitations with complex disambiguation and cross-mapping",
+    "Cross-encoder reranking HURT: -7.1pp — lexical/rule-based approaches outperform semantic re-ranking for exact code matching",
+    "100% reproducibility confirmed across 2 independent runs on 14-case set"
+  ],
+  "timestamp": "2026-03-24",
+  "reproducibility": "Run 1 and Run 2 both produced identical results (14/14 = 100%) with Config J"
+}

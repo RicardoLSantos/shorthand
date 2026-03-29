@@ -17,10 +17,11 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 
 ### Key Features
 
-- **74 FHIR Profiles** for wearable observations and lifestyle metrics
-- **17 CodeSystems** (10 content + 7 stubs; consolidated from 148 following HL7 Physical Activity IG "Temporary Codes" pattern)
-- **173 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
-- **28 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
+- **85 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
+- **15 CodeSystems** with 1,115 custom codes (719 TemporaryCS + 277 AppLogicCS + 119 AgentCS)
+- **193 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
+- **29 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
+- **240 Example Instances** including 5 round-trip validation bundles
 - **CQL/GDL2** clinical decision support rules
 
 ---
@@ -314,11 +315,12 @@ This work is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/
 
 ```bibtex
 @software{santos2026ios,
-  author = {Santos, Ricardo Lourenço dos},
-  title = {iOS Lifestyle Medicine FHIR Implementation Guide},
+  author = {Santos, Ricardo Louren\c{c}o dos and Cruz-Correia, Ricardo Jo\~{a}o},
+  title = {An {HL7 FHIR} Implementation Guide for Lifestyle Medicine in Learning Health Systems},
   year = {2026},
-  publisher = {FMUP},
-  url = {https://github.com/RicardoLSantos/shorthand}
+  publisher = {FMUP / CINTESIS@RISE},
+  url = {https://github.com/RicardoLSantos/shorthand},
+  note = {Manuscript under review: IJMEDI-D-26-01289}
 }
 ```
 
