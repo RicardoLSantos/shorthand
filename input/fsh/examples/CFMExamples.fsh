@@ -58,7 +58,7 @@ Description: "AI Technical Director (Responsável Técnico de IA) at HEADS per C
 * practitioner = Reference(Practitioner/PractitionerExample)
 * organization = Reference(Organization/ExampleOrganizationAIGovernance)
 * code = http://terminology.hl7.org/CodeSystem/practitioner-role#researcher "Researcher"
-* specialty = http://snomed.info/sct#394592004 "Clinical pharmacology"
+* specialty = http://snomed.info/sct#394814009 "General practice (specialty)"
 
 // =============================================================================
 // Patient Refuses AI (Art. 9)
