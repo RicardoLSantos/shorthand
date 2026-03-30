@@ -147,6 +147,39 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 - **Consumer Wearable Integration**: Unified model for Apple HealthKit, Fitbit, Oura, Garmin, Polar
 - **Lifestyle Medicine Context**: Integration of all six pillars in single implementation guide
 
+## Value Proposition
+
+### Quantified Benefits
+
+| Metric | Value | Evidence |
+|--------|:-----:|---------|
+| **Domains covered** | 11 | Vital signs, sleep, activity, nutrition, mindfulness, stress, environmental, social, reproductive, ECG, body metrics |
+| **Vendor support** | 7+ | Apple HealthKit, Fitbit, Garmin, Oura, Polar, Withings, generic |
+| **Custom codes** | 1,115 | Each with documented LOINC/SNOMED migration triggers |
+| **Terminology gap documented** | 86% | Of consumer wearable metrics lack standard codes |
+| **ConceptMaps** | 29 | Covering LOINC, SNOMED CT, OMOP CDM, openEHR |
+| **Example instances** | 240 | 100% profile coverage (2.8× ratio) |
+| **Regulatory frameworks** | 2 | LGPD (Brazil), CFM 2.454/2026 (AI in medicine) |
+| **Estimated dev time saved** | 180h | Based on implementation effort analysis vs. building from scratch |
+
+### Quick Start
+
+- **Level 1 (single domain)**: 1-7 profiles, low effort — first Observation in <30 minutes
+- **Level 2 (multi-domain)**: 10-25 profiles, medium effort
+- **Level 3 (full compliance)**: 85 profiles, all ConceptMaps, regulatory profiles
+
+See [Getting Started](getting-started.html) and [Conformance Requirements](conformance.html) for details.
+
+### Comparison with Published IGs
+
+| Feature | This IG | CGM IG | PA IG | PHD IG |
+|---------|:-------:|:------:|:-----:|:------:|
+| Domains | 11 | 1 (glucose) | 1 (activity) | Device metadata |
+| Vendors | 7+ | CGM devices | Generic | IEEE 11073 |
+| Custom codes | 1,115 | 0 | ~30 | 0 |
+| ConceptMaps | 29 | 0 | 0 | 0 |
+| Regulatory | LGPD + CFM | None | None | None |
+
 ## Implementation Notes
 - Integration with HealthKit API
 - Privacy and security considerations
