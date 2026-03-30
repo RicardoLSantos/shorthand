@@ -326,12 +326,34 @@ This work is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/
 
 ---
 
+## Found This Useful?
+
+If this IG helps your work, please consider:
+
+- **Star this repo** to help others discover it
+- **Open a Discussion** to share your use case or ask questions
+- **Fork** if you're adapting it for your own domain
+- **Cite** using the BibTeX entry above
+
+We track anonymous clone statistics and have seen **69 unique cloners in 14 days** (March 2026) — if you're one of them, we'd love to hear how you're using the IG.
+
+### Stay Updated
+
+This IG is actively developed as part of a PhD thesis at FMUP. To be notified of releases:
+
+1. Click **Watch** (top right) and select "Releases only"
+2. Or check the [RS11 RAG Benchmark](RS11_benchmark/) for our reproducible terminology validation toolkit
+
+---
+
 ## Contact
 
 - **Author**: Ricardo Lourenço dos Santos
 - **Institution**: Faculty of Medicine, University of Porto (FMUP)
+- **Research Groups**: CINTESIS@RISE, MEDCIDS
 - **Email**: ricardolourencosantos@gmail.com
+- **ORCID**: [0000-0003-3737-0972](https://orcid.org/0000-0003-3737-0972)
 
 ---
 
-*Last updated: 2026-02-26*
+*Last updated: 2026-03-30*
