@@ -31,10 +31,8 @@ Thumbs.db
 *.swp
 *.swo
 /output/
-# Exception: Public IG artifacts (QA Report, Index, NPM Package)
+# Exception: QA Report only (index.html and package.tgz contain local paths)
 !output/qa.html
-!output/index.html
-!output/package.tgz
 
 # ConceptMap with vendor mappings - keep local only (JAN 12, 2026)
 # Contains 42 Apple HealthKit mappings from gray literature extraction
@@ -65,6 +63,10 @@ _updatePublisher.sh
 _updatePublisher.bat
 sync_github.sh
 sync_radicle.sh
+
+# QA comparison HTML files (contain local filesystem paths)
+qa_comparison/*.html
+qa_comparison/**/*.html
 
 # Local scripts (not tracked)
 scripts/

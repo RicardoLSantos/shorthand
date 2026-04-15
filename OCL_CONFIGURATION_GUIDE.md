@@ -99,7 +99,7 @@ parameters:
 ### Step 6: Rebuild and Validate
 
 ```bash
-cd /Users/ricardo/shorthand/iOS_Lifestyle_Medicine_HEADS2_FMUP
+cd <your-ig-root-directory>
 ./_genonce.sh
 
 # Verify warning reduction

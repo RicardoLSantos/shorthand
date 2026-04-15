@@ -1,0 +1,53 @@
+# Security Audit — Daily scan for leaked sensitive information
+# Checks tracked files for: API keys, passwords, private paths, SSH keys,
+# personal data, JWT tokens, DB connection strings, tracking IDs.
+#
+# Runs: daily at 06:00 UTC + on every push to main
+# Created: 2026-04-15 T2 S14
+#
+# Security note: This workflow uses NO untrusted inputs (no github.event.*
+# fields in run: commands). All commands operate on checked-out repository
+# content only.
+
+name: Security Audit
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 06:00 UTC (07:00 WEST)
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for git grep
+
+      - name: Run security audit
+        run: |
+          chmod +x scripts/security_audit.sh
+          ./scripts/security_audit.sh || {
+            echo "::error::Security audit found issues. Review the output above."
+            exit 1
+          }
+
+      - name: Check git history for deleted secrets
+        run: |
+          echo "Checking git history for previously committed sensitive files..."
+          DELETED=$(git log --all --diff-filter=D --name-only -- '*.env' '*.key' '*.pem' '*.p12' '*.pfx' '*.jks' '.env*' 'credentials*' 2>/dev/null | grep -v '^$' | head -20)
+          if [ -n "$DELETED" ]; then
+            echo "::warning::Previously deleted sensitive files found in git history:"
+            echo "$DELETED"
+            echo "Consider using BFG Repo-Cleaner to purge these from history."
+          else
+            echo "No previously deleted sensitive files found in history."
+          fi
+
+      - name: Check for large binary files
+        run: |
+          echo "Checking for large tracked files (>5MB)..."
+          git ls-files -z | xargs -0 -I{} sh -c 'size=$(wc -c < "{}"); if [ "$size" -gt 5242880 ]; then echo "WARN: {} is $(echo "scale=1; $size/1048576" | bc)MB"; fi' || true
