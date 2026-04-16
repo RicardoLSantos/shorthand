@@ -288,3 +288,28 @@ FHIR equivalents are noted in comments where they exist
 * #retention-automatic "Automatic Deletion" "Audit records automatically deleted after retention period (CFM 2.454 Art. 6)"
 * #retention-manual-review "Manual Review Before Deletion" "Audit records require manual review before deletion (CFM 2.454 Art. 6)"
 * #retention-permanent "Permanent Retention" "Audit records retained permanently (CFM 2.454 Art. 6)"
+
+// ============================================================================
+// EU AI ACT 2024/1689 — RISK MANAGEMENT (Art. 9) (2 codes)
+// Reference: Regulation (EU) 2024/1689, Chapter III Section 2
+// Cross-ref: CFM 2.454 Art. 3 (risk classification), LGPD Art. 6-IV (non-discrimination)
+// ============================================================================
+* #ai-risk-assessment-complete "AI Risk Assessment Complete" "Risk management assessment for AI system completed per EU AI Act Art. 9"
+* #ai-risk-assessment-pending "AI Risk Assessment Pending" "Risk management assessment for AI system pending — system not yet validated"
+
+// ============================================================================
+// EU AI ACT 2024/1689 — TECHNICAL DOCUMENTATION (Art. 11 + Annex IV) (2 codes)
+// Reference: Regulation (EU) 2024/1689, Chapter III Section 2, Annex IV
+// ============================================================================
+* #ai-technical-doc-model-card "AI Model Card" "Technical documentation describing model architecture, training data, and performance (EU AI Act Art. 11, Annex IV §2)"
+* #ai-technical-doc-impact-assessment "AI Impact Assessment" "Fundamental rights impact assessment (EU AI Act Art. 27, FRIA)"
+
+// ============================================================================
+// EU AI ACT 2024/1689 — PERFORMANCE & DATA GOVERNANCE (Art. 10, 15) (4 codes)
+// Reference: Regulation (EU) 2024/1689, Chapter III Section 2
+// Cross-ref: LGPD Art. 6-IV (non-discrimination), CFM 2.454 Art. 5 (safety)
+// ============================================================================
+* #ai-performance-validated "AI Performance Validated" "AI system performance metrics validated against benchmarks per EU AI Act Art. 15"
+* #ai-performance-monitoring "AI Performance Monitoring" "AI system under continuous performance monitoring per EU AI Act Art. 15"
+* #ai-training-data-certified "AI Training Data Certified" "Training dataset meets EU AI Act Art. 10 data governance requirements (quality, representativeness, bias assessment)"
+* #ai-training-data-uncertified "AI Training Data Uncertified" "Training dataset has NOT been certified for EU AI Act Art. 10 compliance"
