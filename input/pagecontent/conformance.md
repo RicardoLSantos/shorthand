@@ -10,7 +10,7 @@ This IG supports incremental adoption through three conformance levels:
 |:-----:|-------|:-----------------:|:---------------:|
 | **1 — Starter** | Single domain (e.g., Vital Signs or Sleep) | 1–7 profiles | Low |
 | **2 — Multi-Domain** | 3+ domains with cross-domain data | 10–25 profiles | Medium |
-| **3 — Full** | All 11 domains, ConceptMaps, AI/CDSS, Regulatory | 82 profiles | High |
+| **3 — Full** | All 11 domains, ConceptMaps, AI/CDSS, Regulatory | 87 profiles | High |
 
 Implementers **SHOULD** start at Level 1 and progressively adopt additional domains.
 
@@ -49,7 +49,7 @@ A system claiming Level 3 conformance:
 
 ## Domain-Profile Matrix
 
-The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulatory compliance. The table below shows profile counts, MustSupport (MS) element ranges, and primary terminology per domain.
+The IG organizes 87 profiles across 11 lifestyle medicine domains plus regulatory compliance (LGPD, GDPR, EU AI Act, CFM 2.454, HIPAA). The table below shows profile counts, MustSupport (MS) element ranges, and primary terminology per domain.
 
 | # | Domain | Profiles | MS Range | Primary Terminology | Binding Strength |
 |:-:|--------|:--------:|:--------:|---------------------|:----------------:|
@@ -64,11 +64,67 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | 9 | **Substance Use** | 5 | 55 | SNOMED (tobacco, alcohol) + Custom | Required + Extensible |
 | 10 | **Advanced Metrics** | 18 | 12–30 | LOINC (80404-7, 97506-0) + Custom | Required + Extensible |
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
-| — | **Regulatory (LGPD/GDPR)** | 4 | 7–23 | Custom (AppLogicCS) | Required |
+| — | **Regulatory (LGPD/GDPR/EU AI Act)** | 6 | 7–23 | Custom (AppLogicCS, AgentCS) | Required |
 
-**Total**: 85 Profiles, 58 Extensions, 15 CodeSystems (1,115 custom codes + 34 ICD-11 codes), 193 ValueSets, 29 ConceptMaps.
+**Total**: 87 Profiles, 61 Extensions, 15 CodeSystems (1,123 custom codes + 34 ICD-11 codes), 197 ValueSets, 29 ConceptMaps.
 
 > **Note on ICD-11 CodeSystem (15th CS):** This CodeSystem republishes 34 WHO ICD-11 MMS codes under the IG namespace because ICD-11 is not yet available on tx.fhir.org for FHIR validation (as of March 2026). When tx.fhir.org adds ICD-11 support, ValueSets will migrate to the WHO official URL (`http://id.who.int/icd/release/11/mms`) and this CodeSystem will be removed, returning to 14 CodeSystems.
+
+## Regulatory Compliance Coverage
+
+This IG provides multi-jurisdictional regulatory compliance through dedicated FSH artefacts in `input/fsh/regulatory/`. The table below summarizes coverage per regulation and their cross-jurisdictional shared artefacts.
+
+### EU AI Act (Regulation 2024/1689) — ~85% coverage
+
+Implemented in `input/fsh/regulatory/EUAIActFoundation.fsh` plus reused artefacts from the AI/CDSS layer:
+
+| Article | Theme | Artefact |
+|---------|-------|----------|
+| Art. 5 | Prohibited practices | AgentDecisionSupportCS (4-tier risk classification) |
+| Art. 6 | High-risk classification | AIRiskClassificationVS |
+| **Art. 9** | **Risk management** | **RiskAssessmentAISystem profile** |
+| **Art. 10** | **Data governance** | **AITrainingDataGovernance extension** |
+| **Art. 11** | **Technical documentation** | **DocumentReferenceAITechnicalDoc profile** |
+| Art. 12 | Record-keeping | AuditEventAIInteraction |
+| Art. 13 | Transparency | AIInferenceMetadata, DeviceDefinitionSLM |
+| Art. 14 | Human oversight | PhysicianOverrideReasonVS (5 codes) |
+| **Art. 15** | **Accuracy & robustness** | **AIPerformanceMetrics extension** |
+
+8 new `AgentDecisionSupportCS` codes cover the EU AI Act lifecycle: `ai-risk-assessment-complete/pending`, `ai-technical-doc-model-card/impact-assessment`, `ai-performance-validated/monitoring`, `ai-training-data-certified/uncertified`.
+
+### LGPD (Lei 13.709/2018, Brazil) — Phase 1-3 complete
+
+Implemented in `LGPDFoundation.fsh`, `LGPDPhase2Profiles.fsh`, `LGPDPhase3Governance.fsh`:
+
+- **Phase 1**: `DataAnonymizationStatus` extension, processing-purpose VS, AI consent categories VS
+- **Phase 2**: `OrganizationDataController`, `PractitionerRoleDPO`, `TaskDataSubjectRequest` (Art. 18 rights)
+- **Phase 3**: `DataMinimizationScope`, `BiasDetectionFlag`, `CommunicationSecurityIncident` (Art. 48 ANPD notification), `DataAnonymizationMethodVS` (k-anonymity, differential-privacy, generalization, suppression, safe-harbor)
+
+### CFM 2.454/2025 (Brazil, medical AI) — All 4 phases complete
+
+Implemented in `CFM2454Compliance.fsh` — 12 new `AgentDecisionSupportCS` codes covering informed consent, data retention (20 years per Art. 4), AI recommendation review and electronic signature.
+
+### GDPR (Regulation 2016/679) — shared via cross-jurisdictional extensions
+
+Core GDPR requirements are met through extensions reused by LGPD/HIPAA/EU AI Act:
+- `DataAnonymizationStatus` (Art. 4(5) pseudonymization)
+- `DataMinimizationScope` (Art. 5(1)(c))
+- `BiasDetectionFlag` (Art. 22 automated decisions)
+
+### Cross-jurisdictional shared artefacts
+
+| Artefact | Shared by |
+|----------|-----------|
+| `DataAnonymizationStatus` | LGPD, GDPR, HIPAA |
+| `DataMinimizationScope` | LGPD, GDPR, HIPAA |
+| `BiasDetectionFlag` | LGPD, GDPR, EU AI Act |
+| `AITrainingDataGovernance` | EU AI Act, LGPD (Art. 7 lawful bases) |
+| `CommunicationSecurityIncident` | LGPD (ANPD), GDPR (DPA), HIPAA (OCR) |
+| `AgentDecisionSupportCS` (risk tiers) | EU AI Act Art. 5-6, CFM 2.454 |
+
+### HIPAA — mapping (not FSH-encoded)
+
+HIPAA requirements (Privacy Rule, Security Rule, Breach Notification) are mapped to existing artefacts via cross-jurisdictional comments. Dedicated HIPAA FSH planned for post-defense (~10h estimated).
 
 ## Terminology Requirements
 
@@ -80,7 +136,7 @@ The IG organizes 82 profiles across 11 lifestyle medicine domains plus regulator
 | **SNOMED CT** | 18 (23%) | ~4% of domain | Risk levels, clinical interpretation, procedures |
 | **Custom (TemporaryCS)** | 22 (27%) | ~82% of domain | 719 codes for unmapped lifestyle metrics |
 | **Custom (AppLogicCS)** | 12 (15%) | App logic | 277 codes for equipment, governance, regulatory |
-| **Custom (AgentCS)** | 3 (4%) | AI/CDSS | 107 codes for AI agent risk, model, override, events |
+| **Custom (AgentCS)** | 3 (4%) | AI/CDSS + Regulatory | 127 codes for AI agent risk, model, override, events, CFM, EU AI Act |
 | **UCUM** | 19 (24%) | Units only | All quantity values |
 
 ### Standard Codes (LOINC)
