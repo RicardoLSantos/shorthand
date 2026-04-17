@@ -60,10 +60,10 @@ não é especificado nenhum targetScope
 # for unitless or complex unit quantities.
 # =============================================================================
 
-Os códigos UCUM que contêm anotações legíveis por humanos como {score} podem ser enganadores
-Os códigos UCUM que contêm anotações legíveis por humanos como {rpm} podem ser enganadores
-Os códigos UCUM que contêm anotações legíveis por humanos como {spm} podem ser enganadores
-Os códigos UCUM que contêm anotações legíveis por humanos como {pack-years} podem ser enganadores
+Os códigos UCUM que contêm anotações legíveis por humanos como {score} podem ser enganadores (por exemplo, são ignorados quando se comparam unidades). A melhor prática é não depender de anotações no código UCUM, pelo que esta utilização deve ser verificada
+Os códigos UCUM que contêm anotações legíveis por humanos como {rpm} podem ser enganadores (por exemplo, são ignorados quando se comparam unidades). A melhor prática é não depender de anotações no código UCUM, pelo que esta utilização deve ser verificada
+Os códigos UCUM que contêm anotações legíveis por humanos como {spm} podem ser enganadores (por exemplo, são ignorados quando se comparam unidades). A melhor prática é não depender de anotações no código UCUM, pelo que esta utilização deve ser verificada
+Os códigos UCUM que contêm anotações legíveis por humanos como {pack-years} podem ser enganadores (por exemplo, são ignorados quando se comparam unidades). A melhor prática é não depender de anotações no código UCUM, pelo que esta utilização deve ser verificada
 
 # =============================================================================
 # VENDOR API CODESYSTEM WARNINGS (12 warnings)
@@ -180,7 +180,20 @@ The concept '247778001' has a status of inactive
 Review the extension type for data-protection-officer-reference
 
 # =============================================================================
-# Last updated: 2026-03-18 T1 S9 (greedy-twirling-lake)
+# T2 S16 (2026-04-17) — WARNING REDUCTION SPRINT
+# Full-text patterns (IG Publisher uses exact string match, not prefix)
+# =============================================================================
+
+# ObservationInterpretation version mismatch (12 warnings)
+# THO v7.1.0 uses v4.0.0 but value references v3.0.0 — upstream THO inconsistency
+The code system 'http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation' version '4.0.0' for the versionless include in the ValueSet include is different to the one in the value ('3.0.0')
+
+# Observation performer best practice (9 warnings)
+# Example bundles intentionally minimal (show multi-vendor flow, not full clinical workflow)
+Recomendação de boas práticas: Em geral, todas as observações devem ter um executante
+
+# =============================================================================
+# Last updated: 2026-04-17 T2 S16 (clever-mapping-abelson)
 # Covers: 23 IPS errors (baseline) + ~95 suppressed warnings
 # Phase 6a: Removed ICD11LifestyleCodeSystem, use WHO official URL
 # LGPD Phase 2+3: 4 example instances, ANPD/CFM URL suppressions
