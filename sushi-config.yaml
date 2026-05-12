@@ -9,7 +9,7 @@ name: IOSLifestyleMedicineHEADS2FMUP
 title: "iOS Lifestyle Medicine Implementation Guide"
 description: "A multi-vendor FHIR R4 Implementation Guide for integrating consumer wearable data into clinical workflows through lifestyle medicine domains. Covers 11 clinical domains across 7 device vendors with documented terminology gaps and OMOP CDM mappings."
 status: active
-version: 0.2.1
+version: 0.3.0
 experimental: false
 fhirVersion: 4.0.1
 copyrightYear: 2024+
@@ -39,6 +39,9 @@ dependencies:
   hl7.fhir.us.physical-activity: 1.0.0
   # Personal Health Device IG - device metadata (updated 2026-01-16)
   hl7.fhir.uv.phd: 1.1.0
+  # Bulk Data Access IG - $export operation + Group profile (added 2026-05-12 T2 S21)
+  # Resolves canonical: http://hl7.org/fhir/uv/bulkdata/OperationDefinition/group-export
+  hl7.fhir.uv.bulkdata: 2.0.0
 
 # Menu navigation - ÚNICA OCORRÊNCIA
 menu:

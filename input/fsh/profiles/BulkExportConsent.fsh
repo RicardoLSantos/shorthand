@@ -82,9 +82,11 @@ multi-jurisdictional policy structure from MultiJurisdictionalConsent
   * ^short = "Period during which consent is valid (typically research project duration)"
 
 // Actor — research personnel + sponsoring org
+// (provision.actor.role binding inherited from MultiJurisdictionalConsent parent
+// profile; do not re-bind here — IG Publisher 2.1.2 has resolution issues when
+// the child profile restates the same canonical from hl7.terminology.r4 package).
 * provision.actor 1..* MS
 * provision.actor.role 1..1 MS
-* provision.actor.role from http://terminology.hl7.org/ValueSet/security-role-type (extensible)
 * provision.actor.reference 1..1 MS
 
 // Action — what operations are permitted
@@ -252,7 +254,7 @@ Usage: #example
 * provision.class[0].code = #Observation
 
 // Extensions
-* extension[groupRef].valueReference.reference = "Group/bulk-export-group-hrv-decline-example"
+* extension[groupRef].valueReference.reference = "Group/BulkExportGroupHRVDeclineExample"
 * extension[projectMetadata].extension[irbApproval].valueString = "FMUP-IRB-2026-0042"
 * extension[projectMetadata].extension[projectId].valueIdentifier.system = "https://2rdoc.pt/research-projects"
 * extension[projectMetadata].extension[projectId].valueIdentifier.value = "HRV-DECLINE-90D-2026Q2"

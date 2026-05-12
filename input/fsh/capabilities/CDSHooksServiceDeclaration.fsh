@@ -17,6 +17,35 @@
 // ============================================================================
 
 // ============================================================================
+// CodeSystem: CDS Hooks 2.0 Hook Types (local enumeration)
+// ============================================================================
+// Per CDS Hooks 2.0 spec (https://cds-hooks.hl7.org/2.0/), hooks are open-set
+// identifiers ("the set of hooks defined here are not a closed set; anyone is
+// able to define new hooks to fit their use cases") and are NOT bound to a
+// canonical FHIR CodeSystem. This local CodeSystem provides FHIR-side
+// stability for binding hook identifiers in MessageDefinition / PlanDefinition
+// useContext elements without depending on an unpublished canonical.
+// ============================================================================
+
+CodeSystem: CDSHooksHookTypesCS
+Id: cds-hooks-hook-types
+Title: "CDS Hooks 2.0 Hook Types"
+Description: """
+Local CodeSystem enumerating CDS Hooks 2.0 hook identifiers used by this IG's
+reference server. Mirrors hook names defined by the CDS Hooks 2.0 specification
+(https://cds-hooks.hl7.org/2.0/) for stable FHIR-side binding.
+"""
+* ^status = #active
+* ^experimental = false
+* ^content = #complete
+* ^caseSensitive = true
+
+* #patient-view "Patient View" "Patient chart open hook — triggered when a practitioner views a patient"
+* #order-sign "Order Sign" "Order signature hook — triggered at the point of signing an order"
+* #medication-prescribe "Medication Prescribe" "Medication prescription hook — triggered at the point of medication order entry"
+* #encounter-discharge "Encounter Discharge" "Encounter discharge hook — triggered at the point of patient discharge"
+
+// ============================================================================
 // MessageDefinition: CDS Hooks Discovery Document
 // ============================================================================
 // Note: CDS Hooks 2.0 spec uses HTTP /cds-services endpoint returning JSON,
@@ -38,31 +67,31 @@ service intent + bound profile dependencies for FHIR-tooling discovery.
 * status = #active
 * date = "2026-05-07"
 * publisher = "Ricardo Lourenço dos Santos"
-* eventCoding = http://hl7.org/fhir/RestfulInteraction#operation
+* eventCoding = http://hl7.org/fhir/restful-interaction#operation "operation"
 * category = #notification
 
 // Service 1 — Lifestyle Risk Assessment on Patient View
 * useContext[0]
   * code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
-  * valueCodeableConcept = http://hl7.org/fhir/cdshooks#patient-view
+  * valueCodeableConcept = CDSHooksHookTypesCS#patient-view "Patient View"
   * valueCodeableConcept.text = "patient-view: Lifestyle risk assessment displayed when practitioner opens a patient chart. Returns recommendations based on activity, sleep, nutrition, stress, and substance use observations."
 
 // Service 2 — Order-Sign Lifestyle Counseling
 * useContext[1]
   * code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
-  * valueCodeableConcept = http://hl7.org/fhir/cdshooks#order-sign
+  * valueCodeableConcept = CDSHooksHookTypesCS#order-sign "Order Sign"
   * valueCodeableConcept.text = "order-sign: Lifestyle counseling recommendation triggered when a practitioner signs an order, especially medication orders for hypertension/diabetes/depression where lifestyle intervention is first-line. Suggests counseling order entry."
 
 // Service 3 — Medication-Prescribe Drug-Lifestyle Interaction
 * useContext[2]
   * code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
-  * valueCodeableConcept = http://hl7.org/fhir/cdshooks#medication-prescribe
+  * valueCodeableConcept = CDSHooksHookTypesCS#medication-prescribe "Medication Prescribe"
   * valueCodeableConcept.text = "medication-prescribe: Drug-lifestyle interaction warning. E.g., MAOI + tyramine-rich diet, SSRIs + alcohol, anticoagulants + Vitamin K rich foods."
 
 // Service 4 — Encounter-Discharge Lifestyle Plan
 * useContext[3]
   * code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
-  * valueCodeableConcept = http://hl7.org/fhir/cdshooks#encounter-discharge
+  * valueCodeableConcept = CDSHooksHookTypesCS#encounter-discharge "Encounter Discharge"
   * valueCodeableConcept.text = "encounter-discharge: Discharge lifestyle plan recommendation. Generates personalized lifestyle care plan based on diagnosis + wearable data history."
 
 // ============================================================================
@@ -96,7 +125,7 @@ Cards may include:
 
 * useContext[0]
   * code = http://terminology.hl7.org/CodeSystem/usage-context-type#focus
-  * valueCodeableConcept = http://hl7.org/fhir/cdshooks#patient-view
+  * valueCodeableConcept = CDSHooksHookTypesCS#patient-view "Patient View"
 
 * action[0]
   * title = "Evaluate lifestyle observations"
@@ -139,55 +168,55 @@ CDS Hooks JSON format) at HTTP GET /cds-services.
 * type = http://terminology.hl7.org/CodeSystem/library-type#asset-collection
 
 * parameter[0]
-  * name = "service-id-1"
+  * name = #service-id-1
   * use = #out
   * type = #string
   * documentation = "lifestyle-risk-patient-view"
 
 * parameter[1]
-  * name = "hook-1"
+  * name = #hook-1
   * use = #out
   * type = #string
   * documentation = "patient-view"
 
 * parameter[2]
-  * name = "prefetch-1-observations"
+  * name = #prefetch-1-observations
   * use = #out
   * type = #string
   * documentation = "Observation?patient={{context.patientId}}&category=lifestyle&date=ge{{today-30d}}"
 
 * parameter[3]
-  * name = "service-id-2"
+  * name = #service-id-2
   * use = #out
   * type = #string
   * documentation = "lifestyle-counseling-order-sign"
 
 * parameter[4]
-  * name = "hook-2"
+  * name = #hook-2
   * use = #out
   * type = #string
   * documentation = "order-sign"
 
 * parameter[5]
-  * name = "service-id-3"
+  * name = #service-id-3
   * use = #out
   * type = #string
   * documentation = "drug-lifestyle-interaction-rx"
 
 * parameter[6]
-  * name = "hook-3"
+  * name = #hook-3
   * use = #out
   * type = #string
   * documentation = "medication-prescribe"
 
 * parameter[7]
-  * name = "service-id-4"
+  * name = #service-id-4
   * use = #out
   * type = #string
   * documentation = "discharge-lifestyle-plan"
 
 * parameter[8]
-  * name = "hook-4"
+  * name = #hook-4
   * use = #out
   * type = #string
   * documentation = "encounter-discharge"

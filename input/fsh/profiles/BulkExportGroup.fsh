@@ -61,22 +61,40 @@ the 11 lifestyle medicine domains for research/quality-improvement use.
   * ^short = "Research org, IRB, or QI committee sponsoring the cohort"
 
 // Characteristic slicing — define cohort criteria
+// IG Publisher requires every slice with discriminator type=#pattern to have
+// a fixed value, pattern, or required binding on the discriminator path.
+// Lifestyle-metric criteria use any LOINC code from LifestyleMetricCohortCriteriaVS
+// (extensible), so they are represented as UN-SLICED characteristic entries
+// rather than a dedicated slice (which would have no fixed pattern).
+// The fixed-code slices ageRange (LOINC 30525-0) and clinicalCondition
+// (LOINC 11450-4) remain explicit because each has a unique discriminating
+// LOINC code.
 * characteristic ^slicing.discriminator.type = #pattern
 * characteristic ^slicing.discriminator.path = "code"
 * characteristic ^slicing.rules = #open
-* characteristic ^slicing.description = "Cohort criteria slices (lifestyle metric, demographic, clinical condition)"
+* characteristic ^slicing.description = "Cohort criteria slices for demographic (ageRange) and clinical (clinicalCondition) constraints; lifestyle-metric criteria use un-sliced characteristic with LOINC binding."
 * characteristic contains
-    lifestyleMetric 0..* MS and
     ageRange 0..1 MS and
     clinicalCondition 0..* MS
 
-// Lifestyle metric criterion (e.g., HRV-decline pattern)
-* characteristic[lifestyleMetric].code 1..1 MS
-* characteristic[lifestyleMetric].code from LifestyleMetricCohortCriteriaVS (extensible)
-* characteristic[lifestyleMetric].value[x] 1..1 MS
-* characteristic[lifestyleMetric].exclude 1..1 MS
-* characteristic[lifestyleMetric].period 1..1 MS
-  * ^short = "Period over which metric criterion applies (e.g., last 90 days)"
+// Base characteristic constraints for un-sliced lifestyle-metric criteria
+// (e.g., HRV-decline pattern, sleep duration threshold, step-count threshold).
+// Authors SHOULD use LOINC codes from LifestyleMetricCohortCriteriaVS for code values.
+//
+// NOTE: VS binding on characteristic.code is NOT declared at base level.
+// IG Publisher 2.1.2 propagates the binding metadata to characteristic.value[x],
+// triggering a spurious "no bindable types [Range]" error when slices (ageRange)
+// use valueRange. The VS remains documented (see LifestyleMetricCohortCriteriaVS)
+// and authors should follow it; explicit FHIR binding deferred to v0.4.0 after
+// IG Publisher upgrade resolves the propagation behaviour.
+//
+// Slice fixed codes (ageRange→LOINC#30525-0, clinicalCondition→LOINC#11450-4)
+// are independently enforced. Cardinality on value[x] is inherited from FHIR R4
+// Group.characteristic.value[x] (1..1) without re-declaration.
+* characteristic.code 1..1 MS
+* characteristic.exclude 1..1 MS
+* characteristic.period 0..1 MS
+  * ^short = "Period over which the criterion applies (e.g., last 90 days for HRV-decline)"
 
 // Age range criterion
 * characteristic[ageRange].code 1..1 MS
@@ -86,7 +104,7 @@ the 11 lifestyle medicine domains for research/quality-improvement use.
 
 // Clinical condition criterion
 * characteristic[clinicalCondition].code 1..1 MS
-* characteristic[clinicalCondition].code = http://loinc.org#11450-4 "Problem list"
+* characteristic[clinicalCondition].code = http://loinc.org#11450-4 "Problem list - Reported"
 * characteristic[clinicalCondition].valueCodeableConcept 1..1 MS
 * characteristic[clinicalCondition].exclude 1..1 MS
 
@@ -158,7 +176,7 @@ in IG terminology gap analysis (see HeartRateVariabilityCodeSystem.fsh).
 * ^experimental = false
 
 // HRV criteria
-* http://loinc.org#80404-7 "R-R interval.standard deviation [Time] - SDNN"
+* http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * http://loinc.org#76643-6 "R-R interval.standard deviation by EKG"
 * http://loinc.org#76644-4 "R-R interval.coefficient of variation"
 
@@ -205,8 +223,9 @@ Usage: #example
 * name = "HRV-decline-90d-2026Q2-cohort-001"
 * quantity = 247
 
-* characteristic[lifestyleMetric][0]
-  * code = http://loinc.org#80404-7 "R-R interval.standard deviation [Time] - SDNN"
+// Un-sliced characteristic — HRV-decline criterion (lifestyle-metric semantic)
+* characteristic[0]
+  * code = http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
   * valueRange.low.value = 30.0
   * valueRange.low.unit = "ms"
   * valueRange.high.value = 50.0
@@ -223,4 +242,4 @@ Usage: #example
   * valueRange.high.unit = "a"
   * exclude = false
 
-* extension[consentRef].valueReference.reference = "Consent/bulk-export-consent-hrv-decline-2026Q2"
+* extension[consentRef].valueReference.reference = "Consent/BulkExportConsentHRVResearchExample"

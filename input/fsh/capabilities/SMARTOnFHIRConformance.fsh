@@ -42,8 +42,15 @@ with all 11 lifestyle medicine domains + AI/CDSS profiles.
 * format[1] = #xml
 * implementationGuide = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ImplementationGuide/iOS-Lifestyle-Medicine"
 
-// SMART instantiates declaration
-* instantiates[0] = "http://hl7.org/fhir/smart-app-launch/CapabilityStatement/smart-app-launch"
+// SMART instantiates declaration.
+// NOTE: SMART STU2.2 publishes CapabilityStatements with package-specific
+// canonical URLs; the IG Publisher 2.1.2 does not always resolve them
+// reliably depending on the loaded SMART package version. We declare SMART
+// conformance via the security.service coding (#SMART-on-FHIR) and the
+// narrative below; the instantiates link is omitted to avoid canonical
+// resolution failures. Reviewers verifying SMART conformance should consult
+// the smart.security.service declaration and the /.well-known/smart-configuration
+// endpoint required by SMART STU2.2.
 
 * rest[0]
   * mode = #server
@@ -57,7 +64,14 @@ with all 11 lifestyle medicine domains + AI/CDSS profiles.
     * service[0] = http://terminology.hl7.org/CodeSystem/restful-security-service#SMART-on-FHIR "SMART-on-FHIR"
     * service[0].text = "SMART on FHIR App Launch STU2.2 with OAuth 2.0 + OpenID Connect"
 
-    // OAuth 2.0 endpoint URLs via standard SMART extension
+    // OAuth 2.0 endpoint URLs via standard SMART extension.
+    // SMART STU2.2 deprecated the CapabilityStatement-based discovery in favor
+    // of /.well-known/smart-configuration JSON (HTTP-side); the oauth-uris
+    // extension below remains for legacy SMART clients (DSTU2/STU1) and only
+    // declares the 4 sub-extensions defined in the legacy extension shape
+    // (authorize, token, register, manage). Introspect + revoke endpoints
+    // live in the /.well-known/smart-configuration document and the security
+    // narrative below.
     * extension[0]
       * url = "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris"
       * extension[0].url = "authorize"
@@ -68,10 +82,6 @@ with all 11 lifestyle medicine domains + AI/CDSS profiles.
       * extension[2].valueUri = "https://2rdoc.pt/auth/register"
       * extension[3].url = "manage"
       * extension[3].valueUri = "https://2rdoc.pt/auth/manage"
-      * extension[4].url = "introspect"
-      * extension[4].valueUri = "https://2rdoc.pt/auth/introspect"
-      * extension[5].url = "revoke"
-      * extension[5].valueUri = "https://2rdoc.pt/auth/revoke"
 
     // Supported launch contexts — patient, practitioner, encounter
     * description = """
@@ -171,22 +181,22 @@ Description: "Enumeration of SMART on FHIR App Launch scopes supported by this I
 * ^status = #active
 * ^experimental = false
 
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#patient-rs "patient/*.rs"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#patient-cruds "patient/*.cruds"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#user-rs "user/*.rs"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#system-rs "system/*.rs"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#openid-fhirUser "openid fhirUser"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#offline-access "offline_access"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#launch "launch"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#launch-patient "launch/patient"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#launch-practitioner "launch/practitioner"
-* http://terminology.hl7.org/CodeSystem/iOSLifestyleMedicineSMARTScopes#launch-encounter "launch/encounter"
+* IOSLifestyleMedicineSMARTScopes#patient-rs "patient/*.rs"
+* IOSLifestyleMedicineSMARTScopes#patient-cruds "patient/*.cruds"
+* IOSLifestyleMedicineSMARTScopes#user-rs "user/*.rs"
+* IOSLifestyleMedicineSMARTScopes#system-rs "system/*.rs"
+* IOSLifestyleMedicineSMARTScopes#openid-fhirUser "openid fhirUser"
+* IOSLifestyleMedicineSMARTScopes#offline-access "offline_access"
+* IOSLifestyleMedicineSMARTScopes#launch "launch"
+* IOSLifestyleMedicineSMARTScopes#launch-patient "launch/patient"
+* IOSLifestyleMedicineSMARTScopes#launch-practitioner "launch/practitioner"
+* IOSLifestyleMedicineSMARTScopes#launch-encounter "launch/encounter"
 
 // ============================================================================
 // CodeSystem: SMART Scopes (local for ValueSet binding stability)
 // ============================================================================
 
-CodeSystem: iOSLifestyleMedicineSMARTScopes
+CodeSystem: IOSLifestyleMedicineSMARTScopes
 Id: ios-lm-smart-scopes
 Title: "iOS Lifestyle Medicine SMART Scopes CodeSystem"
 Description: "Local CodeSystem for SMART on FHIR App Launch scopes used by this IG. Mirrors canonical SMART scopes from STU2.2 specification for stable ValueSet binding."

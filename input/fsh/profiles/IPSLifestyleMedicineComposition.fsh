@@ -39,7 +39,11 @@ Sections include:
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 // Composition metadata
-* type = $LOINC#60591-5 "Patient summary Document"
+// NOTE: Composition.type pattern is inherited from IPS parent profile
+// (LOINC 60591-5 "International Patient Summary"). Child profile does not
+// re-declare to avoid IG Publisher patternCodeableConcept differential error
+// (when child re-declares type, SUSHI emits incomplete patternCodeableConcept
+// in differential — parent's pattern already covers conformance).
 * title = "Patient Summary - Lifestyle Medicine"
 
 // =============================================================================

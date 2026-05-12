@@ -73,6 +73,7 @@ operation logs, and HIPAA Privacy Rule §164.528 accounting of disclosures.
 // Accessor agent — who performed the access
 * agent[accessor].type 1..1 MS
   * ^short = "Always identifies the human or system actor performing the access"
+* agent[accessor].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT "author (originator)"
 * agent[accessor].who 1..1 MS
   * ^short = "Reference to Practitioner, Patient, Device, or RelatedPerson"
 * agent[accessor].requestor 1..1 MS
@@ -80,10 +81,11 @@ operation logs, and HIPAA Privacy Rule §164.528 accounting of disclosures.
 
 // Recipient agent (for disclosures) — who received the data
 * agent[recipient].type 1..1 MS
+* agent[recipient].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP "information recipient"
 * agent[recipient].who 1..1 MS
   * ^short = "Reference to recipient (e.g., another Practitioner, Organization, or external system)"
-* agent[recipient].requestor 0..1
-  * ^short = "Typically false for recipients"
+* agent[recipient].requestor 1..1 MS
+  * ^short = "Typically false for recipients (FHIR base AuditEvent.agent.requestor is 1..1; set to false in instances)"
 
 // Source — where the audit was generated
 * source 1..1 MS
@@ -109,12 +111,16 @@ operation logs, and HIPAA Privacy Rule §164.528 accounting of disclosures.
 * entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 
 // Accessed resource entity
+* entity[accessedResource].type 1..1 MS
+* entity[accessedResource].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[accessedResource].what 1..1 MS
   * ^short = "Reference to the actual resource accessed (Observation, DocumentReference, etc.)"
 * entity[accessedResource].role 0..1 MS
   * ^short = "Role of the entity (e.g., 4=Domain resource)"
 
 // Query filter entity (for searches/exports)
+* entity[queryFilter].type 1..1 MS
+* entity[queryFilter].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#4 "Other"
 * entity[queryFilter].query 1..1 MS
   * ^short = "Encoded query/filter applied (for bulk exports)"
 * entity[queryFilter].name 0..1 MS
@@ -164,12 +170,19 @@ Usage: #example
 * outcome = #0
 * purposeOfEvent[0] = http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH "healthcare research"
 
-* agent[accessor].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT "author"
+* agent[accessor].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#AUT "author (originator)"
 * agent[accessor].who.reference = "Practitioner/researcher-001"
 * agent[accessor].requestor = true
 
 * source.observer.reference = "Device/lifestyle-medicine-fhir-server"
 * source.type = http://terminology.hl7.org/CodeSystem/security-source-type#4 "Application Server"
 
+* entity[queryFilter].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#4 "Other"
+// FHIR R4 AuditEvent.entity invariant sev-2: "Either a name or a query (NOT both)".
+// Example uses query (Base64-encoded query string); description carried in .type.display.
 * entity[queryFilter].query = "R3JvdXAtSWQ9bGlmZXN0eWxlLW1lZC1jb2hvcnQ="
-* entity[queryFilter].name = "Lifestyle medicine cohort export filter"
+
+// Accessed resource entity slice (satisfies entity[accessedResource] min 1..*)
+* entity[accessedResource].what.reference = "Group/lifestyle-med-cohort"
+* entity[accessedResource].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
+* entity[accessedResource].role = http://terminology.hl7.org/CodeSystem/object-role#4 "Domain Resource"
