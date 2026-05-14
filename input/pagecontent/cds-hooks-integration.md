@@ -2,7 +2,7 @@
 
 This page documents how the iOS Lifestyle Medicine FHIR IG declares **CDS Hooks 2.0** services for clinical decision support integration. A CDS service exposes a deterministic, structured response to a clinical event ("hook"), allowing host EHRs to surface contextual recommendations at the point of decision without changing the host's user interface.
 
-The companion FSH artifact is [CDSHooksServiceDeclaration.fsh](StructureDefinition-LifestyleMedicineCDSHooksDiscovery.html) — a FHIR-side metadata document for the four lifestyle medicine CDS services declared by this IG. The runtime discovery endpoint, however, is HTTP-side (`GET /cds-services` returning JSON per the CDS Hooks 2.0 spec).
+The companion FSH artifact is [CDSHooksServiceDeclaration.fsh](MessageDefinition-LifestyleMedicineCDSHooksDiscovery.html) — a FHIR-side metadata document for the four lifestyle medicine CDS services declared by this IG. The runtime discovery endpoint, however, is HTTP-side (`GET /cds-services` returning JSON per the CDS Hooks 2.0 spec).
 
 ## Overview
 
@@ -119,7 +119,7 @@ CDS Hooks discovery is HTTP-side and returns a JSON document at `GET <base>/cds-
 }
 ```
 
-The FHIR-side metadata for these four services is captured in [LifestyleMedicineCDSHooksDiscovery](StructureDefinition-LifestyleMedicineCDSHooksDiscovery.html) (MessageDefinition) and [LifestyleMedicineCDSServicesRegistry](Library-LifestyleMedicineCDSServicesRegistry.html) (Library). The actual `/cds-services` JSON document is generated at runtime by the reference CDS server, transforming the Library parameters into CDS Hooks JSON.
+The FHIR-side metadata for these four services is captured in [LifestyleMedicineCDSHooksDiscovery](MessageDefinition-LifestyleMedicineCDSHooksDiscovery.html) (MessageDefinition) and [LifestyleMedicineCDSServicesRegistry](Library-LifestyleMedicineCDSServicesRegistry.html) (Library). The actual `/cds-services` JSON document is generated at runtime by the reference CDS server, transforming the Library parameters into CDS Hooks JSON.
 
 ## Four-Step Validation Framework
 
@@ -132,7 +132,7 @@ CDS service validation should follow the four-stage framework articulated by [Wa
 | **3** | Pre-implementation validation (prospective) | Alert override rate < 90%, alert fatigue trend stable | override rate, time-to-action |
 | **4** | Post-implementation validation (prospective, ongoing) | Sustained clinical benefit; no measurable harm | outcome trend, near-miss rate |
 
-The IG recommends that any production deployment of these four services pass Steps 1-2 before pre-implementation pilot, and Step 3 before general availability. Step 4 is continuous and integrates with the audit pipeline (see [AuditEventDataAccess](StructureDefinition-AuditEventDataAccess.html) and AuditEventAIInteraction).
+The IG recommends that any production deployment of these four services pass Steps 1-2 before pre-implementation pilot, and Step 3 before general availability. Step 4 is continuous and integrates with the audit pipeline (see [AuditEventDataAccess](StructureDefinition-audit-event-data-access.html) and AuditEventAIInteraction).
 
 Alert fatigue is a documented failure mode: published override rates for first-generation CDS systems span 49–96 % (Wasylewicz, ibid., synthesising meta-analyses). The validation gates above are tuned to detect and avert that drift before clinical harm.
 
@@ -154,14 +154,14 @@ This addresses **Pitfall #95** (FHIR schema drift) in a CDS-specific context: a 
 
 ## Cross-References
 
-- [CDSHooksServiceDeclaration / MessageDefinition](StructureDefinition-LifestyleMedicineCDSHooksDiscovery.html) (FSH-defined)
+- [CDSHooksServiceDeclaration / MessageDefinition](MessageDefinition-LifestyleMedicineCDSHooksDiscovery.html) (FSH-defined)
 - [LifestyleRiskAssessmentPlanDefinition](PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html) (PlanDefinition logic encoding)
 - [LifestyleMedicineCDSServicesRegistry](Library-LifestyleMedicineCDSServicesRegistry.html) (Library)
 - [CDSHooksHookTypesCS](CodeSystem-cds-hooks-hook-types.html) (local CodeSystem, 4 hooks)
 - [SMART on FHIR Integration](smart-on-fhir-integration.html) (companion narrative)
 - [CFM Resolution 2.454/2026 Compliance](cfm-2454-compliance.html) (AI disclosure on cards)
 - [Data Protection Policies](data-protection-policies.html) (audit + consent overlay)
-- [AuditEventAIInteraction](StructureDefinition-AuditEventAIInteraction.html) (CDS card output auditing)
+- [AuditEventAIInteraction](StructureDefinition-audit-event-ai-interaction.html) (CDS card output auditing)
 
 ## Normative References
 

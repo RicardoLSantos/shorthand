@@ -124,8 +124,8 @@ Apps claiming conformance to this IG MUST:
 3. Honor `aud` parameter (set to FHIR base URL) on standalone launch.
 4. Validate the `id_token` signature and `iss` claim when using OpenID Connect.
 5. Refresh access tokens via `offline_access` when long-lived sessions are required (e.g., wearable sync workers).
-6. Log all data-access operations to `AuditEvent` resources conformant to [AuditEventDataAccess](StructureDefinition-AuditEventDataAccess.html).
-7. Respect patient consent decisions encoded in [MultiJurisdictionalConsent](StructureDefinition-MultiJurisdictionalConsent.html) before exposing personal data.
+6. Log all data-access operations to `AuditEvent` resources conformant to [AuditEventDataAccess](StructureDefinition-audit-event-data-access.html).
+7. Respect patient consent decisions encoded in [MultiJurisdictionalConsent](StructureDefinition-multi-jurisdictional-consent.html) before exposing personal data.
 
 Servers claiming conformance MUST additionally:
 
@@ -141,12 +141,12 @@ Servers claiming conformance MUST additionally:
 - [SMART Launch Scopes ValueSet](ValueSet-smart-launch-scope-vs.html)
 - [CDS Hooks Integration](cds-hooks-integration.html) (complementary clinical decision support)
 - [Data Protection Policies](data-protection-policies.html) (LGPD + GDPR + HIPAA mapping)
-- [Multi-Jurisdictional Consent](StructureDefinition-MultiJurisdictionalConsent.html)
-- [AuditEvent Data Access Profile](StructureDefinition-AuditEventDataAccess.html)
+- [Multi-Jurisdictional Consent](StructureDefinition-multi-jurisdictional-consent.html)
+- [AuditEvent Data Access Profile](StructureDefinition-audit-event-data-access.html)
 
 ## Normative References
 
-- [HL7 SMART App Launch STU2.2](http://hl7.org/fhir/smart-app-launch/STU2.2/) (trial use, ballot)
+- [HL7 SMART App Launch STU2.2](https://hl7.org/fhir/smart-app-launch/STU2.2/index.html) (trial use, ballot)
 - [OAuth 2.0 RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749)
 - [OAuth 2.0 Token Introspection RFC 7662](https://datatracker.ietf.org/doc/html/rfc7662)
 - [OAuth 2.0 Token Revocation RFC 7009](https://datatracker.ietf.org/doc/html/rfc7009)
