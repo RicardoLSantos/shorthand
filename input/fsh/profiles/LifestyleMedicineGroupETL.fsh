@@ -209,6 +209,10 @@ HRV (SDNN + RMSSD) + sleep + activity observations for downstream analysis.
 * actual = false
 * active = true
 * code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/bulk-export-group-category#research
+* name = "ETL-AppleHealthKit-HRVdecline-90d-2026Q2-cohort-001"
+
+// Inherited from BulkExportGroup parent (1..* MS): consent reference
+* extension[consentRef].valueReference.reference = "Consent/BulkExportConsentHRVResearchExample"
 
 * extension[vendorCohort].valueCodeableConcept.text = "Apple HealthKit"
 * extension[timeWindow].valuePeriod.start = "2026-02-19"
