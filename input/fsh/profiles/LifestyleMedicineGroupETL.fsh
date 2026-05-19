@@ -221,7 +221,7 @@ HRV (SDNN + RMSSD) + sleep + activity observations for downstream analysis.
 * extension[destination].valueUrl = "https://2rdoc.pt/fhir/warehouse/research"
 
 * characteristic[measurementTypeFilter][0].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#measurement-type
-* characteristic[measurementTypeFilter][0].valueCodeableConcept = http://loinc.org#80404-7 "R-R interval.standard deviation"
+* characteristic[measurementTypeFilter][0].valueCodeableConcept = http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * characteristic[measurementTypeFilter][0].exclude = false
 
 * characteristic[vendorFilter][0].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#vendor
