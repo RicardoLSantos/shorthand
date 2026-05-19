@@ -62,10 +62,10 @@ Cross-profile dependencies:
     DestinationWarehouse named destination 0..1 MS
 
 // Tighten characteristic — at least vendor + measurement type filters expected
+// NOTE: inherit slicing discriminator (#pattern at code) from BulkExportGroup parent;
+//       do NOT redeclare ^slicing.discriminator.type/path because changing #pattern → #value
+//       is invalid per FHIR R4 ProfileUtilities (cannot change discriminator across profile chain)
 * characteristic 1..* MS
-* characteristic ^slicing.discriminator.type = #value
-* characteristic ^slicing.discriminator.path = "code"
-* characteristic ^slicing.rules = #open
 
 * characteristic contains
     measurementTypeFilter 0..* MS and
