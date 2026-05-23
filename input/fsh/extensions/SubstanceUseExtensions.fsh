@@ -18,7 +18,7 @@ Context: Observation
 ValueSet: SubstanceUseMotivationVS
 Id: substance-use-motivation-vs
 Title: "Substance Use Motivation ValueSet"
-Description: "Stages of change (Prochaska Transtheoretical Model) using standard SNOMED CT qualifier values. Replaces custom codes per Cat B remediation (2026-02-27)."
+Description: "Stages of change (Prochaska Transtheoretical Model) using standard SNOMED CT qualifier values. Replaces custom codes per Cat B remediation (2026-02-27). Deprecated SNOMED 134409004 (Relapse stage) updated to active 263855007 (Relapse phase) — no family-consistent successor exists; semantic match chosen over the generic parent 134408007 (Database-First, 2026-05-23)."
 * ^experimental = false
 * ^version = "0.2.0"
 * http://snomed.info/sct#134414000 "Precontemplation stage"
@@ -26,7 +26,7 @@ Description: "Stages of change (Prochaska Transtheoretical Model) using standard
 * http://snomed.info/sct#134412001 "Preparation stage"
 * http://snomed.info/sct#134411008 "Action stage"
 * http://snomed.info/sct#134410009 "Maintenance stage"
-* http://snomed.info/sct#134409004 "Relapse stage"
+* http://snomed.info/sct#263855007 "Relapse phase"
 Extension: SubstanceUseTrigger
 Id: substance-use-trigger
 Title: "Substance Use Trigger"
