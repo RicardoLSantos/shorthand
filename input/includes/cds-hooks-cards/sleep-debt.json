@@ -1,0 +1,48 @@
+{
+  "cards": [
+    {
+      "uuid": "c3a7e4b2-3d5f-4a0c-9b2e-4f6a8c0d3e51",
+      "summary": "Sleep debt accumulating (mean 5.8 h over 9 days) - review sleep hygiene",
+      "indicator": "info",
+      "detail": "Mean nightly sleep duration has stayed below the AASM-recommended 7 hours for 9 consecutive days (current mean 5.8 h). Cumulative sleep restriction is associated with impaired glucose tolerance, elevated inflammatory markers, and reduced HRV.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Lifestyle Risk Assessment",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "patient-view",
+          "display": "Lifestyle Risk Assessment"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Open lifestyle counseling care plan (sleep hygiene)",
+          "uuid": "d4b8f5c3-4e6a-4b1d-8c3f-5a7b9d1e4f62",
+          "actions": [
+            {
+              "type": "create",
+              "description": "Create a sleep-hygiene-focused lifestyle counseling CarePlan",
+              "resource": {
+                "resourceType": "CarePlan",
+                "status": "draft",
+                "intent": "proposal",
+                "category": [
+                  { "text": "Sleep hygiene lifestyle counseling" }
+                ],
+                "subject": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "at-most-one",
+      "links": [
+        {
+          "label": "AASM-aligned sleep hygiene patient handout",
+          "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/advanced_vitalsigns.html",
+          "type": "absolute"
+        }
+      ]
+    }
+  ]
+}

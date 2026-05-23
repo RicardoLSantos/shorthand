@@ -1,0 +1,60 @@
+{
+  "cards": [
+    {
+      "uuid": "a1f5c2e0-1b3d-4e8a-9c7f-0d2e6a8b4c10",
+      "summary": "RMSSD trending down (mean 28 ms over 14 days) - consider recovery review",
+      "indicator": "warning",
+      "detail": "Root Mean Square of Successive Differences (RMSSD), the primary parasympathetic HRV marker, has declined for 14 consecutive days (current mean 28 ms vs prior baseline 41 ms). Sustained decline may indicate overtraining, accumulated stress, or sympathetic dominance. RMSSD has no LOINC code; this observation uses the IG custom code `#hrv-rmssd` (HeartRateVariabilityCodeSystem), not a fabricated LOINC code.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Lifestyle Risk Assessment",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "patient-view",
+          "display": "Lifestyle Risk Assessment"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Refer for polysomnography (sleep study)",
+          "uuid": "b2e6d3f1-2c4e-4f9b-8a1d-3e5f7b9c2d40",
+          "isRecommended": true,
+          "actions": [
+            {
+              "type": "create",
+              "description": "Create ServiceRequest for polysomnography to evaluate RMSSD decline correlated with sleep fragmentation",
+              "resource": {
+                "resourceType": "ServiceRequest",
+                "status": "draft",
+                "intent": "proposal",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "60554003",
+                      "display": "Polysomnography"
+                    }
+                  ]
+                },
+                "subject": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "any",
+      "links": [
+        {
+          "label": "View full RMSSD trajectory (SMART app)",
+          "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/smart-on-fhir-integration.html",
+          "type": "smart"
+        },
+        {
+          "label": "Wasylewicz & Scheepers-Hoeks (2019) Ch.11 - CDS validation framework",
+          "url": "https://doi.org/10.1007/978-3-319-99713-1_11",
+          "type": "absolute"
+        }
+      ]
+    }
+  ]
+}

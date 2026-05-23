@@ -1,0 +1,51 @@
+{
+  "cards": [
+    {
+      "uuid": "e5c9a6d4-5f7b-4c2e-9d4a-6b8c0e2f5a73",
+      "summary": "Polypharmacy threshold reached (6 chronic agents) - consider deprescribing review",
+      "indicator": "warning",
+      "detail": "Signing this prescription brings the active chronic medication count to 6, crossing the polypharmacy threshold (>= 5 chronic agents). Beers Criteria and STOPP/START guidance recommend a structured deprescribing review, with lifestyle interventions as first-line where appropriate. This recommendation is generated with AI assistance; the source attribution below carries the mandatory transparency disclosure.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Drug-Lifestyle CDS (AI-assisted; CFM 2.454/2026 Art. 4 disclosure)",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "medication-prescribe",
+          "display": "Drug-Lifestyle Interaction Warning"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Launch lifestyle medicine deprescribing protocol",
+          "uuid": "f6d0b7e5-6a8c-4d3f-8e5b-7c9d1f3a6b84",
+          "actions": [
+            {
+              "type": "create",
+              "description": "Initiate a deprescribing review task (Beers / STOPP-START) with lifestyle-first substitution where indicated",
+              "resource": {
+                "resourceType": "Task",
+                "status": "draft",
+                "intent": "proposal",
+                "description": "Structured deprescribing review with lifestyle-first substitution where indicated",
+                "for": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "any",
+      "links": [
+        {
+          "label": "Evidence-based deprescribing toolkit",
+          "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html",
+          "type": "absolute"
+        },
+        {
+          "label": "CFM Resolution 2.454/2026 compliance (AI disclosure requirement)",
+          "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html",
+          "type": "absolute"
+        }
+      ]
+    }
+  ]
+}

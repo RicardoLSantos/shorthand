@@ -64,37 +64,161 @@ The set of hooks is open per CDS Hooks 2.0; sites MAY introduce additional servi
 
 **Cards emitted**: one comprehensive Card with up to three suggested CarePlan instances (low / moderate / high intervention intensity).
 
-## Card Examples (illustrative)
+## Card Examples (concrete)
 
-These illustrative Card payloads show how each service serializes recommendations per the CDS Hooks 2.0 Card schema. The example values reflect the IG's eleven-domain coverage but are not normative; concrete Card JSON schemas are linked at the end of this page.
+The following are **concrete, copy-pasteable Card payloads** showing how each service serialises recommendations per the CDS Hooks 2.0 Card schema (a service returns `{ "cards": [ ... ] }`). The values are illustrative, not normative. The same payloads are committed as standalone files under `input/includes/cds-hooks-cards/` (`hrv-overtraining.json`, `sleep-debt.json`, `polypharmacy.json`) so reference implementations can validate them against the published Card schema (see [JSON Schema Validation Strategy](#json-schema-validation-strategy)).
+
+> **Terminology integrity note.** RMSSD, pNN50, and LF/HF power have **no LOINC code** (verified against LOINC via the project's Database-First protocol). The HRV Card below references the IG custom code `#hrv-rmssd` from `HeartRateVariabilityCodeSystem` — *not* a fabricated LOINC code. Every clinical code in these examples is database-verified (e.g., SNOMED CT `60554003` Polysomnography — confirmed, **not** `23056005` which is *Sciatica*). This is the same discipline that the [ConceptMaps](conceptmaps.html) follow throughout the IG.
 
 ### HRVOvertraining Card (from `patient-view`)
 
-A Card summarizing a declining RMSSD trend over the last 14 days, suggesting potential overtraining or sympathetic dominance. The Card includes:
+A declining RMSSD trend over the last 14 days, suggesting potential overtraining or sympathetic dominance. Indicator `warning`; the `source` element (singular per CDS Hooks 2.0 — the schema field is `source`, **not** `sources`) points to [LifestyleRiskAssessmentPlanDefinition](PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html); the suggestion proposes a polysomnography referral; the validation link references [Wasylewicz & Scheepers-Hoeks 2019](https://doi.org/10.1007/978-3-319-99713-1_11) Chapter 11.
 
-- **Summary**: "RMSSD trending down (mean 28 ms, last 14 days) — consider recovery review"
-- **Indicator**: `warning`
-- **Source**: declared in the Card's `source` element (singular per CDS Hooks 2.0 Card schema — note the schema field is `source` not `sources`) pointing to the [LifestyleRiskAssessmentPlanDefinition](PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html) canonical URL.
-- **Suggestion**: launch a SMART app to view full RMSSD trajectory; optionally place a referral order for sleep study if RMSSD decline correlates with sleep fragmentation.
-- **Link**: detailed recommendation page in the IG, including reference to [Wasylewicz & Scheepers-Hoeks 2019](https://doi.org/10.1007/978-3-319-99713-1_11) Chapter 11 four-step validation framework.
+```json
+{
+  "cards": [
+    {
+      "uuid": "a1f5c2e0-1b3d-4e8a-9c7f-0d2e6a8b4c10",
+      "summary": "RMSSD trending down (mean 28 ms over 14 days) - consider recovery review",
+      "indicator": "warning",
+      "detail": "Root Mean Square of Successive Differences (RMSSD), the primary parasympathetic HRV marker, has declined for 14 consecutive days (current mean 28 ms vs prior baseline 41 ms). RMSSD has no LOINC code; this observation uses the IG custom code #hrv-rmssd (HeartRateVariabilityCodeSystem), not a fabricated LOINC code.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Lifestyle Risk Assessment",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "patient-view",
+          "display": "Lifestyle Risk Assessment"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Refer for polysomnography (sleep study)",
+          "uuid": "b2e6d3f1-2c4e-4f9b-8a1d-3e5f7b9c2d40",
+          "isRecommended": true,
+          "actions": [
+            {
+              "type": "create",
+              "description": "Create ServiceRequest for polysomnography to evaluate RMSSD decline correlated with sleep fragmentation",
+              "resource": {
+                "resourceType": "ServiceRequest",
+                "status": "draft",
+                "intent": "proposal",
+                "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "60554003", "display": "Polysomnography" } ] },
+                "subject": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "any",
+      "links": [
+        { "label": "View full RMSSD trajectory (SMART app)", "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/smart-on-fhir-integration.html", "type": "smart" },
+        { "label": "Wasylewicz & Scheepers-Hoeks (2019) Ch.11 - CDS validation framework", "url": "https://doi.org/10.1007/978-3-319-99713-1_11", "type": "absolute" }
+      ]
+    }
+  ]
+}
+```
 
 ### SleepDebt Card (from `patient-view`)
 
-A Card summarizing cumulative sleep debt (mean sleep duration below 6 h for ≥ 7 consecutive days):
+Cumulative sleep debt (mean sleep duration below the AASM-recommended 7 h for ≥ 7 consecutive days). Indicator `info`; suggests opening a sleep-hygiene lifestyle counseling CarePlan; links to the AASM-aligned handout (advanced sleep-stage observations are covered by the [advanced_vitalsigns](advanced_vitalsigns.html) page).
 
-- **Summary**: "Sleep debt accumulating (mean 5.8 h × 9 days) — review sleep hygiene"
-- **Indicator**: `info`
-- **Suggestion**: open lifestyle counseling order; link to AASM-aligned sleep hygiene patient handout.
-- **Link**: relevant CarePlan template (advanced sleep stage observations are covered by the [advanced_vitalsigns](advanced_vitalsigns.html) page).
+```json
+{
+  "cards": [
+    {
+      "uuid": "c3a7e4b2-3d5f-4a0c-9b2e-4f6a8c0d3e51",
+      "summary": "Sleep debt accumulating (mean 5.8 h over 9 days) - review sleep hygiene",
+      "indicator": "info",
+      "detail": "Mean nightly sleep duration has stayed below the AASM-recommended 7 hours for 9 consecutive days (current mean 5.8 h). Cumulative sleep restriction is associated with impaired glucose tolerance, elevated inflammatory markers, and reduced HRV.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Lifestyle Risk Assessment",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "patient-view",
+          "display": "Lifestyle Risk Assessment"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Open lifestyle counseling care plan (sleep hygiene)",
+          "uuid": "d4b8f5c3-4e6a-4b1d-8c3f-5a7b9d1e4f62",
+          "actions": [
+            {
+              "type": "create",
+              "description": "Create a sleep-hygiene-focused lifestyle counseling CarePlan",
+              "resource": {
+                "resourceType": "CarePlan",
+                "status": "draft",
+                "intent": "proposal",
+                "category": [ { "text": "Sleep hygiene lifestyle counseling" } ],
+                "subject": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "at-most-one",
+      "links": [
+        { "label": "AASM-aligned sleep hygiene patient handout", "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/advanced_vitalsigns.html", "type": "absolute" }
+      ]
+    }
+  ]
+}
+```
 
 ### Polypharmacy Card (from `medication-prescribe`)
 
-A Card emitted when the prescribed medication brings the patient's active medication list above five chronic agents, triggering a polypharmacy review per Beers Criteria / STOPP/START guidelines:
+Emitted when the prescribed medication brings the patient's active chronic medication list above five agents, triggering a polypharmacy review per Beers Criteria / STOPP-START. Indicator `warning`; the `source.label` carries the **AI-assistance disclosure** per [CFM Resolution 2.454/2026](cfm-2454-compliance.html) Art. 4 transparency requirement.
 
-- **Summary**: "Polypharmacy threshold reached (6 chronic agents) — consider deprescribing review"
-- **Indicator**: `warning`
-- **Suggestion**: launch lifestyle medicine deprescribing protocol; link to evidence-based deprescribing toolkit.
-- **Source**: an AI-assistance disclosure per [CFM Resolution 2.454/2026](cfm-2454-compliance.html) Art. 4 transparency requirement (the recommendation is generated with AI assistance and the source attribution is mandatory).
+```json
+{
+  "cards": [
+    {
+      "uuid": "e5c9a6d4-5f7b-4c2e-9d4a-6b8c0e2f5a73",
+      "summary": "Polypharmacy threshold reached (6 chronic agents) - consider deprescribing review",
+      "indicator": "warning",
+      "detail": "Signing this prescription brings the active chronic medication count to 6, crossing the polypharmacy threshold (>= 5 chronic agents). Beers Criteria and STOPP/START guidance recommend a structured deprescribing review, with lifestyle interventions as first-line where appropriate. This recommendation is generated with AI assistance; the source attribution below carries the mandatory transparency disclosure.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Drug-Lifestyle CDS (AI-assisted; CFM 2.454/2026 Art. 4 disclosure)",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "medication-prescribe",
+          "display": "Drug-Lifestyle Interaction Warning"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Launch lifestyle medicine deprescribing protocol",
+          "uuid": "f6d0b7e5-6a8c-4d3f-8e5b-7c9d1f3a6b84",
+          "actions": [
+            {
+              "type": "create",
+              "description": "Initiate a deprescribing review task (Beers / STOPP-START) with lifestyle-first substitution where indicated",
+              "resource": {
+                "resourceType": "Task",
+                "status": "draft",
+                "intent": "proposal",
+                "description": "Structured deprescribing review with lifestyle-first substitution where indicated",
+                "for": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "any",
+      "links": [
+        { "label": "Evidence-based deprescribing toolkit", "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html", "type": "absolute" },
+        { "label": "CFM Resolution 2.454/2026 compliance (AI disclosure requirement)", "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html", "type": "absolute" }
+      ]
+    }
+  ]
+}
+```
 
 ## Discovery Endpoint Structure
 
