@@ -1,0 +1,48 @@
+{
+  "cards": [
+    {
+      "uuid": "a7f1d8c3-6b9e-4d2a-8f5c-3e7a9c1b6d04",
+      "summary": "Discharge lifestyle plan ready - graded activity, sleep, HRV follow-up",
+      "indicator": "info",
+      "detail": "Based on this encounter's diagnoses and the patient's wearable history (HRV, sleep duration, daily activity, nutrition pattern), a personalised post-discharge lifestyle care plan is proposed. The plan emphasises graded reintroduction of physical activity toward the WHO 150 min/week target, sleep regularisation toward the AASM 7-9 h range, and a 4-week HRV recovery review (RMSSD trend). No fabricated clinical codes are used in this example; domain references resolve to the IG's verified terminology.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Lifestyle Risk Assessment",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "encounter-discharge",
+          "display": "Personalized Lifestyle Discharge Plan"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Create post-discharge lifestyle care plan",
+          "uuid": "b8a2e9d4-7c0f-4e3b-9a6d-4f8b0d2c7e15",
+          "actions": [
+            {
+              "type": "create",
+              "description": "Create a multi-domain lifestyle CarePlan (activity, sleep, HRV recovery) for post-discharge follow-up",
+              "resource": {
+                "resourceType": "CarePlan",
+                "status": "draft",
+                "intent": "plan",
+                "category": [
+                  { "text": "Post-discharge lifestyle care plan" }
+                ],
+                "subject": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "at-most-one",
+      "links": [
+        {
+          "label": "Lifestyle medicine discharge planning guidance",
+          "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/advanced_vitalsigns.html",
+          "type": "absolute"
+        }
+      ]
+    }
+  ]
+}

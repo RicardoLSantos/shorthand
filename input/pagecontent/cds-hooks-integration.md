@@ -66,7 +66,7 @@ The set of hooks is open per CDS Hooks 2.0; sites MAY introduce additional servi
 
 ## Card Examples (concrete)
 
-The following are **concrete, copy-pasteable Card payloads** showing how each service serialises recommendations per the CDS Hooks 2.0 Card schema (a service returns `{ "cards": [ ... ] }`). The values are illustrative, not normative. The same payloads are committed as standalone files under `input/includes/cds-hooks-cards/` (`hrv-overtraining.json`, `sleep-debt.json`, `polypharmacy.json`) so reference implementations can validate them against the published Card schema (see [JSON Schema Validation Strategy](#json-schema-validation-strategy)).
+The following are **concrete, copy-pasteable Card payloads** showing how each service serialises recommendations per the CDS Hooks 2.0 Card schema (a service returns `{ "cards": [ ... ] }`). The values are illustrative, not normative. The same payloads are committed as standalone files under `input/includes/cds-hooks-cards/` (`hrv-overtraining.json`, `sleep-debt.json`, `polypharmacy.json`, `discharge-plan.json`) so reference implementations can validate them against the published Card schema (see [JSON Schema Validation Strategy](#json-schema-validation-strategy)).
 
 > **Terminology integrity note.** RMSSD, pNN50, and LF/HF power have **no LOINC code** (verified against LOINC via the project's Database-First protocol). The HRV Card below references the IG custom code `#hrv-rmssd` from `HeartRateVariabilityCodeSystem` — *not* a fabricated LOINC code. Every clinical code in these examples is database-verified (e.g., SNOMED CT `60554003` Polysomnography — confirmed, **not** `23056005` which is *Sciatica*). This is the same discipline that the [ConceptMaps](conceptmaps.html) follow throughout the IG.
 
@@ -214,6 +214,61 @@ Emitted when the prescribed medication brings the patient's active chronic medic
       "links": [
         { "label": "Evidence-based deprescribing toolkit", "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html", "type": "absolute" },
         { "label": "CFM Resolution 2.454/2026 compliance (AI disclosure requirement)", "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/cfm-2454-compliance.html", "type": "absolute" }
+      ]
+    }
+  ]
+}
+```
+
+### DischargeLifestylePlan Card (from `encounter-discharge`)
+
+Emitted at discharge to assemble a personalised post-discharge lifestyle care plan from the encounter's diagnoses and the patient's wearable history (HRV, sleep, activity, nutrition). Indicator `info`; the `source` (singular per CDS Hooks 2.0) points to [LifestyleRiskAssessmentPlanDefinition](PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html); the suggestion proposes a multi-domain lifestyle `CarePlan` (intent `plan`) emphasising graded activity reintroduction toward the WHO 150 min/week target, sleep regularisation toward the AASM 7–9 h range, and a 4-week HRV recovery review. Committed standalone as `input/includes/cds-hooks-cards/discharge-plan.json`.
+
+```json
+{
+  "cards": [
+    {
+      "uuid": "a7f1d8c3-6b9e-4d2a-8f5c-3e7a9c1b6d04",
+      "summary": "Discharge lifestyle plan ready - graded activity, sleep, HRV follow-up",
+      "indicator": "info",
+      "detail": "Based on this encounter's diagnoses and the patient's wearable history (HRV, sleep duration, daily activity, nutrition pattern), a personalised post-discharge lifestyle care plan is proposed. The plan emphasises graded reintroduction of physical activity toward the WHO 150 min/week target, sleep regularisation toward the AASM 7-9 h range, and a 4-week HRV recovery review (RMSSD trend). No fabricated clinical codes are used in this example; domain references resolve to the IG's verified terminology.",
+      "source": {
+        "label": "iOS Lifestyle Medicine - Lifestyle Risk Assessment",
+        "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html",
+        "topic": {
+          "system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/cds-hooks-hook-types",
+          "code": "encounter-discharge",
+          "display": "Personalized Lifestyle Discharge Plan"
+        }
+      },
+      "suggestions": [
+        {
+          "label": "Create post-discharge lifestyle care plan",
+          "uuid": "b8a2e9d4-7c0f-4e3b-9a6d-4f8b0d2c7e15",
+          "actions": [
+            {
+              "type": "create",
+              "description": "Create a multi-domain lifestyle CarePlan (activity, sleep, HRV recovery) for post-discharge follow-up",
+              "resource": {
+                "resourceType": "CarePlan",
+                "status": "draft",
+                "intent": "plan",
+                "category": [
+                  { "text": "Post-discharge lifestyle care plan" }
+                ],
+                "subject": { "reference": "Patient/example" }
+              }
+            }
+          ]
+        }
+      ],
+      "selectionBehavior": "at-most-one",
+      "links": [
+        {
+          "label": "Lifestyle medicine discharge planning guidance",
+          "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/advanced_vitalsigns.html",
+          "type": "absolute"
+        }
       ]
     }
   ]
