@@ -40,7 +40,8 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 
 // Sedentarism detected → prescribe exercise
 // Replaces: LifestyleMedicineTemporaryCS#exercise-prescription
-* http://snomed.info/sct#182982001 "Exercise on prescription"
+// SNOMED 182982001 deprecated -> 310882002 active (Database-First, 2026-05-23)
+* http://snomed.info/sct#310882002 "Exercise on prescription"
 
 // Personalised exercise programme
 // Replaces: LifestyleMedicineTemporaryCS#exercise-physiology
@@ -120,7 +121,8 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 
 // Generic diagnostic imaging category
 // Replaces: LifestyleMedicineTemporaryCS#imaging
-* http://snomed.info/sct#7396004 "Diagnostic imaging"
+// SNOMED 7396004 deprecated -> 363679005 active (Database-First, 2026-05-23)
+* http://snomed.info/sct#363679005 "Imaging"
 
 // ============================================================================
 // REFERRALS

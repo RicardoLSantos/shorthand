@@ -53,7 +53,7 @@ Title: "Complete Mindfulness Session Response"
   * linkId = "mood_assessment"
   * item[0]
     * linkId = "current_mood"
-    * answer.valueCoding = http://snomed.info/sct#247778001 "Elevated mood"
+    * answer.valueCoding = http://snomed.info/sct#81548002 "Elevated mood"
   * item[1]
     * linkId = "mood_intensity"
     * answer.valueInteger = 3
