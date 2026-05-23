@@ -95,6 +95,10 @@ Description: "CapabilityStatement declaring the full server capabilities for the
       * name = "combo-code-value-quantity"
       * type = #composite
       * documentation = "Search observations by code and value together"
+    * operation[0]
+      * name = "lastn"
+      * definition = "http://hl7.org/fhir/OperationDefinition/Observation-lastn"
+      * documentation = "$lastn - retrieve the most recent N observations per group/code; apt for wearable time-series queries (e.g., last 10 HRV readings)."
 
   // ========================================================================
   // Device — Wearable device provenance
@@ -297,3 +301,31 @@ Description: "CapabilityStatement declaring the full server capabilities for the
     * searchParam[1]
       * name = "status"
       * type = #token
+
+  // ========================================================================
+  // MedicationRequest — Lifestyle-context prescribing + drug-lifestyle interactions
+  // ========================================================================
+  * resource[12]
+    * type = #MedicationRequest
+    * documentation = "Lifestyle-medicine medication requests. Supports the CDS Hooks drug-lifestyle-interaction service (medication-prescribe hook) flagging diet/lifestyle interactions (MAOI+tyramine, SSRI+alcohol, anticoagulant+Vitamin K-rich foods)."
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/lifestyle-medication-request"
+    * interaction[0].code = #read
+    * interaction[1].code = #create
+    * interaction[2].code = #update
+    * interaction[3].code = #search-type
+    * searchParam[0]
+      * name = "patient"
+      * type = #reference
+      * documentation = "Search medication requests by patient"
+    * searchParam[1]
+      * name = "status"
+      * type = #token
+      * documentation = "Search by prescribing status (active, completed, stopped, draft)"
+    * searchParam[2]
+      * name = "intent"
+      * type = #token
+      * documentation = "Search by intent (proposal, plan, order)"
+    * searchParam[3]
+      * name = "authoredon"
+      * type = #date
+      * documentation = "Search by authored date"

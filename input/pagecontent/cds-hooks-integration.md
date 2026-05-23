@@ -56,6 +56,8 @@ The set of hooks is open per CDS Hooks 2.0; sites MAY introduce additional servi
 
 **Cards emitted**: zero (no interaction) or one warning Card per invocation.
 
+**FHIR resource**: the prescribing context conforms to the [`LifestyleMedicationRequest`](StructureDefinition-lifestyle-medication-request.html) profile. Its [`drugLifestyleInteraction`](StructureDefinition-drug-lifestyle-interaction.html) extension carries the matched interaction category — an extensible [ValueSet](ValueSet-drug-lifestyle-interaction-vs.html) seeded with `maoi-tyramine`, `ssri-alcohol`, and `anticoagulant-vitamink` and intended for clinical expansion — so this hook reasons over a concrete, validatable resource rather than a free-text payload.
+
 ### Service 4 — `encounter-discharge` (Personalized Lifestyle Discharge Plan)
 
 **Trigger**: practitioner closes (discharges) an encounter.
