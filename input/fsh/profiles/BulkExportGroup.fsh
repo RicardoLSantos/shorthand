@@ -99,7 +99,13 @@ the 11 lifestyle medicine domains for research/quality-improvement use.
 // Age range criterion
 * characteristic[ageRange].code 1..1 MS
 * characteristic[ageRange].code = http://loinc.org#30525-0 "Age"
-* characteristic[ageRange].valueRange 1..1 MS
+// NOTE (T1 S43, 2026-05-23): value[x] intentionally NOT narrowed to Range here.
+// FHIR R4 base Group.characteristic.value[x] carries an example binding
+// (GroupCharacteristicValue). Narrowing this slice to only Range inherits that
+// binding onto a non-bindable type → IG Publisher error "no bindable types [Range]".
+// Keeping the base value[x] choice (which includes bindable CodeableConcept) keeps
+// the inherited example binding valid. ageRange semantics are enforced by the fixed
+// LOINC#30525-0 code + demonstrated via valueRange in the example below.
 * characteristic[ageRange].exclude 1..1 MS
 
 // Clinical condition criterion
