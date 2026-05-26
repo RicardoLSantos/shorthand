@@ -107,9 +107,9 @@ Usage: #definition
 
 * group[=].element[+].code = #dependent-count
 * group[=].element[=].display = "Number of dependents"
-* group[=].element[=].target[+].code = #63503-7
+* group[=].element[=].target[+].code = #63503-7 // ⚠️ T2 S33 VRF-TERM-018: 63503-7 = "Marital status [NHANES]" (NOT dependents/household); no exact LOINC for dependent-count — T1/clinical to resolve (remove target or alternative)
 * group[=].element[=].target[=].display = "Number of family members in household"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].equivalence = #relatedto // T2 S33: downgraded from #equivalent (was claiming exact equivalence to a wrong concept)
 
 // =============================================================================
 // Group 4: Social Connection Panel

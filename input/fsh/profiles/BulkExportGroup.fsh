@@ -196,7 +196,7 @@ in IG terminology gap analysis (see HeartRateVariabilityCodeSystem.fsh).
 * http://loinc.org#8867-4 "Heart rate"
 
 // VO2 max
-* http://loinc.org#92841-6 "Maximal oxygen consumption normalized [Volume rate/mass]"
+* http://loinc.org#60842-2 "Oxygen consumption (VO2)" // T2 S33 VRF-TERM-018: 92841-6 was "Countermeasure report" (not VO2max); 60842-2 matches the vo2max-estimation-observation profile
 
 // SpO2
 * http://loinc.org#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"

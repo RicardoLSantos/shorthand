@@ -209,13 +209,13 @@ Usage: #definition
 * group[=].element[+].code = #diet-quality-score
 * group[=].element[=].display = "Diet quality score"
 * group[=].element[=].target[+].code = #75282-4
-* group[=].element[=].target[=].display = "Diet"
+* group[=].element[=].target[=].display = "Nutrition assessment panel" // T2 S33 VRF-TERM-018: 75282-4 = "Nutrition assessment panel" (display "Diet" was imprecise; code OK, #relatedto)
 * group[=].element[=].target[=].equivalence = #relatedto
 * group[=].element[=].target[=].comment = "General dietary assessment; use HEI-2020 for US populations"
 
 * group[=].element[+].code = #meal-frequency
 * group[=].element[=].display = "Meal frequency"
-* group[=].element[=].target[+].code = #65968-0
+* group[=].element[=].target[+].code = #65968-0 // ⚠️ T2 S33 VRF-TERM-018: 65968-0 = "How many hours do you normally sleep" (NOT meal-frequency); no exact LOINC for meal-frequency — T1/clinical to resolve (remove target or alternative)
 * group[=].element[=].target[=].display = "Eating habits"
 * group[=].element[=].target[=].equivalence = #relatedto
 * group[=].element[=].target[=].comment = "Includes meal patterns, snacking behavior"
