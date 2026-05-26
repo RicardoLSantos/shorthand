@@ -73,6 +73,8 @@ Id: drug-lifestyle-interaction
 Title: "Drug-Lifestyle Interaction Extension"
 Description: "Flags a known interaction between the prescribed medication and a dietary/lifestyle factor, supporting the IG's CDS Hooks drug-lifestyle-interaction service (medication-prescribe hook)."
 * ^experimental = false
+* ^context[+].type = #element
+* ^context[=].expression = "MedicationRequest"
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1
 * valueCodeableConcept from DrugLifestyleInteractionVS (extensible)

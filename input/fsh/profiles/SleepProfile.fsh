@@ -58,7 +58,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 
 Profile: SleepObservation
 Parent: Observation
-Id: activity-observation
+Id: sleep-observation
 Title: "Sleep Observation Profile"
 Description: """
 Profile for recording sleep data from iOS Health App and wearable devices.

@@ -127,7 +127,7 @@ rest level: pipeline-rate-limit, pipeline-retry-semantics, pipeline-error-report
     * type = #Provenance
     * documentation = "Pipeline server creates 1 Provenance per Observation (per Profile #2 WearableMeasurementProvenance) capturing firmware version + time of measurement + time of upload + transformation lineage. Run-level Provenance (Profile #1 entry[etlProvenance]) is also indexed for ETL batch auditability."
     * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/wearable-measurement-provenance"
-    * supportedProfile[1] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/PGHDProvenance"
+    * supportedProfile[1] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
     * interaction[0].code = #read
     * interaction[1].code = #search-type
     * searchParam[0]

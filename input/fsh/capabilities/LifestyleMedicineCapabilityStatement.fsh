@@ -31,38 +31,38 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[0]
     * type = #Observation
     * documentation = "Supports all wearable observation profiles across 11 domains: Physical Activity, Sleep, Nutrition, Stress/Mental Wellness, Substance Use, Social Connection, HRV, Vital Signs, Body Metrics, Environmental Context, Reproductive Health."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/PhysicalActivityObservation"
-    * supportedProfile[1] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/SleepObservation"
-    * supportedProfile[2] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/HeartRateObservation"
-    * supportedProfile[3] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/BloodPressureObservation"
-    * supportedProfile[4] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/OxygenSaturationObservation"
-    * supportedProfile[5] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/RespiratoryRateObservation"
-    * supportedProfile[6] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/BodyTemperatureObservation"
-    * supportedProfile[7] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/WeightObservation"
-    * supportedProfile[8] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/HeightObservation"
-    * supportedProfile[9] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/BMIObservation"
-    * supportedProfile[10] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/VO2MaxEstimationObservation"
-    * supportedProfile[11] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/CGMObservation"
-    * supportedProfile[12] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/BodyCompositionObservation"
-    * supportedProfile[13] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/NutritionIntakeObservation"
-    * supportedProfile[14] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/CalorieIntakeObservation"
-    * supportedProfile[15] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/WaterIntakeObservation"
-    * supportedProfile[16] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/StressLevelProfile"
-    * supportedProfile[17] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/EnvironmentalObservation"
-    * supportedProfile[18] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/NoiseExposureObservation"
-    * supportedProfile[19] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/UVExposureObservation"
-    * supportedProfile[20] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/FertilityObservation"
-    * supportedProfile[21] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/RecoveryReadinessObservation"
-    * supportedProfile[22] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/CRPObservation"
-    * supportedProfile[23] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/HsCRPObservation"
-    * supportedProfile[24] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/IL6Observation"
-    * supportedProfile[25] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/TNFAlphaObservation"
-    * supportedProfile[26] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/HRVInflammationCorrelationObservation"
-    * supportedProfile[27] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/RunningDynamicsObservation"
-    * supportedProfile[28] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/CyclingDynamicsObservation"
-    * supportedProfile[29] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/SwimmingMetricsObservation"
-    * supportedProfile[30] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/StrengthTrainingObservation"
-    * supportedProfile[31] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/MobilityMeasurement"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/physical-activity-observation"
+    * supportedProfile[1] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/sleep-observation"
+    * supportedProfile[2] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/heart-rate-observation"
+    * supportedProfile[3] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/blood-pressure-observation"
+    * supportedProfile[4] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/oxygen-saturation-observation"
+    * supportedProfile[5] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/respiratory-rate-observation"
+    * supportedProfile[6] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-temperature-observation"
+    * supportedProfile[7] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/weight-observation"
+    * supportedProfile[8] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/height-observation"
+    * supportedProfile[9] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/bmi-observation"
+    * supportedProfile[10] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/vo2max-estimation-observation"
+    * supportedProfile[11] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cgm-observation"
+    * supportedProfile[12] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/body-composition-observation"
+    * supportedProfile[13] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/nutrition-intake-observation"
+    * supportedProfile[14] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/calorie-intake-observation"
+    * supportedProfile[15] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/water-intake-observation"
+    * supportedProfile[16] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/stress-level"
+    * supportedProfile[17] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/environmental-observation"
+    * supportedProfile[18] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/noise-exposure-observation"
+    * supportedProfile[19] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/uv-exposure-observation"
+    * supportedProfile[20] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/fertility-observation"
+    * supportedProfile[21] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/recovery-readiness-observation"
+    * supportedProfile[22] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/crp-observation"
+    * supportedProfile[23] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hscrp-observation"
+    * supportedProfile[24] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/il6-observation"
+    * supportedProfile[25] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/tnf-alpha-observation"
+    * supportedProfile[26] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/hrv-inflammation-correlation"
+    * supportedProfile[27] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/running-dynamics-observation"
+    * supportedProfile[28] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/cycling-dynamics-observation"
+    * supportedProfile[29] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/swimming-metrics-observation"
+    * supportedProfile[30] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/strength-training-observation"
+    * supportedProfile[31] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-measurement"
     * interaction[0].code = #read
     * interaction[1].code = #create
     * interaction[2].code = #update
@@ -154,7 +154,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[4]
     * type = #ClinicalImpression
     * documentation = "AI-generated clinical impressions with risk assessment, confidence scores, and reasoning narratives. Supports CFM 2.454 and EU AI Act compliance."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/ClinicalImpressionAIAssessment"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/clinical-impression-ai-assessment"
     * interaction[0].code = #read
     * interaction[1].code = #create
     * interaction[2].code = #search-type
@@ -174,7 +174,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[5]
     * type = #CarePlan
     * documentation = "Lifestyle medicine care plans (AI-generated or physician-created) covering stress management, exercise, nutrition, and sleep interventions."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/CarePlanLifestyleMedicine"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/care-plan-lifestyle-medicine"
     * interaction[0].code = #read
     * interaction[1].code = #create
     * interaction[2].code = #update
@@ -198,7 +198,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[6]
     * type = #AuditEvent
     * documentation = "Audit trail for AI/CDSS interactions: inference execution, recommendation generation, physician overrides. Required for EU AI Act Art. 12 and CFM 2.454."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/AuditEventAIInteraction"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/audit-event-ai-interaction"
     * interaction[0].code = #read
     * interaction[1].code = #create
     * interaction[2].code = #search-type
@@ -221,7 +221,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[7]
     * type = #Consent
     * documentation = "Patient consent records supporting multi-jurisdictional compliance (GDPR, LGPD, HIPAA). Includes AI-assisted care consent per CFM 2.454."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/MultiJurisdictionalConsent"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/multi-jurisdictional-consent"
     * interaction[0].code = #read
     * interaction[1].code = #create
     * interaction[2].code = #update
@@ -239,7 +239,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[8]
     * type = #Provenance
     * documentation = "Patient-Generated Health Data provenance tracking: wearable device source, transformation pipeline, and AI processing chain."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/PGHDProvenance"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/pghd-provenance"
     * interaction[0].code = #read
     * interaction[1].code = #create
     * interaction[2].code = #search-type
@@ -259,7 +259,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[9]
     * type = #DeviceDefinition
     * documentation = "Small Language Model (SLM) device definitions for on-device AI inference registration and EU AI Act model registry compliance."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/DeviceDefinitionSLM"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/device-definition-slm"
     * interaction[0].code = #read
     * interaction[1].code = #search-type
     * searchParam[0]
@@ -275,7 +275,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[10]
     * type = #RiskAssessment
     * documentation = "Mobility and fall risk assessments derived from wearable gait analysis data."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/MobilityRiskAssessment"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mobility-risk-assessment"
     * interaction[0].code = #read
     * interaction[1].code = #create
     * interaction[2].code = #search-type
@@ -292,7 +292,7 @@ Description: "CapabilityStatement declaring the full server capabilities for the
   * resource[11]
     * type = #Questionnaire
     * documentation = "Structured questionnaires for symptom tracking and lifestyle assessment (mindfulness, social connection, substance use)."
-    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/SymptomQuestionnaire"
+    * supportedProfile[0] = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/symptom-questionnaire"
     * interaction[0].code = #read
     * interaction[1].code = #search-type
     * searchParam[0]
