@@ -136,16 +136,16 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 * http://snomed.info/sct#103699006 "Referral to dietitian"
 
 // Replaces: LifestyleMedicineTemporaryCS#endocrinology-referral
-* http://snomed.info/sct#183523005 "Referral to endocrine service"
+* http://snomed.info/sct#306118006 "Referral to endocrinology service" // T2 S33 VRF-TERM-018: 183523005 was "Referral to gastroenterology service"
 
 // Replaces: LifestyleMedicineTemporaryCS#physiotherapy-referral
-* http://snomed.info/sct#183524004 "Referral to physiotherapy service"
+* http://snomed.info/sct#306170007 "Referral to physiotherapy service" // T2 S33 VRF-TERM-018: 183524004 was "Psychiatric referral"
 
 // Replaces: LifestyleMedicineTemporaryCS#psychology-referral
-* http://snomed.info/sct#183583007 "Referral to psychologist"
+* http://snomed.info/sct#183583007 "Refer to mental health worker" // T2 S33 VRF-TERM-018: display corrected (183583007 = mental health worker, not "psychologist"; for psychology-specific consider IAPT 1363001000000106)
 
 // Replaces: LifestyleMedicineTemporaryCS#specialist-referral (generic)
-* http://snomed.info/sct#183561008 "Referral to specialist"
+* http://snomed.info/sct#103696004 "Patient referral to specialist" // T2 S33 VRF-TERM-018: 183561008 was "Referral to general practitioner"
 
 // ============================================================================
 // REMOTE MONITORING
@@ -155,7 +155,7 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 * http://snomed.info/sct#719858009 "Telehealth monitoring"
 
 // Replaces: LifestyleMedicineTemporaryCS#wearable-monitoring
-* http://snomed.info/sct#722172003 "Ambulatory monitoring"
+* http://snomed.info/sct#722172003 "Ambulatory monitoring" // ⚠️ T2 S33 VRF-TERM-018: 722172003 actually = "Military health institution" — T1/clinical to resolve (cf. 719858009 Telehealth monitoring above; consider a wearable/remote-monitoring code or remove)
 
 // Replaces: LifestyleMedicineTemporaryCS#device-prescription
-* http://snomed.info/sct#840534001 "Recommendation to use home monitoring device"
+* http://snomed.info/sct#840534001 "Recommendation to use home monitoring device" // ⚠️ T2 S33 VRF-TERM-018: 840534001 actually = "2019-nCoV antigen immunisation" — T1/clinical to resolve (alternative monitoring-recommendation code or remove)

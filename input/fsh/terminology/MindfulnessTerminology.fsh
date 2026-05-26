@@ -9,7 +9,7 @@ Description: "Value set for mindfulness practice outcomes"
 * LifestyleMedicineTemporaryCS#stressReduction "Stress Reduction"
 * LifestyleMedicineTemporaryCS#emotionalBalance "Emotional Balance"
 * LifestyleMedicineTemporaryCS#improvedSleep "Improved Sleep"
-* include $SCT#365949003 "Finding of level of stress"
+* include $SCT#365949003 "Health-related behavior finding" // T2 S33 VRF-TERM-018: display corrected (365949003 = "Health-related behavior finding", matches MindfulnessProfiles; for a stress-specific concept consider 304753007 "Perceived stress scale")
 * include $SCT#106131003 "Mood finding"
 ValueSet: MindfulnessQualifierVS
 Id: mindfulness-qualifier-vs

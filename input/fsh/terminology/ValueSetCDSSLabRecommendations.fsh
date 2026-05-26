@@ -103,4 +103,4 @@ Replaced by standard codes per comparative audit (PA IG benchmark: 8.6% custom).
 
 // Holter monitoring for sustained arrhythmia
 // Replaces: LifestyleMedicineTemporaryCS#holter-monitor
-* http://snomed.info/sct#252339003 "Holter electrocardiogram monitoring"
+* http://snomed.info/sct#427047002 "Holter extended electrocardiographic recording" // T2 S33 VRF-TERM-018: 252339003 was "Iodination" (not Holter)

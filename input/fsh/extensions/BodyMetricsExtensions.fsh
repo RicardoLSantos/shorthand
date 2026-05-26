@@ -67,11 +67,10 @@ Description: "Standard conditions under which measurements are taken"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
 
+// T2 S33 VRF-TERM-018: removed 307819006 ("Arthroplasty of knee"; was "Post-exercise" = redundant synonym of After exercise) + 307820000 ("Tarsometatarsal arthrodesis"; "Wearing light clothing" has no exact SNOMED). 255203001 ("Additional values")→73775008 "Morning". 309604004 is "During exercise" not "During rest" → 263678003 "At rest".
 * $SCT#255214003 "After exercise"
-* $SCT#307819006 "Post-exercise"
-* $SCT#307820000 "Wearing light clothing"
-* $SCT#255203001 "First thing in morning"
-* $SCT#309604004 "During rest"
+* $SCT#73775008 "Morning"
+* $SCT#263678003 "At rest"
 
 ValueSet: MeasurementDeviceTypeVS
 Id: measurement-device-type-vs

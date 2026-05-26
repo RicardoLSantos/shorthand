@@ -180,7 +180,7 @@ Using custom CodeSystem for substance categories where SNOMED lacks class-level 
 // SNOMED CT - Verified specific substance codes
 * $SCT#398705004 "Cannabis (substance)"
 * $SCT#387085005 "Cocaine (substance)"
-* $SCT#75672003 "Amphetamine (substance)"
+* $SCT#373338002 "Amphetamine" // T2 S33 VRF-TERM-018: was 75672003 = "Platelet mean volume determination" (not Amphetamine)
 * $SCT#288459003 "MDMA (substance)"
 // Custom codes for substance CLASS categories (SNOMED gap - no class-level codes)
 * LifestyleMedicineTemporaryCS#opioids "Opioids"

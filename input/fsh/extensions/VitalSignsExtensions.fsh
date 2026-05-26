@@ -14,7 +14,7 @@ Title: "Measurement Context Value Set"
 Description: "Value set for measurement context in vital signs observations"
 * ^name = "MeasurementContextVitalSigns"
 * ^experimental = false
-* $SCT#255214003 "At rest"
+// T2 S33 VRF-TERM-018: 255214003 was mislabeled "At rest" (it is "After exercise") → 263678003 "At rest"; 309605003 "Post exercise" was "menopause periods" → 255214003 "After exercise"; removed 410534003 (was "Not indicated", duplicate label of 309604004 "During exercise").
+* $SCT#263678003 "At rest"
 * $SCT#309604004 "During exercise"
-* $SCT#309605003 "Post exercise"
-* $SCT#410534003 "During exercise"
+* $SCT#255214003 "After exercise"

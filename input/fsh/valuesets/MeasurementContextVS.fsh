@@ -14,8 +14,7 @@ Description: "Contexts in which measurements can be taken, including temporal an
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* $SCT#272125009 "Assessment context value (qualifier value)"
-* $SCT#307818003 "Before food"
-* $SCT#307819006 "After food"
+// T2 S33 VRF-TERM-018: removed 272125009 ("Priorities" — was mislabeled "Assessment context value", a hierarchy parent) + 264362003 ("Dwelling" — was mislabeled "Time of day", no exact SNOMED context code). Swapped 307818003/307819006 (wrong concepts) → correct Before/After food. 255214003 kept (correct here = After exercise).
+* $SCT#311500009 "Before food"
+* $SCT#225758001 "After food"
 * $SCT#255214003 "After exercise"
-* $SCT#264362003 "Time of day"

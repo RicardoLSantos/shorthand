@@ -27,7 +27,7 @@ Description: "Goals related to social-history health tracking and planning"
 // SNOMED code verified (2026-01-12)
 // Note: 289530006 actual = "Bleeding from vagina" - using broader concept instead
 * $SCT#118185001 "Finding related to pregnancy (finding)"
-* $SCT#364320009 "Menstrual cycle observable (observable entity)"
+* $SCT#248957007 "Menstruation" // T2 S33 VRF-TERM-018: 364320009 was "Pregnancy observable" (not menstrual); 248957007 "Menstruation" is the std=S menstrual observable
 
 ValueSet: ReproductiveActivityVS
 Id: social-history-activity-vs
