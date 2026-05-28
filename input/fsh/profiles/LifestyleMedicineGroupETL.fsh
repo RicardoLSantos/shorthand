@@ -74,19 +74,19 @@ Cross-profile dependencies:
 
 // measurementTypeFilter — filter by LOINC code (e.g., 80404-7 SDNN, 8867-4 HR)
 * characteristic[measurementTypeFilter].code 1..1 MS
-* characteristic[measurementTypeFilter].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#measurement-type (exactly)
+* characteristic[measurementTypeFilter].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#measurement-type (exactly)
 * characteristic[measurementTypeFilter].value[x] 1..1 MS
 * characteristic[measurementTypeFilter].valueCodeableConcept 1..1 MS
 
 // vendorFilter — filter by vendor identifier (e.g., Apple, Fitbit, Garmin)
 * characteristic[vendorFilter].code 1..1 MS
-* characteristic[vendorFilter].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#vendor (exactly)
+* characteristic[vendorFilter].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#vendor (exactly)
 * characteristic[vendorFilter].value[x] 1..1 MS
 * characteristic[vendorFilter].valueCodeableConcept 1..1 MS
 
 // patientCohortFilter — filter by clinical criteria (e.g., 'HRV-decline-90d', 'PA-non-adherence-WHO')
 * characteristic[patientCohortFilter].code 1..1 MS
-* characteristic[patientCohortFilter].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#patient-cohort (exactly)
+* characteristic[patientCohortFilter].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#patient-cohort (exactly)
 * characteristic[patientCohortFilter].value[x] 1..1 MS
 * characteristic[patientCohortFilter].valueCodeableConcept 1..1 MS
 
@@ -220,14 +220,14 @@ HRV (SDNN + RMSSD) + sleep + activity observations for downstream analysis.
 * extension[pipeline].valueReference = Reference(LifestyleRiskAssessmentPlanDefinition)
 * extension[destination].valueUrl = "https://2rdoc.pt/fhir/warehouse/research"
 
-* characteristic[measurementTypeFilter][0].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#measurement-type
+* characteristic[measurementTypeFilter][0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#measurement-type
 * characteristic[measurementTypeFilter][0].valueCodeableConcept = http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * characteristic[measurementTypeFilter][0].exclude = false
 
-* characteristic[vendorFilter][0].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#vendor
+* characteristic[vendorFilter][0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#vendor
 * characteristic[vendorFilter][0].valueCodeableConcept.text = "Apple HealthKit"
 * characteristic[vendorFilter][0].exclude = false
 
-* characteristic[patientCohortFilter][0].code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#patient-cohort
+* characteristic[patientCohortFilter][0].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/etl-group-characteristic#patient-cohort
 * characteristic[patientCohortFilter][0].valueCodeableConcept.text = "HRV-decline-90d (SDNN downward slope p<0.05 over 90 days)"
 * characteristic[patientCohortFilter][0].exclude = false

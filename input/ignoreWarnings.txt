@@ -202,3 +202,95 @@ Recomendação de boas práticas: Em geral, todas as observações devem ter um 
 # T1 S9: Performer best practice + regulatory URLs suppressed (~28 warnings)
 # Note: Messages are in Portuguese due to system locale
 # =============================================================================
+
+# =============================================================================
+# T1 S46 (2026-05-27, greedy-twirling-lake) — G1 GATE Fase 3 warning triage
+# Genuine defects FIXED at source (NOT suppressed): etl-group-characteristic
+# http->https (9), CQL Library refs registered (3), NamingSystem <vendor> text
+# fix (2), Device urn:uuid alignment (1). The entries below are accept-class
+# (endpoint URIs / doc-maps / advisories) suppressed WITH justification per the
+# "warnings em fases" gate. Full-message exact text per Pitfall #64 (prefix-only
+# fails; PT locale). ROOT-CAUSE: PT-locale text drift recurs -> T2 release lane
+# should add LANG=en_US.UTF-8 to _genonce.sh to stabilise future suppressions.
+# =============================================================================
+
+# --- SMART OAuth endpoint URIs (Pitfall #29: endpoints, NOT resolvable defs) ---
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/auth/authorize'
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/auth/token'
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/auth/register'
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/auth/manage'
+
+# --- Pipeline error-reporting endpoint URIs (Pitfall #29) ---
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/api/pipeline/errors'
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/api/pipeline/applehealthkit/errors'
+
+# --- Namespace / endpoint URIs (identifier.system, ConceptMap source uri, Group ext) ---
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/practitioner-identifier-cs'
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/ig/ios-lifestyle-medicine/vendor-apis'
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/research-projects'
+Não foi possível encontrar uma definição para o valor URL 'https://2rdoc.pt/fhir/warehouse/research'
+
+# --- LGPD extension #element context (advisory; extensions correctly scoped via context) ---
+Rever o tipo de extensão para data-protection-officer-reference: as extensões não devem ter um contexto de Element, a menos que se pretenda realmente que possam ser utilizadas em qualquer lugar
+Rever o tipo de extensão para lgpd-registration-number: as extensões não devem ter um contexto de Element, a menos que se pretenda realmente que possam ser utilizadas em qualquer lugar
+
+# --- No standalone examples (advisory; AI extensions/profiles demonstrated in
+#     composite AICompliance bundles; standalone examples = S47 nice-to-have) ---
+The Implementation Guide contains no examples for this extension
+The Implementation Guide contains no examples for this profile
+
+# --- CodeableConcept fixed-value advisory (bulk-export-consent intentional fixed values) ---
+Para o tipo complexo CodeableConcept, considere a possibilidade de utilizar um padrão em vez de um valor fixo para evitar restringir demasiado a instância
+
+# --- Dependency version advisory (pinned stable versions; upgrade = separate scoped decision) ---
+O Guia de Implementação utiliza o pacote hl7.fhir.uv.phd#1.1.0 lançado em 2024-10-18, mas a versão apropriada mais recente é 2.0.0. Esta referência está a ficar velha e a versão mais recente deve ser considerada
+O Guia de Implementação utiliza o pacote hl7.fhir.uv.bulkdata#2.0.0 lançado em 2021-11-26, mas a versão apropriada mais recente é 3.0.0. Esta referência está a ficar velha e a versão mais recente deve ser considerada
+
+# --- CQL expression-language (refresh: current full message, Pitfall #64) ---
+A linguagem de expressão text/cql-identifier não é suportada, pelo que não pode ser validada
+
+# --- openEHR ConceptMap doc-map scope (refresh: current full messages, Pitfall #64) ---
+O sistema de código-alvo openEHR-EHR-OBSERVATION.heart_rate_variability.v0 não está totalmente definido e preenchido e não é especificado nenhum targetScope, pelo que a verificação do código-alvo não será efectuada
+O sistema de código-alvo openEHR-EHR-OBSERVATION.physical_activity_detailed.v0 não está totalmente definido e preenchido e não é especificado nenhum targetScope, pelo que a verificação do código-alvo não será efectuada
+O sistema de código-alvo openEHR-EHR-OBSERVATION.sleep_architecture.v0 não está totalmente definido e preenchido e não é especificado nenhum targetScope, pelo que a verificação do código-alvo não será efectuada
+O sistema de código-alvo openEHR-EHR-CLUSTER.wearable_device.v0 não está totalmente definido e preenchido e não é especificado nenhum targetScope, pelo que a verificação do código-alvo não será efectuada
+O Sistema de Código Fonte openEHR-EHR-OBSERVATION.heart_rate_variability.v0 não está totalmente definido e preenchido e não é especificado o sourceScope, pelo que a verificação do código fonte não será efectuada
+O Sistema de Código Fonte openEHR-EHR-OBSERVATION.physical_activity_detailed.v0 não está totalmente definido e preenchido e não é especificado o sourceScope, pelo que a verificação do código fonte não será efectuada
+O Sistema de Código Fonte openEHR-EHR-OBSERVATION.sleep_architecture.v0 não está totalmente definido e preenchido e não é especificado o sourceScope, pelo que a verificação do código fonte não será efectuada
+O Sistema de Código Fonte openEHR-EHR-CLUSTER.wearable_device.v0 não está totalmente definido e preenchido e não é especificado o sourceScope, pelo que a verificação do código fonte não será efectuada
+
+# --- ConceptMap group-level no source/target system (structural openEHR maps) ---
+Não existe um sistema de código-fonte, pelo que os códigos-fonte não podem ser verificados
+Não existe um sistema de códigos-alvo, pelo que os códigos-alvo não podem ser verificados
+
+# --- OMOP doc-map scope (refresh, Pitfall #64) ---
+O sistema de códigos de destino http://athena.ohdsi.org/search-terms/terms não tem todo o conteúdo (conteúdo = not-present), pelo que os códigos de destino não podem ser verificados
+O sistema de código-alvo MEASUREMENT não está totalmente definido e preenchido e não é especificado nenhum targetScope, pelo que a verificação do código-alvo não será efectuada
+O sistema de código-alvo DEVICE_EXPOSURE não está totalmente definido e preenchido e não é especificado nenhum targetScope, pelo que a verificação do código-alvo não será efectuada
+
+# --- Vendor API doc-map (refresh, Pitfall #64; vendor APIs not FHIR terminology) ---
+O sistema de código-fonte https://developer.apple.com/documentation/healthkit não tem todo o conteúdo (conteúdo = not-present), pelo que os códigos-fonte não podem ser verificados
+O sistema de código-fonte https://dev.fitbit.com/build/reference/web-api não tem todo o conteúdo (conteúdo = not-present), pelo que os códigos-fonte não podem ser verificados
+O Sistema de Código Fonte https://developer.garmin.com/health-api não está totalmente definido e preenchido e não é especificado o sourceScope, pelo que a verificação do código fonte não será efectuada
+O Sistema de Código Fonte https://www.polaraccesslink.com/v3 não está totalmente definido e preenchido e não é especificado o sourceScope, pelo que a verificação do código fonte não será efectuada
+O Sistema de Código Fonte https://cloud.ouraring.com/v2/usercollection não está totalmente definido e preenchido e não é especificado o sourceScope, pelo que a verificação do código fonte não será efectuada
+
+# --- Regulatory framework URLs (refresh, Pitfall #29 + #64; legal URLs not FHIR endpoints) ---
+Não foi possível encontrar uma definição para o valor URL 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+Não foi possível encontrar uma definição para o valor URL 'https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_j'
+Não foi possível encontrar uma definição para o valor URL 'http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm'
+Não foi possível encontrar uma definição para o valor URL 'http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm#art11'
+
+# --- ICD-10-CM external system incomplete (refresh, Pitfall #64) ---
+O sistema de código-fonte http://hl7.org/fhir/sid/icd-10-cm não tem todo o conteúdo (conteúdo = not-present), pelo que os códigos-fonte não podem ser verificados
+
+# --- Inactive concept advisory (373338002 in recreational-substance examples;
+#     intentional like prior 247778001). FLAG T2: VRF-TERM-018 swapped to an
+#     inactive code -> review at next terminology pass. ---
+The concept '373338002' has a status of inactive and its use should be reviewed
+
+# --- Device batch-bundle PUT-by-id resolution heuristic (NOT a defect: the ETL
+#     example uses urn:uuid fullUrl + Device/AppleWatchDevice ref; entry resolves
+#     by type+id; the IG Publisher's constructed target urn:uuid:AppleWatchDevice
+#     is a mixed urn-uuid/resource-id batch-bundle heuristic quirk) ---
+A entrada 1 corresponde à referência Device/AppleWatchDevice por tipo e id, mas o seu URL completo urn:uuid:22222222-2222-4222-8222-222222222222 não corresponde ao URL de destino completo urn:uuid:AppleWatchDevice pelas regras de resolução de pacotes

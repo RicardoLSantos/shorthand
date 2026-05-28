@@ -55,6 +55,7 @@ menu:
     CDS Hooks Integration: cds-hooks-integration.html
     openEHR Integration: openehr-integration.html
     GDL Integration: gdl-integration.html
+    Integrated Walkthrough (M4): smart-cds-integrated-walkthrough.html
     Implementation Scope: implementation-scope-and-roadmap.html
     Abbreviations: abbreviations.html
   Policies:
@@ -112,6 +113,13 @@ parameters:
     # ── External Terminology Systems ──
     - http://athena.ohdsi.org/search-terms/terms
     - https://ckm.openehr.org/ckm/archetypes
+
+    # ── CQL logic libraries (external, HEADS-ETL; T1 S46) ──
+    # urn:cql:library: canonicals are intentionally outside the IG namespace
+    # (CQL library coordinate convention); special-url exempts the
+    # Library.url-vs-namespace match check. See CQLLibraryReferences.fsh.
+    - urn:cql:library:CVR-003:v1.2
+    - urn:cql:library:MET-002:v1.0
 
     # ── OCL Sources (prepared for future integration) ──
     # Uncomment after creating Sources in OCL:

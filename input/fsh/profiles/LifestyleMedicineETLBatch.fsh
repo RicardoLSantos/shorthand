@@ -126,7 +126,7 @@ Description: "NamingSystem defining the URN namespace for ETL run identifiers us
 * contact.telecom.value = "fhir@2rdoc.pt"
 * responsible = "iOS Lifestyle Medicine HEADS FHIR IG"
 * type = http://terminology.hl7.org/CodeSystem/v2-0203#FILL "Filler Identifier"
-* description = "URN namespace for ETL (Extract-Transform-Load) run identifiers. Each ETL run from a wearable vendor API into the Lifestyle Medicine IG receives a stable, dedup-safe identifier scoped to this namespace. Identifier values follow the pattern <vendor>-<source>-<YYYYMMDD>-<HHMMSS>-<runseq> (e.g., apple-healthkit-etl-20260515-100000-001)."
+* description = "URN namespace for ETL (Extract-Transform-Load) run identifiers. Each ETL run from a wearable vendor API into the Lifestyle Medicine IG receives a stable, dedup-safe identifier scoped to this namespace. Identifier values follow the pattern {vendor}-{source}-{YYYYMMDD}-{HHMMSS}-{runseq} (e.g., apple-healthkit-etl-20260515-100000-001)."
 * jurisdiction = urn:iso:std:iso:3166#PT "Portugal"
 * uniqueId.type = #uri
 * uniqueId.value = "https://2rdoc.pt/ig/ios-lifestyle-medicine/identifier/etl-run-id"
