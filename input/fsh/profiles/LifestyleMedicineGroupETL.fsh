@@ -208,7 +208,12 @@ HRV (SDNN + RMSSD) + sleep + activity observations for downstream analysis.
 * type = #person
 * actual = false
 * active = true
-* code = http://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/bulk-export-group-category#research
+// T2 S35 (2026-05-28 11:14 WEST) Opção γ — USER-ratified refino da Decisão 3.1
+// (T1 S46 CoC) via AskUserQuestion: use HL7 v3-ActReason#HRESCH em vez de criar
+// CS local `bulk-export-group-category` que duplicaria terminologia standard.
+// HRESCH = "healthcare research" — já enumerado em BulkExportGroupCategoryVS
+// (BulkExportGroup.fsh:157). Root-cause fix, ZERO Pitfall #33 risk.
+* code = http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH
 * name = "ETL-AppleHealthKit-HRVdecline-90d-2026Q2-cohort-001"
 
 // Inherited from BulkExportGroup parent (1..* MS): consent reference

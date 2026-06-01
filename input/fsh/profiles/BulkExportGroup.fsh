@@ -160,10 +160,13 @@ Description: "Category codes for Bulk FHIR Export Group cohort intent"
 * ^status = #active
 * ^experimental = false
 
+// T2 S35 (2026-05-28 11:15 WEST) — opcional fix dos 2 displays canonical
+// per v3-ActReason HL7 (resolve 2 INFORMATION entries em qa.txt linha 14017-14018).
+// Pitfall #33 sub-rule: display deve match canonical (`en` / `en-US` per VS validator).
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH "healthcare research"
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#PUBHLTH "public health"
-* http://terminology.hl7.org/CodeSystem/v3-ActReason#HQUALIMP "healthcare quality improvement"
-* http://terminology.hl7.org/CodeSystem/v3-ActReason#HSYSADMIN "healthcare system administration"
+* http://terminology.hl7.org/CodeSystem/v3-ActReason#HQUALIMP "health quality improvement"
+* http://terminology.hl7.org/CodeSystem/v3-ActReason#HSYSADMIN "health system administration"
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#PATRQT "patient requested"
 
 // ============================================================================

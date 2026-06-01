@@ -207,3 +207,28 @@ If you discover a verification error in this IG:
 *Total verified codes in IG: 1,103 custom + 34 ICD-11 fragment*
 *LOINC substitutions: 19 (verified against Athena CONCEPT.csv)*
 *OMOP audit: 28 corrections across 6 ConceptMaps (Mar 2026)*
+
+---
+
+## ADDENDUM (T1 S47, 28 May 2026) — VRF-TERM-018 (T2 S33) + Database-First Protocol v3 active-status axis (Lesson #538)
+
+<!-- AUTHORED-BY-CLAUDE-T1-S47 - additive ADDENDUM per Lesson #431 frozen-at-birth -->
+
+In late May 2026 the verification protocol was extended along a third axis after a systematic IG-wide audit (**VRF-TERM-018**, T2 S33, 26 May 2026) detected approximately twenty-six wrong-concept SNOMED CT and LOINC bindings — codes whose digit format was syntactically valid but whose display text did not match the source-side description (right code-system + valid code + wrong concept). These are invisible to standard validators (the code exists, so `$lookup` returns success) and require a *display-semantic* check via `tx.fhir.org $validate-code`, which is synonym-tolerant: a `result = false` from `$validate-code` is a genuine flag because the validator accepts any registered designation for the concept, so a mismatch indicates the binding points at a different concept entirely.
+
+The remediation cycle (DocumentFirst per the protocol above):
+
+1. **Detect** — `$validate-code` over every externally-bound SNOMED/LOINC code in the IG.
+2. **Triage** — separate "same concept, different wording" (accept; synonym) from "different concept" (defect).
+3. **Replace** — verify each replacement code with `$lookup` + Vocab2 (two-source) before substitution.
+4. **Closure pass** — re-run `$validate-code` over all replacements; expect zero defeats, only synonym-class warnings.
+
+The closure pass confirmed: zero active wrong-concept bindings besides six flagged inline `// ⚠️ VRF-TERM-018` (cases where no clean International code exists for the concept; the inline flag asks T1 / clinical reviewer to decide whether to keep the local CodeSystem code, define a new local code, or accept the closest International code with the semantic gap documented). Critically, one replacement code (SNOMED `373338002`) was later found INACTIVE during follow-up audit (T2 S34) — which prompted the **Database-First Protocol v3** refinement (**Lesson #538**): the protocol now verifies *three* axes for every code, not two:
+
+- **Axis 1 — Existence** (`$lookup` returns success; the code exists in the code system).
+- **Axis 2 — Display-semantic** (`$validate-code` returns true; the display text matches a registered designation for the concept).
+- **Axis 3 — Active-status** (`$lookup`'s response includes `status: active`; the code has not been deprecated by the source authority).
+
+A code that passes Axes 1 and 2 but fails Axis 3 (the `373338002` case) is a *future failure*: the binding works today, but the source authority has flagged the code as deprecated and any new client validating against the latest release will reject it. Adding Axis 3 to the protocol catches this pre-release. The full discipline is now documented as Pitfall #109 in the project ledger (display-semantic verification) and Lesson #538 (active-status axis as the third Database-First check).
+
+**Cumulative verification footprint** (as of v0.4.1 PRE-STAGED, 28 May 2026): 1,103 custom codes + 34 ICD-11 fragment + ~26 VRF-TERM-018 SNOMED/LOINC remediated (T2 S33) + 6 inline-flagged (deferred to T1/clinical decision) + 1 active-status correction (T2 S34, `373338002` → successor pending Database-First v3 confirmation, deferred T2 S36+) = a total of ~1,170 codes verified against at least Athena CONCEPT.csv (LOINC + standard vocabularies), Vocab2 (SNOMED CT), and `tx.fhir.org` (existence + display + active-status). The audit pattern is now a recurring discipline rather than a one-time exercise: every pre-release pass runs `$validate-code` over the full external-binding surface and quarantines new flags before the release proceeds.

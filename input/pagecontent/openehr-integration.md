@@ -62,3 +62,50 @@ Archetype data items carry term_bindings to LOINC/SNOMED CT **where a code exist
 ## Sources
 
 This narrative is a companion to the openEHR-related ConceptMaps committed under `input/fsh/terminology/` (`ConceptMapFHIRToOpenEHR`, `ConceptMapOpenEHRToFHIR`, `ConceptMapVendorToOpenEHR`, `ConceptMapOpenEHRToOMOP`). The four-archetype consumer-wearable scope and the three priority design patterns (data quality, algorithm provenance, temporal semantics) reflect the findings of the project systematic review of openEHR archetypes for consumer wearable health devices (RS6). Archetype identifiers follow the openEHR naming convention (`openEHR-EHR-OBSERVATION.<concept>.v0`); the `v0` suffix denotes pre-CKM-submission drafts. HRV LOINC status (SDNN `80404-7` present; RMSSD/pNN50/LF/HF absent) is database-verified per the IG terminology verification protocol.
+
+---
+
+## ADDENDUM (T1 S47, 28 May 2026) — Vulcan FHIR-to-OMOP IG alignment + OMOP integration cross-link
+
+<!-- AUTHORED-BY-CLAUDE-T1-S47 - additive ADDENDUM per Lesson #431 frozen-at-birth -->
+
+The companion ConceptMap `ConceptMapOpenEHRToOMOP` is also the cross-standard bridge that the new [OMOP Integration](omop-integration.html) page describes from the OMOP side. Together they let an openEHR archetype source feed an OHDSI-network federated analysis through a Vulcan FHIR-to-OMOP IG v1.0.0 (INFORMATIVE 1) compatible pipeline — this IG provides the mapping shape; the [HL7 Vulcan FHIR-to-OMOP IG](http://hl7.org/fhir/uv/fhir-to-omop) (v1.0.0, R5, CC0-1.0, BRR workgroup) provides the generic resource-level transformation contract; and the OHDSI [Standardized Vocabularies](https://athena.ohdsi.org) provide the target `concept_id` values.
+
+The IG's RS13 post-defense ETL implementation is now positioned as a **Vulcan-conformant deployment**, not a novel framework — repositioning the openEHR↔OMOP bridge narrows the claimed novelty without losing the substantive contribution (the lifestyle-medicine-vertical archetype-to-OMOP mapping, which Vulcan does not specify). The four-archetype consumer-wearable scope (HRV, sleep, activity, mindfulness) and the three design patterns above are unchanged; the new framing situates them inside the broader FHIR-to-OMOP standards landscape that emerged in 2026.
+
+
+<!-- AUTHORED-BY-CLAUDE-T1-S48 (Pitfall #97) · 2nd additive ADDENDUM (Lesson #431 frozen-at-birth) · pasted v0.4.1 T1 S49 -->
+
+## ADDENDUM (T1 S48, 30 May 2026) — Platform alignment: the system approach, the CDR, archetype governance, and AQL
+
+The [Why two models](#why-two-models) section above states *that* this IG persists in openEHR and exchanges in FHIR. This addendum states *why that is the right division of labour at the platform level*, grounded in the openEHR–FHIR community's own analysis and in a national-scale openEHR reference architecture.
+
+### A. The system approach to standardization
+
+A widely-cited critique from the standards community is that FHIR, **as it is used in practice**, is message-oriented: every pair of systems and every business use case tends to spawn its own Implementation Guide and profiles, so the same clinical concept gets re-modeled many times over (one analysis counted **more than sixty different FHIR models for vital signs** alone). On that reading, *each FHIR IG is itself a standard* — FHIR is a framework of standards rather than a single data model.
+
+The proposed remedy is a **"system approach"**: standardize once at the level of the **data source / clinical data repository**, then **derive FHIR messages from that canonical model** — and openEHR is the technology that implements this approach. The conclusion of that analysis is exactly this IG's architecture: *combine FHIR and openEHR to get the best of both worlds by deriving FHIR messages from openEHR data models.* This addendum records that our dual-model is not an idiosyncratic choice but the position of the openEHR–FHIR community and of national e-health agencies.
+
+The practical consequence for this IG: the curated, governed clinical model lives as **openEHR archetypes** (stable, reusable, vendor-neutral), and the FHIR profiles in this IG are the **exchange projection** of that model — which is why the IG is reuse-heavy and adds local profiles/extensions only where genuinely necessary (the antidote to proliferation; see also the [Vocabularies and Value Sets Catalog](terminology-vocabularies-catalog.html)).
+
+### B. The CDR reference architecture (layered, openEHR-native)
+
+A national-scale openEHR platform demonstrates the persistence layer this IG's data ultimately targets: a **layered Medical Data Integration Centre (MeDIC)** pattern in which an **openEHR Clinical Data Repository (CDR)** sits at the centre, archetypes and templates define the canonical clinical content, and **standardized interfaces (including FHIR) project that content outward** for exchange and secondary use. The relevance to this IG: the FHIR resources defined here are the *interoperable surface* of such a CDR, not a competing store. The wearable-biomarker → CDR → exchange/secondary-use flow that this IG models is the same flow that the MeDIC pattern operationalizes at national scale, including for longitudinal cardiology/physical-activity use cases that are directly analogous to this IG's lifestyle-medicine vertical.
+
+### C. Archetype governance (the CKM lifecycle)
+
+openEHR's strength is governed reuse, and governance is a **lifecycle**, not a one-off authoring act. The Clinical Knowledge Manager (CKM) model — *need → draft → incubator → development → quality-assurance → review → approval* — is what keeps a shared archetype set trustworthy and reusable across institutions, and it is the discipline this IG assumes for any archetype it references via `OpenEHRArchetypesCS`. Named reuse of CKM archetypes ("reuse saves resources") is the governance counterpart to the IG's reuse-first terminology stance: the same anti-proliferation principle, applied to the clinical content models rather than to the exchange profiles.
+
+This governance lifecycle parallels the IG's own release governance (versioned source, CI, transparent suppression of inherited build warnings) — the two registries (archetypes in CKM, profiles/terminology in this IG) are kept current by the same kind of discipline.
+
+### D. AQL and semantic traceability
+
+Because openEHR separates the reference model from the archetype model, a single **Archetype Query Language (AQL)** query can retrieve data across heterogeneous archetypes by semantic path rather than by physical schema — the query is stable even as the underlying templates evolve. For this IG, that is the property that makes the openEHR side a durable source for the FHIR projection: the meaning travels with the data (archetype paths + terminology bindings), so a FHIR resource derived from the CDR carries a traceable semantic lineage back to the archetype node it came from. This is the persistence-layer counterpart of the IG's ConceptMap bridge.
+
+### E. openEHR-native patient-reported outcomes
+
+Patient-reported outcome measures (PROMs) — quality of care assessed from the patient's perspective, a key indicator of value-based care — are a concrete, deployed precedent for openEHR-native patient-facing data: an NHS open-standard, open-source, openEHR-native PROMs platform delivering questionnaires across web and mobile and charting population-level outcomes. For this IG, PROMs sit naturally **alongside** wearable biomarkers as patient-reported, openEHR-persisted, FHIR-exchanged data — reinforcing that the lifestyle-medicine vertical spans device-measured *and* patient-reported signals, both governed by the same archetype/terminology discipline (relevant to the openEHR archetype scope for consumer wearables, RS6).
+
+### F. Scope statement (unchanged)
+
+This addendum documents **architecture alignment**, not deployment. Operating an openEHR CDR (running AQL, hosting archetypes, executing the MeDIC layers) is an operational concern documented as future work under RS13 (see [Implementation Scope](implementation-scope-and-roadmap.html)). This IG adopts the openEHR *pattern* and projects it into FHIR; it does not ship a running CDR.

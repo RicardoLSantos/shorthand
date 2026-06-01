@@ -1,5 +1,39 @@
 # Changelog - iOS Lifestyle Medicine FHIR Implementation Guide
 
+## [0.4.1] - 2026-06-01
+
+### Added
+- **LifestyleMedicationRequest** profile (`lifestyle-medication-request`) — MedicationRequest specialization with `DrugLifestyleInteraction` extension (local CodeSystems: maoi-tyramine / ssri-alcohol / anticoagulant-vitamink) — concrete FHIR resource for the CDS Hooks `drug-lifestyle-interaction` service (T1 S44).
+- Server CapabilityStatement enriched: MedicationRequest resource (typed search params) + Observation `$lastn` operation (T1 S44).
+- Narrative pages: `gdl-integration.md` (GDL2→CDS Hooks bridge + honest scope: native GDL2 engine = openEHR-side, out-of-scope/RS13) + `implementation-scope-and-roadmap.md` (artifact-vs-deployment scope; operational layers CDR/CDS-endpoint/OMOP-ETL/OCL/GDL-engine/CQL-exec/LLM-RAG = RS13 post-defense) (T1 S45/S45 EXT).
+- Narrative page: `smart-cds-integrated-walkthrough.md` (M4 integrated walkthrough; SMART+CDS+ETL+Audit+Bulk+Consent across a single Apple HealthKit HRV-decline cohort; defensible-by-IG-content-only per Pitfall #57) (T1 S46).
+- 2 thin CQL Library doc-pointer resources (`LibraryCVR003HRVRisk` + `LibraryMET002MetabolicOverride`) resolving 3 unresolved `ClinicalImpression.protocol[0]` references; URLs use the CQL coordinate convention (`urn:cql:library:<id>:<version>`) exempted via `sushi-config.yaml parameters: special-url:` (T1 S46; Pitfall #112 NEW).
+
+### Fixed
+- **Build errors 5 → 0** (T1 S43): 3 Consent terminology errors (`regulatory-framework-cs#gdpr` → `AppLogicCS#gdpr`, resolves locally — removes tx.fhir.org dependency, Pitfall #100) + 2 `Group.characteristic [Range]` binding errors (drop `valueRange` narrowing on inherited slice). **Zero suppression** (USER firm rule, T2 S21).
+- **41 supportedProfile canonical references** PascalCase → kebab-case FSH Id (Pitfall #101) across LifestyleMedicineCapabilityStatement + PatientDataPipelineCapability; map-based per-canonical audit, not blind sed (T1 S45; convergent with T2 S33 fix-list).
+- **SleepObservation Id root-fix**: `activity-observation` → `sleep-observation` (Sleep profile was published under the wrong canonical; blast-radius grep = 1) (T1 S45).
+- **VRF-TERM-018 terminology remediation** (T2 S33): ~26 wrong-concept SNOMED/LOINC codes corrected (right code-system + valid code + WRONG concept — invisible to the FHIR validator). Examples: At-rest `255214003`→`263678003`; Abdomen `62413002`(=Radius)→`818983003`; Back `32849002`(=Esophagus)→`281213008`; Amphetamine `75672003`(=Platelet volume)→`373338002`; Holter `252339003`(=Iodination)→`427047002`; VO2max `92841-6`(=Countermeasure report)→`60842-2` "Oxygen consumption (VO2)". Method: Database-First (Vocab2/Athena) + tx.fhir.org `$validate-code` (Pitfall #109, Lesson #527). Origin: Dec 2024, LLM-assisted FSH pre-Database-First (git-blame, Pitfall #71).
+- **5 SNOMED inactive → active** swaps (Database-First + family check, Pitfall #55) (T2 S32).
+- **T1 Fase 3 warnings 137 → 1** (-99%): NamingSystem `<vendor>`→`{vendor}` placeholder convention; `etl-group-characteristic` http→https 6 refs; ~40 accept-class suppressions refreshed with exact full-message text in EN (Pitfall #64); special-url for 2 CQL Library urns (T1 S46).
+- **T2 S35 Opção γ — bulk-export-group-category example** (1-line fix; root-cause): `LifestyleMedicineGroupETL.fsh:211` `bulk-export-group-category#research` → `v3-ActReason#HRESCH` (HL7 standard, already enumerated in `BulkExportGroupCategoryVS`). Refines T1 S46 CoC Decisão 3.1 (which had proposed creating a local CS — would have duplicated HL7 standard terminology, Pitfall #33 risk). USER ratified γ via AskUserQuestion 2026-05-28 11:13 WEST after empirical diagnostic.
+- **T2 S35 — 2 display normalisations** in `BulkExportGroupCategoryVS`: `HQUALIMP` "healthcare quality improvement" → "health quality improvement"; `HSYSADMIN` "healthcare system administration" → "health system administration" (matches v3-ActReason canonical; resolves 2 INFORMATION entries; Pitfall #33 sub-rule).
+
+### Changed
+- **T2 S35 — Build script locale**: added `export LANG=en_US.UTF-8` + `export LC_ALL=en_US.UTF-8` to `_genonce.sh` (T2 lane, gitignored). T1 S46 CoC Decisão 3.3 — root-cause Pitfall #64 (locale-driven message drift between IG Publisher versions); EN-side `ignoreWarnings.txt` entries (authored by T1 S46) now match emitted warning messages. Lesson #538.
+- Warnings **137 → 0** (cumulative: T1 Fase 3 −136 [41 supportedProfile + 9 NamingSystem placeholder + 6 etl-group-characteristic + ~40 accept-class refresh + minor] + T2 S35 Opção γ −1 = 0; remaining ~48 fragment-CS ACCEPTED per Pitfall #61, suppressed in `ignoreWarnings.txt`).
+- 5 flagged terminology codes (Fair `445511000124105`, wearable-monitoring, device-prescription, meal-frequency `45978-4` #relatedto, dependent-count `68508-1` #relatedto): documented as defensible local CodeSystem gaps OR `#relatedto` bridges per Database-First menu (T2 S34, `T2_TO_T1_FLAGGED_CODES_DBFIRST_MENU_20260527_101517.md`). 3/5 = genuine terminology gaps (the IG/thesis HRV-gap finding), 2/5 = LOINC-bridge with #relatedto.
+
+### Methodology / provenance
+- Database-First display-semantic terminology audit IG-wide (163 LOINC + 167 SNOMED) via `$lookup` (existence) + `$validate-code` (concept correctness). This release is a demonstration of the IG's own anti-LLM-hallucination thesis (Pitfall #33; RS11/RS12).
+- Built with IG Publisher 2.2.7 + A3 JVM DNS flags (Pitfall #100) + EN locale (Pitfall #64 Lesson #538); err=0, warn=0, 0 broken links.
+- Special-url exemptions documented in `sushi-config.yaml parameters: special-url:` for non-namespace canonicals (vendor APIs, athena/ckm, CQL library urns); Pitfall #112 refines Pitfall #61 (URL-mismatch errors on complete-content resources DO accept special-url).
+
+### Source counts (FSH)
+- Profiles 94 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 263 (657 artefacts; +1 Library doc-pointer Instance vs T1 S45 baseline; +0 vs T1 S46 close 263I).
+
+---
+
 ## [0.4.0] - 2026-05-21
 
 ### Errata vs v0.3.0 (Pitfall #67 conditional disclosure — v0.3.0 immutable per Pitfall #66)

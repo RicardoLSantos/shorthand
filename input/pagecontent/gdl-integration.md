@@ -37,3 +37,19 @@ This IG **adopts the GDL2 → CDS Hooks correspondence as a design pattern** and
 - embed or require a GDL2 execution engine (the GDL2 reference engine is an openEHR-side component).
 
 Native GDL2 authoring and an executing engine sit in the **openEHR persistence layer**, which is out of scope for a FHIR IG and is addressed as future work alongside the openEHR CDR integration (see [openEHR Integration](openehr-integration.html)). The IG's contribution is the **published bridge** — the ConceptMaps and the CDS Hooks service contract — that makes GDL2-authored guidelines executable over FHIR. This is an *adopted architectural pattern*, not an *employed tool*: the IG demonstrates the integration path without overclaiming a deployed GDL2 runtime.
+
+---
+
+## ADDENDUM (T1 S47, 28 May 2026) — Adopted-pattern stance reinforced + HEADS-ETL out-of-scope statement (Decision #12)
+
+<!-- AUTHORED-BY-CLAUDE-T1-S47 - additive ADDENDUM per Lesson #431 frozen-at-birth -->
+
+The *adopted-pattern, not employed-tool* stance recorded above is now part of a consistent IG-wide discipline (project **Decision #12** in the CLAUDE.md decisions ledger), applied not just to GDL2 but to **every external runtime layer the IG references**:
+
+- The **CQL engine** is external (the `Library` resources [`LibraryCVR003HRVRisk`](Library-LibraryCVR003HRVRisk.html) and [`LibraryMET002MetabolicOverride`](Library-LibraryMET002MetabolicOverride.html) are doc-pointers via `urn:cql:library:` with `special-url`; the executable CQL is maintained externally in the HEADS-ETL repository).
+- The **LLM agent runtime** is external (see [LLM/AI Integration](llm-ai-integration.html); the IG ships the conformance shape — Profiles, Extensions, CodeSystem, ValueSets — but no inference endpoint, prompt template, or model file).
+- The **OMOP ETL pipeline** is external (see [OMOP Integration](omop-integration.html); the IG ships six ConceptMaps but no transformation engine; the HEADS-ETL pipeline is now positioned as a Vulcan FHIR-to-OMOP IG v1.0.0 conformant deployment, not a novel framework — anti-overclaim per Pitfall #110).
+- The **openEHR CDR** is external (the [openEHR Integration](openehr-integration.html) page documents archetype↔FHIR-profile correspondence; no CDR is shipped).
+- The **GDL2 reference engine** is external (the present page documents the bridge; no engine is shipped).
+
+The unifying name for everything operational is **HEADS-ETL** — a separate repository, post-defense work (**RS13**), tracked in the IG only through the citable artefacts here. The discipline is enforceable: any addition to the IG that would require a running engine to be useful is, by construction, a candidate for refusal or repositioning as a doc-pointer + scope statement. The five external-runtime statements above are the canonical examples of how that discipline is operationalised. See [Implementation Scope and Roadmap](implementation-scope-and-roadmap.html) for the full inventory of in-scope vs. out-of-scope items, and [FHIR Intermediate Course Alignment](fhir-intermediate-course-alignment.html) for how the same discipline maps onto the HL7 FHIR Intermediate Brasil course's expectations.
