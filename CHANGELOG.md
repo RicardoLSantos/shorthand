@@ -1,5 +1,10 @@
 # Changelog - iOS Lifestyle Medicine FHIR Implementation Guide
 
+## [Unreleased]
+
+### Fixed
+- **Terminology (#147)**: `SubstanceUseValueSets` Amphetamine code `SCT#373338002` (INACTIVE since 2014-07-31, shipped in v0.4.1) → active successor `SCT#703842006` "Amphetamine" (Database-First Protocol v3: OMOP `CONCEPT_RELATIONSHIP` replaced-by `4188670`→`45773119` + tx.fhir.org `$lookup inactive=false` @ SNOMED Intl 20250201). Staged for v0.4.2; `sushi .` 0/0; full genonce verification at next release (T2 S36).
+
 ## [0.4.1] - 2026-06-01
 
 ### Added

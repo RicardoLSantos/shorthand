@@ -180,7 +180,7 @@ Using custom CodeSystem for substance categories where SNOMED lacks class-level 
 // SNOMED CT - Verified specific substance codes
 * $SCT#398705004 "Cannabis (substance)"
 * $SCT#387085005 "Cocaine (substance)"
-* $SCT#373338002 "Amphetamine" // T2 S33 VRF-TERM-018: was 75672003 = "Platelet mean volume determination" (not Amphetamine)
+* $SCT#703842006 "Amphetamine" // T2 S36 #147: 373338002 INACTIVE since 2014-07-31 -> active successor 703842006 (Database-First v3: OMOP replaced-by 4188670->45773119 + tx.fhir.org inactive=false @20250201); prior 75672003 was wrong (T2 S33 VRF-TERM-018)
 * $SCT#288459003 "MDMA (substance)"
 // Custom codes for substance CLASS categories (SNOMED gap - no class-level codes)
 * LifestyleMedicineTemporaryCS#opioids "Opioids"
