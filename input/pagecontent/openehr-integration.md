@@ -16,16 +16,18 @@ Translation is declarative, via ConceptMaps (see [ConceptMaps](conceptmaps.html)
 
 ## Archetype coverage (consumer wearable scope)
 
-The IG maps to four custom openEHR archetypes covering the consumer-wearable domains (heart-rate variability, sleep, physical activity, and device provenance). These are the four archetypes the systematic review identified as the priority CKM gaps for consumer wearables:
+<!-- G-6 harmonized T1 S51 (2026-06-02): aligned with Decisão #16 / S50 live CKM-mirror reconciliation — replaced the "four priority CKM gaps" overclaim with honest per-archetype novel/reuse/specialisation status -->
 
-| Domain | Archetype identifier | FHIR↔openEHR ConceptMaps |
-|--------|----------------------|---------------------------|
-| HRV | `openEHR-EHR-OBSERVATION.heart_rate_variability.v0` | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR, ConceptMapVendorToOpenEHR |
-| Physical activity | `openEHR-EHR-OBSERVATION.physical_activity_detailed.v0` | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
-| Sleep | `openEHR-EHR-OBSERVATION.sleep_architecture.v0` | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
-| Device provenance | `openEHR-EHR-CLUSTER.wearable_device.v0` | ConceptMapVendorToOpenEHR |
+The IG bridges to four openEHR archetypes covering core consumer-wearable domains (heart-rate variability, sleep, physical activity, and device provenance). Rather than presenting these as a uniform set of "CKM gaps", the IG records each archetype's **honest status relative to the published openEHR Clinical Knowledge Manager (CKM)** — a distinction confirmed by a live reconciliation against the CKM mirror (433 published OBSERVATION/CLUSTER concepts). Some are genuinely novel concepts with no CKM equivalent; others reuse or specialise an already-published CKM archetype. This is the characterisation a CKM reviewer expects, and it is the basis on which any future CKM submission would be scoped:
 
-Domains outside the consumer-wearable scope (nutrition, mindfulness, environmental, social, reproductive, mobility) are mapped to LOINC/SNOMED CT at the FHIR layer but are intentionally **not** given openEHR archetypes in this IG — they are out of the consumer-wearable archetype scope and are documented as future archetype work.
+| Domain | Archetype identifier | Status vs published CKM | FHIR↔openEHR ConceptMaps |
+|--------|----------------------|--------------------------|---------------------------|
+| HRV | `openEHR-EHR-OBSERVATION.heart_rate_variability.v0` | **Novel** — no OBSERVATION CKM equivalent | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR, ConceptMapVendorToOpenEHR |
+| Sleep | `openEHR-EHR-OBSERVATION.sleep_architecture.v0` | **Novel concept** — the published CKM sleep archetype models disturbance questionnaires, not sleep architecture/stages | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
+| Physical activity | `openEHR-EHR-OBSERVATION.physical_activity_detailed.v0` | **Reuse** — aligns to a published CKM physical-activity OBSERVATION archetype (a wearable-detailed projection, not a new gap) | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
+| Device provenance | `openEHR-EHR-CLUSTER.wearable_device.v0` | **Specialisation** of the published CKM device CLUSTER archetype (`openEHR-EHR-CLUSTER.device.v1`) | ConceptMapVendorToOpenEHR |
+
+These four are the consumer-wearable subset that this IG bridges into FHIR; the IG's broader original-archetype set is reconciled in an internal report whose genuine-versus-reuse classification is **pending clinical-supervisor validation before any CKM submission** (no draft archetype is submitted or catalogued until then). Domains outside the consumer-wearable scope (nutrition, mindfulness, environmental, social, reproductive, mobility) are mapped to LOINC/SNOMED CT at the FHIR layer but are intentionally **not** bridged to openEHR archetypes in this IG — they are documented as future archetype work.
 
 ## Bidirectional translation
 
@@ -35,6 +37,88 @@ The bridge is bidirectional and includes a direct vendor ingestion path and a re
 - **openEHR → FHIR** (`ConceptMapOpenEHRToFHIR`): the inverse, for systems whose system of record is an openEHR CDR.
 - **Vendor API → openEHR** (`ConceptMapVendorToOpenEHR`): a direct ingestion path mapping Apple HealthKit, Fitbit, Oura, Garmin and Polar fields to archetype nodes, enabling ETL that bypasses FHIR where appropriate.
 - **openEHR → OMOP** (`ConceptMapOpenEHRToOMOP`): bridges archetype data to OMOP CDM `MEASUREMENT`/`OBSERVATION` for population analytics (see the OMOP ConceptMaps for the verified `concept_id` mappings).
+
+## Element-level mapping (openEHR data item → FHIR path)
+
+<!-- AUTHORED-BY-CLAUDE-T1-S51 (2026-06-02): surfaced verbatim from committed ConceptMapOpenEHRToFHIR.fsh; LOINC codes Database-First verified vs Athena 2026-06-02 -->
+
+The bridge above is defined at the granularity of **individual data items**, not only archetype-to-resource. The tables below surface the committed `ConceptMapOpenEHRToFHIR` instance so the projection is explicit and reviewable — each row is the actual mapping committed in `input/fsh/terminology/ConceptMapOpenEHRToFHIR.fsh`. The LOINC codes are Database-First verified against the OHDSI Athena vocabulary (2026-06-02).
+
+**HRV** — `openEHR-EHR-OBSERVATION.heart_rate_variability.v0` → `Observation` (vital-signs):
+
+| openEHR data item | FHIR path | Terminology | Equivalence |
+|-------------------|-----------|-------------|-------------|
+| SDNN | `Observation.component[sdnn].valueQuantity` | LOINC `80404-7` (ms) | equivalent |
+| RMSSD | `Observation.component[rmssd].valueQuantity` | `LifestyleMedicineTemporaryCS#hrv-rmssd` (ms) — no LOINC | equivalent |
+| pNN50 | `Observation.component[pnn50].valueQuantity` | `…#hrv-pnn50` (%) — no LOINC | equivalent |
+| LF/HF ratio | `Observation.component[lf-hf-ratio].valueQuantity` | `…#hrv-lf-hf-ratio` — no LOINC | equivalent |
+| Recording duration | `Observation.effectivePeriod` | derived (end − start) | relatedto |
+| Physiological state | `Observation.component[state].valueCodeableConcept` | custom (resting/active/sleep) | equivalent |
+| Device | `Observation.device` | Device reference | relatedto |
+
+**Sleep** — `…sleep_architecture.v0` → `Observation` (sleep-analysis):
+
+| openEHR data item | FHIR path | Terminology | Equivalence |
+|-------------------|-----------|-------------|-------------|
+| Total sleep time | `Observation.valueQuantity` | LOINC `93832-4` (h/min) | equivalent |
+| Deep sleep duration | `Observation.component[deep-sleep].valueQuantity` | custom — no LOINC | equivalent |
+| REM sleep duration | `Observation.component[rem-sleep].valueQuantity` | custom — no LOINC | equivalent |
+| Sleep efficiency | `Observation.component[efficiency].valueQuantity` | custom (TST/TIB %) | equivalent |
+| Sleep score | `Observation.component[score].valueInteger` | vendor composite (0–100) | equivalent |
+| Avg HRV (RMSSD) during sleep | `Observation.component[sleep-hrv].valueQuantity` | `…#hrv-rmssd` (ms) | equivalent |
+
+**Physical activity** — `…physical_activity_detailed.v0` → `Observation` (physical-activity):
+
+| openEHR data item | FHIR path | Terminology | Equivalence |
+|-------------------|-----------|-------------|-------------|
+| Step count | `Observation.valueQuantity` | LOINC `55423-8` (steps) | equivalent |
+| Distance | `Observation.component[distance].valueQuantity` | LOINC `55430-3` (km/m) | equivalent |
+| Active calories | `Observation.component[active-calories].valueQuantity` | LOINC `41979-6` (kcal) | equivalent |
+| Moderate-activity minutes | `Observation.component[moderate-minutes].valueQuantity` | LOINC `77592-4` (min) | equivalent |
+| Vigorous-activity minutes | `Observation.component[vigorous-minutes].valueQuantity` | LOINC `77593-2` (min) | equivalent |
+
+**Device provenance** — `…wearable_device.v0` (CLUSTER) → `Device`:
+
+| openEHR data item | FHIR path | Equivalence |
+|-------------------|-----------|-------------|
+| Device platform | `Device.manufacturer` | equivalent |
+| Device model | `Device.modelNumber` | equivalent |
+| Device category | `Device.type` (SNOMED CT device type where available) | equivalent |
+| Serial number | `Device.serialNumber` | equivalent |
+| Firmware version | `Device.version[firmware]` | equivalent |
+
+> **Node-code convention note (honest):** the committed ConceptMaps reference data items by their ADL2 element identifiers (`idN`), whereas the `*.v0` draft archetypes are authored in ADL 1.4 (`atNNNN`) — for example, SDNN is `at0004` in the v0 ADL and `id5` in the ConceptMap. Reconciling node-code conventions across the full archetype set is part of the pre-CKM term-bindings audit; it does not affect the data-item → FHIR-path projection above, which is the reviewable contract.
+
+## Worked AQL (semantic retrieval over the CDR)
+
+Because openEHR separates the reference model from the archetype model, the same FHIR projection can be sourced from an openEHR CDR by querying data items via their **semantic archetype path** rather than a physical schema (the *AQL and semantic traceability* addendum below explains why this matters). Two illustrative queries over the HRV archetype use its ADL 1.4 node paths (`OBSERVATION[at0000]/data[at0001]/events[at0002]/data[at0003]/items[at0004]` = SDNN, `items[at0005]` = RMSSD):
+
+*Resting SDNN below the 50 ms low-HRV threshold in the last 90 days:*
+
+```sql
+SELECT
+  o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value/magnitude AS sdnn_ms,
+  o/data[at0001]/events[at0002]/time AS measured_at
+FROM EHR e
+  CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.heart_rate_variability.v0]
+WHERE o/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value/magnitude < 50
+  AND o/data[at0001]/events[at0002]/time > '2026-03-04T00:00:00Z'
+ORDER BY measured_at DESC
+```
+
+*RMSSD trend (parasympathetic marker) per subject, for a recovery review:*
+
+```sql
+SELECT
+  e/ehr_id/value AS subject,
+  o/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value/magnitude AS rmssd_ms,
+  o/data[at0001]/events[at0002]/time AS measured_at
+FROM EHR e
+  CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.heart_rate_variability.v0]
+ORDER BY subject, measured_at
+```
+
+Each result row carries its semantic lineage (archetype id + node path), so a FHIR `Observation` derived from it is traceable back to `items[at0004]` (SDNN) / `items[at0005]` (RMSSD) — the persistence-layer counterpart of the [ConceptMaps](conceptmaps.html) bridge.
 
 ## Design pattern 1 — Data-quality representation
 
@@ -71,7 +155,7 @@ This narrative is a companion to the openEHR-related ConceptMaps committed under
 
 The companion ConceptMap `ConceptMapOpenEHRToOMOP` is also the cross-standard bridge that the new [OMOP Integration](omop-integration.html) page describes from the OMOP side. Together they let an openEHR archetype source feed an OHDSI-network federated analysis through a Vulcan FHIR-to-OMOP IG v1.0.0 (INFORMATIVE 1) compatible pipeline — this IG provides the mapping shape; the [HL7 Vulcan FHIR-to-OMOP IG](http://hl7.org/fhir/uv/fhir-to-omop) (v1.0.0, R5, CC0-1.0, BRR workgroup) provides the generic resource-level transformation contract; and the OHDSI [Standardized Vocabularies](https://athena.ohdsi.org) provide the target `concept_id` values.
 
-The IG's RS13 post-defense ETL implementation is now positioned as a **Vulcan-conformant deployment**, not a novel framework — repositioning the openEHR↔OMOP bridge narrows the claimed novelty without losing the substantive contribution (the lifestyle-medicine-vertical archetype-to-OMOP mapping, which Vulcan does not specify). The four-archetype consumer-wearable scope (HRV, sleep, activity, mindfulness) and the three design patterns above are unchanged; the new framing situates them inside the broader FHIR-to-OMOP standards landscape that emerged in 2026.
+The IG's RS13 post-defense ETL implementation is now positioned as a **Vulcan-conformant deployment**, not a novel framework — repositioning the openEHR↔OMOP bridge narrows the claimed novelty without losing the substantive contribution (the lifestyle-medicine-vertical archetype-to-OMOP mapping, which Vulcan does not specify). The four-archetype consumer-wearable scope (HRV, sleep, activity, device provenance) and the three design patterns above are unchanged; the new framing situates them inside the broader FHIR-to-OMOP standards landscape that emerged in 2026.
 
 
 <!-- AUTHORED-BY-CLAUDE-T1-S48 (Pitfall #97) · 2nd additive ADDENDUM (Lesson #431 frozen-at-birth) · pasted v0.4.1 T1 S49 -->
