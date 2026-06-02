@@ -61,8 +61,8 @@ The bridge above is defined at the granularity of **individual data items**, not
 | openEHR data item | FHIR path | Terminology | Equivalence |
 |-------------------|-----------|-------------|-------------|
 | Total sleep time | `Observation.valueQuantity` | LOINC `93832-4` (h/min) | equivalent |
-| Deep sleep duration | `Observation.component[deep-sleep].valueQuantity` | custom — no LOINC | equivalent |
-| REM sleep duration | `Observation.component[rem-sleep].valueQuantity` | custom — no LOINC | equivalent |
+| Deep sleep duration | `Observation.component[deep-sleep].valueQuantity` | custom code† | equivalent |
+| REM sleep duration | `Observation.component[rem-sleep].valueQuantity` | custom code† | equivalent |
 | Sleep efficiency | `Observation.component[efficiency].valueQuantity` | custom (TST/TIB %) | equivalent |
 | Sleep score | `Observation.component[score].valueInteger` | vendor composite (0–100) | equivalent |
 | Avg HRV (RMSSD) during sleep | `Observation.component[sleep-hrv].valueQuantity` | `…#hrv-rmssd` (ms) | equivalent |
@@ -88,6 +88,8 @@ The bridge above is defined at the granularity of **individual data items**, not
 | Firmware version | `Device.version[firmware]` | equivalent |
 
 > **Node-code convention note (honest):** the committed ConceptMaps reference data items by their ADL2 element identifiers (`idN`), whereas the `*.v0` draft archetypes are authored in ADL 1.4 (`atNNNN`) — for example, SDNN is `at0004` in the v0 ADL and `id5` in the ConceptMap. Reconciling node-code conventions across the full archetype set is part of the pre-CKM term-bindings audit; it does not affect the data-item → FHIR-path projection above, which is the reviewable contract.
+
+> **† Binding improvements (terminology audit, Database-First vs OHDSI Athena):** the deep/REM sleep rows currently bind custom codes, but LOINC codes **do exist** — `93831-6` (Deep sleep duration) and `93829-0` (REM sleep duration); and the activity-minute rows bind IPAQ-survey LOINC (`77592-4`/`77593-2`) where device-method LOINC (`101689-8` / `101690-6`) are preferable for wearable-sourced data. These ConceptMap binding updates are queued in the terminology lane (not yet applied); the tables above reflect the *currently committed* bindings so the narrative does not run ahead of the FSH.
 
 ## Worked AQL (semantic retrieval over the CDR)
 
