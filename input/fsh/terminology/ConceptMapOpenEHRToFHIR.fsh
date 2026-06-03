@@ -144,7 +144,7 @@ Architecture:
 * group[1].element[3].target[0].code = #Observation.component
 * group[1].element[3].target[0].display = "Observation.component[moderate-minutes].valueQuantity"
 * group[1].element[3].target[0].equivalence = #equivalent
-* group[1].element[3].target[0].comment = "Map to component with LOINC 77592-4. Unit: min"
+* group[1].element[3].target[0].comment = "Map to component with LOINC 101689-8 (device-method 'Duration of moderate activity'; aligned 2026-06-03 with ConceptMapOpenEHRToOMOP, was IPAQ-survey 77592-4). Unit: min"
 
 // Vigorous activity minutes (id33) → Observation.component
 * group[1].element[4].code = #id33
@@ -152,7 +152,7 @@ Architecture:
 * group[1].element[4].target[0].code = #Observation.component
 * group[1].element[4].target[0].display = "Observation.component[vigorous-minutes].valueQuantity"
 * group[1].element[4].target[0].equivalence = #equivalent
-* group[1].element[4].target[0].comment = "Map to component with LOINC 77593-2. Unit: min"
+* group[1].element[4].target[0].comment = "Map to component with LOINC 101690-6 (device-method 'Duration of vigorous activity'; aligned 2026-06-03 with ConceptMapOpenEHRToOMOP, was IPAQ-survey 77593-2). Unit: min"
 
 // ============================================================================
 // GROUP 3: Sleep Architecture Archetype → FHIR Observation

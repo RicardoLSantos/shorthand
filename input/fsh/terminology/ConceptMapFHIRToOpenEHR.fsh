@@ -142,19 +142,19 @@ Architecture:
 
 // Moderate minutes component → id32
 * group[1].element[3].code = #"Observation.component:moderate-minutes"
-* group[1].element[3].display = "Moderate activity minutes with LOINC 77592-4"
+* group[1].element[3].display = "Moderate activity minutes with LOINC 101689-8"
 * group[1].element[3].target[0].code = #id32
 * group[1].element[3].target[0].display = "Moderately active minutes"
 * group[1].element[3].target[0].equivalence = #equivalent
-* group[1].element[3].target[0].comment = "Map from component with LOINC 77592-4. Unit: min"
+* group[1].element[3].target[0].comment = "Map from component with LOINC 101689-8 (device-method 'Duration of moderate activity'; aligned 2026-06-03 with ConceptMapOpenEHRToOMOP, was IPAQ-survey 77592-4). Unit: min"
 
 // Vigorous minutes component → id33
 * group[1].element[4].code = #"Observation.component:vigorous-minutes"
-* group[1].element[4].display = "Vigorous activity minutes with LOINC 77593-2"
+* group[1].element[4].display = "Vigorous activity minutes with LOINC 101690-6"
 * group[1].element[4].target[0].code = #id33
 * group[1].element[4].target[0].display = "Vigorously active minutes"
 * group[1].element[4].target[0].equivalence = #equivalent
-* group[1].element[4].target[0].comment = "Map from component with LOINC 77593-2. Unit: min"
+* group[1].element[4].target[0].comment = "Map from component with LOINC 101690-6 (device-method 'Duration of vigorous activity'; aligned 2026-06-03 with ConceptMapOpenEHRToOMOP, was IPAQ-survey 77593-2). Unit: min"
 
 // ============================================================================
 // GROUP 3: FHIR Observation (Sleep) → openEHR Sleep Architecture Archetype
@@ -176,7 +176,7 @@ Architecture:
 * group[2].element[1].target[0].code = #id23
 * group[2].element[1].target[0].display = "Deep sleep duration"
 * group[2].element[1].target[0].equivalence = #equivalent
-* group[2].element[1].target[0].comment = "N3/SWS stage duration. Custom code - no LOINC"
+* group[2].element[1].target[0].comment = "N3/SWS stage duration. LOINC 93831-6 'Deep sleep duration' (used IG-wide: SleepProfile, ConceptMapSleepToLOINC; updated 2026-06-03, was 'no LOINC')"
 
 // REM sleep component → id24
 * group[2].element[2].code = #"Observation.component:rem-sleep"
@@ -184,7 +184,7 @@ Architecture:
 * group[2].element[2].target[0].code = #id24
 * group[2].element[2].target[0].display = "REM sleep duration"
 * group[2].element[2].target[0].equivalence = #equivalent
-* group[2].element[2].target[0].comment = "REM stage duration. Custom code - no LOINC"
+* group[2].element[2].target[0].comment = "REM stage duration. LOINC 93829-0 'REM sleep duration' (used IG-wide: SleepProfile, ConceptMapSleepToOMOP, examples; updated 2026-06-03, was 'no LOINC')"
 
 // Sleep efficiency component → id30
 * group[2].element[3].code = #"Observation.component:efficiency"

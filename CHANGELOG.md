@@ -4,6 +4,7 @@
 
 ### Fixed
 - **Terminology (#147)**: `SubstanceUseValueSets` Amphetamine code `SCT#373338002` (INACTIVE since 2014-07-31, shipped in v0.4.1) → active successor `SCT#703842006` "Amphetamine" (Database-First Protocol v3: OMOP `CONCEPT_RELATIONSHIP` replaced-by `4188670`→`45773119` + tx.fhir.org `$lookup inactive=false` @ SNOMED Intl 20250201). Staged for v0.4.2; `sushi .` 0/0; full genonce verification at next release (T2 S36).
+- **Terminology (F1/F2, T2 S38)**: openEHR ConceptMap internal-consistency alignment (display/comment text only — no code/binding changes). **F2** — activity moderate/vigorous LOINC in `ConceptMapFHIRToOpenEHR` + `ConceptMapOpenEHRToFHIR` aligned from IPAQ-survey `77592-4`/`77593-2` → device-method `101689-8`/`101690-6` (matching the Athena-verified `ConceptMapOpenEHRToOMOP`; device codes are the correct fit for wearable data — resolves a 3-map internal inconsistency). **F1** — sleep Deep/REM comments in `ConceptMapFHIRToOpenEHR` updated "Custom code - no LOINC" → `93831-6` (Deep) / `93829-0` (REM), already used IG-wide (SleepProfile, ConceptMapSleepToLOINC, ConceptMapSleepToOMOP, examples). All 4 codes tx.fhir.org `$lookup inactive=false` (Database-First 2-source; VRF-TERM-019). Makes the openEHR narrative's "queued to terminology lane" footnote (T1 S51) true. Staged for v0.4.2.
 
 ## [0.4.1] - 2026-06-01
 
