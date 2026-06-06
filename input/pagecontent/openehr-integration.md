@@ -61,8 +61,8 @@ The bridge above is defined at the granularity of **individual data items**, not
 | openEHR data item | FHIR path | Terminology | Equivalence |
 |-------------------|-----------|-------------|-------------|
 | Total sleep time | `Observation.valueQuantity` | LOINC `93832-4` (h/min) | equivalent |
-| Deep sleep duration | `Observation.component[deep-sleep].valueQuantity` | custom code† | equivalent |
-| REM sleep duration | `Observation.component[rem-sleep].valueQuantity` | custom code† | equivalent |
+| Deep sleep duration | `Observation.component[deep-sleep].valueQuantity` | LOINC `93831-6` (min) | equivalent |
+| REM sleep duration | `Observation.component[rem-sleep].valueQuantity` | LOINC `93829-0` (min) | equivalent |
 | Sleep efficiency | `Observation.component[efficiency].valueQuantity` | custom (TST/TIB %) | equivalent |
 | Sleep score | `Observation.component[score].valueInteger` | vendor composite (0–100) | equivalent |
 | Avg HRV (RMSSD) during sleep | `Observation.component[sleep-hrv].valueQuantity` | `…#hrv-rmssd` (ms) | equivalent |
@@ -74,8 +74,8 @@ The bridge above is defined at the granularity of **individual data items**, not
 | Step count | `Observation.valueQuantity` | LOINC `55423-8` (steps) | equivalent |
 | Distance | `Observation.component[distance].valueQuantity` | LOINC `55430-3` (km/m) | equivalent |
 | Active calories | `Observation.component[active-calories].valueQuantity` | LOINC `41979-6` (kcal) | equivalent |
-| Moderate-activity minutes | `Observation.component[moderate-minutes].valueQuantity` | LOINC `77592-4` (min) | equivalent |
-| Vigorous-activity minutes | `Observation.component[vigorous-minutes].valueQuantity` | LOINC `77593-2` (min) | equivalent |
+| Moderate-activity minutes | `Observation.component[moderateMinutes].valueQuantity` | LOINC `101689-8` (min) — device-method | equivalent |
+| Vigorous-activity minutes | `Observation.component[vigorousMinutes].valueQuantity` | LOINC `101690-6` (min) — device-method | equivalent |
 
 **Device provenance** — `…wearable_device.v0` (CLUSTER) → `Device`:
 
@@ -89,7 +89,7 @@ The bridge above is defined at the granularity of **individual data items**, not
 
 > **Node-code convention note (honest):** the committed ConceptMaps reference data items by their ADL2 element identifiers (`idN`), whereas the `*.v0` draft archetypes are authored in ADL 1.4 (`atNNNN`) — for example, SDNN is `at0004` in the v0 ADL and `id5` in the ConceptMap. Reconciling node-code conventions across the full archetype set is part of the pre-CKM term-bindings audit; it does not affect the data-item → FHIR-path projection above, which is the reviewable contract.
 
-> **† Binding improvements (terminology audit, Database-First vs OHDSI Athena):** the deep/REM sleep rows currently bind custom codes, but LOINC codes **do exist** — `93831-6` (Deep sleep duration) and `93829-0` (REM sleep duration); and the activity-minute rows bind IPAQ-survey LOINC (`77592-4`/`77593-2`) where device-method LOINC (`101689-8` / `101690-6`) are preferable for wearable-sourced data. These ConceptMap binding updates are queued in the terminology lane (not yet applied); the tables above reflect the *currently committed* bindings so the narrative does not run ahead of the FSH.
+> **Binding status (terminology audit, Database-First vs OHDSI Athena — APPLIED; rides on v0.4.2 [Unreleased]):** the deep/REM sleep rows bind LOINC `93831-6` (Deep sleep duration) / `93829-0` (REM sleep duration), used IG-wide (`SleepProfile`). The activity-minute rows bind **device-method** LOINC `101689-8` (Duration of moderate activity) / `101690-6` (Duration of vigorous activity) — preferable to the former IPAQ-survey LOINC (`77592-4`/`77593-2`) for wearable-sourced data. The three openEHR ConceptMaps were aligned to these codes on 2026-06-03 (`VRF-TERM-019`); the `PhysicalActivityObservation` profile now defines explicit `moderateMinutes`/`vigorousMinutes` component slices binding the device-method codes (2026-06-06, T1 S53), so the profile, the three openEHR ConceptMaps and the OMOP map are internally consistent. The former IPAQ codes are preserved as provenance notes in the ConceptMap comments (audit trail).
 
 ## Worked AQL (semantic retrieval over the CDR)
 

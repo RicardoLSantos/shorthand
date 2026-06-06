@@ -101,7 +101,9 @@ References:
     steps 0..1 MS and
     distance 0..1 MS and
     duration 0..1 MS and
-    energy 0..1 MS
+    energy 0..1 MS and
+    moderateMinutes 0..1 MS and
+    vigorousMinutes 0..1 MS
 
 * component[steps].code = $LOINC#55423-8 "Number of steps in unspecified time Pedometer"
 * component[steps].valueQuantity only Quantity
@@ -122,3 +124,16 @@ References:
 * component[energy].valueQuantity only Quantity
 * component[energy].valueQuantity.system = $UCUM
 * component[energy].valueQuantity.code = #kcal "kilocalorie"
+
+// WHO 2020 intensity-stratified minutes. Device-method LOINC (wearable-sourced, NOT IPAQ-survey
+// 77592-4/77593-2). Database-First verified vs Athena 2026-06-06 (101689-8 std=S, 101690-6 std=S);
+// aligns the profile with the three openEHR ConceptMaps + the OMOP map (VRF-TERM-019, T1 S53).
+* component[moderateMinutes].code = $LOINC#101689-8 "Duration of moderate activity"
+* component[moderateMinutes].valueQuantity only Quantity
+* component[moderateMinutes].valueQuantity.system = $UCUM
+* component[moderateMinutes].valueQuantity.code = #min "minute"
+
+* component[vigorousMinutes].code = $LOINC#101690-6 "Duration of vigorous activity"
+* component[vigorousMinutes].valueQuantity only Quantity
+* component[vigorousMinutes].valueQuantity.system = $UCUM
+* component[vigorousMinutes].valueQuantity.code = #min "minute"
