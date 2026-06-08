@@ -2,9 +2,18 @@
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-06-08
+
+### Added
+- **Activity profile device-method binding (T1 S53)**: `PhysicalActivityObservation` gains 2 component slices — `moderateMinutes` (LOINC `101689-8` "Duration of moderate activity") + `vigorousMinutes` (LOINC `101690-6` "Duration of vigorous activity"), UCUM `min`, Database-First Athena-verified (std=S). Resolves the profile↔ConceptMap inconsistency flagged by T2 S38: the device-method codes lived only in the 3 openEHR ConceptMaps + the OMOP map, with **no profile binding them**. The profile now guarantees them — closing the openEHR↔FHIR↔OMOP round-trip (VRF-TERM-019 addendum, T1 S53). `sushi .` 0/0.
+
 ### Fixed
-- **Terminology (#147)**: `SubstanceUseValueSets` Amphetamine code `SCT#373338002` (INACTIVE since 2014-07-31, shipped in v0.4.1) → active successor `SCT#703842006` "Amphetamine" (Database-First Protocol v3: OMOP `CONCEPT_RELATIONSHIP` replaced-by `4188670`→`45773119` + tx.fhir.org `$lookup inactive=false` @ SNOMED Intl 20250201). Staged for v0.4.2; `sushi .` 0/0; full genonce verification at next release (T2 S36).
-- **Terminology (F1/F2, T2 S38)**: openEHR ConceptMap internal-consistency alignment (display/comment text only — no code/binding changes). **F2** — activity moderate/vigorous LOINC in `ConceptMapFHIRToOpenEHR` + `ConceptMapOpenEHRToFHIR` aligned from IPAQ-survey `77592-4`/`77593-2` → device-method `101689-8`/`101690-6` (matching the Athena-verified `ConceptMapOpenEHRToOMOP`; device codes are the correct fit for wearable data — resolves a 3-map internal inconsistency). **F1** — sleep Deep/REM comments in `ConceptMapFHIRToOpenEHR` updated "Custom code - no LOINC" → `93831-6` (Deep) / `93829-0` (REM), already used IG-wide (SleepProfile, ConceptMapSleepToLOINC, ConceptMapSleepToOMOP, examples). All 4 codes tx.fhir.org `$lookup inactive=false` (Database-First 2-source; VRF-TERM-019). Makes the openEHR narrative's "queued to terminology lane" footnote (T1 S51) true. Staged for v0.4.2.
+- **Terminology (#147)**: `SubstanceUseValueSets` Amphetamine code `SCT#373338002` (INACTIVE since 2014-07-31, shipped in v0.4.1) → active successor `SCT#703842006` "Amphetamine" (Database-First Protocol v3: OMOP `CONCEPT_RELATIONSHIP` replaced-by `4188670`→`45773119` + tx.fhir.org `$lookup inactive=false` @ SNOMED Intl 20250201). `sushi .` 0/0; genonce-verified this release (v0.4.2).
+- **Terminology (F1/F2, T2 S38)**: openEHR ConceptMap internal-consistency alignment (display/comment text only — no code/binding changes). **F2** — activity moderate/vigorous LOINC in `ConceptMapFHIRToOpenEHR` + `ConceptMapOpenEHRToFHIR` aligned from IPAQ-survey `77592-4`/`77593-2` → device-method `101689-8`/`101690-6` (matching the Athena-verified `ConceptMapOpenEHRToOMOP`; device codes are the correct fit for wearable data — resolves a 3-map internal inconsistency). **F1** — sleep Deep/REM comments in `ConceptMapFHIRToOpenEHR` updated "Custom code - no LOINC" → `93831-6` (Deep) / `93829-0` (REM), already used IG-wide (SleepProfile, ConceptMapSleepToLOINC, ConceptMapSleepToOMOP, examples). All 4 codes tx.fhir.org `$lookup inactive=false` (Database-First 2-source; VRF-TERM-019). Makes the openEHR narrative's "queued to terminology lane" footnote (T1 S51) true. **Applied in profile + narrative (T1 S53).**
+- **openEHR narrative reconciliation (T1 S53)**: `openehr-integration.md` — sleep Deep/REM rows `custom code†` → `93831-6`/`93829-0` (the `SleepProfile` already bound them; the table was stale); activity rows IPAQ-survey → device-method; binding-status footnote `queued` → **APPLIED**.
+
+### Source counts (FSH)
+- Profiles 94 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 263 (**657 artefacts — unchanged vs v0.4.1**; the 2 new activity component slices are intra-profile, not new artefacts). Built with IG Publisher 2.2.7 + EN locale + A3 JVM flags; err=0 / warn=0 target (genonce-verified this release).
 
 ## [0.4.1] - 2026-06-01
 
