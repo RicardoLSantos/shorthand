@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://2rdoc.pt/ig/ios-lifestyle-medicine/schemas/cds-hooks-card-2.0.schema.json",
+  "title": "CDS Hooks 2.0 Card",
+  "$comment": "Faithful local Draft-07 encoding of the CDS Hooks 2.0 Card object (https://cds-hooks.org/specification/current/#card-attributes). The official site does NOT publish a standalone Card JSON Schema: https://cds-hooks.org/schemas/2.0/Card.json returned HTTP 404 on 2026-06-09. This vendored schema is maintained by the IG to pre-commit/CI-validate the IG's own Card examples. additionalProperties is false at the Card level (catches the 'sources'-plural typo of Pitfall #95); nested FHIR objects (resource, topic) stay permissive. AUTHORED-BY-CLAUDE-T1-S55 (Pitfall #97).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summary", "indicator", "source"],
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "description": "Unique identifier of the card (recommended; used by suggestion actions and feedback)."
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 140,
+      "description": "One-sentence, <=140-character summary of the card."
+    },
+    "detail": {
+      "type": "string",
+      "description": "Optional GitHub-flavored Markdown detail."
+    },
+    "indicator": {
+      "type": "string",
+      "enum": ["info", "warning", "critical"],
+      "description": "Urgency / importance of the card."
+    },
+    "source": {
+      "type": "object",
+      "required": ["label"],
+      "properties": {
+        "label": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "icon": { "type": "string", "format": "uri" },
+        "topic": {
+          "type": "object",
+          "description": "Topic Coding (system/code/display). Kept permissive (FHIR-owned shape).",
+          "properties": {
+            "system": { "type": "string" },
+            "code": { "type": "string" },
+            "display": { "type": "string" }
+          }
+        }
+      }
+    },
+    "suggestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label"],
+        "properties": {
+          "label": { "type": "string" },
+          "uuid": { "type": "string" },
+          "isRecommended": { "type": "boolean" },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "description"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["create", "update", "delete"]
+                },
+                "description": { "type": "string" },
+                "resource": {
+                  "type": "object",
+                  "description": "FHIR resource payload. Kept permissive (FHIR-owned shape)."
+                },
+                "resourceId": {
+                  "type": ["string", "array"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "selectionBehavior": {
+      "type": "string",
+      "enum": ["at-most-one", "any"]
+    },
+    "overrideReasons": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "url", "type"],
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "type": {
+            "type": "string",
+            "enum": ["absolute", "smart"]
+          },
+          "appContext": { "type": "string" }
+        }
+      }
+    }
+  },
+  "if": { "required": ["suggestions"] },
+  "then": {
+    "required": ["selectionBehavior"],
+    "$comment": "CDS Hooks 2.0: selectionBehavior MUST be present when suggestions are present."
+  }
+}

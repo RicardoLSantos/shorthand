@@ -1,0 +1,46 @@
+# CDS Hooks Card conformance gate (HL7 FHIR Intermediate — course item 4.3)
+# Validates every CDS Hooks Card example (standalone files AND the copies embedded in
+# the cds-hooks-integration narrative, Pitfall #54) against the vendored CDS Hooks 2.0
+# Card JSON Schema. Hard-fails on any non-conformance (e.g. the historical 'sources'-
+# plural typo, Pitfall #95).
+#
+# Mirrors the conventions of ig-build.yml. Python + jsonschema (repo's scripting baseline).
+
+name: CDS Card Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'input/includes/cds-hooks-cards/**'
+      - 'input/pagecontent/cds-hooks-integration.md'
+      - '.github/scripts/validate_cds_cards.py'
+      - '.github/workflows/cds-card-validation.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'input/includes/cds-hooks-cards/**'
+      - 'input/pagecontent/cds-hooks-integration.md'
+      - '.github/scripts/validate_cds_cards.py'
+      - '.github/workflows/cds-card-validation.yml'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  validate-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install jsonschema
+        run: pip install jsonschema
+
+      - name: Validate CDS Hooks Cards (hard-fail on non-conformance)
+        run: python3 .github/scripts/validate_cds_cards.py
+
+      - name: Self-test the gate (must reject a 'sources'-plural typo)
+        run: python3 .github/scripts/validate_cds_cards.py --self-test

@@ -1,0 +1,39 @@
+# ConceptMap terminology-drift advisory (HL7 FHIR Intermediate — course item 4.9)
+# Weekly + on-demand re-validation of the IG's ConceptMap target codes against tx.fhir.org
+# ($validate-code, LOINC + SNOMED). The full Database-First check (incl. OMOP concept_ids)
+# runs LOCALLY against the OMOP CONCEPT CSVs, which are too large for CI; here we run the
+# network advisory subset.
+#
+# Advisory only (continue-on-error): a transient tx.fhir.org outage (Pitfall #100) must NOT
+# break the build. A drift finding is uploaded as an artifact for the terminology owner to
+# triage (it is never auto-fixed — Pitfall #82 / #109). Pure Python stdlib, no pip install.
+
+name: ConceptMap Drift
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # advisory: never break the build on tx transients
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: ConceptMap drift check (tx.fhir.org advisory — LOINC + SNOMED)
+        run: python3 .github/scripts/conceptmap_drift_check.py --source txfhir --report conceptmap-drift-report.md
+
+      - name: Upload drift report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: conceptmap-drift-report
+          path: conceptmap-drift-report.md
+          retention-days: 30
