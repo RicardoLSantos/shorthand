@@ -50,16 +50,11 @@ def _find_repo_root(start: Path) -> Path:
 REPO = _find_repo_root(Path(__file__))
 DEFAULT_FSH_ROOT = REPO / "input" / "fsh"
 
-# The big terminology CSVs live in the Thesis_github repo (gitignored, not in CI).
-DEFAULT_ATHENA = os.environ.get(
-    "ATHENA_CONCEPT_CSV",
-    "/Users/ricardo/Thesis_github/etl/data/athena/CONCEPT.csv",
-)
-DEFAULT_VOCAB2 = os.environ.get(
-    "VOCAB2_CONCEPT_CSV",
-    "/Users/ricardo/Thesis_github/knowledge_base/Vocabulario/"
-    "vocabulary_download_v5_{752480b0-e103-4ebd-aa87-3a4903b42741}_1768995263295/CONCEPT.csv",
-)
+# The large OMOP CONCEPT CSVs are NOT in this (public) repo. For --source local, provide them
+# via the ATHENA_CONCEPT_CSV / VOCAB2_CONCEPT_CSV env vars, or the --athena / --vocab2 flags
+# (LOINC + OMOP concept_id -> Athena CONCEPT.csv; SNOMED -> a SNOMED-bearing CONCEPT.csv).
+DEFAULT_ATHENA = os.environ.get("ATHENA_CONCEPT_CSV", "")
+DEFAULT_VOCAB2 = os.environ.get("VOCAB2_CONCEPT_CSV", "")
 
 TX_SERVER = "https://tx.fhir.org/r4"
 SYSTEM_URL = {"LOINC": "http://loinc.org", "SNOMED": "http://snomed.info/sct"}
@@ -188,6 +183,10 @@ def status_from_row(found: dict, code: str):
 
 def run_local(loinc, snomed, omop, athena_path, vocab2_path):
     results = {}  # (system, code) -> (status, name)
+    if not athena_path:
+        sys.stderr.write("ERROR: --source local needs the Athena CONCEPT.csv (LOINC + OMOP). "
+                         "Set ATHENA_CONCEPT_CSV or pass --athena PATH (the large CSV is not in the repo).\n")
+        return None
     athena = Path(athena_path)
     if not athena.exists():
         sys.stderr.write(f"ERROR: Athena CONCEPT.csv not found: {athena}\n")
@@ -199,9 +198,13 @@ def run_local(loinc, snomed, omop, athena_path, vocab2_path):
     for c in omop:
         results[("OMOP", c)] = status_from_row(omop_found, c)
     if snomed:
+        if not vocab2_path:
+            sys.stderr.write("ERROR: SNOMED targets present but no SNOMED CONCEPT.csv. "
+                             "Set VOCAB2_CONCEPT_CSV or pass --vocab2 PATH.\n")
+            return None
         vocab2 = Path(vocab2_path)
         if not vocab2.exists():
-            sys.stderr.write(f"ERROR: Vocab2 SNOMED CONCEPT.csv not found: {vocab2}\n")
+            sys.stderr.write(f"ERROR: SNOMED CONCEPT.csv not found: {vocab2}\n")
             return None
         sys.stderr.write(f"[local] scanning Vocab2 SNOMED ({vocab2.stat().st_size // 1_000_000} MB)...\n")
         snomed_found = scan_vocab2_snomed(vocab2, snomed)
