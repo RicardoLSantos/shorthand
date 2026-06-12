@@ -57,7 +57,8 @@ Usage: #example
 Description: "Oxygen saturation observation example"
 Title: "Oxygen Saturation Measurement Example"
 * status = #final
-* code = $LOINC#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
+* code.coding[O2Sat] = $LOINC#2708-6 "Oxygen saturation in Arterial blood"
+* code.coding[PulseOx] = $LOINC#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * valueQuantity = 98 '%' "percent"
@@ -99,7 +100,7 @@ Title: "Advanced Vital Signs Example"
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/DeviceHeartRateMonitor)
-* code = $LOINC#8716-3 "Vital signs"
+* code = $LOINC#8716-3 "Vital signs note"
 * code.text = "Advanced vital signs assessment (multi-component); the measured values are carried by the components below"
 * component[hrvSpectral].valueQuantity = 42 'ms' "millisecond"
 * component[meanArterialPressure].valueQuantity = 93 'mm[Hg]' "millimeter of mercury"

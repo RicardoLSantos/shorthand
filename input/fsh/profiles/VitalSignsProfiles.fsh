@@ -86,8 +86,16 @@ Id: oxygen-saturation-observation
 Title: "Oxygen Saturation Observation Profile"
 Description: "Profile for SpO2 measurements from iOS Health App. Maps to HKQuantityTypeIdentifier.oxygenSaturation. Normal range: 95-100%."
 
-* code = $LOINC#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
-* code ^comment = "Wearable / iOS HealthKit SpO2 is non-invasive pulse oximetry; 59408-5 preserves the 'by Pulse oximetry' method. LOINC 2708-6 (arterial-sample SaO2 / ABG) is out of scope for wearable-sourced data."
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "$this"
+* code.coding ^slicing.rules = #open
+* code.coding ^slicing.ordered = false
+* code.coding contains
+    O2Sat 1..1 MS and
+    PulseOx 1..1 MS
+* code.coding[O2Sat] = $LOINC#2708-6 "Oxygen saturation in Arterial blood"
+* code.coding[PulseOx] = $LOINC#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
+* code ^comment = "Dual-coded per the US Core Pulse Oximetry pattern: the O2Sat slice fixes 2708-6 (the FHIR oxygensat 'magic' anchor — canonical SpO2 code, method-independent, NOT an arterial-blood-gas claim); the PulseOx slice fixes 59408-5 (method = pulse oximetry). Both required (1..1). Wearable / iOS HealthKit SpO2 is always non-invasive pulse oximetry. Additional codings allowed (open slicing)."
 * valueQuantity 1..1 MS
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #%
