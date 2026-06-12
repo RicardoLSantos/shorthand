@@ -16,6 +16,7 @@ Description: "Profile for vital signs data from iOS Health App"
 * code 1..1 MS
 * value[x] 0..1 MS
 * device 0..1 MS
+* dataAbsentReason 0..1 MS
 
 Profile: HeartRateObservation
 Parent: LifestyleVitalSigns
@@ -85,12 +86,13 @@ Id: oxygen-saturation-observation
 Title: "Oxygen Saturation Observation Profile"
 Description: "Profile for SpO2 measurements from iOS Health App. Maps to HKQuantityTypeIdentifier.oxygenSaturation. Normal range: 95-100%."
 
-* code = $LOINC#2708-6 "Oxygen saturation in Arterial blood"
+* code = $LOINC#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
+* code ^comment = "Wearable / iOS HealthKit SpO2 is non-invasive pulse oximetry; 59408-5 preserves the 'by Pulse oximetry' method. LOINC 2708-6 (arterial-sample SaO2 / ABG) is out of scope for wearable-sourced data."
 * valueQuantity 1..1 MS
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #%
 * valueQuantity ^short = "SpO2 percentage"
-* valueQuantity ^definition = "Peripheral oxygen saturation. Normal: 95-100%. <90% indicates hypoxemia requiring medical attention."
+* valueQuantity ^definition = "Peripheral oxygen saturation (SpO2) measured by pulse oximetry. Normal: 95-100%. <90% indicates hypoxemia requiring medical attention."
 * note 0..* MS
 
 
@@ -173,3 +175,20 @@ Description: "Sites where body temperature can be measured"
 * $SCT#52795006 "Forehead structure"
 * $SCT#91470000 "Axillary region structure"
 * $SCT#34402009 "Rectum structure"
+
+
+// SDNN (Heart Rate Variability) Profile (LOINC 80404-7) — standalone, referenced by ETL fhir_hrv_sdnn.json
+Profile: SdnnObservation
+Parent: LifestyleVitalSigns
+Id: sdnn-observation
+Title: "SDNN Heart Rate Variability Observation Profile"
+Description: "Profile for SDNN (standard deviation of NN intervals) heart rate variability from iOS Health App / Apple Watch. Maps to HKQuantityTypeIdentifier.heartRateVariabilitySDNN. SDNN is the primary time-domain HRV marker of overall autonomic modulation. Coexists with the heartRateVariability component of HeartRateObservation (bundled HR+HRV); this standalone profile serves the ETL standalone-SDNN path."
+
+* code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* code ^comment = "80404-7 is the only HRV time-domain metric with a LOINC code (verified Athena). RMSSD, pNN50, LF/HF have no LOINC and use a custom CodeSystem."
+* valueQuantity 1..1 MS
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #ms
+* valueQuantity ^short = "SDNN in milliseconds"
+* valueQuantity ^definition = "Standard deviation of NN (normal-to-normal) intervals. Resting normal ~50-100 ms over 24h; lower values indicate reduced autonomic/parasympathetic modulation."
+* note 0..* MS

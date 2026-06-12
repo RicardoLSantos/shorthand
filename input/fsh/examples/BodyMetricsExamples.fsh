@@ -4,7 +4,6 @@ Usage: #example
 Description: "Weight observation example"
 Title: "Weight Measurement Example"
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#29463-7 "Body weight"
 * subject = Reference(PatientExample)
 * performer = Reference(PractitionerExample)
@@ -20,7 +19,6 @@ Usage: #example
 Description: "Height observation example"
 Title: "Height Measurement Example"
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#8302-2 "Body height"
 * subject = Reference(PatientExample)
 * performer = Reference(PractitionerExample)
@@ -35,7 +33,6 @@ Usage: #example
 Description: "Body Mass Index observation example"
 Title: "BMI Calculation Example"
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#39156-5 "Body mass index (BMI) [Ratio]"
 * subject = Reference(PatientExample)
 * performer = Reference(PractitionerExample)
@@ -52,7 +49,6 @@ Usage: #example
 Description: "Body composition observation example"
 Title: "Body Composition Measurement Example" 
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#body-composition-panel "Body composition measurement panel"
 * subject = Reference(PatientExample)
 * performer = Reference(PractitionerExample)

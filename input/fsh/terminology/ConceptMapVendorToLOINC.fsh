@@ -83,8 +83,8 @@ Usage: #definition
 // Oxygen Saturation
 * group[0].element[5].code = #HKQuantityTypeIdentifierOxygenSaturation
 * group[0].element[5].display = "Oxygen Saturation"
-* group[0].element[5].target[0].code = #2708-6
-* group[0].element[5].target[0].display = "Oxygen saturation in Arterial blood"
+* group[0].element[5].target[0].code = #59408-5
+* group[0].element[5].target[0].display = "Oxygen saturation in Arterial blood by Pulse oximetry"
 * group[0].element[5].target[0].equivalence = #equivalent
 
 // Respiratory Rate
@@ -403,8 +403,8 @@ Usage: #definition
 // SpO2
 * group[2].element[3].code = #avgSpo2
 * group[2].element[3].display = "Average SpO2"
-* group[2].element[3].target[0].code = #2708-6
-* group[2].element[3].target[0].display = "Oxygen saturation in Arterial blood"
+* group[2].element[3].target[0].code = #59408-5
+* group[2].element[3].target[0].display = "Oxygen saturation in Arterial blood by Pulse oximetry"
 * group[2].element[3].target[0].equivalence = #equivalent
 
 // =============================================================================

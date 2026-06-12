@@ -57,7 +57,7 @@ Usage: #example
 Description: "Oxygen saturation observation example"
 Title: "Oxygen Saturation Measurement Example"
 * status = #final
-* code = $LOINC#2708-6 "Oxygen saturation in Arterial blood"
+* code = $LOINC#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * valueQuantity = 98 '%' "percent"
@@ -99,7 +99,8 @@ Title: "Advanced Vital Signs Example"
 * effectiveDateTime = "2024-03-19T15:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/DeviceHeartRateMonitor)
-* code = $LOINC#8716-3 "Vital signs note"
+* code = $LOINC#8716-3 "Vital signs"
+* code.text = "Advanced vital signs assessment (multi-component); the measured values are carried by the components below"
 * component[hrvSpectral].valueQuantity = 42 'ms' "millisecond"
 * component[meanArterialPressure].valueQuantity = 93 'mm[Hg]' "millimeter of mercury"
 * component[autonomicBalance].valueQuantity = 1.2 '1' "ratio"
@@ -210,7 +211,6 @@ Title: "Advanced Vital Signs with Homeostasis Index"
 Description: "Example of advanced vital signs observation using the homeostasis-index extension to capture physiological balance"
 
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
 * code = $LOINC#8867-4 "Heart rate"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2026-01-27T06:30:00Z"
@@ -226,3 +226,18 @@ Description: "Example of advanced vital signs observation using the homeostasis-
 
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 * note.text = "Resting heart rate 58 bpm with high homeostasis index (0.82). Indicates good physiological balance and autonomic regulation."
+
+Instance: SdnnObservationExample
+InstanceOf: SdnnObservation
+Usage: #example
+Description: "SDNN heart rate variability observation example (Apple Watch)"
+Title: "SDNN HRV Measurement Example"
+* status = #final
+* code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* subject = Reference(PatientExample)
+* effectiveDateTime = "2025-11-27T07:00:00Z"
+* valueQuantity = 45.5 'ms' "millisecond"
+* valueQuantity.system = $UCUM
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
+* note.text = "Low SDNN indicative of reduced parasympathetic tone. Associated with elevated inflammatory markers."
+* device.display = "Apple Watch Series 9"

@@ -3,7 +3,7 @@ Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
 
 Profile: AdvancedVitalSigns
-Parent: Observation
+Parent: LifestyleVitalSigns
 Id: advanced-vital-signs
 Title: "Advanced Vital Signs Profile"
 Description: "Profile for advanced vital signs data from iOS Health App"
@@ -14,8 +14,6 @@ Description: "Profile for advanced vital signs data from iOS Health App"
 * ^contact.name = "Advanced Vital Signs Working Group"
 
 * status MS
-* category 1..1 MS
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code 1..1 MS
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS

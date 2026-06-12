@@ -112,7 +112,6 @@ Description: "Weight with conditions observation example"
 Title: "Weight Measurement with Conditions Example"
 
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code = $LOINC#29463-7 "Body weight"
 * subject = Reference(Patient/example)
 * effectiveDateTime = "2024-03-19T08:00:00Z"

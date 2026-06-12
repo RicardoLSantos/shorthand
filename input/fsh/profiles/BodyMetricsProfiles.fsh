@@ -3,7 +3,7 @@ Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
 
 Profile: BodyMetricsObservation
-Parent: Observation
+Parent: LifestyleVitalSigns
 Id: body-metrics-observation
 Title: "Body Metrics Observation Profile"
 Description: "Profile for body measurements from iOS Health App"
@@ -13,8 +13,6 @@ Description: "Profile for body measurements from iOS Health App"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
-* category 1..1 MS
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * subject 1..1 MS
 * effectiveDateTime 1..1 MS
 * device 0..1 MS
