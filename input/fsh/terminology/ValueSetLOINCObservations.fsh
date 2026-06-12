@@ -47,6 +47,11 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * http://loinc.org#59408-5 "Oxygen saturation in Arterial blood by Pulse oximetry"
 
 // ============================================================================
+// PANELS
+// ============================================================================
+* http://loinc.org#85353-1 "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+
+// ============================================================================
 // ANTHROPOMETRICS
 // ============================================================================
 * http://loinc.org#29463-7 "Body weight"

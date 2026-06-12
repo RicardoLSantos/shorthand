@@ -192,3 +192,15 @@ Description: "Profile for SDNN (standard deviation of NN intervals) heart rate v
 * valueQuantity ^short = "SDNN in milliseconds"
 * valueQuantity ^definition = "Standard deviation of NN (normal-to-normal) intervals. Resting normal ~50-100 ms over 24h; lower values indicate reduced autonomic/parasympathetic modulation."
 * note 0..* MS
+
+
+// Vital Signs Panel (LOINC 85353-1) — groups individual lifestyle vital-signs observations via hasMember (M5)
+Profile: VitalSignsPanel
+Parent: LifestyleVitalSigns
+Id: vital-signs-panel
+Title: "Vital Signs Panel Profile"
+Description: "Panel grouping the individual lifestyle-medicine vital-signs observations (heart rate, blood pressure, oxygen saturation, body temperature, respiratory rate) plus body metrics (weight, height, BMI, body composition) via hasMember, matching the LOINC 85353-1 panel scope. The panel itself carries no value; the measurements live in the referenced member observations."
+
+* code = $LOINC#85353-1 "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+* hasMember MS
+* hasMember only Reference(HeartRateObservation or BloodPressureObservation or OxygenSaturationObservation or BodyTemperatureObservation or RespiratoryRateObservation or BodyMetricsObservation)

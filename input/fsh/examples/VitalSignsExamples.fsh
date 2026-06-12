@@ -241,3 +241,21 @@ Title: "SDNN HRV Measurement Example"
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
 * note.text = "Low SDNN indicative of reduced parasympathetic tone. Associated with elevated inflammatory markers."
 * device.display = "Apple Watch Series 9"
+
+Instance: VitalSignsPanelExample
+InstanceOf: VitalSignsPanel
+Usage: #example
+Description: "Vital signs panel grouping individual lifestyle-medicine measurements"
+Title: "Vital Signs Panel Example"
+* status = #final
+* code = $LOINC#85353-1 "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+* subject = Reference(PatientExample)
+* effectiveDateTime = "2024-03-19T15:30:00Z"
+* hasMember[+] = Reference(HeartRateExample)
+* hasMember[+] = Reference(BloodPressureExample)
+* hasMember[+] = Reference(OxygenSaturationExample)
+* hasMember[+] = Reference(BodyTemperatureExample)
+* hasMember[+] = Reference(RespiratoryRateExample)
+* hasMember[+] = Reference(WeightExample)
+* hasMember[+] = Reference(HeightExample)
+* hasMember[+] = Reference(BMIExample)
