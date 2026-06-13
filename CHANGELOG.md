@@ -2,6 +2,25 @@
 
 ## [Unreleased]
 
+## [0.4.3] - 2026-06-13
+
+### Added
+- **SpO₂ dual-coding (US Core Pulse Oximetry pattern)** — `OxygenSaturationObservation` now slices `code` into `O2Sat` (1..1, LOINC `2708-6` — the FHIR `oxygensat` method-independent anchor, mandated by R4/R5 core) + `PulseOx` (1..1, LOINC `59408-5` — pulse-ox method). Aligns the IG with the most widely implemented FHIR profile (US Core) and the HL7 discussion FHIR-31574. C1 remediation (T1 S57 FSH `b98a5d76d` + T2 S43 narrative).
+- **`SdnnObservation`** profile (parent `LifestyleVitalSigns`, LOINC `80404-7`, ms) + example — H1; the HRV-SDNN ETL (`fhir_hrv_sdnn.json`) already targeted it (T1 S57).
+- **`VitalSignsPanel`** profile (LOINC `85353-1`, `hasMember` → HR/BP/SpO2/Temp/RR + Body Metrics) + 8-member example; `85353-1` added to `ValueSetLOINCObservations` (M5, T1 S57).
+- **Narrative**: new `### SpO₂ Coding — Pulse Oximetry vs Arterial Blood Gas` subsection (`vitalsigns.md`) + 4 pagecontent pages aligned to the dual-coding (`vitalsigns` / `advanced_vitalsigns` / `conformance` / `bibliography`) (T2 S43).
+
+### Fixed / Changed
+- **C1 (Critical) SpO₂ wearable** — default `2708-6` ("Oxygen saturation in Arterial blood", read as ABG/invasive) → dual-coding `2708-6` (anchor) + `59408-5` (pulse-ox method). AI-flagged (Fable 5 audit) + clinician-confirmed + FHIR-conformance-driven (the `oxygensat` profile fixes `2708-6`) → tri-axial co-validation; `2708-6` retained in the ValueSet for true arterial samples (T1 S57).
+- **H2/H3** — `BodyMetricsObservation` + `AdvancedVitalSigns` re-parented `Observation` → `LifestyleVitalSigns` (inherit vs-1/2/3 invariants; manual `category` removed) (T1 S57).
+- **M4** — `AdvancedVitalSignsExample` code `8716-3` display "Vital signs note" → "Vital signs" (Athena Database-First) (T1 S57).
+- **M6** — `dataAbsentReason 0..1 MS` in `LifestyleVitalSigns` (vs-2 escape-hatch) (T1 S57).
+- **M2 (terminology, T1 S58)** — `HeartRateVariabilityCodeSystem.fsh` renamed → `ValueSetHeartRateVariability.fsh` (the file declares a ValueSet; `Id`/canonical unchanged) + `hrv-*` custom codes re-attributed to their real CodeSystem (`LifestyleMedicineTemporaryCS`, Database-First) in `BulkExportGroup.fsh` + `cds-hooks-integration.md` + `hrv-overtraining.json` card.
+- **README** refreshed to v0.4.3 reality (96P/77E/19CS/204VS/265I/661) + RISE-Health affiliation (Pitfall #98; CINTESIS retired) + RS10-published note + private-repo links dropped (T1 S58 + T2 S43).
+
+### Source counts (FSH)
+- Profiles **96** / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances **265** = **661 artefacts** (+4 vs v0.4.2: +`SdnnObservation` +`VitalSignsPanel` profiles, +2 examples). Built with IG Publisher 2.2.7 + EN locale + A3 JVM flags; err=0 / warn=0 (genonce-verified this release).
+
 ## [0.4.2] - 2026-06-08
 
 ### Added

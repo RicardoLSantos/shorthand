@@ -139,7 +139,7 @@ This page provides a comprehensive list of references supporting the iOS Lifesty
 ### LOINC
 
 - Regenstrief Institute. **Logical Observation Identifiers Names and Codes (LOINC).** Available at: [https://loinc.org](https://loinc.org)
-- Key codes used: 80404-7 (SDNN), 2708-6 (SpO2), 8867-4 (Heart rate), 93832-4 (Sleep duration), 55423-8 (Steps), 72166-2 (Tobacco status), 75626-2 (AUDIT-C)
+- Key codes used: 80404-7 (SDNN), 2708-6 + 59408-5 (SpO2, dual-coded pulse-ox), 8867-4 (Heart rate), 93832-4 (Sleep duration), 55423-8 (Steps), 72166-2 (Tobacco status), 75626-2 (AUDIT-C)
 
 ### SNOMED CT
 

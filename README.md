@@ -4,7 +4,7 @@
 [![IG Publisher](https://img.shields.io/badge/IG%20Publisher-2.2.7-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey)](LICENSE)
 
-**Version**: 0.4.2
+**Version**: 0.4.3
 **Status**: STU1 Draft
 **Publisher**: FMUP (Faculty of Medicine, University of Porto)
 **Canonical**: `https://2rdoc.pt/ig/ios-lifestyle-medicine`
@@ -17,13 +17,13 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 
 ### Key Features
 
-- **94 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
+- **96 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
 - **77 Extensions** for measurement context, provenance, and AI/CDSS metadata
 - **19 CodeSystems** with custom codes for HRV/lifestyle metrics that lack LOINC/SNOMED (the documented terminology gap)
 - **204 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
 - **29 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
-- **263 Example Instances** including round-trip validation bundles
-- **657 total artefacts** (FHIR R4, IG Publisher 2.2.7, err=0 / warn=0 / 0 broken links)
+- **265 Example Instances** including round-trip validation bundles
+- **661 total artefacts** (FHIR R4, IG Publisher 2.2.7, err=0 / warn=0 / 0 broken links)
 - **SMART on FHIR + CDS Hooks 2.0 + Bulk Data** + **CQL/GDL2** clinical decision support
 - **openEHR + OMOP** round-trip transformations (ConceptMaps)
 
@@ -45,7 +45,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.4.2<br/>94 Profiles | 19 CS | 204 VS"]
+        FHIRIG["FHIR IG v0.4.3<br/>96 Profiles | 19 CS | 204 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -109,22 +109,22 @@ sequenceDiagram
 
 | Category | Count | Description |
 |----------|:-----:|-------------|
-| **Profiles** | 94 | Observation, Device, Patient, vital-signs, AI/CDSS profiles |
+| **Profiles** | 96 | Observation, Device, Patient, vital-signs, AI/CDSS profiles |
 | **Extensions** | 77 | Custom FHIR extensions |
 | **CodeSystems** | 19 | Content + external-stub CodeSystems |
 | **ValueSets** | 204 | LOINC, SNOMED CT, custom bindings |
-| **Instances** | 263 | Examples, ConceptMaps (29), round-trip validation bundles |
-| **Total** | **657** | All artefacts (v0.4.2, FHIR R4) |
+| **Instances** | 265 | Examples, ConceptMaps (29), round-trip validation bundles |
+| **Total** | **661** | All artefacts (v0.4.3, FHIR R4) |
 
-### Build Validation (2026-06-08, v0.4.2 release)
+### Build Validation (2026-06-13, v0.4.3 release)
 
 | Metric | Value | Notes |
 |--------|:-----:|-------|
 | Errors | 0 | |
 | Warnings | 0 | |
 | Broken Links | 0 | |
-| HTML Pages | 8,159 | |
-| Links Checked | 3,033,718 | 100% valid |
+| HTML Pages | 8,218 | |
+| Links Checked | 3,087,827 | 100% valid |
 
 ---
 
@@ -245,7 +245,7 @@ After build, the IG is available at:
 |----------|------|
 | **IG Index** | [output/index.html](output/index.html) |
 | **QA Report** | [output/qa.html](output/qa.html) |
-| **Full Package** | [GitHub Release v0.4.2](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.4.2) |
+| **Full Package** | [GitHub Release v0.4.3](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.4.3) |
 
 ---
 
@@ -255,7 +255,7 @@ After build, the IG is available at:
 iOS_Lifestyle_Medicine_HEADS2_FMUP/
 ├── input/
 │   ├── fsh/
-│   │   ├── profiles/          # 94 FHIR profiles
+│   │   ├── profiles/          # 96 FHIR profiles
 │   │   ├── extensions/        # 77 extensions
 │   │   ├── terminology/       # CodeSystems, ValueSets, ConceptMaps
 │   │   └── aliases.fsh        # Common aliases
@@ -356,4 +356,4 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 
 ---
 
-*Last updated: 2026-06-13 (v0.4.2)*
+*Last updated: 2026-06-13 (v0.4.3)*

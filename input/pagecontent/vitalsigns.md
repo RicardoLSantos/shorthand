@@ -101,9 +101,22 @@ Elements marked with MS must be supported:
 | HRV | component[heartRateVariability] | 80404-7 |
 | Blood Pressure Systolic | component[systolic] | 8480-6 |
 | Blood Pressure Diastolic | component[diastolic] | 8462-4 |
-| SpO2 | valueQuantity | 2708-6 |
+| SpO2 | code (dual-coded) + valueQuantity | 2708-6 + 59408-5 |
 | Body Temperature | valueQuantity | 8310-5 |
 | Respiratory Rate | valueQuantity | 9279-1 |
+
+### SpO₂ Coding — Pulse Oximetry vs Arterial Blood Gas
+
+Wearable SpO₂ (Apple Watch, iOS HealthKit) is **always non-invasive pulse oximetry** (photoplethysmography). It *estimates* arterial oxygen saturation (SaO₂) but is a clinically distinct measurement — the two diverge under dyshemoglobinemia, poor peripheral perfusion, and motion.
+
+`OxygenSaturationObservation` therefore **dual-codes** `Observation.code`, following the [US Core Pulse Oximetry](https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html) slicing pattern:
+
+| Slice | LOINC | Role |
+|-------|-------|------|
+| `O2Sat` (1..1) | `2708-6` | FHIR `oxygensat` canonical anchor — the method-independent vital-signs "magic" code mandated by FHIR R4/R5 core. The *"Arterial blood"* display is historical; in this profile it does **not** assert an arterial-blood-gas sample. |
+| `PulseOx` (1..1) | `59408-5` | Measurement method — pulse oximetry (non-invasive). |
+
+Both codings are required (`1..1`); additional codings are permitted (open slicing). `2708-6` is retained as the conformance anchor because FHIR core fixes it for every `oxygensat`-derived profile, while `59408-5` carries the wearable measurement method. Invasive arterial blood gas (ABG) is out of scope for wearable data, though `2708-6` remains valid for true arterial samples in other contexts. This dual-coding aligns the IG with the most widely implemented FHIR profile (US Core) and engages the HL7 discussion on SpO₂ coding (FHIR-31574).
 
 ### Implementation Considerations
 

@@ -10,7 +10,7 @@ This IG supports incremental adoption through three conformance levels:
 |:-----:|-------|:-----------------:|:---------------:|
 | **1 — Starter** | Single domain (e.g., Vital Signs or Sleep) | 1–7 profiles | Low |
 | **2 — Multi-Domain** | 3+ domains with cross-domain data | 10–25 profiles | Medium |
-| **3 — Full** | All 11 domains, ConceptMaps, AI/CDSS, Regulatory | 87 profiles | High |
+| **3 — Full** | All 11 domains, ConceptMaps, AI/CDSS, Regulatory | 96 profiles | High |
 
 Implementers **SHOULD** start at Level 1 and progressively adopt additional domains.
 
@@ -49,11 +49,11 @@ A system claiming Level 3 conformance:
 
 ## Domain-Profile Matrix
 
-The IG organizes 87 profiles across 11 lifestyle medicine domains plus regulatory compliance (LGPD, GDPR, EU AI Act, CFM 2.454, HIPAA). The table below shows profile counts, MustSupport (MS) element ranges, and primary terminology per domain.
+The IG organizes 96 profiles across 11 lifestyle medicine domains plus regulatory compliance (LGPD, GDPR, EU AI Act, CFM 2.454, HIPAA). The table below shows profile counts, MustSupport (MS) element ranges, and primary terminology per domain.
 
 | # | Domain | Profiles | MS Range | Primary Terminology | Binding Strength |
 |:-:|--------|:--------:|:--------:|---------------------|:----------------:|
-| 1 | **Vital Signs** | 7 | 19–23 | LOINC (8867-4, 85354-9, 2708-6) | Required + Extensible |
+| 1 | **Vital Signs** | 7 | 19–23 | LOINC (8867-4, 85354-9, 2708-6 + 59408-5) | Required + Extensible |
 | 2 | **Physical Activity** | 5 | 10–61 | LOINC (55423-8) + Custom | Extensible |
 | 3 | **Sleep** | 1 | 15 | LOINC (93832-4, 93831-6) + Custom | Extensible |
 | 4 | **Mindfulness & Mental Health** | 5 | 12–17 | Custom (stress, loneliness) | Extensible + Required |
@@ -66,7 +66,7 @@ The IG organizes 87 profiles across 11 lifestyle medicine domains plus regulator
 | 11 | **Infrastructure & Support** | 21 | 7–60 | Mixed (FHIR base + Custom) | Mixed |
 | — | **Regulatory (LGPD/GDPR/EU AI Act)** | 6 | 7–23 | Custom (AppLogicCS, AgentCS) | Required |
 
-**Total**: 87 Profiles, 61 Extensions, 15 CodeSystems (1,123 custom codes + 34 ICD-11 codes), 197 ValueSets, 29 ConceptMaps.
+**Total**: 96 Profiles, 77 Extensions, 19 CodeSystems (1,123 custom codes + 34 ICD-11 codes), 204 ValueSets, 29 ConceptMaps.
 
 > **Note on ICD-11 CodeSystem (15th CS):** This CodeSystem republishes 34 WHO ICD-11 MMS codes under the IG namespace because ICD-11 is not yet available on tx.fhir.org for FHIR validation (as of March 2026). When tx.fhir.org adds ICD-11 support, ValueSets will migrate to the WHO official URL (`http://id.who.int/icd/release/11/mms`) and this CodeSystem will be removed, returning to 14 CodeSystems.
 

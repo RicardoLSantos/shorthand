@@ -80,7 +80,7 @@ This module defines how advanced vital signs data collected from the iOS Health 
 | Respiratory Rate | RespiratoryObservation.component[rate] | 9279-1 | Respiratory rate |
 | Blood Pressure | BPObservation.component[systolic/diastolic] | 85354-9 | Blood pressure panel with all children |
 | Temperature | TempObservation.component[core] | 8310-5 | Body temperature |
-| Oxygen Saturation | SpO2Observation.component[saturation] | 59408-5 | Oxygen saturation in blood |
+| Oxygen Saturation | OxygenSaturationObservation (dual-coded code + valueQuantity) | 2708-6 + 59408-5 | SpO₂ pulse oximetry — anchor 2708-6 + method 59408-5 |
 
 ### Advanced Measurements
 | iOS Health App | FHIR Path | Code | Source | Description |
