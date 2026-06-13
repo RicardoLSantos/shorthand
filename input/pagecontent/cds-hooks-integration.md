@@ -70,7 +70,7 @@ The set of hooks is open per CDS Hooks 2.0; sites MAY introduce additional servi
 
 The following are **concrete, copy-pasteable Card payloads** showing how each service serialises recommendations per the CDS Hooks 2.0 Card schema (a service returns `{ "cards": [ ... ] }`). The values are illustrative, not normative. The same payloads are committed as standalone files under `input/includes/cds-hooks-cards/` (`hrv-overtraining.json`, `sleep-debt.json`, `polypharmacy.json`, `discharge-plan.json`) so reference implementations can validate them against the published Card schema (see [JSON Schema Validation Strategy](#json-schema-validation-strategy)).
 
-> **Terminology integrity note.** RMSSD, pNN50, and LF/HF power have **no LOINC code** (verified against LOINC via the project's Database-First protocol). The HRV Card below references the IG custom code `#hrv-rmssd` from `HeartRateVariabilityCodeSystem` — *not* a fabricated LOINC code. Every clinical code in these examples is database-verified (e.g., SNOMED CT `60554003` Polysomnography — confirmed, **not** `23056005` which is *Sciatica*). This is the same discipline that the [ConceptMaps](conceptmaps.html) follow throughout the IG.
+> **Terminology integrity note.** RMSSD, pNN50, and LF/HF power have **no LOINC code** (verified against LOINC via the project's Database-First protocol). The HRV Card below references the IG custom code `#hrv-rmssd` from the `LifestyleMedicineTemporaryCS` CodeSystem (enumerated in the [HRV ValueSet](ValueSet-heart-rate-variability-vs.html)) — *not* a fabricated LOINC code. Every clinical code in these examples is database-verified (e.g., SNOMED CT `60554003` Polysomnography — confirmed, **not** `23056005` which is *Sciatica*). This is the same discipline that the [ConceptMaps](conceptmaps.html) follow throughout the IG.
 
 ### HRVOvertraining Card (from `patient-view`)
 
@@ -83,7 +83,7 @@ A declining RMSSD trend over the last 14 days, suggesting potential overtraining
       "uuid": "a1f5c2e0-1b3d-4e8a-9c7f-0d2e6a8b4c10",
       "summary": "RMSSD trending down (mean 28 ms over 14 days) - consider recovery review",
       "indicator": "warning",
-      "detail": "Root Mean Square of Successive Differences (RMSSD), the primary parasympathetic HRV marker, has declined for 14 consecutive days (current mean 28 ms vs prior baseline 41 ms). RMSSD has no LOINC code; this observation uses the IG custom code #hrv-rmssd (HeartRateVariabilityCodeSystem), not a fabricated LOINC code.",
+      "detail": "Root Mean Square of Successive Differences (RMSSD), the primary parasympathetic HRV marker, has declined for 14 consecutive days (current mean 28 ms vs prior baseline 41 ms). RMSSD has no LOINC code; this observation uses the IG custom code #hrv-rmssd (LifestyleMedicineTemporaryCS), not a fabricated LOINC code.",
       "source": {
         "label": "iOS Lifestyle Medicine - Lifestyle Risk Assessment",
         "url": "https://2rdoc.pt/ig/ios-lifestyle-medicine/PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html",

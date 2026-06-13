@@ -179,7 +179,7 @@ Title: "Lifestyle Metric Cohort Criteria"
 Description: """
 LOINC + custom codes used as cohort selection criteria over lifestyle
 medicine wearable observations. Reuses canonical LOINC codes verified
-in IG terminology gap analysis (see HeartRateVariabilityCodeSystem.fsh).
+in IG terminology gap analysis (see ValueSetHeartRateVariability.fsh).
 """
 * ^status = #active
 * ^experimental = false
