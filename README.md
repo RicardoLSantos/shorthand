@@ -1,10 +1,10 @@
 # iOS Lifestyle Medicine FHIR Implementation Guide
 
 [![FHIR R4](https://img.shields.io/badge/FHIR-R4-blue)](https://hl7.org/fhir/R4/)
-[![IG Publisher](https://img.shields.io/badge/IG%20Publisher-1.6.x-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+[![IG Publisher](https://img.shields.io/badge/IG%20Publisher-2.2.7-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey)](LICENSE)
 
-**Version**: 0.2.0
+**Version**: 0.4.2
 **Status**: STU1 Draft
 **Publisher**: FMUP (Faculty of Medicine, University of Porto)
 **Canonical**: `https://2rdoc.pt/ig/ios-lifestyle-medicine`
@@ -17,12 +17,15 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 
 ### Key Features
 
-- **85 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
-- **15 CodeSystems** with 1,115 custom codes (719 TemporaryCS + 277 AppLogicCS + 119 AgentCS)
-- **193 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
+- **94 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
+- **77 Extensions** for measurement context, provenance, and AI/CDSS metadata
+- **19 CodeSystems** with custom codes for HRV/lifestyle metrics that lack LOINC/SNOMED (the documented terminology gap)
+- **204 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
 - **29 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
-- **240 Example Instances** including 5 round-trip validation bundles
-- **CQL/GDL2** clinical decision support rules
+- **263 Example Instances** including round-trip validation bundles
+- **657 total artefacts** (FHIR R4, IG Publisher 2.2.7, err=0 / warn=0 / 0 broken links)
+- **SMART on FHIR + CDS Hooks 2.0 + Bulk Data** + **CQL/GDL2** clinical decision support
+- **openEHR + OMOP** round-trip transformations (ConceptMaps)
 
 ---
 
@@ -42,7 +45,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.2.0<br/>74 Profiles | 17 CS | 173 VS"]
+        FHIRIG["FHIR IG v0.4.2<br/>94 Profiles | 19 CS | 204 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -106,25 +109,22 @@ sequenceDiagram
 
 | Category | Count | Description |
 |----------|:-----:|-------------|
-| **Profiles** | 74 | Observation, Device, Patient profiles |
-| **Extensions** | 50 | Custom FHIR extensions |
-| **CodeSystems** | 17 | 10 content (1,186 codes) + 7 external stubs |
-| **ValueSets** | 173 | LOINC, SNOMED CT, custom bindings |
-| **ConceptMaps** | 28 | Cross-terminology mappings |
-| **Examples** | 189 | Validation instances |
-| **Total** | **525** | All artifacts |
-| **FSH Files** | 171 | Total source files |
-| **FSH Lines** | 21,491 | Total lines of FSH code |
+| **Profiles** | 94 | Observation, Device, Patient, vital-signs, AI/CDSS profiles |
+| **Extensions** | 77 | Custom FHIR extensions |
+| **CodeSystems** | 19 | Content + external-stub CodeSystems |
+| **ValueSets** | 204 | LOINC, SNOMED CT, custom bindings |
+| **Instances** | 263 | Examples, ConceptMaps (29), round-trip validation bundles |
+| **Total** | **657** | All artefacts (v0.4.2, FHIR R4) |
 
-### Build Validation (2026-02-26)
+### Build Validation (2026-06-08, v0.4.2 release)
 
 | Metric | Value | Notes |
 |--------|:-----:|-------|
-| Errors | 28 | All inherited from IPS upstream |
-| Warnings | 75 | 97.3% non-actionable |
+| Errors | 0 | |
+| Warnings | 0 | |
 | Broken Links | 0 | |
-| HTML Pages | 6,663 | |
-| Links Checked | 2,646,758 | |
+| HTML Pages | 8,159 | |
+| Links Checked | 3,033,718 | 100% valid |
 
 ---
 
@@ -214,7 +214,7 @@ flowchart LR
 ### Prerequisites
 
 - [SUSHI](https://fshschool.org/docs/sushi/) v3.x
-- [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) v1.6.x
+- [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) v2.2.7
 - Java 17+
 
 ### Build
@@ -245,7 +245,7 @@ After build, the IG is available at:
 |----------|------|
 | **IG Index** | [output/index.html](output/index.html) |
 | **QA Report** | [output/qa.html](output/qa.html) |
-| **Full Package** | [GitHub Release v0.2.0](https://github.com/RicardoLSantos/shorthand/releases/download/v0.2.0/full-ig.zip) (91 MB) |
+| **Full Package** | [GitHub Release v0.4.2](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.4.2) |
 
 ---
 
@@ -255,8 +255,8 @@ After build, the IG is available at:
 iOS_Lifestyle_Medicine_HEADS2_FMUP/
 ├── input/
 │   ├── fsh/
-│   │   ├── profiles/          # 74 FHIR profiles
-│   │   ├── extensions/        # 50 extensions
+│   │   ├── profiles/          # 94 FHIR profiles
+│   │   ├── extensions/        # 77 extensions
 │   │   ├── terminology/       # CodeSystems, ValueSets, ConceptMaps
 │   │   └── aliases.fsh        # Common aliases
 │   ├── pagecontent/           # Narrative pages
@@ -272,9 +272,9 @@ iOS_Lifestyle_Medicine_HEADS2_FMUP/
 
 | Project | Description |
 |---------|-------------|
-| [HEADS-ETL](../../../Thesis_github/etl/) | FHIR → OMOP transformation (R/Python) |
-| [CQL Library](../../../Thesis_github/etl_poc/cql/) | HRVInflammationRisk rules |
-| [GDL2 Guidelines](../../../Thesis_github/etl_poc/gdl2/) | openEHR decision support |
+| HEADS-ETL | FHIR → OMOP transformation (R/Python) — companion pipeline |
+| CQL Library | HRVInflammationRisk clinical decision rules |
+| GDL2 Guidelines | openEHR-based decision support |
 
 ---
 
@@ -318,9 +318,9 @@ This work is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/
   author = {Santos, Ricardo Louren\c{c}o dos and Cruz-Correia, Ricardo Jo\~{a}o},
   title = {An {HL7 FHIR} Implementation Guide for Lifestyle Medicine in Learning Health Systems},
   year = {2026},
-  publisher = {FMUP / CINTESIS@RISE},
+  publisher = {RISE-Health, Universidade do Porto},
   url = {https://github.com/RicardoLSantos/shorthand},
-  note = {Manuscript under review: IJMEDI-D-26-01289}
+  note = {Published: Int. J. Medical Informatics (2026), art. 106465}
 }
 ```
 
@@ -335,7 +335,7 @@ If this IG helps your work, please consider:
 - **Fork** if you're adapting it for your own domain
 - **Cite** using the BibTeX entry above
 
-We track anonymous clone statistics and have seen **69 unique cloners in 14 days** (March 2026) — if you're one of them, we'd love to hear how you're using the IG.
+We track anonymous clone statistics via GitHub Insights — if you're using the IG in your work, we'd love to hear about it (open a Discussion).
 
 ### Stay Updated
 
@@ -350,10 +350,10 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 
 - **Author**: Ricardo Lourenço dos Santos
 - **Institution**: Faculty of Medicine, University of Porto (FMUP)
-- **Research Groups**: CINTESIS@RISE, MEDCIDS
+- **Research Groups**: RISE-Health, MEDCIDS
 - **Email**: ricardolourencosantos@gmail.com
 - **ORCID**: [0000-0003-3737-0972](https://orcid.org/0000-0003-3737-0972)
 
 ---
 
-*Last updated: 2026-03-30*
+*Last updated: 2026-06-13 (v0.4.2)*
