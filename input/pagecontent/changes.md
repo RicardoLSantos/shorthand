@@ -2,7 +2,52 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
-## Version 0.2.1 (2026-03-25) — Current
+## Version 0.4.3 (2026-06-13) — Current
+
+### Vital Signs — SpO₂ dual-coding + HRV/panel profiles
+
+- **SpO₂ dual-coding (US Core Pulse Oximetry pattern)**: `OxygenSaturationObservation` slices `code` into `O2Sat` (LOINC `2708-6`, the FHIR `oxygensat` method-independent anchor mandated by R4/R5) + `PulseOx` (LOINC `59408-5`, pulse-ox method). Aligns the IG with the most widely implemented FHIR profile (US Core) and HL7 discussion FHIR-31574; `2708-6` is retained in the ValueSet for true arterial blood-gas samples.
+- **New profiles**: `SdnnObservation` (HRV-SDNN, LOINC `80404-7`, ms) and `VitalSignsPanel` (LOINC `85353-1`, `hasMember` → HR / BP / SpO₂ / Temp / RR + Body Metrics), with examples.
+- **Narrative**: new "SpO₂ Coding — Pulse Oximetry vs Arterial Blood Gas" subsection; four pagecontent pages aligned to the dual-coding.
+
+### Updated Totals (v0.4.3, FSH source)
+
+- **96 Profiles**, **77 Extensions**, **19 CodeSystems**, **204 ValueSets**, **265 Instances** (incl. **29 ConceptMaps**) = **661 artefacts**
+- **1,123 custom codes** + **34 ICD-11 codes**
+- IG Publisher 2.2.7, EN locale: genonce **0 errors / 0 warnings / 0 broken links**
+
+---
+
+## Version 0.4.2 (2026-06-08)
+
+- **Activity profile device-method binding**: `PhysicalActivityObservation` gains `moderateMinutes` (LOINC `101689-8`) + `vigorousMinutes` (LOINC `101690-6`) component slices (UCUM `min`, Database-First Athena-verified), closing the openEHR↔FHIR↔OMOP round-trip.
+- **Terminology**: Amphetamine `SCT#373338002` (inactive since 2014) → active successor `SCT#703842006`; openEHR ConceptMap internal-consistency alignment (F1/F2 — display/comment only, no binding changes).
+
+---
+
+## Version 0.4.1 (2026-06-01)
+
+- **LifestyleMedicationRequest** profile + `DrugLifestyleInteraction` extension — a concrete FHIR resource for the CDS Hooks `drug-lifestyle-interaction` service.
+- New narrative pages (GDL2→CDS Hooks bridge, implementation scope/roadmap, integrated SMART+CDS walkthrough) and two CQL Library doc-pointers.
+- **VRF-TERM-018**: ~26 wrong-concept SNOMED/LOINC codes corrected (right code-system + valid code + *wrong* concept — invisible to the FHIR validator) via Database-First + tx.fhir.org `$validate-code`.
+
+---
+
+## Version 0.4.0 (2026-05-21)
+
+- **Nutrition OMOP ConceptMap remediation (CN1)**: 11/11 fabricated OMOP `concept_id` mappings corrected via the Database-First Protocol (Athena direct lookup). *Errata*: the immutable v0.3.0 release shipped the pre-remediation map.
+- +4 Profiles (incl. `WearableMeasurementProvenance` and `LifestyleMedicineGroupETL` for population/ETL export) + 11 Extensions; IPS upstream baseline (Pitfall #31) eliminated; first fully clean build (0 errors / 0 warnings).
+
+---
+
+## Version 0.3.0 (2026-05-14)
+
+- **SMART on FHIR STU2.2**, **CDS Hooks 2.0** (4-service catalog), **Bulk FHIR Export**, **AuditEvent** profiles, and **Multi-Jurisdictional Consent** (LGPD + GDPR + HIPAA).
+- 5 new profiles (`AuditEventDataAccess`, `AuditEventAIInteraction`, `MultiJurisdictionalConsent`, `BulkExportGroup`, `BulkExportConsent`) plus CDS Hooks discovery/registry instances and a SMART CapabilityStatement.
+
+---
+
+## Version 0.2.1 (2026-03-25)
 
 ### ICD-11 CodeSystem Restored (Option B)
 
