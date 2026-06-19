@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [0.4.4] - 2026-06-19
+
+### Changed
+- **Course-CI narrative accuracy (T1 S59 staged → T2 S45 applied)** — `fhir-intermediate-course-alignment.md` items 4.3 + 4.9 corrected from an *under-claim* ("CI tooling = roadmap / not yet implemented") to ✅ DONE (spec + CI): the CDS Hooks Card validation is a Python `jsonschema` validator (`.github/scripts/validate_cds_cards.py`, `--self-test`) in a hard-fail GitHub Actions workflow (`cds-card-validation.yml`), and the ConceptMap drift mitigation a weekly Python drift-check (`.github/scripts/conceptmap_drift_check.py`, Database-First local + tx.fhir.org advisory) in `conceptmap-drift.yml` (continue-on-error) — both shipped in commit `f2bff6fe9` (T1 S55). The 10/13 = 76.9% in-IG-scope figure is unchanged (these items were already counted as satisfied; this upgrades only *how*).
+
+### Source counts (FSH)
+- Profiles 96 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 265 = **661 artefacts** (unchanged vs v0.4.3 — pagecontent-only edit). Built with IG Publisher 2.2.7 + EN locale + A3 JVM flags; genonce **err=0 / warn=1 / 0 broken links**. The single warning is the upstream `hl7.fhir.uv.ips` 2.0.0→2.0.1 dependency-staleness advisory (HL7 published IPS 2.0.1 after the v0.4.3 build) — benign and informative, **not introduced by this change**; the IPS-upgrade decision is deferred to a future release (T1/FSH lane). NOT suppressed (an "upgrade the dependency" advisory should surface, not be hidden).
+
 ## [0.4.3] - 2026-06-13
 
 ### Added
