@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [0.4.5] - 2026-06-20
+
+### Changed
+- **IPS dependency upgrade `hl7.fhir.uv.ips` 2.0.0 → 2.0.1 (T1 S61)** — HL7 published the formal IPS 2.0.1 release (GitHub tag `2.0.1`, non-prerelease, 18 Jun 2026; FHIR-registry `dist-tags.latest = 2.0.1`) after the v0.4.3/v0.4.4 builds, which surfaced as the single `warn=1` dependency-staleness advisory in v0.4.4. Bumping the pin to 2.0.1 resolves it. The transitive `hl7.fhir.uv.extensions.r4` is **unchanged at 5.3.0** (the stable formal release our prior builds already resolved — so the historical Pitfall #31 extensions-version risk did not apply); IPS 2.0.1 additionally pins `hl7.terminology.r4 7.2.0` + `hl7.fhir.uv.ipa 1.1.0`. genonce verified the upgrade with **zero regressions** to the derived `IPSLifestyleMedicineComposition`: a Pitfall #99 diff against the v0.4.4 baseline shows an identical per-resource err/warn distribution, minus the one cleared staleness advisory (no resource gained an error or warning).
+
+### Source counts (FSH)
+- Profiles 96 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 265 = **661 artefacts** (unchanged vs v0.4.4 — dependency-bump only, no FSH/pagecontent change). Built with IG Publisher 2.2.7 + EN locale + A3 JVM flags; genonce **err=0 / warn=0 / 0 broken links** (3,087,608 links checked). **First zero-warning release**: the v0.4.4 staleness advisory is cleared, making this the fifth consecutive zero-defect release (v0.4.1→v0.4.5) and the first with `warn=0`.
+
 ## [0.4.4] - 2026-06-19
 
 ### Changed
