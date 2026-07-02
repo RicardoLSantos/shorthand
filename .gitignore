@@ -48,11 +48,12 @@ FHIR_SERVER_DEPLOYMENT_GUIDE.md
 FHIR_TERMINOLOGY_STANDARDS_GUIDE.md
 PLAN_FHIR_IG_137_WARNINGS_STRATEGY.md
 
-# Configuration and changelog - keep local only
-CHANGELOG.md
-sushi-config.yaml
+# Canonical IG metadata — MUST remain tracked (M1 T-17).
+# CHANGELOG.md + sushi-config.yaml were committed before this block existed;
+# .gitignore had no effect while tracked → "tracked-but-ignored" footgun (2 Jul 2026).
+# Do NOT re-add those filenames here. Version bumps = T2 lane but always committed (Pitfall #108).
 
-# Build scripts and sync utilities - keep local only
+# Build scripts and sync utilities - T2 lane, local only (not in public index)
 _build.sh
 _build.bat
 _genonce.sh
