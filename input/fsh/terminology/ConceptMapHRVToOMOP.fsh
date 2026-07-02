@@ -1,6 +1,6 @@
 // ConceptMap: HRV LOINC → OMOP CDM
 // Created: 2025-11-28
-// Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
+// Author: Ricardo Lourenco dos Santos (fhir@2rdoc.pt)
 // Purpose: Enable HRV data transformation from FHIR (LOINC-coded) to OMOP CDM
 // Context: PhD Thesis - RS4 FHIR-OMOP ETL systematic review finding
 // CORRECTED 2026-03-20: Previous 37547368 was HALLUCINATED (not found in Athena CONCEPT.csv)
@@ -22,7 +22,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "ricardolourencosantos@gmail.com"
+* contact.telecom.value = "fhir@2rdoc.pt"
 * description = """
 Maps HRV (Heart Rate Variability) metrics from LOINC codes to OMOP CDM concepts for federated analytics.
 

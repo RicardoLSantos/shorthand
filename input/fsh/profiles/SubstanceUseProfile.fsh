@@ -1,7 +1,7 @@
 // =============================================================================
 // SubstanceUse Profiles for Lifestyle Medicine
 // =============================================================================
-// Author: Ricardo Lourenço dos Santos (ricardolourencosantos@gmail.com)
+// Author: Ricardo Lourenço dos Santos (fhir@2rdoc.pt)
 // Links: https://linktr.ee/ricardolsantos
 // Created: 2025-11-25
 // Updated: 2026-01-12 (F2.13: Enhanced bibliographic references)

@@ -1,6 +1,6 @@
 // ConceptMap: Vendor APIs → openEHR Archetypes
 // Created: 2025-11-25
-// Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
+// Author: Ricardo Lourenco dos Santos (fhir@2rdoc.pt)
 // Links: https://linktr.ee/ricardolsantos
 // Purpose: Enable direct wearable vendor to openEHR transformation
 // Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
@@ -21,7 +21,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "ricardolourencosantos@gmail.com"
+* contact.telecom.value = "fhir@2rdoc.pt"
 * description = """
 Direct mapping from proprietary wearable vendor API data types to openEHR archetypes.
 

@@ -1,6 +1,6 @@
 // ConceptMap: CGM LOINC/Custom → OMOP CDM
 // Created: 2025-11-28
-// Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
+// Author: Ricardo Lourenco dos Santos (fhir@2rdoc.pt)
 // Purpose: Enable CGM data transformation from FHIR to OMOP CDM
 // Context: PhD Thesis - Continuous Glucose Monitoring for lifestyle medicine
 
@@ -20,7 +20,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "ricardolourencosantos@gmail.com"
+* contact.telecom.value = "fhir@2rdoc.pt"
 * description = """
 Maps Continuous Glucose Monitoring (CGM) metrics to OMOP CDM concepts for federated analytics.
 

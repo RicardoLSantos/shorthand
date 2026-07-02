@@ -1,6 +1,6 @@
 // ConceptMap: FHIR → openEHR Archetype Elements (REVERSE MAPPING)
 // Created: 2025-11-25
-// Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
+// Author: Ricardo Lourenco dos Santos (fhir@2rdoc.pt)
 // Links: https://linktr.ee/ricardolsantos
 // Purpose: Enable FHIR to openEHR transformation for wearable data
 // Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
@@ -21,7 +21,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "ricardolourencosantos@gmail.com"
+* contact.telecom.value = "fhir@2rdoc.pt"
 * description = """
 Reverse mapping from FHIR R4 resources to custom openEHR archetypes for wearable lifestyle medicine data.
 

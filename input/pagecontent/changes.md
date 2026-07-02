@@ -2,7 +2,31 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
-## Version 0.4.3 (2026-06-13) — Current
+## Version 0.4.5 (2026-06-20) — Current
+
+### Dependency
+
+- **IPS `hl7.fhir.uv.ips` 2.0.0 → 2.0.1**: HL7's formal IPS 2.0.1 release cleared the single dependency-staleness advisory carried in v0.4.4 — making v0.4.5 the **first zero-warning release** (genonce **0 errors / 0 warnings / 0 broken links**) and the fifth consecutive zero-defect build (v0.4.1 → v0.4.5). The transitive `hl7.fhir.uv.extensions.r4` is unchanged at 5.3.0 (a per-resource diff against v0.4.4 shows zero regressions).
+
+### Updated Totals (v0.4.5, FSH source — unchanged vs v0.4.4)
+
+- **96 Profiles**, **77 Extensions**, **19 CodeSystems**, **204 ValueSets**, **265 Instances** (incl. **29 ConceptMaps**) = **661 artefacts** — dependency bump only, no FSH/pagecontent change. IG Publisher 2.2.7, EN locale.
+
+---
+
+## Version 0.4.4 (2026-06-19)
+
+### Documentation / CI
+
+- **Course-CI narrative accuracy**: `fhir-intermediate-course-alignment.md` items 4.3 + 4.9 upgraded from "roadmap" to ✅ DONE — the CDS Hooks Card `jsonschema` validator (`.github/scripts/validate_cds_cards.py`, `--self-test`) in a hard-fail GitHub Actions workflow, plus the weekly ConceptMap drift-check (`.github/scripts/conceptmap_drift_check.py`). genonce **0 errors / 1 warning / 0 broken links** — the single warning being the benign upstream IPS 2.0.0→2.0.1 staleness advisory (cleared in v0.4.5), not introduced by this change.
+
+### Updated Totals (v0.4.4, FSH source — unchanged vs v0.4.3)
+
+- **661 artefacts** (pagecontent-only edit).
+
+---
+
+## Version 0.4.3 (2026-06-13)
 
 ### Vital Signs — SpO₂ dual-coding + HRV/panel profiles
 

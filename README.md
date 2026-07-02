@@ -4,7 +4,7 @@
 [![IG Publisher](https://img.shields.io/badge/IG%20Publisher-2.2.7-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey)](LICENSE)
 
-**Version**: 0.4.3
+**Version**: 0.4.5
 **Status**: STU1 Draft
 **Publisher**: FMUP (Faculty of Medicine, University of Porto)
 **Canonical**: `https://2rdoc.pt/ig/ios-lifestyle-medicine`
@@ -45,7 +45,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.4.3<br/>96 Profiles | 19 CS | 204 VS"]
+        FHIRIG["FHIR IG v0.4.5<br/>96 Profiles | 19 CS | 204 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -114,7 +114,7 @@ sequenceDiagram
 | **CodeSystems** | 19 | Content + external-stub CodeSystems |
 | **ValueSets** | 204 | LOINC, SNOMED CT, custom bindings |
 | **Instances** | 265 | Examples, ConceptMaps (29), round-trip validation bundles |
-| **Total** | **661** | All artefacts (v0.4.3, FHIR R4) |
+| **Total** | **661** | All artefacts (v0.4.5, FHIR R4) |
 
 ### Build Validation (2026-06-13, v0.4.3 release)
 
@@ -245,7 +245,7 @@ After build, the IG is available at:
 |----------|------|
 | **IG Index** | [output/index.html](output/index.html) |
 | **QA Report** | [output/qa.html](output/qa.html) |
-| **Full Package** | [GitHub Release v0.4.3](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.4.3) |
+| **Full Package** | [GitHub Release v0.4.5](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.4.5) |
 
 ---
 
@@ -351,9 +351,9 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 - **Author**: Ricardo Lourenço dos Santos
 - **Institution**: Faculty of Medicine, University of Porto (FMUP)
 - **Research Groups**: RISE-Health, MEDCIDS
-- **Email**: ricardolourencosantos@gmail.com
+- **Email**: fhir@2rdoc.pt
 - **ORCID**: [0000-0003-3737-0972](https://orcid.org/0000-0003-3737-0972)
 
 ---
 
-*Last updated: 2026-06-13 (v0.4.3)*
+*Last updated: 2026-07-02 (v0.4.5)*
