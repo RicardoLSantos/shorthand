@@ -138,7 +138,7 @@ Title: "Mobility Risk Assessment Example"
 * occurrenceDateTime = "2026-01-20T09:30:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
 * basis = Reference(MobilityProfileExample)
-* prediction[fallRisk].outcome = $SCT#217082002 "Accidental fall"
+* prediction[fallRisk].outcome = LifestyleMedicineTemporaryCS#fall-risk-low-risk "Low Risk"
 * prediction[fallRisk].probabilityDecimal = 0.12
 * prediction[fallRisk].qualitativeRisk = http://terminology.hl7.org/CodeSystem/risk-probability#low "Low likelihood"
 * note.text = "Low fall risk based on iOS 14+ gait metrics: Walking steadiness OK (72%), asymmetry normal (7.5%), adequate stair speeds"
