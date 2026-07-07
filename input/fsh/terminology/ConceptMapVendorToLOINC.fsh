@@ -336,6 +336,48 @@ Usage: #definition
 * group[0].element[41].target[0].equivalence = #unmatched
 * group[0].element[41].target[0].comment = "GAP: No LOINC code. iOS 17.0+. Functional Threshold Power in watts. Key cycling fitness metric."
 
+// Nutrition + substance (dietary/alcohol) — added 2026-07-07 (T1, P1 Bucket D). Genuinely new to this ConceptMap.
+// All target codes Database-First verified vs Athena CONCEPT.csv (LOINC, std=S) 2026-07-07; adversarially re-verified.
+// Deferred (see cross_terminal_feedback/T1_TO_T2_GM_CONCEPTMAP14_VERIFIED_SPEC_P1_20260707.md): Bucket A (3 stale
+// #unmatched → valid code, USER/author confirm) · Bucket C (walkingSpeed judgment) · Bucket B (3 wrong-concept codes
+// stay #unmatched, app drops them, T2/Swift lane). NOT a blind "+14".
+* group[0].element[42].code = #HKQuantityTypeIdentifierDietaryEnergyConsumed
+* group[0].element[42].display = "Dietary Energy Consumed"
+* group[0].element[42].target[0].code = #9052-2
+* group[0].element[42].target[0].display = "Calorie intake total"
+* group[0].element[42].target[0].equivalence = #equivalent
+* group[0].element[43].code = #HKQuantityTypeIdentifierDietaryCarbohydrates
+* group[0].element[43].display = "Dietary Carbohydrates"
+* group[0].element[43].target[0].code = #9059-7
+* group[0].element[43].target[0].display = "Carbohydrate intake Estimated"
+* group[0].element[43].target[0].equivalence = #equivalent
+* group[0].element[44].code = #HKQuantityTypeIdentifierDietaryProtein
+* group[0].element[44].display = "Dietary Protein"
+* group[0].element[44].target[0].code = #9085-2
+* group[0].element[44].target[0].display = "Protein intake 24 hour"
+* group[0].element[44].target[0].equivalence = #equivalent
+* group[0].element[45].code = #HKQuantityTypeIdentifierDietaryFatTotal
+* group[0].element[45].display = "Dietary Fat Total"
+* group[0].element[45].target[0].code = #75297-2
+* group[0].element[45].target[0].display = "Fat intake 24 hour Estimated"
+* group[0].element[45].target[0].equivalence = #equivalent
+* group[0].element[46].code = #HKQuantityTypeIdentifierDietaryWater
+* group[0].element[46].display = "Dietary Water"
+* group[0].element[46].target[0].code = #8990-4
+* group[0].element[46].target[0].display = "Fluid intake 24 hour"
+* group[0].element[46].target[0].equivalence = #wider
+* group[0].element[46].target[0].comment = "Fluid intake is wider than water-only; LOINC has no water-specific intake code."
+* group[0].element[47].code = #HKQuantityTypeIdentifierDietaryCaffeine
+* group[0].element[47].display = "Dietary Caffeine"
+* group[0].element[47].target[0].code = #80489-8
+* group[0].element[47].target[0].display = "Caffeine intake 24 hour Estimated"
+* group[0].element[47].target[0].equivalence = #equivalent
+* group[0].element[48].code = #HKQuantityTypeIdentifierNumberOfAlcoholicBeverages
+* group[0].element[48].display = "Number of Alcoholic Beverages"
+* group[0].element[48].target[0].code = #74013-4
+* group[0].element[48].target[0].display = "Alcoholic drinks per day"
+* group[0].element[48].target[0].equivalence = #equivalent
+
 // =============================================================================
 // GROUP 2: Fitbit API → LOINC
 // =============================================================================
