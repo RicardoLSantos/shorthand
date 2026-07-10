@@ -88,6 +88,9 @@ Code: MIT License. Terminology data subject to respective licensing agreements.
 
 ## Contact
 
-Ricardo Lourenço dos Santos — ricardolourencosantos@gmail.com
-ORCID: [0000-0001-6017-8255](https://orcid.org/0000-0001-6017-8255)
-Faculty of Medicine, University of Porto (FMUP) / RISE-Health, MEDCIDS
+Author: Ricardo Lourenço dos Santos
+Institution: Faculty of Medicine, University of Porto (FMUP)
+Research Groups: RISE-Health, MEDCIDS
+Email: fhir@2rdoc.pt
+ORCID: [0000-0003-3737-0972](https://orcid.org/0000-0003-3737-0972)
+Last updated: 2026-07-02 (v0.4.5)
