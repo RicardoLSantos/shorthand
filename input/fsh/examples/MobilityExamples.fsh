@@ -140,7 +140,7 @@ Title: "Mobility Risk Assessment Example"
 * basis = Reference(MobilityProfileExample)
 * prediction[fallRisk].outcome = LifestyleMedicineTemporaryCS#fall-risk-low-risk "Low Risk"
 * prediction[fallRisk].probabilityDecimal = 0.12
-* prediction[fallRisk].qualitativeRisk = http://terminology.hl7.org/CodeSystem/risk-probability#low "Low likelihood"
+* prediction[fallRisk].qualitativeRisk = http://snomed.info/sct#723505004 "Low risk (qualifier value)"
 * note.text = "Low fall risk based on iOS 14+ gait metrics: Walking steadiness OK (72%), asymmetry normal (7.5%), adequate stair speeds"
 
 
