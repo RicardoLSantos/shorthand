@@ -211,6 +211,81 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.
 * referenceRange.text = "Normal: < 8.1 pg/mL (assay-dependent)"
 
 // =============================================================================
+// Task 2.2.5b: IL-1beta / IL-8 / IL-10 Observation Profiles
+// Castro-Marrero 2022 (Antioxid Redox Signal 36:729-739, PMID 35229657) circulating
+// cytokine bridge panel: mitochondrial-targeted intervention (CoQ10+selenium) lowered
+// IL-1beta/IL-6/IL-8/IL-10/TNF-alpha (p<0.01), CRP unchanged. These 3 complete the
+// cytokine capture layer of the mito-inflammation axis alongside IL-6 (26881-3) and
+// TNF-alpha (3074-2). Codes Database-First-verified (Athena std=S, 2026-07-11).
+// USER-ratified (Wave 2 §C GO, 2026-07-11). See T1 mito-inflammatory coverage audit.
+// =============================================================================
+
+Profile: IL1BetaObservation
+Parent: InflammatoryMarkerObservation
+Id: il1beta-observation
+Title: "Interleukin-1 beta (IL-1β) Observation Profile"
+Description: """
+Profile for Interleukin-1 beta measurements.
+
+LOINC: 13629-1 'Interleukin 1 beta [Mass/volume] in Serum or Plasma'
+
+Pro-inflammatory cytokine of the innate immune (inflammasome) response. Member of the
+circulating cytokine panel modulated by mitochondrial-targeted intervention
+(Castro-Marrero 2022). Supports the autonomic-immune axis capture layer.
+"""
+
+* code = $LOINC#13629-1 "Interleukin 1 beta [Mass/volume] in Serum or Plasma"
+* valueQuantity MS
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #pg/mL
+* valueQuantity.unit = "pg/mL"
+
+* referenceRange.text = "Assay-dependent; interpret against laboratory reference interval"
+
+Profile: IL8Observation
+Parent: InflammatoryMarkerObservation
+Id: il8-observation
+Title: "Interleukin-8 (IL-8/CXCL8) Observation Profile"
+Description: """
+Profile for Interleukin-8 (CXCL8) measurements.
+
+LOINC: 33211-4 'Interleukin 8 [Mass/volume] in Serum or Plasma'
+
+Pro-inflammatory chemokine (neutrophil chemoattractant). Member of the circulating
+cytokine panel reduced by mitochondrial-targeted intervention (Castro-Marrero 2022).
+"""
+
+* code = $LOINC#33211-4 "Interleukin 8 [Mass/volume] in Serum or Plasma"
+* valueQuantity MS
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #pg/mL
+* valueQuantity.unit = "pg/mL"
+
+* referenceRange.text = "Assay-dependent; interpret against laboratory reference interval"
+
+Profile: IL10Observation
+Parent: InflammatoryMarkerObservation
+Id: il10-observation
+Title: "Interleukin-10 (IL-10) Observation Profile"
+Description: """
+Profile for Interleukin-10 measurements.
+
+LOINC: 26848-2 'Interleukin 10 [Mass/volume] in Serum or Plasma'
+
+Regulatory / anti-inflammatory cytokine. Captured alongside the pro-inflammatory
+markers to represent the pro-/anti-inflammatory balance; member of the circulating
+cytokine panel modulated by mitochondrial-targeted intervention (Castro-Marrero 2022).
+"""
+
+* code = $LOINC#26848-2 "Interleukin 10 [Mass/volume] in Serum or Plasma"
+* valueQuantity MS
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #pg/mL
+* valueQuantity.unit = "pg/mL"
+
+* referenceRange.text = "Assay-dependent; interpret against laboratory reference interval"
+
+// =============================================================================
 // Task 2.2.6: HRV-Inflammation Correlation Observation Profile
 // =============================================================================
 
@@ -302,5 +377,58 @@ Description: "LOINC codes for inflammatory biomarkers used in lifestyle medicine
 * $LOINC#30522-7 "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method"
 * $LOINC#26881-3 "Interleukin 6 [Mass/volume] in Serum or Plasma"
 * $LOINC#3074-2 "Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma"
+* $LOINC#13629-1 "Interleukin 1 beta [Mass/volume] in Serum or Plasma"
+* $LOINC#33211-4 "Interleukin 8 [Mass/volume] in Serum or Plasma"
+* $LOINC#26848-2 "Interleukin 10 [Mass/volume] in Serum or Plasma"
 * $LOINC#4537-7 "Erythrocyte sedimentation rate"
 * $LOINC#33762-6 "Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma"
+
+// =============================================================================
+// Metabolic / mitochondrial anaerobic proxy (mito-inflammation axis, P2)
+// Lactate = accessible clinical proxy of anaerobic metabolism / mitochondrial
+// oxidative capacity; relevant to post-exertional malaise and exercise intolerance
+// (mechanism PMIDs: Naviaux 2016 PNAS, Fluge 2016 pyruvate dehydrogenase, Wang 2023
+// PNAS WASF3). NOT an inflammatory marker -> own profile, deliberately NOT added to
+// InflammatoryMarkerVS. Code Database-First-verified (Athena std=S, 2026-07-11).
+// USER-ratified (Wave 2 §C GO, P2, 2026-07-11).
+// =============================================================================
+
+Profile: LactateObservation
+Parent: Observation
+Id: lactate-observation
+Title: "Lactate Observation Profile"
+Description: """
+Profile for blood/serum lactate measurements as a proxy for anaerobic metabolism and
+mitochondrial oxidative capacity in the mito-inflammation axis.
+
+LOINC: 14118-4 'Lactate [Mass/volume] in Serum or Plasma' (Mass/volume variant; the
+Moles/volume variant 2519-7 = mmol/L is the more common clinical reporting unit).
+"""
+
+* ^version = "1.0.0"
+* ^status = #active
+* ^experimental = false
+
+* status MS
+* category 1..* MS
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding.code"
+* category ^slicing.rules = #open
+* category contains laboratory 1..1 MS
+* category[laboratory].coding.system = $observation-category
+* category[laboratory].coding.code = #laboratory
+
+* code = $LOINC#14118-4 "Lactate [Mass/volume] in Serum or Plasma"
+* subject 1..1 MS
+* subject only Reference(Patient)
+* effectiveDateTime 1..1 MS
+* value[x] 1..1 MS
+* valueQuantity only Quantity
+* valueQuantity MS
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #mg/dL
+* valueQuantity.unit = "mg/dL"
+
+* referenceRange.text = "Normal venous approximately 4.5-19.8 mg/dL (0.5-2.2 mmol/L); assay- and site-dependent"
+
+* note 0..* MS

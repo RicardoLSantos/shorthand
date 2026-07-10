@@ -211,3 +211,87 @@ Usage: #example
 * hasMember[2].display = "TNF-α measurement"
 
 * note.text = "Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation."
+
+// =============================================================================
+// Examples 8-11: Castro-Marrero 2022 bridge cytokines (IL-1β, IL-8, IL-10) + Lactate
+// =============================================================================
+
+Instance: IL1BetaExample-Normal
+InstanceOf: IL1BetaObservation
+Title: "IL-1β Example - Within Reference Interval"
+Description: "Example of Interleukin-1 beta measurement within reference interval"
+Usage: #example
+
+* status = #final
+* category[laboratory].coding.system = $observation-category
+* category[laboratory].coding.code = #laboratory
+* category[laboratory].coding.display = "Laboratory"
+* code = $LOINC#13629-1 "Interleukin 1 beta [Mass/volume] in Serum or Plasma"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2025-11-27T09:20:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* valueQuantity.value = 2.1
+* valueQuantity.unit = "pg/mL"
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #pg/mL
+* note.text = "IL-1β within reference interval. Member of the circulating cytokine panel (with IL-6/IL-8/IL-10/TNF-α) captured for the mito-inflammation axis per RS1 / Castro-Marrero 2022."
+
+Instance: IL8Example-Elevated
+InstanceOf: IL8Observation
+Title: "IL-8 Example - Elevated"
+Description: "Example of elevated Interleukin-8 (CXCL8)"
+Usage: #example
+
+* status = #final
+* category[laboratory].coding.system = $observation-category
+* category[laboratory].coding.code = #laboratory
+* category[laboratory].coding.display = "Laboratory"
+* code = $LOINC#33211-4 "Interleukin 8 [Mass/volume] in Serum or Plasma"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2025-11-27T09:22:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* valueQuantity.value = 45.0
+* valueQuantity.unit = "pg/mL"
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #pg/mL
+* note.text = "Elevated IL-8 (neutrophil chemoattractant) suggesting active pro-inflammatory signalling. Interpret against wearable HRV trend (autonomic-immune axis)."
+
+Instance: IL10Example-Normal
+InstanceOf: IL10Observation
+Title: "IL-10 Example - Within Reference Interval"
+Description: "Example of Interleukin-10 (regulatory/anti-inflammatory cytokine)"
+Usage: #example
+
+* status = #final
+* category[laboratory].coding.system = $observation-category
+* category[laboratory].coding.code = #laboratory
+* category[laboratory].coding.display = "Laboratory"
+* code = $LOINC#26848-2 "Interleukin 10 [Mass/volume] in Serum or Plasma"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2025-11-27T09:24:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* valueQuantity.value = 4.5
+* valueQuantity.unit = "pg/mL"
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #pg/mL
+* note.text = "IL-10 captured alongside pro-inflammatory markers to represent the pro-/anti-inflammatory balance modulated by mitochondrial-targeted intervention (Castro-Marrero 2022)."
+
+Instance: LactateExample-Normal
+InstanceOf: LactateObservation
+Title: "Lactate Example - Within Reference Interval"
+Description: "Example of blood lactate as a mitochondrial anaerobic-metabolism proxy"
+Usage: #example
+
+* status = #final
+* category[laboratory].coding.system = $observation-category
+* category[laboratory].coding.code = #laboratory
+* category[laboratory].coding.display = "Laboratory"
+* code = $LOINC#14118-4 "Lactate [Mass/volume] in Serum or Plasma"
+* subject = Reference(Patient/PatientExample)
+* effectiveDateTime = "2025-11-27T09:26:00Z"
+* performer = Reference(Practitioner/PractitionerExample)
+* valueQuantity.value = 12.0
+* valueQuantity.unit = "mg/dL"
+* valueQuantity.system = $UCUM
+* valueQuantity.code = #mg/dL
+* note.text = "Resting lactate within reference interval (approximately 1.3 mmol/L). Serial lactate can serve as an accessible proxy for anaerobic metabolism / mitochondrial oxidative capacity alongside VO2max in the mito-inflammation axis."
