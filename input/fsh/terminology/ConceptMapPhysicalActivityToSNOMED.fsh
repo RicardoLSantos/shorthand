@@ -19,7 +19,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = "Operational ConceptMap for physical activity terminology translation. Enables runtime $translate operations for semantic interoperability between Apple HealthKit activity types and SNOMED CT standard terminology. Critical for iOS Health App data integration into EHR systems."
 * purpose = "Provides semantic mappings from Apple HealthKit physical activity types (HKWorkoutActivityType) to standard SNOMED CT codes. Enables clinical decision support systems to interpret wearable device activity data using standardized terminology."
 

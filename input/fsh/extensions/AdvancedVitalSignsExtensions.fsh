@@ -13,7 +13,7 @@ Description: "Index representing overall physiological stress based on multiple 
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -39,7 +39,7 @@ Description: "Composite measure of physiological balance and adaptation"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -65,7 +65,7 @@ Description: "Measure of how efficiently the body recovers from stress or exerti
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -91,7 +91,7 @@ Description: "Measure of cumulative physiological burden over time"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -117,7 +117,7 @@ Description: "Indicator of position in circadian rhythm cycle"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -152,7 +152,7 @@ Description: "Indicator of the quality and reliability of the measurement"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"

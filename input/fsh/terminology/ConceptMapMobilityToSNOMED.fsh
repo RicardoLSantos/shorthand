@@ -19,7 +19,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = "Operational ConceptMap for mobility assessment terminology translation. Enables runtime $translate operations for semantic interoperability between consumer mobility monitoring wearables and SNOMED CT standard terminology."
 * purpose = "Provides semantic mappings from custom mobility assessment codes to standard SNOMED CT codes. Consumer wearables (Apple Watch, Garmin) increasingly provide gait analysis and mobility assessments but use proprietary terminology."
 

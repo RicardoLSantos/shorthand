@@ -11,7 +11,7 @@ Description: "Goals related to social-history health tracking and planning"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -42,7 +42,7 @@ Description: "Activities related to social-history health monitoring"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"

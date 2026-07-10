@@ -20,7 +20,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = "Operational ConceptMap for sleep measurement terminology translation. Enables runtime $translate operations for semantic interoperability between consumer wearable device sleep data and LOINC standard terminology. Critical for integrating iOS Health App and other consumer sleep tracking platforms into EHR systems."
 * purpose = "Provides semantic mappings from custom sleep measurement codes to standard LOINC codes. Sleep tracking from consumer devices (Apple Watch, Fitbit, Oura Ring, Garmin, etc.) uses proprietary measurements not fully covered by LOINC. This ConceptMap enables clinical decision support systems to interpret consumer sleep data using standardized terminology where available."
 

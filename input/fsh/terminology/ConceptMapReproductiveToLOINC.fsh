@@ -19,7 +19,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = "Operational ConceptMap for reproductive health terminology translation. Enables runtime $translate operations for semantic interoperability between consumer fertility tracking applications and LOINC standard terminology."
 * purpose = "Provides semantic mappings from custom reproductive health codes to standard LOINC codes. Consumer fertility tracking apps capture ovulation status, menstrual cycle data, but use proprietary coding systems."
 

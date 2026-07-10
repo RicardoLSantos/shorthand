@@ -40,7 +40,7 @@ When tx.fhir.org adds ICD-11 support, ValueSets should migrate to the WHO URL.
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Ricardo L. Santos"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^caseSensitive = true
 * ^content = #complete
 * ^copyright = "Codes sourced from ICD-11 © World Health Organization (WHO), CC BY-NC-ND 3.0 IGO. Republished under IG namespace for FHIR validation."

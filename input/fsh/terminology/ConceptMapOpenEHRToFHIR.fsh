@@ -1,6 +1,6 @@
 // ConceptMap: openEHR Archetype Elements → FHIR
 // Created: 2025-11-25
-// Author: Ricardo Lourenco dos Santos (fhir@2rdoc.pt)
+// Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Links: https://linktr.ee/ricardolsantos
 // Purpose: Enable bidirectional mapping between openEHR archetypes and FHIR resources
 // Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
@@ -21,7 +21,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = """
 Bidirectional mapping between custom openEHR archetypes for wearable lifestyle medicine data and FHIR R4 resources.
 

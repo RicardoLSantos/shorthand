@@ -19,7 +19,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = "Operational ConceptMap for mindfulness observation terminology translation. Enables runtime $translate operations for semantic interoperability between mindfulness/meditation tracking applications and SNOMED CT standard terminology."
 * purpose = "Provides semantic mappings from custom mindfulness observation codes to standard SNOMED CT codes. Mindfulness and meditation tracking is increasingly common in consumer health apps but lacks standardized clinical terminology."
 

@@ -14,7 +14,7 @@ Description: "Records the conditions under which body measurements were taken"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -38,7 +38,7 @@ Description: "Specifies the type of device used for body measurements"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -62,7 +62,7 @@ Description: "Standard conditions under which measurements are taken"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
@@ -86,7 +86,7 @@ Description: "Types of devices used for health and body measurements"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"

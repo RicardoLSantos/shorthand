@@ -13,7 +13,7 @@ Description: "Qualitative assessments of sleep quality for lifestyle medicine. U
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "Ricardo Lourenco dos Santos"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@2rdoc.pt"
+* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"

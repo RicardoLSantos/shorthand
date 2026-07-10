@@ -1,6 +1,6 @@
 // ConceptMap: Physical Activity LOINC → OMOP CDM
 // Created: 2025-11-28
-// Author: Ricardo Lourenco dos Santos (fhir@2rdoc.pt)
+// Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Purpose: Enable physical activity transformation from FHIR to OMOP CDM
 // Context: PhD Thesis - Physical Activity as lifestyle medicine pillar
 
@@ -20,7 +20,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = """
 Maps physical activity metrics from wearables to OMOP CDM concepts for federated analytics.
 

@@ -19,7 +19,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = "Operational ConceptMap for body composition measurement terminology translation. Enables runtime $translate operations for semantic interoperability between consumer bioimpedance scales and LOINC standard terminology."
 * purpose = "Provides semantic mappings from custom body composition codes to standard LOINC codes. Consumer body composition scales measure metrics like body fat percentage, lean mass, BMI via bioimpedance analysis (BIA)."
 

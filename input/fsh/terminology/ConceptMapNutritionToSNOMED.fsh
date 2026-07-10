@@ -19,7 +19,7 @@ Usage: #definition
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
-* contact.telecom.value = "fhir@2rdoc.pt"
+* contact.telecom.value = "ricardolourencosantos@gmail.com"
 * description = "Operational ConceptMap for nutrition measurement terminology translation. Enables runtime $translate operations for semantic interoperability between consumer nutrition tracking applications and SNOMED CT standard terminology."
 * purpose = "Provides semantic mappings from custom nutrition measurement codes to standard SNOMED CT codes. Consumer nutrition tracking uses proprietary measurements not fully covered by SNOMED CT. This ConceptMap enables clinical decision support systems to interpret consumer nutrition data using standardized terminology where available."
 
