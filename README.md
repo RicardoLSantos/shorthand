@@ -351,8 +351,8 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 - **Author**: Ricardo Lourenço dos Santos
 - **Institution**: Faculty of Medicine, University of Porto (FMUP)
 - **Research Groups**: RISE-Health, MEDCIDS
-- **Email**: fhir@2rdoc.pt
-- **ORCID**: [0000-0003-3737-0972](https://orcid.org/0000-0003-3737-0972)
+- **Email**: ricardolourencosantos@gmail.com
+- **ORCID**: [0000-0001-6017-8255](https://orcid.org/0000-0001-6017-8255)
 
 ---
 
