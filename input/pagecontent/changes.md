@@ -2,7 +2,23 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
-## Version 0.4.5 (2026-06-20) — Current
+## Version 0.4.6 (2026-07-13) — Current
+
+### Inflammatory Marker Bindings — mitochondria↔inflammation panel
+
+- Added four bridge-cytokine / metabolite Observation profiles binding the Castro-Marrero 2022 (PMID 35229657) mitochondria↔inflammation panel: **IL-1β (LOINC `13629-1`)**, **IL-8 (`33211-4`)**, **IL-10 (`26848-2`)**, and **lactate (`14118-4`)**. IL-1β / IL-8 / IL-10 join the `InflammatoryMarker` ValueSet; **lactate is deliberately kept OUTSIDE the inflammatory ValueSet** (metabolic, not inflammatory). All four codes verified Database-First (Athena, `std=S`) and live-validated against `tx.fhir.org`. Supports the HRV↔inflammation evidence base cited by G1.
+
+### Build
+
+- genonce **0 errors / 223 warnings / 0 broken links** (IG Publisher 2.2.10). The 223 warnings are a **single benign class**: the IG Publisher (≥2.2.10) recommendation to assign OIDs to the 223 terminology resources (204 ValueSets + 19 CodeSystems) for interoperability with OID-based ecosystems (e.g. CDA). None is a FHIR conformance error — the build validates with **zero errors** and all terminology is live-validated against `tx.fhir.org`. A registered OID root (IANA Private Enterprise Number) is planned for the production phase (post-defense) as the genuine remediation; OIDs are never invented without a registered root.
+
+### Updated Totals (v0.4.6, FSH source)
+
+- **100 Profiles** (+4), **77 Extensions**, **19 CodeSystems**, **204 ValueSets**, **269 Instances** (+4 examples; incl. **29 ConceptMaps**) = **669 artefacts**. IG Publisher 2.2.10, EN locale.
+
+---
+
+## Version 0.4.5 (2026-06-20)
 
 ### Dependency
 

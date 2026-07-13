@@ -99,11 +99,18 @@ jobs:
           warnings = qa.get('warnings', 0)
           print(f'Errors: {errors}')
           print(f'Warnings: {warnings}')
-          if errors > 23:
-              print(f'FAIL: {errors} errors exceeds IPS baseline of 23')
+          # Release standard (Opcao C, v0.4.6+): err=0 is the quality bar. Since IG Publisher
+          # 2.2.10 the warnings are a single benign class -- the OID-assignment recommendation
+          # for the terminology resources (204 ValueSets + 19 CodeSystems; CDA/OID interop),
+          # which is NOT a FHIR conformance error. See changes.md [0.4.6] +
+          # T2_TO_GM_WARN223_CLASS_AUDIT_20260711. Warnings are logged for visibility but do not
+          # fail the gate; a registered OID root (IANA PEN) is the planned production-phase
+          # remediation (OIDs are never invented without a registered root).
+          if errors > 0:
+              print(f'FAIL: build not clean - {errors} errors (release standard: err=0)')
               sys.exit(1)
           else:
-              print(f'OK: {errors} errors within IPS upstream baseline (23)')
+              print(f'OK: 0 errors ({warnings} warnings = benign OID class, see changes.md) - meets release standard')
           "
           elif [ -f output/qa.html ]; then
             echo "qa.json not found, qa.html exists"
