@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [0.4.6] - 2026-07-13
+
+### Added
+- **Inflammatory Marker Bindings — mitochondria↔inflammation panel (T1 wire 10 Jul + T2 build-trial 11 Jul, released 13 Jul)** — four bridge-cytokine / metabolite Observation profiles binding the Castro-Marrero 2022 (PMID 35229657) mitochondria↔inflammation panel: **IL-1β** (LOINC `13629-1`), **IL-8** (`33211-4`), **IL-10** (`26848-2`), and **lactate** (`14118-4`). IL-1β / IL-8 / IL-10 join the existing **`InflammatoryMarker` ValueSet** (they are new *members* of that VS — **not** a new ValueSet, so the ValueSet count stays **204**, per the raw-FSH-205-vs-published-204 SUSHI-dedup distinction, Pitfall #81); **lactate is deliberately kept OUTSIDE the inflammatory ValueSet** (metabolic, not inflammatory). All four codes verified Database-First (Athena, `std=S`) + live-validated against `tx.fhir.org` `$lookup`. Each profile ships one example instance. Supports the HRV↔inflammation evidence base cited by G1 (RS5/RS6/RS12 merge).
+
+### Source counts (FSH)
+- Profiles **100** (+4) / Extensions 77 / CodeSystems 19 / ValueSets **204** / Instances **269** (+4 examples; incl. 29 ConceptMaps) = **669 artefacts** (+8 vs v0.4.5: +4 profiles +4 examples; Extensions / CodeSystems / **ValueSets unchanged** — the 3 cytokine codes join the existing `InflammatoryMarker` VS, they do not create a new one). Built with **IG Publisher 2.2.10** + EN locale; genonce **err=0 / warn=223 / 0 broken links**. The 223 warnings are a **single benign class** — the OID-assignment recommendation newly emitted by IG Publisher ≥2.2.10 for the 223 terminology resources (204 ValueSets + 19 CodeSystems) for interoperability with OID-based ecosystems (e.g. CDA). None is a FHIR conformance error; the build validates with **zero errors**, all terminology is live-validated against `tx.fhir.org`, and a registered OID root (IANA Private Enterprise Number) is planned for the production phase (post-defense) as the genuine remediation — OIDs are never invented without a registered root. This is **not** a regression from v0.4.5's `warn=0` and **not** a suppression-file drift (`ignoreWarnings.txt` unchanged): it is the IG Publisher 2.2.7 → 2.2.10 upgrade surfacing an advisory class. `err=0` remains the release gate (Opção C — the CI `ig-build.yml` Gate A fails on `errors > 0`, treating the OID `warn=223` as benign). Released public + immutable (GitHub Release + `package.tgz` asset; tag `v0.4.6` → commit `055fa32f9`); CI IG-Build green.
+
 ## [0.4.5] - 2026-06-20
 
 ### Changed
