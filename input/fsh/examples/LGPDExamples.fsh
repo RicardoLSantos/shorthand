@@ -29,11 +29,11 @@ Description: "Example of a healthcare organization (Centro Hospitalar Universit�
 * name = "Centro Hospitalar Universitário de São João"
 * type = $OrgType#prov
 * telecom[0].system = #email
-* telecom[0].value = "dpo@chusj.min-saude.pt"
+* telecom[0].value = "dpo@example.org"
 * telecom[0].use = #work
 * contact[0].name.text = "Encarregado de Proteção de Dados"
 * contact[0].telecom[0].system = #email
-* contact[0].telecom[0].value = "dpo@chusj.min-saude.pt"
+* contact[0].telecom[0].value = "dpo@example.org"
 * address[0].line = "Alameda Prof. Hernâni Monteiro"
 * address[0].city = "Porto"
 * address[0].postalCode = "4200-319"
@@ -59,7 +59,7 @@ Description: "Example of an LGPD Data Protection Officer (encarregado) designate
 * specialty[0].text = "Health Data Protection"
 * specialty[1].text = "AI Systems Compliance"
 * telecom[0].system = #email
-* telecom[0].value = "dpo@chusj.min-saude.pt"
+* telecom[0].value = "dpo@example.org"
 * telecom[0].use = #work
 * telecom[1].system = #phone
 * telecom[1].value = "+351-225-512-100"

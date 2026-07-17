@@ -40,7 +40,7 @@ Description: "AI Commission at Centro Hospitalar Universitário de São João pe
 * contact[0].name.text = "Prof. Ricardo Cruz-Correia"
 * contact[0].purpose = http://terminology.hl7.org/CodeSystem/contactentity-type#ADMIN "Administrative"
 * contact[0].telecom[0].system = #email
-* contact[0].telecom[0].value = "rcorreia@med.up.pt"
+* contact[0].telecom[0].value = "support@example.org"
 
 // =============================================================================
 // AI Technical Director (Art. 8)
