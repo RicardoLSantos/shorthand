@@ -2,7 +2,27 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
-## Version 0.4.6 (2026-07-13) — Current
+## Version 0.4.7 (2026-07-17) — Current
+
+### openEHR Archetype Catalog
+
+- Added the **openEHR Archetype Catalog** page (Implementation menu): a public inventory of the openEHR ADL 1.4 archetypes developed for this IG, reporting **12 genuinely original artefacts** (11 novel concepts + 1 specialisation of `CLUSTER.device.v1`) out of a 48-concept development snapshot. The page publishes the evidence behind that number rather than asking the reader to take it on trust — the four-way classification (**12** genuine + **5** CKM extensions + **21** duplicates + **10** classified = **48**), the CKM-mirror cross-check that produced it (`c798e8a`, **689** `.adl` files, **every RM type**; the mirror is of the trunk — 455 `in_development` / 232 `published` — so "no CKM equivalent" means absent even as a draft), the per-archetype external term-bindings (**7 of 12** bound, **18** bindings; Archie 3.15.0 → 12/12 `OK | VALID`), and the method caveats needed to weigh it. A further ~7 concepts exist without a CKM duplicate and are explicitly **not claimed** as original. The ADL files are **not distributed with this IG**: the page describes the archetype set, it is not a download point.
+
+### Changed
+
+- The LGPD and CFM example instances now use RFC-2606 example addresses (`dpo@example.org`, `support@example.org`) in place of real third-party contact details.
+
+### Build
+
+- genonce **0 errors / 223 warnings / 0 broken links** (IG Publisher 2.2.10). The 223 warnings are the same **single benign class** as v0.4.6: the IG Publisher (≥2.2.10) recommendation to assign OIDs to the 223 terminology resources (204 ValueSets + 19 CodeSystems) for interoperability with OID-based ecosystems such as CDA. None is a FHIR conformance error — the build validates with **zero errors**, and a registered OID root (IANA Private Enterprise Number) is planned for the production phase as the genuine remediation; OIDs are never invented without a registered root.
+
+### Updated Totals (v0.4.7, FSH source)
+
+- **100 Profiles**, **77 Extensions**, **19 CodeSystems**, **204 ValueSets**, **269 Instances** (incl. **29 ConceptMaps**) = **669 artefacts** — unchanged from v0.4.6: this release adds one narrative page and two example contact strings.
+
+---
+
+## Version 0.4.6 (2026-07-13)
 
 ### Inflammatory Marker Bindings — mitochondria↔inflammation panel
 

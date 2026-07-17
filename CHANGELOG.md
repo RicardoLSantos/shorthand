@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+## [0.4.7] - 2026-07-17
+
+### Added
+- **openEHR Archetype Catalog page** (`openehr-archetypes-catalog.html`, Implementation menu) — a public, checkable inventory of the openEHR ADL 1.4 archetype set developed for this IG. It reports the reconciled contribution as **12 genuinely original artefacts** (11 novel concepts + 1 specialisation of `CLUSTER.device.v1`, `wearable_device`) out of a 48-concept development snapshot, and publishes the evidence so the number can be checked rather than taken on trust: the four-way classification (**12** genuine + **5** CKM extensions + **21** duplicates + **10** classified = **48**), the CKM-mirror cross-check behind it (`openEHR/CKM-mirror` commit `c798e8a`, **689** `.adl` files, **every RM type** — the mirror is of the trunk, **455** `in_development` / **232** `published`, which makes "no CKM equivalent" a *stronger* claim: the concept is absent even as a draft), the per-archetype external term-bindings (**7 of 12** bound, **18** bindings, Archie 3.15.0 → 12/12 `OK | VALID`), and the method caveats. It also states the second level explicitly: a further ~7 concepts exist without a CKM duplicate but are **not claimed** as original. The ADL files themselves remain **not distributed with this IG** (git-ignored) — the page describes the set, it is not a download point.
+
+### Changed
+- **Example instances use RFC-2606 addresses** — the LGPD and CFM example instances carried real third-party contact addresses; they now use `dpo@example.org` / `support@example.org`. Synthetic examples must never ship real contact details.
+- **Untracked a pre-remediation ConceptMap backup** — `backup/fsh_backups/terminology/ConceptMapNutritionToOMOP_PRE_CN1_REMEDIATION_*.fsh` no longer travels with the repository (the file is kept on disk). It predates the `/backup/` ignore rule; note that untracking does not remove it from the published history.
+
+### Source counts (FSH) — unchanged from v0.4.6
+- Profiles 100 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 269 (incl. 29 ConceptMaps) = **669 artefacts** — **unchanged**: this release adds one narrative page and edits two example contact strings; no FSH artefact was added, removed, or re-shaped. ValueSets remain **204** published (205 raw in FSH → SUSHI dedup; Pitfall #81).
+- Built with **IG Publisher 2.2.10**; genonce **err=0 / warn=223 / 0 broken links** (3,222,366 links checked; 8,318 HTML files, 0 invalid xhtml). The `warn=223` is **identical to v0.4.6** and remains the same single benign class — the OID-assignment recommendation emitted by IG Publisher ≥2.2.10 for the 223 terminology resources (204 ValueSets + 19 CodeSystems) for interoperability with OID-based ecosystems (e.g. CDA). None is a FHIR conformance error; a registered OID root (IANA Private Enterprise Number) is planned for the production phase as the genuine remediation — OIDs are never invented without a registered root. A per-resource diff against the v0.4.6 baseline shows **zero new errors and zero new warnings** (info 12979 → 12984, the new page). `err=0` remains the release gate (Opção C — CI `ig-build.yml` Gate A fails on `errors > 0`).
+
 ## [0.4.6] - 2026-07-13
 
 ### Added
