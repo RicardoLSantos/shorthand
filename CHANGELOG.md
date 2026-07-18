@@ -2,8 +2,14 @@
 
 ## [Unreleased]
 
+## [0.4.8] - 2026-07-18
+
 ### Changed
-- **openEHR Archetype Catalog page — binding count 7/12·18 → 8/12·19 (D-6 accelerometer)** — the `wearable_device` CLUSTER now carries one external term-binding, `[SNOMED::471451000124109]` "Accelerometer" (Physical Object, `std=S`, active — verified Database-First against Vocab2), applied to the `at0012` node in the working ADL on 2026-07-17 and adopted by USER decision D-6. The catalog's binding column moves from **7 of 12 · 18 bindings** to **8 of 12 · 19** (the archetype count stays **12** — this is a binding, not a new concept). The page also records, honestly, that not every unbound sensor flag is a gap: GPS (`SNOMED::897293009`) and temperature (`SNOMED::720387005`) have exact active codes and are unbound by decision, not by absence. **Source-applied only — NOT yet render-verified or released:** the genonce render + a v0.4.8 release are DISK-BLOCKED (build volume at ~6.5 GiB, below the ~8 GiB genonce floor; no prune per USER). The immutable v0.4.7 release records the 7/12·18 state as-shipped; this page correction ships in the next disk-enabled genonce. FSH artefact counts unchanged (**669**).
+- **openEHR Archetype Catalog page — binding count 7/12·18 → 8/12·19 (accelerometer)** — the `wearable_device` CLUSTER now carries one external term-binding, `[SNOMED::471451000124109]` "Accelerometer" (Physical Object, `std=S`, active — verified Database-First against Vocab2), applied to the `at0012` node in the working ADL and adopted as an author scoping decision. The catalog's binding column moves from **7 of 12 · 18 bindings** to **8 of 12 · 19** (14 LOINC + 5 SNOMED occurrences / 18 distinct codes; the archetype count stays **12** — this is a binding, not a new concept). The page also records, honestly, that not every unbound sensor flag is a gap: GPS (`SNOMED::897293009`) and temperature (`SNOMED::720387005`) have exact active codes and are unbound by decision, not by absence — the claim is scoped to the two flags actually verified, not over-generalised.
+
+### Source counts (FSH) — unchanged from v0.4.7
+- Profiles 100 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 269 (incl. 29 ConceptMaps) = **669 artefacts** — **unchanged**: this release re-renders one narrative page with a corrected binding count; no FSH artefact was added, removed, or re-shaped.
+- Built with **IG Publisher 2.2.10**; genonce **err=0 / warn=223 / 0 broken links** (info 12984). The `warn=223` is **identical to v0.4.6/v0.4.7** and remains the same single benign class — the OID-assignment advisory emitted for the 223 terminology resources (204 ValueSets + 19 CodeSystems); none is a FHIR conformance error, and a registered OID root (IANA Private Enterprise Number) is planned for the production phase. A per-resource diff against the v0.4.7 baseline shows **zero new errors and zero new warnings** (#99). `err=0` remains the release gate. Both the rendered catalog HTML and the `package.tgz` (version `0.4.8`) carry the corrected **8 of 12 · 19** count.
 
 ## [0.4.7] - 2026-07-17
 
