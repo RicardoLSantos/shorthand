@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Changed
+- **openEHR Archetype Catalog page — binding count 7/12·18 → 8/12·19 (D-6 accelerometer)** — the `wearable_device` CLUSTER now carries one external term-binding, `[SNOMED::471451000124109]` "Accelerometer" (Physical Object, `std=S`, active — verified Database-First against Vocab2), applied to the `at0012` node in the working ADL on 2026-07-17 and adopted by USER decision D-6. The catalog's binding column moves from **7 of 12 · 18 bindings** to **8 of 12 · 19** (the archetype count stays **12** — this is a binding, not a new concept). The page also records, honestly, that not every unbound sensor flag is a gap: GPS (`SNOMED::897293009`) and temperature (`SNOMED::720387005`) have exact active codes and are unbound by decision, not by absence. **Source-applied only — NOT yet render-verified or released:** the genonce render + a v0.4.8 release are DISK-BLOCKED (build volume at ~6.5 GiB, below the ~8 GiB genonce floor; no prune per USER). The immutable v0.4.7 release records the 7/12·18 state as-shipped; this page correction ships in the next disk-enabled genonce. FSH artefact counts unchanged (**669**).
+
 ## [0.4.7] - 2026-07-17
 
 ### Added
