@@ -6,7 +6,7 @@ Reproducibility package for the empirical benchmark described in:
 
 ## Overview
 
-This benchmark evaluates whether small language models (SLMs) combined with Retrieval-Augmented Generation (RAG) can accurately validate medical terminology codes (LOINC, SNOMED CT, ICD-10-CM) on consumer hardware (Apple M1, 8GB RAM).
+This benchmark evaluates whether small language models (SLMs) combined with Retrieval-Augmented Generation (RAG) can accurately validate medical terminology codes (LOINC, SNOMED CT, ICD-10-CM) on consumer hardware (Apple M1, 16GB RAM).
 
 **Key Result**: Baseline LLM accuracy of 42.9% improved to **100%** on a focused 14-case test set (Config J) and **71.4%** on an extended 42-case set (Config M) using ChromaDB RAG + clinical abbreviation dictionary.
 
