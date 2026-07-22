@@ -10,6 +10,8 @@ This benchmark evaluates whether small language models (SLMs) combined with Retr
 
 **Key Result**: Baseline LLM accuracy of 42.9% improved to **100%** on a focused 14-case test set (Config J) and **71.4%** on an extended 42-case set (Config M) using ChromaDB RAG + clinical abbreviation dictionary.
 
+> **Note on configuration labels:** the accuracy figures below (`Config A–M`) enumerate the finer-grained 14-case pipeline stages of *this package*; the manuscript supplement (Table S11) is authoritative for configuration letters, case counts, and mechanisms. The 42.9% here is the package baseline (the no-retrieval stage of the 14-case set), **not** the paper's 36-case Configuration G baseline. See [Configuration Labels — Scope Note](#configuration-labels--scope-note).
+
 ## Contents
 
 | File | Description |
@@ -61,6 +63,12 @@ python benchmark_3phase_rag.py
 | L | Config K + cross-encoder | — | 61.9% |
 | **M** | **Config K + 94-entry dictionary** | — | **71.4%** |
 
+## Configuration Labels — Scope Note
+
+The manuscript supplement (**Table S11** and note **S11.1**) is authoritative for configuration letters, case counts, and mechanisms. The `A`–`M` labels in **this package** enumerate successive pipeline stages of the 14-case run at a finer granularity, so the package's `A`–`J` do **not** correspond to Configurations A–J reported in the paper.
+
+In particular, the baseline here (`A`, 42.9%, 6/14) is the **no-retrieval stage of the 14-case set**; it is **not** the paper's 36-case Configuration G baseline, which the paper reports as **24.2% (8/33)** merit-scored / **30.6% (11/36)** as-run. The `A`–`M` accuracy values in this package are unchanged; a full relabel to the manuscript's scheme awaits the editorial decision. (For the paper's per-configuration definitions and case counts, see the supplement, Table S11 and S11.1.)
+
 ## ChromaDB Collection Setup
 
 The benchmark requires pre-indexed ChromaDB collections. Indexing scripts are available in the main thesis repository. Source vocabularies require separate licensing agreements:
@@ -93,4 +101,4 @@ Institution: Faculty of Medicine, University of Porto (FMUP)
 Research Groups: RISE-Health, MEDCIDS
 Email: ricardolourencosantos@gmail.com
 ORCID: [0000-0001-6017-8255](https://orcid.org/0000-0001-6017-8255)
-Last updated: 2026-07-02 (v0.4.5)
+Last updated: 2026-07-22 (added configuration-labels scope note)
