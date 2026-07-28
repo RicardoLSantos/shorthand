@@ -2,7 +2,18 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
-## Version 0.4.7 (2026-07-17) — Current
+## Version 0.4.8 (2026-07-18) — Current
+
+### openEHR Archetype Catalog
+
+- **Term-binding count corrected to 8 of 12 (19 bindings).** The `CLUSTER.wearable_device` archetype gained an external binding: the `at0012` "Accelerometer" node is now bound to SNOMED CT `471451000124109` "Accelerometer" (Observable/Physical Object, `standard=S`, active — verified Database-First against the local Athena/Vocab2 downloads). This supersedes the **7 of 12 · 18 bindings** reported in the 0.4.7 entry below, which was accurate when that page was first published. Two OBSERVATION archetypes remain unbound by decision, both genuine terminology gaps: `circadian_rhythm` (the phenomenon has SNOMED `30920001`, but its metrics — acrophase, inter/intra-daily stability — have no code) and `recovery_readiness` (the adjacent `429157007` "Heart rate recovery time" is not equivalent). The two structural CLUSTERs carry no code by design.
+- The catalogue page was re-rendered accordingly; **no FSH artefact was added, removed or reshaped** — the artefact counts are unchanged at 100 profiles / 77 extensions / 19 code systems / 204 value sets / 269 instances = **669**.
+
+### Build
+
+- IG Publisher 2.2.10 — **0 errors / 223 warnings / 0 broken links**. The warning class is unchanged from 0.4.7 (OID advisories on the 223 terminology resources); no conformance error.
+
+## Version 0.4.7 (2026-07-17)
 
 ### openEHR Archetype Catalog
 
