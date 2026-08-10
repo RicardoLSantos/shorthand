@@ -53,7 +53,7 @@ All notable changes to this Implementation Guide are documented on this page.
 
 ### Dependency
 
-- **IPS `hl7.fhir.uv.ips` 2.0.0 → 2.0.1**: HL7's formal IPS 2.0.1 release cleared the single dependency-staleness advisory carried in v0.4.4 — making v0.4.5 the **first zero-warning release** (genonce **0 errors / 0 warnings / 0 broken links**) and the fifth consecutive zero-defect build (v0.4.1 → v0.4.5). The transitive `hl7.fhir.uv.extensions.r4` is unchanged at 5.3.0 (a per-resource diff against v0.4.4 shows zero regressions).
+- **IPS `hl7.fhir.uv.ips` 2.0.0 → 2.0.1**: HL7's formal IPS 2.0.1 release cleared the single dependency-staleness advisory carried in v0.4.4 — **restoring `warn=0`** (genonce **0 errors / 0 warnings / 0 broken links**) and making v0.4.5 the fifth consecutive zero-error release (v0.4.1 → v0.4.5). The first build to reach `warn=0` was **v0.4.1** (warnings 137 → 0); v0.4.4's single staleness advisory was the only interruption between them. The transitive `hl7.fhir.uv.extensions.r4` is unchanged at 5.3.0 (a per-resource diff against v0.4.4 shows zero regressions).
 
 ### Updated Totals (v0.4.5, FSH source — unchanged vs v0.4.4)
 
@@ -107,7 +107,7 @@ All notable changes to this Implementation Guide are documented on this page.
 ## Version 0.4.0 (2026-05-21)
 
 - **Nutrition OMOP ConceptMap remediation (CN1)**: 11/11 fabricated OMOP `concept_id` mappings corrected via the Database-First Protocol (Athena direct lookup). *Errata*: the immutable v0.3.0 release shipped the pre-remediation map.
-- +4 Profiles (incl. `WearableMeasurementProvenance` and `LifestyleMedicineGroupETL` for population/ETL export) + 11 Extensions; IPS upstream baseline (Pitfall #31) eliminated; first fully clean build (0 errors / 0 warnings).
+- +4 Profiles (incl. `WearableMeasurementProvenance` and `LifestyleMedicineGroupETL` for population/ETL export) + 11 Extensions; IPS upstream baseline (Pitfall #31) eliminated. This release cleared the 23 IPS-inherited errors but was **not** yet clean: five errors remained (two IG Publisher binding limitations in the ETL Group profiles, three transient terminology-server connectivity errors) together with 137 warnings. Both were cleared in v0.4.1, which is the **first fully clean build** (0 errors / 0 warnings).
 
 ---
 
