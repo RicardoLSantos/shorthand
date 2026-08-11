@@ -91,7 +91,7 @@ sequenceDiagram
     participant T as Terminology
     participant E as ETL Service
     participant O as OMOP CDM
-    participant C as CQL Engine
+    participant C as CQL Library
 
     W->>F: Export HealthKit data
     F->>T: Validate codes (LOINC, SNOMED)
@@ -99,9 +99,17 @@ sequenceDiagram
     F->>E: POST /process
     E->>O: Transform to MEASUREMENT
     O->>C: Query observations
-    C->>C: Execute HRVInflammationRisk
+    C->>C: HRVInflammationRisk decision rules
     C-->>O: Risk = HIGH/MODERATE/LOW
 ```
+
+> **Status of the CQL leg.** `HRVInflammationRisk.cql` is **authored and validated,
+> but not executed by a CQL engine anywhere in this project.** Its decision logic is
+> checked by a JavaScript test harness that re-implements the same rules against FHIR
+> R4 test bundles; no CQL execution engine is invoked. The diagram above is the
+> intended architecture, not a runtime trace. The CQL source and harness live in the
+> companion HEADS-ETL work, not in this repository, which carries only the
+> `Library` conformance resources that reference them.
 
 ---
 
