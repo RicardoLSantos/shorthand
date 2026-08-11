@@ -50,7 +50,9 @@ def lookup_athena(code: str) -> str:
     """Look up a code in Athena CONCEPT.csv (LOINC, UCUM)."""
     try:
         result = subprocess.run(
-            ["awk", "-F\t", f'$7 == "{code}" {{print $2}}', str(ATHENA_CSV)],
+            # `-v c=` passes the code as data; interpolating it into the awk
+            # program text would let a crafted code inject awk (incl. system()).
+            ["awk", "-F\t", "-v", f"c={code}", '$7 == c {print $2}', str(ATHENA_CSV)],
             capture_output=True, text=True, timeout=5
         )
         return result.stdout.strip()
@@ -66,7 +68,7 @@ def lookup_vocab2(code: str) -> str:
         return ""
     try:
         result = subprocess.run(
-            ["awk", "-F\t", f'$7 == "{code}" {{print $2}}', str(vocab2_path[0])],
+            ["awk", "-F\t", "-v", f"c={code}", '$7 == c {print $2}', str(vocab2_path[0])],
             capture_output=True, text=True, timeout=10
         )
         return result.stdout.strip()
@@ -94,7 +96,7 @@ def lookup_icd11(code: str) -> str:
         return ""
     try:
         result = subprocess.run(
-            ["awk", "-F\t", f'$7 == "{code}" {{print $2}}', str(ICD11_CSV)],
+            ["awk", "-F\t", "-v", f"c={code}", '$7 == c {print $2}', str(ICD11_CSV)],
             capture_output=True, text=True, timeout=5
         )
         return result.stdout.strip()
@@ -150,8 +152,11 @@ def search_vocab2_term(term: str, vocabulary: str = "SNOMED", top_k: int = 10) -
     if not VOCAB2_PATH:
         return []
     try:
-        cmd = f'grep -iF "{term}" "{VOCAB2_PATH}" | head -500'
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=15)
+        # argv form, no shell: `-m 500` is equivalent to the former `| head -500`,
+        # and `--` stops option parsing so a term starting with `-` stays data.
+        # A shell string here would execute $(...) inside a term (e.g. an LLM synonym).
+        result = subprocess.run(["grep", "-iF", "-m", "500", "--", term, VOCAB2_PATH],
+                                capture_output=True, text=True, timeout=15)
         raw = []
         for line in result.stdout.strip().split("\n"):
             if not line:
@@ -183,8 +188,8 @@ def search_icd11_term(term: str, top_k: int = 10) -> list:
     if not ICD11_CSV.exists():
         return []
     try:
-        cmd = f'grep -iF "{term}" "{ICD11_CSV}" | head -100'
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=5)
+        result = subprocess.run(["grep", "-iF", "-m", "100", "--", term, str(ICD11_CSV)],
+                                capture_output=True, text=True, timeout=5)
         raw = []
         for line in result.stdout.strip().split("\n"):
             if not line:
@@ -258,7 +263,8 @@ def search_bm25(query: str, terminology: str, top_k: int = 5) -> list:
     vocab_id = VOCAB_MAP.get(terminology, terminology)
     try:
         result = subprocess.run(
-            ["awk", "-F\t", f'tolower($2) ~ tolower("{query.split()[0]}") && $4 == "{vocab_id}" {{print $7 "\\t" $2}}',
+            ["awk", "-F\t", "-v", f"q={query.split()[0]}", "-v", f"v={vocab_id}",
+             'tolower($2) ~ tolower(q) && $4 == v {print $7 "\\t" $2}',
              db_path],
             capture_output=True, text=True, timeout=timeout
         )
@@ -275,8 +281,8 @@ def search_athena_term(term: str, vocabulary: str = "LOINC", top_k: int = 5) -> 
     try:
         # Get enough candidates to rank properly (common terms have 200+ matches)
         # Use -F (fixed string) to avoid regex interpretation of brackets, dots, etc.
-        cmd = f'grep -iF "{term}" {ATHENA_CSV} | head -500'
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=10)
+        result = subprocess.run(["grep", "-iF", "-m", "500", "--", term, str(ATHENA_CSV)],
+                                capture_output=True, text=True, timeout=10)
         raw = []
         for line in result.stdout.strip().split("\n"):
             if not line:
@@ -809,12 +815,13 @@ def search_with_domain_filter(term: str, vocabulary: str, query: str, top_k: int
     try:
         # Build awk filter with optional domain constraint
         if domain:
-            awk_expr = f'tolower($2) ~ tolower("{term}") && $4 == "{vocabulary}" && $3 == "{domain}" {{print $7 "\\t" $2 "\\t" $5}}'
+            awk_expr = 'tolower($2) ~ tolower(t) && $4 == v && $3 == d {print $7 "\\t" $2 "\\t" $5}'
         else:
-            awk_expr = f'tolower($2) ~ tolower("{term}") && $4 == "{vocabulary}" {{print $7 "\\t" $2 "\\t" $5}}'
+            awk_expr = 'tolower($2) ~ tolower(t) && $4 == v {print $7 "\\t" $2 "\\t" $5}'
 
         result = subprocess.run(
-            ["awk", "-F\t", awk_expr, csv_path],
+            ["awk", "-F\t", "-v", f"t={term}", "-v", f"v={vocabulary}", "-v", f"d={domain or ''}",
+             awk_expr, csv_path],
             capture_output=True, text=True, timeout=15
         )
 
