@@ -1,9 +1,21 @@
-# Security Scan — gitleaks secret detection across the FULL git history
+# Security Scan — gitleaks secret detection
 #
 # Complements .github/workflows/security-audit.yml, which greps the *current*
-# tracked tree with hand-written patterns. This one runs gitleaks over every
-# commit (fetch-depth: 0), so a secret that was committed and later deleted is
-# still detected — deleting a file does not remove it from history.
+# tracked tree with hand-written patterns. This one reads git history, so a
+# secret that was committed and later deleted is still detected — deleting a
+# file does not remove it from history.
+#
+# SCOPE DEPENDS ON THE EVENT — `fetch-depth: 0` is necessary but NOT sufficient.
+# gitleaks-action derives its range from the trigger, measured on 2026-08-11:
+#   push / pull_request  → only the pushed range (`--log-opts=<base>^..<head>`).
+#                          Run 31482331763 scanned 3 commits / 7.95 KB in 0.1s.
+#                          This is the fast pre-merge gate, NOT a history scan.
+#   schedule / dispatch  → no range flag, so the whole repository.
+#                          Run 31482458639 scanned 504 commits / 1.45 GB in 64s.
+# So the weekly run below is what actually answers "was a secret ever committed?".
+# If you need that answer now, do not read a green push run — trigger it:
+#   gh workflow run security-scan.yml --ref main
+# and confirm the "N commits scanned" line matches the repository, not the push.
 #
 # Uses no third-party API keys and no Claude API: gitleaks runs entirely in the
 # runner with the repository-scoped GITHUB_TOKEN.
