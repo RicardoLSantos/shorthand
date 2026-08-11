@@ -73,6 +73,35 @@ qa_comparison/**/*.html
 # Local scripts (not tracked — root-level only, allows .github/scripts/)
 /scripts/
 
+# Secrets — preventive (2026-08-11, T1 security scan). Nothing tracked matches
+# today; this block exists so a credential file cannot be added by accident.
+# A name-based rule is necessary but NOT sufficient: a secret pasted inside a
+# Makefile/.sh/.md has no filename that betrays it — that is what the gitleaks
+# job in .github/workflows/security-scan.yml is for.
+.env
+.env.*
+*.env
+*.env.*
+credentials
+credentials.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_rsa.*
+# Templates with placeholder values stay versionable (negation must come last).
+!*.env.example
+!*.env.sample
+!*.env.template
+
+# Python bytecode + local pre-edit backups (never publish; the pre-edit version
+# of any tracked file is recoverable with `git show <rev>:<path>`).
+__pycache__/
+*.pyc
+.local_backups/
+
 # IG Publisher auto-generated narrative conformance traceability (regenerated each build)
 # Resource: FHIR Requirements consolidating narrative conformance statements
 # Flagged by T1 S34 (2026-05-13); resolved T2 S27 (2026-05-21) → auto-regenerated artifact, NOT manual

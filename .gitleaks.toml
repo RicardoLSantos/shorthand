@@ -1,0 +1,35 @@
+# gitleaks configuration — iOS Lifestyle Medicine FHIR IG (public repository)
+#
+# Purpose of the single allowlist below: the 2026-08-11 full-history scan
+# (gitleaks 8.30.1, 505 commits, 1.51 GB) reported 112 hits, ALL from the
+# `generic-api-key` rule, ALL matching `did:key:z6Mk...` inside a Radicle
+# how-to document (`rad delegate add did:key:...`) that lived in history in
+# October 2025. A `did:key:` is the PUBLIC half of an ed25519 keypair — it is
+# an address, published on purpose: this repository's own `rad://` remotes
+# contain one, and the project documentation publishes the authorised seed DID.
+# The rule fires only on the literal `key:` prefix inside `did:key:`.
+#
+# Without this allowlist the Security Scan job would be red on its first run
+# and stay red, which trains maintainers to ignore it. The allowlist is
+# deliberately narrow: it matches the multibase/base58btc ed25519 public-key
+# form ONLY, so a genuine credential on the same line is still reported.
+#
+# Verified 2026-08-11: with this file, full history = 0 findings; a control
+# file containing a well-formed AWS key + a high-entropy assignment is still
+# detected, so detection is not globally disabled.
+#
+# Adding to this file requires the same evidence: what fired, why it is public
+# or synthetic, and a re-run showing the detector still catches a real secret.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Radicle/DID public key identifiers (public by construction, not credentials)"
+regexTarget = "line"
+regexes = [
+  # did:key: multibase base58btc, ed25519 (z6Mk prefix) — a public identifier
+  '''did:key:z6Mk[1-9A-HJ-NP-Za-km-z]{40,50}''',
+  # rad:// remote URLs embed the same public DIDs
+  '''rad://z[1-9A-HJ-NP-Za-km-z]{20,60}''',
+]

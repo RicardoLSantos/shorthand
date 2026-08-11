@@ -2,16 +2,22 @@
 # Security Audit Script — Daily check for leaked sensitive information
 # Repository: iOS Lifestyle Medicine FHIR IG (PUBLIC on GitHub)
 # Created: 2026-04-15 by T2 S14
-# Usage: ./scripts/security_audit.sh [--fix]
+# Usage: ./.github/scripts/security_audit.sh [--fix]
 #   --fix: automatically stage .gitignore additions for flagged files
+#
+# 2026-08-11 (T1): REPO_ROOT was "$(dirname "$0")/.." from the era when this
+# script lived at scripts/. After the move to .github/scripts/ it resolved to
+# .github/, and since `git grep`/`git ls-files` scope to the working directory,
+# every check ran against 7 of 281 tracked files (~2.5%) while still printing
+# PASS. The self-exclusion pathspecs moved with it and are now .github-relative.
 
 set -euo pipefail
 
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$REPO_ROOT"
 
 # Directories to exclude from scanning (build artifacts, templates)
-EXCLUDE=':!scripts/security_audit.sh :!qa_comparison/ :!output/ :!template/ :!fsh-generated/ :!*.html'
+EXCLUDE=':!.github/scripts/security_audit.sh :!qa_comparison/ :!output/ :!template/ :!fsh-generated/ :!*.html'
 
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
@@ -46,14 +52,17 @@ echo "Checking passwords and secrets..."
 while IFS=: read -r file line content; do
     [ -z "$file" ] && continue
     log_finding "HIGH" "$file" "$line" "Possible password: $(echo "$content" | head -c 80)"
-done < <(git grep -n -i -E '(password|passwd|pwd|secret|credential)\s*[:=]\s*["\x27][^"\x27]{3,}' -- ':!scripts/security_audit.sh' ':!*.md' ':!input/pagecontent/*.md' 2>/dev/null || true)
+# `git grep -E` is POSIX ERE: `\s` is NOT a shorthand there, it matches a literal
+# "s". The former pattern therefore matched `passwords="..."` but never the
+# canonical `password = "..."` / `password: "..."`. Verified 2026-08-11 (T1).
+done < <(git grep -n -i -E '(password|passwd|pwd|secret|credential)[[:space:]]*[:=][[:space:]]*["\x27][^"\x27]{3,}' -- ':!.github/scripts/security_audit.sh' ':!*.md' ':!input/pagecontent/*.md' 2>/dev/null || true)
 
 # 3. Private file paths (local system disclosure)
 echo "Checking private file paths..."
 while IFS=: read -r file line content; do
     [ -z "$file" ] && continue
     log_finding "WARN" "$file" "$line" "Local path disclosure: $(echo "$content" | head -c 80)"
-done < <(git grep -n -E '(/Users/[a-zA-Z]+/|/home/[a-zA-Z]+/|C:\\Users\\)' -- ':!scripts/security_audit.sh' ':!.gitignore' 2>/dev/null || true)
+done < <(git grep -n -E '(/Users/[a-zA-Z]+/|/home/[a-zA-Z]+/|C:\\Users\\)' -- ':!.github/scripts/security_audit.sh' ':!.gitignore' 2>/dev/null || true)
 
 # 4. SSH/PGP private keys
 echo "Checking for private keys..."
@@ -73,7 +82,7 @@ echo "Checking for internal IPs..."
 while IFS=: read -r file line content; do
     [ -z "$file" ] && continue
     log_finding "WARN" "$file" "$line" "Internal IP: $(echo "$content" | head -c 80)"
-done < <(git grep -n -E '(10\.[0-9]+\.[0-9]+\.[0-9]+|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+)' -- ':!scripts/security_audit.sh' ':!*.md' 2>/dev/null || true)
+done < <(git grep -n -E '(10\.[0-9]+\.[0-9]+\.[0-9]+|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+|192\.168\.[0-9]+\.[0-9]+)' -- ':!.github/scripts/security_audit.sh' ':!*.md' 2>/dev/null || true)
 
 # 7. JWT tokens
 echo "Checking for JWT tokens..."

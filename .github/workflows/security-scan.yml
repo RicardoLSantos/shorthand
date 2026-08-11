@@ -1,0 +1,49 @@
+# Security Scan — gitleaks secret detection across the FULL git history
+#
+# Complements .github/workflows/security-audit.yml, which greps the *current*
+# tracked tree with hand-written patterns. This one runs gitleaks over every
+# commit (fetch-depth: 0), so a secret that was committed and later deleted is
+# still detected — deleting a file does not remove it from history.
+#
+# Uses no third-party API keys and no Claude API: gitleaks runs entirely in the
+# runner with the repository-scoped GITHUB_TOKEN.
+#
+# SCHEDULE FOR MAINTAINERS
+#   security-scan  (this file)  weekly  — Mondays 07:00 UTC / 08:00 WEST
+#   security-audit              daily   — 06:00 UTC / 07:00 WEST
+#   conceptmap-drift            weekly  — Mondays 06:00 UTC
+# A red run means: triage first (placeholder vs real), and if real, ROTATE the
+# credential at the service. Removing the file does not remediate history.
+#
+# Created: 2026-08-11 (T1) — see knowledge_base/security/SECURITY_PROCESS.md in
+# the Thesis repository for the detect → triage → remediate → verify process.
+
+name: Security Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 7 * * 1'  # Mondays 07:00 UTC (08:00 WEST)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    name: gitleaks (full history)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history — the point of this job
+
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Findings are printed redacted; values never appear in the log.
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "false"
