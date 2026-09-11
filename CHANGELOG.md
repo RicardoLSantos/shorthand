@@ -2,6 +2,26 @@
 
 ## [Unreleased]
 
+## [0.5.0] - Unreleased (candidate, 2026-09-11)
+
+### Added
+- **`HeartRateVariabilityObservation` profile** (`heart-rate-variability-observation`) — one HRV metric per Observation, `code` bound to `HeartRateVariabilityVS` (extensible): SDNN (LOINC 80404-7) or, for the metrics without a LOINC code, RMSSD, pNN50, LF power, HF power and the LF/HF ratio (custom codes bridged by `ConceptMapHRVToLOINC`); Quantity in UCUM (ms, %, ms2, 1); personal baseline via `referenceRange`/`interpretation`; `MeasurementContext` extension. Three examples (RMSSD 42 ms, pNN50 18 %, LF/HF 1.8). `SdnnObservation` is unchanged.
+- **Terminology verification ledger** — `input/data/terminology-verification-ledger.csv` records, for every externally-defined code bound in the FSH sources (LOINC, SNOMED CT, ICD-11, UCUM), the date, source and version of its last verification; produced by `.github/scripts/terminology_ledger_check.py` (owner sources → dated local snapshots → tx.fhir.org, advisory; never on the build path) and summarised in a dated table on the Terminology Verification page; advisory weekly step in the ConceptMap Drift workflow. Three concept-property definitions in `AppLogicCS` (`verified-on`, `verified-via`, `source-version`).
+- **Questionnaire instrument codes** — PSS-10 (LOINC 106875-8), IPAQ short form (LOINC 77582-5 and the seven item codes 77583-3…77589-0, matched by question text) and PSQI (SNOMED CT 699200007); score Observation examples for the PSS-10 total (106860-0) and the IPAQ total physical activity (77594-0, MET-min/wk).
+- **Wearable device profiles** — `WearableDataSource` (the application is the first-class device: type fixed to SNOMED CT 706689003, `parent` → sensor) and `WearableSensorDevice` (type from the Personal Health Device IG's IEEE 11073-10101 MDC device specialisations, extensible); the six software Device examples now conform to `WearableDataSource`; two sensor examples (pulse oximeter 528388, step counter 528484) linked through `parent`.
+
+### Changed
+- **openEHR ConceptMaps use the ADL 1.4 node identifiers** — the four FHIR↔openEHR maps had carried ADL2 identifiers (`idN`) from a 2025-11 authoring pass that the archetype corpus no longer uses; every node code is now the `atNNNN` identifier of the published draft archetype, decided by the archetype term text and checked against the term definitions. Five vendor elements that had no ADL 1.4 counterpart were removed and recorded; the Fitbit coverage element moved to the wearable-device CLUSTER data-quality node.
+- **ICD-11 CodeSystem rebuilt** — the 2026-03 edition (34 codes) contained 9 codes absent from ICD-11 MMS and 12 codes carrying another concept's title; rebuilt from the WHO MMS linearization export and tx.fhir.org (MMS 2026-01) with 46 concepts, WHO titles verbatim and per-concept verification properties; ValueSets regenerated; the ICD-10-CM → ICD-11 ConceptMap follows the WHO ICD-10 to ICD-11 mapping tables (2024-01). tx.fhir.org now serves ICD-11 MMS; the republished CodeSystem is retained by design so that validation never depends on a terminology server.
+- **Terminology corrections surfaced by the ledger** — `ConceptMapHRVToOMOP`: the custom HRV codes had been declared as pseudo-LOINC codes (`hrv-*-local`), now in a group whose source is the custom CodeSystem; *Heavy drinker* is SNOMED CT 86933000 (228279004 is *Very heavy drinker*); *Cohabiting* is SNOMED CT 38070000 (14012001 is *Common law partnership*).
+- Terminology pages (ICD-11 Integration, Design Decisions, Known Issues, Terminology Verification, openEHR Integration, Getting Started) updated accordingly.
+
+### Source counts (FSH)
+- Profiles 103 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 276 (incl. 29 ConceptMaps) = **679 artefacts** (+3 profiles, +7 instances vs 0.4.8); ICD-11 CodeSystem 34 → 46 concepts. Build result recorded in the release notes at tag time.
+
+### Built against
+- LOINC 2.82 (tx.fhir.org; Athena snapshot 2026-01-21) · SNOMED CT International 20250201 (tx.fhir.org; Vocab2 snapshot 2025-02-01) · ICD-11 MMS 2026-01 (tx.fhir.org; WHO linearization export 2026-03-20) · UCUM 2.2 · IEEE 11073-10101 MDC 2024-12-05 (via hl7.fhir.uv.phd 1.1.0) · IG Publisher 2.2.10.
+
 ## [0.4.8] - 2026-07-18
 
 ### Changed
