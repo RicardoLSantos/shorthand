@@ -74,7 +74,7 @@ Description: "Status categories for alcohol consumption"
 * $SCT#228276006 "Occasional drinker (finding)"
 * $SCT#228277002 "Light drinker (finding)"
 * $SCT#43783005 "Moderate drinker (finding)"
-* $SCT#228279004 "Heavy drinker (finding)"
+* $SCT#86933000 "Heavy drinker"   // 228279004 is "Very heavy drinker"; corrected 2026-09-11 (tx.fhir.org International 20250201; Vocab2)
 * $SCT#228281002 "Problem drinker (finding)"
 // FIX 2026-01-12: Replaced inactive 160573003 with active 261665006
 * $SCT#261665006 "Unknown (qualifier value)"

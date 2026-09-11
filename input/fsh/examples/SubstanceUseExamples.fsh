@@ -117,7 +117,7 @@ Description: "Example of high-risk alcohol consumption with binge episodes"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-25T10:00:00Z"
 * performer = Reference(Practitioner/PractitionerExample)
-* valueCodeableConcept = $SCT#228279004 "Heavy drinker (finding)"
+* valueCodeableConcept = $SCT#86933000 "Heavy drinker"   // 228279004 is "Very heavy drinker"; corrected 2026-09-11 (tx.fhir.org International 20250201; Vocab2)
 * component[drinksPerWeek].code = $LOINC#68519-8 "How many standard drinks containing alcohol do you have on a typical day"
 * component[drinksPerWeek].valueQuantity = 21 '/wk' "per week"
 * component[drinkingFrequency].code = $LOINC#68518-0 "How often do you have a drink containing alcohol"
