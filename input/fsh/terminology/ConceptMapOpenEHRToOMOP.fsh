@@ -58,40 +58,40 @@ Architecture:
 * group[0].unmapped.display = "Unmapped HRV element - requires custom OMOP concept"
 
 // ============================================================================
-// SDNN (id5) → MEASUREMENT - NOTE: Verify concept ID
+// SDNN (at0004) → MEASUREMENT - NOTE: Verify concept ID
 // CORRECTED 2025-12-08: Using 37547368 (verified in ConceptMapHRVToOMOP)
 // ============================================================================
-* group[0].element[0].code = #id5
-* group[0].element[0].display = "SDNN - Standard deviation of NN intervals"
+* group[0].element[0].code = #at0004
+* group[0].element[0].display = "SDNN"
 * group[0].element[0].target[0].code = #21491502
 * group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = "VERIFIED via Athena CONCEPT.csv 2026-03-19: concept_id=21491502, LOINC 80404-7, Domain=Measurement, Standard. Store in MEASUREMENT with value_as_number (ms). Previous 37547368 NOT in local Athena/Vocab2."
 
 // ============================================================================
-// RMSSD (id6) - GAP CONFIRMED 2025-12-08 ❌
+// RMSSD (at0005) - GAP CONFIRMED 2025-12-08 ❌
 // ============================================================================
-* group[0].element[1].code = #id6
-* group[0].element[1].display = "RMSSD - Root mean square of successive differences"
+* group[0].element[1].code = #at0005
+* group[0].element[1].display = "RMSSD"
 * group[0].element[1].target[0].code = #0
 * group[0].element[1].target[0].display = "No OMOP concept - custom concept required"
 * group[0].element[1].target[0].equivalence = #unmatched
 * group[0].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: RMSSD has NO OMOP concept (Concept ID = 0). Primary wearable HRV metric used by Fitbit/Garmin/Oura - requires OHDSI vocabulary submission. Note: Apple exposes SDNN instead of RMSSD."
 
 // ============================================================================
-// pNN50 (id7) - GAP CONFIRMED 2025-12-08 ❌
+// pNN50 (at0006) - GAP CONFIRMED 2025-12-08 ❌
 // ============================================================================
-* group[0].element[2].code = #id7
-* group[0].element[2].display = "pNN50 - Percentage of NN intervals >50ms"
+* group[0].element[2].code = #at0006
+* group[0].element[2].display = "pNN50"
 * group[0].element[2].target[0].code = #0
 * group[0].element[2].target[0].display = "No OMOP concept - custom concept required"
 * group[0].element[2].target[0].equivalence = #unmatched
 * group[0].element[2].target[0].comment = "GAP CONFIRMED 2025-12-08: pNN50 has NO OMOP concept (Concept ID = 0). High correlation with RMSSD (r>0.90). Unit: percentage."
 
 // ============================================================================
-// LF/HF Ratio (id13) - GAP CONFIRMED 2025-12-08 ❌
+// LF/HF Ratio (at0012) - GAP CONFIRMED 2025-12-08 ❌
 // ============================================================================
-* group[0].element[3].code = #id13
+* group[0].element[3].code = #at0012
 * group[0].element[3].display = "LF/HF Ratio"
 * group[0].element[3].target[0].code = #0
 * group[0].element[3].target[0].display = "No OMOP concept - custom concept required"
@@ -99,9 +99,9 @@ Architecture:
 * group[0].element[3].target[0].comment = "GAP CONFIRMED 2025-12-08: LF/HF ratio has NO OMOP concept (Concept ID = 0). Autonomic balance indicator. Dimensionless ratio."
 
 // ============================================================================
-// Recording duration (id32) - VERIFIED 2026-03-19 (was 4272025 HALLUCINATED)
+// Recording duration (at0031) - VERIFIED 2026-03-19 (was 4272025 HALLUCINATED)
 // ============================================================================
-* group[0].element[4].code = #id32
+* group[0].element[4].code = #at0031
 * group[0].element[4].display = "Recording duration"
 * group[0].element[4].target[0].code = #3004182
 * group[0].element[4].target[0].display = "Recording duration by EKG"
@@ -109,9 +109,9 @@ Architecture:
 * group[0].element[4].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=3004182, LOINC 8618-1, Domain=Measurement. Previous 4272025='Herpesvirus disease of turbot' (HALLUCINATED). Critical for HRV interpretation (5min vs 24h)."
 
 // ============================================================================
-// Physiological state (id41) - VERIFIED 2026-03-19 (was 4058895 HALLUCINATED)
+// Physiological state (at0040) - VERIFIED 2026-03-19 (was 4058895 HALLUCINATED)
 // ============================================================================
-* group[0].element[5].code = #id41
+* group[0].element[5].code = #at0040
 * group[0].element[5].display = "Physiological state"
 * group[0].element[5].target[0].code = #4287468
 * group[0].element[5].target[0].display = "Body position"
@@ -126,10 +126,10 @@ Architecture:
 * group[1].target = "MEASUREMENT"
 
 // ============================================================================
-// Step count (id10) - VERIFIED 2026-03-19 (was 40771089 HALLUCINATED)
+// Step count (at0009) - VERIFIED 2026-03-19 (was 40771089 HALLUCINATED)
 // NOTE: ConceptMapActivityToOMOP also needs audit for 40771089
 // ============================================================================
-* group[1].element[0].code = #id10
+* group[1].element[0].code = #at0009
 * group[1].element[0].display = "Step count"
 * group[1].element[0].target[0].code = #40758552
 * group[1].element[0].target[0].display = "Number of steps in unspecified time Pedometer"
@@ -137,9 +137,9 @@ Architecture:
 * group[1].element[0].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=40758552, LOINC 55423-8, Domain=Observation, Standard. Previous 40771089='What language do you feel comfortable speaking' (HALLUCINATED). Store in MEASUREMENT, unit_concept_id=9529 (count)."
 
 // ============================================================================
-// Distance (id11) - VERIFIED 2026-03-19 (was 4149130 HALLUCINATED)
+// Distance (at0010) - VERIFIED 2026-03-19 (was 4149130 HALLUCINATED)
 // ============================================================================
-* group[1].element[1].code = #id11
+* group[1].element[1].code = #at0010
 * group[1].element[1].display = "Distance"
 * group[1].element[1].target[0].code = #40758559
 * group[1].element[1].target[0].display = "Walking distance unspecified time Pedometer"
@@ -147,9 +147,9 @@ Architecture:
 * group[1].element[1].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=40758559, LOINC 55430-3, Domain=Measurement, Standard. Previous 4149130='Gastroenterology service' (HALLUCINATED). Unit: meter (8582) or kilometer (9314)."
 
 // ============================================================================
-// Active calories (id20) - VERIFIED 2026-03-19 (was 4074432 HALLUCINATED)
+// Active calories (at0019) - VERIFIED 2026-03-19 (was 4074432 HALLUCINATED)
 // ============================================================================
-* group[1].element[2].code = #id20
+* group[1].element[2].code = #at0019
 * group[1].element[2].display = "Active calories"
 * group[1].element[2].target[0].code = #21490772
 * group[1].element[2].target[0].display = "Energy expended Reporting Period by Indirect calorimetry"
@@ -157,9 +157,9 @@ Architecture:
 * group[1].element[2].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=21490772, LOINC 75990-2, Domain=Measurement. Previous 4074432='Open freeing adhesions fallopian tube' (HALLUCINATED). Unit: kilocalorie (8692)."
 
 // ============================================================================
-// Moderate activity minutes (id32) - VERIFIED 2026-03-19 (was 4090484 HALLUCINATED+DUPLICATE)
+// Moderate activity minutes (at0031) - VERIFIED 2026-03-19 (was 4090484 HALLUCINATED+DUPLICATE)
 // ============================================================================
-* group[1].element[3].code = #id32
+* group[1].element[3].code = #at0031
 * group[1].element[3].display = "Moderately active minutes"
 * group[1].element[3].target[0].code = #3964780
 * group[1].element[3].target[0].display = "Duration of moderate activity"
@@ -167,9 +167,9 @@ Architecture:
 * group[1].element[3].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=3964780, LOINC 101689-8, Domain=Measurement, Standard. Previous 4090484='Laplace transform damping factor' (HALLUCINATED, also duplicated with vigorous). WHO target: 150-300 min/week."
 
 // ============================================================================
-// Vigorous activity minutes (id33) - VERIFIED 2026-03-19 (was 4090484 HALLUCINATED+DUPLICATE)
+// Vigorous activity minutes (at0032) - VERIFIED 2026-03-19 (was 4090484 HALLUCINATED+DUPLICATE)
 // ============================================================================
-* group[1].element[4].code = #id33
+* group[1].element[4].code = #at0032
 * group[1].element[4].display = "Vigorously active minutes"
 * group[1].element[4].target[0].code = #3965425
 * group[1].element[4].target[0].display = "Duration of vigorous activity"
@@ -184,9 +184,9 @@ Architecture:
 * group[2].target = "MEASUREMENT"
 
 // ============================================================================
-// Total sleep time (id13) - VERIFIED 2026-03-19 (was 40771110 HALLUCINATED)
+// Total sleep time (at0012) - VERIFIED 2026-03-19 (was 40771110 HALLUCINATED)
 // ============================================================================
-* group[2].element[0].code = #id13
+* group[2].element[0].code = #at0012
 * group[2].element[0].display = "Total sleep time"
 * group[2].element[0].target[0].code = #1002368
 * group[2].element[0].target[0].display = "Sleep duration"
@@ -194,9 +194,9 @@ Architecture:
 * group[2].element[0].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=1002368, LOINC 93832-4, Domain=Observation, Standard. Previous 40771110='Have you used drugs other than medical' (HALLUCINATED). Unit: minute (8550) or hour (8505)."
 
 // ============================================================================
-// Deep sleep duration (id23) - GAP CONFIRMED 2025-12-08 ❌
+// Deep sleep duration (at0022) - GAP CONFIRMED 2025-12-08 ❌
 // ============================================================================
-* group[2].element[1].code = #id23
+* group[2].element[1].code = #at0022
 * group[2].element[1].display = "Deep sleep duration"
 * group[2].element[1].target[0].code = #0
 * group[2].element[1].target[0].display = "No OMOP concept - custom concept required"
@@ -204,9 +204,9 @@ Architecture:
 * group[2].element[1].target[0].comment = "GAP CONFIRMED 2025-12-08: Deep sleep (N3/SWS) has NO OMOP concept (Concept ID = 0). Critical for sleep quality assessment. Note: Consumer devices use algorithms, not EEG."
 
 // ============================================================================
-// REM sleep duration (id24) - GAP CONFIRMED 2025-12-08 ❌
+// REM sleep duration (at0023) - GAP CONFIRMED 2025-12-08 ❌
 // ============================================================================
-* group[2].element[2].code = #id24
+* group[2].element[2].code = #at0023
 * group[2].element[2].display = "REM sleep duration"
 * group[2].element[2].target[0].code = #0
 * group[2].element[2].target[0].display = "No OMOP concept - custom concept required"
@@ -214,9 +214,9 @@ Architecture:
 * group[2].element[2].target[0].comment = "GAP CONFIRMED 2025-12-08: REM sleep duration has NO OMOP concept (Concept ID = 0). Important for memory consolidation. Note: LOINC 93829-0 exists but NO OMOP mapping."
 
 // ============================================================================
-// Sleep efficiency (id30) - GAP CONFIRMED 2025-12-08 ❌
+// Sleep efficiency (at0029) - GAP CONFIRMED 2025-12-08 ❌
 // ============================================================================
-* group[2].element[3].code = #id30
+* group[2].element[3].code = #at0029
 * group[2].element[3].display = "Sleep efficiency"
 * group[2].element[3].target[0].code = #0
 * group[2].element[3].target[0].display = "No OMOP concept - custom concept required"
@@ -224,9 +224,9 @@ Architecture:
 * group[2].element[3].target[0].comment = "GAP CONFIRMED 2025-12-08: Sleep efficiency has NO OMOP concept (Concept ID = 0). TST/TIB ratio (%). Normal: >85%. Key quality metric."
 
 // ============================================================================
-// Sleep score (id40) - GAP (Vendor-specific) ⚠️
+// Sleep score (at0039) - GAP (Vendor-specific) ⚠️
 // ============================================================================
-* group[2].element[4].code = #id40
+* group[2].element[4].code = #at0039
 * group[2].element[4].display = "Sleep score"
 * group[2].element[4].target[0].code = #0
 * group[2].element[4].target[0].display = "No OMOP concept - vendor-specific score"
@@ -234,10 +234,10 @@ Architecture:
 * group[2].element[4].target[0].comment = "GAP CONFIRMED 2025-12-08: Proprietary composite score (0-100). Not standardized - varies by vendor. NOT suitable for cross-vendor research."
 
 // ============================================================================
-// Average HRV during sleep (id53) - GAP CONFIRMED 2025-12-08 ❌
+// Average HRV during sleep (at0052) - GAP CONFIRMED 2025-12-08 ❌
 // ============================================================================
-* group[2].element[5].code = #id53
-* group[2].element[5].display = "Average HRV (RMSSD) during sleep"
+* group[2].element[5].code = #at0052
+* group[2].element[5].display = "Average HRV (RMSSD)"
 * group[2].element[5].target[0].code = #0
 * group[2].element[5].target[0].display = "No OMOP concept - requires RMSSD concept"
 * group[2].element[5].target[0].equivalence = #unmatched
@@ -251,41 +251,41 @@ Architecture:
 * group[3].target = "DEVICE_EXPOSURE"
 
 // ============================================================================
-// Device platform (id2) - GAP CONFIRMED 2026-03-19 (was 4044180 HALLUCINATED)
+// Device platform (at0001) - GAP CONFIRMED 2026-03-19 (was 4044180 HALLUCINATED)
 // ============================================================================
-* group[3].element[0].code = #id2
+* group[3].element[0].code = #at0001
 * group[3].element[0].display = "Device platform"
 * group[3].element[0].target[0].code = #0
 * group[3].element[0].target[0].display = "No standard wearable sensor concept"
 * group[3].element[0].target[0].equivalence = #unmatched
 * group[3].element[0].target[0].comment = "GAP CONFIRMED via Athena+Vocab2 2026-03-19: No standard 'wearable sensor' concept in OMOP. Previous 4044180='Administrative disposition - action' (HALLUCINATED). Store vendor name in device_source_value. Requires OHDSI vocabulary submission."
 
-// Device model (id3) → DEVICE_EXPOSURE.device_source_value
-* group[3].element[1].code = #id3
+// Device model (at0002) → DEVICE_EXPOSURE.device_source_value
+* group[3].element[1].code = #at0002
 * group[3].element[1].display = "Device model"
 * group[3].element[1].target[0].code = #0
 * group[3].element[1].target[0].display = "Store in device_source_value"
 * group[3].element[1].target[0].equivalence = #relatedto
 * group[3].element[1].target[0].comment = "Store specific model name in device_source_value field (e.g., 'Apple Watch Series 9')"
 
-// Device category (id4) → DEVICE_EXPOSURE.device_type_concept_id
-* group[3].element[2].code = #id4
+// Device category (at0003) → DEVICE_EXPOSURE.device_type_concept_id
+* group[3].element[2].code = #at0003
 * group[3].element[2].display = "Device category"
 * group[3].element[2].target[0].code = #44818706
 * group[3].element[2].target[0].display = "Patient reported device"
 * group[3].element[2].target[0].equivalence = #equivalent
 * group[3].element[2].target[0].comment = "VERIFIED via Athena 2026-03-19: concept_id=44818706='Patient reported device' (Device Type). Previous 44818707='EHR Detail' (WRONG — wearable data is patient-reported, not EHR). Use as device_type_concept_id."
 
-// Serial number (id23) → DEVICE_EXPOSURE.unique_device_id
-* group[3].element[3].code = #id23
+// Serial number (at0022) → DEVICE_EXPOSURE.unique_device_id
+* group[3].element[3].code = #at0022
 * group[3].element[3].display = "Serial number"
 * group[3].element[3].target[0].code = #32882
 * group[3].element[3].target[0].display = "Store in unique_device_id"
 * group[3].element[3].target[0].equivalence = #equivalent
 * group[3].element[3].target[0].comment = "Map to unique_device_id field in DEVICE_EXPOSURE"
 
-// Firmware version (id20) → Not mapped (metadata only)
-* group[3].element[4].code = #id20
+// Firmware version (at0019) → Not mapped (metadata only)
+* group[3].element[4].code = #at0019
 * group[3].element[4].display = "Firmware version"
 * group[3].element[4].target[0].code = #0
 * group[3].element[4].target[0].display = "Not mapped - metadata only"
