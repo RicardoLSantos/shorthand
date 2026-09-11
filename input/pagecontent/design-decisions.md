@@ -49,6 +49,9 @@ ICD-11 is not available on tx.fhir.org (the FHIR terminology server used by the 
 - `special-url` parameter was tested but does not override tx.fhir.org validation behaviour
 - Migration plan: when tx.fhir.org adds ICD-11 support, ValueSets will switch to the WHO URL and this CodeSystem will be removed
 
+### Update (2026-09-11)
+tx.fhir.org serves ICD-11 MMS (release 2026-01). The migration plan above is withdrawn: the republished CodeSystem is retained **by design** so that the IG validates without depending on the availability of a terminology server, and tx.fhir.org and the WHO linearization export are used as verification sources instead. The same design applies to every external code in this IG: each code is recorded in `input/data/terminology-verification-ledger.csv` with the date, source and version of its last verification (see Terminology Verification). On the same date the CodeSystem was rebuilt from the WHO tables after the verification found 9 non-existent codes and 12 wrong titles in the 2026-03 edition (46 concepts now).
+
 ### Evidence
 CI GREEN (23 errors, all IPS upstream baseline). FAQ Q41 documents the full analysis.
 

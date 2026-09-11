@@ -233,6 +233,8 @@ The ETL pipeline provides **runtime verification** (not build-time elimination) 
 
 **ICD-11 CodeSystem (resolved 2026-03-25):** ICD-11 is not available on tx.fhir.org. A fragment CodeSystem with `^url = http://id.who.int/icd/release/11/mms` and `content = #fragment` caused 57 validation errors because the IG Publisher could not associate the WHO URL with the SUSHI-generated canonical URL. The `ignoreWarnings.txt` file cannot suppress errors (only warnings), per [HL7 issue #470](https://github.com/HL7/fhir-ig-publisher/issues/470). Resolution: republish 34 ICD-11 codes under the IG namespace (`ICD11LifestyleMedicineCS`, `content = #complete`). This adds a 15th CodeSystem that will be removed when tx.fhir.org adds ICD-11 support.
 
+**ICD-11 CodeSystem (update 2026-09-11):** tx.fhir.org now serves ICD-11 MMS (release 2026-01). The republished CodeSystem is retained by design so that validation never depends on a terminology server; its 46 codes were re-verified on 2026-09-11 against WHO ICD-11 MMS and tx.fhir.org, and the 2026-03 edition's 9 non-existent codes and 12 wrong titles were corrected (see ICD-11 Integration → Correction of 2026-09-11).
+
 **Projected after OCL integration:** 23 errors (IPS only), ~160 warnings (~22% reduction from ~200)
 
 These issues do not prevent the IG from being used in production. All FHIR profiles, extensions, and examples validate correctly against their defined constraints.

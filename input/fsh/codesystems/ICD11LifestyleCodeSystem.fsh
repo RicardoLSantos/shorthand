@@ -1,172 +1,180 @@
 // ICD-11 Lifestyle Medicine CodeSystem
-// Created: 2026-01-26
-// History:
-//   Phase 6a (2026-03-02): Removed — referenced WHO URL directly in ValueSets
-//   2026-03-22 T1 S12: Restored as #fragment with WHO URL
-//   2026-03-25 T2 S9: Added WHO-sourced descriptions to all 34 codes
-//   2026-03-25 T1 S13: Option B — IG namespace + #complete (resolves 57 CI errors)
-//     Reason: WHO URL fragment fails validation because IG Publisher cannot
-//     associate ^url (WHO) with SUSHI canonical (IG). tx.fhir.org does not know
-//     ICD-11. ignoreWarnings.txt cannot suppress errors (HL7 issue #470).
-//     WHO DDCC IG has 1,622 errors for the same reason.
+// Republished subset of ICD-11 MMS codes relevant to lifestyle medicine, under the IG namespace.
 //
-// DESIGN DECISION:
-// This CodeSystem republishes 34 ICD-11 MMS codes under the IG namespace because:
-// 1. ICD-11 is NOT available on tx.fhir.org (as of March 2026)
-// 2. Fragment CS with WHO URL (^url ≠ SUSHI canonical) is not used for validation
-// 3. ignoreWarnings.txt cannot suppress errors, only warnings (HL7 #470)
-// 4. All 34 codes are exact copies from WHO ICD-11 MMS 2024-01
-// Future: When tx.fhir.org adds ICD-11, migrate ValueSets to
-//   http://id.who.int/icd/release/11/mms and remove this CodeSystem.
+// Why a republished CodeSystem: validation of this IG must not depend on the availability of a
+// terminology server. Every code below is re-verified against the terminology owner (WHO) and
+// against tx.fhir.org on the dates recorded in the per-concept verification properties and in
+// input/data/terminology-verification-ledger.csv (see terminology-verification.md).
+//
+// Correction of 2026-09-11: the 2026-03 edition of this CodeSystem carried 34 codes, of which
+// 9 did not exist in ICD-11 MMS and 12 carried the title of a different concept (block ranges
+// had been typed as category codes). Every concept was re-derived from the WHO linearization
+// table and tx.fhir.org; titles are the WHO MMS titles verbatim.
+
+RuleSet: ICD11Verified(code)
+* #{code} ^property[+].code = #verified-on
+* #{code} ^property[=].valueDateTime = "2026-09-11"
+* #{code} ^property[+].code = #verified-via
+* #{code} ^property[=].valueString = "tx.fhir.org (ICD-11 MMS 2026-01) and the WHO ICD-11 MMS linearization export from icd.who.int (2026-03-20)"
+* #{code} ^property[+].code = #source-version
+* #{code} ^property[=].valueString = "ICD-11 MMS 2026-01"
 
 CodeSystem: ICD11LifestyleMedicineCS
 Id: icd-11-lifestyle-cs
 Title: "ICD-11 Lifestyle Medicine Codes"
 Description: """
-Republished subset of 34 ICD-11 codes relevant to lifestyle medicine,
-sourced from WHO ICD-11 MMS 2024-01.
+Republished subset of 46 ICD-11 MMS codes relevant to lifestyle medicine (health behaviours,
+nutrition, overweight and obesity, sleep-wake disorders, stress and burnout), sourced from WHO ICD-11
+MMS release 2026-01. Titles are the WHO MMS titles.
 
-This CodeSystem exists under the IG namespace because ICD-11 is not yet available
-on tx.fhir.org for FHIR validation. The authoritative source remains WHO ICD-11
-at https://icd.who.int (official URL: http://id.who.int/icd/release/11/mms).
+This CodeSystem exists under the IG namespace by design: the IG validates without depending on a
+terminology server. The authoritative source remains WHO ICD-11 at https://icd.who.int (official
+system URL: http://id.who.int/icd/release/11/mms), which tx.fhir.org also serves; both are used as
+verification sources. Each concept carries the properties verified-on, verified-via and source-version,
+and the machine-readable record is input/data/terminology-verification-ledger.csv.
 
-When tx.fhir.org adds ICD-11 support, ValueSets should migrate to the WHO URL.
+History: the 2026-03 edition (34 codes) contained 9 codes absent from ICD-11 MMS and 12 codes whose
+title belonged to another concept; it was rebuilt on 2026-09-11 from the WHO linearization table and
+tx.fhir.org. Physical-activity types (walking, running, cycling, swimming) have no ICD-11 category
+and are coded with SNOMED CT and LOINC elsewhere in this IG.
 """
 
-* ^version = "0.2.0"
+* ^version = "0.3.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-03-25"
+* ^date = "2026-09-11"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Ricardo L. Santos"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "ricardolourencosantos@gmail.com"
 * ^caseSensitive = true
 * ^content = #complete
+* ^count = 46
 * ^copyright = "Codes sourced from ICD-11 © World Health Organization (WHO), CC BY-NC-ND 3.0 IGO. Republished under IG namespace for FHIR validation."
 
-// =============================================================================
-// CHAPTER 24: Problems associated with health behaviours (QE10-QE2Z)
-// =============================================================================
+// Verification properties (defined in AppLogicCS; recorded per concept)
+* ^property[+].code = #verified-on
+* ^property[=].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs#verified-on"
+* ^property[=].description = "Date on which the code was last verified against its source terminology"
+* ^property[=].type = #dateTime
+* ^property[+].code = #verified-via
+* ^property[=].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs#verified-via"
+* ^property[=].description = "Source consulted for the last verification"
+* ^property[=].type = #string
+* ^property[+].code = #source-version
+* ^property[=].uri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/app-logic-cs#source-version"
+* ^property[=].description = "Release of the source terminology against which the code was verified"
+* ^property[=].type = #string
 
+
+// =============================================================================
+// Chapter 24 · Problems associated with health behaviours (blocks QE1 hazardous substance use · QE2 health-related behaviours)
+// =============================================================================
 * #QE10 "Hazardous alcohol use"
-    "A pattern of alcohol use that increases the risk of harmful consequences for the user."
-
+* insert ICD11Verified(QE10)
 * #QE11 "Hazardous drug use"
-    "A pattern of drug use that increases the risk of harmful consequences for the user."
-
+* insert ICD11Verified(QE11)
+* #QE11.Z "Hazardous drug use, unspecified"
+* insert ICD11Verified(QE11.Z)
 * #QE12 "Hazardous nicotine use"
-    "A pattern of nicotine use that increases the risk of harmful consequences for the user."
-
-* #QE1Y "Other specified problems associated with health behaviours"
-    "Problems associated with health behaviours that are specified but not classifiable elsewhere."
-
-* #QE1Z "Problems associated with health behaviours, unspecified"
-    "Problems associated with health behaviours that are not otherwise specified."
-
-// =============================================================================
-// CHAPTER 24: Problems associated with drinking water or nutrition (QD60-QD6Z)
-// =============================================================================
-
-* #QD60 "Problems associated with insufficient drinking-water supply"
-    "Health issues related to inadequate access to safe drinking water."
-
-* #QD61 "Problems associated with dietary inadequacy"
-    "Health issues related to insufficient or inappropriate dietary intake."
-
-* #QD62 "Problems associated with food supply"
-    "Health issues related to inadequate access to appropriate food."
-
-* #QD6Y "Other specified problems associated with drinking water or nutrition"
-    "Problems related to drinking water or nutrition that are specified but not classifiable elsewhere."
-
-* #QD6Z "Problems associated with drinking water or nutrition, unspecified"
-    "Problems related to drinking water or nutrition that are not otherwise specified."
+* insert ICD11Verified(QE12)
+* #QE13 "Tobacco use"
+* insert ICD11Verified(QE13)
+* #QE1Y "Other specified hazardous substance use"
+* insert ICD11Verified(QE1Y)
+* #QE1Z "Hazardous substance use, unspecified"
+* insert ICD11Verified(QE1Z)
+* #QE20 "Lack of physical exercise"
+* insert ICD11Verified(QE20)
+* #QE21 "Hazardous gambling or betting"
+* insert ICD11Verified(QE21)
+* #QE22 "Hazardous gaming"
+* insert ICD11Verified(QE22)
+* #QE23 "Problems with inappropriate diet or eating habits"
+* insert ICD11Verified(QE23)
+* #QE2Z "Problem with health-related behaviours, unspecified"
+* insert ICD11Verified(QE2Z)
 
 // =============================================================================
-// CHAPTER 24: Occupational and Lifestyle (QD80-QD8Z)
+// Chapter 24 · Psychosocial circumstances: stress, burnout, employment, participation
 // =============================================================================
-
-* #QD80 "Problems associated with lifestyle"
-    "Health problems related to modifiable lifestyle behaviours."
-
+* #QE01 "Stress, not elsewhere classified"
+* insert ICD11Verified(QE01)
 * #QD85 "Burnout"
-    "A syndrome resulting from chronic workplace stress that has not been successfully managed."
-
+* insert ICD11Verified(QD85)
 * #QD8Y "Other specified problems associated with employment or unemployment"
-    "Employment-related problems that are specified but not classifiable elsewhere."
-
+* insert ICD11Verified(QD8Y)
 * #QD8Z "Problems associated with employment or unemployment, unspecified"
-    "Employment-related problems that are not otherwise specified."
+* insert ICD11Verified(QD8Z)
+* #QF2A "Difficulty or need for assistance with community participation"
+* insert ICD11Verified(QF2A)
 
 // =============================================================================
-// CHAPTER 7: Sleep-Wake Disorders
+// Chapter 24 · Problems associated with drinking water or nutrition (block QD6)
 // =============================================================================
-
-* #7A00 "Insomnia disorders"
-    "Disorders characterized by persistent difficulty with sleep initiation, duration, consolidation, or quality."
-
-* #7A01 "Hypersomnolence disorders"
-    "Disorders characterized by excessive sleepiness despite adequate or prolonged sleep."
-
-* #7A20 "Sleep-related breathing disorders"
-    "Disorders characterized by abnormal respiration during sleep."
-
-* #7A40 "Circadian rhythm sleep-wake disorders"
-    "Disorders characterized by persistent sleep disturbance due to alteration of the circadian system."
-
-* #7A4Y "Other specified sleep-wake disorders"
-    "Sleep-wake disorders that are specified but not classifiable elsewhere."
-
-* #7A4Z "Sleep-wake disorders, unspecified"
-    "Sleep-wake disorders that are not otherwise specified."
+* #QD60 "Problems associated with inadequate drinking-water"
+* insert ICD11Verified(QD60)
+* #QD61 "Inadequate food"
+* insert ICD11Verified(QD61)
+* #QD6Z "Problems associated with drinking water or nutrition, unspecified"
+* insert ICD11Verified(QD6Z)
 
 // =============================================================================
-// CHAPTER 5: Nutritional Disorders
+// Chapter 05 · Undernutrition (block 5B5) and overweight or obesity (block 5B8)
 // =============================================================================
-
-* #5B70 "Undernutrition in infants, children or adolescents"
-    "Nutritional deficiency state in infants, children or adolescents."
-
-* #5B71 "Underweight in adults"
-    "Body mass index (BMI) below the normal range in adults."
-
-* #5B72 "Undernutrition in adults"
-    "A state of malnutrition in adults characterized by loss of body mass."
-
-* #5B80 "Overweight or obesity"
-    "Abnormal or excessive fat accumulation that may impair health."
-
-* #5B81 "Overweight"
-    "Body mass index (BMI) above the normal range but below the threshold for obesity."
-
-* #5B82 "Obesity"
-    "Body mass index (BMI) at or above the threshold defining obesity."
+* #5B50 "Underweight in infants, children or adolescents"
+* insert ICD11Verified(5B50)
+* #5B54 "Underweight in adults"
+* insert ICD11Verified(5B54)
+* #5B71 "Protein deficiency"
+* insert ICD11Verified(5B71)
+* #5B7Z "Unspecified undernutrition"
+* insert ICD11Verified(5B7Z)
+* #5B80 "Overweight or localised adiposity"
+* insert ICD11Verified(5B80)
+* #5B80.0 "Overweight"
+* insert ICD11Verified(5B80.0)
+* #5B80.0Z "Overweight, unspecified"
+* insert ICD11Verified(5B80.0Z)
+* #5B81 "Obesity"
+* insert ICD11Verified(5B81)
+* #5B81.0 "Obesity due to energy imbalance"
+* insert ICD11Verified(5B81.0)
+* #5B81.Z "Obesity, unspecified"
+* insert ICD11Verified(5B81.Z)
 
 // =============================================================================
-// Physical Activity Extension Codes
+// Chapter 07 · Sleep-wake disorders (insomnia 7A0 · hypersomnolence 7A2 · sleep-related breathing 7A4 · circadian 7A6)
 // =============================================================================
-
-* #XE5A1 "Walking as physical activity"
-    "Walking performed as deliberate physical activity for health or recreation."
-
-* #XE5A2 "Running or jogging"
-    "Running or jogging performed as physical activity."
-
-* #XE5A3 "Cycling"
-    "Cycling performed as physical activity."
-
-* #XE5A4 "Swimming"
-    "Swimming performed as physical activity."
-
-* #XE5A5 "Sports activities"
-    "Participation in organized or recreational sports."
-
-* #XE5A6 "Exercise or fitness activities"
-    "Deliberate exercise performed for physical fitness."
-
-* #XE5AY "Other specified physical activities"
-    "Physical activities that are specified but not classifiable elsewhere."
-
-* #XE5AZ "Physical activity, unspecified"
-    "Physical activity that is not otherwise specified."
+* #7A00 "Chronic insomnia"
+* insert ICD11Verified(7A00)
+* #7A01 "Short-term insomnia"
+* insert ICD11Verified(7A01)
+* #7A0Z "Insomnia disorders, unspecified"
+* insert ICD11Verified(7A0Z)
+* #7A21 "Idiopathic hypersomnia"
+* insert ICD11Verified(7A21)
+* #7A24 "Hypersomnia due to a medication or substance"
+* insert ICD11Verified(7A24)
+* #7A26 "Insufficient sleep syndrome"
+* insert ICD11Verified(7A26)
+* #7A2Z "Hypersomnolence disorders, unspecified"
+* insert ICD11Verified(7A2Z)
+* #7A40 "Central sleep apnoeas"
+* insert ICD11Verified(7A40)
+* #7A41 "Obstructive sleep apnoea"
+* insert ICD11Verified(7A41)
+* #7A4Y "Other specified sleep-related breathing disorders"
+* insert ICD11Verified(7A4Y)
+* #7A4Z "Sleep-related breathing disorders, unspecified"
+* insert ICD11Verified(7A4Z)
+* #7A60 "Delayed sleep-wake phase disorder"
+* insert ICD11Verified(7A60)
+* #7A64 "Circadian rhythm sleep-wake disorder, shift work type"
+* insert ICD11Verified(7A64)
+* #7A65 "Circadian rhythm sleep-wake disorder, jet lag type"
+* insert ICD11Verified(7A65)
+* #7A6Z "Circadian rhythm sleep-wake disorders, unspecified"
+* insert ICD11Verified(7A6Z)
+* #7B2Z "Sleep-wake disorders, unspecified"
+* insert ICD11Verified(7B2Z)

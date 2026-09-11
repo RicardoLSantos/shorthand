@@ -36,12 +36,12 @@ This Implementation Guide currently maps lifestyle medicine metrics to:
 
 **Current ICD-11 Coverage:**
 - **1 ConceptMap** (ICD-10-CM → ICD-11 lifestyle codes)
-- **1 CodeSystem fragment** (34 WHO ICD-11 MMS codes, `#fragment` for local validation)
+- **1 republished CodeSystem** (46 WHO ICD-11 MMS codes under the IG namespace, `content = #complete`, each concept carrying `verified-on` / `verified-via` / `source-version`; last verified 2026-09-11 against WHO ICD-11 MMS 2026-01 and tx.fhir.org)
 - **5 ValueSets** (Health Behaviours, Nutrition, Sleep, Physical Activity, combined)
 
 ICD-11 deeper integration is planned as future work (see Roadmap below). Current limitations:
 
-1. **ICD-11 is NOT on tx.fhir.org** — Requires local fragment CodeSystem with `special-url` for IG Publisher validation
+1. **Validation must not depend on a terminology server** — tx.fhir.org has served ICD-11 MMS (release 2026-01) since 2026, and it is used, together with the WHO linearization export from icd.who.int, as a verification source; the republished CodeSystem is kept by design so that the IG builds and validates when the server is unavailable
 2. **ICD-11 is NOT in OHDSI Athena** — No standard OMOP concept_ids exist
 3. **Lifestyle medicine codes are condition-adjacent** — We capture biomarkers (HRV, sleep stages) rather than diagnoses
 4. **Mapping complexity** — 60%+ of ICD-11 mappings require postcoordination rules
@@ -183,3 +183,7 @@ These tables form the foundation for future ConceptMap development in this IG.
 *Last updated: 2026-01-24*
 *Status: Documentation phase (Phase 1)*
 *Next milestone: ConceptMap development (Q2 2026)*
+
+## Correction of 2026-09-11
+
+The republished ICD-11 CodeSystem was rebuilt on 2026-09-11 after a full re-verification of its codes against the WHO ICD-11 MMS linearization export (icd.who.int, 2026-03-20) and tx.fhir.org (MMS 2026-01). The 2026-03 edition carried 34 codes: 9 did not exist in ICD-11 MMS (5B72, 5B82, QD62, QD6Y, XE5A1–XE5A6, XE5AZ) and 12 carried the title of a different concept (block ranges had been typed as category codes — for example 7A20 is *Narcolepsy*, not *Sleep-related breathing disorders*, and QD80 is *Problem associated with unemployment*). The rebuilt CodeSystem has 46 concepts whose titles are the WHO MMS titles verbatim, the ValueSets were regenerated from it, and the ICD-10-CM to ICD-11 ConceptMap now follows the WHO ICD-10 to ICD-11 mapping tables (2024-01). Physical-activity types have no ICD-11 category and are coded with SNOMED CT and LOINC elsewhere in this IG. The per-code record is `input/data/terminology-verification-ledger.csv`.

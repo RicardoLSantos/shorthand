@@ -1,207 +1,191 @@
 // ConceptMap: ICD-10-CM to ICD-11 Lifestyle Medicine Codes
-// Created: 2026-01-26
-// Updated: 2026-03-02 — Phase 6a: Reference WHO official ICD-11 URL
-// Updated: 2026-03-25 — T1 S13 Option B: Target references IG-namespace CS
-// Purpose: Translation between ICD-10-CM and ICD-11 lifestyle medicine codes
-// Reference: WHO ICD-11 MMS 2024-01, ICD-10-CM 2024
+// Targets are the ICD-11 MMS categories given by the WHO ICD-10 to ICD-11 mapping tables (release
+// 2024-01, 10To11MapToOneCategory / 10To11MapToMultipleCategories), restricted to the codes republished
+// in ICD11LifestyleMedicineCS. ICD-10-CM-specific codes that the WHO tables (ICD-10, not CM) do not
+// list are mapped by title with the equivalence stated per target. Rebuilt on 2026-09-11.
 
 Instance: icd10-to-icd11-lifestyle
 InstanceOf: ConceptMap
 Usage: #definition
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/icd10-to-icd11-lifestyle"
-* version = "0.1.0"
+* version = "0.2.0"
 * name = "ICD10ToICD11LifestyleConceptMap"
 * title = "ICD-10-CM to ICD-11 Lifestyle Medicine ConceptMap"
 * status = #active
 * experimental = false
-* date = "2026-01-26"
+* date = "2026-09-11"
 * publisher = "Ricardo Lourenco dos Santos, FMUP"
 * description = """
-Maps ICD-10-CM lifestyle-related codes to their ICD-11 equivalents.
-This ConceptMap supports transition from ICD-10-CM to ICD-11 for
-lifestyle medicine documentation in clinical systems.
-
-Note: ICD-11 provides more specific lifestyle categorization compared to ICD-10-CM.
-Some ICD-10-CM codes map to multiple ICD-11 concepts (narrow-to-broad).
+Maps ICD-10-CM lifestyle-related codes to ICD-11 MMS categories, following the WHO ICD-10 to ICD-11
+mapping tables (2024-01) wherever the ICD-10 code exists in the WHO tables; ICD-10-CM-specific codes
+(Z72.820, Z72.821, E66.3, E66.01) are mapped by title with the equivalence stated per target. Physical-activity
+context codes (Y93.*) have no ICD-11 MMS category and are recorded as unmatched. Targets are the codes
+republished in the IG's ICD-11 CodeSystem, verified 2026-09-11 against WHO ICD-11 MMS and tx.fhir.org.
 """
 
-// Note: Using group-level source/target instead of top-level sourceUri/targetUri
-// to avoid FHIR validator strictness about CodeSystem vs ValueSet references
-
-// =============================================================================
-// HEALTH BEHAVIOURS MAPPINGS
-// =============================================================================
-
+// Group-level source/target (the target is the IG's republished ICD-11 CodeSystem)
 * group[+].source = "http://hl7.org/fhir/sid/icd-10-cm"
 * group[=].target = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/icd-11-lifestyle-cs"
 
-// Tobacco/Nicotine Use
+// Tobacco use
 * group[=].element[+].code = #Z72.0
 * group[=].element[=].display = "Tobacco use"
-* group[=].element[=].target[+].code = #QE12
-* group[=].element[=].target[=].display = "Hazardous nicotine use"
+* group[=].element[=].target[+].code = #QE13
+* group[=].element[=].target[=].display = "Tobacco use"
 * group[=].element[=].target[=].equivalence = #equivalent
-* group[=].element[=].target[=].comment = "ICD-11 broadens to all nicotine products including vaping"
+* group[=].element[=].target[=].comment = "WHO ICD-10 to ICD-11 map (2024-01): Z72.0 → QE13."
 
-// Alcohol Use
+// Alcohol use
 * group[=].element[+].code = #Z72.1
 * group[=].element[=].display = "Alcohol use"
 * group[=].element[=].target[+].code = #QE10
 * group[=].element[=].target[=].display = "Hazardous alcohol use"
 * group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "WHO map: Z72.1 → QE10. ICD-11 qualifies the use as hazardous."
 
-// Drug Use
+// Drug use
 * group[=].element[+].code = #Z72.2
 * group[=].element[=].display = "Drug use"
-* group[=].element[=].target[+].code = #QE11
-* group[=].element[=].target[=].display = "Hazardous drug use"
+* group[=].element[=].target[+].code = #QE11.Z
+* group[=].element[=].target[=].display = "Hazardous drug use, unspecified"
 * group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "WHO map: Z72.2 → QE11.Z (hazardous drug use, unspecified)."
 
-// Lack of Physical Exercise
+// Lack of physical exercise
 * group[=].element[+].code = #Z72.3
 * group[=].element[=].display = "Lack of physical exercise"
-* group[=].element[=].target[+].code = #QD80
-* group[=].element[=].target[=].display = "Problems associated with lifestyle"
-* group[=].element[=].target[=].equivalence = #wider
-* group[=].element[=].target[=].comment = "ICD-11 QD80 is broader, covering multiple lifestyle factors"
+* group[=].element[=].target[+].code = #QE20
+* group[=].element[=].target[=].display = "Lack of physical exercise"
+* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "WHO map: Z72.3 → QE20."
 
-// Inappropriate Diet
+// Inappropriate diet and eating habits
 * group[=].element[+].code = #Z72.4
 * group[=].element[=].display = "Inappropriate diet and eating habits"
-* group[=].element[=].target[+].code = #QD61
-* group[=].element[=].target[=].display = "Problems associated with dietary inadequacy"
+* group[=].element[=].target[+].code = #QE23
+* group[=].element[=].target[=].display = "Problems with inappropriate diet or eating habits"
 * group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "WHO map: Z72.4 → QE23."
 
-// High Risk Sexual Behavior - maps to other health behaviours
+// High risk sexual behavior
 * group[=].element[+].code = #Z72.5
 * group[=].element[=].display = "High risk sexual behavior"
-* group[=].element[=].target[+].code = #QE1Y
-* group[=].element[=].target[=].display = "Other specified problems associated with health behaviours"
+* group[=].element[=].target[+].code = #QE2Z
+* group[=].element[=].target[=].display = "Problem with health-related behaviours, unspecified"
 * group[=].element[=].target[=].equivalence = #wider
+* group[=].element[=].target[=].comment = "WHO map: Z72.5 → QE2Z (no specific ICD-11 category)."
 
-// Gambling and Betting
+// Gambling and betting
 * group[=].element[+].code = #Z72.6
 * group[=].element[=].display = "Gambling and betting"
-* group[=].element[=].target[+].code = #QE1Y
-* group[=].element[=].target[=].display = "Other specified problems associated with health behaviours"
-* group[=].element[=].target[=].equivalence = #wider
-* group[=].element[=].target[=].comment = "ICD-11 has dedicated gambling disorder codes in Chapter 6"
+* group[=].element[=].target[+].code = #QE21
+* group[=].element[=].target[=].display = "Hazardous gambling or betting"
+* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "WHO map: Z72.6 → QE21."
 
-// =============================================================================
-// SLEEP DISORDER MAPPINGS
-// =============================================================================
-
-// Sleep Deprivation
+// Sleep deprivation
 * group[=].element[+].code = #Z72.820
 * group[=].element[=].display = "Sleep deprivation"
-* group[=].element[=].target[+].code = #7A00
-* group[=].element[=].target[=].display = "Insomnia disorders"
-* group[=].element[=].target[=].equivalence = #wider
-* group[=].element[=].target[=].comment = "Sleep deprivation may be voluntary; insomnia is pathological"
+* group[=].element[=].target[+].code = #7A26
+* group[=].element[=].target[=].display = "Insufficient sleep syndrome"
+* group[=].element[=].target[=].equivalence = #inexact
+* group[=].element[=].target[=].comment = "ICD-10-CM-specific code (no WHO map entry); closest ICD-11 category is insufficient sleep syndrome. WHO maps the ICD-10 parent Z72.8 to QE2Z."
 
-// Inadequate Sleep Hygiene
+// Inadequate sleep hygiene
 * group[=].element[+].code = #Z72.821
 * group[=].element[=].display = "Inadequate sleep hygiene"
-* group[=].element[=].target[+].code = #7A00
-* group[=].element[=].target[=].display = "Insomnia disorders"
+* group[=].element[=].target[+].code = #QE2Z
+* group[=].element[=].target[=].display = "Problem with health-related behaviours, unspecified"
 * group[=].element[=].target[=].equivalence = #wider
-
-// =============================================================================
-// OBESITY AND NUTRITION MAPPINGS
-// =============================================================================
+* group[=].element[=].target[=].comment = "ICD-10-CM-specific code; WHO maps the ICD-10 parent Z72.8 to QE2Z."
 
 // Overweight
 * group[=].element[+].code = #E66.3
 * group[=].element[=].display = "Overweight"
-* group[=].element[=].target[+].code = #5B81
+* group[=].element[=].target[+].code = #5B80.0
 * group[=].element[=].target[=].display = "Overweight"
 * group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "ICD-10-CM-specific code; ICD-11 5B80.0 Overweight (same title)."
 
 // Obesity, unspecified
 * group[=].element[+].code = #E66.9
 * group[=].element[=].display = "Obesity, unspecified"
-* group[=].element[=].target[+].code = #5B82
-* group[=].element[=].target[=].display = "Obesity"
+* group[=].element[=].target[+].code = #5B81.Z
+* group[=].element[=].target[=].display = "Obesity, unspecified"
 * group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "WHO map: E66.9 → 5B81.Z."
 
-// Morbid obesity (severe)
+// Morbid (severe) obesity due to excess calories
 * group[=].element[+].code = #E66.01
 * group[=].element[=].display = "Morbid (severe) obesity due to excess calories"
-* group[=].element[=].target[+].code = #5B82
-* group[=].element[=].target[=].display = "Obesity"
+* group[=].element[=].target[+].code = #5B81.0
+* group[=].element[=].target[=].display = "Obesity due to energy imbalance"
 * group[=].element[=].target[=].equivalence = #wider
-* group[=].element[=].target[=].comment = "ICD-11 5B82 includes severity subtypes"
+* group[=].element[=].target[=].comment = "ICD-10-CM-specific code; WHO maps the ICD-10 parent E66.0 → 5B81.0. Severity is carried by BMI extension codes in ICD-11."
 
-// Adult malnutrition
+// Unspecified protein-calorie malnutrition
 * group[=].element[+].code = #E46
 * group[=].element[=].display = "Unspecified protein-calorie malnutrition"
-* group[=].element[=].target[+].code = #5B72
-* group[=].element[=].target[=].display = "Undernutrition in adults"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[+].code = #5B71
+* group[=].element[=].target[=].display = "Protein deficiency"
+* group[=].element[=].target[=].equivalence = #inexact
+* group[=].element[=].target[=].comment = "WHO one-category map: E46 → 5B71."
+* group[=].element[=].target[+].code = #5B54
+* group[=].element[=].target[=].display = "Underweight in adults"
+* group[=].element[=].target[=].equivalence = #narrower
+* group[=].element[=].target[=].comment = "WHO multi-category map also lists 5B54 (underweight in adults), 5B50, 5B51, 5B52, 5B53."
 
-// =============================================================================
-// OCCUPATIONAL/LIFESTYLE FACTOR MAPPINGS
-// =============================================================================
-
-// Burnout
+// Burn-out
 * group[=].element[+].code = #Z73.0
 * group[=].element[=].display = "Burn-out"
 * group[=].element[=].target[+].code = #QD85
 * group[=].element[=].target[=].display = "Burnout"
 * group[=].element[=].target[=].equivalence = #equivalent
-* group[=].element[=].target[=].comment = "ICD-11 provides WHO-endorsed definition of burnout syndrome"
+* group[=].element[=].target[=].comment = "WHO map: Z73.0 → QD85."
 
 // Lack of relaxation and leisure
 * group[=].element[+].code = #Z73.2
 * group[=].element[=].display = "Lack of relaxation and leisure"
-* group[=].element[=].target[+].code = #QD80
-* group[=].element[=].target[=].display = "Problems associated with lifestyle"
-* group[=].element[=].target[=].equivalence = #wider
+* group[=].element[=].target[+].code = #QF2A
+* group[=].element[=].target[=].display = "Difficulty or need for assistance with community participation"
+* group[=].element[=].target[=].equivalence = #inexact
+* group[=].element[=].target[=].comment = "WHO map: Z73.2 → QF2A."
 
 // Stress, not elsewhere classified
 * group[=].element[+].code = #Z73.3
 * group[=].element[=].display = "Stress, not elsewhere classified"
-* group[=].element[=].target[+].code = #QD80
-* group[=].element[=].target[=].display = "Problems associated with lifestyle"
-* group[=].element[=].target[=].equivalence = #wider
+* group[=].element[=].target[+].code = #QE01
+* group[=].element[=].target[=].display = "Stress, not elsewhere classified"
+* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[=].comment = "WHO map: Z73.3 → QE01."
 
-// =============================================================================
-// PHYSICAL ACTIVITY CONTEXT MAPPINGS (Y93.* External Cause Codes)
-// =============================================================================
-
-// Walking activity
+// Activity, walking, marching and hiking
 * group[=].element[+].code = #Y93.01
 * group[=].element[=].display = "Activity, walking, marching and hiking"
-* group[=].element[=].target[+].code = #XE5A1
-* group[=].element[=].target[=].display = "Walking as physical activity"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[+].equivalence = #unmatched
+* group[=].element[=].target[=].comment = "ICD-11 MMS has no category for physical-activity types; ICD-11 activity codes are extension codes for the external-cause context only."
 
-// Running activity
+// Activity, running
 * group[=].element[+].code = #Y93.02
 * group[=].element[=].display = "Activity, running"
-* group[=].element[=].target[+].code = #XE5A2
-* group[=].element[=].target[=].display = "Running or jogging"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[+].equivalence = #unmatched
+* group[=].element[=].target[=].comment = "See Y93.01."
 
-// Swimming activity
+// Activity, swimming
 * group[=].element[+].code = #Y93.11
 * group[=].element[=].display = "Activity, swimming"
-* group[=].element[=].target[+].code = #XE5A4
-* group[=].element[=].target[=].display = "Swimming"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[+].equivalence = #unmatched
+* group[=].element[=].target[=].comment = "See Y93.01."
 
-// Bike riding
+// Activity, bike riding
 * group[=].element[+].code = #Y93.55
 * group[=].element[=].display = "Activity, bike riding"
-* group[=].element[=].target[+].code = #XE5A3
-* group[=].element[=].target[=].display = "Cycling"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[+].equivalence = #unmatched
+* group[=].element[=].target[=].comment = "See Y93.01."
 
-// Exercise machines
+// Activity, exercise machines primarily for cardiorespiratory conditioning
 * group[=].element[+].code = #Y93.A1
 * group[=].element[=].display = "Activity, exercise machines primarily for cardiorespiratory conditioning"
-* group[=].element[=].target[+].code = #XE5A6
-* group[=].element[=].target[=].display = "Exercise or fitness activities"
-* group[=].element[=].target[=].equivalence = #equivalent
-
+* group[=].element[=].target[+].equivalence = #unmatched
+* group[=].element[=].target[=].comment = "See Y93.01."
