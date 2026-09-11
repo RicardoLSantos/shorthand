@@ -608,6 +608,7 @@ def page_table(rows: dict) -> str:
 
 def check(found: dict, rows: dict):
     missing = [k for k in found if k not in rows]
+    orphans = [k for k in rows if k not in found]   # ledger rows for codes no longer bound in FSH
     stale, problems = [], []
     today = dt.date.fromisoformat(TODAY)
     for key, row in rows.items():
@@ -619,10 +620,10 @@ def check(found: dict, rows: dict):
                 stale.append((key, age))
         else:
             stale.append((key, None))
-    return missing, stale, problems
+    return missing, stale, problems, orphans
 
 
-def build_report(found, rows, missing, stale, problems, sources) -> str:
+def build_report(found, rows, missing, stale, problems, sources, orphans=()) -> str:
     per = summarise(rows)
     lines = [f"# Terminology verification ledger — report {TODAY}", "",
              f"Codes extracted from FSH: {len(found)} · ledger rows: {len(rows)} · sources this run: {', '.join(sources) or 'none (check only)'}", "",
@@ -631,6 +632,8 @@ def build_report(found, rows, missing, stale, problems, sources) -> str:
     lines += [f"- {s} {c}" for s, c in sorted(missing)] or ["- none"]
     lines.append(f"\n## Re-verification due ({len(stale)})")
     lines += [f"- {k[0]} {k[1]} — {'never verified' if age is None else f'{age} days'}" for k, age in sorted(stale)] or ["- none"]
+    lines.append(f"\n## Retired — ledger rows whose code is no longer bound in FSH ({len(orphans)})")
+    lines += [f"- {s} {c}" for s, c in sorted(orphans)] or ["- none"]
     lines.append(f"\n## Findings ({len(problems)})")
     lines += [f"- {k[0]} {k[1]} — {st}: {note}" for k, st, note in sorted(problems)] or ["- none"]
     return "\n".join(lines) + "\n"
@@ -672,17 +675,21 @@ def main() -> int:
             write_ledger(ledger_path, rows)
             print(f"ledger written: {ledger_path.relative_to(REPO)} ({len(rows)} rows)")
 
-    missing, stale, problems = check(found, rows)
+    missing, stale, problems, orphans = check(found, rows)
     if args.page_table:
         print(page_table(rows))
     if args.report:
-        Path(args.report).write_text(build_report(found, rows, missing, stale, problems, sources), encoding="utf-8")
+        Path(args.report).write_text(build_report(found, rows, missing, stale, problems, sources, orphans), encoding="utf-8")
         print(f"report written: {args.report}")
     if args.check or args.strict or not sources:
-        print(f"check: missing={len(missing)} stale={len(stale)} findings={len(problems)}")
+        print(f"check: missing={len(missing)} retired={len(orphans)} stale={len(stale)} findings={len(problems)}")
+        for k in sorted(missing)[:40]:
+            print(f"  - missing from ledger: {k[0]} {k[1]}")
+        for k in sorted(orphans)[:40]:
+            print(f"  - retired (not in FSH): {k[0]} {k[1]}")
         for k, st, note in sorted(problems)[:40]:
             print(f"  - {k[0]} {k[1]}: {st} {note[:100]}")
-    if args.strict and (missing or problems):
+    if args.strict and (missing or orphans or problems):
         return 1
     return 0
 
