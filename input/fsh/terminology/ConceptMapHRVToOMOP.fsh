@@ -159,12 +159,12 @@ ETL workaround: Store in measurement_source_value with qualifier
 // ============================================================================
 // Heart Rate - VERIFIED OMOP MAPPING ✅
 // ============================================================================
-* group[0].element[4].code = #8867-4
-* group[0].element[4].display = "Heart rate [LOINC]"
-* group[0].element[4].target[0].code = #3027018
-* group[0].element[4].target[0].display = "Heart rate"
-* group[0].element[4].target[0].equivalence = #equivalent
-* group[0].element[4].target[0].comment = """
+* group[0].element[1].code = #8867-4
+* group[0].element[1].display = "Heart rate [LOINC]"
+* group[0].element[1].target[0].code = #3027018
+* group[0].element[1].target[0].display = "Heart rate"
+* group[0].element[1].target[0].equivalence = #equivalent
+* group[0].element[1].target[0].comment = """
 Verified standard OMOP concept for heart rate.
 - OMOP concept_id: 3027018
 - Unit_concept_id: 8541 (per minute, {beats}/min)
@@ -174,12 +174,12 @@ Verified standard OMOP concept for heart rate.
 // ============================================================================
 // Resting Heart Rate - OMOP MAPPING
 // ============================================================================
-* group[0].element[5].code = #40443-4
-* group[0].element[5].display = "Heart rate --resting"
-* group[0].element[5].target[0].code = #3040891
-* group[0].element[5].target[0].display = "Heart rate --resting"
-* group[0].element[5].target[0].equivalence = #equivalent
-* group[0].element[5].target[0].comment = """
+* group[0].element[2].code = #40443-4
+* group[0].element[2].display = "Heart rate --resting"
+* group[0].element[2].target[0].code = #3040891
+* group[0].element[2].target[0].display = "Heart rate --resting"
+* group[0].element[2].target[0].equivalence = #equivalent
+* group[0].element[2].target[0].comment = """
 VERIFIED via Athena CONCEPT.csv LOINC 40443-4 → concept_id 3040891 (2026-03-20)
 Previously mapped to broader 3027018 (Heart rate) — exact concept exists.
 - OMOP concept_id: 3040891
@@ -191,15 +191,15 @@ Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HR
 // ============================================================================
 // GROUP 2: Supporting Concepts for HRV Context
 // ============================================================================
-* group[1].source = "http://snomed.info/sct"
-* group[1].target = "http://athena.ohdsi.org/search-terms/terms"
+* group[2].source = "http://snomed.info/sct"
+* group[2].target = "http://athena.ohdsi.org/search-terms/terms"
 
-* group[1].element[0].code = #86290005
-* group[1].element[0].display = "Respiratory rate [SNOMED]"
-* group[1].element[0].target[0].code = #3024171
-* group[1].element[0].target[0].display = "Respiratory rate"
-* group[1].element[0].target[0].equivalence = #equivalent
-* group[1].element[0].target[0].comment = "Critical for HRV interpretation. RSA (respiratory sinus arrhythmia) affects HF power band."
+* group[2].element[0].code = #86290005
+* group[2].element[0].display = "Respiratory rate [SNOMED]"
+* group[2].element[0].target[0].code = #3024171
+* group[2].element[0].target[0].display = "Respiratory rate"
+* group[2].element[0].target[0].equivalence = #equivalent
+* group[2].element[0].target[0].comment = "Critical for HRV interpretation. RSA (respiratory sinus arrhythmia) affects HF power band."
 
 // ============================================================================
 // OMOP UNIT CONCEPTS REFERENCE
