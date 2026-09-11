@@ -30,6 +30,18 @@ jobs:
       - name: ConceptMap drift check (tx.fhir.org advisory — LOINC + SNOMED)
         run: python3 .github/scripts/conceptmap_drift_check.py --source txfhir --report conceptmap-drift-report.md
 
+      - name: Terminology ledger check (advisory — every external code in FSH vs input/data/terminology-verification-ledger.csv, re-verified on tx.fhir.org)
+        continue-on-error: true
+        run: python3 .github/scripts/terminology_ledger_check.py --source txfhir --check --report terminology-ledger-report.md
+
+      - name: Upload terminology ledger report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: terminology-ledger-report
+          path: terminology-ledger-report.md
+          retention-days: 30
+
       - name: Upload drift report
         if: always()
         uses: actions/upload-artifact@v4

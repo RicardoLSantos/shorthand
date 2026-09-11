@@ -165,6 +165,25 @@ This IG was developed alongside a Retrieval-Augmented Generation (RAG) system fo
 | Query: "OMOP for RMSSD" | Fabricated concept_id | Correctly identified gap |
 | Overall error rate | ~25% | ~0% (for indexed codes) |
 
+## Verification ledger — last verification by terminology
+
+Every externally-defined code bound in the FSH sources is listed in `input/data/terminology-verification-ledger.csv` with the date, source and version of its last verification. The ledger is produced by `.github/scripts/terminology_ledger_check.py` (run by hand and weekly as an advisory step of the ConceptMap Drift workflow) and never sits on the build path: the IG validates without a terminology server, and network failures are recorded as "unreachable", never as "not found".
+
+**Sources, in order of authority.** The owner of each terminology is the reference: `loinc.org` and its FHIR API (LOINC, two releases a year, February and August); `browser.ihtsdotools.org`, International edition (SNOMED CT, monthly — the browser is for human use, so automated SNOMED checks use the dated Vocab2 snapshot and tx.fhir.org, both International); `icd.who.int` (ICD-11 MMS, one release a year — the linearization export and the ICD-10 to ICD-11 mapping tables are used as the owner source); `ucum.org` and the NLM validator (UCUM). The dated local OMOP snapshots (Athena, Vocab2) are mirrors; `tx.fhir.org` is the third, advisory source, also used to check that the display used in the IG is a registered designation of the concept.
+
+**Last verification (2026-09-11):**
+
+| System | Codes in the IG | Last verified | Via | Source version(s) | Open findings |
+|---|--:|---|---|---|--:|
+| LOINC | 178 | 2026-09-11 | Athena OMOP snapshot, tx.fhir.org | Athena LOINC snapshot 2026-01-21; tx LOINC 2.82 | 7 |
+| SNOMED CT (International) | 108 | 2026-09-11 | Vocab2 OMOP snapshot, tx.fhir.org | Vocab2 SNOMED 2025-02-01 SNOMED CT International Edition; tx SNOMED http://snomed.info/sct/900000000000207008/version/20250201 | 6 |
+| ICD-11 MMS (republished in the IG) | 46 | 2026-09-11 | tx.fhir.org | tx ICD11 2026-01 | 0 |
+| UCUM | 9 | 2026-09-11 | Athena OMOP snapshot, tx.fhir.org | Athena UCUM snapshot 2026-01-21; tx UCUM 2.2 | 9 |
+
+**Findings on 2026-09-11.** The republished ICD-11 CodeSystem was rebuilt on this date after the first ledger run found 9 codes absent from ICD-11 MMS and 12 codes carrying another concept's title (see ICD-11 Integration → Correction of 2026-09-11); the second run shows 0 ICD-11 findings. Two defects surfaced in other systems and were corrected the same day: three custom HRV codes had been declared under the LOINC system in `ConceptMapHRVToOMOP` (now in a group whose source is the custom CodeSystem), and SNOMED CT 228279004 (*Very heavy drinker*) had been used for *Heavy drinker* (now 86933000). The remaining findings are display-name classes, not concept errors: UCUM displays written as words (`Days` for `d`) where tx.fhir.org accepts only the code; four LOINC long common names from an earlier LOINC release (`… Narrative` renamed `… note`); and SNOMED designations that are synonyms of the official term (`Former drinker` for *Ex-drinker*). One SNOMED item is kept under review: 14012001 is displayed as *Cohabiting* while its preferred term is *Common law partnership*.
+
+**Cadence.** Codes are re-verified at the rhythm of each terminology (SNOMED International monthly; LOINC after each February and August release; ICD-11 and ATC after each annual release; UCUM and package-fixed vocabularies at each IG release), and release notes state the terminology versions the release was built against.
+
 ## Known Gaps
 
 The following metrics have **no standard codes** despite extensive verification:
@@ -204,7 +223,7 @@ If you discover a verification error in this IG:
 
 *Last updated: 2026-03-25*
 *Verification protocol version: 2.0 (Database-First, post OMOP audit VRF-TERM-017)*
-*Total verified codes in IG: 1,103 custom + 34 ICD-11 fragment*
+*Total verified codes in IG: 1,103 custom + 46 ICD-11 (republished)*
 *LOINC substitutions: 19 (verified against Athena CONCEPT.csv)*
 *OMOP audit: 28 corrections across 6 ConceptMaps (Mar 2026)*
 
