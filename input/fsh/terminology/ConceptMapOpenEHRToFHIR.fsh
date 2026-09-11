@@ -52,56 +52,56 @@ Architecture:
 * group[0].unmapped.code = #other
 * group[0].unmapped.display = "Unmapped HRV element"
 
-// SDNN (id5) → Observation.component (LOINC 80404-7)
-* group[0].element[0].code = #id5
-* group[0].element[0].display = "SDNN - Standard deviation of NN intervals"
+// SDNN (at0004) → Observation.component (LOINC 80404-7)
+* group[0].element[0].code = #at0004
+* group[0].element[0].display = "SDNN"
 * group[0].element[0].target[0].code = #Observation.component
 * group[0].element[0].target[0].display = "Observation.component[sdnn].valueQuantity"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = "Map to component with code LOINC 80404-7. Unit: ms"
 
-// RMSSD (id6) → Observation.component (custom code)
-* group[0].element[1].code = #id6
-* group[0].element[1].display = "RMSSD - Root mean square of successive differences"
+// RMSSD (at0005) → Observation.component (custom code)
+* group[0].element[1].code = #at0005
+* group[0].element[1].display = "RMSSD"
 * group[0].element[1].target[0].code = #Observation.component
 * group[0].element[1].target[0].display = "Observation.component[rmssd].valueQuantity"
 * group[0].element[1].target[0].equivalence = #equivalent
 * group[0].element[1].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-rmssd. No LOINC code available. Unit: ms"
 
-// pNN50 (id7) → Observation.component
-* group[0].element[2].code = #id7
-* group[0].element[2].display = "pNN50 - Percentage of NN intervals >50ms"
+// pNN50 (at0006) → Observation.component
+* group[0].element[2].code = #at0006
+* group[0].element[2].display = "pNN50"
 * group[0].element[2].target[0].code = #Observation.component
 * group[0].element[2].target[0].display = "Observation.component[pnn50].valueQuantity"
 * group[0].element[2].target[0].equivalence = #equivalent
 * group[0].element[2].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-pnn50. Unit: %"
 
-// LF/HF Ratio (id13) → Observation.component
-* group[0].element[3].code = #id13
+// LF/HF Ratio (at0012) → Observation.component
+* group[0].element[3].code = #at0012
 * group[0].element[3].display = "LF/HF Ratio"
 * group[0].element[3].target[0].code = #Observation.component
 * group[0].element[3].target[0].display = "Observation.component[lf-hf-ratio].valueQuantity"
 * group[0].element[3].target[0].equivalence = #equivalent
 * group[0].element[3].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-lf-hf-ratio. Dimensionless ratio"
 
-// Recording duration (id32) → Observation.component or effectivePeriod
-* group[0].element[4].code = #id32
+// Recording duration (at0031) → Observation.component or effectivePeriod
+* group[0].element[4].code = #at0031
 * group[0].element[4].display = "Recording duration"
 * group[0].element[4].target[0].code = #Observation.effectivePeriod
 * group[0].element[4].target[0].display = "Observation.effectivePeriod (start/end)"
 * group[0].element[4].target[0].equivalence = #relatedto
 * group[0].element[4].target[0].comment = "Duration derived from effectivePeriod.end - effectivePeriod.start"
 
-// Physiological state (id41) → Observation.component (context)
-* group[0].element[5].code = #id41
+// Physiological state (at0040) → Observation.component (context)
+* group[0].element[5].code = #at0040
 * group[0].element[5].display = "Physiological state"
 * group[0].element[5].target[0].code = #Observation.component
 * group[0].element[5].target[0].display = "Observation.component[state].valueCodeableConcept"
 * group[0].element[5].target[0].equivalence = #equivalent
 * group[0].element[5].target[0].comment = "Map resting/active/sleep states to component with custom code"
 
-// Device type (id51) → Observation.device reference
-* group[0].element[6].code = #id51
+// Device type (at0050) → Observation.device reference
+* group[0].element[6].code = #at0050
 * group[0].element[6].display = "Device type"
 * group[0].element[6].target[0].code = #Observation.device
 * group[0].element[6].target[0].display = "Observation.device → Device reference"
@@ -114,40 +114,40 @@ Architecture:
 * group[1].source = "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0"
 // group[1].target omitted (structural mapping, not terminology)
 
-// Step count (id10) → Observation.valueQuantity
-* group[1].element[0].code = #id10
+// Step count (at0009) → Observation.valueQuantity
+* group[1].element[0].code = #at0009
 * group[1].element[0].display = "Step count"
 * group[1].element[0].target[0].code = #Observation.valueQuantity
 * group[1].element[0].target[0].display = "Observation.valueQuantity"
 * group[1].element[0].target[0].equivalence = #equivalent
 * group[1].element[0].target[0].comment = "Primary value when code is LOINC 55423-8 (Number of steps). Unit: steps"
 
-// Distance (id11) → Observation.component
-* group[1].element[1].code = #id11
+// Distance (at0010) → Observation.component
+* group[1].element[1].code = #at0010
 * group[1].element[1].display = "Distance"
 * group[1].element[1].target[0].code = #Observation.component
 * group[1].element[1].target[0].display = "Observation.component[distance].valueQuantity"
 * group[1].element[1].target[0].equivalence = #equivalent
 * group[1].element[1].target[0].comment = "Map to component with LOINC 55430-3. Unit: km or m"
 
-// Active calories (id20) → Observation.component
-* group[1].element[2].code = #id20
+// Active calories (at0019) → Observation.component
+* group[1].element[2].code = #at0019
 * group[1].element[2].display = "Active calories"
 * group[1].element[2].target[0].code = #Observation.component
 * group[1].element[2].target[0].display = "Observation.component[active-calories].valueQuantity"
 * group[1].element[2].target[0].equivalence = #equivalent
 * group[1].element[2].target[0].comment = "Map to component with LOINC 41979-6. Unit: kcal"
 
-// Moderate activity minutes (id32) → Observation.component
-* group[1].element[3].code = #id32
+// Moderate activity minutes (at0031) → Observation.component
+* group[1].element[3].code = #at0031
 * group[1].element[3].display = "Moderately active minutes"
 * group[1].element[3].target[0].code = #Observation.component
 * group[1].element[3].target[0].display = "Observation.component[moderate-minutes].valueQuantity"
 * group[1].element[3].target[0].equivalence = #equivalent
 * group[1].element[3].target[0].comment = "Map to component with LOINC 101689-8 (device-method 'Duration of moderate activity'; aligned 2026-06-03 with ConceptMapOpenEHRToOMOP, was IPAQ-survey 77592-4). Unit: min"
 
-// Vigorous activity minutes (id33) → Observation.component
-* group[1].element[4].code = #id33
+// Vigorous activity minutes (at0032) → Observation.component
+* group[1].element[4].code = #at0032
 * group[1].element[4].display = "Vigorously active minutes"
 * group[1].element[4].target[0].code = #Observation.component
 * group[1].element[4].target[0].display = "Observation.component[vigorous-minutes].valueQuantity"
@@ -160,49 +160,49 @@ Architecture:
 * group[2].source = "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
 // group[2].target omitted (structural mapping, not terminology)
 
-// Total sleep time (id13) → Observation.valueQuantity
-* group[2].element[0].code = #id13
+// Total sleep time (at0012) → Observation.valueQuantity
+* group[2].element[0].code = #at0012
 * group[2].element[0].display = "Total sleep time"
 * group[2].element[0].target[0].code = #Observation.valueQuantity
 * group[2].element[0].target[0].display = "Observation.valueQuantity"
 * group[2].element[0].target[0].equivalence = #equivalent
 * group[2].element[0].target[0].comment = "Primary value when code is LOINC 93832-4 (Sleep duration). Unit: h or min"
 
-// Deep sleep duration (id23) → Observation.component
-* group[2].element[1].code = #id23
+// Deep sleep duration (at0022) → Observation.component
+* group[2].element[1].code = #at0022
 * group[2].element[1].display = "Deep sleep duration"
 * group[2].element[1].target[0].code = #Observation.component
 * group[2].element[1].target[0].display = "Observation.component[deep-sleep].valueQuantity"
 * group[2].element[1].target[0].equivalence = #equivalent
 * group[2].element[1].target[0].comment = "N3/SWS stage duration. Custom code required - no LOINC"
 
-// REM sleep duration (id24) → Observation.component
-* group[2].element[2].code = #id24
+// REM sleep duration (at0023) → Observation.component
+* group[2].element[2].code = #at0023
 * group[2].element[2].display = "REM sleep duration"
 * group[2].element[2].target[0].code = #Observation.component
 * group[2].element[2].target[0].display = "Observation.component[rem-sleep].valueQuantity"
 * group[2].element[2].target[0].equivalence = #equivalent
 * group[2].element[2].target[0].comment = "REM stage duration. Custom code required - no LOINC"
 
-// Sleep efficiency (id30) → Observation.component
-* group[2].element[3].code = #id30
+// Sleep efficiency (at0029) → Observation.component
+* group[2].element[3].code = #at0029
 * group[2].element[3].display = "Sleep efficiency"
 * group[2].element[3].target[0].code = #Observation.component
 * group[2].element[3].target[0].display = "Observation.component[efficiency].valueQuantity"
 * group[2].element[3].target[0].equivalence = #equivalent
 * group[2].element[3].target[0].comment = "TST/TIB ratio as percentage. Custom code required - no LOINC"
 
-// Sleep score (id40) → Observation.component
-* group[2].element[4].code = #id40
+// Sleep score (at0039) → Observation.component
+* group[2].element[4].code = #at0039
 * group[2].element[4].display = "Sleep score"
 * group[2].element[4].target[0].code = #Observation.component
 * group[2].element[4].target[0].display = "Observation.component[score].valueInteger"
 * group[2].element[4].target[0].equivalence = #equivalent
 * group[2].element[4].target[0].comment = "Vendor-specific composite score (0-100). Proprietary algorithm"
 
-// Average HRV during sleep (id53) → Observation.component
-* group[2].element[5].code = #id53
-* group[2].element[5].display = "Average HRV (RMSSD) during sleep"
+// Average HRV during sleep (at0052) → Observation.component
+* group[2].element[5].code = #at0052
+* group[2].element[5].display = "Average HRV (RMSSD)"
 * group[2].element[5].target[0].code = #Observation.component
 * group[2].element[5].target[0].display = "Observation.component[sleep-hrv].valueQuantity"
 * group[2].element[5].target[0].equivalence = #equivalent
@@ -214,39 +214,39 @@ Architecture:
 * group[3].source = "openEHR-EHR-CLUSTER.wearable_device.v0"
 // group[3].target omitted (structural mapping, not terminology)
 
-// Device platform (id2) → Device.manufacturer
-* group[3].element[0].code = #id2
+// Device platform (at0001) → Device.manufacturer
+* group[3].element[0].code = #at0001
 * group[3].element[0].display = "Device platform"
 * group[3].element[0].target[0].code = #Device.manufacturer
 * group[3].element[0].target[0].display = "Device.manufacturer"
 * group[3].element[0].target[0].equivalence = #equivalent
 * group[3].element[0].target[0].comment = "Map vendor code to manufacturer string (Apple, Fitbit, Garmin, etc.)"
 
-// Device model (id3) → Device.modelNumber
-* group[3].element[1].code = #id3
+// Device model (at0002) → Device.modelNumber
+* group[3].element[1].code = #at0002
 * group[3].element[1].display = "Device model"
 * group[3].element[1].target[0].code = #Device.modelNumber
 * group[3].element[1].target[0].display = "Device.modelNumber"
 * group[3].element[1].target[0].equivalence = #equivalent
 * group[3].element[1].target[0].comment = "Specific model name"
 
-// Device category (id4) → Device.type
-* group[3].element[2].code = #id4
+// Device category (at0003) → Device.type
+* group[3].element[2].code = #at0003
 * group[3].element[2].display = "Device category"
 * group[3].element[2].target[0].code = #Device.type
 * group[3].element[2].target[0].display = "Device.type"
 * group[3].element[2].target[0].equivalence = #equivalent
 * group[3].element[2].target[0].comment = "Map to SNOMED CT device type codes where available"
 
-// Serial number (id23) → Device.serialNumber
-* group[3].element[3].code = #id23
+// Serial number (at0022) → Device.serialNumber
+* group[3].element[3].code = #at0022
 * group[3].element[3].display = "Serial number"
 * group[3].element[3].target[0].code = #Device.serialNumber
 * group[3].element[3].target[0].display = "Device.serialNumber"
 * group[3].element[3].target[0].equivalence = #equivalent
 
-// Firmware version (id20) → Device.version
-* group[3].element[4].code = #id20
+// Firmware version (at0019) → Device.version
+* group[3].element[4].code = #at0019
 * group[3].element[4].display = "Firmware version"
 * group[3].element[4].target[0].code = #Device.version
 * group[3].element[4].target[0].display = "Device.version[firmware]"
