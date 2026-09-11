@@ -163,7 +163,7 @@ Description: "Marital or partnership status"
 * $SCT#13184001 "Separated"
 // Note: 442751008 "Civil partnership" is UK SNOMED extension, not in International Edition
 // For UK implementations, add: * $SCT#442751008 "Civil partnership"
-* $SCT#14012001 "Cohabiting"
+* $SCT#38070000 "Cohabiting"   // 14012001 is "Common law partnership"; corrected 2026-09-11 (tx.fhir.org International 20250201; Vocab2)
 
 ValueSet: CaregiverRoleVS
 Id: caregiver-role-vs
