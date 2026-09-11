@@ -81,14 +81,25 @@ ETL Implementation:
 """
 
 // ============================================================================
+// GROUP 2: custom HRV codes (LifestyleMedicineTemporaryCS) → OMOP. These metrics have no LOINC
+// code, so their source system is the IG's custom CodeSystem, not LOINC (corrected 2026-09-11:
+// they had been written as pseudo-LOINC codes "hrv-*-local").
+// ============================================================================
+* group[1].source = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
+* group[1].target = "http://athena.ohdsi.org/search-terms/terms"
+* group[1].unmapped.mode = #fixed
+* group[1].unmapped.code = #0
+* group[1].unmapped.display = "No OMOP concept - requires custom vocabulary extension"
+
+// ============================================================================
 // RMSSD - NO OMOP CONCEPT ⚠️ CRITICAL GAP
 // ============================================================================
-* group[0].element[1].code = #hrv-rmssd-local
-* group[0].element[1].display = "RMSSD - Root Mean Square of Successive Differences [Custom]"
-* group[0].element[1].target[0].code = #0
-* group[0].element[1].target[0].display = "No OMOP concept available"
-* group[0].element[1].target[0].equivalence = #unmatched
-* group[0].element[1].target[0].comment = """
+* group[1].element[0].code = #hrv-rmssd
+* group[1].element[0].display = "RMSSD - Root Mean Square of Successive Differences [Custom]"
+* group[1].element[0].target[0].code = #0
+* group[1].element[0].target[0].display = "No OMOP concept available"
+* group[1].element[0].target[0].equivalence = #unmatched
+* group[1].element[0].target[0].comment = """
 CRITICAL GAP: RMSSD has NO OMOP concept (concept_id = 0)
 
 Clinical Importance:
@@ -108,12 +119,12 @@ Recommendation: Submit new concept proposal to OHDSI Vocabulary team
 // ============================================================================
 // pNN50 - NO OMOP CONCEPT ⚠️
 // ============================================================================
-* group[0].element[2].code = #hrv-pnn50-local
-* group[0].element[2].display = "pNN50 - Percentage of NN intervals >50ms [Custom]"
-* group[0].element[2].target[0].code = #0
-* group[0].element[2].target[0].display = "No OMOP concept available"
-* group[0].element[2].target[0].equivalence = #unmatched
-* group[0].element[2].target[0].comment = """
+* group[1].element[1].code = #hrv-pnn50
+* group[1].element[1].display = "pNN50 - Percentage of NN intervals >50ms [Custom]"
+* group[1].element[1].target[0].code = #0
+* group[1].element[1].target[0].display = "No OMOP concept available"
+* group[1].element[1].target[0].equivalence = #unmatched
+* group[1].element[1].target[0].comment = """
 GAP: pNN50 has no OMOP concept (concept_id = 0)
 
 Clinical notes:
@@ -128,12 +139,12 @@ ETL workaround: Store as measurement_source_value = 'pNN50:{value}%'
 // ============================================================================
 // LF/HF RATIO - NO OMOP CONCEPT ⚠️
 // ============================================================================
-* group[0].element[3].code = #hrv-lf-hf-local
-* group[0].element[3].display = "LF/HF Ratio - Low to High Frequency Power Ratio [Custom]"
-* group[0].element[3].target[0].code = #0
-* group[0].element[3].target[0].display = "No OMOP concept available"
-* group[0].element[3].target[0].equivalence = #unmatched
-* group[0].element[3].target[0].comment = """
+* group[1].element[2].code = #hrv-lf-hf-ratio
+* group[1].element[2].display = "LF/HF Ratio - Low to High Frequency Power Ratio [Custom]"
+* group[1].element[2].target[0].code = #0
+* group[1].element[2].target[0].display = "No OMOP concept available"
+* group[1].element[2].target[0].equivalence = #unmatched
+* group[1].element[2].target[0].comment = """
 GAP: LF/HF ratio has no OMOP concept (concept_id = 0)
 
 Clinical notes:
