@@ -71,18 +71,21 @@ Each profile uses standard LOINC codes where available, with custom codes from `
 
 ### Step 3: Include Device Information
 
-Consumer wearable data SHOULD include a Device resource identifying the source:
+Consumer wearable data SHOULD include a Device resource identifying the source. In this IG the source is the **application** that produced the observations (a health platform such as HealthKit, a vendor app, or the ETL application), because different watches, rings and oximeters feed the same application: use the `WearableDataSource` profile, whose type is fixed to SNOMED CT 706689003 *Application programme software*, and point `Observation.device` to it.
 
 ```json
 {
   "resourceType": "Device",
-  "deviceName": [{"name": "Apple Watch Series 9", "type": "user-friendly-name"}],
+  "meta": {"profile": ["https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/wearable-data-source"]},
+  "deviceName": [{"name": "Apple Health", "type": "user-friendly-name"}],
   "manufacturer": "Apple Inc.",
-  "type": {
-    "coding": [{"system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs", "code": "sleep-monitoring-device"}]
-  }
+  "version": [{"value": "iOS 17.0"}],
+  "type": {"coding": [{"system": "http://snomed.info/sct", "code": "706689003", "display": "Application programme software"}]},
+  "parent": {"reference": "Device/SensorPulseOximeterAppleWatch"}
 }
 ```
+
+When the physical sensor is known, describe it as a second Device with the `WearableSensorDevice` profile — typed with the IEEE 11073-10101 (MDC) device specialisations of the Personal Health Device IG (for example 528388 pulse oximeter, 528484 step counter) — and reference it from the application Device through `parent`. The sensor layer is optional; the observation always points to the software.
 
 ### Step 4: Use ConceptMaps for Terminology Translation
 

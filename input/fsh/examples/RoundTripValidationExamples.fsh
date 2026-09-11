@@ -10,7 +10,7 @@
 // =============================================================================
 
 Instance: DeviceAppleWatch
-InstanceOf: Device
+InstanceOf: WearableDataSource
 Usage: #example
 Title: "Apple Watch Series 9"
 Description: "Apple Watch device for HRV round-trip validation"
@@ -21,9 +21,10 @@ Description: "Apple Watch device for HRV round-trip validation"
 * version.value = "watchOS 10.2"
 * status = #active
 * type = $SCT#706689003 "Application programme software"
+* parent = Reference(SensorPulseOximeterAppleWatch)
 
 Instance: DeviceFitbitSense
-InstanceOf: Device
+InstanceOf: WearableDataSource
 Usage: #example
 Title: "Fitbit Sense 2"
 Description: "Fitbit Sense 2 device for sleep round-trip validation"
@@ -36,7 +37,7 @@ Description: "Fitbit Sense 2 device for sleep round-trip validation"
 * type = $SCT#706689003 "Application programme software"
 
 Instance: DeviceGarminVenu
-InstanceOf: Device
+InstanceOf: WearableDataSource
 Usage: #example
 Title: "Garmin Venu 3"
 Description: "Garmin Venu 3 device for activity round-trip validation"
@@ -47,9 +48,10 @@ Description: "Garmin Venu 3 device for activity round-trip validation"
 * version.value = "Software 9.18"
 * status = #active
 * type = $SCT#706689003 "Application programme software"
+* parent = Reference(SensorStepCounterGarminVenu)
 
 Instance: DeviceOuraRing
-InstanceOf: Device
+InstanceOf: WearableDataSource
 Usage: #example
 Title: "Oura Ring Gen 3"
 Description: "Oura Ring Gen 3 device for body metrics round-trip validation"

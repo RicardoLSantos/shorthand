@@ -1,5 +1,5 @@
 Instance: iphone-example
-InstanceOf: Device
+InstanceOf: WearableDataSource
 Usage: #example
 Title: "iPhone Device Example"
 Description: "Example iPhone device for iOS Health App data collection"
