@@ -510,6 +510,15 @@ Body Structure codes for muscle groups). ConceptMaps link these to standards.
 * #snomed-equivalent "SNOMED CT Equivalent Code" "Reference to an equivalent SNOMED CT concept for this code"
 * #openehr-path "openEHR Archetype Path" "Path to the equivalent element in an openEHR archetype"
 
+// --- Terminology Verification Properties (3 codes, added 2026-09-11) ---
+// Formal URIs for the CodeSystem.property entries that record, per concept, when and
+// against which source an externally-defined code was last verified. Used by the
+// ICD-11 republished CodeSystem and by the custom CodeSystems that carry standard
+// equivalents; the machine-readable record is input/data/terminology-verification-ledger.csv.
+* #verified-on "Terminology Verification Date" "Date on which the code was last verified against its source terminology (property type: dateTime)"
+* #verified-via "Terminology Verification Source" "Source consulted for the last verification: the terminology owner's site or API, a dated local snapshot, or a terminology server (property type: string)"
+* #source-version "Source Terminology Version" "Version or release of the source terminology against which the code was verified (property type: string)"
+
 // --- Regulatory Frameworks (5 codes) ---
 // Merged from RegulatoryFrameworkCS — healthcare data protection frameworks
 * #gdpr "GDPR - General Data Protection Regulation" "European Union data protection regulation"
