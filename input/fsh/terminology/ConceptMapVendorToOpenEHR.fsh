@@ -140,7 +140,7 @@ Use Cases:
 * group[4].element[1].code = #hrv_sdnn
 * group[4].element[1].display = "Polar: HRV SDNN"
 * group[4].element[1].target[0].code = #at0004
-* group[4].element[0].target[0].display = "SDNN - Standard deviation of NN intervals"
+* group[4].element[1].target[0].display = "SDNN"
 * group[4].element[1].target[0].equivalence = #equivalent
 * group[4].element[1].target[0].comment = "Polar provides SDNN from ECG. High accuracy. Unit: ms"
 
@@ -158,7 +158,7 @@ Use Cases:
 * group[5].source = "com.apple.health"
 * group[5].target = "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
 
-// HKCategoryValueSleepAnalysis → at0012 (Total sleep time)
+// HKCategoryValueSleepAnalysisAsleepCore → at0021 (Light sleep duration)
 * group[5].element[0].code = #HKCategoryValueSleepAnalysisAsleepCore
 * group[5].element[0].display = "Apple HealthKit: Core Sleep"
 * group[5].element[0].target[0].code = #at0021
@@ -217,7 +217,7 @@ Use Cases:
 * group[6].element[2].target[0].equivalence = #equivalent
 * group[6].element[2].target[0].comment = "HealthKit provides in kilocalories (kcal). Direct mapping."
 
-// HKQuantityTypeIdentifierAppleExerciseTime → at0031/at0032 (Activity minutes)
+// HKQuantityTypeIdentifierAppleExerciseTime → at0033 (Exercise minutes)
 * group[6].element[3].code = #HKQuantityTypeIdentifierAppleExerciseTime
 * group[6].element[3].display = "Apple HealthKit: Exercise Time"
 * group[6].element[3].target[0].code = #at0033
@@ -242,8 +242,8 @@ Use Cases:
 //    - Polar: Any time with chest strap (gold standard)
 //
 // 3. RECOMMENDED APPROACH:
-//    - Store vendor_source in device archetype (id2)
-//    - Include measurement context (id41: physiological_state)
+//    - Store vendor_source in the device CLUSTER (at0001, Device platform)
+//    - Include measurement context (at0040: Physiological state)
 //    - Document algorithm version in firmware_version (at0019)
 //    - Use caution when comparing cross-vendor data
 //
