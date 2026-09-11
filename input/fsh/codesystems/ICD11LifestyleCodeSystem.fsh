@@ -7,8 +7,8 @@
 // input/data/terminology-verification-ledger.csv (see terminology-verification.md).
 //
 // Correction of 2026-09-11: the 2026-03 edition of this CodeSystem carried 34 codes, of which
-// 9 did not exist in ICD-11 MMS and 12 carried the title of a different concept (block ranges
-// had been typed as category codes). Every concept was re-derived from the WHO linearization
+// 11 did not exist in ICD-11 MMS and 16 carried the title of a different concept (block ranges
+// had been typed as category codes); only 7 were correct. Every concept was re-derived from the WHO linearization
 // table and tx.fhir.org; titles are the WHO MMS titles verbatim.
 
 RuleSet: ICD11Verified(code)
@@ -33,8 +33,8 @@ system URL: http://id.who.int/icd/release/11/mms), which tx.fhir.org also serves
 verification sources. Each concept carries the properties verified-on, verified-via and source-version,
 and the machine-readable record is input/data/terminology-verification-ledger.csv.
 
-History: the 2026-03 edition (34 codes) contained 9 codes absent from ICD-11 MMS and 12 codes whose
-title belonged to another concept; it was rebuilt on 2026-09-11 from the WHO linearization table and
+History: the 2026-03 edition (34 codes) contained 11 codes absent from ICD-11 MMS and 16 codes whose
+title belonged to another concept (7 were correct); it was rebuilt on 2026-09-11 from the WHO linearization table and
 tx.fhir.org. Physical-activity types (walking, running, cycling, swimming) have no ICD-11 category
 and are coded with SNOMED CT and LOINC elsewhere in this IG.
 """

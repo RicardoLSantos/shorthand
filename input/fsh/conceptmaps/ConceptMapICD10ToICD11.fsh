@@ -41,16 +41,16 @@ republished in the IG's ICD-11 CodeSystem, verified 2026-09-11 against WHO ICD-1
 * group[=].element[=].display = "Alcohol use"
 * group[=].element[=].target[+].code = #QE10
 * group[=].element[=].target[=].display = "Hazardous alcohol use"
-* group[=].element[=].target[=].equivalence = #equivalent
-* group[=].element[=].target[=].comment = "WHO map: Z72.1 → QE10. ICD-11 qualifies the use as hazardous."
+* group[=].element[=].target[=].equivalence = #narrower
+* group[=].element[=].target[=].comment = "WHO map (best match): Z72.1 → QE10; the ICD-11 target is narrower (hazardous use)."
 
 // Drug use
 * group[=].element[+].code = #Z72.2
 * group[=].element[=].display = "Drug use"
 * group[=].element[=].target[+].code = #QE11.Z
 * group[=].element[=].target[=].display = "Hazardous drug use, unspecified"
-* group[=].element[=].target[=].equivalence = #equivalent
-* group[=].element[=].target[=].comment = "WHO map: Z72.2 → QE11.Z (hazardous drug use, unspecified)."
+* group[=].element[=].target[=].equivalence = #narrower
+* group[=].element[=].target[=].comment = "WHO map (best match): Z72.2 → QE11.Z; the ICD-11 target is narrower (hazardous use, unspecified)."
 
 // Lack of physical exercise
 * group[=].element[+].code = #Z72.3
