@@ -3,6 +3,8 @@
 // Author: Ricardo Lourenco dos Santos, FMUP
 // Reference: Cohen S, Kamarck T, Mermelstein R. A global measure of perceived stress. J Health Soc Behav. 1983;24(4):385-396.
 
+Alias: $LOINC = http://loinc.org
+
 Instance: stress-assessment-pss10
 InstanceOf: Questionnaire
 Usage: #definition
@@ -16,6 +18,7 @@ Description: "The Perceived Stress Scale (PSS-10) is the most widely used psycho
 * version = "1.0.0"
 * name = "StressAssessmentPSS10"
 * date = "2025-11-28"
+* code = $LOINC#106875-8 "Perceived stress scale-10 [PSS-10]"   // LOINC 2.82, verified 2026-09-11 (loinc.org via tx.fhir.org; Athena snapshot 2026-01-21)
 * publisher = "FMUP HEADS Lab"
 * description = "The PSS-10 is a validated 10-item questionnaire measuring perceived stress over the past month. Items marked with (R) are reverse scored. Scores range from 0-40, with higher scores indicating greater perceived stress. Score interpretation: 0-13 low stress, 14-26 moderate stress, 27-40 high perceived stress."
 

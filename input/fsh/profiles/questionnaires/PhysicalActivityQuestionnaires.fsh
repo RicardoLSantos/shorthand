@@ -3,6 +3,8 @@
 // Author: Ricardo Lourenco dos Santos, FMUP
 // Reference: Craig CL et al. International Physical Activity Questionnaire: 12-country reliability and validity. Med Sci Sports Exerc. 2003;35(8):1381-1395.
 
+Alias: $LOINC = http://loinc.org
+
 Instance: physical-activity-ipaq-short
 InstanceOf: Questionnaire
 Usage: #definition
@@ -16,6 +18,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
 * version = "1.0.0"
 * name = "PhysicalActivityIPAQShort"
 * date = "2025-11-28"
+* code = $LOINC#77582-5 "International Physical Activity Questionnaire Self-Administered Short Form [IPAQ]"   // LOINC 2.82, verified 2026-09-11 (loinc.org via tx.fhir.org; Athena snapshot 2026-01-21)
 * publisher = "FMUP HEADS Lab"
 * description = "IPAQ-Short Form is a validated 7-item questionnaire measuring physical activity over the past 7 days. Results can be reported as categorical (low, moderate, high activity) or as MET-minutes/week. MET values: Walking=3.3, Moderate PA=4.0, Vigorous PA=8.0. Total MET-min/week = sum of Walking + Moderate + Vigorous MET-min/week."
 
@@ -39,6 +42,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
     * linkId = "ipaq_q1_days"
     * text = "During the last 7 days, on how many days did you do vigorous physical activities like heavy lifting, digging, aerobics, or fast bicycling?"
     * type = #integer
+    * code = $LOINC#77583-3 "During the last 7 days, on how many days did you do vigorous physical activities like heavy lifting, digging, aerobics, or fast bicycling for at least 10 minutes at a time [IPAQ]"
     * required = true
     * extension[0].url = "http://hl7.org/fhir/StructureDefinition/minValue"
     * extension[0].valueInteger = 0
@@ -49,6 +53,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
     * linkId = "ipaq_q2_time"
     * text = "How much time did you usually spend doing vigorous physical activities on one of those days? (minutes)"
     * type = #integer
+    * code = $LOINC#77584-1 "How much time did you usually spend doing vigorous physical activities on one of those days [IPAQ]"
     * required = false
     * enableWhen[0].question = "ipaq_q1_days"
     * enableWhen[0].operator = #>
@@ -71,6 +76,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
     * linkId = "ipaq_q3_days"
     * text = "During the last 7 days, on how many days did you do moderate physical activities like carrying light loads, bicycling at a regular pace, or doubles tennis? Do not include walking."
     * type = #integer
+    * code = $LOINC#77585-8 "During the last 7 days, on how many days did you do moderate physical activities like carrying light loads, bicycling at a regular pace, or doubles tennis for at least 10 minutes at a time [IPAQ]"
     * required = true
     * extension[0].url = "http://hl7.org/fhir/StructureDefinition/minValue"
     * extension[0].valueInteger = 0
@@ -81,6 +87,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
     * linkId = "ipaq_q4_time"
     * text = "How much time did you usually spend doing moderate physical activities on one of those days? (minutes)"
     * type = #integer
+    * code = $LOINC#77586-6 "How much time did you usually spend doing moderate physical activities on one of those days [IPAQ]"
     * required = false
     * enableWhen[0].question = "ipaq_q3_days"
     * enableWhen[0].operator = #>
@@ -103,6 +110,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
     * linkId = "ipaq_q5_days"
     * text = "During the last 7 days, on how many days did you walk for at least 10 minutes at a time?"
     * type = #integer
+    * code = $LOINC#77587-4 "During the last 7 days, on how many days did you walk for at least 10 minutes at a time [IPAQ]"
     * required = true
     * extension[0].url = "http://hl7.org/fhir/StructureDefinition/minValue"
     * extension[0].valueInteger = 0
@@ -113,6 +121,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
     * linkId = "ipaq_q6_time"
     * text = "How much time did you usually spend walking on one of those days? (minutes)"
     * type = #integer
+    * code = $LOINC#77588-2 "How much time did you usually spend walking on one of those days [IPAQ]"
     * required = false
     * enableWhen[0].question = "ipaq_q5_days"
     * enableWhen[0].operator = #>
@@ -135,6 +144,7 @@ Description: "The International Physical Activity Questionnaire (IPAQ) Short For
     * linkId = "ipaq_q7_sitting"
     * text = "During the last 7 days, how much time did you spend sitting on a week day? (hours)"
     * type = #decimal
+    * code = $LOINC#77589-0 "During the last 7 days, how much time did you usually spend sitting on a weekday [IPAQ]"
     * required = true
     * extension[0].url = "http://hl7.org/fhir/StructureDefinition/minValue"
     * extension[0].valueDecimal = 0

@@ -3,6 +3,8 @@
 // Author: Ricardo Lourenco dos Santos, FMUP
 // Reference: Buysse DJ et al. The Pittsburgh Sleep Quality Index. Psychiatry Research 1989;28(2):193-213.
 
+Alias: $SCT = http://snomed.info/sct
+
 Instance: sleep-quality-psqi
 InstanceOf: Questionnaire
 Usage: #definition
@@ -16,6 +18,7 @@ Description: "Questionnaire for assessing sleep quality based on the Pittsburgh 
 * version = "1.0.0"
 * name = "SleepQualityPSQI"
 * date = "2025-11-28"
+* code = $SCT#699200007 "Pittsburgh sleep quality index"   // SNOMED CT International 20250201, verified 2026-09-11 (tx.fhir.org; Vocab2 snapshot); no LOINC panel code exists for the PSQI
 * publisher = "FMUP HEADS Lab"
 * description = "A validated questionnaire for measuring sleep quality over the past month. Based on the Pittsburgh Sleep Quality Index (PSQI) by Buysse et al. Global scores >5 indicate poor sleep quality."
 
