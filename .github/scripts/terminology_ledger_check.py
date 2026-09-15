@@ -97,13 +97,20 @@ RE_CONCEPT = re.compile(r'^\s*\*\s*#(\S+)\s+"((?:[^"\\]|\\.)*)"')
 
 
 def _strip_comment(line: str) -> str:
-    """Drop a trailing FSH // comment (outside quotes)."""
+    """Drop a trailing FSH // comment (outside quotes).
+
+    A ``//`` only opens a comment at a token boundary (start of line or after
+    whitespace), mirroring the SUSHI lexer: the ``//`` inside an unquoted URL such
+    as ``* http://loinc.org#8867-4 "Heart rate"`` is part of the code token, not a
+    comment. Cutting there silently dropped every full-URL code from the ledger.
+    """
     out, in_q, i = [], False, 0
     while i < len(line):
         ch = line[i]
         if ch == '"' and (i == 0 or line[i - 1] != "\\"):
             in_q = not in_q
-        if not in_q and line.startswith("//", i):
+        if (not in_q and line.startswith("//", i)
+                and (i == 0 or line[i - 1].isspace())):
             break
         out.append(ch)
         i += 1
@@ -531,15 +538,20 @@ def verify(found: dict, sources: list[str], args, log=print) -> dict:
     return results
 
 
-def merge(found: dict, previous: dict, run: dict, manual_snomed: str | None) -> dict:
+def merge(found: dict, previous: dict, run: dict, manual_snomed: str | None, kept: set | None = None) -> dict:
+    """``kept`` = keys deliberately not re-verified this run (--only-new): their ledger rows are
+    carried over unchanged, apart from the display/files columns that come from the FSH."""
     rows = {}
+    kept = kept or set()
     for key, rec in found.items():
         system, code = key
         prev = previous.get(key)
         r = run.get(key)
         displays = " | ".join(sorted(rec["displays"]))
         files = ";".join(sorted(rec["files"]))
-        if r:
+        if key in kept and prev:
+            row = dict(prev); row["display_in_ig"] = displays; row["files"] = files
+        elif r:
             notes = list(dict.fromkeys(r["notes"]))
             display_flag = any(n.startswith("tx display check") for n in notes)
             status = r["status"] or "unverified"
@@ -650,6 +662,9 @@ def main() -> int:
     ap.add_argument("--strict", action="store_true", help="exit 1 on missing ledger rows or non-active codes")
     ap.add_argument("--athena", default=os.environ.get("ATHENA_CONCEPT_CSV", ""))
     ap.add_argument("--vocab2", default=os.environ.get("VOCAB2_CONCEPT_CSV", ""))
+    ap.add_argument("--only-new", action="store_true",
+                    help="verify only the codes absent from the ledger and keep every existing row as it is "
+                         "(incremental run before a commit; a full run re-verifies everything)")
     ap.add_argument("--pause", type=float, default=0.3, help="seconds between network calls")
     ap.add_argument("--manual-snomed-version", default=None,
                     help="record a manual SNOMED International browser check done today, e.g. 20250901")
@@ -669,8 +684,13 @@ def main() -> int:
     previous = read_ledger(ledger_path)
     rows = previous
     if sources:
-        run = verify(found, sources, args)
-        rows = merge(found, previous, run, args.manual_snomed_version)
+        targets, kept = found, set()
+        if args.only_new:
+            targets = {k: v for k, v in found.items() if k not in previous}
+            kept = set(found) - set(targets)
+            print(f"--only-new: {len(targets)} code(s) to verify, {len(kept)} ledger row(s) kept as they are")
+        run = verify(targets, sources, args) if targets else {}
+        rows = merge(found, previous, run, args.manual_snomed_version, kept)
         if args.write_ledger:
             write_ledger(ledger_path, rows)
             print(f"ledger written: {ledger_path.relative_to(REPO)} ({len(rows)} rows)")
