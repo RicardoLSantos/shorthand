@@ -91,7 +91,7 @@ Verified against tx.fhir.org 2026-02-19.
 
 * http://snomed.info/sct#425405005 "Excellent (qualifier value)"
 * http://snomed.info/sct#20572008 "Good (qualifier value)"
-* http://snomed.info/sct#260347006 "Fair (qualifier value)" // ⚠️ T2 S33 VRF-TERM-018: 260347006 actually = "+" (not Fair); no clean International "Fair" qualifier found (445511000124105 is non-International) — T1/clinical to resolve (alternative code or non-SNOMED grading)
+* http://snomed.info/sct#260347006 "Fair (qualifier value)" // 2026-09-15: this code is "+"; SNOMED International has no "Fair" qualifier (445511000124105 is a US-extension concept) — replacement pending
 * http://snomed.info/sct#255351007 "Poor (qualifier value)"
 
 
@@ -117,7 +117,8 @@ Verified against tx.fhir.org 2026-02-19.
 
 * http://snomed.info/sct#385633008 "Improving (qualifier value)"
 * http://snomed.info/sct#58158008 "Stable (qualifier value)"
-* http://snomed.info/sct#271299001 "Worsening (qualifier value)"
+// 2026-09-15: 271299001 is the finding Patient's condition worsened; the qualifier is 230993007 (OMOP SNOMED 2025-02-01; tx.fhir.org 20250201)
+* http://snomed.info/sct#230993007 "Worsening (qualifier value)"
 * http://snomed.info/sct#261665006 "Unknown (qualifier value)"
 
 

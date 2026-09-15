@@ -134,6 +134,7 @@ def extract_codes(fsh_root: Path):
         text = path.read_text(encoding="utf-8", errors="replace")
         is_icd11_cs = re.search(r"^Id:\s*" + re.escape(IG_ICD11_CS_ID) + r"\s*$", text, re.M) is not None
         group_sys, cur_group = {}, 0
+        cur_elem, cur_tgt = None, None   # (system, code) of the last element / target seen, for their displays
         in_block_string = False
         for raw in text.splitlines():
             if raw.count('"""') % 2 == 1:
@@ -165,8 +166,20 @@ def extract_codes(fsh_root: Path):
                     idx = m.group(1)
                     g = cur_group if idx in ("+", "=") else int(idx)
                     system = group_sys.get(g, {}).get(side)
-                    if system:
+                    key = (system, m.group(2)) if system else None
+                    if side == "source":
+                        cur_elem, cur_tgt = key, None
+                    else:
+                        cur_tgt = key
+                    if key:
                         add(system, m.group(2), None, path)
+            # the display lines that follow an element / target code belong to that code
+            m = RE_ELEM_DISP.match(line)
+            if m and cur_elem:
+                add(cur_elem[0], cur_elem[1], m.group(2), path)
+            m = RE_TGT_DISP.match(line)
+            if m and cur_tgt:
+                add(cur_tgt[0], cur_tgt[1], m.group(2), path)
     return found
 
 

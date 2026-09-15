@@ -126,21 +126,21 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #family-support
 * group[=].element[=].display = "Family support subscale"
-* group[=].element[=].target[+].code = #LA137-2
+* group[=].element[=].target[+].code = #LA9277-0 // 2026-09-15: was LA137-2, the answer "None"
 * group[=].element[=].target[=].display = "Family member"
 * group[=].element[=].target[=].equivalence = #inexact
 * group[=].element[=].target[=].comment = "GAP: No specific LOINC for MSPSS subscales; use custom code with reference"
 
 * group[=].element[+].code = #friend-support
 * group[=].element[=].display = "Friends support subscale"
-* group[=].element[=].target[+].code = #LA137-2
+* group[=].element[=].target[+].code = #LA6656-8 // 2026-09-15: was LA137-2, the answer "None"
 * group[=].element[=].target[=].display = "Friend"
 * group[=].element[=].target[=].equivalence = #inexact
 * group[=].element[=].target[=].comment = "GAP: No specific LOINC for MSPSS subscales; use custom code with reference"
 
 * group[=].element[+].code = #significant-other-support
 * group[=].element[=].display = "Significant other support subscale"
-* group[=].element[=].target[+].code = #LA137-2
+* group[=].element[=].target[+].code = #LA30381-0 // 2026-09-15: was LA137-2, the answer "None"
 * group[=].element[=].target[=].display = "Significant other"
 * group[=].element[=].target[=].equivalence = #inexact
 * group[=].element[=].target[=].comment = "GAP: No specific LOINC for MSPSS subscales; use custom code with reference"

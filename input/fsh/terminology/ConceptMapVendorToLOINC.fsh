@@ -69,14 +69,14 @@ Usage: #definition
 * group[0].element[3].code = #HKQuantityTypeIdentifierStepCount
 * group[0].element[3].display = "Step Count"
 * group[0].element[3].target[0].code = #55423-8
-* group[0].element[3].target[0].display = "Number of steps in 24 hour Measured"
+* group[0].element[3].target[0].display = "Number of steps in unspecified time Pedometer"
 * group[0].element[3].target[0].equivalence = #equivalent
 
 // Walking + Running Distance
 * group[0].element[4].code = #HKQuantityTypeIdentifierDistanceWalkingRunning
 * group[0].element[4].display = "Walking + Running Distance"
 * group[0].element[4].target[0].code = #41950-7
-* group[0].element[4].target[0].display = "Number of steps"
+* group[0].element[4].target[0].display = "Number of steps in 24 hour Measured"
 * group[0].element[4].target[0].equivalence = #wider
 * group[0].element[4].target[0].comment = "Distance is wider concept than step count; approximate mapping"
 
@@ -393,7 +393,7 @@ Usage: #definition
 // Daily Steps
 * group[1].element[1].code = #activities-steps
 * group[1].element[1].display = "Daily Steps"
-* group[1].element[1].target[0].code = #55423-8
+* group[1].element[1].target[0].code = #41950-7 // 2026-09-15: a daily total is 41950-7; 55423-8 is the pedometer count over an unspecified time
 * group[1].element[1].target[0].display = "Number of steps in 24 hour Measured"
 * group[1].element[1].target[0].equivalence = #equivalent
 
@@ -421,7 +421,7 @@ Usage: #definition
 // Daily Steps
 * group[2].element[0].code = #dailySteps
 * group[2].element[0].display = "Daily Steps"
-* group[2].element[0].target[0].code = #55423-8
+* group[2].element[0].target[0].code = #41950-7 // 2026-09-15: a daily total is 41950-7; 55423-8 is the pedometer count over an unspecified time
 * group[2].element[0].target[0].display = "Number of steps in 24 hour Measured"
 * group[2].element[0].target[0].equivalence = #equivalent
 

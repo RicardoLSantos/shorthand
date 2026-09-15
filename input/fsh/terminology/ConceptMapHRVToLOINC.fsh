@@ -43,7 +43,7 @@ Usage: #definition
 * group[0].element[0].target[0].code = #80404-7
 * group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
 * group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 80404-7 = R-R interval.standard deviation (Heart rate variability). Created LOINC v2.72 (June 2022). Time-domain HRV measure representing total variability."
+* group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 80404-7 = R-R interval.standard deviation (Heart rate variability). First released in LOINC 2.54 (December 2015). Time-domain HRV measure representing total variability."
 
 // ============================================================================
 // RMSSD - GAP CONFIRMED 2025-12-08 ❌

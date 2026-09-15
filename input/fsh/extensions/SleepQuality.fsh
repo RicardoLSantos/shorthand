@@ -23,7 +23,7 @@ Description: "Extended value set for subjective sleep quality assessment. Uses c
 // Quality grades — SNOMED CT (per SharedQualifierValueSets, Phase 2 adoption)
 * http://snomed.info/sct#425405005 "Excellent (qualifier value)"
 * http://snomed.info/sct#20572008 "Good (qualifier value)"
-* http://snomed.info/sct#260347006 "Fair (qualifier value)"
+* http://snomed.info/sct#260347006 "Fair (qualifier value)" // 2026-09-15: this code is "+"; SNOMED International has no "Fair" qualifier — replacement pending (see SharedQualifierValueSets)
 * http://snomed.info/sct#255351007 "Poor (qualifier value)"
 // Sleep-specific qualifiers — no standard equivalent
 * LifestyleMedicineTemporaryCS#restful "Restful sleep"

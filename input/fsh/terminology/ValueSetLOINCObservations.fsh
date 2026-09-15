@@ -75,6 +75,12 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 // ============================================================================
 // 2026-09-15: 93832-4 is Sleep duration, not sleep efficiency; sleep efficiency has no LOINC code (see Known Gaps).
 * http://loinc.org#93832-4 "Sleep duration"
+// 2026-09-15: the other sleep codes the sleep profile and ConceptMapSleepToLOINC use (this ValueSet is that map's target scope)
+* http://loinc.org#103213-5 "Duration in bed"
+* http://loinc.org#93831-6 "Deep sleep duration"
+* http://loinc.org#93830-8 "Light sleep duration"
+* http://loinc.org#103211-9 "Number of awakenings"
+* http://loinc.org#90568-7 "Polysomnography panel"
 
 // ============================================================================
 // NUTRITION AND DIETARY INTAKE
