@@ -155,7 +155,12 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 * http://snomed.info/sct#719858009 "Telehealth monitoring"
 
 // Replaces: LifestyleMedicineTemporaryCS#wearable-monitoring
-* http://snomed.info/sct#722172003 "Ambulatory monitoring" // ⚠️ T2 S33 VRF-TERM-018: 722172003 actually = "Military health institution" — T1/clinical to resolve (cf. 719858009 Telehealth monitoring above; consider a wearable/remote-monitoring code or remove)
+// 2026-09-15: 722172003 (Military health institution) replaced — the wearable is the
+// patient's own monitoring; verified in the OMOP SNOMED snapshot 2025-02-01 and tx.fhir.org (20250201)
+* http://snomed.info/sct#310858007 "Self-monitoring"
 
 // Replaces: LifestyleMedicineTemporaryCS#device-prescription
-* http://snomed.info/sct#840534001 "Recommendation to use home monitoring device" // ⚠️ T2 S33 VRF-TERM-018: 840534001 actually = "2019-nCoV antigen immunisation" — T1/clinical to resolve (alternative monitoring-recommendation code or remove)
+// 2026-09-15: 840534001 (Administration of SARS-CoV-2 antigen vaccine) replaced by the closest
+// International concept for prescribing or issuing a device; verified in the OMOP SNOMED
+// snapshot 2025-02-01 and tx.fhir.org (20250201)
+* http://snomed.info/sct#439894008 "Provision of device"
