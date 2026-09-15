@@ -79,7 +79,9 @@ Title: "VO2max Estimation Example"
 Description: "Example of VO2max estimation from Apple Watch during outdoor run"
 
 * status = #final
-// category and code are fixed by profile (exam, LOINC#60842-2)
+// category is fixed by profile (exam). code: the loinc slice (60842-2) is fixed by the
+// profile; the optional snomed slice is given explicitly so the example is dual-coded.
+* code.coding[snomed] = $SCT#251898000 "Maximum oxygen uptake"
 * subject = Reference(Patient/PatientExample)
 * effectiveDateTime = "2025-11-30T07:45:00Z"
 * performer = Reference(Practitioner/PractitionerExample)

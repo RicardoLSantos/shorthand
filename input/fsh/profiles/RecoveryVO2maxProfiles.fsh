@@ -180,7 +180,16 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * category 1..1 MS
 * category = $ObsCat#exam "Exam"
 * code 1..1 MS
-* code = $LOINC#60842-2 "Oxygen consumption (VO2)"
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "$this"
+* code.coding ^slicing.rules = #open
+* code.coding ^slicing.ordered = false
+* code.coding contains
+    loinc 1..1 MS and
+    snomed 0..1 MS
+* code.coding[loinc] = $LOINC#60842-2 "Oxygen consumption (VO2)"
+* code.coding[snomed] = $SCT#251898000 "Maximum oxygen uptake"
+* code ^comment = "Dual-coded, following the OxygenSaturationObservation pattern: the loinc slice fixes 60842-2 Oxygen consumption (VO2), the code this profile has always carried; the snomed slice (optional, must-support) carries 251898000 Maximum oxygen uptake, the observable entity bound by the openEHR archetype vo2max_estimation and the concept that names the maximal value explicitly. Additional codings allowed (open slicing). Verified 2026-09-15: LOINC 60842-2 in the Athena LOINC snapshot 2026-01-21 and tx.fhir.org LOINC 2.82; SNOMED 251898000 in the OMOP SNOMED snapshot 2025-02-01 and tx.fhir.org SNOMED International 20250201."
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effectiveDateTime 1..1 MS
