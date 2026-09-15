@@ -573,6 +573,12 @@ def merge(found: dict, previous: dict, run: dict, manual_snomed: str | None, kep
             row = {"system": system, "code": code, "display_in_ig": displays, "official_display": "",
                    "status": "unverified", "verified_on": "", "verified_via": "", "source_version": "",
                    "method": "", "note": "no source reached", "files": files}
+        if not displays:
+            # bound only as a ConceptMap element/target without a display: the display check
+            # (does the IG use this code for the concept it names?) could not run — say so.
+            tag = "no display bound in FSH: existence verified, meaning not checked"
+            if tag not in row.get("note", ""):
+                row["note"] = " | ".join(x for x in (row.get("note", ""), tag) if x)[:400]
         if system == "SNOMED" and manual_snomed:
             row["method"] = ";".join(dict.fromkeys((row["method"] + ";owner-browser").strip(";").split(";")))
             row["verified_via"] = ";".join(dict.fromkeys((row["verified_via"] + ";browser.ihtsdotools.org (manual)").strip(";").split(";")))
@@ -663,8 +669,8 @@ def main() -> int:
     ap.add_argument("--athena", default=os.environ.get("ATHENA_CONCEPT_CSV", ""))
     ap.add_argument("--vocab2", default=os.environ.get("VOCAB2_CONCEPT_CSV", ""))
     ap.add_argument("--only-new", action="store_true",
-                    help="verify only the codes absent from the ledger and keep every existing row as it is "
-                         "(incremental run before a commit; a full run re-verifies everything)")
+                    help="verify only the codes absent from the ledger or whose FSH display changed, and keep "
+                         "every other row as it is (incremental run before a commit; a full run re-verifies everything)")
     ap.add_argument("--pause", type=float, default=0.3, help="seconds between network calls")
     ap.add_argument("--manual-snomed-version", default=None,
                     help="record a manual SNOMED International browser check done today, e.g. 20250901")
@@ -686,9 +692,14 @@ def main() -> int:
     if sources:
         targets, kept = found, set()
         if args.only_new:
-            targets = {k: v for k, v in found.items() if k not in previous}
+            # a code is re-verified when it is new to the ledger OR when the display bound to it in
+            # the FSH changed since the last run (a display change is a semantic change)
+            targets = {k: v for k, v in found.items()
+                       if k not in previous
+                       or " | ".join(sorted(v["displays"])) != previous[k].get("display_in_ig", "")}
             kept = set(found) - set(targets)
-            print(f"--only-new: {len(targets)} code(s) to verify, {len(kept)} ledger row(s) kept as they are")
+            print(f"--only-new: {len(targets)} code(s) to verify (new or display changed), "
+                  f"{len(kept)} ledger row(s) kept as they are")
         run = verify(targets, sources, args) if targets else {}
         rows = merge(found, previous, run, args.manual_snomed_version, kept)
         if args.write_ledger:
