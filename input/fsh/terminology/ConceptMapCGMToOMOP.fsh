@@ -94,6 +94,9 @@ GAP: No OMOP concept exists for GMI.
 // ============================================================================
 // Mean Glucose
 // ============================================================================
+// 2026-09-15: 41653-7 is Glucose [Mass/volume] in Capillary blood by Glucometer (a point reading); the display is the
+// name of 93791-2 (mean in Serum or Plasma, OMOP concept 1002230), and element[8] already carries the CGM mean
+// (97507-8 Average glucose in Interstitial fluid) — replacement or removal pending
 * group[0].element[2].code = #41653-7
 * group[0].element[2].display = "Glucose [Mass/volume] mean in Serum or Plasma"
 * group[0].element[2].target[0].code = #0

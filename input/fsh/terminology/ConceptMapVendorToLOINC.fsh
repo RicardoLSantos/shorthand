@@ -75,6 +75,8 @@ Usage: #definition
 // Walking + Running Distance
 * group[0].element[4].code = #HKQuantityTypeIdentifierDistanceWalkingRunning
 * group[0].element[4].display = "Walking + Running Distance"
+// 2026-09-15: a walking/running distance mapped to a step count; LOINC has distance concepts (55430-3 Walking distance
+// unspecified time Pedometer, 41953-1 Walking distance 24 hour Calculated, 93849-8 Exercise distance in 24 hour) — replacement pending
 * group[0].element[4].target[0].code = #41950-7
 * group[0].element[4].target[0].display = "Number of steps in 24 hour Measured"
 * group[0].element[4].target[0].equivalence = #wider
