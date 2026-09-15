@@ -186,11 +186,12 @@ in IG terminology gap analysis (see ValueSetHeartRateVariability.fsh).
 
 // HRV criteria
 * http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
-* http://loinc.org#76643-6 "R-R interval.standard deviation by EKG"
-* http://loinc.org#76644-4 "R-R interval.coefficient of variation"
+* http://loinc.org#76643-6 "R-R interval.standard deviation (Heart rate variability) by EKG"
+* http://loinc.org#76644-4 "R-R interval.coefficient of variation by EKG"
 
 // Activity criteria
-* http://loinc.org#41950-7 "Number of steps in unspecified time Pedometer"
+// 2026-09-15: the pedometer step count is 55423-8 (the code the physical-activity profile uses); 41950-7 is Number of steps in 24 hour Measured
+* http://loinc.org#55423-8 "Number of steps in unspecified time Pedometer"
 
 // Sleep criteria
 * http://loinc.org#93832-4 "Sleep duration"

@@ -55,21 +55,21 @@ Usage: #definition
 
 * group[=].element[+].code = #nutrition-protein-intake
 * group[=].element[=].display = "Protein intake"
-* group[=].element[=].target[+].code = #9059-7
+* group[=].element[=].target[+].code = #9085-2 // 2026-09-15: was 9059-7, which is Carbohydrate intake Estimated
 * group[=].element[=].target[=].display = "Protein intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM DRI: 0.8g/kg/day (adults)"
 
 * group[=].element[+].code = #nutrition-carbohydrate-intake
 * group[=].element[=].display = "Carbohydrate intake"
-* group[=].element[=].target[+].code = #9057-1
+* group[=].element[=].target[+].code = #9065-4 // 2026-09-15: was 9057-1, which is Calorie intake total 24 hour
 * group[=].element[=].target[=].display = "Carbohydrate intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM DRI: 45-65% of total calories"
 
 * group[=].element[+].code = #nutrition-fat-intake
 * group[=].element[=].display = "Fat intake"
-* group[=].element[=].target[+].code = #9060-5
+* group[=].element[=].target[+].code = #9072-0 // 2026-09-15: was 9060-5, which is Carbohydrate intake Measured
 * group[=].element[=].target[=].display = "Fat intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM DRI: 20-35% of total calories"
@@ -95,14 +95,14 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #fluid-intake
 * group[=].element[=].display = "Fluid intake"
-* group[=].element[=].target[+].code = #9053-0
+* group[=].element[=].target[+].code = #8990-4 // 2026-09-15: was 9053-0, which is Calorie intake total 1 hour
 * group[=].element[=].target[=].display = "Fluid intake 24 hour"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "EFSA (2010): 2.0L/day women, 2.5L/day men"
 
 * group[=].element[+].code = #nutrition-water-intake
 * group[=].element[=].display = "Water intake"
-* group[=].element[=].target[+].code = #9053-0
+* group[=].element[=].target[+].code = #8990-4 // 2026-09-15: was 9053-0, which is Calorie intake total 1 hour
 * group[=].element[=].target[=].display = "Fluid intake 24 hour"
 * group[=].element[=].target[=].equivalence = #relatedto
 * group[=].element[=].target[=].comment = "Water subset of total fluid; report in mL"

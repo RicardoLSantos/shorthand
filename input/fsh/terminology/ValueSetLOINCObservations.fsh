@@ -31,8 +31,12 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 // ============================================================================
 // ECG/RHYTHM
 // ============================================================================
-* http://loinc.org#8636-3 "R-R interval in EKG"
-* http://loinc.org#8625-6 "QT interval in EKG"
+// 2026-09-15: 8636-3 is Q-T interval corrected; the R-R interval code is 8637-1. Both kept, each under its own name.
+* http://loinc.org#8637-1 "R-R interval by EKG"
+* http://loinc.org#8636-3 "Q-T interval corrected"
+// 2026-09-15: 8625-6 is P-R Interval; the Q-T interval code is 8634-8. Both kept, each under its own name.
+* http://loinc.org#8634-8 "Q-T interval"
+* http://loinc.org#8625-6 "P-R Interval"
 * http://loinc.org#8633-0 "QRS duration in EKG"
 
 // ============================================================================
@@ -62,27 +66,34 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 // ============================================================================
 // PHYSICAL ACTIVITY
 // ============================================================================
-* http://loinc.org#55423-8 "Number of steps in 24 hour Measured"
-* http://loinc.org#41950-7 "Number of steps"
+// 2026-09-15: the two step-count displays had been crossed; each code now carries its own name.
+* http://loinc.org#55423-8 "Number of steps in unspecified time Pedometer"
+* http://loinc.org#41950-7 "Number of steps in 24 hour Measured"
 
 // ============================================================================
 // SLEEP
 // ============================================================================
-* http://loinc.org#93832-4 "Sleep efficiency"
+// 2026-09-15: 93832-4 is Sleep duration, not sleep efficiency; sleep efficiency has no LOINC code (see Known Gaps).
+* http://loinc.org#93832-4 "Sleep duration"
 
 // ============================================================================
 // NUTRITION AND DIETARY INTAKE
 // ============================================================================
 * http://loinc.org#9052-2 "Caloric intake total"
-* http://loinc.org#9059-7 "Protein intake 24 hour"
-* http://loinc.org#9057-1 "Carbohydrate intake 24 hour"
-* http://loinc.org#9060-5 "Fat intake 24 hour"
-* http://loinc.org#9055-5 "Fiber intake 24 hour"
-* http://loinc.org#9061-3 "Saturated fat intake 24 hour"
-* http://loinc.org#9053-0 "Fluid intake 24 hour"
-* http://loinc.org#9056-3 "Caffeine intake 24 hour"
-* http://loinc.org#75282-4 "Diet"
-* http://loinc.org#65968-0 "Eating habits"
+// 2026-09-15: 9059-7 (Carbohydrate intake Estimated), 9057-1 (Calorie intake total 24 hour) and 9060-5
+// (Carbohydrate intake Measured) had been listed as protein, carbohydrate and fat intake; replaced by the
+// codes that carry those names. 9059-7 is kept under its own name (it is a vendor-map target).
+* http://loinc.org#9085-2 "Protein intake 24 hour"
+* http://loinc.org#9065-4 "Carbohydrate intake 24 hour"
+* http://loinc.org#9072-0 "Fat intake 24 hour"
+* http://loinc.org#9059-7 "Carbohydrate intake Estimated"
+* http://loinc.org#9055-5 "Fiber intake 24 hour" // 2026-09-15: this code is Calorie intake total 10 hour; LOINC has only 81133-1 (Estimated) and 81057-2 (Measured) for fiber intake 24 hour — replacement pending
+* http://loinc.org#9061-3 "Saturated fat intake 24 hour" // 2026-09-15: this code is Carbohydrate intake 1 hour; LOINC has only 81033-3 (Estimated) and 81136-4 (Measured) for saturated fat intake 24 hour — replacement pending
+// 2026-09-15: 9053-0 (Calorie intake total 1 hour) had been listed as fluid intake; replaced by 8990-4.
+* http://loinc.org#8990-4 "Fluid intake 24 hour"
+* http://loinc.org#9056-3 "Caffeine intake 24 hour" // 2026-09-15: this code is Calorie intake total 12 hour; LOINC has only 80489-8 (Estimated) and 80490-6 (Measured) for caffeine intake 24 hour — replacement pending
+* http://loinc.org#75282-4 "Diet" // 2026-09-15: 75282-4 is the Nutrition assessment panel — review pending
+* http://loinc.org#65968-0 "Eating habits" // 2026-09-15: this code is How many hours do you normally sleep [DI-PAD]; no LOINC code for eating habits found — replacement pending
 
 // ============================================================================
 // VITAMINS (24 hour Estimated)
@@ -114,7 +125,7 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * http://loinc.org#91663-5 "Social support index [MOS Social Support Survey]"
 * http://loinc.org#91645-2 "Affectionate support [MOS Social Support Survey]"
 * http://loinc.org#63512-8 "How many people are living or staying at this address [#]"
-* http://loinc.org#63503-7 "Number of family members in household"
+* http://loinc.org#63503-7 "Number of family members in household" // 2026-09-15: this code is Marital status [NHANES]; 63512-8 above already covers household size — review pending
 
 // ============================================================================
 // PANELS (for reference)
