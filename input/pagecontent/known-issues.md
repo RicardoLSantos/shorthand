@@ -1,278 +1,59 @@
 # Known Issues
 
-This page documents known issues that affect the iOS Lifestyle Medicine Implementation Guide build validation but do not impact functionality.
-
-**Build Summary (2026-03-25):** 23 errors (all IPS upstream), ~201 warnings (30 suppressed)
-
-**Tooling Versions:**
-- SUSHI: v3.18.1
-- IG Publisher: v2.2.3+ (CI uses `latest`)
-- FHIR R4: v4.0.1
-- IPS Dependency: hl7.fhir.uv.ips#2.0.0
-
-**Note on IG Publisher v2.2.x (March 2026):** Starting with v2.2.1, the IG Publisher treats codes from unknown CodeSystems as errors (previously warnings in v2.1.2). ICD-11 codes required adding `http://id.who.int/icd/release/11/mms` to `special-url` in sushi-config.yaml and providing a local `#fragment` CodeSystem for validation.
-
----
-
-## Errors (23 total — all upstream IPS 2.0.0)
-
-All 23 errors originate from the IPS 2.0.0 dependency (`hl7.fhir.uv.ips#2.0.0`). None are caused by this IG's profiles, extensions, or examples.
-
-### 1. Extension Reference Error (19 occurrences)
-
-**Error Message:**
-```
-Cannot find a definition for the canonical URL
-'http://hl7.org/fhir/StructureDefinition/note|5.3.0-ballot-tc1'
-```
-
-**Cause:** The IPS 2.0.0 dependency references a ballot Technical Correction version of the `note` extension (`5.3.0-ballot-tc1`) that was never published as an independent package on the HL7 terminology server (`tx.fhir.org`).
-
-**Impact:** Cosmetic only. Does not affect profile functionality or validation of actual patient data.
-
-**Resolution:** Awaiting IPS IG update from HL7. This will be resolved when IPS publishes a corrected version referencing a released extension version.
-
-**Tracking:** HL7 IPS Working Group
-
----
-
-### 2. Broken Links — pkp-2 Constraint (8 occurrences)
-
-**Error Message:**
-```
-The link 'unknown.html' for "?pkp-2?" cannot be resolved
-```
-
-**Cause:** Internal documentation reference in IPS 2.0.0 profiles that cannot be resolved by the IG Publisher.
-
-**Impact:** Cosmetic only. Affects generated HTML documentation but not profile validity.
-
-**Resolution:** Upstream fix required in IPS IG.
-
----
-
-### 3. patternCodeableConcept Inheritance (1 occurrence)
-
-**Error Message:**
-```
-The base element has a pattern type 'CodeableConcept', so this element must have a fixed value, but it does not
-```
-
-**Cause:** Structural inheritance constraint from the IPS Composition base profile. The `sectionLifestyleMedicine` slice inherits a pattern that the IG Publisher interprets as requiring a fixed value.
-
-**Impact:** Cosmetic only. The section code binding works correctly at runtime.
-
-**Resolution:** Upstream structural fix in IPS IG, or explicit pattern override in a future version of this IG.
-
----
-
-## Warnings (~222 total — by category)
-
-### Category 1: IPS Upstream `note|5.3.0-ballot-tc1` (42 warnings)
-
-Same root cause as the errors above. The IPS profile generates both errors and warnings for each snapshot element referencing the unresolved extension.
-
-**OCL/ETL mitigation:** None — structural, not terminological.
-
----
-
-### Category 2: ConceptMap openEHR Archetype URLs (24 warnings)
-
-**Warning Messages:**
-```
-Cannot find a definition for the URL 'openEHR-EHR-OBSERVATION.heart_rate_variability.v0'
-Source/Target Code System is not fully defined and populated
-```
-
-**Affected ConceptMaps:**
-- ConceptMapFHIRToOpenEHR (8 warnings)
-- ConceptMapOpenEHRToFHIR (8 warnings)
-- ConceptMapOpenEHRToOMOP (8 warnings)
-
-**Cause:** openEHR archetype identifiers are not FHIR CodeSystems. The IG Publisher cannot resolve these URLs because they exist in the openEHR CKM namespace, not in FHIR terminology infrastructure.
-
-**Impact:** Expected behavior. The ConceptMaps correctly document the semantic mappings between FHIR and openEHR archetypes.
-
-**OCL mitigation:** Create a FHIR CodeSystem in OCL representing the openEHR archetype identifiers used in these mappings. This would allow the IG Publisher to validate the codes. Estimated elimination: **24 warnings**.
-
----
-
-### Category 3: UCUM Annotation Warnings (14 warnings)
-
-**Warning Message:**
-```
-UCUM codes containing human-readable annotations like {score} may be misleading
-```
-
-**Affected codes:** `{score}`, `{rpm}`, `{spm}`, `{pack-years}`
-
-**Cause:** UCUM annotations (curly-brace codes) are valid UCUM but the IG Publisher flags them as best-practice warnings because annotations are ignored in unit comparisons.
-
-**Impact:** Cosmetic. These are the correct UCUM representations for dimensionless scores and custom units. Using `1` (dimensionless) would lose semantic meaning.
-
-**OCL/ETL mitigation:** None — UCUM validation issue, not terminology.
-
----
-
-### Category 4: ConceptMap OHDSI/Athena (12 warnings)
-
-**Warning Messages:**
-```
-Target CodeSystem http://athena.ohdsi.org/search-terms/terms does not have all content
-(content = not-present), so target codes cannot be checked
-```
-
-**Affected ConceptMaps:**
-- ConceptMapActivityToOMOP, ConceptMapCGMToOMOP, ConceptMapHRVToOMOP
-- ConceptMapSleepToOMOP, ConceptMapNutritionToOMOP
-
-**Cause:** The OHDSI Athena CodeSystem is declared with `content = not-present` because the full OMOP vocabulary (~5M concepts) cannot be included in the IG. Only the specific Concept IDs used in mappings are referenced.
-
-**Impact:** Expected behavior. The ConceptMaps correctly reference OHDSI Concept IDs validated against the Athena vocabulary browser.
-
-**OCL mitigation:** Import the subset of OHDSI Concept IDs used in ConceptMaps into OCL as a CodeSystem with `content = complete`. OCL has native OHDSI/OMOP integration. Estimated elimination: **12 warnings**.
-
-**ETL contribution:** The HEADS ETL pipeline (FHIR→OMOP step) validates these Concept IDs against the actual OMOP CDM, providing runtime verification.
-
----
-
-### Category 5: ConceptMap Vendor API URLs (10 warnings)
-
-**Warning Messages:**
-```
-Cannot find a definition for the URL 'https://developer.garmin.com/health-api'
-Source CodeSystem does not have all content (content = not-present)
-```
-
-**Affected vendors:** Apple HealthKit, Fitbit, Garmin, Polar, Oura
-
-**Cause:** Vendor API CodeSystems are declared as stub CodeSystems (content = not-present) because these are proprietary systems whose full code lists cannot be published.
-
-**Impact:** Expected behavior. The ConceptMaps correctly map vendor-specific codes to LOINC/SNOMED standard terminologies.
-
-**OCL mitigation:** Host the vendor stub CodeSystems in OCL with the specific codes used in mappings (content = fragment). Estimated elimination: **10 warnings**.
-
-**ETL contribution:** The HEADS ETL pipeline extracts data from HealthKit, validating that all vendor codes in ConceptMaps correspond to real API identifiers. This provides runtime evidence that the mappings are correct.
-
----
-
-### Category 6: LGPD Regulatory Artifacts (Phase 1–3) (~80 warnings)
-
-LGPD implementation (10 GAPs, completed 2026-03-16) introduced 4 new profiles, 5 ValueSets, 2 extensions, and ~35 codes. Many of these generate "no examples" warnings. As of 2026-03-18, examples exist for the 4 Phase 2+3 profiles (OrganizationDataController, PractitionerRoleDPO, TaskDataSubjectRequest, CommunicationSecurityIncident), which should reduce warnings when CI rebuilds.
-
-**Impact:** Expected. New regulatory profiles require examples for full validation; remaining warnings are for ValueSets and extensions without dedicated example resources.
-
----
-
-### Category 7: Other Warnings (46 warnings)
-
-| Sub-category | Count | Description | Fixable |
-|-------------|-------|-------------|---------|
-| Bundle fullUrl mismatches | 5 | Reference resolution in Bundle example | Fixed (2026-01-27) |
-| OID/URN identifiers | 4 | Example identifier systems (urn:oid) | Expected |
-| Consent policy URLs | 3 | Legislative URLs (GDPR, HIPAA, LGPD) | Expected |
-| CQL language | 2 | CQL expressions not validated by IG Publisher | Expected |
-| Display name mismatch | 1 | diet-quality-score display text | **Fixed (2026-01-29)** |
-| pin-canonicals | 1 | plan-definition-type version ambiguity | **Fixed (2026-01-29)** |
-| ICD-10 content | 1 | ICD-10-CM not fully populated | Expected |
-| VendorToOpenEHR URIs | 8 | Vendor + CKM source/target URIs | OCL mitigable |
-| task-output-type CodeSystem | 1 | Non-standard CodeSystem URL | Fixed (2026-01-27) |
-
----
-
-## OCL and ETL Mitigation Strategy
-
-### What OCL (Open Concept Lab) can resolve
-
-| Warning Category | Current | After OCL | Eliminated |
-|-----------------|---------|-----------|------------|
-| openEHR archetype URLs | 24 | 0 | **24** |
-| OHDSI/Athena content | 12 | 0 | **12** |
-| Vendor API URLs | 10 | 0 | **10** |
-| **Total** | **46** | **0** | **46 (31%)** |
-
-**How:** Configure OCL as an additional terminology server (`tx` parameter in `sushi-config.yaml`), hosting:
-- openEHR archetype identifier CodeSystem
-- OHDSI Concept ID subset CodeSystem (using OCL's native OMOP integration)
-- Vendor API stub CodeSystems with mapped codes
-
-### What the HEADS ETL pipeline validates
-
-The ETL pipeline provides **runtime verification** (not build-time elimination) for:
-- Vendor code mappings (HealthKit → LOINC): confirms ConceptMap accuracy
-- OHDSI Concept ID validity: confirms OMOP CDM compatibility
-- End-to-end data flow: iPhone/Watch → FHIR → OMOP CDM
-
-### What neither can resolve
-
-| Category | Count | Reason |
-|----------|-------|--------|
-| IPS upstream errors | 28 | Bug in `hl7.fhir.uv.ips#2.0.0-ballot` |
-| IPS upstream warnings | 42 | Same root cause as errors |
-| UCUM annotations | 14 | Valid UCUM, best-practice warning |
-| OID/URN/Policy URLs | 7 | Expected for example identifiers |
-| CQL validation | 2 | IG Publisher limitation |
-| **Total irreducible** | **93** | |
-
----
-
-## Summary
-
-| Issue Category | Errors | Warnings | Total | Status |
-|---------------|--------|----------|-------|--------|
-| IPS 2.0.0 upstream (note, pkp-2) | 23 | 42 | 65 | Awaiting HL7 update |
-| ConceptMap external systems | 0 | ~40 | ~40 | **OCL mitigable** |
-| LGPD regulatory artifacts | 0 | ~60 | ~60 | Expected (Phase 1–3, examples added) |
-| UCUM annotations | 0 | ~13 | ~13 | Expected (valid UCUM) |
-| Pinned versions | 0 | ~30 | ~30 | Informational |
-| Other expected warnings | 0 | ~21 | ~21 | Expected behavior |
-| **Total** | **23** | **~206** | **~229** | |
-| *Suppressed* | *0* | *30* | *30* | *ignoreWarnings.txt* |
-
-**ConceptMap FHIR↔openEHR (resolved 2026-03-18):** Previously 21 structural errors from element-path-as-code validation. Fixed by removing `group.source` declarations (FHIR element paths are not CodeSystem codes). ConceptMaps retain `group.target` for openEHR archetype IDs.
-
-**ICD-11 CodeSystem (resolved 2026-03-25):** ICD-11 is not available on tx.fhir.org. A fragment CodeSystem with `^url = http://id.who.int/icd/release/11/mms` and `content = #fragment` caused 57 validation errors because the IG Publisher could not associate the WHO URL with the SUSHI-generated canonical URL. The `ignoreWarnings.txt` file cannot suppress errors (only warnings), per [HL7 issue #470](https://github.com/HL7/fhir-ig-publisher/issues/470). Resolution: republish 34 ICD-11 codes under the IG namespace (`ICD11LifestyleMedicineCS`, `content = #complete`). This adds a 15th CodeSystem that will be removed when tx.fhir.org adds ICD-11 support.
-
-**ICD-11 CodeSystem (update 2026-09-11):** tx.fhir.org now serves ICD-11 MMS (release 2026-01). The republished CodeSystem is retained by design so that validation never depends on a terminology server; its 46 codes were re-verified on 2026-09-11 against WHO ICD-11 MMS and tx.fhir.org, and the 2026-03 edition's 11 non-existent codes and 16 wrong titles were corrected (see ICD-11 Integration → Correction of 2026-09-11).
-
-**Projected after OCL integration:** 23 errors (IPS only), ~160 warnings (~22% reduction from ~200)
-
-These issues do not prevent the IG from being used in production. All FHIR profiles, extensions, and examples validate correctly against their defined constraints.
-
----
-
-## Upstream Contribution Strategy
-
-### Version Testing (2026-02-07)
-
-| Version | Errors | Warnings | Result |
-|---------|--------|----------|--------|
-| IG Publisher 2.0.28 + SUSHI 3.16.5 | 28 | 153 | Baseline |
-| IG Publisher 2.1.0 + SUSHI 3.17.0 | 28 | **145** | -8 warnings |
-
-**Conclusion**: Updating tools reduces warnings but does not fix IPS upstream errors.
-
-### GitHub Issues Prepared
-
-1. **HL7/fhir-ips**: Build errors when deriving from Composition-uv-ips
-   - `note|5.3.0-ballot-tc1` extension not published
-   - `pkp-2` constraint broken links
-
-2. **HL7/fhir-ig-publisher**: Constraint links render as `?pkp-2?` pointing to unknown.html
-
-### Resolution Timeline
-
-| Date | Action |
-|------|--------|
-| 2026-02-07 | Issues prepared, version testing complete |
-| 2026-02-08 | Submit issues to GitHub |
-| 2026-02-15 | Follow-up if no response |
-| 2026-02-28 | PhD defense (use workaround if not resolved) |
-
----
-
-*Last updated: 2026-03-25*
-*Build: IG Publisher v2.2.3+ (latest), SUSHI 3.18.1*
-*iOS Lifestyle Medicine IG v0.2.0*
-*ICD-11 Fragment: Restored with special-url for local validation (2026-03-25)*
-*Upstream Issues: Prepared for submission to HL7/fhir-ips and HL7/fhir-ig-publisher*
+This page states what the current build reports, what is deliberately suppressed and why, what the IG knowingly leaves open, and what was resolved in earlier releases. Numbers below are taken from the release build's `qa.txt`; the same build can be reproduced with the commands in the README's Quick Start.
+
+## Build status — v0.5.0 (2026-09-16)
+
+| Metric | Value |
+|---|---|
+| Errors | **0** (zero since v0.4.1, 2026-06-01) |
+| Warnings | **223** — a single advisory class, see below |
+| Information | 13,221 |
+| Broken links | 0 |
+| Toolchain | IG Publisher 2.2.10 · SUSHI 3.18.1 · FHIR 4.0.1 (the CI builds with the latest IG Publisher release) |
+
+## The 223 warnings: one advisory class, not suppressed
+
+Every one of the 223 warnings is the same message: *"The resource … should have an OID assigned to cater for possible use with OID based terminology systems"* — one per CodeSystem (19) and one per ValueSet (204), which is why the count equals the number of terminology resources. OIDs are optional identifiers in FHIR; assigning 223 of them requires an OID arc registered to the publisher, which is a governance decision outside a release. The warning is therefore left visible rather than suppressed, and the count is expected to move only when terminology resources are added or removed.
+
+## Suppressed warnings (`input/ignoreWarnings.txt`, 98 active lines)
+
+Suppressions are reserved for messages the IG Publisher emits about things that are correct by design; genuine defects are fixed at the FSH source. Each block in the file carries its justification. Summary by block:
+
+| Block | What is suppressed | Why it is correct by design |
+|---|---|---|
+| Upstream IPS 2.0.x references | profile/type resolution, `pkp-2` hyperlink and reference messages inherited from the IPS dependency | historical (see *Resolved*); the entries are kept so that older builds remain reproducible |
+| Example-instance OIDs | "OID not found" for the national OIDs used in example identifiers | the OIDs are real national identifiers used on purpose in examples; replacing them would reintroduce four "resource not found" errors |
+| Cross-paradigm ConceptMaps (openEHR, OMOP) | "no definition found for URL" for archetype identifiers and Athena concept targets; group source/target scope messages | openEHR archetype identifiers and OMOP concept identifiers are not FHIR CodeSystems; these maps document element-path and concept correspondences |
+| UCUM annotations | annotated units such as `{score}`, `{rpm}`, `{spm}`, `{pack-years}`, `{MET-min}` | annotations are the UCUM-recommended way to carry unitless or composite lifestyle metrics |
+| Vendor API CodeSystems | reverse-DNS identifiers and REST endpoints used as CodeSystem URIs; "not-present" content of vendor stubs | vendor APIs are not FHIR terminology servers; the stubs exist so that vendor codes can be mapped, not expanded |
+| Legal and regulatory URLs | ANPD, CFM and other legal-framework URLs referenced by regulatory profiles | these are citations of legal texts, not FHIR endpoints |
+| SMART OAuth, pipeline and namespace URIs | endpoint URIs in capability statements, error-reporting endpoints, `identifier.system` namespaces | endpoints and namespaces are identifiers, not resolvable definitions |
+| CQL expression language | `text/cql-identifier` not supported for validation | valid CQL media type; the libraries are external documentation pointers (see *Open limitations*) |
+| ICD-10-CM on the terminology server | incomplete content on `tx.fhir.org` | external-system limitation; ICD-10-CM codes are used as references only |
+| Observation performer best practice | "no performer" advisories on wearable observations | the data source is a device, recorded in `device`, not a practitioner |
+| ObservationInterpretation version mismatch | HL7 Terminology v7.1.0 packages v4.0.0 while values reference v3.0.0 | upstream inconsistency in the terminology package |
+| Advisories accepted as-is | inactive SNOMED concepts used intentionally in examples; a `Reference(PractitionerRole)` extension type; fixed-value CodeableConcepts in consent examples; pinned dependency versions; extensions demonstrated only inside composite bundles; a batch-bundle `PUT`-by-id resolution heuristic | each is an intentional modelling or example choice, documented in the file next to the suppression |
+
+## Open limitations (known, not defects of the build)
+
+- **No hosted site yet.** The canonical URL `https://2rdoc.pt/ig/ios-lifestyle-medicine` is the IG's identifier; the rendered site is not deployed there. The versioned GitHub releases (`package.tgz`) are the distribution; see the [roadmap](implementation-scope-and-roadmap.html).
+- **CQL libraries are external and not executed.** `ClinicalImpression.protocol` references `urn:cql:library:` URIs registered as thin `Library` resources; no CQL engine runs in this project. Likewise the GDL2 bridge is documented without an engine.
+- **One profile has no example.** `ConsumerECGObservation` is the abstract parent of the ECG profiles; each of its five child profiles has an example.
+- **Two bindings are annotated as pending review in the FSH** (a distance→steps element in the vendor-to-LOINC ConceptMap, and two components of `ReproductiveObservation`); they carry inline notes rather than silent approximations. See the [terminology verification page](terminology-verification.html).
+- **ICD-11 codes are republished under the IG namespace by design** (a complete, verified fragment) so that the build never depends on the availability of an external terminology server; the ledger records the owner-source verification of each code.
+- **An external terminology router is specification only.** The interfaces, extensions and CodeSystems that would carry an agent's outputs are specified; no implementation is distributed or required by this IG.
+
+## Resolved in earlier releases
+
+| Issue | Releases affected | Resolution |
+|---|---|---|
+| 23 errors inherited from the IPS 2.0.0 dependency (`note\|5.3.0-ballot-tc1` referenced an unpublished extensions package) | v0.2.x – v0.3.x (March–May 2026) | resolved upstream when HL7 published `hl7.fhir.uv.extensions.r4` 5.3.0; the IG's suppressions for that era remain for reproducibility |
+| 21 errors from openEHR/OMOP ConceptMaps declaring non-FHIR systems as `group.source`/`group.target` | v0.3.0 (March 2026) | structural maps now carry the identifiers as documented targets without CodeSystem semantics |
+| 5 residual errors (Consent terminology resolved locally; two thin CQL `Library` resources for unresolved protocol references) | v0.4.1 (June 2026) | fixed at source; errors have been 0 since |
+| 34-code ICD-11 fragment in which a substantial share of the codes were absent from the WHO MMS linearization or carried another concept's title | v0.3.x – v0.4.8 | rebuilt in v0.5.0 as a 46-concept fragment verified against the WHO linearization and `tx.fhir.org` (see the 0.5.0 change log) |
+| Bindings pointing at valid codes with the wrong meaning (nutrition, social-history, sleep-quality value sets) | up to v0.4.8 | corrected or retired in v0.5.0 with the terminology ledger as the record |
+
+## Reporting
+
+Open an issue on the [GitHub repository](https://github.com/RicardoLSantos/shorthand/issues). Please quote the IG version and the exact `qa.txt` line.
