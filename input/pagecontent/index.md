@@ -1,10 +1,10 @@
-# iOS Health App Lifestyle Medicine Implementation Guide
+# iOS Lifestyle Medicine Implementation Guide
 
 ## Purpose
-This FHIR implementation guide defines how to extract and represent health and lifestyle data from the iOS Health App to support lifestyle medicine interventions. The IG implements the FHIRconnect methodology (Kohler et al., 2025) for seamless integration between openEHR archetypes and FHIR resources, achieving 65.8% mapping reuse through a triple-layered transformation architecture.
+This FHIR implementation guide defines how to represent consumer-wearable health and lifestyle data in FHIR R4 to support lifestyle-medicine interventions across vendor ecosystems. The iOS Health App export is the origin of the proof-of-concept adapter, not the scope of the IG: profiles are vendor-agnostic and vendor specifics are confined to ConceptMaps and stub CodeSystems. The IG adopts the FHIRconnect architectural pattern (Kohler et al., 2025) for integration between openEHR archetypes and FHIR resources, achieving 75% weighted mapping reuse through a triple-layered transformation architecture (published computation: [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)).
 
 ## Scope
-The implementation guide covers the following data domains from iOS Health App:
+The implementation guide covers the following consumer-wearable data domains (the iOS Health App export was the proof-of-concept source):
 
 ### Vital Signs
 - Basic vital signs (heart rate, blood pressure, temperature, etc.)
@@ -110,7 +110,7 @@ This IG implements the **FHIRconnect triple-layer architecture** for optimal int
 - Dual-coding strategy for 86% terminology gap
 
 ### Key Achievements
-- **65.8% overall mapping reuse** (exceeds HiGHmed's 65% benchmark)
+- **75% weighted mapping reuse** across the layered architecture (the published computation, [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465); an earlier 65.8% figure, computed in January 2026 on the v0.2.x map set, is superseded)
 - **29 ConceptMaps** operationalize consumer health domains plus cross-paradigm interoperability
 - **7+ vendor support** through unified architecture
 - **Migration path** for evolving terminology standards
@@ -126,8 +126,9 @@ This IG aligns with and extends several HL7 FHIR Implementation Guides:
 | IG | Version | Purpose |
 |----|---------|---------|
 | [HL7 Physical Activity IG](http://hl7.org/fhir/us/physical-activity) | 1.0.0 | Steps, calories, Exercise Vital Sign (EVS) profiles |
-| [Personal Health Device IG](http://hl7.org/fhir/uv/phd) | 1.0.0 | Device metadata, IEEE 11073 mapping patterns |
-| [International Patient Summary](http://hl7.org/fhir/uv/ips) | 2.0.0 | Cross-border patient summary interoperability |
+| [Personal Health Device IG](http://hl7.org/fhir/uv/phd) | 1.1.0 | Device metadata, IEEE 11073 mapping patterns |
+| [International Patient Summary](http://hl7.org/fhir/uv/ips) | 2.0.1 | Cross-border patient summary interoperability |
+| [Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata) | 2.0.0 | Population-level export (`Group/$export`, `BulkExportGroup`) |
 | [IHE Privacy Consent on FHIR](https://profiles.ihe.net/ITI/PCF) | 1.1.0 | Consent management patterns |
 
 ### Related Standards (Informative)
@@ -155,10 +156,10 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 |--------|:-----:|---------|
 | **Domains covered** | 11 | Vital signs, sleep, activity, nutrition, mindfulness, stress, environmental, social, reproductive, ECG, body metrics |
 | **Vendor support** | 7+ | Apple HealthKit, Fitbit, Garmin, Oura, Polar, Withings, generic |
-| **Custom codes** | 1,115 | Each with documented LOINC/SNOMED migration triggers |
+| **Custom codes** | 1,211 | Each with documented LOINC/SNOMED migration triggers |
 | **Terminology gap documented** | 86% | Of consumer wearable metrics lack standard codes |
 | **ConceptMaps** | 29 | Covering LOINC, SNOMED CT, OMOP CDM, openEHR |
-| **Example instances** | 240 | 100% profile coverage (2.8× ratio) |
+| **Example instances** | 191 | 102 of 103 profiles have at least one example (the abstract `ConsumerECGObservation` parent has none) |
 | **Regulatory frameworks** | 2 | LGPD (Brazil), CFM 2.454/2026 (AI in medicine) |
 | **Estimated dev time saved** | 180h | Based on implementation effort analysis vs. building from scratch |
 
@@ -166,7 +167,7 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 
 - **Level 1 (single domain)**: 1-7 profiles, low effort — first Observation in <30 minutes
 - **Level 2 (multi-domain)**: 10-25 profiles, medium effort
-- **Level 3 (full compliance)**: 85 profiles, all ConceptMaps, regulatory profiles
+- **Level 3 (full compliance)**: 103 profiles, all ConceptMaps, regulatory profiles
 
 See [Getting Started](getting-started.html) and [Conformance Requirements](conformance.html) for details.
 
@@ -176,7 +177,7 @@ See [Getting Started](getting-started.html) and [Conformance Requirements](confo
 |---------|:-------:|:------:|:-----:|:------:|
 | Domains | 11 | 1 (glucose) | 1 (activity) | Device metadata |
 | Vendors | 7+ | CGM devices | Generic | IEEE 11073 |
-| Custom codes | 1,115 | 0 | ~30 | 0 |
+| Custom codes | 1,211 | 0 | ~30 | 0 |
 | ConceptMaps | 29 | 0 | 0 | 0 |
 | Regulatory | LGPD + CFM | None | None | None |
 
