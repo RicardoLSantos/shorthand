@@ -16,7 +16,7 @@ Usage: #definition
 * title = "Vendor Proprietary Codes to LOINC Mapping"
 * status = #active
 * experimental = false
-* date = "2024-11-21"
+* date = "2026-09-16"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * description = "Operational ConceptMap for translating proprietary wearable device codes to LOINC standard terminology. Based on gray literature analysis of 75 sources documenting 11 major vendors with 0% LOINC adoption rate."

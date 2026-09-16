@@ -32,7 +32,7 @@ Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 * ^status = #active
 * ^experimental = false
 * ^version = "1.0.0"
-* ^date = "2026-02-27"
+* ^date = "2026-09-16"
 
 // ============================================================================
 // EXERCISE INTERVENTIONS

@@ -86,7 +86,7 @@ Verified against tx.fhir.org 2026-02-19.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-02-19"
+* ^date = "2026-09-16"
 * ^publisher = "FMUP/2RDoc"
 
 * http://snomed.info/sct#425405005 "Excellent (qualifier value)"
@@ -111,7 +111,7 @@ Verified against tx.fhir.org 2026-02-19.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-02-19"
+* ^date = "2026-09-16"
 * ^publisher = "FMUP/2RDoc"
 
 * http://snomed.info/sct#385633008 "Improving (qualifier value)"

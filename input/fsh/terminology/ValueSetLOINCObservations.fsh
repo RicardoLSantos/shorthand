@@ -10,7 +10,7 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * ^status = #active
 * ^experimental = false
 * ^version = "1.0.0"
-* ^date = "2024-11-21"
+* ^date = "2026-09-16"
 
 // ============================================================================
 // HEART RATE VARIABILITY

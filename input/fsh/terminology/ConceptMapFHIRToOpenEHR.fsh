@@ -17,7 +17,7 @@ Usage: #definition
 * title = "FHIR Resource to openEHR Archetype Mapping"
 * status = #active
 * experimental = false
-* date = "2025-11-25"
+* date = "2026-09-16"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email

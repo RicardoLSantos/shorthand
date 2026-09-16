@@ -32,7 +32,7 @@ Usage: #definition
 
 * status = #active
 * experimental = false
-* date = "2026-01-16"
+* date = "2026-09-16"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapSocialToLOINC"
 // ARCHITECTURE NOTE (2026-01-16): sourceUri/targetCanonical REMOVED

@@ -19,7 +19,7 @@ Usage: #definition
 * title = "Heart Rate Variability to LOINC Mapping"
 * status = #active
 * experimental = false
-* date = "2024-11-21"
+* date = "2026-09-16"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * description = "Operational ConceptMap for HRV terminology translation. Enables runtime $translate operations for semantic interoperability between custom HRV codes and LOINC standard terminology."

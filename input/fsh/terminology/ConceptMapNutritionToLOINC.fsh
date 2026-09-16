@@ -33,7 +33,7 @@ Usage: #definition
 
 * status = #active
 * experimental = false
-* date = "2026-01-15"
+* date = "2026-09-16"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapNutritionToLOINC"
 // ConceptMap.source MUST be a ValueSet per FHIR R4 (IG Publisher 2.0.28+)

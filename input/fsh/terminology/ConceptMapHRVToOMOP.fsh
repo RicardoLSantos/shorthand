@@ -18,7 +18,7 @@ Usage: #definition
 * title = "HRV LOINC to OMOP CDM Mapping"
 * status = #active
 * experimental = false
-* date = "2025-11-28"
+* date = "2026-09-16"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
