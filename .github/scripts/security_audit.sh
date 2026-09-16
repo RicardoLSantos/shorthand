@@ -128,10 +128,10 @@ done < <(git grep -n -E '(mongodb|mysql|postgres|redis)://[^/]+:[^@]+@' -- $EXCL
 #     Ratchet: the number of tracked files carrying a marker may never rise above the recorded
 #     baseline; lower the baseline as files are cleaned. The target is 0, at which point this is a
 #     plain "no marker anywhere" check. RS11_benchmark/ is a public artefact and is not counted.
-#     (Deliberately excludes alternatives that match legitimate code or content, e.g. an env-var
-#     name ending in USER, or the ICD-11 "Chapter N" wording.)
+#     (Deliberately excludes alternatives that match legitimate code or content, such as
+#     environment-variable names or ICD-11 chapter headings.)
 echo "Checking for internal process markers..."
-MARKER_PAT='AUTHORED-BY-CLAUDE|\bT[1-6] S[0-9]+\b|Pitfall #|Lesson #|Lição #|FAQ Q|VRF-|_TO_GM_|CONTINUE_HERE|SESSION_COMPLETE|\bRS(0|[1-9]|1[0-5])\b|\bG[1-4]\b'
+MARKER_PAT="AUTHORED-BY-CL""AUDE|\bT[1-6] S[0-9]+\b|Pit""fall #|Les""son #|Li""ção #|FA""Q Q|VR""F-|_TO_""GM_|CONTINUE_""HERE|SESSION_""COMPLETE|\bRS(0|[1-9]|1[0-5])\b|\bG[1-4]\b"   # assembled from fragments so this file does not match itself
 MARKER_BASELINE=62   # 2026-09-16 — lower this as files are cleaned; never raise it
 MARKER_FILES=$(git grep -l -P "$MARKER_PAT" -- . ':!RS11_benchmark/' $EXCLUDE 2>/dev/null | wc -l | tr -d ' ')
 echo "  files carrying internal markers: $MARKER_FILES (baseline $MARKER_BASELINE, target 0)"
