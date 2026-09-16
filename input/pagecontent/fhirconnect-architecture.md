@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Implementation Guide adopts the FHIRconnect methodology (Kohler et al., 2025) for seamless integration between openEHR archetypes and FHIR resources. FHIRconnect provides a triple-layered transformation architecture that enables 65% mapping reuse across different clinical contexts, significantly reducing implementation complexity for wearable device data integration.
+This Implementation Guide adopts the FHIRconnect architectural pattern (Kohler et al., 2025) for seamless integration between openEHR archetypes and FHIR resources. FHIRconnect provides a triple-layered transformation architecture that enables 65% mapping reuse across different clinical contexts, significantly reducing implementation complexity for wearable device data integration.
 
 ## Triple-Layer Architecture
 
@@ -34,7 +34,7 @@ The FHIRconnect approach implements three distinct mapping layers, each addressi
 
 ## ConceptMap Implementation
 
-This IG includes 10 operational ConceptMaps that implement FHIRconnect principles:
+This IG includes 29 ConceptMaps. The ten domain-level maps below implement the FHIRconnect principles directly; the remaining maps are the openEHR/OMOP cross-paradigm bridges and the vendor-terminology maps (see the [terminology catalog](terminology-vocabularies-catalog.html)):
 
 ### Core Vital Signs Mappings
 1. **ConceptMapHRVToLOINC**: Maps HRV metrics to LOINC codes with migration path
@@ -84,18 +84,20 @@ This IG includes 10 operational ConceptMaps that implement FHIRconnect principle
 
 ## Mapping Reuse Metrics
 
-Following FHIRconnect's empirical validation with 21 million patients across 38 German hospitals:
+FHIRconnect (Kohler et al., 2025) reports an *expected* mapping-reuse rate of about 65%, derived from the roughly 35% extension share observed in FHIR implementation guides; its proof-of-concept mapped the German Core Dataset — whose data model standardises data from over 21 million patients across 38 university hospitals — on sample data. Those figures describe the pattern's expected economics, not a measurement of this IG.
 
-### This IG Achievement Metrics:
-- **Model-mappings reuse**: 100% (all use base FHIR Observation)
-- **Extension-mappings reuse**: 67.4% (shared across device vendors)
-- **Context-mappings reuse**: 45% (terminology overlap between domains)
-- **Overall mapping efficiency**: 65.8% reuse rate
+### This IG (published computation)
+Measured on the released map set and reported in [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465):
+- **Model layer**: 100% reusable (vendor-agnostic FHIR profiles)
+- **Extension layer**: 67% reusable (domain extensions for HRV measurement methods, activity metrics and sleep staging)
+- **Context layer**: vendor-specific (ConceptMaps translating vendor API terminology to the profiles)
+- **Overall**: **75% weighted reuse** across the seven vendor ecosystems analysed in the article
 
-### Comparison with FHIRconnect Original:
-- Original HiGHmed Consortium: 65% reuse
-- This IG (Lifestyle Medicine): 65.8% reuse
-- **Validation**: Confirms FHIRconnect efficiency for novel domain
+An earlier overall figure of 65.8% (100% / 67.4% / 45% by layer), computed in January 2026 on the v0.2.x map set, is superseded by the published weighted computation and is kept here only as history.
+
+### Comparison with FHIRconnect
+- FHIRconnect: ~65% *expected* reuse (a derived expectation, not a measurement)
+- This IG: 75% *weighted* reuse (measured on the published map set)
 
 ## Implementation Benefits
 
@@ -162,7 +164,7 @@ This implementation fulfills all FHIRconnect requirements:
 
 ✅ **Model now, map later**: Archetypes designed before complete terminology
 ✅ **Triple-layer separation**: Clear distinction between mapping concerns
-✅ **Reuse quantification**: Measured 65.8% mapping reuse
+✅ **Reuse quantification**: 75% weighted mapping reuse (published computation)
 ✅ **Vendor neutrality**: Single model supports 7+ device vendors
 ✅ **Migration path**: Built-in terminology evolution support
 ✅ **Operational deployment**: ConceptMaps enable runtime $translate
