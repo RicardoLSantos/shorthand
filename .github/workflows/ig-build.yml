@@ -46,6 +46,9 @@ jobs:
       - name: Run SUSHI
         run: sushi .
 
+      - name: Check README artefact counts against the FSH sources
+        run: bash .github/scripts/ig_counts.sh --check
+
   # Job 2: Full IG Publisher build (main + PRs only)
   ig-build:
     runs-on: ubuntu-latest

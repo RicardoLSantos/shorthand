@@ -1,10 +1,10 @@
 # iOS Lifestyle Medicine FHIR Implementation Guide
 
 [![FHIR R4](https://img.shields.io/badge/FHIR-R4-blue)](https://hl7.org/fhir/R4/)
-[![IG Publisher](https://img.shields.io/badge/IG%20Publisher-2.2.7-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+[![IG Publisher](https://img.shields.io/badge/IG%20Publisher-2.2.10-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey)](LICENSE)
 
-**Version**: 0.4.5
+**Version**: 0.5.0 (released 2026-09-16)
 **Status**: STU1 Draft
 **Publisher**: FMUP (Faculty of Medicine, University of Porto)
 **Canonical**: `https://2rdoc.pt/ig/ios-lifestyle-medicine`
@@ -17,13 +17,13 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 
 ### Key Features
 
-- **96 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
+- **103 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
 - **77 Extensions** for measurement context, provenance, and AI/CDSS metadata
 - **19 CodeSystems** with custom codes for HRV/lifestyle metrics that lack LOINC/SNOMED (the documented terminology gap)
 - **204 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
 - **29 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
-- **265 Example Instances** including round-trip validation bundles
-- **661 total artefacts** (FHIR R4, IG Publisher 2.2.7, err=0 / warn=0 / 0 broken links)
+- **279 Instances** (191 examples, 29 ConceptMaps, round-trip validation bundles)
+- **682 total artefacts** (FHIR R4 4.0.1; v0.5.0 built with IG Publisher 2.2.10: err=0 / warn=223 — one advisory class, see [Known Issues](input/pagecontent/known-issues.md) / 0 broken links)
 - **SMART on FHIR + CDS Hooks 2.0 + Bulk Data** + **CQL/GDL2** clinical decision support
 - **openEHR + OMOP** round-trip transformations (ConceptMaps)
 
@@ -45,7 +45,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.4.5<br/>96 Profiles | 19 CS | 204 VS"]
+        FHIRIG["FHIR IG v0.5.0<br/>103 Profiles | 19 CS | 204 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -61,8 +61,8 @@ flowchart TB
 
         subgraph TG4["Clinical Decision Support"]
             direction LR
-            CQL["CQL Engine ✅"]
-            GDL2["GDL2 ✅"]
+            CQL["CQL Library<br/>(authored, not executed)"]
+            GDL2["GDL2 guideline<br/>(bridge pattern, no engine)"]
             CDSHOOKS["CDS Hooks 🔴"]
         end
     end
@@ -75,8 +75,8 @@ flowchart TB
     classDef partial fill:#fff8e6,stroke:#cc9900,stroke-width:2px,color:#333
     classDef todo fill:#ffeaea,stroke:#cc6666,stroke-width:2px,color:#333
 
-    class APPLE,FHIRIG,TXFHIR,OMOP,CQL,GDL2 done
-    class OCL,OPENEHR partial
+    class APPLE,FHIRIG,TXFHIR,OMOP done
+    class OCL,OPENEHR,CQL,GDL2 partial
     class FITBIT,GARMIN,OURA,POLAR,CDSHOOKS todo
 ```
 
@@ -117,22 +117,22 @@ sequenceDiagram
 
 | Category | Count | Description |
 |----------|:-----:|-------------|
-| **Profiles** | 96 | Observation, Device, Patient, vital-signs, AI/CDSS profiles |
+| **Profiles** | 103 | Observation, Device, Patient, vital-signs, AI/CDSS profiles |
 | **Extensions** | 77 | Custom FHIR extensions |
 | **CodeSystems** | 19 | Content + external-stub CodeSystems |
 | **ValueSets** | 204 | LOINC, SNOMED CT, custom bindings |
-| **Instances** | 265 | Examples, ConceptMaps (29), round-trip validation bundles |
-| **Total** | **661** | All artefacts (v0.4.5, FHIR R4) |
+| **Instances** | 279 | 191 examples, 29 ConceptMaps, round-trip validation bundles |
+| **Total** | **682** | All artefacts (v0.5.0, FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
 
-### Build Validation (2026-06-13, v0.4.3 release)
+### Build Validation (2026-09-16, v0.5.0 release)
 
 | Metric | Value | Notes |
 |--------|:-----:|-------|
-| Errors | 0 | |
-| Warnings | 0 | |
+| Errors | 0 | since v0.4.1 |
+| Warnings | 223 | a single advisory class (URL/OID definitions the validator cannot resolve for cross-standard mappings); the active suppressions are listed on the [Known Issues](input/pagecontent/known-issues.md) page |
+| Information | 13,221 | |
 | Broken Links | 0 | |
-| HTML Pages | 8,218 | |
-| Links Checked | 3,087,827 | 100% valid |
+| Toolchain | IG Publisher 2.2.10 · SUSHI 3.18.1 · FHIR 4.0.1 | the CI builds with the latest publisher |
 
 ---
 
@@ -221,22 +221,24 @@ flowchart LR
 
 ### Prerequisites
 
-- [SUSHI](https://fshschool.org/docs/sushi/) v3.x
-- [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) v2.2.7
-- Java 17+
+- [SUSHI](https://fshschool.org/docs/sushi/) 3.x (v0.5.0 was built with 3.18.1)
+- [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) (v0.5.0 was built with 2.2.10; the CI downloads the latest release)
+- Java 17 or later, and Jekyll (`gem install jekyll`) for the HTML rendering
 
 ### Build
 
 ```bash
 # Clone repository
 git clone https://github.com/RicardoLSantos/shorthand.git
-cd iOS_Lifestyle_Medicine_HEADS2_FMUP
+cd shorthand
 
-# Validate FSH
+# Validate FSH (fast; this is what the CI runs first)
 sushi .
 
-# Full IG build
-./_genonce.sh
+# Full IG build — the same two steps the CI runs
+mkdir -p input-cache
+curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o input-cache/publisher.jar
+java -Xmx4g -jar input-cache/publisher.jar -ig ig.ini
 ```
 
 ### Output
@@ -245,31 +247,40 @@ After build, the IG is available at:
 - `output/index.html` - Main IG page
 - `output/qa.html` - Quality Assurance report
 
+(The HL7 `_genonce.sh` / `_updatePublisher.sh` wrapper scripts are not tracked in this repository; the two commands above are equivalent.)
+
 ---
 
 ## Documentation
 
 | Resource | Link |
 |----------|------|
-| **IG Index** | [output/index.html](output/index.html) |
-| **QA Report** | [output/qa.html](output/qa.html) |
-| **Full Package** | [GitHub Release v0.4.5](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.4.5) |
+| **IG Index** | `output/index.html` after a local build (no hosted site yet — see the [roadmap](input/pagecontent/implementation-scope-and-roadmap.md)) |
+| **QA Report** | `output/qa.html` after a local build |
+| **Full Package** | [GitHub Release v0.5.0](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.5.0) (`package.tgz`, version 0.5.0) |
+| **Change log** | [CHANGELOG.md](CHANGELOG.md) (mirrored on the [Changes](input/pagecontent/changes.md) page) |
 
 ---
 
 ## Project Structure
 
 ```
-iOS_Lifestyle_Medicine_HEADS2_FMUP/
+shorthand/
 ├── input/
-│   ├── fsh/
-│   │   ├── profiles/          # 96 FHIR profiles
-│   │   ├── extensions/        # 77 extensions
-│   │   ├── terminology/       # CodeSystems, ValueSets, ConceptMaps
-│   │   └── aliases.fsh        # Common aliases
+│   ├── fsh/                   # 29 directories; the main ones:
+│   │   ├── profiles/          #   103 FHIR profiles
+│   │   ├── extensions/        #   77 extensions
+│   │   ├── codesystems/, valuesets/, terminology/   # CodeSystems, ValueSets, ConceptMaps and external stubs
+│   │   ├── mappings/          #   openEHR `Mapping:` blocks
+│   │   ├── examples/          #   example instances
+│   │   └── aliases.fsh        #   common aliases
 │   ├── pagecontent/           # Narrative pages
+│   ├── includes/              # CDS Hooks cards and shared fragments
+│   ├── data/                  # terminology-verification-ledger.csv
 │   └── images/                # Figures and diagrams
-├── output/                    # Generated IG
+├── .github/workflows/         # CI: sushi-validate, ig-build, security audit
+├── RS11_benchmark/            # Reproducible terminology-RAG benchmark toolkit
+├── output/                    # Generated IG (local builds only; not tracked)
 ├── sushi-config.yaml          # SUSHI configuration
 └── ig.ini                     # IG Publisher config
 ```
@@ -288,17 +299,13 @@ iOS_Lifestyle_Medicine_HEADS2_FMUP/
 
 ## Standards Roadmap
 
-```mermaid
-gantt
-    title Standards Submission Timeline
-    dateFormat YYYY-MM
-    section LOINC
-        RMSSD/pNN50 Proposal    :2026-03, 2026-08
-    section openEHR
-        HRV Archetype to CKM    :2026-03, 2026-09
-    section HL7 FHIR
-        IG Ballot Process       :2026-07, 2026-10
-```
+Status as of v0.5.0 (2026-09-16) — details on the [Implementation Scope and Roadmap](input/pagecontent/implementation-scope-and-roadmap.md) page:
+
+| Track | Status | Interim mechanism |
+|-------|--------|-------------------|
+| LOINC submission (RMSSD, pNN50, LF/HF) | **Not submitted** | interim codes in `LifestyleMedicineTemporaryCS`, bridged to LOINC by `ConceptMapHRVToLOINC` (SDNN already has LOINC 80404-7) |
+| openEHR CKM | **Not submitted** — the archetypes are catalogued with their status relative to the published CKM (see the [archetype catalog](input/pagecontent/openehr-archetypes-catalog.md)) | five element-level `Mapping:` blocks on the profiles whose archetype was developed for this IG |
+| HL7 FHIR ballot | **Not started** | versioned GitHub releases (`package.tgz`) |
 
 ---
 
@@ -321,14 +328,25 @@ This work is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/
 
 ## Citation
 
+Please cite the published article (a `CITATION.cff` file is provided for the GitHub "Cite this repository" button):
+
 ```bibtex
-@software{santos2026ios,
-  author = {Santos, Ricardo Louren\c{c}o dos and Cruz-Correia, Ricardo Jo\~{a}o},
-  title = {An {HL7 FHIR} Implementation Guide for Lifestyle Medicine in Learning Health Systems},
-  year = {2026},
-  publisher = {RISE-Health, Universidade do Porto},
-  url = {https://github.com/RicardoLSantos/shorthand},
-  note = {Published: Int. J. Medical Informatics (2026), art. 106465}
+@article{lourencosantos2026fhirig,
+  author  = {Louren\c{c}o Santos, Ricardo and Cruz-Correia, Ricardo Jo\~{a}o},
+  title   = {An {HL7 FHIR}{\textregistered} {IG} for lifestyle medicine in learning health systems: Multi-vendor wearable interoperability with documented terminology gaps},
+  journal = {International Journal of Medical Informatics},
+  year    = {2026},
+  volume  = {217},
+  pages   = {106465},
+  doi     = {10.1016/j.ijmedinf.2026.106465}
+}
+
+@software{lourencosantos2026fhirig_repo,
+  author  = {Louren\c{c}o Santos, Ricardo and Cruz-Correia, Ricardo Jo\~{a}o},
+  title   = {{iOS} Lifestyle Medicine {FHIR} Implementation Guide},
+  version = {0.5.0},
+  year    = {2026},
+  url     = {https://github.com/RicardoLSantos/shorthand}
 }
 ```
 
@@ -350,7 +368,7 @@ We track anonymous clone statistics via GitHub Insights — if you're using the 
 This IG is actively developed as part of a PhD thesis at FMUP. To be notified of releases:
 
 1. Click **Watch** (top right) and select "Releases only"
-2. Or check the [RS11 RAG Benchmark](RS11_benchmark/) for our reproducible terminology validation toolkit
+2. Or check the [terminology-RAG benchmark](RS11_benchmark/) for our reproducible terminology validation toolkit
 
 ---
 
@@ -364,4 +382,4 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 
 ---
 
-*Last updated: 2026-07-02 (v0.4.5)*
+*Last updated: 2026-09-16 (v0.5.0)*
