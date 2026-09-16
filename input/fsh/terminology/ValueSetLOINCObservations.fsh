@@ -93,13 +93,11 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * http://loinc.org#9065-4 "Carbohydrate intake 24 hour"
 * http://loinc.org#9072-0 "Fat intake 24 hour"
 * http://loinc.org#9059-7 "Carbohydrate intake Estimated"
-* http://loinc.org#9055-5 "Fiber intake 24 hour" // 2026-09-15: this code is Calorie intake total 10 hour; LOINC has only 81133-1 (Estimated) and 81057-2 (Measured) for fiber intake 24 hour — replacement pending
-* http://loinc.org#9061-3 "Saturated fat intake 24 hour" // 2026-09-15: this code is Carbohydrate intake 1 hour; LOINC has only 81033-3 (Estimated) and 81136-4 (Measured) for saturated fat intake 24 hour — replacement pending
+* http://loinc.org#81133-1 "Fiber intake 24 hour Estimated" // 2026-09-16: replaces 9055-5 (Calorie intake total 10 hour); the Estimated variant is the one this IG already uses for caffeine (80489-8 in SubstanceUseProfile)
+* http://loinc.org#81033-3 "Saturated fat intake 24 hour Estimated" // 2026-09-16: replaces 9061-3 (Carbohydrate intake 1 hour); the Estimated variant is the one this IG already uses for caffeine (80489-8 in SubstanceUseProfile)
 // 2026-09-15: 9053-0 (Calorie intake total 1 hour) had been listed as fluid intake; replaced by 8990-4.
 * http://loinc.org#8990-4 "Fluid intake 24 hour"
-* http://loinc.org#9056-3 "Caffeine intake 24 hour" // 2026-09-15: this code is Calorie intake total 12 hour; LOINC has only 80489-8 (Estimated) and 80490-6 (Measured) for caffeine intake 24 hour — replacement pending
-* http://loinc.org#75282-4 "Diet" // 2026-09-15: 75282-4 is the Nutrition assessment panel — review pending
-* http://loinc.org#65968-0 "Eating habits" // 2026-09-15: this code is How many hours do you normally sleep [DI-PAD]; no LOINC code for eating habits found — replacement pending
+* http://loinc.org#80489-8 "Caffeine intake 24 hour Estimated" // 2026-09-16: replaces 9056-3 (Calorie intake total 12 hour); the Estimated variant is the one this IG already uses for caffeine (80489-8 in SubstanceUseProfile)
 
 // ============================================================================
 // VITAMINS (24 hour Estimated)
@@ -131,7 +129,6 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * http://loinc.org#91663-5 "Social support index [MOS Social Support Survey]"
 * http://loinc.org#91645-2 "Affectionate support [MOS Social Support Survey]"
 * http://loinc.org#63512-8 "How many people are living or staying at this address [#]"
-* http://loinc.org#63503-7 "Number of family members in household" // 2026-09-15: this code is Marital status [NHANES]; 63512-8 above already covers household size — review pending
 
 // ============================================================================
 // PANELS (for reference)

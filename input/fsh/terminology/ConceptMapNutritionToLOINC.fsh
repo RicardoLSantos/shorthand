@@ -76,15 +76,15 @@ Usage: #definition
 
 * group[=].element[+].code = #fiber-intake
 * group[=].element[=].display = "Fiber intake"
-* group[=].element[=].target[+].code = #9055-5 // 2026-09-16: this code is Calorie intake total 10 hour; intended concept fibre intake 24 hour (LOINC has only 81133-1 Estimated / 81057-2 Measured) — replacement pending, as in ValueSetLOINCObservations
-* group[=].element[=].target[=].display = "Fiber intake 24 hour"
+* group[=].element[=].target[+].code = #81133-1 // 2026-09-16: was 9055-5, which is Calorie intake total 10 hour
+* group[=].element[=].target[=].display = "Fiber intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM AI: 25g/day (women), 38g/day (men)"
 
 * group[=].element[+].code = #saturated-fat
 * group[=].element[=].display = "Saturated fat intake"
-* group[=].element[=].target[+].code = #9061-3 // 2026-09-16: this code is Carbohydrate intake 1 hour; intended concept saturated fat intake 24 hour (LOINC has only 81033-3 Estimated / 81136-4 Measured) — replacement pending, as in ValueSetLOINCObservations
-* group[=].element[=].target[=].display = "Saturated fat intake 24 hour"
+* group[=].element[=].target[+].code = #81033-3 // 2026-09-16: was 9061-3, which is Carbohydrate intake 1 hour
+* group[=].element[=].target[=].display = "Saturated fat intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "DGA 2020: <10% of total calories"
 
@@ -208,21 +208,17 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #diet-quality-score
 * group[=].element[=].display = "Diet quality score"
-* group[=].element[=].target[+].code = #75282-4 // 2026-09-16: 75282-4 is the Nutrition assessment panel; intended concept a diet-quality score — review pending, as in ValueSetLOINCObservations
-* group[=].element[=].target[=].display = "Nutrition assessment panel" // T2 S33 VRF-TERM-018: 75282-4 = "Nutrition assessment panel" (display "Diet" was imprecise; code OK, #relatedto)
-* group[=].element[=].target[=].equivalence = #relatedto
-* group[=].element[=].target[=].comment = "General dietary assessment; use HEI-2020 for US populations"
+* group[=].element[=].target[+].equivalence = #unmatched // 2026-09-16: no exact LOINC code; 75282-4 was mapped here but names another concept (Nutrition assessment panel)
+* group[=].element[=].target[=].comment = "No exact LOINC code for a diet-quality score; a replacement is pending"
 
 * group[=].element[+].code = #meal-frequency
 * group[=].element[=].display = "Meal frequency"
-* group[=].element[=].target[+].code = #65968-0 // 2026-09-16: this code is How many hours do you normally sleep [DI-PAD]; intended concept meal frequency, for which LOINC has no exact code — replacement or removal pending, as in ValueSetLOINCObservations
-* group[=].element[=].target[=].display = "Eating habits"
-* group[=].element[=].target[=].equivalence = #relatedto
-* group[=].element[=].target[=].comment = "Includes meal patterns, snacking behavior"
+* group[=].element[=].target[+].equivalence = #unmatched // 2026-09-16: no exact LOINC code; 65968-0 was mapped here but names another concept (How many hours do you normally sleep [DI-PAD])
+* group[=].element[=].target[=].comment = "No exact LOINC code for meal frequency / eating habits; a replacement is pending"
 
 * group[=].element[+].code = #caffeine-intake
 * group[=].element[=].display = "Caffeine intake"
-* group[=].element[=].target[+].code = #9056-3 // 2026-09-16: this code is Calorie intake total 12 hour; intended concept caffeine intake 24 hour (LOINC has only 80489-8 Estimated / 80490-6 Measured) — replacement pending, as in ValueSetLOINCObservations
-* group[=].element[=].target[=].display = "Caffeine intake 24 hour"
+* group[=].element[=].target[+].code = #80489-8 // 2026-09-16: was 9056-3, which is Calorie intake total 12 hour
+* group[=].element[=].target[=].display = "Caffeine intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "Moderate intake: <400mg/day (FDA)"

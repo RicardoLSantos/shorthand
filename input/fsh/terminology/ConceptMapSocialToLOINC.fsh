@@ -107,9 +107,8 @@ Usage: #definition
 
 * group[=].element[+].code = #dependent-count
 * group[=].element[=].display = "Number of dependents"
-* group[=].element[=].target[+].code = #63503-7 // 2026-09-16: this code is Marital status [NHANES]; intended concept number of dependents in the household, for which LOINC has no exact code — replacement or removal pending, as in ValueSetLOINCObservations
-* group[=].element[=].target[=].display = "Number of family members in household"
-* group[=].element[=].target[=].equivalence = #relatedto // T2 S33: downgraded from #equivalent (was claiming exact equivalence to a wrong concept)
+* group[=].element[=].target[+].equivalence = #unmatched // 2026-09-16: no exact LOINC code for the number of dependents; 63503-7 (Marital status [NHANES]) was mapped here
+* group[=].element[=].target[=].comment = "No exact LOINC code for the number of dependents in the household; a replacement is pending"
 
 // =============================================================================
 // Group 4: Social Connection Panel

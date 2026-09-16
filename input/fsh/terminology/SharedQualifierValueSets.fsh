@@ -91,7 +91,6 @@ Verified against tx.fhir.org 2026-02-19.
 
 * http://snomed.info/sct#425405005 "Excellent (qualifier value)"
 * http://snomed.info/sct#20572008 "Good (qualifier value)"
-* http://snomed.info/sct#260347006 "Fair (qualifier value)" // 2026-09-15: this code is "+"; SNOMED International has no "Fair" qualifier (445511000124105 is a US-extension concept) — replacement pending
 * http://snomed.info/sct#255351007 "Poor (qualifier value)"
 
 

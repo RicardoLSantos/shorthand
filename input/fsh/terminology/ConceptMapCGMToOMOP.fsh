@@ -91,77 +91,65 @@ Clinical significance: Allows real-time A1c estimation without blood draw.
 GAP: No OMOP concept exists for GMI.
 """
 
-// ============================================================================
-// Mean Glucose
-// ============================================================================
-// 2026-09-15: 41653-7 is Glucose [Mass/volume] in Capillary blood by Glucometer (a point reading); the display is the
-// name of 93791-2 (mean in Serum or Plasma, OMOP concept 1002230), and element[8] already carries the CGM mean
-// (97507-8 Average glucose in Interstitial fluid) — replacement or removal pending
-* group[0].element[2].code = #41653-7
-* group[0].element[2].display = "Glucose [Mass/volume] mean in Serum or Plasma"
-* group[0].element[2].target[0].code = #0
-* group[0].element[2].target[0].display = "No OMOP concept for mean glucose"
-* group[0].element[2].target[0].equivalence = #unmatched
-* group[0].element[2].target[0].comment = "Mean glucose over CGM recording period. Use measurement_source_value for context."
 
 // ============================================================================
 // LOINC CGM Codes (Phase 3 additions, 2026-03-10 — from CGM IG v1.0.0)
 // ============================================================================
-* group[0].element[3].code = #104641-6
-* group[0].element[3].display = "Time below range, low in Reporting Period Interstitial fluid by calculation"
+* group[0].element[2].code = #104641-6
+* group[0].element[2].display = "Time below range, low in Reporting Period Interstitial fluid by calculation"
+* group[0].element[2].target[0].code = #0
+* group[0].element[2].target[0].display = "No OMOP concept available"
+* group[0].element[2].target[0].equivalence = #unmatched
+* group[0].element[2].target[0].comment = "LOINC Phase 3. Target: <4% (<70 mg/dL). Replaces custom #tbr."
+
+* group[0].element[3].code = #104642-4
+* group[0].element[3].display = "Time below range, very low in Reporting Period Interstitial fluid by calculation"
 * group[0].element[3].target[0].code = #0
 * group[0].element[3].target[0].display = "No OMOP concept available"
 * group[0].element[3].target[0].equivalence = #unmatched
-* group[0].element[3].target[0].comment = "LOINC Phase 3. Target: <4% (<70 mg/dL). Replaces custom #tbr."
+* group[0].element[3].target[0].comment = "LOINC Phase 3. Target: <1% (<54 mg/dL). Replaces custom #tbr-l2."
 
-* group[0].element[4].code = #104642-4
-* group[0].element[4].display = "Time below range, very low in Reporting Period Interstitial fluid by calculation"
+* group[0].element[4].code = #104640-8
+* group[0].element[4].display = "Time above range, high in Reporting Period Interstitial fluid by calculation"
 * group[0].element[4].target[0].code = #0
 * group[0].element[4].target[0].display = "No OMOP concept available"
 * group[0].element[4].target[0].equivalence = #unmatched
-* group[0].element[4].target[0].comment = "LOINC Phase 3. Target: <1% (<54 mg/dL). Replaces custom #tbr-l2."
+* group[0].element[4].target[0].comment = "LOINC Phase 3. Target: <25% (>180 mg/dL). Replaces custom #tar."
 
-* group[0].element[5].code = #104640-8
-* group[0].element[5].display = "Time above range, high in Reporting Period Interstitial fluid by calculation"
+* group[0].element[5].code = #104639-0
+* group[0].element[5].display = "Time above range, very high in Reporting Period Interstitial fluid by calculation"
 * group[0].element[5].target[0].code = #0
 * group[0].element[5].target[0].display = "No OMOP concept available"
 * group[0].element[5].target[0].equivalence = #unmatched
-* group[0].element[5].target[0].comment = "LOINC Phase 3. Target: <25% (>180 mg/dL). Replaces custom #tar."
+* group[0].element[5].target[0].comment = "LOINC Phase 3. Target: <5% (>250 mg/dL). Replaces custom #tar-l2."
 
-* group[0].element[6].code = #104639-0
-* group[0].element[6].display = "Time above range, very high in Reporting Period Interstitial fluid by calculation"
+* group[0].element[6].code = #104638-2
+* group[0].element[6].display = "Glucose standard deviation/Glucose mean in Reporting Period Interstitial fluid by calculation"
 * group[0].element[6].target[0].code = #0
 * group[0].element[6].target[0].display = "No OMOP concept available"
 * group[0].element[6].target[0].equivalence = #unmatched
-* group[0].element[6].target[0].comment = "LOINC Phase 3. Target: <5% (>250 mg/dL). Replaces custom #tar-l2."
+* group[0].element[6].target[0].comment = "LOINC Phase 3. CV target: <36%. Replaces custom #cv."
 
-* group[0].element[7].code = #104638-2
-* group[0].element[7].display = "Glucose standard deviation/Glucose mean in Reporting Period Interstitial fluid by calculation"
+* group[0].element[7].code = #97507-8
+* group[0].element[7].display = "Average glucose [Mass/volume] in Interstitial fluid during Reporting Period"
 * group[0].element[7].target[0].code = #0
-* group[0].element[7].target[0].display = "No OMOP concept available"
+* group[0].element[7].target[0].display = "No OMOP concept for mean glucose"
 * group[0].element[7].target[0].equivalence = #unmatched
-* group[0].element[7].target[0].comment = "LOINC Phase 3. CV target: <36%. Replaces custom #cv."
+* group[0].element[7].target[0].comment = "LOINC Phase 3. Mean glucose over CGM period. Replaces custom #mean."
 
-* group[0].element[8].code = #97507-8
-* group[0].element[8].display = "Average glucose [Mass/volume] in Interstitial fluid during Reporting Period"
+* group[0].element[8].code = #104637-4
+* group[0].element[8].display = "Percentage of time continuous glucose monitor device worn Reporting Period Calculated"
 * group[0].element[8].target[0].code = #0
-* group[0].element[8].target[0].display = "No OMOP concept for mean glucose"
+* group[0].element[8].target[0].display = "No OMOP concept available"
 * group[0].element[8].target[0].equivalence = #unmatched
-* group[0].element[8].target[0].comment = "LOINC Phase 3. Mean glucose over CGM period. Replaces custom #mean."
+* group[0].element[8].target[0].comment = "LOINC Phase 3. Sensor active time %. Replaces custom #cgm-active-time (improved from 97504-5)."
 
-* group[0].element[9].code = #104637-4
-* group[0].element[9].display = "Percentage of time continuous glucose monitor device worn Reporting Period Calculated"
+* group[0].element[9].code = #104636-6
+* group[0].element[9].display = "Days continuous glucose monitor device worn [#] Reporting Period Estimated"
 * group[0].element[9].target[0].code = #0
 * group[0].element[9].target[0].display = "No OMOP concept available"
 * group[0].element[9].target[0].equivalence = #unmatched
-* group[0].element[9].target[0].comment = "LOINC Phase 3. Sensor active time %. Replaces custom #cgm-active-time (improved from 97504-5)."
-
-* group[0].element[10].code = #104636-6
-* group[0].element[10].display = "Days continuous glucose monitor device worn [#] Reporting Period Estimated"
-* group[0].element[10].target[0].code = #0
-* group[0].element[10].target[0].display = "No OMOP concept available"
-* group[0].element[10].target[0].equivalence = #unmatched
-* group[0].element[10].target[0].comment = "LOINC Phase 3. Days since sensor insertion. Replaces custom #sensor-days."
+* group[0].element[9].target[0].comment = "LOINC Phase 3. Days since sensor insertion. Replaces custom #sensor-days."
 
 // ============================================================================
 // GROUP 2: Custom CGM Metrics → OMOP (remaining Time in Range metrics without LOINC)
