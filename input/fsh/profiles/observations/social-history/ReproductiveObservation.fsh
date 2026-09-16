@@ -28,23 +28,23 @@ Description: "Base profile for social-history health observations"
     pattern 0..1 MS
 
 * component[severity]
-  * code = $LOINC#72514-3
+  * code = $LOINC#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
   * value[x] only integer
   * valueInteger 1..1 
   * valueInteger obeys rep-1
 
 * component[duration]
-  * code = $LOINC#3144-3
+  * code = $LOINC#3144-3 "Last menstrual period duration"
   * value[x] only Quantity
   * valueQuantity from DurationUnitsVS (required)
 
 * component[frequency]
-  * code = $LOINC#92656-8
+  * code = $LOINC#92656-8 "Number of menstrual periods per year" // 2026-09-16: quantitative LOINC concept (scale Qn, property NRat) bound here to a coded frequency value — binding review pending
   * value[x] only CodeableConcept
   * valueCodeableConcept from SymptomFrequencyVS (extensible)
 
 * component[pattern]
-  * code = $LOINC#64699-2
+  * code = $LOINC#64699-2 "During ages 18-22 what was the pattern of your menstrual cycles, excluding time around pregnancies [PhenX]" // 2026-09-16: PhenX questionnaire item (ages 18-22; status TRIAL in LOINC 2.82) bound here to a symptom-progression value set — binding review pending
   * value[x] only CodeableConcept
   * valueCodeableConcept from SymptomProgressionVS (extensible)
 
