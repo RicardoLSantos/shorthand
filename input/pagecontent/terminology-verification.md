@@ -147,7 +147,7 @@ This IG was developed alongside a Retrieval-Augmented Generation (RAG) system fo
 | **Synonym** | Cross-terminology synonyms | 1,800,000 entries |
 | **THO Collection** | HL7 Terminology | 20,051 codes |
 
-**Key finding**: LLMs without RAG fabricated codes; with RAG grounding, the same queries returned verified codes from indexed sources. Benchmark: 42.9% accuracy (no RAG) → 92.9% (ChromaDB RAG) → 100% (+ abbreviation dictionary) on 14-case test.
+**How it was used**: during development, retrieval over these indexed sources served as a *verification aid* — a deterministic index proposed candidate codes, and every code that entered the IG was then confirmed against the terminology owner's source and `tx.fhir.org` (the ledger above is the record). Language models were never the source of a code. **No retrieval or model component is distributed or required by this IG**: a possible integration with an external terminology router is specified only through the interfaces, extensions and CodeSystems that carry an agent's outputs.
 
 ### Related Work in RAG for Terminology
 

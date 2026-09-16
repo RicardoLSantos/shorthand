@@ -54,9 +54,9 @@ The IG includes explicit support for [EU AI Act](https://eur-lex.europa.eu/eli/r
 
 - **Article 9 — Risk management system**: the IG's [Multi-Jurisdictional Consent profile](StructureDefinition-multi-jurisdictional-consent.html) and [Bulk Export Consent profile](StructureDefinition-bulk-export-consent.html) provide the data-flow-level controls (purpose limitation, retention, withdrawal) that operationalise Article 9 requirements for high-risk AI systems in healthcare.
 
-- **Article 10 — Data quality + data governance**: the IG's [Terminology Verification Protocol](terminology-verification.html) (RS11-derived 5-step verification) and the [ConceptMaps cross-vendor sleep stages](ConceptMap-ConceptMapCrossVendorSleepStages.html) enforce data-source provenance and cross-vendor semantic equivalence — a prerequisite for "training, validation and testing data sets" being "relevant, sufficiently representative" per Article 10(3).
+- **Article 10 — Data quality + data governance**: the IG's [Terminology Verification Protocol](terminology-verification.html) (a five-step, database-first verification) and the [ConceptMaps cross-vendor sleep stages](ConceptMap-ConceptMapCrossVendorSleepStages.html) enforce data-source provenance and cross-vendor semantic equivalence — a prerequisite for "training, validation and testing data sets" being "relevant, sufficiently representative" per Article 10(3).
 
-- **Article 11 — Technical documentation**: this IG itself, as a published FHIR Implementation Guide with versioned releases (v0.3.0 and onwards) and a stable canonical URL (`https://2rdoc.pt/ig/ios-lifestyle-medicine`), constitutes the "technical documentation drawn up before that system is placed on the market" per Article 11(1).
+- **Article 11 — Technical documentation**: this IG itself, as a FHIR Implementation Guide with versioned GitHub releases (`package.tgz`, v0.3.0 onwards) and a stable canonical identifier (`https://2rdoc.pt/ig/ios-lifestyle-medicine` — the rendered site is not yet deployed at that address; see the [roadmap](implementation-scope-and-roadmap.html)), constitutes the "technical documentation drawn up before that system is placed on the market" per Article 11(1).
 
 - **Article 15 — Accuracy, robustness, cybersecurity** + **Article 12 — Record-keeping**: the [AuditEventDataAccess](StructureDefinition-audit-event-data-access.html) and [AuditEventAIInteraction](StructureDefinition-audit-event-ai-interaction.html) profiles operationalise the logging granularity required for accuracy investigations and security incident reconstruction. The AI-interaction subtype specifically captures (a) the AI component making the recommendation, (b) the input context, (c) the output (Card / recommendation / classification), and (d) the human-in-the-loop disposition (accepted / overridden / modified).
 
@@ -72,21 +72,21 @@ Beyond EU AI Act, the IG explicitly supports multi-jurisdictional consent and pr
 
 The [Data Protection Policies](data-protection-policies.html) page documents the cross-jurisdictional mapping.
 
-## ChromaDB Terminology Pillar (roadmap)
+## Terminology indexing (specification only)
 
-The IG's longer-horizon roadmap includes a **ChromaDB-backed terminology indexing toolkit** (deferred per Caminho B post-RS11). The toolkit will index the IG's local CodeSystems (CDSHooksHookTypesCS, IOSLifestyleMedicineSMARTScopes, vendor-specific stubs) plus federated external terminologies (LOINC, SNOMED CT, ICD-11, UCUM) into a vector database supporting semantic search across the IG's ~17 CodeSystems and ~203 ValueSets. This addresses the **terminology bridging gap** documented in RS11 (LLMs achieve ~0% accuracy on exact code lookup; the ChromaDB layer provides the candidate-generation step that an LLM can then disambiguate per RS11's Hybrid Model Router).
+A possible longer-horizon addition is a **vector-indexed terminology toolkit** that would index the IG's local CodeSystems (CDSHooksHookTypesCS, IOSLifestyleMedicineSMARTScopes, vendor-specific stubs) plus federated external terminologies (LOINC, SNOMED CT, ICD-11, UCUM) into a vector index supporting semantic search across the IG's 19 CodeSystems and 204 ValueSets. The intent is a **terminology bridging** step: a deterministic index returns candidate codes, which a language model may then only disambiguate — never look up exact codes on its own. This interface is what the agent-output extensions and CodeSystems of this IG are specified to carry; the index and any model behind it are external to the IG.
 
-Status: roadmap; concrete artefacts (Indexer scripts, persistence schema, query API) deferred to a post-RS11 IG release (v0.4.0+).
+Status: **specification only** — no indexer, persistence schema or query API is distributed or required by this IG, and nothing in the IG depends on it.
 
 ## Production Discipline
 
 The IG is built and maintained with the following engineering disciplines, documented in the project's lessons-learned corpus:
 
-- **Root-cause-not-suppression**: build errors are fixed at FSH source level (R1-R6 cluster fixes in v0.3.0 reduced raw error count by 70% in v0.2.1→v0.3.0 cycle); `ignoreWarnings.txt` is reserved for documented upstream-library quirks (Pitfall #31 IPS upstream), never for new error categories introduced by the IG.
+- **Root-cause-not-suppression**: build errors are fixed at FSH source level (R1-R6 cluster fixes in v0.3.0 reduced raw error count by 70% in v0.2.1→v0.3.0 cycle); `ignoreWarnings.txt` is reserved for documented upstream-library quirks (for example the IPS 2.0.0 dependency that referenced an unpublished extensions package, resolved when `hl7.fhir.uv.extensions.r4` 5.3.0 was published), never for new error categories introduced by the IG.
 
 - **Working-artifact-as-baseline**: every release reserves a known-good baseline (v0.2.1 = 23-error baseline) against which subsequent release-candidates are measured. Network-induced transients (JVM DNS resolver failures against tx.fhir.org) are classified as separate from code-class errors and do not block release.
 
-- **Premortem before production-critical actions**: tag/release operations are preceded by an explicit Failure Mode enumeration (typical 3-5 modes per release) with documented mitigations (Pitfall #93 protocol).
+- **Premortem before production-critical actions**: tag/release operations are preceded by an explicit Failure Mode enumeration (typical 3-5 modes per release) with documented mitigations (a premortem protocol).
 
 - **Cross-terminal coordination**: when companion artefacts span multiple authors / sub-teams (e.g., narrative content vs FSH source vs commercial roadmap), explicit ownership boundaries are documented and re-checked at each session (Path 4b convention).
 
@@ -99,9 +99,9 @@ These disciplines distinguish the IG from typical first-release FHIR IGs that ac
 - [SMART on FHIR Integration](smart-on-fhir-integration.html) — authentication + scope grammar
 - [CDS Hooks Integration](cds-hooks-integration.html) — decision support hook catalog
 - [Data Protection Policies](data-protection-policies.html) — multi-jurisdictional regulatory overlay
-- [Terminology Verification](terminology-verification.html) — 5-step verification protocol (RS11-derived)
+- [Terminology Verification](terminology-verification.html) — five-step, database-first verification protocol
 - [Bibliography](bibliography.html) — external references used in the IG
 
 ## Sources / Provenance
 
-This narrative was authored by T2 S23 (14 May 2026) as a strategic positioning page complementing the IG's domain-specific pagecontent. The eleven-domain coverage matrix reflects the explicit FSH profiles + ConceptMaps committed across v0.1.0 through v0.3.0 (T2 S01-S23). The seven-vendor coverage matrix reflects the ConceptMaps named in the table above plus the underlying CodeSystem stubs (`apple-healthkit-stub`, `fitbit-api-stub`, `garmin-connect-stub`, `oura-api-stub`, `polar-api-stub`) committed across the same cycle. The EU AI Act mapping cites Regulation 2024/1689 article numbers verbatim; no academic citations are introduced inline (Pitfall #67 — defensible-by-IG-content-only). All internal links in this narrative use kebab-case FSH `Id:` discipline (Pitfall #101).
+This narrative is a strategic positioning page complementing the IG's domain-specific pages. The eleven-domain coverage matrix reflects the FSH profiles and ConceptMaps committed from v0.1.0 through v0.3.0. The seven-vendor coverage matrix reflects the ConceptMaps named in the table above plus the underlying CodeSystem stubs (`apple-healthkit-stub`, `fitbit-api-stub`, `garmin-connect-stub`, `oura-api-stub`, `polar-api-stub`) committed across the same cycle. The EU AI Act mapping cites Regulation 2024/1689 article numbers verbatim; no academic citations are introduced inline (the page is defensible from the IG's own content). All internal links in this narrative use the kebab-case FSH `Id:` form.

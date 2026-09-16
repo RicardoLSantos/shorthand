@@ -16,18 +16,18 @@ This IG is an **artifact-level specification**. It defines, binds and **validate
 | **Terminology** | Local CodeSystems + ValueSets + external bindings (LOINC/SNOMED/ICD-11), all Database-First verified; ICD-11 republished as a fragment pending WHO-URL availability on the terminology server |
 | **AI / regulatory** | AI decision-support extensions + CodeSystems + EU AI Act compliance profiles (Art. 9/10/11/15) for AI-surfaced recommendations |
 
-### Deferred to operational deployment — out of scope for this IG (RS13, post-defense)
+### Deferred to operational deployment — out of scope for this IG
 
 These are **reference-architecture** components. Where the IG mentions them, it uses conditional language ("when deployed…"); none is asserted as currently operational.
 
-| Component | Status | Where it belongs |
+| Component | Status | Where it would live |
 |---|---|---|
-| Live openEHR CDR (e.g., EHRbase) + archetype↔FHIR round-trip validation in a running repository | Reference architecture; not deployed | openEHR persistence layer (RS13) |
-| Running CDS Hooks endpoint (`/cds-services` returning live Cards) | Service contract specified; endpoint not hosted | Deployment (RS13) |
-| GDL2 execution engine (native `.gdl` guideline runtime) | Bridge documented; no engine shipped | openEHR side (RS13) |
-| OMOP ETL pipeline + populated CDM warehouse + analytics cohorts | ConceptMaps specified; ETL not implemented | Research warehouse (RS13) |
-| OCL / hosted terminology server | Prepared, not activated; tx.fhir.org used as fallback | Terminology infrastructure (RS13) |
-| LLM agent + RAG terminology service (the Hybrid Model Router) | Extensions/CodeSystems specified to *carry* agent outputs; the router itself is RS11 | RS11 (router) + RS13 (integration) |
+| Live openEHR CDR (e.g., EHRbase) + archetype↔FHIR round-trip validation in a running repository | Reference architecture; not deployed | an openEHR persistence layer (follow-on deployment project) |
+| Running CDS Hooks endpoint (`/cds-services` returning live Cards) | Service contract specified; endpoint not hosted | a hosted deployment (follow-on project) |
+| GDL2 execution engine (native `.gdl` guideline runtime) | Bridge documented; no engine shipped | the openEHR side of a deployment |
+| OMOP ETL pipeline + populated CDM warehouse + analytics cohorts | ConceptMaps specified; ETL not implemented | a research warehouse (follow-on project) |
+| OCL / hosted terminology server | Prepared, not activated; tx.fhir.org used as fallback | terminology infrastructure (follow-on project) |
+| External terminology router (an LLM agent with retrieval-augmented terminology lookup) | **Specification only**: a possible integration with an external terminology router is specified — the interfaces, extensions and CodeSystems that carry the agent's outputs — and **no implementation is distributed or required by this IG** | an external service, outside this IG |
 
 ### CQL libraries (decision recorded)
 
@@ -36,6 +36,6 @@ The IG's `ClinicalImpression.protocol` elements reference CQL logic via `urn:cql
 ### Roadmap
 
 1. **This IG (current)** — artifact-level integration across the six standards above, validated clean, with explicit scope statements (this page).
-2. **RS13 (post-defense)** — operational deployment: CDR + CDS endpoint + OMOP ETL + terminology server, demonstrating the specified integrations end-to-end.
+2. **Operational deployment (follow-on project)** — CDR + CDS endpoint + OMOP ETL + terminology server, demonstrating the specified integrations end-to-end.
 
-The IG's contribution is the **specified, validated, internally-consistent integration surface**; operational rollout is the natural follow-on, deliberately scoped out of the thesis IG rather than left implicit.
+The IG's contribution is the **specified, validated, internally-consistent integration surface**; operational rollout is the natural follow-on, deliberately scoped out of this IG rather than left implicit.
