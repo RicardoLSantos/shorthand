@@ -32,12 +32,14 @@ Elements marked with MS must be supported:
 ## iOS Health App to FHIR Mapping
 
 ### Core Fields
-| iOS Health App | FHIR Path | LOINC Code |
-|----------------|-----------|------------|
-| Symptom Type | Observation.code | 75325-1 |
-| Severity | Observation.component[severity].valueQuantity | 72514-3 |
-| Duration | Observation.component[duration].valueDuration | 103333-2 |
-| Frequency | Observation.component[frequency].valueQuantity | 103334-0 |
+| iOS Health App | FHIR path (recommended shape) | Code |
+|----------------|-------------------------------|------|
+| Symptom Type | `Observation.code` | LOINC `75325-1` "Symptom" — or a SNOMED CT symptom concept as the code itself, as the shipped examples do (e.g. `84229001` "Fatigue") |
+| Severity | `Observation.component[severity].valueInteger` (0–10) | LOINC `72514-3` "Pain severity - 0-10 verbal numeric rating [Score] - Reported" — an integer score, bound the same way in `ReproductiveObservation` |
+| Duration | `Observation.component[duration].valueQuantity` (UCUM time unit) | LOINC `64748-7` "Symptoms duration" |
+| Frequency | `Observation.component[frequency].valueCodeableConcept` | no generic LOINC code exists (LOINC carries only instrument-specific frequency scores, e.g. `72193-6` KCCQ, `88471-8` SAQ); the IG uses `SymptomFrequencyVS` (interim codes in `LifestyleMedicineTemporaryCS`) |
+
+> **Scope note (0.5.0).** The IG does not define a dedicated Symptom *Observation* profile. Symptom observations use the base `Observation` resource — see `ExampleSymptomSeverity` and `ChronicSymptomExample` — together with the `SymptomQuestionnaire` profile and the `SymptomFrequencyVS`, `SymptomImpactVS` and `SymptomProgressionVS` ValueSets. The paths above are the recommended shape; the severity and duration components mirror the component slicing of `ReproductiveObservation`. Two codes previously listed here (`103333-2`, `103334-0`) do not exist in LOINC (not resolvable in LOINC 2.82) and were replaced on 2026-09-16 after verification against OHDSI Athena and `tx.fhir.org`.
 
 ### Implementation Considerations
 

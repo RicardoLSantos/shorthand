@@ -16,18 +16,17 @@ Translation is declarative, via ConceptMaps (see [ConceptMaps](conceptmaps.html)
 
 ## Archetype coverage (consumer wearable scope)
 
-<!-- G-6 harmonized T1 S51 (2026-06-02): aligned with Decisão #16 / S50 live CKM-mirror reconciliation — replaced the "four priority CKM gaps" overclaim with honest per-archetype novel/reuse/specialisation status -->
-
-The IG bridges to four openEHR archetypes covering core consumer-wearable domains (heart-rate variability, sleep, physical activity, and device provenance). Rather than presenting these as a uniform set of "CKM gaps", the IG records each archetype's **honest status relative to the published openEHR Clinical Knowledge Manager (CKM)** — a distinction confirmed by a live reconciliation against the CKM mirror (433 published OBSERVATION/CLUSTER concepts). Some are genuinely novel concepts with no CKM equivalent; others reuse or specialise an already-published CKM archetype. This is the characterisation a CKM reviewer expects, and it is the basis on which any future CKM submission would be scoped:
+The IG bridges to five openEHR archetypes covering core consumer-wearable domains (heart-rate variability, sleep, physical activity, VO2max estimation, and device provenance). Rather than presenting these as a uniform set of "CKM gaps", the IG records each archetype's **honest status relative to the published openEHR Clinical Knowledge Manager (CKM)** — a distinction confirmed by a live reconciliation against the CKM mirror (433 published OBSERVATION/CLUSTER concepts). Some are genuinely novel concepts with no CKM equivalent; others reuse or specialise an already-published CKM archetype. This is the characterisation a CKM reviewer expects, and it is the basis on which any future CKM submission would be scoped:
 
 | Domain | Archetype identifier | Status vs published CKM | FHIR↔openEHR ConceptMaps |
 |--------|----------------------|--------------------------|---------------------------|
 | HRV | `openEHR-EHR-OBSERVATION.heart_rate_variability.v0` | **Novel** — no OBSERVATION CKM equivalent | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR, ConceptMapVendorToOpenEHR |
 | Sleep | `openEHR-EHR-OBSERVATION.sleep_architecture.v0` | **Novel concept** — the published CKM sleep archetype models disturbance questionnaires, not sleep architecture/stages | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
 | Physical activity | `openEHR-EHR-OBSERVATION.physical_activity_detailed.v0` | **Reuse** — aligns to a published CKM physical-activity OBSERVATION archetype (a wearable-detailed projection, not a new gap) | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
+| VO2max estimation | `openEHR-EHR-OBSERVATION.vo2max_estimation.v0` | **Novel** — no OBSERVATION CKM equivalent (a standalone OBSERVATION; see the [archetype catalog](openehr-archetypes-catalog.html)) | — (element-level `Mapping:` block on `VO2MaxEstimationObservation`; no dedicated openEHR ConceptMap yet) |
 | Device provenance | `openEHR-EHR-CLUSTER.wearable_device.v0` | **Specialisation** of the published CKM device CLUSTER archetype (`openEHR-EHR-CLUSTER.device.v1`) | ConceptMapVendorToOpenEHR |
 
-These four are the consumer-wearable subset that this IG bridges into FHIR; the IG's broader original-archetype set is reconciled in an internal report whose genuine-versus-reuse classification is **pending clinical-supervisor validation before any CKM submission** (no draft archetype is submitted or catalogued until then). Domains outside the consumer-wearable scope (nutrition, mindfulness, environmental, social, reproductive, mobility) are mapped to LOINC/SNOMED CT at the FHIR layer but are intentionally **not** bridged to openEHR archetypes in this IG — they are documented as future archetype work.
+These five are the consumer-wearable subset that this IG bridges into FHIR; the IG's broader original-archetype set is reconciled in an internal report whose genuine-versus-reuse classification is **pending clinical-supervisor validation before any CKM submission** (no draft archetype is submitted or catalogued until then). Domains outside the consumer-wearable scope (nutrition, mindfulness, environmental, social, reproductive, mobility) are mapped to LOINC/SNOMED CT at the FHIR layer but are intentionally **not** bridged to openEHR archetypes in this IG — they are documented as future archetype work.
 
 ## Bidirectional translation
 
@@ -40,7 +39,6 @@ The bridge is bidirectional and includes a direct vendor ingestion path and a re
 
 ## Element-level mapping (openEHR data item → FHIR path)
 
-<!-- AUTHORED-BY-CLAUDE-T1-S51 (2026-06-02): surfaced verbatim from committed ConceptMapOpenEHRToFHIR.fsh; LOINC codes Database-First verified vs Athena 2026-06-02 -->
 
 The bridge above is defined at the granularity of **individual data items**, not only archetype-to-resource. The tables below surface the committed `ConceptMapOpenEHRToFHIR` instance so the projection is explicit and reviewable — each row is the actual mapping committed in `input/fsh/terminology/ConceptMapOpenEHRToFHIR.fsh`. The LOINC codes are Database-First verified against the OHDSI Athena vocabulary (2026-06-02).
 
@@ -89,7 +87,7 @@ The bridge above is defined at the granularity of **individual data items**, not
 
 > **Node-code convention note:** the ConceptMaps reference archetype data items by their ADL 1.4 node identifiers (`atNNNN`), which are the identifiers of the published `*.v0` draft archetypes — for example, SDNN is `at0004`, RMSSD `at0005`, pNN50 `at0006` and the LF/HF ratio `at0012` in the heart-rate-variability archetype. Until 2026-09-11 the maps carried the ADL2 identifiers (`idN`) of an earlier authoring pass; each node code is now checked against the archetype term definitions, and the vendor map's elements that had no ADL 1.4 counterpart were removed rather than re-mapped.
 
-> **Binding status (terminology audit, Database-First vs OHDSI Athena — APPLIED; rides on v0.4.2 [Unreleased]):** the deep/REM sleep rows bind LOINC `93831-6` (Deep sleep duration) / `93829-0` (REM sleep duration), used IG-wide (`SleepProfile`). The activity-minute rows bind **device-method** LOINC `101689-8` (Duration of moderate activity) / `101690-6` (Duration of vigorous activity) — preferable to the former IPAQ-survey LOINC (`77592-4`/`77593-2`) for wearable-sourced data. The three openEHR ConceptMaps were aligned to these codes on 2026-06-03 (`VRF-TERM-019`); the `PhysicalActivityObservation` profile now defines explicit `moderateMinutes`/`vigorousMinutes` component slices binding the device-method codes (2026-06-06, T1 S53), so the profile, the three openEHR ConceptMaps and the OMOP map are internally consistent. The former IPAQ codes are preserved as provenance notes in the ConceptMap comments (audit trail).
+> **Binding status (terminology audit, Database-First vs OHDSI Athena — applied in v0.4.2):** the deep/REM sleep rows bind LOINC `93831-6` (Deep sleep duration) / `93829-0` (REM sleep duration), used IG-wide (`SleepProfile`). The activity-minute rows bind **device-method** LOINC `101689-8` (Duration of moderate activity) / `101690-6` (Duration of vigorous activity) — preferable to the former IPAQ-survey LOINC (`77592-4`/`77593-2`) for wearable-sourced data. The three openEHR ConceptMaps were aligned to these codes on 2026-06-03; the `PhysicalActivityObservation` profile now defines explicit `moderateMinutes`/`vigorousMinutes` component slices binding the device-method codes (2026-06-06), so the profile, the three openEHR ConceptMaps and the OMOP map are internally consistent. The former IPAQ codes are preserved as provenance notes in the ConceptMap comments (audit trail).
 
 ## Worked AQL (semantic retrieval over the CDR)
 
@@ -147,22 +145,19 @@ Archetype data items carry term_bindings to LOINC/SNOMED CT **where a code exist
 
 ## Sources
 
-This narrative is a companion to the openEHR-related ConceptMaps committed under `input/fsh/terminology/` (`ConceptMapFHIRToOpenEHR`, `ConceptMapOpenEHRToFHIR`, `ConceptMapVendorToOpenEHR`, `ConceptMapOpenEHRToOMOP`). The four-archetype consumer-wearable scope and the three priority design patterns (data quality, algorithm provenance, temporal semantics) reflect the findings of the project systematic review of openEHR archetypes for consumer wearable health devices (RS6). Archetype identifiers follow the openEHR naming convention (`openEHR-EHR-OBSERVATION.<concept>.v0`); the `v0` suffix denotes pre-CKM-submission drafts. HRV LOINC status (SDNN `80404-7` present; RMSSD/pNN50/LF/HF absent) is database-verified per the IG terminology verification protocol.
+This narrative is a companion to the openEHR-related ConceptMaps committed under `input/fsh/terminology/` (`ConceptMapFHIRToOpenEHR`, `ConceptMapOpenEHRToFHIR`, `ConceptMapVendorToOpenEHR`, `ConceptMapOpenEHRToOMOP`). The five-archetype consumer-wearable scope and the three priority design patterns (data quality, algorithm provenance, temporal semantics) reflect the findings of the project systematic review of openEHR archetypes for consumer wearable health devices. Archetype identifiers follow the openEHR naming convention (`openEHR-EHR-OBSERVATION.<concept>.v0`); the `v0` suffix denotes pre-CKM-submission drafts. HRV LOINC status (SDNN `80404-7` present; RMSSD/pNN50/LF/HF absent) is database-verified per the IG terminology verification protocol.
 
 ---
 
-## ADDENDUM (T1 S47, 28 May 2026) — Vulcan FHIR-to-OMOP IG alignment + OMOP integration cross-link
+## ADDENDUM (28 May 2026) — Vulcan FHIR-to-OMOP IG alignment + OMOP integration cross-link
 
-<!-- AUTHORED-BY-CLAUDE-T1-S47 - additive ADDENDUM per Lesson #431 frozen-at-birth -->
 
 The companion ConceptMap `ConceptMapOpenEHRToOMOP` is also the cross-standard bridge that the new [OMOP Integration](omop-integration.html) page describes from the OMOP side. Together they let an openEHR archetype source feed an OHDSI-network federated analysis through a Vulcan FHIR-to-OMOP IG v1.0.0 (INFORMATIVE 1) compatible pipeline — this IG provides the mapping shape; the [HL7 Vulcan FHIR-to-OMOP IG](http://hl7.org/fhir/uv/fhir-to-omop) (v1.0.0, R5, CC0-1.0, BRR workgroup) provides the generic resource-level transformation contract; and the OHDSI [Standardized Vocabularies](https://athena.ohdsi.org) provide the target `concept_id` values.
 
-The IG's RS13 post-defense ETL implementation is now positioned as a **Vulcan-conformant deployment**, not a novel framework — repositioning the openEHR↔OMOP bridge narrows the claimed novelty without losing the substantive contribution (the lifestyle-medicine-vertical archetype-to-OMOP mapping, which Vulcan does not specify). The four-archetype consumer-wearable scope (HRV, sleep, activity, device provenance) and the three design patterns above are unchanged; the new framing situates them inside the broader FHIR-to-OMOP standards landscape that emerged in 2026.
+The IG's follow-on ETL implementation is now positioned as a **Vulcan-conformant deployment**, not a novel framework — repositioning the openEHR↔OMOP bridge narrows the claimed novelty without losing the substantive contribution (the lifestyle-medicine-vertical archetype-to-OMOP mapping, which Vulcan does not specify). The five-archetype consumer-wearable scope (HRV, sleep, activity, VO2max estimation, device provenance) and the three design patterns above are unchanged; the new framing situates them inside the broader FHIR-to-OMOP standards landscape that emerged in 2026.
 
 
-<!-- AUTHORED-BY-CLAUDE-T1-S48 (Pitfall #97) · 2nd additive ADDENDUM (Lesson #431 frozen-at-birth) · pasted v0.4.1 T1 S49 -->
-
-## ADDENDUM (T1 S48, 30 May 2026) — Platform alignment: the system approach, the CDR, archetype governance, and AQL
+## ADDENDUM (30 May 2026) — Platform alignment: the system approach, the CDR, archetype governance, and AQL
 
 The [Why two models](#why-two-models) section above states *that* this IG persists in openEHR and exchanges in FHIR. This addendum states *why that is the right division of labour at the platform level*, grounded in the openEHR–FHIR community's own analysis and in a national-scale openEHR reference architecture.
 
@@ -190,8 +185,8 @@ Because openEHR separates the reference model from the archetype model, a single
 
 ### E. openEHR-native patient-reported outcomes
 
-Patient-reported outcome measures (PROMs) — quality of care assessed from the patient's perspective, a key indicator of value-based care — are a concrete, deployed precedent for openEHR-native patient-facing data: an NHS open-standard, open-source, openEHR-native PROMs platform delivering questionnaires across web and mobile and charting population-level outcomes. For this IG, PROMs sit naturally **alongside** wearable biomarkers as patient-reported, openEHR-persisted, FHIR-exchanged data — reinforcing that the lifestyle-medicine vertical spans device-measured *and* patient-reported signals, both governed by the same archetype/terminology discipline (relevant to the openEHR archetype scope for consumer wearables, RS6).
+Patient-reported outcome measures (PROMs) — quality of care assessed from the patient's perspective, a key indicator of value-based care — are a concrete, deployed precedent for openEHR-native patient-facing data: an NHS open-standard, open-source, openEHR-native PROMs platform delivering questionnaires across web and mobile and charting population-level outcomes. For this IG, PROMs sit naturally **alongside** wearable biomarkers as patient-reported, openEHR-persisted, FHIR-exchanged data — reinforcing that the lifestyle-medicine vertical spans device-measured *and* patient-reported signals, both governed by the same archetype/terminology discipline (relevant to the openEHR archetype scope for consumer wearables).
 
 ### F. Scope statement (unchanged)
 
-This addendum documents **architecture alignment**, not deployment. Operating an openEHR CDR (running AQL, hosting archetypes, executing the MeDIC layers) is an operational concern documented as future work under RS13 (see [Implementation Scope](implementation-scope-and-roadmap.html)). This IG adopts the openEHR *pattern* and projects it into FHIR; it does not ship a running CDR.
+This addendum documents **architecture alignment**, not deployment. Operating an openEHR CDR (running AQL, hosting archetypes, executing the MeDIC layers) is an operational concern documented as future work (see [Implementation Scope](implementation-scope-and-roadmap.html)). This IG adopts the openEHR *pattern* and projects it into FHIR; it does not ship a running CDR.
