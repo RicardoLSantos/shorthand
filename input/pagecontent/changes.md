@@ -2,6 +2,25 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
+## Unreleased — 0.5.1 candidate (public-surface review, 2026-09-16)
+
+### Changed
+- **README, home page and Known Issues synchronised with v0.5.0** — 103 profiles / 77 extensions / 19 CodeSystems / 204 ValueSets / 279 instances (682 artefacts); build validation 2026-09-16 (0 errors, 223 warnings of a single OID-advisory class, 13,221 informational, 0 broken links); toolchain IG Publisher 2.2.10 / SUSHI 3.18.1. A CI step (`.github/scripts/ig_counts.sh --check`) now fails `sushi-validate` if the README's artefact table drifts from the FSH sources.
+- **Honest status wherever the text implied execution or deployment** — CQL and GDL2 shown as authored/bridged, not executed; the standards gantt replaced by a status table (LOINC not submitted, CKM not submitted, ballot not started); the canonical URL described as an identifier with no hosted site yet; an external terminology router described as a *specification only* (the interfaces, extensions and CodeSystems that carry an agent's outputs; no implementation distributed or required by this IG); the development-time retrieval aid described as a verification method, with the ledger as the evidence.
+- **Reuse figures aligned to the published article** (Int J Med Inform 217:106465) — 75% weighted reuse (Model 100% / Extension 67% / Context vendor-specific); the 65.8% of January 2026 kept only as a dated historical note; FHIRconnect's ~65% described as an expected rate and its 21 M patients as the German Core Dataset's population.
+- **openEHR bridge page** lists the five mapped archetypes (VO2max estimation added, with its catalog status).
+- **Symptoms page** — the severity component is an integer score (LOINC 72514-3); duration uses LOINC 64748-7 "Symptoms duration"; frequency has no generic LOINC code and uses `SymptomFrequencyVS`; two codes previously listed (103333-2, 103334-0) do not exist in LOINC and were removed; the page now states that no dedicated Symptom Observation profile exists in this release.
+- **Name history recorded** — the *Heart Rate Variability CodeSystem* (`HeartRateVariabilityCS`, v0.1.0–v0.2.0) described in the published article was consolidated into `LifestyleMedicineTemporaryCS` (2026-02-25, released in v0.2.1); its six codes are unchanged and exposed through `HeartRateVariabilityVS` (terminology catalog, §6).
+- Two source links that pointed at a non-existent repository name fixed; Quick Start now works from a clean clone (`cd shorthand`, the CI's publisher command).
+
+### Added
+- `CITATION.cff` — preferred citation = the published article; software entry at v0.5.0 (enables GitHub's "Cite this repository").
+- Known Issues page added to the Implementation menu.
+- Security audit check 12 — the number of tracked files carrying internal process markers may never rise (ratchet against a recorded baseline, target 0); proven to fail on a planted marker.
+
+### Removed
+- Internal process markers from page comments, the CI workflows and scripts, `sushi-config.yaml` comments and `input/ignoreWarnings.txt` comments (the suppressions themselves are unchanged).
+
 ## Version 0.5.0 (2026-09-16)
 
 ### Added

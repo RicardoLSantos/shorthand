@@ -31,7 +31,7 @@ Local CodeSystems are defined **only** where a standard concept is missing or wh
 
 The complete, machine-generated list (with canonical URLs and concept counts) is in the IG's [artifacts index](artifacts.html).
 
-## 3. Value Sets (205)
+## 3. Value Sets (204)
 
 The IG defines **205 ValueSets**. Binding strategy:
 
@@ -71,6 +71,8 @@ This discipline is applied not only to profiles but to **ConceptMap targets and 
 ## 6. The advanced-metric gap and provisional codes
 
 Several advanced wearable metrics have **no standard code in any terminology** — most prominently HRV time/frequency-domain metrics RMSSD, pNN50, LF power, HF power, and the LF/HF ratio (only SDNN, SDNN-by-EKG and the coefficient-of-variation have LOINC codes). Rather than mis-attach an unrelated code (a silent error) or leave the data uncoded, the IG publishes these as provisional codes in `LifestyleMedicineTemporaryCS`, each with a documented **migration path** to the standard code if and when one is created.
+
+**Name history.** The *Heart Rate Variability CodeSystem* (`HeartRateVariabilityCS`, v0.1.0–v0.2.0) described in Lourenço Santos & Cruz-Correia 2026 (Int J Med Inform 217:106465, [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)) was consolidated into `LifestyleMedicineTemporaryCS` on 2026-02-25 (released in v0.2.1) together with the other lifestyle-medicine gap CodeSystems. Its six codes — `hrv-sdnn`, `hrv-rmssd`, `hrv-pnn50`, `hrv-lf-power`, `hrv-hf-power`, `hrv-lf-hf-ratio` — are unchanged and are exposed through the ValueSet `HeartRateVariabilityVS`; the file that carried the old name declared only that ValueSet from v0.2.1 onwards and was renamed to the current file convention in v0.4.3.
 
 This is the IG's terminology-gap finding made operational: the gap is **named**, the data is **codable today**, and the path to standardization is **explicit** — which is exactly the contribution a vertical IG can make upstream to the standards bodies.
 

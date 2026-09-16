@@ -143,8 +143,8 @@ This IG aligns with and extends several HL7 FHIR Implementation Guides:
 
 This IG addresses gaps NOT covered by existing HL7 standards:
 
-- **Heart Rate Variability (HRV)**: Comprehensive profiles for SDNN, RMSSD, pNN50, LF/HF ratio - no existing HL7 IG covers these metrics
-- **Sleep Architecture**: Detailed sleep stage profiles (N1/N2/N3/REM, cycles, transitions)
+- **Heart Rate Variability (HRV)**: Comprehensive profiles for SDNN, RMSSD, pNN50, LF/HF ratio - no existing HL7 IG covers these metrics. The six HRV gap codes were first published as `HeartRateVariabilityCS` (v0.1.0–v0.2.0) and have lived unchanged in `LifestyleMedicineTemporaryCS` since v0.2.1, bridged to LOINC by `ConceptMapHRVToLOINC` (see the [terminology catalog](terminology-vocabularies-catalog.html), §6)
+- **Sleep Architecture**: Sleep stage profiles — deep and REM sleep bound to LOINC (93831-6, 93829-0), the remaining stages through the vendor stage CodeSystems (Apple, Fitbit, Garmin, Oura) with a cross-vendor ConceptMap
 - **Consumer Wearable Integration**: Unified model for Apple HealthKit, Fitbit, Oura, Garmin, Polar
 - **Lifestyle Medicine Context**: Integration of all six pillars in single implementation guide
 
