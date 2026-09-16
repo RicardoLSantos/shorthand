@@ -124,6 +124,21 @@ while IFS=: read -r file line content; do
     log_finding "HIGH" "$file" "$line" "DB connection string: $(echo "$content" | head -c 80)"
 done < <(git grep -n -E '(mongodb|mysql|postgres|redis)://[^/]+:[^@]+@' -- $EXCLUDE 2>/dev/null || true)
 
+# 12. Internal process markers (this is a public repository; working notes must not travel in it).
+#     Ratchet: the number of tracked files carrying a marker may never rise above the recorded
+#     baseline; lower the baseline as files are cleaned. The target is 0, at which point this is a
+#     plain "no marker anywhere" check. RS11_benchmark/ is a public artefact and is not counted.
+#     (Deliberately excludes alternatives that match legitimate code or content, e.g. an env-var
+#     name ending in USER, or the ICD-11 "Chapter N" wording.)
+echo "Checking for internal process markers..."
+MARKER_PAT='AUTHORED-BY-CLAUDE|\bT[1-6] S[0-9]+\b|Pitfall #|Lesson #|Lição #|FAQ Q|VRF-|_TO_GM_|CONTINUE_HERE|SESSION_COMPLETE|\bRS(0|[1-9]|1[0-5])\b|\bG[1-4]\b'
+MARKER_BASELINE=62   # 2026-09-16 — lower this as files are cleaned; never raise it
+MARKER_FILES=$(git grep -l -P "$MARKER_PAT" -- . ':!RS11_benchmark/' $EXCLUDE 2>/dev/null | wc -l | tr -d ' ')
+echo "  files carrying internal markers: $MARKER_FILES (baseline $MARKER_BASELINE, target 0)"
+if [ "$MARKER_FILES" -gt "$MARKER_BASELINE" ]; then
+    log_finding "HIGH" "(repository)" "-" "Internal process markers rose to $MARKER_FILES files (baseline $MARKER_BASELINE) — list them with: git grep -l -P \"\$MARKER_PAT\" -- . ':!RS11_benchmark/' (MARKER_PAT is defined in this script)"
+fi
+
 echo ""
 echo "=== Results ==="
 if [ "$FOUND" -eq 0 ]; then
