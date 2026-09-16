@@ -18,14 +18,13 @@ OMOP concept_id (integer). openEHR archetype IDs, FHIR structural paths, locally
 ICD-11 targets, and the #0 / unmapped sentinels are reported as "skipped (not checkable)".
 
 This is READ-ONLY verification. It does NOT edit any FSH. Any inactive/missing code is a
-FLAG for the terminology owner (T2 lane) — not auto-fixed (Pitfall #82 / #109).
+FLAG for the terminology owner — never auto-fixed (a valid code can carry the wrong meaning; the fix needs a human).
 
 Run:
   python3 scripts/conceptmap_drift_check.py                 # local Database-First (default)
   python3 scripts/conceptmap_drift_check.py --source txfhir # tx.fhir.org advisory (LOINC+SNOMED)
   python3 scripts/conceptmap_drift_check.py --report drift.md --strict
 
-AUTHORED-BY-CLAUDE-T1-S55 (Pitfall #97)
 """
 from __future__ import annotations
 
@@ -223,7 +222,7 @@ def tx_validate(system: str, code: str):
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.load(resp)
-    except Exception as e:  # network-class transient (Pitfall #100) — advisory only
+    except Exception as e:  # network-class transient — advisory only
         return "unknown", f"tx error: {e}"
     result, display = None, ""
     for p in data.get("parameter", []):
@@ -296,7 +295,7 @@ def build_report(records, results, source, skipped_count, athena_path, vocab2_pa
                      "(all active; non-standard/unknown are advisory).")
     else:
         lines.append(f"**DRIFT DETECTED: {drift} code(s) inactive/missing** — "
-                     "FLAG for the terminology owner (T2 lane); do NOT auto-fix (Pitfall #82/#109).")
+                     "FLAG for the terminology owner; do NOT auto-fix (a valid code may carry the wrong meaning).")
     return "\n".join(lines), drift
 
 

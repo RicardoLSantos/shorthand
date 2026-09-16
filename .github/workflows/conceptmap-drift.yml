@@ -4,9 +4,9 @@
 # runs LOCALLY against the OMOP CONCEPT CSVs, which are too large for CI; here we run the
 # network advisory subset.
 #
-# Advisory only (continue-on-error): a transient tx.fhir.org outage (Pitfall #100) must NOT
+# Advisory only (continue-on-error): a transient tx.fhir.org outage must NOT
 # break the build. A drift finding is uploaded as an artifact for the terminology owner to
-# triage (it is never auto-fixed — Pitfall #82 / #109). Pure Python stdlib, no pip install.
+# triage (it is never auto-fixed: a valid code can carry the wrong meaning). Pure Python stdlib, no pip install.
 
 name: ConceptMap Drift
 

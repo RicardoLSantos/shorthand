@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Security Audit Script — Daily check for leaked sensitive information
 # Repository: iOS Lifestyle Medicine FHIR IG (PUBLIC on GitHub)
-# Created: 2026-04-15 by T2 S14
+# Created: 2026-04-15
 # Usage: ./.github/scripts/security_audit.sh [--fix]
 #   --fix: automatically stage .gitignore additions for flagged files
 #

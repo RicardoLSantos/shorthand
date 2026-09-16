@@ -3,7 +3,7 @@
 
 Implements course item 4.3 (HL7 FHIR Intermediate, FHIR Course Alignment §4.3).
 
-Validates BOTH copies of every Card (Pitfall #54 — keep them in lock-step):
+Validates BOTH copies of every Card (they must stay in lock-step):
   (a) the standalone Card files  : input/includes/cds-hooks-cards/*.json
   (b) the ```json Card blocks embedded in input/pagecontent/cds-hooks-integration.md
 
@@ -16,7 +16,6 @@ Run:
   python3 scripts/validate_cds_cards.py
   python3 scripts/validate_cds_cards.py --self-test   # proves the gate catches a typo
 
-AUTHORED-BY-CLAUDE-T1-S55 (Pitfall #97)
 """
 from __future__ import annotations
 
@@ -110,7 +109,7 @@ def run_self_test(validator: Draft7Validator, cards_dir: Path) -> int:
         return 2
     mangled = dict(cards[0])
     if "source" in mangled:
-        mangled["sources"] = mangled.pop("source")  # the Pitfall #95 typo
+        mangled["sources"] = mangled.pop("source")  # the plural-key typo this check guards against
     errs = card_errors(validator, mangled)
     if errs:
         print(f"SELF-TEST PASS: a card with the 'source'->'sources' typo is correctly REJECTED ({len(errs)} error(s)):")
