@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [0.5.0] - Unreleased (candidate, 2026-09-16)
+## [0.5.0] - 2026-09-16
 
 ### Added
 - **`HeartRateVariabilityObservation` profile** (`heart-rate-variability-observation`) — one HRV metric per Observation, `code` bound to `HeartRateVariabilityVS` (extensible): SDNN (LOINC 80404-7) or, for the metrics without a LOINC code, RMSSD, pNN50, LF power, HF power and the LF/HF ratio (custom codes bridged by `ConceptMapHRVToLOINC`); Quantity in UCUM (ms, %, ms2, 1); personal baseline via `referenceRange`/`interpretation`; `MeasurementContext` extension. Three examples (RMSSD 42 ms, pNN50 18 %, LF/HF 1.8). `SdnnObservation` is unchanged.
@@ -23,7 +23,7 @@
 - Terminology pages (ICD-11 Integration, Design Decisions, Known Issues, Terminology Verification, openEHR Integration, Getting Started) updated accordingly; the Terminology Verification page's ledger section re-generated (431 codes; findings dated 2026-09-15 and 2026-09-16).
 
 ### Source counts (FSH)
-- Profiles 103 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 279 (incl. 29 ConceptMaps) = **682 artefacts** (+3 profiles, +10 instances vs 0.4.8); ICD-11 CodeSystem 34 → 46 concepts; `Mapping:` blocks 7 → 12. Build result recorded in the release notes at tag time.
+- Profiles 103 / Extensions 77 / CodeSystems 19 / ValueSets 204 / Instances 279 (incl. 29 ConceptMaps) = **682 artefacts** (+3 profiles, +10 instances vs 0.4.8); ICD-11 CodeSystem 34 → 46 concepts; `Mapping:` blocks 7 → 12. Built with IG Publisher 2.2.10 on 2026-09-16: err 0 / warn 223 / info 13221 / 0 broken links; the 223 warnings are the same set as in the 2026-09-11 build (three builds on 2026-09-16: 10:19, 14:04 and 14:52; the last two identical in every count).
 
 ### Built against
 - LOINC 2.82 (tx.fhir.org; Athena snapshot 2026-01-21) · SNOMED CT International 20250201 (tx.fhir.org; Vocab2 snapshot 2025-02-01) · ICD-11 MMS 2026-01 (tx.fhir.org; WHO linearization export 2026-03-20) · UCUM 2.2 · IEEE 11073-10101 MDC 2024-12-05 (via hl7.fhir.uv.phd 1.1.0) · IG Publisher 2.2.10 · ledger verification dated 2026-09-15/16.
