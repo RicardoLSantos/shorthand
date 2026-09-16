@@ -171,7 +171,7 @@ This implementation fulfills all FHIRconnect requirements:
 
 ## References
 
-1. Kohler S, et al. FHIRconnect: Towards seamless integration of openEHR and FHIR. arXiv:2511.14618v1 [cs.SE] 22 Nov 2024.
+1. Kohler S, et al. FHIRconnect: Towards seamless integration of openEHR and FHIR. arXiv:2511.14618v1 [cs.SE] 18 Nov 2025.
 
 2. HiGHmed Consortium. Medical Informatics Initiative Germany. 2018-2024.
 

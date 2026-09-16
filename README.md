@@ -129,7 +129,7 @@ sequenceDiagram
 | Metric | Value | Notes |
 |--------|:-----:|-------|
 | Errors | 0 | since v0.4.1 |
-| Warnings | 223 | a single advisory class (URL/OID definitions the validator cannot resolve for cross-standard mappings); the active suppressions are listed on the [Known Issues](input/pagecontent/known-issues.md) page |
+| Warnings | 223 | a single advisory class — each CodeSystem (19) and ValueSet (204) "should have an OID assigned", an optional identifier for OID-based terminology systems; left visible by design. The active suppressions are listed on the [Known Issues](input/pagecontent/known-issues.md) page |
 | Information | 13,221 | |
 | Broken Links | 0 | |
 | Toolchain | IG Publisher 2.2.10 · SUSHI 3.18.1 · FHIR 4.0.1 | the CI builds with the latest publisher |
@@ -267,7 +267,7 @@ After build, the IG is available at:
 ```
 shorthand/
 ├── input/
-│   ├── fsh/                   # 29 directories; the main ones:
+│   ├── fsh/                   # 22 directories; the main ones:
 │   │   ├── profiles/          #   103 FHIR profiles
 │   │   ├── extensions/        #   77 extensions
 │   │   ├── codesystems/, valuesets/, terminology/   # CodeSystems, ValueSets, ConceptMaps and external stubs

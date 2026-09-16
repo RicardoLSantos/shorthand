@@ -39,8 +39,8 @@ Suppressions are reserved for messages the IG Publisher emits about things that 
 
 - **No hosted site yet.** The canonical URL `https://2rdoc.pt/ig/ios-lifestyle-medicine` is the IG's identifier; the rendered site is not deployed there. The versioned GitHub releases (`package.tgz`) are the distribution; see the [roadmap](implementation-scope-and-roadmap.html).
 - **CQL libraries are external and not executed.** `ClinicalImpression.protocol` references `urn:cql:library:` URIs registered as thin `Library` resources; no CQL engine runs in this project. Likewise the GDL2 bridge is documented without an engine.
-- **One profile has no example.** `ConsumerECGObservation` is the abstract parent of the ECG profiles; each of its five child profiles has an example.
-- **Two bindings are annotated as pending review in the FSH** (a distance→steps element in the vendor-to-LOINC ConceptMap, and two components of `ReproductiveObservation`); they carry inline notes rather than silent approximations. See the [terminology verification page](terminology-verification.html).
+- **Two profiles have no standalone example.** `ConsumerECGObservation` is the abstract parent of the ECG profiles (each of its four child profiles has one); `CarePlanLifestyleMedicine` is instantiated only inline, inside the compliance and workflow bundle examples.
+- **Several bindings are annotated as pending review in the FSH** — two components of `ReproductiveObservation`, a distance→steps element in the vendor-to-LOINC ConceptMap, and three ConceptMap elements declared unmatched pending a replacement (two in the nutrition map, one in the social-history map); each carries an inline note rather than a silent approximation. See the [terminology verification page](terminology-verification.html).
 - **ICD-11 codes are republished under the IG namespace by design** (a complete, verified fragment) so that the build never depends on the availability of an external terminology server; the ledger records the owner-source verification of each code.
 - **An external terminology router is specification only.** The interfaces, extensions and CodeSystems that would carry an agent's outputs are specified; no implementation is distributed or required by this IG.
 
@@ -49,9 +49,9 @@ Suppressions are reserved for messages the IG Publisher emits about things that 
 | Issue | Releases affected | Resolution |
 |---|---|---|
 | 23 errors inherited from the IPS 2.0.0 dependency (`note\|5.3.0-ballot-tc1` referenced an unpublished extensions package) | v0.2.x – v0.3.x (March–May 2026) | resolved upstream when HL7 published `hl7.fhir.uv.extensions.r4` 5.3.0; the IG's suppressions for that era remain for reproducibility |
-| 21 errors from openEHR/OMOP ConceptMaps declaring non-FHIR systems as `group.source`/`group.target` | v0.3.0 (March 2026) | structural maps now carry the identifiers as documented targets without CodeSystem semantics |
+| 21 errors from openEHR/OMOP ConceptMaps declaring non-FHIR systems as `group.source`/`group.target` | v0.2.0 (fixed in March 2026, before v0.2.1) | structural maps now carry the identifiers as documented targets without CodeSystem semantics |
 | 5 residual errors (Consent terminology resolved locally; two thin CQL `Library` resources for unresolved protocol references) | v0.4.1 (June 2026) | fixed at source; errors have been 0 since |
-| 34-code ICD-11 fragment in which a substantial share of the codes were absent from the WHO MMS linearization or carried another concept's title | v0.3.x – v0.4.8 | rebuilt in v0.5.0 as a 46-concept fragment verified against the WHO linearization and `tx.fhir.org` (see the 0.5.0 change log) |
+| 34-code ICD-11 fragment in which a substantial share of the codes were absent from the WHO MMS linearization or carried another concept's title | v0.2.0 – v0.4.8 (twelve releases) | rebuilt in v0.5.0 as a 46-concept fragment verified against the WHO linearization and `tx.fhir.org` (see the 0.5.0 change log) |
 | Bindings pointing at valid codes with the wrong meaning (nutrition, social-history, sleep-quality value sets) | up to v0.4.8 | corrected or retired in v0.5.0 with the terminology ledger as the record |
 
 ## Reporting

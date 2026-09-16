@@ -147,7 +147,7 @@ This IG was developed alongside a Retrieval-Augmented Generation (RAG) system fo
 | **Synonym** | Cross-terminology synonyms | 1,800,000 entries |
 | **THO Collection** | HL7 Terminology | 20,051 codes |
 
-**How it was used**: during development, retrieval over these indexed sources served as a *verification aid* — a deterministic index proposed candidate codes, and every code that entered the IG was then confirmed against the terminology owner's source and `tx.fhir.org` (the ledger above is the record). Language models were never the source of a code. **No retrieval or model component is distributed or required by this IG**: a possible integration with an external terminology router is specified only through the interfaces, extensions and CodeSystems that carry an agent's outputs.
+**How it was used**: during development, retrieval over these indexed sources served as a *verification aid* — a deterministic index proposed candidate codes, and every code that entered the IG was then confirmed against the terminology owner's source and `tx.fhir.org` (the ledger above is the record). Language models were never the source of a code. **No implementation is distributed or required by this IG** — no retrieval or model component ships with it: a possible integration with an external terminology router is specified only through the interfaces, extensions and CodeSystems that carry an agent's outputs.
 
 ### Related Work in RAG for Terminology
 
@@ -200,7 +200,7 @@ The following metrics have **no standard codes** despite extensive verification:
 | Deep Sleep Duration | ❌ | ❌ | ❌ | Custom code required |
 | Sleep Efficiency | ❌ | ❌ | ❌ | Custom code required |
 
-These gaps are documented in the [LifestyleMedicineTemporaryCS](CodeSystem-lifestyle-medicine-temporary-cs.html) with `assignment-status = "pending-loinc"`.
+These gaps are documented in the [LifestyleMedicineTemporaryCS](CodeSystem-lifestyle-medicine-temporary-cs.html); the per-concept `assignment-status` property (`pending-loinc`) is defined in `AppLogicCS` but is not yet applied to the concepts — an open item.
 
 ## Reporting Errors
 

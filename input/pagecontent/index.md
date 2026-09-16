@@ -92,7 +92,7 @@ Built on FHIR R4 (4.0.1) with:
 
 ## Integration Architecture
 
-This IG implements the **FHIRconnect triple-layer architecture** for optimal interoperability:
+This IG adopts the **FHIRconnect triple-layer architectural pattern** for interoperability:
 
 ### Model-Mappings Layer
 - Generic transformations between data models (100% reusable)
@@ -100,12 +100,12 @@ This IG implements the **FHIRconnect triple-layer architecture** for optimal int
 - Vendor-agnostic data structures
 
 ### Extension-Mappings Layer
-- Domain-specific extensions (67.4% reusable across vendors)
+- Domain-specific extensions (67% reusable across vendors, per the published computation)
 - Wearable device metadata
 - Lifestyle medicine context
 
 ### Context-Mappings Layer
-- Terminology bindings (45% reusable across domains)
+- Terminology bindings (the vendor-specific layer: ConceptMaps translate each vendor's API terminology)
 - 29 ConceptMaps covering 120+ metrics (10 domain + 19 cross-paradigm)
 - Dual-coding strategy for 86% terminology gap
 
@@ -156,10 +156,10 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 |--------|:-----:|---------|
 | **Domains covered** | 11 | Vital signs, sleep, activity, nutrition, mindfulness, stress, environmental, social, reproductive, ECG, body metrics |
 | **Vendor support** | 7+ | Apple HealthKit, Fitbit, Garmin, Oura, Polar, Withings, generic |
-| **Custom codes** | 1,211 | Each with documented LOINC/SNOMED migration triggers |
+| **Custom codes** | 1,211 | Interim codes for concepts with no LOINC/SNOMED CT equivalent; the ConceptMaps bridge those that have one. Per-concept migration properties (`assignment-status`, `loinc-equivalent`) are defined in `AppLogicCS` but not yet applied to the concepts |
 | **Terminology gap documented** | 86% | Of consumer wearable metrics lack standard codes |
 | **ConceptMaps** | 29 | Covering LOINC, SNOMED CT, OMOP CDM, openEHR |
-| **Example instances** | 191 | 102 of 103 profiles have at least one example (the abstract `ConsumerECGObservation` parent has none) |
+| **Example instances** | 191 | 101 of 103 profiles have a standalone example — `ConsumerECGObservation` (the abstract ECG parent) has none, and `CarePlanLifestyleMedicine` is instantiated only inline inside bundle examples |
 | **Regulatory frameworks** | 2 | LGPD (Brazil), CFM 2.454/2026 (AI in medicine) |
 | **Estimated dev time saved** | 180h | Based on implementation effort analysis vs. building from scratch |
 

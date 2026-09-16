@@ -76,7 +76,7 @@ The [Data Protection Policies](data-protection-policies.html) page documents the
 
 A possible longer-horizon addition is a **vector-indexed terminology toolkit** that would index the IG's local CodeSystems (CDSHooksHookTypesCS, IOSLifestyleMedicineSMARTScopes, vendor-specific stubs) plus federated external terminologies (LOINC, SNOMED CT, ICD-11, UCUM) into a vector index supporting semantic search across the IG's 19 CodeSystems and 204 ValueSets. The intent is a **terminology bridging** step: a deterministic index returns candidate codes, which a language model may then only disambiguate — never look up exact codes on its own. This interface is what the agent-output extensions and CodeSystems of this IG are specified to carry; the index and any model behind it are external to the IG.
 
-Status: **specification only** — no indexer, persistence schema or query API is distributed or required by this IG, and nothing in the IG depends on it.
+Status: **specification only** — no implementation is distributed or required by this IG (no indexer, persistence schema or query API), and nothing in the IG depends on it.
 
 ## Production Discipline
 
