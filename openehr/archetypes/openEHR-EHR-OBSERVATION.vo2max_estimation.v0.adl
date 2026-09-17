@@ -1,0 +1,455 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.vo2max_estimation.v0
+
+concept
+	[at0000]	-- VO2max estimation
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["email"] = <"ricardolourencosantos@gmail.com">
+		["date"] = <"2025-11-30">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record estimated maximal oxygen uptake (VO2max) derived from wearable devices and fitness applications using indirect estimation algorithms.">
+			use = <"Use to record VO2max estimates from consumer devices that use heart rate, demographic data, and activity patterns to estimate cardiorespiratory fitness without direct laboratory measurement.">
+			misuse = <"Not to be used for directly measured VO2max from cardiopulmonary exercise testing (CPET). Not intended for clinical diagnosis of cardiorespiratory conditions.">
+			keywords = <"VO2max", "cardiorespiratory fitness", "aerobic capacity", "oxygen uptake", "fitness level", "wearable", "estimation">
+			copyright = <"Ricardo Lourenco dos Santos, FMUP, 2025. Creative Commons Attribution-ShareAlike 4.0.">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Faculty of Medicine, University of Porto (FMUP)">
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+		["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["references"] = <"Ross R, Blair SN, Arena R, et al. Importance of Assessing Cardiorespiratory Fitness in Clinical Practice: A Case for Fitness as a Clinical Vital Sign. Circulation. 2016;134(24):e653-e699. doi:10.1161/CIR.0000000000000461
+
+Shrier I, Feldman DE, Engert J, et al. Assessing the predictive validity of wearable device-derived VO2max estimates: A meta-analysis. Sports Med. 2023;53:2411-2425.">
+		["current_contact"] = <"Ricardo Lourenco dos Santos <ricardolourencosantos@gmail.com>">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- VO2max estimation
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- VO2max estimate
+										value matches {
+											DV_QUANTITY matches {
+
+												units matches {"ml/kg/min"}
+
+												magnitude matches {|0.0..100.0|}
+
+												precision matches {|1|}
+
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Fitness level classification
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0200,	-- Superior
+													at0201,	-- Excellent
+													at0202,	-- Good
+													at0203,	-- Fair
+													at0204,	-- Poor
+													at0205]	-- Very poor
+												}
+											}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Age-adjusted percentile
+										value matches {
+											DV_PROPORTION matches {
+												numerator matches {|0.0..100.0|}
+												type matches {2}
+											}
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Fitness age
+										value matches {
+											DV_DURATION matches {
+												value matches {PY/|P0Y..P120Y|}
+											}
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Estimation method
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0210,	-- Submaximal exercise test
+													at0211,	-- Resting heart rate based
+													at0212,	-- Walking test based
+													at0213,	-- Running performance based
+													at0214,	-- Heart rate recovery based
+													at0215,	-- Machine learning algorithm
+													at0216]	-- Manufacturer proprietary
+												}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Confidence level
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0220,	-- High
+													at0221,	-- Medium
+													at0222]	-- Low
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Change from baseline
+										value matches {
+											DV_QUANTITY matches {
+
+												units matches {"ml/kg/min"}
+
+												magnitude matches {|-50.0..50.0|}
+
+												precision matches {|1|}
+
+											}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {	-- Trend
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0230,	-- Improving
+													at0231,	-- Stable
+													at0232,	-- Declining
+													at0233]	-- Insufficient data
+												}
+											}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0020] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0021] occurrences matches {0..1} matches {	-- Test activity type
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0240,	-- Rest
+													at0241,	-- Walking
+													at0242,	-- Running
+													at0243,	-- Cycling
+													at0244,	-- Swimming
+													at0245]	-- Other cardio
+												}
+											}
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- Environmental conditions
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0250,	-- Optimal conditions
+													at0251,	-- Hot environment
+													at0252,	-- Cold environment
+													at0253,	-- High altitude
+													at0254]	-- Suboptimal conditions
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0030] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0031] occurrences matches {0..1} matches {	-- Algorithm version
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0032] occurrences matches {0..1} matches {	-- Reference population
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0033] occurrences matches {0..1} matches {	-- Inputs used
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0034] occurrences matches {0..*} matches {	-- Device details
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0|openEHR-EHR-CLUSTER\.device\.v1/}
+					}
+					allow_archetype CLUSTER[at0035] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"VO2max estimation">
+					description = <"Estimated maximal oxygen uptake from wearable devices and fitness applications.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"VO2max estimate">
+					description = <"Estimated maximal oxygen consumption per kilogram of body weight per minute.">
+				>
+				["at0005"] = <
+					text = <"Fitness level classification">
+					description = <"Categorization of cardiorespiratory fitness based on age and sex norms.">
+				>
+				["at0006"] = <
+					text = <"Age-adjusted percentile">
+					description = <"Percentile ranking compared to age and sex matched population.">
+				>
+				["at0007"] = <
+					text = <"Fitness age">
+					description = <"Estimated biological age based on cardiorespiratory fitness level.">
+				>
+				["at0008"] = <
+					text = <"Estimation method">
+					description = <"Algorithm or method used to estimate VO2max.">
+				>
+				["at0009"] = <
+					text = <"Confidence level">
+					description = <"Device-reported confidence in the estimation accuracy.">
+				>
+				["at0010"] = <
+					text = <"Change from baseline">
+					description = <"Difference from established baseline VO2max value.">
+				>
+				["at0011"] = <
+					text = <"Trend">
+					description = <"Direction of change in VO2max over recent period.">
+				>
+				["at0012"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the VO2max estimation.">
+				>
+				["at0020"] = <
+					text = <"State tree">
+					description = <"@ internal @">
+				>
+				["at0021"] = <
+					text = <"Test activity type">
+					description = <"Type of activity during which VO2max was estimated.">
+				>
+				["at0022"] = <
+					text = <"Environmental conditions">
+					description = <"Environmental factors that may affect estimation accuracy.">
+				>
+				["at0030"] = <
+					text = <"Protocol tree">
+					description = <"@ internal @">
+				>
+				["at0031"] = <
+					text = <"Algorithm version">
+					description = <"Version of the estimation algorithm used.">
+				>
+				["at0032"] = <
+					text = <"Reference population">
+					description = <"Population database used for percentile calculations.">
+				>
+				["at0033"] = <
+					text = <"Inputs used">
+					description = <"Data inputs used in the estimation algorithm.">
+				>
+				["at0034"] = <
+					text = <"Device details">
+					description = <"Details about the device used for estimation.">
+				>
+				["at0035"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local context.">
+				>
+				["at0200"] = <
+					text = <"Superior">
+					description = <"Top tier cardiorespiratory fitness.">
+				>
+				["at0201"] = <
+					text = <"Excellent">
+					description = <"Excellent cardiorespiratory fitness.">
+				>
+				["at0202"] = <
+					text = <"Good">
+					description = <"Good cardiorespiratory fitness.">
+				>
+				["at0203"] = <
+					text = <"Fair">
+					description = <"Fair cardiorespiratory fitness.">
+				>
+				["at0204"] = <
+					text = <"Poor">
+					description = <"Poor cardiorespiratory fitness.">
+				>
+				["at0205"] = <
+					text = <"Very poor">
+					description = <"Very poor cardiorespiratory fitness.">
+				>
+				["at0210"] = <
+					text = <"Submaximal exercise test">
+					description = <"Estimation from submaximal exercise protocol.">
+				>
+				["at0211"] = <
+					text = <"Resting heart rate based">
+					description = <"Estimation primarily from resting heart rate data.">
+				>
+				["at0212"] = <
+					text = <"Walking test based">
+					description = <"Estimation from walking test performance.">
+				>
+				["at0213"] = <
+					text = <"Running performance based">
+					description = <"Estimation from running pace and heart rate data.">
+				>
+				["at0214"] = <
+					text = <"Heart rate recovery based">
+					description = <"Estimation from heart rate recovery patterns.">
+				>
+				["at0215"] = <
+					text = <"Machine learning algorithm">
+					description = <"Estimation using machine learning models.">
+				>
+				["at0216"] = <
+					text = <"Manufacturer proprietary">
+					description = <"Proprietary manufacturer algorithm.">
+				>
+				["at0220"] = <
+					text = <"High">
+					description = <"High confidence in estimation accuracy.">
+				>
+				["at0221"] = <
+					text = <"Medium">
+					description = <"Medium confidence in estimation accuracy.">
+				>
+				["at0222"] = <
+					text = <"Low">
+					description = <"Low confidence in estimation accuracy.">
+				>
+				["at0230"] = <
+					text = <"Improving">
+					description = <"VO2max trending upward.">
+				>
+				["at0231"] = <
+					text = <"Stable">
+					description = <"VO2max relatively stable.">
+				>
+				["at0232"] = <
+					text = <"Declining">
+					description = <"VO2max trending downward.">
+				>
+				["at0233"] = <
+					text = <"Insufficient data">
+					description = <"Not enough data to determine trend.">
+				>
+				["at0240"] = <
+					text = <"Rest">
+					description = <"Estimated at rest.">
+				>
+				["at0241"] = <
+					text = <"Walking">
+					description = <"Estimated during walking activity.">
+				>
+				["at0242"] = <
+					text = <"Running">
+					description = <"Estimated during running activity.">
+				>
+				["at0243"] = <
+					text = <"Cycling">
+					description = <"Estimated during cycling activity.">
+				>
+				["at0244"] = <
+					text = <"Swimming">
+					description = <"Estimated during swimming activity.">
+				>
+				["at0245"] = <
+					text = <"Other cardio">
+					description = <"Estimated during other cardiovascular activity.">
+				>
+				["at0250"] = <
+					text = <"Optimal conditions">
+					description = <"Testing in optimal environmental conditions.">
+				>
+				["at0251"] = <
+					text = <"Hot environment">
+					description = <"Hot environmental conditions may affect accuracy.">
+				>
+				["at0252"] = <
+					text = <"Cold environment">
+					description = <"Cold environmental conditions may affect accuracy.">
+				>
+				["at0253"] = <
+					text = <"High altitude">
+					description = <"High altitude may affect estimation.">
+				>
+				["at0254"] = <
+					text = <"Suboptimal conditions">
+					description = <"Other suboptimal conditions affecting accuracy.">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["LOINC"] = <
+			items = <
+				["at0004"] = <[LOINC::60842-2]>    -- Oxygen consumption (VO2)
+			>
+		>
+		["SNOMED-CT"] = <
+			items = <
+				["at0000"] = <[SNOMED-CT::251898000]>    -- Maximum oxygen uptake
+			>
+		>
+		-- Verified via Athena CONCEPT.csv 2026-02-11
+		-- Previous code 251880007 was INVALID (does not exist in SNOMED CT)
+	>

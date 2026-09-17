@@ -4,7 +4,7 @@
 
 # openEHR Archetype Catalog
 
-> **Where the files live.** The ADL source files are **not currently distributed with this IG**: they were removed from the public repository in `ff0e86377` and the directory is git-ignored. This page is a *description* of that archetype set and of the reconciliation behind the count — it is not a download point. Distribution is a separate decision, tied to a CKM submission plan.
+> **Where the files live.** Since 0.5.1 the **12 genuinely original archetypes (§2.1) and the 6 templates (§3) are distributed with this IG** in the repository folder [`openehr/`](https://github.com/RicardoLSantos/shorthand/tree/main/openehr) (ADL 1.4 and XML sources, with a README that records their provenance, the Archie validation of the archetypes and the validation status of the templates). The other ADL files of the development snapshot (§2.2–§2.4) are not distributed. This page remains the *description* of the set and of the reconciliation behind the count; distribution is not a CKM submission.
 
 ## 1. Scope: what this catalog claims, and what it does not
 
@@ -75,8 +75,8 @@ Extending the cross-check to every RM type resolved the 10 concepts that were pr
 
 ## 3. Operational templates (`.oet`) and reused CKM archetypes
 
-- **6 operational `.oet` templates**: `hrv` · `activity` · `sleep` · `stress` · `encounter` · `Wearable_Summary`. Like the ADL files, these are not distributed with this IG.
-- **2 CKM archetypes reused, and credited**: `COMPOSITION.self_reported_data.v1` (Venheim / Helse Vest) and `CLUSTER.device.v1` (Leslie / Atomica).
+- **6 composition templates** (`hrv` · `activity` · `sleep` · `stress` · `encounter` · `Wearable_Summary`), distributed in [`openehr/templates/`](https://github.com/RicardoLSantos/shorthand/tree/main/openehr/templates). Measured on 2026-09-17: they are well-formed XML in the openEHR v1 namespace shaped like operational templates, but they do **not** validate against the openEHR Operational Template schema (`Template.xsd`, Release-1.0.2 — rejected at the first element) and are not in the Ocean `.oet` format despite the extension, so they are **not validated as operational templates**. They reference four archetypes of this corpus — `heart_rate_variability`, `sleep_architecture` and `wearable_device` (all in §2.1) and `physical_activity_detailed.v0`, which is not distributed (a duplicate of the CKM `physical_activity` archetype); four of the six templates depend on it. **None of the six references a published CKM archetype.**
+- **CKM archetypes reused:** the reuse of `COMPOSITION.self_reported_data.v1` (Venheim / Helse Vest) and `CLUSTER.device.v1` (Leslie / Atomica) described earlier on this page is a design statement that the distributed files do not yet express: no template references either archetype, and none of the twelve ADL files carries a `specialise` clause (this includes `wearable_device`, described in §1 as a specialisation of `CLUSTER.device.v1`). The description in §1 and §2.1 is left as written pending the author's revision.
 
 ## 4. Method caveats (for the reader to weigh)
 

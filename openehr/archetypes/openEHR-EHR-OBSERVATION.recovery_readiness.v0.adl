@@ -1,0 +1,645 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.recovery_readiness.v0
+
+concept
+	[at0000]	-- Recovery readiness
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["email"] = <"ricardolourencosantos@gmail.com">
+		["date"] = <"2025-11-30">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record recovery readiness and strain metrics from wearable fitness devices, supporting training load management and overtraining prevention.">
+			use = <"Use to record recovery scores, strain metrics, and training readiness assessments from consumer wearables. Supports athletic performance optimization and lifestyle medicine interventions focused on recovery.">
+			misuse = <"Not to be used for clinical assessment of overtraining syndrome or medical fatigue conditions. Not intended for diagnosis of medical conditions affecting recovery.">
+			keywords = <"recovery", "readiness", "strain", "training load", "HRV", "sleep", "wearable", "fitness", "overtraining", "fatigue">
+			copyright = <"Ricardo Lourenco dos Santos, FMUP, 2025. Creative Commons Attribution-ShareAlike 4.0.">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Faculty of Medicine, University of Porto (FMUP)">
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+		["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["references"] = <"Plews DJ, et al. Training Adaptation and Heart Rate Variability in Elite Endurance Athletes: Opening the Door to Effective Monitoring. Sports Med. 2013;43(9):773-781. doi:10.1007/s40279-013-0071-8
+
+Foster C. Monitoring training in athletes with reference to overtraining syndrome. Med Sci Sports Exerc. 1998;30(7):1164-1168. doi:10.1097/00005768-199807000-00023">
+		["current_contact"] = <"Ricardo Lourenco dos Santos <ricardolourencosantos@gmail.com>">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Recovery readiness
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Recovery score
+										value matches {
+											DV_QUANTITY matches {
+
+												units matches {"%"}
+
+												magnitude matches {|0.0..100.0|}
+
+												precision matches {|0|}
+
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Recovery status
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0200,	-- Optimal
+													at0201,	-- Good
+													at0202,	-- Moderate
+													at0203,	-- Low
+													at0204]	-- Poor
+												}
+											}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Training readiness
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0210,	-- Peak - high intensity recommended
+													at0211,	-- Primed - moderate-high intensity
+													at0212,	-- Baseline - normal training
+													at0213,	-- Strained - light activity only
+													at0214]	-- Rest day recommended
+												}
+											}
+										}
+									}
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- HRV-based metrics
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Morning HRV (RMSSD)
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"ms"}
+
+														magnitude matches {|0.0..300.0|}
+
+														precision matches {|1|}
+
+													}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- HRV deviation from baseline
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"%"}
+
+														magnitude matches {|-100.0..100.0|}
+
+														precision matches {|0|}
+
+													}
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- HRV trend
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0220,	-- Improving
+															at0221,	-- Stable
+															at0222,	-- Declining
+															at0223]	-- Variable
+														}
+													}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Resting heart rate
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"/min"}
+
+														magnitude matches {|20.0..200.0|}
+
+														precision matches {|0|}
+
+													}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- RHR deviation from baseline
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"/min"}
+
+														magnitude matches {|-50.0..50.0|}
+
+														precision matches {|0|}
+
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- Strain metrics
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Daily strain score
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"1"}
+
+														magnitude matches {|0.0..21.0|}
+
+														precision matches {|1|}
+
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Weekly strain total
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"1"}
+
+														magnitude matches {|0.0..150.0|}
+
+														precision matches {|0|}
+
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Acute:chronic workload ratio
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"1"}
+
+														magnitude matches {|0.0..3.0|}
+
+														precision matches {|2|}
+
+													}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- Training impulse (TRIMP)
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"1"}
+
+														magnitude matches {|0.0..1000.0|}
+
+														precision matches {|0|}
+
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0030] occurrences matches {0..1} matches {	-- Sleep contribution
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- Sleep score
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"%"}
+
+														magnitude matches {|0.0..100.0|}
+
+														precision matches {|0|}
+
+													}
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..1} matches {	-- Sleep duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0H..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- Sleep quality impact
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0230,	-- Positive impact
+															at0231,	-- Neutral
+															at0232]	-- Negative impact
+														}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {	-- Subjective feeling
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0240,	-- Fully recovered
+													at0241,	-- Good
+													at0242,	-- Normal
+													at0243,	-- Tired
+													at0244]	-- Exhausted
+												}
+											}
+										}
+									}
+									ELEMENT[at0041] occurrences matches {0..1} matches {	-- Muscle soreness
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..10|}
+											}
+										}
+									}
+									ELEMENT[at0042] occurrences matches {0..1} matches {	-- Recommended activity
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0050] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0051] occurrences matches {0..1} matches {	-- Measurement timing
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0250,	-- Upon waking
+													at0251,	-- Pre-workout
+													at0252,	-- Post-workout
+													at0253]	-- End of day
+												}
+											}
+										}
+									}
+									ELEMENT[at0052] occurrences matches {0..1} matches {	-- Fasted state
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					INTERVAL_EVENT[at0060] occurrences matches {0..1} matches {	-- 7-day rolling
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[openehr::146]
+								}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {P7D}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0050]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0070] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0071] occurrences matches {0..1} matches {	-- Algorithm type
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0260,	-- HRV-based
+									at0261,	-- Multi-sensor fusion
+									at0262,	-- Machine learning
+									at0263]	-- Subjective input weighted
+								}
+							}
+						}
+					}
+					ELEMENT[at0072] occurrences matches {0..1} matches {	-- Baseline period
+						value matches {
+							DV_DURATION matches {
+								value matches {PD/|P7D..P90D|}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0073] occurrences matches {0..*} matches {	-- Device details
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0|openEHR-EHR-CLUSTER\.device\.v1/}
+					}
+					allow_archetype CLUSTER[at0074] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Recovery readiness">
+					description = <"Recovery readiness and strain metrics from wearable fitness devices.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Recovery score">
+					description = <"Overall recovery score as percentage.">
+				>
+				["at0005"] = <
+					text = <"Recovery status">
+					description = <"Categorical recovery status.">
+				>
+				["at0006"] = <
+					text = <"Training readiness">
+					description = <"Readiness for training based on recovery status.">
+				>
+				["at0010"] = <
+					text = <"HRV-based metrics">
+					description = <"Recovery metrics derived from heart rate variability.">
+				>
+				["at0011"] = <
+					text = <"Morning HRV (RMSSD)">
+					description = <"Morning HRV measurement using RMSSD.">
+				>
+				["at0012"] = <
+					text = <"HRV deviation from baseline">
+					description = <"Percentage deviation from personal baseline HRV.">
+				>
+				["at0013"] = <
+					text = <"HRV trend">
+					description = <"Trend direction of HRV over recent period.">
+				>
+				["at0014"] = <
+					text = <"Resting heart rate">
+					description = <"Resting heart rate measurement.">
+				>
+				["at0015"] = <
+					text = <"RHR deviation from baseline">
+					description = <"Deviation of RHR from personal baseline.">
+				>
+				["at0020"] = <
+					text = <"Strain metrics">
+					description = <"Training strain and load metrics.">
+				>
+				["at0021"] = <
+					text = <"Daily strain score">
+					description = <"Daily cumulative strain score (e.g., WHOOP 0-21 scale).">
+				>
+				["at0022"] = <
+					text = <"Weekly strain total">
+					description = <"Total strain accumulated over the week.">
+				>
+				["at0023"] = <
+					text = <"Acute:chronic workload ratio">
+					description = <"Ratio of acute (1-week) to chronic (4-week) workload.">
+				>
+				["at0024"] = <
+					text = <"Training impulse (TRIMP)">
+					description = <"Training impulse score based on HR and duration.">
+				>
+				["at0030"] = <
+					text = <"Sleep contribution">
+					description = <"Sleep-related recovery factors.">
+				>
+				["at0031"] = <
+					text = <"Sleep score">
+					description = <"Sleep quality score contributing to recovery.">
+				>
+				["at0032"] = <
+					text = <"Sleep duration">
+					description = <"Total sleep duration.">
+				>
+				["at0033"] = <
+					text = <"Sleep quality impact">
+					description = <"Impact of sleep quality on recovery.">
+				>
+				["at0040"] = <
+					text = <"Subjective feeling">
+					description = <"Self-reported recovery feeling.">
+				>
+				["at0041"] = <
+					text = <"Muscle soreness">
+					description = <"Muscle soreness level (0-10 scale).">
+				>
+				["at0042"] = <
+					text = <"Recommended activity">
+					description = <"Device-recommended activity based on recovery.">
+				>
+				["at0043"] = <
+					text = <"Comment">
+					description = <"Additional narrative about recovery status.">
+				>
+				["at0050"] = <
+					text = <"State tree">
+					description = <"@ internal @">
+				>
+				["at0051"] = <
+					text = <"Measurement timing">
+					description = <"When the measurement was taken.">
+				>
+				["at0052"] = <
+					text = <"Fasted state">
+					description = <"Whether measurement taken in fasted state.">
+				>
+				["at0060"] = <
+					text = <"7-day rolling">
+					description = <"7-day rolling average of recovery metrics.">
+				>
+				["at0070"] = <
+					text = <"Protocol tree">
+					description = <"@ internal @">
+				>
+				["at0071"] = <
+					text = <"Algorithm type">
+					description = <"Type of algorithm used for recovery calculation.">
+				>
+				["at0072"] = <
+					text = <"Baseline period">
+					description = <"Duration used to establish personal baseline.">
+				>
+				["at0073"] = <
+					text = <"Device details">
+					description = <"Details about the measurement device.">
+				>
+				["at0074"] = <
+					text = <"Extension">
+					description = <"Additional information for local context.">
+				>
+				["at0200"] = <
+					text = <"Optimal">
+					description = <"Optimal recovery, fully ready for high-intensity training.">
+				>
+				["at0201"] = <
+					text = <"Good">
+					description = <"Good recovery, ready for normal training.">
+				>
+				["at0202"] = <
+					text = <"Moderate">
+					description = <"Moderate recovery, some caution advised.">
+				>
+				["at0203"] = <
+					text = <"Low">
+					description = <"Low recovery, light activity recommended.">
+				>
+				["at0204"] = <
+					text = <"Poor">
+					description = <"Poor recovery, rest recommended.">
+				>
+				["at0210"] = <
+					text = <"Peak - high intensity recommended">
+					description = <"Peak readiness for high-intensity training.">
+				>
+				["at0211"] = <
+					text = <"Primed - moderate-high intensity">
+					description = <"Ready for moderate to high intensity.">
+				>
+				["at0212"] = <
+					text = <"Baseline - normal training">
+					description = <"Ready for normal baseline training.">
+				>
+				["at0213"] = <
+					text = <"Strained - light activity only">
+					description = <"Only light activity recommended.">
+				>
+				["at0214"] = <
+					text = <"Rest day recommended">
+					description = <"Rest day recommended for recovery.">
+				>
+				["at0220"] = <
+					text = <"Improving">
+					description = <"HRV trend is improving.">
+				>
+				["at0221"] = <
+					text = <"Stable">
+					description = <"HRV trend is stable.">
+				>
+				["at0222"] = <
+					text = <"Declining">
+					description = <"HRV trend is declining.">
+				>
+				["at0223"] = <
+					text = <"Variable">
+					description = <"HRV trend is highly variable.">
+				>
+				["at0230"] = <
+					text = <"Positive impact">
+					description = <"Sleep had positive impact on recovery.">
+				>
+				["at0231"] = <
+					text = <"Neutral">
+					description = <"Sleep had neutral impact on recovery.">
+				>
+				["at0232"] = <
+					text = <"Negative impact">
+					description = <"Sleep had negative impact on recovery.">
+				>
+				["at0240"] = <
+					text = <"Fully recovered">
+					description = <"Feels fully recovered.">
+				>
+				["at0241"] = <
+					text = <"Good">
+					description = <"Feels good.">
+				>
+				["at0242"] = <
+					text = <"Normal">
+					description = <"Feels normal.">
+				>
+				["at0243"] = <
+					text = <"Tired">
+					description = <"Feels tired.">
+				>
+				["at0244"] = <
+					text = <"Exhausted">
+					description = <"Feels exhausted.">
+				>
+				["at0250"] = <
+					text = <"Upon waking">
+					description = <"Measured upon waking.">
+				>
+				["at0251"] = <
+					text = <"Pre-workout">
+					description = <"Measured before workout.">
+				>
+				["at0252"] = <
+					text = <"Post-workout">
+					description = <"Measured after workout.">
+				>
+				["at0253"] = <
+					text = <"End of day">
+					description = <"Measured at end of day.">
+				>
+				["at0260"] = <
+					text = <"HRV-based">
+					description = <"Algorithm primarily based on HRV analysis.">
+				>
+				["at0261"] = <
+					text = <"Multi-sensor fusion">
+					description = <"Algorithm using multiple sensor inputs.">
+				>
+				["at0262"] = <
+					text = <"Machine learning">
+					description = <"Machine learning based algorithm.">
+				>
+				["at0263"] = <
+					text = <"Subjective input weighted">
+					description = <"Algorithm weighted by subjective inputs.">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["openEHR"] = <
+			items = <
+				-- Consumer wellness metric - no LOINC/SNOMED-CT codes available
+				-- Local archetype codes used per openEHR specification:
+				-- "Value sets defined locally because terms not available in published terminologies"
+			>
+		>
+	>

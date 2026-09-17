@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://schemas.openehr.org/v1">
+    <id>
+        <value>lifestyle_medicine_stress.v0</value>
+    </id>
+    <name>
+        <value>Lifestyle Medicine Stress and Recovery Assessment</value>
+    </name>
+    <description>
+        <original_author>
+            <item>
+                <key>name</key>
+                <value>Ricardo Lourenco dos Santos</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Faculty of Medicine, University of Porto (FMUP)</value>
+            </item>
+            <item>
+                <key>email</key>
+                <value>ricardolourencosantos@gmail.com</value>
+            </item>
+            <item>
+                <key>date</key>
+                <value>2026-01-29</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>To record stress and recovery indicators from consumer wearable devices, combining HRV-based autonomic nervous system assessment with subjective wellness measures for lifestyle medicine practice.</purpose>
+            <keywords>stress, recovery, readiness, HRV, autonomic nervous system, wellness, mental health, resilience, wearable</keywords>
+            <use>Use for recording stress and recovery measurements including:
+- HRV-based stress scores (proprietary algorithms)
+- Recovery/readiness scores
+- Autonomic balance indicators (LF/HF conceptual)
+- Morning readiness assessment
+- Training load vs recovery balance
+- Subjective wellness inputs (mood, energy, soreness)
+- Mindfulness session tracking
+- Breathing exercise documentation
+
+Primary use cases:
+1. Daily morning readiness check
+2. Pre/post exercise recovery assessment
+3. Longitudinal stress pattern monitoring
+4. Mind-body intervention tracking
+5. Correlation of subjective and objective measures
+
+Compatible devices: Oura Ring, Whoop, Garmin (Body Battery), Apple Watch (varies), Polar</use>
+            <misuse>Not for:
+- Clinical psychological assessment
+- Diagnosis of anxiety or depression disorders
+- Replacement for professional mental health evaluation</misuse>
+            <copyright>CC BY-SA 4.0</copyright>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value>FMUP - Faculty of Medicine, University of Porto</value>
+            </item>
+            <item>
+                <key>references</key>
+                <value>1. Thayer JF, et al. A meta-analysis of heart rate variability and neuroimaging studies. Neurosci Biobehav Rev. 2012;36(2):747-756.
+2. Kim HG, et al. Stress and Heart Rate Variability: A Meta-Analysis and Review. Psychiatry Investig. 2018;15(3):235-245.
+3. Plews DJ, et al. Heart rate variability and training-intensity distribution in elite rowers. Int J Sports Physiol Perform. 2014;9(6):1026-32.
+4. Kivimäki M, Steptoe A. Effects of stress on the development and progression of cardiovascular disease. Nat Rev Cardiol. 2018;15(4):215-229.</value>
+            </item>
+            <item>
+                <key>FHIR_mapping</key>
+                <value>Maps to StressRecoveryObservation profile in iOS Lifestyle Medicine FHIR IG. Uses HRV metrics as objective basis.</value>
+            </item>
+        </other_details>
+    </description>
+    <uid>
+        <value>lifestyle-medicine-stress-v0-2026-01-29</value>
+    </uid>
+    <template_id>
+        <value>lifestyle_medicine_stress.v0</value>
+    </template_id>
+    <concept>Lifestyle Medicine Stress and Recovery Assessment</concept>
+    <definition>
+        <!-- Root COMPOSITION -->
+        <rm_type_name>COMPOSITION</rm_type_name>
+        <occurrences>
+            <lower_included>true</lower_included>
+            <upper_included>true</upper_included>
+            <lower_unbounded>false</lower_unbounded>
+            <upper_unbounded>false</upper_unbounded>
+            <lower>1</lower>
+            <upper>1</upper>
+        </occurrences>
+        <node_id>at0000</node_id>
+        <attributes>
+            <!-- COMPOSITION.category -->
+            <rm_attribute_name>category</rm_attribute_name>
+            <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>1</lower>
+                <upper>1</upper>
+            </existence>
+            <children>
+                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                <occurrences>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                </occurrences>
+                <node_id>at0001</node_id>
+                <attributes>
+                    <rm_attribute_name>defining_code</rm_attribute_name>
+                    <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                    </existence>
+                    <children>
+                        <rm_type_name>CODE_PHRASE</rm_type_name>
+                        <occurrences>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                        </occurrences>
+                        <assumed_value>
+                            <terminology_id>
+                                <value>openehr</value>
+                            </terminology_id>
+                            <code_string>433</code_string>
+                        </assumed_value>
+                    </children>
+                </attributes>
+            </children>
+        </attributes>
+        <attributes>
+            <!-- COMPOSITION.content -->
+            <rm_attribute_name>content</rm_attribute_name>
+            <existence>
+                <lower_included>true</lower_included>
+                <upper_included>true</upper_included>
+                <lower_unbounded>false</lower_unbounded>
+                <upper_unbounded>false</upper_unbounded>
+                <lower>0</lower>
+                <upper>1</upper>
+            </existence>
+            <cardinality>
+                <is_ordered>false</is_ordered>
+                <is_unique>false</is_unique>
+                <interval>
+                    <lower_included>true</lower_included>
+                    <upper_included>false</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>true</upper_unbounded>
+                    <lower>0</lower>
+                </interval>
+            </cardinality>
+            <children>
+                <!-- HRV as objective stress marker -->
+                <rm_type_name>OBSERVATION</rm_type_name>
+                <occurrences>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0</lower>
+                    <upper>1</upper>
+                </occurrences>
+                <archetype_id>
+                    <value>openEHR-EHR-OBSERVATION.heart_rate_variability.v0</value>
+                </archetype_id>
+                <template_id>
+                    <value>lifestyle_medicine_stress.v0</value>
+                </template_id>
+                <node_id>at0002</node_id>
+            </children>
+            <children>
+                <!-- Sleep for recovery context -->
+                <rm_type_name>OBSERVATION</rm_type_name>
+                <occurrences>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0</lower>
+                    <upper>1</upper>
+                </occurrences>
+                <archetype_id>
+                    <value>openEHR-EHR-OBSERVATION.sleep_architecture.v0</value>
+                </archetype_id>
+                <template_id>
+                    <value>lifestyle_medicine_stress.v0</value>
+                </template_id>
+                <node_id>at0003</node_id>
+            </children>
+            <children>
+                <!-- Physical activity context -->
+                <rm_type_name>OBSERVATION</rm_type_name>
+                <occurrences>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0</lower>
+                    <upper>1</upper>
+                </occurrences>
+                <archetype_id>
+                    <value>openEHR-EHR-OBSERVATION.physical_activity_detailed.v0</value>
+                </archetype_id>
+                <template_id>
+                    <value>lifestyle_medicine_stress.v0</value>
+                </template_id>
+                <node_id>at0004</node_id>
+            </children>
+            <children>
+                <!-- Wearable Device cluster -->
+                <rm_type_name>CLUSTER</rm_type_name>
+                <occurrences>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0</lower>
+                    <upper>1</upper>
+                </occurrences>
+                <archetype_id>
+                    <value>openEHR-EHR-CLUSTER.wearable_device.v0</value>
+                </archetype_id>
+                <template_id>
+                    <value>lifestyle_medicine_stress.v0</value>
+                </template_id>
+                <node_id>at0005</node_id>
+            </children>
+        </attributes>
+    </definition>
+    <ontology>
+        <term_definitions language="en">
+            <items code="at0000">
+                <items id="text">Lifestyle Medicine Stress and Recovery Assessment</items>
+                <items id="description">A composition for recording stress and recovery indicators from consumer wearable devices.</items>
+            </items>
+            <items code="at0001">
+                <items id="text">Category</items>
+                <items id="description">The category of the composition (event).</items>
+            </items>
+            <items code="at0002">
+                <items id="text">Heart Rate Variability</items>
+                <items id="description">HRV metrics as objective stress/recovery markers.</items>
+            </items>
+            <items code="at0003">
+                <items id="text">Sleep Architecture</items>
+                <items id="description">Sleep data providing recovery context.</items>
+            </items>
+            <items code="at0004">
+                <items id="text">Physical Activity</items>
+                <items id="description">Activity data for stress/load context.</items>
+            </items>
+            <items code="at0005">
+                <items id="text">Wearable Device</items>
+                <items id="description">Details about the wearable device used for measurement.</items>
+            </items>
+        </term_definitions>
+    </ontology>
+</template>

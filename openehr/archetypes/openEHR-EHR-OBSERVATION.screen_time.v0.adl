@@ -1,0 +1,384 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.screen_time.v0
+
+concept
+	[at0000]	-- Screen time
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["email"] = <"ricardolourencosantos@gmail.com">
+		["date"] = <"2025-11-30">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record digital device usage and screen time data tracked by operating systems and digital wellness applications.">
+			use = <"Use to record daily screen time, app usage patterns, and digital wellness metrics from smartphone and computer operating systems.">
+			misuse = <"Not to be used for clinical assessment of technology addiction. Not intended for workplace productivity monitoring.">
+			keywords = <"screen time", "digital wellness", "phone usage", "app usage", "smartphone", "digital health", "technology">
+			copyright = <"Ricardo Lourenco dos Santos, FMUP, 2025. Creative Commons Attribution-ShareAlike 4.0.">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Faculty of Medicine, University of Porto (FMUP)">
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+		["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["references"] = <"Twenge JM, Campbell WK. Associations between screen time and lower psychological well-being among children and adolescents: Evidence from a population-based study. Prev Med Rep. 2018;12:271-283.
+
+Elhai JD, Dvorak RD, Levine JC, Hall BJ. Problematic smartphone use: A conceptual overview and systematic review. J Affect Disord. 2017;207:251-259.">
+		["current_contact"] = <"Ricardo Lourenco dos Santos <ricardolourencosantos@gmail.com>">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Screen time
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Total screen time
+										value matches {
+											DV_DURATION matches {
+												value matches {PTHM/|PT0S..PT24H|}
+											}
+										}
+									}
+									CLUSTER[at0005] occurrences matches {0..1} matches {	-- By device
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Phone screen time
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {	-- Tablet screen time
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Computer screen time
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..1} matches {	-- TV screen time
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- By category
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Social media
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Entertainment
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Productivity
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Health and fitness
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- Games
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Education
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+											ELEMENT[at0017] occurrences matches {0..1} matches {	-- Other
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0S..PT24H|}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {	-- Pickups
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..1000|}
+											}
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {	-- Notifications received
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..2000|}
+											}
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {	-- First pickup time
+										value matches {
+											DV_TIME matches {*}
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {	-- Last usage time
+										value matches {
+											DV_TIME matches {*}
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {	-- Screen-free time
+										value matches {
+											DV_DURATION matches {
+												value matches {PTHM/|PT0S..PT24H|}
+											}
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Downtime observed
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0030] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0031] occurrences matches {0..1} matches {	-- Tracking source
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0200,	-- iOS Screen Time
+									at0201,	-- Android Digital Wellbeing
+									at0202,	-- Third-party app
+									at0203,	-- Computer tracking software
+									at0204]	-- Self-reported
+								}
+							}
+						}
+					}
+					ELEMENT[at0032] occurrences matches {0..1} matches {	-- Daily limit setting
+						value matches {
+							DV_DURATION matches {
+								value matches {PTHM/|PT0S..PT24H|}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0033] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Screen time">
+					description = <"Digital device usage data from operating systems.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Total screen time">
+					description = <"Total time using screens.">
+				>
+				["at0005"] = <
+					text = <"By device">
+					description = <"Screen time by device type.">
+				>
+				["at0006"] = <
+					text = <"Phone screen time">
+					description = <"Time on smartphone.">
+				>
+				["at0007"] = <
+					text = <"Tablet screen time">
+					description = <"Time on tablet.">
+				>
+				["at0008"] = <
+					text = <"Computer screen time">
+					description = <"Time on computer.">
+				>
+				["at0009"] = <
+					text = <"TV screen time">
+					description = <"Time watching TV.">
+				>
+				["at0010"] = <
+					text = <"By category">
+					description = <"Screen time by app category.">
+				>
+				["at0011"] = <
+					text = <"Social media">
+					description = <"Social networking apps.">
+				>
+				["at0012"] = <
+					text = <"Entertainment">
+					description = <"Entertainment and streaming.">
+				>
+				["at0013"] = <
+					text = <"Productivity">
+					description = <"Work and productivity apps.">
+				>
+				["at0014"] = <
+					text = <"Health and fitness">
+					description = <"Health-related apps.">
+				>
+				["at0015"] = <
+					text = <"Games">
+					description = <"Gaming apps.">
+				>
+				["at0016"] = <
+					text = <"Education">
+					description = <"Educational apps.">
+				>
+				["at0017"] = <
+					text = <"Other">
+					description = <"Other categories.">
+				>
+				["at0020"] = <
+					text = <"Pickups">
+					description = <"Number of times device was picked up.">
+				>
+				["at0021"] = <
+					text = <"Notifications received">
+					description = <"Number of notifications.">
+				>
+				["at0022"] = <
+					text = <"First pickup time">
+					description = <"Time of first device pickup.">
+				>
+				["at0023"] = <
+					text = <"Last usage time">
+					description = <"Time of last device use.">
+				>
+				["at0024"] = <
+					text = <"Screen-free time">
+					description = <"Time without screen usage.">
+				>
+				["at0025"] = <
+					text = <"Downtime observed">
+					description = <"Whether scheduled downtime was followed.">
+				>
+				["at0026"] = <
+					text = <"Comment">
+					description = <"Additional notes.">
+				>
+				["at0030"] = <
+					text = <"Protocol tree">
+					description = <"@ internal @">
+				>
+				["at0031"] = <
+					text = <"Tracking source">
+					description = <"Source of screen time data.">
+				>
+				["at0032"] = <
+					text = <"Daily limit setting">
+					description = <"Configured daily limit.">
+				>
+				["at0033"] = <
+					text = <"Extension">
+					description = <"Additional information.">
+				>
+				["at0200"] = <
+					text = <"iOS Screen Time">
+					description = <"Apple Screen Time.">
+				>
+				["at0201"] = <
+					text = <"Android Digital Wellbeing">
+					description = <"Google Digital Wellbeing.">
+				>
+				["at0202"] = <
+					text = <"Third-party app">
+					description = <"Third-party tracking app.">
+				>
+				["at0203"] = <
+					text = <"Computer tracking software">
+					description = <"Desktop tracking software.">
+				>
+				["at0204"] = <
+					text = <"Self-reported">
+					description = <"Self-reported data.">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["openEHR"] = <
+			items = <
+				-- NOTE (2026-07-15, re-verified against the terminology snapshots):
+				-- The previous claim here -- "no LOINC/SNOMED-CT codes available" -- is
+				-- FALSIFIED for total screen time. It was reached with an ANCHORED search
+				-- (^"screen time"), which cannot match "Video, television or computer screen
+				-- time" because that term does not START with "screen time". Searching
+				-- unanchored and filtering afterwards finds a standard, active code.
+				-- Local codes are retained below for the per-category breakdown, which has
+				-- no published equivalent.
+			>
+		>
+		["SNOMED-CT"] = <
+			items = <
+				["at0004"] = <[SNOMED-CT::2781000175103]>    -- Video, television or computer screen time (verified: Vocab2, std=S, Observable Entity, active, 2026-07-15)
+			>
+		>
+	>

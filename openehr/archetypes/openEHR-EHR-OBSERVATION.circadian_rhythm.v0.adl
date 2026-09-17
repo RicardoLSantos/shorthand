@@ -1,0 +1,541 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.circadian_rhythm.v0
+
+concept
+	[at0000]	-- Circadian rhythm
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["name"] = <"Ricardo Lourenco dos Santos">
+		["organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["email"] = <"ricardolourencosantos@gmail.com">
+		["date"] = <"2025-11-30">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record circadian rhythm metrics derived from wearable device data, including sleep-wake patterns, chronotype assessment, and circadian alignment indicators.">
+			use = <"Use to record circadian rhythm analysis from wearables tracking sleep, activity, heart rate, and temperature patterns. Supports assessment of sleep timing consistency, social jet lag, and circadian phase markers.">
+			misuse = <"Not to be used for clinical chronobiology assessments requiring dim light melatonin onset (DLMO) or core body temperature measurements. Not intended for diagnosis of circadian rhythm sleep-wake disorders.">
+			keywords = <"circadian", "chronotype", "sleep timing", "social jet lag", "biological clock", "melatonin", "wearable", "sleep-wake", "chronobiology">
+			copyright = <"Ricardo Lourenco dos Santos, FMUP, 2025. Creative Commons Attribution-ShareAlike 4.0.">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Faculty of Medicine, University of Porto (FMUP)">
+	other_details = <
+		["licence"] = <"Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)">
+		["custodian_organisation"] = <"FMUP - Faculty of Medicine, University of Porto">
+		["references"] = <"Roenneberg T, et al. Social jetlag and obesity. Curr Biol. 2012;22(10):939-943. doi:10.1016/j.cub.2012.03.038
+
+Wittmann M, et al. Social jetlag: misalignment of biological and social time. Chronobiol Int. 2006;23(1-2):497-509. doi:10.1080/07420520500545979">
+		["current_contact"] = <"Ricardo Lourenco dos Santos <ricardolourencosantos@gmail.com>">
+		["MD5-CAM-1.0.1"] = <"00000000000000000000000000000000">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Circadian rhythm
+		data matches {
+			HISTORY[at0001] matches {	-- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									CLUSTER[at0010] occurrences matches {0..1} matches {	-- Sleep timing
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Sleep onset time
+												value matches {
+													DV_TIME matches {*}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Wake time
+												value matches {
+													DV_TIME matches {*}
+												}
+											}
+											ELEMENT[at0013] occurrences matches {0..1} matches {	-- Mid-sleep time
+												value matches {
+													DV_TIME matches {*}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- Sleep duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0H..PT24H|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0020] occurrences matches {0..1} matches {	-- Chronotype indicators
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- MSFsc (Mid-sleep on free days, sleep-corrected)
+												value matches {
+													DV_TIME matches {*}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Chronotype category
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0200,	-- Extreme early type
+															at0201,	-- Moderate early type
+															at0202,	-- Slight early type
+															at0203,	-- Intermediate type
+															at0204,	-- Slight late type
+															at0205,	-- Moderate late type
+															at0206]	-- Extreme late type
+														}
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Morningness-eveningness score
+												value matches {
+													DV_COUNT matches {
+														magnitude matches {|16..86|}
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0030] occurrences matches {0..1} matches {	-- Circadian alignment
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- Social jet lag
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0H..PT12H|}
+													}
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..1} matches {	-- Sleep regularity index
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"%"}
+
+														magnitude matches {|0.0..100.0|}
+
+														precision matches {|0|}
+
+													}
+												}
+											}
+											ELEMENT[at0033] occurrences matches {0..1} matches {	-- Intra-daily variability
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"1"}
+
+														magnitude matches {|0.0..2.0|}
+
+														precision matches {|2|}
+
+													}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- Inter-daily stability
+												value matches {
+													DV_QUANTITY matches {
+
+														units matches {"1"}
+
+														magnitude matches {|0.0..1.0|}
+
+														precision matches {|2|}
+
+													}
+												}
+											}
+										}
+									}
+									CLUSTER[at0040] occurrences matches {0..1} matches {	-- Light exposure
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- Morning light exposure duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0H..PT6H|}
+													}
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- Evening light exposure duration
+												value matches {
+													DV_DURATION matches {
+														value matches {PTHM/|PT0H..PT6H|}
+													}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- Time of first bright light
+												value matches {
+													DV_TIME matches {*}
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {	-- Time of last bright light
+												value matches {
+													DV_TIME matches {*}
+												}
+											}
+										}
+									}
+									ELEMENT[at0050] occurrences matches {0..1} matches {	-- Circadian phase marker
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0210,	-- Estimated DLMO
+													at0211,	-- Temperature nadir
+													at0212,	-- Activity onset
+													at0213]	-- HRV-derived phase
+												}
+											}
+										}
+									}
+									ELEMENT[at0051] occurrences matches {0..1} matches {	-- Estimated circadian phase time
+										value matches {
+											DV_TIME matches {*}
+										}
+									}
+									ELEMENT[at0052] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0060] matches {	-- State tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0061] occurrences matches {0..1} matches {	-- Day type
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0220,	-- Work day
+													at0221,	-- Free day
+													at0222,	-- Shift work day
+													at0223]	-- Travel day
+												}
+											}
+										}
+									}
+									ELEMENT[at0062] occurrences matches {0..1} matches {	-- Time zone
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0063] occurrences matches {0..1} matches {	-- Daylight saving time active
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True, False}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					INTERVAL_EVENT[at0070] occurrences matches {0..1} matches {	-- Weekly analysis
+						math_function matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[openehr::146]
+								}
+							}
+						}
+						width matches {
+							DV_DURATION matches {
+								value matches {P7D}
+							}
+						}
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0060]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0080] matches {	-- Protocol tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0081] occurrences matches {0..1} matches {	-- Analysis method
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0230,	-- Actigraphy-based
+									at0231,	-- Sleep diary combined
+									at0232,	-- MCTQ algorithm
+									at0233,	-- Cosinor analysis
+									at0234]	-- Machine learning derived
+								}
+							}
+						}
+					}
+					ELEMENT[at0082] occurrences matches {0..1} matches {	-- Minimum days analyzed
+						value matches {
+							DV_COUNT matches {
+								magnitude matches {|1..30|}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0083] occurrences matches {0..*} matches {	-- Device details
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.wearable_device\.v0|openEHR-EHR-CLUSTER\.device\.v1/}
+					}
+					allow_archetype CLUSTER[at0084] occurrences matches {0..*} matches {	-- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Circadian rhythm">
+					description = <"Circadian rhythm metrics derived from wearable device data.">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Default, unspecified point in time or interval event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0010"] = <
+					text = <"Sleep timing">
+					description = <"Sleep timing parameters for circadian analysis.">
+				>
+				["at0011"] = <
+					text = <"Sleep onset time">
+					description = <"Time when sleep began.">
+				>
+				["at0012"] = <
+					text = <"Wake time">
+					description = <"Time of final awakening.">
+				>
+				["at0013"] = <
+					text = <"Mid-sleep time">
+					description = <"Midpoint between sleep onset and wake time.">
+				>
+				["at0014"] = <
+					text = <"Sleep duration">
+					description = <"Total sleep duration.">
+				>
+				["at0020"] = <
+					text = <"Chronotype indicators">
+					description = <"Indicators of individual chronotype.">
+				>
+				["at0021"] = <
+					text = <"MSFsc (Mid-sleep on free days, sleep-corrected)">
+					description = <"Sleep-corrected mid-sleep time on free days, primary chronotype marker.">
+				>
+				["at0022"] = <
+					text = <"Chronotype category">
+					description = <"Categorical classification of chronotype.">
+				>
+				["at0023"] = <
+					text = <"Morningness-eveningness score">
+					description = <"Score on morningness-eveningness questionnaire (MEQ), range 16-86.">
+				>
+				["at0030"] = <
+					text = <"Circadian alignment">
+					description = <"Metrics indicating circadian rhythm alignment and regularity.">
+				>
+				["at0031"] = <
+					text = <"Social jet lag">
+					description = <"Difference between mid-sleep time on work days and free days.">
+				>
+				["at0032"] = <
+					text = <"Sleep regularity index">
+					description = <"Probability of being in same sleep/wake state at same time on consecutive days.">
+				>
+				["at0033"] = <
+					text = <"Intra-daily variability">
+					description = <"Fragmentation of rest-activity rhythm within days.">
+				>
+				["at0034"] = <
+					text = <"Inter-daily stability">
+					description = <"Consistency of rest-activity rhythm between days.">
+				>
+				["at0040"] = <
+					text = <"Light exposure">
+					description = <"Light exposure patterns relevant to circadian entrainment.">
+				>
+				["at0041"] = <
+					text = <"Morning light exposure duration">
+					description = <"Duration of bright light exposure in the morning.">
+				>
+				["at0042"] = <
+					text = <"Evening light exposure duration">
+					description = <"Duration of bright light exposure in the evening.">
+				>
+				["at0043"] = <
+					text = <"Time of first bright light">
+					description = <"Time of first significant bright light exposure.">
+				>
+				["at0044"] = <
+					text = <"Time of last bright light">
+					description = <"Time of last significant bright light exposure.">
+				>
+				["at0050"] = <
+					text = <"Circadian phase marker">
+					description = <"Type of circadian phase marker used.">
+				>
+				["at0051"] = <
+					text = <"Estimated circadian phase time">
+					description = <"Estimated time of the circadian phase marker.">
+				>
+				["at0052"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the circadian assessment.">
+				>
+				["at0060"] = <
+					text = <"State tree">
+					description = <"@ internal @">
+				>
+				["at0061"] = <
+					text = <"Day type">
+					description = <"Type of day being assessed.">
+				>
+				["at0062"] = <
+					text = <"Time zone">
+					description = <"Time zone where measurements were taken.">
+				>
+				["at0063"] = <
+					text = <"Daylight saving time active">
+					description = <"Whether daylight saving time was in effect.">
+				>
+				["at0070"] = <
+					text = <"Weekly analysis">
+					description = <"Circadian analysis over one week period.">
+				>
+				["at0080"] = <
+					text = <"Protocol tree">
+					description = <"@ internal @">
+				>
+				["at0081"] = <
+					text = <"Analysis method">
+					description = <"Method used to derive circadian metrics.">
+				>
+				["at0082"] = <
+					text = <"Minimum days analyzed">
+					description = <"Minimum number of days included in the analysis.">
+				>
+				["at0083"] = <
+					text = <"Device details">
+					description = <"Details about the measurement device.">
+				>
+				["at0084"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local context.">
+				>
+				["at0200"] = <
+					text = <"Extreme early type">
+					description = <"MSFsc before 02:30.">
+				>
+				["at0201"] = <
+					text = <"Moderate early type">
+					description = <"MSFsc 02:30-03:30.">
+				>
+				["at0202"] = <
+					text = <"Slight early type">
+					description = <"MSFsc 03:30-04:30.">
+				>
+				["at0203"] = <
+					text = <"Intermediate type">
+					description = <"MSFsc 04:30-05:30.">
+				>
+				["at0204"] = <
+					text = <"Slight late type">
+					description = <"MSFsc 05:30-06:30.">
+				>
+				["at0205"] = <
+					text = <"Moderate late type">
+					description = <"MSFsc 06:30-07:30.">
+				>
+				["at0206"] = <
+					text = <"Extreme late type">
+					description = <"MSFsc after 07:30.">
+				>
+				["at0210"] = <
+					text = <"Estimated DLMO">
+					description = <"Dim light melatonin onset estimated from wearable data.">
+				>
+				["at0211"] = <
+					text = <"Temperature nadir">
+					description = <"Core body temperature minimum estimated from skin temperature.">
+				>
+				["at0212"] = <
+					text = <"Activity onset">
+					description = <"Onset of daily activity period.">
+				>
+				["at0213"] = <
+					text = <"HRV-derived phase">
+					description = <"Circadian phase derived from HRV patterns.">
+				>
+				["at0220"] = <
+					text = <"Work day">
+					description = <"Day with work or school obligations.">
+				>
+				["at0221"] = <
+					text = <"Free day">
+					description = <"Day without work or school obligations.">
+				>
+				["at0222"] = <
+					text = <"Shift work day">
+					description = <"Day with non-standard work hours.">
+				>
+				["at0223"] = <
+					text = <"Travel day">
+					description = <"Day involving time zone change.">
+				>
+				["at0230"] = <
+					text = <"Actigraphy-based">
+					description = <"Analysis based on activity/movement data.">
+				>
+				["at0231"] = <
+					text = <"Sleep diary combined">
+					description = <"Actigraphy combined with sleep diary data.">
+				>
+				["at0232"] = <
+					text = <"MCTQ algorithm">
+					description = <"Munich Chronotype Questionnaire algorithm.">
+				>
+				["at0233"] = <
+					text = <"Cosinor analysis">
+					description = <"Cosinor rhythm analysis method.">
+				>
+				["at0234"] = <
+					text = <"Machine learning derived">
+					description = <"Machine learning algorithm for circadian analysis.">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["openEHR"] = <
+			items = <
+				-- Consumer wellness metric - no LOINC/SNOMED-CT codes available
+				-- Local archetype codes used per openEHR specification:
+				-- "Value sets defined locally because terms not available in published terminologies"
+			>
+		>
+	>
