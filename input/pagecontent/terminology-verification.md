@@ -171,7 +171,7 @@ Every externally-defined code bound in the FSH sources is listed in `input/data/
 
 **Sources, in order of authority.** The owner of each terminology is the reference: `loinc.org` and its FHIR API (LOINC, two releases a year, February and August); `browser.ihtsdotools.org`, International edition (SNOMED CT, monthly — the browser is for human use, so automated SNOMED checks use the dated Vocab2 snapshot and tx.fhir.org, both International); `icd.who.int` (ICD-11 MMS, one release a year — the linearization export and the ICD-10 to ICD-11 mapping tables are used as the owner source); `ucum.org` and the NLM validator (UCUM). The dated local OMOP snapshots (Athena, Vocab2) are mirrors; `tx.fhir.org` is the third, advisory source, also used to check that the display used in the IG is a registered designation of the concept.
 
-**Last verification (2026-09-16; LOINC: 7 rows on 2026-09-16, the rest on 2026-09-15):**
+**Last verification (2026-09-17 for the 54 rows added or re-verified today — the UCUM codes read from Quantity bindings and the codes bound by today's decisions; 2026-09-16 for 5 rows; 2026-09-15 for the remaining 424):**
 
 | System | Codes in the IG | Last verified | Via | Source version(s) | Open findings |
 |---|--:|---|---|---|--:|

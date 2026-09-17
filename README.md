@@ -20,10 +20,10 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 - **103 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
 - **77 Extensions** for measurement context, provenance, and AI/CDSS metadata
 - **19 CodeSystems** with custom codes for HRV/lifestyle metrics that lack LOINC/SNOMED (the documented terminology gap)
-- **204 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
+- **205 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
 - **29 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
 - **279 Instances** (191 examples, 29 ConceptMaps, round-trip validation bundles)
-- **682 total artefacts** (FHIR R4 4.0.1; v0.5.0 built with IG Publisher 2.2.10: err=0 / warn=223 — one advisory class, see [Known Issues](input/pagecontent/known-issues.md) / 0 broken links)
+- **683 total artefacts** (FHIR R4 4.0.1; v0.5.0 built with IG Publisher 2.2.10: err=0 / warn=223 — one advisory class, see [Known Issues](input/pagecontent/known-issues.md) / 0 broken links)
 - **SMART on FHIR + CDS Hooks 2.0 + Bulk Data** + **CQL/GDL2** clinical decision support
 - **openEHR + OMOP** round-trip transformations (ConceptMaps)
 
@@ -45,7 +45,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.5.0<br/>103 Profiles | 19 CS | 204 VS"]
+        FHIRIG["FHIR IG v0.5.0<br/>103 Profiles | 19 CS | 205 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -120,16 +120,16 @@ sequenceDiagram
 | **Profiles** | 103 | Observation, Device, Patient, vital-signs, AI/CDSS profiles |
 | **Extensions** | 77 | Custom FHIR extensions |
 | **CodeSystems** | 19 | Content + external-stub CodeSystems |
-| **ValueSets** | 204 | LOINC, SNOMED CT, custom bindings |
+| **ValueSets** | 205 | LOINC, SNOMED CT, custom bindings |
 | **Instances** | 279 | 191 examples, 29 ConceptMaps, round-trip validation bundles |
-| **Total** | **682** | All artefacts (v0.5.0, FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
+| **Total** | **683** | All artefacts (v0.5.0, FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
 
 ### Build Validation (2026-09-16, v0.5.0 release)
 
 | Metric | Value | Notes |
 |--------|:-----:|-------|
 | Errors | 0 | since v0.4.1 |
-| Warnings | 223 | a single advisory class — each CodeSystem (19) and ValueSet (204) "should have an OID assigned", an optional identifier for OID-based terminology systems; left visible by design. The active suppressions are listed on the [Known Issues](input/pagecontent/known-issues.md) page |
+| Warnings | 223 | a single advisory class — each CodeSystem (19) and ValueSet (205) "should have an OID assigned", an optional identifier for OID-based terminology systems; left visible by design. The active suppressions are listed on the [Known Issues](input/pagecontent/known-issues.md) page |
 | Information | 13,221 | |
 | Broken Links | 0 | |
 | Toolchain | IG Publisher 2.2.10 · SUSHI 3.18.1 · FHIR 4.0.1 | the CI builds with the latest publisher |

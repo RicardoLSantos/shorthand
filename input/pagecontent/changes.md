@@ -24,13 +24,13 @@ All notable changes to this Implementation Guide are documented on this page.
 
 ### Added
 - `openehr/` — the **12 genuinely original ADL 1.4 archetypes and the 6 composition templates are distributed with the IG** (previously described in the catalog only). The folder's README records provenance (copies of the working corpus with internal working comments removed; no node, constraint, ontology term or terminology binding changed — both versions of each archetype parsed, converted and validated with Archie 3.15.0, 24 parses and 0 errors), and the validation status of the templates: well-formed XML in the openEHR v1 namespace but **not valid Operational Templates** (rejected by the openEHR `Template.xsd`, Release-1.0.2, at their first element), four of the six referencing `physical_activity_detailed.v0`, which is not distributed. The catalog page names the CKM-reuse and specialisation statements that the files do not yet express.
-- Suppression for the *"expression language text/fhirpath is not supported"* warning (full text), alongside the existing `text/cql-identifier` line.
+- Suppressions: the *"expression language text/fhirpath is not supported"* line (full text, alongside the existing `text/cql-identifier` line) and the **English twins of the suppressions the CI runner reported** — the runner downloads the latest IG Publisher and emits its messages in English, the local builds in Portuguese, and a suppression matches only its exact text; 67 English lines copied from the 2.3.4 run plus a Portuguese/English pair for the annotated unit `{MET}` (98 → 168 active lines; nothing removed). See Known Issues → Continuous integration.
 - `CITATION.cff` — preferred citation = the published article; software entry at v0.5.0 (enables GitHub's "Cite this repository").
 - Known Issues page added to the Implementation menu.
 - Security audit check 12 — the number of tracked files carrying internal process markers may never rise (ratchet against a recorded baseline, target 0); proven to fail on a planted marker.
 
 ### Removed
-- Internal process markers from page comments, the CI workflows and scripts, `sushi-config.yaml` comments and `input/ignoreWarnings.txt` comments (the suppressions themselves are unchanged).
+- Internal process markers from page comments, the CI workflows and scripts, `sushi-config.yaml` comments and `input/ignoreWarnings.txt` comments (that clean-up left the suppressions themselves unchanged; the 0.5.1 additions are listed under *Added*).
 
 ## Version 0.5.0 (2026-09-16)
 
