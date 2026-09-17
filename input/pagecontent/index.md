@@ -159,7 +159,7 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 | **Custom codes** | 1,211 | Interim codes for concepts with no LOINC/SNOMED CT equivalent; the ConceptMaps bridge those that have one. Per-concept migration properties (`assignment-status`, `loinc-equivalent`) are defined in `AppLogicCS` but not yet applied to the concepts |
 | **Terminology gap documented** | 86% | Of consumer wearable metrics lack standard codes |
 | **ConceptMaps** | 29 | Covering LOINC, SNOMED CT, OMOP CDM, openEHR |
-| **Example instances** | 191 | 101 of 103 profiles have a standalone example — `ConsumerECGObservation` (the abstract ECG parent) has none, and `CarePlanLifestyleMedicine` is instantiated only inline inside bundle examples |
+| **Example instances** | 192 | every concrete profile has a standalone example (102 of 102; `ConsumerECGObservation`, the abstract ECG parent, is excluded from the denominator — the figure is read from the build's examples pages) |
 | **Regulatory frameworks** | 2 | LGPD (Brazil), CFM 2.454/2026 (AI in medicine) |
 | **Estimated dev time saved** | 180h | Based on implementation effort analysis vs. building from scratch |
 
