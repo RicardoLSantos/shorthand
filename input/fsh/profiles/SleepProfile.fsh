@@ -140,7 +140,11 @@ References:
 * component[respiratoryRate].valueQuantity.system = $UCUM
 * component[respiratoryRate].valueQuantity.code = #/min
  
-* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+// 2026-09-17: until 0.5.0 the component code was fixed to 80404-7 (SDNN) whatever the source reported; the code now identifies the
+// metric actually carried (SDNN 80404-7 or RMSSD hrv-rmssd) through a required binding, which still discriminates the slice (FHIR R4
+// allows a required binding as a value discriminator).
+* component[heartRateVariability].code from SleepHRVMetricVS (required)
+* component[heartRateVariability].code ^comment = "The component code identifies the metric; consumers must read it. Apple HealthKit reports SDNN (LOINC 80404-7); Fitbit, Garmin and Oura report RMSSD (hrv-rmssd — LOINC has no RMSSD concept). The openEHR node at0052 of sleep_architecture records the average RMSSD, so the mapping is exact only for hrv-rmssd."
 * component[heartRateVariability].valueQuantity only Quantity
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.code = #ms

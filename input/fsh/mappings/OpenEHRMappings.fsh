@@ -80,7 +80,7 @@ Id: sleep-to-openehr
 Title: "Mapping to openEHR archetype sleep_architecture"
 Source: SleepObservation
 Target: "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
-Description: "Element-level mapping to openEHR-EHR-OBSERVATION.sleep_architecture.v0 (ADL 1.4). The heartRateVariability component is fixed to LOINC 80404-7 (SDNN) while the archetype node at0052 records the average RMSSD: the correspondence is by role (sleep HRV), not by metric, and is recorded as such."
+Description: "Element-level mapping to openEHR-EHR-OBSERVATION.sleep_architecture.v0 (ADL 1.4). The heartRateVariability component carries either RMSSD (hrv-rmssd) or SDNN (LOINC 80404-7) since 0.5.1; the archetype node at0052 records the average RMSSD, so the correspondence is exact for hrv-rmssd and by role only for SDNN, for which the archetype has no node."
 
 * -> "openEHR-EHR-OBSERVATION.sleep_architecture.v0" "OBSERVATION[at0000] Sleep architecture"
 * effectivePeriod -> "/data[at0001]/events[at0079]" "INTERVAL_EVENT Nightly sleep (time and width); start and end also populate Bedtime /data[at0001]/events[at0002]/data[at0003]/items[at0009] and Wake time items[at0010]"
@@ -90,7 +90,7 @@ Description: "Element-level mapping to openEHR-EHR-OBSERVATION.sleep_architectur
 * component[deepSleep] -> "/data[at0001]/events[at0002]/data[at0003]/items[at0019]/items[at0022]" "Deep sleep duration (Sleep stages cluster)"
 * component[remSleep] -> "/data[at0001]/events[at0002]/data[at0003]/items[at0019]/items[at0023]" "REM sleep duration (Sleep stages cluster)"
 * component[interruptions] -> "/data[at0001]/events[at0002]/data[at0003]/items[at0030]" "Number of awakenings"
-* component[heartRateVariability] -> "/data[at0001]/events[at0002]/data[at0003]/items[at0049]/items[at0052]" "Average HRV (RMSSD) in the Sleep physiology cluster; the FHIR component carries SDNN (LOINC 80404-7): same role, different metric"
+* component[heartRateVariability] -> "/data[at0001]/events[at0002]/data[at0003]/items[at0049]/items[at0052]" "Average HRV (RMSSD) in the Sleep physiology cluster: exact when the FHIR component carries hrv-rmssd; when it carries SDNN (LOINC 80404-7) the archetype has no node for that metric — same role, different metric"
 * component[respiratoryRate] -> "/data[at0001]/events[at0002]/data[at0003]/items[at0049]/items[at0054]" "Respiratory rate (Sleep physiology cluster)"
 * device -> "/protocol[at0089]/items[at0091]" "Wearable device: slot for openEHR-EHR-CLUSTER.wearable_device"
 

@@ -187,9 +187,11 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * code.coding contains
     loinc 1..1 MS and
     snomed 0..1 MS
-* code.coding[loinc] = $LOINC#60842-2 "Oxygen consumption (VO2)"
+// 2026-09-17: 60842-2 (Oxygen consumption (VO2), an absolute rate) replaced by the per-body-weight concept, whose unit (mL/kg/min) is the one the value carries;
+// verified in the Athena LOINC snapshot (concept_id 1002246, standard, active) and on tx.fhir.org (LOINC 2.82, $validate-code with this display).
+* code.coding[loinc] = $LOINC#94122-9 "Oxygen consumption (VO2)/Body weight [Volume Rate Content] --peak during exercise"
 * code.coding[snomed] = $SCT#251898000 "Maximum oxygen uptake"
-* code ^comment = "Dual-coded, following the OxygenSaturationObservation pattern: the loinc slice fixes 60842-2 Oxygen consumption (VO2), the code this profile has always carried; the snomed slice (optional, must-support) carries 251898000 Maximum oxygen uptake, the observable entity bound by the openEHR archetype vo2max_estimation and the concept that names the maximal value explicitly. Additional codings allowed (open slicing). Verified 2026-09-15: LOINC 60842-2 in the Athena LOINC snapshot 2026-01-21 and tx.fhir.org LOINC 2.82; SNOMED 251898000 in the OMOP SNOMED snapshot 2025-02-01 and tx.fhir.org SNOMED International 20250201."
+* code ^comment = "Dual-coded, following the OxygenSaturationObservation pattern: the loinc slice fixes 94122-9 Oxygen consumption (VO2)/Body weight [Volume Rate Content] --peak during exercise (since 0.5.1; 60842-2, an absolute oxygen-consumption rate, was carried until 0.5.0); the snomed slice (optional, must-support) carries 251898000 Maximum oxygen uptake, the observable entity bound by the openEHR archetype vo2max_estimation and the concept that names the maximal value explicitly. Additional codings allowed (open slicing). Verified 2026-09-17: LOINC 94122-9 in the Athena LOINC snapshot 2026-01-21 and tx.fhir.org LOINC 2.82; SNOMED 251898000 in the OMOP SNOMED snapshot 2025-02-01 and tx.fhir.org SNOMED International 20250201. 94122-9 is defined as peak during exercise; this profile carries a submaximal-algorithm estimate — the estimation method is declared in the methodType component (VO2maxMethodVS) and, when a coded procedure exists, in Observation.method; no LOINC concept yet describes an estimated maximal uptake per body weight by wearable algorithm."
 * subject 1..1 MS
 * subject only Reference(Patient)
 * effectiveDateTime 1..1 MS

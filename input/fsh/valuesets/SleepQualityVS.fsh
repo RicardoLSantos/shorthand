@@ -41,3 +41,13 @@ Description: "Qualitative assessments of sleep quality for lifestyle medicine. U
 // - 193462001 "Insomnia" (disorder)
 // -----------------------------------------------------------------------------
 
+
+ValueSet: SleepHRVMetricVS
+Id: sleep-hrv-metric-vs
+Title: "Sleep HRV Metric Value Set"
+Description: "The HRV metric a sleep observation's heartRateVariability component may carry: SDNN (LOINC 80404-7) or RMSSD (a custom code, as LOINC has no RMSSD concept). The component code identifies the metric; consumers must read it — Apple HealthKit reports SDNN, Fitbit, Garmin and Oura report RMSSD."
+* ^experimental = false
+* ^date = "2026-09-17"
+* ^status = #active
+* $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* LifestyleMedicineTemporaryCS#hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)"

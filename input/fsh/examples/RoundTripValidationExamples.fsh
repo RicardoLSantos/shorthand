@@ -205,7 +205,7 @@ Description: "Fitbit sleep data mapped to LOINC codes. Demonstrates multi-compon
 * component[respiratoryRate].valueQuantity = 15 '/min' "per minute"
 * component[respiratoryRate].valueQuantity.system = $UCUM
 * component[respiratoryRate].valueQuantity.unit = "per minute"
-* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* component[heartRateVariability].code = LifestyleMedicineTemporaryCS#hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)" // 2026-09-17: this vendor reports RMSSD (was 80404-7, SDNN, until 0.5.0)
 * component[heartRateVariability].valueQuantity = 38 'ms' "millisecond"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
@@ -344,7 +344,7 @@ Description: "Oura Ring overnight sleep data mapped to LOINC. Demonstrates narro
 * component[respiratoryRate].valueQuantity = 13 '/min' "per minute"
 * component[respiratoryRate].valueQuantity.system = $UCUM
 * component[respiratoryRate].valueQuantity.unit = "per minute"
-* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* component[heartRateVariability].code = LifestyleMedicineTemporaryCS#hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)" // 2026-09-17: this vendor reports RMSSD (was 80404-7, SDNN, until 0.5.0)
 * component[heartRateVariability].valueQuantity = 52 'ms' "millisecond"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
