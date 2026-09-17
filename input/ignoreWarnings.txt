@@ -305,7 +305,8 @@ A entrada 1 corresponde à referência Device/AppleWatchDevice por tipo e id, ma
 # above that the runner reported as an unsuppressed warning is repeated here in the runner's wording
 # (copied verbatim from the qa report of the 2026-09-17 run). Same justification as the Portuguese line.
 # The {MET} pair (Portuguese and English) covers the annotated MET unit introduced in 0.5.1. Three twins added on review (two
-# ConceptMap-group messages and the lgpd-registration-number extension-context advisory): every runner message with a local rule is paired.
+# ConceptMap-group messages and the lgpd-registration-number extension-context advisory), and the full-text twin of the
+# data-protection-officer-reference advisory (an older prefix-only line exists above; the publisher matches a line only as the whole message).
 
 Entry 1 matches the reference Device/AppleWatchDevice by type and id but its fullUrl urn:uuid:22222222-2222-4222-8222-222222222222 does not match the full target URL urn:uuid:AppleWatchDevice by Bundle resolution rules
 For the complex type CodeableConcept, consider using a pattern rather than a fixed value to avoid over-constraining the instance
@@ -376,3 +377,4 @@ UCUM Codes that contain human readable annotations like {MET} can be misleading 
 No Source Code System, so the source codes cannot be checked
 No Target Code System, so the target codes cannot be checked
 Review the extension type for lgpd-registration-number: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+Review the extension type for data-protection-officer-reference: extensions should not have a context of Element unless it's really intended that they can be used anywhere

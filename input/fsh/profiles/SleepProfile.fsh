@@ -144,7 +144,7 @@ References:
 // metric actually carried (SDNN 80404-7 or RMSSD hrv-rmssd) through a required binding, which still discriminates the slice (FHIR R4
 // allows a required binding as a value discriminator).
 * component[heartRateVariability].code from SleepHRVMetricVS (required)
-* component[heartRateVariability].code ^comment = "The component code identifies the metric; consumers must read it. Apple HealthKit reports SDNN (LOINC 80404-7); Fitbit, Garmin and Oura report RMSSD (hrv-rmssd — LOINC has no RMSSD concept). The openEHR node at0052 of sleep_architecture records the average RMSSD, so the mapping is exact only for hrv-rmssd."
+* component[heartRateVariability].code ^comment = "The component code identifies the metric; consumers must read it — as reported in the published article (Int J Med Inform 217:106465, doi:10.1016/j.ijmedinf.2026.106465): Apple HealthKit exposes SDNN; Fitbit, Garmin and Oura expose RMSSD (SDNN = LOINC 80404-7; RMSSD = hrv-rmssd, as LOINC has no RMSSD concept). The openEHR node at0052 of sleep_architecture records the average RMSSD, so the mapping is exact only for hrv-rmssd."
 * component[heartRateVariability].valueQuantity only Quantity
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.code = #ms

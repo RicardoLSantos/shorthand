@@ -45,7 +45,7 @@ Description: "Qualitative assessments of sleep quality for lifestyle medicine. U
 ValueSet: SleepHRVMetricVS
 Id: sleep-hrv-metric-vs
 Title: "Sleep HRV Metric Value Set"
-Description: "The HRV metric a sleep observation's heartRateVariability component may carry: SDNN (LOINC 80404-7) or RMSSD (a custom code, as LOINC has no RMSSD concept). The component code identifies the metric; consumers must read it — Apple HealthKit reports SDNN, Fitbit, Garmin and Oura report RMSSD."
+Description: "The HRV metric a sleep observation's heartRateVariability component may carry: SDNN (LOINC 80404-7) or RMSSD (a custom code, as LOINC has no RMSSD concept). The component code identifies the metric; consumers must read it — as reported in the published article (Int J Med Inform 217:106465, doi:10.1016/j.ijmedinf.2026.106465): Apple HealthKit exposes SDNN; Fitbit, Garmin and Oura expose RMSSD."
 * ^experimental = false
 * ^date = "2026-09-17"
 * ^status = #active
