@@ -1,6 +1,6 @@
 # openEHR artefacts distributed with this IG
 
-This folder holds the **12 ADL 1.4 archetypes** that the [openEHR Archetype Catalog](../input/pagecontent/openehr-archetypes-catalog.md) lists as the genuinely original set (§2.1: 9 OBSERVATION + 3 CLUSTER), and the **6 composition templates** it lists in §3. All are at lifecycle state `in_development`, none has been submitted to the openEHR CKM, and each file carries its own author, date and licence metadata (Creative Commons Attribution-ShareAlike 4.0, as declared in every file; the licence of the archetypes and templates is theirs, not the IG's CC-BY-4.0).
+This folder holds the **12 ADL 1.4 archetypes** that the [openEHR Archetype Catalog](../input/pagecontent/openehr-archetypes-catalog.md) lists as the genuinely original set (§2.1: 9 OBSERVATION + 3 CLUSTER). All are at lifecycle state `in_development`, none has been submitted to the openEHR CKM, and each file carries its own author, date and licence metadata (Creative Commons Attribution-ShareAlike 4.0, as declared in every file; the licence of the archetypes is theirs, not the IG's CC-BY-4.0). The **6 composition templates** the catalog lists in §3 are **not distributed** in this release: they do not validate against the openEHR Operational Template schema (see *Validation status*), so they are withheld until they do.
 
 ## Archetypes (`archetypes/`)
 
@@ -19,26 +19,26 @@ This folder holds the **12 ADL 1.4 archetypes** that the [openEHR Archetype Cata
 | `openEHR-EHR-CLUSTER.vendor_data_provenance.v0.adl` | CLUSTER | Vendor Data Provenance | 5ee4122ea173 |
 | `openEHR-EHR-CLUSTER.wearable_device.v0.adl` | CLUSTER | Wearable Device | 1a8cf5dd8486 |
 
-## Templates (`templates/`)
+## Templates (withheld)
 
-| File | Archetypes referenced | sha256 (12) |
-|---|---|---|
-| `lifestyle_medicine_activity.v0.oet` | `CLUSTER.wearable_device.v0`, `OBSERVATION.physical_activity_detailed.v0` | 0581583b9069 |
-| `lifestyle_medicine_encounter.v0.oet` | `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0`, `OBSERVATION.physical_activity_detailed.v0`, `OBSERVATION.sleep_architecture.v0` | 020c3aaf2bc2 |
-| `lifestyle_medicine_hrv.v0.oet` | `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0` | 055e41f31237 |
-| `lifestyle_medicine_sleep.v0.oet` | `CLUSTER.wearable_device.v0`, `OBSERVATION.sleep_architecture.v0` | abf06223c567 |
-| `lifestyle_medicine_stress.v0.oet` | `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0`, `OBSERVATION.physical_activity_detailed.v0`, `OBSERVATION.sleep_architecture.v0` | 0972b3f78777 |
-| `Lifestyle_Medicine_Wearable_Summary.v0.oet` | `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0`, `OBSERVATION.physical_activity_detailed.v0`, `OBSERVATION.sleep_architecture.v0` | 9c9bd4888d75 |
+The six composition templates, listed here so that the catalog's references can be followed, are not part of this release:
+
+* `lifestyle_medicine_activity.v0.oet` — references `CLUSTER.wearable_device.v0`, `OBSERVATION.physical_activity_detailed.v0`
+* `lifestyle_medicine_encounter.v0.oet` — references `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0`, `OBSERVATION.physical_activity_detailed.v0`, `OBSERVATION.sleep_architecture.v0`
+* `lifestyle_medicine_hrv.v0.oet` — references `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0`
+* `lifestyle_medicine_sleep.v0.oet` — references `CLUSTER.wearable_device.v0`, `OBSERVATION.sleep_architecture.v0`
+* `lifestyle_medicine_stress.v0.oet` — references `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0`, `OBSERVATION.physical_activity_detailed.v0`, `OBSERVATION.sleep_architecture.v0`
+* `Lifestyle_Medicine_Wearable_Summary.v0.oet` — references `CLUSTER.wearable_device.v0`, `OBSERVATION.heart_rate_variability.v0`, `OBSERVATION.physical_activity_detailed.v0`, `OBSERVATION.sleep_architecture.v0`
 
 ## Provenance and what differs from the working copies
 
-These files are copies of the working archetype corpus taken on 2026-09-17. Internal working comments and labels were removed from the copies before distribution; **no node, constraint, occurrence, ontology term or terminology binding was changed.** This was verified with Archie 3.15.0 (Nedap's openEHR reference implementation; the build shipped with the openEHR ADL language server 0.6.1 gives the same result): both versions of each of the 12 archetypes were parsed with the ADL 1.4 parser, converted to ADL 2 and validated (0 parser errors, 0 validation errors in all 24 parses), and the serialised ADL 2 output of each pair was compared. Six pairs are identical (`data_quality_indicator`, `vendor_data_provenance`, `wearable_device`, `lactate_threshold`, `skin_temperature_wearable`, `sleep_architecture`); in the other six the differences are description strings only: the `other_contributors` line of `circadian_rhythm`, `recovery_readiness`, `screen_time` and `vo2max_estimation` (now the institution), one sentence of the `heart_rate_variability` purpose text, and three element descriptions of `stress_assessment` (a requirement label and an adoption figure that had no public source were removed). The six templates differ from the working copies by one removed metadata item each.
+These files are copies of the working archetype corpus taken on 2026-09-17. Internal working comments and labels were removed from the copies before distribution; **no node, constraint, occurrence, ontology term or terminology binding was changed.** This was verified with Archie 3.15.0 (Nedap's openEHR reference implementation; the build shipped with the openEHR ADL language server 0.6.1 gives the same result): both versions of each of the 12 archetypes were parsed with the ADL 1.4 parser, converted to ADL 2 and validated (0 parser errors, 0 validation errors in all 24 parses), and the serialised ADL 2 output of each pair was compared. Six pairs are identical (`data_quality_indicator`, `vendor_data_provenance`, `wearable_device`, `lactate_threshold`, `skin_temperature_wearable`, `sleep_architecture`); in the other six the differences are description strings only: the `other_contributors` line of `circadian_rhythm`, `recovery_readiness`, `screen_time` and `vo2max_estimation` (now the institution), one sentence of the `heart_rate_variability` purpose text, and three element descriptions of `stress_assessment` (a requirement label and an adoption figure that had no public source were removed). 
 
 ## Validation status
 
 * **Archetypes:** 12/12 parse, convert and validate with Archie 3.15.0 as above.
-* **Templates:** the six files are well-formed XML in the openEHR v1 namespace (`xmllint --noout`), shaped like operational templates, but they are **not valid Operational Templates**: validated against the openEHR `Template.xsd` (specifications-ITS-XML, Release-1.0.2) every file is rejected at its first element (`id` where the schema requires `language`), and they reference archetypes by identifier instead of inlining them as an OPT does. They are not in the Ocean Template Designer `.oet` format either (namespace `openEHR/v1/Template`), despite the extension. No openEHR tool available to this project accepts them as templates, so they remain **unvalidated as operational templates**: read them as the composition designs the catalog describes, not as deployable OPTs.
-* **References:** the templates reference four archetypes. Three are in this folder; the fourth, `openEHR-EHR-OBSERVATION.physical_activity_detailed.v0` (referenced by `activity`, `encounter`, `stress` and `Wearable_Summary`), is **not distributed** — it duplicates the published CKM `physical_activity` archetype and is not claimed as original — so those four templates cannot be resolved from this folder alone. None of the six references a published CKM archetype, and none of the twelve archetypes carries a `specialise` clause.
+* **Templates (withheld):** the six files are well-formed XML in the openEHR v1 namespace (`xmllint --noout`), shaped like operational templates, but they are **not valid Operational Templates**: validated against the openEHR Template XML schema (`Template.xsd`, schema version 1.0.1 by Ocean Informatics, taken from the openEHR specifications-ITS-XML repository at tag Release-1.0.2) every file is rejected at its first element (`id` where the schema requires `language`), and they reference archetypes by identifier instead of inlining them as an OPT does. They are not in the Ocean Template Designer `.oet` format either (namespace `openEHR/v1/Template`), despite the extension. No openEHR tool available to this project accepts them as templates, so they remain **unvalidated as operational templates**: read them as the composition designs the catalog describes, not as deployable OPTs.
+* **References:** the templates reference four archetypes. Three are in this folder; the fourth, `openEHR-EHR-OBSERVATION.physical_activity_detailed.v0` (referenced by `activity`, `encounter`, `stress` and `Wearable_Summary`), is not distributed either — it duplicates the published CKM `physical_activity` archetype and is not claimed as original. None of the six references a published CKM archetype, and none of the twelve archetypes carries a `specialise` clause.
 
 ## Not a CKM submission
 
