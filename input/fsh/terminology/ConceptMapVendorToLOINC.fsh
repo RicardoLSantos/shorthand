@@ -16,7 +16,7 @@ Usage: #definition
 * title = "Vendor Proprietary Codes to LOINC Mapping"
 * status = #active
 * experimental = false
-* date = "2026-09-16"
+* date = "2026-09-17"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * description = "Operational ConceptMap for translating proprietary wearable device codes to LOINC standard terminology. Based on gray literature analysis of 75 sources documenting 11 major vendors with 0% LOINC adoption rate."
@@ -75,12 +75,12 @@ Usage: #definition
 // Walking + Running Distance
 * group[0].element[4].code = #HKQuantityTypeIdentifierDistanceWalkingRunning
 * group[0].element[4].display = "Walking + Running Distance"
-// 2026-09-15: a walking/running distance mapped to a step count; LOINC has distance concepts (55430-3 Walking distance
-// unspecified time Pedometer, 41953-1 Walking distance 24 hour Calculated, 93849-8 Exercise distance in 24 hour) — replacement pending
-* group[0].element[4].target[0].code = #41950-7
-* group[0].element[4].target[0].display = "Number of steps in 24 hour Measured"
-* group[0].element[4].target[0].equivalence = #wider
-* group[0].element[4].target[0].comment = "Distance is wider concept than step count; approximate mapping"
+// 2026-09-17: until 0.5.0 this distance was mapped to a step count (41950-7); LOINC has a pedometer distance concept,
+// verified in the Athena LOINC snapshot and on tx.fhir.org (LOINC 2.82) — coherent with the step-count row above (55423-8)
+* group[0].element[4].target[0].code = #55430-3
+* group[0].element[4].target[0].display = "Walking distance unspecified time Pedometer"
+* group[0].element[4].target[0].equivalence = #narrower
+* group[0].element[4].target[0].comment = "HealthKit sample includes running; LOINC concept is walking distance by pedometer"
 
 // Oxygen Saturation
 * group[0].element[5].code = #HKQuantityTypeIdentifierOxygenSaturation

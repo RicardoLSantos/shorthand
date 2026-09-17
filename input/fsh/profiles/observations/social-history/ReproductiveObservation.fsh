@@ -6,7 +6,7 @@ Description: "Base profile for social-history health observations"
 
 * ^version = "1.0.0"
 * ^status = #active
-* ^date = "2024-03-19"
+* ^date = "2026-09-17"
 
 * status MS
 * category 1..1 MS
@@ -24,8 +24,7 @@ Description: "Base profile for social-history health observations"
 * component contains
     severity 0..1 MS and
     duration 0..1 MS and
-    frequency 0..1 MS and
-    pattern 0..1 MS
+    regularity 0..1 MS
 
 * component[severity]
   * code = $LOINC#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
@@ -38,15 +37,12 @@ Description: "Base profile for social-history health observations"
   * value[x] only Quantity
   * valueQuantity from DurationUnitsVS (required)
 
-* component[frequency]
-  * code = $LOINC#92656-8 "Number of menstrual periods per year" // 2026-09-16: quantitative LOINC concept (scale Qn, property NRat) bound here to a coded frequency value — binding review pending
+* component[regularity]
+  // 2026-09-17: replaces the former frequency (LOINC 92656-8, a quantitative concept: scale Qn, property NRat) and pattern (LOINC 64699-2, a PhenX questionnaire item for ages 18-22)
+  // components, whose concepts did not fit a coded regularity value; SNOMED CT International, verified in the Vocab2 snapshot and on tx.fhir.org (20250201)
+  * code = $SCT#364307006 "Regularity of menstrual cycle"
   * value[x] only CodeableConcept
-  * valueCodeableConcept from SymptomFrequencyVS (extensible)
-
-* component[pattern]
-  * code = $LOINC#64699-2 "During ages 18-22 what was the pattern of your menstrual cycles, excluding time around pregnancies [PhenX]" // 2026-09-16: PhenX questionnaire item (ages 18-22; status TRIAL in LOINC 2.82) bound here to a symptom-progression value set — binding review pending
-  * value[x] only CodeableConcept
-  * valueCodeableConcept from SymptomProgressionVS (extensible)
+  * valueCodeableConcept from MenstrualCycleRegularityVS (required)
 
 Invariant: rep-1
 Description: "Severity must be between 0 and 10"

@@ -56,3 +56,14 @@ Description: "Activities related to social-history health monitoring"
 * LifestyleMedicineTemporaryCS#mood-tracking "Mood Tracking"
 * LifestyleMedicineTemporaryCS#medication-log "Medication Log"
 * LifestyleMedicineTemporaryCS#exercise-tracking "Exercise Tracking"
+
+ValueSet: MenstrualCycleRegularityVS
+Id: menstrual-cycle-regularity-vs
+Title: "Menstrual Cycle Regularity Value Set"
+Description: "Coded values for the regularity of the menstrual cycle (SNOMED CT International), bound by the regularity component of the reproductive observation profile"
+* ^experimental = false
+* ^date = "2026-09-17"
+* ^status = #active
+// 2026-09-17: both concepts verified in the Vocab2 SNOMED snapshot (standard, active) and on tx.fhir.org (SNOMED CT International 20250201, $validate-code with these displays)
+* $SCT#302757007 "Regular periods"
+* $SCT#80182007 "Irregular periods"

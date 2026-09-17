@@ -10,5 +10,5 @@ Title: "Social History Observation Example"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history "Social History"
 * code = $LOINC#29762-2 "Social history note"
 * valueString = "Patient reports active social life with regular community engagement"
-* component[frequency].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#symptom-freq-daily "Daily"
+// 2026-09-17: the former frequency component ("Number of menstrual periods per year" = Daily) was removed — this instance is a social-history note and carries no reproductive component; the profile now offers a regularity component (SNOMED 364307006) instead
 * note.text = "Patient demonstrates good social support network"
