@@ -324,7 +324,7 @@ Description: "Profile for recording estimated maximal oxygen uptake (VO2max) fro
 * component[metCapacity].code = LifestyleMedicineTemporaryCS#mets "METs"
 * component[metCapacity].value[x] only Quantity
 * component[metCapacity].valueQuantity.system = $UCUM
-* component[metCapacity].valueQuantity.code = #MET
+* component[metCapacity].valueQuantity.code = #{MET} // 2026-09-17: MET is not a UCUM unit (NLM UCUM validator + tx.fhir.org UCUM 2.2: not found); {MET} is the UCUM annotated form, valid in both sources, as already used for {MET-min}/wk
 
 // Data source
 * component[dataSource].code = LifestyleMedicineTemporaryCS#source "Data Source"

@@ -20,23 +20,24 @@ Description: "Example instance of MindfulnessProgressReport"
   * description = "Frequency of mindfulness practice"
   * population[0]
     * code = http://terminology.hl7.org/CodeSystem/measure-population#denominator
-    * criteria.language = #text/cql-identifier
+    * criteria.language = #text/fhirpath // 2026-09-17: the expressions are FHIRPath, not CQL identifiers (no CQL Library is attached; IG Publisher 2.3.4 reports MEASURE_M_CRITERIA_CQL_NO_LIB for text/cql-identifier criteria without a Library)
     * criteria.expression = "Observation.where(code.coding.code='711415009')"
   * stratifier[0]
     * code.text = "weekly"
-    * criteria.language = #text/cql-identifier
-    * criteria.expression = "Observation.effective.as(DateTime).truncate(@T).truncate(@W)"
+    * description = "Stratified by the observation's effective date; the weekly aggregation is applied by the reporting engine (FHIRPath has no calendar-week function)"
+    * criteria.language = #text/fhirpath // 2026-09-17: the expressions are FHIRPath, not CQL identifiers (no CQL Library is attached; IG Publisher 2.3.4 reports MEASURE_M_CRITERIA_CQL_NO_LIB for text/cql-identifier criteria without a Library)
+    * criteria.expression = "Observation.effective.as(dateTime)" // 2026-09-17: was "Observation.effective.as(DateTime).truncate(@T).truncate(@W)", which is not valid FHIRPath (no truncate function, no @T/@W literals)
 
 * group[1]
   * code.text = "stress-reduction"
   * description = "Stress level changes over time"
   * population[0]
     * code = http://terminology.hl7.org/CodeSystem/measure-population#denominator
-    * criteria.language = #text/cql-identifier
+    * criteria.language = #text/fhirpath // 2026-09-17: the expressions are FHIRPath, not CQL identifiers (no CQL Library is attached; IG Publisher 2.3.4 reports MEASURE_M_CRITERIA_CQL_NO_LIB for text/cql-identifier criteria without a Library)
     * criteria.expression = "Observation.where(component.code.coding.code='725854004')"
   * stratifier[0]
     * code.text = "trend"
-    * criteria.language = #text/cql-identifier
+    * criteria.language = #text/fhirpath // 2026-09-17: the expressions are FHIRPath, not CQL identifiers (no CQL Library is attached; IG Publisher 2.3.4 reports MEASURE_M_CRITERIA_CQL_NO_LIB for text/cql-identifier criteria without a Library)
     * criteria.expression = "component.where(code.coding.code='725854004').value.value"
 
 RuleSet: ReportingMetrics
