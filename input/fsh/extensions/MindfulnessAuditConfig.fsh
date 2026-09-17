@@ -49,5 +49,5 @@ Description: "Default configuration for mindfulness session auditing"
 
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-config-audit "Audit Configuration"
 * extension[auditLevel].valueCode = $AuditLevels#audit-levels-high
-* extension[auditRetention].valueDuration = 90 'days'
+* extension[auditRetention].valueDuration = 90 'd' "days" // 2026-09-17: UCUM code for day is d ('days' is not a UCUM unit: NLM validator + tx.fhir.org UCUM 2.2)
 * extension[auditFormat].valueCode = $AuditFormats#structured

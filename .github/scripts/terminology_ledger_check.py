@@ -94,6 +94,19 @@ RE_ELEM_DISP = re.compile(r'^\s*\*\s*group\[(\d+|[+=])\]\.element\[(?:\d+|[+=])\
 RE_TGT_CODE = re.compile(r'^\s*\*\s*group\[(\d+|[+=])\]\.element\[(?:\d+|[+=])\]\.target\[(?:\d+|[+=])\]\.code\s*=\s*#(\S+)')
 RE_TGT_DISP = re.compile(r'^\s*\*\s*group\[(\d+|[+=])\]\.element\[(?:\d+|[+=])\]\.target\[(?:\d+|[+=])\]\.display\s*=\s*"((?:[^"\\]|\\.)*)"')
 RE_CONCEPT = re.compile(r'^\s*\*\s*#(\S+)\s+"((?:[^"\\]|\\.)*)"')
+# Split-form bindings: system and code assigned on separate rules with the same path prefix, in
+# either order (``* valueQuantity.system = $UCUM`` / ``* valueQuantity.code = #kg``,
+# ``* coding.system = $SCT`` / ``* coding.code = #271299001`` / ``* coding.display = "…"``).
+RE_SPLIT_SYS = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.system\s*=\s*"?(?P<sys>[^"\s]+)"?\s*$')
+RE_SPLIT_CODE = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.code\s*=\s*#(?P<code>[^\s"]+)\s*$')
+RE_SPLIT_DISP = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.display\s*=\s*"(?P<text>(?:[^"\\]|\\.)*)"\s*$')
+RE_SPLIT_UNIT = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.unit\s*=\s*"(?P<text>(?:[^"\\]|\\.)*)"\s*$')
+# FSH Quantity shorthand ``<value> '<unit code>' "<unit text>"``: the quoted unit is UCUM by definition.
+RE_QTY = re.compile(r'''^\s*\*\s*(?P<path>[^\s=]+)\s*=\s*-?[0-9][0-9.]*\s*'(?P<code>[^']+)'(?:\s+"(?P<unit>(?:[^"\\]|\\.)*)")?''')
+RE_DECL = re.compile(r'^(Instance|Profile|Extension|ValueSet|CodeSystem|Logical|Resource|Mapping|RuleSet|Invariant|Alias)\s*:')
+RE_NEW_SIBLING = re.compile(r'^\s*\*\s*(?P<base>[^\s=]*?\[\+\])')
+# path suffixes of Quantity-typed elements (FHIR Quantity and its specialisations, Range and Ratio parts)
+RE_QTY_PATH = re.compile(r'(Quantity|Duration|Age|Count|Distance|quantity|low|high|numerator|denominator)$')
 
 
 def _strip_comment(line: str) -> str:
@@ -118,17 +131,27 @@ def _strip_comment(line: str) -> str:
 
 
 def extract_codes(fsh_root: Path):
-    """Return {(system, code): {"displays": set, "files": set}} for every external code in FSH."""
-    found = defaultdict(lambda: {"displays": set(), "files": set()})
+    """Return {(system, code): {"displays": set, "units": set, "files": set}} for every external code in FSH.
 
-    def add(system, code, display, path):
+    Three syntactic forms are read: the inline ``$SYSTEM#code "display"`` token, the split form
+    (``<path>.system`` and ``<path>.code`` on separate rules of the same instance/profile, in either
+    order, with an optional ``<path>.display`` or ``<path>.unit``), and the FSH Quantity shorthand
+    ``<value> '<ucum>' "<unit>"``. ConceptMap elements/targets take their system from the group.
+    A ``Quantity.unit`` text is recorded but is not a display claim (FHIR: human-readable form).
+    """
+    found = defaultdict(lambda: {"displays": set(), "units": set(), "files": set(), "forms": set()})
+
+    def add(system, code, display, path, unit=None, form="inline"):
         code = code.strip().rstrip(",")
         if not code:
             return
         rec = found[(system, code)]
         rec["files"].add(str(path.relative_to(REPO)))
+        rec["forms"].add(form)
         if display:
             rec["displays"].add(display)
+        if unit:
+            rec["units"].add(unit)
 
     for path in sorted(fsh_root.rglob("*.fsh")):
         text = path.read_text(encoding="utf-8", errors="replace")
@@ -136,6 +159,24 @@ def extract_codes(fsh_root: Path):
         group_sys, cur_group = {}, 0
         cur_elem, cur_tgt = None, None   # (system, code) of the last element / target seen, for their displays
         in_block_string = False
+        # split-form state for the current instance/profile block: normalised path prefix ->
+        # {"system", "code", "display", "unit"}; a pair is emitted once both system and code are known
+        pending: dict[str, dict] = {}
+
+        def flush(keys=None):
+            for k in (list(pending) if keys is None else list(keys)):
+                e = pending.pop(k, None)
+                if e and e.get("system") and e.get("code"):
+                    form = "quantity" if RE_QTY_PATH.search(k) else "split"
+                    add(e["system"], e["code"], e.get("display"), path, unit=e.get("unit"), form=form)
+
+        def entry(prefix):
+            k = prefix.replace("[+]", "[=]")
+            e = pending.get(k)
+            if e is None:
+                e = pending[k] = {"system": None, "code": None, "display": None, "unit": None}
+            return k, e
+
         for raw in text.splitlines():
             if raw.count('"""') % 2 == 1:
                 in_block_string = not in_block_string
@@ -145,8 +186,30 @@ def extract_codes(fsh_root: Path):
             line = _strip_comment(raw)
             if not line.strip():
                 continue
+            if RE_DECL.match(line):
+                flush()               # a new top-level declaration closes every open pair
+            m = RE_NEW_SIBLING.match(line)
+            if m:                     # ``[+]`` starts a new sibling element: close its predecessor's pairs
+                base = m.group("base").replace("[+]", "[=]")
+                flush(k for k in pending if k.startswith(base))
             for m in RE_INLINE.finditer(line):
                 add(ALIAS_SYSTEM[m.group(1)], m.group(2), m.group(3), path)
+            m = RE_QTY.match(line)
+            if m:
+                add("UCUM", m.group("code"), None, path, unit=m.group("unit"), form="quantity")
+            for regex, field in ((RE_SPLIT_SYS, "system"), (RE_SPLIT_CODE, "code"),
+                                 (RE_SPLIT_DISP, "display"), (RE_SPLIT_UNIT, "unit")):
+                m = regex.match(line)
+                if not m or m.group("prefix").startswith("group["):
+                    continue          # ConceptMap groups are handled below
+                value = m.group("sys") if field == "system" else m.group("code") if field == "code" else m.group("text")
+                if field == "system":
+                    value = ALIAS_SYSTEM.get(value)   # None for the IG's own CodeSystems → never emitted
+                k, e = entry(m.group("prefix"))
+                if field in ("system", "code") and e["system"] and e["code"]:
+                    flush([k]); k, e = entry(m.group("prefix"))   # the prefix is reused: close the previous pair
+                e[field] = value
+                break
             if is_icd11_cs:
                 m = RE_CONCEPT.match(line)
                 if m:
@@ -172,14 +235,15 @@ def extract_codes(fsh_root: Path):
                     else:
                         cur_tgt = key
                     if key:
-                        add(system, m.group(2), None, path)
+                        add(system, m.group(2), None, path, form="conceptmap")
             # the display lines that follow an element / target code belong to that code
             m = RE_ELEM_DISP.match(line)
             if m and cur_elem:
-                add(cur_elem[0], cur_elem[1], m.group(2), path)
+                add(cur_elem[0], cur_elem[1], m.group(2), path, form="conceptmap")
             m = RE_TGT_DISP.match(line)
             if m and cur_tgt:
-                add(cur_tgt[0], cur_tgt[1], m.group(2), path)
+                add(cur_tgt[0], cur_tgt[1], m.group(2), path, form="conceptmap")
+        flush()                       # end of file closes the last block's pairs
     return found
 
 
@@ -586,10 +650,17 @@ def merge(found: dict, previous: dict, run: dict, manual_snomed: str | None, kep
             row = {"system": system, "code": code, "display_in_ig": displays, "official_display": "",
                    "status": "unverified", "verified_on": "", "verified_via": "", "source_version": "",
                    "method": "", "note": "no source reached", "files": files}
-        if not displays:
-            # bound only as a ConceptMap element/target without a display: the display check
-            # (does the IG use this code for the concept it names?) could not run — say so.
-            tag = "no display bound in FSH: existence verified, meaning not checked"
+        if not displays and row.get("status") in ("active", "inactive", "display-mismatch"):
+            units = " | ".join(sorted(rec.get("units", ())))
+            if rec.get("forms") and rec["forms"] <= {"quantity"}:
+                # bound as Quantity system/code (split rules or the 'unit' shorthand): the unit text
+                # is the human-readable form (free text per FHIR), not a display claim — existence only.
+                tag = (f"bound as Quantity system/code (unit text: {units or 'none'}): existence verified; "
+                       "unit is free text, not a display claim")
+            else:
+                # bound without a display (e.g. a ConceptMap element/target): the display check
+                # (does the IG use this code for the concept it names?) could not run — say so.
+                tag = "no display bound in FSH: existence verified, meaning not checked"
             if tag not in row.get("note", ""):
                 row["note"] = " | ".join(x for x in (row.get("note", ""), tag) if x)[:400]
         if system == "SNOMED" and manual_snomed:

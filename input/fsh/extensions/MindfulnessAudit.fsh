@@ -51,5 +51,5 @@ Description: "Example of a mindfulness session audit record"
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-audit-session "Session Audit"
 * created = "2024-03-15"
 * extension[auditLevel].valueCode = $AuditLevels#audit-levels-high
-* extension[auditRetention].valueDuration = 90 'days'
+* extension[auditRetention].valueDuration = 90 'd' "days" // 2026-09-17: UCUM code for day is d ('days' is not a UCUM unit: NLM validator + tx.fhir.org UCUM 2.2)
 * extension[auditFormat].valueCode = $AuditFormats#structured
