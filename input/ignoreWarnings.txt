@@ -298,3 +298,77 @@ The concept '373338002' has a status of inactive and its use should be reviewed
 #     by type+id; the IG Publisher's constructed target urn:uuid:AppleWatchDevice
 #     is a mixed urn-uuid/resource-id batch-bundle heuristic quirk) ---
 A entrada 1 corresponde à referência Device/AppleWatchDevice por tipo e id, mas o seu URL completo urn:uuid:22222222-2222-4222-8222-222222222222 não corresponde ao URL de destino completo urn:uuid:AppleWatchDevice pelas regras de resolução de pacotes
+
+# ── English-locale twins of the suppressions above (added 2026-09-17) ──
+# The CI runner (IG Publisher downloaded at build time, 2.3.4 on 2026-09-17) emits its messages in English,
+# while the local builds emit Portuguese; a suppression matches only its exact full text, so each rule
+# above that the runner reported as an unsuppressed warning is repeated here in the runner's wording
+# (copied verbatim from the qa report of the 2026-09-17 run). Same justification as the Portuguese line.
+# The {MET} pair (Portuguese and English) covers the annotated MET unit introduced in 0.5.1.
+
+Entry 1 matches the reference Device/AppleWatchDevice by type and id but its fullUrl urn:uuid:22222222-2222-4222-8222-222222222222 does not match the full target URL urn:uuid:AppleWatchDevice by Bundle resolution rules
+For the complex type CodeableConcept, consider using a pattern rather than a fixed value to avoid over-constraining the instance
+No definition could be found for URL value 'DEVICE_EXPOSURE'
+No definition could be found for URL value 'MEASUREMENT'
+No definition could be found for URL value 'com.apple.health'
+No definition could be found for URL value 'com.fitbit.hrv'
+No definition could be found for URL value 'com.garmin.connect'
+No definition could be found for URL value 'com.ouraring'
+No definition could be found for URL value 'com.polar'
+No definition could be found for URL value 'http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm#art11'
+No definition could be found for URL value 'http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm'
+No definition could be found for URL value 'https://2rdoc.pt/api/pipeline/applehealthkit/errors'
+No definition could be found for URL value 'https://2rdoc.pt/api/pipeline/errors'
+No definition could be found for URL value 'https://2rdoc.pt/auth/authorize'
+No definition could be found for URL value 'https://2rdoc.pt/auth/manage'
+No definition could be found for URL value 'https://2rdoc.pt/auth/register'
+No definition could be found for URL value 'https://2rdoc.pt/auth/token'
+No definition could be found for URL value 'https://2rdoc.pt/fhir/warehouse/research'
+No definition could be found for URL value 'https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/practitioner-identifier-cs'
+No definition could be found for URL value 'https://2rdoc.pt/ig/ios-lifestyle-medicine/vendor-apis'
+No definition could be found for URL value 'https://2rdoc.pt/research-projects'
+No definition could be found for URL value 'https://athena.ohdsi.org/search-terms/concepts'
+No definition could be found for URL value 'https://ckm.openehr.org/ckm'
+No definition could be found for URL value 'https://cloud.ouraring.com/v2/usercollection'
+No definition could be found for URL value 'https://developer.garmin.com/health-api'
+No definition could be found for URL value 'https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_j'
+No definition could be found for URL value 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+No definition could be found for URL value 'https://huggingface.co/BioMistral/BioMistral-7B'
+No definition could be found for URL value 'https://portal.cfm.org.br'
+No definition could be found for URL value 'https://www.anpd.gov.br'
+No definition could be found for URL value 'https://www.hhs.gov/hipaa/index.html'
+No definition could be found for URL value 'https://www.polaraccesslink.com/v3'
+No definition could be found for URL value 'openEHR-EHR-CLUSTER.wearable_device.v0'
+No definition could be found for URL value 'openEHR-EHR-OBSERVATION.heart_rate_variability.v0'
+No definition could be found for URL value 'openEHR-EHR-OBSERVATION.physical_activity_detailed.v0'
+No definition could be found for URL value 'openEHR-EHR-OBSERVATION.sleep_architecture.v0'
+No definition could be found for URL value 'openEHR-EHR-OBSERVATION.vo2max_estimation.v0'
+No definition could be found for URL value 'urn:oid:2.16.840.1.113883.2.4.6.1'
+No definition could be found for URL value 'urn:oid:2.16.840.1.113883.3.4.5.4'
+No definition could be found for URL value 'urn:oid:2.16.858.1.1.1'
+Source Code System http://hl7.org/fhir/sid/icd-10-cm doesn't have all content (content = not-present), so the source codes cannot be checked
+Source Code System https://dev.fitbit.com/build/reference/web-api doesn't have all content (content = not-present), so the source codes cannot be checked
+Source Code System https://developer.apple.com/documentation/healthkit doesn't have all content (content = not-present), so the source codes cannot be checked
+Target Code System http://athena.ohdsi.org/search-terms/terms doesn't have all content (content = not-present), so the target codes cannot be checked
+The ImplementationGuide uses package hl7.fhir.uv.bulkdata#2.0.0 released on 2021-11-26, but the most recent appropriate version is 3.0.0. This reference is getting old and the more recent version should be considered
+The ImplementationGuide uses package hl7.fhir.uv.phd#1.1.0 released on 2024-10-18, but the most recent appropriate version is 2.0.0. This reference is getting old and the more recent version should be considered
+The Source Code System https://cloud.ouraring.com/v2/usercollection is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Source Code System https://developer.garmin.com/health-api is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Source Code System https://www.polaraccesslink.com/v3 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Source Code System openEHR-EHR-CLUSTER.wearable_device.v0 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Source Code System openEHR-EHR-OBSERVATION.heart_rate_variability.v0 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Source Code System openEHR-EHR-OBSERVATION.physical_activity_detailed.v0 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Source Code System openEHR-EHR-OBSERVATION.sleep_architecture.v0 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Target Code System DEVICE_EXPOSURE is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+The Target Code System MEASUREMENT is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+The Target Code System openEHR-EHR-CLUSTER.wearable_device.v0 is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+The Target Code System openEHR-EHR-OBSERVATION.heart_rate_variability.v0 is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+The Target Code System openEHR-EHR-OBSERVATION.physical_activity_detailed.v0 is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+The Target Code System openEHR-EHR-OBSERVATION.sleep_architecture.v0 is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+UCUM Codes that contain human readable annotations like {MET-min} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+UCUM Codes that contain human readable annotations like {pack-years} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+UCUM Codes that contain human readable annotations like {rpm} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+UCUM Codes that contain human readable annotations like {spm} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked
+Os códigos UCUM que contêm anotações legíveis por humanos como {MET} podem ser enganadores (por exemplo, são ignorados quando se comparam unidades). A melhor prática é não depender de anotações no código UCUM, pelo que esta utilização deve ser verificada
+UCUM Codes that contain human readable annotations like {MET} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked

@@ -16,7 +16,7 @@ This page states what the current build reports, what is deliberately suppressed
 
 Every one of the 223 warnings is the same message: *"The resource … should have an OID assigned to cater for possible use with OID based terminology systems"* — one per CodeSystem (19) and one per ValueSet (204), which is why the count equals the number of terminology resources. OIDs are optional identifiers in FHIR; assigning 223 of them requires an OID arc registered to the publisher, which is a governance decision outside a release. The warning is therefore left visible rather than suppressed, and the count is expected to move only when terminology resources are added or removed.
 
-## Suppressed warnings (`input/ignoreWarnings.txt`, 98 active lines)
+## Suppressed warnings (`input/ignoreWarnings.txt`, 165 active lines: 99 in the locale of the local builds and 66 English twins for the CI runner)
 
 Suppressions are reserved for messages the IG Publisher emits about things that are correct by design; genuine defects are fixed at the FSH source. Each block in the file carries its justification. Summary by block:
 
@@ -34,6 +34,10 @@ Suppressions are reserved for messages the IG Publisher emits about things that 
 | Observation performer best practice | "no performer" advisories on wearable observations | the data source is a device, recorded in `device`, not a practitioner |
 | ObservationInterpretation version mismatch | HL7 Terminology v7.1.0 packages v4.0.0 while values reference v3.0.0 | upstream inconsistency in the terminology package |
 | Advisories accepted as-is | inactive SNOMED concepts used intentionally in examples; a `Reference(PractitionerRole)` extension type; fixed-value CodeableConcepts in consent examples; pinned dependency versions; extensions demonstrated only inside composite bundles; a batch-bundle `PUT`-by-id resolution heuristic | each is an intentional modelling or example choice, documented in the file next to the suppression |
+
+## Continuous integration and the IG Publisher version
+
+The release builds are made locally with the IG Publisher version recorded in the changelog (2.2.10 for 0.5.0 and 0.5.1); the CI workflow downloads the latest IG Publisher release at build time, so it can run a newer validator than the release did. Measured on 2026-09-17: the CI build of v0.5.0 (and of the commits that followed it) ran IG Publisher **2.3.4** and **failed** its error gate with 4 errors, all `MEASURE_M_CRITERIA_CQL_NO_LIB` on the `MindfulnessProgressReport` Measure — its four criteria were declared as `text/cql-identifier` without a CQL Library, which 2.2.10 only warned about. 0.5.1 corrects the Measure (the criteria are FHIRPath and are now declared as such; the weekly stratifier expression, which was not valid FHIRPath, is now the observation's effective date) — reproduced with the standalone FHIR validator 6.10.4, the same core as 2.3.4: 4 errors → 0. The 2.3.4 run also reported 361 warnings instead of 223: the runner emits its messages in English and the suppressions were written in the locale of the local builds, so 0.5.1 adds the English twin of every suppression the runner reported (66 lines, full text copied from the run). Nine runner warnings have no local counterpart and are left visible: eight `CONCEPTMAP_GROUP_SOURCE_MISSING` / `CONCEPTMAP_GROUP_TARGET_MISSING` on ConceptMap groups without a declared code system, and one extension-context advisory (`lgpd-registration-number`). The local publisher is not upgraded on a release day; an upgrade to 2.3.4 with a trial build is planned for the next release.
 
 ## Open limitations (known, not defects of the build)
 
