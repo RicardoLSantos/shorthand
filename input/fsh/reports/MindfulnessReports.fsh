@@ -6,7 +6,7 @@ Description: "Example instance of MindfulnessProgressReport"
 * name = "MindfulnessProgressReport"
 * status = #active
 * experimental = false
-* date = "2024-03-19"
+* date = "2026-09-17"
 * publisher = "Example Organization"
 * description = "Measures progress in mindfulness practice over time"
 
