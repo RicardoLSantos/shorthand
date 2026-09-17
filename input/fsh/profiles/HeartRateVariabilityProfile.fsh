@@ -34,6 +34,7 @@ Description: "One heart rate variability (HRV) metric from a consumer wearable o
 * valueQuantity.code ^short = "UCUM unit: ms (SDNN, RMSSD), % (pNN50), ms2 (LF/HF power), 1 (LF/HF ratio)"
 * method 0..1 MS
 * method ^short = "Analysis method (time-domain or frequency-domain), when known"
+* method ^comment = "Declare the acquisition method as well: the LOINC R-R interval codes of HeartRateVariabilityVS (18505-8, 76638-6, 76639-4, 76643-6, 76644-4) are defined by EKG, whereas inter-beat intervals from wrist-worn wearables are PPG-derived (pulse rate variability). 80404-7 (SDNN, no method) remains the primary code for wearable SDNN; the 'by EKG' codes apply when the source is a real ECG (ECG app, chest strap)."
 * device 0..1 MS
 * device ^short = "The application or sensor that produced the metric"
 * referenceRange 0..* MS

@@ -18,7 +18,7 @@ Usage: #definition
 * title = "HRV LOINC to OMOP CDM Mapping"
 * status = #active
 * experimental = false
-* date = "2026-09-16"
+* date = "2026-09-17"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
@@ -187,6 +187,38 @@ Previously mapped to broader 3027018 (Heart rate) — exact concept exists.
 - Vocabulary: LOINC
 Resting HR is critical for HRV baseline interpretation (Uth formula: VO2max = HRmax/HRrest × 15)
 """
+
+// 2026-09-17: the five R-R interval codes added to HeartRateVariabilityVS (defined by EKG; see the value set); LOINC → OMOP concept_id read from the Athena snapshot of 2026-01-21 and the codes confirmed on tx.fhir.org (LOINC 2.82)
+* group[0].element[3].code = #18505-8
+* group[0].element[3].display = "R-R interval (Mean value during study) by EKG"
+* group[0].element[3].target[0].code = #3006307
+* group[0].element[3].target[0].display = "R-R interval (Mean value during study) by EKG"
+* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].comment = "Optional mapping: LOINC 18505-8 → OMOP concept_id 3006307 (Athena LOINC snapshot 2026-01-21; standard concept, domain Measurement)"
+* group[0].element[4].code = #76638-6
+* group[0].element[4].display = "R-R interval (Maximum value during study) by EKG"
+* group[0].element[4].target[0].code = #46235177
+* group[0].element[4].target[0].display = "R-R interval (Maximum value during study) by EKG"
+* group[0].element[4].target[0].equivalence = #equivalent
+* group[0].element[4].target[0].comment = "Optional mapping: LOINC 76638-6 → OMOP concept_id 46235177 (Athena LOINC snapshot 2026-01-21; standard concept, domain Measurement)"
+* group[0].element[5].code = #76639-4
+* group[0].element[5].display = "R-R interval (Minimum value during study) by EKG"
+* group[0].element[5].target[0].code = #46235178
+* group[0].element[5].target[0].display = "R-R interval (Minimum value during study) by EKG"
+* group[0].element[5].target[0].equivalence = #equivalent
+* group[0].element[5].target[0].comment = "Optional mapping: LOINC 76639-4 → OMOP concept_id 46235178 (Athena LOINC snapshot 2026-01-21; standard concept, domain Measurement)"
+* group[0].element[6].code = #76643-6
+* group[0].element[6].display = "R-R interval.standard deviation (Heart rate variability) by EKG"
+* group[0].element[6].target[0].code = #46235182
+* group[0].element[6].target[0].display = "R-R interval.standard deviation (Heart rate variability) by EKG"
+* group[0].element[6].target[0].equivalence = #equivalent
+* group[0].element[6].target[0].comment = "Optional mapping: LOINC 76643-6 → OMOP concept_id 46235182 (Athena LOINC snapshot 2026-01-21; standard concept, domain Measurement)"
+* group[0].element[7].code = #76644-4
+* group[0].element[7].display = "R-R interval.coefficient of variation by EKG"
+* group[0].element[7].target[0].code = #46235183
+* group[0].element[7].target[0].display = "R-R interval.coefficient of variation by EKG"
+* group[0].element[7].target[0].equivalence = #equivalent
+* group[0].element[7].target[0].comment = "Optional mapping: LOINC 76644-4 → OMOP concept_id 46235183 (Athena LOINC snapshot 2026-01-21; standard concept, domain Measurement)"
 
 // ============================================================================
 // GROUP 2: Supporting Concepts for HRV Context

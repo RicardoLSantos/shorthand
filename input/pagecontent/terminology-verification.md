@@ -175,10 +175,10 @@ Every externally-defined code bound in the FSH sources is listed in `input/data/
 
 | System | Codes in the IG | Last verified | Via | Source version(s) | Open findings |
 |---|--:|---|---|---|--:|
-| LOINC | 205 | 2026-09-16 | Athena OMOP snapshot, tx.fhir.org | Athena LOINC snapshot 2026-01-21; tx LOINC 2.82 | 11 |
+| LOINC | 209 | 2026-09-17 | Athena OMOP snapshot, tx.fhir.org | Athena LOINC snapshot 2026-01-21; tx LOINC 2.82 | 11 |
 | SNOMED CT (International) | 172 | 2026-09-17 | Vocab2 OMOP snapshot, tx.fhir.org | Vocab2 SNOMED 2025-02-01 SNOMED CT International Edition; tx SNOMED http://snomed.info/sct/900000000000207008/version/20250201 | 10 |
 | ICD-11 MMS (republished in the IG) | 46 | 2026-09-15 | icd.who.int MMS linearization export, tx.fhir.org | WHO linearization 2026 Mar 20 - 14:07 UTC; tx ICD11 2026-01 | 0 |
-| UCUM | 55 | 2026-09-17 | Athena OMOP snapshot, tx.fhir.org, ucum.nlm.nih.gov validator | Athena UCUM snapshot 2026-01-21; tx UCUM 2.2 | 9 |
+| UCUM | 56 | 2026-09-17 | Athena OMOP snapshot, tx.fhir.org, ucum.nlm.nih.gov validator | Athena UCUM snapshot 2026-01-21; tx UCUM 2.2 | 9 |
 
 **Findings on 2026-09-11.** The republished ICD-11 CodeSystem was rebuilt on this date after the first ledger run found 11 codes absent from ICD-11 MMS and 16 codes carrying another concept's title (7 of 34 were correct; see ICD-11 Integration → Correction of 2026-09-11); the run showed 0 ICD-11 findings against both the WHO linearization export and tx.fhir.org. Three defects surfaced in other systems and were corrected the same day: three custom HRV codes had been declared under the LOINC system in `ConceptMapHRVToOMOP` (now in a group whose source is the custom CodeSystem); SNOMED CT 228279004 (*Very heavy drinker*) had been used for *Heavy drinker* (now 86933000); and SNOMED CT 14012001 (*Common law partnership*) had been used for *Cohabiting* (now 38070000).
 

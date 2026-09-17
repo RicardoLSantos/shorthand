@@ -24,7 +24,8 @@ Description: "Base profile for social-history health observations"
 * component contains
     severity 0..1 MS and
     duration 0..1 MS and
-    regularity 0..1 MS
+    regularity 0..1 MS and
+    frequency 0..1
 
 * component[severity]
   * code = $LOINC#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
@@ -43,6 +44,13 @@ Description: "Base profile for social-history health observations"
   * code = $SCT#364307006 "Regularity of menstrual cycle"
   * value[x] only CodeableConcept
   * valueCodeableConcept from MenstrualCycleRegularityVS (required)
+
+* component[frequency]
+  // 2026-09-17: optional, not must-support; the LOINC concept is quantitative (scale Qn, property NRat), so the value is a Quantity in periods per year (UCUM /a) — the former coded value set is no longer bound here
+  * code = $LOINC#92656-8 "Number of menstrual periods per year"
+  * value[x] only Quantity
+  * valueQuantity.system = $UCUM
+  * valueQuantity.code = #/a
 
 Invariant: rep-1
 Description: "Severity must be between 0 and 10"
