@@ -382,4 +382,4 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 
 ---
 
-*Last updated: 2026-09-16 (v0.5.0)*
+*Last updated: 2026-09-17 (main, 0.5.1 in preparation)*

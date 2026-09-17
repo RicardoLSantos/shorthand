@@ -10,7 +10,7 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * ^status = #active
 * ^experimental = false
 * ^version = "1.0.0"
-* ^date = "2026-09-16"
+* ^date = "2026-09-17"
 
 // ============================================================================
 // HEART RATE VARIABILITY
@@ -93,31 +93,47 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * http://loinc.org#9065-4 "Carbohydrate intake 24 hour"
 * http://loinc.org#9072-0 "Fat intake 24 hour"
 * http://loinc.org#9059-7 "Carbohydrate intake Estimated"
+* http://loinc.org#9060-5 "Carbohydrate intake Measured" // 2026-09-17: Measured variant of 9059-7; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81133-1 "Fiber intake 24 hour Estimated" // 2026-09-16: replaces 9055-5 (Calorie intake total 10 hour); the Estimated variant is the one this IG already uses for caffeine (80489-8 in SubstanceUseProfile)
+* http://loinc.org#81057-2 "Fiber intake 24 hour Measured" // 2026-09-17: Measured variant of 81133-1; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81033-3 "Saturated fat intake 24 hour Estimated" // 2026-09-16: replaces 9061-3 (Carbohydrate intake 1 hour); the Estimated variant is the one this IG already uses for caffeine (80489-8 in SubstanceUseProfile)
+* http://loinc.org#81136-4 "Saturated fat intake 24 hour Measured" // 2026-09-17: Measured variant of 81033-3; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 // 2026-09-15: 9053-0 (Calorie intake total 1 hour) had been listed as fluid intake; replaced by 8990-4.
 * http://loinc.org#8990-4 "Fluid intake 24 hour"
 * http://loinc.org#80489-8 "Caffeine intake 24 hour Estimated" // 2026-09-16: replaces 9056-3 (Calorie intake total 12 hour); the Estimated variant is the one this IG already uses for caffeine (80489-8 in SubstanceUseProfile)
+* http://loinc.org#80490-6 "Caffeine intake 24 hour Measured" // 2026-09-17: Measured variant of 80489-8; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 
 // ============================================================================
 // VITAMINS (24 hour Estimated)
 // ============================================================================
 * http://loinc.org#81929-2 "Vitamin D intake 24 hour Estimated"
+* http://loinc.org#81930-0 "Vitamin D intake 24 hour Measured" // 2026-09-17: Measured variant of 81929-2; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81074-7 "Vitamin C intake 24 hour Estimated"
+* http://loinc.org#81075-4 "Vitamin C intake 24 hour Measured" // 2026-09-17: Measured variant of 81074-7; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81072-1 "Vitamin A intake 24 hour Estimated"
+* http://loinc.org#81073-9 "Vitamin A intake 24 hour Measured" // 2026-09-17: Measured variant of 81072-1; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81076-2 "Vitamin E intake 24 hour Estimated"
+* http://loinc.org#81077-0 "Vitamin E intake 24 hour Measured" // 2026-09-17: Measured variant of 81076-2; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81062-2 "Vitamin B12 intake 24 hour Estimated"
+* http://loinc.org#81063-0 "Vitamin B12 intake 24 hour Measured" // 2026-09-17: Measured variant of 81062-2; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81066-3 "Vitamin B9 (Folate) intake 24 hour Estimated"
+* http://loinc.org#81134-9 "Vitamin B9 (Folate) intake 24 hour Measured" // 2026-09-17: Measured variant of 81066-3; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 
 // ============================================================================
 // MINERALS (24 hour Estimated)
 // ============================================================================
 * http://loinc.org#81137-2 "Calcium intake 24 hour Estimated"
+* http://loinc.org#80975-6 "Calcium intake 24 hour Measured" // 2026-09-17: Measured variant of 81137-2; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81082-0 "Iron intake 24 hour Estimated"
+* http://loinc.org#81083-8 "Iron intake 24 hour Measured" // 2026-09-17: Measured variant of 81082-0; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81011-9 "Sodium intake 24 hour Estimated"
+* http://loinc.org#81012-7 "Sodium intake 24 hour Measured" // 2026-09-17: Measured variant of 81011-9; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81010-1 "Potassium intake 24 hour Estimated"
+* http://loinc.org#81009-3 "Potassium intake 24 hour Measured" // 2026-09-17: Measured variant of 81010-1; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81005-1 "Magnesium intake 24 hour Estimated"
+* http://loinc.org#81006-9 "Magnesium intake 24 hour Measured" // 2026-09-17: Measured variant of 81005-1; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 * http://loinc.org#81089-5 "Zinc intake 24 hour Estimated"
+* http://loinc.org#81088-7 "Zinc intake 24 hour Measured" // 2026-09-17: Measured variant of 81089-5; the code identifies the method (Athena LOINC snapshot + tx.fhir.org LOINC 2.82)
 
 // ============================================================================
 // SOCIAL CONNECTION AND LONELINESS (UCLA Scale, MOS-SSS)

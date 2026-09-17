@@ -350,7 +350,7 @@ Usage: #definition
 * group[0].element[42].target[0].equivalence = #equivalent
 * group[0].element[43].code = #HKQuantityTypeIdentifierDietaryCarbohydrates
 * group[0].element[43].display = "Dietary Carbohydrates"
-* group[0].element[43].target[0].code = #9059-7
+* group[0].element[43].target[0].code = #9059-7 // 2026-09-17: LOINC also defines the Measured variant 9060-5, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[0].element[43].target[0].display = "Carbohydrate intake Estimated"
 * group[0].element[43].target[0].equivalence = #equivalent
 * group[0].element[44].code = #HKQuantityTypeIdentifierDietaryProtein
@@ -371,7 +371,7 @@ Usage: #definition
 * group[0].element[46].target[0].comment = "Fluid intake is wider than water-only; LOINC has no water-specific intake code."
 * group[0].element[47].code = #HKQuantityTypeIdentifierDietaryCaffeine
 * group[0].element[47].display = "Dietary Caffeine"
-* group[0].element[47].target[0].code = #80489-8
+* group[0].element[47].target[0].code = #80489-8 // 2026-09-17: LOINC also defines the Measured variant 80490-6, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[0].element[47].target[0].display = "Caffeine intake 24 hour Estimated"
 * group[0].element[47].target[0].equivalence = #equivalent
 * group[0].element[48].code = #HKQuantityTypeIdentifierNumberOfAlcoholicBeverages

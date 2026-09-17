@@ -86,11 +86,12 @@ Verified against tx.fhir.org 2026-02-19.
 * ^version = "0.2.0"
 * ^status = #active
 * ^experimental = false
-* ^date = "2026-09-16"
+* ^date = "2026-09-17"
 * ^publisher = "FMUP/2RDoc"
 
 * http://snomed.info/sct#425405005 "Excellent (qualifier value)"
 * http://snomed.info/sct#20572008 "Good (qualifier value)"
+* LifestyleMedicineTemporaryCS#quality-fair "Fair" // 2026-09-17: local code for the intermediate grade — no SNOMED CT International concept (US Extension 445511000124105 exists; 260347006 |+| was removed on 2026-09-16 as a wrong concept)
 * http://snomed.info/sct#255351007 "Poor (qualifier value)"
 
 

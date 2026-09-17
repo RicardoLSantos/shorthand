@@ -16,7 +16,7 @@ This page states what the current build reports, what is deliberately suppressed
 
 Every one of the 223 warnings is the same message: *"The resource … should have an OID assigned to cater for possible use with OID based terminology systems"* — one per CodeSystem (19) and one per ValueSet (204), which is why the count equals the number of terminology resources. OIDs are optional identifiers in FHIR; assigning 223 of them requires an OID arc registered to the publisher, which is a governance decision outside a release. The warning is therefore left visible rather than suppressed, and the count is expected to move only when terminology resources are added or removed.
 
-## Suppressed warnings (`input/ignoreWarnings.txt`, 169 non-comment lines — the first is the file header, so 168 rules: 99 written against the messages of the local builds (twelve of them already in English) and 70 in the block of English twins for the CI runner)
+## Suppressed warnings (`input/ignoreWarnings.txt`, 169 non-comment lines — the first is the file header, so 168 rules: 98 written against the messages of the local builds (twelve of them already in English) and 70 in the block of English twins for the CI runner)
 
 Suppressions are reserved for messages the IG Publisher emits about things that are correct by design; genuine defects are fixed at the FSH source. Each block in the file carries its justification. Summary by block:
 

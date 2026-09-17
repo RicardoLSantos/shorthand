@@ -24,7 +24,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
-* ^count = 719
+* ^count = 720
 
 // Traceability: codes renamed due to collisions are documented via inline comments.
 // Full mapping available in scripts/consolidation_mapping.json
@@ -1260,3 +1260,9 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 // From mobility-assessment-method CodeSystem
 * #mobility-assessment-standardized "Standardized Test" "Standardized mobility assessment method"
 
+// Quality grade "Fair" (2026-09-17): SNOMED CT International names Excellent (425405005), Good (20572008) and Poor (255351007)
+// but has no concept for the intermediate grade; 260347006 |+| (a grade "+" of a scale) was bound here until 0.5.0 and removed
+// as a wrong-concept binding. The US Extension defines 445511000124105 |Fair|, which does not resolve on the International
+// edition, so the grade is carried by this local code until an International concept exists (migration target: the
+// International concept, if published; otherwise the US Extension code where that edition is in use).
+* #quality-fair "Fair" "Intermediate quality grade between Good and Poor, used by the quality-grade value sets of this IG"

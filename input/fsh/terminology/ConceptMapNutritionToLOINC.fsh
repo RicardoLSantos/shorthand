@@ -33,7 +33,7 @@ Usage: #definition
 
 * status = #active
 * experimental = false
-* date = "2026-09-16"
+* date = "2026-09-17"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapNutritionToLOINC"
 // ConceptMap.source MUST be a ValueSet per FHIR R4 (IG Publisher 2.0.28+)
@@ -76,14 +76,14 @@ Usage: #definition
 
 * group[=].element[+].code = #fiber-intake
 * group[=].element[=].display = "Fiber intake"
-* group[=].element[=].target[+].code = #81133-1 // 2026-09-16: was 9055-5, which is Calorie intake total 10 hour
+* group[=].element[=].target[+].code = #81133-1 // 2026-09-16: was 9055-5, which is Calorie intake total 10 hour // 2026-09-17: LOINC also defines the Measured variant 81057-2, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Fiber intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM AI: 25g/day (women), 38g/day (men)"
 
 * group[=].element[+].code = #saturated-fat
 * group[=].element[=].display = "Saturated fat intake"
-* group[=].element[=].target[+].code = #81033-3 // 2026-09-16: was 9061-3, which is Carbohydrate intake 1 hour
+* group[=].element[=].target[+].code = #81033-3 // 2026-09-16: was 9061-3, which is Carbohydrate intake 1 hour // 2026-09-17: LOINC also defines the Measured variant 81136-4, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Saturated fat intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "DGA 2020: <10% of total calories"
@@ -114,42 +114,42 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #vitamin-d-intake
 * group[=].element[=].display = "Vitamin D intake"
-* group[=].element[=].target[+].code = #81929-2
+* group[=].element[=].target[+].code = #81929-2 // 2026-09-17: LOINC also defines the Measured variant 81930-0, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Vitamin D intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM (2011): 600-800 IU/day"
 
 * group[=].element[+].code = #vitamin-c-intake
 * group[=].element[=].display = "Vitamin C intake"
-* group[=].element[=].target[+].code = #81074-7
+* group[=].element[=].target[+].code = #81074-7 // 2026-09-17: LOINC also defines the Measured variant 81075-4, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Vitamin C intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 75mg women, 90mg men"
 
 * group[=].element[+].code = #vitamin-a-intake
 * group[=].element[=].display = "Vitamin A intake"
-* group[=].element[=].target[+].code = #81072-1
+* group[=].element[=].target[+].code = #81072-1 // 2026-09-17: LOINC also defines the Measured variant 81073-9, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Vitamin A intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 700mcg RAE women, 900mcg RAE men"
 
 * group[=].element[+].code = #vitamin-e-intake
 * group[=].element[=].display = "Vitamin E intake"
-* group[=].element[=].target[+].code = #81076-2
+* group[=].element[=].target[+].code = #81076-2 // 2026-09-17: LOINC also defines the Measured variant 81077-0, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Vitamin E intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 15mg/day"
 
 * group[=].element[+].code = #vitamin-b12-intake
 * group[=].element[=].display = "Vitamin B12 intake"
-* group[=].element[=].target[+].code = #81062-2
+* group[=].element[=].target[+].code = #81062-2 // 2026-09-17: LOINC also defines the Measured variant 81063-0, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Vitamin B12 intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 2.4mcg/day"
 
 * group[=].element[+].code = #folate-intake
 * group[=].element[=].display = "Folate intake"
-* group[=].element[=].target[+].code = #81066-3
+* group[=].element[=].target[+].code = #81066-3 // 2026-09-17: LOINC also defines the Measured variant 81134-9, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Vitamin B9 (Folate) intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 400mcg DFE/day"
@@ -161,42 +161,42 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #calcium-intake
 * group[=].element[=].display = "Calcium intake"
-* group[=].element[=].target[+].code = #81137-2
+* group[=].element[=].target[+].code = #81137-2 // 2026-09-17: LOINC also defines the Measured variant 80975-6, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Calcium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "IoM (2011): 1000-1200mg/day"
 
 * group[=].element[+].code = #iron-intake
 * group[=].element[=].display = "Iron intake"
-* group[=].element[=].target[+].code = #81082-0
+* group[=].element[=].target[+].code = #81082-0 // 2026-09-17: LOINC also defines the Measured variant 81083-8, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Iron intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 8mg men, 18mg premenopausal women"
 
 * group[=].element[+].code = #nutrition-sodium-intake
 * group[=].element[=].display = "Sodium intake"
-* group[=].element[=].target[+].code = #81011-9
+* group[=].element[=].target[+].code = #81011-9 // 2026-09-17: LOINC also defines the Measured variant 81012-7, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Sodium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "DGA 2020: <2300mg/day"
 
 * group[=].element[+].code = #potassium-intake
 * group[=].element[=].display = "Potassium intake"
-* group[=].element[=].target[+].code = #81010-1
+* group[=].element[=].target[+].code = #81010-1 // 2026-09-17: LOINC also defines the Measured variant 81009-3, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Potassium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "AI: 2600mg women, 3400mg men"
 
 * group[=].element[+].code = #magnesium-intake
 * group[=].element[=].display = "Magnesium intake"
-* group[=].element[=].target[+].code = #81005-1
+* group[=].element[=].target[+].code = #81005-1 // 2026-09-17: LOINC also defines the Measured variant 81006-9, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Magnesium intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 310-320mg women, 400-420mg men"
 
 * group[=].element[+].code = #zinc-intake
 * group[=].element[=].display = "Zinc intake"
-* group[=].element[=].target[+].code = #81089-5
+* group[=].element[=].target[+].code = #81089-5 // 2026-09-17: LOINC also defines the Measured variant 81088-7, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Zinc intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "RDA: 8mg women, 11mg men"
@@ -218,7 +218,7 @@ Usage: #definition
 
 * group[=].element[+].code = #caffeine-intake
 * group[=].element[=].display = "Caffeine intake"
-* group[=].element[=].target[+].code = #80489-8 // 2026-09-16: was 9056-3, which is Calorie intake total 12 hour
+* group[=].element[=].target[+].code = #80489-8 // 2026-09-16: was 9056-3, which is Calorie intake total 12 hour // 2026-09-17: LOINC also defines the Measured variant 80490-6, offered in ValueSetLOINCObservations; this map keeps the Estimated target because the source concept does not state the method
 * group[=].element[=].target[=].display = "Caffeine intake 24 hour Estimated"
 * group[=].element[=].target[=].equivalence = #equivalent
 * group[=].element[=].target[=].comment = "Moderate intake: <400mg/day (FDA)"
