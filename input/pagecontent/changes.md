@@ -2,6 +2,11 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
+## Unreleased
+
+### Added
+- The English twin of the *"expression language text/fhirpath is not supported"* suppression — the v0.5.1 CI run (IG Publisher 2.3.4) showed it 4 times on the `MindfulnessProgressReport` Measure, because the 2.3.4 run of v0.5.0 had reported that criteria language as an error (`MEASURE_M_CRITERIA_CQL_NO_LIB`), not as this warning, so no English line had been copied for it; the Known Issues page records the measured run (0 errors, 229 warnings = 225 OID advisories + these 4).
+
 ## Version 0.5.1 (2026-09-21)
 
 ### Changed
