@@ -1,6 +1,6 @@
 # Changelog - iOS Lifestyle Medicine FHIR Implementation Guide
 
-## [0.5.1] - 2026-09-17
+## [0.5.1] - 2026-09-21
 
 ### Changed
 - **Terminology ledger reads every binding form** — split-form bindings (`system` and `code` on separate rules of the same element) and the Quantity shorthand (`value 'unit'`) are now extracted, so the 47 UCUM codes that the IG's examples and profiles carry beyond the 9 bound in ValueSets were verified for the first time (Athena snapshot, NLM UCUM validator, tx.fhir.org UCUM 2.2): 45 active, 2 not UCUM units (below). A Quantity's `unit` text is recorded with the code but not treated as a display claim. Ledger 431 → 477 rows; findings 30 (unchanged after the two corrections).
@@ -35,6 +35,9 @@
 
 ### Removed
 - Internal process markers from page comments, the CI workflows and scripts, `sushi-config.yaml` comments and `input/ignoreWarnings.txt` comments (that clean-up left the suppressions themselves unchanged; the 0.5.1 additions are listed under *Added*).
+
+### Known issues (carried to 0.5.2)
+- **Narrative pages: codes quoted only in page text.** A review of the narrative pages on 2026-09-17 — codes that appear in page text but are bound in no FSH resource, so outside the terminology ledger — found at least 18 that do not denote the concept the page attributes to them (verified against the Athena LOINC snapshot, the Vocab2 SNOMED snapshot and the WHO MMS linearization): LOINC 73711-4, 73713-0 and 88365-2 in the body-metrics page (two allergen mixes and a pre-meal glucose, quoted as bone mass, muscle mass and a vital-signs query); 8669-4 in the reproductive page (a history of eye disorders, quoted as cervical mucus); 89020-2, 89022-8, 89023-6, 89024-4 and 89025-1 in the environmental page (hearing thresholds, quoted as sound, UV and noise measures); the five `LA…` answer-list codes of the gait table in the mobility page (three of which do not exist); the three OMOP `concept_id`s of the worked example in the OMOP-integration page (they denote cerebral cysts, a patient address and urea nitrogen, not height, weight and BMI — the correct identifiers are 3036277, 3025315 and 3038553); and the ICD-11 code `QE86.0` in the ICD-11 page (absent from the WHO MMS linearization). The same review found an "86 % terminology gap" figure on five pages that the published article does not report (its terminology-gap figure is 97.4 % of 1,173 custom codes without a direct standard equivalent). These pages are corrected in 0.5.2; no resource of this release and no ledger row is affected.
 
 ## [0.5.0] - 2026-09-16
 
