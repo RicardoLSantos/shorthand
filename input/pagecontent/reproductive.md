@@ -86,13 +86,16 @@ Elements marked with MS must be supported:
 ## iOS Health App to FHIR Mapping
 
 ### Core Fields
-| iOS Health App | FHIR Path | LOINC Code |
-|----------------|-----------|------------|
-| Cycle Start | Observation.effectiveDateTime | 8665-2 |
-| Cycle Length | Observation.valueQuantity | 8664-5 |
-| Flow Duration | Observation.component[duration].valueQuantity | 49033-4 |
-| Basal Temperature | Observation.valueQuantity | 8310-5 |
-| Cervical Mucus | Observation.valueCodeableConcept | 8669-4 |
+| iOS Health App | FHIR Path | Code |
+|----------------|-----------|------|
+| Cycle Start | Observation.effectiveDateTime (the start date itself); LOINC 8665-2 "Last menstrual period start date" is listed in `ReproductiveGoalVS`, which no profile binds | LOINC 8665-2 (value set only) |
+| Cycle Frequency | ReproductiveObservation.component[frequency].valueQuantity (periods per year, UCUM `/a`) | LOINC 92656-8 "Number of menstrual periods per year" |
+| Cycle Regularity | ReproductiveObservation.component[regularity].valueCodeableConcept (`MenstrualCycleRegularityVS`) | SNOMED CT 364307006 "Regularity of menstrual cycle" |
+| Flow Duration | ReproductiveObservation.component[duration].valueQuantity | LOINC 3144-3 "Last menstrual period duration" |
+| Basal Temperature | BodyTemperatureObservation (code LOINC 8310-5 "Body temperature") — component[basalBodyTemperature].valueQuantity | LOINC 8328-7 "Axillary temperature" |
+| Cervical Mucus | FertilityObservation.component[cervicalMucus].valueCodeableConcept (`cervical-mucus-vs`) | LOINC 10570-0 "Consistency of Cervical mucus" |
+
+The codes in this table are the ones the profiles bind — except 8665-2, listed in a value set that no profile binds — (re-verified on 2026-09-21 in the Athena/Vocab2 snapshots and on tx.fhir.org, LOINC 2.82 / SNOMED CT International 20250201); iOS Health does not record a cycle-length quantity as such — the IG expresses cycle frequency and regularity as above.
 
 ### Integration Requirements
 1. HealthKit Access

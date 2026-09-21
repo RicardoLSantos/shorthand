@@ -52,7 +52,7 @@ That finding is more than provenance: it is the substantive contribution of the 
 
 The OMOP CDM has two distinct identifier columns for every concept entry, and conflating them is the single most common error class observed in tabular OMOP-targeted artefacts:
 
-- **`concept_id`** — the OHDSI-assigned integer primary key, used in `MEASUREMENT.measurement_concept_id`, `OBSERVATION.observation_concept_id`, etc. This is what a `ConceptMap.element.target.code` should hold when the target is OMOP-standardised. Examples: `4068976` (Body height), `4083586` (Body weight), `3013682` (Body Mass Index).
+- **`concept_id`** — the OHDSI-assigned integer primary key, used in `MEASUREMENT.measurement_concept_id`, `OBSERVATION.observation_concept_id`, etc. This is what a `ConceptMap.element.target.code` should hold when the target is OMOP-standardised. Examples: `3036277` (Body height, LOINC 8302-2), `3025315` (Body weight, LOINC 29463-7), `3038553` (Body mass index, LOINC 39156-5) — the `concept_id` values of the Athena snapshot of 2026-01-21, all standard (`S`).
 - **`concept_code`** — the *source-vocabulary* code as it appears in the original source (e.g., LOINC code `8302-2` for body height, SNOMED CT `50373000` for body height). This is what appears in the source side of the ConceptMap or in legacy source databases.
 
 The two share a digit format in some ranges and can be confused at a glance. The IG has hit this confusion twice in published artefacts (RS10 Tables 2 and 11 in 2026-05; both detected and corrected via a 4-source verification protocol — see [Terminology Verification Protocol](terminology-verification.html)) and has formalised the rule as Pitfall #103 in the project's pitfall ledger:

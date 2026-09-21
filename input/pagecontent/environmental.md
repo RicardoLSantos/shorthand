@@ -79,13 +79,15 @@ Environmental data is mapped to FHIR Observation resources with specific profile
 ## iOS Health App to FHIR Mapping
 
 ### Core Fields
-| iOS Health App | FHIR Path | LOINC Code | Description |
-|----------------|-----------|------------|-------------|
-| Audio Exposure | NoiseExposureObservation.component[level] | 89020-2 | Environmental sound intensity |
-| UV Index | UVExposureObservation.component[index] | 89022-8 | UV Index measurement |
-| Noise Duration | NoiseExposureObservation.component[duration] | 89023-6 | Duration of noise exposure |
-| Peak Level | NoiseExposureObservation.component[peak] | 89024-4 | Peak sound pressure level |
-| Background Noise | NoiseExposureObservation.component[background] | 89025-1 | Background noise level |
+| iOS Health App | FHIR Path | Code (`LifestyleMedicineTemporaryCS`) | Description |
+|----------------|-----------|---------------------------------------|-------------|
+| Environmental Audio Exposure | EnvironmentalAudioExposureObservation.valueQuantity (dB(A)) | `environmental-audio-exposure` | Environmental audio exposure level |
+| UV Index | UVExposureObservation.component[index] | `uv-index` | UV index |
+| Noise Duration | NoiseExposureObservation.component[duration] | `noise-duration` | Environmental noise exposure duration |
+| Peak Level | NoiseExposureObservation.component[peakLevel] | `noise-peak` | Peak environmental sound level |
+| Background Noise | NoiseExposureObservation.component[backgroundNoise] | `noise-background` | Background environmental noise level |
+
+LOINC has no observable for these metrics as a consumer device measures them (its noise and UV items — e.g. 67735-1 "Noise level [Ratio] [PhenX]", 67736-9 "Noise dose [Ratio] [PhenX]" — are PhenX protocol items); the profiles bind the IG's own CodeSystem. The per-concept migration property (`assignment-status`) is defined in `AppLogicCS` but not yet applied to these concepts — an open item recorded on the [terminology verification](terminology-verification.html) page. The codes above are the ones the profiles bind (checked against the FSH sources on 2026-09-21).
 
 ### Mapping Considerations
 

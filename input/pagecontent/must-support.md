@@ -73,8 +73,8 @@ When a device does not support a particular measurement, the corresponding 0..1 
 
 | Strength | Meaning for Implementers |
 |----------|--------------------------|
-| **Required** (30%) | Must use a code from the specified ValueSet. No exceptions. |
-| **Extensible** (65%) | Should use a code from the ValueSet. May use an alternative code if the ValueSet does not cover the concept. |
-| **Preferred** (5%) | Encouraged to use the ValueSet but may freely use alternatives. |
+| **Required** (33%) | Must use a code from the specified ValueSet. No exceptions. |
+| **Extensible** (64%) | Should use a code from the ValueSet. May use an alternative code if the ValueSet does not cover the concept. |
+| **Preferred** (3%) | Encouraged to use the ValueSet but may freely use alternatives. |
 
 Most bindings in this IG use **extensible** strength, allowing local implementations to extend terminology while maintaining interoperability.

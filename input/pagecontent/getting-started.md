@@ -158,7 +158,7 @@ Consumer Device (Apple/Fitbit/Garmin/Oura/Polar)
 
 ## Dual-Coding Strategy
 
-For concepts with LOINC/SNOMED equivalents, use standard codes. For concepts in the 86% terminology gap (no standard code exists), use `LifestyleMedicineTemporaryCS` with the understanding that these codes will migrate to LOINC/SNOMED as standards evolve.
+For concepts with LOINC/SNOMED equivalents, use standard codes. For concepts in the terminology gap (no standard code exists — 97.4% of the 1,173 custom codes audited in the published article, [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)), use `LifestyleMedicineTemporaryCS` with the understanding that these codes will migrate to LOINC/SNOMED as standards evolve.
 
 See [Terminology Verification Protocol](terminology-verification.html) for details on the 4-level verification process used to validate all code assignments.
 

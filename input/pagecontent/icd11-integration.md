@@ -17,7 +17,7 @@ ICD-11 introduces several features particularly relevant to wearable-derived hea
 | Feature | ICD-10 | ICD-11 | Lifestyle Medicine Impact |
 |---------|--------|--------|---------------------------|
 | **Postcoordination** | Limited | Extensive | Combine conditions with context (e.g., obesity + sleep apnea) |
-| **Extension Codes** | None | Chapter X | QE86.0 "Monitoring: ongoing" for continuous tracking |
+| **Extension Codes** | None | Chapter X | Course and temporality qualifiers such as XT8W "Chronic" refine a stem code; ICD-11 has no extension code for continuous monitoring or for a wearable data source |
 | **Digital Foundation** | Retrofitted | Native | Foundation URIs enable API integration |
 | **FHIR Alignment** | Manual | WHO FHIR API | Native ConceptMap support |
 
@@ -117,9 +117,8 @@ Wearable Metric → LOINC (primary) → OMOP (analytics)
 ICD-11 postcoordination allows combining codes:
 
 ```
-BA00.Z (Essential hypertension)
-  + QE86.0 (Monitoring: ongoing)
-  + XY01 (Wearable device as source)
+BA00.Z (Essential hypertension, unspecified)
+  + XT8W (Chronic)
 ```
 
 This IG does NOT implement postcoordination rules. Organizations adopting this IG should:

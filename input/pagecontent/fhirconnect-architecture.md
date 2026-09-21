@@ -39,7 +39,7 @@ This IG includes 29 ConceptMaps. The ten domain-level maps below implement the F
 ### Core Vital Signs Mappings
 1. **ConceptMapHRVToLOINC**: Maps HRV metrics to LOINC codes with migration path
    - Implements dual-coding strategy: LOINC where available, custom with migration metadata
-   - Addresses 86% terminology gap for wearable HRV metrics
+   - Addresses the terminology gap for wearable HRV metrics (RMSSD, pNN50 and the frequency-domain measures have no LOINC code; SDNN has 80404-7)
 
 2. **ConceptMapBodyMetricsToLOINC**: Body measurements to LOINC
    - Leverages existing LOINC coverage for standard anthropometric measures

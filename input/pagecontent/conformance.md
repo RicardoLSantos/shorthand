@@ -148,7 +148,7 @@ Where a profile specifies a LOINC code, implementations:
 
 ### Custom Codes (LifestyleMedicineTemporaryCS)
 
-For metrics in the ~86% terminology gap:
+For metrics in the terminology gap (97.4% of the 1,173 custom codes audited had no direct standard equivalent, [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)):
 - **SHALL** use codes from `LifestyleMedicineTemporaryCS` as specified in profiles
 - **SHOULD** include dual-coding with LOINC LP/LA part codes when available
 - **SHALL** monitor LOINC/SNOMED releases for standard code availability and migrate when published
@@ -174,9 +174,11 @@ The IG includes 19 verified LOINC substitutions for concepts previously mapped t
 
 | Strength | Count | Percentage | Implementer Obligation |
 |----------|:-----:|:----------:|------------------------|
-| **Required** | 30 | 29.7% | **SHALL** use a code from the specified ValueSet |
-| **Extensible** | 66 | 65.3% | **SHOULD** use the ValueSet; custom codes permitted if needed |
-| **Preferred** | 5 | 5.0% | **MAY** use the ValueSet; alternatives freely permitted |
+| **Required** | 56 | 33.3% | **SHALL** use a code from the specified ValueSet |
+| **Extensible** | 107 | 63.7% | **SHOULD** use the ValueSet; custom codes permitted if needed |
+| **Preferred** | 5 | 3.0% | **MAY** use the ValueSet; alternatives freely permitted |
+
+Counted on the v0.5.1 sources (2026-09-21): every binding statement with an explicit strength in the FSH profiles, extensions and instances (`from <ValueSet> (strength)`, comment lines excluded) — 168 statements: 149 bind a ValueSet of this IG by name, 18 bind a ValueSet by canonical URL and 1 binds an external ValueSet through an alias.
 
 Most bindings are **extensible**, allowing local implementations to extend terminology while maintaining interoperability with the IG's standard codes.
 

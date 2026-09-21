@@ -107,7 +107,7 @@ This IG adopts the **FHIRconnect triple-layer architectural pattern** for intero
 ### Context-Mappings Layer
 - Terminology bindings (the vendor-specific layer: ConceptMaps translate each vendor's API terminology)
 - 29 ConceptMaps covering 120+ metrics (10 domain + 19 cross-paradigm)
-- Dual-coding strategy for 86% terminology gap
+- Dual-coding strategy for the terminology gap measured in the published audit — 97.4% of 1,173 custom codes had no direct standard equivalent ([doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465))
 
 ### Key Achievements
 - **75% weighted mapping reuse** across the layered architecture (the published computation, [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465); an earlier 65.8% figure, computed in January 2026 on the v0.2.x map set, is superseded)
@@ -157,7 +157,7 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 | **Domains covered** | 11 | Vital signs, sleep, activity, nutrition, mindfulness, stress, environmental, social, reproductive, ECG, body metrics |
 | **Vendor support** | 7+ | Apple HealthKit, Fitbit, Garmin, Oura, Polar, Withings, generic |
 | **Custom codes** | 1,211 | Interim codes for concepts with no LOINC/SNOMED CT equivalent; the ConceptMaps bridge those that have one. Per-concept migration properties (`assignment-status`, `loinc-equivalent`) are defined in `AppLogicCS` but not yet applied to the concepts |
-| **Terminology gap documented** | 86% | Of consumer wearable metrics lack standard codes |
+| **Terminology gap documented** | 97.4% | Of the 1,173 custom codes audited, share without a direct standard equivalent ([doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)) |
 | **ConceptMaps** | 29 | Covering LOINC, SNOMED CT, OMOP CDM, openEHR |
 | **Example instances** | 192 | every concrete profile has a standalone example (102 of 102; `ConsumerECGObservation`, the abstract ECG parent, is excluded from the denominator — the figure is read from the build's examples pages) |
 | **Regulatory frameworks** | 2 | LGPD (Brazil), CFM 2.454/2026 (AI in medicine) |

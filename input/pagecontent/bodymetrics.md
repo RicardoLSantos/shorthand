@@ -67,7 +67,7 @@ The body measurements are mapped to FHIR Observation resources with specific pro
 ### Search Examples
 GET [base]/Observation?category=vital-signs&patient=[id]&code=29463-7
 GET [base]/Observation?category=vital-signs&patient=[id]&date=ge2024-03-19
-GET [base]/Observation?category=vital-signs&patient=[id]&code=88365-2&date=ge2024-01-01&date=le2024-12-31
+GET [base]/Observation?category=vital-signs&patient=[id]&code=39156-5&date=ge2024-01-01&date=le2024-12-31
 Copy
 ## Conformance
 
@@ -101,11 +101,11 @@ The following device types are supported for data capture:
 | Weight | WeightObservation.valueQuantity | 29463-7 | Body weight measurement |
 | Height | HeightObservation.valueQuantity | 8302-2 | Body height measurement |
 | BMI | BMIObservation.valueQuantity | 39156-5 | Body Mass Index calculation |
-| Body Fat % | BodyCompositionObservation.component[bodyFat] | 41982-0 | Percentage of body fat |
-| Lean Mass | BodyCompositionObservation.component[leanMass] | 291-7 | Lean body mass |
-| Body Water | BodyCompositionObservation.component[bodyWater] | 73708-0 | Total body water |
-| Muscle Mass | BodyCompositionObservation.component[muscleMass] | 73713-0 | Skeletal muscle mass |
-| Bone Mass | BodyCompositionObservation.component[boneMass] | 73711-4 | Bone mass measurement |
+| Body Fat % | BodyCompositionObservation.component[bodyFat] | 41982-0 | Percentage of body fat Measured |
+| Lean Mass | BodyCompositionObservation.component[leanMass] | 8342-8 | Lean body weight estimated by Immersion method |
+| Body Water | BodyCompositionObservation.component[bodyWater] | 101683-1 | Body water mass |
+| Muscle Mass | BodyCompositionObservation.component[muscleMass] | 73965-6 | Body muscle mass/Body weight Measured |
+| Bone Mass | BodyCompositionObservation.component[boneMass] | 101685-6 | Body bone mass |
 
 ### Implementation Considerations
 

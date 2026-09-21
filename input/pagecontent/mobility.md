@@ -200,13 +200,15 @@ Elements marked with MS must be supported:
 ## iOS Health App to FHIR Mapping
 
 ### Core Fields
-| iOS Health App | FHIR Path | LOINC Code |
-|----------------|-----------|------------|
-| Walking Steadiness | WalkingSteadinessObservation.valueQuantity | LA32-8 |
-| Walking Speed | WalkingSpeedObservation.valueQuantity | LA29042-4 |
-| Step Length | StepLengthObservation.valueQuantity | LA19752-7 |
-| Double Support Time | DoubleSupportTimeObservation.valueQuantity | LA32-9 |
-| Walking Asymmetry | WalkingAsymmetryObservation.valueQuantity | LA32-10 |
+| iOS Health App | FHIR Path | Code (`LifestyleMedicineTemporaryCS`) |
+|----------------|-----------|---------------------------------------|
+| Walking Steadiness | MobilityProfile.component[walkingSteadiness].valueQuantity | `walking-steadiness` |
+| Walking Speed | MobilityProfile.component[walkingSpeed].valueQuantity | `walking-speed` |
+| Step Length | MobilityProfile.component[walkingStepLength].valueQuantity | `walking-step-length` |
+| Double Support Time | MobilityProfile.component[walkingDoubleSupport].valueQuantity | `walking-double-support` |
+| Walking Asymmetry | MobilityProfile.component[walkingAsymmetry].valueQuantity | `walking-asymmetry` |
+
+The identifiers previously quoted here (`LA32-8`, `LA29042-4`, `LA19752-7`, `LA32-9`, `LA32-10`) belong to the LOINC answer namespace — two are answer codes ("No", "K13K/E") and three do not exist. LOINC has no observable for walking steadiness, step length, double-support time or walking asymmetry; for walking speed it has 41956-4 to 41959-8 (24-hour and past-week statistics) and 83144-6 (4-metre gait speed test), none of which the profile binds — `MobilityProfile` binds the IG's own code for all five metrics. The per-concept migration property (`assignment-status`) is defined in `AppLogicCS` but not yet applied to these concepts — an open item recorded on the [terminology verification](terminology-verification.html) page. The codes above are the ones `MobilityProfile` binds (checked against the FSH sources on 2026-09-21).
 
 ### Mapping Considerations
 1. Temporality
