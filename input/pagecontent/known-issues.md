@@ -2,19 +2,19 @@
 
 This page states what the current build reports, what is deliberately suppressed and why, what the IG knowingly leaves open, and what was resolved in earlier releases. Numbers below are taken from the release build's `qa.txt`; the same build can be reproduced with the commands in the README's Quick Start.
 
-## Build status — v0.5.0 (2026-09-16)
+## Build status — v0.5.1 (2026-09-21)
 
 | Metric | Value |
 |---|---|
 | Errors | **0** (zero since v0.4.1, 2026-06-01) |
-| Warnings | **223** — a single advisory class, see below |
-| Information | 13,221 |
+| Warnings | **225** — a single advisory class, see below |
+| Information | 13,232 |
 | Broken links | 0 |
 | Toolchain | IG Publisher 2.2.10 · SUSHI 3.18.1 · FHIR 4.0.1 (the CI builds with the latest IG Publisher release) |
 
-## The 223 warnings: one advisory class, not suppressed
+## The 225 warnings: one advisory class, not suppressed
 
-Every one of the 223 warnings is the same message: *"The resource … should have an OID assigned to cater for possible use with OID based terminology systems"* — one per CodeSystem (19) and one per ValueSet (204), which is why the count equals the number of terminology resources. OIDs are optional identifiers in FHIR; assigning 223 of them requires an OID arc registered to the publisher, which is a governance decision outside a release. The warning is therefore left visible rather than suppressed, and the count is expected to move only when terminology resources are added or removed.
+Every one of the 225 warnings is the same message: *"The resource … should have an OID assigned to cater for possible use with OID based terminology systems"* — one per CodeSystem (19) and one per ValueSet (206), which is why the count equals the number of terminology resources. OIDs are optional identifiers in FHIR; assigning 225 of them requires an OID arc registered to the publisher, which is a governance decision outside a release. The warning is therefore left visible rather than suppressed, and the count is expected to move only when terminology resources are added or removed.
 
 ## Suppressed warnings (`input/ignoreWarnings.txt`, 169 non-comment lines — the first is the file header, so 168 rules: 98 written against the messages of the local builds (twelve of them already in English) and 70 in the block of English twins for the CI runner)
 

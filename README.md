@@ -4,7 +4,7 @@
 [![IG Publisher](https://img.shields.io/badge/IG%20Publisher-2.2.10-green)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey)](LICENSE)
 
-**Version**: 0.5.0 (released 2026-09-16)
+**Version**: 0.5.1 (released 2026-09-21)
 **Status**: STU1 Draft
 **Publisher**: FMUP (Faculty of Medicine, University of Porto)
 **Canonical**: `https://2rdoc.pt/ig/ios-lifestyle-medicine`
@@ -23,7 +23,7 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 - **206 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
 - **29 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
 - **280 Instances** (192 examples, 29 ConceptMaps, round-trip validation bundles)
-- **685 total artefacts** on `main` (0.5.1 in preparation; the v0.5.0 release held 682) (FHIR R4 4.0.1; v0.5.0 built with IG Publisher 2.2.10: err=0 / warn=223 — one advisory class, see [Known Issues](input/pagecontent/known-issues.md) / 0 broken links)
+- **685 total artefacts** (v0.5.1; the v0.5.0 release held 682) (FHIR R4 4.0.1; v0.5.1 built with IG Publisher 2.2.10: err=0 / warn=225 — one advisory class, see [Known Issues](input/pagecontent/known-issues.md) / 0 broken links)
 - **SMART on FHIR + CDS Hooks 2.0 + Bulk Data** + **CQL/GDL2** clinical decision support
 - **openEHR + OMOP** round-trip transformations (ConceptMaps)
 
@@ -45,7 +45,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG (main, 0.5.1 in preparation)<br/>103 Profiles | 19 CS | 206 VS"]
+        FHIRIG["FHIR IG v0.5.1<br/>103 Profiles | 19 CS | 206 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -122,15 +122,15 @@ sequenceDiagram
 | **CodeSystems** | 19 | Content + external-stub CodeSystems |
 | **ValueSets** | 206 | LOINC, SNOMED CT, custom bindings |
 | **Instances** | 280 | 192 examples, 29 ConceptMaps, round-trip validation bundles |
-| **Total** | **685** | All artefacts (main, 0.5.1 in preparation; v0.5.0 held 682; FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
+| **Total** | **685** | All artefacts (v0.5.1; v0.5.0 held 682; FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
 
-### Build Validation (2026-09-16, v0.5.0 release)
+### Build Validation (2026-09-21, v0.5.1 release)
 
 | Metric | Value | Notes |
 |--------|:-----:|-------|
 | Errors | 0 | since v0.4.1 |
-| Warnings | 223 | a single advisory class — each CodeSystem (19) and ValueSet (204 at v0.5.0; 206 on main) "should have an OID assigned", an optional identifier for OID-based terminology systems; left visible by design. The active suppressions are listed on the [Known Issues](input/pagecontent/known-issues.md) page |
-| Information | 13,221 | |
+| Warnings | 225 | a single advisory class — each CodeSystem (19) and ValueSet (206) "should have an OID assigned", an optional identifier for OID-based terminology systems; left visible by design. The active suppressions are listed on the [Known Issues](input/pagecontent/known-issues.md) page |
+| Information | 13,232 | |
 | Broken Links | 0 | |
 | Toolchain | IG Publisher 2.2.10 · SUSHI 3.18.1 · FHIR 4.0.1 | the CI builds with the latest publisher |
 
@@ -221,8 +221,8 @@ flowchart LR
 
 ### Prerequisites
 
-- [SUSHI](https://fshschool.org/docs/sushi/) 3.x (v0.5.0 was built with 3.18.1)
-- [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) (v0.5.0 was built with 2.2.10; the CI downloads the latest release)
+- [SUSHI](https://fshschool.org/docs/sushi/) 3.x (v0.5.1 was built with 3.18.1)
+- [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) (v0.5.1 was built with 2.2.10; the CI downloads the latest release)
 - Java 17 or later, and Jekyll (`gem install jekyll`) for the HTML rendering
 
 ### Build
@@ -257,7 +257,7 @@ After build, the IG is available at:
 |----------|------|
 | **IG Index** | `output/index.html` after a local build (no hosted site yet — see the [roadmap](input/pagecontent/implementation-scope-and-roadmap.md)) |
 | **QA Report** | `output/qa.html` after a local build |
-| **Full Package** | [GitHub Release v0.5.0](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.5.0) (`package.tgz`, version 0.5.0) |
+| **Full Package** | [GitHub Release v0.5.1](https://github.com/RicardoLSantos/shorthand/releases/tag/v0.5.1) (`package.tgz`, version 0.5.1) |
 | **Change log** | [CHANGELOG.md](CHANGELOG.md) (mirrored on the [Changes](input/pagecontent/changes.md) page) |
 
 ---
@@ -299,7 +299,7 @@ shorthand/
 
 ## Standards Roadmap
 
-Status as of v0.5.0 (2026-09-16) — details on the [Implementation Scope and Roadmap](input/pagecontent/implementation-scope-and-roadmap.md) page:
+Status as of v0.5.1 (2026-09-21) — details on the [Implementation Scope and Roadmap](input/pagecontent/implementation-scope-and-roadmap.md) page:
 
 | Track | Status | Interim mechanism |
 |-------|--------|-------------------|
@@ -344,7 +344,7 @@ Please cite the published article (a `CITATION.cff` file is provided for the Git
 @software{lourencosantos2026fhirig_repo,
   author  = {Louren\c{c}o Santos, Ricardo and Cruz-Correia, Ricardo Jo\~{a}o},
   title   = {{iOS} Lifestyle Medicine {FHIR} Implementation Guide},
-  version = {0.5.0},
+  version = {0.5.1},
   year    = {2026},
   url     = {https://github.com/RicardoLSantos/shorthand}
 }
@@ -382,4 +382,4 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 
 ---
 
-*Last updated: 2026-09-17 (main, 0.5.1 in preparation)*
+*Last updated: 2026-09-21 (v0.5.1)*
