@@ -159,7 +159,7 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 | **Custom codes** | 1,211 | Interim codes for concepts with no LOINC/SNOMED CT equivalent; the ConceptMaps bridge those that have one. Per-concept migration properties (`assignment-status`, `loinc-equivalent`) are defined in `AppLogicCS` but not yet applied to the concepts |
 | **Terminology gap documented** | 97.4% | Of the 1,173 custom codes audited, share without a direct standard equivalent ([doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)) |
 | **ConceptMaps** | 29 | Covering LOINC, SNOMED CT, OMOP CDM, openEHR |
-| **Example instances** | 192 | every concrete profile has a standalone example (102 of 102; `ConsumerECGObservation`, the abstract ECG parent, is excluded from the denominator — the figure is read from the build's examples pages) |
+| **Example instances** | 193 | every concrete profile has a standalone example (103 of 103 on `main`, 0.5.2 in preparation — 102 of 102 in the v0.5.1 build; `ConsumerECGObservation`, the abstract ECG parent, is excluded from the denominator — the figure is read from the build's examples pages) |
 | **Regulatory frameworks** | 2 | LGPD (Brazil), CFM 2.454/2026 (AI in medicine) |
 | **Estimated dev time saved** | 180h | Based on implementation effort analysis vs. building from scratch |
 
@@ -167,7 +167,7 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 
 - **Level 1 (single domain)**: 1-7 profiles, low effort — first Observation in <30 minutes
 - **Level 2 (multi-domain)**: 10-25 profiles, medium effort
-- **Level 3 (full compliance)**: 103 profiles, all ConceptMaps, regulatory profiles
+- **Level 3 (full compliance)**: 104 profiles, all ConceptMaps, regulatory profiles
 
 See [Getting Started](getting-started.html) and [Conformance Requirements](conformance.html) for details.
 

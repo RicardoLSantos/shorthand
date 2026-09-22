@@ -17,13 +17,13 @@ This FHIR Implementation Guide provides a comprehensive framework for integratin
 
 ### Key Features
 
-- **103 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
+- **104 FHIR Profiles** for wearable observations, lifestyle metrics, AI/CDSS compliance, and regulatory (LGPD/CFM)
 - **77 Extensions** for measurement context, provenance, and AI/CDSS metadata
 - **19 CodeSystems** with custom codes for HRV/lifestyle metrics that lack LOINC/SNOMED (the documented terminology gap)
-- **206 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
+- **207 ValueSets** with LOINC, SNOMED CT, and vendor-specific bindings
 - **29 ConceptMaps** for FHIR ↔ openEHR ↔ OMOP transformations
-- **280 Instances** (192 examples, 29 ConceptMaps, round-trip validation bundles)
-- **685 total artefacts** (v0.5.1; the v0.5.0 release held 682) (FHIR R4 4.0.1; v0.5.1 built with IG Publisher 2.2.10: err=0 / warn=225 — one advisory class, see [Known Issues](input/pagecontent/known-issues.md) / 0 broken links)
+- **281 Instances** (193 examples, 29 ConceptMaps, round-trip validation bundles)
+- **688 total artefacts** on `main` (0.5.2 in preparation; the v0.5.1 release held 685) (FHIR R4 4.0.1; v0.5.1 built with IG Publisher 2.2.10: err=0 / warn=225 — one advisory class, see [Known Issues](input/pagecontent/known-issues.md) / 0 broken links)
 - **SMART on FHIR + CDS Hooks 2.0 + Bulk Data** + **CQL/GDL2** clinical decision support
 - **openEHR + OMOP** round-trip transformations (ConceptMaps)
 
@@ -45,7 +45,7 @@ flowchart TB
             POLAR["Polar 🔴"]
         end
 
-        FHIRIG["FHIR IG v0.5.1<br/>103 Profiles | 19 CS | 206 VS"]
+        FHIRIG["FHIR IG (main, 0.5.2 in preparation)<br/>104 Profiles | 19 CS | 207 VS"]
 
         subgraph TG2["Terminology + ETL"]
             direction LR
@@ -117,12 +117,12 @@ sequenceDiagram
 
 | Category | Count | Description |
 |----------|:-----:|-------------|
-| **Profiles** | 103 | Observation, Device, Patient, vital-signs, AI/CDSS profiles |
+| **Profiles** | 104 | Observation, Device, Patient, Goal, vital-signs, AI/CDSS profiles |
 | **Extensions** | 77 | Custom FHIR extensions |
 | **CodeSystems** | 19 | Content + external-stub CodeSystems |
-| **ValueSets** | 206 | LOINC, SNOMED CT, custom bindings |
-| **Instances** | 280 | 192 examples, 29 ConceptMaps, round-trip validation bundles |
-| **Total** | **685** | All artefacts (v0.5.1; v0.5.0 held 682; FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
+| **ValueSets** | 207 | LOINC, SNOMED CT, custom bindings |
+| **Instances** | 281 | 193 examples, 29 ConceptMaps, round-trip validation bundles |
+| **Total** | **688** | All artefacts (main, 0.5.2 in preparation; v0.5.1 held 685; FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
 
 ### Build Validation (2026-09-21, v0.5.1 release)
 
@@ -382,4 +382,4 @@ This IG is actively developed as part of a PhD thesis at FMUP. To be notified of
 
 ---
 
-*Last updated: 2026-09-21 (v0.5.1)*
+*Last updated: 2026-09-22 (main, 0.5.2 in preparation)*

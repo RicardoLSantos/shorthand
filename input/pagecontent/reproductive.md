@@ -5,7 +5,7 @@
 - Observation: For cycle tracking and temperature measurements
 - QuestionnaireResponse: For symptom reporting
 - CarePlan: For fertility planning
-- Goal: For reproductive health goals
+- Goal: `ReproductiveHealthGoal` — what the person aims for (conception, avoiding an unwanted pregnancy, preconception health, regular cycles, normal weight; `ReproductiveGoalDescriptionVS`) with measurable targets (`ReproductiveGoalMeasureVS`); since 0.5.2 — until then the IG had only an unbound value set here
 
 ### Parameters
 - patient: Patient identifier
@@ -88,14 +88,17 @@ Elements marked with MS must be supported:
 ### Core Fields
 | iOS Health App | FHIR Path | Code |
 |----------------|-----------|------|
-| Cycle Start | Observation.effectiveDateTime (the start date itself); LOINC 8665-2 "Last menstrual period start date" is listed in `ReproductiveGoalVS`, which no profile binds | LOINC 8665-2 (value set only) |
+| Cycle Start | Observation.effectiveDateTime (the start date itself) | — (LOINC 8665-2 "Last menstrual period start date" was listed until 0.5.1 in a value set that no profile bound; that value set was replaced in 0.5.2 by the goal value sets, and the code is no longer bound anywhere) |
 | Cycle Frequency | ReproductiveObservation.component[frequency].valueQuantity (periods per year, UCUM `/a`) | LOINC 92656-8 "Number of menstrual periods per year" |
 | Cycle Regularity | ReproductiveObservation.component[regularity].valueCodeableConcept (`MenstrualCycleRegularityVS`) | SNOMED CT 364307006 "Regularity of menstrual cycle" |
 | Flow Duration | ReproductiveObservation.component[duration].valueQuantity | LOINC 3144-3 "Last menstrual period duration" |
 | Basal Temperature | BodyTemperatureObservation (code LOINC 8310-5 "Body temperature") — component[basalBodyTemperature].valueQuantity | LOINC 8328-7 "Axillary temperature" |
 | Cervical Mucus | FertilityObservation.component[cervicalMucus].valueCodeableConcept (`cervical-mucus-vs`) | LOINC 10570-0 "Consistency of Cervical mucus" |
 
-The codes in this table are the ones the profiles bind — except 8665-2, listed in a value set that no profile binds — (re-verified on 2026-09-21 in the Athena/Vocab2 snapshots and on tx.fhir.org, LOINC 2.82 / SNOMED CT International 20250201); iOS Health does not record a cycle-length quantity as such — the IG expresses cycle frequency and regularity as above.
+The codes in this table are the ones the profiles bind (re-verified on 2026-09-21 in the Athena/Vocab2 snapshots and on tx.fhir.org, LOINC 2.82 / SNOMED CT International 20250201); iOS Health does not record a cycle-length quantity as such — the IG expresses cycle frequency and regularity as above.
+
+### Goals
+`ReproductiveHealthGoal` (since 0.5.2) profiles `Goal` for reproductive-health aims: `description` (required, extensible binding to `ReproductiveGoalDescriptionVS` — SNOMED CT 169449001 "Trying to conceive", 710973002 "Prevention of unwanted pregnancy", 429070000 "Preconception care", 302757007 "Regular periods", 43664005 "Normal weight"), `subject` (Patient), `expressedBy`, and zero or more `target`s whose `measure` is bound (extensible) to `ReproductiveGoalMeasureVS` (SNOMED CT 364307006 "Regularity of menstrual cycle", 161716008 "Usual length of menstrual cycle"; LOINC 92656-8 "Number of menstrual periods per year", 39156-5 "Body mass index (BMI) [Ratio]", 29463-7 "Body weight") and whose `detail[x]` is a coded state (for regularity, `MenstrualCycleRegularityVS`), a Quantity or a Range. The example `ReproductiveHealthGoalExample` states a regular-cycle goal with two targets. A `CarePlanLifestyleMedicine` may reference the goal through `CarePlan.goal`. Which goals suit a person is a clinical decision; the profile carries none. All ten codes were verified on 2026-09-22 in the Vocab2/Athena snapshots and on tx.fhir.org (SNOMED CT International 20250201, LOINC 2.82).
 
 ### Integration Requirements
 1. HealthKit Access

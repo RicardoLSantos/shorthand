@@ -1,33 +1,33 @@
-ValueSet: ReproductiveGoalVS
-Id: social-history-goal-vs
-Title: "Reproductive Health Goals Value Set"
-Description: "Goals related to social-history health tracking and planning"
-* ^experimental = false
+// 2026-09-22: ReproductiveGoalVS (social-history-goal-vs, 5 LOINC observables + 2 SNOMED findings, bound by no profile since it was written)
+// is replaced by the two value sets below, designed for the ReproductiveHealthGoal profile: one for what a goal is (Goal.description),
+// one for what is measured to assess it (Goal.target.measure). Every code verified on 2026-09-22 in the Vocab2 SNOMED snapshot (2025-02-01)
+// or the Athena LOINC snapshot (2026-01-21) and on tx.fhir.org (SNOMED CT International 20250201; LOINC 2.82).
 
-* ^status = #active
-* ^version = "0.1.0"
-* ^status = #active
+ValueSet: ReproductiveGoalDescriptionVS
+Id: reproductive-goal-description-vs
+Title: "Reproductive Health Goal Description Value Set"
+Description: "SNOMED CT International concepts that state what a reproductive-health goal aims at: conceiving, avoiding an unwanted pregnancy, optimising health before conception, regular menstrual cycles, or a normal body weight (the last two are the desired states themselves). Bound (extensible) by Goal.description of the ReproductiveHealthGoal profile; a goal that fits none of these may carry another SNOMED CT concept or text."
 * ^experimental = false
-* ^publisher = "2RDoc FMUP"
-* ^contact.name = "2RDoc Technical Team"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "ricardolourencosantos@gmail.com"
-* ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
-* ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
-* ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^date = "2024-03-19"
+* ^status = #active
+* ^date = "2026-09-22"
+* $SCT#169449001 "Trying to conceive"
+* $SCT#710973002 "Prevention of unwanted pregnancy"
+* $SCT#429070000 "Preconception care"
+* $SCT#302757007 "Regular periods"
+* $SCT#43664005 "Normal weight"
 
-// LOINC codes verified at loinc.org (2026-01-12)
-* $LOINC#8665-2 "Last menstrual period start date"
-* $LOINC#49033-4 "Menstrual History - Reported"
-// Removed: 55284-4 "Blood pressure" - status DISCOURAGED, not relevant to reproductive goals
-* $LOINC#8310-5 "Body temperature"
-* $LOINC#8302-2 "Body height"
+ValueSet: ReproductiveGoalMeasureVS
+Id: reproductive-goal-measure-vs
+Title: "Reproductive Health Goal Measure Value Set"
+Description: "Observables against which a reproductive-health goal is assessed (Goal.target.measure of the ReproductiveHealthGoal profile, extensible): cycle regularity and usual cycle length (SNOMED CT), periods per year, body mass index and body weight (LOINC). The regularity target is expressed with MenstrualCycleRegularityVS; the numeric ones with a Quantity or Range."
+* ^experimental = false
+* ^status = #active
+* ^date = "2026-09-22"
+* $SCT#364307006 "Regularity of menstrual cycle"
+* $SCT#161716008 "Usual length of menstrual cycle"
+* $LOINC#92656-8 "Number of menstrual periods per year"
+* $LOINC#39156-5 "Body mass index (BMI) [Ratio]"
 * $LOINC#29463-7 "Body weight"
-// SNOMED code verified (2026-01-12)
-// Note: 289530006 actual = "Bleeding from vagina" - using broader concept instead
-* $SCT#118185001 "Finding related to pregnancy (finding)"
-* $SCT#248957007 "Menstruation" // T2 S33 VRF-TERM-018: 364320009 was "Pregnancy observable" (not menstrual); 248957007 "Menstruation" is the std=S menstrual observable
 
 ValueSet: ReproductiveActivityVS
 Id: social-history-activity-vs
