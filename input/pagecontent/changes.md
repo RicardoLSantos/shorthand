@@ -19,6 +19,15 @@ All notable changes to this Implementation Guide are documented on this page.
 ### Removed
 - `ReproductiveGoalVS` (`social-history-goal-vs`): a value set of five LOINC observables and two SNOMED CT findings, bound by no profile since it was written, is replaced by the two goal value sets above. Four of its codes are no longer bound anywhere and leave the terminology ledger (LOINC 8665-2, 49033-4; SNOMED CT 118185001, 248957007); the others remain bound elsewhere. `ReproductiveActivityVS` (`social-history-activity-vs`, eight local codes) is likewise bound by no profile and is left as it is pending a decision.
 
+### Pending (decisions not yet taken; listed so that the backlog is public)
+- **Dates on the resources changed in 0.5.1.** Their manual `date` is 2026-09-17, the day the content changed (the FHIR meaning of the element); the release was published on 2026-09-21. Whether the `date` should instead carry the release day (10 edits, 6 additions, one build) is undecided.
+- **Profile id `social-history-observation`** belongs to `ReproductiveObservation` (the file was renamed, the id was not). Renaming the id changes the canonical URL and every reference to it — a breaking change that needs a deprecation path; undecided.
+- **The six composition templates** stay withheld (6/6 rejected by the openEHR Template XML schema at their first element); whether they are repaired as operational templates or replaced is undecided.
+- **`ReproductiveActivityVS`** (`social-history-activity-vs`, eight local codes) is bound by no profile — keep, bind or retire, undecided.
+- **A trial build with IG Publisher 2.3.4** (the version the CI runs) on the maintainers' machine is planned before adopting it for release builds; it needs the disk the release builds need (≥ 15 GB free).
+- **Home page comparison table:** the "~30 custom codes" attributed to the Physical Activity IG has no stated source and will be measured or removed.
+- **The four openEHR limitations above** wait for their authors' decisions on the proposed ADL changes.
+
 ## Version 0.5.1 (2026-09-21)
 
 ### Changed
