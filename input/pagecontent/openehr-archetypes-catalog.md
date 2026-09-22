@@ -90,6 +90,8 @@ Extending the cross-check to every RM type resolved the 10 concepts that were pr
 
 All custom archetypes in this catalog are at lifecycle state `in_development` (draft). The **12** genuinely original archetypes (§2.1) are the candidate contribution for openEHR CKM submission; the extensions, duplicates, and reused archetypes (§2.2–§2.4) are, by design, **not** submitted as original work.
 
+**Known limitations found in use (2026-09-22):** a trial mapping of an Apple Health export onto the distributed archetypes surfaced four limitations — no home for step counts, no "manual export (XML)" value in the data-export-method value sets, device slots not designed alike across the archetypes, and an interval event whose data tree is unconstrained — each declared, with the change that would resolve it, in the folder README (`openehr/README.md`); no archetype was changed.
+
 **Roadmap:** complete the term-binding audit (§4) → submit the audited genuine set to the openEHR CKM (Batch-1A). The reused CKM archetypes and operational templates (§3) are combined via `.oet` templates, not submitted as new archetypes.
 
 ---
