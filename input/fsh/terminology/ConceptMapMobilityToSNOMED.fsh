@@ -15,7 +15,7 @@ Usage: #definition
 * title = "Mobility Assessments to SNOMED CT Mapping"
 * status = #active
 * experimental = false
-* date = "2025-11-22"
+* date = "2026-09-22"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
@@ -51,12 +51,13 @@ Usage: #definition
 * group[0].element[2].target[0].equivalence = #unmatched
 * group[0].element[2].target[0].comment = "CORRECTED 2025-12-08: Walking steadiness (Apple Watch metric) has no verified SNOMED equivalent. Original code 271722003 NOT FOUND. This is a proprietary wearable metric from accelerometer/gyroscope during walking."
 
-// WALKING SPEED - CORRECTED 2025-12-08 ⚠️
-// Code 249869000 NOT FOUND in Australian Ontoserver
+// WALKING SPEED - mapped 2026-09-22 (until 0.5.1 declared unmatched: the 2025-12-08 note said no verified SNOMED code was available; 249869000 does not exist)
 * group[0].element[3].code = #walking-speed
 * group[0].element[3].display = "Walking speed measurement"
-* group[0].element[3].target[0].equivalence = #unmatched
-* group[0].element[3].target[0].comment = "CORRECTED 2025-12-08: Original code 249869000 NOT FOUND in Australian Ontoserver. Walking speed is clinically important for mobility assessment but no verified SNOMED code available. Requires manual verification via browser.ihtsdotools.org."
+* group[0].element[3].target[0].code = #724237005
+* group[0].element[3].target[0].display = "Gait speed"
+* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].comment = "Gait speed (observable entity) is the SNOMED CT International concept for walking speed; verified 2026-09-22 in the Vocab2 snapshot (SNOMED CT 2025-02-01) and on tx.fhir.org (International 20250201). Until 0.5.1 this element was declared unmatched with the note that no verified SNOMED code was available."
 
 // MOVEMENT ASSESSMENT - CORRECTED 2025-12-08 ⚠️
 // Code 364555000 NOT FOUND in Australian Ontoserver

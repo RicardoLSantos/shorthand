@@ -16,7 +16,7 @@ Usage: #definition
 * title = "Vendor Proprietary Codes to LOINC Mapping"
 * status = #active
 * experimental = false
-* date = "2026-09-17"
+* date = "2026-09-22"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * description = "Operational ConceptMap for translating proprietary wearable device codes to LOINC standard terminology. Based on gray literature analysis of 75 sources documenting 11 major vendors with 0% LOINC adoption rate."
@@ -249,8 +249,10 @@ Usage: #definition
 // Walking Speed
 * group[0].element[28].code = #HKQuantityTypeIdentifierWalkingSpeed
 * group[0].element[28].display = "Walking Speed"
-* group[0].element[28].target[0].equivalence = #unmatched
-* group[0].element[28].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Critical mobility metric for fall risk and functional assessment. Unit: m/s"
+* group[0].element[28].target[0].code = #41957-2
+* group[0].element[28].target[0].display = "Walking speed 24 hour mean Calculated"
+* group[0].element[28].target[0].equivalence = #relatedto
+* group[0].element[28].target[0].comment = "Related, not equivalent (decided 2026-09-22): a HealthKit walkingSpeed sample is the average speed of one walking bout, while LOINC defines walking speed as 24-hour or weekly aggregates (41956-4 maximum and 41957-2 mean per 24 h; 41958-0 and 41959-8 per week) or as the 4-metre gait speed test (83144-6) — none is a per-bout value. A daily mean derived from the samples maps to 41957-2. Codes verified in the Athena LOINC snapshot and on tx.fhir.org (LOINC 2.82). iOS 14.0+; unit m/s. Until 0.5.1 this element was declared unmatched with the note that no LOINC code existed."
 
 // Walking Step Length
 * group[0].element[29].code = #HKQuantityTypeIdentifierWalkingStepLength
