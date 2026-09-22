@@ -156,7 +156,7 @@ This IG addresses gaps NOT covered by existing HL7 standards:
 |--------|:-----:|---------|
 | **Domains covered** | 11 | Vital signs, sleep, activity, nutrition, mindfulness, stress, environmental, social, reproductive, ECG, body metrics |
 | **Vendor support** | 7+ | Apple HealthKit, Fitbit, Garmin, Oura, Polar, Withings, generic |
-| **Custom codes** | 1,211 | Interim codes for concepts with no LOINC/SNOMED CT equivalent; the ConceptMaps bridge those that have one. Per-concept migration properties (`assignment-status`, `loinc-equivalent`) are defined in `AppLogicCS` but not yet applied to the concepts |
+| **Custom codes** | 1,166 | Concepts defined in the IG's own CodeSystems, the republished ICD-11 fragment (46 WHO codes) excluded: 720 interim lifestyle-medicine concepts in `LifestyleMedicineTemporaryCS` (with a migration path), 280 application-logic and 127 agent-decision-support concepts, 19 vendor sleep-stage codes, 10 SMART scopes, 4 CDS-hook types, 3 ETL group characteristics and 3 drug–lifestyle interaction types — counted from the FSH sources (`* #code "display"` lines per `CodeSystem:` block; 1,212 with the fragment; the 1,211 quoted until 0.5.1 was that total before one concept was added in 0.5.1). The ConceptMaps bridge those that have a standard equivalent. Per-concept migration properties (`assignment-status`, `loinc-equivalent`) are defined in `AppLogicCS` but not yet applied to the concepts |
 | **Terminology gap documented** | 97.4% | Of the 1,173 custom codes audited, share without a direct standard equivalent ([doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)) |
 | **ConceptMaps** | 29 | Covering LOINC, SNOMED CT, OMOP CDM, openEHR |
 | **Example instances** | 193 | every concrete profile has a standalone example (103 of 103 on `main`, 0.5.2 in preparation — 102 of 102 in the v0.5.1 build; `ConsumerECGObservation`, the abstract ECG parent, is excluded from the denominator — the figure is read from the build's examples pages) |
@@ -177,7 +177,7 @@ See [Getting Started](getting-started.html) and [Conformance Requirements](confo
 |---------|:-------:|:------:|:-----:|:------:|
 | Domains | 11 | 1 (glucose) | 1 (activity) | Device metadata |
 | Vendors | 7+ | CGM devices | Generic | IEEE 11073 |
-| Custom codes | 1,211 | 0 | ~30 | 0 |
+| Custom codes | 1,166 | 0 | ~30 | 0 |
 | ConceptMaps | 29 | 0 | 0 | 0 |
 | Regulatory | LGPD + CFM | None | None | None |
 
