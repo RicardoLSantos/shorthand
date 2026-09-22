@@ -132,7 +132,7 @@ done < <(git grep -n -E '(mongodb|mysql|postgres|redis)://[^/]+:[^@]+@' -- $EXCL
 #     the one script whose environment-variable name would match.)
 echo "Checking for internal process markers..."
 MARKER_PAT="AUTHORED-BY-CL""AUDE|\bT[1-6] S[0-9]+\b|Pit""fall #|Les""son #|Li""ção #|FA""Q Q|VR""F-|_TO_""GM_|CONTINUE_""HERE|SESSION_""COMPLETE|\bRS(0|[1-9]|1[0-5])\b|\bG[1-4]\b|US""ER\b"   # assembled from fragments so this file does not match itself
-MARKER_BASELINE=63   # 2026-09-16 — lower this as files are cleaned; never raise it
+MARKER_BASELINE=62   # 2026-09-22 (was 63 on 2026-09-16) — lower this as files are cleaned; never raise it
 MARKER_FILES=$(git grep -l -P "$MARKER_PAT" -- . ':!RS11_benchmark/' ':!.github/scripts/terminology_ledger_check.py' $EXCLUDE 2>/dev/null | wc -l | tr -d ' ')   # the ledger checker legitimately names a LOINC_… env var
 echo "  files carrying internal markers: $MARKER_FILES (baseline $MARKER_BASELINE, target 0)"
 if [ "$MARKER_FILES" -gt "$MARKER_BASELINE" ]; then
