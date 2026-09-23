@@ -57,7 +57,7 @@ Usage: #definition
 * group[0].element[3].target[0].code = #724237005
 * group[0].element[3].target[0].display = "Gait speed"
 * group[0].element[3].target[0].equivalence = #equivalent
-* group[0].element[3].target[0].comment = "Gait speed (observable entity) is the SNOMED CT International concept for walking speed; verified 2026-09-22 in the Vocab2 snapshot (SNOMED CT 2025-02-01) and on tx.fhir.org (International 20250201). Until 0.5.1 this element was declared unmatched with the note that no verified SNOMED code was available."
+* group[0].element[3].target[0].comment = "Gait speed (observable entity) is the SNOMED CT International concept for walking speed; verified 2026-09-22 in the Vocab2 snapshot (SNOMED CT International Edition 2025-02-01) and on tx.fhir.org (International 20250201). Until 0.5.1 this element was declared unmatched with the note that no verified SNOMED code was available."
 
 // MOVEMENT ASSESSMENT - CORRECTED 2025-12-08 ⚠️
 // Code 364555000 NOT FOUND in Australian Ontoserver

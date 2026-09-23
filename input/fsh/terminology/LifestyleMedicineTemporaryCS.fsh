@@ -561,7 +561,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #improvedFocus "Improved Focus" "Enhanced ability to concentrate"
 * #stressReduction "Stress Reduction" "Decreased levels of stress and tension"
 * #emotionalBalance "Emotional Balance" "Better emotional regulation"
-* #improvedSleep "Improved Sleep" "Enhanced activity quality"
+* #improvedSleep "Improved Sleep" "Enhanced sleep quality"
 
 // --- Domain: mindfulness-qualifier (from MindfulnessQualifierCS) ---
 * #guided "Guided Practice" "Practice with guidance or instruction"
