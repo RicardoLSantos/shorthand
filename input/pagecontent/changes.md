@@ -31,16 +31,6 @@ All notable changes to this Implementation Guide are documented on this page.
 - Hooks re-measured on 2026-09-23: every id the README's *Companion projects* section names (`sdnn-observation`, `crp-observation`, `hrv-inflammation-correlation`, `ConceptMapVendorToLOINC`, LOINC 80404-7 and 30522-7, `heart_rate_variability.v0`, the 14 cases in `RS11_benchmark/`) is present and unchanged. No profile, CodeSystem or ConceptMap was renamed or retired in this release.
 - Changed targets: `ConceptMapVendorToLOINC` (HealthKit walking speed → LOINC 41957-2, *relatedto*), `ConceptMapMobilityToSNOMED` (walking speed → SNOMED CT 724237005) and `MindfulnessDiagnosticMap` (its four SNOMED CT targets). The value set `social-history-goal-vs` was retired.
 
-### Pending (decisions not yet taken; listed so that the backlog is public)
-- **Dates on the resources changed in 0.5.1.** Their manual `date` is 2026-09-17, the day the content changed (the FHIR meaning of the element); the release was published on 2026-09-21. Whether the `date` should instead carry the release day (10 edits, 6 additions, one build) is undecided.
-- **Profile id `social-history-observation`** belongs to `ReproductiveObservation` (the file was renamed, the id was not). Renaming the id changes the canonical URL and every reference to it — a breaking change that needs a deprecation path; undecided.
-- **The six composition templates** stay withheld (6/6 rejected by the openEHR Template XML schema at their first element); whether they are repaired as operational templates or replaced is undecided.
-- **`ReproductiveActivityVS`** (`social-history-activity-vs`, eight local codes) is bound by no profile — keep, bind or retire, undecided.
-- **Home page comparison table:** the "~30 custom codes" attributed to the Physical Activity IG has no stated source and will be measured or removed.
-- **The four openEHR limitations above** wait for their authors' decisions on the proposed ADL changes.
-- **The two CQL `Library` resources** (CVR-003, MET-002) are documentation pointers; whether they stay pointers, are backed by a published CQL library, or are retired is undecided.
-- **The physical-activity archetype.** Whether `physical_activity_detailed.v0` is distributed, or the four ConceptMaps' physical-activity groups are re-targeted to a published CKM archetype, is undecided; how the two archetypes relate has not been checked.
-
 ### Source counts (FSH)
 - Profiles 104 / Extensions 77 / CodeSystems 19 / ValueSets 207 / Instances 281 (incl. 29 ConceptMaps) = **688 artefacts** (+1 profile, +1 ValueSet, +1 instance vs 0.5.1); ledger 499 → 506 verified codes. Built with IG Publisher 2.3.4 and SUSHI 3.20.1 on 2026-09-23: err 0 / warn 226 / info 13,278 / 0 broken links; the 226 warnings are the OID advisories, one per CodeSystem and ValueSet.
 
