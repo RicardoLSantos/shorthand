@@ -107,9 +107,10 @@ sequenceDiagram
 > but not executed by a CQL engine anywhere in this project.** Its decision logic is
 > checked by a JavaScript test harness that re-implements the same rules against FHIR
 > R4 test bundles; no CQL execution engine is invoked. The diagram above is the
-> intended architecture, not a runtime trace. The CQL source and harness live in the
-> companion HEADS-ETL work, not in this repository, which carries only the
-> `Library` conformance resources that reference them.
+> intended architecture, not a runtime trace. The CQL source and harness belong to a
+> companion project (track B under *Companion projects* below), not to this repository;
+> the two `Library` resources this IG carries are documentation pointers for the
+> identifiers its examples cite (`CVR-003`, `MET-002`).
 
 ---
 
@@ -287,13 +288,17 @@ shorthand/
 
 ---
 
-## Related Projects
+## Companion projects — parallel work, outside the scope of this IG and of the thesis
 
-| Project | Description |
-|---------|-------------|
-| HEADS-ETL | FHIR → OMOP transformation (R/Python) — companion pipeline |
-| CQL Library | HRVInflammationRisk clinical decision rules |
-| GDL2 Guidelines | openEHR-based decision support |
+The projects below are developed in parallel by the same author. They are not thesis deliverables and are not released as software packages; the thesis documents some of them only as proofs of concept. They are listed because each has an integration hook into this IG. Status measured on 23 September 2026.
+
+| Track | What it does | Hook into this IG | Status |
+|---|---|---|---|
+| A · Wearable ETL pipeline (HEADS-ETL) | HealthKit → FHIR → OMOP; R/Python proof of concept plus a Swift extractor | produces Observations conforming to `sdnn-observation`, `crp-observation` and `hrv-inflammation-correlation`; vendor codes bound through `ConceptMapVendorToLOINC` | proof of concept on synthetic bundles; full environment not set up |
+| B · HRV–inflammation risk rules (CQL + GDL2, one track) | the same three-tier rule in two formalisms: a FHIR CQL library (`HRVInflammationRisk`) and an openEHR GDL2 guideline | consumes Observations coded with the LOINC codes this IG uses for SDNN (80404-7) and hs-CRP (30522-7); the GDL2 rule binds the `heart_rate_variability.v0` archetype distributed here | CQL logic validated by a harness on 9 synthetic bundles, not executed on a CQL engine; GDL2 specified, not executed; the library's IG-specific ValueSets are not yet defined |
+| C · Terminology Router (DF-TVA) | decision layer that routes a clinical term to LOINC, SNOMED CT or ICD-10 candidates and names the terminology operation to call; composes with a Terminology Service | this IG's custom CodeSystems and ConceptMaps are its routing targets; the 14 benchmark cases are published here (`RS11_benchmark/`, since v0.2.1) | Python service with CI; public release pending |
+
+Tracks A and C are independent; track B is one project in two formalisms.
 
 ---
 

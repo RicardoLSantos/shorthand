@@ -22,7 +22,7 @@ The IG bridges to five openEHR archetypes covering core consumer-wearable domain
 |--------|----------------------|--------------------------|---------------------------|
 | HRV | `openEHR-EHR-OBSERVATION.heart_rate_variability.v0` | **Novel** — no OBSERVATION CKM equivalent | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR, ConceptMapVendorToOpenEHR |
 | Sleep | `openEHR-EHR-OBSERVATION.sleep_architecture.v0` | **Novel concept** — the published CKM sleep archetype models disturbance questionnaires, not sleep architecture/stages | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
-| Physical activity | `openEHR-EHR-OBSERVATION.physical_activity_detailed.v0` | **Reuse** — aligns to a published CKM physical-activity OBSERVATION archetype (a wearable-detailed projection, not a new gap) | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR |
+| Physical activity | `openEHR-EHR-OBSERVATION.physical_activity_detailed.v0` | **Not distributed** — a development archetype outside the twelve distributed with this IG; how it relates to the published CKM `physical_activity` OBSERVATION archetype has not been checked. Four ConceptMaps point to it (the three listed here and `ConceptMapOpenEHRToOMOP`), so their physical-activity groups cannot be resolved from this IG; the publisher warnings this causes are suppressed in `input/ignoreWarnings.txt` (see the `openehr/` folder's README, *Known limitation in the IG's ConceptMaps*) | ConceptMapFHIRToOpenEHR, ConceptMapOpenEHRToFHIR, ConceptMapVendorToOpenEHR |
 | VO2max estimation | `openEHR-EHR-OBSERVATION.vo2max_estimation.v0` | **Novel** — no OBSERVATION CKM equivalent (a standalone OBSERVATION; see the [archetype catalog](openehr-archetypes-catalog.html)) | — (element-level `Mapping:` block on `VO2MaxEstimationObservation`; no dedicated openEHR ConceptMap yet) |
 | Device provenance | `openEHR-EHR-CLUSTER.wearable_device.v0` | **Specialisation** of the published CKM device CLUSTER archetype (`openEHR-EHR-CLUSTER.device.v1`) | ConceptMapVendorToOpenEHR |
 
@@ -65,7 +65,7 @@ The bridge above is defined at the granularity of **individual data items**, not
 | Sleep score | `Observation.component[score].valueInteger` | vendor composite (0–100) | equivalent |
 | Avg HRV (RMSSD) during sleep | `Observation.component[sleep-hrv].valueQuantity` | `…#hrv-rmssd` (ms) | equivalent |
 
-**Physical activity** — `…physical_activity_detailed.v0` → `Observation` (physical-activity):
+**Physical activity** — `…physical_activity_detailed.v0` → `Observation` (physical-activity). The source archetype is not distributed with this IG (see the table above):
 
 | openEHR data item | FHIR path | Terminology | Equivalence |
 |-------------------|-----------|-------------|-------------|

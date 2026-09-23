@@ -81,7 +81,7 @@ In 2026 the HL7 **Vulcan Accelerator** published an INFORMATIVE 1 release of its
 This IG is **compatible-by-design** with the Vulcan FHIR-to-OMOP IG, with two complementary positioning notes:
 
 1. **Scope complementarity, not duplication.** The Vulcan IG covers the *generic* FHIR↔OMOP transformation patterns at the resource level (Observation→MEASUREMENT, etc.). This IG provides the *domain-specific* terminology mappings for lifestyle-medicine concepts (HRV, CGM, activity, sleep, nutrition, openEHR-derived data) — content the Vulcan IG does not specify. The two compose: a Vulcan-conformant ETL engine can ingest the ConceptMaps from this IG and apply the Vulcan transformation rules.
-2. **Repositioning the post-defense ETL work (RS13).** The HEADS-ETL pipeline described in [Implementation Scope and Roadmap](implementation-scope-and-roadmap.html) is now positioned as a *Vulcan-conformant implementation* of the patterns this IG specifies for the lifestyle-medicine vertical, rather than a novel ETL framework. This is a deliberate de-claim — the academic contribution narrows from "new ETL pipeline" to "first lifestyle-medicine-vertical FHIR-to-OMOP ConceptMap suite, conformant to Vulcan v1.0.0 FHIR-to-OMOP IG and addressing the HRV gap RS4 documented".
+2. **Repositioning the post-defense ETL work (RS13).** The HEADS-ETL pipeline described in [Implementation Scope and Roadmap](implementation-scope-and-roadmap.html) (today a proof of concept on synthetic bundles) is now positioned as a *Vulcan-conformant implementation* of the patterns this IG specifies for the lifestyle-medicine vertical, rather than a novel ETL framework. This is a deliberate de-claim — the academic contribution narrows from "new ETL pipeline" to "first lifestyle-medicine-vertical FHIR-to-OMOP ConceptMap suite, conformant to Vulcan v1.0.0 FHIR-to-OMOP IG and addressing the HRV gap RS4 documented".
 
 The repositioning is the operational reading of Pitfall #110 — *external-input survey before scoping new work*: a thorough scan of the OHDSI and HL7 ecosystems for prior art was the precondition for narrowing the IG's claimed novelty without losing the substantive contribution (the HRV→OMOP first-publication anchor + the lifestyle-medicine domain coverage).
 
@@ -117,7 +117,7 @@ A ConceptMap in this IG names the leftmost arrow (source→target). A Vulcan-con
 ### What this does not do
 
 - It does not embed any subset of the OMOP vocabulary larger than what appears as `target.code` values inside the six ConceptMaps.
-- It does not specify an ETL engine, a transformation runtime, or a query language. The Vulcan IG owns the engine layer; the HEADS-ETL repository (post-defense, RS13) owns the implementation.
+- It does not specify an ETL engine, a transformation runtime, or a query language. The Vulcan IG owns the engine layer; the HEADS-ETL companion project (post-defense, RS13; today a proof of concept) owns the implementation.
 - It does not ship CDM table definitions (`MEASUREMENT`, `OBSERVATION`, `CONDITION_OCCURRENCE`, etc.) — those are defined by OHDSI in the [OMOP CDM specification](https://ohdsi.github.io/CommonDataModel/).
 - It does not maintain a SQL schema for the OMOP database — the OHDSI [`CommonDataModel`](https://github.com/OHDSI/CommonDataModel) repository is the canonical source.
 - It does not provide ETL test data or synthetic patient cohorts — Synthea and the OHDSI synthetic Eunomia dataset are the standard tooling.

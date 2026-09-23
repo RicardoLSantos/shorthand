@@ -31,7 +31,7 @@ These are **reference-architecture** components. Where the IG mentions them, it 
 
 ### CQL libraries (decision recorded)
 
-The IG's `ClinicalImpression.protocol` elements reference CQL logic via `urn:cql:library:` URIs. These CQL libraries are maintained **externally** (`etl_poc/cql/`) and are **not embedded or executed** by the IG — the IG references them as documentation pointers, consistent with the CDS Hooks execution model. The corresponding build warnings (the unresolved `urn:cql:library:` references) are therefore **expected and accepted**; a decision to either register thin `Library` resources in the IG or suppress the warnings with this justification is taken at the release-preparation phase. This is the same *adopted-pattern-not-embedded-engine* stance used for GDL.
+The IG's `ClinicalImpression.protocol` elements reference CQL logic via `urn:cql:library:` URIs. No CQL is **embedded in, executed by or distributed with** the IG: the two identifiers are registered as thin `Library` resources (`LibraryCVR003HRVRisk`, `LibraryMET002MetabolicOverride`, exempted through `special-url`), which are documentation pointers, consistent with the CDS Hooks execution model; the references therefore resolve and the build reports no warning for them. This is the same *adopted-pattern-not-embedded-engine* stance used for GDL.
 
 ### Roadmap
 

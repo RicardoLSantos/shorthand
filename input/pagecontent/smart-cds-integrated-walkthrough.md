@@ -22,7 +22,7 @@ Opening the chart triggers the `patient-view` hook, invoking the `lifestyle-risk
 
 For the risk computation that combines HRV decline with inflammatory elevation, the service delegates to an AI model and records the result as a `ClinicalImpressionAIAssessment`. The worked instance [`Bundle-AIComplianceRoundTripBundle`](Bundle-AIComplianceRoundTripBundle.html) contains `ClinicalImpressionComplianceRT`, which demonstrates the full governance footprint required by the EU AI Act profiles:
 
-- **Decision provenance** — `protocol[0]` references the CQL logic library `urn:cql:library:CVR-003:v1.2`, now registered in this IG as [`Library-LibraryCVR003HRVRisk`](Library-LibraryCVR003HRVRisk.html). The executable CQL is maintained externally (see [Implementation Scope](implementation-scope-and-roadmap.html#cql-libraries-decision-recorded)); the Library resource is a resolvable documentation pointer.
+- **Decision provenance** — `protocol[0]` references the CQL library identifier `urn:cql:library:CVR-003:v1.2`, registered in this IG as [`Library-LibraryCVR003HRVRisk`](Library-LibraryCVR003HRVRisk.html), a resolvable documentation pointer: no CQL is embedded in, executed by, or distributed with this IG (see [Implementation Scope](implementation-scope-and-roadmap.html#cql-libraries-decision-recorded)).
 - **Model transparency** — the `agentRecommendation` extension records the model identifier, confidence (0.78), interpretation, and human-readable reasoning; the `inferenceMetadata` extension records latency and risk classification.
 - **Auditability** — a companion `AuditEvent` (see [`Bundle-AIComplianceRoundTripBundle`](Bundle-AIComplianceRoundTripBundle.html)) captures the AI interaction for the EU AI Act Article 12 record-keeping obligation.
 

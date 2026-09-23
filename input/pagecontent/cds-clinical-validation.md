@@ -10,7 +10,7 @@ It is a conformance-and-validation framework, not an execution engine. The runti
 
 Decision support divides into **knowledge-based** logic (explicit IF-THEN rules / computable guidelines, where the recommendation is traceable to an encoded rule) and **non-knowledge-based** logic (machine learning / statistical pattern recognition, where the recommendation emerges from a model and the reasoning is not directly inspectable). The two carry different validation burdens, and the difference in *explainability* is precisely why this IG keeps them in separate lanes:
 
-- **Deterministic logic is primary.** Guideline rules are encoded as computable artifacts ([`LifestyleRiskAssessmentPlanDefinition`](PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html) and the CQL libraries it references). The recommendation is traceable to the rule.
+- **Deterministic logic is primary.** Guideline rules are represented by a definitional artifact ([`LifestyleRiskAssessmentPlanDefinition`](PlanDefinition-LifestyleRiskAssessmentPlanDefinition.html)); in this IG it references no CQL library and carries no condition expression, so the rules are evaluated outside the IG. The recommendation is traceable to the rule.
 - **AI/model logic is an augmentation sidecar**, governed but never the silent author of a clinical action (see [LLM/AI Integration](llm-ai-integration.html) and `AgentDecisionSupportCS`). A non-inspectable "black box" cannot be the unaccountable origin of a recommendation in a regulated setting.
 
 This separation is what makes the validation framework below tractable: a deterministic rule can be validated against its source guideline; a model can only be validated against held-out outcomes.
