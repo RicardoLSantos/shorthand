@@ -39,6 +39,12 @@
 - **The two CQL `Library` resources** (CVR-003, MET-002) are documentation pointers; whether they stay pointers, are backed by a published CQL library, or are retired is undecided.
 - **The physical-activity archetype.** Whether `physical_activity_detailed.v0` is distributed, or the four ConceptMaps' physical-activity groups are re-targeted to a published CKM archetype, is undecided; how the two archetypes relate has not been checked.
 
+### Source counts (FSH)
+- Profiles 104 / Extensions 77 / CodeSystems 19 / ValueSets 207 / Instances 281 (incl. 29 ConceptMaps) = **688 artefacts** (+1 profile, +1 ValueSet, +1 instance vs 0.5.1); ledger 499 → 506 verified codes. Built with IG Publisher 2.3.4 and SUSHI 3.20.1 on 2026-09-23: err 0 / warn 226 / info 13,278 / 0 broken links; the 226 warnings are the OID advisories, one per CodeSystem and ValueSet.
+
+### Built against
+- LOINC 2.82 (tx.fhir.org; Athena snapshot 2026-01-21) · SNOMED CT International 20250201 (tx.fhir.org; Vocab2 snapshot, International Edition 2025-02-01) · ICD-11 MMS 2026-01 (tx.fhir.org; WHO linearization export 2026-03-20) · UCUM 2.2 (NLM UCUM validator, tx.fhir.org) · IEEE 11073-10101 MDC 2024-12-05 (via hl7.fhir.uv.phd 1.1.0) · IG Publisher 2.3.4 · SUSHI 3.20.1 · ledger verification dated 2026-09-15/23.
+
 ## [0.5.1] - 2026-09-21
 
 ### Changed
