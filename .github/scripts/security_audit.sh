@@ -101,9 +101,10 @@ while IFS=: read -r file line content; do
     log_finding "WARN" "$file" "$line" "Personal identifier: $(echo "$content" | head -c 80)"
 done < <(git grep -n -E '(\+351[0-9]{9}|NIF[: ][0-9]{9}|CC[: ][0-9]{8})' -- $EXCLUDE 2>/dev/null || true)
 
-# 9. Copyright-sensitive: large blocks of copied text (heuristic: files >50KB in pagecontent)
+# 9. Copyright-sensitive: large blocks of copied text (heuristic: files >50KB in pagecontent).
+#    The change log page is the IG's own text and grows with every release, so it is not counted.
 echo "Checking for unusually large content files..."
-for f in $(git ls-files 'input/pagecontent/*.md'); do
+for f in $(git ls-files 'input/pagecontent/*.md' ':!input/pagecontent/changes.md'); do
     size=$(wc -c < "$f" 2>/dev/null || echo 0)
     if [ "$size" -gt 51200 ]; then
         log_finding "WARN" "$f" "0" "Large content file (${size} bytes) — verify copyright compliance"
