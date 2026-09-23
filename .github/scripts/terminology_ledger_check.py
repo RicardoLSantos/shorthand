@@ -97,16 +97,28 @@ RE_CONCEPT = re.compile(r'^\s*\*\s*#(\S+)\s+"((?:[^"\\]|\\.)*)"')
 # Split-form bindings: system and code assigned on separate rules with the same path prefix, in
 # either order (``* valueQuantity.system = $UCUM`` / ``* valueQuantity.code = #kg``,
 # ``* coding.system = $SCT`` / ``* coding.code = #271299001`` / ``* coding.display = "…"``).
-RE_SPLIT_SYS = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.system\s*=\s*"?(?P<sys>[^"\s]+)"?\s*$')
-RE_SPLIT_CODE = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.code\s*=\s*#(?P<code>[^\s"]+)\s*$')
-RE_SPLIT_DISP = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.display\s*=\s*"(?P<text>(?:[^"\\]|\\.)*)"\s*$')
-RE_SPLIT_UNIT = re.compile(r'^\s*\*\s*(?P<prefix>[^\s=]+)\.unit\s*=\s*"(?P<text>(?:[^"\\]|\\.)*)"\s*$')
+# An FSH path: no whitespace and no ``=`` outside brackets; a bracket may hold ``=`` (soft index
+# ``component[=]``), which a plain ``[^\s=]+`` refused, so every rule on a ``[=]`` path went unread.
+FSH_PATH = r'(?:[^\s=\[\]]|\[[^\]\s]*\])+'
+RE_SPLIT_SYS = re.compile(r'^\s*\*\s*(?P<prefix>' + FSH_PATH + r')\.system\s*=\s*"?(?P<sys>[^"\s]+)"?\s*$')
+RE_SPLIT_CODE = re.compile(r'^\s*\*\s*(?P<prefix>' + FSH_PATH + r')\.code\s*=\s*#(?P<code>[^\s"]+)\s*$')
+RE_SPLIT_DISP = re.compile(r'^\s*\*\s*(?P<prefix>' + FSH_PATH + r')\.display\s*=\s*"(?P<text>(?:[^"\\]|\\.)*)"\s*$')
+RE_SPLIT_UNIT = re.compile(r'^\s*\*\s*(?P<prefix>' + FSH_PATH + r')\.unit\s*=\s*"(?P<text>(?:[^"\\]|\\.)*)"\s*$')
 # FSH Quantity shorthand ``<value> '<unit code>' "<unit text>"``: the quoted unit is UCUM by definition.
-RE_QTY = re.compile(r'''^\s*\*\s*(?P<path>[^\s=]+)\s*=\s*-?[0-9][0-9.]*\s*'(?P<code>[^']+)'(?:\s+"(?P<unit>(?:[^"\\]|\\.)*)")?''')
+RE_QTY = re.compile(r'^\s*\*\s*(?P<path>' + FSH_PATH + r''')\s*=\s*-?[0-9][0-9.]*\s*'(?P<code>[^']+)'(?:\s+"(?P<unit>(?:[^"\\]|\\.)*)")?''')
 RE_DECL = re.compile(r'^(Instance|Profile|Extension|ValueSet|CodeSystem|Logical|Resource|Mapping|RuleSet|Invariant|Alias)\s*:')
 RE_NEW_SIBLING = re.compile(r'^\s*\*\s*(?P<base>[^\s=]*?\[\+\])')
+# ConceptMap element/target paths (read by the group patterns, not by the split form); a Measure
+# group (``group[0].code.coding[0]``) is an ordinary path
+RE_CM_PATH = re.compile(r'^group\[[^\]]*\]\.(element|unmapped)\b')
+# a ConceptMap group opened with a soft index and no rule of its own (``* group[+]``)
+RE_GROUP_OPEN = re.compile(r'^\s*\*\s*group\[\+\]\s*$')
 # path suffixes of Quantity-typed elements (FHIR Quantity and its specialisations, Range and Ratio parts)
 RE_QTY_PATH = re.compile(r'(Quantity|Duration|Age|Count|Distance|quantity|low|high|numerator|denominator)$')
+# FSH indented rules: a rule line, and the element path that may open its body
+RE_RULE = re.compile(r'^(?P<indent> *)\*\s+(?P<body>\S.*)$')
+RE_PATH_TOKEN = re.compile(r'^[A-Za-z_][\w-]*(\[[^\]\s]*\])?(\.[A-Za-z_][\w-]*(\[[^\]\s]*\])?)*$')
+NOT_PATHS = {"insert", "include", "exclude", "obeys", "codes"}
 
 
 def _strip_comment(line: str) -> str:
@@ -130,6 +142,34 @@ def _strip_comment(line: str) -> str:
     return "".join(out)
 
 
+def _expand_indented(line: str, stack: list) -> str:
+    """Rewrite an indented FSH rule with its full path, and update the indentation context.
+
+    FSH lets a rule take the path of the nearest less-indented rule as its context, so
+    ``* group[0].element[0]`` / ``  * target[0]`` / ``    * code = #X`` is the rule
+    ``* group[0].element[0].target[0].code = #X``. The patterns of extract_codes read one
+    line at a time and need the full path on that line: without this rewrite, a code assigned
+    by an indented rule with no path of its own (``* code = #min`` under ``* valueQuantity``)
+    was never read. ``stack`` holds (indent, path) of the open contexts. A ``[+]`` in a context
+    is resolved by the context rule itself, so its children see it as ``[=]`` (same element).
+    Rules without a path of their own (caret, insert, concept) are returned as they are: their
+    caret path already names the pair, and the patterns below read it on its own.
+    """
+    m = RE_RULE.match(line)
+    if not m:
+        return line
+    indent, body = len(m.group("indent")), m.group("body")
+    while stack and stack[-1][0] >= indent:
+        stack.pop()
+    ctx = stack[-1][1].replace("[+]", "[=]") if stack else ""
+    token = body.split(None, 1)[0]
+    own = token if RE_PATH_TOKEN.match(token) and token not in NOT_PATHS else ""
+    if not own:
+        return line
+    stack.append((indent, f"{ctx}.{own}" if ctx else own))
+    return f"* {ctx}.{own}{body[len(token):]}" if ctx else line
+
+
 def extract_codes(fsh_root: Path):
     """Return {(system, code): {"displays": set, "units": set, "files": set}} for every external code in FSH.
 
@@ -138,6 +178,7 @@ def extract_codes(fsh_root: Path):
     order, with an optional ``<path>.display`` or ``<path>.unit``), and the FSH Quantity shorthand
     ``<value> '<ucum>' "<unit>"``. ConceptMap elements/targets take their system from the group.
     A ``Quantity.unit`` text is recorded but is not a display claim (FHIR: human-readable form).
+    Indented rules are first rewritten with their full path (see _expand_indented).
     """
     found = defaultdict(lambda: {"displays": set(), "units": set(), "files": set(), "forms": set()})
 
@@ -156,12 +197,13 @@ def extract_codes(fsh_root: Path):
     for path in sorted(fsh_root.rglob("*.fsh")):
         text = path.read_text(encoding="utf-8", errors="replace")
         is_icd11_cs = re.search(r"^Id:\s*" + re.escape(IG_ICD11_CS_ID) + r"\s*$", text, re.M) is not None
-        group_sys, cur_group = {}, 0
+        group_sys, cur_group = {}, -1  # a soft-indexed first group is group 0, as in SUSHI
         cur_elem, cur_tgt = None, None   # (system, code) of the last element / target seen, for their displays
         in_block_string = False
         # split-form state for the current instance/profile block: normalised path prefix ->
         # {"system", "code", "display", "unit"}; a pair is emitted once both system and code are known
         pending: dict[str, dict] = {}
+        contexts: list = []           # open indentation contexts of indented rules: (indent, path)
 
         def flush(keys=None):
             for k in (list(pending) if keys is None else list(keys)):
@@ -188,6 +230,12 @@ def extract_codes(fsh_root: Path):
                 continue
             if RE_DECL.match(line):
                 flush()               # a new top-level declaration closes every open pair
+                contexts.clear()      # ... every indentation context
+                group_sys, cur_group = {}, -1   # ... and its ConceptMap groups (indices are per instance)
+                cur_elem = cur_tgt = None
+            line = _expand_indented(line, contexts)
+            if RE_GROUP_OPEN.match(line):
+                cur_group += 1        # ``* group[+]`` opens a group whose rules follow, indented
             m = RE_NEW_SIBLING.match(line)
             if m:                     # ``[+]`` starts a new sibling element: close its predecessor's pairs
                 base = m.group("base").replace("[+]", "[=]")
@@ -200,8 +248,8 @@ def extract_codes(fsh_root: Path):
             for regex, field in ((RE_SPLIT_SYS, "system"), (RE_SPLIT_CODE, "code"),
                                  (RE_SPLIT_DISP, "display"), (RE_SPLIT_UNIT, "unit")):
                 m = regex.match(line)
-                if not m or m.group("prefix").startswith("group["):
-                    continue          # ConceptMap groups are handled below
+                if not m or RE_CM_PATH.match(m.group("prefix")):
+                    continue          # ConceptMap elements/targets are handled below
                 value = m.group("sys") if field == "system" else m.group("code") if field == "code" else m.group("text")
                 if field == "system":
                     value = ALIAS_SYSTEM.get(value)   # None for the IG's own CodeSystems → never emitted
