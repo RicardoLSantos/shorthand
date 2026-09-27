@@ -60,7 +60,7 @@ python benchmark_3phase_rag.py
 | I | RAG + 55-entry dictionary | 92.9% | — |
 | **J** | **RAG + 80-entry dictionary** | **100%** | — |
 | K | Config J on 42 cases | — | 69.0% |
-| L | Config K + cross-encoder | — | 61.9% |
+| L | Cross-encoder re-ranker on the preceding 42-case run (28/42, same day, before K) | — | 61.9% |
 | **M** | **Config K + 94-entry dictionary** | — | **71.4%** |
 
 ## Configuration Labels — Scope Note
