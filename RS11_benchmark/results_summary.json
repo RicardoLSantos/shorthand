@@ -1,7 +1,7 @@
 {
   "title": "RS11 Benchmark Results Summary",
-  "paper": "LLMs and RAG for Medical Vocabulary Validation: A Systematic Review and Empirical Benchmark",
-  "doi": "pending (IJMEDI-D-26-01592)",
+  "paper": "Santos RL, Almeida J, Cruz-Correia RJ. A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An AI-Assisted Evidence Synthesis with Supplementary Empirical Evaluation.",
+  "doi": "pending (International Journal of Medical Informatics, new submission; prior submission reference IJMEDI-D-26-01592)",
   "scheme_note": "AUTHORITATIVE SOURCE: the manuscript supplement (Table S11 and note S11.1) is authoritative for configuration letters, case counts, and mechanisms. The A-M labels in THIS package enumerate successive pipeline stages of the 14-case run at a finer granularity, so package A-J do NOT correspond to Configurations A-J reported in the paper. The baseline here (config A, 42.9%, 6/14) is the no-retrieval stage of the 14-case set; it is NOT the paper's 36-case Configuration G baseline, which the paper reports as 24.2% (8/33) merit-scored and 30.6% (11/36) as-run. No accuracy value in this file has been altered; a full relabel to match the manuscript scheme awaits editorial decision.",
   "model": "Qwen3.5-4B (4-bit quantized, Apple M1 16GB)",
   "hardware": "Apple M1 MacBook Pro (MacBookPro17,1), 16GB unified memory, macOS Darwin 25.3.0",
@@ -28,7 +28,7 @@
     {"id": "I", "name": "RAG + 55-entry dictionary", "cases": 14, "accuracy": 92.9, "correct": 13},
     {"id": "J", "name": "RAG + 80-entry dictionary (BEST 14-case)", "cases": 14, "accuracy": 100.0, "correct": 14},
     {"id": "K", "name": "Config J on 42 cases", "cases": 42, "accuracy": 69.0, "correct": 29},
-    {"id": "L", "name": "Config K + cross-encoder reranking", "cases": 42, "accuracy": 61.9, "correct": 26, "note": "cross-encoder HURT performance"},
+    {"id": "L", "name": "Cross-encoder re-ranker added to the preceding 42-case run (same day, before K)", "cases": 42, "accuracy": 61.9, "correct": 26, "note": "cross-encoder HURT performance: 28/42 in that run without it, 26/42 with it (manuscript supplement, S17.5)"},
     {"id": "M", "name": "Config K + 94-entry dictionary (BEST 42-case)", "cases": 42, "accuracy": 71.4, "correct": 30}
   ],
   "key_findings": [
@@ -36,7 +36,7 @@
     "ChromaDB RAG: 78.6% (+35.7pp) — vector retrieval dramatically improves code lookup",
     "Abbreviation dictionary: 92.9-100% on focused 14-case set — domain knowledge bridges the last gap",
     "Extended 42-case set: 71.4% (Config M) — reveals limitations with complex disambiguation and cross-mapping",
-    "Cross-encoder reranking HURT: -7.1pp — lexical/rule-based approaches outperform semantic re-ranking for exact code matching",
+    "Cross-encoder reranking HURT: 28/42 -> 26/42 (-4.8pp) on the preceding 42-case run — lexical/rule-based approaches outperform semantic re-ranking for exact code matching",
     "100% reproducibility confirmed across 2 independent runs on 14-case set"
   ],
   "timestamp": "2026-03-24",

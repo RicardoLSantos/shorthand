@@ -1,14 +1,14 @@
-# RS11 Benchmark: LLMs and RAG for Medical Vocabulary Validation
+# RS11 Benchmark: Database-First Medical Vocabulary Validation with Small Language Models
 
-Reproducibility package for the empirical benchmark described in:
+Reproducibility package for the empirical evaluation reported in the supplementary materials of:
 
-> Santos RL, Cruz-Correia RJ. **LLMs and RAG for Medical Vocabulary Validation: A Systematic Review and Empirical Benchmark**. International Journal of Medical Informatics (under review). Manuscript ID: IJMEDI-D-26-01592.
+> Santos RL, Almeida J, Cruz-Correia RJ. **A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An AI-Assisted Evidence Synthesis with Supplementary Empirical Evaluation**. International Journal of Medical Informatics, new submission (prior submission reference: IJMEDI-D-26-01592).
 
 ## Overview
 
 This benchmark evaluates whether small language models (SLMs) combined with Retrieval-Augmented Generation (RAG) can accurately validate medical terminology codes (LOINC, SNOMED CT, ICD-10-CM) on consumer hardware (Apple M1, 16GB RAM).
 
-**Key Result**: Baseline LLM accuracy of 42.9% improved to **100%** on a focused 14-case test set (Config J) and **71.4%** on an extended 42-case set (Config M) using ChromaDB RAG + clinical abbreviation dictionary.
+**Key Result**: from a no-retrieval baseline of 42.9% (6/14, Config A), a pipeline of vocabulary-specific database lookup, LLM synonym expansion and a clinical abbreviation dictionary reached **100%** (14/14) on a focused 14-case test set (Config J) and **71.4%** (30/42) on an extended 42-case set (Config M). In `benchmark_3phase_rag.py`, ChromaDB is used only to verify ICD-10-CM codes (`verify_code`). These are figures for the pipeline as a whole; one of the 14 focused cases and two of the 42 extended cases are scored by a response-length threshold, and two further extended cases on a placeholder answer (manuscript supplement, S11.1 and S17.5).
 
 > **Note on configuration labels:** the accuracy figures below (`Config A–M`) enumerate the finer-grained 14-case pipeline stages of *this package*; the manuscript supplement (Table S11) is authoritative for configuration letters, case counts, and mechanisms. The 42.9% here is the package baseline (the no-retrieval stage of the 14-case set), **not** the paper's 36-case Configuration G baseline. See [Configuration Labels — Scope Note](#configuration-labels--scope-note).
 
@@ -30,11 +30,11 @@ This benchmark evaluates whether small language models (SLMs) combined with Retr
    # Install Ollama: https://ollama.ai
    ollama pull qwen3.5:4b
    ```
-3. **ChromaDB** collections (not included due to size — 2.5M embeddings, ~4GB):
-   - `loinc_full` (103,511 codes)
-   - `snomed_terminology` (349,211 codes)
-   - `icd10cm` (47,361 codes)
-   - `synonym_terminology` (1,862,419 entries)
+3. **Local vocabulary files and index** (not included: vocabulary licences), at the paths `benchmark_3phase_rag.py` expects, relative to the parent of this folder:
+   - `etl/data/athena/CONCEPT.csv`: an Athena OHDSI download with LOINC and UCUM
+   - `knowledge_base/Vocabulario/vocabulary_download_v5_*/CONCEPT.csv`: an Athena OHDSI download with SNOMED CT
+   - `data/icd11/ICD11_CONCEPT.csv`: optional, for ICD-11 lookups
+   - `knowledge_base/chromadb`: a ChromaDB store with the collection `icd10cm_terminology`, used only to verify ICD-10-CM codes
    - Source data: [LOINC](https://loinc.org), [SNOMED CT](https://www.snomed.org), [Athena OHDSI](https://athena.ohdsi.org)
 
 ## Quick Start
@@ -60,7 +60,7 @@ python benchmark_3phase_rag.py
 | I | RAG + 55-entry dictionary | 92.9% | — |
 | **J** | **RAG + 80-entry dictionary** | **100%** | — |
 | K | Config J on 42 cases | — | 69.0% |
-| L | Cross-encoder re-ranker on the preceding 42-case run (28/42, same day, before K) | — | 61.9% |
+| L | Cross-encoder re-ranker added to the preceding 42-case run (same day, before K), which scored 28/42 without it | — | 61.9% (26/42) |
 | **M** | **Config K + 94-entry dictionary** | — | **71.4%** |
 
 ## Configuration Labels — Scope Note
@@ -69,9 +69,9 @@ The manuscript supplement (**Table S11** and note **S11.1**) is authoritative fo
 
 In particular, the baseline here (`A`, 42.9%, 6/14) is the **no-retrieval stage of the 14-case set**; it is **not** the paper's 36-case Configuration G baseline, which the paper reports as **24.2% (8/33)** merit-scored / **30.6% (11/36)** as-run. The `A`–`M` accuracy values in this package are unchanged; a full relabel to the manuscript's scheme awaits the editorial decision. (For the paper's per-configuration definitions and case counts, see the supplement, Table S11 and S11.1.)
 
-## ChromaDB Collection Setup
+## Vocabulary Licences and Indexes
 
-The benchmark requires pre-indexed ChromaDB collections. Indexing scripts are available in the main thesis repository. Source vocabularies require separate licensing agreements:
+The vocabulary files and the ChromaDB store are not included. `terminology_rag.py` can index Athena concepts into its own collections (`athena_<vocabulary>`); the `icd10cm_terminology` collection read by the benchmark script is not built by this package. The authors' local index (eight collections, about 2.4 million embeddings) is listed in `results_summary.json`. Source vocabularies require separate licensing agreements:
 
 - **LOINC**: Free registration at [loinc.org](https://loinc.org)
 - **SNOMED CT**: Via [IHTSDO](https://www.snomed.org) member country license
@@ -82,11 +82,11 @@ The benchmark requires pre-indexed ChromaDB collections. Indexing scripts are av
 
 ```bibtex
 @article{santos2026llmrag,
-  author  = {Santos, Ricardo Louren{\c{c}}o dos and Cruz-Correia, Ricardo Jo{\~a}o},
-  title   = {{LLMs} and {RAG} for Medical Vocabulary Validation: A Systematic Review and Empirical Benchmark},
+  author  = {Santos, Ricardo Louren{\c{c}}o dos and Almeida, Jo{\~a}o and Cruz-Correia, Ricardo Jo{\~a}o},
+  title   = {A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An {AI}-Assisted Evidence Synthesis with Supplementary Empirical Evaluation},
   journal = {International Journal of Medical Informatics},
   year    = {2026},
-  note    = {Under review. Manuscript ID: IJMEDI-D-26-01592}
+  note    = {New submission; prior submission reference IJMEDI-D-26-01592}
 }
 ```
 
@@ -101,4 +101,4 @@ Institution: Faculty of Medicine, University of Porto (FMUP)
 Research Groups: RISE-Health, MEDCIDS
 Email: ricardolourencosantos@gmail.com
 ORCID: [0000-0001-6017-8255](https://orcid.org/0000-0001-6017-8255)
-Last updated: 2026-07-22 (added configuration-labels scope note)
+Last updated: 2026-10-06 (title, authors and status of the October 2026 manuscript; key result attributed as in its supplement, S17.5; prerequisites as read by the benchmark script)
