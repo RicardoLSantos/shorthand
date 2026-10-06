@@ -1,44 +1,52 @@
 {
   "title": "RS11 Benchmark Results Summary",
-  "paper": "Santos RL, Almeida J, Cruz-Correia RJ. A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An AI-Assisted Evidence Synthesis with Supplementary Empirical Evaluation.",
-  "doi": "pending (International Journal of Medical Informatics, new submission; prior submission reference IJMEDI-D-26-01592)",
-  "scheme_note": "AUTHORITATIVE SOURCE: the manuscript supplement (Table S11 and note S11.1) is authoritative for configuration letters, case counts, and mechanisms. The A-M labels in THIS package enumerate successive pipeline stages of the 14-case run at a finer granularity, so package A-J do NOT correspond to Configurations A-J reported in the paper. The baseline here (config A, 42.9%, 6/14) is the no-retrieval stage of the 14-case set; it is NOT the paper's 36-case Configuration G baseline, which the paper reports as 24.2% (8/33) merit-scored and 30.6% (11/36) as-run. No accuracy value in this file has been altered; a full relabel to match the manuscript scheme awaits editorial decision.",
+  "paper": "Santos RL, Coutinho-Almeida J, Cruz-Correia RJ. A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An AI-Assisted Evidence Synthesis with Supplementary Empirical Evaluation.",
+  "status": "Manuscript to be submitted to the International Journal of Medical Informatics (prior submission reference: IJMEDI-D-26-01592)",
+  "doi": "not yet assigned",
+  "scheme_note": "AUTHORITATIVE SOURCE: the manuscript supplement (Table S11 and note S11.1) is authoritative for configuration letters, case counts and mechanisms. This file gives the phases of the two archived 14-case runs of benchmark_3phase_rag.py (phase 4 = Configuration J) and Configurations K, L and M (phase 4), each with its result file; the result files are available on request (supplement S11). Until 2026-10-06 this file listed a package series A-M whose stages B-I no archived run reproduces; that series was replaced.",
   "model": "Qwen3.5-4B (4-bit quantized, Apple M1 16GB)",
   "hardware": "Apple M1 MacBook Pro (MacBookPro17,1), 16GB unified memory, macOS Darwin 25.3.0",
   "chromadb_collections": {
-    "loinc_full": 103511,
+    "counted_on": "2026-10-06",
+    "note": "Collections in the authors' local ChromaDB store; benchmark_3phase_rag.py reads only icd10cm_terminology. Counts at the time of the March 2026 runs were not recorded.",
+    "athena_terminology": 10500,
+    "icd10cm_terminology": 46881,
+    "ios_ig_terminology": 1048,
+    "loinc_full_terminology": 103511,
     "snomed_terminology": 349211,
-    "icd10cm": 47361,
     "synonym_terminology": 1862419,
-    "tho_terminology": 20096,
-    "ios_ig_terminology": 1181,
-    "ucum_terminology": 931,
-    "athena_terminology": 10956,
-    "total_embeddings": 2395666
+    "tho_terminology": 19988,
+    "ucum_terminology": 1128,
+    "total_embeddings": 2394686
   },
-  "configs": [
-    {"id": "A", "name": "Baseline (no RAG)", "cases": 14, "accuracy": 42.9, "correct": 6},
-    {"id": "B", "name": "ChromaDB RAG", "cases": 14, "accuracy": 78.6, "correct": 11},
-    {"id": "C", "name": "RAG + Chain-of-Verification", "cases": 14, "accuracy": 85.7, "correct": 12},
-    {"id": "D", "name": "RAG + CoV + Vocabulary Routing", "cases": 14, "accuracy": 85.7, "correct": 12},
-    {"id": "E", "name": "RAG + CoV + Routing + Domain Filter", "cases": 14, "accuracy": 85.7, "correct": 12},
-    {"id": "F", "name": "RAG + Ensemble Agreement", "cases": 14, "accuracy": 85.7, "correct": 12},
-    {"id": "G", "name": "RAG + LOINC Axis Anchoring", "cases": 14, "accuracy": 85.7, "correct": 12},
-    {"id": "H", "name": "RAG + Metadata Enrichment", "cases": 14, "accuracy": 85.7, "correct": 12},
-    {"id": "I", "name": "RAG + 55-entry dictionary", "cases": 14, "accuracy": 92.9, "correct": 13},
-    {"id": "J", "name": "RAG + 80-entry dictionary (BEST 14-case)", "cases": 14, "accuracy": 100.0, "correct": 14},
-    {"id": "K", "name": "Config J on 42 cases", "cases": 42, "accuracy": 69.0, "correct": 29},
-    {"id": "L", "name": "Cross-encoder re-ranker added to the preceding 42-case run (same day, before K)", "cases": 42, "accuracy": 61.9, "correct": 26, "note": "cross-encoder HURT performance: 28/42 in that run without it, 26/42 with it (manuscript supplement, S17.5)"},
-    {"id": "M", "name": "Config K + 94-entry dictionary (BEST 42-case)", "cases": 42, "accuracy": 71.4, "correct": 30}
+  "runs_14_cases": {
+    "phases": {
+      "phase0": "No retrieval",
+      "phase1": "Database candidates in the prompt",
+      "phase2": "+ verification of the answer against the database",
+      "phase3": "+ vocabulary routing",
+      "phase4": "The six approaches of supplement S11, including the abbreviation dictionary (Configuration J)"
+    },
+    "runs": [
+      {"date": "2026-03-20", "result_file": "benchmark_3phase_rag_20260320_130612.json", "cases": 14, "correct": {"phase0": 6, "phase1": 10, "phase2": 10, "phase3": 10, "phase4": 14}},
+      {"date": "2026-03-22", "result_file": "benchmark_3phase_rag_20260322_104655.json", "cases": 14, "correct": {"phase0": 5, "phase1": 9, "phase2": 9, "phase3": 10, "phase4": 14}}
+    ],
+    "note": "Table S11 names the 22 March file for Configuration J and takes the path partition of the 14 cases from phase 4 of the 20 March file: 8 by the confidence-gated database path, 6 by model-mediated paths (supplement S11, S17.5). Table S11 reports Configuration H as phase 3 of an earlier run (benchmark_3phase_rag_20260320_110529.json, 10/14)."
+  },
+  "configs_42_cases": [
+    {"id": "K", "name": "Expanded dictionary; ICD-10-PCS routed to Vocab2; ICD-11 import", "cases": 42, "correct": 29, "accuracy": 69.0, "result_file": "benchmark_3phase_rag_20260323_184147.json (phase 4)"},
+    {"id": "L", "name": "Cross-encoder re-ranker (ms-marco-MiniLM-L-6-v2), in the run that preceded K on the same day", "cases": 42, "correct": 26, "accuracy": 61.9, "result_file": "benchmark_3phase_rag_20260323_173515.json (phase 4)", "note": "28/42 in the preceding run without the re-ranker (benchmark_3phase_rag_20260323_154902.json, phase 4); E-LOINC-01 and E-LOINC-03 lost, none gained (supplement S11)"},
+    {"id": "M", "name": "94-entry abbreviation dictionary (the script in this folder)", "cases": 42, "correct": 30, "accuracy": 71.4, "result_file": "benchmark_3phase_rag_20260324_114358.json and benchmark_3phase_rag_20260324_121448.json (phase 4 only)"}
   ],
   "key_findings": [
-    "Baseline LLM (no RAG): 42.9% accuracy — confirms LLMs cannot reliably look up exact terminology codes",
-    "ChromaDB RAG: 78.6% (+35.7pp) — vector retrieval dramatically improves code lookup",
-    "Abbreviation dictionary: 92.9-100% on focused 14-case set — domain knowledge bridges the last gap",
-    "Extended 42-case set: 71.4% (Config M) — reveals limitations with complex disambiguation and cross-mapping",
-    "Cross-encoder reranking HURT: 28/42 -> 26/42 (-4.8pp) on the preceding 42-case run — lexical/rule-based approaches outperform semantic re-ranking for exact code matching",
-    "100% reproducibility confirmed across 2 independent runs on 14-case set"
+    "Phase 0 (no retrieval): 6/14 (42.9%) and 5/14 in the two 14-case runs",
+    "Phases 1-3 (database candidates, verification, vocabulary routing): 9-10/14 (64.3-71.4%)",
+    "Phase 4 (Configuration J): 14/14 in both runs; in the 20 March run, 8 of the 14 by the confidence-gated database path and 6 by model-mediated paths, 3 of them with an ICD-10-CM code the model emitted from memory, one never confirmed in the database (supplement S11, S17.5)",
+    "Extended 42-case set: 29/42 (K), 26/42 (L), 30/42 (M, 71.4%)",
+    "A general-purpose cross-encoder re-ranker (ms-marco-MiniLM-L-6-v2) lowered accuracy from 28/42 to 26/42 (-4.8pp) in a single run; a cross-encoder trained on clinical query-code pairs was not tested (supplement S11)",
+    "Scoring: 1 of the 14 and 2 of the 42 cases are scored by a response-length threshold, and 2 further extended cases on a placeholder answer (supplement S11.1)",
+    "Re-runs: the two 14-case runs agree in phases 3 and 4 and differ in phases 0-2; no invariance is claimed (supplement S11.1)"
   ],
   "timestamp": "2026-03-24",
-  "reproducibility": "Run 1 and Run 2 both produced identical results (14/14 = 100%) with Config J"
+  "updated": "2026-10-06"
 }
