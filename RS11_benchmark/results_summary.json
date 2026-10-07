@@ -3,7 +3,7 @@
   "paper": "Santos RL, Coutinho-Almeida J, Cruz-Correia RJ. A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An AI-Assisted Evidence Synthesis with Supplementary Empirical Evaluation.",
   "status": "Manuscript to be submitted to the International Journal of Medical Informatics (prior submission reference: IJMEDI-D-26-01592)",
   "doi": "not yet assigned",
-  "scheme_note": "AUTHORITATIVE SOURCE: the manuscript supplement (Table S11 and note S11.1) is authoritative for configuration letters, case counts and mechanisms. This file gives the phases of the two archived 14-case runs of benchmark_3phase_rag.py (phase 4 = Configuration J) and Configurations K, L and M (phase 4), each with its result file; the result files are available on request (supplement S11). Until 2026-10-06 this file listed a package series A-M whose stages B-I no archived run reproduces; that series was replaced.",
+  "scheme_note": "AUTHORITATIVE SOURCE: the manuscript supplement (Table S11 and note S11.1) is authoritative for configuration letters, case counts and mechanisms. This file gives the five phases of the two archived 14-case runs of benchmark_3phase_rag.py whose phase 4 is Configuration J, and phase 4 of Configurations K, L and M, each with its result file; the result files are available on request (supplement S11). Configurations H, J, K and L were run with earlier versions of the script in this folder, and the two phase-4 runs of Configuration M with a harness that is not archived (supplement S11). Until 2026-10-06 this file listed a package series A-M whose stages B-I no archived run reproduces; that series was replaced.",
   "model": "Qwen3.5-4B (4-bit quantized, Apple M1 16GB)",
   "hardware": "Apple M1 MacBook Pro (MacBookPro17,1), 16GB unified memory, macOS Darwin 25.3.0",
   "chromadb_collections": {
@@ -31,22 +31,22 @@
       {"date": "2026-03-20", "result_file": "benchmark_3phase_rag_20260320_130612.json", "cases": 14, "correct": {"phase0": 6, "phase1": 10, "phase2": 10, "phase3": 10, "phase4": 14}},
       {"date": "2026-03-22", "result_file": "benchmark_3phase_rag_20260322_104655.json", "cases": 14, "correct": {"phase0": 5, "phase1": 9, "phase2": 9, "phase3": 10, "phase4": 14}}
     ],
-    "note": "Table S11 names the 22 March file for Configuration J and takes the path partition of the 14 cases from phase 4 of the 20 March file: 8 by the confidence-gated database path, 6 by model-mediated paths (supplement S11, S17.5). Table S11 reports Configuration H as phase 3 of an earlier run (benchmark_3phase_rag_20260320_110529.json, 10/14)."
+    "note": "Table S11 gives both files for Configuration J (14/14 in both); the path partition of the 14 cases is that of phase 4 of the 20 March file: 8 by the confidence-gated database path, 6 by model-mediated paths (supplement S11, S17.5). Table S11 reports Configuration H as phase 3 of an earlier run (benchmark_3phase_rag_20260320_110529.json, 10/14)."
   },
   "configs_42_cases": [
     {"id": "K", "name": "Expanded dictionary; ICD-10-PCS routed to Vocab2; ICD-11 import", "cases": 42, "correct": 29, "accuracy": 69.0, "result_file": "benchmark_3phase_rag_20260323_184147.json (phase 4)"},
     {"id": "L", "name": "Cross-encoder re-ranker (ms-marco-MiniLM-L-6-v2), in the run that preceded K on the same day", "cases": 42, "correct": 26, "accuracy": 61.9, "result_file": "benchmark_3phase_rag_20260323_173515.json (phase 4)", "note": "28/42 in the preceding run without the re-ranker (benchmark_3phase_rag_20260323_154902.json, phase 4); E-LOINC-01 and E-LOINC-03 lost, none gained (supplement S11)"},
-    {"id": "M", "name": "94-entry abbreviation dictionary (the script in this folder)", "cases": 42, "correct": 30, "accuracy": 71.4, "result_file": "benchmark_3phase_rag_20260324_114358.json and benchmark_3phase_rag_20260324_121448.json (phase 4 only)"}
+    {"id": "M", "name": "94-entry abbreviation dictionary, in a harness that is not archived", "cases": 42, "correct": 30, "accuracy": 71.4, "result_file": "benchmark_3phase_rag_20260324_114358.json and benchmark_3phase_rag_20260324_121448.json (phase 4 only)", "note": "Both result files hold phase 4 only (30/42 each), with the keys config (M) and dict_size (94), and no committed version of benchmark_3phase_rag.py writes dict_size; the script in this folder is the version committed after these runs, with a security patch of 11 August 2026 (supplement S11)"}
   ],
   "key_findings": [
-    "Phase 0 (no retrieval): 6/14 (42.9%) and 5/14 in the two 14-case runs",
-    "Phases 1-3 (database candidates, verification, vocabulary routing): 9-10/14 (64.3-71.4%)",
+    "Phase 0 (no retrieval): 6/14 (42.9%) and 5/14 in the two runs whose phase 4 is Configuration J",
+    "Phases 1-3 (database candidates, verification, vocabulary routing): 9-10/14 (64.3-71.4%) in the same two runs",
     "Phase 4 (Configuration J): 14/14 in both runs; in the 20 March run, 8 of the 14 by the confidence-gated database path and 6 by model-mediated paths, 3 of them with an ICD-10-CM code the model emitted from memory, one never confirmed in the database (supplement S11, S17.5)",
     "Extended 42-case set: 29/42 (K), 26/42 (L), 30/42 (M, 71.4%)",
     "A general-purpose cross-encoder re-ranker (ms-marco-MiniLM-L-6-v2) lowered accuracy from 28/42 to 26/42 (-4.8pp) in a single run; a cross-encoder trained on clinical query-code pairs was not tested (supplement S11)",
     "Scoring: 1 of the 14 and 2 of the 42 cases are scored by a response-length threshold, and 2 further extended cases on a placeholder answer (supplement S11.1)",
-    "Re-runs: the two 14-case runs agree in phases 3 and 4 and differ in phases 0-2; no invariance is claimed (supplement S11.1)"
+    "Re-runs: the two runs of Configuration J agree in phases 3 and 4 and differ in phases 0-2; the nine archived runs of the script on the 14 focused cases, made between 19 and 22 March 2026 while it was under development, recorded phase 3 at 57.1-78.6%; no invariance is claimed (supplement S11.1)"
   ],
   "timestamp": "2026-03-24",
-  "updated": "2026-10-06"
+  "updated": "2026-10-07"
 }
