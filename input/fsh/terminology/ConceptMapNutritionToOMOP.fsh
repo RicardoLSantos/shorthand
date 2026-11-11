@@ -35,7 +35,7 @@ Usage: #definition
 * status = #draft
 * experimental = true
 * date = "2026-01-12"
-* publisher = "FMUP HEADS2"
+* publisher = "Ricardo Lourenço dos Santos, FMUP"
 * name = "ConceptMapNutritionToOMOP"
 // ConceptMap.source MUST be a ValueSet per FHIR R4 (IG Publisher 2.0.28+)
 // The ValueSet uses explicit code enumeration to avoid tx.fhir.org expansion issues

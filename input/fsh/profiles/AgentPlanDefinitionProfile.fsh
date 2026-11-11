@@ -272,7 +272,7 @@ Description: "Example plan definition for agent-based HRV risk assessment"
 * status = #draft
 * experimental = true
 * date = "2026-01-25"
-* publisher = "FMUP HEADS2 Project"
+* publisher = "Ricardo Lourenço dos Santos, FMUP"
 * description = "Decision logic for LLM agent assessment of HRV data for cardiovascular risk stratification. Uses RMSSD thresholds from Shaffer & Ginsberg 2017."
 
 * topic[0] = AgentDecisionSupportCS#hrv-monitoring "HRV Monitoring"

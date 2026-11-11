@@ -32,7 +32,7 @@ ATHENA_CONCEPT_PATH = os.path.join(
     os.path.dirname(os.path.dirname(__file__)), "data", "athena", "CONCEPT.csv"
 )
 
-# Known unmapped wearable metrics (thesis gap analysis)
+# Known unmapped wearable metrics (gap analysis)
 UNMAPPED_WEARABLE_METRICS = {
     "RMSSD": {
         "description": "Root Mean Square of Successive Differences (HRV)",
@@ -327,7 +327,7 @@ class TerminologyRAG:
     def suggest_for_unmapped(self, metric_name: str) -> dict:
         """Get suggestions for known unmapped wearable metrics.
 
-        Enhanced with domain knowledge from thesis gap analysis.
+        Enhanced with domain knowledge from the gap analysis.
         """
         info = UNMAPPED_WEARABLE_METRICS.get(metric_name, {})
         if not info:

@@ -33,7 +33,7 @@ Usage: #definition
 * status = #draft
 * experimental = true
 * date = "2026-09-16"
-* publisher = "FMUP HEADS2"
+* publisher = "Ricardo Lourenço dos Santos, FMUP"
 * name = "ConceptMapSocialToLOINC"
 // ARCHITECTURE NOTE (2026-01-16): sourceUri/targetCanonical REMOVED
 // Pattern: Following majority of IG ConceptMaps that omit source/target at instance level

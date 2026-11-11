@@ -127,8 +127,6 @@ grep "openehr" output/qa.txt | wc -l
 
 ## Related Documentation
 
-- [OCL_IMPLEMENTATION_PLAN_20260130.md](../../../knowledge_base/plans/OCL_IMPLEMENTATION_PLAN_20260130.md) - Detailed plan from Terminal 1
-- [VRF-TECH-017](../../../knowledge_base/verifications/TECHNICAL/VRF-TECH-017_IPS_NOTE_EXTENSION_ERROR_RESEARCH_20260130.md) - IPS error research
 - [OCL Documentation](https://docs.openconceptlab.org/en/latest/)
 - [OCL FHIR API](https://docs.openconceptlab.org/en/latest/oclfhir/overview.html)
 
