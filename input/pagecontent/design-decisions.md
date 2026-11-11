@@ -143,3 +143,28 @@ A single cross-jurisdictional artifact set reduces maintenance, ensures consiste
 
 ### Implementation Order
 CFM 2.454 → LGPD → EU AI Act → SBIS → GDPR → HIPAA (~60h total estimated)
+
+## 7. IPS as the Exchange Baseline; IPA and the European Patient Summary (2026-11-11)
+
+### Decision
+Base the guide's exchange layer on the International Patient Summary (IPS) and do not declare conformance to the International Patient Access (IPA) guide.
+
+### Context
+The two HL7 International guides answer different questions. IPA "describes how an application acting on behalf of a patient can access information about the patient from a clinical records system using a FHIR R4 based API" (IPA 1.1.0, STU 1): it is an access specification. IPS defines the content of a summary: "The IPS dataset is minimal and non-exhaustive; specialty-agnostic and condition-independent; but still clinically relevant", and it is designed for "unplanned, cross border care" (IPS 2.0.1, STU 2). This guide defines content (profiles for wearable and lifestyle observations), depends on IPS 2.0.1, and does not depend on IPA.
+
+In Europe, the HL7 Europe Patient Summary (`hl7.fhir.eu.eps` 1.0.0-ballot, STU 1 Ballot 1, draft as of 2026-06-06) "aims conformance with the HL7 FHIR International Patient Summary (IPS) Implementation Guide, version 2.0.0, and with the HL7 FHIR EU Core profiles". IPA 1.1.0 appears in its dependency tree.
+
+The European Health Data Space Regulation (Regulation (EU) 2025/327) names patient summaries as the first priority category of personal electronic health data for primary use (Article 14(1)(a)), to be exchanged in the European electronic health record exchange format; for that category its provisions apply from 26 March 2029 (Article 105, point (a)).
+
+### Options Considered
+1. IPS as the exchange baseline (chosen).
+2. Declare IPA conformance as well.
+3. Depend directly on the HL7 Europe Patient Summary.
+
+### Rationale
+- IPS is the content model, and the European specification builds on it: content aligned with IPS stays aligned with the European patient summary.
+- IPA is an API-access contract that this guide does not implement; conformance to it belongs to the systems that serve the data.
+- The HL7 Europe Patient Summary is a ballot draft, not yet a published standard.
+
+### Evidence
+Dependencies in `sushi-config.yaml`; the IPA 1.1.0 and IPS 2.0.1 home pages (hl7.org) and the HL7 Europe Patient Summary home and introduction pages (hl7.eu), read on 2026-11-11.

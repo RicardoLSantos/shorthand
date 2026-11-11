@@ -110,7 +110,7 @@ This Implementation Guide follows a layered semantic architecture:
 │  EXCHANGE LAYER                                                 │
 │  FHIR Profiles (with bindings to LOINC/SNOMED)                  │
 │  - REST interoperability                                        │
-│  - IPS/IPA conformance                                          │
+│  - IPS conformance                                              │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
