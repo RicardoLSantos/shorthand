@@ -288,9 +288,9 @@ shorthand/
 
 ---
 
-## Companion projects — parallel work, outside the scope of this IG and of the thesis
+## Companion projects — parallel work, outside the scope of this IG
 
-The projects below are developed in parallel by the same author. They are not thesis deliverables and are not released as software packages; the thesis documents some of them only as proofs of concept. They are listed because each has an integration hook into this IG. Status measured on 23 September 2026.
+The projects below are developed in parallel by the same author. They are not part of this IG and are not released as software packages. They are listed because each has an integration hook into this IG. Status measured on 23 September 2026.
 
 | Track | What it does | Hook into this IG | Status |
 |---|---|---|---|
@@ -370,7 +370,7 @@ We track anonymous clone statistics via GitHub Insights — if you're using the 
 
 ### Stay Updated
 
-This IG is actively developed as part of a PhD thesis at FMUP. To be notified of releases:
+This IG is actively developed at the Faculty of Medicine, University of Porto. To be notified of releases:
 
 1. Click **Watch** (top right) and select "Releases only"
 2. Or check the [terminology-RAG benchmark](RS11_benchmark/) for our reproducible terminology validation toolkit
