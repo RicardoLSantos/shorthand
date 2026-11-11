@@ -1,7 +1,7 @@
 // ============================================================================
 // AuditEvent Data Access Profile
 // ============================================================================
-// Date: 2026-05-07 (T2 S20 Caminho C — IG v0.3.0 sprint partial)
+// Date: 2026-05-07 (IG v0.3.0 sprint partial)
 // Purpose: General-purpose AuditEvent profile for logging data access,
 //          disclosure, and modification events under LGPD/GDPR/HIPAA frameworks.
 //          Complements AuditEventAIInteraction (which is AI/CDSS-specific).
@@ -10,9 +10,9 @@
 //             HIPAA Privacy Rule §164.528 (accounting of disclosures)
 //             ISO 27799 (health informatics security management)
 // ============================================================================
-// NOTE (T2 S20): FSH written without IG build validation due to local disk
+// NOTE: FSH written without IG build validation due to local disk
 //                constraint. Pending validation: build via _genonce.sh when
-//                disk recovery (Pitfall #65, ≥5GB free) achieved.
+//                disk recovery (≥5GB free) achieved.
 // ============================================================================
 
 Profile: AuditEventDataAccess

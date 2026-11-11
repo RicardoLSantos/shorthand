@@ -1,7 +1,7 @@
 // ============================================================================
 // CDS Hooks Service Declaration
 // ============================================================================
-// Date: 2026-05-07 (T2 S20 Caminho C — IG v0.3.0 sprint partial)
+// Date: 2026-05-07 (IG v0.3.0 sprint partial)
 // Purpose: Declare CDS Hooks 2.0 service definitions for lifestyle medicine
 //          decision support integration. Apps can subscribe to clinical events
 //          (patient-view, order-sign, medication-prescribe) and receive
@@ -11,9 +11,9 @@
 //            already define CDS-style assistance; this declares the
 //            HTTP/JSON discovery endpoint for external CDS consumers.
 // ============================================================================
-// NOTE (T2 S20): FSH written without IG build validation due to local disk
+// NOTE: FSH written without IG build validation due to local disk
 //                constraint. Pending validation: build via _genonce.sh when
-//                disk recovery (Pitfall #65, ≥5GB free) achieved.
+//                disk recovery (≥5GB free) achieved.
 // ============================================================================
 
 // ============================================================================

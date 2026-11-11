@@ -1,5 +1,5 @@
 // =============================================================================
-// DESIGN NOTE (VRF-TECH-027, 2026-02-19):
+// DESIGN NOTE (2026-02-19):
 // This file previously contained 6 CodeSystems with 0 references:
 // - MindfulnessAlertTypeCS, MindfulnessConfigTypeCS, MindfulnessScheduleTypeCS
 // - MindfulnessAuditTypeCS, MobilityAssessmentMethodCS, MindfulnessMessageEventsCS

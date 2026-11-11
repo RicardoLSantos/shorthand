@@ -508,7 +508,7 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #last-use-date "Date of last substance use" "Date when a substance was last used"
 * #substance-use-summary "Substance use summary" "Comprehensive summary of all substance use patterns for lifestyle medicine assessment"
 * #substance-risk-level "Overall substance use risk level" "Aggregate risk assessment based on all substance use patterns"
-* #hrv-inflammation-correlation "HRV-Inflammation correlation assessment" "Assessment of the correlation between heart rate variability metrics (especially RMSSD) and inflammatory biomarkers (CRP, IL-6). Based on RS1 systematic review finding: inverse correlation between vagal tone and systemic inflammation via cholinergic anti-inflammatory pathway (Tracey 2002)."
+* #hrv-inflammation-correlation "HRV-Inflammation correlation assessment" "Assessment of the correlation between heart rate variability metrics (especially RMSSD) and inflammatory biomarkers (CRP, IL-6). The published evidence reports weak inverse associations between HRV and inflammatory markers (Williams 2019); the proposed mechanism is the cholinergic anti-inflammatory pathway (Tracey 2002)."
 
 // --- Domain: living (from LivingSituationCS) — PARTIALLY SUPERSEDED (2026-02-27) ---
 // SUPERSEDED by SNOMED: alone→105529008, with-spouse→447051007, with-family→224133007, nursing-home→160734000, homeless→160700001

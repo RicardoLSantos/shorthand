@@ -2,12 +2,12 @@
 // SHARED QUALIFIER VALUE SETS - SNOMED CT References
 // =============================================================================
 // Date: 2026-02-19
-// Reference: VRF-TECH-027 Session 3, INTERVENTION_SNOMED_CODE_REPLACEMENT_20260219.md
+// Reference: SNOMED code replacement review (2026-02-19)
 // Purpose: Replace duplicated custom qualifier codes with standard SNOMED CT codes
 //
 // DESIGN RATIONALE:
 // - FSH Quickstart (lines 823-825): "Avoid creating new CodeSystem if possible"
-// - RS11 Database-First Protocol: Use tx.fhir.org verified SNOMED codes
+// - Database-First Protocol: Use tx.fhir.org verified SNOMED codes
 // - Reduces CodeSystem fragmentation (102 qualifier codes across 16 keywords)
 // - Improves interoperability with any SNOMED-compatible system
 //
@@ -146,7 +146,7 @@ Verified against tx.fhir.org 2026-02-19.
 * http://snomed.info/sct#255605001 "Minimal (qualifier value)"
 * http://snomed.info/sct#6736007 "Moderate (severity modifier)"
 * http://snomed.info/sct#56851009 "Maximum (qualifier value)"
-* http://snomed.info/sct#371154000 "Dependent (qualifier value)" // T2 S33 VRF-TERM-018: 182891003 was "Patient misunderstood treatment instructions"; 371154000 is the correct sibling of Independent (371153006)
+* http://snomed.info/sct#371154000 "Dependent (qualifier value)" // 182891003 was "Patient misunderstood treatment instructions"; 371154000 is the correct sibling of Independent (371153006)
 
 
 // -----------------------------------------------------------------------------
@@ -169,7 +169,7 @@ Verified against tx.fhir.org 2026-02-19.
 * ^date = "2026-02-19"
 * ^publisher = "FMUP/2RDoc"
 
-* http://snomed.info/sct#255545003 "Definite (qualifier value)" // T2 S33 VRF-TERM-018: 410592001 was "Probably present"
+* http://snomed.info/sct#255545003 "Definite (qualifier value)" // 410592001 was "Probably present"
 * http://snomed.info/sct#75540009 "High (qualifier value)"
 * http://snomed.info/sct#6736007 "Moderate (severity modifier)"
 * http://snomed.info/sct#62482003 "Low (qualifier value)"
@@ -197,7 +197,7 @@ Verified against tx.fhir.org 2026-02-19.
 
 * http://snomed.info/sct#17621005 "Normal (qualifier value)"
 * http://snomed.info/sct#263654008 "Abnormal (qualifier value)"
-* http://snomed.info/sct#371932001 "Borderline normal (qualifier value)" // T2 S33 VRF-TERM-018: 442096005 was "Measurement finding outside reference range"
+* http://snomed.info/sct#371932001 "Borderline normal (qualifier value)" // 442096005 was "Measurement finding outside reference range"
 * http://snomed.info/sct#261665006 "Unknown (qualifier value)"
 
 

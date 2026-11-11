@@ -8,14 +8,14 @@
 //          interactions between a prescribed medication and dietary/lifestyle
 //          factors (e.g., MAOI + tyramine-rich diet, SSRI + alcohol,
 //          anticoagulant + Vitamin K-rich foods).
-// Context: Closes the FHIR Intermediate course M4 (CDS Hooks) loop for G1 —
+// Context: Closes the FHIR Intermediate course M4 (CDS Hooks) loop
 //          CDSHooksServiceDeclaration.fsh declares a medication-prescribe hook;
 //          this profile is what that hook's context resource conforms to.
 // Regulatory: CFM 2.454/2026 Art. 7 (physician autonomy over prescribing);
 //             EU AI Act Art. 14 (human oversight of AI-surfaced interactions).
-// Authorship: T1 S44 (Path 4b reopened for the G1 gate). Interaction codes are
+// Interaction codes are
 //             local (DrugLifestyleInteractionCS) - NO external LOINC/SNOMED
-//             codes asserted (Database-First, Pitfall #33). Medication and
+//             codes asserted (Database-First). Medication and
 //             reason bindings inherit the FHIR R4 base ValueSets.
 // ============================================================================
 

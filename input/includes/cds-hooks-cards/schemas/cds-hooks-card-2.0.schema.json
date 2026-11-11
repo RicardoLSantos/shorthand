@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://2rdoc.pt/ig/ios-lifestyle-medicine/schemas/cds-hooks-card-2.0.schema.json",
   "title": "CDS Hooks 2.0 Card",
-  "$comment": "Faithful local Draft-07 encoding of the CDS Hooks 2.0 Card object (https://cds-hooks.org/specification/current/#card-attributes). The official site does NOT publish a standalone Card JSON Schema: https://cds-hooks.org/schemas/2.0/Card.json returned HTTP 404 on 2026-06-09. This vendored schema is maintained by the IG to pre-commit/CI-validate the IG's own Card examples. additionalProperties is false at the Card level (catches the 'sources'-plural typo of Pitfall #95); nested FHIR objects (resource, topic) stay permissive. AUTHORED-BY-CLAUDE-T1-S55 (Pitfall #97).",
+  "$comment": "Faithful local Draft-07 encoding of the CDS Hooks 2.0 Card object (https://cds-hooks.org/specification/current/#card-attributes). The official site does NOT publish a standalone Card JSON Schema: https://cds-hooks.org/schemas/2.0/Card.json returned HTTP 404 on 2026-06-09. This vendored schema is maintained by the IG to pre-commit/CI-validate the IG's own Card examples. additionalProperties is false at the Card level (catches the 'sources'-plural typo); nested FHIR objects (resource, topic) stay permissive.",
   "type": "object",
   "additionalProperties": false,
   "required": ["summary", "indicator", "source"],

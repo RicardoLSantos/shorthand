@@ -1,4 +1,3 @@
-<!-- AUTHORED-BY-CLAUDE-T1-S48 (Pitfall #97) · IG narrative · pasted at v0.4.1 release (T1 S49) -->
 
 # Vocabularies and Value Sets Catalog
 
@@ -66,7 +65,7 @@ Large language models have a high error rate on **exact** terminology lookup, so
 4. Verify **active status** (a code can exist but be inactive/deprecated).
 5. A model may only suggest *search terms* or disambiguate *candidates*; it never supplies the code.
 
-This discipline is applied not only to profiles but to **ConceptMap targets and CodeSystem members** — the same surfaces where a wrong-but-valid code is invisible to the FHIR validator (the build passes; the meaning is wrong). The audit findings and remediations are tracked under `VRF-TERM-018`.
+This discipline is applied not only to profiles but to **ConceptMap targets and CodeSystem members** — the same surfaces where a wrong-but-valid code is invisible to the FHIR validator (the build passes; the meaning is wrong). The audit findings and remediations are listed in the [change log](changes.html).
 
 ## 6. The advanced-metric gap and provisional codes
 

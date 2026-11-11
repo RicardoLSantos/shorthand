@@ -57,7 +57,7 @@ Supported Devices:
 * group[0].unmapped.display = "No OMOP concept - requires custom vocabulary extension"
 
 // ============================================================================
-// Steps - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Steps - VERIFIED via Athena LOINC lookup 2026-03-20
 // Previous 40771089 was HALLUCINATED (actually = "What language do you feel most comfortable speaking" SAMHSA)
 // ============================================================================
 * group[0].element[0].code = #55423-8
@@ -75,7 +75,7 @@ VERIFIED via Athena CONCEPT.csv LOINC 55423-8 → concept_id 40758552 (2026-03-2
 """
 
 // ============================================================================
-// Exercise Duration - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Exercise Duration - VERIFIED via Athena LOINC lookup 2026-03-20
 // Previous 4272025 was HALLUCINATED (not found in Athena)
 // ============================================================================
 * group[0].element[1].code = #55411-3
@@ -93,7 +93,7 @@ VERIFIED via Athena CONCEPT.csv LOINC 55411-3 → concept_id 40758540 (2026-03-2
 """
 
 // ============================================================================
-// Exercise Intensity - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Exercise Intensity - VERIFIED via Athena LOINC lookup 2026-03-20
 // Previous 4090484 was HALLUCINATED (not found in Athena)
 // ============================================================================
 * group[0].element[2].code = #82290-8
@@ -109,7 +109,7 @@ VERIFIED via Athena CONCEPT.csv LOINC 82290-8 → concept_id 21493653 (2026-03-2
 """
 
 // ============================================================================
-// Calories Burned - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Calories Burned - VERIFIED via Athena LOINC lookup 2026-03-20
 // Previous #0 was FALSE GAP — OMOP concept EXISTS
 // ============================================================================
 * group[0].element[3].code = #41981-2
@@ -128,7 +128,7 @@ Critical for weight management research.
 """
 
 // ============================================================================
-// Distance Traveled - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Distance Traveled - VERIFIED via Athena LOINC lookup 2026-03-20
 // Previous #0 was FALSE GAP — OMOP concept EXISTS
 // ============================================================================
 * group[0].element[4].code = #55430-3

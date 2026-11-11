@@ -1,6 +1,6 @@
 // =============================================================================
 // EU AI ACT (Regulation 2024/1689) — Foundation Profiles, Extensions, ValueSets
-// Created: 2026-04-16 T2 S15
+// Created: 2026-04-16
 // Reference: Regulation (EU) 2024/1689 of the European Parliament and of the
 //            Council of 13 June 2024 (Official Journal L, 2024/1689, 12.7.2024)
 // Gaps covered: EUAI-GAP-01 (Art. 9), EUAI-GAP-02 (Art. 10), EUAI-GAP-03 (Art. 11),

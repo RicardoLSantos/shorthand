@@ -145,7 +145,6 @@ This page provides definitions for abbreviations and acronyms used throughout th
 | **JBI** | Joanna Briggs Institute |
 | **PRISMA** | Preferred Reporting Items for Systematic Reviews and Meta-Analyses |
 | **PROSPERO** | International prospective register of systematic reviews |
-| **RS** | Systematic Review (project-internal numbering: RS0, RS1, ...) |
 | **SR** | Systematic Review |
 
 ---
@@ -154,6 +153,6 @@ This page provides definitions for abbreviations and acronyms used throughout th
 
 - **Capitalisation**: HL7® and FHIR® are registered trademarks; please preserve the registered-trademark symbol when reproducing.
 - **Pluralisation**: Most clinical acronyms (HRV, SDNN, RMSSD) are uncountable; do not append "s" for plurals.
-- **Cross-references**: This page complements the manuscript abbreviation list reproduced in the [companion publication](https://doi.org/10.2139/ssrn.6409027) (RS10). Where the manuscript and the IG diverge in scope, this page is the authoritative source for IG terminology.
+- **Cross-references**: This page complements the manuscript abbreviation list reproduced in the [companion publication](https://doi.org/10.2139/ssrn.6409027). Where the manuscript and the IG diverge in scope, this page is the authoritative source for IG terminology.
 
 For terminology code definitions (e.g., LOINC 80404-7 = "R-R interval — standard deviation"), see the [ConceptMaps](conceptmaps.html) page and the [Inflammatory Markers terminology overview](inflammatory_markers.html).

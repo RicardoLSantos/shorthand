@@ -7,7 +7,7 @@ Description: "Anatomical locations for symptom recording"
 * $SCT#69536005 "Head"
 * $SCT#45048000 "Neck"
 * $SCT#51185008 "Chest"
-// T2 S33 VRF-TERM-018: 62413002 was "Radius" (not Abdomen) → 818983003 "Abdomen"; 32849002 was "Esophagus" (not Back) → 281213008 "Back structure".
+// 62413002 was "Radius" (not Abdomen) → 818983003 "Abdomen"; 32849002 was "Esophagus" (not Back) → 281213008 "Back structure".
 * $SCT#818983003 "Abdomen"
 * $SCT#281213008 "Back structure, including back of neck"
 * $SCT#53120007 "Upper limb"

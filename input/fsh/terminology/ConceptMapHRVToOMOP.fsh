@@ -2,14 +2,14 @@
 // Created: 2025-11-28
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Purpose: Enable HRV data transformation from FHIR (LOINC-coded) to OMOP CDM
-// Context: PhD Thesis - RS4 FHIR-OMOP ETL systematic review finding
+// Context: HRV LOINC to OMOP mapping
 // CORRECTED 2026-03-20: Previous 37547368 was HALLUCINATED (not found in Athena CONCEPT.csv)
 // Correct OMOP concept_id: 21491502 (verified via Athena LOINC 80404-7 lookup)
 
 Instance: ConceptMapHRVToOMOP
 InstanceOf: ConceptMap
 Title: "HRV LOINC to OMOP CDM Mapping"
-Description: "Maps HRV metrics from LOINC codes to OMOP CDM concept_ids for ETL transformation pipelines. Verified against OHDSI Athena vocabulary. Critical finding from RS4 systematic review: ZERO documented implementations of HRV-OMOP transformation in 354 papers - this ConceptMap addresses that gap."
+Description: "Maps HRV metrics from LOINC codes to OMOP CDM concept_ids for ETL transformation pipelines. Verified against OHDSI Athena vocabulary."
 Usage: #definition
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapHRVToOMOP"
@@ -26,8 +26,7 @@ Usage: #definition
 * description = """
 Maps HRV (Heart Rate Variability) metrics from LOINC codes to OMOP CDM concepts for federated analytics.
 
-Key Findings from RS4 Systematic Review (354 papers analyzed):
-- ZERO documented HRV-OMOP transformations in peer-reviewed literature
+Coverage in the OMOP vocabulary (Athena):
 - Only ONE OMOP concept available: 21491502 (SDNN via LOINC 80404-7)
 - CRITICAL GAP: RMSSD, pNN50, LF/HF have NO OMOP concepts (concept_id = 0)
 
@@ -57,7 +56,7 @@ Target OMOP Table: MEASUREMENT
 * group[0].unmapped.display = "No OMOP concept - requires custom vocabulary extension"
 
 // ============================================================================
-// SDNN - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// SDNN - VERIFIED via Athena LOINC lookup 2026-03-20
 // Previous 37547368 was HALLUCINATED (not found in Athena CONCEPT.csv)
 // ============================================================================
 * group[0].element[0].code = #80404-7

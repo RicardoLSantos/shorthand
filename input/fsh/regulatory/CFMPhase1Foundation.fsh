@@ -1,6 +1,6 @@
 // =============================================================================
 // CFM Resolution 2.454/2026 — Phase 1: ValueSets + Extensions
-// Created: 2026-03-28 T1 S15
+// Created: 2026-03-28
 // Reference: CFM Resolution 2.454/2026 (effective August 2026)
 // Gaps covered: CFM-GAP-01, CFM-GAP-03, CFM-GAP-07
 // =============================================================================

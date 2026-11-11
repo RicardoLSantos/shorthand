@@ -1,7 +1,7 @@
 // ============================================================================
 // SMART on FHIR Conformance Declaration
 // ============================================================================
-// Date: 2026-05-07 (T2 S20 Caminho C — IG v0.3.0 sprint partial)
+// Date: 2026-05-07 (IG v0.3.0 sprint partial)
 // Purpose: Declare SMART on FHIR App Launch conformance for the IG.
 //          External apps need OAuth 2.0 authorization endpoints discoverable
 //          via the CapabilityStatement to integrate with a server claiming
@@ -10,9 +10,9 @@
 // Companion: existing LifestyleMedicineCapabilityStatement.fsh declares
 //            FHIR resource capabilities; this declaration adds SMART auth.
 // ============================================================================
-// NOTE (T2 S20): FSH written without IG build validation due to local disk
+// NOTE: FSH written without IG build validation due to local disk
 //                constraint. Pending validation: build via _genonce.sh when
-//                disk recovery (Pitfall #65, ≥5GB free) achieved.
+//                disk recovery (≥5GB free) achieved.
 // ============================================================================
 
 // ============================================================================

@@ -1,7 +1,7 @@
 // ============================================================================
 // Lifestyle Medicine ETL Batch Bundle Profile
 // ============================================================================
-// Date: 2026-05-15 (T2 S24 — Tier 1B Profile #1)
+// Date: 2026-05-15 (Tier 1B Profile #1)
 // Purpose: Profile Bundle resource for batch ETL operations from vendor APIs
 //          into the Lifestyle Medicine IG. Defines the FHIR-side contract for
 //          patient-data-pipeline batch insertion, with explicit provenance
@@ -10,15 +10,15 @@
 // Reference:
 //   - FHIR R4 Bundle: https://hl7.org/fhir/R4/bundle.html
 //   - Bundle.type = #batch semantics
-//   - PGHDProvenance: see ProvenanceProfile.fsh (T2 S22, 2025-11-25)
-//   - AuditEventDataAccess: see AuditEventDataAccess.fsh (T2 S20, 2026-05-07)
+//   - PGHDProvenance: see ProvenanceProfile.fsh (2025-11-25)
+//   - AuditEventDataAccess: see AuditEventDataAccess.fsh (2026-05-07)
 // Companion:
-//   - Profile #2 WearableMeasurementProvenance (refines PGHDProvenance — T2 S24 spike OR S25)
-//   - Profile #3 PatientDataPipelineCapability (CapabilityStatement — T2 S25)
-//   - Profile #4 LifestyleMedicineGroupETL (extends BulkExportGroup — T2 S25)
-// G2 RS antecedent:
-//   - RS4 (Living SR methodology, Elliott 2017 adaptive search)
-//   - RS13 (FHIRconnect implementation)
+//   - Profile #2 WearableMeasurementProvenance (refines PGHDProvenance)
+//   - Profile #3 PatientDataPipelineCapability (CapabilityStatement)
+//   - Profile #4 LifestyleMedicineGroupETL (extends BulkExportGroup)
+// Antecedents:
+//   - living systematic review methodology (Elliott 2017 adaptive search)
+//   - the companion FHIRconnect implementation
 // ============================================================================
 
 Profile: LifestyleMedicineETLBatch
@@ -40,7 +40,7 @@ The `Bundle.type = #batch` (fixed) semantics enable flexible per-entry processin
 on the FHIR server: each `entry.request.method` independently inserts/updates its
 resource. Failure of one entry does NOT roll back the entire Bundle (unlike
 `type = #transaction`). This matches the best-effort batch ingestion pattern
-used by Living SR (RS4) and FHIRconnect (RS13) wearable ETL pipelines.
+used by wearable ETL pipelines.
 
 Profile constraints (all `MS = mustSupport`):
 
@@ -172,7 +172,7 @@ Description: "Run-level provenance for the LifestyleMedicineETLBatchAppleExample
 // `observations` slice would carry N HRV Observation resources; here we
 // keep the example minimal (1 Observation) for clarity.
 //
-// References reuse existing FSH Instances (Pitfall #101 sub-class B avoidance):
+// References reuse existing FSH Instances (sub-class B avoidance):
 // - PatientExample            (PatientExample.fsh)
 // - AppleWatchDevice          (ProvenanceExamples.fsh:131)
 // - iphone-example            (DeviceExamples.fsh:1)

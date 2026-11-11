@@ -135,7 +135,7 @@ Heart Rate Variability (HRV) demonstrates the IG's dual-coding strategy — LOIN
 }
 ```
 
-> **Note**: RMSSD has no LOINC code (verified against LOINC FHIR API, VRF-TERM-010). The `hrv-rmssd` code from `LifestyleMedicineTemporaryCS` includes a migration trigger for when LOINC assigns a code.
+> **Note**: RMSSD has no LOINC code (verified against the LOINC FHIR API). The `hrv-rmssd` code from `LifestyleMedicineTemporaryCS` includes a migration trigger for when LOINC assigns a code.
 
 ## Architecture Overview
 

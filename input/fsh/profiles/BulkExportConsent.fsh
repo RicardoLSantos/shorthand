@@ -1,7 +1,7 @@
 // ============================================================================
 // Bulk Export Consent Profile (Research-Specific)
 // ============================================================================
-// Date: 2026-05-07 (T2 S20 Caminho C — IG v0.3.0 sprint partial)
+// Date: 2026-05-07 (IG v0.3.0 sprint partial)
 // Purpose: Profile Consent resource for research-specific bulk export
 //          operations. Distinguishes patient consent for clinical care from
 //          patient consent for research bulk export (which has different
@@ -11,9 +11,9 @@
 //            consent) — both profiles co-exist; BulkExportConsent is invoked
 //            specifically when BulkExportGroup is created.
 // ============================================================================
-// NOTE (T2 S20): FSH written without IG build validation due to local disk
+// NOTE: FSH written without IG build validation due to local disk
 //                constraint. Pending validation: build via _genonce.sh when
-//                disk recovery (Pitfall #65, ≥5GB free) achieved.
+//                disk recovery (≥5GB free) achieved.
 // ============================================================================
 
 Profile: BulkExportConsent

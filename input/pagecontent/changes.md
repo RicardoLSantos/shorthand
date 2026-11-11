@@ -154,7 +154,7 @@ All notable changes to this Implementation Guide are documented on this page.
 
 ### Inflammatory Marker Bindings — mitochondria↔inflammation panel
 
-- Added four bridge-cytokine / metabolite Observation profiles binding the Castro-Marrero 2022 (PMID 35229657) mitochondria↔inflammation panel: **IL-1β (LOINC `13629-1`)**, **IL-8 (`33211-4`)**, **IL-10 (`26848-2`)**, and **lactate (`14118-4`)**. IL-1β / IL-8 / IL-10 join the `InflammatoryMarker` ValueSet; **lactate is deliberately kept OUTSIDE the inflammatory ValueSet** (metabolic, not inflammatory). All four codes verified Database-First (Athena, `std=S`) and live-validated against `tx.fhir.org`. Supports the HRV↔inflammation evidence base cited by G1.
+- Added four bridge-cytokine / metabolite Observation profiles binding the Castro-Marrero 2022 (PMID 35229657) mitochondria↔inflammation panel: **IL-1β (LOINC `13629-1`)**, **IL-8 (`33211-4`)**, **IL-10 (`26848-2`)**, and **lactate (`14118-4`)**. IL-1β / IL-8 / IL-10 join the `InflammatoryMarker` ValueSet; **lactate is deliberately kept OUTSIDE the inflammatory ValueSet** (metabolic, not inflammatory). All four codes verified Database-First (Athena, `std=S`) and live-validated against `tx.fhir.org`. Supports the published HRV↔inflammation evidence base.
 
 ### Build
 
@@ -217,14 +217,14 @@ All notable changes to this Implementation Guide are documented on this page.
 
 - **LifestyleMedicationRequest** profile + `DrugLifestyleInteraction` extension — a concrete FHIR resource for the CDS Hooks `drug-lifestyle-interaction` service.
 - New narrative pages (GDL2→CDS Hooks bridge, implementation scope/roadmap, integrated SMART+CDS walkthrough) and two CQL Library doc-pointers.
-- **VRF-TERM-018**: ~26 wrong-concept SNOMED/LOINC codes corrected (right code-system + valid code + *wrong* concept — invisible to the FHIR validator) via Database-First + tx.fhir.org `$validate-code`.
+- **Wrong-concept codes**: ~26 wrong-concept SNOMED/LOINC codes corrected (right code-system + valid code + *wrong* concept — invisible to the FHIR validator) via Database-First + tx.fhir.org `$validate-code`.
 
 ---
 
 ## Version 0.4.0 (2026-05-21)
 
 - **Nutrition OMOP ConceptMap remediation (CN1)**: 11/11 fabricated OMOP `concept_id` mappings corrected via the Database-First Protocol (Athena direct lookup). *Errata*: the immutable v0.3.0 release shipped the pre-remediation map.
-- +4 Profiles (incl. `WearableMeasurementProvenance` and `LifestyleMedicineGroupETL` for population/ETL export) + 11 Extensions; IPS upstream baseline (Pitfall #31) eliminated. This release cleared the 23 IPS-inherited errors but was **not** yet clean: five errors remained (two IG Publisher binding limitations in the ETL Group profiles, three transient terminology-server connectivity errors) together with 137 warnings. Both were cleared in v0.4.1, which is the **first fully clean build** (0 errors / 0 warnings).
+- +4 Profiles (incl. `WearableMeasurementProvenance` and `LifestyleMedicineGroupETL` for population/ETL export) + 11 Extensions; IPS upstream baseline eliminated. This release cleared the 23 IPS-inherited errors but was **not** yet clean: five errors remained (two IG Publisher binding limitations in the ETL Group profiles, three transient terminology-server connectivity errors) together with 137 warnings. Both were cleared in v0.4.1, which is the **first fully clean build** (0 errors / 0 warnings).
 
 ---
 
@@ -244,7 +244,7 @@ All notable changes to this Implementation Guide are documented on this page.
 
 ### OMOP ConceptMap Audit
 
-- **28 corrections** across 6 ConceptMaps (VRF-TERM-017):
+- **28 corrections** across 6 ConceptMaps:
   - 11 hallucinated OMOP concept_ids in OpenEHR ConceptMap
   - 9 corrections in Activity/Sleep/HRV ConceptMaps (5 hallucinated IDs + 4 false GAPs)
   - Sleep quality LOINC corrected: 28323-4 → 95607-8
@@ -336,7 +336,7 @@ All notable changes to this Implementation Guide are documented on this page.
 - Identified 244 codes that should use standard terminologies instead of custom codes
 - Implemented 38 standard code substitutions
 
-### RS11 Full Audit (2026-02-20)
+### Full terminology audit (2026-02-20)
 
 - 1,173 custom codes audited against ~2.5M embeddings (8 ChromaDB collections)
 - 97.4% confirmed as genuine terminology gaps

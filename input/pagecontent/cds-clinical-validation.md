@@ -1,4 +1,3 @@
-<!-- AUTHORED-BY-CLAUDE-T1-S48 (Pitfall #97) · IG narrative · pasted at v0.4.1 release (T1 S49) -->
 
 # CDS Clinical Validation
 
@@ -68,7 +67,7 @@ A validated rule decays as its terminology, evidence, and guideline change — k
 
 ## 7. Scope statement
 
-This page specifies a **validation contract and the artifact shapes** that satisfy it (PlanDefinition-based recommendations with graded justification, schema-valid Cards, terminology drift control). The **execution** of decision logic — running CQL, evaluating models, integrating with a live EHR/CDR — is an operational layer documented as future work under RS13 (see [Implementation Scope](implementation-scope-and-roadmap.html)). The IG follows the validation *pattern*; it does not host the *engine*.
+This page specifies a **validation contract and the artifact shapes** that satisfy it (PlanDefinition-based recommendations with graded justification, schema-valid Cards, terminology drift control). The **execution** of decision logic — running CQL, evaluating models, integrating with a live EHR/CDR — is an operational layer documented as future work (see [Implementation Scope](implementation-scope-and-roadmap.html)). The IG follows the validation *pattern*; it does not host the *engine*.
 
 ## Cross-references
 - [CDS Hooks Integration](cds-hooks-integration.html) — the service declarations and Card examples.

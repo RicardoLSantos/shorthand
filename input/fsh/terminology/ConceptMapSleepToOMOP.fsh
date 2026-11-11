@@ -58,7 +58,7 @@ Supported Sleep Trackers:
 * group[0].unmapped.display = "No OMOP concept - requires custom vocabulary extension"
 
 // ============================================================================
-// Sleep Duration - VERIFIED via Athena LOINC lookup 2026-03-20 (VRF-TERM-017)
+// Sleep Duration - VERIFIED via Athena LOINC lookup 2026-03-20
 // Previous 40771110 was HALLUCINATED (actually = "have you used drugs other than medical reasons" SAMHSA)
 // ============================================================================
 * group[0].element[0].code = #93832-4
@@ -76,7 +76,7 @@ VERIFIED via Athena CONCEPT.csv LOINC 93832-4 → concept_id 1002368 (2026-03-20
 """
 
 // ============================================================================
-// Sleep Quality - CORRECTED 2026-03-20 (VRF-TERM-017 Phase 2)
+// Sleep Quality - CORRECTED 2026-03-20
 // Previous 28323-4 was WRONG CODE (actually = "Physical Activity Behavior [OMAHA]")
 // Correct code: 95607-8 = "Sleep quality - 1-5 numeric rating [Score] 24 hour"
 // ============================================================================
@@ -95,7 +95,7 @@ Can complement with vendor-specific sleep scores (Oura, WHOOP) via measurement_s
 """
 
 // ============================================================================
-// Deep Sleep Duration - CORRECTED 2026-03-20 (VRF-TERM-017 Phase 2)
+// Deep Sleep Duration - CORRECTED 2026-03-20
 // Previous display "Sleep efficiency" was WRONG — 93831-6 is "Deep sleep duration"
 // Sleep efficiency has NO LOINC code in Athena (genuine GAP, moved to Group 2 custom)
 // ============================================================================
@@ -155,7 +155,7 @@ Previously marked as GAP (#0) — false negative, concept exists in Athena.
 """
 
 // ============================================================================
-// Light Sleep Duration - CORRECTED 2026-03-20 (VRF-TERM-017 Phase 2)
+// Light Sleep Duration - CORRECTED 2026-03-20
 // Previous display "Number of awakenings" was WRONG — 93830-8 is "Light sleep duration"
 // Actual "Number of awakenings" is LOINC 103211-9 (see element[7] below)
 // ============================================================================
@@ -196,7 +196,7 @@ Previously marked as GAP (#0) — false negative, concept exists in Athena.
 """
 
 // ============================================================================
-// Number of Awakenings - NEW 2026-03-20 (VRF-TERM-017 Phase 2)
+// Number of Awakenings - NEW 2026-03-20
 // Previously element[5] used 93830-8 with wrong display "Number of awakenings"
 // Correct LOINC: 103211-9 = "Number of awakenings"
 // ============================================================================

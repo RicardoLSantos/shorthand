@@ -1,8 +1,6 @@
 This page describes how this Implementation Guide profiles **AI- and LLM-agent-driven clinical decision support** as a *conformance and governance layer*, without embedding any inference runtime in the IG itself. It complements the [Integrated Walkthrough (M4)](smart-cds-integrated-walkthrough.html) — which shows a concrete worked instance — by enumerating the artifact catalogue and the design discipline that backs it.
 
-<!-- AUTHORED-BY-CLAUDE-T1-S47 -->
-
-> **Scope (honest):** Every artifact referenced below is a conformance artifact published by this IG (Profile, Extension, CodeSystem, ValueSet, Instance). The runtime that *executes* AI inference — an LLM serving endpoint, a CQL engine, an agent-orchestration runtime such as MedAgentBench, an embedding store — is **not** part of this IG. The IG provides FHIR shape, governance fields, and conformance contracts; the engines remain external. This is the *adopted-pattern, not embedded-engine* stance documented in [Implementation Scope and Roadmap](implementation-scope-and-roadmap.html) — operational deployment is future work (RS13, post-defense).
+> **Scope (honest):** Every artifact referenced below is a conformance artifact published by this IG (Profile, Extension, CodeSystem, ValueSet, Instance). The runtime that *executes* AI inference — an LLM serving endpoint, a CQL engine, an agent-orchestration runtime such as MedAgentBench, an embedding store — is **not** part of this IG. The IG provides FHIR shape, governance fields, and conformance contracts; the engines remain external. This is the *adopted-pattern, not embedded-engine* stance documented in [Implementation Scope and Roadmap](implementation-scope-and-roadmap.html) — operational deployment is future work.
 
 ### Design discipline (one-sentence summary)
 
@@ -121,7 +119,7 @@ The AI agent profiles (`AgentServiceRequest`, `AgentPlanDefinition`, `AgentTask`
 - It does not provide a CQL engine, a prompt template, or a fine-tuning recipe.
 - It does not provide a model registry — model identity is carried in the `AIInferenceMetadata` extension as opaque text; resolution to a specific model artefact is implementer responsibility (the Hugging Face model card or an internal MLOps registry being typical choices).
 
-All of these are deliberately out of scope and are the substantive content of post-defense work (RS13). The IG's contribution is the **FHIR conformance and governance shape** that any implementation must satisfy to be auditable.
+All of these are deliberately out of scope and are left to implementations. The IG's contribution is the **FHIR conformance and governance shape** that any implementation must satisfy to be auditable.
 
 ### Artefact index for this page
 

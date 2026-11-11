@@ -1,8 +1,8 @@
 // ============================================================================
 // Wearable Measurement Provenance Profile + Supporting Extensions
 // ============================================================================
-// Date: 2026-05-15 (T2 S24 spike — Tier 1B Profile #2)
-// Purpose: Profile specialising PGHDProvenance (T2 S22, 25 Nov 2025) for
+// Date: 2026-05-15 (spike — Tier 1B Profile #2)
+// Purpose: Profile specialising PGHDProvenance (25 Nov 2025) for
 //          per-Observation provenance of wearable-sourced data. Adds the
 //          4 capabilities NOT covered by the parent PGHDProvenance:
 //          (1) firmware version captured at the time of measurement
@@ -10,13 +10,13 @@
 //          (3) explicit time-of-upload (when the data reached the vendor cloud)
 //          (4) transformation lineage chain (raw → derived metrics, recursive)
 // Reference:
-//   - PGHDProvenance: see ProvenanceProfile.fsh (T2 S22)
+//   - PGHDProvenance: see ProvenanceProfile.fsh
 //   - Bayoumy 2021 wearables (cited in parent)
 //   - W3C PROV-DM transformation lineage semantics
-// G2 RS antecedent:
-//   - RS4 (Living SR methodology, Elliott 2017) — per-Observation provenance
+// Antecedents:
+//   - living systematic review methodology (Elliott 2017) — per-Observation provenance
 //     anchors the audit trail required by adaptive search
-//   - RS13 (FHIRconnect implementation) — provenance is one of FHIRconnect's
+//   - the companion FHIRconnect implementation — provenance is one of FHIRconnect's
 //     three layered concerns: clinical fidelity, transformation lineage,
 //     deployment metadata
 // Companion:

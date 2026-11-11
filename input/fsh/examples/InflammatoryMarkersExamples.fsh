@@ -183,12 +183,12 @@ Usage: #example
 // Example 7: Comprehensive Inflammatory Panel
 // =============================================================================
 // Uses LOINC 82335-1 (Cytokines panel) + hasMember for CRP (not in cytokines panel)
-// Based on RS1 systematic review markers: CRP, IL-6, TNF-α
+// Markers: CRP, IL-6, TNF-α
 
 Instance: InflammatoryPanelExample
 InstanceOf: Observation
 Title: "Inflammatory Panel Example"
-Description: "Comprehensive inflammatory marker panel for lifestyle medicine assessment. Combines cytokines panel (IL-6, TNF-α) with CRP measurements per RS1 systematic review findings."
+Description: "Comprehensive inflammatory marker panel for lifestyle medicine assessment. Combines cytokines panel (IL-6, TNF-α) with CRP measurements."
 Usage: #example
 
 * status = #final
@@ -210,7 +210,7 @@ Usage: #example
 * hasMember[2] = Reference(Observation/TNFAlphaExample-Normal)
 * hasMember[2].display = "TNF-α measurement"
 
-* note.text = "Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning based on RS1 systematic review findings on HRV-inflammation inverse correlation."
+* note.text = "Baseline inflammatory panel for lifestyle medicine program enrollment. Combines LOINC cytokines panel (82335-1) with CRP per AHA/CDC guidelines. Results will be correlated with wearable HRV data for personalized intervention planning, given the published inverse association between HRV and inflammatory markers."
 
 // =============================================================================
 // Examples 8-11: Castro-Marrero 2022 bridge cytokines (IL-1β, IL-8, IL-10) + Lactate
@@ -234,7 +234,7 @@ Usage: #example
 * valueQuantity.unit = "pg/mL"
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #pg/mL
-* note.text = "IL-1β within reference interval. Member of the circulating cytokine panel (with IL-6/IL-8/IL-10/TNF-α) captured for the mito-inflammation axis per RS1 / Castro-Marrero 2022."
+* note.text = "IL-1β within reference interval. Member of the circulating cytokine panel (with IL-6/IL-8/IL-10/TNF-α) captured for the mito-inflammation axis (Castro-Marrero 2022)."
 
 Instance: IL8Example-Elevated
 InstanceOf: IL8Observation

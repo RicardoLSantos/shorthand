@@ -49,7 +49,7 @@ Architecture:
 
 // ============================================================================
 // GROUP 1: HRV Archetype → OMOP MEASUREMENT
-// AUDITED 2026-03-19 (VRF-TERM-017): 37547368→21491502, 4272025→3004182, 4058895→4287468
+// AUDITED 2026-03-19: 37547368→21491502, 4272025→3004182, 4058895→4287468
 // ============================================================================
 * group[0].source = "openEHR-EHR-OBSERVATION.heart_rate_variability.v0"
 * group[0].target = "MEASUREMENT"
@@ -120,7 +120,7 @@ Architecture:
 
 // ============================================================================
 // GROUP 2: Physical Activity Archetype → OMOP MEASUREMENT
-// AUDITED 2026-03-19 (VRF-TERM-017): 40771089→40758552, 4149130→40758559, 4074432→21490772, 4090484→3964780/3965425
+// AUDITED 2026-03-19: 40771089→40758552, 4149130→40758559, 4074432→21490772, 4090484→3964780/3965425
 // ============================================================================
 * group[1].source = "openEHR-EHR-OBSERVATION.physical_activity_detailed.v0"
 * group[1].target = "MEASUREMENT"
@@ -178,7 +178,7 @@ Architecture:
 
 // ============================================================================
 // GROUP 3: Sleep Architecture Archetype → OMOP MEASUREMENT
-// AUDITED 2026-03-19 (VRF-TERM-017): 40771110→1002368
+// AUDITED 2026-03-19: 40771110→1002368
 // ============================================================================
 * group[2].source = "openEHR-EHR-OBSERVATION.sleep_architecture.v0"
 * group[2].target = "MEASUREMENT"
@@ -245,7 +245,7 @@ Architecture:
 
 // ============================================================================
 // GROUP 4: Wearable Device Cluster → OMOP DEVICE_EXPOSURE
-// AUDITED 2026-03-19 (VRF-TERM-017): 4044180→0(GAP), 44818707→44818706
+// AUDITED 2026-03-19: 4044180→0(GAP), 44818707→44818706
 // ============================================================================
 * group[3].source = "openEHR-EHR-CLUSTER.wearable_device.v0"
 * group[3].target = "DEVICE_EXPOSURE"

@@ -221,7 +221,7 @@ Higher vagal tone (HRV) associated with lower TNF-α levels.
 // IL-1beta/IL-6/IL-8/IL-10/TNF-alpha (p<0.01), CRP unchanged. These 3 complete the
 // cytokine capture layer of the mito-inflammation axis alongside IL-6 (26881-3) and
 // TNF-alpha (3074-2). Codes Database-First-verified (Athena std=S, 2026-07-11).
-// USER-ratified (Wave 2 §C GO, 2026-07-11). See T1 mito-inflammatory coverage audit.
+// Ratified by the author (2026-07-11).
 // =============================================================================
 
 Profile: IL1BetaObservation
@@ -396,7 +396,7 @@ Description: "LOINC codes for inflammatory biomarkers used in lifestyle medicine
 // (mechanism PMIDs: Naviaux 2016 PNAS, Fluge 2016 pyruvate dehydrogenase, Wang 2023
 // PNAS WASF3). NOT an inflammatory marker -> own profile, deliberately NOT added to
 // InflammatoryMarkerVS. Code Database-First-verified (Athena std=S, 2026-07-11).
-// USER-ratified (Wave 2 §C GO, P2, 2026-07-11).
+// Ratified by the author (2026-07-11).
 // =============================================================================
 
 Profile: LactateObservation

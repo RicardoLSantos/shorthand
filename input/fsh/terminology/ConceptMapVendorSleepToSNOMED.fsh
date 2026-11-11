@@ -1,7 +1,7 @@
 // ConceptMapVendorSleepToSNOMED.fsh
 // Created: 2025-11-29
 // Purpose: Map vendor-specific sleep stage codes to SNOMED CT for cross-vendor interoperability
-// Based on: RS6 SciSpace Gap 5 (Cross-Vendor Interoperability, 10% coverage, 90 severity)
+// Purpose: cross-vendor interoperability of sleep stages
 //
 // Bibliographic References:
 // - Irwin2016Sleep: Sleep Disturbance, Sleep Duration, and Inflammation (Brain Behav Immun 58:1-16)
@@ -128,7 +128,7 @@ Description: "ValueSet containing Apple HealthKit sleep stage codes"
 Instance: ConceptMapFitbitSleepToSNOMED
 InstanceOf: ConceptMap
 Title: "Fitbit Sleep Stages to SNOMED CT Mapping"
-Description: "Maps Fitbit sleep stage codes to SNOMED CT for clinical interoperability. Addresses RS6 Gap 5: Cross-Vendor Interoperability."
+Description: "Maps Fitbit sleep stage codes to SNOMED CT for clinical interoperability. Addresses cross-vendor interoperability."
 Usage: #definition
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapFitbitSleepToSNOMED"
 * version = "0.1.0"
@@ -315,7 +315,7 @@ Usage: #definition
 Instance: ConceptMapCrossVendorSleepStages
 InstanceOf: ConceptMap
 Title: "Cross-Vendor Sleep Stage Equivalence"
-Description: "Establishes equivalence relationships between different vendor sleep stage terminologies to enable cross-platform data aggregation. Addresses RS6 Gap 5: Fitbit 'light' ≈ Garmin 'light' ≈ Apple 'Core' ≈ Oura 'light'"
+Description: "Establishes equivalence relationships between different vendor sleep stage terminologies to enable cross-platform data aggregation. Cross-vendor interoperability: Fitbit 'light' ≈ Garmin 'light' ≈ Apple 'Core' ≈ Oura 'light'"
 Usage: #definition
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapCrossVendorSleepStages"
 * version = "0.1.0"

@@ -4,12 +4,12 @@
 // Purpose: Example instance for the LifestyleMedicationRequest profile. It
 //          exercises the drug-lifestyle-interaction extension, so this single
 //          example resolves BOTH the profile and the extension "no example"
-//          warnings (T1 S45 Fase 3).
+//          warnings.
 // Anti-hallucination: medication is recorded as free text only (no fabricated
-//          RxNorm/SNOMED code asserted - Pitfall #33). The interaction code is
+//          RxNorm/SNOMED code asserted). The interaction code is
 //          local (DrugLifestyleInteractionCS). subject references the existing
 //          PatientExample instance (no broken reference).
-// Authorship: T1 S45 (Path 4b reopened for the G1 gate).
+//
 // ============================================================================
 
 Instance: LifestyleMedicationRequestExample

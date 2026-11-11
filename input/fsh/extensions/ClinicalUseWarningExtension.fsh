@@ -1,7 +1,7 @@
 // ClinicalUseWarningExtension.fsh
 // Created: 2025-11-29
 // Purpose: Extension for clinical use warnings on consumer wearable-derived observations
-// Based on: RS6 SciSpace systematic review (214 papers, 2015-2025)
+// Based on: a systematic literature review (2015-2025)
 //
 // Bibliographic References:
 // - Bayoumy2021Wearables: Smart wearable devices in cardiovascular care (Nature Reviews Cardiology)
@@ -19,7 +19,7 @@
 Extension: ClinicalUseWarning
 Id: clinical-use-warning
 Title: "Clinical Use Warning Extension"
-Description: "Provides explicit warnings about the appropriate clinical use of consumer wearable-derived observations. Addresses Gap 3 (Algorithm Transparency, 5% coverage, 95 severity) from RS6 gap analysis."
+Description: "Provides explicit warnings about the appropriate clinical use of consumer wearable-derived observations. Addresses algorithm transparency."
 * ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
@@ -67,7 +67,7 @@ Description: "ValueSet for data quality confidence levels in consumer wearable d
 Extension: DataQualityIndicator
 Id: data-quality-indicator
 Title: "Data Quality Indicator Extension"
-Description: "Indicates the quality/confidence level of consumer wearable-derived data. Addresses RS6 Gap 2 (Data Quality Metadata)."
+Description: "Indicates the quality/confidence level of consumer wearable-derived data. Addresses data-quality metadata."
 * ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"

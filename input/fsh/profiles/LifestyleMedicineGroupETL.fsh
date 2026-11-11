@@ -1,7 +1,7 @@
 // ============================================================================
 // Lifestyle Medicine Group for ETL Operations (Profile #4)
 // ============================================================================
-// Date: 2026-05-19 (T2 S25 — Tier 1B Profile #4 / G2 antecedent)
+// Date: 2026-05-19 (Tier 1B Profile #4)
 // Purpose: Specialization of BulkExportGroup for ETL operations targeting
 //          vendor cohort + time window + transformation pipeline + destination
 //          warehouse definitions. Used as input parameter for $export operations
@@ -9,15 +9,15 @@
 //          subject to a single ETL run.
 // Reference:
 //   - FHIR R4 Group: https://hl7.org/fhir/R4/group.html
-//   - BulkExportGroup parent: T2 S20 (`profiles/BulkExportGroup.fsh`)
+//   - BulkExportGroup parent: (`profiles/BulkExportGroup.fsh`)
 //   - Bulk Data Access IG STU2: http://hl7.org/fhir/uv/bulkdata/STU2/
-//   - LifestyleMedicineETLBatch (Profile #1, T2 S24): bundle returned by $export
-//   - WearableMeasurementProvenance (Profile #2, T2 S24): per-Observation provenance
-//   - PatientDataPipelineCapability (Profile #3, T2 S25): server-side declaration
+//   - LifestyleMedicineETLBatch (Profile #1): bundle returned by $export
+//   - WearableMeasurementProvenance (Profile #2): per-Observation provenance
+//   - PatientDataPipelineCapability (Profile #3): server-side declaration
 // Companion:
-//   - BulkExportConsent.fsh (T2 S20) — research-specific consent for $export
+//   - BulkExportConsent.fsh — research-specific consent for $export
 //   - LifestyleMedicineETLBatch.fsh — Bundle.type=batch payload returned by $export
-// G2 RS antecedent: RS4 (Living SR methodology), RS13 (FHIRconnect implementation).
+// Antecedents: living systematic review methodology; the companion FHIRconnect implementation.
 // ============================================================================
 
 // ============================================================================
@@ -36,7 +36,7 @@ LifestyleMedicineETLBatch bundles for the enumerated patient + vendor +
 measurement-type tuple, scoped to the declared temporal window.
 
 Used by:
-  - Research ETL pipelines (e.g., RS4 Living SR cohort population)
+  - Research ETL pipelines (e.g., a living-review cohort population)
   - Quality improvement extracts (e.g., HRV-decline 90-day cohorts)
   - Vendor onboarding validation runs (e.g., Apple HealthKit pilot)
 
@@ -185,8 +185,7 @@ URL of the destination data warehouse where $export output is delivered.
 For FHIR-native warehouses, the endpoint accepts Bundle.type=batch directly.
 For OMOP CDM warehouses, the endpoint may be a separate ETL adapter that
 transforms Bundle.type=batch into OMOP MEASUREMENT + PERSON + OBSERVATION
-records (cf. Vulcan FHIR-to-OMOP IG, alignment under evaluation per T4 S59
-2026-05-18 cross-terminal note).
+records (cf. Vulcan FHIR-to-OMOP IG).
 """
 * ^experimental = true
 * ^context.type = #element
@@ -212,11 +211,11 @@ HRV (SDNN + RMSSD) + sleep + activity observations for downstream analysis.
 * type = #person
 * actual = false
 * active = true
-// T2 S35 (2026-05-28 11:14 WEST) Opção γ — USER-ratified refino da Decisão 3.1
-// (T1 S46 CoC) via AskUserQuestion: use HL7 v3-ActReason#HRESCH em vez de criar
+// 2026-05-28: option γ, ratified by the author
+// (CoC) via AskUserQuestion: use HL7 v3-ActReason#HRESCH em vez de criar
 // CS local `bulk-export-group-category` que duplicaria terminologia standard.
 // HRESCH = "healthcare research" — já enumerado em BulkExportGroupCategoryVS
-// (BulkExportGroup.fsh:157). Root-cause fix, ZERO Pitfall #33 risk.
+// (BulkExportGroup.fsh:157). Root-cause fix, ZERO risk.
 * code = http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH
 * name = "ETL-AppleHealthKit-HRVdecline-90d-2026Q2-cohort-001"
 

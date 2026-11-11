@@ -4,7 +4,7 @@
 // Date: 2026-03-05
 // Purpose: Maps risk classification levels between Brazilian (CFM 2.454/2026)
 //          and European (EU AI Act 2024/1689) regulatory frameworks
-// Note: Uses sourceUri (not sourceCanonical) per VRF-TECH-005 to avoid
+// Note: Uses sourceUri (not sourceCanonical) to avoid
 //       tx.fhir.org expansion issues with local CodeSystems
 // ============================================================================
 

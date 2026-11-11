@@ -1,7 +1,7 @@
 // ECGProfiles.fsh
 // Created: 2025-11-29
 // Purpose: FHIR profiles for ECG-derived observations from consumer wearable devices
-// Based on: Chapter 2 ECG Wearables section, RS6 SciSpace analysis
+// Based on: a review of ECG wearables
 //
 // Bibliographic References:
 // - Rautaharju2009AHAECG: AHA/ACCF/HRS Recommendations for ECG Standardization Part IV (Circulation 119:e241-e250)

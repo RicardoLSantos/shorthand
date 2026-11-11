@@ -1,6 +1,6 @@
 This page presents an **end-to-end worked walkthrough** that ties together the standards layers profiled elsewhere in this Implementation Guide — SMART on FHIR App Launch, CDS Hooks, the openEHR archetype bridge, the EU AI Act governance profiles, and externally-referenced CQL decision logic — into a single clinical scenario. It corresponds to Module 4 ("SMART + CDS Hooks") of the HL7 FHIR Intermediate curriculum and demonstrates that the conformance artifacts in this IG compose into a coherent decision-support flow.
 
-> **Scope (honest):** Every artifact referenced below is a conformance artifact published by this IG (profile, extension, CodeSystem, Instance, or narrative). The runtime that *executes* this flow — a SMART authorization server, a CDS Hooks service endpoint, a CQL engine, an openEHR CDR — is **not** part of this IG. This is the *adopted-pattern, not embedded-engine* stance documented in [Implementation Scope and Roadmap](implementation-scope-and-roadmap.html); operational deployment is future work (RS13, post-defense). The walkthrough therefore demonstrates **artifact-level integration**, not a running system.
+> **Scope (honest):** Every artifact referenced below is a conformance artifact published by this IG (profile, extension, CodeSystem, Instance, or narrative). The runtime that *executes* this flow — a SMART authorization server, a CDS Hooks service endpoint, a CQL engine, an openEHR CDR — is **not** part of this IG. This is the *adopted-pattern, not embedded-engine* stance documented in [Implementation Scope and Roadmap](implementation-scope-and-roadmap.html); operational deployment is future work. The walkthrough therefore demonstrates **artifact-level integration**, not a running system.
 
 ### Clinical scenario
 
@@ -38,7 +38,7 @@ The clinical content modelled above can be authored and governed on the openEHR 
 
 ### What this demonstrates
 
-Composed together, the artifacts above wire **SMART App Launch + CDS Hooks 2.0 + PlanDefinition decision logic + AI/CQL governance + openEHR/GDL bridges + multi-jurisdictional consent** into one coherent, worked flow. To the authors' knowledge this is the first published FHIR IG to assemble these layers into a single artifact set with end-to-end worked examples for the lifestyle-medicine vertical. The novelty is in the *integration and conformance tooling*, not in any single standard; each layer follows its respective specification, and the executing runtime is deliberately left to implementers (and to the post-defense RS13 work).
+Composed together, the artifacts above wire **SMART App Launch + CDS Hooks 2.0 + PlanDefinition decision logic + AI/CQL governance + openEHR/GDL bridges + multi-jurisdictional consent** into one coherent, worked flow. To the authors' knowledge this is the first published FHIR IG to assemble these layers into a single artifact set with end-to-end worked examples for the lifestyle-medicine vertical. The novelty is in the *integration and conformance tooling*, not in any single standard; each layer follows its respective specification, and the executing runtime is deliberately left to implementers.
 
 #### Artifact index for this walkthrough
 

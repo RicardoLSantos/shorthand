@@ -343,7 +343,7 @@ Usage: #definition
 // Nutrition + substance (dietary/alcohol) — added 2026-07-07 (T1, P1 Bucket D). Genuinely new to this ConceptMap.
 // All target codes Database-First verified vs Athena CONCEPT.csv (LOINC, std=S) 2026-07-07; adversarially re-verified.
 // Deferred (see cross_terminal_feedback/T1_TO_T2_GM_CONCEPTMAP14_VERIFIED_SPEC_P1_20260707.md): Bucket A (3 stale
-// #unmatched → valid code, USER/author confirm) · Bucket C (walkingSpeed judgment) · Bucket B (3 wrong-concept codes
+// #unmatched → valid code, author confirm) · Bucket C (walkingSpeed judgment) · Bucket B (3 wrong-concept codes
 // stay #unmatched, app drops them, T2/Swift lane). NOT a blind "+14".
 * group[0].element[42].code = #HKQuantityTypeIdentifierDietaryEnergyConsumed
 * group[0].element[42].display = "Dietary Energy Consumed"

@@ -42,7 +42,7 @@ Description: "2RDoc organization instance for consent and data governance exampl
 * active = true
 
 // ============================================================================
-// Stubs added 2026-05-12 (T2 S21) — Bulk Export / AuditEvent example references
+// Stubs added 2026-05-12 — Bulk Export / AuditEvent example references
 // ============================================================================
 // These stub resources satisfy reference-resolution validation in:
 //   - BulkExportConsentHRVResearchExample (BulkExportConsent.fsh)

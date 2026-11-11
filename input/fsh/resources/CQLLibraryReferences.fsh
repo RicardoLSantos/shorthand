@@ -1,5 +1,5 @@
 // ============================================================================
-// CQL Library reference declarations (T1 S46 — G1 gate Fase 3)
+// CQL Library reference declarations
 // ============================================================================
 // The IG's AI ClinicalImpression examples reference CQL decision logic via
 // `urn:cql:library:` URIs in ClinicalImpression.protocol. These thin Library
@@ -11,7 +11,7 @@
 //
 // Note: `url` embeds the version (`:v1.2`) to match the protocol[0] reference
 // string exactly; no separate `version` element (which would append `|1.2`).
-// Pitfall #33: no fabricated CQL content — these are documentation pointers.
+// no fabricated CQL content — these are documentation pointers.
 // ============================================================================
 
 Instance: LibraryCVR003HRVRisk

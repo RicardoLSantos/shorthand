@@ -1,23 +1,23 @@
 // ============================================================================
 // Patient Data Pipeline CapabilityStatement
 // ============================================================================
-// Date: 2026-05-19 (T2 S25 — Tier 1B Profile #3 / G2 antecedent)
+// Date: 2026-05-19 (Tier 1B Profile #3)
 // Purpose: Declare server-side capabilities for FHIR-based wearable data
 //          ingestion pipelines. Specializes for ETL endpoints accepting
 //          Bundle.type=batch payloads conforming to LifestyleMedicineETLBatch
-//          (Profile #1, T2 S24) with explicit rate-limiting + retry +
+//          (Profile #1) with explicit rate-limiting + retry +
 //          error-reporting semantics for vendor API integration.
 // Reference:
 //   - FHIR R4 CapabilityStatement: https://hl7.org/fhir/R4/capabilitystatement.html
-//   - LifestyleMedicineETLBatch Profile #1: T2 S24 (15 May 2026)
-//   - WearableMeasurementProvenance Profile #2: T2 S24
+//   - LifestyleMedicineETLBatch Profile #1 (15 May 2026)
+//   - WearableMeasurementProvenance Profile #2:
 //   - RFC 6585 §4 (rate limiting): https://datatracker.ietf.org/doc/html/rfc6585
 //   - RFC 7231 §7.1.3 (Retry-After): https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.3
 // Companion:
 //   - LifestyleMedicineCapabilityStatement.fsh — full server capabilities (12 resources)
 //   - SMARTOnFHIRConformance.fsh — SMART STU2.2 OAuth auth declaration
 //   - This Instance complements both with pipeline-specific declarations.
-// G2 RS antecedent: RS4 (Living SR methodology), RS13 (FHIRconnect implementation).
+// Antecedents: living systematic review methodology; the companion FHIRconnect implementation.
 // Convention: follows existing `capabilities/` folder pattern (Instance pattern,
 //             NOT Profile pattern, per LMCapStmt + SMART + Mindfulness precedent).
 // ============================================================================

@@ -1,7 +1,7 @@
 // ============================================================================
 // Bulk FHIR Group Profile (Cohort Export)
 // ============================================================================
-// Date: 2026-05-07 (T2 S20 Caminho C — IG v0.3.0 sprint partial)
+// Date: 2026-05-07 (IG v0.3.0 sprint partial)
 // Purpose: Profile Group resource for cohort definition + Bulk FHIR Export
 //          ($export operation per Bulk Data Access IG). Enables research
 //          and population-health workflows over lifestyle medicine cohorts.
@@ -10,9 +10,9 @@
 //            (system/Group.rs scope) + audit via AuditEventDataAccess.fsh
 //            (Export-type events) + consent via BulkExportConsent.fsh.
 // ============================================================================
-// NOTE (T2 S20): FSH written without IG build validation due to local disk
+// NOTE: FSH written without IG build validation due to local disk
 //                constraint. Pending validation: build via _genonce.sh when
-//                disk recovery (Pitfall #65, ≥5GB free) achieved.
+//                disk recovery (≥5GB free) achieved.
 // ============================================================================
 
 Profile: BulkExportGroup
@@ -99,7 +99,7 @@ the 11 lifestyle medicine domains for research/quality-improvement use.
 // Age range criterion
 * characteristic[ageRange].code 1..1 MS
 * characteristic[ageRange].code = http://loinc.org#30525-0 "Age"
-// NOTE (T1 S43, 2026-05-23): value[x] intentionally NOT narrowed to Range here.
+// NOTE (2026-05-23): value[x] intentionally NOT narrowed to Range here.
 // FHIR R4 base Group.characteristic.value[x] carries an example binding
 // (GroupCharacteristicValue). Narrowing this slice to only Range inherits that
 // binding onto a non-bindable type → IG Publisher error "no bindable types [Range]".
@@ -161,9 +161,9 @@ Description: "Category codes for Bulk FHIR Export Group cohort intent"
 * ^status = #draft
 * ^experimental = true
 
-// T2 S35 (2026-05-28 11:15 WEST) — opcional fix dos 2 displays canonical
+// (2026-05-28 11:15 WEST) — opcional fix dos 2 displays canonical
 // per v3-ActReason HL7 (resolve 2 INFORMATION entries em qa.txt linha 14017-14018).
-// Pitfall #33 sub-rule: display deve match canonical (`en` / `en-US` per VS validator).
+// display deve match canonical (`en` / `en-US` per VS validator).
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH "healthcare research"
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#PUBHLTH "public health"
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#HQUALIMP "health quality improvement"

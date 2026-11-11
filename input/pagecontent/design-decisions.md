@@ -53,7 +53,7 @@ ICD-11 is not available on tx.fhir.org (the FHIR terminology server used by the 
 tx.fhir.org serves ICD-11 MMS (release 2026-01). The migration plan above is withdrawn: the republished CodeSystem is retained **by design** so that the IG validates without depending on the availability of a terminology server, and tx.fhir.org and the WHO linearization export are used as verification sources instead. The same design applies to every external code in this IG: each code is recorded in `input/data/terminology-verification-ledger.csv` with the date, source and version of its last verification (see Terminology Verification). On the same date the CodeSystem was rebuilt from the WHO tables after the verification found 11 non-existent codes and 16 wrong titles in the 2026-03 edition, 7 of 34 correct (46 concepts now).
 
 ### Evidence
-CI GREEN (23 errors, all IPS upstream baseline). FAQ Q41 documents the full analysis.
+CI GREEN (23 errors, all IPS upstream baseline).
 
 ---
 
@@ -63,7 +63,7 @@ CI GREEN (23 errors, all IPS upstream baseline). FAQ Q41 documents the full anal
 All terminology code lookups (LOINC, SNOMED CT, ICD-10, OMOP) must be verified against authoritative databases before use. LLM-suggested codes are never trusted directly.
 
 ### Context
-Empirical validation during term_bindings work found a 33% error rate in LLM-suggested codes: 3/12 LOINC codes wrong (25%), 3/6 SNOMED codes wrong (50%). This confirmed the RS11 systematic review finding that LLMs have near-zero accuracy on exact code lookup.
+Empirical validation during term_bindings work found a 33% error rate in LLM-suggested codes: 3/12 LOINC codes wrong (25%), 3/6 SNOMED codes wrong (50%).
 
 ### Workflow
 1. Identify the clinical concept needed
@@ -77,7 +77,7 @@ Empirical validation during term_bindings work found a 33% error rate in LLM-sug
 - **Online**: `tx.fhir.org $lookup` for final verification
 
 ### Evidence
-VRF-TERM-012 documents the empirical validation. The OMOP ConceptMap audit (VRF-TERM-017) caught 28 errors using this protocol, including 5 hallucinated OMOP concept_ids and 4 false GAPs.
+The OMOP ConceptMap audit caught 28 errors using this protocol, including 5 hallucinated OMOP concept_ids and 4 false GAPs.
 
 ---
 
@@ -97,7 +97,7 @@ OMOP CDM distinguishes the provenance of measurements. Wearable data comes from 
 Accurate provenance metadata is critical for OMOP analytics. Using "EHR Detail" for wearable data would mislead researchers about data quality and source characteristics.
 
 ### Affected Files
-All 6 OMOP ConceptMaps (Activity, Sleep, HRV, CGM, Nutrition, OpenEHR). Corrected in T2 S8 OMOP audit.
+All 6 OMOP ConceptMaps (Activity, Sleep, HRV, CGM, Nutrition, OpenEHR). Corrected in the OMOP audit.
 
 ---
 

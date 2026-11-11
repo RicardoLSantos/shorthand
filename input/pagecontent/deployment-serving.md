@@ -1,10 +1,9 @@
-<!-- AUTHORED-BY-CLAUDE-T1 (Pitfall #97) · IG narrative · pasted at v0.4.1 release (T1 S49) · closes T4 Iozzia deployment handoff -->
 
 ### Deployment & Serving
 
 This page describes **how** the artifacts defined in this Implementation Guide (the SMART on FHIR conformance, the CDS Hooks services, the FHIR profiles and terminology) are **deployed and served** in practice. The IG defines *what* is exchanged and *which* conformance applies; this narrative covers the deployment topology, the serving backends, release safety, and post-deployment monitoring. It complements [SMART on FHIR Integration](smart-on-fhir-integration.html), [CDS Hooks Integration](cds-hooks-integration.html), [LLM/AI Integration](llm-ai-integration.html) and [Terminology Verification](terminology-verification.html).
 
-> **Scope.** Operational deployment (running CDS endpoints, SLM backends, ETL orchestration, CDR/terminology servers) is **reference architecture** documented for completeness and for the post-defense RS13 implementation; it is not claimed as a live production deployment of this IG (see [Implementation Scope & Roadmap](implementation-scope-and-roadmap.html)). Conditional language ("when running") is used throughout to preserve that distinction.
+> **Scope.** Operational deployment (running CDS endpoints, SLM backends, ETL orchestration, CDR/terminology servers) is **reference architecture** documented for completeness and for a later implementation; it is not claimed as a live production deployment of this IG (see [Implementation Scope & Roadmap](implementation-scope-and-roadmap.html)). Conditional language ("when running") is used throughout to preserve that distinction.
 
 #### 1. Serving topology — a stable API over a swappable backend
 
