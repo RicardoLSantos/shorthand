@@ -4,6 +4,15 @@ All notable changes to this Implementation Guide are documented on this page.
 
 > This guide is a draft. Versions 0.x are development snapshots tagged on GitHub; the guide has not been balloted through HL7 or deployed clinically.
 
+## Version 0.6.0 (in development)
+
+### Changed
+- **The guide and its artifacts are declared draft and experimental.** The ImplementationGuide resource and every definitional artifact (profiles, extensions, value sets, code systems, ConceptMaps, Library, Measure, PlanDefinition, Questionnaire, CapabilityStatement, MessageDefinition, OperationDefinition, NamingSystem, SearchParameter) now carry `status = draft` (was `active`) and `experimental = true` (was `false`). Clinical example instances keep their clinical status. A note at the top of the home page and of this page states that versions 0.x are development snapshots.
+- **HRV-inflammation figures now come from the published meta-analysis.** `HRVInflammationCorrelationObservation` and the inflammatory markers page give Williams et al. 2019 (51 human studies; for CRP, SDNN r = -0.202 and RMSSD r = -0.107) as population-level associations; the previous figures (an RMSSD range of r = -0.15 to -0.35, and "26 studies") had no source. The `ConceptMapHRVToOMOP` comment on RMSSD was aligned.
+
+### Added
+- Williams et al. 2019 in the bibliography (Heart Rate Variability, no. 23).
+
 ## Version 0.5.2 (2026-09-23)
 
 ### Changed
