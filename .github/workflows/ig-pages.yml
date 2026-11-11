@@ -1,0 +1,97 @@
+# Publish the rendered guide to GitHub Pages.
+#
+# Manual only (workflow_dispatch): a run builds the guide from the commit it is started on, refuses
+# to publish unless the build has 0 errors and the generated pages carry no internal process marker
+# (.github/scripts/output_marker_sweep.sh), and then deploys the output directory to Pages.
+#
+# One-time repository setting: Settings > Pages > Source = "GitHub Actions".
+# The canonical URL of the guide (https://2rdoc.pt/ig/ios-lifestyle-medicine) is an identifier; the
+# domain's owner can redirect that path to the Pages address.
+
+name: Publish IG to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install Jekyll
+        run: gem install jekyll
+
+      - name: Download IG Publisher
+        run: |
+          mkdir -p input-cache
+          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+            -o input-cache/publisher.jar
+
+      - name: Run IG Publisher
+        run: java -Xmx4g -jar input-cache/publisher.jar -ig ig.ini
+        timeout-minutes: 30
+
+      - name: Require 0 errors
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          qa = json.load(open('output/qa.json'))
+          errs = qa.get('errs', 0)
+          print(f"Errors: {errs}  Warnings: {qa.get('warnings', 0)}")
+          sys.exit(1 if errs > 0 else 0)
+          PY
+
+      - name: Require no internal markers in the generated pages
+        run: bash .github/scripts/output_marker_sweep.sh output
+
+      - name: Size of the site
+        run: |
+          du -sh output
+          kb=$(du -sk output | cut -f1)
+          # GitHub Pages: published sites may be no larger than 1 GB
+          if [ "$kb" -gt 1000000 ]; then echo "site larger than 1 GB: not published"; exit 1; fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
