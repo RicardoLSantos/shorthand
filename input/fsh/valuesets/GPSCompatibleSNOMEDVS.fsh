@@ -50,8 +50,8 @@ Advanced lifestyle metrics require either:
 - Full SNOMED CT licensing through national affiliate programs
 - Custom CodeSystems defined in this IG
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^version = "0.1.0"
 * ^publisher = "FMUP/2RDoc"
 * ^copyright = "This ValueSet references codes from SNOMED CT GPS (CC-BY-4.0). Attribution to SNOMED International required."

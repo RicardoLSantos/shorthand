@@ -2,6 +2,8 @@
 
 All notable changes to this Implementation Guide are documented on this page.
 
+> This guide is a draft. Versions 0.x are development snapshots tagged on GitHub; the guide has not been balloted through HL7 or deployed clinically.
+
 ## Version 0.5.2 (2026-09-23)
 
 ### Changed

@@ -2,11 +2,11 @@ ValueSet: MeasurementContextVS
 Id: measurement-context-vs
 Title: "Measurement Context Value Set"
 Description: "Contexts in which measurements can be taken, including temporal and location-based contexts"
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email

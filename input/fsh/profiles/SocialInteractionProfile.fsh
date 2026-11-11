@@ -5,7 +5,7 @@ Title: "Social Interaction Profile"
 Description: "Profile for recording social interaction data from iOS Health App"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2024-01-03"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 

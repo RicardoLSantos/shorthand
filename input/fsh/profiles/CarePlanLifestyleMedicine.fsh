@@ -22,7 +22,7 @@ Aligned with CFM 2.454/2026 Art. 7 (physician autonomy) and EU AI Act
 Art. 14 (human oversight).
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Status
 * status 1..1 MS
@@ -114,7 +114,7 @@ ValueSet: LifestyleMedicineCarePlanCategoryVS
 Id: lifestyle-medicine-care-plan-category-vs
 Title: "Lifestyle Medicine Care Plan Category Value Set"
 Description: "Categories based on the 6 pillars of lifestyle medicine plus AI-specific workflow categories"
-* ^experimental = false
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-03-05"
 * AgentDecisionSupportCS#lifestyle-exercise "Exercise Intervention"

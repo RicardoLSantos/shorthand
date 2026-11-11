@@ -20,8 +20,8 @@ Title: "Lifestyle Medicine Temporary Codes"
 Description: "Temporary codes for lifestyle medicine concepts not yet covered by standard terminologies (LOINC, SNOMED CT, ICD-11). Following the Physical Activity IG 'Temporary Codes' pattern, these codes are candidates for proposal to standard code systems. Consolidated from domain-specific CodeSystems to align with HL7 FHIR IG best practices (cf. mCODE, PA IG, US Core)."
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs"
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^caseSensitive = true
 * ^content = #complete
 * ^count = 720

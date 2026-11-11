@@ -81,7 +81,7 @@ References:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2026-01-12"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 

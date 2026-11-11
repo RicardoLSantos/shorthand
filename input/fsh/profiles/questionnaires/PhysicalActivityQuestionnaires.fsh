@@ -12,7 +12,7 @@ Title: "Physical Activity Questionnaire (IPAQ-Short)"
 Description: "The International Physical Activity Questionnaire (IPAQ) Short Form measures health-related physical activity over the last 7 days. It assesses vigorous and moderate physical activities, walking, and sitting time."
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/physical-activity-ipaq-short"
-* status = #active
+* status = #draft
 * title = "International Physical Activity Questionnaire - Short Form"
 * subjectType = #Patient
 * version = "1.0.0"

@@ -2,9 +2,9 @@ ValueSet: FallRiskOutcomesValueSet
 Id: fall-risk-outcomes
 Title: "Fall Risk Outcomes Value Set"
 Description: "Value set for fall risk assessment outcomes"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fall-risk-outcomes"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
@@ -25,9 +25,9 @@ ValueSet: RiskLevelValueSet
 Id: risk-level
 Title: "Risk Level Value Set"
 Description: "Value set for general risk levels"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
@@ -47,9 +47,9 @@ ValueSet: MobilityDeclineOutcomesValueSet
 Id: mobility-decline-outcomes
 Title: "Mobility Decline Outcomes Value Set"
 Description: "Value set for mobility decline assessment outcomes"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-decline-outcomes"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
@@ -70,9 +70,9 @@ ValueSet: AssistanceLevelOutcomesValueSet
 Id: assistance-level-outcomes
 Title: "Assistance Level Outcomes Value Set"
 Description: "Value set for assistance level assessment outcomes"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-outcomes"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"

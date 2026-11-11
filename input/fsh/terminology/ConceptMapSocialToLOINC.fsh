@@ -30,8 +30,8 @@ References:
 """
 Usage: #definition
 
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-16"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapSocialToLOINC"

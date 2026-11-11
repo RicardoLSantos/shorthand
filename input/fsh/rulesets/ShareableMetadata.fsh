@@ -13,10 +13,10 @@ RuleSet: ShareableMetadata(version, status, experimental, publisher, description
 
 // Apply to all ValueSets
 RuleSet: ApplyShareableVS
-* insert ShareableMetadata("0.1.0", active, false, 2RDoc PT, [[Comprehensive value set for iOS Lifestyle Medicine]])
+* insert ShareableMetadata("0.1.0", draft, true, 2RDoc PT, [[Comprehensive value set for iOS Lifestyle Medicine]])
 
 // Apply to all CodeSystems  
 RuleSet: ApplyShareableCS
-* insert ShareableMetadata("0.1.0", active, false, 2RDoc PT, [[Code system for iOS Lifestyle Medicine]])
+* insert ShareableMetadata("0.1.0", draft, true, 2RDoc PT, [[Code system for iOS Lifestyle Medicine]])
 * ^content = #complete
 * ^caseSensitive = true

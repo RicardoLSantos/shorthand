@@ -15,8 +15,8 @@ Usage: #definition
 * version = "0.1.0"
 * name = "ConceptMapOpenEHRToFHIR"
 * title = "openEHR Archetype to FHIR Resource Mapping"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-16"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"

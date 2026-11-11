@@ -90,7 +90,7 @@ Aligned with:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2025-11-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -174,7 +174,7 @@ Clinical Context:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2025-11-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -255,7 +255,7 @@ Guidelines:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2025-11-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -305,7 +305,7 @@ clinically appropriate. Privacy and confidentiality considerations are paramount
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2025-11-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -358,7 +358,7 @@ with their current status and risk assessment.
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2025-11-25"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 

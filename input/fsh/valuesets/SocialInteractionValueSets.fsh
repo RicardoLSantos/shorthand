@@ -2,7 +2,7 @@ ValueSet: SocialInteractionTypeVS
 Id: social-interaction-type-vs
 Title: "Social Interaction Type Value Set"
 Description: "Types of social interactions"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#family "Family Interaction"
 * LifestyleMedicineTemporaryCS#friends "Friend Interaction"
 * LifestyleMedicineTemporaryCS#social-interaction-type-professional "Professional Interaction"
@@ -14,7 +14,7 @@ ValueSet: SocialInteractionQualityVS
 Id: social-interaction-quality-vs
 Title: "Social Interaction Quality Value Set"
 Description: "Quality measures for social interactions"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#social-interaction-quality-meaningful "Meaningful"
 * AppLogicCS#supportive "Supportive"
 * AppLogicCS#social-interaction-quality-neutral "Neutral"
@@ -25,7 +25,7 @@ ValueSet: SocialInteractionMediumVS
 Id: social-interaction-medium-vs
 Title: "Social Interaction Medium Value Set"
 Description: "Mediums through which social interaction occurs"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#inPerson "In Person"
 * LifestyleMedicineTemporaryCS#video "Video Call"
 * LifestyleMedicineTemporaryCS#voice "Voice Call"

@@ -19,7 +19,7 @@ Supports EU AI Act Art. 12 (automatic logging of high-risk AI systems)
 and CFM Resolution 2.454/2026 Art. 6 (traceability requirements).
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Type - always a security audit
 * type 1..1 MS
@@ -103,7 +103,7 @@ ValueSet: AIAuditEventSubtypeVS
 Id: ai-audit-event-subtype-vs
 Title: "AI Audit Event Subtype Value Set"
 Description: "Subtypes of AI-related audit events for CDSS interaction logging"
-* ^experimental = false
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-03-05"
 * AgentDecisionSupportCS#ai-inference-executed "AI Inference Executed"

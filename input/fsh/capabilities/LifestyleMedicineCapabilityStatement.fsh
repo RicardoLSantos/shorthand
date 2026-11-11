@@ -13,7 +13,7 @@ Usage: #definition
 Title: "iOS Lifestyle Medicine FHIR IG Server Capabilities"
 Description: "CapabilityStatement declaring the full server capabilities for the iOS Lifestyle Medicine FHIR Implementation Guide. Covers wearable data capture across 11 lifestyle medicine domains, AI/CDSS compliance profiles, and IPS integration."
 
-* status = #active
+* status = #draft
 * date = "2026-03-06"
 * kind = #requirements
 * fhirVersion = #4.0.1

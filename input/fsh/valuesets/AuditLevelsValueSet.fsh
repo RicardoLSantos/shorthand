@@ -2,12 +2,12 @@ ValueSet: AuditLevelsValueSet
 Id: audit-levels
 Title: "Audit Levels Value Set"
 Description: "Value set for audit level types"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audit-levels"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email

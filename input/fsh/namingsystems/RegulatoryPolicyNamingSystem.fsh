@@ -18,7 +18,7 @@ Title: "Regulatory Policy URI Naming System"
 Description: "NamingSystem defining URN patterns for healthcare regulatory policy references used in Consent resources"
 
 * name = "RegulatoryPolicyURN"
-* status = #active
+* status = #draft
 * kind = #identifier
 * date = "2025-11-30"
 * publisher = "iOS Lifestyle Medicine HEADS FHIR IG"
@@ -90,7 +90,7 @@ Title: "Regulatory Authority OID Naming System"
 Description: "NamingSystem defining OIDs for healthcare regulatory authorities used in Consent.policy.authority"
 
 * name = "RegulatoryAuthorityOID"
-* status = #active
+* status = #draft
 * kind = #identifier
 * date = "2025-11-30"
 * publisher = "iOS Lifestyle Medicine HEADS FHIR IG"

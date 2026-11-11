@@ -173,8 +173,8 @@ Title: "Body Temperature Measurement Site Value Set"
 Description: "Sites where body temperature can be measured"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/body-temperature-site-vs"
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 // Body structure codes for temperature measurement sites
 // Note: Using anatomical body structure codes (valid in SNOMED CT International 2025+)

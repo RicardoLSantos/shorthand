@@ -34,8 +34,8 @@ These are operational codes for app functionality, not clinical terminology.
 Standard equivalents are noted in comments where they exist (e.g., SNOMED
 Body Structure codes for muscle groups). ConceptMaps link these to standards.
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^content = #complete
 * ^version = "1.0.0"
 * ^date = "2026-02-27"

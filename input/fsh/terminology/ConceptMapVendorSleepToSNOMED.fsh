@@ -30,7 +30,7 @@ CodeSystem: FitbitSleepStagesCS
 Id: fitbit-sleep-stages-cs
 Title: "Fitbit Sleep Stages CodeSystem"
 Description: "Fitbit proprietary sleep stage classifications from Fitbit Web API"
-* ^experimental = false
+* ^experimental = true
 * ^caseSensitive = true
 * ^content = #complete
 * #wake "Wake" "Awake periods during sleep session"
@@ -42,7 +42,7 @@ CodeSystem: GarminSleepStagesCS
 Id: garmin-sleep-stages-cs
 Title: "Garmin Sleep Stages CodeSystem"
 Description: "Garmin proprietary sleep stage classifications from Garmin Connect API"
-* ^experimental = false
+* ^experimental = true
 * ^caseSensitive = true
 * ^content = #complete
 * #awake "Awake" "Awake periods during sleep"
@@ -55,7 +55,7 @@ CodeSystem: OuraSleepStagesCS
 Id: oura-sleep-stages-cs
 Title: "Oura Ring Sleep Stages CodeSystem"
 Description: "Oura Ring proprietary sleep stage classifications from Oura Cloud API v2. Reference: https://cloud.ouraring.com/docs/"
-* ^experimental = false
+* ^experimental = true
 * ^caseSensitive = true
 * ^content = #complete
 * #awake "Awake" "Awake periods during sleep session"
@@ -67,7 +67,7 @@ CodeSystem: AppleSleepStagesCS
 Id: apple-sleep-stages-cs
 Title: "Apple HealthKit Sleep Stages CodeSystem"
 Description: "Apple HealthKit HKCategoryValueSleepAnalysis sleep stage classifications"
-* ^experimental = false
+* ^experimental = true
 * ^caseSensitive = true
 * ^content = #complete
 * #inBed "In Bed" "User is in bed (may or may not be asleep)"
@@ -90,7 +90,7 @@ ValueSet: SNOMEDSleepStagesVS
 Id: snomed-sleep-stages-vs
 Title: "SNOMED CT Sleep Stages ValueSet"
 Description: "SNOMED CT codes for clinical sleep states. NOTE: SNOMED CT lacks specific sleep stage codes (N1/N2/N3/REM). Only generic sleep/awake states available."
-* ^experimental = false
+* ^experimental = true
 * $SCT#248218005 "Awake" // VERIFIED 2025-12-08: Awake
 * $SCT#248220008 "Asleep" // VERIFIED 2025-12-08: Asleep (generic)
 * $SCT#258158006 "Sleep" // VERIFIED 2025-12-08: Sleep (generic)
@@ -100,28 +100,28 @@ ValueSet: FitbitSleepStagesVS
 Id: fitbit-sleep-stages-vs
 Title: "Fitbit Sleep Stages ValueSet"
 Description: "ValueSet containing Fitbit proprietary sleep stage codes"
-* ^experimental = false
+* ^experimental = true
 * include codes from system FitbitSleepStagesCS
 
 ValueSet: GarminSleepStagesVS
 Id: garmin-sleep-stages-vs
 Title: "Garmin Sleep Stages ValueSet"
 Description: "ValueSet containing Garmin proprietary sleep stage codes"
-* ^experimental = false
+* ^experimental = true
 * include codes from system GarminSleepStagesCS
 
 ValueSet: OuraSleepStagesVS
 Id: oura-sleep-stages-vs
 Title: "Oura Sleep Stages ValueSet"
 Description: "ValueSet containing Oura Ring proprietary sleep stage codes"
-* ^experimental = false
+* ^experimental = true
 * include codes from system OuraSleepStagesCS
 
 ValueSet: AppleSleepStagesVS
 Id: apple-sleep-stages-vs
 Title: "Apple Sleep Stages ValueSet"
 Description: "ValueSet containing Apple HealthKit sleep stage codes"
-* ^experimental = false
+* ^experimental = true
 * include codes from system AppleSleepStagesCS
 
 // ConceptMap: Fitbit → SNOMED CT
@@ -133,8 +133,8 @@ Usage: #definition
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapFitbitSleepToSNOMED"
 * version = "0.1.0"
 * name = "ConceptMapFitbitSleepToSNOMED"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fitbit-sleep-stages-vs"
@@ -176,8 +176,8 @@ Usage: #definition
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapGarminSleepToSNOMED"
 * version = "0.1.0"
 * name = "ConceptMapGarminSleepToSNOMED"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/garmin-sleep-stages-vs"
@@ -223,8 +223,8 @@ Usage: #definition
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapOuraSleepToSNOMED"
 * version = "0.1.0"
 * name = "ConceptMapOuraSleepToSNOMED"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/oura-sleep-stages-vs"
@@ -267,8 +267,8 @@ Usage: #definition
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapAppleSleepToSNOMED"
 * version = "0.1.0"
 * name = "ConceptMapAppleSleepToSNOMED"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/apple-sleep-stages-vs"
@@ -320,8 +320,8 @@ Usage: #definition
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ConceptMap/ConceptMapCrossVendorSleepStages"
 * version = "0.1.0"
 * name = "ConceptMapCrossVendorSleepStages"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2025-11-29"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * description = "Cross-vendor sleep stage mapping enabling semantic interoperability across Apple, Fitbit, Garmin, and Oura sleep tracking data. Critical for multi-device LHS implementations."

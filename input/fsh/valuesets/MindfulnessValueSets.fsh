@@ -2,9 +2,9 @@ ValueSet: EnvironmentTypeValueSet
 Id: environment-type
 Title: "Environment Type Value Set"
 Description: "Value set for environmental context types"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/environment-type"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
@@ -22,9 +22,9 @@ ValueSet: MindfulnessTypeValueSet
 Id: mindfulness-type
 Title: "Mindfulness Type Value Set"
 Description: "Value set for types of mindfulness practices"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-type"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"

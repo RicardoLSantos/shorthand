@@ -27,8 +27,8 @@ For health AI applications, the most common bases are:
 - Health protection (Art. 7-VIII, Art. 11-II-f) — by healthcare professional
 - Research (Art. 7-IV, Art. 11-II-c) — with anonymization when possible
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#lgpd-consent "Consent-Based Processing"
 * AppLogicCS#lgpd-legal-obligation "Legal Obligation"
 * AppLogicCS#lgpd-research "Research Processing"
@@ -57,8 +57,8 @@ data processing, three distinct consent categories apply:
 These categories enable granular consent management in the Consent resource,
 supporting opt-in/opt-out at each processing level.
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AgentDecisionSupportCS#ai-consent-general "AI General Consent"
 * AgentDecisionSupportCS#ai-consent-health "AI Health Data Consent"
 * AgentDecisionSupportCS#ai-consent-automated-decision "AI Automated Decision Consent"
@@ -80,8 +80,8 @@ Each jurisdiction defines these differently:
 
 This ValueSet provides a unified vocabulary across jurisdictions.
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#data-identified "Identified"
 * AppLogicCS#data-pseudonymized "Pseudonymized"
 * AppLogicCS#data-anonymized "Anonymized"

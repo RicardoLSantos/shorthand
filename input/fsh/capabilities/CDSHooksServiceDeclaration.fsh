@@ -35,8 +35,8 @@ Local CodeSystem enumerating CDS Hooks 2.0 hook identifiers used by this IG's
 reference server. Mirrors hook names defined by the CDS Hooks 2.0 specification
 (https://cds-hooks.hl7.org/2.0/) for stable FHIR-side binding.
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^content = #complete
 * ^caseSensitive = true
 
@@ -64,7 +64,7 @@ servers conforming to this IG. The actual discovery endpoint is HTTP-side
 service intent + bound profile dependencies for FHIR-tooling discovery.
 """
 
-* status = #active
+* status = #draft
 * date = "2026-05-07"
 * publisher = "Ricardo Lourenço dos Santos"
 * eventCoding = http://hl7.org/fhir/restful-interaction#operation "operation"
@@ -116,8 +116,8 @@ Cards may include:
  - Stress score elevated for >14 consecutive days
 """
 
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-05-07"
 * publisher = "Ricardo Lourenço dos Santos"
 * description = "Patient-view CDS Hooks service for lifestyle risk assessment based on wearable observation history."
@@ -161,8 +161,8 @@ Implementing servers should return this library's content (transformed to
 CDS Hooks JSON format) at HTTP GET /cds-services.
 """
 
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-05-07"
 * publisher = "Ricardo Lourenço dos Santos"
 * type = http://terminology.hl7.org/CodeSystem/library-type#asset-collection

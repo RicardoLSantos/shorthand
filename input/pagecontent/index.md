@@ -1,5 +1,7 @@
 # iOS Lifestyle Medicine Implementation Guide
 
+> This guide is a draft. Versions 0.x are development snapshots tagged on GitHub; the guide has not been balloted through HL7 or deployed clinically.
+
 ## Purpose
 This FHIR implementation guide defines how to represent consumer-wearable health and lifestyle data in FHIR R4 to support lifestyle-medicine interventions across vendor ecosystems. The iOS Health App export is the origin of the proof-of-concept adapter, not the scope of the IG: profiles are vendor-agnostic and vendor specifics are confined to ConceptMaps and stub CodeSystems. The IG adopts the FHIRconnect architectural pattern (Kohler et al., 2025) for integration between openEHR archetypes and FHIR resources, achieving 75% weighted mapping reuse through a triple-layered transformation architecture (published computation: [doi:10.1016/j.ijmedinf.2026.106465](https://doi.org/10.1016/j.ijmedinf.2026.106465)).
 

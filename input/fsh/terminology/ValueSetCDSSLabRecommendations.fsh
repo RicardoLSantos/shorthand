@@ -32,8 +32,8 @@ Each code represents a test that can be triggered by specific wearable patterns:
 These codes were previously custom (#hba1c, #crp, etc.) in LifestyleMedicineTemporaryCS.
 Replaced by standard codes per comparative audit (PA IG benchmark: 8.6% custom).
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-02-27"
 

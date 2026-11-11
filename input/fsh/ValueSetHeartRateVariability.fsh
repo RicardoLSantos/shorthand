@@ -2,8 +2,8 @@ ValueSet: HeartRateVariabilityVS
 Id: heart-rate-variability-vs
 Title: "Heart Rate Variability ValueSet"
 Description: "Complete set of HRV metrics combining LOINC codes where available and custom codes for gaps"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-09-17"
 

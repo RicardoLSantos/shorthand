@@ -14,8 +14,8 @@ Usage: #definition
 * version = "0.1.0"
 * name = "ConceptMapVendorToLOINC"
 * title = "Vendor Proprietary Codes to LOINC Mapping"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-22"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"

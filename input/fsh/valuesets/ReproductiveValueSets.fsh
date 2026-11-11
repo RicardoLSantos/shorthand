@@ -7,8 +7,8 @@ ValueSet: ReproductiveGoalDescriptionVS
 Id: reproductive-goal-description-vs
 Title: "Reproductive Health Goal Description Value Set"
 Description: "SNOMED CT International concepts that state what a reproductive-health goal aims at: conceiving, avoiding an unwanted pregnancy, optimising health before conception, regular menstrual cycles, or a normal body weight (the last two are the desired states themselves). Bound (extensible) by Goal.description of the ReproductiveHealthGoal profile; a goal that fits none of these may carry another SNOMED CT concept or text."
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * ^date = "2026-09-22"
 * $SCT#169449001 "Trying to conceive"
 * $SCT#710973002 "Prevention of unwanted pregnancy"
@@ -20,8 +20,8 @@ ValueSet: ReproductiveGoalMeasureVS
 Id: reproductive-goal-measure-vs
 Title: "Reproductive Health Goal Measure Value Set"
 Description: "Observables against which a reproductive-health goal is assessed (Goal.target.measure of the ReproductiveHealthGoal profile, extensible): cycle regularity and usual cycle length (SNOMED CT), periods per year, body mass index and body weight (LOINC). The regularity target is expressed with MenstrualCycleRegularityVS; the numeric ones with a Quantity or Range."
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * ^date = "2026-09-22"
 * $SCT#364307006 "Regularity of menstrual cycle"
 * $SCT#161716008 "Usual length of menstrual cycle"
@@ -33,12 +33,12 @@ ValueSet: ReproductiveActivityVS
 Id: social-history-activity-vs
 Title: "Reproductive Health Activities Value Set"
 Description: "Activities related to social-history health monitoring"
-* ^experimental = false
+* ^experimental = true
 
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -61,9 +61,9 @@ ValueSet: MenstrualCycleRegularityVS
 Id: menstrual-cycle-regularity-vs
 Title: "Menstrual Cycle Regularity Value Set"
 Description: "Coded values for the regularity of the menstrual cycle (SNOMED CT International), bound by the regularity component of the reproductive observation profile"
-* ^experimental = false
+* ^experimental = true
 * ^date = "2026-09-17"
-* ^status = #active
+* ^status = #draft
 // 2026-09-17: both concepts verified in the Vocab2 SNOMED snapshot (standard, active) and on tx.fhir.org (SNOMED CT International 20250201, $validate-code with these displays)
 * $SCT#302757007 "Regular periods"
 * $SCT#80182007 "Irregular periods"

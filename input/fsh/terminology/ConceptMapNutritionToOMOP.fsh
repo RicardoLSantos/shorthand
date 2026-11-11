@@ -32,8 +32,8 @@ These should use custom concepts in local OMOP implementations.
 """
 Usage: #definition
 
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-01-12"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapNutritionToOMOP"

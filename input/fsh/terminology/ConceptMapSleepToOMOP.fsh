@@ -14,8 +14,8 @@ Usage: #definition
 * version = "0.1.0"
 * name = "ConceptMapSleepToOMOP"
 * title = "Sleep Metrics to OMOP CDM Mapping"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2025-11-28"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"

@@ -21,8 +21,8 @@ MMS 2026-01 (icd.who.int linearization export) and tx.fhir.org.
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-lifestyle-medicine-vs"
 * ^version = "0.3.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-11"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -51,8 +51,8 @@ stress and burnout.
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-health-behaviours-vs"
 * ^version = "0.3.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-11"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -86,8 +86,8 @@ associated with drinking water or nutrition (chapter 24, block QD6).
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-nutrition-vs"
 * ^version = "0.3.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-11"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -121,8 +121,8 @@ and jet-lag types).
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-sleep-disorders-vs"
 * ^version = "0.3.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-11"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -159,8 +159,8 @@ an injury, not lifestyle activity.
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/icd-11-physical-activity-vs"
 * ^version = "0.3.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-11"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 

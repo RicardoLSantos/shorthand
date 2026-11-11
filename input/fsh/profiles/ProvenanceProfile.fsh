@@ -78,8 +78,8 @@ Id: pghd-provenance-activity-vs
 Title: "PGHD Provenance Activity ValueSet"
 Description: "Activities related to PGHD data capture and transformation"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/pghd-provenance-activity-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * http://terminology.hl7.org/CodeSystem/v3-DataOperation|5.0.0#CREATE "Create"
 * http://terminology.hl7.org/CodeSystem/v3-DataOperation|5.0.0#UPDATE "Update"
 * http://terminology.hl7.org/CodeSystem/v3-DataOperation|5.0.0#APPEND "Append"
@@ -119,7 +119,7 @@ ValueSet: WearableSensorTypeVS
 Id: wearable-sensor-type-vs
 Title: "Wearable Sensor Type ValueSet"
 Description: "Types of sensors in consumer wearable devices"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#ppg "Photoplethysmography (PPG)"
 * LifestyleMedicineTemporaryCS#ecg "Electrocardiogram (ECG)"
 * LifestyleMedicineTemporaryCS#accelerometer "Accelerometer"
@@ -133,7 +133,7 @@ ValueSet: DataCaptureMethodVS
 Id: data-capture-method-vs
 Title: "Data Capture Method ValueSet"
 Description: "Methods by which PGHD data was captured"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#automatic "Automatic"
 * AppLogicCS#manual-entry "Manual Entry"
 * AppLogicCS#derived "Derived"

@@ -19,7 +19,7 @@ identification, and risk classification. Supports regulatory requirements
 for AI system monitoring and auditability per EU AI Act Art. 12-13 and
 CFM Resolution 2.454/2026 Art. 6.
 """
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * ^context[1].type = #element

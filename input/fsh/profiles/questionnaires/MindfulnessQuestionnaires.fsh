@@ -5,7 +5,7 @@ Title: "Daily Mindfulness Questionnaire"
 Description: "Questionnaire for capturing daily mindfulness practice and associated effects"
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/daily-mindfulness"
-* status = #active
+* status = #draft
 * title = "Daily Mindfulness Practice"
 * subjectType = #Patient
 * version = "1.0.0"

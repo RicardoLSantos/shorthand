@@ -30,7 +30,7 @@ ValueSet: QTCorrectionFormulaVS
 Id: qt-correction-formula-vs
 Title: "QT Correction Formula ValueSet"
 Description: "ValueSet for QT interval correction formulas"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#bazett "Bazett Formula"
 * LifestyleMedicineTemporaryCS#fridericia "Fridericia Formula"
 * LifestyleMedicineTemporaryCS#framingham "Framingham Formula"
@@ -133,7 +133,7 @@ ValueSet: QTInterpretationVS
 Id: qt-interpretation-vs
 Title: "QT Interpretation ValueSet"
 Description: "Interpretation codes for QT interval findings"
-* ^experimental = false
+* ^experimental = true
 // Note: SNOMED 78976005 and 251161004 removed - not found in SNOMED CT International 2025-02
 // FIX 2026-01-12: Replaced 17338001 (inactive) with 9651007 (active equivalent)
 * $SCT#9651007 "Long QT syndrome (disorder)"
@@ -146,7 +146,7 @@ Extension: QTClinicalAlert
 Id: qt-clinical-alert
 Title: "QT Clinical Alert Extension"
 Description: "Extension for clinical alerts triggered by QT prolongation thresholds"
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * extension contains
@@ -163,7 +163,7 @@ ValueSet: QTAlertTypeVS
 Id: qt-alert-type-vs
 Title: "QT Alert Type ValueSet"
 Description: "ValueSet for QT clinical alert types"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#qtc-borderline "QTc Borderline Prolongation"
 * LifestyleMedicineTemporaryCS#qtc-prolongation-severe "QTc Severe Prolongation"
 * LifestyleMedicineTemporaryCS#qtc-increase-significant "Significant QTc Increase"

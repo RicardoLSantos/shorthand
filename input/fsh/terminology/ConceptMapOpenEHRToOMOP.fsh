@@ -15,8 +15,8 @@ Usage: #definition
 * version = "0.1.0"
 * name = "ConceptMapOpenEHRToOMOP"
 * title = "openEHR Archetype to OMOP CDM Mapping"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-16"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"

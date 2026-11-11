@@ -14,7 +14,7 @@ Title: "Environmental Observation Profile"
 Description: "Base profile for environmental measurements from iOS Health App"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Environmental Health Working Group"
 
@@ -178,8 +178,8 @@ Title: "Audio Exposure Metrics Value Set"
 Description: "Value set for audio exposure metrics from Apple HealthKit"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/audio-exposure-metrics-vs"
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * $LIFESTYLEOBS#environmental-audio-exposure "Environmental audio exposure level"
 * $LIFESTYLEOBS#headphone-audio-exposure "Headphone audio exposure level"

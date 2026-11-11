@@ -12,8 +12,8 @@ Usage: #definition
 * version = "0.2.0"
 * name = "ICD10ToICD11LifestyleConceptMap"
 * title = "ICD-10-CM to ICD-11 Lifestyle Medicine ConceptMap"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-11"
 * publisher = "Ricardo Lourenco dos Santos, FMUP"
 * description = """

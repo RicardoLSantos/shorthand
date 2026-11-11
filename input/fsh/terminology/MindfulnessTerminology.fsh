@@ -3,7 +3,7 @@ Id: mindfulness-outcome-vs
 Title: "Mindfulness Outcomes Value Set"
 Description: "Value set for mindfulness practice outcomes"
 
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#increasedAwareness "Increased Awareness"
 * LifestyleMedicineTemporaryCS#improvedFocus "Improved Focus"
 * LifestyleMedicineTemporaryCS#stressReduction "Stress Reduction"
@@ -26,7 +26,7 @@ These codes were removed. The custom MindfulnessQualifierCS provides
 appropriate qualifiers for mindfulness practice settings.
 """
 
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#guided "Guided Practice"
 * LifestyleMedicineTemporaryCS#selfDirected "Self-Directed"
 * LifestyleMedicineTemporaryCS#mindfulness-qualifier-group "Group Practice"

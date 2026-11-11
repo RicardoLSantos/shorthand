@@ -49,7 +49,7 @@ References:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2026-01-12"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -122,7 +122,7 @@ ValueSet: LivingSituationVS
 Id: living-situation-vs
 Title: "Living Situation Value Set"
 Description: "Living situation categories using SNOMED CT where available. Cat B Tier 2 remediation (2026-02-27)."
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.2.0"
 // SNOMED CT - Verified via local SNOMED database (2026-02-27)
 * $SCT#105529008 "Lives alone"
@@ -140,7 +140,7 @@ ValueSet: HouseholdTypeVS
 Id: household-type-vs
 Title: "Household Type Value Set"
 Description: "Types of household composition"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#single-person "Single Person"
 * LifestyleMedicineTemporaryCS#couple-no-children "Couple Without Children"
 * LifestyleMedicineTemporaryCS#nuclear-family "Nuclear Family"
@@ -155,7 +155,7 @@ ValueSet: MaritalStatusVS
 Id: marital-status-vs
 Title: "Marital Status Value Set"
 Description: "Marital or partnership status"
-* ^experimental = false
+* ^experimental = true
 * $SCT#87915002 "Married"
 * $SCT#125681006 "Single person"
 * $SCT#33553000 "Widowed"
@@ -169,7 +169,7 @@ ValueSet: CaregiverRoleVS
 Id: caregiver-role-vs
 Title: "Caregiver Role Value Set"
 Description: "Caregiving role categories"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#caregiver-not-applicable "Not Applicable"
 * LifestyleMedicineTemporaryCS#primary-caregiver "Primary Caregiver"
 * LifestyleMedicineTemporaryCS#secondary-caregiver "Secondary Caregiver"
@@ -181,7 +181,7 @@ ValueSet: RelationshipQualityVS
 Id: relationship-quality-vs
 Title: "Relationship Quality Value Set"
 Description: "Quality of family relationships"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#very-supportive "Very Supportive"
 * LifestyleMedicineTemporaryCS#generally-positive "Generally Positive"
 * LifestyleMedicineTemporaryCS#relationship-mixed "Mixed"

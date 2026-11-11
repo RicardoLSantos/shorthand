@@ -26,8 +26,8 @@ Cross-jurisdictional applicability:
 - LGPD Art. 6-VI: Transparency principle
 - GDPR Art. 13-14: Information to be provided to data subjects
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#ai-technical-doc-model-card
 * AgentDecisionSupportCS#ai-technical-doc-impact-assessment
 
@@ -42,8 +42,8 @@ Cross-jurisdictional applicability:
 - CFM 2.454 Art. 5: Patient safety requirements for AI systems
 - LGPD Art. 6-IV: Non-discrimination principle (bias metrics)
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#ai-performance-validated
 * AgentDecisionSupportCS#ai-performance-monitoring
 
@@ -57,8 +57,8 @@ data governance requirements.
 Art. 10 requires: relevant, representative, free of errors, complete datasets.
 Bias assessment against protected characteristics is mandatory.
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#ai-training-data-certified
 * AgentDecisionSupportCS#ai-training-data-uncertified
 
@@ -68,8 +68,8 @@ Title: "AI Risk Assessment Status ValueSet"
 Description: """
 Status of risk management assessments for AI systems under EU AI Act Art. 9.
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#ai-risk-assessment-complete
 * AgentDecisionSupportCS#ai-risk-assessment-pending
 

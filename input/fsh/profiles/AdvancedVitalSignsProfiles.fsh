@@ -9,7 +9,7 @@ Title: "Advanced Vital Signs Profile"
 Description: "Profile for advanced vital signs data from iOS Health App"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Advanced Vital Signs Working Group"
 
@@ -111,7 +111,7 @@ Id: advanced-vital-signs-context-vs
 Title: "Advanced Vital Signs Context Value Set"
 Description: "Context codes for advanced vital sign measurements"
 
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#resting "Resting state"
 * AppLogicCS#vitals-context-active "Active state"
 * AppLogicCS#vitals-context-recovery "Recovery state"

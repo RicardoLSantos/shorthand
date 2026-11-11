@@ -31,8 +31,8 @@ Maps lifestyle medicine nutrition and dietary intake metrics to LOINC codes.
 """
 Usage: #definition
 
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-17"
 * publisher = "FMUP HEADS2"
 * name = "ConceptMapNutritionToLOINC"

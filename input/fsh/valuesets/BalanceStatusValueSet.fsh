@@ -3,9 +3,9 @@ Id: balance-status
 Title: "Balance Status Value Set"
 Description: "Value set for walking steadiness balance status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/balance-status"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
-* ^experimental = false
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email

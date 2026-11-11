@@ -34,8 +34,8 @@ mapped - they represent unrelated clinical concepts.
 standardized activity codes for external cause reporting.
 """
 
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"

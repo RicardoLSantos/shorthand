@@ -4,8 +4,8 @@ Title: "Lifestyle Medicine Observation Value Set"
 Description: "Value set containing all local lifestyle medicine observation codes for sleep, noise, social interaction, stress, UV, HRV, cardiovascular, balance/mobility, nutrition, mindfulness, walking/gait, cardiac, and substance use domains."
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/lifestyle-observation-vs"
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 // Sleep
 * LifestyleMedicineTemporaryCS#sleep-panel "Sleep measurement panel"
 * LifestyleMedicineTemporaryCS#sleep-deep "Deep sleep duration"

@@ -8,8 +8,8 @@ Description: "Index representing overall physiological stress based on multiple 
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -34,8 +34,8 @@ Description: "Composite measure of physiological balance and adaptation"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -60,8 +60,8 @@ Description: "Measure of how efficiently the body recovers from stress or exerti
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -86,8 +86,8 @@ Description: "Measure of cumulative physiological burden over time"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -112,8 +112,8 @@ Description: "Indicator of position in circadian rhythm cycle"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -132,7 +132,7 @@ Id: circadian-phase-vs
 Title: "Circadian Phase Value Set"
 Description: "Value set for circadian rhythm phases"
 
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#early-morning "Early Morning Phase"
 * LifestyleMedicineTemporaryCS#mid-morning "Mid Morning Phase"
 * LifestyleMedicineTemporaryCS#circadian-afternoon "Afternoon Phase"
@@ -147,8 +147,8 @@ Description: "Indicator of the quality and reliability of the measurement"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -167,7 +167,7 @@ Id: measurement-quality-vs
 Title: "Measurement Quality Value Set"
 Description: "Value set for measurement quality indicators"
 
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#measurement-quality-excellent "Excellent Quality"
 * AppLogicCS#measurement-quality-good "Good Quality"
 * AppLogicCS#measurement-quality-fair "Fair Quality"

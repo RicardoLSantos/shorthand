@@ -32,7 +32,7 @@ Usage: #example
 Title: "Example of Mindfulness Questionnaire"
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/MindfulnessQuestionnaireExample"
-* status = #active
+* status = #draft
 * title = "Daily Mindfulness Assessment"
 * version = "1.0"
 * name = "MindfulnessQuestionnaireExample"

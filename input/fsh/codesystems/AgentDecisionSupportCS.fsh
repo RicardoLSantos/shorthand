@@ -32,8 +32,8 @@ These are CDSS operational metadata, not clinical terminology.
 FHIR equivalents are noted in comments where they exist
 (e.g., FHIR task-status for workflow codes).
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^content = #complete
 * ^version = "1.0.0"
 * ^date = "2026-02-27"

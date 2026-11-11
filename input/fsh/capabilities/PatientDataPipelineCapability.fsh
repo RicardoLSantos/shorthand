@@ -46,7 +46,7 @@ Pipeline-specific behavior is declared via 3 dedicated Extensions on
 rest level: pipeline-rate-limit, pipeline-retry-semantics, pipeline-error-reporting.
 """
 
-* status = #active
+* status = #draft
 * date = "2026-05-19"
 * kind = #requirements
 * fhirVersion = #4.0.1
@@ -297,7 +297,7 @@ ETL endpoint. Rate-limited at 10 requests/s per Apple's HealthKit RESTful API
 guidelines; exponential-backoff retry; error reporting at /api/pipeline/errors.
 """
 
-* status = #active
+* status = #draft
 * date = "2026-05-19"
 * kind = #instance
 * implementation

@@ -12,7 +12,7 @@ Title: "Stress Assessment Questionnaire (PSS-10)"
 Description: "The Perceived Stress Scale (PSS-10) is the most widely used psychological instrument for measuring perception of stress. It measures the degree to which situations in life are appraised as stressful during the past month."
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/stress-assessment-pss10"
-* status = #active
+* status = #draft
 * title = "Perceived Stress Scale (PSS-10)"
 * subjectType = #Patient
 * version = "1.0.0"

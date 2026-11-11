@@ -137,8 +137,8 @@ Title: "Mobility Metrics Value Set"
 Description: "Value set for iOS 14+ mobility metrics from Apple HealthKit"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mobility-metrics-vs"
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * $LIFESTYLEOBS#walking-speed "Walking speed measurement"
 * $LIFESTYLEOBS#walking-step-length "Walking step length"

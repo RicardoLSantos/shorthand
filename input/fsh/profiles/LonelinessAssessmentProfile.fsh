@@ -39,7 +39,7 @@ loneliness associated with 26% increased mortality risk (OR=1.26, 95% CI: 1.04-1
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2026-01-12"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -112,7 +112,7 @@ ValueSet: LonelinessFrequencyVS
 Id: loneliness-frequency-vs
 Title: "Loneliness Frequency Value Set"
 Description: "Frequency responses for loneliness assessment"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#hardly-ever "Hardly ever"
 * LifestyleMedicineTemporaryCS#some-of-time "Some of the time"
 * LifestyleMedicineTemporaryCS#often "Often"
@@ -121,7 +121,7 @@ ValueSet: LonelinessItemResponseVS
 Id: loneliness-item-response-vs
 Title: "Loneliness Item Response Value Set"
 Description: "Response options for individual UCLA loneliness items"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#hardly-ever "Hardly ever"
 * LifestyleMedicineTemporaryCS#some-of-time "Some of the time"
 * LifestyleMedicineTemporaryCS#often "Often"
@@ -130,7 +130,7 @@ ValueSet: LonelinessAssessmentMethodVS
 Id: loneliness-assessment-method-vs
 Title: "Loneliness Assessment Method Value Set"
 Description: "Validated instruments for loneliness assessment"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#ucla-20 "UCLA Loneliness Scale (20-item)"
 * LifestyleMedicineTemporaryCS#ucla-3 "UCLA Loneliness Scale (3-item)"
 * LifestyleMedicineTemporaryCS#de-jong "De Jong Gierveld Scale"

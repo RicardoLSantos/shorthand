@@ -23,7 +23,7 @@ quantity or a range. A CarePlanLifestyleMedicine may reference the goal
 through CarePlan.goal. The profile carries no clinical recommendation: which
 goals are appropriate for a person is a clinical decision.
 """
-* ^experimental = false
+* ^experimental = true
 * ^date = "2026-09-22"
 
 // Lifecycle

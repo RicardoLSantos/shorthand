@@ -34,7 +34,7 @@ Aligned with CFM 2.454/2026 Art. 7 (physician autonomy) and EU AI Act Art. 14
 (human oversight).
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Core MedicationRequest constraints
 * status 1..1 MS
@@ -72,7 +72,7 @@ Extension: DrugLifestyleInteraction
 Id: drug-lifestyle-interaction
 Title: "Drug-Lifestyle Interaction Extension"
 Description: "Flags a known interaction between the prescribed medication and a dietary/lifestyle factor, supporting the IG's CDS Hooks drug-lifestyle-interaction service (medication-prescribe hook)."
-* ^experimental = false
+* ^experimental = true
 * ^context[+].type = #element
 * ^context[=].expression = "MedicationRequest"
 * value[x] only CodeableConcept
@@ -88,7 +88,7 @@ CodeSystem: DrugLifestyleInteractionCS
 Id: drug-lifestyle-interaction-cs
 Title: "Drug-Lifestyle Interaction Category Code System"
 Description: "Local code system enumerating categories of drug-diet/lifestyle interaction relevant to lifestyle-medicine prescribing. Starter set derived from the IG's documented CDS Hooks drug-lifestyle-interaction examples; intended for clinical expansion."
-* ^experimental = false
+* ^experimental = true
 * ^caseSensitive = true
 * ^content = #complete
 * #maoi-tyramine "MAOI + tyramine-rich diet" "Monoamine oxidase inhibitors with tyramine-rich foods (aged cheese, cured/fermented foods) - hypertensive crisis risk."
@@ -103,7 +103,7 @@ ValueSet: DrugLifestyleInteractionVS
 Id: drug-lifestyle-interaction-vs
 Title: "Drug-Lifestyle Interaction Category Value Set"
 Description: "Categories of drug-diet/lifestyle interaction surfaced by the CDS Hooks drug-lifestyle-interaction service. Extensible binding - clinical expansion expected."
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * DrugLifestyleInteractionCS#maoi-tyramine "MAOI + tyramine-rich diet"
 * DrugLifestyleInteractionCS#ssri-alcohol "SSRI + alcohol"

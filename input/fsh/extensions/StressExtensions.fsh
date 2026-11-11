@@ -2,7 +2,7 @@ Extension: StressTriggers
 Id: stress-triggers
 Title: "Stress Triggers Extension"
 Description: "Extension for recording identified stress triggers"
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
@@ -12,7 +12,7 @@ Extension: StressCoping
 Id: stress-coping
 Title: "Stress Coping Extension"
 Description: "Extension for recording stress coping mechanisms"
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
@@ -22,7 +22,7 @@ ValueSet: StressTriggersVS
 Id: stress-triggers-vs
 Title: "Stress Triggers Value Set"
 Description: "Value set for common stress triggers"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#stress-triggers-work "Work-related"
 * LifestyleMedicineTemporaryCS#financial "Financial"
 * LifestyleMedicineTemporaryCS#relationships "Relationships"
@@ -35,7 +35,7 @@ ValueSet: StressCopingVS
 Id: stress-coping-vs
 Title: "Stress Coping Value Set"
 Description: "Value set for stress coping mechanisms"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#stress-coping-exercise "Physical Exercise"
 * LifestyleMedicineTemporaryCS#stress-coping-meditation "Meditation"
 * LifestyleMedicineTemporaryCS#stress-coping-social "Social Support"

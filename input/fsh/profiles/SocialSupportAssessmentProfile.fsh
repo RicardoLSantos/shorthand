@@ -42,7 +42,7 @@ Profile for social support assessment using validated instruments.
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2026-01-12"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -134,7 +134,7 @@ ValueSet: SocialSupportLevelVS
 Id: social-support-level-vs
 Title: "Social Support Level Value Set"
 Description: "Levels of perceived social support"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#social-support-level-high "High Support"
 * AppLogicCS#social-support-level-moderate "Moderate Support"
 * AppLogicCS#social-support-level-low "Low Support"
@@ -144,7 +144,7 @@ ValueSet: SocialSupportAssessmentMethodVS
 Id: social-support-assessment-method-vs
 Title: "Social Support Assessment Method Value Set"
 Description: "Validated instruments for social support assessment"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#mspss "MSPSS"
 * LifestyleMedicineTemporaryCS#duke-unc "Duke-UNC FSSQ"
 * LifestyleMedicineTemporaryCS#mos-sss "MOS-SSS"
@@ -156,7 +156,7 @@ ValueSet: SocialSupportInterpretationVS
 Id: social-support-interpretation-vs
 Title: "Social Support Interpretation Value Set"
 Description: "Clinical interpretation of social support scores"
-* ^experimental = false
+* ^experimental = true
 * $ObsInt#H "High"
 * $ObsInt#N "Normal"
 * $ObsInt#L "Low"

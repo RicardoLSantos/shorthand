@@ -20,7 +20,7 @@ InstanceOf: MindfulnessOperation
 Title: "Start Session Operation"
 Description: "Operation to start a new mindfulness session"
 
-* status = #active
+* status = #draft
 * kind = #operation
 * name = "StartSession"
 * code = #start
@@ -41,7 +41,7 @@ InstanceOf: MindfulnessOperation
 Title: "End Session Operation"
 Description: "Operation to end an ongoing mindfulness session"
 
-* status = #active
+* status = #draft
 * kind = #operation
 * name = "EndSession"
 * code = #end

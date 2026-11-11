@@ -29,8 +29,8 @@ Organised by intervention category:
 These codes were previously custom in LifestyleMedicineTemporaryCS.
 Replaced by standard SNOMED codes per comparative audit (PA IG benchmark).
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-09-16"
 

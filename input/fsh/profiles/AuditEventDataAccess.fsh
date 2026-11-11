@@ -28,7 +28,7 @@ required by GDPR Art. 30 records of processing activities, LGPD Art. 37
 operation logs, and HIPAA Privacy Rule §164.528 accounting of disclosures.
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Type — always a security/access audit
 * type 1..1 MS
@@ -141,8 +141,8 @@ Description: """
 ValueSet of audit event types for general data access events under
 GDPR/LGPD/HIPAA compliance regimes.
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * http://dicom.nema.org/resources/ontology/DCM#110100 "Application Activity"
 * http://dicom.nema.org/resources/ontology/DCM#110101 "Audit Log Used"

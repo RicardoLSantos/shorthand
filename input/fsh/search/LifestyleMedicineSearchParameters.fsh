@@ -16,7 +16,7 @@ Usage: #definition
 Title: "Observation Domain Search"
 Description: "Search observations by lifestyle medicine domain using the domain extension value. Enables queries like 'all sleep observations' or 'all HRV observations' across vendor-specific profiles."
 
-* status = #active
+* status = #draft
 * code = #observation-domain
 * name = "ObservationDomain"
 * base = #Observation
@@ -35,7 +35,7 @@ Usage: #definition
 Title: "Observation Device Vendor Search"
 Description: "Search observations by source wearable device manufacturer. Enables vendor-specific data retrieval (e.g., all Apple Watch observations, all Fitbit data)."
 
-* status = #active
+* status = #draft
 * code = #observation-device-vendor
 * name = "ObservationDeviceVendor"
 * base = #Observation
@@ -54,7 +54,7 @@ Usage: #definition
 Title: "Observation Value Range Search"
 Description: "Search observations by quantitative value. Enables clinical queries such as 'SDNN below 40ms' or 'SpO2 below 90%' for risk stratification."
 
-* status = #active
+* status = #draft
 * code = #observation-value-range
 * name = "ObservationValueRange"
 * base = #Observation
@@ -77,7 +77,7 @@ Usage: #definition
 Title: "AuditEvent AI Model Search"
 Description: "Search AI audit events by the SLM/LLM model that generated the inference. Supports EU AI Act Art. 12 model traceability requirements."
 
-* status = #active
+* status = #draft
 * code = #audit-ai-model
 * name = "AuditEventAIModel"
 * base = #AuditEvent
@@ -95,7 +95,7 @@ Usage: #definition
 Title: "ClinicalImpression AI Confidence Search"
 Description: "Search AI-generated clinical impressions by confidence score. Enables filtering low-confidence assessments for physician review prioritisation."
 
-* status = #active
+* status = #draft
 * code = #ai-confidence
 * name = "ClinicalImpressionAIConfidence"
 * base = #ClinicalImpression
@@ -117,7 +117,7 @@ Usage: #definition
 Title: "CarePlan Lifestyle Category Search"
 Description: "Search lifestyle medicine care plans by intervention category (stress management, exercise, nutrition, sleep hygiene). Enables domain-specific plan retrieval."
 
-* status = #active
+* status = #draft
 * code = #careplan-lifestyle-category
 * name = "CarePlanLifestyleCategory"
 * base = #CarePlan
@@ -135,7 +135,7 @@ Usage: #definition
 Title: "Consent Jurisdiction Search"
 Description: "Search patient consents by regulatory jurisdiction (GDPR, LGPD, HIPAA). Enables multi-jurisdictional compliance verification."
 
-* status = #active
+* status = #draft
 * code = #consent-jurisdiction
 * name = "ConsentJurisdiction"
 * base = #Consent

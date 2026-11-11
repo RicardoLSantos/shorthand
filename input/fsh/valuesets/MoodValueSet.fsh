@@ -2,9 +2,9 @@ ValueSet: MoodValueSet
 Id: mood
 Title: "Mood Value Set"
 Description: "Mood states using standard SNOMED CT clinical findings. Replaces custom codes per Cat B remediation (2026-02-27). Deprecated SNOMED 247778001/38237000 updated to active 81548002/48694002 (Database-First, 2026-05-23)."
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mood"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.2.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"

@@ -1,7 +1,7 @@
 Instance: MindfulnessType
 InstanceOf: SearchParameter
 Description: "Example instance of MindfulnessType"Usage: #definition
-* status = #active
+* status = #draft
 * code = #mindfulness-type
 * name = "MindfulnessType"
 * description = "Search for mindfulness observations by practice type"

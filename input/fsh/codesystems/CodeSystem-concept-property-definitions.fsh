@@ -11,8 +11,8 @@ Title: "Assignment Status ValueSet"
 Description: "Valid values for the assignment-status concept property"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assignment-status-vs"
 * ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AppLogicCS#mapped "Mapped"
 * AppLogicCS#pending-loinc "Pending LOINC Assignment"
 * AppLogicCS#pending-snomed "Pending SNOMED CT Assignment"

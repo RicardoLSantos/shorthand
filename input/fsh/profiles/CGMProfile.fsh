@@ -215,8 +215,8 @@ Id: cgm-glucose-unit-vs
 Title: "CGM Glucose Unit ValueSet"
 Description: "Units for glucose measurement"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-unit-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * include $UCUM#mg/dL "milligrams per deciliter"
 * include $UCUM#mmol/L "millimoles per liter"
 
@@ -226,8 +226,8 @@ Id: cgm-glucose-interpretation-vs
 Title: "CGM Glucose Interpretation ValueSet"
 Description: "Categorical interpretation of glucose values per International Consensus"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-glucose-interpretation-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#severe-hypo "Severe Hypoglycemia"
 * LifestyleMedicineTemporaryCS#hypo "Hypoglycemia"
 * LifestyleMedicineTemporaryCS#in-range "In Range"
@@ -240,8 +240,8 @@ Id: cgm-trend-arrow-vs
 Title: "CGM Trend Arrow ValueSet"
 Description: "Direction and rate of glucose change"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-trend-arrow-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#falling-rapidly "Falling Rapidly"
 * LifestyleMedicineTemporaryCS#falling "Falling"
 * LifestyleMedicineTemporaryCS#falling-slowly "Falling Slowly"
@@ -257,8 +257,8 @@ Id: cgm-system-vs
 Title: "CGM System ValueSet"
 Description: "CGM devices and systems"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-system-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AppLogicCS#dexcom-g6 "Dexcom G6"
 * AppLogicCS#dexcom-g7 "Dexcom G7"
 * AppLogicCS#dexcom-one "Dexcom ONE"
@@ -280,8 +280,8 @@ Id: cgm-insertion-site-vs
 Title: "CGM Insertion Site ValueSet"
 Description: "Body sites for CGM sensor insertion"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cgm-insertion-site-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#upper-arm "Upper Arm"
 * LifestyleMedicineTemporaryCS#abdomen "Abdomen"
 * LifestyleMedicineTemporaryCS#buttock "Buttock"

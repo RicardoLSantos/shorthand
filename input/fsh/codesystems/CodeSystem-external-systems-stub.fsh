@@ -20,8 +20,8 @@ Title: "OHDSI OMOP CDM Concepts (External Reference)"
 Description: "Stub CodeSystem representing OHDSI OMOP Common Data Model concepts from Athena. This CodeSystem serves as a formal reference target for ConceptMaps mapping to OMOP. Actual concept codes are maintained at https://athena.ohdsi.org/"
 * ^url = "http://athena.ohdsi.org/search-terms/terms"
 * ^version = "5.4"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-30"
 * ^publisher = "OHDSI (Observational Health Data Sciences and Informatics)"
 * ^contact.name = "OHDSI Community"
@@ -46,8 +46,8 @@ Title: "openEHR Clinical Knowledge Manager Archetypes (External Reference)"
 Description: "Stub CodeSystem representing openEHR archetypes from the Clinical Knowledge Manager (CKM). This CodeSystem serves as a formal reference target for ConceptMaps mapping between FHIR and openEHR. Actual archetypes are maintained at https://ckm.openehr.org/"
 * ^url = "https://ckm.openehr.org/ckm/archetypes"
 * ^version = "2024.1"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-30"
 * ^publisher = "openEHR Foundation"
 * ^contact.name = "openEHR Foundation"
@@ -73,8 +73,8 @@ Title: "Apple HealthKit Types (External Reference)"
 Description: "Stub CodeSystem representing Apple HealthKit quantity and category types. This CodeSystem serves as a formal reference for mapping wearable data from Apple devices."
 * ^url = "https://developer.apple.com/documentation/healthkit"
 * ^version = "2024"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-30"
 * ^publisher = "Apple Inc."
 * ^contact.telecom.system = #url
@@ -101,8 +101,8 @@ Title: "Fitbit Web API Types (External Reference)"
 Description: "Stub CodeSystem representing Fitbit Web API data types. This CodeSystem serves as a formal reference for mapping wearable data from Fitbit devices."
 * ^url = "https://dev.fitbit.com/build/reference/web-api"
 * ^version = "1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-30"
 * ^publisher = "Fitbit (Google)"
 * ^contact.telecom.system = #url
@@ -122,8 +122,8 @@ Title: "Garmin Connect API Types (External Reference)"
 Description: "Stub CodeSystem representing Garmin Connect and Health API data types."
 * ^url = "https://developer.garmin.com/gc-developer-program"
 * ^version = "1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-30"
 * ^publisher = "Garmin Ltd."
 * ^contact.telecom.system = #url
@@ -143,8 +143,8 @@ Title: "Oura Ring API Types (External Reference)"
 Description: "Stub CodeSystem representing Oura Ring API data types."
 * ^url = "https://cloud.ouraring.com/v2/docs"
 * ^version = "2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-30"
 * ^publisher = "Oura Health Oy"
 * ^contact.telecom.system = #url
@@ -164,8 +164,8 @@ Title: "Polar AccessLink API Types (External Reference)"
 Description: "Stub CodeSystem representing Polar AccessLink API data types."
 * ^url = "https://www.polar.com/accesslink-api"
 * ^version = "3.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-30"
 * ^publisher = "Polar Electro Oy"
 * ^contact.telecom.system = #url

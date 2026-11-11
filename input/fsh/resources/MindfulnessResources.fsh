@@ -2,7 +2,7 @@ ValueSet: MindfulnessTypeVS
 Id: mindfulness-type-vs
 Title: "Mindfulness Practice Types Value Set"
 Description: "Value set of mindfulness practice types"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#mindfulness-type-meditation "Meditation"
 * LifestyleMedicineTemporaryCS#breathing "Breathing Exercise"
 * LifestyleMedicineTemporaryCS#bodyScan "Body Scan"
@@ -13,7 +13,7 @@ ValueSet: EnvironmentTypeVS
 Id: environment-type-vs
 Title: "Practice Environment Types Value Set"
 Description: "Value set of practice environment types"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#mindfulness-setting-home "Home Practice"
 * LifestyleMedicineTemporaryCS#mindfulness-setting-clinic "Clinical Setting"
 * LifestyleMedicineTemporaryCS#mindfulness-setting-group "Group Setting"

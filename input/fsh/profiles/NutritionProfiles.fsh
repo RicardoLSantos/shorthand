@@ -22,7 +22,7 @@ Title: "Nutrition Intake Observation Profile"
 Description: "Profile for nutrition intake data from iOS Health App and user input"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
@@ -40,7 +40,7 @@ Title: "Water Intake Observation Profile"
 Description: "Profile for water intake measurements"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * code = $LIFESTYLEOBS#lifestyle-water-intake "Water intake volume"
@@ -56,7 +56,7 @@ Title: "Calorie Intake Observation Profile"
 Description: "Profile for caloric intake measurements"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#lifestyle-caloric-intake "Total caloric intake"
@@ -72,7 +72,7 @@ Title: "Macronutrients Observation Profile"
 Description: "Profile for macronutrient intake measurements"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#macronutrients-panel "Macronutrients intake panel"
@@ -140,7 +140,7 @@ References:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2026-01-12"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 

@@ -2,13 +2,13 @@ Extension: NutritionDataSource
 Id: nutrition-data-source
 Title: "Nutrition Data Source Extension"
 Description: "Indicates the source of nutrition data"
-* ^experimental = false
+* ^experimental = true
 
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -28,13 +28,13 @@ ValueSet: NutritionDataSourceVS
 Id: nutrition-data-source-vs
 Title: "Nutrition Data Source Value Set"
 Description: "Value set for nutrition data sources"
-* ^experimental = false
+* ^experimental = true
 
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email

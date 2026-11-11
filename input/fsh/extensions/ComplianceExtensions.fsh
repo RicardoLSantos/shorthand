@@ -38,7 +38,7 @@ ValueSet: RegulatoryFrameworkVS
 Id: regulatory-framework-vs
 Title: "Regulatory Framework Value Set"
 Description: "Regulatory frameworks for healthcare data protection"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#gdpr "GDPR - General Data Protection Regulation"
 * AppLogicCS#hipaa "HIPAA - Health Insurance Portability and Accountability Act"
 * AppLogicCS#lgpd "LGPD - Lei Geral de Proteção de Dados"

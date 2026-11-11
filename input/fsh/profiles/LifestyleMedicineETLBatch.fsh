@@ -52,8 +52,8 @@ Profile constraints (all `MS = mustSupport`):
 - `total` and `link` are prohibited (Bundle.type=batch is neither search-set nor history)
 """
 
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 
 // ----- Bundle.type — fixed to batch -----
 * type 1..1 MS
@@ -117,7 +117,7 @@ Title: "Lifestyle Medicine ETL Run Identifier URN"
 Description: "NamingSystem defining the URN namespace for ETL run identifiers used in LifestyleMedicineETLBatch Bundle.identifier"
 
 * name = "LifestyleMedicineETLRunId"
-* status = #active
+* status = #draft
 * kind = #identifier
 * date = "2026-05-15"
 * publisher = "iOS Lifestyle Medicine HEADS FHIR IG"

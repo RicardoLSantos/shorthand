@@ -343,8 +343,8 @@ Id: readiness-category-vs
 Title: "Readiness Category ValueSet"
 Description: "Categories for interpreting recovery readiness scores from wearable devices"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/readiness-category-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#optimal "Optimal (85-100)"
 * LifestyleMedicineTemporaryCS#readiness-good "Good (70-84)"
 * LifestyleMedicineTemporaryCS#readiness-fair "Fair (50-69)"
@@ -356,8 +356,8 @@ Id: baseline-comparison-vs
 Title: "Baseline Comparison ValueSet"
 Description: "Methods for comparing current values to established baselines"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/baseline-comparison-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AppLogicCS#above "Above Baseline"
 * AppLogicCS#at "At Baseline"
 * AppLogicCS#below "Below Baseline"
@@ -367,8 +367,8 @@ Id: trend-direction-vs
 Title: "Trend Direction ValueSet"
 Description: "Directions of trends in health metrics over time"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/trend-direction-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#trend-improving "Improving"
 * LifestyleMedicineTemporaryCS#trend-stable "Stable"
 * LifestyleMedicineTemporaryCS#trend-declining "Declining"
@@ -378,8 +378,8 @@ Id: activity-balance-vs
 Title: "Activity Balance ValueSet"
 Description: "Categories for activity and recovery balance status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/activity-balance-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#balanced "Well Balanced"
 * LifestyleMedicineTemporaryCS#slight-over "Slightly Overtrained"
 * LifestyleMedicineTemporaryCS#undertrained "Undertrained"
@@ -390,8 +390,8 @@ Id: recovery-debt-vs
 Title: "Recovery Debt ValueSet"
 Description: "Levels of accumulated recovery debt from training or stress"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/recovery-debt-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#recovery-debt-none "No Debt"
 * LifestyleMedicineTemporaryCS#recovery-debt-mild "Mild Debt"
 * LifestyleMedicineTemporaryCS#recovery-debt-moderate "Moderate Debt"
@@ -402,8 +402,8 @@ Id: training-status-vs
 Title: "Training Status ValueSet"
 Description: "Current training status categories based on fitness trends"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/training-status-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AppLogicCS#productive "Productive"
 * AppLogicCS#maintaining "Maintaining"
 * AppLogicCS#detraining "Detraining"
@@ -417,8 +417,8 @@ Id: recommended-activity-vs
 Title: "Recommended Activity ValueSet"
 Description: "Recommended activity types based on recovery status"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/recommended-activity-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#high-intensity "High Intensity"
 * LifestyleMedicineTemporaryCS#recommended-moderate "Moderate Training"
 * LifestyleMedicineTemporaryCS#recommended-light "Light Activity"
@@ -431,8 +431,8 @@ Id: wearable-vendor-vs
 Title: "Wearable Vendor ValueSet"
 Description: "Supported wearable device vendors for data integration"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/wearable-vendor-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#wearable-vendor-oura "Oura"
 * LifestyleMedicineTemporaryCS#wearable-vendor-whoop "WHOOP"
 * LifestyleMedicineTemporaryCS#wearable-vendor-garmin "Garmin"
@@ -450,8 +450,8 @@ Id: vo2max-unit-vs
 Title: "VO2max Unit ValueSet"
 Description: "Units of measurement for VO2max values"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-unit-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * include $UCUM#mL/kg/min "milliliters per kilogram per minute"
 * include $UCUM#L/min "liters per minute"
 
@@ -460,8 +460,8 @@ Id: crf-category-vs
 Title: "CRF Category ValueSet"
 Description: "Cardiorespiratory fitness categories based on VO2max percentiles"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/crf-category-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#very-poor "Very Poor"
 * LifestyleMedicineTemporaryCS#crf-category-poor "Poor"
 * LifestyleMedicineTemporaryCS#below-average "Below Average"
@@ -476,8 +476,8 @@ Id: crf-standard-vs
 Title: "CRF Standard ValueSet"
 Description: "Reference standards for cardiorespiratory fitness classification"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/crf-standard-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#acsm "ACSM"
 * LifestyleMedicineTemporaryCS#crf-standard-cooper "Cooper Institute"
 * LifestyleMedicineTemporaryCS#hunt "HUNT Fitness Study"
@@ -491,8 +491,8 @@ Id: vo2max-method-vs
 Title: "VO2max Method ValueSet"
 Description: "Methods for estimating or measuring VO2max"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-method-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#wearable "Wearable Algorithm"
 * LifestyleMedicineTemporaryCS#submaximal "Submaximal Test"
 * LifestyleMedicineTemporaryCS#non-exercise "Non-Exercise Prediction"
@@ -505,8 +505,8 @@ Id: vo2max-protocol-vs
 Title: "VO2max Protocol ValueSet"
 Description: "Exercise protocols used for VO2max testing"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-protocol-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#garmin-firstbeat "Garmin FirstBeat"
 * LifestyleMedicineTemporaryCS#apple-cardio "Apple Cardio Fitness"
 * LifestyleMedicineTemporaryCS#polar-fitness "Polar Fitness Test"
@@ -527,8 +527,8 @@ Id: validation-status-vs
 Title: "Validation Status ValueSet"
 Description: "Validation status of health measurements"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/validation-status-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AppLogicCS#validation-clinical "Clinically Validated"
 * AppLogicCS#research "Research Validated"
 * AppLogicCS#manufacturer "Manufacturer Validated"
@@ -540,8 +540,8 @@ Id: hrmax-method-vs
 Title: "HRmax Method ValueSet"
 Description: "Methods for determining maximum heart rate"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/hrmax-method-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#measured "Measured"
 * LifestyleMedicineTemporaryCS#age-220 "220-Age Formula"
 * LifestyleMedicineTemporaryCS#tanaka "Tanaka Formula"
@@ -554,8 +554,8 @@ Id: vo2max-trend-vs
 Title: "VO2max Trend ValueSet"
 Description: "Trends in VO2max values over time"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/vo2max-trend-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#sig-improving "Significantly Improving"
 * LifestyleMedicineTemporaryCS#vo2max-trend-improving "Improving"
 * LifestyleMedicineTemporaryCS#vo2max-trend-stable "Stable"
@@ -568,8 +568,8 @@ Id: cv-risk-category-vs
 Title: "CV Risk Category ValueSet"
 Description: "Cardiovascular risk categories based on fitness assessment"
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cv-risk-category-vs"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AppLogicCS#cv-risk-low "Low Risk"
 * AppLogicCS#cv-risk-moderate "Moderate Risk"
 * AppLogicCS#cv-risk-high "High Risk"

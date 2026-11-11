@@ -7,7 +7,7 @@ Extension: SleepQuality
 Id: sleep-quality
 Title: "Sleep Quality Extension"
 Description: "Extension for recording subjective sleep quality assessment. Uses custom SleepQualityCS codes as SNOMED CT lacks specific sleep quality level codes."
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only CodeableConcept
@@ -18,8 +18,8 @@ Id: sleep-quality-extended-vs
 Title: "Sleep Quality Extended Value Set"
 Description: "Extended value set for subjective sleep quality assessment. Uses custom codes due to SNOMED CT gap - no standard codes exist for sleep quality levels (verified 2026-01-09)."
 * ^name = "SleepQualityExtendedVS"
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 // Quality grades — SNOMED CT (per SharedQualifierValueSets, Phase 2 adoption)
 * http://snomed.info/sct#425405005 "Excellent (qualifier value)"
 * http://snomed.info/sct#20572008 "Good (qualifier value)"

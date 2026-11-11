@@ -14,8 +14,8 @@ Usage: #definition
 * version = "0.1.0"
 * name = "ConceptMapSleepToLOINC"
 * title = "Sleep Measurements to LOINC Mapping"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2025-11-22"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"

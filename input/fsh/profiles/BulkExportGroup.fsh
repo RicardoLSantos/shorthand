@@ -28,7 +28,7 @@ criteria. The $export operation extracts all member observations across
 the 11 lifestyle medicine domains for research/quality-improvement use.
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Type — Person (always — cohorts are patient cohorts in this IG)
 * type 1..1 MS
@@ -157,8 +157,8 @@ ValueSet: BulkExportGroupCategoryVS
 Id: bulk-export-group-category-vs
 Title: "Bulk Export Group Categories"
 Description: "Category codes for Bulk FHIR Export Group cohort intent"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 // T2 S35 (2026-05-28 11:15 WEST) — opcional fix dos 2 displays canonical
 // per v3-ActReason HL7 (resolve 2 INFORMATION entries em qa.txt linha 14017-14018).
@@ -181,8 +181,8 @@ LOINC + custom codes used as cohort selection criteria over lifestyle
 medicine wearable observations. Reuses canonical LOINC codes verified
 in IG terminology gap analysis (see ValueSetHeartRateVariability.fsh).
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 // HRV criteria
 * http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"

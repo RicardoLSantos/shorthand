@@ -19,7 +19,7 @@ ValueSet: SubstanceUseMotivationVS
 Id: substance-use-motivation-vs
 Title: "Substance Use Motivation ValueSet"
 Description: "Stages of change (Prochaska Transtheoretical Model) using standard SNOMED CT qualifier values. Replaces custom codes per Cat B remediation (2026-02-27). Deprecated SNOMED 134409004 (Relapse stage) updated to active 263855007 (Relapse phase) — no family-consistent successor exists; semantic match chosen over the generic parent 134408007 (Database-First, 2026-05-23)."
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.2.0"
 * http://snomed.info/sct#134414000 "Precontemplation stage"
 * http://snomed.info/sct#134413006 "Contemplation stage"
@@ -40,7 +40,7 @@ ValueSet: SubstanceUseTriggerVS
 Id: substance-use-trigger-vs
 Title: "Substance Use Trigger ValueSet"
 Description: "Common triggers for substance use"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * LifestyleMedicineTemporaryCS#substance-trigger-stress "Stress"
 * LifestyleMedicineTemporaryCS#substance-trigger-social "Social situations"
@@ -76,7 +76,7 @@ ValueSet: CessationSupportMethodVS
 Id: cessation-support-method-vs
 Title: "Cessation Support Method ValueSet"
 Description: "Methods of support for substance use cessation"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * LifestyleMedicineTemporaryCS#nrt-patch "NRT - Patch"
 * LifestyleMedicineTemporaryCS#nrt-gum "NRT - Gum"
@@ -96,7 +96,7 @@ ValueSet: CessationSupportStatusVS
 Id: cessation-support-status-vs
 Title: "Cessation Support Status ValueSet"
 Description: "Status of cessation support engagement. Cat B Tier 2 remediation (2026-02-27): replaced bulk include with enumerated clinical cessation status codes."
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.2.0"
 // All codes are cessation-specific clinical states (not generic task-status)
 * LifestyleMedicineTemporaryCS#considering "Considering"
@@ -118,7 +118,7 @@ ValueSet: DrinkingContextVS
 Id: drinking-context-vs
 Title: "Drinking Context ValueSet"
 Description: "Contexts where alcohol consumption typically occurs"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * LifestyleMedicineTemporaryCS#home-alone "Home alone"
 * LifestyleMedicineTemporaryCS#home-social "Home with others"

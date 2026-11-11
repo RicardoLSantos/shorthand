@@ -6,8 +6,8 @@ Description: "Extension for recording location of environmental exposure measure
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -31,8 +31,8 @@ Description: "Additional conditions during environmental exposure measurement"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -55,8 +55,8 @@ Description: "Value set for environmental exposure locations"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -64,7 +64,7 @@ Description: "Value set for environmental exposure locations"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#exposure-location-indoor "Indoor environment"
 * AppLogicCS#exposure-location-outdoor "Outdoor environment"
 * AppLogicCS#exposure-location-workplace "Workplace"
@@ -81,8 +81,8 @@ Description: "Value set for environmental exposure conditions"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -90,7 +90,7 @@ Description: "Value set for environmental exposure conditions"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#exposure-conditions-normal "Normal conditions"
 * AppLogicCS#exposure-conditions-extreme "Extreme conditions"
 * AppLogicCS#controlled "Controlled environment"

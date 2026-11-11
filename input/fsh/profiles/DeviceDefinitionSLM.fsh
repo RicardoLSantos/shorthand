@@ -21,7 +21,7 @@ cutoff. Supports EU AI Act Art. 13 (transparency) and Art. 49 (EU database
 registration) as well as CFM 2.454/2026 Art. 6 (system identification).
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Manufacturer
 * manufacturerString 0..1 MS

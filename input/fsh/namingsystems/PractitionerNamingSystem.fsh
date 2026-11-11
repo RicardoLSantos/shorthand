@@ -7,10 +7,10 @@ ValueSet: PractitionerIdentifierVS
 Id: practitioner-identifier-vs
 Title: "Practitioner Identifier Value Set"
 Description: "Value set para identificadores de practitioners"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -18,7 +18,7 @@ Description: "Value set para identificadores de practitioners"
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe"
 * ^useContext.code = http://terminology.hl7.org/CodeSystem/usage-context-type#program
 * ^useContext.valueCodeableConcept.text = "iOS Lifestyle Medicine"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#npi "National Provider Identifier"
 * AppLogicCS#crm "Conselho Regional de Medicina"
 * AppLogicCS#ssin "Social Security Identification Number"

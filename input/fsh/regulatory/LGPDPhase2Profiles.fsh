@@ -141,8 +141,8 @@ ValueSet: DPORoleVS
 Id: dpo-role-vs
 Title: "DPO Role"
 Description: "Role codes for LGPD Data Protection Officer (encarregado)."
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#lgpd-dpo "Data Protection Officer (Encarregado)"
 * AppLogicCS#lgpd-dpo-deputy "Deputy Data Protection Officer"
 
@@ -153,8 +153,8 @@ Description: """
 Data subject rights under LGPD Art. 18. Each code corresponds to a specific
 right that the data subject (titular) may exercise.
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#lgpd-right-confirmation "Right to Confirmation (Art. 18-I)"
 * AppLogicCS#lgpd-right-access "Right to Access (Art. 18-II)"
 * AppLogicCS#lgpd-right-correction "Right to Correction (Art. 18-III)"
@@ -169,8 +169,8 @@ ValueSet: DataSubjectRequestStatusVS
 Id: data-subject-request-status-vs
 Title: "Data Subject Request Status"
 Description: "Status codes for LGPD data subject rights request processing."
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * http://hl7.org/fhir/task-status#requested "Requested"
 * http://hl7.org/fhir/task-status#accepted "Accepted"
 * http://hl7.org/fhir/task-status#in-progress "In Progress"

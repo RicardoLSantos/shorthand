@@ -135,8 +135,8 @@ Description: """
 Justification categories for data collection under the data minimization principle.
 LGPD Art. 6-III, GDPR Art. 5(1)(c), HIPAA §164.502(b).
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#data-minimization-minimum-necessary "Minimum Necessary"
 * AppLogicCS#data-minimization-research-essential "Research Essential"
 * AppLogicCS#data-minimization-treatment-required "Treatment Required"
@@ -149,8 +149,8 @@ Description: """
 Types of bias that may be detected in AI/ML clinical outputs.
 LGPD Art. 6-IV (non-discrimination), EU AI Act Art. 10 (data governance).
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#bias-none "No Bias Detected"
 * AppLogicCS#bias-demographic "Demographic Bias"
 * AppLogicCS#bias-data "Data Bias"
@@ -163,8 +163,8 @@ Description: """
 Types of security incidents requiring notification under LGPD Art. 48.
 Cross-jurisdictional: GDPR Art. 33-34, HIPAA §164.408.
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#security-incident-breach "Data Breach"
 * AppLogicCS#security-incident-unauthorized-access "Unauthorized Access"
 * AppLogicCS#security-incident-data-loss "Data Loss"
@@ -186,8 +186,8 @@ Cross-jurisdictional applicability:
 - GDPR Recital 26: Anonymisation renders re-identification unreasonably likely
 - HIPAA §164.514: Safe Harbor (18 identifiers) or Expert Determination
 """
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * AppLogicCS#method-k-anonymity "k-Anonymity"
 * AppLogicCS#method-differential-privacy "Differential Privacy"
 * AppLogicCS#method-generalization "Generalization"

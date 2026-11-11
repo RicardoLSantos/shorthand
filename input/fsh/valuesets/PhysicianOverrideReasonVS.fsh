@@ -11,7 +11,7 @@ ValueSet: PhysicianOverrideReasonVS
 Id: physician-override-reason-vs
 Title: "Physician Override Reason Value Set"
 Description: "Reasons for physician override of AI-generated clinical recommendations. Required by CFM Resolution 2.454/2026 Art. 7 (physician autonomy) and EU AI Act Art. 14 (human oversight)."
-* ^experimental = false
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-03-05"
 * AgentDecisionSupportCS#override-clinical-judgment "Clinical Judgment Override"

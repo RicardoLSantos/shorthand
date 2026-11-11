@@ -12,7 +12,7 @@ Id: agent-plan-definition
 Title: "Agent Plan Definition Profile"
 Description: "Profile for plan definitions that encode LLM agent decision logic. Supports documentation of clinical decision rules, trigger conditions, and recommended actions for regulatory compliance and transparency."
 
-* ^experimental = false
+* ^experimental = true
 
 // URL for canonical reference
 * url 1..1 MS
@@ -230,7 +230,7 @@ ValueSet: AgentPlanDefinitionTypeVS
 Id: agent-plan-definition-type-vs
 Title: "Agent Plan Definition Type ValueSet"
 Description: "Types of plan definitions for agent decision logic"
-* ^experimental = false
+* ^experimental = true
 * http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#clinical-protocol "Clinical Protocol"
 * http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#eca-rule "ECA Rule"
 * http://terminology.hl7.org/CodeSystem/plan-definition-type|2.0.0#workflow-definition "Workflow Definition"
@@ -238,7 +238,7 @@ ValueSet: AgentDecisionTopicVS
 Id: agent-decision-topic-vs
 Title: "Agent Decision Topic ValueSet"
 Description: "Topics for agent decision logic including risk assessment, monitoring, interventions, and alerts"
-* ^experimental = false
+* ^experimental = true
 * AgentDecisionSupportCS#cardiovascular-risk "Cardiovascular Risk"
 * AgentDecisionSupportCS#metabolic-risk "Metabolic Risk"
 * AgentDecisionSupportCS#mental-health-risk "Mental Health Risk"

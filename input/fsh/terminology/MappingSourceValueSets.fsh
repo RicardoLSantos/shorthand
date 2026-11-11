@@ -19,7 +19,7 @@ Wrapper ValueSet including all nutrition concepts for ConceptMap source scope.
 
 **Pattern Used**: Explicit code enumeration per HL7 Physical Activity IG.
 """
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 // NutritionCS - Macronutrients (6 codes)
 * LifestyleMedicineTemporaryCS#nutrition-caloric-intake "Caloric intake"
@@ -51,7 +51,7 @@ Combined ValueSet including both nutrition and micronutrient concepts.
 
 **Pattern Used**: Explicit code enumeration per HL7 Physical Activity IG.
 """
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 // NutritionCS (13 codes)
 * LifestyleMedicineTemporaryCS#nutrition-caloric-intake "Caloric intake"
@@ -94,7 +94,7 @@ Wrapper ValueSet including all micronutrient concepts for ConceptMap source scop
 
 **Pattern Used**: Explicit code enumeration per HL7 Physical Activity IG.
 """
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 // Vitamins (6 codes)
 * LifestyleMedicineTemporaryCS#vitamin-d-intake "Vitamin D intake"

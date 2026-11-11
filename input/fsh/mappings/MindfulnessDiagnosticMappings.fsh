@@ -6,7 +6,7 @@ Description: "Mapping of mindfulness outcomes to diagnostic codes"
 * name = "MindfulnessDiagnosticMap"
 * status = #draft
 * date = "2026-09-23"
-* experimental = false
+* experimental = true
 * purpose = "Map mindfulness outcomes to standard diagnostic codes"
 * sourceUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-outcome-vs"
 * targetUri = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/mindfulness-snomed-vs"

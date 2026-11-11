@@ -7,8 +7,8 @@ ValueSet: LOINCObservationsVS
 Id: loinc-observations-vs
 Title: "LOINC Observation Codes for Lifestyle Medicine"
 Description: "LOINC codes relevant for lifestyle medicine observations including HRV, vital signs, anthropometrics, and physical activity metrics. Used as target ValueSet in ConceptMaps for semantic interoperability."
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-09-17"
 

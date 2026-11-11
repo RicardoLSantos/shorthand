@@ -13,8 +13,8 @@ Usage: #definition
 * version = "0.1.0"
 * name = "ConceptMapMobilityToSNOMED"
 * title = "Mobility Assessments to SNOMED CT Mapping"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-22"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * contact.name = "Ricardo L. Santos"

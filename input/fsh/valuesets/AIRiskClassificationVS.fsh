@@ -10,7 +10,7 @@ ValueSet: AIRiskClassificationVS
 Id: ai-risk-classification-vs
 Title: "AI Risk Classification Value Set"
 Description: "Risk classification levels for AI systems in healthcare, aligned with CFM Resolution 2.454/2026 (Brazil) and EU AI Act Regulation 2024/1689 (EU)."
-* ^experimental = false
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-03-05"
 * AgentDecisionSupportCS#ai-risk-baixo "Baixo Risco (Low Risk)"

@@ -9,7 +9,7 @@ Title: "Body Metrics Observation Profile"
 Description: "Profile for body measurements from iOS Health App"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status MS
@@ -24,7 +24,7 @@ Title: "Weight Measurement Profile"
 Description: "Profile for body weight measurements"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 
 * code = $LOINC#29463-7 "Body weight"
 * valueQuantity only Quantity
@@ -38,7 +38,7 @@ Title: "Height Measurement Profile"
 Description: "Profile for body height measurements"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 
 * code = $LOINC#8302-2 "Body height"
 * valueQuantity only Quantity
@@ -52,7 +52,7 @@ Title: "BMI Measurement Profile"
 Description: "Profile for Body Mass Index calculations"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 
 * code = $LOINC#39156-5 "Body mass index (BMI) [Ratio]"
 * valueQuantity only Quantity
@@ -66,7 +66,7 @@ Title: "Body Composition Profile"
 Description: "Profile for body composition measurements including fat, lean mass, and other metrics"
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#body-composition-panel "Body composition measurement panel"
 * component ^slicing.discriminator.type = #value

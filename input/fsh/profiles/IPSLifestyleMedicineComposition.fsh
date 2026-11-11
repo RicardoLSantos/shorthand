@@ -33,8 +33,8 @@ Sections include:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-01-26"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -161,8 +161,8 @@ referenced resources. This Bundle type is 'document' and includes:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-01-26"
 
 * type = #document
@@ -194,8 +194,8 @@ Includes standard IPS section codes plus lifestyle medicine extensions.
 
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ips-lifestyle-medicine-section-codes-vs"
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-01-26"
 
 // Standard IPS sections

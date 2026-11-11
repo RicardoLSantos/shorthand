@@ -2,12 +2,12 @@ ValueSet: EnvironmentalContextValueSet
 Id: environmental-context-vs
 Title: "Environmental Context Value Set"
 Description: "Valid contexts for environmental measurements"
-* ^experimental = false
+* ^experimental = true
 
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email

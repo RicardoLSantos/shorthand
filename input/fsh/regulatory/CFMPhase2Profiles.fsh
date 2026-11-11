@@ -19,8 +19,8 @@ Art. 4 requires clear notification of AI use. Art. 9 requires patient rights inf
 Art. 11 prohibits AI from communicating diagnoses directly — sender MUST be Practitioner.
 """
 
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * status 1..1 MS
@@ -53,8 +53,8 @@ Profile for healthcare organizations with AI governance responsibilities per CFM
 Documents the AI Commission, its Technical Director, and governance policies.
 """
 
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * identifier 0..* MS
@@ -86,8 +86,8 @@ Profile for the AI Technical Director (Responsável Técnico de IA) per CFM 2.45
 Designates the physician responsible for AI governance within the institution.
 """
 
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
 * active 1..1 MS

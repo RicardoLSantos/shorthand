@@ -8,8 +8,8 @@ Description: "Questionnaire for daily nutrition intake tracking"
 * version = "0.1.0"
 * name = "DailyNutritionQuestionnaire"
 * title = "Daily Nutrition Intake"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2024-12-14"
 * publisher = "Ricardo Lourenço dos Santos"
 

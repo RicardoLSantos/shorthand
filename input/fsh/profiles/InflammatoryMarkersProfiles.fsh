@@ -31,8 +31,8 @@ reflecting the cholinergic anti-inflammatory pathway (Tracey 2002).
 """
 
 * ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2025-11-27"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -308,8 +308,8 @@ autonomic-immune axis in lifestyle medicine interventions.
 """
 
 * ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * status MS
 * category 1..* MS
@@ -341,8 +341,8 @@ ValueSet: HsCRPInterpretationVS
 Id: hscrp-interpretation-vs
 Title: "hs-CRP Interpretation ValueSet"
 Description: "Cardiovascular risk interpretation for hs-CRP results (AHA/CDC guidelines)"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#crp-risk-low-risk "Low cardiovascular risk"
 * LifestyleMedicineTemporaryCS#average-risk "Average cardiovascular risk"
 * LifestyleMedicineTemporaryCS#crp-risk-high-risk "High cardiovascular risk"
@@ -359,8 +359,8 @@ Source: HL7 mCODE Implementation Guide v4.0.0
 
 SNOMED-CT codes validated via mCODE IG (HL7 International / Clinical Interoperability Council).
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)"
 * $SCT#268910001 "Patient's condition improved"
 * $SCT#359746009 "Patient's condition stable"
@@ -370,8 +370,8 @@ ValueSet: InflammatoryMarkerVS
 Id: inflammatory-marker-vs
 Title: "Inflammatory Marker ValueSet"
 Description: "LOINC codes for inflammatory biomarkers used in lifestyle medicine"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * $LOINC#1988-5 "C reactive protein [Mass/volume] in Serum or Plasma"
 * $LOINC#30522-7 "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method"
 * $LOINC#26881-3 "Interleukin 6 [Mass/volume] in Serum or Plasma"
@@ -405,8 +405,8 @@ Moles/volume variant 2519-7 = mmol/L is the more common clinical reporting unit)
 """
 
 * ^version = "1.0.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * status MS
 * category 1..* MS

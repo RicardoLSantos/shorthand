@@ -46,7 +46,7 @@ Cross-profile dependencies:
   - Profile #3 PatientDataPipelineCapability — server declaration accepting this Group as $export input
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // All inherited cardinalities from BulkExportGroup preserved:
 //   type = #person (1..1 MS)
@@ -98,8 +98,8 @@ CodeSystem: ETLGroupCharacteristicCS
 Id: etl-group-characteristic
 Title: "ETL Group Characteristic CodeSystem"
 Description: "Local CodeSystem for LifestyleMedicineGroupETL characteristic slicing discriminator codes."
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^content = #complete
 * ^caseSensitive = true
 

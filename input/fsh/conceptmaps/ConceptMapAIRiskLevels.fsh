@@ -21,8 +21,8 @@ nomenclature and regulatory implications.
 
 * version = "1.0.0"
 * name = "ConceptMapAIRiskLevels"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-03-05"
 * publisher = "iOS Lifestyle Medicine HEADS FHIR IG"
 * description = "Bidirectional mapping between CFM 2.454/2026 and EU AI Act risk classification levels"

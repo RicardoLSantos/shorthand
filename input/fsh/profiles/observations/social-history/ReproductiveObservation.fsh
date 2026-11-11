@@ -5,7 +5,7 @@ Title: "Reproductive Health Base Profile"
 Description: "Base profile for social-history health observations"
 
 * ^version = "1.0.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2026-09-17"
 
 * status MS

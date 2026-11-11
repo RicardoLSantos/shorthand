@@ -10,7 +10,7 @@ ValueSet: AIModelIdentifierVS
 Id: ai-model-identifier-vs
 Title: "AI Model Identifier Value Set"
 Description: "Identifiers for Small Language Models (SLMs) and Large Language Models (LLMs) used in the CDSS edge inference pipeline. Supports EU AI Act Art. 13 transparency requirements."
-* ^experimental = false
+* ^experimental = true
 * ^version = "1.0.0"
 * ^date = "2026-03-05"
 * AgentDecisionSupportCS#model-qwen35-4b "Qwen 3.5 4B"

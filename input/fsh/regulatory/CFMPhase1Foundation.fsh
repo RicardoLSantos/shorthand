@@ -13,8 +13,8 @@ ValueSet: CFMDefinitionsVS
 Id: cfm-definitions-vs
 Title: "CFM 2.454 Definition Reference Codes"
 Description: "Codes referencing CFM 2.454 Art. 2 definitions for AI system classification in Brazilian healthcare."
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#ia-medica
 * AgentDecisionSupportCS#sistema-apoio-decisao
 
@@ -22,8 +22,8 @@ ValueSet: AIAutonomyLevelVS
 Id: ai-autonomy-level-vs
 Title: "AI Autonomy Level ValueSet"
 Description: "Levels of AI system autonomy per CFM 2.454 Art. 3 risk classification criteria."
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#autonomy-fully-autonomous
 * AgentDecisionSupportCS#autonomy-semi-autonomous
 * AgentDecisionSupportCS#autonomy-assistive
@@ -33,8 +33,8 @@ ValueSet: AIDisclosureCategoryVS
 Id: ai-disclosure-category-vs
 Title: "AI Disclosure Category ValueSet"
 Description: "Categories of AI-related patient disclosure events per CFM 2.454 Art. 4 and Art. 9."
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#ai-disclosure-completed
 * AgentDecisionSupportCS#patient-second-opinion-requested
 * AgentDecisionSupportCS#patient-refused-ai
@@ -43,8 +43,8 @@ ValueSet: DataRetentionPolicyVS
 Id: data-retention-policy-vs
 Title: "Data Retention Policy ValueSet"
 Description: "Data retention strategies for audit trail compliance per CFM 2.454 Art. 6."
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * AgentDecisionSupportCS#retention-automatic
 * AgentDecisionSupportCS#retention-manual-review
 * AgentDecisionSupportCS#retention-permanent

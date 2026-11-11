@@ -25,7 +25,7 @@ RuleSet: MindfulnessQuestionnaireValidation
 * title MS
 * item MS
 
-* status = #active
+* status = #draft
 * subjectType = #Patient
 * item ^slicing.discriminator.type = #value
 * item ^slicing.discriminator.path = "linkId"

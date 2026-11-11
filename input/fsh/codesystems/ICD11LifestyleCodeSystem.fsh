@@ -40,8 +40,8 @@ and are coded with SNOMED CT and LOINC elsewhere in this IG.
 """
 
 * ^version = "0.3.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-11"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 * ^contact.name = "Ricardo L. Santos"

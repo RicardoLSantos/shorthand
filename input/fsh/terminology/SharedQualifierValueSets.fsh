@@ -30,8 +30,8 @@ Verified against tx.fhir.org 2026-02-19.
 """
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/risk-level-snomed-vs"
 * ^version = "0.2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-02-19"
 * ^publisher = "FMUP/2RDoc"
 * ^copyright = "SNOMED CT codes are copyright SNOMED International. Used under affiliate license."
@@ -58,8 +58,8 @@ Verified against tx.fhir.org 2026-02-19.
 """
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/severity-qualifier-snomed-vs"
 * ^version = "0.2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-02-19"
 * ^publisher = "FMUP/2RDoc"
 
@@ -84,8 +84,8 @@ Verified against tx.fhir.org 2026-02-19.
 """
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/quality-grade-snomed-vs"
 * ^version = "0.2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-17"
 * ^publisher = "FMUP/2RDoc"
 
@@ -110,8 +110,8 @@ Verified against tx.fhir.org 2026-02-19.
 """
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/trend-direction-snomed-vs"
 * ^version = "0.2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-09-16"
 * ^publisher = "FMUP/2RDoc"
 
@@ -137,8 +137,8 @@ Verified against tx.fhir.org 2026-02-19.
 """
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/assistance-level-snomed-vs"
 * ^version = "0.2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-02-19"
 * ^publisher = "FMUP/2RDoc"
 
@@ -164,8 +164,8 @@ Verified against tx.fhir.org 2026-02-19.
 """
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/confidence-level-snomed-vs"
 * ^version = "0.2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-02-19"
 * ^publisher = "FMUP/2RDoc"
 
@@ -190,8 +190,8 @@ Verified against tx.fhir.org 2026-02-19.
 """
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/normal-abnormal-snomed-vs"
 * ^version = "0.2.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^date = "2026-02-19"
 * ^publisher = "FMUP/2RDoc"
 

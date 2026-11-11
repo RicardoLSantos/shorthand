@@ -33,7 +33,7 @@ multi-jurisdictional policy structure from MultiJurisdictionalConsent
   - Mandatory link to BulkExportGroup (cohort definition)
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Override status — only active consents can authorize export
 * status MS
@@ -182,8 +182,8 @@ ValueSet: BulkExportConsentActionVS
 Id: bulk-export-consent-action-vs
 Title: "Bulk Export Consent Actions"
 Description: "Restricted set of actions authorized by BulkExportConsent"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * http://terminology.hl7.org/CodeSystem/consentaction#access "Access"
 * http://terminology.hl7.org/CodeSystem/consentaction#disclose "Disclose"
@@ -205,8 +205,8 @@ GDPR Art. 9.2.j (research exemption), LGPD Art. 11.II.c (research),
 HIPAA §164.512(i) (research). Excludes general treatment/payment/operations
 purposes (which fall under MultiJurisdictionalConsent base profile).
 """
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH "healthcare research"
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#CLINTRCH "clinical trial research"

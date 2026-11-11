@@ -22,7 +22,7 @@ Extension: AgentRecommendation
 Id: agent-recommendation
 Title: "Agent Recommendation Extension"
 Description: "Captures LLM agent recommendation metadata including confidence score, reasoning narrative, and evidence references. Supports MedAgentBench-style evaluation where agents must explain clinical reasoning."
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * ^context[1].type = #element
@@ -65,7 +65,7 @@ ValueSet: AgentInterpretationVS
 Id: agent-interpretation-vs
 Title: "Agent Interpretation ValueSet"
 Description: "ValueSet for LLM agent clinical interpretations"
-* ^experimental = false
+* ^experimental = true
 * AgentDecisionSupportCS#agent-interpretation-high-risk "High Risk"
 * AgentDecisionSupportCS#agent-interpretation-moderate-risk "Moderate Risk"
 * AgentDecisionSupportCS#agent-interpretation-low-risk "Low Risk"
@@ -78,7 +78,7 @@ ValueSet: AgentConfidenceLevelVS
 Id: agent-confidence-level-vs
 Title: "Agent Confidence Level ValueSet"
 Description: "ValueSet for categorical agent confidence levels"
-* ^experimental = false
+* ^experimental = true
 * AgentDecisionSupportCS#agent-confidence-very-high "Very High Confidence"
 * AgentDecisionSupportCS#agent-confidence-high "High Confidence"
 * AgentDecisionSupportCS#agent-confidence-moderate "Moderate Confidence"
@@ -93,7 +93,7 @@ Extension: AgentEvidenceQuality
 Id: agent-evidence-quality
 Title: "Agent Evidence Quality Extension"
 Description: "Indicates the quality and completeness of evidence available to the agent when making a recommendation."
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * ^context[1].type = #element
@@ -118,7 +118,7 @@ ValueSet: AgentDataCompletenessVS
 Id: agent-data-completeness-vs
 Title: "Agent Data Completeness ValueSet"
 Description: "Data completeness assessment values for agent analysis ranging from complete to insufficient"
-* ^experimental = false
+* ^experimental = true
 * AgentDecisionSupportCS#agent-completeness-complete "Complete"
 * AgentDecisionSupportCS#mostly-complete "Mostly Complete"
 * AgentDecisionSupportCS#partial "Partial"
@@ -133,7 +133,7 @@ Extension: AgentActionStatus
 Id: agent-action-status
 Title: "Agent Action Status Extension"
 Description: "Tracks the status of agent-recommended actions in clinical workflow. Supports MedAgentBench task completion evaluation."
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * ^context[1].type = #element
@@ -160,7 +160,7 @@ ValueSet: AgentActionStatusVS
 Id: agent-action-status-vs
 Title: "Agent Action Status ValueSet"
 Description: "Status codes for agent-recommended actions including pending, accepted, rejected, and completed"
-* ^experimental = false
+* ^experimental = true
 * AgentDecisionSupportCS#pending "Pending"
 * AgentDecisionSupportCS#accepted "Accepted"
 * AgentDecisionSupportCS#rejected "Rejected"

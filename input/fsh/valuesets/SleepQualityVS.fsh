@@ -7,8 +7,8 @@ ValueSet: SleepQualityVS
 Id: sleep-quality-vs
 Title: "Sleep Quality Value Set"
 Description: "Qualitative assessments of sleep quality for lifestyle medicine. Uses custom SleepQualityCS codes as SNOMED CT lacks specific sleep quality level codes (verified 2026-01-09). Reference: SNOMED 248254009 'Quality of sleep' is the parent observable entity."
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "Ricardo Lourenco dos Santos"
@@ -46,8 +46,8 @@ ValueSet: SleepHRVMetricVS
 Id: sleep-hrv-metric-vs
 Title: "Sleep HRV Metric Value Set"
 Description: "The HRV metric a sleep observation's heartRateVariability component may carry: SDNN (LOINC 80404-7) or RMSSD (a custom code, as LOINC has no RMSSD concept). The component code identifies the metric; consumers must read it — as reported in the published article (Int J Med Inform 217:106465, doi:10.1016/j.ijmedinf.2026.106465): Apple HealthKit exposes SDNN; Fitbit, Garmin and Oura expose RMSSD."
-* ^experimental = false
+* ^experimental = true
 * ^date = "2026-09-17"
-* ^status = #active
+* ^status = #draft
 * $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * LifestyleMedicineTemporaryCS#hrv-rmssd "HRV RMSSD (Root Mean Square of Successive Differences)"

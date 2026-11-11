@@ -20,7 +20,7 @@ Extension: ClinicalUseWarning
 Id: clinical-use-warning
 Title: "Clinical Use Warning Extension"
 Description: "Provides explicit warnings about the appropriate clinical use of consumer wearable-derived observations. Addresses Gap 3 (Algorithm Transparency, 5% coverage, 95 severity) from RS6 gap analysis."
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * ^context[1].type = #element
@@ -44,7 +44,7 @@ ValueSet: ClinicalUseWarningTypeVS
 Id: clinical-use-warning-type-vs
 Title: "Clinical Use Warning Type ValueSet"
 Description: "ValueSet for clinical use warning codes on consumer wearable observations"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * LifestyleMedicineTemporaryCS#algorithm-not-validated "Algorithm Not Validated"
 * LifestyleMedicineTemporaryCS#vendor-proprietary "Vendor Proprietary Calculation"
@@ -57,7 +57,7 @@ ValueSet: DataQualityConfidenceVS
 Id: data-quality-confidence-vs
 Title: "Data Quality Confidence ValueSet"
 Description: "ValueSet for data quality confidence levels in consumer wearable data"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#data-quality-high "High Confidence"
 * AppLogicCS#data-quality-medium "Medium Confidence"
 * AppLogicCS#data-quality-low "Low Confidence"
@@ -68,7 +68,7 @@ Extension: DataQualityIndicator
 Id: data-quality-indicator
 Title: "Data Quality Indicator Extension"
 Description: "Indicates the quality/confidence level of consumer wearable-derived data. Addresses RS6 Gap 2 (Data Quality Metadata)."
-* ^experimental = false
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * extension contains
@@ -85,7 +85,7 @@ ValueSet: WearableDeviceTypeVS
 Id: wearable-device-type-vs
 Title: "Wearable Device Type ValueSet"
 Description: "ValueSet for types of consumer wearable devices"
-* ^experimental = false
+* ^experimental = true
 * AppLogicCS#smartwatch "Smartwatch"
 * AppLogicCS#fitness-tracker "Fitness Tracker"
 * AppLogicCS#chest-strap "Chest Strap"

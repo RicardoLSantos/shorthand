@@ -10,7 +10,7 @@ Title: "Fatigue Assessment Questionnaire (FSS)"
 Description: "The Fatigue Severity Scale (FSS) is a self-report scale that measures the severity of fatigue and its effect on activities and lifestyle. It is widely used in clinical research for various conditions including chronic fatigue syndrome, multiple sclerosis, and systemic lupus erythematosus."
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/fatigue-assessment-fss"
-* status = #active
+* status = #draft
 * title = "Fatigue Severity Scale (FSS)"
 * subjectType = #Patient
 * version = "1.0.0"

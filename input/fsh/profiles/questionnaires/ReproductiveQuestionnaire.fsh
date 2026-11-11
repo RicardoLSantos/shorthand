@@ -4,7 +4,7 @@ Usage: #definition
 Title: "Reproductive Health Tracking Questionnaire"
 Description: "Daily questionnaire for social-history health tracking"
  
-* status = #active
+* status = #draft
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/social-history-health"
 * name = "ReproductiveHealthQuestionnaire"
 * title = "Reproductive Health Monitoring"

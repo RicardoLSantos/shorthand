@@ -4,13 +4,13 @@ Extension: MeasurementConditions
 Id: measurement-conditions
 Title: "Measurement Conditions Extension"
 Description: "Records the conditions under which body measurements were taken"
-* ^experimental = false
+* ^experimental = true
 
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -28,13 +28,13 @@ Extension: MeasurementDevice
 Id: measurement-device-type
 Title: "Measurement Device Type Extension"
 Description: "Specifies the type of device used for body measurements"
-* ^experimental = false
+* ^experimental = true
 
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -52,13 +52,13 @@ ValueSet: MeasurementConditionsVS
 Id: measurement-conditions-vs
 Title: "Measurement Conditions Value Set"
 Description: "Standard conditions under which measurements are taken"
-* ^experimental = false
+* ^experimental = true
 
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -76,13 +76,13 @@ ValueSet: MeasurementDeviceTypeVS
 Id: measurement-device-type-vs
 Title: "Measurement Device Type Value Set"
 Description: "Types of devices used for health and body measurements"
-* ^experimental = false
+* ^experimental = true
 
 * ^version = "0.1.0"
 * ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email

@@ -27,7 +27,7 @@ InstanceOf: SymptomQuestionnaire
 Usage: #example
 Description: "Symptom assessment questionnaire example"
 Title: "Symptom Assessment Questionnaire Example"
-* status = #active
+* status = #draft
 * title = "Daily Symptom Assessment"
 * item[symptomType].linkId = "symptom-type"
 * item[symptomType].text = "Type of Symptom"

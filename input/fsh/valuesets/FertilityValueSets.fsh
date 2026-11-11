@@ -2,9 +2,9 @@ ValueSet: CervicalMucusValueSet
 Id: cervical-mucus-vs
 Title: "Cervical Mucus Value Set"
 Description: "Value set for cervical mucus observations"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/cervical-mucus-vs"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
@@ -22,9 +22,9 @@ ValueSet: OvulationTestValueSet
 Id: ovulation-test-vs
 Title: "Ovulation Test Value Set"
 Description: "Value set for ovulation test results"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/ovulation-test-vs"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
@@ -40,9 +40,9 @@ ValueSet: FertilityStatusValueSet
 Id: fertility-status-vs
 Title: "Fertility Status Value Set"
 Description: "Value set for fertility status"
-* ^experimental = false
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/fertility-status-vs"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"

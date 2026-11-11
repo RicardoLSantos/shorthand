@@ -22,7 +22,7 @@ Description: "Message definition for starting a mindfulness session"
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/start-session"
 * date = "2024-03-19"
-* status = #active
+* status = #draft
 * eventCoding = $MsgEvents#mindfulness-msg-session-start "Mindfulness Session Start"
 * category = #notification
 * focus.code = #Observation
@@ -37,7 +37,7 @@ Description: "Message definition for ending a mindfulness session"
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/MessageDefinition/end-session"
 * date = "2024-03-19"
-* status = #active
+* status = #draft
 * eventCoding = $MsgEvents#mindfulness-msg-session-end "Mindfulness Session End"
 * category = #notification
 * focus.code = #Observation

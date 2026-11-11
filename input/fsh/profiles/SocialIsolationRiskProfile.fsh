@@ -50,7 +50,7 @@ References:
 """
 
 * ^version = "0.1.0"
-* ^status = #active
+* ^status = #draft
 * ^date = "2026-01-12"
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
 
@@ -110,7 +110,7 @@ ValueSet: IsolationRiskOutcomeVS
 Id: isolation-risk-outcome-vs
 Title: "Social Isolation Risk Outcome Value Set"
 Description: "Potential outcomes from social isolation"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#chronic-isolation "Chronic Social Isolation"
 * LifestyleMedicineTemporaryCS#severe-loneliness "Severe Loneliness"
 * LifestyleMedicineTemporaryCS#functional-decline "Functional Decline"
@@ -120,7 +120,7 @@ ValueSet: IsolationRiskMethodVS
 Id: isolation-risk-method-vs
 Title: "Social Isolation Risk Method Value Set"
 Description: "Methods for assessing social isolation risk"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#loneliness-assessment "Loneliness assessment"
 * LifestyleMedicineTemporaryCS#social-support-assessment "Social support assessment"
 * LifestyleMedicineTemporaryCS#family-structure-assessment "Family structure assessment"
@@ -130,7 +130,7 @@ ValueSet: IsolationRiskFactorVS
 Id: isolation-risk-factor-vs
 Title: "Social Isolation Risk Factor Value Set"
 Description: "Risk factors for social isolation"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#living-alone "Living Alone"
 * LifestyleMedicineTemporaryCS#geographic-isolation "Geographic Isolation"
 * LifestyleMedicineTemporaryCS#mobility-impairment "Mobility Impairment"

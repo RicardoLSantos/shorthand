@@ -27,8 +27,8 @@ CDS Hooks execution model (decision logic lives server-side).
 """
 * url = "urn:cql:library:CVR-003:v1.2"
 * name = "CVR003HRVRisk"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-23"
 * publisher = "Ricardo Lourenço dos Santos"
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library
@@ -45,8 +45,8 @@ distributed with this IG (adopted pattern, not an embedded engine).
 """
 * url = "urn:cql:library:MET-002:v1.0"
 * name = "MET002MetabolicOverride"
-* status = #active
-* experimental = false
+* status = #draft
+* experimental = true
 * date = "2026-09-23"
 * publisher = "Ricardo Lourenço dos Santos"
 * type = http://terminology.hl7.org/CodeSystem/library-type#logic-library

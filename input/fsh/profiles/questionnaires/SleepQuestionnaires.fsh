@@ -12,7 +12,7 @@ Title: "Sleep Quality Questionnaire (PSQI-Based)"
 Description: "Questionnaire for assessing sleep quality based on the Pittsburgh Sleep Quality Index. Measures subjective sleep quality, sleep latency, sleep duration, habitual sleep efficiency, sleep disturbances, use of sleeping medication, and daytime dysfunction over the past month."
 
 * url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/Questionnaire/sleep-quality-psqi"
-* status = #active
+* status = #draft
 * title = "Sleep Quality Assessment (PSQI-Based)"
 * subjectType = #Patient
 * version = "1.0.0"

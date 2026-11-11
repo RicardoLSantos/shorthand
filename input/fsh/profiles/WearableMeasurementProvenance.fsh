@@ -55,8 +55,8 @@ Inherits all parent constraints unchanged: agent slicing (device + assembler
 captureMethod), PGHDProvenanceActivityVS activity binding, signature MS.
 """
 
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 
 // ----- Target tightening — only Observations -----
 * target only Reference(Observation)

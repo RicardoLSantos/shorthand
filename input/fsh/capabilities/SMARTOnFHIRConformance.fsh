@@ -34,7 +34,7 @@ FHIR resource capabilities). Together they enable SMART-app integration
 with all 11 lifestyle medicine domains + AI/CDSS profiles.
 """
 
-* status = #active
+* status = #draft
 * date = "2026-05-07"
 * kind = #requirements
 * fhirVersion = #4.0.1
@@ -178,8 +178,8 @@ ValueSet: SMARTLaunchScopeVS
 Id: smart-launch-scope-vs
 Title: "SMART Launch Scopes"
 Description: "Enumeration of SMART on FHIR App Launch scopes supported by this IG"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 
 * IOSLifestyleMedicineSMARTScopes#patient-rs "patient/*.rs"
 * IOSLifestyleMedicineSMARTScopes#patient-cruds "patient/*.cruds"
@@ -200,8 +200,8 @@ CodeSystem: IOSLifestyleMedicineSMARTScopes
 Id: ios-lm-smart-scopes
 Title: "iOS Lifestyle Medicine SMART Scopes CodeSystem"
 Description: "Local CodeSystem for SMART on FHIR App Launch scopes used by this IG. Mirrors canonical SMART scopes from STU2.2 specification for stable ValueSet binding."
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^content = #complete
 * ^caseSensitive = true
 

@@ -30,7 +30,7 @@ Status categories for tobacco use aligned with IPS (International Patient Summar
 All codes verified from IPS Current Smoking Status ValueSet (hl7.fhir.uv.ips#2.0.0).
 Uses SNOMED CT hierarchy: 365981007 (Tobacco smoking behavior - finding).
 """
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 // IPS-verified codes (Jan 2026)
 * $SCT#266919005 "Never smoked tobacco (finding)"
@@ -50,7 +50,7 @@ Types of tobacco products using SNOMED CT substance codes where available,
 with custom codes for products lacking standard equivalents.
 Cat B Tier 2 remediation (2026-02-27): replaced bulk include with enumerated codes.
 """
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.2.0"
 // SNOMED CT - Verified via local SNOMED database (2026-02-27)
 * $SCT#66562002 "Cigarette smoking tobacco"
@@ -66,7 +66,7 @@ ValueSet: AlcoholUseStatusVS
 Id: alcohol-use-status-vs
 Title: "Alcohol Use Status ValueSet"
 Description: "Status categories for alcohol consumption"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * $SCT#105542008 "Non-drinker of alcohol (finding)"
 * $SCT#82581004 "Former drinker (finding)"
@@ -83,7 +83,7 @@ ValueSet: AlcoholDrinkingFrequencyVS
 Id: alcohol-drinking-frequency-vs
 Title: "Alcohol Drinking Frequency ValueSet"
 Description: "AUDIT-C frequency categories for alcohol consumption using standard LOINC Answer codes. Replaces custom codes per Cat B remediation (2026-02-27)."
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.2.0"
 * http://loinc.org#LA6270-8 "Never"
 * http://loinc.org#LA18926-8 "Monthly or less"
@@ -95,7 +95,7 @@ ValueSet: AlcoholBeverageTypeVS
 Id: alcohol-beverage-type-vs
 Title: "Alcohol Beverage Type ValueSet"
 Description: "Types of alcoholic beverages using SNOMED CT substance codes where available. Cat B Tier 2 remediation (2026-02-27)."
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.2.0"
 // SNOMED CT - Verified via local SNOMED database (2026-02-27)
 * $SCT#53410008 "Beer"
@@ -109,7 +109,7 @@ ValueSet: CaffeineSourceVS
 Id: caffeine-source-vs
 Title: "Caffeine Source ValueSet"
 Description: "Common sources of dietary caffeine"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * LifestyleMedicineTemporaryCS#coffee "Coffee"
 * LifestyleMedicineTemporaryCS#espresso "Espresso"
@@ -123,7 +123,7 @@ ValueSet: CaffeineIntakeLevelVS
 Id: caffeine-intake-level-vs
 Title: "Caffeine Intake Level ValueSet"
 Description: "Categorical assessment of daily caffeine intake"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * AppLogicCS#caffeine-level-none "None"
 * AppLogicCS#caffeine-level-low "Low"
@@ -144,7 +144,7 @@ Previous codes were incorrectly mapped. Corrections:
 
 These codes are semantically appropriate for substance use status.
 """
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * $SCT#228366006 "Finding relating to drug misuse behavior (finding)"
 * $SCT#44870007 "Ex-drug user (finding)"
@@ -175,7 +175,7 @@ The following substance CLASS codes were hallucinated and do NOT exist in SNOMED
 
 Using custom CodeSystem for substance categories where SNOMED lacks class-level codes.
 """
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 // SNOMED CT - Verified specific substance codes
 * $SCT#398705004 "Cannabis (substance)"
@@ -194,7 +194,7 @@ ValueSet: SubstanceUseFrequencyVS
 Id: substance-use-frequency-vs
 Title: "Substance Use Frequency ValueSet"
 Description: "Frequency categories for substance use"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * LifestyleMedicineTemporaryCS#substance-freq-never "Never"
 * LifestyleMedicineTemporaryCS#tried-once "Tried once"
@@ -207,7 +207,7 @@ ValueSet: SubstanceUseRiskLevelVS
 Id: substance-use-risk-level-vs
 Title: "Substance Use Risk Level ValueSet"
 Description: "Overall risk assessment for substance use patterns"
-* ^experimental = false
+* ^experimental = true
 * ^version = "0.1.0"
 * AppLogicCS#substance-risk-minimal "Minimal risk"
 * AppLogicCS#substance-risk-low "Low risk"

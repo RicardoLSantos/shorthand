@@ -2,7 +2,7 @@ ValueSet: BodyLocationsVS
 Id: body-locations-vs
 Title: "Body Locations Value Set"
 Description: "Anatomical locations for symptom recording"
-* ^experimental = false
+* ^experimental = true
 * $SCT#12738006 "Brain"
 * $SCT#69536005 "Head"
 * $SCT#45048000 "Neck"
@@ -17,7 +17,7 @@ ValueSet: DurationUnitsVS
 Id: duration-units-vs
 Title: "Duration Units Value Set"
 Description: "Time units for symptom duration"
-* ^experimental = false
+* ^experimental = true
 * $UCUM#min "Minutes"
 * $UCUM#h "Hours"
 * $UCUM#d "Days"
@@ -27,7 +27,7 @@ ValueSet: SymptomFrequencyVS
 Id: symptom-frequency-vs
 Title: "Symptom Frequency Value Set"
 Description: "Frequency patterns for symptoms"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#rare "Rare"
 * LifestyleMedicineTemporaryCS#occasional "Occasional"
 * LifestyleMedicineTemporaryCS#frequent "Frequent"
@@ -38,7 +38,7 @@ ValueSet: SymptomImpactVS
 Id: symptom-impact-vs
 Title: "Symptom Impact Value Set"
 Description: "Impact levels for symptoms"
-* ^experimental = false
+* ^experimental = true
 * LifestyleMedicineTemporaryCS#symptom-impact-none "No impact"
 * LifestyleMedicineTemporaryCS#symptom-impact-mild "Mild impact"
 * LifestyleMedicineTemporaryCS#symptom-impact-moderate "Moderate impact"
@@ -54,7 +54,7 @@ Progression patterns for symptoms.
 **SNOMED CT Verification Notes (2026-01-12)**:
 - 255314001: Actual = "Progressive" - display corrected
 """
-* ^experimental = false
+* ^experimental = true
 * $SCT#385633008 "Improving (qualifier value)"
 * $SCT#58158008 "Stable (qualifier value)"
 * $SCT#230993007 "Worsening (qualifier value)"
@@ -70,7 +70,7 @@ Times of day for symptom occurrence.
 **SNOMED CT Verification Notes (2026-01-12)**:
 - 2546009: Actual = "Night time" - display corrected
 """
-* ^experimental = false
+* ^experimental = true
 * $SCT#255214003 "After exercise (qualifier value)"
 * $SCT#2546009 "Night time (qualifier value)"
 * $SCT#73775008 "Morning (qualifier value)"

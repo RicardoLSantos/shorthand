@@ -21,7 +21,7 @@ SLM interpretation, risk classification, and recommended actions.
 Supports EU AI Act Art. 13 (transparency) and CFM 2.454 Art. 4-5.
 """
 
-* ^experimental = false
+* ^experimental = true
 
 // Status - must reflect review state
 * status 1..1 MS

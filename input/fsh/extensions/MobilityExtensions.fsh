@@ -2,10 +2,10 @@ Extension: MobilityAlertLevel
 Id: mobility-alert-level
 Title: "Mobility Alert Level Extension"
 Description: "Extension for mobility measurements alert levels to indicate the severity or concern level of mobility changes detected by the device"
-* ^status = #active
+* ^status = #draft
 * ^version = "0.1.0"
-* ^status = #active
-* ^experimental = false
+* ^status = #draft
+* ^experimental = true
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
 * ^contact.telecom.system = #email
@@ -26,8 +26,8 @@ ValueSet: MobilityAlertLevelVS
 Id: mobility-alert-level-vs
 Title: "Mobility Alert Level Value Set"
 Description: "Alert levels for mobility measurements using standard HL7 Observation Interpretation codes. Replaces custom traffic-light codes per Cat B remediation (2026-02-27)."
-* ^experimental = false
-* ^status = #active
+* ^experimental = true
+* ^status = #draft
 * ^version = "0.2.0"
 * ^publisher = "2RDoc FMUP"
 * ^contact.name = "2RDoc Technical Team"
