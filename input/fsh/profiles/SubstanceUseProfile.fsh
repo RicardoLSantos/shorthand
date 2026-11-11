@@ -6,7 +6,7 @@
 // Created: 2025-11-25
 // Updated: 2026-01-12 (F2.13: Enhanced bibliographic references)
 // Purpose: 6th Pillar of Lifestyle Medicine - Avoidance of Risky Substances
-// Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
+// Context: Integrating Wearable Biomarkers into Learning Health Systems
 //
 // =============================================================================
 // BIBLIOGRAPHIC REFERENCES (Peer-Reviewed)

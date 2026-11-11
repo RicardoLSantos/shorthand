@@ -147,12 +147,9 @@ The FHIR validator expects ConceptMap source and target systems to be valid FHIR
 
 These warnings do NOT indicate errors in semantic preservation. They reflect the architectural reality of bridging heterogeneous health information systems.
 
-## Thesis Justification
+## Design Rationale
 
-This approach aligns with the thesis semantic architecture:
-
-> "The thesis treats ConceptMaps as infrastructure for managed evolution of semantic standards, not as substitutes for real standardization."
-> — Chapter 5, Section 5.3
+This guide treats ConceptMaps as infrastructure for the managed evolution of semantic standards, not as substitutes for real standardization.
 
 The dual-model architecture (FHIR + openEHR) requires translation infrastructure:
 
@@ -200,7 +197,7 @@ They do NOT belong in:
 The ~79 warnings from cross-standard ConceptMaps are accepted and documented because:
 - They represent legitimate semantic bridges
 - Alternative approaches would compromise interoperability
-- The thesis architecture requires multi-standard support
+- The guide's dual-model architecture requires multi-standard support
 
 ## SNOMED CT Global Patient Set (GPS) Compatibility
 
@@ -268,4 +265,3 @@ See [GPSCompatibleSNOMEDVS](ValueSet-gps-compatible-snomed-vs.html) for the comp
 
 *Documentation created: 2025-11-27*
 *GPS section added: 2026-01-19*
-*Reference: Thesis Chapter 2 - SNOMED CT Global Patient Set; Chapter 5 - Semantic Interoperability Architecture*

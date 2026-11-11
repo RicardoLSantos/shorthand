@@ -158,7 +158,7 @@ All notable changes to this Implementation Guide are documented on this page.
 
 ### Build
 
-- genonce **0 errors / 223 warnings / 0 broken links** (IG Publisher 2.2.10). The 223 warnings are a **single benign class**: the IG Publisher (≥2.2.10) recommendation to assign OIDs to the 223 terminology resources (204 ValueSets + 19 CodeSystems) for interoperability with OID-based ecosystems (e.g. CDA). None is a FHIR conformance error — the build validates with **zero errors** and all terminology is live-validated against `tx.fhir.org`. A registered OID root (IANA Private Enterprise Number) is planned for the production phase (post-defense) as the genuine remediation; OIDs are never invented without a registered root.
+- genonce **0 errors / 223 warnings / 0 broken links** (IG Publisher 2.2.10). The 223 warnings are a **single benign class**: the IG Publisher (≥2.2.10) recommendation to assign OIDs to the 223 terminology resources (204 ValueSets + 19 CodeSystems) for interoperability with OID-based ecosystems (e.g. CDA). None is a FHIR conformance error — the build validates with **zero errors** and all terminology is live-validated against `tx.fhir.org`. A registered OID root (IANA Private Enterprise Number) is planned for the production phase as the genuine remediation; OIDs are never invented without a registered root.
 
 ### Updated Totals (v0.4.6, FSH source)
 

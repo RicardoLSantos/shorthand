@@ -12,7 +12,7 @@
 // Gap Analysis Context:
 // - Current IG lacks explicit decision support resources (PlanDefinition, Library, Task)
 // - These extensions provide proof-of-concept for agent reasoning capture
-// - Full implementation planned post-thesis (ServiceRequest, Task profiles)
+// - Full implementation left to future work (ServiceRequest, Task profiles)
 
 // ============================================================================
 // Agent Recommendation Extension (Complex)

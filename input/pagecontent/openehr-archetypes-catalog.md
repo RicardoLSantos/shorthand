@@ -8,7 +8,7 @@
 
 ## 1. Scope: what this catalog claims, and what it does not
 
-This catalog describes a set of openEHR ADL 1.4 archetypes developed by **Ricardo Lourenço dos Santos + Ricardo Correia** (FMUP, HEADS2 thesis) to model advanced wearable metrics that have **no published openEHR/CKM coverage** — the ~85% gap identified in the thesis. The strategy was **corrected in December 2025**, following the openEHR Transatlântico course, from "create everything" to **Template-First**: search the CKM → reuse what is already published → create only what is genuinely new → combine through operational templates.
+This catalog describes a set of openEHR ADL 1.4 archetypes developed by **Ricardo Lourenço dos Santos + Ricardo Correia** (FMUP) to model advanced wearable metrics that have **no published openEHR/CKM coverage**. The strategy was **corrected in December 2025**, following the openEHR Transatlântico course, from "create everything" to **Template-First**: search the CKM → reuse what is already published → create only what is genuinely new → combine through operational templates.
 
 **What this catalog does not do.** It does **not** present the 48 ADL files of the development snapshot as "48 archetypes ready for the CKM". Of the 48 unique concepts, **12 are candidates for genuine originality**; the remaining 36 (**5 extensions + 21 duplicates + 10 classified**) reuse, specialise, or duplicate existing CKM archetypes. Presenting those as original work would be a guaranteed CKM rejection, and indefensible.
 
@@ -95,4 +95,4 @@ All custom archetypes in this catalog are at lifecycle state `in_development` (d
 **Roadmap:** complete the term-binding audit (§4) → submit the audited genuine set to the openEHR CKM (Batch-1A). The reused CKM archetypes and operational templates (§3) are combined via `.oet` templates, not submitted as new archetypes.
 
 ---
-*The method rests on the cross-check against the CKM mirror (`openEHR/CKM-mirror`, commit `c798e8a`, 689 `.adl` files, every RM type) and on direct verification of the ADL source; the archetypes are validated with Archie 3.15.0 (12/12 `OK | VALID`). Contribution developed by Ricardo Lourenço dos Santos + Ricardo Correia (FMUP, HEADS2 thesis).*
+*The method rests on the cross-check against the CKM mirror (`openEHR/CKM-mirror`, commit `c798e8a`, 689 `.adl` files, every RM type) and on direct verification of the ADL source; the archetypes are validated with Archie 3.15.0 (12/12 `OK | VALID`). Contribution developed by Ricardo Lourenço dos Santos + Ricardo Correia (FMUP).*

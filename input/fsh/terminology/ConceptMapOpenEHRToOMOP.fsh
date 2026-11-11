@@ -3,7 +3,7 @@
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Links: https://linktr.ee/ricardolsantos
 // Purpose: Enable openEHR to OMOP CDM transformation for research analytics
-// Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
+// Context: Integrating Wearable Biomarkers into Learning Health Systems
 
 Instance: ConceptMapOpenEHRToOMOP
 InstanceOf: ConceptMap

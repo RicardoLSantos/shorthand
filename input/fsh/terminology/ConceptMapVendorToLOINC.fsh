@@ -23,10 +23,10 @@ Usage: #definition
 * purpose = "Enables semantic interoperability between vendor-specific wearable device data and EHR systems using LOINC. Critical for multi-vendor data aggregation in Learning Health Systems and lifestyle medicine research."
 
 // ARCHITECTURAL NOTE (2025-11-27):
-// sourceCanonical/targetCanonical REMOVED per thesis semantic hierarchy decision (Opção B)
+// sourceCanonical/targetCanonical REMOVED per the semantic hierarchy decision (Opção B)
 //
 // Rationale: Vendor codes are NOT clinical terminology - they are proprietary identifiers.
-// Per thesis Chapter 5: "ConceptMaps são para tradução entre sistemas, NÃO para substituir
+// Design principle: "ConceptMaps são para tradução entre sistemas, NÃO para substituir
 // terminologia padrão."
 //
 // - Profiles bind directly to LOINC (Semantic Layer - Level 1)

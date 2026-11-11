@@ -2,7 +2,7 @@
 // Created: 2025-11-28
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Purpose: Enable sleep metrics transformation from FHIR to OMOP CDM
-// Context: PhD Thesis - Sleep as lifestyle medicine pillar
+// Context: Sleep as lifestyle medicine pillar
 
 Instance: ConceptMapSleepToOMOP
 InstanceOf: ConceptMap

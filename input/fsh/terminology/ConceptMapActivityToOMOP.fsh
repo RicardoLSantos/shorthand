@@ -2,7 +2,7 @@
 // Created: 2025-11-28
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Purpose: Enable physical activity transformation from FHIR to OMOP CDM
-// Context: PhD Thesis - Physical Activity as lifestyle medicine pillar
+// Context: Physical Activity as lifestyle medicine pillar
 
 Instance: ConceptMapActivityToOMOP
 InstanceOf: ConceptMap

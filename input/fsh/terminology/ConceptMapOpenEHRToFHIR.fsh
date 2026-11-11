@@ -3,7 +3,7 @@
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Links: https://linktr.ee/ricardolsantos
 // Purpose: Enable bidirectional mapping between openEHR archetypes and FHIR resources
-// Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
+// Context: Integrating Wearable Biomarkers into Learning Health Systems
 
 Instance: ConceptMapOpenEHRToFHIR
 InstanceOf: ConceptMap

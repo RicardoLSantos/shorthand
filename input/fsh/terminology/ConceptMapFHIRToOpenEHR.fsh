@@ -3,7 +3,7 @@
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Links: https://linktr.ee/ricardolsantos
 // Purpose: Enable FHIR to openEHR transformation for wearable data
-// Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
+// Context: Integrating Wearable Biomarkers into Learning Health Systems
 
 Instance: ConceptMapFHIRToOpenEHR
 InstanceOf: ConceptMap

@@ -3,7 +3,7 @@
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Links: https://linktr.ee/ricardolsantos
 // Purpose: Enable direct wearable vendor to openEHR transformation
-// Context: PhD Thesis - Integrating Wearable Biomarkers into Learning Health Systems
+// Context: Integrating Wearable Biomarkers into Learning Health Systems
 
 Instance: ConceptMapVendorToOpenEHR
 InstanceOf: ConceptMap

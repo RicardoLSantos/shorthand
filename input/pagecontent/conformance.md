@@ -124,7 +124,7 @@ Core GDPR requirements are met through extensions reused by LGPD/HIPAA/EU AI Act
 
 ### HIPAA — mapping (not FSH-encoded)
 
-HIPAA requirements (Privacy Rule, Security Rule, Breach Notification) are mapped to existing artefacts via cross-jurisdictional comments. Dedicated HIPAA FSH planned for post-defense (~10h estimated).
+HIPAA requirements (Privacy Rule, Security Rule, Breach Notification) are mapped to existing artefacts via cross-jurisdictional comments.
 
 ## Terminology Requirements
 

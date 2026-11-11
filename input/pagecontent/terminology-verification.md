@@ -10,7 +10,7 @@ Large Language Models (LLMs) can fabricate plausible-sounding but non-existent m
 - **Incorrect OMOP concept_ids** (codes that appear valid but map to wrong concepts)
 - **Outdated references** (citing deprecated or retired codes)
 
-**Documented error rate**: 21.7% of AI-generated medical terminology references contained errors requiring correction (based on thesis verification audits, n=39 references).
+AI-generated terminology references must therefore be checked against the source before use.
 
 ## Four-Level Verification Protocol
 
@@ -217,13 +217,11 @@ If you discover a verification error in this IG:
 
 ## References
 
-1. Santos RL. Integrating Wearable Biomarkers into Learning Health Systems through Semantic Interoperability [PhD thesis]. Porto: University of Porto; 2026. Chapter 3: AI Quality Control and Hallucination Detection.
+1. Regenstrief Institute. LOINC Database v2.78. Indianapolis: Regenstrief Institute; 2026. Available from: https://loinc.org
 
-2. Regenstrief Institute. LOINC Database v2.78. Indianapolis: Regenstrief Institute; 2026. Available from: https://loinc.org
+2. OHDSI. Athena Vocabulary Repository. Available from: https://athena.ohdsi.org
 
-3. OHDSI. Athena Vocabulary Repository. Available from: https://athena.ohdsi.org
-
-4. HL7 International. HL7 Terminology (THO) v7.0.1. Available from: https://terminology.hl7.org
+3. HL7 International. HL7 Terminology (THO) v7.0.1. Available from: https://terminology.hl7.org
 
 ---
 

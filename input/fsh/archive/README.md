@@ -17,13 +17,13 @@ Error: The system https://developer.apple.com/documentation/healthkit is not kno
 
 ### Architectural Decision
 
-Per thesis semantic hierarchy (Chapter 5), we chose **Opção B**:
+Per the guide's semantic hierarchy, we chose **Opção B**:
 
 1. **FHIR Profiles bind directly to LOINC/SNOMED-CT** (Semantic Layer - Level 1)
 2. **ConceptMaps handle Vendor→LOINC translation** (Translation Layer - Infrastructure)
 3. **ValueSets should NOT contain vendor codes** (they are not clinical terminology)
 
-### Thesis Rationale
+### Rationale
 
 > "ConceptMaps são para tradução entre sistemas, NÃO para substituir terminologia padrão."
 

@@ -1,6 +1,6 @@
 // Sport-Specific FHIR Profiles for iOS Lifestyle Medicine IG
 // Based on openEHR archetypes: cycling_dynamics.v0, running_dynamics.v0, swimming_metrics.v0, strength_training.v0
-// Created: 2025-11-28 as part of FHIR IG expansion aligned with thesis requirements
+// Created: 2025-11-28 as part of the FHIR IG expansion for sport-specific metrics
 // Author: Ricardo Lourenco dos Santos, FMUP
 
 Alias: $LOINC = http://loinc.org

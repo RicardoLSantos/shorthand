@@ -2,7 +2,7 @@
 // Created: 2025-11-28
 // Author: Ricardo Lourenco dos Santos (ricardolourencosantos@gmail.com)
 // Purpose: Enable CGM data transformation from FHIR to OMOP CDM
-// Context: PhD Thesis - Continuous Glucose Monitoring for lifestyle medicine
+// Context: Continuous Glucose Monitoring for lifestyle medicine
 
 Instance: ConceptMapCGMToOMOP
 InstanceOf: ConceptMap
