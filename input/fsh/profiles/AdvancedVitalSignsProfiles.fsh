@@ -8,6 +8,7 @@ Id: advanced-vital-signs
 Title: "Advanced Vital Signs Profile"
 Description: "Profile for advanced vital signs data from iOS Health App"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
@@ -100,6 +101,7 @@ Id: advanced-vital-signs-context
 Title: "Advanced Vital Signs Context Extension"
 Description: "Additional context about advanced vital sign measurements"
 
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 

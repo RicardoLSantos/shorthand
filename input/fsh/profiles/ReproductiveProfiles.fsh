@@ -4,6 +4,7 @@ Id: fertility-observation
 Title: "Fertility Observation Profile"
 Description: "Profile for fertility signs and symptoms"
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history

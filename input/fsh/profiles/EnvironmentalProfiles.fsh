@@ -13,6 +13,7 @@ Id: environmental-observation
 Title: "Environmental Observation Profile"
 Description: "Base profile for environmental measurements from iOS Health App"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
@@ -33,6 +34,7 @@ Id: noise-exposure-observation
 Title: "Noise Exposure Observation Profile"
 Description: "Profile for noise exposure measurements from iOS Health App"
 
+* ^experimental = true
 * code = $LIFESTYLEOBS#noise-duration "Environmental noise exposure duration"
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
@@ -72,6 +74,7 @@ Id: uv-exposure-observation
 Title: "UV Exposure Observation Profile"
 Description: "Profile for UV exposure measurements from iOS Health App"
 
+* ^experimental = true
 * code = $LIFESTYLEOBS#uv-duration "UV exposure duration"
 * component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
@@ -113,6 +116,7 @@ Id: environmental-audio-exposure-observation
 Title: "Environmental Audio Exposure Observation Profile"
 Description: "Profile for environmental audio exposure measurements from iOS Health App. Maps to HKQuantityTypeIdentifier.environmentalAudioExposure (iOS 13+). Uses A-weighted decibels (dBASPL)."
 
+* ^experimental = true
 * code = $LIFESTYLEOBS#environmental-audio-exposure "Environmental audio exposure level"
 * valueQuantity 1..1 MS
 * valueQuantity.system = $UCUM
@@ -145,6 +149,7 @@ Id: headphone-audio-exposure-observation
 Title: "Headphone Audio Exposure Observation Profile"
 Description: "Profile for headphone audio exposure measurements from iOS Health App. Maps to HKQuantityTypeIdentifier.headphoneAudioExposure (iOS 14+). Uses A-weighted decibels (dBASPL)."
 
+* ^experimental = true
 * code = $LIFESTYLEOBS#headphone-audio-exposure "Headphone audio exposure level"
 * valueQuantity 1..1 MS
 * valueQuantity.system = $UCUM
@@ -194,6 +199,7 @@ Id: environmental-context
 Title: "Environmental Context Extension"
 Description: "Additional context about environmental measurements"
 
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 

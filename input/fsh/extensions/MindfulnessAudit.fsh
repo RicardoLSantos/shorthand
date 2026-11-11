@@ -6,6 +6,7 @@ Extension: AuditLevelExtension
 Id: audit-level
 Title: "Audit Level Extension"
 Description: "Level of detail for audit records"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only code
@@ -15,6 +16,7 @@ Extension: AuditRetentionExtension
 Id: audit-retention
 Title: "Audit Retention Extension"
 Description: "Period to retain audit records"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only Duration
@@ -23,6 +25,7 @@ Extension: AuditFormatExtension
 Id: audit-format
 Title: "Audit Format Extension"
 Description: "Format for audit records"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only code
@@ -34,6 +37,7 @@ Id: mindfulness-audit
 Title: "Mindfulness Audit"
 Description: "Audit record for mindfulness sessions"
 
+* ^experimental = true
 * code 1..1 MS
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-audit-session "Session Audit"
 * created 1..1 MS

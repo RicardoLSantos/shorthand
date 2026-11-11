@@ -38,6 +38,7 @@ loneliness associated with 26% increased mortality risk (OR=1.26, 95% CI: 1.04-1
 **SNOMED CT**: 267076002 |Feeling lonely (finding)|
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2026-01-12"

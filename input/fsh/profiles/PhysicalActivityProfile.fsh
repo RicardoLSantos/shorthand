@@ -83,6 +83,7 @@ References:
 - Ainsworth BE et al. (2011). Med Sci Sports Exerc 43(8):1575-1581
 """
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity

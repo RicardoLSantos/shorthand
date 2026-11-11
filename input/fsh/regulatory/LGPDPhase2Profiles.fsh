@@ -27,6 +27,7 @@ data. Under LGPD, the controller must:
 - Notify ANPD and data subjects of security incidents (Art. 48)
 - Respond to data subject requests within 15 days (Art. 18, §5)
 """
+* ^experimental = true
 * type 1..1 MS
 * type = http://terminology.hl7.org/CodeSystem/organization-type#prov
 * name 1..1 MS
@@ -57,6 +58,7 @@ The DPO is responsible for (Art. 41):
 
 The DPO's identity and contact information must be publicly available (Art. 41, §1).
 """
+* ^experimental = true
 * practitioner 1..1 MS
 * practitioner ^short = "The individual designated as DPO"
 * organization 1..1 MS
@@ -93,6 +95,7 @@ Supports all 8 data subject rights:
 
 The controller must respond within 15 days (Art. 18, §5).
 """
+* ^experimental = true
 * status MS
 * status from DataSubjectRequestStatusVS (required)
 * intent = #order
@@ -126,12 +129,14 @@ Extension: LGPDRegistrationNumber
 Id: lgpd-registration-number
 Title: "LGPD Registration Number"
 Description: "Registration number with ANPD (Autoridade Nacional de Proteção de Dados), when applicable."
+* ^experimental = true
 * value[x] only string
 
 Extension: DataProtectionOfficerReference
 Id: data-protection-officer-reference
 Title: "Data Protection Officer Reference"
 Description: "Reference to the designated DPO (PractitionerRoleDPO) for this organization."
+* ^experimental = true
 * value[x] only Reference(PractitionerRole)
 
 // ============================================================================

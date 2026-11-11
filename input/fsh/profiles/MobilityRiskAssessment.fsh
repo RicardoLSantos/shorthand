@@ -4,6 +4,7 @@ Id: mobility-risk-assessment
 Title: "Mobility Risk Assessment Profile"
 Description: "Profile for assessing mobility-related risks"
 
+* ^experimental = true
 * status MS
 * subject 1..1 MS
 * occurrence[x] MS

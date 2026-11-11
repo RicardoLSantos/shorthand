@@ -80,6 +80,7 @@ References:
 - Can YS et al. (2019). J Biomed Inform 92:103139
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2026-01-12"

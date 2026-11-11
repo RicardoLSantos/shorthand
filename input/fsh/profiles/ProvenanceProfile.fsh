@@ -22,6 +22,7 @@ Title: "Patient-Generated Health Data Provenance"
 Description: "Provenance profile for tracking the origin and transformation history of PGHD from wearable devices"
 
 // Required elements for audit trail
+* ^experimental = true
 * target 1..* MS
 * recorded 1..1 MS
 * activity 1..1 MS
@@ -97,6 +98,7 @@ Title: "Device Capture Metadata"
 Description: "Additional metadata about how data was captured by the device"
 Context: Provenance.agent
 
+* ^experimental = true
 * extension contains
     samplingRate 0..1 MS and
     sensorType 0..1 MS and

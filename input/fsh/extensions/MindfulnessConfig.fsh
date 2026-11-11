@@ -2,6 +2,7 @@ Extension: MindfulnessSessionDuration
 Id: mindfulness-session-duration
 Title: "Mindfulness Session Duration"
 Description: "Default duration for mindfulness sessions in minutes"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only integer
@@ -10,6 +11,7 @@ Extension: MindfulnessReminderTime
 Id: mindfulness-reminder-time
 Title: "Mindfulness Reminder Time"
 Description: "Default time for daily reminders"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only time
@@ -18,6 +20,7 @@ Extension: MindfulnessPreferredGuide
 Id: mindfulness-preferred-guide
 Title: "Mindfulness Preferred Guide"
 Description: "Preferred guide for mindfulness sessions"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only string
@@ -26,6 +29,7 @@ Extension: MindfulnessNotificationEnabled
 Id: mindfulness-notification-enabled
 Title: "Mindfulness Notification Enabled"
 Description: "Whether notifications are enabled for mindfulness sessions"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only boolean
@@ -36,6 +40,7 @@ Id: mindfulness-configuration
 Title: "Mindfulness Configuration"
 Description: "Configuration settings for mindfulness sessions"
 
+* ^experimental = true
 * code 1..1 MS
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-config-settings "Mindfulness Settings"
 

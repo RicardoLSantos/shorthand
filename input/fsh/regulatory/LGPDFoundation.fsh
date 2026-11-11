@@ -107,6 +107,7 @@ Used for:
 This extension should be applied at the Bundle level for batch operations
 or at individual resource level for granular tracking.
 """
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"
 * ^context[1].type = #element

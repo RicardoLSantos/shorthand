@@ -58,6 +58,7 @@ Id: ai-autonomy-level
 Title: "AI Autonomy Level"
 Description: "Degree of autonomy of an AI system, mapped to CFM 2.454 Art. 3 risk classification."
 Context: DeviceDefinition, ClinicalImpression, RiskAssessment
+* ^experimental = true
 * value[x] only CodeableConcept
 * valueCodeableConcept from AIAutonomyLevelVS (extensible)
 
@@ -69,6 +70,7 @@ Data retention policy for audit records per CFM 2.454 Art. 6 traceability requir
 Specifies retention period, regulatory basis, and deletion strategy.
 """
 Context: AuditEvent, Provenance
+* ^experimental = true
 * extension contains
     retentionPeriod 1..1 MS and
     retentionBasis 0..1 and

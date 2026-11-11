@@ -84,6 +84,7 @@ References:
 - de Zambotti M et al. (2019). Med Sci Sports Exerc 51(7):1538-1557
 """
  
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity

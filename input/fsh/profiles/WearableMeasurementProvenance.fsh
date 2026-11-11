@@ -77,6 +77,7 @@ Id: wearable-firmware-version
 Title: "Wearable Firmware Version"
 Description: "Firmware version of the wearable device at the time of measurement. Required for FDA Class II / EU MDR Class IIa device audit trails."
 
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Provenance"
 
@@ -91,6 +92,7 @@ Id: wearable-time-of-measurement
 Title: "Time of Measurement"
 Description: "When the sensor actually sampled the measurement (distinct from Provenance.recorded which is when the Provenance record was created, and from time-of-upload which is when data reached the vendor cloud)."
 
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Provenance"
 
@@ -105,6 +107,7 @@ Id: wearable-time-of-upload
 Title: "Time of Upload to Vendor Cloud"
 Description: "When the measurement data reached the vendor cloud (typically later than time-of-measurement due to background sync intervals; relevant for latency-sensitive workflows like CDS Hooks)."
 
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Provenance"
 
@@ -119,6 +122,7 @@ Id: wearable-transformation-lineage
 Title: "Wearable Transformation Lineage"
 Description: "Reference to an upstream Provenance representing one step of the transformation chain (raw sample → vendor-derived metric → IG-recomputed metric). Recursive: the upstream Provenance MAY itself carry transformationLineage extensions to walk further back."
 
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Provenance"
 

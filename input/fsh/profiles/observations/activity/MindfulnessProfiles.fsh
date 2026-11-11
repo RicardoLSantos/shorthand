@@ -79,6 +79,7 @@ References:
 - Linardon J. (2020). Behav Ther 51(4):646-658
 """
 
+* ^experimental = true
 * status MS
 * code MS
 * subject MS

@@ -99,6 +99,7 @@ Cross-jurisdictional applicability:
 - HIPAA: Performance documentation supports meaningful use attestation
 """
 Context: DeviceDefinition, ClinicalImpression, RiskAssessment
+* ^experimental = true
 * extension contains
     accuracy 0..1 and
     precision 0..1 and
@@ -148,6 +149,7 @@ Cross-jurisdictional applicability:
 - CFM 2.454 Art. 5: Safety requirements include data quality assurance
 """
 Context: DeviceDefinition
+* ^experimental = true
 * extension contains
     datasetSize 0..1 and
     dataQualityScore 0..1 and
@@ -198,6 +200,7 @@ Cross-jurisdictional applicability:
 - LGPD Art. 38: Data Protection Impact Assessment (DPIA) for high-risk processing
 - GDPR Art. 35: DPIA required for automated processing with legal effects
 """
+* ^experimental = true
 * status MS
 * subject 1..1 MS
 * subject ^short = "The AI system (Device/DeviceDefinition) being assessed"
@@ -223,6 +226,7 @@ Id: ai-risk-assessment-status
 Title: "AI Risk Assessment Status"
 Description: "Status of the AI risk management assessment per EU AI Act Art. 9."
 Context: RiskAssessment
+* ^experimental = true
 * value[x] only CodeableConcept
 * valueCodeableConcept from AIRiskAssessmentStatusVS (required)
 
@@ -256,6 +260,7 @@ Cross-jurisdictional applicability:
 - LGPD Art. 6-VI: Transparency principle — processing logic documentation
 - GDPR Art. 13(2)(f): Logic involved in automated decision-making
 """
+* ^experimental = true
 * status MS
 * type 1..1 MS
 * type ^short = "Document type: model-card or impact-assessment"

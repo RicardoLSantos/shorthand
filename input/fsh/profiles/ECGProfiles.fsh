@@ -44,6 +44,7 @@ Parent: $vitalsigns
 Id: consumer-ecg-observation
 Title: "Consumer ECG Observation Profile"
 Description: "Base profile for ECG-derived observations from consumer wearable devices (Apple Watch, Withings, Samsung, AliveCor)"
+* ^experimental = true
 * ^abstract = true
 * status MS
 * category 1..* MS
@@ -63,6 +64,7 @@ Parent: ConsumerECGObservation
 Id: qt-interval-observation
 Title: "QT Interval Observation Profile"
 Description: "Profile for QT interval measurements from consumer ECG-capable wearable devices. LOINC codes: 8634-8 (Q-T interval), 8636-3 (Q-T corrected). Consumer devices are NOT FDA-cleared for QT measurement. References: Giudicessi2021 (Circulation), Zaballos2023 (Sci Rep)."
+* ^experimental = true
 * code = $LOINC#8634-8 "Q-T interval"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
@@ -101,6 +103,7 @@ Parent: ConsumerECGObservation
 Id: qrs-duration-observation
 Title: "QRS Duration Observation Profile"
 Description: "Profile for QRS complex duration from consumer ECG-capable wearables"
+* ^experimental = true
 * code = $LOINC#44973-6 "QRS duration {Electrocardiograph lead}"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
@@ -112,6 +115,7 @@ Parent: ConsumerECGObservation
 Id: pr-interval-observation
 Title: "PR Interval Observation Profile"
 Description: "Profile for PR interval measurements from consumer ECG-capable wearables"
+* ^experimental = true
 * code = $LOINC#8625-6 "P-R Interval"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
@@ -123,6 +127,7 @@ Parent: ConsumerECGObservation
 Id: heart-rate-ecg-observation
 Title: "Heart Rate by ECG Observation Profile"
 Description: "Profile for heart rate derived from ECG signal (more accurate than PPG during motion)"
+* ^experimental = true
 * code = $LOINC#76282-3 "Heart rate.beat-to-beat by EKG"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM

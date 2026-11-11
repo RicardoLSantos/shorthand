@@ -8,6 +8,7 @@ Id: body-metrics-observation
 Title: "Body Metrics Observation Profile"
 Description: "Profile for body measurements from iOS Health App"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
@@ -23,6 +24,7 @@ Id: weight-observation
 Title: "Weight Measurement Profile"
 Description: "Profile for body weight measurements"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 
@@ -37,6 +39,7 @@ Id: height-observation
 Title: "Height Measurement Profile" 
 Description: "Profile for body height measurements"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 
@@ -51,6 +54,7 @@ Id: bmi-observation
 Title: "BMI Measurement Profile"
 Description: "Profile for Body Mass Index calculations"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 
@@ -65,6 +69,7 @@ Id: body-composition-observation
 Title: "Body Composition Profile"
 Description: "Profile for body composition measurements including fat, lean mass, and other metrics"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 

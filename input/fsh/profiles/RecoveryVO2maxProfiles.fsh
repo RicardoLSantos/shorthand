@@ -18,6 +18,7 @@ Id: recovery-readiness-observation
 Title: "Recovery Readiness Observation Profile"
 Description: "Profile for recording composite recovery and readiness scores from wearable devices including Oura Readiness, WHOOP Recovery, Garmin Body Battery, and similar metrics. Supports strain-recovery balance, training readiness, and contributing factors aligned with openEHR archetype recovery_readiness.v0."
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = $ObsCat#exam "Exam"
@@ -176,6 +177,7 @@ Id: vo2max-estimation-observation
 Title: "VO2max Estimation Observation Profile"
 Description: "Profile for recording estimated maximal oxygen uptake (VO2max) from wearable devices, fitness tests, and predictive algorithms. Supports cardiorespiratory fitness (CRF) classification, fitness age, and trend analysis aligned with openEHR archetype vo2max_estimation.v0."
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = $ObsCat#exam "Exam"

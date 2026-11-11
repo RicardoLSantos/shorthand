@@ -6,6 +6,7 @@ Id: multi-jurisdictional-consent
 Title: "Multi-Jurisdictional Healthcare Consent"
 Description: "Consent profile supporting GDPR, HIPAA, and LGPD compliance"
 
+* ^experimental = true
 * status MS
 * scope MS
 * category MS

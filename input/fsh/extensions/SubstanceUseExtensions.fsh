@@ -12,6 +12,7 @@ Title: "Substance Use Motivation"
 Description: "Patient's motivation level for changing substance use behavior (readiness to change)"
 Context: Observation
 
+* ^experimental = true
 * value[x] only CodeableConcept
 * valueCodeableConcept from SubstanceUseMotivationVS (required)
 
@@ -33,6 +34,7 @@ Title: "Substance Use Trigger"
 Description: "Identified triggers that prompt substance use behavior"
 Context: Observation
 
+* ^experimental = true
 * value[x] only CodeableConcept
 * valueCodeableConcept from SubstanceUseTriggerVS (extensible)
 
@@ -59,6 +61,7 @@ Title: "Cessation Support"
 Description: "Support methods being used or considered for substance cessation"
 Context: Observation
 
+* ^experimental = true
 * extension contains
     method 1..1 MS and
     status 0..1 MS and
@@ -111,6 +114,7 @@ Title: "Drinking Context"
 Description: "Context or setting in which alcohol consumption typically occurs"
 Context: Observation
 
+* ^experimental = true
 * value[x] only CodeableConcept
 * valueCodeableConcept from DrinkingContextVS (extensible)
 

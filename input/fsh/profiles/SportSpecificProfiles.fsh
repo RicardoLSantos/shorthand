@@ -18,6 +18,7 @@ Id: cycling-dynamics-observation
 Title: "Cycling Dynamics Observation Profile"
 Description: "Profile for recording cycling dynamics and power metrics from wearable devices, cycling computers, and smart trainers. Supports FTP, TSS, power zones, and pedaling dynamics aligned with openEHR archetype cycling_dynamics.v0."
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"
@@ -156,6 +157,7 @@ Id: running-dynamics-observation
 Title: "Running Dynamics Observation Profile"
 Description: "Profile for recording running form and biomechanical metrics from wearable devices and running pods. Supports ground contact time, vertical oscillation, cadence, stride length, and running power aligned with openEHR archetype running_dynamics.v0."
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"
@@ -309,6 +311,7 @@ Id: swimming-metrics-observation
 Title: "Swimming Metrics Observation Profile"
 Description: "Profile for recording swimming performance metrics from wearable devices. Supports SWOLF score, stroke metrics, lap analysis, and pace aligned with openEHR archetype swimming_metrics.v0."
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"
@@ -470,6 +473,7 @@ Id: strength-training-observation
 Title: "Strength Training Observation Profile"
 Description: "Profile for recording strength training metrics from wearable devices, velocity-based training systems, and gym equipment. Supports sets, reps, load, velocity-based metrics, and training load aligned with openEHR archetype strength_training.v0."
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = $ObsCat#activity "Activity"

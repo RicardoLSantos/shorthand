@@ -4,6 +4,7 @@ Extension: RegulatoryBasis
 Id: regulatory-basis
 Title: "Regulatory Basis for Consent"
 Description: "Identifies the regulatory framework(s) that govern this consent"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Consent"
 * value[x] only CodeableConcept
@@ -13,6 +14,7 @@ Extension: JurisdictionApplicability
 Id: jurisdiction-applicability
 Title: "Jurisdiction Applicability"
 Description: "Specifies which jurisdictions this consent applies to"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Consent"
 * value[x] only CodeableConcept
@@ -22,6 +24,7 @@ Extension: DataLocalization
 Id: data-localization
 Title: "Data Localization Requirements"
 Description: "Specifies data localization requirements per jurisdiction"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Consent"
 * extension contains

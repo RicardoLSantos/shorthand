@@ -4,6 +4,7 @@ Id: social-history-observation
 Title: "Reproductive Health Base Profile"
 Description: "Base profile for social-history health observations"
 
+* ^experimental = true
 * ^version = "1.0.0"
 * ^status = #draft
 * ^date = "2026-09-17"

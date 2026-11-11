@@ -133,6 +133,7 @@ Reference from BulkExportConsent to the BulkExportGroup cohort that this
 consent authorizes. Bidirectional with BulkExportConsentRef extension on
 BulkExportGroup (forming consent-cohort linked pair).
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Consent"
 
@@ -152,6 +153,7 @@ Metadata about the research project sponsoring the bulk export consent.
 Captures IRB approval, project ID, principal investigator, and expected
 data retention period beyond the consent's provision.period.
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Consent"
 

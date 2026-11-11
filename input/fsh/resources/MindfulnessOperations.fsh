@@ -4,6 +4,7 @@ Id: mindfulness-operation
 Title: "Mindfulness Operation"
 Description: "Base definition for mindfulness operations"
 
+* ^experimental = true
 * status 1..1
 * kind 1..1
 * name 1..1

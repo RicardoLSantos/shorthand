@@ -89,6 +89,7 @@ Aligned with:
 - ACLM Lifestyle Medicine guidelines
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2025-11-25"
@@ -173,6 +174,7 @@ Clinical Context:
 - One standard drink: 14g pure alcohol
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2025-11-25"
@@ -254,6 +256,7 @@ Guidelines:
 - Sleep hygiene: No caffeine 6+ hours before bed
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2025-11-25"
@@ -304,6 +307,7 @@ Note: This is for health assessment purposes only, in contexts where legal and
 clinically appropriate. Privacy and confidentiality considerations are paramount.
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2025-11-25"
@@ -357,6 +361,7 @@ Components include tobacco, alcohol, caffeine, and recreational substances
 with their current status and risk assessment.
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2025-11-25"

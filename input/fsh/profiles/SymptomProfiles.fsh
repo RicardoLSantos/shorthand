@@ -4,6 +4,7 @@ Id: symptom-questionnaire
 Title: "Symptom Assessment Questionnaire"
 Description: "Questionnaire template for symptom assessments"
 
+* ^experimental = true
 * status MS
 * title MS
 * item MS

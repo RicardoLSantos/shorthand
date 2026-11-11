@@ -49,6 +49,7 @@ References:
 - Holt-Lunstad J et al. (2015). Perspect Psychol Sci 10(2):227-237
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2026-01-12"

@@ -48,6 +48,7 @@ References:
 - Berkman LF et al. (2000). Soc Sci Med 51(6):843-857
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2026-01-12"

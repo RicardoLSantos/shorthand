@@ -4,6 +4,7 @@ Id: social-interaction
 Title: "Social Interaction Profile"
 Description: "Profile for recording social interaction data from iOS Health App"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2024-01-03"

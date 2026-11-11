@@ -2,6 +2,7 @@ Extension: AlertTiming
 Id: alert-timing
 Title: "Alert Timing Extension"
 Description: "Defines when alerts should be triggered"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only Timing
@@ -14,6 +15,7 @@ Extension: AlertMessage
 Id: alert-message
 Title: "Alert Message Extension"
 Description: "Defines the alert message content"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only string
@@ -24,6 +26,7 @@ Id: mindfulness-alert
 Title: "Mindfulness Alert"
 Description: "Alert configuration for mindfulness sessions"
 
+* ^experimental = true
 * code 1..1 MS
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-alert-reminder "Mindfulness Reminder"
 

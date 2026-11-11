@@ -15,6 +15,7 @@ Id: wearable-data-source
 Title: "Wearable Data Source (application)"
 Description: "The application that produced wearable observations (a health platform such as HealthKit, a vendor app, or the ETL application), which is the Device that Observation.device references. The type is fixed to SNOMED CT 706689003 Application programme software; deviceName, version (application version) and manufacturer identify the software; the physical sensor, when known, is a WearableSensorDevice referenced through parent."
 
+* ^experimental = true
 * type 1..1 MS
 * type = $SCT#706689003 "Application programme software"
 * type ^short = "Fixed: the data source is software"
@@ -36,6 +37,7 @@ Id: wearable-sensor-device
 Title: "Wearable Sensor Device (hardware)"
 Description: "The physical sensor device behind a wearable data source: watch, ring, chest strap, oximeter, scale. The type is drawn from the IEEE 11073-10101 (MDC) device specialisations of the Personal Health Device IG (extensible), for example 528388 pulse oximeter or 528484 step counter; manufacturer, model and serial number identify the hardware."
 
+* ^experimental = true
 * type 1..1 MS
 * type from $MDCTypes (extensible)
 * type ^short = "IEEE 11073-10101 (MDC) device specialisation, when one applies"

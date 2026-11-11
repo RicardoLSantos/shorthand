@@ -15,6 +15,7 @@ Id: heart-rate-variability-observation
 Title: "Heart Rate Variability Observation Profile"
 Description: "One heart rate variability (HRV) metric from a consumer wearable or an ECG recording: SDNN (LOINC 80404-7) or, for the metrics without a LOINC code, RMSSD, pNN50, LF power, HF power or the LF/HF ratio (LifestyleMedicineTemporaryCS, bridged to LOINC where a code exists by ConceptMapHRVToLOINC). The value is a Quantity in UCUM units (ms for time-domain metrics, % for pNN50, ms2 for spectral power, 1 for the LF/HF ratio). Reference ranges and interpretation carry the person's own baseline; the measurement context (rest, sleep, post-exercise) is recorded with the MeasurementContext extension and the recording device with Observation.device."
 
+* ^experimental = true
 * status MS
 * category 1..* MS
 * category = $ObsCat#vital-signs

@@ -21,6 +21,7 @@ Id: nutrition-intake-observation
 Title: "Nutrition Intake Observation Profile"
 Description: "Profile for nutrition intake data from iOS Health App and user input"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
@@ -39,6 +40,7 @@ Id: water-intake-observation
 Title: "Water Intake Observation Profile"
 Description: "Profile for water intake measurements"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
@@ -55,6 +57,7 @@ Id: calorie-intake-observation
 Title: "Calorie Intake Observation Profile"
 Description: "Profile for caloric intake measurements"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
@@ -71,6 +74,7 @@ Id: macronutrients-observation
 Title: "Macronutrients Observation Profile"
 Description: "Profile for macronutrient intake measurements"
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^publisher = "Ricardo Lourenço dos Santos, FMUP"
@@ -139,6 +143,7 @@ References:
 - Bailey RL et al. (2015). Ann Nutr Metab 66(Suppl 2):22-33
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2026-01-12"

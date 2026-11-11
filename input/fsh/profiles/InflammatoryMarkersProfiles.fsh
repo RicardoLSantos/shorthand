@@ -83,6 +83,7 @@ HRV correlation: Inverse relationship with RMSSD (Williams 2019).
 Higher vagal tone associated with lower CRP levels.
 """
 
+* ^experimental = true
 * code = $LOINC#1988-5 "C reactive protein [Mass/volume] in Serum or Plasma"
 * valueQuantity MS
 * valueQuantity.system = $UCUM
@@ -117,6 +118,7 @@ Primary marker for subclinical inflammation and cardiovascular risk.
 Strong inverse correlation with HRV in lifestyle medicine assessment.
 """
 
+* ^experimental = true
 * code = $LOINC#30522-7 "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method"
 * valueQuantity MS
 * valueQuantity.system = $UCUM
@@ -169,6 +171,7 @@ IL-6 is a key mediator of the acute phase response and stimulates CRP production
 Vagal nerve stimulation reduces IL-6 (cholinergic anti-inflammatory pathway).
 """
 
+* ^experimental = true
 * code = $LOINC#26881-3 "Interleukin 6 [Mass/volume] in Serum or Plasma"
 * valueQuantity MS
 * valueQuantity.system = $UCUM
@@ -200,6 +203,7 @@ TNF-α is suppressed by acetylcholine via the inflammatory reflex.
 Higher vagal tone (HRV) associated with lower TNF-α levels.
 """
 
+* ^experimental = true
 * code = $LOINC#3074-2 "Tumor necrosis factor.alpha [Mass/volume] in Serum or Plasma"
 * valueQuantity MS
 * valueQuantity.system = $UCUM
@@ -234,6 +238,7 @@ circulating cytokine panel modulated by mitochondrial-targeted intervention
 (Castro-Marrero 2022). Supports the autonomic-immune axis capture layer.
 """
 
+* ^experimental = true
 * code = $LOINC#13629-1 "Interleukin 1 beta [Mass/volume] in Serum or Plasma"
 * valueQuantity MS
 * valueQuantity.system = $UCUM
@@ -255,6 +260,7 @@ Pro-inflammatory chemokine (neutrophil chemoattractant). Member of the circulati
 cytokine panel reduced by mitochondrial-targeted intervention (Castro-Marrero 2022).
 """
 
+* ^experimental = true
 * code = $LOINC#33211-4 "Interleukin 8 [Mass/volume] in Serum or Plasma"
 * valueQuantity MS
 * valueQuantity.system = $UCUM
@@ -277,6 +283,7 @@ markers to represent the pro-/anti-inflammatory balance; member of the circulati
 cytokine panel modulated by mitochondrial-targeted intervention (Castro-Marrero 2022).
 """
 
+* ^experimental = true
 * code = $LOINC#26848-2 "Interleukin 10 [Mass/volume] in Serum or Plasma"
 * valueQuantity MS
 * valueQuantity.system = $UCUM

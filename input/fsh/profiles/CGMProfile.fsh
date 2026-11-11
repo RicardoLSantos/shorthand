@@ -19,6 +19,7 @@ Id: cgm-observation
 Title: "Continuous Glucose Monitoring (CGM) Observation Profile"
 Description: "Profile for recording continuous glucose monitoring data from consumer and medical-grade CGM devices. Supports real-time glucose, trend arrows, Time in Range (TIR), and glycemic variability metrics per International Consensus (Battelino 2019). Aligned with openEHR archetype blood_glucose_cgm.v0."
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = $ObsCat#exam "Exam"

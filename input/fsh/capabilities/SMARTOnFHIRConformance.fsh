@@ -163,6 +163,7 @@ Extension to document specific SMART on FHIR launch scopes supported by
 a server beyond the canonical OAuth URIs declaration. Captures supported
 launch contexts (patient, encounter, practitioner) and bulk-export scopes.
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "CapabilityStatement.rest.security"
 

@@ -120,6 +120,7 @@ vendor (e.g., Apple HealthKit pilot) or multi-vendor cohort (e.g., HRV
 decline cohort across Apple + Fitbit + Polar). Used by the pipeline to
 select correct vendor adapter(s) for the $export operation.
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Group"
 
@@ -141,6 +142,7 @@ measurement timestamp included; end = latest measurement timestamp included
 $export operation. Required for any operational ETL run; absent or open-ended
 windows are rejected at pipeline server-side to prevent unbounded extracts.
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Group"
 
@@ -164,6 +166,7 @@ adapter → unit normalization (UCUM) → LOINC code mapping → de-duplication
 transformation pipelines for vendor-specific quirks (e.g., Apple raw HRV vs
 Fitbit derived HRV).
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Group"
 
@@ -185,6 +188,7 @@ transforms Bundle.type=batch into OMOP MEASUREMENT + PERSON + OBSERVATION
 records (cf. Vulcan FHIR-to-OMOP IG, alignment under evaluation per T4 S59
 2026-05-18 cross-terminal note).
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Group"
 

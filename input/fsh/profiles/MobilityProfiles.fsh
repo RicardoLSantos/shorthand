@@ -13,6 +13,7 @@ Id: mobility-profile
 Title: "Mobility Profile"
 Description: "Profile for mobility data from iOS Health App including iOS 14+ gait metrics (walking speed, step length, asymmetry, double support, stair speeds, 6MWT, and walking steadiness)"
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
@@ -118,6 +119,7 @@ Id: mobility-measurement
 Title: "Mobility Measurement"
 Description: "Profile for individual mobility metric observations from iOS Health App"
 
+* ^experimental = true
 * status MS
 * category 1..1 MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity

@@ -4,6 +4,7 @@ Id: mindfulness-schedule
 Title: "Mindfulness Schedule"
 Description: "Schedule configuration for mindfulness sessions"
 
+* ^experimental = true
 * code 1..1 MS
 * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#mindfulness-schedule-recurring "Recurring Schedule"
 
@@ -11,6 +12,7 @@ Extension: MindfulnessScheduleTiming
 Id: mindfulness-schedule-timing
 Title: "Mindfulness Schedule Timing"
 Description: "Timing configuration for mindfulness sessions"
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Basic"
 * value[x] only Timing

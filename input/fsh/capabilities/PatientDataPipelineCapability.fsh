@@ -222,6 +222,7 @@ Retry-After header per the pipeline-retry-semantics extension.
 Used as a hint for vendor API integrators to throttle outbound requests in
 their ETL pipeline before hitting server-side rate limiting.
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "CapabilityStatement.rest"
 
@@ -253,6 +254,7 @@ CodeSystem in v0.5.0 if interoperability friction observed):
   - "exponential-backoff-5-max" — Exponential, max 5 retries
   - "retry-after-aware" — Honor server Retry-After header (RFC 7231 §7.1.3)
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "CapabilityStatement.rest"
 
@@ -277,6 +279,7 @@ The endpoint MUST conform to FHIR R4 OperationOutcome resource semantics
 system/AuditEvent.rs + system/OperationOutcome.rs scopes per
 SMARTOnFHIRConformance.fsh.
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "CapabilityStatement.rest"
 

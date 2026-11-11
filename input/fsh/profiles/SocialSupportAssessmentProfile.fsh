@@ -41,6 +41,7 @@ Profile for social support assessment using validated instruments.
 **LOINC**: 91642-9 |Medical Outcomes Study Social Support Survey panel [MOS Social Support Survey]|
 """
 
+* ^experimental = true
 * ^version = "0.1.0"
 * ^status = #draft
 * ^date = "2026-01-12"

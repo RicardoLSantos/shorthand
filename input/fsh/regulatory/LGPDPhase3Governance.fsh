@@ -32,6 +32,7 @@ Cross-jurisdictional applicability:
 - GDPR Art. 5(1)(c): Data minimisation principle
 - HIPAA §164.502(b): Minimum necessary standard
 """
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "Consent"
 * ^context[1].type = #element
@@ -68,6 +69,7 @@ Cross-jurisdictional applicability:
 - EU AI Act Art. 10: Data governance for training datasets
 - EU AI Act Art. 15: Accuracy, robustness, cybersecurity requirements
 """
+* ^experimental = true
 * ^context[0].type = #element
 * ^context[0].expression = "ClinicalImpression"
 * ^context[1].type = #element
@@ -104,6 +106,7 @@ The notification must include (Art. 48, §1):
 
 Cross-jurisdictional: GDPR Art. 33-34 (72h notification), HIPAA §164.408 (60 days)
 """
+* ^experimental = true
 * status MS
 * status = #completed
 * category 1..1 MS

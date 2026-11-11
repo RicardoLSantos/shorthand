@@ -9,6 +9,7 @@ Id: lifestyle-vital-signs
 Title: "Lifestyle Medicine Vital Signs Profile"
 Description: "Profile for vital signs data from iOS Health App"
 
+* ^experimental = true
 * status MS
 * category 1..* MS
 * subject 1..1 MS
@@ -24,6 +25,7 @@ Id: heart-rate-observation
 Title: "Heart Rate Observation Profile"
 Description: "Profile for heart rate measurements from iOS Health App"
 
+* ^experimental = true
 * code = $LOINC#8867-4 "Heart rate"
 * valueQuantity only Quantity
 * valueQuantity.system = $UCUM
@@ -60,6 +62,7 @@ Id: blood-pressure-observation
 Title: "Blood Pressure Observation Profile"
 Description: "Profile for blood pressure measurements from iOS Health App"
 
+* ^experimental = true
 * code = $LOINC#85354-9 "Blood pressure panel with all children optional"
 * component 2..2 MS
 * component ^slicing.discriminator.type = #value
@@ -86,6 +89,7 @@ Id: oxygen-saturation-observation
 Title: "Oxygen Saturation Observation Profile"
 Description: "Profile for SpO2 measurements from iOS Health App. Maps to HKQuantityTypeIdentifier.oxygenSaturation. Normal range: 95-100%."
 
+* ^experimental = true
 * code.coding ^slicing.discriminator.type = #pattern
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
@@ -111,6 +115,7 @@ Id: body-temperature-observation
 Title: "Body Temperature Observation Profile"
 Description: "Profile for body temperature measurements from iOS Health App. Maps to HKQuantityTypeIdentifier.bodyTemperature. Normal range: 36.1-37.2°C (97-99°F)."
 
+* ^experimental = true
 * code = $LOINC#8310-5 "Body temperature"
 * valueQuantity 1..1 MS
 * valueQuantity.system = $UCUM
@@ -145,6 +150,7 @@ Id: respiratory-rate-observation
 Title: "Respiratory Rate Observation Profile"
 Description: "Profile for respiratory rate measurements from iOS Health App. Maps to HKQuantityTypeIdentifier.respiratoryRate. Normal adult range: 12-20 breaths/min."
 
+* ^experimental = true
 * code = $LOINC#9279-1 "Respiratory rate"
 * valueQuantity 1..1 MS
 * valueQuantity.system = $UCUM
@@ -192,6 +198,7 @@ Id: sdnn-observation
 Title: "SDNN Heart Rate Variability Observation Profile"
 Description: "Profile for SDNN (standard deviation of NN intervals) heart rate variability from iOS Health App / Apple Watch. Maps to HKQuantityTypeIdentifier.heartRateVariabilitySDNN. SDNN is the primary time-domain HRV marker of overall autonomic modulation. Coexists with the heartRateVariability component of HeartRateObservation (bundled HR+HRV); this standalone profile serves the ETL standalone-SDNN path."
 
+* ^experimental = true
 * code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * code ^comment = "80404-7 is the only HRV time-domain metric with a LOINC code (verified Athena). RMSSD, pNN50, LF/HF have no LOINC and use a custom CodeSystem."
 * valueQuantity 1..1 MS
@@ -209,6 +216,7 @@ Id: vital-signs-panel
 Title: "Vital Signs Panel Profile"
 Description: "Panel grouping the individual lifestyle-medicine vital-signs observations (heart rate, blood pressure, oxygen saturation, body temperature, respiratory rate) plus body metrics (weight, height, BMI, body composition) via hasMember, matching the LOINC 85353-1 panel scope. The panel itself carries no value; the measurements live in the referenced member observations."
 
+* ^experimental = true
 * code = $LOINC#85353-1 "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
 * hasMember MS
 * hasMember only Reference(HeartRateObservation or BloodPressureObservation or OxygenSaturationObservation or BodyTemperatureObservation or RespiratoryRateObservation or BodyMetricsObservation)

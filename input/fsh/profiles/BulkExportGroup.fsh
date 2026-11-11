@@ -141,6 +141,7 @@ Extension referencing BulkExportConsent resources that cover the cohort's
 members for the specific $export operation purpose. Required by the
 BulkExportGroup profile to enforce consent provenance before export.
 """
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Group"
 

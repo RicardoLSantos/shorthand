@@ -7,6 +7,7 @@ Id: mindfulness-message-definition
 Title: "Mindfulness Message Definition" 
 Description: "Definition for mindfulness session messages"
 
+* ^experimental = true
 * url 1..1 MS
 * date 1..1 MS
 * status 1..1 MS

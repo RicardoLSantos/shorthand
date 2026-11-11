@@ -3,6 +3,7 @@ Id: mindfulness-context
 Title: "Mindfulness Session Context"
 Description: "Additional context about the mindfulness practice session"
 
+* ^experimental = true
 * ^url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/mindfulness-context"
 * ^version = "1.0.0"
 * ^status = #draft
