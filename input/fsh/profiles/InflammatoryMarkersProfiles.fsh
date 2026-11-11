@@ -1,6 +1,6 @@
 // Inflammatory Markers Profiles for Lifestyle Medicine
 // Created: 2025-11-27
-// Purpose: Support RS1 findings on HRV-Inflammation inverse correlation
+// Purpose: Support the published evidence on the HRV-inflammation inverse association
 // Reference: Task Force ESC 1996, Shaffer 2017, Williams 2019
 
 Alias: $SCT = http://snomed.info/sct
@@ -26,7 +26,7 @@ Key inflammatory markers include:
 - Interleukin-6 (IL-6) - pro-inflammatory cytokine
 - Tumor Necrosis Factor Alpha (TNF-α) - inflammatory mediator
 
-Clinical context: Higher HRV (especially RMSSD) correlates with lower inflammation,
+Clinical context: Higher HRV is weakly associated with lower inflammatory markers (Williams 2019),
 reflecting the cholinergic anti-inflammatory pathway (Tracey 2002).
 """
 
@@ -296,13 +296,12 @@ Title: "HRV-Inflammation Correlation Observation Profile"
 Description: """
 Profile to capture the correlation between Heart Rate Variability and inflammatory markers.
 
-This profile supports the RS1 systematic review finding:
-'Inverse correlation between HRV (especially RMSSD) and inflammatory biomarkers (CRP, IL-6)'
-
-Key relationships documented in literature:
-- RMSSD inversely correlates with CRP (r = -0.15 to -0.35)
-- Higher vagal tone → Lower inflammation
-- Mechanism: Cholinergic anti-inflammatory pathway (Tracey 2002)
+Published evidence: a meta-analysis of 51 human studies (Williams et al. 2019,
+doi:10.1016/j.bbi.2019.03.009) reports weak inverse associations between HRV and CRP:
+- SDNN: r = -0.202 (k = 24, n = 17,421)
+- RMSSD: r = -0.107 (k = 19, n = 16,450)
+These are population-level associations; they do not define a threshold for an individual patient.
+- Proposed mechanism: cholinergic anti-inflammatory pathway (Tracey 2002)
 
 Use case: Track changes in HRV alongside inflammatory markers to assess
 autonomic-immune axis in lifestyle medicine interventions.

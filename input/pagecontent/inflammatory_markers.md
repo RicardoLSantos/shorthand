@@ -1,16 +1,16 @@
 # Inflammatory Markers
 
-This page documents the inflammatory biomarker profiles developed for the iOS Lifestyle Medicine Implementation Guide, based on findings from systematic review RS1 (Wearables and Inflammation).
+This page documents the inflammatory biomarker profiles developed for the iOS Lifestyle Medicine Implementation Guide, based on the published literature on heart rate variability and inflammation.
 
 ## Clinical Background
 
-Chronic low-grade inflammation is increasingly recognized as a key mechanism linking lifestyle factors to cardiovascular disease, metabolic disorders, and accelerated aging. Heart rate variability (HRV) metrics, particularly RMSSD, show consistent inverse correlations with inflammatory biomarkers such as C-reactive protein (CRP) and interleukin-6 (IL-6).
+Chronic low-grade inflammation is increasingly recognized as a key mechanism linking lifestyle factors to cardiovascular disease, metabolic disorders, and accelerated aging. Heart rate variability (HRV) metrics show weak inverse associations with inflammatory biomarkers such as C-reactive protein (CRP) and interleukin-6 (IL-6).
 
 ### Key Evidence
 
 | Study | Finding | Sample |
 |-------|---------|--------|
-| Williams et al. 2019 | HRV inversely correlated with CRP (r = -0.15 to -0.20) | Meta-analysis, 26 studies |
+| Williams et al. 2019 | HRV inversely associated with CRP (SDNN r = -0.202, k = 24; RMSSD r = -0.107, k = 19) | Meta-analysis, 51 studies |
 | Pearson et al. 2003 | hs-CRP risk stratification for cardiovascular disease | AHA/CDC Scientific Statement |
 | Ridker et al. 2002 | CRP superior to LDL for CV event prediction | 28,000 women, 8-year follow-up |
 
@@ -59,7 +59,7 @@ Based on AHA/CDC guidelines (Pearson 2003, Ridker 2002):
 
 ### InflammatoryMarkerVS
 
-Contains LOINC codes for inflammatory biomarkers identified in RS1:
+Contains LOINC codes for inflammatory biomarkers used in this guide:
 
 ```
 ValueSet: InflammatoryMarkerVS

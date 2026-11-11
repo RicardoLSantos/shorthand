@@ -105,7 +105,7 @@ CRITICAL GAP: RMSSD has NO OMOP concept (concept_id = 0)
 Clinical Importance:
 - Primary parasympathetic marker (HRV Task Force 1996)
 - Main HRV metric from consumer wearables (Apple, Oura, Garmin)
-- Strongly associated with vagal tone and inflammation (RS1 finding)
+- Weak inverse association with CRP in a meta-analysis (r = -0.107; Williams 2019)
 - Mathematical relationship: RMSSD = SD1 × √2 (Poincaré plot)
 
 Workaround:

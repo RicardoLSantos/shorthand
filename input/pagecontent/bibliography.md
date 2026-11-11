@@ -66,71 +66,73 @@ This page provides a comprehensive list of references supporting the iOS Lifesty
 
 22. Stein PK, Pu Y. **Heart rate variability, sleep and sleep disorders.** Sleep Med Rev. 2012;16(1):47-66. [DOI:10.1016/j.smrv.2011.02.005](https://doi.org/10.1016/j.smrv.2011.02.005)
 
+23. Williams DP, Koenig J, Carnevali L, Sgoifo A, Jarczok MN, Sternberg EM, Thayer JF. **Heart rate variability and inflammation: A meta-analysis of human studies.** Brain Behav Immun. 2019;80:219-226. [DOI:10.1016/j.bbi.2019.03.009](https://doi.org/10.1016/j.bbi.2019.03.009)
+
 ### ECG and Cardiac Monitoring
 
-23. Perez MV, Mahaffey KW, Hedlin H, et al. **Large-Scale Assessment of a Smartwatch to Identify Atrial Fibrillation.** N Engl J Med. 2019;381(20):1909-1917. [DOI:10.1056/NEJMoa1901183](https://doi.org/10.1056/NEJMoa1901183)
+24. Perez MV, Mahaffey KW, Hedlin H, et al. **Large-Scale Assessment of a Smartwatch to Identify Atrial Fibrillation.** N Engl J Med. 2019;381(20):1909-1917. [DOI:10.1056/NEJMoa1901183](https://doi.org/10.1056/NEJMoa1901183)
 
-24. Giudicessi JR, Schram M, Bos JM, et al. **Artificial Intelligence-Enabled Assessment of the Heart Rate Corrected QT Interval Using a Mobile Electrocardiogram Device.** Circulation. 2021;143(18):1274-1286. [DOI:10.1161/CIRCULATIONAHA.120.050569](https://doi.org/10.1161/CIRCULATIONAHA.120.050569)
+25. Giudicessi JR, Schram M, Bos JM, et al. **Artificial Intelligence-Enabled Assessment of the Heart Rate Corrected QT Interval Using a Mobile Electrocardiogram Device.** Circulation. 2021;143(18):1274-1286. [DOI:10.1161/CIRCULATIONAHA.120.050569](https://doi.org/10.1161/CIRCULATIONAHA.120.050569)
 
-25. Rautaharju PM, Surawicz B, Gettes LS, et al. **AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: part IV.** Circulation. 2009;119(10):e241-e250. [DOI:10.1161/circulationaha.108.191096](https://doi.org/10.1161/circulationaha.108.191096)
+26. Rautaharju PM, Surawicz B, Gettes LS, et al. **AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: part IV.** Circulation. 2009;119(10):e241-e250. [DOI:10.1161/circulationaha.108.191096](https://doi.org/10.1161/circulationaha.108.191096)
 
-26. Roden DM. **Drug-induced prolongation of the QT interval.** N Engl J Med. 2004;350(10):1013-1022. [DOI:10.1056/NEJMra032426](https://doi.org/10.1056/NEJMra032426)
+27. Roden DM. **Drug-induced prolongation of the QT interval.** N Engl J Med. 2004;350(10):1013-1022. [DOI:10.1056/NEJMra032426](https://doi.org/10.1056/NEJMra032426)
 
-27. Schwartz PJ, Crotti L, Insolia R. **Long-QT syndrome: from genetics to management.** Circ Arrhythm Electrophysiol. 2012;5(4):868-877. [DOI:10.1093/eurheartj/ehr479](https://doi.org/10.1093/eurheartj/ehr479)
+28. Schwartz PJ, Crotti L, Insolia R. **Long-QT syndrome: from genetics to management.** Circ Arrhythm Electrophysiol. 2012;5(4):868-877. [DOI:10.1093/eurheartj/ehr479](https://doi.org/10.1093/eurheartj/ehr479)
 
 ### Sleep and Inflammation
 
-28. Irwin MR, Olmstead R, Carroll JE. **Sleep Disturbance, Sleep Duration, and Inflammation: A Systematic Review and Meta-Analysis of Cohort Studies and Experimental Sleep Deprivation.** Biol Psychiatry. 2016;80(1):40-52. [DOI:10.1016/j.bbi.2016.05.001](https://doi.org/10.1016/j.bbi.2016.05.001)
+29. Irwin MR, Olmstead R, Carroll JE. **Sleep Disturbance, Sleep Duration, and Inflammation: A Systematic Review and Meta-Analysis of Cohort Studies and Experimental Sleep Deprivation.** Biol Psychiatry. 2016;80(1):40-52. [DOI:10.1016/j.bbi.2016.05.001](https://doi.org/10.1016/j.bbi.2016.05.001)
 
-29. Prather AA, Marsland AL, Hall M, et al. **Normative variation in self-reported sleep quality and sleep debt is associated with stimulated pro-inflammatory cytokine production.** Sleep. 2015;38(6):1009-1017. [DOI:10.5665/sleep.5124](https://doi.org/10.5665/sleep.5124)
+30. Prather AA, Marsland AL, Hall M, et al. **Normative variation in self-reported sleep quality and sleep debt is associated with stimulated pro-inflammatory cytokine production.** Sleep. 2015;38(6):1009-1017. [DOI:10.5665/sleep.5124](https://doi.org/10.5665/sleep.5124)
 
-30. Depner CM, Cheng PC, Devine JK, et al. **Wearable technologies for developing sleep and circadian biomarkers: a summary of workshop discussions.** Sleep. 2020;43(2):zsz254. [DOI:10.1093/sleep/zsz254](https://doi.org/10.1093/sleep/zsz254)
+31. Depner CM, Cheng PC, Devine JK, et al. **Wearable technologies for developing sleep and circadian biomarkers: a summary of workshop discussions.** Sleep. 2020;43(2):zsz254. [DOI:10.1093/sleep/zsz254](https://doi.org/10.1093/sleep/zsz254)
 
 ### Mindfulness and Stress
 
-31. Kabat-Zinn J. **Mindfulness-based interventions in context: past, present, and future.** Clin Psychol Sci Pract. 2003;10(2):144-156. [DOI:10.1093/clipsy.bpg016](https://doi.org/10.1093/clipsy.bpg016)
+32. Kabat-Zinn J. **Mindfulness-based interventions in context: past, present, and future.** Clin Psychol Sci Pract. 2003;10(2):144-156. [DOI:10.1093/clipsy.bpg016](https://doi.org/10.1093/clipsy.bpg016)
 
-32. Goyal M, Singh S, Sibinga EM, et al. **Meditation programs for psychological stress and well-being: a systematic review and meta-analysis.** JAMA Intern Med. 2014;174(3):357-368. [DOI:10.1001/jamainternmed.2013.13018](https://doi.org/10.1001/jamainternmed.2013.13018)
+33. Goyal M, Singh S, Sibinga EM, et al. **Meditation programs for psychological stress and well-being: a systematic review and meta-analysis.** JAMA Intern Med. 2014;174(3):357-368. [DOI:10.1001/jamainternmed.2013.13018](https://doi.org/10.1001/jamainternmed.2013.13018)
 
-33. Tang YY, Hölzel BK, Posner MI. **The neuroscience of mindfulness meditation.** Nat Rev Neurosci. 2015;16(4):213-225. [DOI:10.1038/nrn3916](https://doi.org/10.1038/nrn3916)
+34. Tang YY, Hölzel BK, Posner MI. **The neuroscience of mindfulness meditation.** Nat Rev Neurosci. 2015;16(4):213-225. [DOI:10.1038/nrn3916](https://doi.org/10.1038/nrn3916)
 
-34. Black DS, Slavich GM. **Mindfulness meditation and the immune system: a systematic review of randomized controlled trials.** Ann N Y Acad Sci. 2016;1373(1):13-24. [DOI:10.1111/nyas.12998](https://doi.org/10.1111/nyas.12998)
+35. Black DS, Slavich GM. **Mindfulness meditation and the immune system: a systematic review of randomized controlled trials.** Ann N Y Acad Sci. 2016;1373(1):13-24. [DOI:10.1111/nyas.12998](https://doi.org/10.1111/nyas.12998)
 
-35. Creswell JD, Lindsay EK. **How does mindfulness training affect health? A mindfulness stress buffering account.** Curr Dir Psychol Sci. 2014;23(6):401-407. [DOI:10.1177/0963721414547415](https://doi.org/10.1177/0963721414547415)
+36. Creswell JD, Lindsay EK. **How does mindfulness training affect health? A mindfulness stress buffering account.** Curr Dir Psychol Sci. 2014;23(6):401-407. [DOI:10.1177/0963721414547415](https://doi.org/10.1177/0963721414547415)
 
-36. Goldberg SB, Tucker RP, Greene PA, et al. **Mindfulness-based interventions for psychiatric disorders: A systematic review and meta-analysis.** Clin Psychol Rev. 2018;59:52-60. [DOI:10.1016/j.cpr.2017.10.011](https://doi.org/10.1016/j.cpr.2017.10.011)
+37. Goldberg SB, Tucker RP, Greene PA, et al. **Mindfulness-based interventions for psychiatric disorders: A systematic review and meta-analysis.** Clin Psychol Rev. 2018;59:52-60. [DOI:10.1016/j.cpr.2017.10.011](https://doi.org/10.1016/j.cpr.2017.10.011)
 
 ### Social Connection and Loneliness
 
-37. Holt-Lunstad J, Smith TB, Layton JB. **Social relationships and mortality risk: a meta-analytic review.** PLoS Med. 2010;7(7):e1000316. [DOI:10.1371/journal.pmed.1000316](https://doi.org/10.1371/journal.pmed.1000316)
+38. Holt-Lunstad J, Smith TB, Layton JB. **Social relationships and mortality risk: a meta-analytic review.** PLoS Med. 2010;7(7):e1000316. [DOI:10.1371/journal.pmed.1000316](https://doi.org/10.1371/journal.pmed.1000316)
 
-38. Holt-Lunstad J, Smith TB, Baker M, Harris T, Stephenson D. **Loneliness and social isolation as risk factors for mortality: a meta-analytic review.** Perspect Psychol Sci. 2015;10(2):227-237. [DOI:10.1177/1745691614568352](https://doi.org/10.1177/1745691614568352)
+39. Holt-Lunstad J, Smith TB, Baker M, Harris T, Stephenson D. **Loneliness and social isolation as risk factors for mortality: a meta-analytic review.** Perspect Psychol Sci. 2015;10(2):227-237. [DOI:10.1177/1745691614568352](https://doi.org/10.1177/1745691614568352)
 
-39. Valtorta NK, Kanaan M, Gilbody S, Ronzi S, Hanratty B. **Loneliness and social isolation as risk factors for coronary heart disease and stroke.** Heart. 2016;102(13):1009-1016. [DOI:10.1136/heartjnl-2015-308790](https://doi.org/10.1136/heartjnl-2015-308790)
+40. Valtorta NK, Kanaan M, Gilbody S, Ronzi S, Hanratty B. **Loneliness and social isolation as risk factors for coronary heart disease and stroke.** Heart. 2016;102(13):1009-1016. [DOI:10.1136/heartjnl-2015-308790](https://doi.org/10.1136/heartjnl-2015-308790)
 
-40. Cacioppo JT, Cacioppo S, Capitanio JP, Cole SW. **The neuroendocrinology of social isolation.** Annu Rev Psychol. 2015;66:733-767. [DOI:10.1146/annurev-psych-010814-015240](https://doi.org/10.1146/annurev-psych-010814-015240)
+41. Cacioppo JT, Cacioppo S, Capitanio JP, Cole SW. **The neuroendocrinology of social isolation.** Annu Rev Psychol. 2015;66:733-767. [DOI:10.1146/annurev-psych-010814-015240](https://doi.org/10.1146/annurev-psych-010814-015240)
 
 ### Validated Instruments
 
-41. Cohen S, Kamarck T, Mermelstein R. **A global measure of perceived stress.** J Health Soc Behav. 1983;24(4):385-396. [DOI:10.2307/2136404](https://doi.org/10.2307/2136404)
+42. Cohen S, Kamarck T, Mermelstein R. **A global measure of perceived stress.** J Health Soc Behav. 1983;24(4):385-396. [DOI:10.2307/2136404](https://doi.org/10.2307/2136404)
 
-42. Buysse DJ, Reynolds CF, Monk TH, Berman SR, Kupfer DJ. **The Pittsburgh Sleep Quality Index: a new instrument for psychiatric practice and research.** Psychiatry Res. 1989;28(2):193-213. [DOI:10.1016/0165-1781(89)90047-4](https://doi.org/10.1016/0165-1781(89)90047-4)
+43. Buysse DJ, Reynolds CF, Monk TH, Berman SR, Kupfer DJ. **The Pittsburgh Sleep Quality Index: a new instrument for psychiatric practice and research.** Psychiatry Res. 1989;28(2):193-213. [DOI:10.1016/0165-1781(89)90047-4](https://doi.org/10.1016/0165-1781(89)90047-4)
 
-43. Russell DW. **UCLA Loneliness Scale (Version 3): Reliability, validity, and factor structure.** J Pers Assess. 1996;66(1):20-40. [DOI:10.1207/s15327752jpa6601_2](https://doi.org/10.1207/s15327752jpa6601_2)
+44. Russell DW. **UCLA Loneliness Scale (Version 3): Reliability, validity, and factor structure.** J Pers Assess. 1996;66(1):20-40. [DOI:10.1207/s15327752jpa6601_2](https://doi.org/10.1207/s15327752jpa6601_2)
 
-44. Hughes ME, Waite LJ, Hawkley LC, Cacioppo JT. **A short scale for measuring loneliness in large surveys.** Res Aging. 2004;26(6):655-672. [DOI:10.1177/0164027504268574](https://doi.org/10.1177/0164027504268574)
+45. Hughes ME, Waite LJ, Hawkley LC, Cacioppo JT. **A short scale for measuring loneliness in large surveys.** Res Aging. 2004;26(6):655-672. [DOI:10.1177/0164027504268574](https://doi.org/10.1177/0164027504268574)
 
-45. Saunders JB, Aasland OG, Babor TF, de la Fuente JR, Grant M. **Development of the Alcohol Use Disorders Identification Test (AUDIT).** Addiction. 1993;88(6):791-804. [DOI:10.1111/j.1360-0443.1993.tb02093.x](https://doi.org/10.1111/j.1360-0443.1993.tb02093.x)
+46. Saunders JB, Aasland OG, Babor TF, de la Fuente JR, Grant M. **Development of the Alcohol Use Disorders Identification Test (AUDIT).** Addiction. 1993;88(6):791-804. [DOI:10.1111/j.1360-0443.1993.tb02093.x](https://doi.org/10.1111/j.1360-0443.1993.tb02093.x)
 
-46. Bush K, Kivlahan DR, McDonell MB, Fihn SD, Bradley KA. **The AUDIT alcohol consumption questions (AUDIT-C): an effective brief screening test for problem drinking.** Arch Intern Med. 1998;158(16):1789-1795. [DOI:10.1001/archinte.158.16.1789](https://doi.org/10.1001/archinte.158.16.1789)
+47. Bush K, Kivlahan DR, McDonell MB, Fihn SD, Bradley KA. **The AUDIT alcohol consumption questions (AUDIT-C): an effective brief screening test for problem drinking.** Arch Intern Med. 1998;158(16):1789-1795. [DOI:10.1001/archinte.158.16.1789](https://doi.org/10.1001/archinte.158.16.1789)
 
 ### Activity and Energy Expenditure
 
-47. Ainsworth BE, Haskell WL, Herrmann SD, et al. **2011 Compendium of Physical Activities: a second update of codes and MET values.** Med Sci Sports Exerc. 2011;43(8):1575-1581. [DOI:10.1249/MSS.0b013e31821ece12](https://doi.org/10.1249/MSS.0b013e31821ece12)
+48. Ainsworth BE, Haskell WL, Herrmann SD, et al. **2011 Compendium of Physical Activities: a second update of codes and MET values.** Med Sci Sports Exerc. 2011;43(8):1575-1581. [DOI:10.1249/MSS.0b013e31821ece12](https://doi.org/10.1249/MSS.0b013e31821ece12)
 
-48. Tudor-Locke C, Craig CL, Brown WJ, et al. **How many steps/day are enough? For adults.** Int J Behav Nutr Phys Act. 2011;8:79. [DOI:10.1186/1479-5868-8-79](https://doi.org/10.1186/1479-5868-8-79)
+49. Tudor-Locke C, Craig CL, Brown WJ, et al. **How many steps/day are enough? For adults.** Int J Behav Nutr Phys Act. 2011;8:79. [DOI:10.1186/1479-5868-8-79](https://doi.org/10.1186/1479-5868-8-79)
 
-49. Bassett DR Jr, Toth LP, LaMunion SR, Crouter SE. **Step counting: a review of measurement considerations and health-related applications.** Sports Med. 2017;47(7):1303-1315. [DOI:10.1007/s40279-016-0663-1](https://doi.org/10.1007/s40279-016-0663-1)
+50. Bassett DR Jr, Toth LP, LaMunion SR, Crouter SE. **Step counting: a review of measurement considerations and health-related applications.** Sports Med. 2017;47(7):1303-1315. [DOI:10.1007/s40279-016-0663-1](https://doi.org/10.1007/s40279-016-0663-1)
 
 ---
 
