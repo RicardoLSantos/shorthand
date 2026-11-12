@@ -133,8 +133,18 @@ done < <(git grep -n -E '(mongodb|mysql|postgres|redis)://[^/]+:[^@]+@' -- $EXCL
 #     the one script whose environment-variable name would match.)
 echo "Checking for internal process markers..."
 MARKER_PAT="AUTHORED-BY-CL""AUDE|\bT[1-6] S[0-9]+\b|Pit""fall #|Les""son #|Li""ção #|FA""Q Q|VR""F-|_TO_""GM_|CONTINUE_""HERE|SESSION_""COMPLETE|\bRS(0|[1-9]|1[0-5])\b|\bG[1-4]\b|US""ER\b"   # assembled from fragments so this file does not match itself
-MARKER_BASELINE=62   # 2026-09-22 (was 63 on 2026-09-16) — lower this as files are cleaned; never raise it
-MARKER_FILES=$(git grep -l -P "$MARKER_PAT" -- . ':!RS11_benchmark/' ':!.github/scripts/terminology_ledger_check.py' $EXCLUDE 2>/dev/null | wc -l | tr -d ' ')   # the ledger checker legitimately names a LOINC_… env var
+MARKER_BASELINE=0    # 2026-11-12 (was 62 on 2026-09-22 and 63 on 2026-09-16) — the target is reached; never raise it
+# git grep exits 1 when no file matches. Under `set -euo pipefail` that exit aborted the script on this line
+# as soon as the count reached 0 (2026-11-11). Exit 1 now means a count of 0; a higher exit is a git error
+# and is reported as a finding, so a failed search can never read as a clean one.
+set +e
+MARKER_LIST=$(git grep -l -P "$MARKER_PAT" -- . ':!RS11_benchmark/' ':!.github/scripts/terminology_ledger_check.py' $EXCLUDE)   # the ledger checker legitimately names a LOINC_… env var
+MARKER_RC=$?
+set -e
+if [ "$MARKER_RC" -gt 1 ]; then
+    log_finding "HIGH" "(script)" "-" "git grep failed in check 12 (rc $MARKER_RC); the marker count is not known"
+fi
+MARKER_FILES=$(printf '%s\n' "$MARKER_LIST" | grep -c . || true)
 echo "  files carrying internal markers: $MARKER_FILES (baseline $MARKER_BASELINE, target 0)"
 if [ "$MARKER_FILES" -gt "$MARKER_BASELINE" ]; then
     log_finding "HIGH" "(repository)" "-" "Internal process markers rose to $MARKER_FILES files (baseline $MARKER_BASELINE) — list them with: git grep -l -P \"\$MARKER_PAT\" -- . ':!RS11_benchmark/' (MARKER_PAT is defined in this script)"
