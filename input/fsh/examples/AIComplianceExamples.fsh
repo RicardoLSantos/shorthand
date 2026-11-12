@@ -90,7 +90,7 @@ Description: "Example of an AI-generated clinical impression from HRV analysis s
 
 * extension[agentRecommendation].extension[confidence].valueDecimal = 0.78
 * extension[agentRecommendation].extension[interpretation].valueCodeableConcept = $AgentCS#agent-interpretation-lifestyle-intervention "Lifestyle Intervention"
-* extension[agentRecommendation].extension[reasoning].valueMarkdown = "SDNN decline (-38% over 72h) exceeds 25% threshold. Concurrent CRP elevation (4.8 mg/L) indicates inflammatory component. Combined HRV+CRP pattern has 78% positive predictive value for stress-related cardiovascular risk in lifestyle medicine cohorts. Recommend: structured stress management (mindfulness 15min/day) + Mediterranean dietary pattern + sleep hygiene optimization."
+* extension[agentRecommendation].extension[reasoning].valueMarkdown = "SDNN decline (-38% over 72h) exceeds 25% threshold. Concurrent CRP elevation (4.8 mg/L) indicates inflammatory component. Recommend: structured stress management (mindfulness 15min/day) + Mediterranean dietary pattern + sleep hygiene optimization."
 * extension[agentRecommendation].extension[agentModel].valueString = "BioMistral-7B-v0.2"
 * extension[agentRecommendation].extension[timestamp].valueDateTime = "2026-03-05T10:30:15Z"
 

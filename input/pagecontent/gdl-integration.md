@@ -1,6 +1,6 @@
 This page documents how guideline decision logic in this Implementation Guide (IG) relates to the openEHR **Guideline Definition Language (GDL2)**, and states explicitly what is, and what is **not**, in scope for the IG.
 
-### Two layers, one decision
+## Two layers, one decision
 
 Computable clinical guidelines separate two concerns:
 
@@ -9,7 +9,7 @@ Computable clinical guidelines separate two concerns:
 
 This IG implements the **execution** layer with **[CDS Hooks 2.0](https://cds-hooks.org/)** — the FHIR-native, HTTP-stateless standard for surfacing decision support as *Cards* at workflow trigger points (see the [CDS Hooks Integration](cds-hooks-integration.html) page and the `CDSHooksServiceDeclaration`). The IG does **not** ship a GDL2 engine, and does **not** ship native GDL2 guideline artifacts. Instead, it documents the **bridge** between the two layers so that a GDL2-authored guideline can be deployed over this IG's FHIR resources.
 
-### The GDL2 → CDS Hooks bridge
+## The GDL2 → CDS Hooks bridge
 
 A GDL2 guideline and a CDS Hooks service share the same shape — *data in → rule logic → recommendation out* — differing only in their data model and transport. The bridge rests on correspondences this IG already defines:
 
@@ -23,13 +23,13 @@ A GDL2 guideline and a CDS Hooks service share the same shape — *data in → r
 
 Because the data correspondence is already published (the openEHR ConceptMaps) and the recommendation target is already standardised (CDS Hooks Cards), a guideline authored once in GDL2 can be executed over this IG without re-authoring its clinical logic — only the data and recommendation bindings are re-targeted.
 
-### Why CDS Hooks is the IG's execution standard
+## Why CDS Hooks is the IG's execution standard
 
 - **FHIR-native and vendor-neutral**: CDS Hooks is the HL7-aligned way to deliver decision support to any FHIR-capable EHR or app, consistent with the rest of this IG.
 - **Stateless and deployable**: an HTTP `/cds-services` endpoint returning Cards requires no openEHR runtime, so the four lifestyle-medicine services (patient-view, order-sign, medication-prescribe, encounter-discharge) are deployable wherever the IG's FHIR profiles are served.
 - **Human oversight by design**: Cards are advisory; the prescriber decides. This aligns with CFM 2.454/2026 Art. 7 (physician autonomy) and EU AI Act Art. 14 (human oversight of AI-surfaced recommendations).
 
-### Scope statement (what this IG does and does not assert)
+## Scope statement (what this IG does and does not assert)
 
 This IG **adopts the GDL2 → CDS Hooks correspondence as a design pattern** and documents it so guideline logic remains portable across the openEHR and FHIR ecosystems. It does **not**:
 

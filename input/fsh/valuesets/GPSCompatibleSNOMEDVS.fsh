@@ -27,7 +27,7 @@ SNOMED CT codes used in this Implementation Guide that are included in the
 SNOMED International Global Patient Set (GPS), available under CC-BY-4.0
 without SNOMED CT affiliate licensing.
 
-## GPS Coverage Analysis
+### GPS Coverage Analysis
 
 | Domain | IG Metrics | GPS Compatible | Coverage |
 |--------|------------|----------------|----------|
@@ -40,7 +40,7 @@ without SNOMED CT affiliate licensing.
 | HRV | 6 | 0 | 0% |
 | **TOTAL** | **57** | **8** | **~14%** |
 
-## Implications
+### Implications
 
 Organizations using GPS-only (without full SNOMED CT license) can exchange:
 - Tobacco and alcohol status data
