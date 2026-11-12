@@ -132,7 +132,7 @@ Supports ICD-11 sleep disorder classification (7A00-7A4Z).
 * section[sectionNutritionStatus] ^definition = """
 Section containing nutrition-related observations and assessments.
 Includes dietary intake, hydration, BMI trends, and nutritional risk scores.
-Supports ICD-11 nutrition codes (5B70-5B82, QD60-QD6Z).
+Supports ICD-11 nutrition codes (5B70-5B81, QD60-QD6Z).
 """
 * section[sectionNutritionStatus].code = $LOINC#61150-9 "Subjective Narrative"
 * section[sectionNutritionStatus].title = "Nutrition Status"
@@ -253,7 +253,7 @@ Description: "Example of an IPS Composition extended for lifestyle medicine"
 * section[sectionProblems].title = "Problem List"
 * section[sectionProblems].code = $LOINC#11450-4 "Problem list - Reported"
 * section[sectionProblems].text.status = #generated
-* section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Obesity (ICD-11: 5B82)</div>"
+* section[sectionProblems].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Obesity (ICD-11: 5B81)</div>"
 * section[sectionProblems].entry[0] = Reference(Condition/example-obesity)
 
 // Lifestyle Medicine section
@@ -321,7 +321,7 @@ Description: "Obesity condition for IPS Lifestyle Medicine example"
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * code = $SCT#414916001 "Obesity"
-* code.text = "Obesity (ICD-11: 5B82)"
+* code.text = "Obesity (ICD-11: 5B81)"
 * subject = Reference(Patient/example-patient)
 * onsetDateTime = "2020-01-01"
 
