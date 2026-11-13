@@ -17,7 +17,7 @@ Usage: #definition
 * title = "Wearable Vendor API to openEHR Archetype Mapping"
 * status = #draft
 * experimental = true
-* date = "2026-09-16"
+* date = "2026-11-13"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
@@ -81,16 +81,16 @@ Use Cases:
 * group[1].element[0].display = "Fitbit: Daily RMSSD average"
 * group[1].element[0].target[0].code = #at0005
 * group[1].element[0].target[0].display = "RMSSD"
-* group[1].element[0].target[0].equivalence = #equivalent
-* group[1].element[0].target[0].comment = "Fitbit provides daily RMSSD average. CAUTION: This is AVERAGED across deep sleep periods, not a single measurement."
+* group[1].element[0].target[0].equivalence = #wider
+* group[1].element[0].target[0].comment = "Fitbit provides daily RMSSD average. CAUTION: This is AVERAGED across deep sleep periods, not a single measurement. 'wider' (2026-11-13): an RMSSD value taken in one context is narrower than the generic RMSSD element."
 
 // deepRmssd → at0005 (RMSSD) with sleep context
 * group[1].element[1].code = #deepRmssd
 * group[1].element[1].display = "Fitbit: Deep sleep RMSSD"
 * group[1].element[1].target[0].code = #at0005
 * group[1].element[1].target[0].display = "RMSSD"
-* group[1].element[1].target[0].equivalence = #equivalent
-* group[1].element[1].target[0].comment = "Fitbit provides RMSSD specifically from deep sleep stages. Set physiological_state (at0040) = 'sleep'"
+* group[1].element[1].target[0].equivalence = #wider
+* group[1].element[1].target[0].comment = "Fitbit provides RMSSD specifically from deep sleep stages. Set physiological_state (at0040) = 'sleep'. 'wider' (2026-11-13): an RMSSD value taken in one context is narrower than the generic RMSSD element."
 
 // ============================================================================
 // GROUP 3: Oura Ring HRV → openEHR HRV Archetype

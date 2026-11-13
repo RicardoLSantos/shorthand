@@ -17,7 +17,7 @@ Usage: #definition
 * title = "openEHR Archetype to FHIR Resource Mapping"
 * status = #draft
 * experimental = true
-* date = "2026-09-16"
+* date = "2026-11-13"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * contact.telecom.system = #email
@@ -43,6 +43,11 @@ Architecture:
 // not a resolvable terminology for tx.fhir.org validation.
 // Source/target defined at group level using Archetype/StructureDefinition IDs.
 
+// EQUIVALENCE NOTE (2026-11-13):
+// A target that names only the generic element Observation.component uses
+// 'wider': the archetype element is one specific component, which the
+// display and the comment name.
+
 // ============================================================================
 // GROUP 1: HRV Archetype → FHIR Observation
 // ============================================================================
@@ -57,7 +62,7 @@ Architecture:
 * group[0].element[0].display = "SDNN"
 * group[0].element[0].target[0].code = #Observation.component
 * group[0].element[0].target[0].display = "Observation.component[sdnn].valueQuantity"
-* group[0].element[0].target[0].equivalence = #equivalent
+* group[0].element[0].target[0].equivalence = #wider
 * group[0].element[0].target[0].comment = "Map to component with code LOINC 80404-7. Unit: ms"
 
 // RMSSD (at0005) → Observation.component (custom code)
@@ -65,7 +70,7 @@ Architecture:
 * group[0].element[1].display = "RMSSD"
 * group[0].element[1].target[0].code = #Observation.component
 * group[0].element[1].target[0].display = "Observation.component[rmssd].valueQuantity"
-* group[0].element[1].target[0].equivalence = #equivalent
+* group[0].element[1].target[0].equivalence = #wider
 * group[0].element[1].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-rmssd. No LOINC code available. Unit: ms"
 
 // pNN50 (at0006) → Observation.component
@@ -73,7 +78,7 @@ Architecture:
 * group[0].element[2].display = "pNN50"
 * group[0].element[2].target[0].code = #Observation.component
 * group[0].element[2].target[0].display = "Observation.component[pnn50].valueQuantity"
-* group[0].element[2].target[0].equivalence = #equivalent
+* group[0].element[2].target[0].equivalence = #wider
 * group[0].element[2].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-pnn50. Unit: %"
 
 // LF/HF Ratio (at0012) → Observation.component
@@ -81,7 +86,7 @@ Architecture:
 * group[0].element[3].display = "LF/HF Ratio"
 * group[0].element[3].target[0].code = #Observation.component
 * group[0].element[3].target[0].display = "Observation.component[lf-hf-ratio].valueQuantity"
-* group[0].element[3].target[0].equivalence = #equivalent
+* group[0].element[3].target[0].equivalence = #wider
 * group[0].element[3].target[0].comment = "Map to component with LifestyleMedicineTemporaryCS#hrv-lf-hf-ratio. Dimensionless ratio"
 
 // Recording duration (at0031) → Observation.component or effectivePeriod
@@ -97,7 +102,7 @@ Architecture:
 * group[0].element[5].display = "Physiological state"
 * group[0].element[5].target[0].code = #Observation.component
 * group[0].element[5].target[0].display = "Observation.component[state].valueCodeableConcept"
-* group[0].element[5].target[0].equivalence = #equivalent
+* group[0].element[5].target[0].equivalence = #wider
 * group[0].element[5].target[0].comment = "Map resting/active/sleep states to component with custom code"
 
 // Device type (at0050) → Observation.device reference
@@ -127,7 +132,7 @@ Architecture:
 * group[1].element[1].display = "Distance"
 * group[1].element[1].target[0].code = #Observation.component
 * group[1].element[1].target[0].display = "Observation.component[distance].valueQuantity"
-* group[1].element[1].target[0].equivalence = #equivalent
+* group[1].element[1].target[0].equivalence = #wider
 * group[1].element[1].target[0].comment = "Map to component with LOINC 55430-3. Unit: km or m"
 
 // Active calories (at0019) → Observation.component
@@ -135,7 +140,7 @@ Architecture:
 * group[1].element[2].display = "Active calories"
 * group[1].element[2].target[0].code = #Observation.component
 * group[1].element[2].target[0].display = "Observation.component[active-calories].valueQuantity"
-* group[1].element[2].target[0].equivalence = #equivalent
+* group[1].element[2].target[0].equivalence = #wider
 * group[1].element[2].target[0].comment = "Map to component with LOINC 41979-6. Unit: kcal"
 
 // Moderate activity minutes (at0031) → Observation.component
@@ -143,7 +148,7 @@ Architecture:
 * group[1].element[3].display = "Moderately active minutes"
 * group[1].element[3].target[0].code = #Observation.component
 * group[1].element[3].target[0].display = "Observation.component[moderate-minutes].valueQuantity"
-* group[1].element[3].target[0].equivalence = #equivalent
+* group[1].element[3].target[0].equivalence = #wider
 * group[1].element[3].target[0].comment = "Map to component with LOINC 101689-8 (device-method 'Duration of moderate activity'; aligned 2026-06-03 with ConceptMapOpenEHRToOMOP, was IPAQ-survey 77592-4). Unit: min"
 
 // Vigorous activity minutes (at0032) → Observation.component
@@ -151,7 +156,7 @@ Architecture:
 * group[1].element[4].display = "Vigorously active minutes"
 * group[1].element[4].target[0].code = #Observation.component
 * group[1].element[4].target[0].display = "Observation.component[vigorous-minutes].valueQuantity"
-* group[1].element[4].target[0].equivalence = #equivalent
+* group[1].element[4].target[0].equivalence = #wider
 * group[1].element[4].target[0].comment = "Map to component with LOINC 101690-6 (device-method 'Duration of vigorous activity'; aligned 2026-06-03 with ConceptMapOpenEHRToOMOP, was IPAQ-survey 77593-2). Unit: min"
 
 // ============================================================================
@@ -173,7 +178,7 @@ Architecture:
 * group[2].element[1].display = "Deep sleep duration"
 * group[2].element[1].target[0].code = #Observation.component
 * group[2].element[1].target[0].display = "Observation.component[deep-sleep].valueQuantity"
-* group[2].element[1].target[0].equivalence = #equivalent
+* group[2].element[1].target[0].equivalence = #wider
 * group[2].element[1].target[0].comment = "N3/SWS stage duration. Custom code required - no LOINC"
 
 // REM sleep duration (at0023) → Observation.component
@@ -181,7 +186,7 @@ Architecture:
 * group[2].element[2].display = "REM sleep duration"
 * group[2].element[2].target[0].code = #Observation.component
 * group[2].element[2].target[0].display = "Observation.component[rem-sleep].valueQuantity"
-* group[2].element[2].target[0].equivalence = #equivalent
+* group[2].element[2].target[0].equivalence = #wider
 * group[2].element[2].target[0].comment = "REM stage duration. Custom code required - no LOINC"
 
 // Sleep efficiency (at0029) → Observation.component
@@ -189,7 +194,7 @@ Architecture:
 * group[2].element[3].display = "Sleep efficiency"
 * group[2].element[3].target[0].code = #Observation.component
 * group[2].element[3].target[0].display = "Observation.component[efficiency].valueQuantity"
-* group[2].element[3].target[0].equivalence = #equivalent
+* group[2].element[3].target[0].equivalence = #wider
 * group[2].element[3].target[0].comment = "TST/TIB ratio as percentage. Custom code required - no LOINC"
 
 // Sleep score (at0039) → Observation.component
@@ -197,7 +202,7 @@ Architecture:
 * group[2].element[4].display = "Sleep score"
 * group[2].element[4].target[0].code = #Observation.component
 * group[2].element[4].target[0].display = "Observation.component[score].valueInteger"
-* group[2].element[4].target[0].equivalence = #equivalent
+* group[2].element[4].target[0].equivalence = #wider
 * group[2].element[4].target[0].comment = "Vendor-specific composite score (0-100). Proprietary algorithm"
 
 // Average HRV during sleep (at0052) → Observation.component
@@ -205,7 +210,7 @@ Architecture:
 * group[2].element[5].display = "Average HRV (RMSSD)"
 * group[2].element[5].target[0].code = #Observation.component
 * group[2].element[5].target[0].display = "Observation.component[sleep-hrv].valueQuantity"
-* group[2].element[5].target[0].equivalence = #equivalent
+* group[2].element[5].target[0].equivalence = #wider
 * group[2].element[5].target[0].comment = "Use LifestyleMedicineTemporaryCS#hrv-rmssd with context. Unit: ms"
 
 // ============================================================================

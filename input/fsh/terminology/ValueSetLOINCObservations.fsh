@@ -142,8 +142,8 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * http://loinc.org#66857-4 "How often do you feel alone"
 * http://loinc.org#66867-3 "How often do you feel isolated from others"
 * http://loinc.org#91642-9 "Medical Outcomes Study Social Support Survey panel"
-* http://loinc.org#91663-5 "Social support index [MOS Social Support Survey]"
-* http://loinc.org#91645-2 "Affectionate support [MOS Social Support Survey]"
+* http://loinc.org#91663-5 "Overall support index average score [MOS Social Support Survey]"
+* http://loinc.org#91645-2 "Affectionate support subscale [MOS Social Support Survey]"
 * http://loinc.org#63512-8 "How many people are living or staying at this address [#]"
 
 // ============================================================================

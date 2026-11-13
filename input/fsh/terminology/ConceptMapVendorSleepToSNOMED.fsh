@@ -269,7 +269,7 @@ Usage: #definition
 * name = "ConceptMapAppleSleepToSNOMED"
 * status = #draft
 * experimental = true
-* date = "2025-11-29"
+* date = "2026-11-13"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * sourceCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/apple-sleep-stages-vs"
 * targetCanonical = "https://2rdoc.pt/ig/ios-lifestyle-medicine/ValueSet/snomed-sleep-stages-vs"
@@ -308,8 +308,8 @@ Usage: #definition
 * group[0].element[5].display = "Asleep (Unspecified)"
 * group[0].element[5].target[0].code = #248220008
 * group[0].element[5].target[0].display = "Asleep"
-* group[0].element[5].target[0].equivalence = #equivalent
-* group[0].element[5].target[0].comment = "VERIFIED 2025-12-08: 248220008 = Asleep (generic)"
+* group[0].element[5].target[0].equivalence = #wider
+* group[0].element[5].target[0].comment = "VERIFIED 2025-12-08: 248220008 = Asleep (generic). 'wider' (2026-11-13): the Apple asleep values (unspecified, core, deep, REM) divide the time asleep, so each one is narrower than 'Asleep'."
 
 // Cross-Vendor Sleep Stage Equivalence ConceptMap
 Instance: ConceptMapCrossVendorSleepStages

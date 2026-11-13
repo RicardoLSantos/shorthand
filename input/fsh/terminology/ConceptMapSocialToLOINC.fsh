@@ -32,7 +32,7 @@ Usage: #definition
 
 * status = #draft
 * experimental = true
-* date = "2026-09-16"
+* date = "2026-11-13"
 * publisher = "Ricardo Lourenço dos Santos, FMUP"
 * name = "ConceptMapSocialToLOINC"
 // ARCHITECTURE NOTE (2026-01-16): sourceUri/targetCanonical REMOVED
@@ -74,22 +74,20 @@ Usage: #definition
 * group[=].target = "http://loinc.org"
 * group[=].element[+].code = #total-score
 * group[=].element[=].display = "Total support score"
-* group[=].element[=].target[+].code = #91642-9
-* group[=].element[=].target[=].display = "Medical Outcomes Study Social Support Survey panel"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[+].equivalence = #unmatched
+* group[=].element[=].target[=].comment = "No LOINC code for a total support score that does not depend on the instrument. For the MOS Social Support Survey, the overall score is 91663-5 (Overall support index average score [MOS Social Support Survey]); 91642-9 is the survey panel, not a score. Checked at loinc.org and on tx.fhir.org (LOINC 2.83), 2026-11-13."
 
 * group[=].element[+].code = #emotional-support
 * group[=].element[=].display = "Emotional support"
 * group[=].element[=].target[+].code = #91663-5
-* group[=].element[=].target[=].display = "Social support index [MOS Social Support Survey]"
+* group[=].element[=].target[=].display = "Overall support index average score [MOS Social Support Survey]"
 * group[=].element[=].target[=].equivalence = #relatedto
 * group[=].element[=].target[=].comment = "MOS-SSS overall social support index"
 
 * group[=].element[+].code = #affective-support
 * group[=].element[=].display = "Affective support"
-* group[=].element[=].target[+].code = #91645-2
-* group[=].element[=].target[=].display = "Affectionate support [MOS Social Support Survey]"
-* group[=].element[=].target[=].equivalence = #equivalent
+* group[=].element[=].target[+].equivalence = #unmatched
+* group[=].element[=].target[=].comment = "No LOINC code for the Duke-UNC FSSQ affective support score (searched on tx.fhir.org, LOINC 2.83, 2026-11-13). The closest LOINC code belongs to another instrument: 91649-4 (Affectionate support subscale average score [MOS Social Support Survey]); 91645-2 is the panel of that subscale, not a score."
 
 // =============================================================================
 // Group 3: Family Structure and Living Situation Mappings

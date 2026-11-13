@@ -38,7 +38,7 @@ Title: "Blood Pressure Measurement Example"
 * component[diastolic].valueQuantity.unit = "millimeter of mercury"
 // Extensions
 * extension[+].url = "https://2rdoc.pt/ig/ios-lifestyle-medicine/StructureDefinition/measurement-context"
-* extension[=].valueCodeableConcept = $SCT#307818003 "Weight monitoring"
+* extension[=].valueCodeableConcept = $SCT#263678003 "At rest"
 
 Instance: DeviceHeartRateMonitor
 InstanceOf: Device

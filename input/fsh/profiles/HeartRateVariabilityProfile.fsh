@@ -44,4 +44,5 @@ Description: "One heart rate variability (HRV) metric from a consumer wearable o
 * interpretation ^short = "Deviation from the personal baseline (for example, L for below the baseline range)"
 * note 0..* MS
 * extension contains MeasurementContext named measurementContext 0..1 MS
-* extension[measurementContext] ^short = "Measurement context: rest, sleep, post-exercise"
+* extension[measurementContext] ^short = "Measurement context (MeasurementContextVS, extensible binding)"
+* extension[measurementContext] ^comment = "MeasurementContextVS has three SNOMED CT contexts: before food, after food and after exercise. It has no code for rest or for sleep. The binding is extensible: when none of the three applies, another code (or text) can be sent."
