@@ -2,7 +2,7 @@
 
 Reproducibility package for the empirical evaluation reported in the supplementary materials of:
 
-> Santos RL, Coutinho-Almeida J, Cruz-Correia RJ. **A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An AI-Assisted Evidence Synthesis with Supplementary Empirical Evaluation**. Manuscript to be submitted to the International Journal of Medical Informatics (prior submission reference: IJMEDI-D-26-01592).
+> Santos RL, Cruz-Correia RJ. **A Database-First Architecture for Trustworthy Medical Vocabulary Validation: An AI-Assisted Evidence Synthesis with a Supplementary Benchmark of Small Language Models**. Manuscript to be submitted to the International Journal of Medical Informatics (prior submission reference: IJMEDI-D-26-01592).
 
 ## Overview
 
@@ -85,8 +85,8 @@ The vocabulary files and the ChromaDB store are not included. `terminology_rag.p
 
 ```bibtex
 @unpublished{santos2026llmrag,
-  author = {Santos, Ricardo Louren{\c{c}}o dos and Coutinho-Almeida, Jo{\~a}o and Cruz-Correia, Ricardo Jo{\~a}o},
-  title  = {A Database-First Architecture for Trustworthy Medical Vocabulary Validation with Small Language Models: An {AI}-Assisted Evidence Synthesis with Supplementary Empirical Evaluation},
+  author = {Santos, Ricardo Louren{\c{c}}o and Cruz-Correia, Ricardo Jo{\~a}o},
+  title  = {A Database-First Architecture for Trustworthy Medical Vocabulary Validation: An {AI}-Assisted Evidence Synthesis with a Supplementary Benchmark of Small Language Models},
   note   = {Manuscript to be submitted to the International Journal of Medical Informatics; prior submission reference IJMEDI-D-26-01592},
   year   = {2026}
 }
