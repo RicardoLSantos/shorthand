@@ -1,0 +1,1841 @@
+{
+ "meta": {
+  "title": "routing question set",
+  "version": "20261119_083359",
+  "written_by": "one AI labeller (Claude Opus 5.5), in English; questions phrased as a clinician or a developer might write them, not sampled from real traffic",
+  "blind_to_implementation": "Written without reading the router implementation (router.py) or the service tests. Sources read: the service README.md and openapi.yaml, and the formal specification (inputs I1-I6, decision table R0-R7, invariants INV-1 to INV-5, failure modes F1-F7).",
+  "categories": {
+   "a": "verify: check a code the caller already holds (task verify)",
+   "b": "retrieve: find the code for a term (task retrieve)",
+   "c": "hierarchy: parents, children or subsumption (task hierarchy)",
+   "d": "map: a code from one system to another (task map)",
+   "e": "interpret: open clinical reasoning, with no code emitted (task interpret)",
+   "f": "out of scope: the service should abstain (no task class fits)"
+  },
+  "expected_route_rule": "The route a correct router reaches under the specification: R0 verify; R1 one exact candidate; R2 expand-then-lookup when there is none, followed by the route of the name the base uses (R2→R1, R2→R3) or by R7 when no concept has the meaning; R3 several candidates; R-pre when no vocabulary is named; R4 hierarchy; R5 map; R6 interpret; R7 abstain.",
+  "candidate_rule": "For retrieve questions with a named vocabulary, the class is measured in the local base that holds it, over standard and valid concepts: one = exactly one concept whose name equals the term (case and spacing ignored); several = more than one such concept, or none such and more than one whose name contains every word of the term; none = no concept whose name contains every word. This is the labeller's reading of the public table, not the store's matcher, which was not read. The README example (93832-4 in LOINC, R1) holds under it: one exact standard concept, against two among all concepts.",
+  "borderline_rule": "borderline = a second labeller with the same definitions could choose another category or another expected route; the reason names the alternative. A question with two operations takes the category of the first and is borderline.",
+  "store_note": "Neither local base holds LOINC and SNOMED together: Athena holds LOINC and UCUM, Vocab2 holds SNOMED, ICD-10 and UCUM (counts in local_bases). Each question names the base that holds its vocabulary; with a store that lacks it, the specification expects an abstention that names the gap (INV-4).",
+  "request_fields": "system, codes, display, term and target_system hold only what the question states (term is the free-text phrase a caller would send); task follows the category, and is null for (f).",
+  "limits": "written and labelled by one AI labeller; English only; n small; not sampled from real use.",
+  "seed": 20261119,
+  "counts": {
+   "total": 73,
+   "by_category": {
+    "a": 14,
+    "b": 19,
+    "c": 10,
+    "d": 10,
+    "e": 10,
+    "f": 10
+   },
+   "borderline": 18,
+   "by_expected_route": {
+    "R-pre": 2,
+    "R0": 14,
+    "R1": 5,
+    "R2→R1": 3,
+    "R2→R3": 2,
+    "R2→R7": 3,
+    "R3": 4,
+    "R4": 10,
+    "R5": 10,
+    "R6": 10,
+    "R7": 10
+   }
+  },
+  "local_bases": {
+   "Athena": {
+    "path": "CONCEPT.csv",
+    "bytes": 48366807,
+    "sha256": "d8ee39b2f01656d38cc85d9caac2b33bda3584b0b2760f2b8e7fce7d16546f97",
+    "rows": 485812,
+    "vocabularies_used": {
+     "LOINC": 277764,
+     "SNOMED": 0,
+     "ICD10": 0,
+     "UCUM": 1128
+    }
+   },
+   "Vocab2": {
+    "path": "CONCEPT.csv",
+    "bytes": 251436694,
+    "sha256": "9698c5a83eeabe0e2c8618835dbe4403eeab0d373047bea29fe4aad7144345ee",
+    "rows": 1870778,
+    "vocabularies_used": {
+     "LOINC": 0,
+     "SNOMED": 1093147,
+     "ICD10": 16638,
+     "UCUM": 1128
+    }
+   }
+  }
+ },
+ "questions": [
+  {
+   "id": "Q01",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q02",
+   "style": "developer",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R1",
+   "borderline": false,
+   "reason_codes": [
+    "8480-6"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "8480-6"
+    ]
+   ]
+  },
+  {
+   "id": "Q03",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R1",
+   "borderline": true,
+   "reason_codes": [
+    "8867-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [],
+    [
+     "8867-4"
+    ]
+   ]
+  },
+  {
+   "id": "Q04",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "44054006"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "44054006"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "44054006"
+    ]
+   ]
+  },
+  {
+   "id": "Q05",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q06",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "59621000"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "59621000"
+    ]
+   ]
+  },
+  {
+   "id": "Q07",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "SNOMED",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R3",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    []
+   ]
+  },
+  {
+   "id": "Q08",
+   "style": "developer",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "93831-6"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "93831-6",
+    "93832-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "93831-6"
+    ],
+    [
+     "93832-4"
+    ]
+   ]
+  },
+  {
+   "id": "Q09",
+   "style": "developer",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": [
+    []
+   ]
+  },
+  {
+   "id": "Q10",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "SNOMED",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R1",
+   "borderline": false,
+   "reason_codes": [
+    "415510005"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "415510005"
+    ]
+   ]
+  },
+  {
+   "id": "Q11",
+   "style": "developer",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "at0015"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    []
+   ]
+  },
+  {
+   "id": "Q12",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q13",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q14",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [],
+    []
+   ]
+  },
+  {
+   "id": "Q15",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "ICD10",
+   "codes": [
+    "Z72.3"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "SNOMED",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "Z72.3"
+    ]
+   ]
+  },
+  {
+   "id": "Q16",
+   "style": "developer",
+   "query_form": "code pair",
+   "system": "SNOMED",
+   "codes": [
+    "38341003",
+    "59621000"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "38341003"
+    ],
+    [
+     "59621000"
+    ]
+   ]
+  },
+  {
+   "id": "Q17",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q18",
+   "style": "developer",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q19",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q20",
+   "style": "developer",
+   "query_form": "code pair",
+   "system": "ICD10",
+   "codes": [
+    "E11.9",
+    "E11"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "E11"
+    ],
+    [
+     "E11.9"
+    ]
+   ]
+  },
+  {
+   "id": "Q21",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R-pre",
+   "borderline": false,
+   "reason_codes": [
+    "41950-7",
+    "55423-8"
+   ],
+   "local_base": [
+    "Athena",
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "41950-7"
+    ],
+    [
+     "55423-8"
+    ],
+    [],
+    []
+   ]
+  },
+  {
+   "id": "Q22",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q23",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "99999003"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "99999003"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "99999003"
+    ]
+   ]
+  },
+  {
+   "id": "Q24",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q25",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q26",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "ICD10",
+   "codes": [
+    "R00.0"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": "SNOMED",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": true,
+   "reason_codes": [
+    "R00.0"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "R00.0"
+    ]
+   ]
+  },
+  {
+   "id": "Q27",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "ICD10",
+   "codes": [
+    "I10"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "SNOMED",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "I10"
+    ]
+   ]
+  },
+  {
+   "id": "Q28",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R3",
+   "borderline": false,
+   "reason_codes": [
+    "80404-7",
+    "76643-6"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [],
+    [
+     "76643-6",
+     "80404-7"
+    ]
+   ]
+  },
+  {
+   "id": "Q29",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "SNOMED",
+   "codes": [],
+   "display": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R1",
+   "borderline": false,
+   "reason_codes": [
+    "251898000"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [],
+    [
+     "251898000"
+    ]
+   ]
+  },
+  {
+   "id": "Q30",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q31",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q32",
+   "style": "developer",
+   "query_form": "free text",
+   "system": "UCUM",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R1",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    []
+   ]
+  },
+  {
+   "id": "Q33",
+   "style": "clinician",
+   "query_form": "code pair",
+   "system": "SNOMED",
+   "codes": [
+    "44054006",
+    "73211009"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "44054006"
+    ],
+    [
+     "73211009"
+    ]
+   ]
+  },
+  {
+   "id": "Q34",
+   "style": "developer",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "8867-4"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "SNOMED",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Athena",
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "8867-4"
+    ]
+   ]
+  },
+  {
+   "id": "Q35",
+   "style": "developer",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "414916001"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "414916001"
+    ]
+   ]
+  },
+  {
+   "id": "Q36",
+   "style": "developer",
+   "query_form": "code pair",
+   "system": "SNOMED",
+   "codes": [
+    "73211009",
+    "46635009"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "46635009"
+    ],
+    [
+     "73211009"
+    ]
+   ]
+  },
+  {
+   "id": "Q37",
+   "style": "developer",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "8867-5"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "8867-5",
+    "8867-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "8867-5"
+    ]
+   ]
+  },
+  {
+   "id": "Q38",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q39",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q40",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R7",
+   "borderline": true,
+   "reason_codes": [
+    "60842-2",
+    "103749-8"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "103749-8"
+    ],
+    [
+     "60842-2"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "Q41",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R3",
+   "borderline": false,
+   "reason_codes": [
+    "80404-7",
+    "76643-6"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "76643-6",
+     "80404-7"
+    ]
+   ]
+  },
+  {
+   "id": "Q42",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "80406-2"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "80406-2"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "80406-2"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "Q43",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "414916001"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "ICD10",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "414916001"
+    ]
+   ]
+  },
+  {
+   "id": "Q44",
+   "style": "developer",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R7",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    []
+   ]
+  },
+  {
+   "id": "Q45",
+   "style": "developer",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "44054006"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "ICD10",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "44054006"
+    ]
+   ]
+  },
+  {
+   "id": "Q46",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R1",
+   "borderline": false,
+   "reason_codes": [
+    "93832-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "93832-4",
+     "93829-0",
+     "93830-8",
+     "93831-6"
+    ]
+   ]
+  },
+  {
+   "id": "Q47",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "8867-4"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "8867-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "8867-4"
+    ]
+   ]
+  },
+  {
+   "id": "Q48",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "19989-3"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "19989-3"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "19989-3"
+    ]
+   ]
+  },
+  {
+   "id": "Q49",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "76644-4"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": true,
+   "reason_codes": [
+    "76644-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "76644-4"
+    ]
+   ]
+  },
+  {
+   "id": "Q50",
+   "style": "developer",
+   "query_form": "code",
+   "system": "OMOP concept_id",
+   "codes": [
+    "3027018"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "LOINC",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": true,
+   "reason_codes": [
+    "8867-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "3027018",
+     "8867-4"
+    ]
+   ]
+  },
+  {
+   "id": "Q51",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q52",
+   "style": "developer",
+   "query_form": "code",
+   "system": "Apple HealthKit",
+   "codes": [
+    "HKQuantityTypeIdentifierHeartRateVariabilitySDNN"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "LOINC",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": true,
+   "reason_codes": [
+    "80404-7",
+    "76643-6"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    []
+   ]
+  },
+  {
+   "id": "Q53",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R3",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    []
+   ]
+  },
+  {
+   "id": "Q54",
+   "style": "developer",
+   "query_form": "free text",
+   "system": "SNOMED",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R3",
+   "borderline": false,
+   "reason_codes": [
+    "390736008",
+    "68130003"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "390736008",
+     "68130003"
+    ]
+   ]
+  },
+  {
+   "id": "Q55",
+   "style": "developer",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q56",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "LOINC",
+   "codes": [],
+   "display": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R3",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [],
+    [
+     "76643-6",
+     "80404-7"
+    ]
+   ]
+  },
+  {
+   "id": "Q57",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "ICD10",
+   "codes": [
+    "E11"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [
+    "E11"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "E11"
+    ]
+   ]
+  },
+  {
+   "id": "Q58",
+   "style": "developer",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "80404-7"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "80404-7"
+    ]
+   ]
+  },
+  {
+   "id": "Q59",
+   "style": "developer",
+   "query_form": "free text",
+   "system": "SNOMED",
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R1",
+   "borderline": false,
+   "reason_codes": [
+    "44054006"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "44054006"
+    ]
+   ]
+  },
+  {
+   "id": "Q60",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q61",
+   "style": "clinician",
+   "query_form": "two codes",
+   "system": "LOINC",
+   "codes": [
+    "8867-4",
+    "8889-8"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": true,
+   "reason_codes": [
+    "8889-8"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "8867-4"
+    ],
+    [
+     "8889-8"
+    ]
+   ]
+  },
+  {
+   "id": "Q62",
+   "style": "clinician",
+   "query_form": "code pair",
+   "system": "LOINC",
+   "codes": [
+    "80404-7",
+    "76643-6"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "76643-6"
+    ],
+    [
+     "80404-7"
+    ]
+   ]
+  },
+  {
+   "id": "Q63",
+   "style": "developer",
+   "query_form": "code",
+   "system": "ICD10",
+   "codes": [
+    "E11.9"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "SNOMED",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "E11.9"
+    ]
+   ]
+  },
+  {
+   "id": "Q64",
+   "style": "developer",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "251898000"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "251898000"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "251898000"
+    ]
+   ]
+  },
+  {
+   "id": "Q65",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "73211009"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "c",
+   "task": "hierarchy",
+   "expected_route": "R4",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "73211009"
+    ]
+   ]
+  },
+  {
+   "id": "Q66",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "ICD10",
+   "codes": [
+    "I10"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "I10"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "I10"
+    ]
+   ]
+  },
+  {
+   "id": "Q67",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "SNOMED",
+   "codes": [
+    "193462001"
+   ],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": "ICD10",
+   "category": "d",
+   "task": "map",
+   "expected_route": "R5",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "193462001"
+    ]
+   ]
+  },
+  {
+   "id": "Q68",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q69",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": "SNOMED",
+   "codes": [],
+   "display": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R2→R1",
+   "borderline": true,
+   "reason_codes": [
+    "251898000"
+   ],
+   "local_base": [
+    "Vocab2"
+   ],
+   "base_facts": [
+    [],
+    [
+     "251898000"
+    ]
+   ]
+  },
+  {
+   "id": "Q70",
+   "style": "clinician",
+   "query_form": "code",
+   "system": "LOINC",
+   "codes": [
+    "80405-4"
+   ],
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "a",
+   "task": "verify",
+   "expected_route": "R0",
+   "borderline": false,
+   "reason_codes": [
+    "80405-4"
+   ],
+   "local_base": [
+    "Athena"
+   ],
+   "base_facts": [
+    [
+     "80405-4"
+    ]
+   ]
+  },
+  {
+   "id": "Q71",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "b",
+   "task": "retrieve",
+   "expected_route": "R-pre",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [
+    "Athena",
+    "Vocab2"
+   ],
+   "base_facts": [
+    [
+     "8867-4"
+    ],
+    []
+   ]
+  },
+  {
+   "id": "Q72",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "f",
+   "task": null,
+   "expected_route": "R7",
+   "borderline": false,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  },
+  {
+   "id": "Q73",
+   "style": "clinician",
+   "query_form": "free text",
+   "system": null,
+   "codes": [],
+   "display": null,
+   "term": null,
+   "name_in_base": null,
+   "target_system": null,
+   "category": "e",
+   "task": "interpret",
+   "expected_route": "R6",
+   "borderline": true,
+   "reason_codes": [],
+   "local_base": [],
+   "base_facts": []
+  }
+ ]
+}

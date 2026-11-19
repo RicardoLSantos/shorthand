@@ -1,0 +1,1992 @@
+{
+ "set": "routing_question_set_20261119_083359.json",
+ "set_sha256": "d3388829e84e89fd9a3f2ab2778b348bca9d6e5e4dd7d6c0993a17bb881e60c0",
+ "router_commit": "5b313864f181e935fe8ae51094e80249989fe641",
+ "head": "0d3642ff1ab40c5e971ba691de3fd444525926a2",
+ "sha256": {
+  "athena/CONCEPT.csv": "d8ee39b2f01656d38cc85d9caac2b33bda3584b0b2760f2b8e7fce7d16546f97",
+  "vocab2/CONCEPT.csv": "9698c5a83eeabe0e2c8618835dbe4403eeab0d373047bea29fe4aad7144345ee",
+  "benchmark_routing_conformance.py": "55cb758ee9aa88c19a0bf50fb402158b4cf63a1c2600813081d2e4992bc936c8",
+  "test_benchmark_routing_conformance.py": "317fc6843489db861937c087c57782417ad91d6b3d9b92c068007f11d7c2ad18",
+  "benchmark_path_a_isolated.py": "9799111c68b84a9a88f8fd4de0845b5b90dec29ef2e81311e0882f82b62579e7"
+ },
+ "index_build": {
+  "athena-index/LOINC": {
+   "rows": 277764,
+   "s": 0.788
+  },
+  "athena-index/UCUM": {
+   "rows": 1128,
+   "s": 0.49
+  },
+  "vocab2-index/SNOMED": {
+   "rows": 1093147,
+   "s": 3.433
+  },
+  "vocab2-index/ICD10": {
+   "rows": 16638,
+   "s": 2.25
+  },
+  "vocab2-index/UCUM": {
+   "rows": 1128,
+   "s": 2.274
+  }
+ },
+ "summary": {
+  "all": {
+   "n": 73,
+   "conform": 59,
+   "outcome_n": 59,
+   "outcome_agree": 57
+  },
+  "borderline": {
+   "n": 18,
+   "conform": 13,
+   "outcome_n": 15,
+   "outcome_agree": 13
+  },
+  "not_borderline": {
+   "n": 55,
+   "conform": 46,
+   "outcome_n": 44,
+   "outcome_agree": 44
+  },
+  "by_category": {
+   "a": {
+    "n": 14,
+    "conform": 14,
+    "outcome_n": 0,
+    "outcome_agree": 0
+   },
+   "b": {
+    "n": 19,
+    "conform": 15,
+    "outcome_n": 19,
+    "outcome_agree": 17
+   },
+   "c": {
+    "n": 10,
+    "conform": 10,
+    "outcome_n": 10,
+    "outcome_agree": 10
+   },
+   "d": {
+    "n": 10,
+    "conform": 10,
+    "outcome_n": 10,
+    "outcome_agree": 10
+   },
+   "e": {
+    "n": 10,
+    "conform": 10,
+    "outcome_n": 10,
+    "outcome_agree": 10
+   },
+   "f": {
+    "n": 10,
+    "conform": 0,
+    "outcome_n": 10,
+    "outcome_agree": 10
+   }
+  }
+ },
+ "confusion": {
+  "R-pre": {
+   "R-pre": 2
+  },
+  "R0": {
+   "R0": 14
+  },
+  "R1": {
+   "R1": 4,
+   "R3": 1
+  },
+  "R2→R1": {
+   "R2→R7": 1,
+   "R2→R1": 2
+  },
+  "R2→R3": {
+   "R2→R1": 1,
+   "R2→R7": 1
+  },
+  "R2→R7": {
+   "R2→R7": 3
+  },
+  "R3": {
+   "R3": 4
+  },
+  "R4": {
+   "R4": 10
+  },
+  "R5": {
+   "R5": 10
+  },
+  "R6": {
+   "R6": 10
+  },
+  "R7": {
+   "R-pre": 10
+  }
+ },
+ "rows": [
+  {
+   "id": "Q01",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q02",
+   "category": "b",
+   "borderline": false,
+   "expected": "R1",
+   "observed": "R1",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R1",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "LOINC 8480-6"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "8480-6"
+   ]
+  },
+  {
+   "id": "Q03",
+   "category": "b",
+   "borderline": true,
+   "expected": "R2→R1",
+   "observed": "R2→R7",
+   "conforms": false,
+   "expected_outcome": "resolved",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R7",
+   "abstention_kind": "no-candidate",
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "8867-4"
+   ]
+  },
+  {
+   "id": "Q04",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "display-refuted",
+   "abstention_codes": [
+    "44054006"
+   ],
+   "decision_reason_codes": [
+    "44054006"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "SNOMED",
+    "code": "44054006",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "44054006"
+   ]
+  },
+  {
+   "id": "Q05",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q06",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "SNOMED",
+    "code": "59621000",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q07",
+   "category": "b",
+   "borderline": false,
+   "expected": "R3",
+   "observed": "R3",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R3",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "SNOMED 251671002",
+    "SNOMED 366337000",
+    "SNOMED 426173002",
+    "SNOMED 426704002",
+    "SNOMED 427565006",
+    "SNOMED 427693000"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "SNOMED",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q08",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "display-refuted",
+   "abstention_codes": [
+    "93831-6"
+   ],
+   "decision_reason_codes": [
+    "93831-6"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "93831-6",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "93831-6",
+    "93832-4"
+   ]
+  },
+  {
+   "id": "Q09",
+   "category": "f",
+   "borderline": true,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q10",
+   "category": "b",
+   "borderline": false,
+   "expected": "R1",
+   "observed": "R1",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R1",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "SNOMED 415510005"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "SNOMED",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "415510005"
+   ]
+  },
+  {
+   "id": "Q11",
+   "category": "a",
+   "borderline": true,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "code-not-found",
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "at0015",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q12",
+   "category": "c",
+   "borderline": true,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q13",
+   "category": "f",
+   "borderline": false,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q14",
+   "category": "b",
+   "borderline": false,
+   "expected": "R2→R7",
+   "observed": "R2→R7",
+   "conforms": true,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R7",
+   "abstention_kind": "no-candidate",
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q15",
+   "category": "d",
+   "borderline": false,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "ICD10",
+    "code": "Z72.3",
+    "display": null,
+    "target_system": "SNOMED"
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q16",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "SNOMED",
+    "code": "38341003",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q17",
+   "category": "e",
+   "borderline": true,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q18",
+   "category": "f",
+   "borderline": false,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q19",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q20",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "ICD10",
+    "code": "E11.9",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q21",
+   "category": "b",
+   "borderline": false,
+   "expected": "R-pre",
+   "observed": "R-pre",
+   "conforms": true,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "41950-7",
+    "55423-8"
+   ]
+  },
+  {
+   "id": "Q22",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q23",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "code-inactive",
+   "abstention_codes": [
+    "99999003"
+   ],
+   "decision_reason_codes": [
+    "99999003"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "SNOMED",
+    "code": "99999003",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "99999003"
+   ]
+  },
+  {
+   "id": "Q24",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q25",
+   "category": "f",
+   "borderline": false,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q26",
+   "category": "d",
+   "borderline": true,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "ICD10",
+    "code": "R00.0",
+    "target_system": "SNOMED"
+   },
+   "labeller_reason_codes": [
+    "R00.0"
+   ]
+  },
+  {
+   "id": "Q27",
+   "category": "d",
+   "borderline": false,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "ICD10",
+    "code": "I10",
+    "display": null,
+    "target_system": "SNOMED"
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q28",
+   "category": "b",
+   "borderline": false,
+   "expected": "R2→R3",
+   "observed": "R2→R1",
+   "conforms": false,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R2",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "LOINC 80404-7"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "80404-7",
+    "76643-6"
+   ]
+  },
+  {
+   "id": "Q29",
+   "category": "b",
+   "borderline": false,
+   "expected": "R2→R1",
+   "observed": "R2→R1",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R2",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "SNOMED 251898000"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "SNOMED",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "251898000"
+   ]
+  },
+  {
+   "id": "Q30",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q31",
+   "category": "f",
+   "borderline": false,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q32",
+   "category": "b",
+   "borderline": false,
+   "expected": "R1",
+   "observed": "R1",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R1",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "UCUM ms"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "UCUM",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q33",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "SNOMED",
+    "code": "44054006",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q34",
+   "category": "d",
+   "borderline": false,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "LOINC",
+    "code": "8867-4",
+    "display": null,
+    "target_system": "SNOMED"
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q35",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "SNOMED",
+    "code": "414916001",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q36",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "SNOMED",
+    "code": "73211009",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q37",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "code-not-found",
+   "abstention_codes": [
+    "8867-5"
+   ],
+   "decision_reason_codes": [
+    "8867-5"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "8867-5",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "8867-5",
+    "8867-4"
+   ]
+  },
+  {
+   "id": "Q38",
+   "category": "f",
+   "borderline": true,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q39",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q40",
+   "category": "b",
+   "borderline": true,
+   "expected": "R2→R7",
+   "observed": "R2→R7",
+   "conforms": true,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R7",
+   "abstention_kind": "no-candidate",
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "60842-2",
+    "103749-8"
+   ]
+  },
+  {
+   "id": "Q41",
+   "category": "b",
+   "borderline": false,
+   "expected": "R3",
+   "observed": "R3",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R3",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "LOINC 76643-6",
+    "LOINC 80404-7"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "80404-7",
+    "76643-6"
+   ]
+  },
+  {
+   "id": "Q42",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "display-refuted",
+   "abstention_codes": [
+    "80406-2"
+   ],
+   "decision_reason_codes": [
+    "80406-2"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "80406-2",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "80406-2"
+   ]
+  },
+  {
+   "id": "Q43",
+   "category": "d",
+   "borderline": false,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "SNOMED",
+    "code": "414916001",
+    "display": null,
+    "target_system": "ICD10"
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q44",
+   "category": "b",
+   "borderline": true,
+   "expected": "R2→R7",
+   "observed": "R2→R7",
+   "conforms": true,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R7",
+   "abstention_kind": "no-candidate",
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q45",
+   "category": "d",
+   "borderline": false,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "SNOMED",
+    "code": "44054006",
+    "display": null,
+    "target_system": "ICD10"
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q46",
+   "category": "b",
+   "borderline": false,
+   "expected": "R1",
+   "observed": "R3",
+   "conforms": false,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R3",
+   "abstention": null,
+   "decision_reason_codes": [
+    "LP412115-0",
+    "LP412112-7",
+    "LP412113-5",
+    "LP412114-3"
+   ],
+   "candidates": [
+    "LOINC 93832-4",
+    "LOINC LP412115-0",
+    "LOINC 93829-0",
+    "LOINC 93830-8",
+    "LOINC 93831-6",
+    "LOINC LP412112-7",
+    "LOINC LP412113-5",
+    "LOINC LP412114-3"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "93832-4"
+   ]
+  },
+  {
+   "id": "Q47",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R0",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "LOINC 8867-4"
+   ],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "8867-4",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "8867-4"
+   ]
+  },
+  {
+   "id": "Q48",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "display-refuted",
+   "abstention_codes": [
+    "19989-3"
+   ],
+   "decision_reason_codes": [
+    "19989-3"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "19989-3",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "19989-3"
+   ]
+  },
+  {
+   "id": "Q49",
+   "category": "a",
+   "borderline": true,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R0",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "LOINC 76644-4"
+   ],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "76644-4",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "76644-4"
+   ]
+  },
+  {
+   "id": "Q50",
+   "category": "d",
+   "borderline": true,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "OMOP concept_id",
+    "code": "3027018",
+    "display": null,
+    "target_system": "LOINC"
+   },
+   "labeller_reason_codes": [
+    "8867-4"
+   ]
+  },
+  {
+   "id": "Q51",
+   "category": "f",
+   "borderline": false,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q52",
+   "category": "d",
+   "borderline": true,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "Apple HealthKit",
+    "code": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+    "display": null,
+    "target_system": "LOINC"
+   },
+   "labeller_reason_codes": [
+    "80404-7",
+    "76643-6"
+   ]
+  },
+  {
+   "id": "Q53",
+   "category": "b",
+   "borderline": false,
+   "expected": "R3",
+   "observed": "R3",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R3",
+   "abstention": null,
+   "decision_reason_codes": [
+    "LP422915-1",
+    "LP73930-7"
+   ],
+   "candidates": [
+    "LOINC 52041-1",
+    "LOINC 97062-4",
+    "LOINC LP422915-1",
+    "LOINC LP73930-7"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q54",
+   "category": "b",
+   "borderline": false,
+   "expected": "R3",
+   "observed": "R3",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R3",
+   "abstention": null,
+   "decision_reason_codes": [
+    "1086511000000107",
+    "1099751000000105",
+    "1099851000000102"
+   ],
+   "candidates": [
+    "SNOMED 390736008",
+    "SNOMED 68130003",
+    "SNOMED 1086511000000107",
+    "SNOMED 1099601000000102",
+    "SNOMED 1099701000000109",
+    "SNOMED 1099751000000105",
+    "SNOMED 1099851000000102"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "SNOMED",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "390736008",
+    "68130003"
+   ]
+  },
+  {
+   "id": "Q55",
+   "category": "f",
+   "borderline": false,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q56",
+   "category": "b",
+   "borderline": true,
+   "expected": "R2→R3",
+   "observed": "R2→R7",
+   "conforms": false,
+   "expected_outcome": "resolved",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R7",
+   "abstention_kind": "no-candidate",
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "LOINC",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q57",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "ICD10",
+    "code": "E11",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "E11"
+   ]
+  },
+  {
+   "id": "Q58",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R0",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "LOINC 80404-7"
+   ],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "80404-7",
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q59",
+   "category": "b",
+   "borderline": false,
+   "expected": "R1",
+   "observed": "R1",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R1",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "SNOMED 44054006"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "SNOMED",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "44054006"
+   ]
+  },
+  {
+   "id": "Q60",
+   "category": "f",
+   "borderline": true,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q61",
+   "category": "a",
+   "borderline": true,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R0",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "LOINC 8867-4"
+   ],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "8867-4",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "8889-8"
+   ]
+  },
+  {
+   "id": "Q62",
+   "category": "c",
+   "borderline": true,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "LOINC",
+    "code": "80404-7",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q63",
+   "category": "d",
+   "borderline": false,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "ICD10",
+    "code": "E11.9",
+    "display": null,
+    "target_system": "SNOMED"
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q64",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R0",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "SNOMED 251898000"
+   ],
+   "request": {
+    "task": "verify",
+    "system_hint": "SNOMED",
+    "code": "251898000",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "251898000"
+   ]
+  },
+  {
+   "id": "Q65",
+   "category": "c",
+   "borderline": false,
+   "expected": "R4",
+   "observed": "R4",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R4",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "hierarchy",
+    "system_hint": "SNOMED",
+    "code": "73211009",
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q66",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "display-refuted",
+   "abstention_codes": [
+    "I10"
+   ],
+   "decision_reason_codes": [
+    "I10"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "ICD10",
+    "code": "I10",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "I10"
+   ]
+  },
+  {
+   "id": "Q67",
+   "category": "d",
+   "borderline": false,
+   "expected": "R5",
+   "observed": "R5",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "B",
+   "route": "R5",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "map",
+    "system_hint": "SNOMED",
+    "code": "193462001",
+    "display": null,
+    "target_system": "ICD10"
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q68",
+   "category": "e",
+   "borderline": false,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q69",
+   "category": "b",
+   "borderline": true,
+   "expected": "R2→R1",
+   "observed": "R2→R1",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "A",
+   "route": "R2",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [
+    "SNOMED 251898000"
+   ],
+   "request": {
+    "task": "retrieve",
+    "system_hint": "SNOMED",
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "251898000"
+   ]
+  },
+  {
+   "id": "Q70",
+   "category": "a",
+   "borderline": false,
+   "expected": "R0",
+   "observed": "R0",
+   "conforms": true,
+   "expected_outcome": null,
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R0",
+   "abstention_kind": "display-refuted",
+   "abstention_codes": [
+    "80405-4"
+   ],
+   "decision_reason_codes": [
+    "80405-4"
+   ],
+   "candidates": [],
+   "request": {
+    "task": "verify",
+    "system_hint": "LOINC",
+    "code": "80405-4",
+    "target_system": null
+   },
+   "labeller_reason_codes": [
+    "80405-4"
+   ]
+  },
+  {
+   "id": "Q71",
+   "category": "b",
+   "borderline": false,
+   "expected": "R-pre",
+   "observed": "R-pre",
+   "conforms": true,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q72",
+   "category": "f",
+   "borderline": false,
+   "expected": "R7",
+   "observed": "R-pre",
+   "conforms": false,
+   "expected_outcome": "abstained",
+   "outcome": "abstained",
+   "path": "abstain",
+   "route": "R-pre",
+   "abstention_kind": null,
+   "abstention_codes": [],
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "retrieve",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  },
+  {
+   "id": "Q73",
+   "category": "e",
+   "borderline": true,
+   "expected": "R6",
+   "observed": "R6",
+   "conforms": true,
+   "expected_outcome": "resolved",
+   "outcome": "resolved",
+   "path": "C",
+   "route": "R6",
+   "abstention": null,
+   "decision_reason_codes": [],
+   "candidates": [],
+   "request": {
+    "task": "interpret",
+    "system_hint": null,
+    "code": null,
+    "display": null,
+    "target_system": null
+   },
+   "labeller_reason_codes": []
+  }
+ ]
+}

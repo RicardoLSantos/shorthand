@@ -1,0 +1,481 @@
+{
+ "model": "qwen3.5:4b",
+ "hardware": "Apple M1 16GB",
+ "level": "all",
+ "total_cases": 36,
+ "accuracy": 30.555555555555557,
+ "hallucination_rate": 25.0,
+ "p50_ms": 29653.85866165161,
+ "p95_ms": 41594.4139957428,
+ "timestamp": "2026-03-19T19:30:30.285235",
+ "results": [
+  {
+   "id": "EASY-LOINC-01",
+   "level": "EASY",
+   "terminology": "LOINC",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 11560.565948486328,
+   "expected": "8867-4",
+   "response_codes": [
+    "51053-1"
+   ]
+  },
+  {
+   "id": "EASY-LOINC-02",
+   "level": "EASY",
+   "terminology": "LOINC",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 20578.00006866455,
+   "expected": "80404-7",
+   "response_codes": [
+    "73733-2"
+   ]
+  },
+  {
+   "id": "EASY-LOINC-03",
+   "level": "EASY",
+   "terminology": "LOINC",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 16618.179082870483,
+   "expected": "4548-4",
+   "response_codes": [
+    "58410-2"
+   ]
+  },
+  {
+   "id": "EASY-LOINC-04",
+   "level": "EASY",
+   "terminology": "LOINC",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 23299.68810081482,
+   "expected": "2345-7",
+   "response_codes": [
+    "66902-2",
+    "66909-2",
+    "66908-2",
+    "66903-2"
+   ]
+  },
+  {
+   "id": "EASY-SNOMED-01",
+   "level": "EASY",
+   "terminology": "SNOMED",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 20322.7858543396,
+   "expected": "44054006",
+   "response_codes": [
+    "383415009",
+    "191976009",
+    "383415008"
+   ]
+  },
+  {
+   "id": "EASY-SNOMED-02",
+   "level": "EASY",
+   "terminology": "SNOMED",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 16515.901803970337,
+   "expected": "49436004",
+   "response_codes": [
+    "38341000"
+   ]
+  },
+  {
+   "id": "EASY-SNOMED-03",
+   "level": "EASY",
+   "terminology": "SNOMED",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 23186.210870742798,
+   "expected": "59621000",
+   "response_codes": [
+    "38341000",
+    "38341100",
+    "38341200"
+   ]
+  },
+  {
+   "id": "EASY-SNOMED-04",
+   "level": "EASY",
+   "terminology": "SNOMED",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 32010.28800010681,
+   "expected": "195967001",
+   "response_codes": [
+    "38341000"
+   ]
+  },
+  {
+   "id": "EASY-ICD10-01",
+   "level": "EASY",
+   "terminology": "ICD-10-CM",
+   "type": "lookup",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 18407.819032669067,
+   "expected": "I10",
+   "response_codes": [
+    "I10",
+    "I11",
+    "I16"
+   ]
+  },
+  {
+   "id": "EASY-ICD10-02",
+   "level": "EASY",
+   "terminology": "ICD-10-CM",
+   "type": "lookup",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 29653.85866165161,
+   "expected": "E11",
+   "response_codes": [
+    "E11.9",
+    "E11",
+    "E11.21"
+   ]
+  },
+  {
+   "id": "EASY-ICD10-03",
+   "level": "EASY",
+   "terminology": "ICD-10-CM",
+   "type": "lookup",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 22144.43588256836,
+   "expected": "K35",
+   "response_codes": [
+    "K35.9",
+    "K35",
+    "K35.0",
+    "K35.1"
+   ]
+  },
+  {
+   "id": "EASY-ICD10-04",
+   "level": "EASY",
+   "terminology": "ICD-10-CM",
+   "type": "lookup",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 37614.92681503296,
+   "expected": "F32",
+   "response_codes": [
+    "F32.9",
+    "F32"
+   ]
+  },
+  {
+   "id": "MED-GAP-01",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "gap",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 816.3940906524658,
+   "expected": "no",
+   "response_codes": []
+  },
+  {
+   "id": "MED-GAP-02",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "gap",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 620.1610565185547,
+   "expected": "no",
+   "response_codes": []
+  },
+  {
+   "id": "MED-TRAP-01",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "trap",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 787.1360778808594,
+   "expected": "no",
+   "response_codes": []
+  },
+  {
+   "id": "MED-VENDOR-01",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "vendor",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 18897.52697944641,
+   "expected": "8867-4",
+   "response_codes": [
+    "1072-5"
+   ]
+  },
+  {
+   "id": "MED-VENDOR-02",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "gap",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 633.7711811065674,
+   "expected": "no",
+   "response_codes": []
+  },
+  {
+   "id": "MED-LOINC-01",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "disambiguation",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 15589.316844940186,
+   "expected": "8889-8",
+   "response_codes": [
+    "8480-6",
+    "8867-2"
+   ]
+  },
+  {
+   "id": "MED-LOINC-02",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "disambiguation",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 17844.058752059937,
+   "expected": "8873-2",
+   "response_codes": [
+    "56334-5",
+    "56334-6"
+   ]
+  },
+  {
+   "id": "MED-LOINC-03",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": true,
+   "latency_ms": 33950.413942337036,
+   "expected": "85354-9",
+   "response_codes": [
+    "8480-6",
+    "8462-4"
+   ]
+  },
+  {
+   "id": "MED-ICD10-01",
+   "level": "MED",
+   "terminology": "ICD-10-CM",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 42042.89412498474,
+   "expected": "Z72.0",
+   "response_codes": []
+  },
+  {
+   "id": "MED-ICD10-02",
+   "level": "MED",
+   "terminology": "ICD-10-CM",
+   "type": "lookup",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 41594.4139957428,
+   "expected": "E66.01",
+   "response_codes": [
+    "E66.9",
+    "E66"
+   ]
+  },
+  {
+   "id": "MED-CROSS-01",
+   "level": "MED",
+   "terminology": "ICD-11",
+   "type": "cross_mapping",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 39793.237924575806,
+   "expected": "QE12",
+   "response_codes": [
+    "Z72.0"
+   ]
+  },
+  {
+   "id": "MED-VALID-01",
+   "level": "MED",
+   "terminology": "LOINC",
+   "type": "validation",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 31225.793838500977,
+   "expected": "8867-4",
+   "response_codes": [
+    "8867-6"
+   ]
+  },
+  {
+   "id": "HARD-REASON-01",
+   "level": "HARD",
+   "terminology": "clinical",
+   "type": "reasoning",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 38394.01698112488,
+   "expected": "reasoning",
+   "response_codes": []
+  },
+  {
+   "id": "HARD-REASON-02",
+   "level": "HARD",
+   "terminology": "clinical",
+   "type": "reasoning",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 37191.56098365784,
+   "expected": "reasoning",
+   "response_codes": []
+  },
+  {
+   "id": "HARD-BRIDGE-01",
+   "level": "HARD",
+   "terminology": "SNOMED",
+   "type": "bridging",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 13060.354948043823,
+   "expected": "251898000",
+   "response_codes": [
+    "334530000"
+   ]
+  },
+  {
+   "id": "HARD-BRIDGE-02",
+   "level": "HARD",
+   "terminology": "LOINC",
+   "type": "bridging",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 21380.5251121521,
+   "expected": "97506-0",
+   "response_codes": [
+    "65953-2"
+   ]
+  },
+  {
+   "id": "HARD-CROSS-01",
+   "level": "HARD",
+   "terminology": "cross",
+   "type": "cross_mapping",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 36837.92996406555,
+   "expected": "reasoning",
+   "response_codes": [
+    "333700000000000000"
+   ]
+  },
+  {
+   "id": "HARD-CROSS-02",
+   "level": "HARD",
+   "terminology": "ICD-10-CM",
+   "type": "cross_mapping",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 33332.25774765015,
+   "expected": "E11",
+   "response_codes": [
+    "44054006",
+    "E11.9",
+    "E11"
+   ]
+  },
+  {
+   "id": "HARD-MULTI-01",
+   "level": "HARD",
+   "terminology": "ICD-10-CM",
+   "type": "multi_step",
+   "correct": true,
+   "hallucination": false,
+   "latency_ms": 37225.72898864746,
+   "expected": "reasoning",
+   "response_codes": [
+    "E11.9"
+   ]
+  },
+  {
+   "id": "HARD-MULTI-02",
+   "level": "HARD",
+   "terminology": "LOINC",
+   "type": "multi_vendor",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 36858.35099220276,
+   "expected": "80404-7",
+   "response_codes": []
+  },
+  {
+   "id": "HARD-DISAMB-01",
+   "level": "HARD",
+   "terminology": "LOINC",
+   "type": "disambiguation",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 39302.57821083069,
+   "expected": "2345-7",
+   "response_codes": []
+  },
+  {
+   "id": "HARD-DISAMB-02",
+   "level": "HARD",
+   "terminology": "LOINC",
+   "type": "disambiguation",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 32247.24578857422,
+   "expected": "10839-9",
+   "response_codes": [
+    "71956-5",
+    "71896-4"
+   ]
+  },
+  {
+   "id": "HARD-ICD10-01",
+   "level": "HARD",
+   "terminology": "ICD-10-PCS",
+   "type": "procedure",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 30724.14803504944,
+   "expected": "0FT44ZZ",
+   "response_codes": []
+  },
+  {
+   "id": "HARD-ICD10-02",
+   "level": "HARD",
+   "terminology": "ICD-10-CM",
+   "type": "sequencing",
+   "correct": false,
+   "hallucination": false,
+   "latency_ms": 38912.99629211426,
+   "expected": "A41.51",
+   "response_codes": []
+  }
+ ]
+}

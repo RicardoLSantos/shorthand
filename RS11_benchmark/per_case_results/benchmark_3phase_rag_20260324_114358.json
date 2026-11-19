@@ -1,0 +1,269 @@
+{
+ "model": "qwen3.5:4b",
+ "hardware": "Apple M1 16GB",
+ "timestamp": "20260324_114358",
+ "test_cases": 42,
+ "config": "M",
+ "dict_size": 94,
+ "phases": {
+  "phase4": {
+   "accuracy": 71.42857142857143,
+   "correct": 30,
+   "total": 42,
+   "results": [
+    {
+     "id": "E-LOINC-01",
+     "correct": true,
+     "confidence": 1.0,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-LOINC-02",
+     "correct": true,
+     "confidence": 0.6,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-LOINC-03",
+     "correct": true,
+     "confidence": 0.75,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-LOINC-04",
+     "correct": true,
+     "confidence": 0.85,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-ICD10-01",
+     "correct": true,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "E-ICD10-02",
+     "correct": true,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "M-GAP-01",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    },
+    {
+     "id": "M-TRAP-01",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    },
+    {
+     "id": "M-LOINC-01",
+     "correct": true,
+     "confidence": 0.9,
+     "path": "confident_direct"
+    },
+    {
+     "id": "M-LOINC-02",
+     "correct": true,
+     "confidence": 0.9,
+     "path": "confident_direct"
+    },
+    {
+     "id": "H-BRIDGE-01",
+     "correct": true,
+     "confidence": 0.7,
+     "path": "confident_direct"
+    },
+    {
+     "id": "H-BRIDGE-02",
+     "correct": true,
+     "confidence": 0.8,
+     "path": "confident_direct"
+    },
+    {
+     "id": "H-REASON-01",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    },
+    {
+     "id": "H-CROSS-01",
+     "correct": true,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "E-SNOMED-01",
+     "correct": true,
+     "confidence": 1.0,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-SNOMED-02",
+     "correct": true,
+     "confidence": 1.0,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-SNOMED-03",
+     "correct": false,
+     "confidence": 0.85,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-SNOMED-04",
+     "correct": false,
+     "confidence": 0.85,
+     "path": "confident_direct"
+    },
+    {
+     "id": "E-ICD10-03",
+     "correct": true,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "E-ICD10-04",
+     "correct": true,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "M-GAP-02",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    },
+    {
+     "id": "M-VENDOR-01",
+     "correct": true,
+     "confidence": 0.6,
+     "path": "confident_direct"
+    },
+    {
+     "id": "M-VENDOR-02",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    },
+    {
+     "id": "M-LOINC-03",
+     "correct": true,
+     "confidence": 0.75,
+     "path": "confident_direct"
+    },
+    {
+     "id": "M-ICD10-01",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "M-ICD10-02",
+     "correct": true,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "M-VALID-01",
+     "correct": true,
+     "confidence": 0.85,
+     "path": "confident_direct"
+    },
+    {
+     "id": "M-CROSS-01",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "H-REASON-02",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    },
+    {
+     "id": "H-CROSS-02",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "H-MULTI-01",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "H-MULTI-02",
+     "correct": true,
+     "confidence": 0.5,
+     "path": "single_vote_confirmed"
+    },
+    {
+     "id": "H-DISAMB-01",
+     "correct": true,
+     "confidence": 0.73,
+     "path": "confident_direct"
+    },
+    {
+     "id": "H-DISAMB-02",
+     "correct": true,
+     "confidence": 0.717,
+     "path": "confident_direct"
+    },
+    {
+     "id": "H-ICD10-01",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "H-ICD10-02",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "N-ICD10-01",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "N-ICD10-02",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "N-ICD10-03",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "N-VENDOR-01",
+     "correct": false,
+     "confidence": 0.0,
+     "path": "fallback_phase3"
+    },
+    {
+     "id": "N-VENDOR-02",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    },
+    {
+     "id": "N-VENDOR-03",
+     "correct": true,
+     "confidence": 0,
+     "path": "rag_verified"
+    }
+   ]
+  }
+ }
+}

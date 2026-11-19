@@ -1,0 +1,608 @@
+{
+ "A": {
+  "timestamp": "2026-02-22T10:09:29.200287",
+  "version": "3.0-RAG",
+  "retrieval_mode": "dense",
+  "models": {
+   "mistral:7b": {
+    "test_cases": [
+     {
+      "id": "RAG-LOINC-001",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "10251-7",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "101694-8",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [],
+      "latency_ms": 26506.15692138672,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "unknown",
+       "response_length": 31
+      }
+     },
+     {
+      "id": "RAG-LOINC-002",
+      "category": "gap_detection",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "10000-8",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "101694-8",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [],
+      "latency_ms": 38412.5280380249,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "basic",
+       "response_length": 448
+      }
+     },
+     {
+      "id": "RAG-CLINICAL-001",
+      "category": "clinical_interpretation",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "10250-9",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "10251-7",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [],
+      "latency_ms": 61475.95500946045,
+      "evaluation": {
+       "correct": true,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "good",
+       "response_length": 730
+      }
+     },
+     {
+      "id": "RAG-MAPPING-001",
+      "category": "vendor_mapping",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "10251-7",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "10250-9",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [
+       "101694-8"
+      ],
+      "latency_ms": 33663.017988204956,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": true,
+       "uses_context": true,
+       "reasoning_quality": "good",
+       "response_length": 1317,
+       "suspicious_code": "101694-8"
+      }
+     },
+     {
+      "id": "RAG-VALIDATION-001",
+      "category": "data_validation",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "101694-8",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "8890-6",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [
+       "8867-4"
+      ],
+      "latency_ms": 22792.56796836853,
+      "evaluation": {
+       "correct": false,
+       "partial": true,
+       "hallucination_detected": false,
+       "uses_context": false,
+       "reasoning_quality": "good",
+       "response_length": 763,
+       "found_count": 2,
+       "expected_count": 3
+      }
+     },
+     {
+      "id": "RAG-REASONING-001",
+      "category": "clinical_reasoning",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "10251-7",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "10250-9",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [],
+      "latency_ms": 43706.34698867798,
+      "evaluation": {
+       "correct": true,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": false,
+       "reasoning_quality": "good",
+       "response_length": 1804
+      }
+     },
+     {
+      "id": "RAG-LOINC-003",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "101694-8",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "103207-7",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [
+       "8876-5",
+       "11328-2"
+      ],
+      "latency_ms": 11755.604982376099,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": true,
+       "uses_context": true,
+       "reasoning_quality": "basic",
+       "response_length": 205,
+       "suspicious_code": "8876-5"
+      }
+     },
+     {
+      "id": "RAG-LOINC-004",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "10346-5",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "14775-1",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [
+       "8470-2"
+      ],
+      "latency_ms": 11257.75694847107,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": true,
+       "uses_context": false,
+       "reasoning_quality": "basic",
+       "response_length": 128,
+       "suspicious_code": "8470-2"
+      }
+     },
+     {
+      "id": "RAG-LOINC-005",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "12144-2",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "11377-9",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [
+       "11377-9",
+       "11378-7"
+      ],
+      "latency_ms": 22732.694625854492,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": true,
+       "uses_context": true,
+       "reasoning_quality": "basic",
+       "response_length": 735,
+       "suspicious_code": "11377-9"
+      }
+     },
+     {
+      "id": "RAG-LOINC-006",
+      "category": "gap_detection",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "101694-8",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "9911-9",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [],
+      "latency_ms": 16382.536172866821,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "basic",
+       "response_length": 528
+      }
+     },
+     {
+      "id": "RAG-SNOMED-001",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "2222141000000103",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 2,
+        "code": "2222151000000100",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 3,
+        "code": "359642000",
+        "vocabulary": "SNOM"
+       }
+      ],
+      "response_codes": [
+       "44054006"
+      ],
+      "latency_ms": 7947.534084320068,
+      "evaluation": {
+       "correct": true,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": false,
+       "reasoning_quality": "basic",
+       "response_length": 119
+      }
+     },
+     {
+      "id": "RAG-SNOMED-002",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "1201005",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 2,
+        "code": "429457004",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 3,
+        "code": "78975002",
+        "vocabulary": "SNOMED"
+       }
+      ],
+      "response_codes": [
+       "1201005",
+       "78975002",
+       "402039007"
+      ],
+      "latency_ms": 22338.18793296814,
+      "evaluation": {
+       "correct": false,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "basic",
+       "response_length": 801
+      }
+     },
+     {
+      "id": "RAG-SNOMED-003",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "233910005",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 2,
+        "code": "426749004",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 3,
+        "code": "49436004",
+        "vocabulary": "SNOMED"
+       }
+      ],
+      "response_codes": [
+       "49436004"
+      ],
+      "latency_ms": 6984.8151206970215,
+      "evaluation": {
+       "correct": true,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": false,
+       "reasoning_quality": "basic",
+       "response_length": 111
+      }
+     },
+     {
+      "id": "RAG-SNOMED-004",
+      "category": "terminology_lookup",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "462276004",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 2,
+        "code": "713118002",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 3,
+        "code": "463005003",
+        "vocabulary": "SNOMED"
+       }
+      ],
+      "response_codes": [
+       "462276004",
+       "463005003",
+       "462761006"
+      ],
+      "latency_ms": 28352.752685546875,
+      "evaluation": {
+       "correct": true,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "basic",
+       "response_length": 1187
+      }
+     },
+     {
+      "id": "RAG-SNOMED-005",
+      "category": "semantic_bridging",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "39361004",
+        "vocabulary": "SNOMED"
+       },
+       {
+        "rank": 2,
+        "code": "1321881000000103",
+        "vocabulary": "SNOMED"
+       }
+      ],
+      "response_codes": [
+       "413056007"
+      ],
+      "latency_ms": 15471.408128738403,
+      "evaluation": {
+       "correct": false,
+       "partial": true,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "basic",
+       "response_length": 498,
+       "found_count": 1,
+       "expected_count": 2
+      }
+     },
+     {
+      "id": "RAG-SNOMED-006",
+      "category": "cross_mapping",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "101578-3",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "10251-7",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [
+       "80404-7",
+       "362915007"
+      ],
+      "latency_ms": 20948.91595840454,
+      "evaluation": {
+       "correct": true,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": true,
+       "reasoning_quality": "good",
+       "response_length": 673
+      }
+     },
+     {
+      "id": "RAG-REASONING-002",
+      "category": "clinical_reasoning",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "101916-5",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "101912-4",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [
+       "8603-2",
+       "5417-0"
+      ],
+      "latency_ms": 46003.443241119385,
+      "evaluation": {
+       "correct": true,
+       "partial": false,
+       "hallucination_detected": false,
+       "uses_context": false,
+       "reasoning_quality": "basic",
+       "response_length": 1496
+      }
+     },
+     {
+      "id": "RAG-REASONING-003",
+      "category": "disambiguation",
+      "context_used_codes": [
+       {
+        "rank": 1,
+        "code": "101578-3",
+        "vocabulary": "LOINC"
+       },
+       {
+        "rank": 2,
+        "code": "10251-7",
+        "vocabulary": "LOINC"
+       }
+      ],
+      "response_codes": [],
+      "latency_ms": 61212.03804016113,
+      "evaluation": {
+       "correct": false,
+       "partial": true,
+       "hallucination_detected": false,
+       "uses_context": false,
+       "reasoning_quality": "basic",
+       "response_length": 1985,
+       "found_count": 2,
+       "expected_count": 3
+      }
+     }
+    ],
+    "latencies": [
+     26506.15692138672,
+     38412.5280380249,
+     61475.95500946045,
+     33663.017988204956,
+     22792.56796836853,
+     43706.34698867798,
+     11755.604982376099,
+     11257.75694847107,
+     22732.694625854492,
+     16382.536172866821,
+     7947.534084320068,
+     22338.18793296814,
+     6984.8151206970215,
+     28352.752685546875,
+     15471.408128738403,
+     20948.91595840454,
+     46003.443241119385,
+     61212.03804016113
+    ],
+    "totals": {
+     "correct": 7,
+     "partial": 3,
+     "hallucinations": 4,
+     "errors": 0,
+     "empty_responses": 0,
+     "total_latency_ms": 497944.2608356476
+    },
+    "summary": {
+     "accuracy": 38.88888888888889,
+     "partial_rate": 16.666666666666664,
+     "hallucination_rate": 22.22222222222222,
+     "empty_rate": 0.0,
+     "error_rate": 0.0,
+     "avg_latency_ms": 27663.570046424866,
+     "p50_latency_ms": 22792.56796836853,
+     "p95_latency_ms": 61475.95500946045
+    }
+   }
+  },
+  "summary": {},
+  "comparison": {
+   "metrics": [
+    "accuracy",
+    "hallucination_rate",
+    "empty_rate",
+    "avg_latency_ms"
+   ],
+   "by_model": {
+    "mistral:7b": {
+     "accuracy": 38.88888888888889,
+     "partial_rate": 16.666666666666664,
+     "hallucination_rate": 22.22222222222222,
+     "empty_rate": 0.0,
+     "error_rate": 0.0,
+     "avg_latency_ms": 27663.570046424866,
+     "p50_latency_ms": 22792.56796836853,
+     "p95_latency_ms": 61475.95500946045
+    }
+   },
+   "winner_by_metric": {
+    "accuracy": "mistral:7b",
+    "hallucination_rate": "mistral:7b",
+    "empty_rate": "mistral:7b",
+    "avg_latency_ms": "mistral:7b"
+   }
+  }
+ }
+}

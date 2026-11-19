@@ -1,0 +1,7073 @@
+{
+ "what": "post-hoc re-read with the Markdown fence taken off; not in the committed protocol; no model call",
+ "source_run": "benchmark_routing_arm2_path_c_20261119_090535.json",
+ "source_sha256": "00f1b16966d41f2159f4621211b6c4fdc68597ff51deb30faef2d0149121847b",
+ "script_sha256": "27310485eabcd4cb900a1bfccdf2dfbfcb5ddb188511a7e9388868f81abc0ff7",
+ "head": "0545e5b613205051ba7bd5b9386a16508ebf6c60",
+ "unfenced": {
+  "arm2": 20,
+  "path_c": 9
+ },
+ "arm2": {
+  "summary": {
+   "all": {
+    "n": 73,
+    "task_ok": 63,
+    "model_conform": 52,
+    "labeller_fields_conform": 54,
+    "labeller_request_conform": 59,
+    "model_outcome_n": 59,
+    "model_outcome_agree": 49,
+    "same_route_as_arm1": 53,
+    "system_ok": 66,
+    "code_ok": 69,
+    "code_not_in_text": 0,
+    "invalid": 0
+   },
+   "borderline": {
+    "n": 18,
+    "task_ok": 11,
+    "model_conform": 8,
+    "labeller_fields_conform": 9,
+    "labeller_request_conform": 13,
+    "model_outcome_n": 15,
+    "model_outcome_agree": 9,
+    "same_route_as_arm1": 9,
+    "system_ok": 13,
+    "code_ok": 15,
+    "code_not_in_text": 0,
+    "invalid": 0
+   },
+   "by_category": {
+    "a": {
+     "n": 14,
+     "task_ok": 11,
+     "model_conform": 11,
+     "labeller_fields_conform": 11,
+     "labeller_request_conform": 14,
+     "model_outcome_n": 0,
+     "model_outcome_agree": 0,
+     "same_route_as_arm1": 11,
+     "system_ok": 14,
+     "code_ok": 13,
+     "code_not_in_text": 0,
+     "invalid": 0
+    },
+    "b": {
+     "n": 19,
+     "task_ok": 17,
+     "model_conform": 11,
+     "labeller_fields_conform": 14,
+     "labeller_request_conform": 15,
+     "model_outcome_n": 19,
+     "model_outcome_agree": 13,
+     "same_route_as_arm1": 13,
+     "system_ok": 18,
+     "code_ok": 18,
+     "code_not_in_text": 0,
+     "invalid": 0
+    },
+    "c": {
+     "n": 10,
+     "task_ok": 10,
+     "model_conform": 10,
+     "labeller_fields_conform": 10,
+     "labeller_request_conform": 10,
+     "model_outcome_n": 10,
+     "model_outcome_agree": 10,
+     "same_route_as_arm1": 10,
+     "system_ok": 9,
+     "code_ok": 9,
+     "code_not_in_text": 0,
+     "invalid": 0
+    },
+    "d": {
+     "n": 10,
+     "task_ok": 9,
+     "model_conform": 9,
+     "labeller_fields_conform": 9,
+     "labeller_request_conform": 10,
+     "model_outcome_n": 10,
+     "model_outcome_agree": 9,
+     "same_route_as_arm1": 9,
+     "system_ok": 8,
+     "code_ok": 9,
+     "code_not_in_text": 0,
+     "invalid": 0
+    },
+    "e": {
+     "n": 10,
+     "task_ok": 10,
+     "model_conform": 10,
+     "labeller_fields_conform": 10,
+     "labeller_request_conform": 10,
+     "model_outcome_n": 10,
+     "model_outcome_agree": 10,
+     "same_route_as_arm1": 10,
+     "system_ok": 9,
+     "code_ok": 10,
+     "code_not_in_text": 0,
+     "invalid": 0
+    },
+    "f": {
+     "n": 10,
+     "task_ok": 6,
+     "model_conform": 1,
+     "labeller_fields_conform": 0,
+     "labeller_request_conform": 0,
+     "model_outcome_n": 10,
+     "model_outcome_agree": 7,
+     "same_route_as_arm1": 0,
+     "system_ok": 8,
+     "code_ok": 10,
+     "code_not_in_text": 0,
+     "invalid": 0
+    }
+   },
+   "task_confusion": {
+    "verify": {
+     "verify": 11,
+     "retrieve": 3
+    },
+    "retrieve": {
+     "retrieve": 17,
+     "map": 2
+    },
+    "map": {
+     "map": 9,
+     "retrieve": 1
+    },
+    "hierarchy": {
+     "hierarchy": 10
+    },
+    "interpret": {
+     "interpret": 10
+    },
+    "out_of_scope": {
+     "out_of_scope": 6,
+     "interpret": 3,
+     "retrieve": 1
+    }
+   },
+   "route_confusion_model": {
+    "R-pre": {
+     "R-pre": 2
+    },
+    "R0": {
+     "R0": 11,
+     "R2→R7": 3
+    },
+    "R1": {
+     "R1": 4,
+     "R3": 1
+    },
+    "R2→R1": {
+     "R5": 1,
+     "R2→R7": 1,
+     "R7": 1
+    },
+    "R2→R3": {
+     "R7": 1,
+     "R2→R7": 1
+    },
+    "R2→R7": {
+     "R2→R7": 2,
+     "R5": 1
+    },
+    "R3": {
+     "R3": 3,
+     "R2→R7": 1
+    },
+    "R4": {
+     "R4": 10
+    },
+    "R5": {
+     "R5": 9,
+     "R-pre": 1
+    },
+    "R6": {
+     "R6": 10
+    },
+    "R7": {
+     "chamador-recusa": 6,
+     "R6": 3,
+     "R2→R7": 1
+    }
+   },
+   "task_disagreements": [
+    {
+     "id": "Q03",
+     "category": "b",
+     "gold": "retrieve",
+     "declared": "map",
+     "error": null
+    },
+    {
+     "id": "Q38",
+     "category": "f",
+     "gold": "out_of_scope",
+     "declared": "interpret",
+     "error": null
+    },
+    {
+     "id": "Q44",
+     "category": "b",
+     "gold": "retrieve",
+     "declared": "map",
+     "error": null
+    },
+    {
+     "id": "Q48",
+     "category": "a",
+     "gold": "verify",
+     "declared": "retrieve",
+     "error": null
+    },
+    {
+     "id": "Q49",
+     "category": "a",
+     "gold": "verify",
+     "declared": "retrieve",
+     "error": null
+    },
+    {
+     "id": "Q50",
+     "category": "d",
+     "gold": "map",
+     "declared": "retrieve",
+     "error": null
+    },
+    {
+     "id": "Q55",
+     "category": "f",
+     "gold": "out_of_scope",
+     "declared": "interpret",
+     "error": null
+    },
+    {
+     "id": "Q60",
+     "category": "f",
+     "gold": "out_of_scope",
+     "declared": "interpret",
+     "error": null
+    },
+    {
+     "id": "Q61",
+     "category": "a",
+     "gold": "verify",
+     "declared": "retrieve",
+     "error": null
+    },
+    {
+     "id": "Q72",
+     "category": "f",
+     "gold": "out_of_scope",
+     "declared": "retrieve",
+     "error": null
+    }
+   ],
+   "route_disagreements_model": [
+    {
+     "id": "Q03",
+     "expected": "R2→R1",
+     "model": "R5",
+     "arm1": "R2→R7"
+    },
+    {
+     "id": "Q09",
+     "expected": "R7",
+     "model": "chamador-recusa",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q13",
+     "expected": "R7",
+     "model": "chamador-recusa",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q18",
+     "expected": "R7",
+     "model": "chamador-recusa",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q25",
+     "expected": "R7",
+     "model": "chamador-recusa",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q28",
+     "expected": "R2→R3",
+     "model": "R7",
+     "arm1": "R2→R1"
+    },
+    {
+     "id": "Q29",
+     "expected": "R2→R1",
+     "model": "R2→R7",
+     "arm1": "R2→R1"
+    },
+    {
+     "id": "Q31",
+     "expected": "R7",
+     "model": "chamador-recusa",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q38",
+     "expected": "R7",
+     "model": "R6",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q41",
+     "expected": "R3",
+     "model": "R2→R7",
+     "arm1": "R3"
+    },
+    {
+     "id": "Q44",
+     "expected": "R2→R7",
+     "model": "R5",
+     "arm1": "R2→R7"
+    },
+    {
+     "id": "Q46",
+     "expected": "R1",
+     "model": "R3",
+     "arm1": "R3"
+    },
+    {
+     "id": "Q48",
+     "expected": "R0",
+     "model": "R2→R7",
+     "arm1": "R0"
+    },
+    {
+     "id": "Q49",
+     "expected": "R0",
+     "model": "R2→R7",
+     "arm1": "R0"
+    },
+    {
+     "id": "Q50",
+     "expected": "R5",
+     "model": "R-pre",
+     "arm1": "R5"
+    },
+    {
+     "id": "Q51",
+     "expected": "R7",
+     "model": "chamador-recusa",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q55",
+     "expected": "R7",
+     "model": "R6",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q56",
+     "expected": "R2→R3",
+     "model": "R2→R7",
+     "arm1": "R2→R7"
+    },
+    {
+     "id": "Q60",
+     "expected": "R7",
+     "model": "R6",
+     "arm1": "R-pre"
+    },
+    {
+     "id": "Q61",
+     "expected": "R0",
+     "model": "R2→R7",
+     "arm1": "R0"
+    },
+    {
+     "id": "Q69",
+     "expected": "R2→R1",
+     "model": "R7",
+     "arm1": "R2→R1"
+    }
+   ],
+   "arm1_recomputed_vs_file_mismatch": [],
+   "latency_ms": {
+    "n": 73,
+    "p50": 12673.718,
+    "p95": 17257.383,
+    "max": 21213.43
+   }
+  },
+  "rows": [
+   {
+    "id": "Q01",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 18831.087,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 93,
+     "prompt_eval_count": 481,
+     "total_duration": 18825588583,
+     "load_duration": 4084281042
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q02",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R1",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 10381.262,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 60,
+     "prompt_eval_count": 481,
+     "total_duration": 10379313250,
+     "load_duration": 165299417
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 8480-6"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 8480-6"
+     ]
+    },
+    "labeller_request": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 8480-6"
+     ]
+    },
+    "arm1_file_label": "R1"
+   },
+   {
+    "id": "Q03",
+    "category": "b",
+    "borderline": true,
+    "expected_route": "R2→R1",
+    "gold_task": "retrieve",
+    "declared_task": "map",
+    "task_ok": false,
+    "request": {
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "model_ms": 10323.165,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 61,
+     "prompt_eval_count": 485,
+     "total_duration": 10321646750,
+     "load_duration": 155517208
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "arm1_file_label": "R2→R7"
+   },
+   {
+    "id": "Q04",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "target_system": null
+    },
+    "model_ms": 12087.803,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 76,
+     "prompt_eval_count": 494,
+     "total_duration": 12086472959,
+     "load_duration": 140883834
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q05",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 16748.322,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 114,
+     "prompt_eval_count": 496,
+     "total_duration": 16746721209,
+     "load_duration": 133472250
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q06",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "59621000",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "59621000",
+     "target_system": null
+    },
+    "model_ms": 11237.44,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 70,
+     "prompt_eval_count": 494,
+     "total_duration": 11235581375,
+     "load_duration": 155965542
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q07",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R3",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 9819.498,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 57,
+     "prompt_eval_count": 492,
+     "total_duration": 9817561042,
+     "load_duration": 153168833
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251671002",
+      "SNOMED 366337000",
+      "SNOMED 426173002",
+      "SNOMED 426704002",
+      "SNOMED 427565006",
+      "SNOMED 427693000"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251671002",
+      "SNOMED 366337000",
+      "SNOMED 426173002",
+      "SNOMED 426704002",
+      "SNOMED 427565006",
+      "SNOMED 427693000"
+     ]
+    },
+    "labeller_request": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251671002",
+      "SNOMED 366337000",
+      "SNOMED 426173002",
+      "SNOMED 426704002",
+      "SNOMED 427565006",
+      "SNOMED 427693000"
+     ]
+    },
+    "arm1_file_label": "R3"
+   },
+   {
+    "id": "Q08",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "93831-6",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "93831-6",
+     "target_system": null
+    },
+    "model_ms": 11247.451,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 69,
+     "prompt_eval_count": 488,
+     "total_duration": 11246302250,
+     "load_duration": 141928958
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q09",
+    "category": "f",
+    "borderline": true,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "out_of_scope",
+    "task_ok": true,
+    "request": {
+     "task": "out_of_scope",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "out_of_scope",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11509.616,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 72,
+     "prompt_eval_count": 489,
+     "total_duration": 11508384542,
+     "load_duration": 151955000
+    },
+    "system_ok": false,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q10",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R1",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 10639.423,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 64,
+     "prompt_eval_count": 484,
+     "total_duration": 10637808666,
+     "load_duration": 154294583
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 415510005"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 415510005"
+     ]
+    },
+    "labeller_request": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 415510005"
+     ]
+    },
+    "arm1_file_label": "R1"
+   },
+   {
+    "id": "Q11",
+    "category": "a",
+    "borderline": true,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "at0015",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "at0015",
+     "target_system": null
+    },
+    "model_ms": 11861.979,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 76,
+     "prompt_eval_count": 484,
+     "total_duration": 11860448958,
+     "load_duration": 136701083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-not-found",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-not-found",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-not-found",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q12",
+    "category": "c",
+    "borderline": true,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11436.019,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 67,
+     "prompt_eval_count": 484,
+     "total_duration": 11434499584,
+     "load_duration": 156406000
+    },
+    "system_ok": false,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q13",
+    "category": "f",
+    "borderline": false,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "out_of_scope",
+    "task_ok": true,
+    "request": {
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 10415.433,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 60,
+     "prompt_eval_count": 480,
+     "total_duration": 10409258125,
+     "load_duration": 133378625
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q14",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R2→R7",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 9664.75,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 56,
+     "prompt_eval_count": 483,
+     "total_duration": 9662763000,
+     "load_duration": 154102083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "arm1_file_label": "R2→R7"
+   },
+   {
+    "id": "Q15",
+    "category": "d",
+    "borderline": false,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "Z72.3",
+     "target_system": "SNOMED"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "Z72.3",
+     "target_system": "SNOMED"
+    },
+    "model_ms": 12794.576,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 85,
+     "prompt_eval_count": 496,
+     "total_duration": 12793413167,
+     "load_duration": 147625125
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q16",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "38341003",
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "38341003",
+     "target_system": null
+    },
+    "model_ms": 12940.097,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 84,
+     "prompt_eval_count": 498,
+     "total_duration": 12938493125,
+     "load_duration": 155794084
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q17",
+    "category": "e",
+    "borderline": true,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12394.119,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 80,
+     "prompt_eval_count": 489,
+     "total_duration": 12392661208,
+     "load_duration": 155969791
+    },
+    "system_ok": false,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q18",
+    "category": "f",
+    "borderline": false,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "out_of_scope",
+    "task_ok": true,
+    "request": {
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 9560.253,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 56,
+     "prompt_eval_count": 479,
+     "total_duration": 9558594291,
+     "load_duration": 151465166
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q19",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11133.552,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 70,
+     "prompt_eval_count": 486,
+     "total_duration": 11129980042,
+     "load_duration": 151786792
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q20",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "ICD10",
+     "code": "E11.9",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "ICD10",
+     "code": "E11.9",
+     "target_system": null
+    },
+    "model_ms": 13114.619,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 86,
+     "prompt_eval_count": 490,
+     "total_duration": 13112899291,
+     "load_duration": 155680083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q21",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R-pre",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 9420.953,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 52,
+     "prompt_eval_count": 481,
+     "total_duration": 9419280209,
+     "load_duration": 159879875
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R-pre",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R-pre",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q22",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12700.495,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 78,
+     "prompt_eval_count": 488,
+     "total_duration": 12699530750,
+     "load_duration": 138183333
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q23",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "SNOMED",
+     "code": "99999003",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "SNOMED",
+     "code": "99999003",
+     "target_system": null
+    },
+    "model_ms": 11314.521,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 69,
+     "prompt_eval_count": 498,
+     "total_duration": 11312585792,
+     "load_duration": 132989750
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-inactive",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-inactive",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-inactive",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q24",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11260.452,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 483,
+     "total_duration": 11258487709,
+     "load_duration": 152218292
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q25",
+    "category": "f",
+    "borderline": false,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "out_of_scope",
+    "task_ok": true,
+    "request": {
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 10794.271,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 65,
+     "prompt_eval_count": 488,
+     "total_duration": 10792672500,
+     "load_duration": 152601209
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q26",
+    "category": "d",
+    "borderline": true,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "R00.0",
+     "target_system": "SNOMED"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "R00.0",
+     "target_system": "SNOMED"
+    },
+    "model_ms": 14471.854,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 99,
+     "prompt_eval_count": 502,
+     "total_duration": 14453278792,
+     "load_duration": 152991209
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q27",
+    "category": "d",
+    "borderline": false,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "I10",
+     "target_system": "SNOMED"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "I10",
+     "target_system": "SNOMED"
+    },
+    "model_ms": 21213.43,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 98,
+     "prompt_eval_count": 490,
+     "total_duration": 21092942334,
+     "load_duration": 132473834
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q28",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R2→R3",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12188.692,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 54,
+     "prompt_eval_count": 483,
+     "total_duration": 12157259250,
+     "load_duration": 210183209
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R1",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 80404-7"
+     ]
+    },
+    "labeller_request": {
+     "label": "R2→R1",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 80404-7"
+     ]
+    },
+    "arm1_file_label": "R2→R1"
+   },
+   {
+    "id": "Q29",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R2→R1",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 13131.022,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 62,
+     "prompt_eval_count": 481,
+     "total_duration": 13125441375,
+     "load_duration": 160218250
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251898000"
+     ]
+    },
+    "labeller_request": {
+     "label": "R2→R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251898000"
+     ]
+    },
+    "arm1_file_label": "R2→R1"
+   },
+   {
+    "id": "Q30",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 17248.772,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 72,
+     "prompt_eval_count": 485,
+     "total_duration": 17224328708,
+     "load_duration": 150611208
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q31",
+    "category": "f",
+    "borderline": false,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "out_of_scope",
+    "task_ok": true,
+    "request": {
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12755.857,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 58,
+     "prompt_eval_count": 481,
+     "total_duration": 12730461875,
+     "load_duration": 390456083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q32",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R1",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "UCUM",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "UCUM",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 10968.477,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 54,
+     "prompt_eval_count": 483,
+     "total_duration": 10965654958,
+     "load_duration": 177341166
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "UCUM ms"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "UCUM ms"
+     ]
+    },
+    "labeller_request": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "UCUM ms"
+     ]
+    },
+    "arm1_file_label": "R1"
+   },
+   {
+    "id": "Q33",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "target_system": null
+    },
+    "model_ms": 14659.413,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 81,
+     "prompt_eval_count": 511,
+     "total_duration": 14656554083,
+     "load_duration": 154058083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q34",
+    "category": "d",
+    "borderline": false,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": "8867-4",
+     "target_system": "SNOMED CT"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": "8867-4",
+     "target_system_codes": []
+    },
+    "model_ms": 15867.617,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 85,
+     "prompt_eval_count": 491,
+     "total_duration": 15863807458,
+     "load_duration": 143775250
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q35",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "414916001",
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "414916001",
+     "target_system": null
+    },
+    "model_ms": 13684.334,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 83,
+     "prompt_eval_count": 489,
+     "total_duration": 13681006834,
+     "load_duration": 176490542
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q36",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "73211009",
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "73211009",
+     "target_system": null
+    },
+    "model_ms": 11499.192,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 505,
+     "total_duration": 11497119125,
+     "load_duration": 169038875
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q37",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "8867-5",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "8867-5",
+     "target_system": null
+    },
+    "model_ms": 13642.987,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 75,
+     "prompt_eval_count": 496,
+     "total_duration": 13640385125,
+     "load_duration": 156402833
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-not-found",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-not-found",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "code-not-found",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q38",
+    "category": "f",
+    "borderline": true,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "interpret",
+    "task_ok": false,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 15049.957,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 76,
+     "prompt_eval_count": 487,
+     "total_duration": 15047845417,
+     "load_duration": 174213083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q39",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 15426.135,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 86,
+     "prompt_eval_count": 492,
+     "total_duration": 15420484208,
+     "load_duration": 159821375
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q40",
+    "category": "b",
+    "borderline": true,
+    "expected_route": "R2→R7",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12006.336,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 56,
+     "prompt_eval_count": 483,
+     "total_duration": 11998771958,
+     "load_duration": 170569083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "arm1_file_label": "R2→R7"
+   },
+   {
+    "id": "Q41",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R3",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12060.842,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 62,
+     "prompt_eval_count": 487,
+     "total_duration": 12057815833,
+     "load_duration": 169916125
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 76643-6",
+      "LOINC 80404-7"
+     ]
+    },
+    "labeller_request": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 76643-6",
+      "LOINC 80404-7"
+     ]
+    },
+    "arm1_file_label": "R3"
+   },
+   {
+    "id": "Q42",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "80406-2",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "80406-2",
+     "target_system": null
+    },
+    "model_ms": 13558.405,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 496,
+     "total_duration": 13555062833,
+     "load_duration": 172761208
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q43",
+    "category": "d",
+    "borderline": false,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "414916001",
+     "target_system": "ICD10"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "414916001",
+     "target_system": "ICD10"
+    },
+    "model_ms": 17092.902,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 102,
+     "prompt_eval_count": 499,
+     "total_duration": 17090834542,
+     "load_duration": 174311875
+    },
+    "system_ok": false,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q44",
+    "category": "b",
+    "borderline": true,
+    "expected_route": "R2→R7",
+    "gold_task": "retrieve",
+    "declared_task": "map",
+    "task_ok": false,
+    "request": {
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "RMSSD",
+     "display": null,
+     "target_system": "LOINC"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "RMSSD",
+     "target_system": "LOINC"
+    },
+    "model_ms": 12122.409,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 65,
+     "prompt_eval_count": 479,
+     "total_duration": 12120639625,
+     "load_duration": 156294166
+    },
+    "system_ok": false,
+    "code_ok": false,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "arm1_file_label": "R2→R7"
+   },
+   {
+    "id": "Q45",
+    "category": "d",
+    "borderline": false,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "display": null,
+     "target_system": "ICD-10"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "target_system": "ICD-10"
+    },
+    "model_ms": 15962.638,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 78,
+     "prompt_eval_count": 494,
+     "total_duration": 15958339584,
+     "load_duration": 152279750
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q46",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R1",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 10795.499,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 54,
+     "prompt_eval_count": 482,
+     "total_duration": 10791727584,
+     "load_duration": 156000375
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R3",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 93832-4",
+      "LOINC LP412115-0",
+      "LOINC 93829-0",
+      "LOINC 93830-8",
+      "LOINC 93831-6",
+      "LOINC LP412112-7",
+      "LOINC LP412113-5",
+      "LOINC LP412114-3"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R3",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 93832-4",
+      "LOINC LP412115-0",
+      "LOINC 93829-0",
+      "LOINC 93830-8",
+      "LOINC 93831-6",
+      "LOINC LP412112-7",
+      "LOINC LP412113-5",
+      "LOINC LP412114-3"
+     ]
+    },
+    "labeller_request": {
+     "label": "R3",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 93832-4",
+      "LOINC LP412115-0",
+      "LOINC 93829-0",
+      "LOINC 93830-8",
+      "LOINC 93831-6",
+      "LOINC LP412112-7",
+      "LOINC LP412113-5",
+      "LOINC LP412114-3"
+     ]
+    },
+    "arm1_file_label": "R3"
+   },
+   {
+    "id": "Q47",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "8867-4",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "8867-4",
+     "target_system": null
+    },
+    "model_ms": 12461.067,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 64,
+     "prompt_eval_count": 489,
+     "total_duration": 12459590291,
+     "load_duration": 149935208
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 8867-4"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 8867-4"
+     ]
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 8867-4"
+     ]
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q48",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "retrieve",
+    "task_ok": false,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "19989-3",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "19989-3",
+     "target_system": null
+    },
+    "model_ms": 12990.309,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 67,
+     "prompt_eval_count": 488,
+     "total_duration": 12988465375,
+     "load_duration": 157291041
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q49",
+    "category": "a",
+    "borderline": true,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "retrieve",
+    "task_ok": false,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "76644-4",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "76644-4",
+     "target_system": null
+    },
+    "model_ms": 15130.361,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 83,
+     "prompt_eval_count": 486,
+     "total_duration": 15127135792,
+     "load_duration": 165798709
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 76644-4"
+     ]
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q50",
+    "category": "d",
+    "borderline": true,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "retrieve",
+    "task_ok": false,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "OMOP",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "OMOP",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "model_ms": 14416.178,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 77,
+     "prompt_eval_count": 490,
+     "total_duration": 14414721292,
+     "load_duration": 147268625
+    },
+    "system_ok": true,
+    "code_ok": false,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q51",
+    "category": "f",
+    "borderline": false,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "out_of_scope",
+    "task_ok": true,
+    "request": {
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "out_of_scope",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11526.979,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 57,
+     "prompt_eval_count": 480,
+     "total_duration": 11525160166,
+     "load_duration": 155357708
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "chamador-recusa",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q52",
+    "category": "d",
+    "borderline": true,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+     "target_system": "LOINC"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "LOINC",
+     "code_codes": [],
+     "target_system": "LOINC"
+    },
+    "model_ms": 16573.533,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 87,
+     "prompt_eval_count": 489,
+     "total_duration": 16571874459,
+     "load_duration": 149108500
+    },
+    "system_ok": false,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q53",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R3",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11572.304,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 54,
+     "prompt_eval_count": 479,
+     "total_duration": 11570869708,
+     "load_duration": 162993500
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 52041-1",
+      "LOINC 97062-4",
+      "LOINC LP422915-1",
+      "LOINC LP73930-7"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 52041-1",
+      "LOINC 97062-4",
+      "LOINC LP422915-1",
+      "LOINC LP73930-7"
+     ]
+    },
+    "labeller_request": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "LOINC 52041-1",
+      "LOINC 97062-4",
+      "LOINC LP422915-1",
+      "LOINC LP73930-7"
+     ]
+    },
+    "arm1_file_label": "R3"
+   },
+   {
+    "id": "Q54",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R3",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11588.374,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 60,
+     "prompt_eval_count": 482,
+     "total_duration": 11586797000,
+     "load_duration": 167943791
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 390736008",
+      "SNOMED 68130003",
+      "SNOMED 1086511000000107",
+      "SNOMED 1099601000000102",
+      "SNOMED 1099701000000109",
+      "SNOMED 1099751000000105",
+      "SNOMED 1099851000000102"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 390736008",
+      "SNOMED 68130003",
+      "SNOMED 1086511000000107",
+      "SNOMED 1099601000000102",
+      "SNOMED 1099701000000109",
+      "SNOMED 1099751000000105",
+      "SNOMED 1099851000000102"
+     ]
+    },
+    "labeller_request": {
+     "label": "R3",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 390736008",
+      "SNOMED 68130003",
+      "SNOMED 1086511000000107",
+      "SNOMED 1099601000000102",
+      "SNOMED 1099701000000109",
+      "SNOMED 1099751000000105",
+      "SNOMED 1099851000000102"
+     ]
+    },
+    "arm1_file_label": "R3"
+   },
+   {
+    "id": "Q55",
+    "category": "f",
+    "borderline": false,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "interpret",
+    "task_ok": false,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11478.811,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 60,
+     "prompt_eval_count": 482,
+     "total_duration": 11477289791,
+     "load_duration": 143315250
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q56",
+    "category": "b",
+    "borderline": true,
+    "expected_route": "R2→R3",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 13242.203,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 64,
+     "prompt_eval_count": 490,
+     "total_duration": 13239869625,
+     "load_duration": 160835459
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "arm1_file_label": "R2→R7"
+   },
+   {
+    "id": "Q57",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 15856.232,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 75,
+     "prompt_eval_count": 485,
+     "total_duration": 15854494083,
+     "load_duration": 162728625
+    },
+    "system_ok": true,
+    "code_ok": false,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q58",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "80404-7",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "80404-7",
+     "target_system": null
+    },
+    "model_ms": 16699.108,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 78,
+     "prompt_eval_count": 501,
+     "total_duration": 16697310584,
+     "load_duration": 154411750
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 80404-7"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 80404-7"
+     ]
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 80404-7"
+     ]
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q59",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R1",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 14973.46,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 482,
+     "total_duration": 14971991667,
+     "load_duration": 159813000
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 44054006"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 44054006"
+     ]
+    },
+    "labeller_request": {
+     "label": "R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 44054006"
+     ]
+    },
+    "arm1_file_label": "R1"
+   },
+   {
+    "id": "Q60",
+    "category": "f",
+    "borderline": true,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "interpret",
+    "task_ok": false,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 16157.667,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 80,
+     "prompt_eval_count": 494,
+     "total_duration": 16156060167,
+     "load_duration": 146875167
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": false,
+     "outcome": "resolved",
+     "outcome_agree": false,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q61",
+    "category": "a",
+    "borderline": true,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "retrieve",
+    "task_ok": false,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12497.061,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 60,
+     "prompt_eval_count": 499,
+     "total_duration": 12493678917,
+     "load_duration": 141178375
+    },
+    "system_ok": true,
+    "code_ok": false,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "LOINC 8867-4"
+     ]
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q62",
+    "category": "c",
+    "borderline": true,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "LOINC",
+     "code": "80404-7",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "LOINC",
+     "code": "80404-7",
+     "target_system": null
+    },
+    "model_ms": 18839.719,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 114,
+     "prompt_eval_count": 501,
+     "total_duration": 18838046125,
+     "load_duration": 145205083
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q63",
+    "category": "d",
+    "borderline": false,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "E11.9",
+     "target_system": "SNOMED"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "ICD10",
+     "code": "E11.9",
+     "target_system": "SNOMED"
+    },
+    "model_ms": 15471.994,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 92,
+     "prompt_eval_count": 488,
+     "total_duration": 15460831875,
+     "load_duration": 156943792
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q64",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "SNOMED",
+     "code": "251898000",
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "SNOMED",
+     "code": "251898000",
+     "target_system": null
+    },
+    "model_ms": 12599.732,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 69,
+     "prompt_eval_count": 486,
+     "total_duration": 12598039750,
+     "load_duration": 144213583
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251898000"
+     ]
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251898000"
+     ]
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": null,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251898000"
+     ]
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q65",
+    "category": "c",
+    "borderline": false,
+    "expected_route": "R4",
+    "gold_task": "hierarchy",
+    "declared_task": "hierarchy",
+    "task_ok": true,
+    "request": {
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "73211009",
+     "display": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "hierarchy",
+     "system_hint": "SNOMED",
+     "code": "73211009",
+     "target_system": null
+    },
+    "model_ms": 13102.008,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 73,
+     "prompt_eval_count": 490,
+     "total_duration": 13100471500,
+     "load_duration": 156781750
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R4",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R4"
+   },
+   {
+    "id": "Q66",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "ICD10",
+     "code": "I10",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "ICD10",
+     "code": "I10",
+     "target_system": null
+    },
+    "model_ms": 11536.877,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 60,
+     "prompt_eval_count": 489,
+     "total_duration": 11535270208,
+     "load_duration": 158950291
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q67",
+    "category": "d",
+    "borderline": false,
+    "expected_route": "R5",
+    "gold_task": "map",
+    "declared_task": "map",
+    "task_ok": true,
+    "request": {
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "193462001",
+     "target_system": "ICD-10"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "193462001",
+     "target_system": "ICD-10"
+    },
+    "model_ms": 16552.659,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 99,
+     "prompt_eval_count": 498,
+     "total_duration": 16550328375,
+     "load_duration": 155730333
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R5",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R5"
+   },
+   {
+    "id": "Q68",
+    "category": "e",
+    "borderline": false,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 15874.435,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 94,
+     "prompt_eval_count": 496,
+     "total_duration": 15872906500,
+     "load_duration": 147928667
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   },
+   {
+    "id": "Q69",
+    "category": "b",
+    "borderline": true,
+    "expected_route": "R2→R1",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11346.454,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 57,
+     "prompt_eval_count": 487,
+     "total_duration": 11343818000,
+     "load_duration": 157560292
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R7",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": false,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R2→R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251898000"
+     ]
+    },
+    "labeller_request": {
+     "label": "R2→R1",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": [
+      "SNOMED 251898000"
+     ]
+    },
+    "arm1_file_label": "R2→R1"
+   },
+   {
+    "id": "Q70",
+    "category": "a",
+    "borderline": false,
+    "expected_route": "R0",
+    "gold_task": "verify",
+    "declared_task": "verify",
+    "task_ok": true,
+    "request": {
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "80405-4",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "verify",
+     "system_hint": "LOINC",
+     "code": "80405-4",
+     "target_system": null
+    },
+    "model_ms": 12673.718,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 61,
+     "prompt_eval_count": 494,
+     "total_duration": 12672282500,
+     "load_duration": 145941459
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R0",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": null,
+     "abstention": "display-refuted",
+     "candidates": []
+    },
+    "arm1_file_label": "R0"
+   },
+   {
+    "id": "Q71",
+    "category": "b",
+    "borderline": false,
+    "expected_route": "R-pre",
+    "gold_task": "retrieve",
+    "declared_task": "retrieve",
+    "task_ok": true,
+    "request": {
+     "task": "retrieve",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11652.278,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 52,
+     "prompt_eval_count": 480,
+     "total_duration": 11650432334,
+     "load_duration": 147066875
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R-pre",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R-pre",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q72",
+    "category": "f",
+    "borderline": false,
+    "expected_route": "R7",
+    "gold_task": "out_of_scope",
+    "declared_task": "retrieve",
+    "task_ok": false,
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 14021.046,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 69,
+     "prompt_eval_count": 491,
+     "total_duration": 14019071250,
+     "load_duration": 158854417
+    },
+    "system_ok": false,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R2→R7",
+     "conforms": true,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "no-candidate",
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R-pre",
+     "conforms": false,
+     "outcome": "abstained",
+     "outcome_agree": true,
+     "abstention": "system-hint-required",
+     "candidates": []
+    },
+    "arm1_file_label": "R-pre"
+   },
+   {
+    "id": "Q73",
+    "category": "e",
+    "borderline": true,
+    "expected_route": "R6",
+    "gold_task": "interpret",
+    "declared_task": "interpret",
+    "task_ok": true,
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 17257.383,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 92,
+     "prompt_eval_count": 503,
+     "total_duration": 17255757333,
+     "load_duration": 155866625
+    },
+    "system_ok": true,
+    "code_ok": true,
+    "code_not_in_text": false,
+    "model": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_fields": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "labeller_request": {
+     "label": "R6",
+     "conforms": true,
+     "outcome": "resolved",
+     "outcome_agree": true,
+     "abstention": null,
+     "candidates": []
+    },
+    "arm1_file_label": "R6"
+   }
+  ]
+ },
+ "path_c": {
+  "summary": {
+   "n": 33,
+   "verdicts": {
+    "acerto": 7,
+    "sem_resposta": 20,
+    "erro": 2,
+    "recusa_certa": 4
+   },
+   "model_alone_correct": 8,
+   "ref_verdicts": {
+    "sem_resposta": 18,
+    "erro": 2,
+    "acerto": 9,
+    "recusa_certa": 4
+   },
+   "a2_file_mismatch": [],
+   "steps": {
+    "rota": 8,
+    "pedido": 13,
+    "escolha": 1
+   },
+   "routes": {
+    "R3": 4,
+    "R2→R7": 10,
+    "R1": 6,
+    "R7": 7,
+    "R6": 1,
+    "R5": 3,
+    "R-pre": 2
+   },
+   "how": {
+    "escolha": 3,
+    "sem-resposta-da-rota": 23,
+    "caminho-A": 6,
+    "escolha-nula": 1
+   },
+   "r3": [
+    {
+     "id": "EASY-LOINC-01",
+     "expected": "8867-4",
+     "candidates": [
+      "LOINC 8867-4",
+      "LOINC HRTRATE",
+      "LOINC LP29713-2",
+      "LOINC LP435346-4",
+      "LOINC LP72677-5",
+      "LOINC 101692-2",
+      "LOINC 101693-0",
+      "LOINC 101694-8",
+      "LOINC 10249-1",
+      "LOINC 10250-9"
+     ],
+     "choice": "8867-4",
+     "how": "escolha",
+     "verdict": "acerto",
+     "step": null
+    },
+    {
+     "id": "EASY-LOINC-04",
+     "expected": "2345-7",
+     "candidates": [
+      "LOINC 51419-0"
+     ],
+     "choice": null,
+     "how": "escolha-nula",
+     "verdict": "sem_resposta",
+     "step": "rota"
+    },
+    {
+     "id": "MED-LOINC-03",
+     "expected": "85354-9",
+     "candidates": [
+      "LOINC 35094-2",
+      "LOINC LP72170-1",
+      "LOINC 34553-8",
+      "LOINC 55417-0",
+      "LOINC 85354-9",
+      "LOINC 86641-8",
+      "LOINC 96607-7",
+      "LOINC 97844-5",
+      "LOINC LP248084-8",
+      "LOINC LP261268-9"
+     ],
+     "choice": "35094-2",
+     "how": "escolha",
+     "verdict": "erro",
+     "step": "escolha"
+    },
+    {
+     "id": "MED-VALID-01",
+     "expected": "8867-4",
+     "candidates": [
+      "LOINC 8867-4",
+      "LOINC HRTRATE",
+      "LOINC LP29713-2",
+      "LOINC LP435346-4",
+      "LOINC LP72677-5",
+      "LOINC 101692-2",
+      "LOINC 101693-0",
+      "LOINC 101694-8",
+      "LOINC 10249-1",
+      "LOINC 10250-9"
+     ],
+     "choice": "8867-4",
+     "how": "escolha",
+     "verdict": "acerto",
+     "step": null
+    }
+   ],
+   "g_rule_differs": [],
+   "code_not_in_text": [],
+   "invalid_requests": [],
+   "latency_ms_request": {
+    "n": 33,
+    "p50": 12498.421,
+    "p95": 16425.023,
+    "max": 16742.214
+   },
+   "latency_ms_choice": {
+    "n": 4,
+    "p50": 4147.845,
+    "p95": 4296.365,
+    "max": 4296.365
+   },
+   "per_case": [
+    {
+     "id": "EASY-LOINC-01",
+     "verdict": "acerto",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R3",
+     "answer": "8867-4",
+     "step": null
+    },
+    {
+     "id": "EASY-LOINC-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R2→R7",
+     "answer": null,
+     "step": "rota"
+    },
+    {
+     "id": "EASY-LOINC-03",
+     "verdict": "erro",
+     "model_alone_correct": false,
+     "a2": "erro",
+     "route": "R1",
+     "answer": "LP16413-4",
+     "step": "rota"
+    },
+    {
+     "id": "EASY-LOINC-04",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "erro",
+     "route": "R3",
+     "answer": null,
+     "step": "rota"
+    },
+    {
+     "id": "EASY-SNOMED-01",
+     "verdict": "acerto",
+     "model_alone_correct": false,
+     "a2": "acerto",
+     "route": "R1",
+     "answer": "44054006",
+     "step": null
+    },
+    {
+     "id": "EASY-SNOMED-02",
+     "verdict": "acerto",
+     "model_alone_correct": false,
+     "a2": "acerto",
+     "route": "R1",
+     "answer": "49436004",
+     "step": null
+    },
+    {
+     "id": "EASY-SNOMED-03",
+     "verdict": "acerto",
+     "model_alone_correct": false,
+     "a2": "acerto",
+     "route": "R1",
+     "answer": "59621000",
+     "step": null
+    },
+    {
+     "id": "EASY-SNOMED-04",
+     "verdict": "acerto",
+     "model_alone_correct": false,
+     "a2": "acerto",
+     "route": "R1",
+     "answer": "195967001",
+     "step": null
+    },
+    {
+     "id": "EASY-ICD10-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": true,
+     "a2": "sem_resposta",
+     "route": "R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "EASY-ICD10-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": true,
+     "a2": "acerto",
+     "route": "R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "EASY-ICD10-03",
+     "verdict": "sem_resposta",
+     "model_alone_correct": true,
+     "a2": "acerto",
+     "route": "R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "EASY-ICD10-04",
+     "verdict": "sem_resposta",
+     "model_alone_correct": true,
+     "a2": "sem_resposta",
+     "route": "R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "MED-GAP-01",
+     "verdict": "recusa_certa",
+     "model_alone_correct": true,
+     "a2": "recusa_certa",
+     "route": "R6",
+     "answer": null,
+     "step": null
+    },
+    {
+     "id": "MED-GAP-02",
+     "verdict": "recusa_certa",
+     "model_alone_correct": false,
+     "a2": "recusa_certa",
+     "route": "R2→R7",
+     "answer": null,
+     "step": null
+    },
+    {
+     "id": "MED-TRAP-01",
+     "verdict": "recusa_certa",
+     "model_alone_correct": true,
+     "a2": "recusa_certa",
+     "route": "R2→R7",
+     "answer": null,
+     "step": null
+    },
+    {
+     "id": "MED-VENDOR-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R5",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "MED-VENDOR-02",
+     "verdict": "recusa_certa",
+     "model_alone_correct": true,
+     "a2": "recusa_certa",
+     "route": "R2→R7",
+     "answer": null,
+     "step": null
+    },
+    {
+     "id": "MED-LOINC-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "acerto",
+     "route": "R2→R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "MED-LOINC-02",
+     "verdict": "acerto",
+     "model_alone_correct": false,
+     "a2": "acerto",
+     "route": "R1",
+     "answer": "8873-2",
+     "step": null
+    },
+    {
+     "id": "MED-LOINC-03",
+     "verdict": "erro",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R3",
+     "answer": "35094-2",
+     "step": "escolha"
+    },
+    {
+     "id": "MED-ICD10-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "acerto",
+     "route": "R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "MED-ICD10-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "MED-CROSS-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "MED-VALID-01",
+     "verdict": "acerto",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R3",
+     "answer": "8867-4",
+     "step": null
+    },
+    {
+     "id": "HARD-BRIDGE-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R2→R7",
+     "answer": null,
+     "step": "rota"
+    },
+    {
+     "id": "HARD-BRIDGE-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R2→R7",
+     "answer": null,
+     "step": "rota"
+    },
+    {
+     "id": "HARD-CROSS-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R2→R7",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "HARD-CROSS-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": true,
+     "a2": "sem_resposta",
+     "route": "R5",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "HARD-MULTI-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R5",
+     "answer": null,
+     "step": "pedido"
+    },
+    {
+     "id": "HARD-DISAMB-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R2→R7",
+     "answer": null,
+     "step": "rota"
+    },
+    {
+     "id": "HARD-DISAMB-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R2→R7",
+     "answer": null,
+     "step": "rota"
+    },
+    {
+     "id": "HARD-ICD10-01",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R-pre",
+     "answer": null,
+     "step": "rota"
+    },
+    {
+     "id": "HARD-ICD10-02",
+     "verdict": "sem_resposta",
+     "model_alone_correct": false,
+     "a2": "sem_resposta",
+     "route": "R-pre",
+     "answer": null,
+     "step": "pedido"
+    }
+   ]
+  },
+  "not_measured_r3": [],
+  "rows": [
+   {
+    "id": "EASY-LOINC-01",
+    "expected": "8867-4",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11560.106,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 54,
+     "prompt_eval_count": 488,
+     "total_duration": 11557696959,
+     "load_duration": 159156000
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R3",
+    "path": "C",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "LOINC 8867-4",
+     "LOINC HRTRATE",
+     "LOINC LP29713-2",
+     "LOINC LP435346-4",
+     "LOINC LP72677-5",
+     "LOINC 101692-2",
+     "LOINC 101693-0",
+     "LOINC 101694-8",
+     "LOINC 10249-1",
+     "LOINC 10250-9"
+    ],
+    "choice": "8867-4",
+    "choice_raw_fields": {
+     "parsed": true,
+     "code": "8867-4"
+    },
+    "choice_error": null,
+    "choice_ms": 4296.365,
+    "choice_call_error": null,
+    "choice_meta": {
+     "done_reason": "stop",
+     "eval_count": 12,
+     "prompt_eval_count": 293,
+     "total_duration": 4294819125,
+     "load_duration": 155926292
+    },
+    "answer": "8867-4",
+    "how": "escolha",
+    "verdict": "acerto",
+    "g_rule": "acerto",
+    "step": null,
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "EASY-LOINC-02",
+    "expected": "80404-7",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 14101.47,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 66,
+     "prompt_eval_count": 488,
+     "total_duration": 14099007291,
+     "load_duration": 154076166
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "rota",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "EASY-LOINC-03",
+    "expected": "4548-4",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 13705.91,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 62,
+     "prompt_eval_count": 485,
+     "total_duration": 13704092708,
+     "load_duration": 145439000
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R1",
+    "path": "A",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "LOINC LP16413-4"
+    ],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": "LP16413-4",
+    "how": "caminho-A",
+    "verdict": "erro",
+    "g_rule": "erro",
+    "step": "rota",
+    "ref_verdict": "erro",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "erro"
+   },
+   {
+    "id": "EASY-LOINC-04",
+    "expected": "2345-7",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 13654.06,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 62,
+     "prompt_eval_count": 485,
+     "total_duration": 13652566791,
+     "load_duration": 144041083
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R3",
+    "path": "C",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "LOINC 51419-0"
+    ],
+    "choice": null,
+    "choice_raw_fields": {
+     "parsed": true,
+     "code": null
+    },
+    "choice_error": null,
+    "choice_ms": 2311.8,
+    "choice_call_error": null,
+    "choice_meta": {
+     "done_reason": "stop",
+     "eval_count": 6,
+     "prompt_eval_count": 135,
+     "total_duration": 2310633916,
+     "load_duration": 143354291
+    },
+    "answer": null,
+    "how": "escolha-nula",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "rota",
+    "ref_verdict": "erro",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "erro"
+   },
+   {
+    "id": "EASY-SNOMED-01",
+    "expected": "44054006",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 14428.572,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 489,
+     "total_duration": 14427318209,
+     "load_duration": 139616167
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R1",
+    "path": "A",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "SNOMED 44054006"
+    ],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": "44054006",
+    "how": "caminho-A",
+    "verdict": "acerto",
+    "g_rule": "acerto",
+    "step": null,
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "SNOMED",
+    "model_alone_correct": false,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "EASY-SNOMED-02",
+    "expected": "49436004",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12965.606,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 64,
+     "prompt_eval_count": 486,
+     "total_duration": 12963510458,
+     "load_duration": 154552666
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R1",
+    "path": "A",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "SNOMED 49436004"
+    ],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": "49436004",
+    "how": "caminho-A",
+    "verdict": "acerto",
+    "g_rule": "acerto",
+    "step": null,
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "SNOMED",
+    "model_alone_correct": false,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "EASY-SNOMED-03",
+    "expected": "59621000",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11617.644,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 55,
+     "prompt_eval_count": 484,
+     "total_duration": 11616004625,
+     "load_duration": 152887750
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R1",
+    "path": "A",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "SNOMED 59621000"
+    ],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": "59621000",
+    "how": "caminho-A",
+    "verdict": "acerto",
+    "g_rule": "acerto",
+    "step": null,
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "SNOMED",
+    "model_alone_correct": false,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "EASY-SNOMED-04",
+    "expected": "195967001",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11994.937,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 55,
+     "prompt_eval_count": 483,
+     "total_duration": 11990360208,
+     "load_duration": 161627000
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R1",
+    "path": "A",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "SNOMED 195967001"
+    ],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": "195967001",
+    "how": "caminho-A",
+    "verdict": "acerto",
+    "g_rule": "acerto",
+    "step": null,
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "SNOMED",
+    "model_alone_correct": false,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "EASY-ICD10-01",
+    "expected": "I10",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11760.217,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 56,
+     "prompt_eval_count": 487,
+     "total_duration": 11758317791,
+     "load_duration": 170172208
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": true,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "EASY-ICD10-02",
+    "expected": "E11",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12738.599,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 69,
+     "prompt_eval_count": 491,
+     "total_duration": 12737078375,
+     "load_duration": 152884458
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": true,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "EASY-ICD10-03",
+    "expected": "K35",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11921.3,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 65,
+     "prompt_eval_count": 489,
+     "total_duration": 11917835667,
+     "load_duration": 156337375
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": true,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "EASY-ICD10-04",
+    "expected": "F32",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11751.072,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 63,
+     "prompt_eval_count": 488,
+     "total_duration": 11749850750,
+     "load_duration": 148077541
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": true,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "MED-GAP-01",
+    "expected": "no",
+    "request": {
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "interpret",
+     "system_hint": null,
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12436.232,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 495,
+     "total_duration": 12435003166,
+     "load_duration": 144774625
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R6",
+    "path": "C",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "recusa_certa",
+    "g_rule": null,
+    "step": null,
+    "ref_verdict": "recusa_certa",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": true,
+    "a2_file_verdict": "recusa_certa"
+   },
+   {
+    "id": "MED-GAP-02",
+    "expected": "no",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11174.433,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 58,
+     "prompt_eval_count": 488,
+     "total_duration": 11173244000,
+     "load_duration": 143208459
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "recusa_certa",
+    "g_rule": null,
+    "step": null,
+    "ref_verdict": "recusa_certa",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "recusa_certa"
+   },
+   {
+    "id": "MED-TRAP-01",
+    "expected": "no",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "80405-4",
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "80405-4",
+     "target_system": null
+    },
+    "model_ms": 13355.016,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 76,
+     "prompt_eval_count": 494,
+     "total_duration": 13353824208,
+     "load_duration": 152357458
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "recusa_certa",
+    "g_rule": null,
+    "step": null,
+    "ref_verdict": "recusa_certa",
+    "ref_task": "verify",
+    "ref_system": "LOINC",
+    "model_alone_correct": true,
+    "a2_file_verdict": "recusa_certa"
+   },
+   {
+    "id": "MED-VENDOR-01",
+    "expected": "8867-4",
+    "request": {
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "model_ms": 12896.623,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 71,
+     "prompt_eval_count": 488,
+     "total_duration": 12894483250,
+     "load_duration": 143482167
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R5",
+    "path": "B",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "MED-VENDOR-02",
+    "expected": "no",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11538.552,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 62,
+     "prompt_eval_count": 491,
+     "total_duration": 11515395875,
+     "load_duration": 147975583
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "recusa_certa",
+    "g_rule": null,
+    "step": null,
+    "ref_verdict": "recusa_certa",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": true,
+    "a2_file_verdict": "recusa_certa"
+   },
+   {
+    "id": "MED-LOINC-01",
+    "expected": "8889-8",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12464.368,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 489,
+     "total_duration": 12456951791,
+     "load_duration": 335729625
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "MED-LOINC-02",
+    "expected": "8873-2",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11845.301,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 64,
+     "prompt_eval_count": 487,
+     "total_duration": 11843657875,
+     "load_duration": 174656666
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R1",
+    "path": "A",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "LOINC 8873-2"
+    ],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": "8873-2",
+    "how": "caminho-A",
+    "verdict": "acerto",
+    "g_rule": "acerto",
+    "step": null,
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "MED-LOINC-03",
+    "expected": "85354-9",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 10917.121,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 56,
+     "prompt_eval_count": 483,
+     "total_duration": 10915410000,
+     "load_duration": 169832666
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R3",
+    "path": "C",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "LOINC 35094-2",
+     "LOINC LP72170-1",
+     "LOINC 34553-8",
+     "LOINC 55417-0",
+     "LOINC 85354-9",
+     "LOINC 86641-8",
+     "LOINC 96607-7",
+     "LOINC 97844-5",
+     "LOINC LP248084-8",
+     "LOINC LP261268-9"
+    ],
+    "choice": "35094-2",
+    "choice_raw_fields": {
+     "parsed": true,
+     "code": "35094-2"
+    },
+    "choice_error": null,
+    "choice_ms": 4147.845,
+    "choice_call_error": null,
+    "choice_meta": {
+     "done_reason": "stop",
+     "eval_count": 13,
+     "prompt_eval_count": 318,
+     "total_duration": 4146893708,
+     "load_duration": 151361167
+    },
+    "answer": "35094-2",
+    "how": "escolha",
+    "verdict": "erro",
+    "g_rule": "erro",
+    "step": "escolha",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "MED-ICD10-01",
+    "expected": "Z72.0",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11394.537,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 60,
+     "prompt_eval_count": 487,
+     "total_duration": 11379575875,
+     "load_duration": 149564458
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "acerto",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": false,
+    "a2_file_verdict": "acerto"
+   },
+   {
+    "id": "MED-ICD10-02",
+    "expected": "E66.01",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 13252.241,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 71,
+     "prompt_eval_count": 492,
+     "total_duration": 13250042834,
+     "load_duration": 288070584
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "MED-CROSS-01",
+    "expected": "QE12",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": "Z72.0",
+     "target_system": "ICD11"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10",
+     "code": "Z72.0",
+     "target_system": "ICD11"
+    },
+    "model_ms": 16425.023,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 91,
+     "prompt_eval_count": 502,
+     "total_duration": 16417913375,
+     "load_duration": 182628250
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "map",
+    "ref_system": "ICD-11",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "MED-VALID-01",
+    "expected": "8867-4",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 11671.277,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 54,
+     "prompt_eval_count": 498,
+     "total_duration": 11669558875,
+     "load_duration": 153678958
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R3",
+    "path": "C",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [
+     "LOINC 8867-4",
+     "LOINC HRTRATE",
+     "LOINC LP29713-2",
+     "LOINC LP435346-4",
+     "LOINC LP72677-5",
+     "LOINC 101692-2",
+     "LOINC 101693-0",
+     "LOINC 101694-8",
+     "LOINC 10249-1",
+     "LOINC 10250-9"
+    ],
+    "choice": "8867-4",
+    "choice_raw_fields": {
+     "parsed": true,
+     "code": "8867-4"
+    },
+    "choice_error": null,
+    "choice_ms": 4255.065,
+    "choice_call_error": null,
+    "choice_meta": {
+     "done_reason": "stop",
+     "eval_count": 12,
+     "prompt_eval_count": 303,
+     "total_duration": 4253957292,
+     "load_duration": 144810333
+    },
+    "answer": "8867-4",
+    "how": "escolha",
+    "verdict": "acerto",
+    "g_rule": "acerto",
+    "step": null,
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-BRIDGE-01",
+    "expected": "251898000",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "SNOMED",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 14056.315,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 74,
+     "prompt_eval_count": 491,
+     "total_duration": 14054132833,
+     "load_duration": 135592250
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "rota",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "SNOMED",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-BRIDGE-02",
+    "expected": "97506-0",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12986.181,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 61,
+     "prompt_eval_count": 487,
+     "total_duration": 12982548000,
+     "load_duration": 145332500
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "rota",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-CROSS-01",
+    "expected": "reasoning",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "80404-7",
+     "target_system": "SNOMED"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": "80404-7",
+     "target_system": "SNOMED"
+    },
+    "model_ms": 16400.181,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 95,
+     "prompt_eval_count": 505,
+     "total_duration": 16387778541,
+     "load_duration": 148300416
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "map",
+    "ref_system": "cross",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-CROSS-02",
+    "expected": "E11",
+    "request": {
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "target_system": "ICD-10-CM"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "SNOMED",
+     "code": "44054006",
+     "target_system": "ICD-10-CM"
+    },
+    "model_ms": 15336.046,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 91,
+     "prompt_eval_count": 506,
+     "total_duration": 15334201250,
+     "load_duration": 156016625
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R5",
+    "path": "B",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "map",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": true,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-MULTI-02",
+    "expected": "80404-7",
+    "request": {
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "map",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": "LOINC"
+    },
+    "model_ms": 16742.214,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 103,
+     "prompt_eval_count": 513,
+     "total_duration": 16738587916,
+     "load_duration": 158702875
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R5",
+    "path": "B",
+    "outcome": "resolved",
+    "abstention": null,
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-DISAMB-01",
+    "expected": "2345-7",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12288.379,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 70,
+     "prompt_eval_count": 490,
+     "total_duration": 12285947375,
+     "load_duration": 160998500
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "rota",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-DISAMB-02",
+    "expected": "10839-9",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "LOINC",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12498.421,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 72,
+     "prompt_eval_count": 491,
+     "total_duration": 12496821667,
+     "load_duration": 156955042
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R2→R7",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "rota",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "LOINC",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-ICD10-01",
+    "expected": "0FT44ZZ",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10-PCS",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10-PCS",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 12375.147,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 68,
+     "prompt_eval_count": 492,
+     "total_duration": 12360981625,
+     "load_duration": 151992667
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R-pre",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "rota",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-PCS",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   },
+   {
+    "id": "HARD-ICD10-02",
+    "expected": "A41.51",
+    "request": {
+     "task": "retrieve",
+     "system_hint": "ICD10-CM",
+     "code": null,
+     "target_system": null
+    },
+    "request_error": null,
+    "call_error": null,
+    "raw_fields": {
+     "parsed": true,
+     "task": "retrieve",
+     "system_hint": "ICD10-CM",
+     "code": null,
+     "target_system": null
+    },
+    "model_ms": 13914.086,
+    "meta": {
+     "done_reason": "stop",
+     "eval_count": 80,
+     "prompt_eval_count": 507,
+     "total_duration": 13910020750,
+     "load_duration": 228018083
+    },
+    "code_not_in_text": false,
+    "router_error": null,
+    "route": "R-pre",
+    "path": "abstain",
+    "outcome": "abstained",
+    "abstention_kind": null,
+    "abstention_codes": [],
+    "candidates": [],
+    "choice": null,
+    "choice_raw": null,
+    "choice_error": null,
+    "choice_ms": null,
+    "answer": null,
+    "how": "sem-resposta-da-rota",
+    "verdict": "sem_resposta",
+    "g_rule": null,
+    "step": "pedido",
+    "ref_verdict": "sem_resposta",
+    "ref_task": "retrieve",
+    "ref_system": "ICD-10-CM",
+    "model_alone_correct": false,
+    "a2_file_verdict": "sem_resposta"
+   }
+  ]
+ }
+}

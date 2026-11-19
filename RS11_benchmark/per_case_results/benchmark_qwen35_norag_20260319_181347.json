@@ -1,0 +1,128 @@
+{
+ "model": "qwen3.5:4b",
+ "hardware": "Apple M1 16GB",
+ "rag": "none",
+ "think": false,
+ "accuracy": 41.66666666666667,
+ "p50_ms": 20462.618827819824,
+ "p95_ms": 27506.9100856781,
+ "results": [
+  {
+   "id": "LOINC-001",
+   "correct": false,
+   "latency_ms": 1469.09499168396,
+   "cat": "lookup",
+   "expected": "80404-7",
+   "response_codes": []
+  },
+  {
+   "id": "LOINC-002",
+   "correct": true,
+   "latency_ms": 668.9040660858154,
+   "cat": "gap",
+   "expected": "no",
+   "response_codes": []
+  },
+  {
+   "id": "LOINC-003",
+   "correct": false,
+   "latency_ms": 9842.891931533813,
+   "cat": "lookup",
+   "expected": "8867-4",
+   "response_codes": [
+    "8867-6",
+    "8480-6",
+    "10752-0"
+   ]
+  },
+  {
+   "id": "LOINC-004",
+   "correct": false,
+   "latency_ms": 24506.106853485107,
+   "cat": "lookup",
+   "expected": "4548-4",
+   "response_codes": [
+    "58410-2"
+   ]
+  },
+  {
+   "id": "LOINC-005",
+   "correct": false,
+   "latency_ms": 27506.9100856781,
+   "cat": "lookup",
+   "expected": "85354-9",
+   "response_codes": [
+    "8480-6"
+   ]
+  },
+  {
+   "id": "LOINC-006",
+   "correct": false,
+   "latency_ms": 19723.519802093506,
+   "cat": "lookup",
+   "expected": "8889-8",
+   "response_codes": [
+    "8867-4",
+    "8867-2"
+   ]
+  },
+  {
+   "id": "SNOMED-001",
+   "correct": false,
+   "latency_ms": 20462.618827819824,
+   "cat": "lookup",
+   "expected": "44054006",
+   "response_codes": [
+    "239870000"
+   ]
+  },
+  {
+   "id": "SNOMED-002",
+   "correct": false,
+   "latency_ms": 24690.45400619507,
+   "cat": "lookup",
+   "expected": "49436004",
+   "response_codes": [
+    "33228000"
+   ]
+  },
+  {
+   "id": "ICD10-001",
+   "correct": true,
+   "latency_ms": 11534.93595123291,
+   "cat": "lookup",
+   "expected": "I10",
+   "response_codes": [
+    "I10"
+   ]
+  },
+  {
+   "id": "ICD10-002",
+   "correct": true,
+   "latency_ms": 25760.44011116028,
+   "cat": "lookup",
+   "expected": "E11",
+   "response_codes": [
+    "E11.9",
+    "E11"
+   ]
+  },
+  {
+   "id": "REASON-001",
+   "correct": true,
+   "latency_ms": 25533.427953720093,
+   "cat": "reasoning",
+   "expected": "reasoning",
+   "response_codes": []
+  },
+  {
+   "id": "TRAP-001",
+   "correct": true,
+   "latency_ms": 734.8978519439697,
+   "cat": "trap",
+   "expected": "no",
+   "response_codes": []
+  }
+ ],
+ "timestamp": "2026-03-19T18:13:47"
+}
