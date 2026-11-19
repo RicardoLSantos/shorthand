@@ -1,6 +1,6 @@
 # Measurement scripts (cleaned copies)
 
-This folder holds cleaned copies of the scripts and tests of the three routing measurements of 19 November 2026 (Supplementary S18.1 of the article): (a) path A in isolation; (b) arm 1, the conformance of the router with its public specification; and (c) arm 2 with path C end to end, with a post-hoc re-read of (c). It also holds the protocol of each measurement, in Portuguese, as committed before its run, and the script of Configuration G (the 36-case baseline), whose case sentences path C reads. The per-case results that these scripts wrote are in `../per_case_results/` (tag `benchmark-2026-11-19`). The three-phase benchmark script in the parent folder, which the path A script reads, has the SHA-256 that the path A run recorded. These copies were deposited after the per-case copies, whose README gives the scripts as available on request; the scripts in this folder are public.
+This folder holds cleaned copies of the scripts and tests of the three routing measurements of 19 November 2026 (Supplementary S18.1 of the article): (a) path A in isolation; (b) arm 1, the conformance of the router with its written specification (the service's README, OpenAPI description and formal specification, which are not published); and (c) arm 2 with path C end to end, with a post-hoc re-read of (c). It also holds the protocol of each measurement, in Portuguese, as committed before its run, and the script of Configuration G (the 36-case baseline), whose case sentences path C reads. The per-case results that these scripts wrote are in `../per_case_results/` (tag `benchmark-2026-11-19`). The three-phase benchmark script in the parent folder, which the path A script reads, has the SHA-256 that the path A run recorded. These copies were deposited after the per-case copies, whose README gives the scripts as available on request; the scripts in this folder are public.
 
 ## What the scripts need
 
@@ -26,6 +26,7 @@ Paths are relative to the root of a working copy, with the scripts in `scripts/`
 - Commit identifiers, which refer to the authors' working repository, and clock times, which are those of Lisbon (WET).
 - Labels and messages in Portuguese, as in the per-case copies.
 - The docstring of the post-hoc script says that the re-read was "declared in the report (section 3.1)": that is the authors' working report, which is not deposited; the re-read is described in Supplementary S18.1.
+- The words "public specification" in the docstring of `benchmark_routing_conformance.py`, and "especificação pública" in `protocol_routing_two_arms.md`, as written before the runs: they name the service's written specification, which is not published. The SHA-256 of each file of the service as measured is in `../service_manifest/`.
 
 ## The protocols
 
