@@ -3,7 +3,7 @@
 3-Level Terminology Benchmark: LOINC + SNOMED CT + ICD-10-CM
 Tests task-aware routing architecture across Easy/Medium/Hard levels.
 
-Author: Claude Opus 4.6 + Ricardo Santos
+Author: Ricardo Lourenço Santos, with the assistance of Claude Code (Anthropic; Claude Opus 4.6)
 Date: 2026-03-19
 Version: 1.0
 

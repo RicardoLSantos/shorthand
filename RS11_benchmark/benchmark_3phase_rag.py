@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """
 3-Phase RAG Benchmark: Context-Grounded → Chain-of-Verification → Vocabulary Routing
-Implements the 3 pillars from Session 19 (166 papers) for achieving >90% accuracy.
+Implements the 3 pillars from a SciSpace literature search of 19 March 2026 (166 papers) for achieving >90% accuracy.
 
 Phase 1: Context-Grounded Prompts (+16pp) — RAG candidates in prompt
 Phase 2: Chain-of-Verification (+15-20pp) — DB verifies LLM output
 Phase 3: Vocabulary-Aware Routing (+5-10pp) — Route by query type
 
-NEW (T4 2026-03-20): SciSpace-derived approaches (#1-#5)
+NEW (2026-03-20): SciSpace-derived approaches (#1-#5)
   Approach #1: Confidence Scoring + Calibration (per-result [0-1] score)
   Approach #2: Ensemble Agreement Voting (3-method parallel, majority wins)
   Approach #3: UMLS Semantic Type Filtering (pre-filter by domain_id)
   Approach #4: LOINC Axis Anchoring (decompose into 6-axis search)
   Approach #5: Metadata Enrichment (specimen, method, units disambiguation)
 
-Author: Claude Opus 4.6 + Ricardo Santos
+Author: Ricardo Lourenço Santos, with the assistance of Claude Code (Anthropic; Claude Opus 4.6)
 Date: 2026-03-19, updated 2026-03-20
 """
 

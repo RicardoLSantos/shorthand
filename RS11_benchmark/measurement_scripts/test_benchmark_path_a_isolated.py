@@ -25,22 +25,22 @@ from terminology_router.stores import AthenaCsvStore  # noqa: E402
 HEADER = ["concept_id", "concept_name", "domain_id", "vocabulary_id", "concept_class_id",
           "standard_concept", "concept_code", "valid_start_date", "valid_end_date", "invalid_reason"]
 ROWS = [
-    ("1", "Alpha rate", "Measurement", "LOINC", "Clinical Observation", "S", "8867-4", "", "", ""),
-    ("2", "Alpha rate --resting", "Measurement", "LOINC", "Clinical Observation", "S", "40443-4", "", "", ""),
-    ("3", "Alpha rate by Beta method", "Measurement", "LOINC", "Clinical Observation", "S", "8889-8", "", "", ""),
-    ("4", "Beta level", "Measurement", "LOINC", "Lab Test", "S", "2339-0", "", "", ""),
-    ("5", "Beta level", "Measurement", "LOINC", "Lab Test", "", "2345-7", "", "", ""),
-    ("6", "Alpha rate --during gamma", "Measurement", "LOINC", "Clinical Observation", "", "99990-1", "", "", "D"),
-    ("7", "Gamma certification [Type]", "Observation", "LOINC", "Clinical Observation", "S", "80405-4", "", "", ""),
+    ("1", "Heart rate", "Measurement", "LOINC", "Clinical Observation", "S", "8867-4", "", "", ""),
+    ("2", "Heart rate --resting", "Measurement", "LOINC", "Clinical Observation", "S", "40443-4", "", "", ""),
+    ("3", "Heart rate by Pulse oximetry", "Measurement", "LOINC", "Clinical Observation", "S", "8889-8", "", "", ""),
+    ("4", "Glucose [Mass/volume] in Blood", "Measurement", "LOINC", "Lab Test", "S", "2339-0", "", "", ""),
+    ("5", "Glucose [Mass/volume] in Serum or Plasma", "Measurement", "LOINC", "Lab Test", "", "2345-7", "", "", ""),
+    ("6", "Heart rate --during apnea", "Measurement", "LOINC", "Clinical Observation", "", "99990-1", "", "", "D"),
+    ("7", "Provider Certification [Type]", "Observation", "LOINC", "Clinical Observation", "S", "80405-4", "", "", ""),
     ("8", "Delta disorder", "Condition", "SNOMED", "Clinical Finding", "S", "44054006", "", "", ""),
     ("9", "Zeta", "Condition", "SNOMED", "Clinical Finding", "S", "195967001", "", "", ""),
     ("10", "Zeta attack", "Condition", "SNOMED", "Clinical Finding", "S", "266364000", "", "", ""),
 ]
 XML = ("<ICD10CM.tabular><chapter><section id='E08-E13'>"
-       "<diag><name>E11</name><desc>Delta disorder</desc>"
-       "<diag><name>E11.2</name><desc>Delta disorder with organ complications</desc>"
-       "<diag><name>E11.21</name><desc>Delta disorder with delta organ disease</desc></diag>"
-       "</diag></diag><diag><name>I10</name><desc>Epsilon disorder (primary)</desc></diag>"
+       "<diag><name>E11</name><desc>Type 2 diabetes mellitus</desc>"
+       "<diag><name>E11.2</name><desc>Type 2 diabetes mellitus with kidney complications</desc>"
+       "<diag><name>E11.21</name><desc>Type 2 diabetes mellitus with diabetic nephropathy</desc></diag>"
+       "</diag></diag><diag><name>I10</name><desc>Essential (primary) hypertension</desc></diag>"
        "</section></chapter></ICD10CM.tabular>")
 
 
@@ -90,8 +90,8 @@ class TestStore(unittest.TestCase):
         cls.csv = AthenaCsvStore(cls.d / "CONCEPT.csv")
 
     def test_same_answers_as_athena_csv_store(self):
-        for voc, q in (("LOINC", "alpha rate"), ("LOINC", "Beta level"), ("LOINC", "rate"), ("LOINC", "rmssd"),
-                       ("LOINC", "  ALPHA RATE  "), ("SNOMED", "zeta"), ("SNOMED", "delta"), ("LOINC", "")):
+        for voc, q in (("LOINC", "heart rate"), ("LOINC", "Glucose"), ("LOINC", "rate"), ("LOINC", "rmssd"),
+                       ("LOINC", "  HEART RATE  "), ("SNOMED", "zeta"), ("SNOMED", "delta"), ("LOINC", "")):
             self.assertEqual([key(c) for c in self.st.search(q, voc)], [key(c) for c in self.csv.search(q, voc)],
                              (voc, q))
         for voc, code in (("LOINC", "8867-4"), ("LOINC", "99990-1"), ("LOINC", "1-8"), ("SNOMED", "195967001")):
@@ -104,18 +104,18 @@ class TestStore(unittest.TestCase):
 
     def test_icd10cm_rows(self):
         got = {(c, n) for c, n, _s, _i in pa.load_icd10cm_tabular(self.d / "tabular.xml")}
-        self.assertEqual(got, {("E11", "Delta disorder"),
-                               ("E11.2", "Delta disorder with organ complications"),
-                               ("E11.21", "Delta disorder with delta organ disease"),
-                               ("I10", "Epsilon disorder (primary)")})
+        self.assertEqual(got, {("E11", "Type 2 diabetes mellitus"),
+                               ("E11.2", "Type 2 diabetes mellitus with kidney complications"),
+                               ("E11.21", "Type 2 diabetes mellitus with diabetic nephropathy"),
+                               ("I10", "Essential (primary) hypertension")})
         c = self.st.get("ICD10CM", "E11.21")
         self.assertTrue(c.active and c.standard and c.match is MatchStrength.EXACT)
 
     def test_router_paths(self):
         r = Router(stores=[self.st])
-        d = r.route(RouteRequest(query="alpha rate", system_hint="LOINC"))
+        d = r.route(RouteRequest(query="heart rate", system_hint="LOINC"))
         self.assertEqual((d.route, d.path, d.candidates[0].code), (Route.R1_LOOKUP, RPath.A, "8867-4"))
-        d = r.route(RouteRequest(query="beta level", system_hint="LOINC"))
+        d = r.route(RouteRequest(query="glucose", system_hint="LOINC"))
         self.assertNotEqual(d.path, RPath.A)
         d = r.route(RouteRequest(query="99999-9", code="99999-9", system_hint="LOINC", task=TaskClass.VERIFY))
         self.assertEqual((d.route, d.outcome), (Route.R0_VERIFY, Outcome.ABSTAINED))
@@ -123,7 +123,7 @@ class TestStore(unittest.TestCase):
         d = r.route(RouteRequest(query="aspirin", system_hint="RxNorm"))
         self.assertEqual(d.route, Route.R7_ABSTAIN)
         self.assertTrue(d.abstention_reason.startswith("store-lacks-vocabulary"))
-        d = r.route(RouteRequest(query="delta disorder", system_hint="ICD-10-CM"))
+        d = r.route(RouteRequest(query="type 2 diabetes mellitus", system_hint="ICD-10-CM"))
         self.assertEqual((d.path, d.candidates[0].code), (RPath.A, "E11"))
 
     def test_samplers(self):
@@ -140,9 +140,9 @@ class TestStore(unittest.TestCase):
             self.assertEqual(inv, pa.invent_codes(self.st, voc, 25, pa.make_rng(20261119)))
 
     def test_trap_request(self):
-        req = pa.request_for_case({"type": "trap", "q": "80405-4 alpha rate variability", "term": "LOINC"})
+        req = pa.request_for_case({"type": "trap", "q": "80405-4 heart rate variability", "term": "LOINC"})
         self.assertEqual((req.task, req.code, req.display, req.system_hint),
-                         (TaskClass.VERIFY, "80405-4", "alpha rate variability", "LOINC"))
+                         (TaskClass.VERIFY, "80405-4", "heart rate variability", "LOINC"))
         d = Router(stores=[self.st]).route(req)
         self.assertEqual(pa.score(d, None)[0], "recusa_certa")
         self.assertEqual(pa.request_for_case({"type": "cross_mapping", "q": "x", "term": "ICD-11"}).task, TaskClass.MAP)
@@ -154,7 +154,7 @@ class TestScoring(unittest.TestCase):
     def test_score_rules(self):
         st = build_store(fixture_dir())
         r = Router(stores=[st])
-        d_ok = r.route(RouteRequest(query="alpha rate", system_hint="LOINC"))
+        d_ok = r.route(RouteRequest(query="heart rate", system_hint="LOINC"))
         d_none = r.route(RouteRequest(query="rmssd", system_hint="LOINC"))
         self.assertEqual(pa.score(d_ok, "8867-4"), ("acerto", "8867-4"))
         self.assertEqual(pa.score(d_ok, "8889-8"), ("erro", "8867-4"))

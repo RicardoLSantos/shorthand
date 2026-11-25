@@ -32,10 +32,10 @@ def dec(route, path, outcome=Outcome.RESOLVED, why=None):
 
 class TestRequests(unittest.TestCase):
     def test_fields(self):
-        r = rc.to_request(q(task=None, term="alpha rate", system="LOINC"))
-        self.assertEqual((r.task, r.query, r.system_hint, r.code), (TaskClass.RETRIEVE, "alpha rate", "LOINC", None))
-        r = rc.to_request(q(task="verify", codes=["8867-4"], system="LOINC", display="Alpha rate"))
-        self.assertEqual((r.task, r.query, r.code, r.display), (TaskClass.VERIFY, "8867-4", "8867-4", "Alpha rate"))
+        r = rc.to_request(q(task=None, term="heart rate", system="LOINC"))
+        self.assertEqual((r.task, r.query, r.system_hint, r.code), (TaskClass.RETRIEVE, "heart rate", "LOINC", None))
+        r = rc.to_request(q(task="verify", codes=["8867-4"], system="LOINC", display="Heart rate"))
+        self.assertEqual((r.task, r.query, r.code, r.display), (TaskClass.VERIFY, "8867-4", "8867-4", "Heart rate"))
         r = rc.to_request(q(task="hierarchy", codes=["11", "22"], system="SNOMED", text="is 11 a 22?"))
         self.assertEqual((r.task, r.query, r.code), (TaskClass.HIERARCHY, "11", "11"))
         r = rc.to_request(q(task="map", codes=["E11"], system="ICD10", target_system="SNOMED"))
@@ -76,7 +76,7 @@ class TestLabels(unittest.TestCase):
         self.assertEqual(rc.observed_label(r.route(rc.to_request(q(task="verify", codes=["8867-4"], system="LOINC")))),
                          "R0")
         self.assertEqual(rc.observed_label(r.route(rc.to_request(q(term="rmssd", system="LOINC")))), "R2→R7")
-        self.assertEqual(rc.observed_label(r.route(rc.to_request(q(term="alpha rate", system="LOINC")))), "R1")
+        self.assertEqual(rc.observed_label(r.route(rc.to_request(q(term="heart rate", system="LOINC")))), "R1")
         self.assertEqual(rc.observed_label(r.route(rc.to_request(q(term="x", system="OMOP concept_id")))), "R-pre")
 
 

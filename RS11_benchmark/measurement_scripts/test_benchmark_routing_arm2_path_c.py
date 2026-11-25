@@ -22,7 +22,7 @@ from terminology_router.models import Route, RouteRequest, TaskClass  # noqa: E4
 from terminology_router.router import Router  # noqa: E402
 
 
-def req_json(task="retrieve", query="Beta level", system_hint="LOINC", code=None, display=None, target_system=None):
+def req_json(task="retrieve", query="Glucose", system_hint="LOINC", code=None, display=None, target_system=None):
     return json.dumps(dict(task=task, query=query, system_hint=system_hint, code=code, display=display,
                            target_system=target_system))
 
@@ -80,7 +80,7 @@ class TestParse(unittest.TestCase):
     def test_request(self):
         f, err = m.parse_request(req_json(display=""))
         self.assertIsNone(err)
-        self.assertEqual((f["task"], f["query"], f["system_hint"], f["display"]), ("retrieve", "Beta level", "LOINC", None))
+        self.assertEqual((f["task"], f["query"], f["system_hint"], f["display"]), ("retrieve", "Glucose", "LOINC", None))
         self.assertEqual(m.parse_request("not json")[1], "json-invalido")
         self.assertEqual(m.parse_request(req_json(task="lookup"))[1], "tarefa-invalida")
         self.assertEqual(m.parse_request('{"task": "verify", "query": 5}')[1], "campo-invalido")
@@ -95,18 +95,18 @@ class TestParse(unittest.TestCase):
     def test_model_request(self):
         f, _ = m.parse_request(req_json(task="out_of_scope"))
         self.assertIsNone(m.model_request(f))
-        f, _ = m.parse_request(req_json(task="verify", query="8867-4", code="8867-4", display="Alpha rate"))
+        f, _ = m.parse_request(req_json(task="verify", query="8867-4", code="8867-4", display="Heart rate"))
         r = m.model_request(f)
-        self.assertEqual((r.task, r.query, r.code, r.display), (TaskClass.VERIFY, "8867-4", "8867-4", "Alpha rate"))
+        self.assertEqual((r.task, r.query, r.code, r.display), (TaskClass.VERIFY, "8867-4", "8867-4", "Heart rate"))
 
     def test_labeller_request_with_task(self):
-        q = tq(term="alpha rate", system="LOINC", task="retrieve")
+        q = tq(term="heart rate", system="LOINC", task="retrieve")
         r = m.labeller_request_with_task(q, "interpret")
-        self.assertEqual((r.task, r.query, r.system_hint), (TaskClass.INTERPRET, "alpha rate", "LOINC"))
+        self.assertEqual((r.task, r.query, r.system_hint), (TaskClass.INTERPRET, "heart rate", "LOINC"))
         self.assertIsNone(m.labeller_request_with_task(q, "out_of_scope"))
 
     def test_code_not_in_text(self):
-        self.assertTrue(m.code_not_in_text({"code": "8867-4"}, "What is the LOINC code for alpha rate?"))
+        self.assertTrue(m.code_not_in_text({"code": "8867-4"}, "What is the LOINC code for heart rate?"))
         self.assertFalse(m.code_not_in_text({"code": "80405-4"}, "Is LOINC code 80405-4 for HRV?"))
         self.assertFalse(m.code_not_in_text({"code": None}, "x"))
 
@@ -148,9 +148,9 @@ class TestEndToEnd(unittest.TestCase):
         return self.router.route(RouteRequest(**kw))
 
     def test_answer(self):
-        d = self.route(query="Alpha rate", system_hint="LOINC")
+        d = self.route(query="Heart rate", system_hint="LOINC")
         self.assertEqual(m.end_to_end(self.router, d, None), ("8867-4", "caminho-A"))
-        d = self.route(query="Beta level", system_hint="LOINC")
+        d = self.route(query="Glucose", system_hint="LOINC")
         self.assertIs(d.route, Route.R3_DISAMBIGUATE)
         self.assertEqual(m.end_to_end(self.router, d, "2345-7"), ("2345-7", "escolha"))
         self.assertEqual(m.end_to_end(self.router, d, "9999-9"), (None, "fora-dos-candidatos"))
@@ -169,8 +169,8 @@ class TestEndToEnd(unittest.TestCase):
         self.assertEqual(m.verdict_of("E11", pa.NOT_A_CODE), "erro")
 
     def test_failure_step(self):
-        ref = RouteRequest(query="Beta level", system_hint="LOINC", task=TaskClass.RETRIEVE)
-        d = self.route(query="Beta level", system_hint="LOINC")
+        ref = RouteRequest(query="Glucose", system_hint="LOINC", task=TaskClass.RETRIEVE)
+        d = self.route(query="Glucose", system_hint="LOINC")
         f = m.parse_request(req_json())[0]
         self.assertIsNone(m.failure_step("acerto", f, ref, "sem_resposta", d, "2345-7"))
         self.assertEqual(m.failure_step("sem_resposta", None, ref, "sem_resposta", None, "2345-7"), "pedido")
@@ -182,7 +182,7 @@ class TestEndToEnd(unittest.TestCase):
         self.assertEqual(m.failure_step("erro", f, ref, "sem_resposta", d, "2345-7"), "escolha")
         self.assertEqual(m.failure_step("erro", f, ref, "sem_resposta", d, None), "escolha")
         self.assertEqual(m.failure_step("erro", f, ref, "sem_resposta", d, "1558-6"), "rota")
-        d7 = self.route(query="Beta level in sweat", system_hint="LOINC")
+        d7 = self.route(query="Glucose in sweat", system_hint="LOINC")
         self.assertEqual(m.failure_step("sem_resposta", f, ref, "sem_resposta", d7, "2345-7"), "rota")
 
     def test_g_rule(self):
@@ -192,16 +192,16 @@ class TestEndToEnd(unittest.TestCase):
         self.assertIsNone(m.g_rule("E11", None))
 
     def test_path_c_case(self):
-        q = "What is the LOINC code for beta level in fluid x?"
+        q = "What is the LOINC code for glucose in serum or plasma?"
         fake = FakeClient({q: req_json()}, {q: '{"code": "2345-7"}'})
-        ref = RouteRequest(query="Beta level", system_hint="LOINC", task=TaskClass.RETRIEVE)
+        ref = RouteRequest(query="Glucose", system_hint="LOINC", task=TaskClass.RETRIEVE)
         row = m.path_c_case(fake, self.router, "EASY-LOINC-04", q, "2345-7", ref, "sem_resposta", lambda: None)
         self.assertEqual((row["route"], row["answer"], row["how"], row["verdict"], row["step"]),
                          ("R3", "2345-7", "escolha", "acerto", None))
         self.assertEqual(row["candidates"], ["LOINC 2339-0", "LOINC 2345-7"])
         self.assertEqual(len(fake.calls), 2)
-        self.assertIn("2345-7 Beta level [non-standard]", fake.calls[1][1])
-        self.assertNotIn("Beta level", json.dumps({k: v for k, v in row.items() if k not in ("request", "raw")}))
+        self.assertIn("2345-7 Glucose [Mass/volume] in Serum or Plasma [non-standard]", fake.calls[1][1])
+        self.assertNotIn("Glucose", json.dumps({k: v for k, v in row.items() if k not in ("request", "raw")}))
         fake = FakeClient({q: req_json()}, {q: '{"code": "1558-6"}'})
         row = m.path_c_case(fake, self.router, "EASY-LOINC-04", q, "2345-7", ref, "sem_resposta", lambda: None)
         self.assertEqual((row["answer"], row["how"], row["verdict"], row["step"], row["choice"]),
@@ -216,9 +216,9 @@ class TestEndToEnd(unittest.TestCase):
                 raise RuntimeError("defect")
 
         self.assertEqual(m.safe_route(Boom(), None), (None, "RuntimeError: defect"))
-        q = "What is the LOINC code for beta level in fluid x?"
+        q = "What is the LOINC code for glucose in serum or plasma?"
         fake = FakeClient({q: req_json()})
-        ref = RouteRequest(query="Beta level", system_hint="LOINC", task=TaskClass.RETRIEVE)
+        ref = RouteRequest(query="Glucose", system_hint="LOINC", task=TaskClass.RETRIEVE)
         row = m.path_c_case(fake, Boom(), "EASY-LOINC-04", q, "no", ref, "recusa_certa", lambda: None)
         self.assertEqual((row["route"], row["verdict"], row["step"], row["how"]),
                          ("erro-do-router", "erro-do-router", "rota", "erro-do-router"))
@@ -228,16 +228,16 @@ class TestEndToEnd(unittest.TestCase):
                          ("erro-do-router", False, False))
 
     def test_guard_stops(self):
-        q = "What is the LOINC code for alpha rate?"
-        fake = FakeClient({q: req_json(query="Alpha rate")})
+        q = "What is the LOINC code for heart rate?"
+        fake = FakeClient({q: req_json(query="Heart rate")})
         with self.assertRaises(m.Stop):
             m.path_c_case(fake, self.router, "EASY-LOINC-01", q, "8867-4", None, None, lambda: "disco abaixo de 3 GiB")
         self.assertEqual(fake.calls, [])
 
     def test_arm2_question(self):
-        q = tq(id="Q04", text="Is 8867-4 the LOINC code for alpha rate?", codes=["8867-4"], system="LOINC",
-               display="alpha rate", task="verify", category="a", expected_route="R0")
-        fake = FakeClient({q["text"]: req_json(task="verify", query="8867-4", code="8867-4", display="alpha rate")})
+        q = tq(id="Q04", text="Is 8867-4 the LOINC code for heart rate?", codes=["8867-4"], system="LOINC",
+               display="heart rate", task="verify", category="a", expected_route="R0")
+        fake = FakeClient({q["text"]: req_json(task="verify", query="8867-4", code="8867-4", display="heart rate")})
         row = m.arm2_question(fake, self.router, q, lambda: None)
         self.assertEqual((row["gold_task"], row["declared_task"], row["task_ok"]), ("verify", "verify", True))
         self.assertEqual((row["model"]["label"], row["model"]["conforms"]), ("R0", True))

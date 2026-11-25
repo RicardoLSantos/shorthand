@@ -14,6 +14,9 @@
   },
   "expected_route_rule": "The route a correct router reaches under the specification: R0 verify; R1 one exact candidate; R2 expand-then-lookup when there is none, followed by the route of the name the base uses (R2→R1, R2→R3) or by R7 when no concept has the meaning; R3 several candidates; R-pre when no vocabulary is named; R4 hierarchy; R5 map; R6 interpret; R7 abstain.",
   "candidate_rule": "For retrieve questions with a named vocabulary, the class is measured in the local base that holds it, over standard and valid concepts: one = exactly one concept whose name equals the term (case and spacing ignored); several = more than one such concept, or none such and more than one whose name contains every word of the term; none = no concept whose name contains every word. This is the labeller's reading of the public table, not the store's matcher, which was not read. The README example (93832-4 in LOINC, R1) holds under it: one exact standard concept, against two among all concepts.",
+  "loinc_names": {
+   "93832-4": "Sleep duration"
+  },
   "borderline_rule": "borderline = a second labeller with the same definitions could choose another category or another expected route; the reason names the alternative. A question with two operations takes the category of the first and is borderline.",
   "store_note": "Neither local base holds LOINC and SNOMED together: Athena holds LOINC and UCUM, Vocab2 holds SNOMED, ICD-10 and UCUM (counts in local_bases). Each question names the base that holds its vocabulary; with a store that lacks it, the specification expects an abstention that names the gap (INV-4).",
   "request_fields": "system, codes, display, term and target_system hold only what the question states (term is the free-text phrase a caller would send); task follows the category, and is null for (f).",
@@ -113,7 +116,10 @@
     [
      "8480-6"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "8480-6": "Systolic blood pressure"
+   }
   },
   {
    "id": "Q03",
@@ -138,7 +144,10 @@
     [
      "8867-4"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "8867-4": "Heart rate"
+   }
   },
   {
    "id": "Q04",
@@ -261,7 +270,11 @@
     [
      "93832-4"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "93831-6": "Deep sleep duration",
+    "93832-4": "Sleep duration"
+   }
   },
   {
    "id": "Q09",
@@ -560,7 +573,11 @@
     ],
     [],
     []
-   ]
+   ],
+   "loinc_names": {
+    "41950-7": "Number of steps in 24 hour Measured",
+    "55423-8": "Number of steps in unspecified time Pedometer"
+   }
   },
   {
    "id": "Q22",
@@ -722,7 +739,11 @@
      "76643-6",
      "80404-7"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "80404-7": "R-R interval.standard deviation (Heart rate variability)",
+    "76643-6": "R-R interval.standard deviation (Heart rate variability) by EKG"
+   }
   },
   {
    "id": "Q29",
@@ -861,7 +882,10 @@
     [
      "8867-4"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "8867-4": "Heart rate"
+   }
   },
   {
    "id": "Q35",
@@ -946,6 +970,12 @@
     [
      "8867-5"
     ]
+   ],
+   "loinc_names": {
+    "8867-4": "Heart rate"
+   },
+   "not_in_loinc_2_80": [
+    "8867-5"
    ]
   },
   {
@@ -1012,7 +1042,11 @@
      "60842-2"
     ],
     []
-   ]
+   ],
+   "loinc_names": {
+    "60842-2": "Oxygen consumption (VO2)",
+    "103749-8": "Oxygen consumption (VO2) --peak"
+   }
   },
   {
    "id": "Q41",
@@ -1039,7 +1073,11 @@
      "76643-6",
      "80404-7"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "80404-7": "R-R interval.standard deviation (Heart rate variability)",
+    "76643-6": "R-R interval.standard deviation (Heart rate variability) by EKG"
+   }
   },
   {
    "id": "Q42",
@@ -1067,7 +1105,10 @@
      "80406-2"
     ],
     []
-   ]
+   ],
+   "loinc_names": {
+    "80406-2": "Date and time of initial encounter"
+   }
   },
   {
    "id": "Q43",
@@ -1168,7 +1209,13 @@
      "93830-8",
      "93831-6"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "93832-4": "Sleep duration",
+    "93829-0": "REM sleep duration",
+    "93830-8": "Light sleep duration",
+    "93831-6": "Deep sleep duration"
+   }
   },
   {
    "id": "Q47",
@@ -1195,7 +1242,10 @@
     [
      "8867-4"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "8867-4": "Heart rate"
+   }
   },
   {
    "id": "Q48",
@@ -1222,7 +1272,10 @@
     [
      "19989-3"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "19989-3": "Maximum oxygen setting Ventilator alarm"
+   }
   },
   {
    "id": "Q49",
@@ -1250,7 +1303,10 @@
     [
      "76644-4"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "76644-4": "R-R interval.coefficient of variation by EKG"
+   }
   },
   {
    "id": "Q50",
@@ -1279,7 +1335,10 @@
      "3027018",
      "8867-4"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "8867-4": "Heart rate"
+   }
   },
   {
    "id": "Q51",
@@ -1319,6 +1378,10 @@
     "80404-7",
     "76643-6"
    ],
+   "loinc_names": {
+    "80404-7": "R-R interval.standard deviation (Heart rate variability)",
+    "76643-6": "R-R interval.standard deviation (Heart rate variability) by EKG"
+   },
    "local_base": [
     "Athena"
    ],
@@ -1414,7 +1477,11 @@
      "76643-6",
      "80404-7"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "76643-6": "R-R interval.standard deviation (Heart rate variability) by EKG",
+    "80404-7": "R-R interval.standard deviation (Heart rate variability)"
+   }
   },
   {
    "id": "Q57",
@@ -1467,7 +1534,10 @@
     [
      "80404-7"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "80404-7": "R-R interval.standard deviation (Heart rate variability)"
+   }
   },
   {
    "id": "Q59",
@@ -1541,7 +1611,11 @@
     [
      "8889-8"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "8867-4": "Heart rate",
+    "8889-8": "Heart rate by Pulse oximetry"
+   }
   },
   {
    "id": "Q62",
@@ -1571,7 +1645,11 @@
     [
      "80404-7"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "80404-7": "R-R interval.standard deviation (Heart rate variability)",
+    "76643-6": "R-R interval.standard deviation (Heart rate variability) by EKG"
+   }
   },
   {
    "id": "Q63",
@@ -1774,7 +1852,10 @@
     [
      "80405-4"
     ]
-   ]
+   ],
+   "loinc_names": {
+    "80405-4": "Provider Certification [Type]"
+   }
   },
   {
    "id": "Q71",
@@ -1799,7 +1880,10 @@
      "8867-4"
     ],
     []
-   ]
+   ],
+   "loinc_names": {
+    "8867-4": "Heart rate"
+   }
   },
   {
    "id": "Q72",
