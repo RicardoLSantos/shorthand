@@ -10,7 +10,7 @@ Description: "Additional context about the vital sign measurement"
 
 ValueSet: MeasurementContextVitalSigns
 Id: measurement-context-vital-signs
-Title: "Measurement Context Value Set"
+Title: "Vital Signs Measurement Context Value Set"
 Description: "Value set for measurement context in vital signs observations"
 * ^name = "MeasurementContextVitalSigns"
 * ^experimental = true

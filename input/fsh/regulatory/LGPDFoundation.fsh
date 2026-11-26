@@ -69,7 +69,7 @@ supporting opt-in/opt-out at each processing level.
 // ============================================================================
 ValueSet: DataAnonymizationStatusVS
 Id: data-anonymization-status-vs
-Title: "Data Anonymization Status"
+Title: "Data Anonymization Status Value Set"
 Description: """
 Levels of data anonymization/pseudonymization for cross-jurisdictional compliance.
 

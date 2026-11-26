@@ -12,7 +12,7 @@
 Instance: DeviceAppleWatch
 InstanceOf: WearableDataSource
 Usage: #example
-Title: "Apple Watch Series 9"
+Title: "Apple Watch Series 9 (round-trip validation)"
 Description: "Apple Watch device for HRV round-trip validation"
 * deviceName.name = "Apple Watch Series 9"
 * deviceName.type = #user-friendly-name
@@ -53,7 +53,7 @@ Description: "Garmin Venu 3 device for activity round-trip validation"
 Instance: DeviceOuraRing
 InstanceOf: WearableDataSource
 Usage: #example
-Title: "Oura Ring Gen 3"
+Title: "Oura Ring Gen 3 (round-trip validation)"
 Description: "Oura Ring Gen 3 device for body metrics round-trip validation"
 * deviceName.name = "Oura Ring Generation 3"
 * deviceName.type = #user-friendly-name

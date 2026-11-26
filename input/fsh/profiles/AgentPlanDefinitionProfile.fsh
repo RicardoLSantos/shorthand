@@ -278,27 +278,13 @@ Description: "Example plan definition for agent-based HRV risk assessment"
 * topic[0] = AgentDecisionSupportCS#hrv-monitoring "HRV Monitoring"
 * topic[1] = AgentDecisionSupportCS#cardiovascular-risk "Cardiovascular Risk"
 
+// The conditions are stated in the action descriptions: the guide has no CQL library for this plan.
 * action[0]
   * title = "Evaluate HRV RMSSD Value"
-  * description = "Assess RMSSD value against clinical thresholds"
-  * condition[0]
-    * kind = #applicability
-    * expression
-      * language = #text/cql
-      * expression = "RMSSD observation is available"
+  * description = "Assess RMSSD value against clinical thresholds, when an RMSSD observation is available"
   * action[0]
     * title = "Low RMSSD Alert"
     * description = "Generate alert if RMSSD < 20ms"
-    * condition[0]
-      * kind = #applicability
-      * expression
-        * language = #text/cql
-        * expression = "RMSSD < 20"
   * action[1]
     * title = "Normal RMSSD"
     * description = "No action if RMSSD 20-50ms"
-    * condition[0]
-      * kind = #applicability
-      * expression
-        * language = #text/cql
-        * expression = "RMSSD >= 20 and RMSSD <= 50"

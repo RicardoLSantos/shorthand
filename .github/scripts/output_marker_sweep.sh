@@ -2,8 +2,8 @@
 # Gate for publishing the rendered guide: the generated pages must carry no internal process marker.
 # Same marker classes as check 12 of security_audit.sh, but with no baseline: a published site
 # carries zero. Scans every text file under the output directory (HTML, JSON, XML, JS, CSS, TXT, MD),
-# except the third-party JavaScript the IG template copies in (assets/js/*.js and prism.js), which it
-# counts and lists.
+# except the third-party JavaScript the IG template copies in (assets/js/*.js and prism.js, and a copy
+# of one of them one folder down, such as en/, when it is byte-identical), which it counts and lists.
 # Prints the number of files scanned (the denominator) and the hits (file:line:marker), and exits 1
 # on any hit and 2 on any read error, so a deploy job that runs it does not publish.
 # The search is done in Python (not grep -P, which BSD grep lacks: a grep error must never read as
@@ -21,9 +21,23 @@ pat = re.compile("AUTHORED-BY-CL" "AUDE|\\bT[1-6] S[0-9]+\\b|Pit" "fall #|Les" "
 ext = (".html", ".json", ".xml", ".js", ".css", ".txt", ".md")
 # Third-party JavaScript copied in by the IG template (minified identifiers and language keyword
 # lists that can match the markers): not generated from input/, so not scanned. The guide's sources
-# contain no .js. Skipped files are counted and listed.
-def template_js(rel):
+# contain no .js. A multi-language template also copies these files into each language folder
+# (en/assets/js/, en/prism.js): a copy one folder down is skipped only when it is byte-identical
+# to the root file, which is skipped itself; any other copy is scanned. Skipped files are counted
+# and listed.
+def root_template_js(rel):
     return rel.endswith(".js") and (rel.startswith("assets/js/") or rel == "prism.js")
+def template_js(rel):
+    if root_template_js(rel):
+        return True
+    first, _, rest = rel.partition("/")
+    if not rest or not root_template_js(rest):
+        return False
+    try:
+        with open(os.path.join(out, first, rest), "rb") as a, open(os.path.join(out, rest), "rb") as b:
+            return a.read() == b.read()
+    except OSError:
+        return False
 n = 0; hits = []; skipped = []
 for root, _, files in os.walk(out):
     for f in files:

@@ -188,7 +188,7 @@ Usage: #definition
 // Forced Vital Capacity
 * group[0].element[18].code = #HKQuantityTypeIdentifierForcedVitalCapacity
 * group[0].element[18].display = "Forced Vital Capacity"
-* group[0].element[18].target[0].code = #19868-9
+* group[0].element[18].target[0].code = #19870-5
 * group[0].element[18].target[0].display = "Forced vital capacity [Volume] Respiratory system"
 * group[0].element[18].target[0].equivalence = #equivalent
 
@@ -202,7 +202,7 @@ Usage: #definition
 // Peak Expiratory Flow Rate
 * group[0].element[20].code = #HKQuantityTypeIdentifierPeakExpiratoryFlowRate
 * group[0].element[20].display = "Peak Expiratory Flow Rate"
-* group[0].element[20].target[0].code = #19935-6
+* group[0].element[20].target[0].code = #33452-4
 * group[0].element[20].target[0].display = "Maximum expiratory gas flow Respiratory system airway"
 * group[0].element[20].target[0].equivalence = #equivalent
 

@@ -133,7 +133,7 @@ Cross-jurisdictional: GDPR Art. 33-34 (72h notification), HIPAA §164.408 (60 da
 // ============================================================================
 ValueSet: DataMinimizationScopeVS
 Id: data-minimization-scope-vs
-Title: "Data Minimization Scope"
+Title: "Data Minimization Scope Value Set"
 Description: """
 Justification categories for data collection under the data minimization principle.
 LGPD Art. 6-III, GDPR Art. 5(1)(c), HIPAA §164.502(b).
