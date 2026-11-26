@@ -121,7 +121,7 @@ Description: "Profile for recording cycling dynamics and power metrics from wear
 * component[duration].valueQuantity.system = $UCUM
 * component[duration].valueQuantity.code = #min
 
-* component[distance].code = $LOINC#55430-3 "Walking distance unspecified time Pedometer"
+* component[distance].code = $LOINC#93818-3 "Cycling distance unspecified time"
 * component[distance].value[x] only Quantity
 * component[distance].valueQuantity.system = $UCUM
 * component[distance].valueQuantity.code = #km
@@ -272,7 +272,7 @@ Description: "Profile for recording running form and biomechanical metrics from 
 * component[avgSpeed].valueQuantity.system = $UCUM
 * component[avgSpeed].valueQuantity.code = #km/h
 
-* component[distance].code = $LOINC#55430-3 "Walking distance unspecified time Pedometer"
+* component[distance].code = $LOINC#93817-5 "Running distance unspecified time"
 * component[distance].value[x] only Quantity
 * component[distance].valueQuantity.system = $UCUM
 * component[distance].valueQuantity.code = #km

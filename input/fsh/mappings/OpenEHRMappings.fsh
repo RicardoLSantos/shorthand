@@ -25,7 +25,7 @@ Target: "openEHR-EHR-OBSERVATION.heart_rate_variability.v0"
 Description: "Element-level mapping to openEHR-EHR-OBSERVATION.heart_rate_variability.v0 (ADL 1.4). One Observation maps to one ELEMENT of the archetype's event data tree, selected by Observation.code; the OBSERVATION groups all metrics of one recording. Observation.referenceRange has no archetype counterpart."
 
 * -> "openEHR-EHR-OBSERVATION.heart_rate_variability.v0" "OBSERVATION[at0000] Heart rate variability"
-* code -> "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" "LOINC 80404-7 or hrv-sdnn: SDNN"
+* code -> "/data[at0001]/events[at0002]/data[at0003]/items[at0004]" "LOINC 112429-6, 80404-7 or hrv-sdnn: SDNN"
 * code -> "/data[at0001]/events[at0002]/data[at0003]/items[at0005]" "hrv-rmssd: RMSSD"
 * code -> "/data[at0001]/events[at0002]/data[at0003]/items[at0006]" "hrv-pnn50: pNN50"
 * code -> "/data[at0001]/events[at0002]/data[at0003]/items[at0009]/items[at0010]" "hrv-lf-power: LF Power (Spectral analysis cluster)"

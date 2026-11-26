@@ -338,7 +338,7 @@ clinically appropriate. Privacy and confidentiality considerations are paramount
   * valueCodeableConcept from RecreationalSubstanceTypeVS (extensible)
 
 * component[useFrequency]
-  * code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-frequency "Frequency of substance use"
+  * code = $LOINC#112320-7 "Substance consumption frequency"
   * value[x] only CodeableConcept
   * valueCodeableConcept from SubstanceUseFrequencyVS (extensible)
 

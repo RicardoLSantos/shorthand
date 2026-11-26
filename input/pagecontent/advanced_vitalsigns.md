@@ -76,7 +76,7 @@ This module defines how advanced vital signs data collected from the iOS Health 
 ### Core Fields
 | iOS Health App | FHIR Path | LOINC Code | Description |
 |----------------|-----------|------------|-------------|
-| Heart Rate Variability | HRVObservation.component[hrv] | 80404-7 | R-R interval standard deviation |
+| Heart Rate Variability | HRVObservation.component[hrv] | 112429-6 | Heart rate variability SDNN (80404-7, R-R interval standard deviation, accepted for data from 0.5.x) |
 | Respiratory Rate | RespiratoryObservation.component[rate] | 9279-1 | Respiratory rate |
 | Blood Pressure | BPObservation.component[systolic/diastolic] | 85354-9 | Blood pressure panel with all children |
 | Temperature | TempObservation.component[core] | 8310-5 | Body temperature |
@@ -85,7 +85,7 @@ This module defines how advanced vital signs data collected from the iOS Health 
 ### Advanced Measurements
 | iOS Health App | FHIR Path | Code | Source | Description |
 |----------------|-----------|------|--------|-------------|
-| HRV (SDNN) | HRVObservation.component[sdnn] | 80404-7 | LOINC | R-R interval standard deviation |
+| HRV (SDNN) | HRVObservation.component[sdnn] | 112429-6 | LOINC | Heart rate variability SDNN (80404-7 accepted for data from 0.5.x) |
 | HRV (RMSSD) | HRVObservation.component[rmssd] | rmssd | Custom | Root mean square successive differences (no LOINC) |
 | Recovery Rate | RecoveryObservation.component[rate] | recovery-rate | Custom | Cardiac recovery rate (no LOINC) |
 | Stress Index | StressObservation.component[index] | stress-physiological | Custom | Physiological stress index (no LOINC) |

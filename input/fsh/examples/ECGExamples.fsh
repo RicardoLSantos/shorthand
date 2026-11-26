@@ -45,7 +45,7 @@ Description: "Example of QT interval measurement from Apple Watch Series 9 ECG f
 * component[rrInterval].code = $LOINC#8637-1 "R-R interval by EKG"
 * component[rrInterval].valueQuantity = 833 'ms' "milliseconds"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
 // Clinical warning extension (complex extension with sub-extensions)
 * extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
@@ -74,7 +74,7 @@ Description: "Example of QRS duration measurement from consumer ECG device"
 
 * valueQuantity = 92 'ms' "milliseconds"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
 * extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning
@@ -102,7 +102,7 @@ Description: "Example of PR interval measurement from consumer ECG device"
 
 * valueQuantity = 160 'ms' "milliseconds"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
 * extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning
@@ -130,7 +130,7 @@ Description: "Example of heart rate derived from ECG R-R intervals"
 
 * valueQuantity = 68 '/min' "per minute"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
 * extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
 * extension[clinicalWarning].extension[severity].valueCode = #warning

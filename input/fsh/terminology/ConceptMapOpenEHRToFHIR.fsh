@@ -57,13 +57,13 @@ Architecture:
 * group[0].unmapped.code = #other
 * group[0].unmapped.display = "Unmapped HRV element"
 
-// SDNN (at0004) → Observation.component (LOINC 80404-7)
+// SDNN (at0004) → Observation.component (LOINC 112429-6)
 * group[0].element[0].code = #at0004
 * group[0].element[0].display = "SDNN"
 * group[0].element[0].target[0].code = #Observation.component
 * group[0].element[0].target[0].display = "Observation.component[sdnn].valueQuantity"
 * group[0].element[0].target[0].equivalence = #wider
-* group[0].element[0].target[0].comment = "Map to component with code LOINC 80404-7. Unit: ms"
+* group[0].element[0].target[0].comment = "Map to component with code LOINC 112429-6 (the SDNN code for wearable data since 0.6.0; 80404-7 until 0.5.x). Unit: ms"
 
 // RMSSD (at0005) → Observation.component (custom code)
 * group[0].element[1].code = #at0005
@@ -133,7 +133,7 @@ Architecture:
 * group[1].element[1].target[0].code = #Observation.component
 * group[1].element[1].target[0].display = "Observation.component[distance].valueQuantity"
 * group[1].element[1].target[0].equivalence = #wider
-* group[1].element[1].target[0].comment = "Map to component with LOINC 55430-3. Unit: km or m"
+* group[1].element[1].target[0].comment = "Map to component with LOINC 55430-3 (walking, step counter) or 112427-0 (walking or running). Unit: km or m"
 
 // Active calories (at0019) → Observation.component
 * group[1].element[2].code = #at0019

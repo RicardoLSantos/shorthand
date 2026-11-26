@@ -52,7 +52,9 @@ Description: "Profile for heart rate measurements from iOS Health App"
 * component[recoveryHeartRate].valueQuantity.system = $UCUM
 * component[recoveryHeartRate].valueQuantity.code = #/min
 
-* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+// 2026-11-26: until 0.5.x the code was fixed to 80404-7; wearable data now carry 112429-6 (LOINC 2.82) and 80404-7 stays
+// accepted, through a required binding, which still discriminates the slice (as in SleepObservation)
+* component[heartRateVariability].code from SdnnCodeVS (required)
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.code = #ms
 
@@ -191,22 +193,34 @@ Description: "Sites where body temperature can be measured"
 * $SCT#34402009 "Rectum structure"
 
 
-// SDNN (Heart Rate Variability) Profile (LOINC 80404-7) — standalone, referenced by ETL fhir_hrv_sdnn.json
+// SDNN (Heart Rate Variability) Profile (LOINC 112429-6; 80404-7 accepted) — standalone, referenced by ETL fhir_hrv_sdnn.json
 Profile: SdnnObservation
 Parent: LifestyleVitalSigns
 Id: sdnn-observation
 Title: "SDNN Heart Rate Variability Observation Profile"
-Description: "Profile for SDNN (standard deviation of NN intervals) heart rate variability from iOS Health App / Apple Watch. Maps to HKQuantityTypeIdentifier.heartRateVariabilitySDNN. SDNN is the primary time-domain HRV marker of overall autonomic modulation. Coexists with the heartRateVariability component of HeartRateObservation (bundled HR+HRV); this standalone profile serves the ETL standalone-SDNN path."
+Description: "Profile for SDNN (standard deviation of NN intervals) heart rate variability from iOS Health App / Apple Watch. Maps to HKQuantityTypeIdentifier.heartRateVariabilitySDNN. SDNN is the primary time-domain HRV marker of overall autonomic modulation. Coexists with the heartRateVariability component of HeartRateObservation (bundled HR+HRV); this standalone profile serves the ETL standalone-SDNN path. Code: LOINC 112429-6 (Heart rate variability SDNN [Time], LOINC 2.82) for wearable data; 80404-7 (R-R interval.standard deviation (Heart rate variability)), the code of releases up to 0.5.x, is still accepted."
 
 * ^experimental = true
-* code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
-* code ^comment = "80404-7 is the only HRV time-domain metric with a LOINC code (verified Athena). RMSSD, pNN50, LF/HF have no LOINC and use a custom CodeSystem."
+* code from SdnnCodeVS (required)
+* code ^comment = "Send LOINC 112429-6 (Heart rate variability SDNN [Time], LOINC 2.82: system ^Patient, no method) for wearable data. 80404-7 (R-R interval.standard deviation (Heart rate variability), LOINC 2.54: system Heart, no method), the code of releases up to 0.5.x, is still accepted, so a query by code must ask for both. 76643-6 is the SDNN by EKG. RMSSD, pNN50, LF and HF have no LOINC code and use LifestyleMedicineTemporaryCS (checked against the LOINC 2.83 table on 2026-11-26)."
 * valueQuantity 1..1 MS
 * valueQuantity.system = $UCUM
 * valueQuantity.code = #ms
 * valueQuantity ^short = "SDNN in milliseconds"
 * valueQuantity ^definition = "Standard deviation of NN (normal-to-normal) intervals. Resting normal ~50-100 ms over 24h; lower values indicate reduced autonomic/parasympathetic modulation."
 * note 0..* MS
+
+
+// The SDNN codes bound by SdnnObservation and by the heartRateVariability component of HeartRateObservation
+ValueSet: SdnnCodeVS
+Id: sdnn-code-vs
+Title: "SDNN Code Value Set"
+Description: "The LOINC codes an SDNN observation may carry. Wearable data carry 112429-6 (Heart rate variability SDNN [Time], LOINC 2.82: system ^Patient, no method). 80404-7 (R-R interval.standard deviation (Heart rate variability), LOINC 2.54: system Heart, no method), the code of releases up to 0.5.x, stays accepted so that data written with those releases still validate. The two are distinct LOINC terms: a query by code must ask for both."
+* ^experimental = true
+* ^status = #draft
+* ^date = "2026-11-26"
+* $LOINC#112429-6 "Heart rate variability SDNN [Time]"
+* $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 
 
 // Vital Signs Panel (LOINC 85353-1) — groups individual lifestyle vital-signs observations via hasMember (M5)

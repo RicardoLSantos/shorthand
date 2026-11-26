@@ -185,7 +185,8 @@ in IG terminology gap analysis (see ValueSetHeartRateVariability.fsh).
 * ^status = #draft
 * ^experimental = true
 
-// HRV criteria
+// HRV criteria (2026-11-26: 112429-6, LOINC 2.82, is the SDNN code for wearable data; 80404-7 stays for data from 0.5.x)
+* http://loinc.org#112429-6 "Heart rate variability SDNN [Time]"
 * http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
 * http://loinc.org#76643-6 "R-R interval.standard deviation (Heart rate variability) by EKG"
 * http://loinc.org#76644-4 "R-R interval.coefficient of variation by EKG"
@@ -234,9 +235,10 @@ Usage: #example
 * name = "HRV-decline-90d-2026Q2-cohort-001"
 * quantity = 247
 
-// Un-sliced characteristic — HRV-decline criterion (lifestyle-metric semantic)
+// Un-sliced characteristic — HRV-decline criterion (lifestyle-metric semantic). 2026-11-26: SDNN coded 112429-6 (wearable
+// data from 0.6.0); data from 0.5.x carry 80404-7, which a cohort over both releases must also select
 * characteristic[0]
-  * code = http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+  * code = http://loinc.org#112429-6 "Heart rate variability SDNN [Time]"
   * valueRange.low.value = 30.0
   * valueRange.low.unit = "ms"
   * valueRange.high.value = 50.0

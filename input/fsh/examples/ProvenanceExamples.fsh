@@ -14,7 +14,7 @@ Description: "Example HRV observation with RMSSD metric captured by Apple Watch"
 
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
-* code = http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* code = http://loinc.org#112429-6 "Heart rate variability SDNN [Time]"
 * code.text = "Heart Rate Variability - SDNN"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2025-01-15T08:30:00Z"
@@ -30,7 +30,7 @@ Description: "Example HRV observation with RMSSD metric captured by Apple Watch"
 * component[=].valueQuantity.unit = "ms"
 * component[=].valueQuantity.system = "http://unitsofmeasure.org"
 * component[=].valueQuantity.code = #ms
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 * note.text = "HRV measurement captured during morning rest period"
 
 

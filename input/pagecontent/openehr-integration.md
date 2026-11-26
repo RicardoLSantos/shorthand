@@ -46,7 +46,7 @@ The bridge above is defined at the granularity of **individual data items**, not
 
 | openEHR data item | FHIR path | Terminology | Equivalence |
 |-------------------|-----------|-------------|-------------|
-| SDNN | `Observation.component[sdnn].valueQuantity` | LOINC `80404-7` (ms) | equivalent |
+| SDNN | `Observation.component[sdnn].valueQuantity` | LOINC `112429-6` (ms; `80404-7` accepted for data from 0.5.x) | equivalent |
 | RMSSD | `Observation.component[rmssd].valueQuantity` | `LifestyleMedicineTemporaryCS#hrv-rmssd` (ms) — no LOINC | equivalent |
 | pNN50 | `Observation.component[pnn50].valueQuantity` | `…#hrv-pnn50` (%) — no LOINC | equivalent |
 | LF/HF ratio | `Observation.component[lf-hf-ratio].valueQuantity` | `…#hrv-lf-hf-ratio` — no LOINC | equivalent |
@@ -70,7 +70,7 @@ The bridge above is defined at the granularity of **individual data items**, not
 | openEHR data item | FHIR path | Terminology | Equivalence |
 |-------------------|-----------|-------------|-------------|
 | Step count | `Observation.valueQuantity` | LOINC `55423-8` (steps) | equivalent |
-| Distance | `Observation.component[distance].valueQuantity` | LOINC `55430-3` (km/m) | equivalent |
+| Distance | `Observation.component[distance].valueQuantity` | LOINC `55430-3` or `112427-0` (km/m) | equivalent |
 | Active calories | `Observation.component[active-calories].valueQuantity` | LOINC `41979-6` (kcal) | equivalent |
 | Moderate-activity minutes | `Observation.component[moderateMinutes].valueQuantity` | LOINC `101689-8` (min) — device-method | equivalent |
 | Vigorous-activity minutes | `Observation.component[vigorousMinutes].valueQuantity` | LOINC `101690-6` (min) — device-method | equivalent |
@@ -134,7 +134,7 @@ A single HRV value summarises an underlying window; a sleep value summarises a n
 
 ## Terminology bindings
 
-Archetype data items carry term_bindings to LOINC/SNOMED CT **where a code exists**, and to the IG custom CodeSystem where it does not. For HRV specifically, only **SDNN** has a LOINC code (`80404-7`); **RMSSD, pNN50, LF power, HF power, and LF/HF ratio have no LOINC code** (verified via the project Database-First protocol). These bind to IG custom codes (`#hrv-rmssd`, `#hrv-pnn50`, `#hrv-lf-power`, `#hrv-hf-power`, `#hrv-lf-hf-ratio`) with a documented migration path should LOINC assign codes in future. See [ConceptMaps](conceptmaps.html) and [Inflammatory Markers](inflammatory_markers.html).
+Archetype data items carry term_bindings to LOINC/SNOMED CT **where a code exists**, and to the IG custom CodeSystem where it does not. For HRV specifically, **SDNN** has LOINC codes (`112429-6` for wearable data since LOINC 2.82, `80404-7` accepted for data from 0.5.x, and `76643-6` by EKG); **RMSSD, pNN50, LF power, HF power, and LF/HF ratio have no LOINC code** (verified via the project Database-First protocol). These bind to IG custom codes (`#hrv-rmssd`, `#hrv-pnn50`, `#hrv-lf-power`, `#hrv-hf-power`, `#hrv-lf-hf-ratio`) with a documented migration path should LOINC assign codes in future. See [ConceptMaps](conceptmaps.html) and [Inflammatory Markers](inflammatory_markers.html).
 
 ## Cross-references
 

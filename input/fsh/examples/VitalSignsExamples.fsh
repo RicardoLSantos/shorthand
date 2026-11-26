@@ -12,7 +12,7 @@ Title: "Heart Rate Measurement Example"
 * valueQuantity.unit = "per minute"
 * device = Reference(DeviceHeartRateMonitor)
 * performer = Reference(PractitionerExample)
-* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* component[heartRateVariability].code = $LOINC#112429-6 "Heart rate variability SDNN [Time]"
 * component[heartRateVariability].valueQuantity = 45 'ms' "millisecond"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
@@ -66,7 +66,7 @@ Title: "Oxygen Saturation Measurement Example"
 * valueQuantity.unit = "percent"
 * device = Reference(DevicePulseOximeter)
 * performer = Reference(PractitionerExample)
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
 Instance: DevicePulseOximeter
 InstanceOf: Device
@@ -234,7 +234,7 @@ Usage: #example
 Description: "SDNN heart rate variability observation example (Apple Watch)"
 Title: "SDNN HRV Measurement Example"
 * status = #final
-* code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* code = $LOINC#112429-6 "Heart rate variability SDNN [Time]"
 * subject = Reference(PatientExample)
 * effectiveDateTime = "2025-11-27T07:00:00Z"
 * valueQuantity = 45.5 'ms' "millisecond"

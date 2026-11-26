@@ -16,7 +16,7 @@ Usage: #definition
 * title = "Vendor Proprietary Codes to LOINC Mapping"
 * status = #draft
 * experimental = true
-* date = "2026-09-22"
+* date = "2026-11-26"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * description = "Operational ConceptMap for translating proprietary wearable device codes to LOINC standard terminology. Based on gray literature analysis of 75 sources documenting 11 major vendors with 0% LOINC adoption rate."
@@ -44,12 +44,17 @@ Usage: #definition
 * group[0].target = "http://loinc.org"
 
 // HRV - Apple correctly reports SDNN (CORRECTED 2026-01-07)
+// 2026-11-26: target changed to LOINC 112429-6 (LOINC 2.82); 80404-7, the target until 0.5.x, kept as a related target
 * group[0].element[0].code = #HKQuantityTypeIdentifierHeartRateVariabilitySDNN
 * group[0].element[0].display = "Heart Rate Variability SDNN"
-* group[0].element[0].target[0].code = #80404-7
-* group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
+* group[0].element[0].target[0].code = #112429-6
+* group[0].element[0].target[0].display = "Heart rate variability SDNN [Time]"
 * group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "VERIFIED 2026-01-07: Apple Watch correctly reports SDNN via HKQuantityTypeIdentifierHeartRateVariabilitySDNN. Note: RMSSD would be clinically preferable for short-term parasympathetic assessment (Shaffer 2017), but Apple chose to expose SDNN. Third-party apps can compute RMSSD from raw RR intervals. See: Hernando et al. 2018, Sensors 18(8):2619; Marco Altini analysis."
+* group[0].element[0].target[0].comment = "2026-11-26: LOINC 2.82 code for this measure: the standard deviation of the inter-beat intervals between normal heartbeats, at the patient level, without a method (checked against the LOINC 2.83 table on 2026-11-26). VERIFIED 2026-01-07: Apple Watch correctly reports SDNN via HKQuantityTypeIdentifierHeartRateVariabilitySDNN. Note: RMSSD would be clinically preferable for short-term parasympathetic assessment (Shaffer 2017), but Apple chose to expose SDNN. Third-party apps can compute RMSSD from raw RR intervals. See: Hernando et al. 2018, Sensors 18(8):2619; Marco Altini analysis."
+* group[0].element[0].target[1].code = #80404-7
+* group[0].element[0].target[1].display = "R-R interval.standard deviation (Heart rate variability)"
+* group[0].element[0].target[1].equivalence = #relatedto
+* group[0].element[0].target[1].comment = "The target of this element until 0.5.x (LOINC 2.54, system Heart, no definition text). Data coded with it are still accepted by SdnnObservation, HeartRateObservation and SleepObservation."
 
 // Heart Rate
 * group[0].element[1].code = #HKQuantityTypeIdentifierHeartRate
@@ -77,10 +82,11 @@ Usage: #definition
 * group[0].element[4].display = "Walking + Running Distance"
 // 2026-09-17: until 0.5.0 this distance was mapped to a step count (41950-7); LOINC has a pedometer distance concept,
 // verified in the Athena LOINC snapshot and on tx.fhir.org (LOINC 2.82) — coherent with the step-count row above (55423-8)
-* group[0].element[4].target[0].code = #55430-3
-* group[0].element[4].target[0].display = "Walking distance unspecified time Pedometer"
-* group[0].element[4].target[0].equivalence = #narrower
-* group[0].element[4].target[0].comment = "HealthKit sample includes running; LOINC concept is walking distance by pedometer"
+// 2026-11-26: LOINC 2.82 added the walking or running distance; until 0.5.x this element targeted 55430-3 (narrower)
+* group[0].element[4].target[0].code = #112427-0
+* group[0].element[4].target[0].display = "Distance walking or running"
+* group[0].element[4].target[0].equivalence = #equivalent
+* group[0].element[4].target[0].comment = "LOINC 2.82 code for the same concept: the distance the person has moved by walking or running (checked against the LOINC 2.83 table on 2026-11-26). Until 0.5.x this element targeted 55430-3 Walking distance unspecified time Pedometer, as narrower, because the HealthKit sample includes running."
 
 // Oxygen Saturation
 * group[0].element[5].code = #HKQuantityTypeIdentifierOxygenSaturation
@@ -263,26 +269,34 @@ Usage: #definition
 // Walking Asymmetry Percentage
 * group[0].element[30].code = #HKQuantityTypeIdentifierWalkingAsymmetryPercentage
 * group[0].element[30].display = "Walking Asymmetry Percentage"
-* group[0].element[30].target[0].equivalence = #unmatched
-* group[0].element[30].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Balance and coordination assessment. Normal <10%"
+* group[0].element[30].target[0].code = #112432-0
+* group[0].element[30].target[0].display = "Walking asymmetry"
+* group[0].element[30].target[0].equivalence = #equivalent
+* group[0].element[30].target[0].comment = "LOINC 2.82 code for the same concept (checked against the LOINC 2.83 table on 2026-11-26): the percentage of steps, on flat ground, in which one foot moves faster or slower than the other. iOS 14.0+. Balance and coordination assessment. Normal <10%. Until 0.5.x this element was unmatched with the note that no LOINC code existed."
 
 // Walking Double Support Percentage
 * group[0].element[31].code = #HKQuantityTypeIdentifierWalkingDoubleSupportPercentage
 * group[0].element[31].display = "Walking Double Support Percentage"
-* group[0].element[31].target[0].equivalence = #unmatched
-* group[0].element[31].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Time with both feet on ground. Higher values may indicate instability."
+* group[0].element[31].target[0].code = #112434-6
+* group[0].element[31].target[0].display = "Walking double support [Percentile]"
+* group[0].element[31].target[0].equivalence = #equivalent
+* group[0].element[31].target[0].comment = "LOINC 2.82 code for the same concept (checked against the LOINC 2.83 table on 2026-11-26): the percentage of time both feet touch the ground while walking steadily on flat ground. iOS 14.0+. Higher values may indicate instability. Until 0.5.x this element was unmatched with the note that no LOINC code existed."
 
 // Stair Ascent Speed
 * group[0].element[32].code = #HKQuantityTypeIdentifierStairAscentSpeed
 * group[0].element[32].display = "Stair Ascent Speed"
-* group[0].element[32].target[0].equivalence = #unmatched
-* group[0].element[32].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Functional capacity indicator. Unit: m/s"
+* group[0].element[32].target[0].code = #112431-2
+* group[0].element[32].target[0].display = "Stair ascent speed [Velocity]"
+* group[0].element[32].target[0].equivalence = #equivalent
+* group[0].element[32].target[0].comment = "LOINC 2.82 code for the same concept (checked against the LOINC 2.83 table on 2026-11-26): the speed while climbing a flight of stairs. iOS 14.0+. Functional capacity indicator. Unit: m/s. Until 0.5.x this element was unmatched with the note that no LOINC code existed."
 
 // Stair Descent Speed
 * group[0].element[33].code = #HKQuantityTypeIdentifierStairDescentSpeed
 * group[0].element[33].display = "Stair Descent Speed"
-* group[0].element[33].target[0].equivalence = #unmatched
-* group[0].element[33].target[0].comment = "GAP: No LOINC code. iOS 14.0+. Fall risk indicator. Unit: m/s"
+* group[0].element[33].target[0].code = #112430-4
+* group[0].element[33].target[0].display = "Stair descent speed [Velocity]"
+* group[0].element[33].target[0].equivalence = #equivalent
+* group[0].element[33].target[0].comment = "LOINC 2.82 code for the same concept (checked against the LOINC 2.83 table on 2026-11-26): the speed while descending a flight of stairs. iOS 14.0+. Fall risk indicator. Unit: m/s. Until 0.5.x this element was unmatched with the note that no LOINC code existed."
 
 // Six Minute Walk Test Distance
 * group[0].element[34].code = #HKQuantityTypeIdentifierSixMinuteWalkTestDistance

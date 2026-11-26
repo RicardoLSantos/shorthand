@@ -222,7 +222,7 @@ Description: "Example of recreational substance use screening as part of lifesty
 * component[substanceType].valueCodeableConcept = $SCT#398705004 "Cannabis (substance)"
 
 // Frequency: rarely
-* component[useFrequency].code = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-frequency "Frequency of substance use"
+* component[useFrequency].code = $LOINC#112320-7 "Substance consumption frequency"
 * component[useFrequency].valueCodeableConcept = https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs#substance-freq-never "Never"
 
 // Last use date

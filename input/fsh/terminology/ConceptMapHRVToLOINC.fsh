@@ -19,7 +19,7 @@ Usage: #definition
 * title = "Heart Rate Variability to LOINC Mapping"
 * status = #draft
 * experimental = true
-* date = "2026-09-16"
+* date = "2026-11-26"
 * publisher = "Ricardo Lourenço dos Santos"
 * contact.name = "Ricardo L. Santos"
 * description = "Operational ConceptMap for HRV terminology translation. Enables runtime $translate operations for semantic interoperability between custom HRV codes and LOINC standard terminology."
@@ -44,6 +44,10 @@ Usage: #definition
 * group[0].element[0].target[0].display = "R-R interval.standard deviation (Heart rate variability)"
 * group[0].element[0].target[0].equivalence = #equivalent
 * group[0].element[0].target[0].comment = "VERIFIED 2025-12-08 via tx.fhir.org: 80404-7 = R-R interval.standard deviation (Heart rate variability). First released in LOINC 2.54 (December 2015). Time-domain HRV measure representing total variability."
+* group[0].element[0].target[1].code = #112429-6
+* group[0].element[0].target[1].display = "Heart rate variability SDNN [Time]"
+* group[0].element[0].target[1].equivalence = #relatedto
+* group[0].element[0].target[1].comment = "2026-11-26: the LOINC 2.82 SDNN code (system ^Patient, no method), the one the IG sends for wearable data; related, as hrv-sdnn is the IG's generic SDNN code (checked against the LOINC 2.83 table on 2026-11-26)."
 
 // ============================================================================
 // RMSSD - GAP CONFIRMED 2025-12-08 ❌

@@ -8,6 +8,9 @@
 // 2026-02-27: 122 Cat C/D codes relocated to AppLogicCS (app metadata + ordinal scales), 893 -> 771
 // 2026-02-27: 21 Cat B Tier 1 codes superseded by standard LOINC/SNOMED/HL7 codes, 771 -> 750
 // 2026-02-27: Cat B Tier 2 — 5 ValueSets updated: bulk includes replaced with enumerated SNOMED + custom gap codes (no count change — codes remain in CS, referenced by VS)
+// 2026-11-26: 6 codes deprecated, superseded by LOINC 2.82 codes (walking-asymmetry, walking-double-support,
+//   stair-ascent-speed, stair-descent-speed, substance-frequency, stand-hours); the concepts stay, marked with
+//   the deprecated property, so that data written with 0.5.x still validate
 // Pattern: Physical Activity IG 'Temporary Codes' (cf. mCODE, US Core)
 // Codes are candidates for proposal to LOINC, SNOMED CT, or other standards
 //
@@ -25,6 +28,14 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * ^caseSensitive = true
 * ^content = #complete
 * ^count = 720
+
+// Concept property (FHIR R4 concept-properties): a deprecated code has been superseded by a standard code for the
+// same concept, named in its definition. Profiles and examples use the standard code; the deprecated code stays
+// in the value sets that list it.
+* ^property[+].code = #deprecated
+* ^property[=].uri = "http://hl7.org/fhir/concept-properties#deprecated"
+* ^property[=].description = "Date on which the code was deprecated because a standard code for the same concept became available (the superseding code is named in the definition)"
+* ^property[=].type = #dateTime
 
 // Traceability: codes renamed due to collisions are documented via inline comments.
 // Full mapping available in scripts/consolidation_mapping.json
@@ -494,17 +505,27 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #walking-distance "Walking distance measurement" "Measurement of total distance walked"
 * #walking-steadiness "Walking steadiness measurement" "Measurement of walking balance and steadiness. Maps to Apple HealthKit HKQuantityTypeIdentifier.appleWalkingSteadiness (iOS 15+)"
 * #walking-step-length "Walking step length" "Average step length during walking. Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingStepLength (iOS 14+). Unit: meters"
-* #walking-asymmetry "Walking asymmetry percentage" "Percentage difference in step time between left and right legs. Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingAsymmetryPercentage (iOS 14+). Normal: <10%. Values >15% may indicate gait pathology"
-* #walking-double-support "Walking double support percentage" "Percentage of gait cycle with both feet on ground. Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingDoubleSupportPercentage (iOS 14+). Increases with age and fall risk"
-* #stair-ascent-speed "Stair ascent speed" "Speed of ascending stairs. Maps to Apple HealthKit HKQuantityTypeIdentifier.stairAscentSpeed (iOS 14+). Unit: meters per second. Indicator of lower limb strength and cardiopulmonary function"
-* #stair-descent-speed "Stair descent speed" "Speed of descending stairs. Maps to Apple HealthKit HKQuantityTypeIdentifier.stairDescentSpeed (iOS 14+). Unit: meters per second. Relevant for fall risk assessment"
+* #walking-asymmetry "Walking asymmetry percentage" "Deprecated: superseded by LOINC 112432-0 (Walking asymmetry, LOINC 2.82). Percentage of steps, on flat ground, in which one foot moves faster or slower than the other (the LOINC 112432-0 definition). Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingAsymmetryPercentage (iOS 14+). Normal: <10%. Values >15% may indicate gait pathology"
+* #walking-asymmetry ^property[+].code = #deprecated
+* #walking-asymmetry ^property[=].valueDateTime = "2026-11-26"
+* #walking-double-support "Walking double support percentage" "Deprecated: superseded by LOINC 112434-6 (Walking double support [Percentile], LOINC 2.82). Percentage of gait cycle with both feet on ground. Maps to Apple HealthKit HKQuantityTypeIdentifier.walkingDoubleSupportPercentage (iOS 14+). Increases with age and fall risk"
+* #walking-double-support ^property[+].code = #deprecated
+* #walking-double-support ^property[=].valueDateTime = "2026-11-26"
+* #stair-ascent-speed "Stair ascent speed" "Deprecated: superseded by LOINC 112431-2 (Stair ascent speed [Velocity], LOINC 2.82). Speed of ascending stairs. Maps to Apple HealthKit HKQuantityTypeIdentifier.stairAscentSpeed (iOS 14+). Unit: meters per second. Indicator of lower limb strength and cardiopulmonary function"
+* #stair-ascent-speed ^property[+].code = #deprecated
+* #stair-ascent-speed ^property[=].valueDateTime = "2026-11-26"
+* #stair-descent-speed "Stair descent speed" "Deprecated: superseded by LOINC 112430-4 (Stair descent speed [Velocity], LOINC 2.82). Speed of descending stairs. Maps to Apple HealthKit HKQuantityTypeIdentifier.stairDescentSpeed (iOS 14+). Unit: meters per second. Relevant for fall risk assessment"
+* #stair-descent-speed ^property[+].code = #deprecated
+* #stair-descent-speed ^property[=].valueDateTime = "2026-11-26"
 * #six-minute-walk-distance "Six-minute walk test distance" "Distance walked in six minutes. Maps to Apple HealthKit HKQuantityTypeIdentifier.sixMinuteWalkTestDistance (iOS 14+). Unit: meters. Clinical measure of functional exercise capacity"
 * #heart-rate-exercise "Heart rate during exercise" "Heart rate measurement during physical exercise activity"
 * #heart-rate-variability "Heart rate variability" "Measurement of heart rate variability (HRV)"
 * #alcohol-type "Type of alcoholic beverage" "Type of alcoholic beverage consumed (beer, wine, spirits, etc.)"
 * #caffeine-source "Caffeine source" "Source of dietary caffeine intake (coffee, tea, energy drinks, etc.)"
 * #last-caffeine-time "Time of last caffeine intake" "Date and time of the most recent caffeine consumption"
-* #substance-frequency "Frequency of substance use" "How often a substance is used (daily, weekly, monthly, etc.)"
+* #substance-frequency "Frequency of substance use" "Deprecated: superseded by LOINC 112320-7 (Substance consumption frequency, LOINC 2.82). How often a substance is used (daily, weekly, monthly, etc.)"
+* #substance-frequency ^property[+].code = #deprecated
+* #substance-frequency ^property[=].valueDateTime = "2026-11-26"
 * #last-use-date "Date of last substance use" "Date when a substance was last used"
 * #substance-use-summary "Substance use summary" "Comprehensive summary of all substance use patterns for lifestyle medicine assessment"
 * #substance-risk-level "Overall substance use risk level" "Aggregate risk assessment based on all substance use patterns"
@@ -666,7 +687,9 @@ Description: "Temporary codes for lifestyle medicine concepts not yet covered by
 * #active-minutes "Active Minutes" "Minutes of activity in heart rate zones (moderate to vigorous). Apple: Exercise Ring minutes, Fitbit: Active Zone Minutes, Garmin: Intensity Minutes."
 * #met-minutes "MET-Minutes" "Metabolic Equivalent of Task × Duration. Standard measure for physical activity dose. 1 MET = 1 kcal/kg/hour (resting). Target: 500-1000 MET-min/week per guidelines."
 * #floors-climbed "Floors Climbed" "Number of floors/flights of stairs climbed. Indicates vertical displacement activity. Typically measured via barometric altimeter."
-* #stand-hours "Stand Hours" "Hours with at least 1 minute standing. Apple Watch specific metric. Target: 12 stand hours/day. Proxy for sedentary behavior interruption."
+* #stand-hours "Stand Hours" "Deprecated: superseded by LOINC 112425-4 (Standing time 1 day, LOINC 2.82). Hours with at least 1 minute standing. LOINC 112425-4 counts the hours of the day in which the person stood and moved for at least one minute, but its example unit is min. Apple Watch specific metric. Target: 12 stand hours/day. Proxy for sedentary behavior interruption."
+* #stand-hours ^property[+].code = #deprecated
+* #stand-hours ^property[=].valueDateTime = "2026-11-26"
 
 // --- Domain: qt-alert (from QTAlertTypeCS) ---
 * #qtc-borderline "QTc Borderline Prolongation" "QTc 440-500ms (men) or 460-500ms (women); warrants monitoring"

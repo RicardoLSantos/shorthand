@@ -58,16 +58,16 @@ Description: "Profile for mobility data from iOS Health App including iOS 14+ ga
 * component[walkingStepLength] ^definition = "Average step length during walking. HKQuantityTypeIdentifier.walkingStepLength (iOS 14+)"
 
 // Walking Asymmetry Percentage (iOS 14+)
-* component[walkingAsymmetry].code = $LIFESTYLEOBS#walking-asymmetry "Walking asymmetry percentage"
+* component[walkingAsymmetry].code = $LOINC#112432-0 "Walking asymmetry"
 * component[walkingAsymmetry].valueQuantity 1..1
 * component[walkingAsymmetry].valueQuantity.system = $UCUM
 * component[walkingAsymmetry].valueQuantity.code = #%
 * component[walkingAsymmetry].valueQuantity ^short = "Asymmetry percentage"
 * component[walkingAsymmetry] ^short = "Walking asymmetry"
-* component[walkingAsymmetry] ^definition = "Percentage difference in step time between left and right legs. HKQuantityTypeIdentifier.walkingAsymmetryPercentage (iOS 14+). Normal: <10%"
+* component[walkingAsymmetry] ^definition = "Percentage of steps, on flat ground, in which one foot moves faster or slower than the other (the LOINC 112432-0 definition). HKQuantityTypeIdentifier.walkingAsymmetryPercentage (iOS 14+). Normal: <10%"
 
 // Walking Double Support Percentage (iOS 14+)
-* component[walkingDoubleSupport].code = $LIFESTYLEOBS#walking-double-support "Walking double support percentage"
+* component[walkingDoubleSupport].code = $LOINC#112434-6 "Walking double support [Percentile]"
 * component[walkingDoubleSupport].valueQuantity 1..1
 * component[walkingDoubleSupport].valueQuantity.system = $UCUM
 * component[walkingDoubleSupport].valueQuantity.code = #%
@@ -76,7 +76,7 @@ Description: "Profile for mobility data from iOS Health App including iOS 14+ ga
 * component[walkingDoubleSupport] ^definition = "Percentage of gait cycle with both feet on ground. HKQuantityTypeIdentifier.walkingDoubleSupportPercentage (iOS 14+). Increases with age and fall risk"
 
 // Stair Ascent Speed (iOS 14+)
-* component[stairAscentSpeed].code = $LIFESTYLEOBS#stair-ascent-speed "Stair ascent speed"
+* component[stairAscentSpeed].code = $LOINC#112431-2 "Stair ascent speed [Velocity]"
 * component[stairAscentSpeed].valueQuantity 1..1
 * component[stairAscentSpeed].valueQuantity.system = $UCUM
 * component[stairAscentSpeed].valueQuantity.code = #m/s
@@ -85,7 +85,7 @@ Description: "Profile for mobility data from iOS Health App including iOS 14+ ga
 * component[stairAscentSpeed] ^definition = "Speed of ascending stairs. HKQuantityTypeIdentifier.stairAscentSpeed (iOS 14+). Indicator of lower limb strength"
 
 // Stair Descent Speed (iOS 14+)
-* component[stairDescentSpeed].code = $LIFESTYLEOBS#stair-descent-speed "Stair descent speed"
+* component[stairDescentSpeed].code = $LOINC#112430-4 "Stair descent speed [Velocity]"
 * component[stairDescentSpeed].valueQuantity 1..1
 * component[stairDescentSpeed].valueQuantity.system = $UCUM
 * component[stairDescentSpeed].valueQuantity.code = #m/s
@@ -148,6 +148,11 @@ Description: "Value set for iOS 14+ mobility metrics from Apple HealthKit"
 * $LIFESTYLEOBS#walking-double-support "Walking double support percentage"
 * $LIFESTYLEOBS#stair-ascent-speed "Stair ascent speed"
 * $LIFESTYLEOBS#stair-descent-speed "Stair descent speed"
+// 2026-11-26: LOINC 2.82 codes for four of the metrics above; the temporary codes stay so that data written with 0.5.x still validate
+* $LOINC#112432-0 "Walking asymmetry"
+* $LOINC#112434-6 "Walking double support [Percentile]"
+* $LOINC#112431-2 "Stair ascent speed [Velocity]"
+* $LOINC#112430-4 "Stair descent speed [Velocity]"
 * $LOINC#64098-7 "Six minute walk test"
 * $LIFESTYLEOBS#walking-steadiness "Walking steadiness measurement"
 * $LIFESTYLEOBS#gait-assessment "Gait assessment"

@@ -6,7 +6,7 @@
 // =============================================================================
 
 Alias: $LOINC = http://loinc.org
-Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0
+Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 
 // -----------------------------------------------------------------------------
 // Example 1: Basic Social Interaction (Original)

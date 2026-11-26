@@ -86,7 +86,7 @@ InstanceOf: Observation
 Usage: #inline
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
-* code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* code = $LOINC#112429-6 "Heart rate variability SDNN [Time]"
 * subject = Reference(urn:uuid:a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d)
 * effectiveDateTime = "2026-03-05T08:00:00Z"
 * valueQuantity.value = 28

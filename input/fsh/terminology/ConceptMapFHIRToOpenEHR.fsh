@@ -54,13 +54,13 @@ Architecture:
 * group[0].unmapped.code = #other
 * group[0].unmapped.display = "Unmapped FHIR HRV element"
 
-// SDNN component (LOINC 80404-7) → at0004
+// SDNN component (LOINC 112429-6, or 80404-7 for data from 0.5.x) → at0004
 * group[0].element[0].code = #"Observation.component:sdnn"
-* group[0].element[0].display = "SDNN component with LOINC 80404-7"
+* group[0].element[0].display = "SDNN component with LOINC 112429-6 or 80404-7"
 * group[0].element[0].target[0].code = #at0004
 * group[0].element[0].target[0].display = "SDNN"
 * group[0].element[0].target[0].equivalence = #equivalent
-* group[0].element[0].target[0].comment = "Map from Observation.component with code LOINC 80404-7. Unit: ms"
+* group[0].element[0].target[0].comment = "Map from Observation.component with code LOINC 112429-6 (wearable data from 0.6.0) or 80404-7 (data from 0.5.x). Unit: ms"
 
 // RMSSD component → at0005
 * group[0].element[1].code = #"Observation.component:rmssd"
@@ -126,11 +126,11 @@ Architecture:
 
 // Distance component → at0010
 * group[1].element[1].code = #"Observation.component:distance"
-* group[1].element[1].display = "Distance component with LOINC 55430-3"
+* group[1].element[1].display = "Distance component with LOINC 55430-3 or 112427-0"
 * group[1].element[1].target[0].code = #at0010
 * group[1].element[1].target[0].display = "Distance"
 * group[1].element[1].target[0].equivalence = #equivalent
-* group[1].element[1].target[0].comment = "Map from component with LOINC 55430-3. Unit: km or m"
+* group[1].element[1].target[0].comment = "Map from component with LOINC 55430-3 (walking, step counter) or 112427-0 (walking or running). Unit: km or m"
 
 // Active calories component → at0019
 * group[1].element[2].code = #"Observation.component:active-calories"

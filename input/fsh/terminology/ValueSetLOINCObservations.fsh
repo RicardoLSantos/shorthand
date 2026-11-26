@@ -10,12 +10,13 @@ Description: "LOINC codes relevant for lifestyle medicine observations including
 * ^status = #draft
 * ^experimental = true
 * ^version = "1.0.0"
-* ^date = "2026-09-17"
+* ^date = "2026-11-26"
 
 // ============================================================================
 // HEART RATE VARIABILITY
 // ============================================================================
-* http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)" // SDNN - Only HRV code
+* http://loinc.org#112429-6 "Heart rate variability SDNN [Time]" // SDNN, LOINC 2.82 (the code for wearable data)
+* http://loinc.org#80404-7 "R-R interval.standard deviation (Heart rate variability)" // SDNN, LOINC 2.54 (accepted for data from 0.5.x)
 
 // ============================================================================
 // HEART RATE (BASIC)

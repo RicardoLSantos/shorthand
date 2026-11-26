@@ -200,15 +200,15 @@ Elements marked with MS must be supported:
 ## iOS Health App to FHIR Mapping
 
 ### Core Fields
-| iOS Health App | FHIR Path | Code (`LifestyleMedicineTemporaryCS`) |
+| iOS Health App | FHIR Path | Code |
 |----------------|-----------|---------------------------------------|
-| Walking Steadiness | MobilityProfile.component[walkingSteadiness].valueQuantity | `walking-steadiness` |
-| Walking Speed | MobilityProfile.component[walkingSpeed].valueQuantity | `walking-speed` |
-| Step Length | MobilityProfile.component[walkingStepLength].valueQuantity | `walking-step-length` |
-| Double Support Time | MobilityProfile.component[walkingDoubleSupport].valueQuantity | `walking-double-support` |
-| Walking Asymmetry | MobilityProfile.component[walkingAsymmetry].valueQuantity | `walking-asymmetry` |
+| Walking Steadiness | MobilityProfile.component[walkingSteadiness].valueQuantity | `LifestyleMedicineTemporaryCS#walking-steadiness` |
+| Walking Speed | MobilityProfile.component[walkingSpeed].valueQuantity | `LifestyleMedicineTemporaryCS#walking-speed` |
+| Step Length | MobilityProfile.component[walkingStepLength].valueQuantity | `LifestyleMedicineTemporaryCS#walking-step-length` |
+| Double Support Time | MobilityProfile.component[walkingDoubleSupport].valueQuantity | LOINC `112434-6` |
+| Walking Asymmetry | MobilityProfile.component[walkingAsymmetry].valueQuantity | LOINC `112432-0` |
 
-The identifiers previously quoted here (`LA32-8`, `LA29042-4`, `LA19752-7`, `LA32-9`, `LA32-10`) belong to the LOINC answer namespace — two are answer codes ("No", "K13K/E") and three do not exist. LOINC has no observable for walking steadiness, step length, double-support time or walking asymmetry; for walking speed it has 41956-4 to 41959-8 (24-hour and past-week statistics) and 83144-6 (4-metre gait speed test), none of which the profile binds — `MobilityProfile` binds the IG's own code for all five metrics. Since 0.5.2 the ConceptMaps give walking speed its standard counterparts: `walking-speed` maps to SNOMED CT 724237005 "Gait speed" (equivalent) in the mobility-to-SNOMED map, and the HealthKit walking-speed sample maps to LOINC 41957-2 "Walking speed 24 hour mean Calculated" as *related* (a sample is the mean of one walking bout, the LOINC concept a 24-hour mean) in the vendor-to-LOINC map; both codes verified on 2026-09-22 in two sources. The per-concept migration property (`assignment-status`) is defined in `AppLogicCS` but not yet applied to these concepts — an open item recorded on the [terminology verification](terminology-verification.html) page. The codes above are the ones `MobilityProfile` binds (checked against the FSH sources on 2026-09-21).
+The identifiers previously quoted here (`LA32-8`, `LA29042-4`, `LA19752-7`, `LA32-9`, `LA32-10`) belong to the LOINC answer namespace — two are answer codes ("No", "K13K/E") and three do not exist. In LOINC 2.83, a search by name (on 2026-11-26) finds no observable for walking steadiness or step length; since 2.82 LOINC has walking double support (112434-6) and walking asymmetry (112432-0), which `MobilityProfile` binds from 0.6.0; for walking speed it has 41956-4 to 41959-8 (24-hour and past-week statistics) and 83144-6 (4-metre gait speed test), none of which the profile binds — `MobilityProfile` binds the IG's own code for the other three metrics. Since 0.5.2 the ConceptMaps give walking speed its standard counterparts: `walking-speed` maps to SNOMED CT 724237005 "Gait speed" (equivalent) in the mobility-to-SNOMED map, and the HealthKit walking-speed sample maps to LOINC 41957-2 "Walking speed 24 hour mean Calculated" as *related* (a sample is the mean of one walking bout, the LOINC concept a 24-hour mean) in the vendor-to-LOINC map; both codes verified on 2026-09-22 in two sources. The per-concept migration property (`assignment-status`) is defined in `AppLogicCS` but not yet applied to these concepts — an open item recorded on the [terminology verification](terminology-verification.html) page. The codes above are the ones `MobilityProfile` binds (checked against the FSH sources on 2026-09-21).
 
 ### Mapping Considerations
 1. Temporality

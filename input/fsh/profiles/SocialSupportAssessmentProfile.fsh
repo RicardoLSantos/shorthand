@@ -15,7 +15,7 @@
 Alias: $LOINC = http://loinc.org
 Alias: $SCT = http://snomed.info/sct
 Alias: $UCUM = http://unitsofmeasure.org
-Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0
+Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 
 Profile: SocialSupportAssessmentProfile
 Parent: Observation

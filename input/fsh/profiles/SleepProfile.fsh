@@ -49,7 +49,7 @@
 // - 103211-9: Number of awakenings
 // - 103215-0: Wake time after sleep onset (WASO)
 // - 9279-1: Respiratory rate (during sleep)
-// - 80404-7: SDNN (HRV during sleep)
+// - 112429-6: SDNN (HRV during sleep; 80404-7 accepted for data from 0.5.x)
 // =============================================================================
 
 Alias: $SCT = http://snomed.info/sct
@@ -145,7 +145,7 @@ References:
 // metric actually carried (SDNN 80404-7 or RMSSD hrv-rmssd) through a required binding, which still discriminates the slice (FHIR R4
 // allows a required binding as a value discriminator).
 * component[heartRateVariability].code from SleepHRVMetricVS (required)
-* component[heartRateVariability].code ^comment = "The component code identifies the metric; consumers must read it — as reported in the published article (Int J Med Inform 217:106465, doi:10.1016/j.ijmedinf.2026.106465): Apple HealthKit exposes SDNN; Fitbit, Garmin and Oura expose RMSSD (SDNN = LOINC 80404-7; RMSSD = hrv-rmssd, as LOINC has no RMSSD concept). The openEHR node at0052 of sleep_architecture records the average RMSSD, so the mapping is exact only for hrv-rmssd."
+* component[heartRateVariability].code ^comment = "The component code identifies the metric; consumers must read it — as reported in the published article (Int J Med Inform 217:106465, doi:10.1016/j.ijmedinf.2026.106465): Apple HealthKit exposes SDNN; Fitbit, Garmin and Oura expose RMSSD. Codes: SDNN = LOINC 112429-6 for wearable data (80404-7, the code of releases up to 0.5.x, is accepted); RMSSD = hrv-rmssd, as LOINC has no RMSSD concept. The openEHR node at0052 of sleep_architecture records the average RMSSD, so the mapping is exact only for hrv-rmssd."
 * component[heartRateVariability].valueQuantity only Quantity
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.code = #ms

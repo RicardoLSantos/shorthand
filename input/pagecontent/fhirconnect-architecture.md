@@ -28,7 +28,7 @@ The FHIRconnect approach implements three distinct mapping layers, each addressi
 **Purpose**: Apply local terminology bindings and organizational constraints
 **Scope**: Implementation-specific
 **Example**:
-- LOINC `80404-7` for SDNN (where available)
+- LOINC `112429-6` for SDNN from wearables (`80404-7` accepted for data from 0.5.x)
 - Custom codes for RMSSD, pNN50 (pending LOINC submission)
 - Vendor-specific identifiers (Apple HealthKit, Fitbit, etc.)
 
@@ -39,7 +39,7 @@ This IG includes 29 ConceptMaps. The ten domain-level maps below implement the F
 ### Core Vital Signs Mappings
 1. **ConceptMapHRVToLOINC**: Maps HRV metrics to LOINC codes with migration path
    - Implements dual-coding strategy: LOINC where available, custom with migration metadata
-   - Addresses the terminology gap for wearable HRV metrics (RMSSD, pNN50 and the frequency-domain measures have no LOINC code; SDNN has 80404-7)
+   - Addresses the terminology gap for wearable HRV metrics (RMSSD, pNN50 and the frequency-domain measures have no LOINC code; SDNN has 112429-6 and 80404-7)
 
 2. **ConceptMapBodyMetricsToLOINC**: Body measurements to LOINC
    - Leverages existing LOINC coverage for standard anthropometric measures

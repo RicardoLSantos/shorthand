@@ -81,14 +81,14 @@ Description: "Withings BPM Connect device for blood pressure round-trip validati
 // Vendor: Apple HealthKit
 // Domain: Heart Rate Variability
 // ConceptMap: ConceptMapVendorToLOINC (group[0])
-// Translation: HKQuantityTypeIdentifierHeartRateVariabilitySDNN → LOINC 80404-7
+// Translation: HKQuantityTypeIdentifierHeartRateVariabilitySDNN → LOINC 112429-6 (80404-7 until 0.5.x)
 // =============================================================================
 
 Instance: RoundTripAppleHRV
 InstanceOf: Bundle
 Usage: #example
 Title: "Round-Trip Validation: Apple Watch HRV"
-Description: "Demonstrates Apple HealthKit HRV data transformation to FHIR. Vendor code HKQuantityTypeIdentifierHeartRateVariabilitySDNN maps to LOINC 80404-7 (SDNN) via ConceptMapVendorToLOINC. Includes heart rate (8867-4) as secondary observation."
+Description: "Demonstrates Apple HealthKit HRV data transformation to FHIR. Vendor code HKQuantityTypeIdentifierHeartRateVariabilitySDNN maps to LOINC 112429-6 (SDNN) via ConceptMapVendorToLOINC. Includes heart rate (8867-4) as secondary observation."
 
 * type = #collection
 * timestamp = "2026-03-05T08:30:00Z"
@@ -116,8 +116,8 @@ Usage: #inline
 Instance: ObsAppleHRV
 InstanceOf: HeartRateObservation
 Usage: #inline
-Title: "Apple HRV → LOINC 80404-7"
-Description: "Apple Watch SDNN measurement mapped from HKQuantityTypeIdentifierHeartRateVariabilitySDNN to LOINC 80404-7 via ConceptMapVendorToLOINC"
+Title: "Apple HRV → LOINC 112429-6"
+Description: "Apple Watch SDNN measurement mapped from HKQuantityTypeIdentifierHeartRateVariabilitySDNN to LOINC 112429-6 via ConceptMapVendorToLOINC"
 * status = #final
 * code = $LOINC#8867-4 "Heart rate"
 * subject.reference = "urn:uuid:550e8400-e29b-41d4-a716-446655440001"
@@ -126,11 +126,11 @@ Description: "Apple Watch SDNN measurement mapped from HKQuantityTypeIdentifierH
 * valueQuantity = 62 '/min' "per minute"
 * valueQuantity.system = $UCUM
 * valueQuantity.unit = "per minute"
-* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)"
+* component[heartRateVariability].code = $LOINC#112429-6 "Heart rate variability SDNN [Time]"
 * component[heartRateVariability].valueQuantity = 42 'ms' "millisecond"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"
-* note.text = "Round-trip validation: Apple HealthKit HKQuantityTypeIdentifierHeartRateVariabilitySDNN → LOINC 80404-7 via ConceptMapVendorToLOINC (group[0], element[0]). Equivalence: equivalent."
+* note.text = "Round-trip validation: Apple HealthKit HKQuantityTypeIdentifierHeartRateVariabilitySDNN → LOINC 112429-6 via ConceptMapVendorToLOINC (group[0], element[0]). Equivalence: equivalent."
 
 Instance: ObsAppleHeartRate
 InstanceOf: HeartRateObservation

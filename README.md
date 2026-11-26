@@ -143,6 +143,7 @@ sequenceDiagram
 
 | Code | Description | Status |
 |------|-------------|:------:|
+| 112429-6 | Heart rate variability SDNN (LOINC 2.82; the code for wearable data since 0.6.0) | ✅ |
 | 80404-7 | R-R interval standard deviation (SDNN) | ✅ |
 | 76643-6 | R-R interval standard deviation by EKG | ✅ |
 | 76644-4 | R-R interval coefficient of variation | ✅ |
@@ -308,7 +309,7 @@ Status as of v0.5.2 (2026-09-23) — details on the [Implementation Scope and Ro
 
 | Track | Status | Interim mechanism |
 |-------|--------|-------------------|
-| LOINC submission (RMSSD, pNN50, LF/HF) | **Not submitted** | interim codes in `LifestyleMedicineTemporaryCS`, bridged to LOINC by `ConceptMapHRVToLOINC` (SDNN already has LOINC 80404-7) |
+| LOINC submission (RMSSD, pNN50, LF/HF) | **Not submitted** | interim codes in `LifestyleMedicineTemporaryCS`, bridged to LOINC by `ConceptMapHRVToLOINC` (SDNN has LOINC 112429-6 and 80404-7) |
 | openEHR CKM | **Not submitted** — the archetypes are catalogued with their status relative to the published CKM (see the [archetype catalog](input/pagecontent/openehr-archetypes-catalog.md)) | five element-level `Mapping:` blocks on the profiles whose archetype was developed for this IG |
 | HL7 FHIR ballot | **Not started** | versioned GitHub releases (`package.tgz`) |
 

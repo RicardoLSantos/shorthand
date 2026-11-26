@@ -98,7 +98,7 @@ Elements marked with MS must be supported:
 | iOS Health App | FHIR Path | LOINC Code |
 |----------------|-----------|-------------|
 | Heart Rate | valueQuantity | 8867-4 |
-| HRV | component[heartRateVariability] | 80404-7 |
+| HRV (SDNN) | component[heartRateVariability] | 112429-6 (80404-7 accepted for data from 0.5.x) |
 | Blood Pressure Systolic | component[systolic] | 8480-6 |
 | Blood Pressure Diastolic | component[diastolic] | 8462-4 |
 | SpO2 | code (dual-coded) + valueQuantity | 2708-6 + 59408-5 |

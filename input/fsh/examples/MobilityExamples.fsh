@@ -29,16 +29,16 @@ Title: "Mobility Profile Assessment Example"
 * component[walkingStepLength].code = $LIFESTYLEOBS#walking-step-length "Walking step length"
 * component[walkingStepLength].valueQuantity = 0.72 'm' "meters"
 
-* component[walkingAsymmetry].code = $LIFESTYLEOBS#walking-asymmetry "Walking asymmetry percentage"
+* component[walkingAsymmetry].code = $LOINC#112432-0 "Walking asymmetry"
 * component[walkingAsymmetry].valueQuantity = 7.5 '%' "percent"
 
-* component[walkingDoubleSupport].code = $LIFESTYLEOBS#walking-double-support "Walking double support percentage"
+* component[walkingDoubleSupport].code = $LOINC#112434-6 "Walking double support [Percentile]"
 * component[walkingDoubleSupport].valueQuantity = 28.3 '%' "percent"
 
-* component[stairAscentSpeed].code = $LIFESTYLEOBS#stair-ascent-speed "Stair ascent speed"
+* component[stairAscentSpeed].code = $LOINC#112431-2 "Stair ascent speed [Velocity]"
 * component[stairAscentSpeed].valueQuantity = 0.65 'm/s' "meters per second"
 
-* component[stairDescentSpeed].code = $LIFESTYLEOBS#stair-descent-speed "Stair descent speed"
+* component[stairDescentSpeed].code = $LOINC#112430-4 "Stair descent speed [Velocity]"
 * component[stairDescentSpeed].valueQuantity = 0.58 'm/s' "meters per second"
 
 // iOS 15+ Walking Steadiness
@@ -96,7 +96,7 @@ Title: "Walking Asymmetry Elevated Example"
 * performer = Reference(Practitioner/PractitionerExample)
 * device = Reference(Device/iphone-example)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
-* code = $LIFESTYLEOBS#walking-asymmetry "Walking asymmetry percentage"
+* code = $LOINC#112432-0 "Walking asymmetry"
 * valueQuantity = 18.5 '%' "percent"
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 * note.text = "Walking asymmetry >15% may indicate gait pathology. Normal range: <10%. Recommend clinical gait assessment."
@@ -117,10 +117,10 @@ Title: "Stair Speed Assessment Example"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#activity
 * code = $LIFESTYLEOBS#gait-assessment "Gait assessment"
 
-* component[stairAscentSpeed].code = $LIFESTYLEOBS#stair-ascent-speed "Stair ascent speed"
+* component[stairAscentSpeed].code = $LOINC#112431-2 "Stair ascent speed [Velocity]"
 * component[stairAscentSpeed].valueQuantity = 0.52 'm/s' "meters per second"
 
-* component[stairDescentSpeed].code = $LIFESTYLEOBS#stair-descent-speed "Stair descent speed"
+* component[stairDescentSpeed].code = $LOINC#112430-4 "Stair descent speed [Velocity]"
 * component[stairDescentSpeed].valueQuantity = 0.48 'm/s' "meters per second"
 
 * note.text = "Stair speeds within normal range. Indicates adequate lower limb strength and balance."

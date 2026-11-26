@@ -118,7 +118,7 @@ Heart Rate Variability (HRV) demonstrates the IG's dual-coding strategy — LOIN
   "status": "final",
   "code": {
     "coding": [
-      {"system": "http://loinc.org", "code": "80404-7", "display": "R-R interval.standard deviation (SDNN)"},
+      {"system": "http://loinc.org", "code": "112429-6", "display": "Heart rate variability SDNN [Time]"},
       {"system": "https://2rdoc.pt/ig/ios-lifestyle-medicine/CodeSystem/lifestyle-medicine-temporary-cs", "code": "hrv-sdnn", "display": "SDNN"}
     ]
   },

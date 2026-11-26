@@ -12,7 +12,7 @@
 Alias: $LOINC = http://loinc.org
 Alias: $UCUM = http://unitsofmeasure.org
 Alias: $SCT = http://snomed.info/sct
-Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0
+Alias: $ObsInt = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation
 
 Instance: NutritionQuestionnaireResponseExample
 InstanceOf: QuestionnaireResponse

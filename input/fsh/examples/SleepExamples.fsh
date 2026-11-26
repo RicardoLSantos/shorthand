@@ -43,7 +43,7 @@ Title: "Example of Sleep Record"
 * component[respiratoryRate].valueQuantity.system = $UCUM
 * component[respiratoryRate].valueQuantity.unit = "per minute"
  
-* component[heartRateVariability].code = $LOINC#80404-7 "R-R interval.standard deviation (Heart rate variability)" // 2026-09-17: SDNN kept for this generic sleep monitor; the code identifies the metric (see SleepHRVMetricVS)
+* component[heartRateVariability].code = $LOINC#112429-6 "Heart rate variability SDNN [Time]" // 2026-09-17: SDNN kept for this generic sleep monitor; the code identifies the metric (see SleepHRVMetricVS). 2026-11-26: SDNN is coded 112429-6 for wearable data
 * component[heartRateVariability].valueQuantity = 45 'ms' "millisecond"
 * component[heartRateVariability].valueQuantity.system = $UCUM
 * component[heartRateVariability].valueQuantity.unit = "millisecond"

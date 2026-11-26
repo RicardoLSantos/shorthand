@@ -45,6 +45,7 @@
 // LOINC Codes:
 // - 55423-8: Number of steps in unspecified time Pedometer
 // - 55430-3: Walking distance unspecified time Pedometer
+// - 112427-0: Distance walking or running (LOINC 2.82; the distance component accepts both)
 // - 55411-3: Exercise duration
 // - 55424-6: Calories burned in unspecified time Pedometer
 // - 82290-8: Physical activity guidelines met [Boolean]
@@ -111,7 +112,10 @@ References:
 * component[steps].valueQuantity.system = $UCUM
 * component[steps].valueQuantity.code = #1 "count"
 
-* component[distance].code = $LOINC#55430-3 "Walking distance unspecified time Pedometer"
+// 2026-11-26: until 0.5.x the code was fixed to 55430-3; the slice now accepts 55430-3 (a walking distance from a step
+// counter) or 112427-0 (LOINC 2.82, a distance that includes running) through a required binding, which still
+// discriminates the slice (FHIR R4 allows a required binding as a value discriminator).
+* component[distance].code from PhysicalActivityDistanceVS (required)
 * component[distance].valueQuantity only Quantity
 * component[distance].valueQuantity.system = $UCUM
 * component[distance].valueQuantity.code = #km "kilometer"
@@ -138,3 +142,13 @@ References:
 * component[vigorousMinutes].valueQuantity only Quantity
 * component[vigorousMinutes].valueQuantity.system = $UCUM
 * component[vigorousMinutes].valueQuantity.code = #min "minute"
+
+ValueSet: PhysicalActivityDistanceVS
+Id: physical-activity-distance-vs
+Title: "Physical Activity Distance Value Set"
+Description: "The LOINC codes the distance component of a physical activity observation may carry: 55430-3 (Walking distance unspecified time Pedometer) for a walking distance counted by a step counter, and 112427-0 (Distance walking or running, LOINC 2.82) for a distance that includes running, such as the Apple HealthKit walking + running distance."
+* ^experimental = true
+* ^status = #draft
+* ^date = "2026-11-26"
+* $LOINC#55430-3 "Walking distance unspecified time Pedometer"
+* $LOINC#112427-0 "Distance walking or running"

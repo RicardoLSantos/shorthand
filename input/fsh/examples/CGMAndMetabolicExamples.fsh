@@ -93,7 +93,7 @@ Description: "Example of hs-CRP inflammatory marker measurement"
 
 * valueQuantity = 1.8 'mg/L' "milligrams per liter"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
 * referenceRange.low = 0 'mg/L'
 * referenceRange.high = 3 'mg/L'

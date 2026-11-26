@@ -33,7 +33,7 @@ Description: "Example of alcohol consumption tracking as part of lifestyle medic
 // Weekly drinks as component
 * component[drinksPerWeek].valueQuantity = 8 '/wk' "per week"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#N "Normal"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
 * note.text = "Moderate alcohol consumption. Per ACLM guidelines, recommend harm reduction strategies."
 
@@ -133,7 +133,7 @@ Description: "Example showing QT prolongation clinical alert extension"
 * component[rrInterval].code = $LOINC#8637-1 "R-R interval by EKG"
 * component[rrInterval].valueQuantity = 923 'ms' "milliseconds"
 
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation|3.0.0#H "High"
+* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 
 // Clinical warning - consumer device (uses named slices from ConsumerECGObservation profile)
 * extension[clinicalWarning].extension[warningCode].valueCodeableConcept = LifestyleMedicineTemporaryCS#consumer-grade-sensor "Consumer-Grade Sensor"
