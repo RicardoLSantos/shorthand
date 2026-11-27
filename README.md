@@ -121,9 +121,9 @@ sequenceDiagram
 | **Profiles** | 104 | Observation, Device, Patient, Goal, vital-signs, AI/CDSS profiles |
 | **Extensions** | 77 | Custom FHIR extensions |
 | **CodeSystems** | 19 | Content + external-stub CodeSystems |
-| **ValueSets** | 207 | LOINC, SNOMED CT, custom bindings |
+| **ValueSets** | 209 | LOINC, SNOMED CT, custom bindings |
 | **Instances** | 281 | 193 examples, 29 ConceptMaps, round-trip validation bundles |
-| **Total** | **688** | All artefacts (v0.5.2; v0.5.1 held 685; FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
+| **Total** | **690** | All artefacts (v0.6.0; v0.5.2 held 688; FHIR R4 4.0.1) — counted from the FSH sources by `.github/scripts/ig_counts.sh` |
 
 ### Build Validation (2026-09-23, v0.5.2 release)
 
